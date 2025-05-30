@@ -1033,7 +1033,7 @@ script Littleroot_Idletalk_Oldman{
 	releaseall
 }
 
-	
+script TownPreview {mappreview}
 
 //////////////////////////////////////////////////////////////////////
 

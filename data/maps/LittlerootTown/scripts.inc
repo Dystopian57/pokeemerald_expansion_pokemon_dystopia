@@ -2043,6 +2043,12 @@ Littleroot_Idletalk_Oldman::
 	return
 
 
+TownPreview::
+# 1036 "data/maps/LittlerootTown/scripts.pory"
+	mappreview
+	return
+
+
 LittlerootTown_Trigger_Blocknopokes::
 # 1041 "data/maps/LittlerootTown/scripts.pory"
 	lockall

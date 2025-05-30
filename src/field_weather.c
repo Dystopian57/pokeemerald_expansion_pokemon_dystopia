@@ -1,4 +1,5 @@
 #include "global.h"
+#include "constants/expansion.h"
 #include "constants/songs.h"
 #include "constants/weather.h"
 #include "constants/rgb.h"
@@ -7,6 +8,7 @@
 #include "field_weather.h"
 #include "fieldmap.h"
 #include "main.h"
+#include "map_preview_screen.h"
 #include "menu.h"
 #include "palette.h"
 #include "random.h"
@@ -220,7 +222,10 @@ void StartWeather(void)
         gWeatherPtr->sandstormSwirlSpritesCreated = 0;
         gWeatherPtr->bubblesSpritesCreated = 0;
         gWeatherPtr->lightenedFogSpritePalsCount = 0;
-        Weather_SetBlendCoeffs(16, 0);
+   if (EXPANSION_VERSION_MINOR >= 9 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+    {
+        Weather_SetBlendCoeffs(8, 12); // Indoor shadows
+    }
         gWeatherPtr->currWeather = 0;
         gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_IDLE;
         gWeatherPtr->readyForInit = FALSE;

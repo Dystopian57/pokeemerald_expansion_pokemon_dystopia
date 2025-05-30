@@ -13,7 +13,7 @@ static EWRAM_DATA u8 sFieldMugshotSpriteId = 0;
 // don't remove the `+ 32`
 // otherwise your sprite will not be placed in the place you desire
 #define MUGSHOT_X 188 + 32
-#define MUGSHOT_Y 71  + 32
+#define MUGSHOT_Y 62  + 32
 
 static const struct OamData sFieldMugshot_Oam = {
     .size = SPRITE_SIZE(32x32),
