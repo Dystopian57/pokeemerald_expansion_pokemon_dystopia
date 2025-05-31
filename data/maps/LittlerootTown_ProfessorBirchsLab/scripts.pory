@@ -998,13 +998,14 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "… … … … … Click!$"
 
 `
+script LabPreview {mappopup}
 
 mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Lights}
 
 script Lights {
 	if (var(VAR_LITTLEROOT_PHASE) == 3)
-	{setweather (WEATHER_UNDERWATER_BUBBLES)
+	{setweather (WEATHER_NONE)
 }}
 
 script Littleroot_Idletalk_Aidee{
@@ -1014,16 +1015,18 @@ script Littleroot_Idletalk_Aidee{
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("Hm? Sorry, I'm a bit busy. Can't help you choose"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 2)
-	{msgbox (format("GIVE VOLTORB SHARD QUEST"))}
+	{msgbox (format("Oh, {PLAYER} - yes, I could definitely use your help. \p There's some samples" ))}
 	releaseall
 }
 
 script Littleroot_Idletalk_Prof{
 	lockall
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
-	{msgbox (format("Sorry, would love to help you decide, but I'm in the middle of something here"))}
+	{msgbox (format("I'm sorry - would love to help you decide, but I'm in the middle of something here."))}
 	if(var(VAR_LITTLEROOT_PHASE) == 2)
-	{msgbox (format("Go now to Oldale don't be late"))}
+	{msgbox (format("You should get going now - don't be late for the therapy session. \p It's in the
+	first building to the right, you can't miss it. \p It's a group session, by the way - maybe you
+	can make some friends!"))}
 	releaseall
 }
 
@@ -1041,19 +1044,22 @@ script Littleroot_Idletalk_Pikachu1{
 			waitmovement (4)
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && !flag (InsistonPika1) && !flag (InsistonPika2))
-					{msgbox (format("I know I said choose a Safemon, but that's mine."))
+					{msgbox (format("Look, I know I asked you to choose a Safemon... \p But that one
+					happens to be mine."))
 					setflag (InsistonPika1)
 					goto(finishPikascript)}
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika1))
-					{msgbox (format("I told you, that's my Safemon."))
+					{msgbox (format("{PLAYER}... don't insist. Leave that Pikachu alone."))
 					clearflag (InsistonPika1)
 					setflag (InsistonPika2)
 					goto(finishPikascript)}
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika2) && !flag (GotPika)){
-				msgbox (format("For the love of Arceus, what's with young boys and 
-				Pikachus? You really want it huh?"), MSGBOX_YESNO)
+				msgbox (format("For the love of Arceus, what's with teenagers and 
+				Pikachus? \p You really want to choose it?")) 
+				msgbox (format("I warn you - it may be cute, but it's
+				a piece of work"), MSGBOX_YESNO)
 				waitmessage
 					if(var(VAR_RESULT) == YES){
 					playfanfare(MUS_OBTAIN_ITEM)
@@ -1073,6 +1079,7 @@ script Littleroot_Idletalk_Pikachu1{
 					call(NicknameBoxMon3)
 					setflag(FLAG_SYS_POKEMON_GET)
 					setvar(VAR_LITTLEROOT_PHASE, 2)}}
+					
 
 					else{
 					msgbox (format("Good, then pick from the ones in the Pokéballs."))}
@@ -1081,8 +1088,9 @@ script Littleroot_Idletalk_Pikachu1{
 
 
 				
-			else {msgbox (format("Pikaaa... (Pikachu wants to go out)"))}
+			else {msgbox (format("Pikaaa... \p Pikachu looks at you with begging eyes."))}
 				finishPikascript:
+				//PLACE VARIABLES HERE FOR EITHER "HOPE YOU GET ALONG WITH PIKA OR THE ONE BELOW"
 				waitmessage
 				applymovement (4, Profbacktowork1)
 				releaseall}
@@ -1095,22 +1103,15 @@ script NicknamePartyMon3{
     hidemonpic
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)
-        call(Common_EventScript_NameReceivedPartyMon)
-    }
- 
- 
-}
+        call(Common_EventScript_NameReceivedPartyMon)}}
  
 script NicknameBoxMon3{
  
     msgbox("Give it a nickname?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
-        call(Common_EventScript_NameReceivedBoxMon)
-    }
-    msgbox("Transferred to PC")
- 
-}
+        call(Common_EventScript_NameReceivedBoxMon)}
+    msgbox("Transferred to PC")}
 											
 
 //TRIGGER SCRIPTS
@@ -1143,12 +1144,14 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 		The good news is, I'm giving you your very own Safemon! \p I know they are not like your old
 		MANKEY, but they should keep you safe through Route 101."))
     }
-	waitmessage
+	special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3))
+    waitmovement(0)
+	special (RemoveCameraObject)
 	applymovement (4, Profturningback)
 	waitmovement (4)
 	setvar(VAR_LITTLEROOT_PHASE, 1)
 	removefieldmugshot
-	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3))
 	special (RemoveCameraObject)
 	releaseall}
 movement Profturning {face_down}
@@ -1173,7 +1176,7 @@ script LittlerootTown_Eventscript_ProffessorNoPokesUpstairs {
 	waitmovement (4)
 	applymovement (4, Profangry)
 	waitmovement (4)
-	msgbox (format("Hey, just because there's no door doesn't mean you can't go in there."))
+	msgbox (format("Hey, just because there's no door doesn't mean you can go in there."))
 	waitmessage
 	applymovement (4, Profturningback4)
 	waitmovement (4)
@@ -1189,9 +1192,7 @@ movement Dontgoup1{walk_down * 1}
 script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	lockall
 	applymovement (4, Profturning5)
-	msgbox (format("You should get going now - don't be late for the therapy session. \p It's in the
-	first building to the right, you can't miss it. \p It's a group session, by the way - maybe you
-	can make some friends."))
+	msgbox (format("Mind leaving the same way you entered? That is, through the DOOR."))
 	waitmessage
 	applymovement (4, Profturningback5)
 	waitmovement (4)
@@ -1203,6 +1204,7 @@ movement Profturningback5 {face_up}
 
 movement Dontgoup2{face_down walk_down * 1}
 
+
 //STARTER SELECTION
 
 script Lab_EventScript_Starter1{
@@ -1210,28 +1212,33 @@ script Lab_EventScript_Starter1{
     lockall
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
     {showmonpic(SPECIES_MUDKIP, 10,3)
-    msgbox(format("Do you want to choose Mudkip?") MSGBOX_YESNO)
+    msgbox(format("Ah, Bulbasaur...? Not the worst choice. \p Safe Bulbasaurs have had their natural
+	bulb replaced with an artificial one, which synthesises only safe substances. \p No more kids 
+	accidentally breathing Poison Powder!\p That aside, it's a sturdy, reliable Grass type."))
+	waitmessage
+	msgbox("So? Do you choose it?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_MUDKIP, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Mudkip")
+            msgbox("Received Safe Bulbasaur!")
             removeobject(1)
             setflag(GOTSTARTER1)
             call(NicknamePartyMon1)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
 			applymovement (4, Profturning1)
-			msgbox (format("POKELOREHERE"))
+			msgbox (format("I hope you that Bulbasaur and you become good friends."))
 			waitmessage
 			applymovement (4, Proftoaidee1)
-			msgbox (format("My aidee wants something."))
+			msgbox (format("Ah, before you go - care speaking with my Aidee over there? \p We could
+			use your help with some field work we need done in Route 101. It will not take you long."))
 			waitmessage
 
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Mudkip")
+            msgbox("Recieved Safe Bulbasaur!")
             removeobject(1)
             setflag(GOTSTARTER1)
             call(NicknameBoxMon1)
