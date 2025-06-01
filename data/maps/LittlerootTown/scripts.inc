@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 # 1 "data/maps/LittlerootTown/scripts.pory"
 
 # 2 "data/maps/LittlerootTown/scripts.pory"
 
 # 3 "data/maps/LittlerootTown/scripts.pory"
+=======
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 LittlerootTown_MapScripts::
 # 4 "data/maps/LittlerootTown/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
@@ -148,9 +151,13 @@ LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
 
 # 75 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MoveMomToMaysDoor::
+<<<<<<< HEAD
 # 76 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxyperm LOCALID_MOM, 14, 8
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 8
 # 77 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 8
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	return
 # 78 "data/maps/LittlerootTown/scripts.pory"
 
@@ -158,21 +165,31 @@ LittlerootTown_EventScript_MoveMomToMaysDoor::
 LittlerootTown_EventScript_SetTwinPos::
 # 80 "data/maps/LittlerootTown/scripts.pory"
 	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
+<<<<<<< HEAD
 # 81 "data/maps/LittlerootTown/scripts.pory"
 	setobjectxyperm LOCALID_TWIN, 10, 1
 # 82 "data/maps/LittlerootTown/scripts.pory"
-	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_UP
 # 83 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 10, 1
+	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_UP
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	return
 # 84 "data/maps/LittlerootTown/scripts.pory"
 
 # 85 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetTwinGuardingRoutePos::
+<<<<<<< HEAD
 # 86 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxyperm LOCALID_TWIN, 7, 2
+	setobjectxyperm LOCALID__LITTLEROOT_TWIN, 7, 2
 # 87 "data/maps/LittlerootTown/scripts.pory"
-	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID__LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_DOWN
 # 88 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 7, 2
+	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_DOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	return
 # 89 "data/maps/LittlerootTown/scripts.pory"
 
@@ -180,9 +197,13 @@ LittlerootTown_EventScript_SetTwinGuardingRoutePos::
 LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::
 # 91 "data/maps/LittlerootTown/scripts.pory"
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+<<<<<<< HEAD
 # 92 "data/maps/LittlerootTown/scripts.pory"
-	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID_LITTLEROOT_MOM, MOVEMENT_TYPE_FACE_DOWN
 # 93 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectmovementtype LOCALID_LITTLEROOT_MOM, MOVEMENT_TYPE_FACE_DOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	checkplayergender
 # 94 "data/maps/LittlerootTown/scripts.pory"
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetMomInFrontOfDoorMale
@@ -194,17 +215,25 @@ LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::
 
 # 98 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetMomInFrontOfDoorMale::
+<<<<<<< HEAD
 # 99 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxyperm LOCALID_MOM, 5, 9
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 5, 9
 # 100 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 5, 9
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	return
 # 101 "data/maps/LittlerootTown/scripts.pory"
 
 # 102 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetMomInFrontOfDoorFemale::
+<<<<<<< HEAD
 # 103 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxyperm LOCALID_MOM, 14, 9
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 9
 # 104 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 9
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	return
 # 105 "data/maps/LittlerootTown/scripts.pory"
 
@@ -270,19 +299,28 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	delay 15
 # 136 "data/maps/LittlerootTown/scripts.pory"
 	playse SE_LEDGE
+<<<<<<< HEAD
 # 137 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerStepOffTruck
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerStepOffTruck
 # 138 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerStepOffTruck
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 139 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8004, VAR_0x8005
 # 140 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 141 "data/maps/LittlerootTown/scripts.pory"
-	addobject LOCALID_MOM
+	addobject LOCALID_LITTLEROOT_MOM
 # 142 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitHouse
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitHouse
 # 143 "data/maps/LittlerootTown/scripts.pory"
+=======
+	addobject LOCALID_LITTLEROOT_MOM
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitHouse
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 144 "data/maps/LittlerootTown/scripts.pory"
 	closedoor VAR_0x8004, VAR_0x8005
@@ -290,37 +328,55 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	waitdooranim
 # 146 "data/maps/LittlerootTown/scripts.pory"
 	delay 10
+<<<<<<< HEAD
 # 147 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
 # 148 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 149 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Text_OurNewHomeLetsGoInside, MSGBOX_DEFAULT
 # 150 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
+<<<<<<< HEAD
 # 151 "data/maps/LittlerootTown/scripts.pory"
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachDoor
 # 152 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerApproachDoor
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerApproachDoor
 # 153 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachDoor
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerApproachDoor
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 154 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8004, VAR_0x8005
 # 155 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 156 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomEnterHouse
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomEnterHouse
 # 157 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
 # 158 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomEnterHouse
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 159 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
 # 160 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_INTRO_STATE, 3
+<<<<<<< HEAD
 # 161 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat OBJ_EVENT_ID_PLAYER, 0
+	hideobjectat LOCALID_PLAYER, 0
 # 162 "data/maps/LittlerootTown/scripts.pory"
+=======
+	hideobjectat LOCALID_PLAYER, 0
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8004, VAR_0x8005
 # 163 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -416,9 +472,13 @@ LittlerootTown_EventScript_BeginDexUpgradeScene::
 	lockall
 # 209 "data/maps/LittlerootTown/scripts.pory"
 	playse SE_PIN
+<<<<<<< HEAD
 # 210 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_BIRCH, Common_Movement_ExclamationMark
+	applymovement LOCALID_LITTLEROOT_BIRCH, Common_Movement_ExclamationMark
 # 211 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_BIRCH, Common_Movement_ExclamationMark
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 212 "data/maps/LittlerootTown/scripts.pory"
 	delay 80
@@ -454,11 +514,16 @@ LittlerootTown_OnWarp:
 
 # 228 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade::
+<<<<<<< HEAD
 # 229 "data/maps/LittlerootTown/scripts.pory"
-	addobject LOCALID_BIRCH
+	addobject LOCALID_LITTLEROOT_BIRCH
 # 230 "data/maps/LittlerootTown/scripts.pory"
-	addobject LOCALID_RIVAL
+	addobject LOCALID_LITTLEROOT_RIVAL
 # 231 "data/maps/LittlerootTown/scripts.pory"
+=======
+	addobject LOCALID_LITTLEROOT_BIRCH
+	addobject LOCALID_LITTLEROOT_RIVAL
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	checkplayergender
 # 232 "data/maps/LittlerootTown/scripts.pory"
 	goto_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale
@@ -470,21 +535,31 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade::
 
 # 236 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale::
+<<<<<<< HEAD
 # 237 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_RIVAL, 6, 10
+	setobjectxy LOCALID_LITTLEROOT_RIVAL, 6, 10
 # 238 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_BIRCH, 5, 10
+	setobjectxy LOCALID_LITTLEROOT_BIRCH, 5, 10
 # 239 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxy LOCALID_LITTLEROOT_RIVAL, 6, 10
+	setobjectxy LOCALID_LITTLEROOT_BIRCH, 5, 10
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	end
 # 240 "data/maps/LittlerootTown/scripts.pory"
 
 # 241 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeFemale::
+<<<<<<< HEAD
 # 242 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_RIVAL, 13, 10
+	setobjectxy LOCALID_LITTLEROOT_RIVAL, 13, 10
 # 243 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_BIRCH, 14, 10
+	setobjectxy LOCALID_LITTLEROOT_BIRCH, 14, 10
 # 244 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxy LOCALID_LITTLEROOT_RIVAL, 13, 10
+	setobjectxy LOCALID_LITTLEROOT_BIRCH, 14, 10
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	end
 # 245 "data/maps/LittlerootTown/scripts.pory"
 
@@ -532,9 +607,13 @@ LittlerootTown_EventScript_GoSaveBirch::
 	msgbox LittlerootTown_Text_CanYouGoSeeWhatsHappening, MSGBOX_DEFAULT
 # 267 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
+<<<<<<< HEAD
 # 268 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, Common_Movement_FaceOriginalDirection
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
 # 269 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 270 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_TOWN_STATE, 2
@@ -570,15 +649,23 @@ LittlerootTown_EventScript_GoodLuck::
 LittlerootTown_EventScript_NeedPokemonTriggerLeft::
 # 286 "data/maps/LittlerootTown/scripts.pory"
 	lockall
+<<<<<<< HEAD
 # 287 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeft
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeft
 # 288 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeft
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 289 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_DangerousWithoutPokemon
+<<<<<<< HEAD
 # 290 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinReturnLeft
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnLeft
 # 291 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnLeft
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 292 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
@@ -592,11 +679,16 @@ LittlerootTown_EventScript_DangerousWithoutPokemon::
 	msgbox LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
 # 297 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
+<<<<<<< HEAD
 # 298 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinPushPlayerFromRoute
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinPushPlayerFromRoute
 # 299 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
 # 300 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinPushPlayerFromRoute
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 301 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Text_DangerousIfYouDontHavePokemon, MSGBOX_DEFAULT
@@ -686,15 +778,23 @@ LittlerootTown_Movement_PushPlayerBackFromRoute:
 LittlerootTown_EventScript_NeedPokemonTriggerRight::
 # 344 "data/maps/LittlerootTown/scripts.pory"
 	lockall
+<<<<<<< HEAD
 # 345 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinApproachPlayerRight
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerRight
 # 346 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerRight
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 347 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_DangerousWithoutPokemon
+<<<<<<< HEAD
 # 348 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinReturnRight
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnRight
 # 349 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnRight
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 350 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
@@ -754,13 +854,19 @@ LittlerootTown_Movement_TwinReturnRight:
 LittlerootTown_EventScript_GoSaveBirchTrigger::
 # 378 "data/maps/LittlerootTown/scripts.pory"
 	lockall
+<<<<<<< HEAD
 # 379 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_WalkInPlaceFasterRight
 # 380 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 381 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 382 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 383 "data/maps/LittlerootTown/scripts.pory"
 	special GetPlayerBigGuyGirlString
@@ -768,9 +874,13 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 	msgbox LittlerootTown_Text_CanYouGoSeeWhatsHappening, MSGBOX_DEFAULT
 # 385 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
+<<<<<<< HEAD
 # 386 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_TWIN, Common_Movement_FaceOriginalDirection
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
 # 387 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 388 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_TOWN_STATE, 2
@@ -866,9 +976,13 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger0::
 	lockall
 # 434 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_0x8008, 0
+<<<<<<< HEAD
 # 435 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_MOM, 10, 9
+	setobjectxy LOCALID_LITTLEROOT_MOM, 10, 9
 # 436 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxy LOCALID_LITTLEROOT_MOM, 10, 9
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 # 437 "data/maps/LittlerootTown/scripts.pory"
 	end
@@ -880,9 +994,13 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger1::
 	lockall
 # 441 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_0x8008, 1
+<<<<<<< HEAD
 # 442 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_MOM, 11, 9
+	setobjectxy LOCALID_LITTLEROOT_MOM, 11, 9
 # 443 "data/maps/LittlerootTown/scripts.pory"
+=======
+	setobjectxy LOCALID_LITTLEROOT_MOM, 11, 9
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 # 444 "data/maps/LittlerootTown/scripts.pory"
 	end
@@ -996,9 +1114,13 @@ LittlerootTown_EventScript_SetHomeDoorCoordsFemale::
 
 # 499 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomNoticePlayerMale::
+<<<<<<< HEAD
 # 500 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterRight
 # 501 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterRight
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 502 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1006,9 +1128,13 @@ LittlerootTown_EventScript_MomNoticePlayerMale::
 
 # 504 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomNoticePlayerFemale::
+<<<<<<< HEAD
 # 505 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterLeft
 # 506 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterLeft
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 507 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1052,13 +1178,19 @@ LittlerootTown_EventScript_MomApproachPlayerFemale::
 
 # 527 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayer0::
+<<<<<<< HEAD
 # 528 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 # 529 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 530 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayer0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayer0
 # 531 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayer0
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 532 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1066,13 +1198,19 @@ LittlerootTown_EventScript_MomApproachPlayer0::
 
 # 534 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayer1::
+<<<<<<< HEAD
 # 535 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 # 536 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 537 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayer1
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayer1
 # 538 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayer1
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 539 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1080,13 +1218,19 @@ LittlerootTown_EventScript_MomApproachPlayer1::
 
 # 541 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerMale2::
+<<<<<<< HEAD
 # 542 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 543 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 544 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerMale2
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale2
 # 545 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale2
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 546 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1094,13 +1238,19 @@ LittlerootTown_EventScript_MomApproachPlayerMale2::
 
 # 548 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerMale3::
+<<<<<<< HEAD
 # 549 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 550 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 551 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerMale3
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale3
 # 552 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale3
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 553 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1108,13 +1258,19 @@ LittlerootTown_EventScript_MomApproachPlayerMale3::
 
 # 555 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerMale4::
+<<<<<<< HEAD
 # 556 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 557 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 558 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerMale4
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale4
 # 559 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale4
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 560 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1122,13 +1278,19 @@ LittlerootTown_EventScript_MomApproachPlayerMale4::
 
 # 562 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerMale5::
+<<<<<<< HEAD
 # 563 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 564 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 565 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerMale5
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale5
 # 566 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerMale5
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 567 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1136,13 +1298,19 @@ LittlerootTown_EventScript_MomApproachPlayerMale5::
 
 # 569 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerFemale2::
+<<<<<<< HEAD
 # 570 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 571 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 572 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerFemale2
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale2
 # 573 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale2
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 574 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1150,13 +1318,19 @@ LittlerootTown_EventScript_MomApproachPlayerFemale2::
 
 # 576 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerFemale3::
+<<<<<<< HEAD
 # 577 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 578 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 579 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerFemale3
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale3
 # 580 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale3
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 581 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1164,13 +1338,19 @@ LittlerootTown_EventScript_MomApproachPlayerFemale3::
 
 # 583 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerFemale4::
+<<<<<<< HEAD
 # 584 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 585 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 586 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerFemale4
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale4
 # 587 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale4
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 588 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1178,13 +1358,19 @@ LittlerootTown_EventScript_MomApproachPlayerFemale4::
 
 # 590 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomApproachPlayerFemale5::
+<<<<<<< HEAD
 # 591 "data/maps/LittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 592 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 593 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerFemale5
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale5
 # 594 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerFemale5
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 595 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1228,9 +1414,13 @@ LittlerootTown_EventScript_MomReturnHomeFemale::
 
 # 615 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHome0::
+<<<<<<< HEAD
 # 616 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHome0
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHome0
 # 617 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHome0
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 618 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1238,9 +1428,13 @@ LittlerootTown_EventScript_MomReturnHome0::
 
 # 620 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHome1::
+<<<<<<< HEAD
 # 621 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHome1
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHome1
 # 622 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHome1
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 623 "data/maps/LittlerootTown/scripts.pory"
 	return
@@ -1248,21 +1442,31 @@ LittlerootTown_EventScript_MomReturnHome1::
 
 # 625 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeMale2::
+<<<<<<< HEAD
 # 626 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale2
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale2
 # 627 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale2
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 628 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 629 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 630 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 631 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 632 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 633 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 634 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1272,21 +1476,31 @@ LittlerootTown_EventScript_MomReturnHomeMale2::
 
 # 637 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeMale3::
+<<<<<<< HEAD
 # 638 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale3
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale3
 # 639 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale3
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 640 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 641 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 642 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 643 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 644 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 645 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 646 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1296,21 +1510,31 @@ LittlerootTown_EventScript_MomReturnHomeMale3::
 
 # 649 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeMale4::
+<<<<<<< HEAD
 # 650 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale4
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale4
 # 651 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale4
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 652 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 653 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 654 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 655 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 656 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 657 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 658 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1320,21 +1544,31 @@ LittlerootTown_EventScript_MomReturnHomeMale4::
 
 # 661 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeMale5::
+<<<<<<< HEAD
 # 662 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale5
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale5
 # 663 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeMale5
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 664 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 665 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 666 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 667 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 668 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 669 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 670 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1344,21 +1578,31 @@ LittlerootTown_EventScript_MomReturnHomeMale5::
 
 # 673 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeFemale2::
+<<<<<<< HEAD
 # 674 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeFemale2
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale2
 # 675 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale2
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 676 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 677 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 678 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 679 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 680 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 681 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 682 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1368,21 +1612,31 @@ LittlerootTown_EventScript_MomReturnHomeFemale2::
 
 # 685 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeFemale3::
+<<<<<<< HEAD
 # 686 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeFemale3
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale3
 # 687 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale3
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 688 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 689 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 690 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 691 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 692 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 693 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 694 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1392,21 +1646,31 @@ LittlerootTown_EventScript_MomReturnHomeFemale3::
 
 # 697 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeFemale4::
+<<<<<<< HEAD
 # 698 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeFemale4
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale4
 # 699 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale4
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 700 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 701 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 702 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 703 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 704 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM MAP_LITTLEROOT_TOWN
 # 705 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 706 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1416,21 +1680,31 @@ LittlerootTown_EventScript_MomReturnHomeFemale4::
 
 # 709 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MomReturnHomeFemale5::
+<<<<<<< HEAD
 # 710 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeFemale5
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale5
 # 711 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomReturnHomeFemale5
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 712 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 713 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 714 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 715 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 716 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 717 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 718 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1752,21 +2026,31 @@ LittlerootTown_EventScript_Mom::
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
 # 877 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_GiveRunningShoes
+<<<<<<< HEAD
 # 878 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterUp
 # 879 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	waitmovement 0
 # 880 "data/maps/LittlerootTown/scripts.pory"
 	opendoor VAR_0x8009, VAR_0x800A
 # 881 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
+<<<<<<< HEAD
 # 882 "data/maps/LittlerootTown/scripts.pory"
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
 # 883 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 884 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 # 885 "data/maps/LittlerootTown/scripts.pory"
+=======
+	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	closedoor VAR_0x8009, VAR_0x800A
 # 886 "data/maps/LittlerootTown/scripts.pory"
 	waitdooranim
@@ -1778,9 +2062,13 @@ LittlerootTown_EventScript_Mom::
 
 # 890 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetReceivedRunningShoes::
+<<<<<<< HEAD
 # 891 "data/maps/LittlerootTown/scripts.pory"
-	removeobject LOCALID_MOM
+	removeobject LOCALID_LITTLEROOT_MOM
 # 892 "data/maps/LittlerootTown/scripts.pory"
+=======
+	removeobject LOCALID_LITTLEROOT_MOM
+>>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 	setflag FLAG_SYS_B_DASH
 # 893 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
