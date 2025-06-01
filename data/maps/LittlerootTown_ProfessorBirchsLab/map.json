@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
@@ -54,6 +54,7 @@
       "flag": "GOTSTARTER3"
     },
     {
+      "local_id": "LOCALID_PROF_BALSAM",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
       "x": 7,
       "y": 2,
@@ -270,7 +271,5 @@
       "script": "LabPreview"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

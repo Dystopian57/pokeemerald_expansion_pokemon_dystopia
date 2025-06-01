@@ -1008,6 +1008,7 @@ script Lights {
 	{setweather (WEATHER_NONE)
 }}
 
+
 script Littleroot_Idletalk_Aidee{
 	lockall
 	//if ((flag(VOLTORBSHARDGOT)))
