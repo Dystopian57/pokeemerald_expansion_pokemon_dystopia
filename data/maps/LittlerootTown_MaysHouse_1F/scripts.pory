@@ -798,12 +798,14 @@ script Won_or_Caught {
 	removeobject(2)
 	fadescreen(FADE_FROM_BLACK)
 	msgbox("THANK YOU NOW I GO")
+	waitmessage
+	playse (SE_FLEE)
     applymovement (1, Rivalleaves)
     waitmovement (1)
     removeobject (1)
     setflag(RIVAL_LEAVES_HOME)
     setflag(DOLL_BATTLE)
-    setvar(VAR_LITTLEROOT_PHASE, 3)
+    setvar(VAR_LITTLEROOT_PHASE, 4)
 	return
 }
 

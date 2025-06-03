@@ -1598,36 +1598,40 @@ Won_or_Caught::
 # 800 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox Won_or_Caught_Text_0
 # 801 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement 1, Rivalleaves
+	waitmessage
 # 802 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 1
+	playse SE_FLEE
 # 803 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	removeobject 1
+	applymovement 1, Rivalleaves
 # 804 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag RIVAL_LEAVES_HOME
+	waitmovement 1
 # 805 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag DOLL_BATTLE
+	removeobject 1
 # 806 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_LITTLEROOT_PHASE, 3
+	setflag RIVAL_LEAVES_HOME
+# 807 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setflag DOLL_BATTLE
+# 808 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_LITTLEROOT_PHASE, 4
 	return
 
 
-# 810 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 812 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 Rivalleaves:
-# 811 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 813 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_left
-# 811 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 813 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_left
-# 811 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 813 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_left
-# 812 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 814 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_down
-# 812 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 814 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
 RanAway::
-# 816 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 818 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RanAway_Text_0
 	return
 
@@ -1645,5 +1649,5 @@ Won_or_Caught_Text_0:
 	.string "THANK YOU NOW I GO$"
 
 RanAway_Text_0:
-# 816 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 818 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "I GET IT'S SCARY BUT COME ON$"

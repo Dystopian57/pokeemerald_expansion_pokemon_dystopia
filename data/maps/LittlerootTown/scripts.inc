@@ -3757,180 +3757,190 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 # 1879 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
 
-followertest::
-# 1891 "data/maps/LittlerootTown/scripts.pory"
-	lockall
-# 1892 "data/maps/LittlerootTown/scripts.pory"
-	msgbox followertest_Text_0
+Decotest::
 # 1893 "data/maps/LittlerootTown/scripts.pory"
-	waitmessage
+	lockall
 # 1894 "data/maps/LittlerootTown/scripts.pory"
-	setfollowernpc LOCALID_LITTLEROOT_TOWN_HIKER, FNPC_ALL, 0, 0
+	special ShowSecretBaseDecorationMenu
 # 1895 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
-Littleroot_Idletalk_Oldman::
-# 1899 "data/maps/LittlerootTown/scripts.pory"
+followertest::
+# 1898 "data/maps/LittlerootTown/scripts.pory"
 	lockall
+# 1899 "data/maps/LittlerootTown/scripts.pory"
+	msgbox followertest_Text_0
 # 1900 "data/maps/LittlerootTown/scripts.pory"
-	msgbox Littleroot_Idletalk_Oldman_Text_0
+	waitmessage
 # 1901 "data/maps/LittlerootTown/scripts.pory"
+	setfollowernpc LOCALID_LITTLEROOT_TOWN_HIKER, FNPC_ALL, 0, 0
+# 1902 "data/maps/LittlerootTown/scripts.pory"
+	releaseall
+	return
+
+
+Littleroot_Idletalk_Oldman::
+# 1910 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1911 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Littleroot_Idletalk_Oldman_Text_0
+# 1912 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
 TownPreview::
-# 1904 "data/maps/LittlerootTown/scripts.pory"
+# 1915 "data/maps/LittlerootTown/scripts.pory"
 	mappreview
 	return
 
 
 LittlerootTown_Trigger_Blocknopokes::
-# 1909 "data/maps/LittlerootTown/scripts.pory"
+# 1920 "data/maps/LittlerootTown/scripts.pory"
 	lockall
-# 1910 "data/maps/LittlerootTown/scripts.pory"
+# 1921 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_Blocknopokes_Text_0
-# 1911 "data/maps/LittlerootTown/scripts.pory"
+# 1922 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NoGoRoute
-# 1912 "data/maps/LittlerootTown/scripts.pory"
+# 1923 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
-# 1913 "data/maps/LittlerootTown/scripts.pory"
+# 1924 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
-# 1916 "data/maps/LittlerootTown/scripts.pory"
+# 1927 "data/maps/LittlerootTown/scripts.pory"
 NoGoRoute:
-# 1917 "data/maps/LittlerootTown/scripts.pory"
+# 1928 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
 	step_end
 
 LittlerootTown_Trigger_Blockgorival::
-# 1921 "data/maps/LittlerootTown/scripts.pory"
+# 1932 "data/maps/LittlerootTown/scripts.pory"
 	lockall
-# 1922 "data/maps/LittlerootTown/scripts.pory"
+# 1933 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_Blockgorival_Text_0
-# 1923 "data/maps/LittlerootTown/scripts.pory"
+# 1934 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NoGoRoute2
-# 1924 "data/maps/LittlerootTown/scripts.pory"
+# 1935 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
-# 1925 "data/maps/LittlerootTown/scripts.pory"
+# 1936 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
-# 1928 "data/maps/LittlerootTown/scripts.pory"
+# 1939 "data/maps/LittlerootTown/scripts.pory"
 NoGoRoute2:
-# 1929 "data/maps/LittlerootTown/scripts.pory"
+# 1940 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
 	step_end
 
 LittlerootTown_Trigger_NoEnterRival1::
-# 1933 "data/maps/LittlerootTown/scripts.pory"
+# 1944 "data/maps/LittlerootTown/scripts.pory"
 	lockall
-# 1934 "data/maps/LittlerootTown/scripts.pory"
+# 1945 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_NoEnterRival1_Text_0
-# 1935 "data/maps/LittlerootTown/scripts.pory"
+# 1946 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NoEnterRival
-# 1936 "data/maps/LittlerootTown/scripts.pory"
+# 1947 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
-# 1937 "data/maps/LittlerootTown/scripts.pory"
+# 1948 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
-# 1940 "data/maps/LittlerootTown/scripts.pory"
+# 1951 "data/maps/LittlerootTown/scripts.pory"
 NoEnterRival:
-# 1941 "data/maps/LittlerootTown/scripts.pory"
+# 1952 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
 	step_end
 
 LittlerootTown_Eventscript_Oldmanasking::
-# 1945 "data/maps/LittlerootTown/scripts.pory"
+# 1956 "data/maps/LittlerootTown/scripts.pory"
 	lockall
-# 1946 "data/maps/LittlerootTown/scripts.pory"
+# 1957 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, Oldmanturning
-# 1947 "data/maps/LittlerootTown/scripts.pory"
+# 1958 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Playerturningtooldman
-# 1948 "data/maps/LittlerootTown/scripts.pory"
+# 1959 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_0
-# 1949 "data/maps/LittlerootTown/scripts.pory"
+# 1960 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
-# 1950 "data/maps/LittlerootTown/scripts.pory"
+# 1961 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, Oldmanapproaching
-# 1951 "data/maps/LittlerootTown/scripts.pory"
+# 1962 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
-# 1952 "data/maps/LittlerootTown/scripts.pory"
+# 1963 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_1
-# 1953 "data/maps/LittlerootTown/scripts.pory"
+# 1964 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, Oldmanreturning
-# 1954 "data/maps/LittlerootTown/scripts.pory"
+# 1965 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
-# 1957 "data/maps/LittlerootTown/scripts.pory"
+# 1968 "data/maps/LittlerootTown/scripts.pory"
 Oldmanturning:
-# 1958 "data/maps/LittlerootTown/scripts.pory"
+# 1969 "data/maps/LittlerootTown/scripts.pory"
 	face_right
 	step_end
 
-# 1961 "data/maps/LittlerootTown/scripts.pory"
+# 1972 "data/maps/LittlerootTown/scripts.pory"
 Playerturningtooldman:
-# 1962 "data/maps/LittlerootTown/scripts.pory"
+# 1973 "data/maps/LittlerootTown/scripts.pory"
 	face_left
 	step_end
 
-# 1965 "data/maps/LittlerootTown/scripts.pory"
+# 1976 "data/maps/LittlerootTown/scripts.pory"
 Oldmanapproaching:
-# 1966 "data/maps/LittlerootTown/scripts.pory"
+# 1977 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 1967 "data/maps/LittlerootTown/scripts.pory"
+# 1978 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1967 "data/maps/LittlerootTown/scripts.pory"
+# 1978 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
 	step_end
 
-# 1970 "data/maps/LittlerootTown/scripts.pory"
+# 1981 "data/maps/LittlerootTown/scripts.pory"
 Oldmanreturning:
-# 1971 "data/maps/LittlerootTown/scripts.pory"
+# 1982 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1971 "data/maps/LittlerootTown/scripts.pory"
+# 1982 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1972 "data/maps/LittlerootTown/scripts.pory"
+# 1983 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 1973 "data/maps/LittlerootTown/scripts.pory"
+# 1984 "data/maps/LittlerootTown/scripts.pory"
 	face_down
 	step_end
 
 followertest_Text_0:
-# 1892 "data/maps/LittlerootTown/scripts.pory"
+# 1899 "data/maps/LittlerootTown/scripts.pory"
 	.string "I shall follow you$"
 
 Littleroot_Idletalk_Oldman_Text_0:
-# 1900 "data/maps/LittlerootTown/scripts.pory"
+# 1911 "data/maps/LittlerootTown/scripts.pory"
 	.string "Good morning, {PLAYER}. It's good to\n"
 	.string "see you outside for once.$"
 
 LittlerootTown_Trigger_Blocknopokes_Text_0:
-# 1910 "data/maps/LittlerootTown/scripts.pory"
+# 1921 "data/maps/LittlerootTown/scripts.pory"
 	.string "I better go to the LAB first...$"
 
 LittlerootTown_Trigger_Blockgorival_Text_0:
-# 1922 "data/maps/LittlerootTown/scripts.pory"
+# 1933 "data/maps/LittlerootTown/scripts.pory"
 	.string "I should check on {RIVAL}$"
 
 LittlerootTown_Trigger_NoEnterRival1_Text_0:
-# 1934 "data/maps/LittlerootTown/scripts.pory"
+# 1945 "data/maps/LittlerootTown/scripts.pory"
 	.string "DON'T COME INSIDE, {PLAYER}. THE\n"
 	.string "ENEMY IS IN HERE$"
 
 LittlerootTown_Eventscript_Oldmanasking_Text_0:
-# 1948 "data/maps/LittlerootTown/scripts.pory"
+# 1959 "data/maps/LittlerootTown/scripts.pory"
 	.string "Ah, {PLAYER}, do you have a minute?$"
 
 LittlerootTown_Eventscript_Oldmanasking_Text_1:
-# 1952 "data/maps/LittlerootTown/scripts.pory"
+# 1963 "data/maps/LittlerootTown/scripts.pory"
 	.string "Can you check on RIVAL?)$"

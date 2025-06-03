@@ -1885,8 +1885,15 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 //2 POKE GOT, GO CHECK ON RIVAL
 //3 CAN LEAVE LITTLEROOT
 
-//IDLE TALKS
 
+
+//TESTS
+
+script Decotest {
+	lockall
+	special (ShowSecretBaseDecorationMenu)
+	releaseall
+}
 script followertest {
 	lockall
 	msgbox ("I shall follow you")
@@ -1895,6 +1902,10 @@ script followertest {
 	releaseall
 }
 
+
+//////////////////////////////////////////////////////////////////////
+
+//IDLE TALKS
 script Littleroot_Idletalk_Oldman{
 	lockall
 	msgbox (format("Good morning, {PLAYER}. It's good to see you outside for once."))

@@ -214,16 +214,7 @@
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "1",
-      "script": "LittlerootTown_Eventscript_ProffessorDontgo"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "1",
-      "script": "LittlerootTown_Eventscript_ProffessorDontgo"
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo1"
     },
     {
       "type": "trigger",
@@ -232,7 +223,7 @@
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "1",
-      "script": "LittlerootTown_Eventscript_ProffessorDontgo"
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo1"
     },
     {
       "type": "trigger",
@@ -241,7 +232,7 @@
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "1",
-      "script": "LittlerootTown_Eventscript_ProffessorDontgo"
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo1"
     },
     {
       "type": "trigger",
@@ -250,7 +241,7 @@
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "1",
-      "script": "LittlerootTown_Eventscript_ProffessorDontgo"
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo1"
     },
     {
       "type": "trigger",
@@ -263,13 +254,67 @@
     },
     {
       "type": "trigger",
-      "x": 8,
-      "y": 12,
+      "x": 5,
+      "y": 8,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "LabPreview"
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "1",
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo1"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo2"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo2"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo2"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo2"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Eventscript_ProffessorDontgo2"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SafemonLore"
+    }
+  ]
 }
