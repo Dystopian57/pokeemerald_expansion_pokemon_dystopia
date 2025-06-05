@@ -1035,7 +1035,7 @@ script Littleroot_Idletalk_Aidee{
 	goto (FinishAideeScript)}
 	if (var(VAR_LITTLEROOT_PHASE) == 2 && flag (Aideeaskstoread) && flag (ReadAllSafemonLore))
 	{
-		if (flag (!AideeTestMistake))
+		if (!flag (AideeTestMistake))
 		{msgbox (format("I see you've been studying thouroughly - time for your test then!"))}
 		else {msgbox (format("Have you reviewed the topic? Let's try again!"))}
 		waitmessage
@@ -1081,7 +1081,7 @@ script Littleroot_Idletalk_Aidee{
 		physical growth is halted at a tender age."))
 		waitmessage
 		hidemonpic
-		msgbox (format("Which type of Safemon do you think it is"))
+		msgbox (format("Which type of Safemon do you think it is?"))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
 		if (var(VAR_RESULT) == 0) {
 			playse (SE_RG_POKE_JUMP_SUCCESS)
@@ -1089,7 +1089,7 @@ script Littleroot_Idletalk_Aidee{
 			Ahaha, come on, I'm just kidding! \p I think your observational skills are enough for this
 			job - it's an easy one. \p There's some samples we need to collect in Route 101 - Voltorb
 			Shards, from the Voltorbs that Kanto dropped on us during the war. \p Don't worry, they won't
-			be set off or anything. I've done this myself many times. \p Look inside the big craters,
+			explode! I've done this myself many times. \p Look inside the big craters,
 			that's where you're most likely to find them. I'll make it worth your time, trust me!"))
 			setflag (AideeQuestAccepted)
 			setvar(VAR_LITTLEROOT_PHASE, 3)
@@ -1378,7 +1378,9 @@ script Lab_EventScript_Starter1{
  
     lockall
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
-    {showmonpic(SPECIES_BULBASAUR, 10,3)
+	{
+	applymovement (4, moves(face_down))
+	showmonpic(SPECIES_BULBASAUR, 10,3)
     msgbox(format("Ah, Bulbasaur...? Not the worst choice. \p Safe Bulbasaurs have had their natural
 	bulb replaced with an artificial one, which synthesises only safe substances. \p No more kids 
 	accidentally breathing Poison Powder!\p That aside, it's a sturdy, reliable Grass type."))
@@ -1414,20 +1416,22 @@ script Lab_EventScript_Starter1{
 			setvar(VAR_LITTLEROOT_PHASE, 2)
         }
         else{
-            hidemonpic
+            applymovement (4, moves(face_down))
+		    hidemonpic
             msgbox("No More Room")
         }
     }
     if(var(VAR_RESULT) == NO){
         hidemonpic
+		applymovement(4, moves(face_up))
     }}
 
 else{
 applymovement(4, moves(face_down))
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
 a trip to the next town. \p If you want some extra, feel free to buy some Pokéballs while you're in
-Oldale. \p You'll be surprised how many new species inhabit Hoenn now. Go have some fun."))}
-applymovement(4, moves(face_down))
+Oldale. \p You'll be surprised how many new species inhabit Hoenn now. Go have some fun."))
+applymovement(4, moves(face_up))}
     waitmessage
     releaseall
     end
@@ -1474,7 +1478,7 @@ script Lab_EventScript_Starter2{
     lockall
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
     {showmonpic(SPECIES_CYNDAQUIL, 10,3)
-    msgbox(format("That one contains Cyndaquil - or, well, the safe version of it. Devon removed the pyroglands 
+    msgbox(format("That one contains Cyndaquil - or, well, the safe version of it. \p Devon removed the pyroglands 
 	on its back, so its 'firepower' is severely diminished now. \p But it's still a Fire type, and a
 	trusty one at that. Cute too, if you care about such things."))
 	waitmessage
@@ -1552,11 +1556,13 @@ script Lab_EventScript_Starter3{
 	waitmessage
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 3, walk_up * 3))
+	waitmovement
 	special (RemoveCameraObject)
 	msgbox(format("You are very disappointed... until your gaze falls upon a third choice...?"))
 	waitmessage
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3, walk_left * 3))
+	waitmovement
 	special (RemoveCameraObject)
 	}
    else{

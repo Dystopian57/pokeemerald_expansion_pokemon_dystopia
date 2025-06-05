@@ -764,17 +764,42 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 
 `
 
+script RivalWatchout {
+	
+lockall
+playbgm (MUS_HELP, TRUE)
+applymovement (1, moves(face_down))
+msgbox (format("{PLAYER}, don't go beyond the chair barricade!! \p It's the only thing keeping us safe from that
+FIEND! \p AAGH, it got me good... Leave me, I'm done for!"))
+waitmessage
+applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+applymovement (1, moves(face_right))
+releaseall
+}
+
+script RivalyouareBrave {
+	lockall
+	msgbox (format("{PLAYER}... cough. Y-you... \p You are the bravest soldier I know! It's been an HONOUR to
+	share battlefield with you!"))
+	releaseall
+}
 script Littleroot_Idletalk_Rival{
 	lockall
-	msgbox (format("PLEASE HELP ME"))
+	applymovement (1, moves(face_player))
+	msgbox (format("Ugh... I don't have much longer... run away, while you can... cough cough"))
+	waitmessage
+	msgbox (format("(Despite their claims, {RIVAL} does not seem injured... and all you see beyond the chairs is a
+	weird doll... \p {RIVAL} is clearly delusional again... perhaps they'll calm down if I deal with it)."))
+	applymovement (1, moves(face_right))
 	releaseall
 }
 
 script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
 	lockall
-    msgbox ("It's just a doll...")
+    msgbox (format("(As I thought, it's just a doll... one of Super Substitute, Devon's mascot). \p (Wait... i-it's
+	moving!?)"))
     waitmessage
-	setwildbattle(SPECIES_SMEARGLE, 5, ITEM_BLUE_ORB)
+	setwildbattle(SPECIES_MIMIKYU, 5)
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){

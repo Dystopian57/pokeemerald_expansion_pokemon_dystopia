@@ -1930,7 +1930,7 @@ movement NoGoRoute{
 
 script LittlerootTown_Trigger_Blockgorival{
 	lockall
-	msgbox ("I should check on {RIVAL}")
+	msgbox ("I should check on {RIVAL}.")
 	applymovement (OBJ_EVENT_ID_PLAYER, NoGoRoute2)
 	waitmovement(0)
 	releaseall	
@@ -1942,7 +1942,10 @@ movement NoGoRoute2{
 
 script LittlerootTown_Trigger_NoEnterRival1{
 	lockall
-	msgbox (format("DON'T COME INSIDE, {PLAYER}. THE ENEMY IS IN HERE"))
+	msgbox (format("(You hear someone yelling inside...) \p DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
+	\p Take this - ORYAAAAAAAAHH! \p (It 
+	seems {RIVAL} is having another episode... not a good time to visit)"))
+	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, NoEnterRival)
 	waitmovement(0)
 	releaseall	
@@ -1960,7 +1963,9 @@ script LittlerootTown_Eventscript_Oldmanasking {
 	waitmessage
 	applymovement (1, Oldmanapproaching)
 	waitmovement (0)
-	msgbox ("Can you check on RIVAL?)")
+	msgbox (format("Would you mind paying {RIVAL} a visit? \p {RIVAL} has been screaming a lot lately, and it has
+	me worried. \p Also tired, because I can barely get any sleep! \p You'll be doing us all a favour if you can
+	get {RIVAL} to calm down - {RIVAL} included."))
 	applymovement (1, Oldmanreturning)
 	releaseall
 }
