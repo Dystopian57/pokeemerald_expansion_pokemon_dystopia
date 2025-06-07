@@ -58,10 +58,10 @@
 #define ReadAllSafemonLore    0x2C // Unused Flag
 #define AideeTestMistake    0x2D // Unused Flag
 #define AideeQuestAccepted    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define checkonrival      0x2F // Unused Flag
+#define rivalhouse1stdialogue    0x30 // Unused Flag
+#define WatchedTVathome   0x31 // Unused Flag
+#define Oldmantyhide    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag

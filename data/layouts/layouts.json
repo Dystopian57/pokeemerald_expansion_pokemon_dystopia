@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/LittlerootLabTunnel/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootLabTunnel/map.bin"
+    },
+    {
+      "id": "LAYOUT_GREAT_CRATER",
+      "name": "Great_Crater_Layout",
+      "width": 22,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Great_Crater/border.bin",
+      "blockdata_filepath": "data/layouts/Great_Crater/map.bin"
     }
   ]
 }

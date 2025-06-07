@@ -1,7 +1,7 @@
 gText_Birch_Welcome::
 	.string "Well well, I thought you'd never call.\n"
 	.string "Welcome back to society, soldier!\p"
-	.string "They tell me you haven't left home since\n"
+	.string "They say you haven't left home since\n"
 	.string "coming back from the war. Was about time!\p"
 	.string "You've been in there so long, I bet you\n"
 	.string "don't know what has happened in Hoenn.\p"
@@ -39,7 +39,7 @@ gText_Birch_BoyOrGirl::
 	.string "$"
 
 gText_Birch_WhatsYourName::
-	.string "Wow, you look terrible.\n"
+	.string "Wow, you look terrible!\p"
 	.string "Oh, I need a name to put here as well.$"
 
 gText_Birch_SoItsPlayer::

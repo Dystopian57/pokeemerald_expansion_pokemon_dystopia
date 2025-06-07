@@ -204,7 +204,7 @@
       "y": 2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "2",
+      "var_value": "3",
       "script": "LittlerootTown_Eventscript_ProffessorGotoOldale"
     },
     {
@@ -305,6 +305,24 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "2",
       "script": "LittlerootTown_Eventscript_ProffessorDontgo2"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Eventscript_ProffessorGotoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "4",
+      "script": "LittlerootTown_Eventscript_ProffessorGotoOldale"
     }
   ],
   "bg_events": [

@@ -264,10 +264,10 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_LITTLEROOT_PHASE                             0x40F7 // Used to define phases of Littleroot
+#define VAR_LITTLEROOT_PHASE                             0x40F7 // Used to define phases of Littleroot: 1 Arriveatlab, 2 got Poke, 3 Aideequest, 4 checkonrival
 #define VAR_CLOCK_SET                                    0x40F8 // Used to prevent player from leaving bedroom without setting the clock
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_TV_TURNOFF                                0x40F9 // Unused Var
+#define VAR_RIVALMIMIWARNINGDONE                              0x40FA // Used so Rival only warns the player about Mimikyu once at the start of the game
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var

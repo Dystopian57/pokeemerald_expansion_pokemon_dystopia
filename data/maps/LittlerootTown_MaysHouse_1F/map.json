@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_PLAYERS_HOUSE_1F_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_RIVAL_MAY_NORMAL",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 5,
       "y": 6,
       "elevation": 0,
@@ -40,6 +40,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE",
       "flag": "DOLL_BATTLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": -7,
+      "y": -5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -68,20 +81,11 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 5,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "3",
-      "script": "RivalyouareBrave"
-    },
-    {
-      "type": "trigger",
       "x": 3,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "3",
+      "var": "VAR_RIVALMIMIWARNINGDONE",
+      "var_value": "0",
       "script": "RivalWatchout"
     },
     {
@@ -89,8 +93,8 @@
       "x": 2,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "3",
+      "var": "VAR_RIVALMIMIWARNINGDONE",
+      "var_value": "0",
       "script": "RivalWatchout"
     },
     {
@@ -98,8 +102,8 @@
       "x": 1,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "3",
+      "var": "VAR_RIVALMIMIWARNINGDONE",
+      "var_value": "0",
       "script": "RivalWatchout"
     },
     {
@@ -107,8 +111,8 @@
       "x": 0,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "3",
+      "var": "VAR_RIVALMIMIWARNINGDONE",
+      "var_value": "0",
       "script": "RivalWatchout"
     }
   ],

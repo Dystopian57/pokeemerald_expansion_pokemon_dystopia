@@ -1898,7 +1898,7 @@ script followertest {
 	lockall
 	msgbox ("I shall follow you")
 	waitmessage
-	setfollowernpc (LOCALID_LITTLEROOT_TOWN_HIKER, FNPC_ALL, 0, 0)
+	setfollowernpc (2, FNPC_ALL, 0, 0)
 	releaseall
 }
 
@@ -1908,7 +1908,12 @@ script followertest {
 //IDLE TALKS
 script Littleroot_Idletalk_Oldman{
 	lockall
-	msgbox (format("Good morning, {PLAYER}. It's good to see you outside for once."))
+	
+	if (!flag (checkonrival))
+	{msgbox (format("Good morning, {PLAYER}. It's good to see you outside for once."))}
+	else
+	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... old people need their sleep."))}
+	//add extra line and flag for post-checking on rival dialogue	
 	releaseall
 }
 
@@ -1918,7 +1923,7 @@ script TownPreview {mappreview}
 
 script LittlerootTown_Trigger_Blocknopokes{
 	lockall
-	msgbox ("I better go to the LAB first...")
+	msgbox ("I better go to the lab first...")
 	applymovement (OBJ_EVENT_ID_PLAYER, NoGoRoute)
 	waitmovement(0)
 	releaseall	
@@ -1943,12 +1948,24 @@ movement NoGoRoute2{
 script LittlerootTown_Trigger_NoEnterRival1{
 	lockall
 	msgbox (format("(You hear someone yelling inside...) \p DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
-	\p Take this - ORYAAAAAAAAHH! \p (It 
-	seems {RIVAL} is having another episode... not a good time to visit)"))
+	\p Take this..."))
+	msgbox (format("ORYAAAAAAAAHH!"))
+	call(RivalShake)
+	playse (SE_BANG)
+	msgbox (format("(It seems {RIVAL} is having another episode... not a good time to visit)")) 
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, NoEnterRival)
 	waitmovement(0)
 	releaseall	
+}
+
+script RivalShake {
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+ 
 }
 
 movement NoEnterRival{
@@ -1957,16 +1974,19 @@ movement NoEnterRival{
 
 script LittlerootTown_Eventscript_Oldmanasking {
 	lockall
-	applymovement (1, Oldmanturning)
+	if (!flag (checkonrival))
+	{applymovement (1, Oldmanturning)
 	applymovement (OBJ_EVENT_ID_PLAYER, Playerturningtooldman)
 	msgbox (format("Ah, {PLAYER}, do you have a minute?"))
 	waitmessage
 	applymovement (1, Oldmanapproaching)
 	waitmovement (0)
-	msgbox (format("Would you mind paying {RIVAL} a visit? \p {RIVAL} has been screaming a lot lately, and it has
-	me worried. \p Also tired, because I can barely get any sleep! \p You'll be doing us all a favour if you can
-	get {RIVAL} to calm down - {RIVAL} included."))
+	msgbox (format("Would you mind paying {RIVAL} a visit? \p They have been screaming a lot lately, and it has
+	me worried. \p Also tired, because I can barely get any sleep! \p You went to the war together, didn't you?
+	Perhaps you can calm them down. \p It will do us all a favour, {RIVAL} included."))
 	applymovement (1, Oldmanreturning)
+	setflag (checkonrival)}
+	else {msgbox (format("Have you checked on {RIVAL} yet? It would mean lot if you do."))}
 	releaseall
 }
 
@@ -1988,3 +2008,41 @@ movement Oldmanreturning {
 	walk_up * 1
 	face_down
 }
+
+script OldManThanks {
+lockall
+msgbox (format("Ah, {PLAYER}!"))
+waitmessage	
+applymovement (8, moves(walk_up * 5))
+waitmovement
+msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! \p I only asked you to calm them down, but
+getting them out also works for me - hohoho! \p Finally I can get some sleep, at least until they come back. Now,
+take this as thanks."))
+playfanfare(MUS_OBTAIN_ITEM)
+setflag (FLAG_SYS_B_DASH)
+checkplayergender
+    if(var(VAR_RESULT) == MALE)
+    {msgbox (format("Obtained the Better Crutches!"))
+	waitmessage
+    msgbox (format("These are some old crutches of mine. I noticed yours are not in the best shape - these
+	should help you move better in the rough terrain outside the town."))
+    }
+    else
+    {
+    msgbox (format("Obtained the Better Arm Sling!"))
+    msgbox (format("This is an old arm sling of mine. I noticed yours is not in the best shape - this one
+	should secure your arm better so you can move around more easily."))
+    }
+	msgbox (format("Take care on your trip to Oldale now. There's much hardship in these parts lately, and people
+	are not as friendly as they used to. \p But if you trust in your Pokémon, you should be fine. Good bye!"))
+	applymovement (4, moves(walk_down * 7))
+	waitmovement (4)
+	removeobject (8)
+	setflag (Oldmantyhide)
+	setvar(VAR_LITTLEROOT_PHASE, 5)
+//Receive Running shoes
+releaseall }
+
+script Oldmantyhide {
+	
+setflag (Oldmantyhide)}

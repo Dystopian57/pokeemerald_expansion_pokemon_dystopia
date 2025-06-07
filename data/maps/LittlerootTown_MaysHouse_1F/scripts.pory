@@ -97,7 +97,6 @@ LittlerootTown_MaysHouse_1F_OnFrame:
 # 55 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
 # 56 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 # 57 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.2byte 0
 # 58 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -764,32 +763,38 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 
 `
 
+mapscripts LittlerootTown_RivalsHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: HidePokeball}
+
+script HidePokeball {
+	
+}
+
 script RivalWatchout {
 	
 lockall
 playbgm (MUS_HELP, TRUE)
 applymovement (1, moves(face_down))
-msgbox (format("{PLAYER}, don't go beyond the chair barricade!! \p It's the only thing keeping us safe from that
-FIEND! \p AAGH, it got me good... Leave me, I'm done for!"))
+msgbox (format("{PLAYER}, don't go beyond the barricade!! \p That fiend the Kantonian threw at us... it's... too
+strong! \p AAGH, it got me good... Leave me, I'm done for!"))
 waitmessage
 applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 applymovement (1, moves(face_right))
+ setvar(VAR_RIVALMIMIWARNINGDONE, 1)
 releaseall
 }
 
-script RivalyouareBrave {
-	lockall
-	msgbox (format("{PLAYER}... cough. Y-you... \p You are the bravest soldier I know! It's been an HONOUR to
-	share battlefield with you!"))
-	releaseall
-}
 script Littleroot_Idletalk_Rival{
 	lockall
-	applymovement (1, moves(face_player))
-	msgbox (format("Ugh... I don't have much longer... run away, while you can... cough cough"))
+	if (!flag (rivalhouse1stdialogue))
+	{applymovement (1, moves(face_player))
+	msgbox (format("Ugh... I don't have much longer... run away, while you can..."))
 	waitmessage
-	msgbox (format("(Despite their claims, {RIVAL} does not seem injured... and all you see beyond the chairs is a
-	weird doll... \p {RIVAL} is clearly delusional again... perhaps they'll calm down if I deal with it)."))
+	msgbox (format("({RIVAL} does not seem injured... and all you see beyond the chairs is a
+	weird doll...?) \p ({RIVAL} is clearly delusional again... perhaps they'll calm down if I pretend to deal
+	with it.)"))
+	setflag (rivalhouse1stdialogue)}
+	else {msgbox(format("{PLAYER}... it's been an honour... to share battlefield... with you."))}
 	applymovement (1, moves(face_right))
 	releaseall
 }
@@ -820,26 +825,44 @@ script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
  
 script Won_or_Caught {
 	fadescreen(FADE_TO_BLACK)
-	removeobject(2)
+	setobjectxy (1, 9, 6)
 	fadescreen(FADE_FROM_BLACK)
-	msgbox("THANK YOU NOW I GO")
+	msgbox (format("{PLAYER}... you did it! You beat the fiend! \p This will go down in the history books.
+	Let me restrain it - perhaps we can put it to some use."))
+	waitmessage
+	applymovement (1, moves(face_right))
+	msgbox (format("Bang!"))
+	setobjectxy (3, 10, 6)
+	removeobject(2)
+	playse (SE_BALL_OPEN)
+	waitse
+	removeobject(3)
+	applymovement (1, moves(face_down))
+	msgbox (format("Piece of cake - now that this base is secure, let's push onto the north front! \p Cover my
+	rear now, {PLAYER} - chaaaaarge!"))
 	waitmessage
 	playse (SE_FLEE)
     applymovement (1, Rivalleaves)
     waitmovement (1)
     removeobject (1)
+	playse (SE_DOOR)
     setflag(RIVAL_LEAVES_HOME)
     setflag(DOLL_BATTLE)
     setvar(VAR_LITTLEROOT_PHASE, 4)
+	clearflag (Oldmantyhide)
+	playbgm (MUS_NONE, TRUE)
 	return
 }
 
 movement Rivalleaves {
-    walk_left * 3
     walk_down * 2
+    walk_left * 7
 }
  
 script RanAway {
-	msgbox("I GET IT'S SCARY BUT COME ON")
+	lockall
+	msgbox (format("{PLAYER}, don't falter now!! This...! \p This is the battle that will decide the fate
+	of HOENN! EVERYONE IS COUNTING ON YOU! YOU CAN DO IT!"))
+	releaseall
 	return
 }

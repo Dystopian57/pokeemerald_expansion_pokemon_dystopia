@@ -1015,17 +1015,19 @@ script Littleroot_Idletalk_Aidee{
 	//if ((flag(VOLTORBSHARDGOT)))
 	//{msgbox (format("SO YOU GOT IT, COME WITH ME"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3)
-	{msgbox (format("How's the search for Voltorb Shards going? Remember - there should be some in the
-	big craters of Route 101. \p I'm counting on you, soldier boy!"))}
+	{msgbox (format("How's the search for {COLOR BLUE}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
+	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier boy!"))}
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 2 && !flag (Aideeaskstoread))
 	{msgbox (format("Oh, {PLAYER} - you're a lifesaver! Yes, I could use your help with a small task. 
 	\p Before I tell you about it however, I hope you don't mind me testing your... wits." ))
-	applymovement (5, Aideelookstoshelf)
+	applymovement (5, moves(face_up))
 	msgbox (format("See that shelf over there? Read a bit about Safemon, and I'll test you once you're
 	done."))
 	setflag (Aideeaskstoread)
+	applymovement (5, moves(face_left))
+	waitmovement
 	goto (FinishAideeScript)
 	}
     if (var(VAR_LITTLEROOT_PHASE) == 2 && flag (Aideeaskstoread) && !flag (ReadAllSafemonLore))
@@ -1042,29 +1044,12 @@ script Littleroot_Idletalk_Aidee{
 		
 		#QUESTION NUMBER 1
 		#MAY NEED TO HIDE PIC BEFORE DYNMULTICHOICE?
-		showmonpic(SPECIES_ZANGOOSE, 10,3)
-		msgbox (format("Let's start with an easy one... Zangoose have been modified so that their
-		physical growth is halted at a tender age."))
+		showmonpic(SPECIES_SHROOMISH, 10,3)
+		msgbox (format("Let's start with an easy first question... Safe Shroomish have been modified so that they
+		resemble a different type of fungus - a safer, edible one."))
 		waitmessage
 		hidemonpic
 		msgbox (format("Which type of Safemon do you think it is?"))
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
-		if (var(VAR_RESULT) == 0) {
-			playse (SE_RG_POKE_JUMP_SUCCESS)
-			msgbox (format("That's correct! Here comes the next one!"))}
-		else {playse (SE_RG_POKE_JUMP_FAILURE)
-		msgbox (format("Ah, not quite... \p Why don't you do a little reviewing, and try your luck
-		again?"))
-		
-		goto (FinishAideeScript)}
-
-		#QUESTION NUMBER 2
-		showmonpic(SPECIES_ZANGOOSE, 10,3)
-		msgbox (format("Let's start with an easy one... Zangoose have been modified so that their
-		physical growth is halted at a tender age."))
-		waitmessage
-		hidemonpic
-		msgbox (format("Which type of Safemon do you think it is"))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
 		if (var(VAR_RESULT) == 0) {
 			playse (SE_RG_POKE_JUMP_SUCCESS)
@@ -1075,17 +1060,35 @@ script Littleroot_Idletalk_Aidee{
 		setflag (AideeTestMistake)
 		goto (FinishAideeScript)}
 
-		#QUESTION NUMBER 3
-		showmonpic(SPECIES_ZANGOOSE, 10,3)
-		msgbox (format("Let's start with an easy one... Zangoose have been modified so that their
-		physical growth is halted at a tender age."))
+		#QUESTION NUMBER 2
+		showmonpic(SPECIES_ELECTRIKE, 10,3)
+		msgbox (format("Now for a trickier one... Electrike generate and store their electricity
+		in low-voltage batteries that have been implanted to the sides of their heads."))
 		waitmessage
 		hidemonpic
 		msgbox (format("Which type of Safemon do you think it is?"))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
-		if (var(VAR_RESULT) == 0) {
+		if (var(VAR_RESULT) == 1) {
 			playse (SE_RG_POKE_JUMP_SUCCESS)
-			msgbox (format("That's correct! Good job, {PLAYER}. \p I didn't know soldiers were this smart!
+			msgbox (format("Great work! Only one more now..."))}
+		else {playse (SE_RG_POKE_JUMP_FAILURE)
+		msgbox (format("Ah, not quite... \p Why don't you do a little reviewing, and try your luck
+		again?"))
+		setflag (AideeTestMistake)
+		goto (FinishAideeScript)}
+
+		#QUESTION NUMBER 3
+		showmonpic(SPECIES_MACHOP, 10,3)
+		msgbox (format("Now, for the final and toughest question! Just by looking at it, which type of Safemon
+		do you think this is?"))
+		waitmessage
+		hidemonpic
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
+		if (var(VAR_RESULT) == 0) {
+			playse (SE_RG_POKE_JUMP_FAILURE)
+			msgbox (format("Hehe... I'm sorry, that was a trick question - the answer is none! \p Machop belongs
+			to a new type of Safemon called Robot Safemon. \p Safemon is an emerging field, so books and
+			taxonomies get outdated all the time. \p That aside, {PLAYER}... I didn't know soldiers were this smart!
 			Ahaha, come on, I'm just kidding! \p I think your observational skills are enough for this
 			job - it's an easy one. \p There's some samples we need to collect in Route 101 - Voltorb
 			Shards, from the Voltorbs that Kanto dropped on us during the war. \p Don't worry, they won't
@@ -1132,7 +1135,7 @@ script SafemonLore {
 			msgbox (format("Surgical Safemon are Pokémon who have been subjected to surgery to remove
 			their dangerous traits, or to replace them with safe ones."))
 			showmonpic(SPECIES_BULBASAUR, 10,3)
-			msgbox (format("Bulbasaurs fall under this category, due to their native bulbs having been
+			msgbox (format("Bulbasaur fall under this category, due to their native bulbs having been
 			replaced by synthetic organs that can only segregate safe substances."))
 			hidemonpic
 			setflag (ReadSurSafemonLore)}
@@ -1186,34 +1189,44 @@ movement Profbacktowork {face_up}
 script Littleroot_Idletalk_Pikachu1{
 			lockall
 			showmonpic(SPECIES_PIKACHU_SAFE, 10,3)
+			playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_ENCOUNTER) 
 			msgbox (format("Pika-pika?"))
 			waitmessage
+			hidemonpic
 			
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && !flag (InsistonPika1) && !flag (InsistonPika2))
-					{applymovement (4, Profnopika1)
+					{applymovement (4, moves(face_right))
 					waitmovement (4)
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					msgbox (format("Look, I know I asked you to choose a Safemon... \p But that one
 					happens to be mine."))
 					setflag (InsistonPika1)
+					applymovement (4, moves(face_up))
+					removefieldmugshot
 					goto(finishPikascript)}
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika1))
-					{applymovement (4, Profnopika1)
+					{applymovement (4, moves(face_right))
 					waitmovement (4)
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 					msgbox (format("{PLAYER}... don't insist. Leave that Pikachu alone."))
 					clearflag (InsistonPika1)
 					setflag (InsistonPika2)
+					applymovement (4, moves(face_up))
+					removefieldmugshot
 					goto(finishPikascript)}
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika2) && !flag (GotPika))
-				{applymovement (4, Profnopika1)
+				{applymovement (4, moves(face_right))
 				waitmovement (4)
+				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
 				msgbox (format("For the love of Arceus, what's with teenagers and 
 				Pikachus? \p You really want to choose it?")) 
 				msgbox (format("I warn you - it may be cute, but it's
 				a piece of work"), MSGBOX_YESNO)
 				waitmessage
+				removefieldmugshot
 					if(var(VAR_RESULT) == YES){
 					playfanfare(MUS_OBTAIN_ITEM)
 					msgbox(format("(I pressured the Professor to give me her Safe Pikachu!)"))
@@ -1226,7 +1239,15 @@ script Littleroot_Idletalk_Pikachu1{
 					if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             		call(NicknamePartyMon3)
            			setflag(FLAG_SYS_POKEMON_GET)
-					setvar(VAR_LITTLEROOT_PHASE, 2)}
+					setvar(VAR_LITTLEROOT_PHASE, 2)
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					msgbox (format("Well, I hope it doesn't give you too much trouble."))
+					waitmessage
+					applymovement (4, moves(face_left))
+					msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
+					use your help with some field work we need done in Route 101. It will not take you long."))
+					removefieldmugshot
+					}
 
 					elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
 					call(NicknameBoxMon3)
@@ -1237,6 +1258,7 @@ script Littleroot_Idletalk_Pikachu1{
 					else{
 					msgbox (format("Good, then pick from the ones in the Pokéballs."))}
 					waitmessage
+					applymovement (4, moves(face_up))
 					goto(finishPikascript)}
 
 
@@ -1282,8 +1304,8 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 	
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Good news", "Bad news")
     if (var(VAR_RESULT) == 0) {
-        msgbox(format("Well, the goods news is... I'm sending you on an adventure to Oldale Town,
-		with your very own Safemon! \p And the bad news is... I have signed you up for a therapy session
+        msgbox(format("Well, the goods news is... I'm sending you on an adventure to {COLOR GREEN} Oldale Town,
+		{COLOR DARK_GRAY} with your very own Safemon! \p And the bad news is... I have signed you up for a therapy session
 		there.
 		\p Don't look at me like that. You have been stuck at home for a year, and you need some help
 		to reconnect with the world and with yourself. \p It will do you good, trust me. \p Now, pick
@@ -1293,7 +1315,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
     elif (var(VAR_RESULT) == 1) {
         msgbox(format("Well, the bad news is... I'm sending you to Oldale Town to attend a therapy
 		session. \p Don't look at me like that. You have been stuck at home for a year, and you need
-		some help to reconnect with the world and with yourself. It will do you good, trust me.\p
+		some help to reconnect with the world and with yourself. \p It will do you good, trust me.\p
 		The good news is, I'm giving you your very own Safemon! \p I know they are not like your old
 		MANKEY, but they should keep you safe through Route 101."))
     }
@@ -1313,7 +1335,7 @@ movement Profturningback {face_up}
 script LittlerootTown_Eventscript_ProffessorDontgo1 {
 	lockall
 	applymovement (4, Profturning0)
-	msgbox (format("Come on {PLAYER}, can't you at least give this a chance?."))
+	msgbox (format("Come on {PLAYER}, can't you at least give this a chance?"))
 	applymovement (OBJ_EVENT_ID_PLAYER, Playercantleave)
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	applymovement (4, Profturningback0)
@@ -1362,8 +1384,9 @@ script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	msgbox (format("Mind leaving the same way you entered? That is, through the DOOR."))
 	waitmessage
 	applymovement (4, Profturningback5)
-	waitmovement (4)
+	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Dontgoup2)
+	waitmovement (0)
 	releaseall	}
 
 movement Profturning5 {emote_exclamation_mark face_right}
@@ -1476,10 +1499,11 @@ movement Profturningback1 {
 script Lab_EventScript_Starter2{
  
     lockall
+	applymovement (4, moves(face_down))
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
     {showmonpic(SPECIES_CYNDAQUIL, 10,3)
     msgbox(format("That one contains Cyndaquil - or, well, the safe version of it. \p Devon removed the pyroglands 
-	on its back, so its 'firepower' is severely diminished now. \p But it's still a Fire type, and a
+	on its back, so its firepower is severely diminished now. \p But it's still a Fire type, and a
 	trusty one at that. Cute too, if you care about such things."))
 	waitmessage
 	msgbox("So? Do you choose it?", MSGBOX_YESNO)
@@ -1493,6 +1517,13 @@ script Lab_EventScript_Starter2{
             call(NicknamePartyMon2)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
+			msgbox (format("I hope you and that Bulbasaur and you become good friends."))
+			waitmessage
+			applymovement (4, moves(face_left))
+			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
+			use your help with some field work we need done in Route 101. It will not take you long."))
+			applymovement (4, moves(face_up))
+			waitmessage
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
@@ -1504,7 +1535,8 @@ script Lab_EventScript_Starter2{
 			setvar(VAR_LITTLEROOT_PHASE, 2)
         }
         else{
-            hidemonpic
+            applymovement (4, moves(face_down))
+			hidemonpic
             msgbox("No More Room")
         }
 	}
@@ -1550,10 +1582,14 @@ script Lab_EventScript_Starter3{
  
     lockall
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
-    {msgbox(format("(The Pokéball is empty...) \p Oh, sorry about that... Devon retrieved all specimens
+    {msgbox(format("(The Pokéball is empty..."))
+	waitmessage
+	applymovement (4, moves(face_down))
+	msgbox(format("Oh, sorry about that... Devon retrieved all specimens
 	of that starter Safemon. \p They didn't tell us why - apparently it's classified information. \p
 	I guess two is still a choice, right?"))
 	waitmessage
+	applymovement (4, moves(face_up))
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 3, walk_up * 3))
 	waitmovement

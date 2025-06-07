@@ -5,9 +5,9 @@ static const u16 sFieldMugshotPal_TestAlt[] = INCBIN_U16("graphics/field_mugshot
 // Balsam
 static const u32 sFieldMugshotGfx_BalsamNormal[] = INCBIN_U32("graphics/field_mugshots/balsam/normal.4bpp.lz");
 static const u16 sFieldMugshotPal_BalsamNormal[] = INCBIN_U16("graphics/field_mugshots/balsam/normal.gbapal");
-static const u32 sFieldMugshotGfx_BalsamHappy[] = INCBIN_U32("graphics/field_mugshots/balsam/angry.4bpp.lz");
+static const u32 sFieldMugshotGfx_BalsamHappy[] = INCBIN_U32("graphics/field_mugshots/balsam/happy.4bpp.lz");
 static const u16 sFieldMugshotPal_BalsamHappy[] = INCBIN_U16("graphics/field_mugshots/balsam/happy.gbapal");
-static const u32 sFieldMugshotGfx_BalsamAngry[] = INCBIN_U32("graphics/field_mugshots/balsam/happy.4bpp.lz");
+static const u32 sFieldMugshotGfx_BalsamAngry[] = INCBIN_U32("graphics/field_mugshots/balsam/angry.4bpp.lz");
 static const u16 sFieldMugshotPal_BalsamAngry[] = INCBIN_U16("graphics/field_mugshots/balsam/angry.gbapal");
 static const u32 sFieldMugshotGfx_BalsamConfused[] = INCBIN_U32("graphics/field_mugshots/balsam/confused.4bpp.lz");
 static const u16 sFieldMugshotPal_BalsamConfused[] = INCBIN_U16("graphics/field_mugshots/balsam/confused.gbapal");

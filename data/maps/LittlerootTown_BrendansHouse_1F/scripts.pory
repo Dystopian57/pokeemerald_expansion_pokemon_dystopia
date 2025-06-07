@@ -104,7 +104,6 @@ LittlerootTown_BrendansHouse_1F_OnFrame:
 # 58 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 1, LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor
 # 59 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 # 60 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.2byte 0
 # 61 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -791,28 +790,7 @@ PlayersHouse_1F_Text_IsThatABreakingStory:
 # 422 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 423 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-PlayersHouse_1F_Text_LatiEmergencyNewsFlash:
-# 424 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "We bring you this emergency\n"
-# 425 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "news flash!\p"
-# 426 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "In various HOENN locales, there have\n"
-# 427 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "been reports of a BZZT…colored\l"
-# 428 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "POKéMON in flight.\p"
-# 429 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "The identity of this POKéMON is\n"
-# 430 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "currently unknown.\p"
-# 431 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "We now return you to the regular\n"
-# 432 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "movie program.$"
-# 433 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
-# 434 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 PlayersHouse_1F_Text_WhatColorDidTheySay:
 # 435 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "MOM: {PLAYER}, did you catch that?\p"
@@ -830,3 +808,31 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "There are still unknown POKéMON.$"
 
 `
+
+script ShouldTurnOffTV {
+	
+lockall
+msgbox (format("Oh... I should turn off the TV before I go."))
+applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+waitmovement(0)
+releaseall
+}
+
+script TV {
+	
+lockall
+if (!flag (WatchedTVathome))
+{playbgm (MUS_INTRO_BATTLE, FALSE)
+msgbox (format("Is it a plane!? Is it a Wingull!?  o, it's SUPER SUBSTITUTE! \p The hero that protects you from
+danger with a wall of fluffy justice! \p New season of Devon TV most loved cartoon is airing soon, so...
+\p Stay tuned, and stay safe!"))
+special (TurnOffTVScreen)
+setvar(VAR_TV_TURNOFF , 1)
+playbgm (MUS_NONE, TRUE)
+setflag (WatchedTVathome)}
+else {
+msgbox (format("I'm not in the mood for more TV..."))
+}
+waitmessage
+releaseall
+}
