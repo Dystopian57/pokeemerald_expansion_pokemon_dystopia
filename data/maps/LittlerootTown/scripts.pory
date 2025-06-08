@@ -1898,7 +1898,7 @@ script followertest {
 	lockall
 	msgbox ("I shall follow you")
 	waitmessage
-	setfollowernpc (2, FNPC_ALL, 0, 0)
+	setfollowernpc (LOCALID_HIKER_LITTLEROOT, FNPC_ALL, 0, 0)
 	releaseall
 }
 
@@ -1925,7 +1925,7 @@ script LittlerootTown_Trigger_Blocknopokes{
 	lockall
 	msgbox ("I better go to the lab first...")
 	applymovement (OBJ_EVENT_ID_PLAYER, NoGoRoute)
-	waitmovement(0)
+	waitmovement
 	releaseall	
 }
 
@@ -1937,7 +1937,7 @@ script LittlerootTown_Trigger_Blockgorival{
 	lockall
 	msgbox ("I should check on {RIVAL}.")
 	applymovement (OBJ_EVENT_ID_PLAYER, NoGoRoute2)
-	waitmovement(0)
+	waitmovement
 	releaseall	
 }
 
@@ -1955,7 +1955,7 @@ script LittlerootTown_Trigger_NoEnterRival1{
 	msgbox (format("(It seems {RIVAL} is having another episode... not a good time to visit)")) 
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, NoEnterRival)
-	waitmovement(0)
+	waitmovement
 	releaseall	
 }
 
@@ -1980,7 +1980,7 @@ script LittlerootTown_Eventscript_Oldmanasking {
 	msgbox (format("Ah, {PLAYER}, do you have a minute?"))
 	waitmessage
 	applymovement (1, Oldmanapproaching)
-	waitmovement (0)
+	waitmovement
 	msgbox (format("Would you mind paying {RIVAL} a visit? \p They have been screaming a lot lately, and it has
 	me worried. \p Also tired, because I can barely get any sleep! \p You went to the war together, didn't you?
 	Perhaps you can calm them down. \p It will do us all a favour, {RIVAL} included."))
@@ -2012,7 +2012,8 @@ movement Oldmanreturning {
 script OldManThanks {
 lockall
 msgbox (format("Ah, {PLAYER}!"))
-waitmessage	
+waitmessage
+setobjectxy (8, 14, 16)
 applymovement (8, moves(walk_up * 5))
 waitmovement
 msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! \p I only asked you to calm them down, but
@@ -2025,14 +2026,12 @@ checkplayergender
     {msgbox (format("Obtained the Better Crutches!"))
 	waitmessage
     msgbox (format("These are some old crutches of mine. I noticed yours are not in the best shape - these
-	should help you move better in the rough terrain outside the town."))
-    }
+	should help you move better in the rough terrain outside the town."))}
     else
-    {
-    msgbox (format("Obtained the Better Arm Sling!"))
+    {msgbox (format("Obtained the Better Arm Sling!"))
+	waitmessage
     msgbox (format("This is an old arm sling of mine. I noticed yours is not in the best shape - this one
-	should secure your arm better so you can move around more easily."))
-    }
+	should secure your arm better so you can move around more easily."))}
 	msgbox (format("Take care on your trip to Oldale now. There's much hardship in these parts lately, and people
 	are not as friendly as they used to. \p But if you trust in your Pokémon, you should be fine. Good bye!"))
 	applymovement (4, moves(walk_down * 7))
@@ -2041,8 +2040,4 @@ checkplayergender
 	setflag (Oldmantyhide)
 	setvar(VAR_LITTLEROOT_PHASE, 5)
 //Receive Running shoes
-releaseall }
-
-script Oldmantyhide {
-	
-setflag (Oldmantyhide)}
+releaseall}

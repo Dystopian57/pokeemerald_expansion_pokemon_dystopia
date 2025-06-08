@@ -1,6 +1,9 @@
 #include "constants/trainers.h"
 #include "data.h"
 
+const u32 gTrainerFrontPic_OrphanM[] = INCBIN_U32("graphics/trainers/front_pics/orphan_male.4bpp.lz");
+const u16 gTrainerPalette_OrphanM[] = INCBIN_U16("graphics/trainers/front_pics/orphan_male.gbapal");
+
 const u32 gTrainerFrontPic_Hiker[] = INCBIN_U32("graphics/trainers/front_pics/hiker.4bpp.lz");
 const u16 gTrainerPalette_Hiker[] = INCBIN_U16("graphics/trainers/front_pics/hiker.gbapal");
 
@@ -308,6 +311,7 @@ const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pic
 
 const struct TrainerSprite gTrainerSprites[] =
 {
+    TRAINER_SPRITE(TRAINER_PIC_ORPHAN_MALE, gTrainerFrontPic_OrphanM, gTrainerPalette_OrphanM),
     TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),
     TRAINER_SPRITE(TRAINER_PIC_AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, gTrainerPalette_AquaGruntM),
     TRAINER_SPRITE(TRAINER_PIC_POKEMON_BREEDER_F, gTrainerFrontPic_PokemonBreederF, gTrainerPalette_PokemonBreederF),

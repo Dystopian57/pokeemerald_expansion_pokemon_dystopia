@@ -1625,38 +1625,36 @@ ShouldTurnOffTV::
 # 817 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	waitmovement 0
 # 818 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setflag Oldmantyhide
-# 819 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 TV::
-# 824 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 823 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
-# 825 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 824 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto_if_unset WatchedTVathome, TV_2
-# 835 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 834 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox TV_Text_1
 TV_1:
-# 837 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 836 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	waitmessage
-# 838 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 837 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 TV_2:
-# 826 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 825 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	playbgm MUS_INTRO_BATTLE, FALSE
-# 827 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 826 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox TV_Text_0
-# 830 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 829 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	special TurnOffTVScreen
-# 831 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 830 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setvar VAR_TV_TURNOFF, 1
-# 832 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 831 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	playbgm MUS_NONE, TRUE
-# 833 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 832 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setflag WatchedTVathome
 	goto TV_1
 
@@ -1673,7 +1671,7 @@ ShouldTurnOffTV_Text_0:
 	.string "go.$"
 
 TV_Text_0:
-# 827 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 826 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Is it a plane!? Is it a Wingull!? o, it's\n"
 	.string "SUPER SUBSTITUTE!\p"
 	.string "The hero that protects you from danger\n"
@@ -1683,5 +1681,5 @@ TV_Text_0:
 	.string "Stay tuned, and stay safe!$"
 
 TV_Text_1:
-# 835 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 834 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "I'm not in the mood for more TV...$"

@@ -492,3 +492,25 @@ Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
 # 247 "data/maps/Route101/scripts.pory"
 	.string "{UP_ARROW} OLDALE TOWN$"
+
+OrphanBattle::
+# 254 "data/maps/Route101/scripts.pory"
+	trainerbattle_single TRAINER_ORPHAN_MALE_1, Orphan_Intro, Orphan_Outro
+# 255 "data/maps/Route101/scripts.pory"
+	msgbox PostBattle_Orphan, MSGBOX_AUTOCLOSE
+# 256 "data/maps/Route101/scripts.pory"
+	waitmessage
+	end
+
+
+Orphan_Intro::
+# 261 "data/maps/Route101/scripts.pory"
+	.string "You'll never win$"
+
+Orphan_Outro::
+# 265 "data/maps/Route101/scripts.pory"
+	.string "Doesn't count$"
+
+PostBattle_Orphan::
+# 269 "data/maps/Route101/scripts.pory"
+	.string "I'll win next time$"

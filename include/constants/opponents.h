@@ -4,7 +4,7 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
+#define TRAINER_ORPHAN_MALE_1                 1
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
 #define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
 #define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
@@ -839,10 +839,6 @@
 #define TRAINER_FERNANDO_3                  833
 #define TRAINER_FERNANDO_4                  834
 #define TRAINER_FERNANDO_5                  835
-#define TRAINER_SAWYER_2                    836
-#define TRAINER_SAWYER_3                    837
-#define TRAINER_SAWYER_4                    838
-#define TRAINER_SAWYER_5                    839
 #define TRAINER_GABRIELLE_2                 840
 #define TRAINER_GABRIELLE_3                 841
 #define TRAINER_GABRIELLE_4                 842

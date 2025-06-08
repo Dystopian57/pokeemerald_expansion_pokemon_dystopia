@@ -248,3 +248,24 @@ Route101_Text_RouteSign:
 
 
 `
+
+script OrphanBattle{
+ 
+	trainerbattle_single(TRAINER_ORPHAN_MALE_1, Orphan_Intro, Orphan_Outro)
+	msgbox(PostBattle_Orphan, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+ 
+}
+ 
+text Orphan_Intro{
+    "You'll never win"
+}
+ 
+text Orphan_Outro{
+    "Doesn't count"
+}
+ 
+text PostBattle_Orphan{
+    "I'll win next time"
+}

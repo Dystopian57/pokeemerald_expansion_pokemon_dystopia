@@ -153,21 +153,6 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 -};
 ```
 
-#### [src/data/trainers.party](..src/data/trainers.party)
-```diff
-+=== TRAINER_SAWYER_1 ===
-+Name: SAWYER
-+Class: Hiker
-+Pic: Hiker
-+Gender: Male
-+Music: Hiker
-+Double Battle: No
-+AI: Check Bad Move / Try To Faint / Check Viability
-+
-+Geodude
-+Level: 21
-+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-```
 
 #### [src/data/partner_parties.h](..src/data/partner_parties.h)
 ```diff

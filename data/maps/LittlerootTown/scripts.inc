@@ -3775,7 +3775,7 @@ followertest::
 # 1900 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
 # 1901 "data/maps/LittlerootTown/scripts.pory"
-	setfollowernpc 2, FNPC_ALL, 0, 0
+	setfollowernpc LOCALID_HIKER_LITTLEROOT, FNPC_ALL, 0, 0
 # 1902 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
@@ -3813,7 +3813,7 @@ LittlerootTown_Trigger_Blocknopokes::
 # 1927 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NoGoRoute
 # 1928 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
+	waitmovement
 # 1929 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
@@ -3833,7 +3833,7 @@ LittlerootTown_Trigger_Blockgorival::
 # 1939 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NoGoRoute2
 # 1940 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
+	waitmovement
 # 1941 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
@@ -3863,7 +3863,7 @@ LittlerootTown_Trigger_NoEnterRival1::
 # 1957 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NoEnterRival
 # 1958 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
+	waitmovement
 # 1959 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
@@ -3913,7 +3913,7 @@ LittlerootTown_Eventscript_Oldmanasking_2:
 # 1982 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, Oldmanapproaching
 # 1983 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
+	waitmovement
 # 1984 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_1
 # 1987 "data/maps/LittlerootTown/scripts.pory"
@@ -3965,80 +3965,84 @@ OldManThanks::
 # 2015 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
 # 2016 "data/maps/LittlerootTown/scripts.pory"
-	applymovement 8, OldManThanks_Movement_0
+	setobjectxy 8, 14, 16
 # 2017 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement
+	applymovement 8, OldManThanks_Movement_0
 # 2018 "data/maps/LittlerootTown/scripts.pory"
+	waitmovement
+# 2019 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_1
-# 2021 "data/maps/LittlerootTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 2022 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_SYS_B_DASH
+	playfanfare MUS_OBTAIN_ITEM
 # 2023 "data/maps/LittlerootTown/scripts.pory"
-	checkplayergender
+	setflag FLAG_SYS_B_DASH
 # 2024 "data/maps/LittlerootTown/scripts.pory"
+	checkplayergender
+# 2025 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldManThanks_2
-# 2032 "data/maps/LittlerootTown/scripts.pory"
+# 2031 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_4
+# 2032 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
 # 2033 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_5
 OldManThanks_1:
-# 2036 "data/maps/LittlerootTown/scripts.pory"
+# 2035 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_6
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 4, OldManThanks_Movement_1
+# 2038 "data/maps/LittlerootTown/scripts.pory"
+	waitmovement 4
 # 2039 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
-# 2040 "data/maps/LittlerootTown/scripts.pory"
 	removeobject 8
-# 2041 "data/maps/LittlerootTown/scripts.pory"
+# 2040 "data/maps/LittlerootTown/scripts.pory"
 	setflag Oldmantyhide
-# 2042 "data/maps/LittlerootTown/scripts.pory"
+# 2041 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_PHASE, 5
-# 2044 "data/maps/LittlerootTown/scripts.pory"
+# 2043 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 OldManThanks_2:
-# 2025 "data/maps/LittlerootTown/scripts.pory"
-	msgbox OldManThanks_Text_2
 # 2026 "data/maps/LittlerootTown/scripts.pory"
-	waitmessage
+	msgbox OldManThanks_Text_2
 # 2027 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 2028 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_3
 	goto OldManThanks_1
 
 
-# 2016 "data/maps/LittlerootTown/scripts.pory"
+# 2017 "data/maps/LittlerootTown/scripts.pory"
 OldManThanks_Movement_0:
-# 2016 "data/maps/LittlerootTown/scripts.pory"
+# 2017 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2016 "data/maps/LittlerootTown/scripts.pory"
+# 2017 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2016 "data/maps/LittlerootTown/scripts.pory"
+# 2017 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2016 "data/maps/LittlerootTown/scripts.pory"
+# 2017 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2016 "data/maps/LittlerootTown/scripts.pory"
+# 2017 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
 	step_end
 
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 OldManThanks_Movement_1:
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2038 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
 	step_end
 
@@ -4107,7 +4111,7 @@ OldManThanks_Text_0:
 	.string "Ah, {PLAYER}!$"
 
 OldManThanks_Text_1:
-# 2018 "data/maps/LittlerootTown/scripts.pory"
+# 2019 "data/maps/LittlerootTown/scripts.pory"
 	.string "I saw {RIVAL} storming out like a\n"
 	.string "frenzied Linoone!\p"
 	.string "I only asked you to calm them down, but\n"
@@ -4118,18 +4122,18 @@ OldManThanks_Text_1:
 	.string "thanks.$"
 
 OldManThanks_Text_2:
-# 2025 "data/maps/LittlerootTown/scripts.pory"
+# 2026 "data/maps/LittlerootTown/scripts.pory"
 	.string "Obtained the Better Crutches!$"
 
 OldManThanks_Text_3:
-# 2027 "data/maps/LittlerootTown/scripts.pory"
+# 2028 "data/maps/LittlerootTown/scripts.pory"
 	.string "These are some old crutches of mine. I\n"
 	.string "noticed yours are not in the best shape\l"
 	.string "- these should help you move better in\l"
 	.string "the rough terrain outside the town.$"
 
 OldManThanks_Text_4:
-# 2032 "data/maps/LittlerootTown/scripts.pory"
+# 2031 "data/maps/LittlerootTown/scripts.pory"
 	.string "Obtained the Better Arm Sling!$"
 
 OldManThanks_Text_5:
@@ -4141,7 +4145,7 @@ OldManThanks_Text_5:
 	.string "easily.$"
 
 OldManThanks_Text_6:
-# 2036 "data/maps/LittlerootTown/scripts.pory"
+# 2035 "data/maps/LittlerootTown/scripts.pory"
 	.string "Take care on your trip to Oldale now.\n"
 	.string "There's much hardship in these parts\l"
 	.string "lately, and people are not as friendly\l"
