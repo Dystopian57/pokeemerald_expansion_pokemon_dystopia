@@ -9766,10 +9766,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_ORPHAN_MALE_1 ===
 Name: Joel
-Class: Ninja Boy
+Class: Orphan
 Pic: orphan_male
 Gender: Male
-Music: Female
+Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 

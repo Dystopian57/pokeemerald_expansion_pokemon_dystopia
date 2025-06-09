@@ -22,7 +22,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 4,
+      "x": 9,
       "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -31,7 +31,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Littleroot_Idletalk_Oldman",
-      "flag": "FLAG_TEMP_1"
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_HIKER_LITTLEROOT",
@@ -115,19 +115,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RivalsHouse_1F_EventScript_RivalMom",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 28,
-      "y": 24,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "Oldmantyhide"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",

@@ -2013,8 +2013,8 @@ script OldManThanks {
 lockall
 msgbox (format("Ah, {PLAYER}!"))
 waitmessage
-setobjectxy (8, 14, 16)
-applymovement (8, moves(walk_up * 5))
+setobjectxy (1, 14, 16)
+applymovement (1, moves(walk_up * 5))
 waitmovement
 msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! \p I only asked you to calm them down, but
 getting them out also works for me - hohoho! \p Finally I can get some sleep, at least until they come back. Now,
@@ -2035,9 +2035,9 @@ checkplayergender
 	msgbox (format("Take care on your trip to Oldale now. There's much hardship in these parts lately, and people
 	are not as friendly as they used to. \p But if you trust in your Pokémon, you should be fine. Good bye!"))
 	applymovement (4, moves(walk_down * 7))
-	waitmovement (4)
-	removeobject (8)
-	setflag (Oldmantyhide)
+	waitmovement (0)
+	removeobject (1)
+	setobjectxy (1, 4, 17)
 	setvar(VAR_LITTLEROOT_PHASE, 5)
 //Receive Running shoes
 releaseall}

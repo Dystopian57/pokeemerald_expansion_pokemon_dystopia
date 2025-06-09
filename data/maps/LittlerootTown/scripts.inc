@@ -3965,9 +3965,9 @@ OldManThanks::
 # 2015 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
 # 2016 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy 8, 14, 16
+	setobjectxy 1, 14, 16
 # 2017 "data/maps/LittlerootTown/scripts.pory"
-	applymovement 8, OldManThanks_Movement_0
+	applymovement 1, OldManThanks_Movement_0
 # 2018 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement
 # 2019 "data/maps/LittlerootTown/scripts.pory"
@@ -3995,7 +3995,7 @@ OldManThanks_1:
 # 2038 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 4
 # 2039 "data/maps/LittlerootTown/scripts.pory"
-	removeobject 8
+	removeobject 1
 # 2040 "data/maps/LittlerootTown/scripts.pory"
 	setflag Oldmantyhide
 # 2041 "data/maps/LittlerootTown/scripts.pory"
