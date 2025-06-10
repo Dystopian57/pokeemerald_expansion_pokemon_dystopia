@@ -95,7 +95,10 @@
     "Underwater_Route125",
     "LittlerootCemetery",
     "LittlerootLabBasement",
-    "LittlerootLabTunnel"
+    "LittlerootLabTunnel",
+    "GreatCrater",
+    "OldaleWarehouse",
+    "PetalburgLandfill"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -109,7 +112,8 @@
     "OldaleTown_House2",
     "OldaleTown_PokemonCenter_1F",
     "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+    "OldaleTown_Mart",
+    "DLC"
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",
@@ -432,8 +436,7 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave",
-    "Great_Crater"
+    "MeteorFalls_StevensCave"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -1165,4 +1165,10 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/LittlerootLabTunnel/scripts.inc"
 
-	.include "data/maps/Great_Crater/scripts.inc"
+	.include "data/maps/GreatCrater/scripts.inc"
+
+	.include "data/maps/OldaleWarehouse/scripts.inc"
+
+	.include "data/maps/PetalburgLandfill/scripts.inc"
+
+	.include "data/maps/DLC/scripts.inc"

@@ -104,7 +104,7 @@
     {
       "id": "LAYOUT_OLDALE_TOWN",
       "name": "OldaleTown_Layout",
-      "width": 20,
+      "width": 39,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -177,7 +177,7 @@
       "width": 50,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route102/border.bin",
       "blockdata_filepath": "data/layouts/Route102/map.bin"
     },
@@ -4444,12 +4444,42 @@
     {
       "id": "LAYOUT_GREAT_CRATER",
       "name": "Great_Crater_Layout",
-      "width": 22,
+      "width": 28,
       "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/Great_Crater/border.bin",
       "blockdata_filepath": "data/layouts/Great_Crater/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_WAREHOUSE",
+      "name": "OldaleWarehouse_Layout",
+      "width": 14,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/OldaleWarehouse/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleWarehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_LANDFILL",
+      "name": "PetalburgLandfill_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/PetalburgLandfill/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgLandfill/map.bin"
+    },
+    {
+      "id": "LAYOUT_DLC",
+      "name": "DLC_Layout",
+      "width": 12,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/DLC/border.bin",
+      "blockdata_filepath": "data/layouts/DLC/map.bin"
     }
   ]
 }

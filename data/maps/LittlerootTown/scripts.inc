@@ -3993,11 +3993,11 @@ OldManThanks_1:
 # 2037 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 4, OldManThanks_Movement_1
 # 2038 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 4
+	waitmovement 0
 # 2039 "data/maps/LittlerootTown/scripts.pory"
 	removeobject 1
 # 2040 "data/maps/LittlerootTown/scripts.pory"
-	setflag Oldmantyhide
+	setobjectxy 1, 4, 17
 # 2041 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_PHASE, 5
 # 2043 "data/maps/LittlerootTown/scripts.pory"
