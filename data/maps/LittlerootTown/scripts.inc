@@ -3932,7 +3932,7 @@ Oldmanturning:
 # 1997 "data/maps/LittlerootTown/scripts.pory"
 Playerturningtooldman:
 # 1998 "data/maps/LittlerootTown/scripts.pory"
-	face_left
+	face_right
 	step_end
 
 # 2001 "data/maps/LittlerootTown/scripts.pory"
@@ -3940,9 +3940,7 @@ Oldmanapproaching:
 # 2002 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
 # 2003 "data/maps/LittlerootTown/scripts.pory"
-	walk_right
-# 2003 "data/maps/LittlerootTown/scripts.pory"
-	walk_right
+	face_left
 	step_end
 
 # 2006 "data/maps/LittlerootTown/scripts.pory"

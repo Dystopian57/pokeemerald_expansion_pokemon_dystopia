@@ -1995,12 +1995,12 @@ movement Oldmanturning {
 }
 
 movement Playerturningtooldman {
-	face_left
+	face_right
 }
 
 movement Oldmanapproaching {
 	walk_down * 1
-	walk_right * 2
+	face_left
 }
 
 movement Oldmanreturning {
