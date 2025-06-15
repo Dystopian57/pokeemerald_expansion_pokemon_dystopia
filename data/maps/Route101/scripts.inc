@@ -505,12 +505,12 @@ OrphanBattle::
 
 Orphan_Intro::
 # 261 "data/maps/Route101/scripts.pory"
-	.string "You'll never win$"
+	.string "Hey! You can't go into my Secret Shelter!$"
 
 Orphan_Outro::
 # 265 "data/maps/Route101/scripts.pory"
-	.string "Doesn't count$"
+	.string "... you still can't go inside.$"
 
 PostBattle_Orphan::
 # 269 "data/maps/Route101/scripts.pory"
-	.string "I'll win next time$"
+	.string "Fiiine. Just because I'm nice, I'll\p give you this.$"

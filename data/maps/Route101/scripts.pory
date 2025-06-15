@@ -259,13 +259,13 @@ script OrphanBattle{
 }
  
 text Orphan_Intro{
-    "You'll never win"
+    "Hey! You can't go into my Secret Shelter!"
 }
  
 text Orphan_Outro{
-    "Doesn't count"
+    "... you still can't go inside."
 }
  
 text PostBattle_Orphan{
-    "I'll win next time"
+    "Fiiine. Just because I'm nice, I'll\p give you this."
 }
