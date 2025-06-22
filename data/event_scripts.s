@@ -1172,3 +1172,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PetalburgLandfill/scripts.inc"
 
 	.include "data/maps/DLC/scripts.inc"
+
+	.include "data/maps/PetalburgCasino/scripts.inc"
+
+	.include "data/maps/Route104DevonLab/scripts.inc"
+
+	.include "data/maps/Route102RaltsSanctuary/scripts.inc"
+
+	.include "data/maps/OldaleWarehouseColdStorage/scripts.inc"
+
+	.include "data/maps/OldaleWarehouseApplianceStorage/scripts.inc"
+
+	.include "data/maps/Route104Ship/scripts.inc"

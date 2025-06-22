@@ -4465,7 +4465,7 @@
       "id": "LAYOUT_PETALBURG_LANDFILL",
       "name": "PetalburgLandfill_Layout",
       "width": 24,
-      "height": 24,
+      "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/PetalburgLandfill/border.bin",
@@ -4480,6 +4480,66 @@
       "secondary_tileset": "gTileset_PokemonSchool",
       "border_filepath": "data/layouts/DLC/border.bin",
       "blockdata_filepath": "data/layouts/DLC/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CASINO",
+      "name": "PetalburgCasino_Layout",
+      "width": 22,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MauvilleGameCorner",
+      "border_filepath": "data/layouts/PetalburgCasino/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCasino/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104DEVON_LAB",
+      "name": "Route104DevonLab_Layout",
+      "width": 20,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Route104DevonLab/border.bin",
+      "blockdata_filepath": "data/layouts/Route104DevonLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE102RALTS_SANCTUARY",
+      "name": "Route102RaltsSanctuary_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Route102RaltsSanctuary/border.bin",
+      "blockdata_filepath": "data/layouts/Route102RaltsSanctuary/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_WAREHOUSE_COLD_STORAGE",
+      "name": "OldaleWarehouseColdStorage_Layout",
+      "width": 20,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_OceanicMuseum",
+      "border_filepath": "data/layouts/OldaleWarehouseColdStorage/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleWarehouseColdStorage/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_WAREHOUSE_APPLIANCE_STORAGE",
+      "name": "OldaleWarehouseApplianceStorage_Layout",
+      "width": 16,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/OldaleWarehouseApplianceStorage/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleWarehouseApplianceStorage/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104SHIP",
+      "name": "Route104Ship_Layout",
+      "width": 13,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/Route104Ship/border.bin",
+      "blockdata_filepath": "data/layouts/Route104Ship/map.bin"
     }
   ]
 }

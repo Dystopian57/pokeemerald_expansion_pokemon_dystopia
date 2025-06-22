@@ -98,7 +98,13 @@
     "LittlerootLabTunnel",
     "GreatCrater",
     "OldaleWarehouse",
-    "PetalburgLandfill"
+    "PetalburgLandfill",
+    "PetalburgCasino",
+    "Route104DevonLab",
+    "Route102RaltsSanctuary",
+    "OldaleWarehouseColdStorage",
+    "OldaleWarehouseApplianceStorage",
+    "Route104Ship"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
