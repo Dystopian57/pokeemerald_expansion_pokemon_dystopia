@@ -104,7 +104,10 @@
     "Route102RaltsSanctuary",
     "OldaleWarehouseColdStorage",
     "OldaleWarehouseApplianceStorage",
-    "Route104Ship"
+    "Route104Ship",
+    "OldaleWarehouseUpper",
+    "ConcordBridge",
+    "ConcordCustoms"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

@@ -174,8 +174,8 @@
     {
       "id": "LAYOUT_ROUTE102",
       "name": "Route102_Layout",
-      "width": 50,
-      "height": 20,
+      "width": 66,
+      "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route102/border.bin",
@@ -4445,7 +4445,7 @@
       "id": "LAYOUT_GREAT_CRATER",
       "name": "Great_Crater_Layout",
       "width": 28,
-      "height": 22,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/Great_Crater/border.bin",
@@ -4517,7 +4517,7 @@
       "width": 20,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_OceanicMuseum",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/OldaleWarehouseColdStorage/border.bin",
       "blockdata_filepath": "data/layouts/OldaleWarehouseColdStorage/map.bin"
     },
@@ -4540,6 +4540,36 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/Route104Ship/border.bin",
       "blockdata_filepath": "data/layouts/Route104Ship/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_WAREHOUSE_UPPER",
+      "name": "OldaleWarehouseUpper_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/OldaleWarehouseUpper/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleWarehouseUpper/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONCORD_BRIDGE",
+      "name": "ConcordBridge_Layout",
+      "width": 20,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/ConcordBridge/border.bin",
+      "blockdata_filepath": "data/layouts/ConcordBridge/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONCORD_CUSTOMS",
+      "name": "ConcordCustoms_Layout",
+      "width": 15,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/ConcordCustoms/border.bin",
+      "blockdata_filepath": "data/layouts/ConcordCustoms/map.bin"
     }
   ]
 }

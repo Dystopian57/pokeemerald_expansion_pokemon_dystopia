@@ -1,7 +1,7 @@
 {
-  "id": "MAP_GREAT_CRATER",
-  "name": "GreatCrater",
-  "layout": "LAYOUT_GREAT_CRATER",
+  "id": "MAP_CONCORD_BRIDGE",
+  "name": "ConcordBridge",
+  "layout": "LAYOUT_CONCORD_BRIDGE",
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
@@ -15,9 +15,22 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
-      "x": 1,
+      "graphics_id": "OBJ_EVENT_GFX_TRUCK",
+      "x": 15,
       "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TRUCK",
+      "x": 9,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -28,36 +41,7 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-    {
-      "x": 27,
-      "y": 14,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE101",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 27,
-      "y": 15,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE101",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 11,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE102",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 12,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE102",
-      "dest_warp_id": "1"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

@@ -1184,3 +1184,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/OldaleWarehouseApplianceStorage/scripts.inc"
 
 	.include "data/maps/Route104Ship/scripts.inc"
+
+	.include "data/maps/OldaleWarehouseUpper/scripts.inc"
+
+	.include "data/maps/ConcordBridge/scripts.inc"
+
+	.include "data/maps/ConcordCustoms/scripts.inc"
