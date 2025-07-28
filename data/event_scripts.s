@@ -1190,3 +1190,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ConcordBridge/scripts.inc"
 
 	.include "data/maps/ConcordCustoms/scripts.inc"
+
+	.include "data/maps/PetalburgBeach/scripts.inc"
+
+	.include "data/maps/PetalburgHarbor/scripts.inc"
+
+	.include "data/maps/PetalburgBeachCave/scripts.inc"

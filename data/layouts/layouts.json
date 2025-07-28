@@ -5,7 +5,7 @@
       "id": "LAYOUT_PETALBURG_CITY",
       "name": "PetalburgCity_Layout",
       "width": 30,
-      "height": 30,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/PetalburgCity/border.bin",
@@ -4570,6 +4570,36 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ConcordCustoms/border.bin",
       "blockdata_filepath": "data/layouts/ConcordCustoms/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_BEACH",
+      "name": "PetalburgBeach_Layout",
+      "width": 44,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/PetalburgBeach/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_HARBOR",
+      "name": "PetalburgHarbor_Layout",
+      "width": 13,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_IslandHarbor",
+      "border_filepath": "data/layouts/PetalburgHarbor/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgHarbor/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_BEACH_CAVE",
+      "name": "PetalburgBeachCave_Layout",
+      "width": 16,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/PetalburgBeachCave/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgBeachCave/map.bin"
     }
   ]
 }
