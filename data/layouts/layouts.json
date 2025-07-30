@@ -544,7 +544,7 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
       "name": "LittlerootTown_BrendansHouse_2F_Layout",
-      "width": 9,
+      "width": 10,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
@@ -594,7 +594,7 @@
     {
       "id": "LAYOUT_HOUSE2",
       "name": "House2_Layout",
-      "width": 11,
+      "width": 8,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
@@ -4474,7 +4474,7 @@
     {
       "id": "LAYOUT_DLC",
       "name": "DLC_Layout",
-      "width": 12,
+      "width": 23,
       "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonSchool",
@@ -4600,6 +4600,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/PetalburgBeachCave/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgBeachCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_BALSAM_OFFICE",
+      "name": "BalsamOffice_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/BalsamOffice/border.bin",
+      "blockdata_filepath": "data/layouts/BalsamOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_REBEL_BASEMENT",
+      "name": "RebelBasement_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFactory",
+      "border_filepath": "data/layouts/RebelBasement/border.bin",
+      "blockdata_filepath": "data/layouts/RebelBasement/map.bin"
     }
   ]
 }

@@ -1196,3 +1196,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PetalburgHarbor/scripts.inc"
 
 	.include "data/maps/PetalburgBeachCave/scripts.inc"
+
+	.include "data/maps/BalsamOffice/scripts.inc"
+
+	.include "data/maps/RebelBasement/scripts.inc"

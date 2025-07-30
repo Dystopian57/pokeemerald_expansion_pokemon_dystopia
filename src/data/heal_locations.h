@@ -7,8 +7,8 @@ static const struct HealLocation sHealLocations[NUM_HEAL_LOCATIONS - 1] = {
     [HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F - 1] = {
         .mapGroup = MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F),
         .mapNum = MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F),
-        .x = 4,
-        .y = 2,
+        .x = 2,
+        .y = 6,
     },
     [HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F - 1] = {
         .mapGroup = MAP_GROUP(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F),
