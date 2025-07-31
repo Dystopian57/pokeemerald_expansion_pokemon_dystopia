@@ -5,7 +5,7 @@
   "music": "MUS_NONE",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
@@ -210,7 +210,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 9,
+      "x": 7,
       "y": 2,
       "elevation": 0,
       "var": "VAR_CLOCK_SET",
