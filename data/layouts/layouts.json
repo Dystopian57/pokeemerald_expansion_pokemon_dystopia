@@ -346,7 +346,7 @@
       "name": "Route119_Layout",
       "width": 40,
       "height": 140,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route119/border.bin",
       "blockdata_filepath": "data/layouts/Route119/map.bin"
@@ -356,7 +356,7 @@
       "name": "Route120_Layout",
       "width": 40,
       "height": 100,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route120/border.bin",
       "blockdata_filepath": "data/layouts/Route120/map.bin"
@@ -366,7 +366,7 @@
       "name": "Route121_Layout",
       "width": 80,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/Route121/border.bin",
       "blockdata_filepath": "data/layouts/Route121/map.bin"
@@ -386,7 +386,7 @@
       "name": "Route123_Layout",
       "width": 140,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/Route123/border.bin",
       "blockdata_filepath": "data/layouts/Route123/map.bin"
@@ -3446,7 +3446,7 @@
       "name": "BattleFrontier_OutsideEast_Layout",
       "width": 72,
       "height": 72,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_BattleFrontierOutsideEast",
       "border_filepath": "data/layouts/BattleFrontier_OutsideEast/border.bin",
       "blockdata_filepath": "data/layouts/BattleFrontier_OutsideEast/map.bin"
@@ -4424,7 +4424,7 @@
     {
       "id": "LAYOUT_LITTLEROOT_LAB_BASEMENT",
       "name": "LittlerootLabBasement_Layout",
-      "width": 14,
+      "width": 22,
       "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Facility",
@@ -4594,7 +4594,7 @@
     {
       "id": "LAYOUT_PETALBURG_BEACH_CAVE",
       "name": "PetalburgBeachCave_Layout",
-      "width": 16,
+      "width": 17,
       "height": 17,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
