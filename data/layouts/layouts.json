@@ -16,7 +16,7 @@
       "name": "SlateportCity_Layout",
       "width": 40,
       "height": 60,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/SlateportCity/border.bin",
       "blockdata_filepath": "data/layouts/SlateportCity/map.bin"
@@ -4467,7 +4467,7 @@
       "width": 24,
       "height": 28,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Facility",
+      "secondary_tileset": "gTileset_Landfill",
       "border_filepath": "data/layouts/PetalburgLandfill/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgLandfill/map.bin"
     },
@@ -4620,6 +4620,16 @@
       "secondary_tileset": "gTileset_BattleFactory",
       "border_filepath": "data/layouts/RebelBasement/border.bin",
       "blockdata_filepath": "data/layouts/RebelBasement/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_BEACH_CLINIC",
+      "name": "PetalburgBeachClinic_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/PetalburgBeachClinic/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgBeachClinic/map.bin"
     }
   ]
 }

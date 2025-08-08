@@ -1200,3 +1200,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BalsamOffice/scripts.inc"
 
 	.include "data/maps/RebelBasement/scripts.inc"
+
+	.include "data/maps/PetalburgBeachClinic/scripts.inc"

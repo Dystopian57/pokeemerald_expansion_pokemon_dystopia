@@ -841,3 +841,14 @@ const struct Tileset gTileset_GeneralGreen =
     .metatileAttributes = gMetatileAttributes_GeneralGreen,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Landfill =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Landfill,
+    .palettes = gTilesetPalettes_Landfill,
+    .metatiles = gMetatiles_Landfill,
+    .metatileAttributes = gMetatileAttributes_Landfill,
+    .callback = NULL,
+};
