@@ -113,7 +113,14 @@
     "PetalburgBeachCave",
     "BalsamOffice",
     "RebelBasement",
-    "PetalburgBeachClinic"
+    "PetalburgBeachClinic",
+    "Petalburg_Dojo",
+    "PetalburgDojo_CameliaRoom",
+    "PetalburgDojo_SharpyRoom",
+    "PetalburgDojo_NormanRoom",
+    "CourtneyWorkshop",
+    "PetalburgBikeShop",
+    "PetalburgCasinoBathrooms"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

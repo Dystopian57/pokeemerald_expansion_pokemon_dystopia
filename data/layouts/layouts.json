@@ -256,7 +256,7 @@
       "name": "Route110_Layout",
       "width": 40,
       "height": 100,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route110/border.bin",
       "blockdata_filepath": "data/layouts/Route110/map.bin"
@@ -4484,7 +4484,7 @@
     {
       "id": "LAYOUT_PETALBURG_CASINO",
       "name": "PetalburgCasino_Layout",
-      "width": 22,
+      "width": 28,
       "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_MauvilleGameCorner",
@@ -4630,6 +4630,76 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/PetalburgBeachClinic/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgBeachClinic/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_DOJO",
+      "name": "Petalburg_Dojo_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/Petalburg_Dojo/border.bin",
+      "blockdata_filepath": "data/layouts/Petalburg_Dojo/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_DOJO_CAMELIA_ROOM",
+      "name": "PetalburgDojo_CameliaRoom_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/PetalburgDojo_CameliaRoom/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgDojo_CameliaRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_DOJO_SHARPY_ROOM",
+      "name": "PetalburgDojo_SharpyRoom_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/PetalburgDojo_SharpyRoom/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgDojo_SharpyRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_DOJO_NORMAN_ROOM",
+      "name": "PetalburgDojo_NormanRoom_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/PetalburgDojo_NormanRoom/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgDojo_NormanRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_COURTNEY_WORKSHOP",
+      "name": "CourtneyWorkshop_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CourtneyWorkshop/border.bin",
+      "blockdata_filepath": "data/layouts/CourtneyWorkshop/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_BIKE_SHOP",
+      "name": "PetalburgBikeShop_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/PetalburgBikeShop/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgBikeShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CASINO_BATHROOMS",
+      "name": "PetalburgCasinoBathrooms_Layout",
+      "width": 22,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MauvilleGameCorner",
+      "border_filepath": "data/layouts/PetalburgCasinoBathrooms/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCasinoBathrooms/map.bin"
     }
   ]
 }

@@ -1202,3 +1202,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RebelBasement/scripts.inc"
 
 	.include "data/maps/PetalburgBeachClinic/scripts.inc"
+
+	.include "data/maps/Petalburg_Dojo/scripts.inc"
+
+	.include "data/maps/PetalburgDojo_CameliaRoom/scripts.inc"
+
+	.include "data/maps/PetalburgDojo_SharpyRoom/scripts.inc"
+
+	.include "data/maps/PetalburgDojo_NormanRoom/scripts.inc"
+
+	.include "data/maps/CourtneyWorkshop/scripts.inc"
+
+	.include "data/maps/PetalburgBikeShop/scripts.inc"
+
+	.include "data/maps/PetalburgCasinoBathrooms/scripts.inc"
