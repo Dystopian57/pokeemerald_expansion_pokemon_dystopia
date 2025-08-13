@@ -4614,8 +4614,8 @@
     {
       "id": "LAYOUT_REBEL_BASEMENT",
       "name": "RebelBasement_Layout",
-      "width": 17,
-      "height": 13,
+      "width": 21,
+      "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BattleFactory",
       "border_filepath": "data/layouts/RebelBasement/border.bin",
@@ -4710,6 +4710,16 @@
       "secondary_tileset": "gTileset_MauvilleGameCorner",
       "border_filepath": "data/layouts/PetalburgCasinoBathroomStall/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCasinoBathroomStall/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_LANDFILL_CONTAINER",
+      "name": "PetalburgLandfillContainer_Layout",
+      "width": 5,
+      "height": 5,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideOfTruck",
+      "border_filepath": "data/layouts/PetalburgLandfillContainer/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgLandfillContainer/map.bin"
     }
   ]
 }

@@ -1218,3 +1218,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PetalburgCasinoBathrooms/scripts.inc"
 
 	.include "data/maps/PetalburgCasinoBathroomStall/scripts.inc"
+
+	.include "data/maps/PetalburgLandfillContainer/scripts.inc"

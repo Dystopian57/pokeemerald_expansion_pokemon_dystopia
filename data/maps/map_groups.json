@@ -121,7 +121,8 @@
     "CourtneyWorkshop",
     "PetalburgBikeShop",
     "PetalburgCasinoBathrooms",
-    "PetalburgCasinoBathroomStall"
+    "PetalburgCasinoBathroomStall",
+    "PetalburgLandfillContainer"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
