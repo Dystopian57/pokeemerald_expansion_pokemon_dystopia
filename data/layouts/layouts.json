@@ -4684,8 +4684,8 @@
     {
       "id": "LAYOUT_PETALBURG_BIKE_SHOP",
       "name": "PetalburgBikeShop_Layout",
-      "width": 12,
-      "height": 9,
+      "width": 19,
+      "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/PetalburgBikeShop/border.bin",
@@ -4714,8 +4714,8 @@
     {
       "id": "LAYOUT_PETALBURG_LANDFILL_CONTAINER",
       "name": "PetalburgLandfillContainer_Layout",
-      "width": 5,
-      "height": 5,
+      "width": 6,
+      "height": 6,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_InsideOfTruck",
       "border_filepath": "data/layouts/PetalburgLandfillContainer/border.bin",
