@@ -66,7 +66,7 @@
       "name": "MossdeepCity_Layout",
       "width": 80,
       "height": 40,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/MossdeepCity/border.bin",
       "blockdata_filepath": "data/layouts/MossdeepCity/map.bin"
@@ -615,7 +615,7 @@
       "id": "LAYOUT_POKEMON_CENTER_2F",
       "name": "PokemonCenter_2F_Layout",
       "width": 14,
-      "height": 10,
+      "height": 7,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/PokemonCenter_2F/border.bin",
@@ -4504,9 +4504,9 @@
     {
       "id": "LAYOUT_ROUTE102RALTS_SANCTUARY",
       "name": "Route102RaltsSanctuary_Layout",
-      "width": 10,
-      "height": 10,
-      "primary_tileset": "gTileset_General",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route102RaltsSanctuary/border.bin",
       "blockdata_filepath": "data/layouts/Route102RaltsSanctuary/map.bin"
@@ -4604,7 +4604,7 @@
     {
       "id": "LAYOUT_BALSAM_OFFICE",
       "name": "BalsamOffice_Layout",
-      "width": 10,
+      "width": 8,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
@@ -4635,7 +4635,7 @@
       "id": "LAYOUT_PETALBURG_DOJO",
       "name": "Petalburg_Dojo_Layout",
       "width": 9,
-      "height": 8,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/Petalburg_Dojo/border.bin",
@@ -4684,7 +4684,7 @@
     {
       "id": "LAYOUT_PETALBURG_BIKE_SHOP",
       "name": "PetalburgBikeShop_Layout",
-      "width": 19,
+      "width": 17,
       "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BikeShop",
@@ -4720,6 +4720,26 @@
       "secondary_tileset": "gTileset_InsideOfTruck",
       "border_filepath": "data/layouts/PetalburgLandfillContainer/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgLandfillContainer/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKE_INN_ROOM1",
+      "name": "PokeInnRoom1_Layout",
+      "width": 6,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PokeInnRoom1/border.bin",
+      "blockdata_filepath": "data/layouts/PokeInnRoom1/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKE_INN_ROOM2",
+      "name": "PokeInnRoom2_Layout",
+      "width": 6,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PokeInnRoom2/border.bin",
+      "blockdata_filepath": "data/layouts/PokeInnRoom2/map.bin"
     }
   ]
 }
