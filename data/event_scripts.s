@@ -1224,3 +1224,23 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PokeInnRoom1/scripts.inc"
 
 	.include "data/maps/PokeInnRoom2/scripts.inc"
+
+	.include "data/maps/Route104ShipUnderwater/scripts.inc"
+
+	.include "data/maps/Route104ShipRooms/scripts.inc"
+
+	.include "data/maps/PetalburgParkCustoms/scripts.inc"
+
+	.include "data/maps/PetalburgParkCustomsUpper/scripts.inc"
+
+	.include "data/maps/PetalburgParkCustomsRoof/scripts.inc"
+
+	.include "data/maps/ExclusionZoneTunnel/scripts.inc"
+
+	.include "data/maps/DevonVirtualWorld1/scripts.inc"
+
+	.include "data/maps/DevonVirtualWorld2/scripts.inc"
+
+	.include "data/maps/LittlerootLabTunnel2/scripts.inc"
+
+	.include "data/maps/Route103DevonLabUpper/scripts.inc"
