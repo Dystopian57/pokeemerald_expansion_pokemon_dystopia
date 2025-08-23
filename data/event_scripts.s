@@ -1244,3 +1244,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootLabTunnel2/scripts.inc"
 
 	.include "data/maps/Route103DevonLabUpper/scripts.inc"
+
+	.include "data/maps/Route102Shed/scripts.inc"
