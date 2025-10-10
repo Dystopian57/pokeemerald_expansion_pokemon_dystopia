@@ -188,14 +188,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
         .itemRare = ITEM_LIGHT_BALL,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = PERCENT_FEMALE(0),
         .eggCycles = 10,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
         .abilities = { ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
         .bodyColor = BODY_COLOR_YELLOW,
-        .speciesName = _("Pikachu (S)"),
+        .speciesName = _("Purachu"),
         .cryId = CRY_PIKACHU,
         .natDexNum = NATIONAL_DEX_PIKACHU_SAFE,
         .categoryName = _("Mouse"),
@@ -228,41 +228,39 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .palette = gMonPalette_Pikachu_Safe,
         .shinyPalette = gMonShinyPalette_Pikachu_Safe,
         .iconSprite = gMonIcon_Pikachu_Safe,
-        .iconPalIndex = 2,
+        .iconPalIndex = 1,
 #if P_GENDER_DIFFERENCES
         .frontPicFemale = gMonFrontPic_Pikachu_Safe,
         .frontPicSizeFemale = MON_COORDS_SIZE(48, 48),
-        .backPicFemale = gMonBackPic_PikachuF,
+        .backPicFemale = gMonBackPic_Pikachu_Safe,
         .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
     #if P_CUSTOM_GENDER_DIFF_ICONS == TRUE
-        .iconSpriteFemale = gMonIcon_PikachuF,
-        .iconPalIndexFemale = 2,
+        .iconSpriteFemale = gMonIcon_Pikachu_Safe,
+        .iconPalIndexFemale = 1,
     #endif //P_CUSTOM_GENDER_DIFF_ICONS
 #endif //P_GENDER_DIFFERENCES
         SHADOW(-3, 5, SHADOW_SIZE_M)
         OVERWORLD(
-            sPicTable_Pikachu,
+            sPicTable_Pikachu_Safe,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Pikachu,
-            gShinyOverworldPalette_Pikachu
+            gOverworldPalette_Pikachu_Safe,
+            gShinyOverworldPalette_Pikachu_Safe
         )
         OVERWORLD_FEMALE(
-            sPicTable_PikachuF,
+            sPicTable_Pikachu_Safe,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following
         )
         FOOTPRINT(Pikachu)
-        .levelUpLearnset = sPikachuLevelUpLearnset,
+        .levelUpLearnset = sPikachu_SafeLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
-        .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-        .formChangeTable = sPikachuFormChangeTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_RAICHU},
-                                {EVO_NONE, 0, SPECIES_RAICHU_ALOLA}),
+        .formSpeciesIdTable = sPikachu_SafeFormSpeciesIdTable,
+        .formChangeTable = sPikachu_SafeFormChangeTable,
     },
 
     /* You may add any custom species below this point based on the following structure: */

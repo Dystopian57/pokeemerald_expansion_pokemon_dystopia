@@ -188,15 +188,7 @@ static const struct SpriteFrameImage sPicTable_Arbok[] = {
 };
 #endif //P_FAMILY_EKANS
 
-#if P_FAMILY_PIKACHU
-#if P_GEN_2_CROSS_EVOS
-static const struct SpriteFrameImage sPicTable_Pichu[] = {
-    overworld_ascending_frames(gObjectEventPic_Pichu, 4, 4),
-};
-static const struct SpriteFrameImage sPicTable_PichuSpikyEared[] = {
-    overworld_ascending_frames(gObjectEventPic_PichuSpikyEared, 4, 4),
-};
-#endif //P_GEN_2_CROSS_EVOS
+#if P_FAMILY_PIKACHU_SAFE
 static const struct SpriteFrameImage sPicTable_Pikachu[] = {
     overworld_ascending_frames(gObjectEventPic_Pikachu, 4, 4),
 };
@@ -205,6 +197,25 @@ static const struct SpriteFrameImage sPicTable_PikachuF[] = {
     overworld_ascending_frames(gObjectEventPic_PikachuF, 4, 4),
 };
 #endif //P_GENDER_DIFFERENCES
+
+#endif //P_FAMILY_PIKACHU
+
+
+//SAFE PIKACHU HERE
+
+#if P_FAMILY_PIKACHU_SAFE
+#if P_GEN_2_CROSS_EVOS
+static const struct SpriteFrameImage sPicTable_Pichu[] = {
+    overworld_ascending_frames(gObjectEventPic_Pichu, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PichuSpikyEared[] = {
+    overworld_ascending_frames(gObjectEventPic_PichuSpikyEared, 4, 4),
+};
+#endif //P_GEN_2_CROSS_EVOS
+static const struct SpriteFrameImage sPicTable_Pikachu_Safe[] = {
+    overworld_ascending_frames(gObjectEventPic_Pikachu_Safe, 4, 4),
+};
+
 #if P_COSPLAY_PIKACHU_FORMS
 /*static const struct SpriteFrameImage sPicTable_PikachuCosplay[] = {
     overworld_ascending_frames(gObjectEventPic_PikachuCosplay, 4, 4),
@@ -273,6 +284,9 @@ static const struct SpriteFrameImage sPicTable_RaichuAlola[] = {
 };
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_PIKACHU
+
+//END OF SAFE PIKACHU
+
 
 #if P_FAMILY_SANDSHREW
 static const struct SpriteFrameImage sPicTable_Sandshrew[] = {

@@ -56,6 +56,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE102",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 16,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_GREAT_CRATER_HOT_SPRINGS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

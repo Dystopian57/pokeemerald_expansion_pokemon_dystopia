@@ -26738,7 +26738,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 
 const u32 gMonFrontPic_Pikachu_Safe[] = INCBIN_U32("graphics/pokemon/pikachu_safe/anim_front.4bpp.lz");
 const u32 gMonBackPic_Pikachu_Safe[] = INCBIN_U32("graphics/pokemon/pikachu_safe/back.4bpp.lz");
-const u16    gMonPalette_Pikachu_Safe[] = INCBIN_U16("graphics/pokemon/pikachu_safe/normal.gbapal");
+const u16 gMonPalette_Pikachu_Safe[] = INCBIN_U16("graphics/pokemon/pikachu_safe/normal.gbapal");
 const u16 gMonShinyPalette_Pikachu_Safe[] = INCBIN_U16("graphics/pokemon/pikachu_safe/shiny.gbapal");
 const u8 gMonIcon_Pikachu_Safe[] = INCBIN_U8("graphics/pokemon/pikachu_safe/icon.4bpp");
 const u8 gMonFootprint_Pikachu_Safe[] = INCBIN_U8("graphics/pokemon/pikachu_safe/footprint.1bpp");
+
+const u32 gObjectEventPic_Pikachu_Safe[] = INCBIN_COMP("graphics/pokemon/pikachu_safe/overworld.4bpp");
+const u16 gOverworldPalette_Pikachu_Safe[] = INCBIN_U16("graphics/pokemon/pikachu_safe/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_Pikachu_Safe[] = INCBIN_U16("graphics/pokemon/pikachu_safe/overworld_shiny.gbapal");

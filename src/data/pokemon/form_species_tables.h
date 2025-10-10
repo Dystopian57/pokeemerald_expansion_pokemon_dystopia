@@ -2195,3 +2195,20 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+//SAFE PIKACHU HERE
+
+#if P_FAMILY_PIKACHU_SAFE
+
+
+static const u16 sPikachu_SafeFormSpeciesIdTable[] = {
+    SPECIES_PIKACHU_SAFE,
+    SPECIES_PIKACHU,
+};
+
+
+#endif //P_FAMILY_PIKACHU_SAFE
+
+//END OF SAFE PIKACHU
+
+

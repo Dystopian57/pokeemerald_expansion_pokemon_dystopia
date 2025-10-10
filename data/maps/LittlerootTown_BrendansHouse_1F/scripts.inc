@@ -44,8 +44,6 @@ LittlerootTown_BrendansHouse_1F_MapScripts::
 LittlerootTown_BrendansHouse_1F_OnLoad:
 # 23 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 13 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-# 24 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes
 # 25 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 14 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 26 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -61,15 +59,6 @@ LittlerootTown_BrendansHouse_1F_OnLoad:
 # 31 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 17 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 32 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes::
-# 33 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-# 18 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-# 34 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
-# 35 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-# 19 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-# 36 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
 # 37 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 20 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 38 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

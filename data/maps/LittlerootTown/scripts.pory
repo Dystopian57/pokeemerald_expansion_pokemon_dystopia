@@ -1917,8 +1917,6 @@ script Littleroot_Idletalk_Oldman{
 	releaseall
 }
 
-script TownPreview {mappreview}
-
 //////////////////////////////////////////////////////////////////////
 
 script LittlerootTown_Trigger_Blocknopokes{

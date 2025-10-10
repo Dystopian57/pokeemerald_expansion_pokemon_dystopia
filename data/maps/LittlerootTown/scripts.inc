@@ -3799,11 +3799,6 @@ Littleroot_Idletalk_Oldman_2:
 	goto Littleroot_Idletalk_Oldman_1
 
 
-TownPreview::
-# 1920 "data/maps/LittlerootTown/scripts.pory"
-	mappreview
-	return
-
 
 LittlerootTown_Trigger_Blocknopokes::
 # 1925 "data/maps/LittlerootTown/scripts.pory"

@@ -4,9 +4,6 @@
 const u32 gTrainerFrontPic_OrphanM[] = INCBIN_U32("graphics/trainers/front_pics/orphan_male.4bpp.lz");
 const u16 gTrainerPalette_OrphanM[] = INCBIN_U16("graphics/trainers/front_pics/orphan_male.gbapal");
 
-const u32 gTrainerFrontPic_OrphanM[] = INCBIN_U32("graphics/trainers/front_pics/orphan_male.4bpp.lz");
-const u16 gTrainerPalette_OrphanM[] = INCBIN_U16("graphics/trainers/front_pics/orphan_male.gbapal");
-
 const u32 gTrainerFrontPic_Hiker[] = INCBIN_U32("graphics/trainers/front_pics/hiker.4bpp.smol");
 const u16 gTrainerPalette_Hiker[] = INCBIN_U16("graphics/trainers/front_pics/hiker.gbapal");
 

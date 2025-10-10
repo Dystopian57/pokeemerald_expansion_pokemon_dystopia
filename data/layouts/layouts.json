@@ -56,7 +56,7 @@
       "name": "LilycoveCity_Layout",
       "width": 80,
       "height": 40,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/LilycoveCity/border.bin",
       "blockdata_filepath": "data/layouts/LilycoveCity/map.bin"
@@ -126,7 +126,7 @@
       "name": "LavaridgeTown_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/LavaridgeTown/border.bin",
       "blockdata_filepath": "data/layouts/LavaridgeTown/map.bin"
@@ -156,7 +156,7 @@
       "name": "PacifidlogTown_Layout",
       "width": 20,
       "height": 40,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/PacifidlogTown/border.bin",
       "blockdata_filepath": "data/layouts/PacifidlogTown/map.bin"
@@ -216,7 +216,7 @@
       "name": "Route106_Layout",
       "width": 80,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route106/border.bin",
       "blockdata_filepath": "data/layouts/Route106/map.bin"
@@ -276,7 +276,7 @@
       "name": "Route112_Layout",
       "width": 40,
       "height": 60,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Route112/border.bin",
       "blockdata_filepath": "data/layouts/Route112/map.bin"
@@ -316,7 +316,7 @@
       "name": "Route116_Layout",
       "width": 100,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route116/border.bin",
       "blockdata_filepath": "data/layouts/Route116/map.bin"
@@ -336,7 +336,7 @@
       "name": "Route118_Layout",
       "width": 80,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route118/border.bin",
       "blockdata_filepath": "data/layouts/Route118/map.bin"
@@ -1376,7 +1376,7 @@
       "name": "MtPyre_2F_Layout",
       "width": 13,
       "height": 13,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MtPyre_2F/border.bin",
       "blockdata_filepath": "data/layouts/MtPyre_2F/map.bin"
@@ -2386,7 +2386,7 @@
       "name": "SafariZone_North_Layout",
       "width": 40,
       "height": 40,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/SafariZone_North/border.bin",
       "blockdata_filepath": "data/layouts/SafariZone_North/map.bin"
@@ -2626,7 +2626,7 @@
       "name": "Route130_Layout",
       "width": 80,
       "height": 40,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route130/border.bin",
       "blockdata_filepath": "data/layouts/Route130/map.bin"
@@ -4415,9 +4415,9 @@
       "id": "LAYOUT_LITTLEROOT_CEMETERY",
       "name": "LittlerootCemetery_Layout",
       "width": 12,
-      "height": 14,
+      "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/LittlerootCemetery/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootCemetery/map.bin"
     },
@@ -4850,6 +4850,26 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/Route102Shed/border.bin",
       "blockdata_filepath": "data/layouts/Route102Shed/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MAUSOLEUM",
+      "name": "LittlerootMausoleum_Layout",
+      "width": 13,
+      "height": 18,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/LittlerootMausoleum/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMausoleum/map.bin"
+    },
+    {
+      "id": "LAYOUT_GREAT_CRATER_HOT_SPRINGS",
+      "name": "GreatCraterHotSprings_Layout",
+      "width": 13,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/GreatCraterHotSprings/border.bin",
+      "blockdata_filepath": "data/layouts/GreatCraterHotSprings/map.bin"
     }
   ]
 }

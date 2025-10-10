@@ -135,7 +135,9 @@
     "DevonVirtualWorld2",
     "LittlerootLabTunnel2",
     "Route103DevonLabUpper",
-    "Route102Shed"
+    "Route102Shed",
+    "LittlerootMausoleum",
+    "GreatCraterHotSprings"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

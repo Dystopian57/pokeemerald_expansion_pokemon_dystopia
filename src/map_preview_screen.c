@@ -258,12 +258,6 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .image = IMG_MONEAN_CHAMBER
     },
 
-     [MPS_LITTLEROOT_TOWN] = {
-     .mapsec = MAPSEC_LITTLEROOT_TOWN,
-     .type = MPS_TYPE_FADE_IN,
-     .flagId = MPS_FLAG_NULL,
-     .image =  IMG_ROCKET_HIDEOUT
-    },
 };
 
 static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
