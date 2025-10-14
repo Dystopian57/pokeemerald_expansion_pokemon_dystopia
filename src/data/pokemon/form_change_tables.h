@@ -1320,5 +1320,6 @@ static const struct FormChange sPikachu_SafeFormChangeTable[] =
 { };
 #endif //P_FAMILY_PIKACHU_SAFE
 
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

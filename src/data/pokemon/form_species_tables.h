@@ -2196,19 +2196,146 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_TERAPAGOS
 
-//SAFE PIKACHU HERE
-
 #if P_FAMILY_PIKACHU_SAFE
-
-
 static const u16 sPikachu_SafeFormSpeciesIdTable[] = {
     SPECIES_PIKACHU_SAFE,
     SPECIES_PIKACHU,
 };
-
-
 #endif //P_FAMILY_PIKACHU_SAFE
 
-//END OF SAFE PIKACHU
+
+#if P_FAMILY_BULBASYNTH
+static const u16 sBulbasynthFormSpeciesIdTable[] = {
+    SPECIES_BULBASYNTH,
+    SPECIES_BULBASAUR,
+};
+#endif //P_FAMILY_BULBASYNTH
+
+#if P_FAMILY_SMOTHQUIL
+static const u16 sSmothquilFormSpeciesIdTable[] = {
+    SPECIES_SMOTHQUIL,
+    SPECIES_CYNDAQUIL,
+};
+#endif //P_FAMILY_SMOTHQUIL
+
+#if P_FAMILY_WARABBIT
+static const u16 sWarabbitFormSpeciesIdTable[] = {
+    SPECIES_WARABBIT,
+};
+#endif //P_FAMILY_WARABBIT
+
+#if P_FAMILY_NINKABURI
+static const u16 sNinkaburiFormSpeciesIdTable[] = {
+    SPECIES_NINKABURI,
+    SPECIES_NINCADA
+};
+#endif //P_FAMILY_NINKABURI
+
+#if P_FAMILY_CHEERORB
+static const u16 sCheerorbFormSpeciesIdTable[] = {
+    SPECIES_CHEERORB,
+    SPECIES_VOLTORB,
+};
+#endif //P_FAMILY_CHEERORB
+
+#if P_FAMILY_POOCHAIN
+static const u16 sPoochainFormSpeciesIdTable[] = {
+    SPECIES_POOCHAIN,
+    SPECIES_POOCHYENA
+};
+#endif //P_FAMILY_POOCHAIN
+
+#if P_FAMILY_SHIITAKO
+static const u16 sShiitakoFormSpeciesIdTable[] = {
+    SPECIES_SHIITAKO,
+    SPECIES_SHROOMISH,
+};
+#endif //P_FAMILY_SHIITAKO
+
+#if P_FAMILY_LOADTAD
+static const u16 sLotadFormSpeciesIdTable[] = {
+    SPECIES_LOADTAD,
+    SPECIES_LOTAD,
+};
+#endif //P_FAMILY_LOADTAD
+
+#if P_FAMILY_MANCHINE
+static const u16 sManchineFormSpeciesIdTable[] = {
+    SPECIES_MANCHINE,
+    SPECIES_MACHOP,
+};
+#endif //P_FAMILY_MANCHINE
+
+#if P_FAMILY_HELIPIP
+static const u16 sHelipipFormSpeciesIdTable[] = {
+    SPECIES_HELIPIP,
+    SPECIES_HOPPIP,
+};
+#endif //P_FAMILY_HELIPIP
+
+#if P_FAMILY_MUDDER
+static const u16 sMudderFormSpeciesIdTable[] = {
+    SPECIES_MUDDER,
+    SPECIES_GRIMER,
+};
+#endif //P_FAMILY_MUDDER
+
+#if P_FAMILY_FOOMING
+static const u16 sFoomingFormSpeciesIdTable[] = {
+    SPECIES_FOOMING,
+    SPECIES_KOFFING,
+};
+#endif //P_FAMILY_FOOMING
+
+#if P_FAMILY_GEOSLUG
+static const u16 sGeoslugFormSpeciesIdTable[] = {
+    SPECIES_GEOSLUG,
+    SPECIES_SLUGMA,
+};
+#endif //P_FAMILY_GEOSLUG
+
+#if P_FAMILY_TUMBELA
+static const u16 sTumbelaFormSpeciesIdTable[] = {
+    SPECIES_TUMBELA,
+    SPECIES_TANGELA,
+};
+#endif //P_FAMILY_TUMBELA
+
+#if P_FAMILY_DOUNO
+static const u16 sDounoFormSpeciesIdTable[] = {
+    SPECIES_DOUNO,
+    SPECIES_DODUO,
+};
+#endif //P_FAMILY_DOUNO
+
+#if P_FAMILY_PANSELIA
+static const u16 sPanseliaFormSpeciesIdTable[] = {
+    SPECIES_PANSELIA,
+    SPECIES_ROSELIA,
+};
+#endif //P_FAMILY_PANSELIA
+
+#if P_FAMILY_VERIWOODO
+static const u16 sVeriwoodoFormSpeciesIdTable[] = {
+    SPECIES_VERIWOODO,
+    SPECIES_SUDOWOODO,
+};
+#endif //P_FAMILY_VERIWOODO
+
+#if P_FAMILY_NIDORAN_I
+static const u16 sNidoran_IFormSpeciesIdTable[] = {
+    SPECIES_NIDORAN_I,
+    SPECIES_NIDORAN_F,
+    SPECIES_NIDORAN_M,
+};
+#endif //P_FAMILY_GEOSLUG
+
+#if P_FAMILY_GUMMIN
+static const u16 sGumminFormSpeciesIdTable[] = {
+    SPECIES_GUMMIN,
+    SPECIES_GULPIN,
+};
+#endif //P_FAMILY_GUMMIN
+
 
 

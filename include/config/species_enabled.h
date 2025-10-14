@@ -604,5 +604,26 @@
 #define P_FAMILY_TERAPAGOS               P_GEN_9_POKEMON
 #define P_FAMILY_PECHARUNT               P_GEN_9_POKEMON
 #define P_FAMILY_PIKACHU_SAFE            P_GEN_9_POKEMON
+#define P_FAMILY_BULBASYNTH              P_GEN_9_POKEMON
+#define P_FAMILY_SMOTHQUIL               P_GEN_9_POKEMON
+#define P_FAMILY_WARABBIT                P_GEN_9_POKEMON
+#define P_FAMILY_NINKABURI               P_GEN_9_POKEMON
+#define P_FAMILY_CHEERORB                P_GEN_9_POKEMON
+#define P_FAMILY_POOCHAIN                P_GEN_9_POKEMON
+#define P_FAMILY_SHIITAKO                P_GEN_9_POKEMON
+#define P_FAMILY_LOADTAD                 P_GEN_9_POKEMON
+#define P_FAMILY_MANCHINE                P_GEN_9_POKEMON
+#define P_FAMILY_HELIPIP                 P_GEN_9_POKEMON
+#define P_FAMILY_MUDDER                  P_GEN_9_POKEMON
+#define P_FAMILY_FOOMING                 P_GEN_9_POKEMON
+#define P_FAMILY_GEOSLUG                 P_GEN_9_POKEMON
+
+#define P_FAMILY_TUMBELA                 P_GEN_9_POKEMON
+#define P_FAMILY_DOUNO                   P_GEN_9_POKEMON
+#define P_FAMILY_PANSELIA                P_GEN_9_POKEMON
+#define P_FAMILY_VERIWOODO               P_GEN_9_POKEMON
+#define P_FAMILY_NIDORAN_I               P_GEN_9_POKEMON
+#define P_FAMILY_GUMMIN                  P_GEN_9_POKEMON
+
 
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H

@@ -1638,8 +1638,27 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 #define SPECIES_PIKACHU_SAFE                            1524
+#define SPECIES_BULBASYNTH                              1525
+#define SPECIES_SMOTHQUIL                               1526
+#define SPECIES_WARABBIT                                1527
+#define SPECIES_NINKABURI                               1528
+#define SPECIES_CHEERORB                                1529
+#define SPECIES_POOCHAIN                                1530
+#define SPECIES_SHIITAKO                                1531
+#define SPECIES_LOADTAD                                 1532
+#define SPECIES_MANCHINE                                1533
+#define SPECIES_HELIPIP                                 1534
+#define SPECIES_MUDDER                                  1535
+#define SPECIES_FOOMING                                 1536
+#define SPECIES_GEOSLUG                                 1537
+#define SPECIES_TUMBELA                                 1538
+#define SPECIES_DOUNO                                   1539
+#define SPECIES_PANSELIA                                1540
+#define SPECIES_VERIWOODO                               1541
+#define SPECIES_NIDORAN_I                               1542
+#define SPECIES_GUMMIN                                  1543
 
-#define SPECIES_EGG                                     (SPECIES_PIKACHU_SAFE + 1)
+#define SPECIES_EGG                                     (SPECIES_GUMMIN + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
