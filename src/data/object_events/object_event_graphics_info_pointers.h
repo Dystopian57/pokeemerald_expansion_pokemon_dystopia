@@ -236,6 +236,26 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphir
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireMay;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfBalsam;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DevonGruntM;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_camelia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_clerkf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cosplayerf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cosplayerm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonadminf;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonadminm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devongruntf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonresearcherf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonresearcherm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hermitm;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_medicm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mercenarym;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_netrunnerf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_netrunnerm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_orphangirlf;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -492,6 +512,25 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
+    [OBJ_EVENT_GFX_PROF_BALSAM] =              &gObjectEventGraphicsInfo_ProfBalsam,
+    [OBJ_EVENT_GFX_DEVONGRUNTM] =              &gObjectEventGraphicsInfo_DevonGruntM,
+    [OBJ_EVENT_GFX_CAMELIA] =              &gObjectEventGraphicsInfo_camelia,
+    [OBJ_EVENT_GFX_CLERKF] =              &gObjectEventGraphicsInfo_clerkf,
+    [OBJ_EVENT_GFX_COSPLAYERF] =              &gObjectEventGraphicsInfo_cosplayerf,
+    [OBJ_EVENT_GFX_COSPLAYERM] =              &gObjectEventGraphicsInfo_cosplayerm,
+    [OBJ_EVENT_GFX_DEVONADMINF] =              &gObjectEventGraphicsInfo_devonadminf,
+    [OBJ_EVENT_GFX_DEVONADMINM] =              &gObjectEventGraphicsInfo_devonadminm,
+    [OBJ_EVENT_GFX_DEVONGRUNTF] =              &gObjectEventGraphicsInfo_devongruntf,
+    [OBJ_EVENT_GFX_DEVONRESEARCHERF] =              &gObjectEventGraphicsInfo_devonresearcherf,
+    [OBJ_EVENT_GFX_DEVONRESEARCHERM] =              &gObjectEventGraphicsInfo_devonresearcherm,
+    [OBJ_EVENT_GFX_HERMITM] =              &gObjectEventGraphicsInfo_hermitm,
+
+    [OBJ_EVENT_GFX_MEDICM] =              &gObjectEventGraphicsInfo_medicm,
+    [OBJ_EVENT_GFX_MERCENARYM] =              &gObjectEventGraphicsInfo_mercenarym,
+    [OBJ_EVENT_GFX_NETRUNNERF] =              &gObjectEventGraphicsInfo_netrunnerf,
+    [OBJ_EVENT_GFX_NETRUNNERM] =              &gObjectEventGraphicsInfo_netrunnerm,
+    [OBJ_EVENT_GFX_ORPHANGIRLF] =              &gObjectEventGraphicsInfo_orphangirlf,
+
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

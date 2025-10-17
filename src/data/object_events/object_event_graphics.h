@@ -123,6 +123,26 @@ const u32 gObjectEventPic_Man4[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Man5[] = INCBIN_U32("graphics/object_events/pics/people/man_5.4bpp");
 const u32 gObjectEventPic_Nurse[] = INCBIN_U32("graphics/object_events/pics/people/nurse.4bpp");
 const u32 gObjectEventPic_ProfBirch[] = INCBIN_U32("graphics/object_events/pics/people/prof_birch.4bpp");
+const u32 gObjectEventPic_ProfBalsam[] = INCBIN_U32("graphics/object_events/pics/people/prof_balsam.4bpp");
+const u32 gObjectEventPic_DevonGruntM[] = INCBIN_U32("graphics/object_events/pics/people/devon_grunt_m.4bpp");
+const u32 gObjectEventPic_camelia[] = INCBIN_U32("graphics/object_events/pics/people/camelia.4bpp");
+const u32 gObjectEventPic_clerkf[] = INCBIN_U32("graphics/object_events/pics/people/clerkf.4bpp");
+const u32 gObjectEventPic_cosplayerf[] = INCBIN_U32("graphics/object_events/pics/people/cosplayerf.4bpp");
+const u32 gObjectEventPic_cosplayerm[] = INCBIN_U32("graphics/object_events/pics/people/cosplayerm.4bpp");
+const u32 gObjectEventPic_devonadminf[] = INCBIN_U32("graphics/object_events/pics/people/devonadminf.4bpp");
+
+const u32 gObjectEventPic_devonadminm[] = INCBIN_U32("graphics/object_events/pics/people/devonadminm.4bpp");
+const u32 gObjectEventPic_devongruntf[] = INCBIN_U32("graphics/object_events/pics/people/devongruntf.4bpp");
+const u32 gObjectEventPic_devonresearcherf[] = INCBIN_U32("graphics/object_events/pics/people/devonresearcherf.4bpp");
+const u32 gObjectEventPic_devonresearcherm[] = INCBIN_U32("graphics/object_events/pics/people/devonresearcherm.4bpp");
+const u32 gObjectEventPic_hermitm[] = INCBIN_U32("graphics/object_events/pics/people/hermitm.4bpp");
+
+const u32 gObjectEventPic_medicm[] = INCBIN_U32("graphics/object_events/pics/people/medicm.4bpp");
+const u32 gObjectEventPic_mercenarym[] = INCBIN_U32("graphics/object_events/pics/people/mercenarym.4bpp");
+const u32 gObjectEventPic_netrunnerf[] = INCBIN_U32("graphics/object_events/pics/people/netrunnerf.4bpp");
+const u32 gObjectEventPic_netrunnerm[] = INCBIN_U32("graphics/object_events/pics/people/netrunnerm.4bpp");
+const u32 gObjectEventPic_orphangirlf[] = INCBIN_U32("graphics/object_events/pics/people/orphangirlf.4bpp");
+
 const u32 gObjectEventPic_ReporterM[] = INCBIN_U32("graphics/object_events/pics/people/reporter_m.4bpp");
 const u32 gObjectEventPic_ReporterF[] = INCBIN_U32("graphics/object_events/pics/people/reporter_f.4bpp");
 const u32 gObjectEventPic_MauvilleOldMan1[] = INCBIN_U32("graphics/object_events/pics/people/mauville_old_man_1.4bpp");

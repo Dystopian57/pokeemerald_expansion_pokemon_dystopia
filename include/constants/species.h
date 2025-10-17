@@ -1657,8 +1657,20 @@
 #define SPECIES_VERIWOODO                               1541
 #define SPECIES_NIDORAN_I                               1542
 #define SPECIES_GUMMIN                                  1543
+#define SPECIES_TRASHEAL                                1544
+#define SPECIES_GRIMANE                                 1545
+#define SPECIES_KANGASKID                               1546
+#define SPECIES_TAMARAKKU                               1547
+#define SPECIES_GACHAPOD                                1548
+#define SPECIES_KAMOKEN                                 1549
+#define SPECIES_WARTZ                                   1550
+#define SPECIES_DELIBIN                                 1551
+#define SPECIES_ROTOM_MONITOR                           1552
+#define SPECIES_ROLLOON                                 1553
+#define SPECIES_MIMIYURUI                               1554
 
-#define SPECIES_EGG                                     (SPECIES_GUMMIN + 1)
+
+#define SPECIES_EGG                                     (SPECIES_MIMIYURUI + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

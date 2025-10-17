@@ -2024,6 +2024,8 @@ static inline bool32 DoesBattlerNegateDamage(u32 battler)
     return FALSE;
 }
 
+
+
 static u32 UpdateEffectivenessResultFlagsForDoubleSpreadMoves(u32 resultFlags)
 {
     // Only play the "best" sound

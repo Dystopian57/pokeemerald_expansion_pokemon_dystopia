@@ -1882,26 +1882,60 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 //PHASES
 //0 START
 //1 PROF WANTS YOU TO CHOOSE
-//2 POKE GOT, GO CHECK ON RIVAL
+//2 OBTAINED POKEMON, GO CHECK ON RIVAL
 //3 CAN LEAVE LITTLEROOT
 
 
 
 //TESTS
 
-script Decotest {
-	lockall
-	special (ShowSecretBaseDecorationMenu)
-	releaseall
-}
 script followertest {
 	lockall
-	msgbox ("I shall follow you")
+	msgbox ("I shall follow you with pleasure.")
 	waitmessage
-	setfollowernpc (LOCALID_HIKER_LITTLEROOT, FNPC_ALL, 0, 0)
+	setfollowernpc (LOCALID_FOLLOWER1, FNPC_ALL, 0, 0)
 	releaseall
 }
 
+script followertest1 {
+	lockall
+	msgbox ("I shall follow you with pleasure.")
+	waitmessage
+	setfollowernpc (LOCALID_FOLLOWER1, FNPC_ALL, 0, 0)
+	releaseall
+}
+
+script followertest2 {
+	lockall
+	msgbox ("I shall follow you with pleasure.")
+	waitmessage
+	setfollowernpc (LOCALID_FOLLOWER2, FNPC_ALL, 0, 0)
+	releaseall
+}
+
+script followertest3 {
+	lockall
+	msgbox ("I shall follow you with pleasure.")
+	waitmessage
+	setfollowernpc (LOCALID_FOLLOWER3, FNPC_ALL, 0, 0)
+	releaseall
+}
+
+script followertest4 {
+	lockall
+	msgbox ("I shall follow you with pleasure.")
+	waitmessage
+	setfollowernpc (LOCALID_FOLLOWER4, FNPC_ALL, 0, 0)
+	releaseall
+}
+
+script followertest5 {
+	lockall
+	msgbox ("I shall follow you with pleasure.")
+	waitmessage
+	setfollowernpc (LOCALID_FOLLOWER5, FNPC_ALL, 0, 0)
+	releaseall
+}
 
 //////////////////////////////////////////////////////////////////////
 

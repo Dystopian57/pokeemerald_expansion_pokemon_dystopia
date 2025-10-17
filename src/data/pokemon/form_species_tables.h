@@ -2337,5 +2337,80 @@ static const u16 sGumminFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_GUMMIN
 
+#if P_FAMILY_TRASHEAL
+static const u16 sTrashealFormSpeciesIdTable[] = {
+    SPECIES_TRASHEAL,
+    SPECIES_TRUBBISH,
+};
+#endif //P_FAMILY_TRASHEAL
+
+#if P_FAMILY_GRIMANE
+static const u16 sGrimaneFormSpeciesIdTable[] = {
+    SPECIES_GRIMANE,
+    SPECIES_MAWILE,
+};
+#endif //P_FAMILY_GRIMANE
+
+#if P_FAMILY_KANGASKID
+static const u16 sKangaskidFormSpeciesIdTable[] = {
+    SPECIES_KANGASKID,
+    SPECIES_KANGASKHAN,
+};
+#endif //P_FAMILY_KANGASKID
+
+#if P_FAMILY_TAMARAKKU
+static const u16 sTamarakkuFormSpeciesIdTable[] = {
+    SPECIES_TAMARAKKU,
+    SPECIES_TOGEPI,
+};
+#endif //P_FAMILY_TAMARAKKU
+
+#if P_FAMILY_GACHAPOD
+static const u16 sGachapodFormSpeciesIdTable[] = {
+    SPECIES_GACHAPOD,
+    SPECIES_DITTO,
+};
+#endif //P_FAMILY_GACHAPOD
+
+#if P_FAMILY_KAMOKEN
+static const u16 sKamokenFormSpeciesIdTable[] = {
+    SPECIES_KAMOKEN,
+    SPECIES_FARFETCHD,
+};
+#endif //P_FAMILY_KAMOKEN
+
+#if P_FAMILY_WARTZ
+static const u16 sWartzFormSpeciesIdTable[] = {
+    SPECIES_WARTZ,
+    SPECIES_RALTS,
+};
+#endif //P_FAMILY_WARTZ
+
+#if P_FAMILY_DELIBIN
+static const u16 sDelibirdFormSpeciesIdTable[] = {
+    SPECIES_DELIBIN,
+    SPECIES_DELIBIRD,
+};
+#endif //P_FAMILY_DELIBIN
+
+#if P_FAMILY_ROTOM_MONITOR
+static const u16 sRotom_MFormSpeciesIdTable[] = {
+    SPECIES_ROTOM_MONITOR,
+};
+#endif //P_FAMILY_ROTOM_MONITOR
+
+#if P_FAMILY_ROLLOON
+static const u16 sDrifloonFormSpeciesIdTable[] = {
+    SPECIES_ROLLOON,
+    SPECIES_DRIFLOON,
+};
+#endif //P_FAMILY_ROLLOON
+
+#if P_FAMILY_MIMIYURUI
+static const u16 sMimiyuruiFormSpeciesIdTable[] = {
+    SPECIES_MIMIYURUI,
+};
+#endif //P_FAMILY_MIMIYURUI
+
 
 
