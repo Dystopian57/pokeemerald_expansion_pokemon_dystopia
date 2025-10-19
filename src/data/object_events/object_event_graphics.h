@@ -130,18 +130,37 @@ const u32 gObjectEventPic_clerkf[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_cosplayerf[] = INCBIN_U32("graphics/object_events/pics/people/cosplayerf.4bpp");
 const u32 gObjectEventPic_cosplayerm[] = INCBIN_U32("graphics/object_events/pics/people/cosplayerm.4bpp");
 const u32 gObjectEventPic_devonadminf[] = INCBIN_U32("graphics/object_events/pics/people/devonadminf.4bpp");
-
 const u32 gObjectEventPic_devonadminm[] = INCBIN_U32("graphics/object_events/pics/people/devonadminm.4bpp");
 const u32 gObjectEventPic_devongruntf[] = INCBIN_U32("graphics/object_events/pics/people/devongruntf.4bpp");
 const u32 gObjectEventPic_devonresearcherf[] = INCBIN_U32("graphics/object_events/pics/people/devonresearcherf.4bpp");
 const u32 gObjectEventPic_devonresearcherm[] = INCBIN_U32("graphics/object_events/pics/people/devonresearcherm.4bpp");
 const u32 gObjectEventPic_hermitm[] = INCBIN_U32("graphics/object_events/pics/people/hermitm.4bpp");
-
 const u32 gObjectEventPic_medicm[] = INCBIN_U32("graphics/object_events/pics/people/medicm.4bpp");
 const u32 gObjectEventPic_mercenarym[] = INCBIN_U32("graphics/object_events/pics/people/mercenarym.4bpp");
 const u32 gObjectEventPic_netrunnerf[] = INCBIN_U32("graphics/object_events/pics/people/netrunnerf.4bpp");
 const u32 gObjectEventPic_netrunnerm[] = INCBIN_U32("graphics/object_events/pics/people/netrunnerm.4bpp");
 const u32 gObjectEventPic_orphangirlf[] = INCBIN_U32("graphics/object_events/pics/people/orphangirlf.4bpp");
+const u32 gObjectEventPic_punkf[] = INCBIN_U32("graphics/object_events/pics/people/punkf.4bpp");
+const u32 gObjectEventPic_punkm[] = INCBIN_U32("graphics/object_events/pics/people/punkm.4bpp");
+const u32 gObjectEventPic_rebeladminf[] = INCBIN_U32("graphics/object_events/pics/people/rebeladminf.4bpp");
+const u32 gObjectEventPic_rebeladminm[] = INCBIN_U32("graphics/object_events/pics/people/rebeladminm.4bpp");
+const u32 gObjectEventPic_rebelgruntf[] = INCBIN_U32("graphics/object_events/pics/people/rebelgruntf.4bpp");
+const u32 gObjectEventPic_rebelgruntm[] = INCBIN_U32("graphics/object_events/pics/people/rebelgruntm.4bpp");
+const u32 gObjectEventPic_roxannedevon[] = INCBIN_U32("graphics/object_events/pics/people/roxannedevon.4bpp");
+const u32 gObjectEventPic_scavengerf[] = INCBIN_U32("graphics/object_events/pics/people/scavengerf.4bpp");
+const u32 gObjectEventPic_scavengerm[] = INCBIN_U32("graphics/object_events/pics/people/scavengerm.4bpp");
+const u32 gObjectEventPic_sharpy[] = INCBIN_U32("graphics/object_events/pics/people/sharpy.4bpp");
+
+const u32 gObjectEventPic_touristm[] = INCBIN_U32("graphics/object_events/pics/people/touristm.4bpp");
+const u32 gObjectEventPic_veteranm[] = INCBIN_U32("graphics/object_events/pics/people/veteranm.4bpp");
+const u32 gObjectEventPic_warcameramanm[] = INCBIN_U32("graphics/object_events/pics/people/warcameramanm.4bpp");
+const u32 gObjectEventPic_warreporterf[] = INCBIN_U32("graphics/object_events/pics/people/warreporterf.4bpp");
+
+const u32 gObjectEventPic_sidneyrebel[] = INCBIN_U32("graphics/object_events/pics/people/sidneyrebel.4bpp");
+const u32 gObjectEventPic_technicianf[] = INCBIN_U32("graphics/object_events/pics/people/technicianf.4bpp");
+const u32 gObjectEventPic_technicianm[] = INCBIN_U32("graphics/object_events/pics/people/technicianm.4bpp");
+const u32 gObjectEventPic_theoristm[] = INCBIN_U32("graphics/object_events/pics/people/theoristm.4bpp");
+const u32 gObjectEventPic_touristf[] = INCBIN_U32("graphics/object_events/pics/people/touristf.4bpp");
 
 const u32 gObjectEventPic_ReporterM[] = INCBIN_U32("graphics/object_events/pics/people/reporter_m.4bpp");
 const u32 gObjectEventPic_ReporterF[] = INCBIN_U32("graphics/object_events/pics/people/reporter_f.4bpp");

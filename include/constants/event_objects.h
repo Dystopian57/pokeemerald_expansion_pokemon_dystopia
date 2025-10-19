@@ -258,17 +258,36 @@
 #define OBJ_EVENT_GFX_DEVONRESEARCHERF           251
 #define OBJ_EVENT_GFX_DEVONRESEARCHERM           252
 #define OBJ_EVENT_GFX_HERMITM                    253
+#define OBJ_EVENT_GFX_MEDICM                     254
+#define OBJ_EVENT_GFX_MERCENARYM                 255
+#define OBJ_EVENT_GFX_NETRUNNERF                 256
+#define OBJ_EVENT_GFX_NETRUNNERM                 257
+#define OBJ_EVENT_GFX_ORPHANGIRLF                258
+#define OBJ_EVENT_GFX_PUNKF                      259
+#define OBJ_EVENT_GFX_PUNKM                      260
+#define OBJ_EVENT_GFX_REBELADMINF                261
+#define OBJ_EVENT_GFX_REBELADMINM                262
+#define OBJ_EVENT_GFX_REBELGRUNTF                263
+#define OBJ_EVENT_GFX_REBELGRUNTM                264
+#define OBJ_EVENT_GFX_ROXANNEDEVON               265
+#define OBJ_EVENT_GFX_SCAVENGERF                 266
+#define OBJ_EVENT_GFX_SCAVENGERM                 267
+#define OBJ_EVENT_GFX_SHARPY                     268
+#define OBJ_EVENT_GFX_SIDNEYREBEL                269
+#define OBJ_EVENT_GFX_TECHNICIANF                270
+#define OBJ_EVENT_GFX_TECHNICIANM                271
+#define OBJ_EVENT_GFX_THEORISTM                  272
+#define OBJ_EVENT_GFX_TOURISTF                   273
 
-#define OBJ_EVENT_GFX_MEDICM               254
-#define OBJ_EVENT_GFX_MERCENARYM                255
-#define OBJ_EVENT_GFX_NETRUNNERF           256
-#define OBJ_EVENT_GFX_NETRUNNERM           257
-#define OBJ_EVENT_GFX_ORPHANGIRLF                    258
+#define OBJ_EVENT_GFX_TOURISTM                   274
+#define OBJ_EVENT_GFX_VETERANM                   275
+#define OBJ_EVENT_GFX_WARCAMERAMANM              276
+#define OBJ_EVENT_GFX_WARREPORTERF               277
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        259
+#define NUM_OBJ_EVENT_GFX                        278
 
 
 // These are dynamic object gfx ids.

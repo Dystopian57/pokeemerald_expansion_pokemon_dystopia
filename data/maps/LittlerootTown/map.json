@@ -118,7 +118,7 @@
     },
     {
       "local_id": "LOCALID_FOLLOWER1",
-      "graphics_id": "OBJ_EVENT_GFX_MEDICM",
+      "graphics_id": "OBJ_EVENT_GFX_TOURISTM",
       "x": 7,
       "y": 8,
       "elevation": 0,
@@ -132,7 +132,7 @@
     },
     {
       "local_id": "LOCALID_FOLLOWER2",
-      "graphics_id": "OBJ_EVENT_GFX_MERCENARYM",
+      "graphics_id": "OBJ_EVENT_GFX_VETERANM",
       "x": 8,
       "y": 8,
       "elevation": 0,
@@ -146,7 +146,7 @@
     },
     {
       "local_id": "LOCALID_FOLLOWER4",
-      "graphics_id": "OBJ_EVENT_GFX_NETRUNNERM",
+      "graphics_id": "OBJ_EVENT_GFX_WARREPORTERF",
       "x": 10,
       "y": 8,
       "elevation": 0,
@@ -160,7 +160,7 @@
     },
     {
       "local_id": "LOCALID_FOLLOWER3",
-      "graphics_id": "OBJ_EVENT_GFX_NETRUNNERF",
+      "graphics_id": "OBJ_EVENT_GFX_WARCAMERAMANM",
       "x": 9,
       "y": 8,
       "elevation": 0,
@@ -174,7 +174,7 @@
     },
     {
       "local_id": "LOCALID_FOLLOWER5",
-      "graphics_id": "OBJ_EVENT_GFX_ORPHANGIRLF",
+      "graphics_id": "OBJ_EVENT_GFX_TOURISTF",
       "x": 11,
       "y": 8,
       "elevation": 0,

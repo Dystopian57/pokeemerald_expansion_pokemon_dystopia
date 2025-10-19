@@ -238,24 +238,41 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfBalsam;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DevonGruntM;
-
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_camelia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_clerkf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cosplayerf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cosplayerm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonadminf;
-
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonadminm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devongruntf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonresearcherf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonresearcherm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hermitm;
-
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_medicm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mercenarym;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_netrunnerf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_netrunnerm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_orphangirlf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_punkf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_punkm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebeladminf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebeladminm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelgruntf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelgruntm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_roxannedevon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_scavengerf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_scavengerm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sharpy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sidneyrebel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_technicianf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_technicianm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_theoristm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_touristf;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_touristm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_veteranm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_warcameramanm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_warreporterf;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -514,22 +531,41 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_PROF_BALSAM] =              &gObjectEventGraphicsInfo_ProfBalsam,
     [OBJ_EVENT_GFX_DEVONGRUNTM] =              &gObjectEventGraphicsInfo_DevonGruntM,
-    [OBJ_EVENT_GFX_CAMELIA] =              &gObjectEventGraphicsInfo_camelia,
-    [OBJ_EVENT_GFX_CLERKF] =              &gObjectEventGraphicsInfo_clerkf,
-    [OBJ_EVENT_GFX_COSPLAYERF] =              &gObjectEventGraphicsInfo_cosplayerf,
-    [OBJ_EVENT_GFX_COSPLAYERM] =              &gObjectEventGraphicsInfo_cosplayerm,
+    [OBJ_EVENT_GFX_CAMELIA] =                  &gObjectEventGraphicsInfo_camelia,
+    [OBJ_EVENT_GFX_CLERKF] =                   &gObjectEventGraphicsInfo_clerkf,
+    [OBJ_EVENT_GFX_COSPLAYERF] =               &gObjectEventGraphicsInfo_cosplayerf,
+    [OBJ_EVENT_GFX_COSPLAYERM] =               &gObjectEventGraphicsInfo_cosplayerm,
     [OBJ_EVENT_GFX_DEVONADMINF] =              &gObjectEventGraphicsInfo_devonadminf,
     [OBJ_EVENT_GFX_DEVONADMINM] =              &gObjectEventGraphicsInfo_devonadminm,
     [OBJ_EVENT_GFX_DEVONGRUNTF] =              &gObjectEventGraphicsInfo_devongruntf,
-    [OBJ_EVENT_GFX_DEVONRESEARCHERF] =              &gObjectEventGraphicsInfo_devonresearcherf,
-    [OBJ_EVENT_GFX_DEVONRESEARCHERM] =              &gObjectEventGraphicsInfo_devonresearcherm,
-    [OBJ_EVENT_GFX_HERMITM] =              &gObjectEventGraphicsInfo_hermitm,
-
-    [OBJ_EVENT_GFX_MEDICM] =              &gObjectEventGraphicsInfo_medicm,
-    [OBJ_EVENT_GFX_MERCENARYM] =              &gObjectEventGraphicsInfo_mercenarym,
-    [OBJ_EVENT_GFX_NETRUNNERF] =              &gObjectEventGraphicsInfo_netrunnerf,
-    [OBJ_EVENT_GFX_NETRUNNERM] =              &gObjectEventGraphicsInfo_netrunnerm,
+    [OBJ_EVENT_GFX_DEVONRESEARCHERF] =         &gObjectEventGraphicsInfo_devonresearcherf,
+    [OBJ_EVENT_GFX_DEVONRESEARCHERM] =         &gObjectEventGraphicsInfo_devonresearcherm,
+    [OBJ_EVENT_GFX_HERMITM] =                  &gObjectEventGraphicsInfo_hermitm,
+    [OBJ_EVENT_GFX_MEDICM] =                   &gObjectEventGraphicsInfo_medicm,
+    [OBJ_EVENT_GFX_MERCENARYM] =               &gObjectEventGraphicsInfo_mercenarym,
+    [OBJ_EVENT_GFX_NETRUNNERF] =               &gObjectEventGraphicsInfo_netrunnerf,
+    [OBJ_EVENT_GFX_NETRUNNERM] =               &gObjectEventGraphicsInfo_netrunnerm,
     [OBJ_EVENT_GFX_ORPHANGIRLF] =              &gObjectEventGraphicsInfo_orphangirlf,
+    [OBJ_EVENT_GFX_PUNKF] =                    &gObjectEventGraphicsInfo_punkf,
+    [OBJ_EVENT_GFX_PUNKM] =                    &gObjectEventGraphicsInfo_punkm,
+    [OBJ_EVENT_GFX_REBELADMINF] =              &gObjectEventGraphicsInfo_rebeladminf,
+    [OBJ_EVENT_GFX_REBELADMINM] =              &gObjectEventGraphicsInfo_rebeladminm,
+    [OBJ_EVENT_GFX_REBELGRUNTF] =              &gObjectEventGraphicsInfo_rebelgruntf,
+    [OBJ_EVENT_GFX_REBELGRUNTM] =              &gObjectEventGraphicsInfo_rebelgruntm,
+    [OBJ_EVENT_GFX_ROXANNEDEVON] =             &gObjectEventGraphicsInfo_roxannedevon,
+    [OBJ_EVENT_GFX_SCAVENGERF] =               &gObjectEventGraphicsInfo_scavengerf,
+    [OBJ_EVENT_GFX_SCAVENGERM] =               &gObjectEventGraphicsInfo_scavengerm,
+    [OBJ_EVENT_GFX_SHARPY] =                   &gObjectEventGraphicsInfo_sharpy,
+    [OBJ_EVENT_GFX_SIDNEYREBEL] =              &gObjectEventGraphicsInfo_sidneyrebel,
+    [OBJ_EVENT_GFX_TECHNICIANF] =              &gObjectEventGraphicsInfo_technicianf,
+    [OBJ_EVENT_GFX_TECHNICIANM] =              &gObjectEventGraphicsInfo_technicianm,
+    [OBJ_EVENT_GFX_THEORISTM] =                &gObjectEventGraphicsInfo_theoristm,
+    [OBJ_EVENT_GFX_TOURISTF] =                 &gObjectEventGraphicsInfo_touristf,
+
+    [OBJ_EVENT_GFX_TOURISTM] =                 &gObjectEventGraphicsInfo_touristm,
+    [OBJ_EVENT_GFX_VETERANM] =                 &gObjectEventGraphicsInfo_veteranm,
+    [OBJ_EVENT_GFX_WARCAMERAMANM] =            &gObjectEventGraphicsInfo_warcameramanm,
+    [OBJ_EVENT_GFX_WARREPORTERF] =             &gObjectEventGraphicsInfo_warreporterf,
 
 };
 
