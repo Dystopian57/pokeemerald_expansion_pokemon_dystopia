@@ -17,14 +17,14 @@
   "warp_events": [
     {
       "x": 0,
-      "y": 19,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "3"
     },
     {
       "x": 0,
-      "y": 20,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "4"

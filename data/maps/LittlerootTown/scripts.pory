@@ -1889,53 +1889,13 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 //TESTS
 
-script followertest {
-	lockall
-	msgbox ("I shall follow you with pleasure.")
-	waitmessage
-	setfollowernpc (LOCALID_FOLLOWER1, FNPC_ALL, 0, 0)
-	releaseall
-}
-
-script followertest1 {
-	lockall
-	msgbox ("I shall follow you with pleasure.")
-	waitmessage
-	setfollowernpc (LOCALID_FOLLOWER1, FNPC_ALL, 0, 0)
-	releaseall
-}
-
-script followertest2 {
-	lockall
-	msgbox ("I shall follow you with pleasure.")
-	waitmessage
-	setfollowernpc (LOCALID_FOLLOWER2, FNPC_ALL, 0, 0)
-	releaseall
-}
-
-script followertest3 {
-	lockall
-	msgbox ("I shall follow you with pleasure.")
-	waitmessage
-	setfollowernpc (LOCALID_FOLLOWER3, FNPC_ALL, 0, 0)
-	releaseall
-}
-
-script followertest4 {
-	lockall
-	msgbox ("I shall follow you with pleasure.")
-	waitmessage
-	setfollowernpc (LOCALID_FOLLOWER4, FNPC_ALL, 0, 0)
-	releaseall
-}
-
-script followertest5 {
-	lockall
-	msgbox ("I shall follow you with pleasure.")
-	waitmessage
-	setfollowernpc (LOCALID_FOLLOWER5, FNPC_ALL, 0, 0)
-	releaseall
-}
+//script followertest {
+	//lockall
+	//msgbox ("I shall follow you with pleasure.")
+	//waitmessage
+	//setfollowernpc (LOCALID_FOLLOWER1, FNPC_ALL, 0, 0)
+	//releaseall
+//}
 
 //////////////////////////////////////////////////////////////////////
 

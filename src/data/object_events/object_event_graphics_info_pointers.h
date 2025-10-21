@@ -561,7 +561,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TECHNICIANM] =              &gObjectEventGraphicsInfo_technicianm,
     [OBJ_EVENT_GFX_THEORISTM] =                &gObjectEventGraphicsInfo_theoristm,
     [OBJ_EVENT_GFX_TOURISTF] =                 &gObjectEventGraphicsInfo_touristf,
-
     [OBJ_EVENT_GFX_TOURISTM] =                 &gObjectEventGraphicsInfo_touristm,
     [OBJ_EVENT_GFX_VETERANM] =                 &gObjectEventGraphicsInfo_veteranm,
     [OBJ_EVENT_GFX_WARCAMERAMANM] =            &gObjectEventGraphicsInfo_warcameramanm,
