@@ -296,7 +296,7 @@
       "name": "Route114_Layout",
       "width": 40,
       "height": 80,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/Route114/border.bin",
       "blockdata_filepath": "data/layouts/Route114/map.bin"
@@ -4864,8 +4864,8 @@
     {
       "id": "LAYOUT_GREAT_CRATER_HOT_SPRINGS",
       "name": "GreatCraterHotSprings_Layout",
-      "width": 13,
-      "height": 17,
+      "width": 15,
+      "height": 19,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/GreatCraterHotSprings/border.bin",

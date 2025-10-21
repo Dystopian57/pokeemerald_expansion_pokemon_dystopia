@@ -2,7 +2,7 @@
   "id": "MAP_OLDALE_WAREHOUSE_APPLIANCE_STORAGE",
   "name": "OldaleWarehouseApplianceStorage",
   "layout": "LAYOUT_OLDALE_WAREHOUSE_APPLIANCE_STORAGE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_SEVII_DUNGEON",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,7 +14,22 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 0,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_OLDALE_WAREHOUSE",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_OLDALE_WAREHOUSE",
+      "dest_warp_id": "5"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

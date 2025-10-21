@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_BEACH_CAVE",
   "name": "PetalburgBeachCave",
   "layout": "LAYOUT_PETALBURG_BEACH_CAVE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_B_PALACE",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -28,7 +28,22 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_BEACH",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_EXCLUSION_ZONE_TUNNEL",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

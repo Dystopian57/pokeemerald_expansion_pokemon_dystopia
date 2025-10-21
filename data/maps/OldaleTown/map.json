@@ -140,32 +140,46 @@
   ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 3,
+      "x": 4,
+      "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
+      "x": 14,
       "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_DLC",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE2",
       "dest_warp_id": "0"
     },
     {
-      "x": 5,
-      "y": 16,
+      "x": 15,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
-      "y": 6,
+      "x": 0,
+      "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_OLDALE_TOWN_MART",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE102",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE102",
+      "dest_warp_id": "3"
     },
     {
       "x": 36,
@@ -178,8 +192,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 0,
-      "y": 10,
+      "x": 1,
+      "y": 11,
       "elevation": 3,
       "var": "VAR_OLDALE_TOWN_STATE",
       "var_value": "0",
@@ -216,8 +230,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 11,
-      "y": 9,
+      "x": 10,
+      "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "OldaleTown_EventScript_TownSign"
@@ -232,8 +246,8 @@
     },
     {
       "type": "sign",
-      "x": 15,
-      "y": 6,
+      "x": 17,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -249,7 +263,7 @@
     {
       "type": "sign",
       "x": 16,
-      "y": 6,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"

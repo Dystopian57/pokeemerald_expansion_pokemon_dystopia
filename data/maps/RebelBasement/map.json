@@ -2,7 +2,7 @@
   "id": "MAP_REBEL_BASEMENT",
   "name": "RebelBasement",
   "layout": "LAYOUT_REBEL_BASEMENT",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_POKE_MANSION",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

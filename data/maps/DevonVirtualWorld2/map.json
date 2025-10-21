@@ -2,7 +2,7 @@
   "id": "MAP_DEVON_VIRTUAL_WORLD2",
   "name": "DevonVirtualWorld2",
   "layout": "LAYOUT_DEVON_VIRTUAL_WORLD2",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_ENCOUNTER_DEOXYS",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

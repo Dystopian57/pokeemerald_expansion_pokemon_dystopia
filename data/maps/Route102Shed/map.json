@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE102SHED",
   "name": "Route102Shed",
   "layout": "LAYOUT_ROUTE102SHED",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DESERT",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -28,7 +28,29 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE102",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE102",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE102RALTS_SANCTUARY",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }
