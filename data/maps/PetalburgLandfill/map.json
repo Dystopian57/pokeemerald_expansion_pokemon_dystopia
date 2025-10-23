@@ -3,10 +3,10 @@
   "name": "PetalburgLandfill",
   "layout": "LAYOUT_PETALBURG_LANDFILL",
   "music": "MUS_PETALBURG_WOODS",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_KANTO_SAFARI_ZONE",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
@@ -14,7 +14,29 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_LANDFILL_CONTAINER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 12,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "8"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

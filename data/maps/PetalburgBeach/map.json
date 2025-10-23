@@ -3,7 +3,7 @@
   "name": "PetalburgBeach",
   "layout": "LAYOUT_PETALBURG_BEACH",
   "music": "MUS_GSC_ROUTE38",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_TREASURE_BEACH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -17,7 +17,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": 26,
-      "y": 29,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 33,
-      "y": 30,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -41,7 +41,57 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 18,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 19,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 10,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_BEACH_CLINIC",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_BEACH_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_HARBOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_HARBOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_HARBOR",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

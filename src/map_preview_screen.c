@@ -101,12 +101,12 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_MT_MOON
     },
-    [MPS_DIGLETTS_CAVE] = {
-        .mapsec = MAPSEC_DIGLETTS_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_DIGLETTS_CAVE
-    },
+    //[MPS_DIGLETTS_CAVE] = {
+        //.mapsec = MAPSEC_DIGLETTS_CAVE,
+        //.type = MPS_TYPE_CAVE,
+        //.flagId = MPS_FLAG_NULL,
+        //.image = IMG_DIGLETTS_CAVE
+    //},
     [MPS_ROCK_TUNNEL] = {
         .mapsec = MAPSEC_ROCK_TUNNEL,
         .type = MPS_TYPE_CAVE,
@@ -189,7 +189,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .mapsec = MAPSEC_DOTTED_HOLE,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_DOTTED_HOLE
+        .image = IMG_MT_EMBER
     },
     [MPS_BERRY_FOREST] = {
         .mapsec = MAPSEC_BERRY_FOREST,
@@ -233,12 +233,12 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_MONEAN_CHAMBER
     },
-    [MPS_TDILFORD_CHAMBER] = {
-        .mapsec = MAPSEC_DILFORD_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
+    //[MPS_TDILFORD_CHAMBER] = {
+        //.mapsec = MAPSEC_DILFORD_CHAMBER,
+        //.type = MPS_TYPE_CAVE,
+        //.flagId = MPS_FLAG_NULL,
+        //.image = IMG_MONEAN_CHAMBER
+    //},
     [MPS_SCUFIB_CHAMBER] = {
         .mapsec = MAPSEC_SCUFIB_CHAMBER,
         .type = MPS_TYPE_CAVE,

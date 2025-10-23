@@ -3,21 +3,21 @@
   "name": "PetalburgBeachCave",
   "layout": "LAYOUT_PETALBURG_BEACH_CAVE",
   "music": "MUS_B_PALACE",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_SEAFLOOR_CAVERN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
-  "show_map_name": true,
+  "allow_running": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 8,
-      "y": 5,
+      "x": 7,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -30,15 +30,15 @@
   ],
   "warp_events": [
     {
-      "x": 8,
-      "y": 13,
+      "x": 7,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_BEACH",
-      "dest_warp_id": "2"
+      "dest_warp_id": "3"
     },
     {
-      "x": 12,
-      "y": 4,
+      "x": 11,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_EXCLUSION_ZONE_TUNNEL",
       "dest_warp_id": "1"

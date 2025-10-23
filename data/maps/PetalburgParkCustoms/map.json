@@ -3,18 +3,40 @@
   "name": "PetalburgParkCustoms",
   "layout": "LAYOUT_PETALBURG_PARK_CUSTOMS",
   "music": "MUS_LILYCOVE_MUSEUM",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_JAGGED_PASS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 7,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_PARK_CUSTOMS_UPPER",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

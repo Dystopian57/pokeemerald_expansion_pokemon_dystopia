@@ -2,19 +2,41 @@
   "id": "MAP_ROUTE104DEVON_LAB",
   "name": "Route104DevonLab",
   "layout": "LAYOUT_ROUTE104DEVON_LAB",
-  "music": "MUS_RG_POKE_MANSION",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "music": "MUS_RG_SILPH",
+  "region_map_section": "MAPSEC_SILPH_CO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 7,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 14,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE103DEVON_LAB_UPPER",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }
