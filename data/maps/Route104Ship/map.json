@@ -3,7 +3,7 @@
   "name": "Route104Ship",
   "layout": "LAYOUT_ROUTE104SHIP",
   "music": "MUS_B_PYRAMID_TOP",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_S_S_ANNE",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_INDOOR",
