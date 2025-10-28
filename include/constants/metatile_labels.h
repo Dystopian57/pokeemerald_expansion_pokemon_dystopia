@@ -395,11 +395,11 @@
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
 
 // gTileset_Petalburg
-#define METATILE_Petalburg_Door_BattleArena  0x331
-#define METATILE_Petalburg_Door_BirchsLab    0x249
-#define METATILE_Petalburg_Door_Gym          0x2AB
-#define METATILE_Petalburg_Door_Littleroot   0x248
-#define METATILE_Petalburg_Door_Oldale       0x287
+#define METATILE_Petalburg_Dojo_Door        0x331
+#define METATILE_Petalburg_Door_BirchsLab   0x249
+#define METATILE_Petalburg_Door_Gym         0x2AB
+#define METATILE_Petalburg_Door_Littleroot  0x248
+#define METATILE_Petalburg_Door_Oldale      0x287
 
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_Door                0x224
@@ -789,6 +789,7 @@
 #define METATILE_Underwater_RockWall     0x21E
 
 // Other
+#define METATILE_Dojo_Door                     0x21B
 #define METATILE_RSMossdeepGym_RedArrow_Down   0x205
 #define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
 #define METATILE_RSMossdeepGym_RedArrow_Right  0x204
