@@ -260,8 +260,8 @@
 // gTileset_InsideShip
 #define METATILE_InsideShip_DoorIndent_Locked            0x234
 #define METATILE_InsideShip_DoorIndent_Unlocked          0x21A
-#define METATILE_InsideShip_FloatingLogs_VerticalBottom  0x30B
-#define METATILE_InsideShip_FloatingLogs_VerticalTop     0x303
+#define METATILE_InsideShip_FloatingLogs_VerticalBottom  0x260
+#define METATILE_InsideShip_FloatingLogs_VerticalTop     0x258
 #define METATILE_InsideShip_IntactDoor_Bottom_Interior   0x297
 #define METATILE_InsideShip_IntactDoor_Bottom_Locked     0x233
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked   0x22B
@@ -299,7 +299,7 @@
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
 // gTileset_Mauville
-#define METATILE_Mauville_AshGrass            0x36C
+#define METATILE_Mauville_AshGrass            0x20A
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251
 #define METATILE_Mauville_Door                0x2AC
@@ -326,7 +326,7 @@
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
 
 // gTileset_MauvilleGameCorner
-#define METATILE_MauvilleGameCorner_IntactDoor_Bottom_Unlocked  0x249
+#define METATILE_MauvilleGameCorner_Door_Bathroom  0x249
 
 // gTileset_MauvilleGym
 #define METATILE_MauvilleGym_FloorTile        0x21A
@@ -399,7 +399,10 @@
 #define METATILE_Petalburg_Door_BirchsLab   0x249
 #define METATILE_Petalburg_Door_Gym         0x2AB
 #define METATILE_Petalburg_Door_Littleroot  0x248
-#define METATILE_Petalburg_Door_Oldale      0x287
+#define METATILE_Petalburg_Door_Oldale      0x3D3
+#define METATILE_Petalburg_Door_Oldale2     0x287
+#define METATILE_Petalburg_Door_Oldale3     0x3D4
+#define METATILE_Petalburg_LongGrass_Root   0x291
 
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_Door                0x224

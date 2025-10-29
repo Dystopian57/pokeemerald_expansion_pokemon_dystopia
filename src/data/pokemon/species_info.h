@@ -259,8 +259,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Pikachu)
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
-        .formSpeciesIdTable = sPikachu_SafeFormSpeciesIdTable,
-        .formChangeTable = sPikachu_SafeFormChangeTable,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
     },
 
     [SPECIES_BULBASYNTH] =
