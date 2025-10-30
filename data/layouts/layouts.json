@@ -4784,8 +4784,8 @@
     {
       "id": "LAYOUT_PETALBURG_PARK_CUSTOMS_ROOF",
       "name": "PetalburgParkCustomsRoof_Layout",
-      "width": 11,
-      "height": 12,
+      "width": 25,
+      "height": 20,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/PetalburgParkCustomsRoof/border.bin",
