@@ -357,6 +357,11 @@ const u8 DecorDesc_PIKACHU_DOLL[] = _(
         "Place it on a mat\n"
         "or a desk.");
 
+const u8 DecorDesc_PURACHU_DOLL[] = _(
+    "A PURACHU doll.\n"
+        "Place it on a mat\n"
+        "or a desk.");
+
 const u8 DecorDesc_MARILL_DOLL[] = _(
     "A MARILL doll.\n"
         "Place it on a mat\n"

@@ -123,3 +123,6 @@ const u16 gDecorIconPalette_RegirockDoll[] = INCBIN_U16("graphics/decorations/re
 
 const u32 gDecorIcon_RegisteelDoll[] = INCBIN_U32("graphics/decorations/registeel_doll.4bpp.smol");
 const u16 gDecorIconPalette_RegisteelDoll[] = INCBIN_U16("graphics/decorations/registeel_doll.gbapal");
+
+const u32 gDecorIcon_PurachuDoll[] = INCBIN_U32("graphics/decorations/purachu_doll.4bpp.smol");
+const u16 gDecorIconPalette_PurachuDoll[] = INCBIN_U16("graphics/decorations/purachu_doll.gbapal");

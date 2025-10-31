@@ -4505,8 +4505,8 @@
       "id": "LAYOUT_ROUTE102RALTS_SANCTUARY",
       "name": "Route102RaltsSanctuary_Layout",
       "width": 12,
-      "height": 12,
-      "primary_tileset": "gTileset_GeneralGreen",
+      "height": 24,
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route102RaltsSanctuary/border.bin",
       "blockdata_filepath": "data/layouts/Route102RaltsSanctuary/map.bin"
@@ -4534,9 +4534,9 @@
     {
       "id": "LAYOUT_ROUTE104SHIP",
       "name": "Route104Ship_Layout",
-      "width": 8,
-      "height": 11,
-      "primary_tileset": "gTileset_GeneralGreen",
+      "width": 20,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/Route104Ship/border.bin",
       "blockdata_filepath": "data/layouts/Route104Ship/map.bin"
@@ -4744,8 +4744,8 @@
     {
       "id": "LAYOUT_ROUTE104SHIP_UNDERWATER",
       "name": "Route104ShipUnderwater_Layout",
-      "width": 15,
-      "height": 7,
+      "width": 35,
+      "height": 16,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/Route104ShipUnderwater/border.bin",
@@ -4870,6 +4870,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/GreatCraterHotSprings/border.bin",
       "blockdata_filepath": "data/layouts/GreatCraterHotSprings/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104SHIP_OVERWATER",
+      "name": "Route104ShipOverwater_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/Route104ShipOverwater/border.bin",
+      "blockdata_filepath": "data/layouts/Route104ShipOverwater/map.bin"
     }
   ]
 }

@@ -244,6 +244,9 @@
 #define METATILE_General_YellowCaveIndent      0x1A8
 #define METATILE_General_YellowCaveOpen        0x1A9
 
+// gTileset_GeneralGreen
+#define METATILE_GeneralGreen_CalmWater  0x170
+
 // gTileset_GenericBuilding
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
@@ -299,7 +302,7 @@
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
 // gTileset_Mauville
-#define METATILE_Mauville_AshGrass            0x20A
+#define METATILE_Mauville_AshGrass            0x36C
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251
 #define METATILE_Mauville_Door                0x2AC
@@ -324,6 +327,7 @@
 #define METATILE_Mauville_MirageTower_TileD   0x3DC
 #define METATILE_Mauville_MirageTower_TileE   0x3DD
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
+#define METATILE_Mauville_NormalGrass         0x212
 
 // gTileset_MauvilleGameCorner
 #define METATILE_MauvilleGameCorner_Door_Bathroom  0x249

@@ -1251,3 +1251,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootMausoleum/scripts.inc"
 
 	.include "data/maps/GreatCraterHotSprings/scripts.inc"
+
+	.include "data/maps/Route104ShipOverwater/scripts.inc"
