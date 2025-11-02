@@ -23,17 +23,24 @@
   "warp_events": [
     {
       "x": 3,
-      "y": 10,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ROUTE104",
       "dest_warp_id": "6"
     },
     {
       "x": 4,
-      "y": 10,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ROUTE104",
       "dest_warp_id": "6"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104SHIP_UNDERROOM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

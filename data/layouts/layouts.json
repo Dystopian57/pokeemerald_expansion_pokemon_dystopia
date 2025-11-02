@@ -175,7 +175,7 @@
       "id": "LAYOUT_ROUTE102",
       "name": "Route102_Layout",
       "width": 66,
-      "height": 26,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route102/border.bin",
@@ -4505,7 +4505,7 @@
       "id": "LAYOUT_ROUTE102RALTS_SANCTUARY",
       "name": "Route102RaltsSanctuary_Layout",
       "width": 12,
-      "height": 24,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route102RaltsSanctuary/border.bin",
@@ -4585,7 +4585,7 @@
       "id": "LAYOUT_PETALBURG_HARBOR",
       "name": "PetalburgHarbor_Layout",
       "width": 13,
-      "height": 12,
+      "height": 17,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_IslandHarbor",
       "border_filepath": "data/layouts/PetalburgHarbor/border.bin",
@@ -4880,6 +4880,26 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/Route104ShipOverwater/border.bin",
       "blockdata_filepath": "data/layouts/Route104ShipOverwater/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104SHIP_UNDERROOM",
+      "name": "Route104ShipUnderroom_Layout",
+      "width": 13,
+      "height": 6,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/Route104ShipUnderroom/border.bin",
+      "blockdata_filepath": "data/layouts/Route104ShipUnderroom/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUT104SHIP_UNDERROOM2",
+      "name": "Rout104ShipUnderroom2_Layout",
+      "width": 20,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/Rout104ShipUnderroom2/border.bin",
+      "blockdata_filepath": "data/layouts/Rout104ShipUnderroom2/map.bin"
     }
   ]
 }
