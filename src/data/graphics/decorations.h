@@ -126,3 +126,9 @@ const u16 gDecorIconPalette_RegisteelDoll[] = INCBIN_U16("graphics/decorations/r
 
 const u32 gDecorIcon_PurachuDoll[] = INCBIN_U32("graphics/decorations/purachu_doll.4bpp.smol");
 const u16 gDecorIconPalette_PurachuDoll[] = INCBIN_U16("graphics/decorations/purachu_doll.gbapal");
+
+const u32 gDecorIcon_DarkSofa[] = INCBIN_U32("graphics/decorations/darksofaicon.4bpp.smol");
+const u16 gDecorIconPalette_DarkSofa[] = INCBIN_U16("graphics/decorations/darksofaicon.gbapal");
+
+const u32 gDecorIcon_Freezer[] = INCBIN_U32("graphics/decorations/freezer.4bpp.smol");
+const u16 gDecorIconPalette_Freezer[] = INCBIN_U16("graphics/decorations/freezer.gbapal");

@@ -1,6 +1,10 @@
 Route102_MapScripts::
 	.byte 0
 
+Route102_OnResume:
+	setstepcallback STEP_CB_ASH
+	end
+
 Route102_EventScript_LittleBoy::
 	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
 	end
@@ -16,7 +20,7 @@ Route102_EventScript_RouteSignPetalburg::
 Route102_EventScript_Boy::
 	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
 	end
-
+	
 Route102_EventScript_Calvin::
 	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle

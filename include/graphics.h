@@ -180,6 +180,10 @@ extern const u32 gDecorIcon_RegisteelDoll[];
 extern const u16 gDecorIconPalette_RegisteelDoll[];
 extern const u32 gDecorIcon_PurachuDoll[];
 extern const u16 gDecorIconPalette_PurachuDoll[];
+extern const u32 gDecorIcon_DarkSofa[];
+extern const u16 gDecorIconPalette_DarkSofa[];
+extern const u32 gDecorIcon_Freezer[];
+extern const u16 gDecorIconPalette_Freezer[];
 
 extern const u32 gWallClock_Gfx[];
 extern const u16 gWallClockMale_Pal[];

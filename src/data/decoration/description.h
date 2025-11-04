@@ -42,6 +42,11 @@ const u8 DecorDesc_HARD_DESK[] = _(
         "of rocks. Holds\n"
         "many decorations.");
 
+const u8 DecorDesc_DARK_SOFA[] = _(
+    "A worn leather sofa\n"
+        "to take a break\n"
+        "from your journey.");
+
 const u8 DecorDesc_SMALL_CHAIR[] = _(
     "A small chair made\n"
         "for one.");
@@ -76,8 +81,8 @@ const u8 DecorDesc_CAMP_CHAIR[] = _(
         "of logs.");
 
 const u8 DecorDesc_HARD_CHAIR[] = _(
-    "A small chair made\n"
-        "of rock.");
+    "An old radio that\n"
+        "doesn't work anymore.");
 
 const u8 DecorDesc_RED_PLANT[] = _(
     "A vivid red potted\n"
@@ -106,9 +111,8 @@ const u8 DecorDesc_GORGEOUS_PLANT[] = _(
         "plant in a big pot.");
 
 const u8 DecorDesc_RED_BRICK[] = _(
-    "A red-colored brick.\n"
-        "Decorations can be\n"
-        "placed on top.");
+    "A red futon you can.\n"
+        "lie down in to rest.");
 
 const u8 DecorDesc_YELLOW_BRICK[] = _(
     "A yellow-colored\n"
@@ -166,6 +170,10 @@ const u8 DecorDesc_TIRE[] = _(
     "An old large tire.\n"
         "Decorations can be\n"
         "placed on top.");
+
+const u8 DecorDesc_TOOLSHELF[] = _(
+    "A shelf full of.\n"
+        "well-used tools.");
 
 const u8 DecorDesc_STAND[] = _(
     "A large pedestal\n"
@@ -310,6 +318,15 @@ const u8 DecorDesc_BALL_POSTER[] = _(
         "printed with POKé\n"
         "BALLS.");
 
+const u8 DecorDesc_FREEZER[] = _(
+    "An old Glaliecious\n"
+        "brand freezer.");
+
+const u8 DecorDesc_WALL_CLOCK[] = _(
+    "A broken clock that\n"
+        "always shows the.\n"
+        "same time.");
+
 const u8 DecorDesc_GREEN_POSTER[] = _(
     "A small poster with\n"
         "a TREECKO print.");
@@ -317,6 +334,10 @@ const u8 DecorDesc_GREEN_POSTER[] = _(
 const u8 DecorDesc_RED_POSTER[] = _(
     "A small poster with\n"
         "a TORCHIC print.");
+
+const u8 DecorDesc_FIRSTAIDKIT[] = _(
+    "A box containing\n"
+        "medical supplies.");
 
 const u8 DecorDesc_BLUE_POSTER[] = _(
     "A small poster with\n"

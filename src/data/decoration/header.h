@@ -120,6 +120,18 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_HARD_DESK,
     },
 
+    [DECOR_DARK_SOFA] =
+    {
+        .id = DECOR_DARK_SOFA,
+        .name = _("DARK SOFA"),
+        .permission = DECORPERM_SPRITE,
+        .shape = DECORSHAPE_1x2,
+        .category = DECORCAT_CHAIR,
+        .price = 10000,
+        .description = DecorDesc_DARK_SOFA,
+        .tiles = DecorGfx_DARK_SOFA,
+    },
+
     [DECOR_SMALL_CHAIR] =
     {
         .id = DECOR_SMALL_CHAIR,
@@ -219,10 +231,10 @@ const struct Decoration gDecorations[] =
     [DECOR_HARD_CHAIR] =
     {
         .id = DECOR_HARD_CHAIR,
-        .name = _("HARD CHAIR"),
-        .permission = DECORPERM_PASS_FLOOR,
+        .name = _("OLD RADIO"),
+        .permission = DECORPERM_SOLID_FLOOR,
         .shape = DECORSHAPE_1x1,
-        .category = DECORCAT_CHAIR,
+        .category = DECORCAT_ORNAMENT,
         .price = 2000,
         .description = DecorDesc_HARD_CHAIR,
         .tiles = DecorGfx_HARD_CHAIR,
@@ -303,8 +315,8 @@ const struct Decoration gDecorations[] =
     [DECOR_RED_BRICK] =
     {
         .id = DECOR_RED_BRICK,
-        .name = _("RED BRICK"),
-        .permission = DECORPERM_SOLID_FLOOR,
+        .name = _("RED FUTON"),
+        .permission = DECORPERM_PASS_FLOOR,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_ORNAMENT,
         .price = 500,
@@ -447,12 +459,12 @@ const struct Decoration gDecorations[] =
     [DECOR_TIRE] =
     {
         .id = DECOR_TIRE,
-        .name = _("TIRE"),
+        .name = _("TOOL SHELF"),
         .permission = DECORPERM_SOLID_FLOOR,
         .shape = DECORSHAPE_2x2,
         .category = DECORCAT_ORNAMENT,
         .price = 800,
-        .description = DecorDesc_TIRE,
+        .description = DecorDesc_TOOLSHELF,
         .tiles = DecorGfx_TIRE,
     },
 
@@ -804,6 +816,18 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_BALL_POSTER,
     },
 
+    [DECOR_FREEZER] =
+    {
+        .id = DECOR_FREEZER,
+        .name = _("FREEZER"),
+        .permission = DECORPERM_SPRITE,
+        .shape = DECORSHAPE_1x1,
+        .category = DECORCAT_ORNAMENT,
+        .price = 1000,
+        .description = DecorDesc_FREEZER,
+        .tiles = DecorGfx_FREEZER,
+    },
+
     [DECOR_GREEN_POSTER] =
     {
         .id = DECOR_GREEN_POSTER,
@@ -819,12 +843,12 @@ const struct Decoration gDecorations[] =
     [DECOR_RED_POSTER] =
     {
         .id = DECOR_RED_POSTER,
-        .name = _("RED POSTER"),
+        .name = _("FIRST AID KIT"),
         .permission = DECORPERM_NA_WALL,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_POSTER,
         .price = 1000,
-        .description = DecorDesc_RED_POSTER,
+        .description = DecorDesc_FIRSTAIDKIT,
         .tiles = DecorGfx_RED_POSTER,
     },
 
@@ -843,12 +867,12 @@ const struct Decoration gDecorations[] =
     [DECOR_CUTE_POSTER] =
     {
         .id = DECOR_CUTE_POSTER,
-        .name = _("CUTE POSTER"),
+        .name = _("WALL CLOCK"),
         .permission = DECORPERM_NA_WALL,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_POSTER,
         .price = 1000,
-        .description = DecorDesc_CUTE_POSTER,
+        .description = DecorDesc_WALL_CLOCK,
         .tiles = DecorGfx_CUTE_POSTER,
     },
 

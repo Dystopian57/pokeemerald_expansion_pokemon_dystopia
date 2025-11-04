@@ -83,6 +83,11 @@ const u16 DecorGfx_HARD_DESK[] = {
     DECOR_TILE(HardDesk_BottomRight)
 };
 
+
+const u16 DecorGfx_DARK_SOFA[] = {
+    OBJ_EVENT_GFX_DARK_SOFA
+};
+
 const u16 DecorGfx_SMALL_CHAIR[] = {
     DECOR_TILE(SmallChair)
 };
@@ -415,6 +420,10 @@ const u16 DecorGfx_SPIKES_MAT[] = {
     DECOR_TILE(SpikesMat_BottomLeft),
     DECOR_TILE(SpikesMat_BottomMid),
     DECOR_TILE(SpikesMat_BottomRight)
+};
+
+const u16 DecorGfx_FREEZER[] = {
+    OBJ_EVENT_GFX_FREEZER
 };
 
 const u16 DecorGfx_BALL_POSTER[] = {
