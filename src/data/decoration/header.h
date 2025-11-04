@@ -243,7 +243,7 @@ const struct Decoration gDecorations[] =
     [DECOR_RED_PLANT] =
     {
         .id = DECOR_RED_PLANT,
-        .name = _("RED PLANT"),
+        .name = _("CACTUS"),
         .permission = DECORPERM_BEHIND_FLOOR,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_PLANT,
@@ -807,7 +807,7 @@ const struct Decoration gDecorations[] =
     [DECOR_BALL_POSTER] =
     {
         .id = DECOR_BALL_POSTER,
-        .name = _("BALL POSTER"),
+        .name = _("WALL NOTES"),
         .permission = DECORPERM_NA_WALL,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_POSTER,
@@ -855,7 +855,7 @@ const struct Decoration gDecorations[] =
     [DECOR_BLUE_POSTER] =
     {
         .id = DECOR_BLUE_POSTER,
-        .name = _("BLUE POSTER"),
+        .name = _("FADED MIRROR"),
         .permission = DECORPERM_NA_WALL,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_POSTER,
@@ -960,7 +960,7 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_PIKACHU_DOLL,
     },
 
-        [DECOR_PURACHU_DOLL] =
+    [DECOR_PURACHU_DOLL] =
     {
         .id = DECOR_PURACHU_DOLL,
         .name = _("PURACHU DOLL"),
@@ -1419,10 +1419,10 @@ const struct Decoration gDecorations[] =
     [DECOR_CHARIZARD_DOLL] =
     {
         .id = DECOR_CHARIZARD_DOLL,
-        .name = _("CHARIZARD DOLL"),
+        .name = _("FLIMSY WALL"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
-        .category = DECORCAT_DOLL,
+        .category = DECORCAT_ORNAMENT,
         .price = 10000,
         .description = DecorDesc_CHARIZARD_DOLL,
         .tiles = DecorGfx_CHARIZARD_DOLL,
@@ -1486,5 +1486,6 @@ const struct Decoration gDecorations[] =
         .price = 10000,
         .description = DecorDesc_REGISTEEL_DOLL,
         .tiles = DecorGfx_REGISTEEL_DOLL,
-    }
+    },
+
 };

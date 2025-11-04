@@ -85,8 +85,9 @@ const u8 DecorDesc_HARD_CHAIR[] = _(
         "doesn't work anymore.");
 
 const u8 DecorDesc_RED_PLANT[] = _(
-    "A vivid red potted\n"
-        "plant.");
+    "A hardy cactus\n"
+        "native to\n"
+        "Road 002");
 
 const u8 DecorDesc_TROPICAL_PLANT[] = _(
     "A flowering tropical\n"
@@ -314,9 +315,9 @@ const u8 DecorDesc_SPIKES_MAT[] = _(
         "Put items on top.");
 
 const u8 DecorDesc_BALL_POSTER[] = _(
-    "A small poster\n"
-        "printed with POKé\n"
-        "BALLS.");
+    "Paper sheets\n"
+        "with many a\n"
+        "scribble.");
 
 const u8 DecorDesc_FREEZER[] = _(
     "An old Glaliecious\n"
@@ -340,8 +341,9 @@ const u8 DecorDesc_FIRSTAIDKIT[] = _(
         "medical supplies.");
 
 const u8 DecorDesc_BLUE_POSTER[] = _(
-    "A small poster with\n"
-        "a MUDKIP print.");
+    "A mirror that\n"
+        "gives a blurry\n"
+        "reflection.");
 
 const u8 DecorDesc_CUTE_POSTER[] = _(
     "A small poster with\n"
@@ -569,9 +571,9 @@ const u8 DecorDesc_VENUSAUR_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_CHARIZARD_DOLL[] = _(
-    "A large doll.\n"
-        "Place it on a mat\n"
-        "or a desk.");
+    "A wall made of.\n"
+        "cardboard with\n"
+        "holes on it.");
 
 const u8 DecorDesc_BLASTOISE_DOLL[] = _(
     "A large doll.\n"
