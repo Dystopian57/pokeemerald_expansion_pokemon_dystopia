@@ -374,8 +374,8 @@
     },
     {
       "type": "secret_base",
-      "x": 29,
-      "y": 8,
+      "x": 28,
+      "y": 7,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE1_1"
     },
