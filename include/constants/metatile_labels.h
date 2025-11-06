@@ -100,6 +100,7 @@
 #define METATILE_BikeShop_Generator_Off_Tile5      0x2F5
 #define METATILE_BikeShop_Generator_Off_Tile6      0x2F6
 #define METATILE_BikeShop_Generator_Off_Tile7      0x2F7
+#define METATILE_BikeShop_RedCaveIndent            0x30D
 #define METATILE_BikeShop_Wall_Edge_Top            0x281
 
 // gTileset_BrendansMaysHouse
@@ -721,6 +722,12 @@
 #define METATILE_SecretBase_YellowBalloon               0x340
 #define METATILE_SecretBase_YellowBrick_Bottom          0x22E
 #define METATILE_SecretBase_YellowBrick_Top             0x226
+
+// gTileset_SecretBaseRedCave
+#define METATILE_SecretBaseRedCave_PC  0x379
+
+// gTileset_SecretBaseShrub
+#define METATILE_SecretBaseShrub_PC  0x379
 
 // gTileset_Shop
 #define METATILE_Shop_Door_Elevator   0x285
