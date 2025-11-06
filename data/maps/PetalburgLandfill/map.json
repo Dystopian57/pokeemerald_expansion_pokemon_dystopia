@@ -52,5 +52,13 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "secret_base",
+      "x": 21,
+      "y": 15,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_BLUE_CAVE2_1"
+    }
+  ]
 }

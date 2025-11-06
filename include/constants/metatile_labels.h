@@ -171,6 +171,7 @@
 #define METATILE_Facility_NewMauvilleDoor_Open_Tile3    0x2CB
 #define METATILE_Facility_NewMauvilleDoor_Open_Tile4    0x2CC
 #define METATILE_Facility_NewMauvilleDoor_Open_Tile5    0x2CD
+#define METATILE_Facility_Shrub                         0x3FE
 
 // gTileset_Fallarbor
 #define METATILE_Fallarbor_AshField                  0x218
@@ -206,7 +207,7 @@
 #define METATILE_Fortree_WoodBridge1_Top                   0x297
 
 // gTileset_General
-#define METATILE_General_BlueCaveIndent        0x1B0
+#define METATILE_General_BlueCaveIndent        0x024
 #define METATILE_General_BlueCaveOpen          0x1B1
 #define METATILE_General_CalmWater             0x170
 #define METATILE_General_CaveEntrance_Bottom   0x0A7
@@ -269,6 +270,9 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Interior   0x297
 #define METATILE_InsideShip_IntactDoor_Bottom_Locked     0x233
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked   0x22B
+
+// gTileset_Landfill
+#define METATILE_Landfill_BlueCaveIndent  0x201
 
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
@@ -723,11 +727,17 @@
 #define METATILE_SecretBase_YellowBrick_Bottom          0x22E
 #define METATILE_SecretBase_YellowBrick_Top             0x226
 
+// gTileset_SecretBaseBlueCave
+#define METATILE_SecretBaseBlueCave_PC  0x220
+
 // gTileset_SecretBaseRedCave
 #define METATILE_SecretBaseRedCave_PC  0x379
 
 // gTileset_SecretBaseShrub
 #define METATILE_SecretBaseShrub_PC  0x379
+
+// gTileset_SecretBaseTree
+#define METATILE_SecretBaseTree_PC  0x380
 
 // gTileset_Shop
 #define METATILE_Shop_Door_Elevator   0x285
@@ -740,6 +750,7 @@
 #define METATILE_Slateport_CalmWater        0x338
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
+#define METATILE_Slateport_Shrub            0x3F6
 #define METATILE_Slateport_TallGrass        0x3B9
 
 // gTileset_Sootopolis

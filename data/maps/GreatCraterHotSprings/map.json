@@ -17,7 +17,7 @@
   "warp_events": [
     {
       "x": 7,
-      "y": 16,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_GREAT_CRATER",
       "dest_warp_id": "5"

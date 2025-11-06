@@ -73,5 +73,13 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "secret_base",
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_1"
+    }
+  ]
 }
