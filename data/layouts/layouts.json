@@ -4865,7 +4865,7 @@
       "id": "LAYOUT_GREAT_CRATER_HOT_SPRINGS",
       "name": "GreatCraterHotSprings_Layout",
       "width": 15,
-      "height": 11,
+      "height": 10,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/GreatCraterHotSprings/border.bin",
