@@ -19,15 +19,8 @@
       "x": 2,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_PETALBURG_CASINO",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 3,
-      "y": 5,
-      "elevation": 0,
-      "dest_map": "MAP_PETALBURG_CASINO",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_MAUVILLE_CITY_GAME_CORNER",
+      "dest_warp_id": "3"
     },
     {
       "x": 6,
@@ -35,6 +28,13 @@
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CASINO_BATHROOM_STALL",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_GAME_CORNER",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],
