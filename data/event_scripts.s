@@ -1257,3 +1257,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route104ShipUnderroom/scripts.inc"
 
 	.include "data/maps/Rout104ShipUnderroom2/scripts.inc"
+
+	.include "data/maps/JoelTent/scripts.inc"

@@ -4900,6 +4900,16 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/Rout104ShipUnderroom2/border.bin",
       "blockdata_filepath": "data/layouts/Rout104ShipUnderroom2/map.bin"
+    },
+    {
+      "id": "LAYOUT_JOEL_TENT",
+      "name": "JoelTent_Layout",
+      "width": 11,
+      "height": 7,
+      "primary_tileset": "gTileset_SecretBase",
+      "secondary_tileset": "gTileset_SecretBaseShrub",
+      "border_filepath": "data/layouts/JoelTent/border.bin",
+      "blockdata_filepath": "data/layouts/JoelTent/map.bin"
     }
   ]
 }
