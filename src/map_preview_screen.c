@@ -117,7 +117,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .mapsec = MAPSEC_POKEMON_TOWER,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_POKEMON_TOWER
+        .image = IMG_POKEMON_MANSION
     },
     [MPS_SAFARI_ZONE] = {
         .mapsec = MAPSEC_KANTO_SAFARI_ZONE,
@@ -133,7 +133,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
     },
     [MPS_POKEMON_MANSION] = {
         .mapsec = MAPSEC_POKEMON_MANSION,
-        .type = MPS_TYPE_FADE_IN,
+        .type = MPS_TYPE_ANY,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_POKEMON_MANSION
     },
@@ -145,10 +145,18 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
     },
     [MPS_SILPH_CO] = {
         .mapsec = MAPSEC_SILPH_CO,
-        .type = MPS_TYPE_CAVE,
+        .type = MPS_TYPE_FADE_IN,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_SILPH_CO
+        .image = IMG_ROCKET_HIDEOUT
     },
+
+    [MPS_NEW_MAUVILLE] = {
+        .mapsec = MAPSEC_NEW_MAUVILLE,
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROCKET_HIDEOUT
+    },
+
     [MPS_VICTORY_ROAD] = {
         .mapsec = MAPSEC_KANTO_VICTORY_ROAD,
         .type = MPS_TYPE_CAVE,
@@ -161,12 +169,12 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_CERULEAN_CAVE
     },
-    [MPS_POWER_PLANT] = {
-        .mapsec = MAPSEC_POWER_PLANT,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_POWER_PLANT
-    },
+    //[MPS_POWER_PLANT] = {
+        //.mapsec = MAPSEC_POWER_PLANT,
+        //.type = MPS_TYPE_FADE_IN,
+        //.flagId = MPS_FLAG_NULL,
+        //.image = IMG_POWER_PLANT
+    //},
     [MPS_MT_EMBER] = {
         .mapsec = MAPSEC_MT_EMBER,
         .type = MPS_TYPE_CAVE,
@@ -175,7 +183,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
     },
     [MPS_ROCKET_WAREHOUSE] = {
         .mapsec = MAPSEC_ROCKET_WAREHOUSE,
-        .type = MPS_TYPE_FADE_IN,
+        .type = MPS_TYPE_BASIC,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_ROCKET_WAREHOUSE
     },
@@ -221,6 +229,14 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_VIRIDIAN_FOREST
     },
+
+    [MPS_GREEN_PATH] = {
+        .mapsec = MAPSEC_GREEN_PATH,
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_VIRIDIAN_FOREST
+    },
+
     [MPS_LIPTOO_CHAMBER] = {
         .mapsec = MAPSEC_LIPTOO_CHAMBER,
         .type = MPS_TYPE_CAVE,
