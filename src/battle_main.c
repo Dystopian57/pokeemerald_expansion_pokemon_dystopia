@@ -368,7 +368,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
-    [TRAINER_CLASS_ORPHAN] = { _("ORPHAN♂"), BALL_MASTER },
+    [TRAINER_CLASS_ORPHAN] = { _("ORPHAN♂"), 3, BALL_PARK },
     //♂ ♀
     [TRAINER_CLASS_CAMELIA] = { _("CAMELIA") }, 
     [TRAINER_CLASS_CLERKF] = { _("CLERK♀") },    

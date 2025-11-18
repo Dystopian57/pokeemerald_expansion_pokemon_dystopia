@@ -3,7 +3,7 @@
   "name": "OldaleWarehouseUpper",
   "layout": "LAYOUT_OLDALE_WAREHOUSE_UPPER",
   "music": "MUS_RG_SEVII_DUNGEON",
-  "region_map_section": "MAPSEC_ROCKET_WAREHOUSE",
+  "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_INDOOR",

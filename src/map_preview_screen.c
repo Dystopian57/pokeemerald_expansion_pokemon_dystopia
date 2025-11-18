@@ -119,6 +119,13 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_POKEMON_MANSION
     },
+
+     [MPS_CAVE_OF_ORIGIN] = {
+        .mapsec = MAPSEC_CAVE_OF_ORIGIN,
+        .type = MPS_TYPE_CAVE,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_POKEMON_MANSION
+    },
     [MPS_SAFARI_ZONE] = {
         .mapsec = MAPSEC_KANTO_SAFARI_ZONE,
         .type = MPS_TYPE_FADE_IN,
@@ -152,7 +159,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
 
     [MPS_NEW_MAUVILLE] = {
         .mapsec = MAPSEC_NEW_MAUVILLE,
-        .type = MPS_TYPE_FADE_IN,
+        .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_ROCKET_HIDEOUT
     },
@@ -175,6 +182,14 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         //.flagId = MPS_FLAG_NULL,
         //.image = IMG_POWER_PLANT
     //},
+
+        [MPS_ABANDONED_SHIP] = {
+        .mapsec = MAPSEC_ABANDONED_SHIP,
+        .type = MPS_TYPE_CAVE,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_POWER_PLANT
+    },
+
     [MPS_MT_EMBER] = {
         .mapsec = MAPSEC_MT_EMBER,
         .type = MPS_TYPE_CAVE,
@@ -183,7 +198,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
     },
     [MPS_ROCKET_WAREHOUSE] = {
         .mapsec = MAPSEC_ROCKET_WAREHOUSE,
-        .type = MPS_TYPE_BASIC,
+        .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_ROCKET_WAREHOUSE
     },
@@ -212,11 +227,19 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .image = IMG_ICEFALL_CAVE
     },
     [MPS_LOST_CAVE] = {
+        .mapsec = MAPSEC_SEAFLOOR_CAVERN,
+        .type = MPS_TYPE_CAVE,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_LOST_CAVE
+    },
+
+    [MPS_SEAFLOOR_CAVERN] = {
         .mapsec = MAPSEC_LOST_CAVE,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_LOST_CAVE
     },
+
     [MPS_ALTERING_CAVE] = {
         .mapsec = MAPSEC_ALTERING_CAVE,
         .type = MPS_TYPE_CAVE,
@@ -232,7 +255,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
 
     [MPS_GREEN_PATH] = {
         .mapsec = MAPSEC_GREEN_PATH,
-        .type = MPS_TYPE_FADE_IN,
+        .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_VIRIDIAN_FOREST
     },

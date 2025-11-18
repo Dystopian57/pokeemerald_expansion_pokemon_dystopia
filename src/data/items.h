@@ -195,12 +195,11 @@ const struct Item gItemsInfo[] =
 
     [ITEM_GREAT_BALL] =
     {
-        .name = ITEM_NAME("Great Ball"),
+        .name = ITEM_NAME("Devon Ball"),
         .price = 600,
         .description = COMPOUND_STRING(
-            "A good Ball with a\n"
-            "higher catch rate\n"
-            "than a Poké Ball."),
+            "A great Ball\n"
+            "designed by Devon."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_GREAT_BALL,
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
@@ -590,11 +589,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_PARK_BALL] =
     {
-        .name = ITEM_NAME("Park Ball"),
+        .name = ITEM_NAME("Broken Ball"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A special Ball for\n"
-            "the Pal Park."),
+            "A Pokéball that\n"
+            "was damaged during\n"
+            "the war."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_PARK_BALL,
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,

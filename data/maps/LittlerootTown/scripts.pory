@@ -1877,6 +1877,7 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 # 1017 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
+
 `
 
 //PHASES
@@ -1912,6 +1913,16 @@ script Littleroot_Idletalk_Oldman{
 }
 
 //////////////////////////////////////////////////////////////////////
+
+//script Mugshottest {
+//lockall
+//setvar (MUGSHOT_THIEFBALL, 1)
+//callnative (DrawMugshot)
+//msgbox ("This is a mugshot test.")
+//callnative (ClearMugshot)
+//releaseall
+///}
+
 
 
 script LittlerootTown_Trigger_Blocknopokes{

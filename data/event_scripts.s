@@ -63,6 +63,7 @@
 #include "constants/vars.h"
 #include "constants/weather.h"
 #include "constants/field_mugshots.h"
+#include "constants/mugshots.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1259,3 +1260,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Rout104ShipUnderroom2/scripts.inc"
 
 	.include "data/maps/JoelTent/scripts.inc"
+
+	.include "data/maps/OldaleTown_House2_2F/scripts.inc"

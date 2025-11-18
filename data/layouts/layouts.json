@@ -5,7 +5,7 @@
       "id": "LAYOUT_PETALBURG_CITY",
       "name": "PetalburgCity_Layout",
       "width": 38,
-      "height": 41,
+      "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/PetalburgCity/border.bin",
@@ -584,8 +584,8 @@
     {
       "id": "LAYOUT_HOUSE1",
       "name": "House1_Layout",
-      "width": 10,
-      "height": 9,
+      "width": 9,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/House1/border.bin",
@@ -4575,7 +4575,7 @@
       "id": "LAYOUT_PETALBURG_BEACH",
       "name": "PetalburgBeach_Layout",
       "width": 44,
-      "height": 35,
+      "height": 33,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/PetalburgBeach/border.bin",
@@ -4910,6 +4910,16 @@
       "secondary_tileset": "gTileset_SecretBaseShrub",
       "border_filepath": "data/layouts/JoelTent/border.bin",
       "blockdata_filepath": "data/layouts/JoelTent/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_HOUSE2_2F",
+      "name": "OldaleTown_House2_2F_Layout",
+      "width": 8,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/OldaleTown_House2_2F/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_House2_2F/map.bin"
     }
   ]
 }

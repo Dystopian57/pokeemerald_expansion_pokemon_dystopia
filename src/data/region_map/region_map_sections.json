@@ -74,7 +74,7 @@
     },
     {
       "id": "MAPSEC_MAUVILLE_CITY",
-      "name": "MAUVILLE CITY",
+      "name": "APPLIANCE STORAGE",
       "x": 8,
       "y": 6,
       "width": 2,
@@ -466,7 +466,7 @@
     },
     {
       "id": "MAPSEC_BATTLE_FRONTIER",
-      "name": "BATTLE FRONTIER",
+      "name": "REBEL HIDEOUT",
       "x": 22,
       "y": 12,
       "width": 1,
@@ -530,7 +530,7 @@
     },
     {
       "id": "MAPSEC_AQUA_HIDEOUT_OLD",
-      "name": "{AQUA} HIDEOUT",
+      "name": "UNDERGROUND LAB",
       "x": 19,
       "y": 3,
       "width": 1,
@@ -578,7 +578,7 @@
     },
     {
       "id": "MAPSEC_CAVE_OF_ORIGIN",
-      "name": "CAVE OF ORIGIN",
+      "name": "LITTL. MAUSOLEUM",
       "x": 21,
       "y": 7,
       "width": 1,
@@ -594,7 +594,7 @@
     },
     {
       "id": "MAPSEC_FIERY_PATH",
-      "name": "FIERY PATH",
+      "name": "GREAT CRATER",
       "x": 6,
       "y": 3,
       "width": 1,
@@ -602,7 +602,7 @@
     },
     {
       "id": "MAPSEC_FIERY_PATH2",
-      "name": "FIERY PATH",
+      "name": "CRATER HOT SPRINGS",
       "x": 7,
       "y": 3,
       "width": 1,
@@ -626,7 +626,7 @@
     },
     {
       "id": "MAPSEC_SEALED_CHAMBER",
-      "name": "SEALED CHAMBER",
+      "name": "BALSAM'S ROOM",
       "x": 11,
       "y": 10,
       "width": 1,
@@ -717,7 +717,7 @@
     },
     {
       "id": "MAPSEC_LAVENDER_TOWN",
-      "name": "GRAVEYARD",
+      "name": "LITL. GRAVEYARD",
       "x": 5,
       "y": 11,
       "width": 1,
@@ -893,7 +893,7 @@
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
-      "name": "LAB TUNNEL",
+      "name": "UNDERGROUND",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -1069,7 +1069,7 @@
     },
     {
       "id": "MAPSEC_WATER_PATH",
-      "name": "WATER PATH"
+      "name": "PETALBURG BEACH"
     },
     {
       "id": "MAPSEC_RUIN_VALLEY",
@@ -1221,7 +1221,7 @@
     },
     {
       "id": "MAPSEC_MAGMA_HIDEOUT",
-      "name": "REBEL HIDEOUT",
+      "name": "OLDALE WAREHOUSE",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -1229,7 +1229,7 @@
     },
     {
       "id": "MAPSEC_MIRAGE_TOWER",
-      "name": "MIRAGE TOWER",
+      "name": "PETALBURG ARCADE",
       "x": 8,
       "y": 2,
       "width": 1,
@@ -1289,7 +1289,7 @@
     },
     {
       "id": "MAPSEC_DESERT_UNDERPASS",
-      "name": "DESERT UNDERPASS",
+      "name": "EXCLUSION TUNNEL",
       "x": 2,
       "y": 0,
       "width": 1,
@@ -1305,7 +1305,7 @@
     },
     {
       "id": "MAPSEC_NAVEL_ROCK",
-      "name": "NAVEL ROCK"
+      "name": "GREAT CRATER"
     },
     {
       "id": "MAPSEC_TRAINER_HILL",

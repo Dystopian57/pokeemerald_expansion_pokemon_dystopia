@@ -3,7 +3,7 @@
   "name": "OldaleWarehouseApplianceStorage",
   "layout": "LAYOUT_OLDALE_WAREHOUSE_APPLIANCE_STORAGE",
   "music": "MUS_RG_SEVII_DUNGEON",
-  "region_map_section": "MAPSEC_POWER_PLANT",
+  "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
