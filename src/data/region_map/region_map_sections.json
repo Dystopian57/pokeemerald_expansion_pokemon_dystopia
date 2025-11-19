@@ -34,7 +34,7 @@
     },
     {
       "id": "MAPSEC_FALLARBOR_TOWN",
-      "name": "REBEL HARBOR",
+      "name": "FALLARBOR TOWN",
       "x": 3,
       "y": 0,
       "width": 1,
@@ -74,7 +74,7 @@
     },
     {
       "id": "MAPSEC_MAUVILLE_CITY",
-      "name": "APPLIANCE STORAGE",
+      "name": "MAUVILLE CITY",
       "x": 8,
       "y": 6,
       "width": 2,
@@ -82,7 +82,7 @@
     },
     {
       "id": "MAPSEC_RUSTBORO_CITY",
-      "name": "RUSTBORO CITY",
+      "name": "NEO RUSTBORO",
       "x": 0,
       "y": 5,
       "width": 1,
@@ -242,7 +242,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_115",
-      "name": "ROUTE 115",
+      "name": "RUSTBORO SLUMS",
       "x": 0,
       "y": 2,
       "width": 1,
@@ -250,7 +250,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_116",
-      "name": "ROUTE 116",
+      "name": "LIFE INDUSTRIES",
       "x": 1,
       "y": 5,
       "width": 4,
@@ -474,7 +474,7 @@
     },
     {
       "id": "MAPSEC_PETALBURG_WOODS",
-      "name": "PETALBURG WOODS",
+      "name": "PETALBURG PARK",
       "x": 0,
       "y": 8,
       "width": 1,
@@ -595,8 +595,8 @@
     {
       "id": "MAPSEC_FIERY_PATH",
       "name": "GREAT CRATER",
-      "x": 6,
-      "y": 3,
+      "x": 3,
+      "y": 8,
       "width": 1,
       "height": 1
     },
@@ -634,7 +634,7 @@
     },
     {
       "id": "MAPSEC_UNDERWATER_SEALED_CHAMBER",
-      "name": "UNDERWATER",
+      "name": "FROZEN CRADLE",
       "x": 11,
       "y": 10,
       "width": 1,
@@ -674,7 +674,7 @@
     },
     {
       "id": "MAPSEC_INSIDE_OF_TRUCK",
-      "name": "INSIDE OF TRUCK"
+      "name": "ROAD 001"
     },
     {
       "id": "MAPSEC_SKY_PILLAR",
@@ -893,7 +893,7 @@
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
-      "name": "UNDERGROUND",
+      "name": "DIGGLETTS CAVE",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -965,7 +965,7 @@
     },
     {
       "id": "MAPSEC_ONE_ISLAND",
-      "name": "D. LEARN CENTER"
+      "name": "ONE ISLAND"
     },
     {
       "id": "MAPSEC_TWO_ISLAND",
@@ -1041,7 +1041,7 @@
     },
     {
       "id": "MAPSEC_RESORT_GORGEOUS",
-      "name": "RESORT GORGEOUS"
+      "name": "AZURE RESORT"
     },
     {
       "id": "MAPSEC_WATER_LABYRINTH",
@@ -1069,7 +1069,7 @@
     },
     {
       "id": "MAPSEC_WATER_PATH",
-      "name": "PETALBURG BEACH"
+      "name": "WATER PATH"
     },
     {
       "id": "MAPSEC_RUIN_VALLEY",
@@ -1133,7 +1133,7 @@
     },
     {
       "id": "MAPSEC_DOTTED_HOLE",
-      "name": "GREAT CRATER",
+      "name": "DOTTED HOLE",
       "x": 3,
       "y": 10,
       "width": 1,
@@ -1237,7 +1237,7 @@
     },
     {
       "id": "MAPSEC_BIRTH_ISLAND",
-      "name": "BIRTH ISLAND"
+      "name": "D.L.C."
     },
     {
       "id": "MAPSEC_FARAWAY_ISLAND",
@@ -1253,7 +1253,7 @@
     },
     {
       "id": "MAPSEC_MARINE_CAVE",
-      "name": "MARINE CAVE"
+      "name": "REBEL HARBOR"
     },
     {
       "id": "MAPSEC_UNDERWATER_MARINE_CAVE",
@@ -1305,7 +1305,7 @@
     },
     {
       "id": "MAPSEC_NAVEL_ROCK",
-      "name": "GREAT CRATER"
+      "name": "NAVEL ROCK"
     },
     {
       "id": "MAPSEC_TRAINER_HILL",

@@ -141,7 +141,9 @@
     "Route104ShipOverwater",
     "Route104ShipUnderroom",
     "Rout104ShipUnderroom2",
-    "JoelTent"
+    "JoelTent",
+    "PokeInnRoom1_1",
+    "PokeInnRoom2_1"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -156,7 +158,8 @@
     "OldaleTown_PokemonCenter_1F",
     "OldaleTown_PokemonCenter_2F",
     "OldaleTown_Mart",
-    "DLC"
+    "DLC",
+    "OldaleTown_House2_2F"
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",

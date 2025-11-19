@@ -4,7 +4,7 @@
     {
       "id": "LAYOUT_PETALBURG_CITY",
       "name": "PetalburgCity_Layout",
-      "width": 38,
+      "width": 44,
       "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -4915,11 +4915,31 @@
       "id": "LAYOUT_OLDALE_TOWN_HOUSE2_2F",
       "name": "OldaleTown_House2_2F_Layout",
       "width": 8,
-      "height": 9,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/OldaleTown_House2_2F/border.bin",
       "blockdata_filepath": "data/layouts/OldaleTown_House2_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKE_INN_ROOM1_1",
+      "name": "PokeInnRoom1_1_Layout",
+      "width": 6,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PokeInnRoom1_1/border.bin",
+      "blockdata_filepath": "data/layouts/PokeInnRoom1_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKE_INN_ROOM2_1",
+      "name": "PokeInnRoom2_1_Layout",
+      "width": 6,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PokeInnRoom2_1/border.bin",
+      "blockdata_filepath": "data/layouts/PokeInnRoom2_1/map.bin"
     }
   ]
 }

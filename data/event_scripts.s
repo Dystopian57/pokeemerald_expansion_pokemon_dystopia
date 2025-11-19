@@ -1262,3 +1262,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/JoelTent/scripts.inc"
 
 	.include "data/maps/OldaleTown_House2_2F/scripts.inc"
+
+	.include "data/maps/PokeInnRoom1_1/scripts.inc"
+
+	.include "data/maps/PokeInnRoom2_1/scripts.inc"

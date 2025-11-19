@@ -196,6 +196,14 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_MT_EMBER
     },
+
+    [MPS_FIERY_PATH] = {
+        .mapsec = MAPSEC_FIERY_PATH,
+        .type = MPS_TYPE_CAVE,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MT_EMBER
+    },
+
     [MPS_ROCKET_WAREHOUSE] = {
         .mapsec = MAPSEC_ROCKET_WAREHOUSE,
         .type = MPS_TYPE_CAVE,
