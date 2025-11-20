@@ -20,14 +20,14 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_2F",
-      "dest_warp_id": "3"
+      "dest_warp_id": "4"
     },
     {
       "x": 3,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_2F",
-      "dest_warp_id": "3"
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],
