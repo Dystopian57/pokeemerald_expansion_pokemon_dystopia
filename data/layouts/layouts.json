@@ -4805,7 +4805,7 @@
       "id": "LAYOUT_DEVON_VIRTUAL_WORLD1",
       "name": "DevonVirtualWorld1_Layout",
       "width": 20,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/DevonVirtualWorld1/border.bin",
@@ -4814,7 +4814,7 @@
     {
       "id": "LAYOUT_DEVON_VIRTUAL_WORLD2",
       "name": "DevonVirtualWorld2_Layout",
-      "width": 30,
+      "width": 37,
       "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_CableClub",
