@@ -984,6 +984,10 @@ SECTIONS {
         sound/songs/midi/mus_littleroot_test.o(.rodata);
         sound/songs/midi/mus_snowpoint.o(.rodata);
         sound/songs/midi/mus_teamgrduel.o(.rodata);
+        sound/songs/midi/mus_greatcanyon.o(.rodata);
+        sound/songs/midi/mus_underpizza.o(.rodata);
+        sound/songs/midi/mus_inazumacity.o(.rodata);
+        sound/songs/midi/mus_sinjohruins.o(.rodata);
         sound/songs/midi/mus_gsc_route38.o(.rodata);
         sound/songs/midi/mus_caught.o(.rodata);
         sound/songs/midi/mus_victory_wild.o(.rodata);

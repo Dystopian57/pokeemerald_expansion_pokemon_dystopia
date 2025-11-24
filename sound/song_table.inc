@@ -573,6 +573,10 @@ gSongTable::
 	song mus_casino_plus_gacha, 0, 0
 	song mus_snowpoint, 0, 0
 	song mus_teamgrduel, 0, 0
+	song mus_greatcanyon, 0, 0
+	song mus_underpizza, 0, 0
+	song mus_inazumacity, 0, 0
+	song mus_sinjohruins, 0, 0
 	song ph_trap_blend, 2, 2
 	song ph_trap_held, 2, 2
 	song ph_trap_solo, 2, 2

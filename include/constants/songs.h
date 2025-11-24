@@ -503,7 +503,11 @@
 #define MUS_CASINO_PLUS_GACHA       569
 #define MUS_SNOWPOINT               570
 #define MUS_TEAMGRDUEL              571
-#define END_MUS                     MUS_TEAMGRDUEL
+#define MUS_GREATCANYON             572
+#define MUS_UNDERPIZZA              573
+#define MUS_INAZUMACITY             574
+#define MUS_SINJOHRUINS             575
+#define END_MUS                     MUS_SINJOHRUINS
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.
