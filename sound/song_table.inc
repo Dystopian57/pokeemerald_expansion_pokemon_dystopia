@@ -577,6 +577,20 @@ gSongTable::
 	song mus_underpizza, 0, 0
 	song mus_inazumacity, 0, 0
 	song mus_sinjohruins, 0, 0
+
+	song mus_spikemuth, 0, 0
+	song mus_oldchateau, 0, 0
+	song mus_sinnohleaguextday, 0, 0
+	song mus_eternaforest, 0, 0
+	song mus_unovaroute10, 0, 0
+	song mus_opelucidcity, 0, 0
+	song mus_virbankcomplex, 0, 0
+	song mus_coldstorage, 0, 0
+	song mus_strangehouse, 0, 0
+	song mus_abyssalruins, 0, 0
+	song mus_anistarcity, 0, 0
+	song mus_unovaroutegate, 0, 0
+
 	song ph_trap_blend, 2, 2
 	song ph_trap_held, 2, 2
 	song ph_trap_solo, 2, 2

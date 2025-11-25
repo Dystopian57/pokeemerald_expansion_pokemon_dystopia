@@ -1,5 +1,5 @@
 voice_group inazumacity
-	voice_keysplit_all voicegroup_emerald_drumset_1
+	voice_keysplit_all voicegroup_frlg_drumset
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242
 	voice_directsound 60, 0, DirectSoundWaveData_unknown_koto_high, 255, 0, 206, 242
@@ -128,3 +128,4 @@ voice_group inazumacity
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 255, 255, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0
+	

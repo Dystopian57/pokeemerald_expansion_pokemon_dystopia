@@ -507,7 +507,21 @@
 #define MUS_UNDERPIZZA              573
 #define MUS_INAZUMACITY             574
 #define MUS_SINJOHRUINS             575
-#define END_MUS                     MUS_SINJOHRUINS
+
+#define MUS_SPIKEMUTH               576
+#define MUS_OLDCHATEAU              577
+#define MUS_SINNOHLEAGUEXTDAY       578
+#define MUS_ETERNAFOREST            579
+#define MUS_UNOVAROUTE10            580
+#define MUS_OPELUCIDCITY            581
+#define MUS_VIRBANKCOMPLEX          582
+#define MUS_COLDSTORAGE             583
+#define MUS_STRANGEHOUSE            584
+#define MUS_ABYSSALRUINS            585
+#define MUS_ANISTARCITY             586
+#define MUS_UNOVAROUTEGATE          587
+
+#define END_MUS                     MUS_UNOVAROUTEGATE
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

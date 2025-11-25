@@ -1,5 +1,5 @@
 voice_group greatcanyon
-	voice_keysplit_all voicegroup_rs_drumset
+	voice_keysplit_all voicegroup_frlg_drumset
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

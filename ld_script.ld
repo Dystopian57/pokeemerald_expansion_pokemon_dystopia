@@ -988,6 +988,20 @@ SECTIONS {
         sound/songs/midi/mus_underpizza.o(.rodata);
         sound/songs/midi/mus_inazumacity.o(.rodata);
         sound/songs/midi/mus_sinjohruins.o(.rodata);
+
+        sound/songs/midi/mus_spikemuth.o(.rodata);
+        sound/songs/midi/mus_oldchateau.o(.rodata);
+        sound/songs/midi/mus_sinnohleaguextday.o(.rodata);
+        sound/songs/midi/mus_eternaforest.o(.rodata);
+        sound/songs/midi/mus_unovaroute10.o(.rodata);
+        sound/songs/midi/mus_opelucidcity.o(.rodata);
+        sound/songs/midi/mus_virbankcomplex.o(.rodata);
+        sound/songs/midi/mus_coldstorage.o(.rodata);
+        sound/songs/midi/mus_strangehouse.o(.rodata);
+        sound/songs/midi/mus_abyssalruins.o(.rodata);
+        sound/songs/midi/mus_anistarcity.o(.rodata);
+        sound/songs/midi/mus_unovaroutegate.o(.rodata);
+        
         sound/songs/midi/mus_gsc_route38.o(.rodata);
         sound/songs/midi/mus_caught.o(.rodata);
         sound/songs/midi/mus_victory_wild.o(.rodata);

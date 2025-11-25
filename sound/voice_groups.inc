@@ -45,6 +45,21 @@
 .include "sound/voicegroups/underpizza.inc"
 .include "sound/voicegroups/inazumacity.inc"
 .include "sound/voicegroups/sinjohruins.inc"
+
+.include "sound/voicegroups/spikemuth.inc"
+.include "sound/voicegroups/oldchateau.inc"
+.include "sound/voicegroups/sinnohleaguextday.inc"
+.include "sound/voicegroups/eternaforest.inc"
+.include "sound/voicegroups/unovaroute10.inc"
+.include "sound/voicegroups/opelucidcity.inc"
+.include "sound/voicegroups/virbankcomplex.inc"
+.include "sound/voicegroups/coldstorage.inc"
+.include "sound/voicegroups/strangehouse.inc"
+.include "sound/voicegroups/abyssalruins.inc"
+.include "sound/voicegroups/anistarcity.inc"
+.include "sound/voicegroups/unovaroutegate.inc"
+
+
 .include "sound/voicegroups/b_tower_rs.inc"
 .include "sound/voicegroups/encounter_swimmer.inc"
 .include "sound/voicegroups/cave_of_origin.inc"
