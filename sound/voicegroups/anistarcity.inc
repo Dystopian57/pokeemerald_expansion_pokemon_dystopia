@@ -1,5 +1,5 @@
 voice_group anistarcity
-	voice_keysplit_all voicegroup_emerald_drumset_1
+	voice_keysplit_all voicegroup_frlg_drumset
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242
 	voice_directsound 60, 0, DirectSoundWaveData_unknown_koto_high, 255, 0, 206, 242
@@ -7,7 +7,7 @@ voice_group anistarcity
 	voice_directsound 60, 65, DirectSoundWaveData_sd90_classical_detuned_ep1_high, 255, 204, 77, 246
 	voice_directsound 60, 0, DirectSoundWaveData_dance_drums_ride_bell, 255, 165, 103, 231
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_open_triangle, 255, 204, 128, 249
-	voice_directsound 60, 0, DirectSoundWaveData_register_noise, 255, 0, 255, 76
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242
 	voice_directsound 60, 0, DirectSoundWaveData_heart_of_asia_gamelan, 255, 188, 139, 239
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -41,7 +41,7 @@ voice_group anistarcity
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_16, 0, 7, 15, 1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_pinball_52_clarinet, 255, 0, 255, 127  
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 216, 0, 165
@@ -74,7 +74,7 @@ voice_group anistarcity
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 0, 255, 127
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_low, 255, 76, 154, 188
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 204
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

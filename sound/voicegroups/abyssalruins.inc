@@ -29,7 +29,7 @@ voice_group abyssalruins
 	voice_directsound_no_resample 64, 64, DirectSoundWaveData_sc88pro_open_low_conga, 255, 0, 255, 0
 	voice_directsound_no_resample 64, 64, DirectSoundWaveData_sc88pro_open_low_conga, 255, 0, 255, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 226
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 195
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255	, 165, 90, 216
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_special_scream_drive, 255, 0, 255, 195
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 188
@@ -55,7 +55,7 @@ voice_group abyssalruins
 	voice_directsound 60, 0, DirectSoundWaveData_unknown_female_voice, 128, 165, 128, 204
 	voice_directsound 60, 0, DirectSoundWaveData_unused_unknown_male_voice, 128, 165, 128, 188
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet
+	voice_directsound 60, 0, DirectSoundWaveData_trinity_big_boned, 255, 165, 154, 127
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -74,7 +74,7 @@ voice_group abyssalruins
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 0, 255, 127
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_low, 255, 76, 154, 188
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 204
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

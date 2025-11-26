@@ -4940,6 +4940,46 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/PokeInnRoom2_1/border.bin",
       "blockdata_filepath": "data/layouts/PokeInnRoom2_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARCADE_BASEMENT",
+      "name": "ArcadeBasement_Layout",
+      "width": 14,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ArcadeBasement/border.bin",
+      "blockdata_filepath": "data/layouts/ArcadeBasement/map.bin"
+    },
+    {
+      "id": "LAYOUT_REBEL_ROOM1",
+      "name": "RebelRoom1_Layout",
+      "width": 6,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/RebelRoom1/border.bin",
+      "blockdata_filepath": "data/layouts/RebelRoom1/map.bin"
+    },
+    {
+      "id": "LAYOUT_REBEL_ROOM2",
+      "name": "RebelRoom2_Layout",
+      "width": 6,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/RebelRoom2/border.bin",
+      "blockdata_filepath": "data/layouts/RebelRoom2/map.bin"
+    },
+    {
+      "id": "LAYOUT_SIDNEY_OFFICE",
+      "name": "SidneyOffice_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SidneyOffice/border.bin",
+      "blockdata_filepath": "data/layouts/SidneyOffice/map.bin"
     }
   ]
 }

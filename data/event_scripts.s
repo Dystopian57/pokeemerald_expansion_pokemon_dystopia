@@ -1266,3 +1266,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PokeInnRoom1_1/scripts.inc"
 
 	.include "data/maps/PokeInnRoom2_1/scripts.inc"
+
+	.include "data/maps/ArcadeBasement/scripts.inc"
+
+	.include "data/maps/RebelRoom1/scripts.inc"
+
+	.include "data/maps/RebelRoom2/scripts.inc"
+
+	.include "data/maps/SidneyOffice/scripts.inc"

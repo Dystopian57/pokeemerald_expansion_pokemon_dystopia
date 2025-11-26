@@ -143,7 +143,11 @@
     "Rout104ShipUnderroom2",
     "JoelTent",
     "PokeInnRoom1_1",
-    "PokeInnRoom2_1"
+    "PokeInnRoom2_1",
+    "ArcadeBasement",
+    "RebelRoom1",
+    "RebelRoom2",
+    "SidneyOffice"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
