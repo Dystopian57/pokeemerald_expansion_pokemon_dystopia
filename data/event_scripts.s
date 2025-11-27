@@ -1278,3 +1278,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ArcadeElevator/scripts.inc"
 
 	.include "data/maps/Sableye_Lair/scripts.inc"
+
+	.include "data/maps/Hermit_Tree/scripts.inc"
+
+	.include "data/maps/Arcade_Elevator_To_Barracks/scripts.inc"

@@ -65,13 +65,13 @@
     },
     {
       "x": 20,
-      "y": 2,
+      "y": 1,
       "elevation": 0,
       "dest_map": "MAP_REBEL_BASEMENT",
       "dest_warp_id": "0"
     },
     {
-      "x": 19,
+      "x": 20,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_ARCADE_BASEMENT",

@@ -5000,6 +5000,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Sableye_Lair/border.bin",
       "blockdata_filepath": "data/layouts/Sableye_Lair/map.bin"
+    },
+    {
+      "id": "LAYOUT_HERMIT_TREE",
+      "name": "Hermit_Tree_Layout",
+      "width": 9,
+      "height": 7,
+      "primary_tileset": "gTileset_SecretBase",
+      "secondary_tileset": "gTileset_SecretBaseTree",
+      "border_filepath": "data/layouts/Hermit_Tree/border.bin",
+      "blockdata_filepath": "data/layouts/Hermit_Tree/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARCADE_ELEVATOR_TO_BARRACKS",
+      "name": "Arcade_Elevator_To_Barracks_Layout",
+      "width": 4,
+      "height": 5,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFrontier",
+      "border_filepath": "data/layouts/Arcade_Elevator_To_Barracks/border.bin",
+      "blockdata_filepath": "data/layouts/Arcade_Elevator_To_Barracks/map.bin"
     }
   ]
 }

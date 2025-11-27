@@ -3,7 +3,7 @@
   "name": "RebelRoom2",
   "layout": "LAYOUT_REBEL_ROOM2",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_CELADON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

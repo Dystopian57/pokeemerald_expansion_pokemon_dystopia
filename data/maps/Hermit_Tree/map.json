@@ -1,9 +1,9 @@
 {
-  "id": "MAP_REBEL_ROOM1",
-  "name": "RebelRoom1",
-  "layout": "LAYOUT_REBEL_ROOM1",
+  "id": "MAP_HERMIT_TREE",
+  "name": "Hermit_Tree",
+  "layout": "LAYOUT_HERMIT_TREE",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_CELADON_CITY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -16,18 +16,11 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 2,
-      "y": 6,
+      "x": 4,
+      "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_ARCADE_BASEMENT",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 3,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_ARCADE_BASEMENT",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_ROUTE102RALTS_SANCTUARY",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],
