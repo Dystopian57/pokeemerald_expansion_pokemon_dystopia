@@ -147,7 +147,9 @@
     "ArcadeBasement",
     "RebelRoom1",
     "RebelRoom2",
-    "SidneyOffice"
+    "SidneyOffice",
+    "ArcadeElevator",
+    "Sableye_Lair"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

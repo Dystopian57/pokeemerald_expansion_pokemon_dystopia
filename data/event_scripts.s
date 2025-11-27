@@ -1274,3 +1274,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RebelRoom2/scripts.inc"
 
 	.include "data/maps/SidneyOffice/scripts.inc"
+
+	.include "data/maps/ArcadeElevator/scripts.inc"
+
+	.include "data/maps/Sableye_Lair/scripts.inc"

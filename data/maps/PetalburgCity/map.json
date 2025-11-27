@@ -347,20 +347,6 @@
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_BIKE_SHOP",
       "dest_warp_id": "3"
-    },
-    {
-      "x": 24,
-      "y": 39,
-      "elevation": 0,
-      "dest_map": "MAP_PETALBURG_BEACH",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 25,
-      "y": 39,
-      "elevation": 0,
-      "dest_map": "MAP_PETALBURG_BEACH",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

@@ -4980,6 +4980,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/SidneyOffice/border.bin",
       "blockdata_filepath": "data/layouts/SidneyOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARCADE_ELEVATOR",
+      "name": "ArcadeElevator_Layout",
+      "width": 5,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFrontier",
+      "border_filepath": "data/layouts/ArcadeElevator/border.bin",
+      "blockdata_filepath": "data/layouts/ArcadeElevator/map.bin"
+    },
+    {
+      "id": "LAYOUT_SABLEYE_LAIR",
+      "name": "Sableye_Lair_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Sableye_Lair/border.bin",
+      "blockdata_filepath": "data/layouts/Sableye_Lair/map.bin"
     }
   ]
 }
