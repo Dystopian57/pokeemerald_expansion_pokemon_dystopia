@@ -811,13 +811,96 @@ waitmovement(0)
 releaseall
 }
 
+script PlayerMedicineCabinet {
+	
+lockall
+msgbox (format("The cabinet contains human medicine.\pThere's some painkillers left in here,
+ but I don't need them anymore."))
+releaseall
+}
+
+script PlayerRationBoxes {
+	
+lockall
+msgbox (format("There's still war rations left in the boxes. I've been eating them for the
+past year or so..."))
+releaseall
+}
+
+script PlayerFridge {
+	
+lockall
+msgbox (format("The fridge is empty"))
+releaseall
+}
+
+script PlayerKitchenCabinet {
+	
+lockall
+msgbox (format("There's only dusty dinnerware in here."))
+releaseall
+}
+
+script PlayerVitaminCabinet {
+	lockall
+	if (!flag (FLAG_ITEM_PLAYER1F_VITAMIN))
+	{msgbox (format("The cabinet contains Pokémon medicine. There's a leftover bioenhancer..."))
+	giveitem (ITEM_X_DEFENSE)
+	setflag (FLAG_ITEM_PLAYER1F_VITAMIN)}
+	else
+	{msgbox (format("The cabinet has nothing else of use"))}
+	waitmovement(0)
+	releaseall	
+}
+
+script PlayerFirstAidKit {
+	lockall
+	if (!flag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION))
+	{msgbox (format("You open the first aid kit..."))
+	giveitem (ITEM_POTION)
+	setflag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION)}
+	else
+	{msgbox (format("There's nothing else of use in the first aid kit."))}
+	waitmovement(0)
+	releaseall	
+}
+
+script PlayerDirtySink {
+lockall
+if(!(flag(FLAG_SYS_POKEMON_GET)))
+{msgbox (format("A NINKABURI has just retreated below the dirty sink.\p If I had a Pokémon
+and a Pokéball, perhaps I could catch it..."))}
+if((flag(FLAG_SYS_POKEMON_GET)) && !(flag(SinkNinkaburiGone)))
+{msgbox (format("A NINKABURI appears boldly from below the sink!"))
+	setwildbattle(SPECIES_NINKABURI, 2)
+	dowildbattle
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		call(Won_or_Caught)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_WON){
+		call(Won_or_Caught)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+		call(RanAway)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+		call(RanAway)
+	}
+	waitmessage
+	setflag (SinkNinkaburiGone)}
+else
+{msgbox (format("You don't see any NINKABURI around the sink."))}
+releaseall
+}
+
 script TV {
 	
 lockall
 if (!flag (WatchedTVathome))
 {playbgm (MUS_INTRO_BATTLE, FALSE)
-msgbox (format("Is it a plane!? Is it a Wingull!?  o, it's SUPER SUBSTITUTE! \p The hero that protects you from
-danger with a wall of fluffy justice! \p New season of Devon TV most loved cartoon is airing soon, so...
+msgbox (format("Is it a plane!? Is it a Wingull!? No, it's SUPER SUBSTITUTE! \pThe hero that protects you from
+danger with a wall of fluffy justice! \pNew season of Devon TV's most loved cartoon is airing soon, so...
 \p Stay tuned, and stay safe!"))
 special (TurnOffTVScreen)
 setvar(VAR_TV_TURNOFF , 1)

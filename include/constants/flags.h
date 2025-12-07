@@ -51,20 +51,20 @@
 #define InsistonPika1       0x25 // Unused Flag
 #define InsistonPika2       0x26 // Unused Flag
 #define GotPika             0x27 // Unused Flag
-#define Aideeaskstoread    0x28 // Unused Flag
-#define ReadGenSafemonLore    0x29 // Unused Flag
-#define ReadSurSafemonLore    0x2A // Unused Flag
-#define ReadConSafemonLore    0x2B // Unused Flag
-#define ReadAllSafemonLore    0x2C // Unused Flag
+#define Aideeaskstoread     0x28 // Unused Flag
+#define ReadGenSafemonLore  0x29 // Unused Flag
+#define ReadSurSafemonLore  0x2A // Unused Flag
+#define ReadConSafemonLore  0x2B // Unused Flag
+#define ReadAllSafemonLore  0x2C // Unused Flag
 #define AideeTestMistake    0x2D // Unused Flag
-#define AideeQuestAccepted    0x2E // Unused Flag
-#define checkonrival      0x2F // Unused Flag
+#define AideeQuestAccepted  0x2E // Unused Flag
+#define checkonrival        0x2F // Unused Flag
 #define rivalhouse1stdialogue    0x30 // Unused Flag
-#define WatchedTVathome   0x31 // Unused Flag
-#define Oldmantyhide    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define WatchedTVathome      0x31 // Unused Flag
+#define Oldmantyhide         0x32 // Unused Flag
+#define FLAG_UNUSED_0x033     0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define SinkNinkaburiGone    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
@@ -1222,9 +1222,9 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
+#define FLAG_ITEM_BEDROOM_TRASHCAN                                  0x493 // Unused Flag
+#define FLAG_ITEM_PLAYER1F_AIDKIT_POTION                            0x494 // Unused Flag
+#define FLAG_ITEM_PLAYER1F_VITAMIN                                  0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
