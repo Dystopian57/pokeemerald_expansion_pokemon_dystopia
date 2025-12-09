@@ -17,7 +17,7 @@
 # 9 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 6 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 10 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_MapScripts::
+
 # 11 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 7 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 12 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -1601,281 +1601,337 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 # 801 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "There are still unknown POKéMON.$"
 
-ShouldTurnOffTV::
-# 807 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	lockall
-# 808 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	msgbox ShouldTurnOffTV_Text_0
+LittlerootTown_BrendansHouse_1F_MapScripts::
+# 806 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, TVOFF
+	.byte 0
+
+
+TVOFF::
 # 809 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ShouldTurnOffTV_Movement_0
+	goto_if_set WatchedTVathome, TVOFF_1
+	return
+
+TVOFF_1:
 # 810 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	waitmovement 0
-# 811 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	releaseall
+	special TurnOffTVScreen
 	return
 
 
-PlayerMedicineCabinet::
-# 816 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+ShouldTurnOffTV::
+# 815 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
+# 816 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox ShouldTurnOffTV_Text_0
 # 817 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	msgbox PlayerMedicineCabinet_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, ShouldTurnOffTV_Movement_0
+# 818 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	waitmovement 0
 # 819 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
-PlayerRationBoxes::
+PlayerMedicineCabinet::
 # 824 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
 # 825 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	msgbox PlayerRationBoxes_Text_0
-# 827 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox PlayerMedicineCabinet_Text_0
+# 826 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
-PlayerFridge::
-# 832 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+PlayerRationBoxes::
+# 831 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
+# 832 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox PlayerRationBoxes_Text_0
 # 833 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+PlayerOpenRationBox::
+# 838 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	lockall
+# 839 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	goto_if_unset FLAG_ITEM_PLAYER1F_RATION, PlayerOpenRationBox_2
+# 844 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox PlayerOpenRationBox_Text_1
+PlayerOpenRationBox_1:
+# 845 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	waitmovement 0
+# 846 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	releaseall
+# 847 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	releaseall
+	return
+
+PlayerOpenRationBox_2:
+# 840 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox PlayerOpenRationBox_Text_0
+# 841 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	giveitem ITEM_ENERGY_ROOT, 3
+# 842 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	setflag FLAG_ITEM_PLAYER1F_RATION
+	goto PlayerOpenRationBox_1
+
+
+PlayerFridge::
+# 853 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	lockall
+# 854 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerFridge_Text_0
-# 834 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 855 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerKitchenCabinet::
-# 839 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 860 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
-# 840 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 861 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerKitchenCabinet_Text_0
-# 841 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 862 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+Player1FTrashcan::
+# 867 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	lockall
+# 868 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox Player1FTrashcan_Text_0
+# 869 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+Player1FPlant::
+# 874 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	lockall
+# 875 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox Player1FPlant_Text_0
+# 876 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerVitaminCabinet::
-# 845 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 880 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
-# 846 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 881 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto_if_unset FLAG_ITEM_PLAYER1F_VITAMIN, PlayerVitaminCabinet_2
-# 851 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 886 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerVitaminCabinet_Text_1
 PlayerVitaminCabinet_1:
-# 852 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	waitmovement 0
-# 853 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 887 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 PlayerVitaminCabinet_2:
-# 847 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 882 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerVitaminCabinet_Text_0
-# 848 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 883 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	giveitem ITEM_X_DEFENSE
-# 849 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 884 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setflag FLAG_ITEM_PLAYER1F_VITAMIN
 	goto PlayerVitaminCabinet_1
 
 
 PlayerFirstAidKit::
-# 857 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 891 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
-# 858 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 892 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto_if_unset FLAG_ITEM_PLAYER1F_AIDKIT_POTION, PlayerFirstAidKit_2
-# 863 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 897 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerFirstAidKit_Text_1
 PlayerFirstAidKit_1:
-# 864 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	waitmovement 0
-# 865 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 898 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 PlayerFirstAidKit_2:
-# 859 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 893 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerFirstAidKit_Text_0
-# 860 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 894 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	giveitem ITEM_POTION
-# 861 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 895 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setflag FLAG_ITEM_PLAYER1F_AIDKIT_POTION
 	goto PlayerFirstAidKit_1
 
 
 PlayerDirtySink::
-# 869 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 902 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
-# 870 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 903 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto_if_unset FLAG_SYS_POKEMON_GET, PlayerDirtySink_2
 PlayerDirtySink_1:
-# 873 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, PlayerDirtySink_7
-PlayerDirtySink_6:
-# 893 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	msgbox PlayerDirtySink_Text_2
+# 906 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	goto_if_set FLAG_SYS_POKEMON_GET, PlayerDirtySink_6
 PlayerDirtySink_4:
-# 894 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 914 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	goto_if_set FLAG_SYS_POKEMON_GET, PlayerDirtySink_11
+PlayerDirtySink_9:
+# 916 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+ninkaburigone:
+# 917 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 PlayerDirtySink_2:
-# 871 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 904 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerDirtySink_Text_0
 	goto PlayerDirtySink_1
 
 PlayerDirtySink_5:
-# 874 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 907 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerDirtySink_Text_1
-# 875 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 908 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setwildbattle SPECIES_NINKABURI, 2
-# 876 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 909 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	dowildbattle
-# 877 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 910 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 878 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq PlayerDirtySink_11
-# 881 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq PlayerDirtySink_12
-# 884 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_RAN
-	goto_if_eq PlayerDirtySink_13
-# 887 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
-	goto_if_eq PlayerDirtySink_14
-PlayerDirtySink_10:
-# 890 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 911 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	waitmessage
-# 891 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 912 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setflag SinkNinkaburiGone
+# 913 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	goto ninkaburigone
 	goto PlayerDirtySink_4
 
-PlayerDirtySink_7:
-# 873 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+PlayerDirtySink_6:
+# 906 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto_if_unset SinkNinkaburiGone, PlayerDirtySink_5
-	goto PlayerDirtySink_6
+	goto PlayerDirtySink_4
+
+PlayerDirtySink_10:
+# 915 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	msgbox PlayerDirtySink_Text_2
+	goto PlayerDirtySink_9
 
 PlayerDirtySink_11:
-# 879 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call Won_or_Caught
-	goto PlayerDirtySink_10
-
-PlayerDirtySink_12:
-# 882 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call Won_or_Caught
-	goto PlayerDirtySink_10
-
-PlayerDirtySink_13:
-# 885 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call RanAway
-	goto PlayerDirtySink_10
-
-PlayerDirtySink_14:
-# 888 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call RanAway
-	goto PlayerDirtySink_10
+# 914 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	goto_if_set SinkNinkaburiGone, PlayerDirtySink_10
+	goto PlayerDirtySink_9
 
 
 TV::
-# 899 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 922 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
-# 900 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 923 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto_if_unset WatchedTVathome, TV_2
-# 910 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 933 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox TV_Text_1
 TV_1:
-# 912 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 935 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	waitmessage
-# 913 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 936 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
 TV_2:
-# 901 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 924 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	playbgm MUS_INTRO_BATTLE, FALSE
-# 902 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 925 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox TV_Text_0
-# 905 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 928 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	special TurnOffTVScreen
-# 906 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 929 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setvar VAR_TV_TURNOFF, 1
-# 907 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 930 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	playbgm MUS_NONE, TRUE
-# 908 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 931 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setflag WatchedTVathome
 	goto TV_1
 
 
-# 809 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 817 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 ShouldTurnOffTV_Movement_0:
-# 809 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 817 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	walk_up
 	step_end
 
 ShouldTurnOffTV_Text_0:
-# 808 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 816 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Oh... I should turn off the TV before I\n"
 	.string "go.$"
 
 PlayerMedicineCabinet_Text_0:
-# 817 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "The cabinet contains human medicine.\p"
-	.string "There's some painkillers left in here,\n"
-	.string "but I don't need them anymore.$"
+# 825 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "The cabinet contains human medicine.\n"
+	.string "There's some painkillers left in it.$"
 
 PlayerRationBoxes_Text_0:
-# 825 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "There's still war rations left in the\n"
-	.string "boxes. I've been eating them for the\l"
-	.string "past year or so...$"
+# 832 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "A sealed box full of canned rations.$"
+
+PlayerOpenRationBox_Text_0:
+# 840 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "There's a few canned rations left in\n"
+	.string "this box...$"
+
+PlayerOpenRationBox_Text_1:
+# 844 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "The box is empty.$"
 
 PlayerFridge_Text_0:
-# 833 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "The fridge is empty$"
+# 854 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "The fridge is empty.$"
 
 PlayerKitchenCabinet_Text_0:
-# 840 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 861 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "There's only dusty dinnerware in here.$"
 
+Player1FTrashcan_Text_0:
+# 868 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "The trash can is empty.$"
+
+Player1FPlant_Text_0:
+# 875 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "Despite the lack of care, the plant\n"
+	.string "clings to life.\p"
+	.string "It is sort of inspiring.$"
+
 PlayerVitaminCabinet_Text_0:
-# 847 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 882 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "The cabinet contains Pokémon medicine.\n"
 	.string "There's a leftover bioenhancer...$"
 
 PlayerVitaminCabinet_Text_1:
-# 851 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "The cabinet has nothing else of use$"
+# 886 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "The cabinet contains nothing of use.$"
 
 PlayerFirstAidKit_Text_0:
-# 859 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 893 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "You open the first aid kit...$"
 
 PlayerFirstAidKit_Text_1:
-# 863 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "There's nothing else of use in the first\n"
-	.string "aid kit.$"
+# 897 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "There's nothing of use in the first aid\n"
+	.string "kit.$"
 
 PlayerDirtySink_Text_0:
-# 871 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 904 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "A NINKABURI has just retreated below\n"
 	.string "the dirty sink.\p"
 	.string "If I had a Pokémon and a Pokéball,\n"
 	.string "perhaps I could catch it...$"
 
 PlayerDirtySink_Text_1:
-# 874 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 907 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "A NINKABURI appears boldly from below\n"
 	.string "the sink!$"
 
 PlayerDirtySink_Text_2:
-# 893 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "You don't see any NINKABURI around the\n"
-	.string "sink.$"
+# 915 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	.string "There doesn't seem to be any NINKABURI\n"
+	.string "around the sink.$"
 
 TV_Text_0:
-# 902 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 925 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Is it a plane!? Is it a Wingull!? No, it's\n"
 	.string "SUPER SUBSTITUTE!\p"
 	.string "The hero that protects you from danger\n"
@@ -1885,5 +1941,5 @@ TV_Text_0:
 	.string "Stay tuned, and stay safe!$"
 
 TV_Text_1:
-# 910 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 933 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "I'm not in the mood for more TV...$"

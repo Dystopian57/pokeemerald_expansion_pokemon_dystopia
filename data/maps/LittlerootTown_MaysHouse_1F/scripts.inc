@@ -1546,164 +1546,146 @@ Littleroot_Idletalk_Rival::
 	lockall
 # 782 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	goto_if_unset rivalhouse1stdialogue, Littleroot_Idletalk_Rival_2
-# 790 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 791 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox Littleroot_Idletalk_Rival_Text_2
 Littleroot_Idletalk_Rival_1:
-# 791 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement 1, RivalWatchout_Movement_1
 # 792 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	applymovement 1, RivalWatchout_Movement_1
+# 793 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 Littleroot_Idletalk_Rival_2:
 # 783 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	applymovement 1, Littleroot_Idletalk_Rival_Movement_0
-# 784 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox Littleroot_Idletalk_Rival_Text_0
 # 785 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmessage
+	msgbox Littleroot_Idletalk_Rival_Text_0
 # 786 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	waitmessage
+# 787 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox Littleroot_Idletalk_Rival_Text_1
-# 789 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 790 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	setflag rivalhouse1stdialogue
 	goto Littleroot_Idletalk_Rival_1
 
 
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE::
-# 796 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 797 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 798 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_Text_0
-# 799 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmessage
 # 800 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setwildbattle SPECIES_MIMIKYU, 5
+	waitmessage
 # 801 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_MIMIYURUI, 3
 # 802 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 803 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 804 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_2
-# 806 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 807 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_3
-# 809 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 810 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_4
-# 812 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 813 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_5
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_1:
-# 815 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmessage
 # 816 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	waitmessage
+# 817 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_2:
-# 804 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 805 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	call Won_or_Caught
 	goto LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_1
 
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_3:
-# 807 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 808 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	call Won_or_Caught
 	goto LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_1
 
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_4:
-# 810 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 811 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	call RanAway
 	goto LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_1
 
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_5:
-# 813 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 814 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	call RanAway
 	goto LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_1
 
 
 Won_or_Caught::
-# 820 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
 # 821 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectxy 1, 9, 6
+	fadescreen FADE_TO_BLACK
 # 822 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	setobjectxy 1, 9, 7
 # 823 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 824 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox Won_or_Caught_Text_0
-# 825 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmessage
 # 826 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement 1, RivalWatchout_Movement_1
+	waitmessage
 # 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox Won_or_Caught_Text_1
+	applymovement OBJ_EVENT_ID_PLAYER, Won_or_Caught_Movement_0
 # 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectxy 3, 10, 6
+	applymovement 1, Won_or_Caught_Movement_1
 # 829 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	removeobject 2
+	setobjectxy 3, 10, 6
 # 830 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	playse SE_BALL_OPEN
 # 831 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	waitse
 # 832 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	removeobject 3
+	msgbox Won_or_Caught_Text_1
 # 833 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement 1, RivalWatchout_Movement_0
+	waitbuttonpress
 # 834 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox Won_or_Caught_Text_2
+	removeobject 2
+# 835 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	removeobject 3
 # 836 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmessage
+	applymovement 1, RivalWatchout_Movement_0
 # 837 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playse SE_FLEE
-# 838 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement 1, Rivalleaves
+	msgbox Won_or_Caught_Text_2
 # 839 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 1
+	waitmessage
 # 840 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	removeobject 1
+	playse SE_FLEE
 # 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playse SE_DOOR
+	applymovement 1, Won_or_Caught_Movement_2
 # 842 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag RIVAL_LEAVES_HOME
+	waitmovement 1
 # 843 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag DOLL_BATTLE
+	removeobject 1
 # 844 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_LITTLEROOT_PHASE, 4
+	playse SE_DOOR
 # 845 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	clearflag Oldmantyhide
+	setflag RIVAL_LEAVES_HOME
 # 846 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playbgm MUS_NONE, TRUE
+	setflag DOLL_BATTLE
+# 847 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_LITTLEROOT_PHASE, 4
+# 848 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	clearflag Oldmantyhide
+# 849 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	playbgm MUS_LITTLEROOT_TEST, TRUE
 	return
 
 
-# 850 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-Rivalleaves:
-# 851 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_down
-# 851 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_down
-# 852 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 852 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 852 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 852 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 852 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 852 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 852 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-	step_end
-
 RanAway::
-# 856 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 854 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	lockall
-# 857 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 855 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RanAway_Text_0
-# 859 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 857 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
@@ -1726,42 +1708,84 @@ Littleroot_Idletalk_Rival_Movement_0:
 	face_player
 	step_end
 
+# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+Won_or_Caught_Movement_0:
+# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_down
+# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	face_up
+	step_end
+
+# 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+Won_or_Caught_Movement_1:
+# 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_right
+# 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	face_up
+	step_end
+
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+Won_or_Caught_Movement_2:
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_down
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_down
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
+# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	face_down
+	step_end
+
 RivalWatchout_Text_0:
 # 771 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "{PLAYER}, don't go beyond the\n"
 	.string "barricade!!\p"
-	.string "That fiend the Kantonian threw at us...\n"
-	.string "it's... too strong!\p"
+	.string "That Pokémon the Kantonian threw at\n"
+	.string "us... it's... too strong!\p"
 	.string "AAGH, it got me good... Leave me, I'm done\n"
 	.string "for!$"
 
 Littleroot_Idletalk_Rival_Text_0:
-# 784 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 785 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "Ugh... I don't have much longer... run\n"
 	.string "away, while you can...$"
 
 Littleroot_Idletalk_Rival_Text_1:
-# 786 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "({RIVAL} does not seem injured... and\n"
+# 787 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "{RIVAL} does not seem injured... and\n"
 	.string "all you see beyond the chairs is a weird\l"
-	.string "doll...?)\p"
-	.string "({RIVAL} is clearly delusional\n"
-	.string "again... perhaps they'll calm down if I\l"
+	.string "doll.\p"
+	.string "{RIVAL} seems to be having another\n"
+	.string "episode... perhaps they'll calm down if I\l"
 	.string "pretend to deal with it.)$"
 
 Littleroot_Idletalk_Rival_Text_2:
-# 790 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 791 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "{PLAYER}... it's been an honour... to\n"
 	.string "share battlefield... with you.$"
 
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_Text_0:
-# 797 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "(As I thought, it's just a doll... one of\n"
-	.string "Super Substitute, Devon's mascot).\p"
-	.string "(Wait... i-it's moving!?)$"
+# 798 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "As I thought, it's just a doll... one of\n"
+	.string "Super Substitute, Devon's mascot.\p"
+	.string "Wait... i-it's moving!?$"
 
 Won_or_Caught_Text_0:
-# 823 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 824 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "{PLAYER}... you did it! You beat the\n"
 	.string "fiend!\p"
 	.string "This will go down in the history books.\n"
@@ -1769,11 +1793,11 @@ Won_or_Caught_Text_0:
 	.string "it to some use.$"
 
 Won_or_Caught_Text_1:
-# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 832 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "Bang!$"
 
 Won_or_Caught_Text_2:
-# 834 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 837 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "Piece of cake - now that this base is\n"
 	.string "secure, let's push onto the north\l"
 	.string "front!\p"
@@ -1781,8 +1805,9 @@ Won_or_Caught_Text_2:
 	.string "chaaaaarge!$"
 
 RanAway_Text_0:
-# 857 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 855 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "{PLAYER}, don't falter now!! This...!\p"
 	.string "This is the battle that will decide the\n"
-	.string "fate of HOENN! EVERYONE IS COUNTING ON\l"
-	.string "YOU! YOU CAN DO IT!$"
+	.string "fate of HOENN!\p"
+	.string "EVERYONE IS COUNTING ON YOU! YOU CAN\n"
+	.string "DO IT!$"

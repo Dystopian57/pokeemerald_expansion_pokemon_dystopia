@@ -305,14 +305,14 @@ script PlayerRoomBookshelf {
 
 script PlayerRoomWardrobe {
 	lockall
-	msgbox (format("There's no clean clothes in the wardrobe... \p Guess I'll just wear this."))
+	msgbox (format("The wardrobe is full of dirty, smelly clothes."))
 	waitmovement(0)
 	releaseall		
 }
 
 script PlayerBed {
 	lockall
-    msgbox("Should I rest for a bit?", MSGBOX_YESNO)
+    msgbox("Rest for a bit?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 	fadescreen (FADE_TO_BLACK)
 	special(HealPlayerParty)
@@ -327,9 +327,9 @@ script PlayerRoomDadPrize {
 	lockall
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
-	msgbox (format("It's dad's Battle Frontier trophy. It's quite dusty and has lost most of its
+	msgbox (format("It's a Battle Frontier trophy. \pIt's quite dusty and has lost most of its
 	sheen."))}
-	else {	msgbox (format("It's mom's Battle Frontier trophy. It's quite dusty and has lost most of its
+	else {	msgbox (format("It's a Battle Frontier trophy. \pIt's quite dusty and has lost most of its
 	sheen."))}
 	waitmovement(0)
 	releaseall		
@@ -337,8 +337,7 @@ script PlayerRoomDadPrize {
 
 script PlayerRoomBox {
 	lockall
-	msgbox (format("My Pokéball Rifle is dissasembled inside the box.\pI'd rather not use
-	this again."))
+	msgbox (format("A Pokéball Rifle is dissasembled inside the box."))
 	waitmovement(0)
 	releaseall		
 }
@@ -355,17 +354,26 @@ script PlayerRoomTrashCan {
 	releaseall		
 }
 
+script PlayerRoomTextbooks {
+	lockall
+	msgbox (format("A pile of textbooks lies besides the bed."))
+	waitmovement(0)
+	releaseall		
+}
+
 script PlayerRoomDiary {
 	lockall
-	msgbox (format("My diary... should I even read this?"))
+	opendiary:
+	msgbox (format("A diary is open on top of the desk."))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Oldest entry", "Old entry", "Newest entry", "Don't read")
 		if (var(VAR_RESULT) == 0) {
 			msgbox (format("Today dad and mom gave me the best birthday gift ever - my first
 			Pokémon! Yay!\pMommy said it's a Mankey, a Fighting type.\pIn school I learnt
-			Fighting is strong against Normal type Pokémon, like the ones grandpa uses. \pOh, about 
-			grandpa, Daddy said I am going to stay with him for a while, because him and mommy are going
+			Fighting types are strong against Normal types, like the ones grandpa uses. \pOh, about 
+			grandpa, Daddy said I am going to stay with him for a while...\pBecause him and mommy are going
 			to be very very busy with work.\pI was a bit sad. It was my birthday, but I think everyone
-			was sad today."))}
+			was sad today."))
+			goto (opendiary)}
 
 		if (var(VAR_RESULT) == 1) {
 			msgbox (format("Today, Mankey and I are being drafted into the Hoenn army.\pAfter our 
@@ -373,13 +381,15 @@ script PlayerRoomDiary {
 			may come, but after all that happened, it's like I can't feel anything anymore. \pI think I have
 			ran out of all my fear, anger, and sadness. \pThis war seems to have stolen everything from me, 
 			even my feelings. \pIf anything, I am curious - who is behind all of this, and why did it have 
-			to happen?"))}
+			to happen?"))
+			goto (opendiary)}
 		if (var(VAR_RESULT) == 2) {
-			msgbox (format("Grandpa was right all along. I am spineless. Useless. \pThere is nothing of him
+			msgbox (format("Grandfather was right all along. I am spineless. Useless. \pThere is nothing of him
 			or of my parents in me. \pUseless, useless, useless.\pThey took Primeape away from me. Now I
 			have nothing left of what they gave me.\pOnly this rag, and this broken house I hate. \pUseless, useless,
 			useless, useless, useless... \pUSELESS.\p{COLOR LIGHT_GRAY}{SHADOW WHITE}The same word is 
-			written for pages on end."))}
+			written for pages on end."))
+			goto (opendiary)}
 
 		if (var(VAR_RESULT) == 3) {
 			releaseall}
@@ -388,15 +398,16 @@ script PlayerRoomDiary {
 
 script PlayerRoomMail {
 	lockall
-	msgbox (format("A laptop is on the floor, with Devon Mail open. \pThere's three mails in the inbox, from
-	three different senders.
-	\p From which one should I read?"))
+	msgbox (format("A laptop is on the floor, with Devon Mail open."))
+	backtomail:
+	msgbox (format("There's three mails in the inbox, from three different senders."))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Devon Corp - Rustboro HQ", "Petalburg Gym", "Oldale DLC", "Ignore laptop")
 		if (var(VAR_RESULT) == 0) {
 			msgbox (format("From: Devon Corporation. \nSubject: Mail has been delivered.
 			\p After failing to deliver your package personally, our mailing staff has deposited it in your allocated
 			   mailbox right outside your domicile. \pPlease check it at your earliest convenience. \p Stay safe,
-			   \n Devon Corporation"))}
+			   \n Devon Corporation"))
+			   goto(backtomail)}
 
 		if (var(VAR_RESULT) == 1) {
 			checkplayergender
@@ -417,14 +428,16 @@ script PlayerRoomMail {
 			\pShe beat me when he was half your age… she was a real prodigy. 
 			\pWell, got to go. Remember to eat well, and do plenty of exercise. 
 			\pTake care,
-			\nNorman."))}}
+			\nNorman."))}
+			goto(backtomail)}
 		if (var(VAR_RESULT) == 2) {
-			msgbox (format("From: Oldale DLC. Subject: You are not alone.
-			\p Did you live through traumatic experiences during the Kantonian invasion? 
+			msgbox (format("From: Oldale DLC. \nSubject: You are not alone.
+			\p Did you live through traumatic experiences during the Kantonian war? 
 			If so, you are not alone. \pCome join us at the newly-established Oldale-based DLC 
 			(Devon Learning Center) and share your burden in an environment of kindness through a  
 			group-based, PTSD Therapy. \p
-			Disclaimer: Only SAFEMON are allowed into the center during sessions."))}
+			Disclaimer: Only SAFEMON are allowed into the center during sessions."))
+			goto(backtomail)}
 
 		if (var(VAR_RESULT) == 3) {
 			releaseall}

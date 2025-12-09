@@ -768,7 +768,7 @@ script RivalWatchout {
 lockall
 playbgm (MUS_HELP, TRUE)
 applymovement (1, moves(face_down))
-msgbox (format("{PLAYER}, don't go beyond the barricade!! \p That fiend the Kantonian threw at us... it's... too
+msgbox (format("{PLAYER}, don't go beyond the barricade!! \p That Pokémon the Kantonian threw at us... it's... too
 strong! \p AAGH, it got me good... Leave me, I'm done for!"))
 waitmessage
 applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
@@ -781,10 +781,11 @@ script Littleroot_Idletalk_Rival{
 	lockall
 	if (!flag (rivalhouse1stdialogue))
 	{applymovement (1, moves(face_player))
+	//drawrivalmugshot, make gender switch for it
 	msgbox (format("Ugh... I don't have much longer... run away, while you can..."))
 	waitmessage
-	msgbox (format("({RIVAL} does not seem injured... and all you see beyond the chairs is a
-	weird doll...?) \p ({RIVAL} is clearly delusional again... perhaps they'll calm down if I pretend to deal
+	msgbox (format("{RIVAL} does not seem injured... and all you see beyond the chairs is a
+	weird doll.\p{RIVAL} seems to be having another episode... perhaps they'll calm down if I pretend to deal
 	with it.)"))
 	setflag (rivalhouse1stdialogue)}
 	else {msgbox(format("{PLAYER}... it's been an honour... to share battlefield... with you."))}
@@ -794,10 +795,10 @@ script Littleroot_Idletalk_Rival{
 
 script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
 	lockall
-    msgbox (format("(As I thought, it's just a doll... one of Super Substitute, Devon's mascot). \p (Wait... i-it's
-	moving!?)"))
+    msgbox (format("As I thought, it's just a doll... one of Super Substitute, Devon's mascot. \p Wait... i-it's
+	moving!?"))
     waitmessage
-	setwildbattle(SPECIES_MIMIKYU, 5)
+	setwildbattle(SPECIES_MIMIYURUI, 3)
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
@@ -818,24 +819,26 @@ script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
  
 script Won_or_Caught {
 	fadescreen(FADE_TO_BLACK)
-	setobjectxy (1, 9, 6)
+	setobjectxy (1, 9, 7)
 	fadescreen(FADE_FROM_BLACK)
 	msgbox (format("{PLAYER}... you did it! You beat the fiend! \p This will go down in the history books.
 	Let me restrain it - perhaps we can put it to some use."))
 	waitmessage
-	applymovement (1, moves(face_right))
-	msgbox (format("Bang!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, face_up))
+	applymovement (1, moves(walk_right * 1, face_up))
 	setobjectxy (3, 10, 6)
-	removeobject(2)
 	playse (SE_BALL_OPEN)
 	waitse
+	msgbox (format("Bang!"))
+	waitbuttonpress
+	removeobject(2)
 	removeobject(3)
 	applymovement (1, moves(face_down))
 	msgbox (format("Piece of cake - now that this base is secure, let's push onto the north front! \p Cover my
 	rear now, {PLAYER} - chaaaaarge!"))
 	waitmessage
 	playse (SE_FLEE)
-    applymovement (1, Rivalleaves)
+    applymovement (1, moves(walk_left * 1, walk_down * 2, walk_left * 7, face_down))
     waitmovement (1)
     removeobject (1)
 	playse (SE_DOOR)
@@ -843,19 +846,14 @@ script Won_or_Caught {
     setflag(DOLL_BATTLE)
     setvar(VAR_LITTLEROOT_PHASE, 4)
 	clearflag (Oldmantyhide)
-	playbgm (MUS_NONE, TRUE)
+	playbgm (MUS_LITTLEROOT_TEST, TRUE)
 	return
-}
-
-movement Rivalleaves {
-    walk_down * 2
-    walk_left * 7
 }
  
 script RanAway {
 	lockall
 	msgbox (format("{PLAYER}, don't falter now!! This...! \p This is the battle that will decide the fate
-	of HOENN! EVERYONE IS COUNTING ON YOU! YOU CAN DO IT!"))
+	of HOENN!\pEVERYONE IS COUNTING ON YOU! YOU CAN DO IT!"))
 	releaseall
 	return
 }

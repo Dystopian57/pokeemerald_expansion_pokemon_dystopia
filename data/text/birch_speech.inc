@@ -14,8 +14,8 @@ gText_Birch_Pokemon::
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "After the war with Kanto, Devon and\n"
-	.string "Silph.Co signed a peace treaty....\p"
+	.string "After the war with Kanto, Devon Corp.\n"
+	.string "and Silph.Co signed a peace treaty....\p"
 	.string "Which stated that all Pokémon in both\n"
 	.string "regions should be turned into weaker\l"
 	.string "versions of themselves - SAFEMON.\p"
@@ -32,10 +32,10 @@ gText_Birch_MainSpeech::
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "So I need your info to fill a new one.$"
+	.string "So I need your info to fill a new one.\p"
+	.string "$"
 gText_Birch_BoyOrGirl::
-	.string "Send me a picture of you. Take a new\n"
-	.string "one if you need to.\p"
+	.string "Send me a picture of you."
 	.string "$"
 
 gText_Birch_WhatsYourName::

@@ -29,7 +29,7 @@
       "flag": "RIVAL_LEAVES_HOME"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_AZUMARILL",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIYURUI)",
       "x": 10,
       "y": 6,
       "elevation": 0,

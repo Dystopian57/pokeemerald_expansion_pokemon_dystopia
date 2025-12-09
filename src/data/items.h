@@ -879,14 +879,14 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ENERGY_POWDER] =
     {
-        .name = ITEM_NAME("Energy Powder"),
-        .pluralName = ITEM_PLURAL_NAME("Energy Powder"),
+        .name = ITEM_NAME("Energy Bar"),
+        .pluralName = ITEM_PLURAL_NAME("Energy Bars"),
         .price = 500,
         .description = COMPOUND_STRING(
-            "A bitter powder\n"
-            "that restores HP\n"
+            "A bitter but highly\n"
+            "nutritious snack that.\n"
         #if I_HEALTH_RECOVERY >= GEN_7
-            "by 60 points."),
+            "restores 60 HP."),
         #else
             "by 50 points."),
         #endif
@@ -897,19 +897,20 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_EnergyPowder,
         .flingPower = 30,
-        .iconPic = gItemIcon_Powder,
-        .iconPalette = gItemIconPalette_EnergyPowder,
+        .iconPic = gItemIcon_RageCandyBar,
+        .iconPalette = gItemIconPalette_RageCandyBar,
     },
 
     [ITEM_ENERGY_ROOT] =
     {
-        .name = ITEM_NAME("Energy Root"),
+        .name = ITEM_NAME("War Ration"),
+        .pluralName = ITEM_PLURAL_NAME("War Rations"),
         .price = (I_PRICE >= GEN_7) ? 1200 : 800,
         .description = COMPOUND_STRING(
-            "A bitter root\n"
-            "that restores HP\n"
+            "A bland but filling\n"
+            "canned meal that\n"
         #if I_HEALTH_RECOVERY >= GEN_7
-            "by 120 points."),
+            "restores 120 HP."),
         #else
             "by 200 points."),
         #endif
@@ -920,8 +921,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_EnergyRoot,
         .flingPower = 30,
-        .iconPic = gItemIcon_EnergyRoot,
-        .iconPalette = gItemIconPalette_EnergyRoot,
+        .iconPic = gItemIcon_SwapSnack,
+        .iconPalette = gItemIconPalette_SwapSnack,
     },
 
     [ITEM_HEAL_POWDER] =
@@ -1331,9 +1332,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SHALOUR_SABLE] =
     {
-        .name = ITEM_NAME("Shalour Sable"),
+        .name = ITEM_NAME("Crater Donut"),
         .price = (I_PRICE >= GEN_7) ? 350 : 200,
-        .description = sFullHealDesc,
+        .description = COMPOUND_STRING(
+            "A sweet designed in\n"
+            "poor taste, but of\n"
+            "great taste."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,

@@ -1826,22 +1826,6 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	//releaseall
 //}
 
-//////////////////////////////////////////////////////////////////////
-
-//IDLE TALKS
-script Littleroot_Idletalk_Oldman{
-	lockall
-	
-	if (!flag (checkonrival))
-	{msgbox (format("Good morning, {PLAYER}. It's good to see you outside for once."))}
-	else
-	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... old people need their sleep."))}
-	//add extra line and flag for post-checking on rival dialogue	
-	releaseall
-}
-
-//////////////////////////////////////////////////////////////////////
-
 //script Mugshottest2 {
 //lockall
 //setvar (VAR_0x8000, MUGSHOT_THIEFBALL)
@@ -1852,18 +1836,60 @@ script Littleroot_Idletalk_Oldman{
 //releaseall
 //}
 
-script Nameboxtest {
-setspeaker ([SP_NAME_BALSAM])
-msgbox ("This is a test.")
+script Littleroot_Techguy_Talk {
+lockall
+applymovement (3, moves(face_player))
+msgbox (format("To think that one can alter Pokémon to make them safer...\p
+Technology is amazing, but it can be scary too."))
 releaseall
 }
 
-script Mugshottest {
-	lockall
-	createfieldmugshot (MUGSHOT_TEST , EMOTE_NORMAL)
-	msgbox ("This is a mugshot test.")
-	removefieldmugshot
-	releaseall
+script Littleroot_Player_Mailbox {
+lockall
+msgbox (format("There's a package inside the mailbox. A letter is attached to it.
+\p 'For your invaluable service to the region, and the losses you suffered while performing it,
+please accept these tokens of gratitude, courtesy of Devon Corp."))
+playse (MUS_OBTAIN_ITEM)
+msgbox (format("Obtained the DEVONDEX!"))
+setflag(FLAG_SYS_POKEDEX_GET)
+waitbuttonpress
+msgbox (format("There's something else in the package..."))
+playse (MUS_OBTAIN_ITEM)
+msgbox (format("Obtained the DEVONAV!"))
+setflag(FLAG_SYS_POKENAV_GET)
+waitbuttonpress
+releaseall
+}
+
+script Littleroot_Rival_Mailbox {
+lockall
+msgbox (format("The mailbox is empty."))
+releaseall
+}
+
+script Littleroot_RivalHouseSign {
+lockall
+msgbox (format("{RIVAL}'s house."))
+releaseall
+}
+
+script Littleroot_LabSign {
+lockall
+msgbox (format("Littleroot's Pokémon Lab."))
+releaseall
+}
+
+script Littleroot_CemeterySign {
+lockall
+msgbox (format("East - Littleroot Graveyard."))
+releaseall
+}
+
+script Littleroot_TownSign {
+lockall
+msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}'Littleroot Town\pA t-wn t-at -an't be sh--ed -ny -ue.'\p
+{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The elements have faded most of the writing."))
+releaseall
 }
 
 script LittlerootTown_Trigger_Blocknopokes{
@@ -1894,12 +1920,13 @@ script LittlerootTown_Trigger_NoEnterRival1{
 	lockall
 	msgbox (format("(You hear someone yelling inside...) \p DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
 	\p Take this..."))
-	msgbox (format("ORYAAAAAAAAHH!"))
+	waitbuttonpress
 	call(RivalShake)
 	playse (SE_BANG)
-	msgbox (format("(It seems {RIVAL} is having another episode... not a good time to visit)")) 
+	msgbox (format("ORYAAAAAAAAHH!"))
+	msgbox (format("(Whatever is happening inside, it does not look like a good time to visit...)")) 
 	waitmessage
-	applymovement (OBJ_EVENT_ID_PLAYER, NoEnterRival)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
 	releaseall	
 }
@@ -1913,76 +1940,81 @@ script RivalShake {
  
 }
 
-movement NoEnterRival{
-		walk_down * 1
+script Littleroot_Idletalk_Oldman{
+	lockall
+	applymovement (1, moves(face_player))
+	if (var(VAR_LITTLEROOT_PHASE) == 0 && !flag(Birchafter1stgreeting))
+	{msgbox (format("Ah, {PLAYER}! I'm so glad to see you.\pPlease, go inside - Professor Balsam is waiting
+	for you.\pI've retired, you see, and left her in charge of things."))
+	setflag (Birchafter1stgreeting)
+	goto (endfirstgreeting)}
+	if (var(VAR_LITTLEROOT_PHASE) == 0 && flag(Birchafter1stgreeting))
+	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things she wants to talk about."))}
+	if (var(VAR_LITTLEROOT_PHASE) == 3 && flag (checkonrival))
+	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... old people need their sleep."))}
+	if (var(VAR_LITTLEROOT_PHASE) == 5)
+	{checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	msgbox (format("How are the new crutches treating you, {PLAYER}?\pThe war left the terrain in a 
+	treacherous state, so please take care."))}
+	else
+	{msgbox (format("How is the new arm sling treating you, {PLAYER}?\pThe war left the terrain in a 
+	treacherous state, so please take care."))}}
+	endfirstgreeting:	
+	releaseall
 }
 
 script LittlerootTown_Eventscript_Oldmanasking {
 	lockall
 	if (!flag (checkonrival))
-	{applymovement (1, Oldmanturning)
-	applymovement (OBJ_EVENT_ID_PLAYER, Playerturningtooldman)
+	{
+	playse (SE_PIN)
+	applymovement (1, moves(emote_exclamation_mark))
+	//draw MUGSHOT HERE NEED TO INCLUDE IIIIT
 	msgbox (format("Ah, {PLAYER}, do you have a minute?"))
-	waitmessage
-	applymovement (1, Oldmanapproaching)
+	waitbuttonpress
+	applymovement (1, moves(face_down, walk_down * 1, face_left))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 	waitmovement
-	msgbox (format("Would you mind paying {RIVAL} a visit? \p They have been screaming a lot lately, and it has
-	me worried. \p Also tired, because I can barely get any sleep! \p You went to the war together, didn't you?
-	Perhaps you can calm them down. \p It will do us all a favour, {RIVAL} included."))
-	applymovement (1, Oldmanreturning)
+	msgbox (format("Would you mind paying {RIVAL} a visit? They have been making quite a ruckus lately...\p
+	It's as if they are reliving things that happened during the war.\pYou went to the front together, 
+	didn't you? Perhaps you can calm them down."))
+	waitbuttonpress
+	applymovement (1, moves(walk_up * 1, face_down))
 	setflag (checkonrival)}
-	else {msgbox (format("Have you checked on {RIVAL} yet? It would mean lot if you do."))}
+	else {setflag (checkonrival)}
 	releaseall
 }
 
-movement Oldmanturning {
-	face_right
-}
-
-movement Playerturningtooldman {
-	face_right
-}
-
-movement Oldmanapproaching {
-	walk_down * 1
-	face_left
-}
-
-movement Oldmanreturning {
-	walk_left * 2
-	walk_up * 1
-	face_down
-}
-
 script OldManThanks {
-lockall
-msgbox (format("Ah, {PLAYER}!"))
-waitmessage
-setobjectxy (1, 14, 16)
-applymovement (1, moves(walk_up * 5))
-waitmovement
-msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! \p I only asked you to calm them down, but
-getting them out also works for me - hohoho! \p Finally I can get some sleep, at least until they come back. Now,
-take this as thanks."))
-playfanfare(MUS_OBTAIN_ITEM)
-setflag (FLAG_SYS_B_DASH)
-checkplayergender
-    if(var(VAR_RESULT) == MALE)
-    {msgbox (format("Obtained the Better Crutches!"))
+	lockall
+	msgbox (format("Ah, {PLAYER}!"))
 	waitmessage
-    msgbox (format("These are some old crutches of mine. I noticed yours are not in the best shape - these
-	should help you move better in the rough terrain outside the town."))}
-    else
-    {msgbox (format("Obtained the Better Arm Sling!"))
-	waitmessage
-    msgbox (format("This is an old arm sling of mine. I noticed yours is not in the best shape - this one
-	should secure your arm better so you can move around more easily."))}
-	msgbox (format("Take care on your trip to Oldale now. There's much hardship in these parts lately, and people
-	are not as friendly as they used to. \p But if you trust in your Pokémon, you should be fine. Good bye!"))
-	applymovement (4, moves(walk_down * 7))
-	waitmovement (0)
-	removeobject (1)
-	setobjectxy (1, 4, 17)
-	setvar(VAR_LITTLEROOT_PHASE, 5)
-//Receive Running shoes
-releaseall}
+	setobjectxy (1, 14, 16)
+	applymovement (1, moves(walk_up * 5))
+	waitmovement
+	msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! What got into them?\p Well, at
+	least you got them to leave the house. That may do them some good.\pThank you for checking on them. Here,
+	take this as a form of thanks."))
+	playfanfare(MUS_OBTAIN_ITEM)
+	setflag (FLAG_SYS_B_DASH)
+	checkplayergender
+		if(var(VAR_RESULT) == MALE)
+		{msgbox (format("Obtained the Better Crutches!"))
+		waitmessage
+		msgbox (format("These are some old crutches of mine.\pTI noticed yours are not in the best shape - these
+		should help you move around better."))}
+		else
+		{msgbox (format("Obtained the Better Arm Sling!"))
+		waitmessage
+		msgbox (format("This is an old arm sling of mine.\pTI noticed yours is not in the best shape - this one
+		should secure your arm better, so you can move around more easily."))}
+		msgbox (format("Well, take care on your trip to Oldale now!\p There's much hardship in these parts lately, and people
+		are not as friendly as they used to.\p But have faith in your Pokémon, and you should be fine. Good bye!"))
+		applymovement (4, moves(walk_down * 7))
+		waitmovement (0)
+		removeobject (1)
+		setobjectxy (1, 4, 17)
+		setvar(VAR_LITTLEROOT_PHASE, 5)
+	//Receive Running shoes
+	releaseall}

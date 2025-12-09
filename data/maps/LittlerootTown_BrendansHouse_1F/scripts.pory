@@ -7,7 +7,7 @@ raw `
 # 5 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 6 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_MapScripts::
+
 # 7 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
 # 8 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -802,6 +802,14 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 
 `
 
+mapscripts LittlerootTown_BrendansHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_LOAD: TVOFF}
+
+script TVOFF {
+	if (flag(WatchedTVathome))
+	{special (TurnOffTVScreen)}
+	}
+
 script ShouldTurnOffTV {
 	
 lockall
@@ -814,23 +822,36 @@ releaseall
 script PlayerMedicineCabinet {
 	
 lockall
-msgbox (format("The cabinet contains human medicine.\pThere's some painkillers left in here,
- but I don't need them anymore."))
+msgbox (format("The cabinet contains human medicine. There's some painkillers left in it."))
 releaseall
 }
 
 script PlayerRationBoxes {
 	
 lockall
-msgbox (format("There's still war rations left in the boxes. I've been eating them for the
-past year or so..."))
+msgbox (format("A sealed box full of canned rations."))
 releaseall
 }
+
+script PlayerOpenRationBox {
+	
+lockall
+	if (!flag (FLAG_ITEM_PLAYER1F_RATION))
+	{msgbox (format("There's a few canned rations left in this box..."))
+	giveitem (ITEM_ENERGY_ROOT, 3)
+	setflag (FLAG_ITEM_PLAYER1F_RATION)}
+	else
+	{msgbox (format("The box is empty."))}
+	waitmovement(0)
+	releaseall	
+releaseall
+}
+
 
 script PlayerFridge {
 	
 lockall
-msgbox (format("The fridge is empty"))
+msgbox (format("The fridge is empty."))
 releaseall
 }
 
@@ -841,6 +862,20 @@ msgbox (format("There's only dusty dinnerware in here."))
 releaseall
 }
 
+script Player1FTrashcan {
+	
+lockall
+msgbox (format("The trash can is empty."))
+releaseall
+}
+
+script Player1FPlant {
+	
+lockall
+msgbox (format("Despite the lack of care, the plant clings to life.\pIt is sort of inspiring."))
+releaseall
+}
+
 script PlayerVitaminCabinet {
 	lockall
 	if (!flag (FLAG_ITEM_PLAYER1F_VITAMIN))
@@ -848,8 +883,7 @@ script PlayerVitaminCabinet {
 	giveitem (ITEM_X_DEFENSE)
 	setflag (FLAG_ITEM_PLAYER1F_VITAMIN)}
 	else
-	{msgbox (format("The cabinet has nothing else of use"))}
-	waitmovement(0)
+	{msgbox (format("The cabinet contains nothing of use."))}
 	releaseall	
 }
 
@@ -860,8 +894,7 @@ script PlayerFirstAidKit {
 	giveitem (ITEM_POTION)
 	setflag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION)}
 	else
-	{msgbox (format("There's nothing else of use in the first aid kit."))}
-	waitmovement(0)
+	{msgbox (format("There's nothing of use in the first aid kit."))}
 	releaseall	
 }
 
@@ -875,22 +908,12 @@ if((flag(FLAG_SYS_POKEMON_GET)) && !(flag(SinkNinkaburiGone)))
 	setwildbattle(SPECIES_NINKABURI, 2)
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
-	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
-		call(Won_or_Caught)
-	}
-	elif(var(VAR_RESULT) == B_OUTCOME_WON){
-		call(Won_or_Caught)
-	}
-	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
-		call(RanAway)
-	}
-	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
-		call(RanAway)
-	}
 	waitmessage
-	setflag (SinkNinkaburiGone)}
-else
-{msgbox (format("You don't see any NINKABURI around the sink."))}
+	setflag (SinkNinkaburiGone)
+	goto (ninkaburigone)}
+if((flag(FLAG_SYS_POKEMON_GET)) && (flag(SinkNinkaburiGone)))
+{msgbox (format("There doesn't seem to be any NINKABURI around the sink."))}
+ninkaburigone:
 releaseall
 }
 

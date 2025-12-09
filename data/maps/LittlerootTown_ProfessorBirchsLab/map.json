@@ -94,7 +94,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKACHU_SAFE)",
       "x": 10,
       "y": 3,
       "elevation": 0,
@@ -191,7 +191,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 11,
       "y": 2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
@@ -200,7 +200,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 11,
       "y": 2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
@@ -299,16 +299,16 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 11,
       "y": 2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "2",
-      "script": "LittlerootTown_Eventscript_ProffessorGotoOldale"
+      "script": "LittlerootTown_Eventscript_Aideenotthere"
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 11,
       "y": 2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",

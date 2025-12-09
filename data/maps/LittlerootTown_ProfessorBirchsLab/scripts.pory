@@ -1012,99 +1012,21 @@ script Littleroot_Idletalk_Aidee{
 	lockall
 	applymovement (5, Aideetoplayer)
 	//if ((flag(VOLTORBSHARDGOT)))
-	//{msgbox (format("SO YOU GOT IT, COME WITH ME"))}
+	//{msgbox (format("SO YOU GOT IT, HAHA thought you were DELULU like RIVAL. COME WITH ME"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3)
-	{msgbox (format("How's the search for {COLOR BLUE}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
+	{msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
 	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier boy!"))}
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))}
-	if (var(VAR_LITTLEROOT_PHASE) == 2 && !flag (Aideeaskstoread))
+	if (var(VAR_LITTLEROOT_PHASE) == 2)
 	{msgbox (format("Oh, {PLAYER} - you're a lifesaver! Yes, I could use your help with a small task. 
-	\p Before I tell you about it however, I hope you don't mind me testing your... wits." ))
-	applymovement (5, moves(face_up))
-	msgbox (format("See that shelf over there? Read a bit about Safemon, and I'll test you once you're
-	done."))
-	setflag (Aideeaskstoread)
-	applymovement (5, moves(face_left))
-	waitmovement
-	goto (FinishAideeScript)
-	}
-    if (var(VAR_LITTLEROOT_PHASE) == 2 && flag (Aideeaskstoread) && !flag (ReadAllSafemonLore))
-	{msgbox (format("{PLAYER}, either you're the fastest reader in Hoenn, or you're not taking this
-	seriously! \p I'm betting on the latter - come on, it's a short book, it won't kill you to
-	finish it."))
-	goto (FinishAideeScript)}
-	if (var(VAR_LITTLEROOT_PHASE) == 2 && flag (Aideeaskstoread) && flag (ReadAllSafemonLore))
-	{
-		if (!flag (AideeTestMistake))
-		{msgbox (format("I see you've been studying thouroughly - time for your test then!"))}
-		else {msgbox (format("Have you reviewed the topic? Let's try again!"))}
-		waitmessage
-		
-		#QUESTION NUMBER 1
-		#MAY NEED TO HIDE PIC BEFORE DYNMULTICHOICE?
-		showmonpic(SPECIES_SHROOMISH, 10,3)
-		msgbox (format("Let's start with an easy first question... Safe Shroomish have been modified so that they
-		resemble a different type of fungus - a safer, edible one."))
-		waitmessage
-		hidemonpic
-		msgbox (format("Which type of Safemon do you think it is?"))
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
-		if (var(VAR_RESULT) == 0) {
-			playse (SE_RG_POKE_JUMP_SUCCESS)
-			msgbox (format("That's correct! Here comes the next one!"))}
-		else {playse (SE_RG_POKE_JUMP_FAILURE)
-		msgbox (format("Ah, not quite... \p Why don't you do a little reviewing, and try your luck
-		again?"))
-		setflag (AideeTestMistake)
-		goto (FinishAideeScript)}
-
-		#QUESTION NUMBER 2
-		showmonpic(SPECIES_ELECTRIKE, 10,3)
-		msgbox (format("Now for a trickier one... Electrike generate and store their electricity
-		in low-voltage batteries that have been implanted to the sides of their heads."))
-		waitmessage
-		hidemonpic
-		msgbox (format("Which type of Safemon do you think it is?"))
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
-		if (var(VAR_RESULT) == 1) {
-			playse (SE_RG_POKE_JUMP_SUCCESS)
-			msgbox (format("Great work! Only one more now..."))}
-		else {playse (SE_RG_POKE_JUMP_FAILURE)
-		msgbox (format("Ah, not quite... \p Why don't you do a little reviewing, and try your luck
-		again?"))
-		setflag (AideeTestMistake)
-		goto (FinishAideeScript)}
-
-		#QUESTION NUMBER 3
-		showmonpic(SPECIES_MACHOP, 10,3)
-		msgbox (format("Now, for the final and toughest question! Just by looking at it, which type of Safemon
-		do you think this is?"))
-		waitmessage
-		hidemonpic
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Genetic", "Surgical", "Contraption")
-		if (var(VAR_RESULT) == 0) {
-			playse (SE_RG_POKE_JUMP_FAILURE)
-			msgbox (format("Hehe... I'm sorry, that was a trick question - the answer is none! \p Machop belongs
-			to a new type of Safemon called Robot Safemon. \p Safemon is an emerging field, so books and
-			taxonomies get outdated all the time. \p That aside, {PLAYER}... I didn't know soldiers were this smart!
-			Ahaha, come on, I'm just kidding! \p I think your observational skills are enough for this
-			job - it's an easy one. \p There's some samples we need to collect in Route 101 - Voltorb
-			Shards, from the Voltorbs that Kanto dropped on us during the war. \p Don't worry, they won't
-			explode! I've done this myself many times. \p Look inside the big craters,
-			that's where you're most likely to find them. I'll make it worth your time, trust me!"))
-			setflag (AideeQuestAccepted)
-			setvar(VAR_LITTLEROOT_PHASE, 3)
-			}
-		else {playse (SE_RG_POKE_JUMP_FAILURE)
-		msgbox (format("Ah, not quite... \p Why don't you do a little reviewing, and try your luck
-		again?"))
-		setflag (AideeTestMistake)
-		goto (FinishAideeScript)}
-	
-	
-	}
-	FinishAideeScript:
+	\pThere's some samples we need to collect from Route 101 - {COLOR RED}Voltorb Shards{COLOR DARK_GRAY}.
+	\pYes, they are the remains of the Voltorbs that Kanto dropped on us during the war.
+	\pDon't worry, they won't explode! I've done this myself many times.
+	\pLook inside the big craters, that's where you're most likely to find them. I'll make it worth your time, trust me!"))
+		setflag (AideeQuestAccepted)
+		setvar(VAR_LITTLEROOT_PHASE, 3)
+		}
 	releaseall
 
 }
@@ -1113,58 +1035,51 @@ movement Aideetoplayer {face_player}
 
 script SafemonLore {
 	lockall
-	if (!flag (Aideeaskstoread)){
-	msgbox (format("There's a bunch of complicated books on Safemon here..."))}
-	if (flag (Aideeaskstoread))
-	{msgbox (format("'Introduction to Safemon Classification, by Devon Corporation.'
+	msgbox (format("'Introduction to Safemon Classification, by Devon Corporation.'
 	\p Hmm... which chapter should I read?"))
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "1) Genetic Safemon", "2) Surgical
-		Safemon", "3) Contraption Safemon", "Don't read")
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "1) Genetic Safemon", "2) Surgical
+		Safemon", "3) Contraption Safemon", "4) Addendum", "Don't read")
 		if (var(VAR_RESULT) == 0) {
 			msgbox (format("As their name suggests, Genetic Safemon are those whose genes have been
-			modified to alter their biological traits, often to suppress dangerous capacities."))
-			showmonpic(SPECIES_CYNDAQUIL, 10,3)
-			msgbox (format("An example is Cyndaquil, whose back fire-glands can no longer produce flames
+			modified to alter their biological traits, often to suppress dangerous capabilities."))
+			showmonpic(SPECIES_SMOTHQUIL, 10,3)
+			msgbox (format("An example is Smothquil, whose back fire-glands can no longer produce flames
 			to the dangerous extent they could before."))
-			hidemonpic
-			setflag (ReadGenSafemonLore)}
+			hidemonpic}
 			
 
 		if (var(VAR_RESULT) == 1) {
 			msgbox (format("Surgical Safemon are Pokémon who have been subjected to surgery to remove
 			their dangerous traits, or to replace them with safe ones."))
-			showmonpic(SPECIES_BULBASAUR, 10,3)
-			msgbox (format("Bulbasaur fall under this category, due to their native bulbs having been
+			showmonpic(SPECIES_BULBASYNTH, 10,3)
+			msgbox (format("Bulbasynth fall under this category, due to their native bulbs having been
 			replaced by synthetic organs that can only segregate safe substances."))
-			hidemonpic
-			setflag (ReadSurSafemonLore)}
+			hidemonpic}
 			
 
 		if (var(VAR_RESULT) == 2) {
 			msgbox (format("When a Pokémon is made safer for human interaction simply by equipping them
 			with an artificial restrain or device, they are called Contraption Safemon."))
-			showmonpic(SPECIES_POOCHYENA, 10,3)
+			showmonpic(SPECIES_POOCHAIN, 10,3)
 			msgbox (format("Due to their large number in Hoenn, it was determined faster and more cost-
 			effective to make Poochyenas safer with this method - more specifically, by adjusting special
 			muzzles around their jaws."))
-			hidemonpic
-			setflag (ReadConSafemonLore)}
+			hidemonpic}
 
 		if (var(VAR_RESULT) == 3) {
-			releaseall}
-			
-		
-		}
-		if (flag (ReadGenSafemonLore) && flag (ReadSurSafemonLore) && flag (ReadConSafemonLore))
-		{setflag (ReadAllSafemonLore)}
+			msgbox (format("Due to their large number in Hoenn, it was determined faster and more cost-
+			effective to make Poochyenas safer with this method - more specifically, by adjusting special
+			muzzles around their jaws."))}
 
+		if (var(VAR_RESULT) == 4) {
+			releaseall}
 		releaseall
 }
 
 
 script Littleroot_Idletalk_Prof{
 	lockall
-	applymovement (4, Proftoplayer)
+	applymovement (4, moves(face_player))
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("I'm sorry - would love to help you decide, but I'm in the middle of something here."))}
 	if(var(VAR_LITTLEROOT_PHASE) == 2)
@@ -1173,11 +1088,9 @@ script Littleroot_Idletalk_Prof{
 	{msgbox (format("You should get going now - don't be late for the therapy session. \p It's in Oldale,
 	in the first building to the right, you can't miss it. \p It's a group session, by the way - maybe you
 	can make some friends!"))}
-	applymovement (4, Profbacktowork)
+	applymovement (4, moves(face_up))
 	releaseall
 }
-movement Proftoplayer {face_player}
-movement Profbacktowork {face_up}
 
 //when you get VOLTORB SHARD, just set the flag
 
@@ -1189,7 +1102,7 @@ script Littleroot_Idletalk_Pikachu1{
 			lockall
 			showmonpic(SPECIES_PIKACHU_SAFE, 10,3)
 			playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_ENCOUNTER) 
-			msgbox (format("Pika-pika?"))
+			msgbox (format("Pura-pura?"))
 			waitmessage
 			hidemonpic
 			
@@ -1209,7 +1122,7 @@ script Littleroot_Idletalk_Pikachu1{
 					{applymovement (4, moves(face_right))
 					waitmovement (4)
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
-					msgbox (format("{PLAYER}... don't insist. Leave that Pikachu alone."))
+					msgbox (format("{PLAYER}... Leave that Purachu alone. You're going to spoil it."))
 					clearflag (InsistonPika1)
 					setflag (InsistonPika2)
 					applymovement (4, moves(face_up))
@@ -1220,19 +1133,21 @@ script Littleroot_Idletalk_Pikachu1{
 				{applymovement (4, moves(face_right))
 				waitmovement (4)
 				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
-				msgbox (format("For the love of Arceus, what's with teenagers and 
-				Pikachus? \p You really want to choose it?")) 
-				msgbox (format("I warn you - it may be cute, but it's
-				a piece of work"), MSGBOX_YESNO)
+				msgbox (format("... you really want to be a {COLOR RED}Red{COLOR DARK_GRAY} wannabe that bad?"))
+				removefieldmugshot
+				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+				msgbox (format("Well, if you like Purachu so much, you can take it as your partner.
+				\pI warn you though - it may be cute, but it's a piece of work."))
+				msgbox ("Are you sure?",MSGBOX_YESNO)
 				waitmessage
 				removefieldmugshot
 					if(var(VAR_RESULT) == YES){
 					playfanfare(MUS_OBTAIN_ITEM)
-					msgbox(format("(I pressured the Professor to give me her Safe Pikachu!)"))
+					msgbox(format("(The Professor has been pressed into giving her Purachu!)"))
 					waitmessage
 					setflag (GotPika)
 					setflag(GOTSTARTER3)
-					removeobject (8)
+					removeobject (7)
 					givemon(SPECIES_PIKACHU_SAFE, 5, ITEM_MASTER_BALL)
        				
 					if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
@@ -1244,7 +1159,7 @@ script Littleroot_Idletalk_Pikachu1{
 					waitmessage
 					applymovement (4, moves(face_left))
 					msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
-					use your help with some field work we need done in Route 101. It will not take you long."))
+					use your help with some field work we need done in Route 101.\pIt will not take you long."))
 					removefieldmugshot
 					}
 
@@ -1262,7 +1177,7 @@ script Littleroot_Idletalk_Pikachu1{
 
 
 				
-			else {msgbox (format("Pikaaa... \p (It looks like Pikachu wants to go on a walk.)"))}
+			else {msgbox (format("Puraaa... \p (It looks like Purachu wants to go on a walk.)"))}
 				finishPikascript:
 				//PLACE VARIABLES HERE FOR EITHER "HOPE YOU GET ALONG WITH PIKA OR THE ONE BELOW"
 				waitmessage
@@ -1273,7 +1188,7 @@ script Littleroot_Idletalk_Pikachu1{
 
 script NicknamePartyMon3{
  
-    msgbox("Should I give Pikachu a nickname...?", MSGBOX_YESNO)
+    msgbox("Give Purachu a nickname...?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)
@@ -1298,23 +1213,27 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 	special (RemoveCameraObject)
 	applymovement (4, Profturning)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Ah, {PLAYER}, you're here. I have good and bad
-			news for you... which would you like to hear first?"))
+			news for you...\pWhich would you like to hear first?"))
 	
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Good news", "Bad news")
     if (var(VAR_RESULT) == 0) {
-        msgbox(format("Well, the goods news is... I'm sending you on an adventure to {COLOR GREEN} Oldale Town,
-		{COLOR DARK_GRAY} with your very own Safemon! \p And the bad news is... I have signed you up for a therapy session
-		there.
-		\p Don't look at me like that. You have been stuck at home for a year, and you need some help
-		to reconnect with the world and with yourself. \p It will do you good, trust me. \p Now, pick
+        msgbox(format("Well, the goods news is...\pI'm sending you on an adventure to {COLOR GREEN} Oldale 
+		Town,
+		{COLOR DARK_GRAY} with your very own Safemon! \p And the 'bad' news is... I have signed you 
+		up for a therapy session there.
+		\pDon't look at me like that. Birch told me what you went through, and that you've shut
+		yourself home for a year. \p But now that you're out, you need some help to reconnect with
+		the world.\n It'll do you good, trust me. \p Now, pick
 		a Safemon to accompany you. I know they're not like your old MANKEY, but they should get you
 		through Route 101 safely enough."))
     }
     elif (var(VAR_RESULT) == 1) {
-        msgbox(format("Well, the bad news is... I'm sending you to Oldale Town to attend a therapy
-		session. \p Don't look at me like that. You have been stuck at home for a year, and you need
-		some help to reconnect with the world and with yourself. \p It will do you good, trust me.\p
+        msgbox(format("Well, the 'bad' news is...\pI'm sending you to Oldale Town to attend a therapy
+		session. \p Don't look at me like that. Birch told me what you went through, and that you've shut
+		yourself home for a year. \p But now that you're out, you need some help to reconnect with
+		the world.\n It'll do you good, trust me.\p
 		The good news is, I'm giving you your very own Safemon! \p I know they are not like your old
 		MANKEY, but they should keep you safe through Route 101."))
     }
@@ -1360,23 +1279,57 @@ movement Playercantleave1 {walk_up * 1}
 
 script LittlerootTown_Eventscript_ProffessorNoPokesUpstairs {
 	lockall
-	applymovement (4, Profturning4)
+	applymovement (4, moves(face_right))
 	waitmovement (4)
-	applymovement (4, Profangry)
+	applymovement (4, moves(emote_exclamation_mark))
 	waitmovement (4)
-	msgbox (format("Hey, just because there's no door doesn't mean you can go in there."))
+	playse (SE_PIN)
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	msgbox (format("You're not going to find any Safemon up there, {PLAYER}."))
+	removefieldmugshot
 	waitmessage
-	applymovement (4, Profturningback4)
+	applymovement (4, moves(face_up))
 	waitmovement (4)
-	applymovement (OBJ_EVENT_ID_PLAYER, Dontgoup1)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	releaseall}
 
-movement Profturning4 {face_right}
-movement Profangry {emote_double_exclamation_mark}
-movement Profturningback4 {face_up}
-movement Dontgoup1{walk_down * 1}
+script LittlerootTown_Eventscript_ProffessorNoDoor {
+	lockall
+	applymovement (4, moves(face_right))
+	waitmovement (4)
+	applymovement (4, moves(emote_exclamation_mark))
+	waitmovement (4)
+	playse (SE_PIN)
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	msgbox (format("Hey, just because there's no door, doesn't mean you can go in
+	there, {PLAYER}."))
+	removefieldmugshot
+	waitmessage
+	applymovement (4, moves(face_up))
+	waitmovement (4)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	releaseall
+}
 
+script LittlerootTown_Eventscript_Aideenotthere {
+	lockall
+	applymovement (4, moves(face_right))
+	waitmovement (4)
+	applymovement (4, moves(emote_exclamation_mark))
+	waitmovement (4)
+	playse (SE_PIN)
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	msgbox (format("{PLAYER}, my Aidee is on the left side of the room. Can't miss him."))
+	removefieldmugshot
+	waitmessage
+	applymovement (4, moves(face_up))
+	waitmovement (4)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	releaseall
+}
 script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	lockall
 	applymovement (4, Profturning5)
@@ -1402,28 +1355,28 @@ script Lab_EventScript_Starter1{
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
 	{
 	applymovement (4, moves(face_down))
-	showmonpic(SPECIES_BULBASAUR, 10,3)
-    msgbox(format("Ah, Bulbasaur...? Not the worst choice. \p Safe Bulbasaurs have had their natural
-	bulb replaced with an artificial one, which synthesises only safe substances. \p No more kids 
-	accidentally breathing Poison Powder!\p That aside, it's a sturdy, reliable Grass type."))
+	showmonpic(SPECIES_BULBASYNTH, 10,3)
+    msgbox(format("Ah, Bulbasynth...? Not the worst choice. \p Bulbasaur have had their natural
+	bulbs replaced with an artificial ones, which synthesise only safe substances. \p No more kids 
+	accidentally breathing Poison Powder!\p That aside, Bulbasynth is a sturdy, reliable Grass type."))
 	waitmessage
 	msgbox("So? Do you choose it?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_BULBASAUR, 50, ITEM_MIRACLE_SEED)
+        givemon(SPECIES_BULBASYNTH, 5, ITEM_MIRACLE_SEED)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Safe Bulbasaur!")
+            msgbox("Received Bulbasynth!")
             removeobject(1)
             setflag(GOTSTARTER1)
             call(NicknamePartyMon1)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
 			applymovement (4, Profturning1)
-			msgbox (format("I hope you and that Bulbasaur and you become good friends."))
+			msgbox (format("I hope you and that Bulbasynth and you become good friends."))
 			waitmessage
 			applymovement (4, Proftoaidee1)
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
-			use your help with some field work we need done in Route 101. It will not take you long."))
+			use your help with some field work we need done in Route 101.\pIt will not take you long."))
 			applymovement (4, Profturningback1)
 			waitmessage
 
@@ -1451,8 +1404,8 @@ script Lab_EventScript_Starter1{
 else{
 applymovement(4, moves(face_down))
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
-a trip to the next town. \p If you want some extra, feel free to buy some Pokéballs while you're in
-Oldale. \p You'll be surprised how many new species inhabit Hoenn now. Go have some fun."))
+a trip to the next town. \p If you want more, buy some Pokéballs while you're in
+Oldale. \p You'll be surprised how many new species inhabit Hoenn now.\pGo catch them all!"))
 applymovement(4, moves(face_up))}
     waitmessage
     releaseall
@@ -1462,7 +1415,7 @@ applymovement(4, moves(face_up))}
  
 script NicknamePartyMon1{
  
-    msgbox("(Should I give Bulbasaur a nickname...?)", MSGBOX_YESNO)
+    msgbox("(Should I give Bulbasynth a nickname...?)", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)
@@ -1500,23 +1453,23 @@ script Lab_EventScript_Starter2{
     lockall
 	applymovement (4, moves(face_down))
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
-    {showmonpic(SPECIES_CYNDAQUIL, 10,3)
-    msgbox(format("That one contains Cyndaquil - or, well, the safe version of it. \p Devon removed the pyroglands 
-	on its back, so its firepower is severely diminished now. \p But it's still a Fire type, and a
-	trusty one at that. Cute too, if you care about such things."))
+    {showmonpic(SPECIES_SMOTHQUIL, 10,3)
+    msgbox(format("That ball contains a Smothquil. \p Devon removed the pyroglands 
+	from the back of Cyndaquil, so their firepower is severely diminished now. \p But Smothquil are
+	 still Fire types, and trusty ones at that."))
 	waitmessage
 	msgbox("So? Do you choose it?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_CYNDAQUIL, 50, ITEM_CHARCOAL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("I received a Safe Cyndaquil!")
+            msgbox("I received a Smothquil!")
             removeobject(2)
             setflag(GOTSTARTER2)
             call(NicknamePartyMon2)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
-			msgbox (format("I hope you and that Bulbasaur and you become good friends."))
+			msgbox (format("I hope you and that Smothquil and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
@@ -1526,7 +1479,7 @@ script Lab_EventScript_Starter2{
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Cyndaquil")
+            msgbox("Received Smothquil")
             removeobject(2)
             setflag(GOTSTARTER2)
             call(NicknameBoxMon2)
@@ -1544,9 +1497,11 @@ script Lab_EventScript_Starter2{
 	}}
 
 else{
+applymovement(4, moves(face_down))
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
-a trip to the next town. \p If you want some extra, feel free to buy some Pokéballs while you're in
-Oldale. \p You'll be surprised how many new species inhabit Hoenn now. Go have some fun."))}
+a trip to the next town. \p If you want more, buy some Pokéballs while you're in
+Oldale. \p You'll be surprised how many new species inhabit Hoenn now.\pGo catch them all!"))
+applymovement(4, moves(face_up))}
     waitmessage
     releaseall
     end
@@ -1555,7 +1510,7 @@ Oldale. \p You'll be surprised how many new species inhabit Hoenn now. Go have s
  
 script NicknamePartyMon2{
  
-    msgbox("(Should I give Cyndaquil a nickname...?)", MSGBOX_YESNO)
+    msgbox("(Should I give Smothquil a nickname...?)", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)
@@ -1581,22 +1536,25 @@ script Lab_EventScript_Starter3{
  
     lockall
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
-    {msgbox(format("(The Pokéball is empty..."))
+    {msgbox(format("The Pokéball is empty..."))
 	waitmessage
 	applymovement (4, moves(face_down))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	msgbox(format("Oh, sorry about that... Devon retrieved all specimens
-	of that starter Safemon. \p They didn't tell us why - apparently it's classified information. \p
+	of that Safemon. \p They didn't tell us why - apparently it's classified information. \p
 	I guess two is still a choice, right?"))
 	waitmessage
+	removefieldmugshot
 	applymovement (4, moves(face_up))
 	special (SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 3, walk_up * 3))
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 3))
 	waitmovement
 	special (RemoveCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 	msgbox(format("You are very disappointed... until your gaze falls upon a third choice...?"))
 	waitmessage
 	special (SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3, walk_left * 3))
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(, walk_left * 3))
 	waitmovement
 	special (RemoveCameraObject)
 	}

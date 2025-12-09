@@ -182,14 +182,6 @@
     },
     {
       "type": "sign",
-      "x": 3,
-      "y": 4,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TV"
-    },
-    {
-      "type": "sign",
       "x": 6,
       "y": 2,
       "elevation": 0,
@@ -218,7 +210,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PlayerRationBoxes"
+      "script": "PlayerOpenRationBox"
     },
     {
       "type": "sign",
@@ -238,7 +230,7 @@
     },
     {
       "type": "sign",
-      "x": 2,
+      "x": 3,
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -262,19 +254,35 @@
     },
     {
       "type": "sign",
-      "x": 4,
-      "y": 2,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PlayerMedicineCabinet"
-    },
-    {
-      "type": "sign",
       "x": 3,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PlayerVitaminCabinet"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlayerVitaminCabinet"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Player1FTrashcan"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Player1FPlant"
     }
   ]
 }
