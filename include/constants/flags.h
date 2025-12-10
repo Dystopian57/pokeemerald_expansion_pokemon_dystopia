@@ -66,7 +66,7 @@
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define SinkNinkaburiGone    0x35 // Unused Flag
 #define Birchafter1stgreeting    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define Donutquestaccepted    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
@@ -1226,7 +1226,7 @@
 #define FLAG_ITEM_PLAYER1F_AIDKIT_POTION                            0x494 // Unused Flag
 #define FLAG_ITEM_PLAYER1F_VITAMIN                                  0x495 // Unused Flag
 #define FLAG_ITEM_PLAYER1F_RATION                                   0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
+#define FLAG_ITEM_LITTLEROOT_MAILBOX                                0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag

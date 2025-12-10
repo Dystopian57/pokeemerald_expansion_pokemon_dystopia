@@ -314,6 +314,15 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "4",
       "script": "LittlerootTown_Eventscript_ProffessorGotoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "5",
+      "script": "LittlerootTown_Eventscript_ProffessorGotoOldale"
     }
   ],
   "bg_events": [

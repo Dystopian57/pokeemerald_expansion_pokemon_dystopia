@@ -1839,26 +1839,34 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 script Littleroot_Techguy_Talk {
 lockall
 applymovement (3, moves(face_player))
-msgbox (format("To think that one can alter Pokémon to make them safer...\p
-Technology is amazing, but it can be scary too."))
+if (var(VAR_LITTLEROOT_PHASE) == 5)
+{msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
+you mind getting me a Crater Donut? They're to die for... \pIf you take a left on Route 101, you'll
+arrive to the Great Crater. There's a guy that sells them there. \pDo me the favour, and I'll give
+you some Pokéballs. Fair deal, right?"))
+setflag(Donutquestaccepted)}
+else {msgbox (format("To think that one can alter Pokémon to make them safer...\p
+Technology is amazing, but it can be scary too."))}
 releaseall
 }
 
 script Littleroot_Player_Mailbox {
 lockall
-msgbox (format("There's a package inside the mailbox. A letter is attached to it.
-\p 'For your invaluable service to the region, and the losses you suffered while performing it,
-please accept these tokens of gratitude, courtesy of Devon Corp."))
-playse (MUS_OBTAIN_ITEM)
-msgbox (format("Obtained the DEVONDEX!"))
-setflag(FLAG_SYS_POKEDEX_GET)
-waitbuttonpress
-msgbox (format("There's something else in the package..."))
-playse (MUS_OBTAIN_ITEM)
-msgbox (format("Obtained the DEVONAV!"))
-setflag(FLAG_SYS_POKENAV_GET)
-waitbuttonpress
-releaseall
+	if (!flag (FLAG_ITEM_LITTLEROOT_MAILBOX))
+	{msgbox (format("There's a package inside the mailbox. A letter is attached to it.
+	\p For your invaluable service to the region, and the losses you suffered while performing it,
+	please accept these tokens of gratitude, courtesy of Devon Corp."))
+	playse (MUS_OBTAIN_ITEM)
+	msgbox (format("Obtained the DEVONDEX!"))
+	setflag(FLAG_SYS_POKEDEX_GET)
+	waitbuttonpress
+	msgbox (format("There's something else in the package..."))
+	playse (MUS_OBTAIN_ITEM)
+	msgbox (format("Obtained the DEVONAV!"))
+	setflag(FLAG_SYS_POKENAV_GET)
+	setflag(FLAG_ITEM_LITTLEROOT_MAILBOX)}
+	else{msgbox (format("The mailbox is empty."))}
+	releaseall
 }
 
 script Littleroot_Rival_Mailbox {
@@ -1894,37 +1902,45 @@ releaseall
 
 script LittlerootTown_Trigger_Blocknopokes{
 	lockall
-	msgbox ("I better go to the lab first...")
-	applymovement (OBJ_EVENT_ID_PLAYER, NoGoRoute)
+	msgbox ("Proffessor Balsam is waiting at the lab...")
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
 	releaseall	
-}
-
-movement NoGoRoute{
-		walk_down * 1
 }
 
 script LittlerootTown_Trigger_Blockgorival{
 	lockall
-	msgbox ("I should check on {RIVAL}.")
-	applymovement (OBJ_EVENT_ID_PLAYER, NoGoRoute2)
+	msgbox ("I should check on {RIVAL}...")
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
 	releaseall	
 }
 
-movement NoGoRoute2{
-		walk_down * 1
+script LittlerootTown_Trigger_Blocknopokesnocemetery{
+	lockall
+	msgbox ("I better go to the lab first...")
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+	waitmovement
+	releaseall	
+}
+
+script LittlerootTown_Trigger_Blockgorivalnocemetery{
+	lockall
+	msgbox ("I should check on {RIVAL}...")
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+	waitmovement
+	releaseall	
 }
 
 script LittlerootTown_Trigger_NoEnterRival1{
 	lockall
-	msgbox (format("(You hear someone yelling inside...) \p DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
+	msgbox (format("You hear someone yelling inside... \p DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
 	\p Take this..."))
 	waitbuttonpress
 	call(RivalShake)
 	playse (SE_BANG)
 	msgbox (format("ORYAAAAAAAAHH!"))
-	msgbox (format("(Whatever is happening inside, it does not look like a good time to visit...)")) 
+	msgbox (format("Whatever is happening inside, it does not look like a good time to visit...")) 
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
@@ -1951,7 +1967,9 @@ script Littleroot_Idletalk_Oldman{
 	if (var(VAR_LITTLEROOT_PHASE) == 0 && flag(Birchafter1stgreeting))
 	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things she wants to talk about."))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3 && flag (checkonrival))
-	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... old people need their sleep."))}
+	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... it would lift a weight off my old
+	shoulders. \p I tried checking on them myself, but they wouldn't open the door.\p I hope you have
+	better luck."))}
 	if (var(VAR_LITTLEROOT_PHASE) == 5)
 	{checkplayergender
 	if(var(VAR_RESULT) == MALE){
@@ -1979,8 +1997,8 @@ script LittlerootTown_Eventscript_Oldmanasking {
 	msgbox (format("Would you mind paying {RIVAL} a visit? They have been making quite a ruckus lately...\p
 	It's as if they are reliving things that happened during the war.\pYou went to the front together, 
 	didn't you? Perhaps you can calm them down."))
-	waitbuttonpress
 	applymovement (1, moves(walk_up * 1, face_down))
+	waitmovement
 	setflag (checkonrival)}
 	else {setflag (checkonrival)}
 	releaseall
@@ -2011,8 +2029,8 @@ script OldManThanks {
 		should secure your arm better, so you can move around more easily."))}
 		msgbox (format("Well, take care on your trip to Oldale now!\p There's much hardship in these parts lately, and people
 		are not as friendly as they used to.\p But have faith in your Pokémon, and you should be fine. Good bye!"))
-		applymovement (4, moves(walk_down * 7))
-		waitmovement (0)
+		applymovement (1, moves(walk_down * 7))
+		waitmovement (1)
 		removeobject (1)
 		setobjectxy (1, 4, 17)
 		setvar(VAR_LITTLEROOT_PHASE, 5)

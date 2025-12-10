@@ -1010,12 +1010,19 @@ script Lights {
 
 script Littleroot_Idletalk_Aidee{
 	lockall
-	applymovement (5, Aideetoplayer)
+	applymovement (5, moves(face_player))
 	//if ((flag(VOLTORBSHARDGOT)))
 	//{msgbox (format("SO YOU GOT IT, HAHA thought you were DELULU like RIVAL. COME WITH ME"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3)
 	{msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
-	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier boy!"))}
+	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier!"))}
+	if (var(VAR_LITTLEROOT_PHASE) == 4)
+	{msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
+	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier!"))}
+	if (var(VAR_LITTLEROOT_PHASE) == 5)
+	{msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
+	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier!"))}
+
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 2)
@@ -1023,15 +1030,14 @@ script Littleroot_Idletalk_Aidee{
 	\pThere's some samples we need to collect from Route 101 - {COLOR RED}Voltorb Shards{COLOR DARK_GRAY}.
 	\pYes, they are the remains of the Voltorbs that Kanto dropped on us during the war.
 	\pDon't worry, they won't explode! I've done this myself many times.
-	\pLook inside the big craters, that's where you're most likely to find them. I'll make it worth your time, trust me!"))
+	\pLook inside the big craters, that's where you're most likely to find them. I'll make it worth your time, I promise!"))
 		setflag (AideeQuestAccepted)
 		setvar(VAR_LITTLEROOT_PHASE, 3)
 		}
+	applymovement (5, moves(face_left))
 	releaseall
 
 }
-movement Aideelookstoshelf {face_up}
-movement Aideetoplayer {face_player}
 
 script SafemonLore {
 	lockall
@@ -1089,6 +1095,7 @@ script Littleroot_Idletalk_Prof{
 	in the first building to the right, you can't miss it. \p It's a group session, by the way - maybe you
 	can make some friends!"))}
 	applymovement (4, moves(face_up))
+	waitmovement
 	releaseall
 }
 
@@ -1138,7 +1145,7 @@ script Littleroot_Idletalk_Pikachu1{
 				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 				msgbox (format("Well, if you like Purachu so much, you can take it as your partner.
 				\pI warn you though - it may be cute, but it's a piece of work."))
-				msgbox ("Are you sure?",MSGBOX_YESNO)
+				msgbox ("Will you choose it?",MSGBOX_YESNO)
 				waitmessage
 				removefieldmugshot
 					if(var(VAR_RESULT) == YES){
@@ -1177,7 +1184,7 @@ script Littleroot_Idletalk_Pikachu1{
 
 
 				
-			else {msgbox (format("Puraaa... \p (It looks like Purachu wants to go on a walk.)"))}
+			else {msgbox (format("It looks like Purachu wants to go on a walk."))}
 				finishPikascript:
 				//PLACE VARIABLES HERE FOR EITHER "HOPE YOU GET ALONG WITH PIKA OR THE ONE BELOW"
 				waitmessage
@@ -1225,17 +1232,15 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 		up for a therapy session there.
 		\pDon't look at me like that. Birch told me what you went through, and that you've shut
 		yourself home for a year. \p But now that you're out, you need some help to reconnect with
-		the world.\n It'll do you good, trust me. \p Now, pick
-		a Safemon to accompany you. I know they're not like your old MANKEY, but they should get you
-		through Route 101 safely enough."))
+		the world.\p Now, pick a Safemon to accompany you.\pI know they're not like your old MANKEY, 
+		but they should get you through Route 101 safely enough."))
     }
     elif (var(VAR_RESULT) == 1) {
         msgbox(format("Well, the 'bad' news is...\pI'm sending you to Oldale Town to attend a therapy
 		session. \p Don't look at me like that. Birch told me what you went through, and that you've shut
 		yourself home for a year. \p But now that you're out, you need some help to reconnect with
-		the world.\n It'll do you good, trust me.\p
-		The good news is, I'm giving you your very own Safemon! \p I know they are not like your old
-		MANKEY, but they should keep you safe through Route 101."))
+		the world. \p The good news is, I'm giving you your very own Safemon! \p I know they are not like your old
+		MANKEY, but they should get you safe through Route 101."))
     }
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3))
@@ -1333,6 +1338,8 @@ script LittlerootTown_Eventscript_Aideenotthere {
 script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	lockall
 	applymovement (4, Profturning5)
+	playse (SE_PIN)
+	waitmovement (4)
 	msgbox (format("Mind leaving the same way you entered? That is, through the DOOR."))
 	waitmessage
 	applymovement (4, Profturningback5)
@@ -1357,7 +1364,7 @@ script Lab_EventScript_Starter1{
 	applymovement (4, moves(face_down))
 	showmonpic(SPECIES_BULBASYNTH, 10,3)
     msgbox(format("Ah, Bulbasynth...? Not the worst choice. \p Bulbasaur have had their natural
-	bulbs replaced with an artificial ones, which synthesise only safe substances. \p No more kids 
+	bulbs replaced with artificial ones, which synthesise only safe substances. \p No more kids 
 	accidentally breathing Poison Powder!\p That aside, Bulbasynth is a sturdy, reliable Grass type."))
 	waitmessage
 	msgbox("So? Do you choose it?", MSGBOX_YESNO)
@@ -1371,13 +1378,12 @@ script Lab_EventScript_Starter1{
             call(NicknamePartyMon1)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
-			applymovement (4, Profturning1)
-			msgbox (format("I hope you and that Bulbasynth and you become good friends."))
+			msgbox (format("I hope that Bulbasynth and you become good friends."))
 			waitmessage
-			applymovement (4, Proftoaidee1)
+			applymovement (4, moves(face_left))
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
 			use your help with some field work we need done in Route 101.\pIt will not take you long."))
-			applymovement (4, Profturningback1)
+			applymovement (4, moves(face_up))
 			waitmessage
 
         }
@@ -1391,7 +1397,7 @@ script Lab_EventScript_Starter1{
 			setvar(VAR_LITTLEROOT_PHASE, 2)
         }
         else{
-            applymovement (4, moves(face_down))
+            applymovement (4, moves(face_up))
 		    hidemonpic
             msgbox("No More Room")
         }
@@ -1405,7 +1411,7 @@ else{
 applymovement(4, moves(face_down))
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
 a trip to the next town. \p If you want more, buy some Pokéballs while you're in
-Oldale. \p You'll be surprised how many new species inhabit Hoenn now.\pGo catch them all!"))
+Oldale. \p You'll be surprised by how many new species inhabit Hoenn now.\pGo catch them all!"))
 applymovement(4, moves(face_up))}
     waitmessage
     releaseall
@@ -1415,7 +1421,7 @@ applymovement(4, moves(face_up))}
  
 script NicknamePartyMon1{
  
-    msgbox("(Should I give Bulbasynth a nickname...?)", MSGBOX_YESNO)
+    msgbox("Should I give Bulbasynth a nickname...?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)
@@ -1454,13 +1460,13 @@ script Lab_EventScript_Starter2{
 	applymovement (4, moves(face_down))
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
     {showmonpic(SPECIES_SMOTHQUIL, 10,3)
-    msgbox(format("That ball contains a Smothquil. \p Devon removed the pyroglands 
-	from the back of Cyndaquil, so their firepower is severely diminished now. \p But Smothquil are
-	 still Fire types, and trusty ones at that."))
+    msgbox(format("That ball contains a Smothquil. \p Cyndaquil's back was a bit of a fire hazard, so Devon
+	 removed the pyroglands from this species' back. \p Their firepower is severely diminished now, but 
+	 Smothquil are still Fire types, and trusty ones at that."))
 	waitmessage
 	msgbox("So? Do you choose it?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_CYNDAQUIL, 50, ITEM_CHARCOAL)
+        givemon(SPECIES_SMOTHQUIL, 5, ITEM_CHARCOAL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("I received a Smothquil!")
@@ -1469,12 +1475,11 @@ script Lab_EventScript_Starter2{
             call(NicknamePartyMon2)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
-			msgbox (format("I hope you and that Smothquil and you become good friends."))
+			msgbox (format("I hope that Smothquil and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
 			use your help with some field work we need done in Route 101. It will not take you long."))
-			applymovement (4, moves(face_up))
 			waitmessage
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1487,7 +1492,6 @@ script Lab_EventScript_Starter2{
 			setvar(VAR_LITTLEROOT_PHASE, 2)
         }
         else{
-            applymovement (4, moves(face_down))
 			hidemonpic
             msgbox("No More Room")
         }
@@ -1500,9 +1504,9 @@ else{
 applymovement(4, moves(face_down))
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
 a trip to the next town. \p If you want more, buy some Pokéballs while you're in
-Oldale. \p You'll be surprised how many new species inhabit Hoenn now.\pGo catch them all!"))
-applymovement(4, moves(face_up))}
+Oldale. \p You'll be surprised how many new species inhabit Hoenn now.\pGo catch them all!"))}
     waitmessage
+	applymovement (4, moves(face_up))
     releaseall
     end
  
@@ -1510,7 +1514,7 @@ applymovement(4, moves(face_up))}
  
 script NicknamePartyMon2{
  
-    msgbox("(Should I give Smothquil a nickname...?)", MSGBOX_YESNO)
+    msgbox("Should I give Smothquil a nickname...?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)

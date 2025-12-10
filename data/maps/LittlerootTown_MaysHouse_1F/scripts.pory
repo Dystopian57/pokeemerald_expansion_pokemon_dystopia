@@ -6,11 +6,6 @@ LittlerootTown_MaysHouse_1F_MapScripts::
 # 5 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_MaysHouse_1F_OnLoad
 # 6 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_1F_OnTransition
-# 7 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_MaysHouse_1F_OnFrame
-# 8 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.byte 0
 # 9 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 10 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -45,74 +40,20 @@ LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual::
 # 28 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 29 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_OnTransition:
-# 30 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
-# 31 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
-# 32 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
-# 33 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
 # 34 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 35 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 2, 4
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
 # 39 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 40 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 6, 5
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
-# 44 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 45 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 1, 8
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
 # 49 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 50 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 # 51 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_OnFrame:
-# 52 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
-# 53 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
-# 54 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
-# 55 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
-# 56 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-# 57 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.2byte 0
 # 58 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 59 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
-# 60 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
-# 61 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
-# 62 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
-	waitmovement 0
-# 66 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 1, 1
-# 67 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitstate
-# 68 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	releaseall
-# 69 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
 # 70 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 71 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -124,27 +65,9 @@ LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs:
 # 74 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 75 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
-# 76 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
-	setvar VAR_0x8005, FEMALE
-# 79 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
-# 80 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
 # 81 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 82 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
-# 83 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
-# 84 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8004, FEMALE
-	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM
-	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
-# 87 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
 # 88 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 89 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -261,19 +184,6 @@ RivalsHouse_1F_EventScript_RivalSibling::
 # 148 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 149 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
-# 150 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
-	setvar VAR_0x8005, FEMALE
-# 153 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
-# 154 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
-# 155 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
-# 156 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
 # 157 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 158 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -767,8 +677,9 @@ script RivalWatchout {
 	
 lockall
 playbgm (MUS_HELP, TRUE)
-applymovement (1, moves(face_down))
-msgbox (format("{PLAYER}, don't go beyond the barricade!! \p That Pokémon the Kantonian threw at us... it's... too
+applymovement (1, moves(face_down, emote_exclamation_mark))
+playse (SE_PIN)
+msgbox (format("{PLAYER}, don't go beyond the barricade!! \p That Pokémon the Kantonians threw at us... it's... too
 strong! \p AAGH, it got me good... Leave me, I'm done for!"))
 waitmessage
 applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
@@ -779,14 +690,15 @@ releaseall
 
 script Littleroot_Idletalk_Rival{
 	lockall
+	applymovement (1, moves(face_player))
 	if (!flag (rivalhouse1stdialogue))
-	{applymovement (1, moves(face_player))
+	{
 	//drawrivalmugshot, make gender switch for it
 	msgbox (format("Ugh... I don't have much longer... run away, while you can..."))
 	waitmessage
 	msgbox (format("{RIVAL} does not seem injured... and all you see beyond the chairs is a
 	weird doll.\p{RIVAL} seems to be having another episode... perhaps they'll calm down if I pretend to deal
-	with it.)"))
+	with it."))
 	setflag (rivalhouse1stdialogue)}
 	else {msgbox(format("{PLAYER}... it's been an honour... to share battlefield... with you."))}
 	applymovement (1, moves(face_right))
@@ -818,19 +730,21 @@ script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
 }
  
 script Won_or_Caught {
-	fadescreen(FADE_TO_BLACK)
 	setobjectxy (1, 9, 7)
+	applymovement (1, moves(face_right))
+	hidefollower
 	fadescreen(FADE_FROM_BLACK)
 	msgbox (format("{PLAYER}... you did it! You beat the fiend! \p This will go down in the history books.
 	Let me restrain it - perhaps we can put it to some use."))
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, face_up))
 	applymovement (1, moves(walk_right * 1, face_up))
+	waitmovement
+	msgbox (format("Bang!"))
+	waitmessage
 	setobjectxy (3, 10, 6)
 	playse (SE_BALL_OPEN)
 	waitse
-	msgbox (format("Bang!"))
-	waitbuttonpress
 	removeobject(2)
 	removeobject(3)
 	applymovement (1, moves(face_down))
@@ -838,7 +752,7 @@ script Won_or_Caught {
 	rear now, {PLAYER} - chaaaaarge!"))
 	waitmessage
 	playse (SE_FLEE)
-    applymovement (1, moves(walk_left * 1, walk_down * 2, walk_left * 7, face_down))
+    applymovement (1, moves(walk_fast_left * 1, walk_fast_down * 1, walk_fast_left * 7, face_down))
     waitmovement (1)
     removeobject (1)
 	playse (SE_DOOR)

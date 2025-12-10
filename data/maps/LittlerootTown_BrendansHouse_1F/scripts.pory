@@ -11,11 +11,6 @@ raw `
 # 7 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
 # 8 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
-# 9 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
-# 10 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.byte 0
 # 11 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 12 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -51,36 +46,16 @@ LittlerootTown_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
 # 30 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 31 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_OnTransition:
-# 32 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor
-# 33 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs
-# 34 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV
-# 35 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	end
+
 # 36 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 37 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 8, 4
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
 # 41 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 42 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 4, 5
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
 # 46 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 47 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 9, 8
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
 # 51 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 52 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -88,30 +63,11 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
 # 53 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 @ The below SS Ticket script uses Mays house state by accident(?), but theyre both set identically after the intro
 # 54 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_OnFrame:
-# 55 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-# 56 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
-# 57 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport
-# 58 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 1, LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor
 # 59 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 # 60 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.2byte 0
 # 61 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 62 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
-# 63 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	lockall
-# 64 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
-# 65 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-	waitmovement 0
 # 69 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 7, 1
 # 70 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -131,11 +87,6 @@ LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs:
 # 77 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 78 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn::
-# 79 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
-	setvar VAR_0x8005, MALE
 # 82 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 # 83 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -143,15 +94,6 @@ LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn::
 # 84 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 85 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport::
-# 86 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	lockall
-# 87 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setvar VAR_0x8004, MALE
-	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM
-	goto PlayersHouse_1F_EventScript_PetalburgGymReportMale
-# 90 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	end
 # 91 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 92 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -200,19 +142,6 @@ LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach:
 # 117 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 118 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-LittlerootTown_BrendansHouse_1F_EventScript_GoSeeRoom::
-# 119 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
-	setvar VAR_0x8005, MALE
-# 122 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterLeft
-# 123 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	waitmovement 0
-# 124 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
-# 125 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	end
 # 126 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 127 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -808,6 +737,7 @@ mapscripts LittlerootTown_BrendansHouse_1F_MapScripts {
 script TVOFF {
 	if (flag(WatchedTVathome))
 	{special (TurnOffTVScreen)}
+	else {special (TurnOnTVScreen)}
 	}
 
 script ShouldTurnOffTV {
@@ -829,23 +759,11 @@ releaseall
 script PlayerRationBoxes {
 	
 lockall
-msgbox (format("A sealed box full of canned rations."))
+msgbox (format("It's a sealed box full of canned rations."))
 releaseall
 }
 
-script PlayerOpenRationBox {
-	
-lockall
-	if (!flag (FLAG_ITEM_PLAYER1F_RATION))
-	{msgbox (format("There's a few canned rations left in this box..."))
-	giveitem (ITEM_ENERGY_ROOT, 3)
-	setflag (FLAG_ITEM_PLAYER1F_RATION)}
-	else
-	{msgbox (format("The box is empty."))}
-	waitmovement(0)
-	releaseall	
-releaseall
-}
+
 
 
 script PlayerFridge {
@@ -896,6 +814,17 @@ script PlayerFirstAidKit {
 	else
 	{msgbox (format("There's nothing of use in the first aid kit."))}
 	releaseall	
+}
+
+script PlayerOpenRationBox {
+	lockall
+	if (!flag (FLAG_ITEM_PLAYER1F_RATION))
+	{msgbox (format("There's a few canned rations left in this box..."))
+	giveitem (ITEM_ENERGY_ROOT, 3)
+	setflag (FLAG_ITEM_PLAYER1F_RATION)}
+	else
+	{msgbox (format("The box is empty."))}
+	releaseall
 }
 
 script PlayerDirtySink {

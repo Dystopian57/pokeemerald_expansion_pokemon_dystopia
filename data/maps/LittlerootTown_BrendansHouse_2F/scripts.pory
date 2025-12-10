@@ -224,7 +224,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_PC::
 	lockall
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
-	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
@@ -350,7 +350,6 @@ script PlayerRoomTrashCan {
 	setflag (FLAG_ITEM_BEDROOM_TRASHCAN)}
 	else
 	{msgbox (format("The trash can is empty."))}
-	waitmovement(0)
 	releaseall		
 }
 
