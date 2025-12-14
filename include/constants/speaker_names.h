@@ -6,6 +6,9 @@ enum SpeakerNames {
     SP_NAME_MOM,
     SP_NAME_PLAYER,
     SP_NAME_BALSAM,
+    SP_NAME_AIDEE,
+    SP_NAME_BIRCH,
+    SP_NAME_RIVAL,
     SP_NAME_COUNT
 };
 

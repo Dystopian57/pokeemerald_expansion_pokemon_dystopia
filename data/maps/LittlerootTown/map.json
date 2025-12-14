@@ -118,15 +118,6 @@
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_LITTLEROOT_PHASE",
-      "var_value": "0",
-      "script": "LittlerootTown_Trigger_Blocknopokes"
-    },
-    {
-      "type": "trigger",
       "x": 7,
       "y": 18,
       "elevation": 0,
@@ -136,7 +127,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
+      "x": 11,
       "y": 2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
@@ -145,7 +136,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 10,
       "y": 2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
@@ -196,6 +187,33 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "0",
       "script": "LittlerootTown_Trigger_Blocknopokesnocemetery"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Trigger_Blockgorival"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "2",
+      "script": "LittlerootTown_Trigger_Blockgorival"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "0",
+      "script": "LittlerootTown_Trigger_Blocknopokes"
     }
   ],
   "bg_events": [

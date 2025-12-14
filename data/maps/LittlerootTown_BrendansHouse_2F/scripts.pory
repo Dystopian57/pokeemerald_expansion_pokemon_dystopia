@@ -281,6 +281,17 @@ PlayersHouse_2F_Text_ItsAGameCube:
 
 `
 
+
+mapscripts LittlerootTown_BrendansHouse_2F_MapScripts2 {
+    MAP_SCRIPT_ON_TRANSITION: Respawnatplayerbed
+	MAP_SCRIPT_ON_LOAD: Respawnatplayerbed}
+
+script Respawnatplayerbed {
+   	setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+	end 
+}
+
+
 script Setclocktoleave {
 	lockall
 	msgbox (format("Is it too early to leave...? I should check the clock."))
@@ -292,21 +303,18 @@ script Setclocktoleave {
 script PlayerRoomGamecube {
 	lockall
 	msgbox (format("{COLOR DARK_GRAY}It's an old Gamecube. The game 'Harvest Moon: A Wonderful Life' is loaded in."))
-	waitmovement(0)
 	releaseall		
 }
 
 script PlayerRoomBookshelf {
 	lockall
 	msgbox (format("The shelf is full of novels. Most of them are science fiction ones."))
-	waitmovement(0)
 	releaseall		
 }
 
 script PlayerRoomWardrobe {
 	lockall
 	msgbox (format("The wardrobe is full of dirty, smelly clothes."))
-	waitmovement(0)
 	releaseall		
 }
 
@@ -329,16 +337,14 @@ script PlayerRoomDadPrize {
 	if(var(VAR_RESULT) == MALE){
 	msgbox (format("It's a Battle Frontier trophy. \pIt's quite dusty and has lost most of its
 	sheen."))}
-	else {	msgbox (format("It's a Battle Frontier trophy. \pIt's quite dusty and has lost most of its
+	else {msgbox (format("It's a Battle Frontier trophy. \pIt's quite dusty and has lost most of its
 	sheen."))}
-	waitmovement(0)
 	releaseall		
 }
 
 script PlayerRoomBox {
 	lockall
 	msgbox (format("A Pokéball Rifle is dissasembled inside the box."))
-	waitmovement(0)
 	releaseall		
 }
 
@@ -355,8 +361,7 @@ script PlayerRoomTrashCan {
 
 script PlayerRoomTextbooks {
 	lockall
-	msgbox (format("A pile of textbooks lies besides the bed."))
-	waitmovement(0)
+	msgbox (format("A pile of textbooks lies beside the bed."))
 	releaseall		
 }
 

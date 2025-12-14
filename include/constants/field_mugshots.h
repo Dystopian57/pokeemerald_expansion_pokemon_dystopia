@@ -4,13 +4,20 @@
 #define MUGSHOT_NONE  0
 #define MUGSHOT_TEST  1
 #define MUGSHOT_BALSAM  2
-#define MUGSHOT_COUNT 3
+#define MUGSHOT_AIDEE  3
+#define MUGSHOT_BIRCH  4
+#define MUGSHOT_MPLAYER  5
+#define MUGSHOT_FPLAYER  6
+#define MUGSHOT_COUNT 7
 
 #define EMOTE_NORMAL  0
 #define EMOTE_HAPPY   1
 #define EMOTE_ANGRY   2
 #define EMOTE_CONFUSED     3
 #define EMOTE_MENACING     4
-#define EMOTE_COUNT   5
+#define EMOTE_SAD     5
+#define EMOTE_TALK     6
+#define EMOTE_POKEBALL     7
+#define EMOTE_COUNT   8
 
 #endif // GUARD_CONSTANTS_MUGSHOTS_H

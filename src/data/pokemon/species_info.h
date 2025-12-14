@@ -395,7 +395,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Smothquil,
             gShinyOverworldPalette_Smothquil
         )
-        .levelUpLearnset = sCyndaquilLevelUpLearnset,
+        .levelUpLearnset = sSmothquilLevelUpLearnset,
         .teachableLearnset = sCyndaquilTeachableLearnset,
         .eggMoveLearnset = sCyndaquilEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_QUILAVA}),

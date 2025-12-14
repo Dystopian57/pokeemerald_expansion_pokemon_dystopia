@@ -1003,7 +1003,7 @@ mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Lights}
 
 script Lights {
-	if (var(VAR_LITTLEROOT_PHASE) == 3)
+	if (var(VAR_LITTLEROOT_PHASE) == 5)
 	{setweather (WEATHER_NONE)
 }}
 
@@ -1011,30 +1011,60 @@ script Lights {
 script Littleroot_Idletalk_Aidee{
 	lockall
 	applymovement (5, moves(face_player))
+	setspeaker ([SP_NAME_AIDEE])
 	//if ((flag(VOLTORBSHARDGOT)))
 	//{msgbox (format("SO YOU GOT IT, HAHA thought you were DELULU like RIVAL. COME WITH ME"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3)
-	{msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
-	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier!"))}
+	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	msgbox (format("Remember - there should be {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} in the big 
+	craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	msgbox (format("I'm counting on you, soldier!"))}
+
 	if (var(VAR_LITTLEROOT_PHASE) == 4)
-	{msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
-	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier!"))}
+	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+	msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going?"))
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	msgbox (format("Remember - there should be {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} in the big 
+	craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	msgbox (format("I'm counting on you, soldier!"))}
+
 	if (var(VAR_LITTLEROOT_PHASE) == 5)
-	{msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going? Remember - 
-	there should be some in the big craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}. \p I'm counting on you, soldier!"))}
+	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+	msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going?"))
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	msgbox (format("Remember - there should be {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} in the big 
+	craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	msgbox (format("I'm counting on you, soldier!"))}
 
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
-	{msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))}
+	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+	msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 2)
-	{msgbox (format("Oh, {PLAYER} - you're a lifesaver! Yes, I could use your help with a small task. 
-	\pThere's some samples we need to collect from Route 101 - {COLOR RED}Voltorb Shards{COLOR DARK_GRAY}.
-	\pYes, they are the remains of the Voltorbs that Kanto dropped on us during the war.
-	\pDon't worry, they won't explode! I've done this myself many times.
-	\pLook inside the big craters, that's where you're most likely to find them. I'll make it worth your time, I promise!"))
+	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	msgbox (format("Oh, {PLAYER} - you're a lifesaver! Yes, I could use your help with a small task."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	msgbox (format("There's some samples we need to collect from Route 101 - {COLOR RED}Voltorb Shards{COLOR DARK_GRAY}.
+	\pYes, they are the remains of the Voltorbs that Kanto dropped on us during the war."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Don't worry, they won't explode! I've done this myself many times."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Look inside the big craters, that's where you're most likely to find them. I'll make it worth your time, I promise!"))
 		setflag (AideeQuestAccepted)
 		setvar(VAR_LITTLEROOT_PHASE, 3)
 		}
 	applymovement (5, moves(face_left))
+	removefieldmugshot
 	releaseall
 
 }
@@ -1085,15 +1115,20 @@ script SafemonLore {
 
 script Littleroot_Idletalk_Prof{
 	lockall
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	applymovement (4, moves(face_player))
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("I'm sorry - would love to help you decide, but I'm in the middle of something here."))}
 	if(var(VAR_LITTLEROOT_PHASE) == 2)
 	{msgbox (format("If you could give my Aidee a hand, it would be a huge help. We're very busy lately."))}
 	if(var(VAR_LITTLEROOT_PHASE) == 3)
-	{msgbox (format("You should get going now - don't be late for the therapy session. \p It's in Oldale,
-	in the first building to the right, you can't miss it. \p It's a group session, by the way - maybe you
-	can make some friends!"))}
+	{msgbox (format("You should get going now - don't be late for the therapy session. \p It's in
+	{COLOR GREEN} Oldale{COLOR DARK_GRAY}, in the first building to the right, you can't miss it. "))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+	msgbox (format("It's a group session, by the way - try to make some friends!"))}
+	removefieldmugshot
 	applymovement (4, moves(face_up))
 	waitmovement
 	releaseall
@@ -1115,7 +1150,8 @@ script Littleroot_Idletalk_Pikachu1{
 			
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && !flag (InsistonPika1) && !flag (InsistonPika2))
-					{applymovement (4, moves(face_right))
+					{setspeaker ([SP_NAME_BALSAM])
+					applymovement (4, moves(face_right))
 					waitmovement (4)
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					msgbox (format("Look, I know I asked you to choose a Safemon... \p But that one
@@ -1126,7 +1162,8 @@ script Littleroot_Idletalk_Pikachu1{
 					goto(finishPikascript)}
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika1))
-					{applymovement (4, moves(face_right))
+					{setspeaker ([SP_NAME_BALSAM])
+					applymovement (4, moves(face_right))
 					waitmovement (4)
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 					msgbox (format("{PLAYER}... Leave that Purachu alone. You're going to spoil it."))
@@ -1137,20 +1174,23 @@ script Littleroot_Idletalk_Pikachu1{
 					goto(finishPikascript)}
 
 			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika2) && !flag (GotPika))
-				{applymovement (4, moves(face_right))
+				{setspeaker ([SP_NAME_BALSAM])
+				applymovement (4, moves(face_right))
 				waitmovement (4)
+				setspeaker ([SP_NAME_BALSAM])
 				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
 				msgbox (format("... you really want to be a {COLOR RED}Red{COLOR DARK_GRAY} wannabe that bad?"))
 				removefieldmugshot
 				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 				msgbox (format("Well, if you like Purachu so much, you can take it as your partner.
 				\pI warn you though - it may be cute, but it's a piece of work."))
+				setspeaker ([SP_NAME_BALSAM])
 				msgbox ("Will you choose it?",MSGBOX_YESNO)
 				waitmessage
 				removefieldmugshot
 					if(var(VAR_RESULT) == YES){
 					playfanfare(MUS_OBTAIN_ITEM)
-					msgbox(format("(The Professor has been pressed into giving her Purachu!)"))
+					msgbox(format("The Professor has been pressed into giving her Purachu!"))
 					waitmessage
 					setflag (GotPika)
 					setflag(GOTSTARTER3)
@@ -1162,7 +1202,8 @@ script Littleroot_Idletalk_Pikachu1{
            			setflag(FLAG_SYS_POKEMON_GET)
 					setvar(VAR_LITTLEROOT_PHASE, 2)
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-					msgbox (format("Well, I hope it doesn't give you too much trouble."))
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Well, it's yours now. Don't say I didn't warn you."))
 					waitmessage
 					applymovement (4, moves(face_left))
 					msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
@@ -1177,9 +1218,12 @@ script Littleroot_Idletalk_Pikachu1{
 					
 
 					else{
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
 					msgbox (format("Good, then pick from the ones in the Pokéballs."))}
 					waitmessage
 					applymovement (4, moves(face_up))
+					removefieldmugshot
 					goto(finishPikascript)}
 
 
@@ -1218,7 +1262,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 3))
     waitmovement(0)
 	special (RemoveCameraObject)
-	applymovement (4, Profturning)
+	applymovement (4, moves(face_down))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Ah, {PLAYER}, you're here. I have good and bad
@@ -1226,61 +1270,89 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 	
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Good news", "Bad news")
     if (var(VAR_RESULT) == 0) {
-        msgbox(format("Well, the goods news is...\pI'm sending you on an adventure to {COLOR GREEN} Oldale 
-		Town,
-		{COLOR DARK_GRAY} with your very own Safemon! \p And the 'bad' news is... I have signed you 
-		up for a therapy session there.
-		\pDon't look at me like that. Birch told me what you went through, and that you've shut
-		yourself home for a year. \p But now that you're out, you need some help to reconnect with
-		the world.\p Now, pick a Safemon to accompany you.\pI know they're not like your old MANKEY, 
+        msgbox(format("Well, the goods news is..."))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_BALSAM])	
+		msgbox(format("I'm sending you on an adventure to {COLOR GREEN}Oldale 
+		Town{COLOR DARK_GRAY}, with your very own Safemon!"))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("And the 'bad' news is... I have signed you up for a therapy session there."))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("Don't look at me like that. Birch told me what you went through, and that you've shut
+		yourself home for a year."))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("But now that you're out, you need some help to reconnect with
+		the world.\p Now, pick a Safemon to accompany you.\pI know they're not like your old Mankey, 
 		but they should get you through Route 101 safely enough."))
     }
     elif (var(VAR_RESULT) == 1) {
-        msgbox(format("Well, the 'bad' news is...\pI'm sending you to Oldale Town to attend a therapy
-		session. \p Don't look at me like that. Birch told me what you went through, and that you've shut
-		yourself home for a year. \p But now that you're out, you need some help to reconnect with
-		the world. \p The good news is, I'm giving you your very own Safemon! \p I know they are not like your old
-		MANKEY, but they should get you safe through Route 101."))
+        msgbox(format("Well, the 'bad' news is...\pI'm sending you to {COLOR GREEN}Oldale 
+		Town{COLOR DARK_GRAY} to attend a therapy
+		session."))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("Don't look at me like that. Birch told me what you went through, and that you've shut
+		yourself home for a year."))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("But now that you're out, you need some help to reconnect with
+		the world."))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("The good news is, I'm giving you your very own Safemon!"))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("I know they are not like your old Mankey, but they should get you safe 
+		through Route 101."))
     }
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3))
     waitmovement(0)
 	special (RemoveCameraObject)
-	applymovement (4, Profturningback)
+	applymovement (4, moves(face_up))
 	waitmovement (4)
 	setvar(VAR_LITTLEROOT_PHASE, 1)
 	removefieldmugshot
 	special (RemoveCameraObject)
 	releaseall}
-movement Profturning {face_down}
-movement Profturningback {face_up}
 
 script LittlerootTown_Eventscript_ProffessorDontgo1 {
 	lockall
-	applymovement (4, Profturning0)
+	applymovement (4, moves(face_down))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Come on {PLAYER}, can't you at least give this a chance?"))
-	applymovement (OBJ_EVENT_ID_PLAYER, Playercantleave)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
-	applymovement (4, Profturningback0)
+	applymovement (4, moves(face_up))
 	waitmovement (4)
+	removefieldmugshot
 	releaseall}
-movement Profturning0 {face_down}
-movement Profturningback0 {face_up}
-movement Playercantleave {walk_up * 1}
 
 script LittlerootTown_Eventscript_ProffessorDontgo2 {
 	lockall
-	applymovement (4, Profturning0)
+	applymovement (4, moves(face_down))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("{PLAYER}, we're helping you out here - least you could do is return the favour,
 	don't you think?"))
-	applymovement (OBJ_EVENT_ID_PLAYER, Playercantleave)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
-	applymovement (4, Profturningback0)
+	applymovement (4, moves(face_up))
 	waitmovement (4)
+	removefieldmugshot
 	releaseall}
-movement Profturning2 {face_down}
-movement Profturningback2 {face_up}
-movement Playercantleave1 {walk_up * 1}
 
 script LittlerootTown_Eventscript_ProffessorNoPokesUpstairs {
 	lockall
@@ -1290,6 +1362,7 @@ script LittlerootTown_Eventscript_ProffessorNoPokesUpstairs {
 	waitmovement (4)
 	playse (SE_PIN)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("You're not going to find any Safemon up there, {PLAYER}."))
 	removefieldmugshot
 	waitmessage
@@ -1307,6 +1380,7 @@ script LittlerootTown_Eventscript_ProffessorNoDoor {
 	waitmovement (4)
 	playse (SE_PIN)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Hey, just because there's no door, doesn't mean you can go in
 	there, {PLAYER}."))
 	removefieldmugshot
@@ -1326,6 +1400,7 @@ script LittlerootTown_Eventscript_Aideenotthere {
 	waitmovement (4)
 	playse (SE_PIN)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("{PLAYER}, my Aidee is on the left side of the room. Can't miss him."))
 	removefieldmugshot
 	waitmessage
@@ -1340,7 +1415,10 @@ script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	applymovement (4, Profturning5)
 	playse (SE_PIN)
 	waitmovement (4)
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Mind leaving the same way you entered? That is, through the DOOR."))
+	removefieldmugshot
 	waitmessage
 	applymovement (4, Profturningback5)
 	waitmovement (0)
@@ -1359,31 +1437,45 @@ movement Dontgoup2{walk_down * 1}
 script Lab_EventScript_Starter1{
  
     lockall
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
 	{
 	applymovement (4, moves(face_down))
 	showmonpic(SPECIES_BULBASYNTH, 10,3)
     msgbox(format("Ah, Bulbasynth...? Not the worst choice. \p Bulbasaur have had their natural
-	bulbs replaced with artificial ones, which synthesise only safe substances. \p No more kids 
-	accidentally breathing Poison Powder!\p That aside, Bulbasynth is a sturdy, reliable Grass type."))
+	bulbs replaced with artificial ones, which synthesise only safe substances."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+	msgbox(format("No more kids 
+	accidentally breathing Poison Powder! Hooraay...!"))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox(format("That aside, Bulbasynth is a sturdy, reliable Grass type."))
 	waitmessage
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox("So? Do you choose it?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_BULBASYNTH, 5, ITEM_MIRACLE_SEED)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
+			removefieldmugshot
             msgbox("Received Bulbasynth!")
             removeobject(1)
             setflag(GOTSTARTER1)
             call(NicknamePartyMon1)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_BALSAM])
 			msgbox (format("I hope that Bulbasynth and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
 			use your help with some field work we need done in Route 101.\pIt will not take you long."))
 			applymovement (4, moves(face_up))
+			waitmovement
 			waitmessage
 
         }
@@ -1405,18 +1497,25 @@ script Lab_EventScript_Starter1{
     if(var(VAR_RESULT) == NO){
         hidemonpic
 		applymovement(4, moves(face_up))
+		removefieldmugshot
+		releaseall
     }}
 
 else{
 applymovement(4, moves(face_down))
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+setspeaker ([SP_NAME_BALSAM])
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
 a trip to the next town. \p If you want more, buy some Pokéballs while you're in
-Oldale. \p You'll be surprised by how many new species inhabit Hoenn now.\pGo catch them all!"))
+{COLOR GREEN} Oldale{COLOR DARK_GRAY}. \p You'll be surprised by how many new species inhabit Hoenn 
+now.\pGo catch some!"))
+removefieldmugshot
 applymovement(4, moves(face_up))}
     waitmessage
+	applymovement (4, moves(face_up))
+	waitmovement
     releaseall
     end
- 
 }
  
 script NicknamePartyMon1{
@@ -1457,6 +1556,8 @@ movement Profturningback1 {
 script Lab_EventScript_Starter2{
  
     lockall
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	applymovement (4, moves(face_down))
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
     {showmonpic(SPECIES_SMOTHQUIL, 10,3)
@@ -1475,12 +1576,17 @@ script Lab_EventScript_Starter2{
             call(NicknamePartyMon2)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_BALSAM])
 			msgbox (format("I hope that Smothquil and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
 			use your help with some field work we need done in Route 101. It will not take you long."))
+			applymovement (4, moves(face_up))
+			waitmovement
 			waitmessage
+			removefieldmugshot
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
@@ -1498,19 +1604,35 @@ script Lab_EventScript_Starter2{
 	}
     if (var (VAR_RESULT) == NO){
         hidemonpic
+		removefieldmugshot
+		applymovement (4, moves(face_up))
 	}}
 
 else{
 applymovement(4, moves(face_down))
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+setspeaker ([SP_NAME_BALSAM])
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
-a trip to the next town. \p If you want more, buy some Pokéballs while you're in
-Oldale. \p You'll be surprised how many new species inhabit Hoenn now.\pGo catch them all!"))}
+a trip to the next town."))
+removefieldmugshot
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+msgbox (format("If you want more, buy some Pokéballs while you're in {COLOR GREEN} Oldale{COLOR DARK_GRAY}.
+ \pYou'll be surprised by how many new species inhabit Hoenn now."))
+removefieldmugshot
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+msgbox(format("Go catch some!"))
     waitmessage
 	applymovement (4, moves(face_up))
+	waitmovement
+	removefieldmugshot
     releaseall
     end
  
 }
+applymovement (4, moves(face_up))
+waitmovement
+removefieldmugshot
+releaseall}
  
 script NicknamePartyMon2{
  
@@ -1544,9 +1666,12 @@ script Lab_EventScript_Starter3{
 	waitmessage
 	applymovement (4, moves(face_down))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox(format("Oh, sorry about that... Devon retrieved all specimens
-	of that Safemon. \p They didn't tell us why - apparently it's classified information. \p
-	I guess two is still a choice, right?"))
+	of that Safemon. \p They didn't tell us why - apparently it's classified information."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+	msgbox(format("I guess two is still a choice, right?"))
 	waitmessage
 	removefieldmugshot
 	applymovement (4, moves(face_up))
@@ -1558,7 +1683,7 @@ script Lab_EventScript_Starter3{
 	msgbox(format("You are very disappointed... until your gaze falls upon a third choice...?"))
 	waitmessage
 	special (SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, moves(, walk_left * 3))
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 3))
 	waitmovement
 	special (RemoveCameraObject)
 	}

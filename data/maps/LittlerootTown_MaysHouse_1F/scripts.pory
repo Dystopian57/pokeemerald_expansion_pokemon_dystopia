@@ -676,32 +676,46 @@ script HidePokeball {
 script RivalWatchout {
 	
 lockall
+createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)
+setspeaker ([SP_NAME_RIVAL])
 playbgm (MUS_HELP, TRUE)
 applymovement (1, moves(face_down, emote_exclamation_mark))
 playse (SE_PIN)
-msgbox (format("{PLAYER}, don't go beyond the barricade!! \p That Pokémon the Kantonians threw at us... it's... too
-strong! \p AAGH, it got me good... Leave me, I'm done for!"))
+msgbox (format("{PLAYER}, don't go beyond the barricade!!"))
+removefieldmugshot
+createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
+msgbox (format("That Pokémon the Kantonians threw at us... it's too strong...!"))
+removefieldmugshot
+createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)
+setspeaker ([SP_NAME_RIVAL])
+msgbox (format("Uggh... it got me good. Leave me... I'm done for!"))
 waitmessage
 applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 applymovement (1, moves(face_right))
- setvar(VAR_RIVALMIMIWARNINGDONE, 1)
+setvar(VAR_RIVALMIMIWARNINGDONE, 1)
+removefieldmugshot
 releaseall
 }
 
 script Littleroot_Idletalk_Rival{
 	lockall
+	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)
+	setspeaker ([SP_NAME_RIVAL])
 	applymovement (1, moves(face_player))
 	if (!flag (rivalhouse1stdialogue))
 	{
-	//drawrivalmugshot, make gender switch for it
 	msgbox (format("Ugh... I don't have much longer... run away, while you can..."))
-	waitmessage
-	msgbox (format("{RIVAL} does not seem injured... and all you see beyond the chairs is a
-	weird doll.\p{RIVAL} seems to be having another episode... perhaps they'll calm down if I pretend to deal
-	with it."))
+	removefieldmugshot
+	applymovement (1, moves(face_player))
+	msgbox (format("{RIVAL} does not seem injured... and the 'enemy Pokémon' in question seems to be
+	just a doll."))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+	msgbox (format("{RIVAL} seems to be having another episode... perhaps they'll calm down if the 'enemy'
+	is dealt with."))
 	setflag (rivalhouse1stdialogue)}
 	else {msgbox(format("{PLAYER}... it's been an honour... to share battlefield... with you."))}
 	applymovement (1, moves(face_right))
+	removefieldmugshot
 	releaseall
 }
 
@@ -734,6 +748,8 @@ script Won_or_Caught {
 	applymovement (1, moves(face_right))
 	hidefollower
 	fadescreen(FADE_FROM_BLACK)
+	setspeaker ([SP_NAME_RIVAL])
+	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
 	msgbox (format("{PLAYER}... you did it! You beat the fiend! \p This will go down in the history books.
 	Let me restrain it - perhaps we can put it to some use."))
 	waitmessage
@@ -748,14 +764,20 @@ script Won_or_Caught {
 	removeobject(2)
 	removeobject(3)
 	applymovement (1, moves(face_down))
-	msgbox (format("Piece of cake - now that this base is secure, let's push onto the north front! \p Cover my
-	rear now, {PLAYER} - chaaaaarge!"))
+	setspeaker ([SP_NAME_RIVAL])
+	msgbox (format("Piece of cake - now that this base is secure, let's push onto the north front!
+	\pCover my rear, {PLAYER}. At the count of three, two, one..."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_RIVAL])
+	msgbox (format("CHAAAAAARGE!!"))
 	waitmessage
 	playse (SE_FLEE)
     applymovement (1, moves(walk_fast_left * 1, walk_fast_down * 1, walk_fast_left * 7, face_down))
     waitmovement (1)
     removeobject (1)
 	playse (SE_DOOR)
+	removefieldmugshot
     setflag(RIVAL_LEAVES_HOME)
     setflag(DOLL_BATTLE)
     setvar(VAR_LITTLEROOT_PHASE, 4)
@@ -766,8 +788,14 @@ script Won_or_Caught {
  
 script RanAway {
 	lockall
+	setspeaker ([SP_NAME_RIVAL])
+	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
 	msgbox (format("{PLAYER}, don't falter now!! This...! \p This is the battle that will decide the fate
-	of HOENN!\pEVERYONE IS COUNTING ON YOU! YOU CAN DO IT!"))
+	of HOENN!"))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
+	msgbox (format("EVERYONE IS COUNTING ON YOU! YOU CAN DO IT"))
+	removefieldmugshot
 	releaseall
 	return
 }
