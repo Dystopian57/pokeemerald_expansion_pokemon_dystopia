@@ -559,20 +559,6 @@ PlayersHouse_2F_Text_ItsAGameCube:
 # 280 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "serve as the Controller.$"
 
-LittlerootTown_BrendansHouse_2F_MapScripts2::
-# 286 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, Respawnatplayerbed
-# 287 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, Respawnatplayerbed
-	.byte 0
-
-
-Respawnatplayerbed::
-# 290 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
-	end
-
-
 Setclocktoleave::
 # 296 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall

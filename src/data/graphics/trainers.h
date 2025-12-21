@@ -67,8 +67,8 @@ const u16 gTrainerPalette_rebeladminm[] = INCBIN_U16("graphics/trainers/front_pi
 const u32 gTrainerFrontPic_rebelgruntf[] = INCBIN_U32("graphics/trainers/front_pics/rebelgruntf.4bpp.lz");
 const u16 gTrainerPalette_rebelgruntf[] = INCBIN_U16("graphics/trainers/front_pics/rebelgruntf.gbapal");
 
-const u32 gTrainerFrontPic_rebelgruntm[] = INCBIN_U32("graphics/trainers/front_pics/rebelgruntm.4bpp.lz");
-const u16 gTrainerPalette_rebelgruntm[] = INCBIN_U16("graphics/trainers/front_pics/rebelgruntm.gbapal");
+const u32 gTrainerFrontPic_rebelgruntmbattle[] = INCBIN_U32("graphics/trainers/front_pics/rebelgruntmbattle.4bpp.lz");
+const u16 gTrainerPalette_rebelgruntmbattle[] = INCBIN_U16("graphics/trainers/front_pics/rebelgruntmbattle.gbapal");
 
 const u32 gTrainerFrontPic_reporters[] = INCBIN_U32("graphics/trainers/front_pics/reporters.4bpp.lz");
 const u16 gTrainerPalette_reporters[] = INCBIN_U16("graphics/trainers/front_pics/reporters.gbapal");
@@ -424,6 +424,7 @@ const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pic
 const struct TrainerSprite gTrainerSprites[] =
 {
     TRAINER_SPRITE(TRAINER_PIC_ORPHAN_MALE, gTrainerFrontPic_OrphanM, gTrainerPalette_OrphanM),
+    TRAINER_SPRITE(TRAINER_PIC_REBELGRUNTMBATTLE, gTrainerFrontPic_rebelgruntmbattle, gTrainerPalette_rebelgruntmbattle),
     TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),
     TRAINER_SPRITE(TRAINER_PIC_AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, gTrainerPalette_AquaGruntM),
     TRAINER_SPRITE(TRAINER_PIC_POKEMON_BREEDER_F, gTrainerFrontPic_PokemonBreederF, gTrainerPalette_PokemonBreederF),

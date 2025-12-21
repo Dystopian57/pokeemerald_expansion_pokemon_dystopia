@@ -1576,6 +1576,88 @@ RanAway::
 	return
 
 
+RivalHouseSealedBox::
+# 804 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 805 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseSealedBox_Text_0
+# 806 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+RivalHouseTV::
+# 810 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 811 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseTV_Text_0
+# 812 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+RivalHouseMedicineCabinet::
+# 816 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 817 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseMedicineCabinet_Text_0
+# 819 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+RivalHouseFridge::
+# 823 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 824 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseFridge_Text_0
+# 825 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+RivalHouseSink::
+# 829 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 830 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseSink_Text_0
+# 831 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+RivalHouseSandbag::
+# 835 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 836 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseSandbag_Text_0
+# 837 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
+RivalHouseBinoculars::
+# 842 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 843 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	goto_if_unset FLAG_ITEM_RIVAL1F_BINOCULARS, RivalHouseBinoculars_2
+# 849 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseBinoculars_Text_1
+RivalHouseBinoculars_1:
+# 850 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+	return
+
+RivalHouseBinoculars_2:
+# 844 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseBinoculars_Text_0
+# 846 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	giveitem ITEM_ZOOM_LENS
+# 847 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setflag FLAG_ITEM_RIVAL1F_BINOCULARS
+	goto RivalHouseBinoculars_1
+
+
 # 682 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 RivalWatchout_Movement_0:
 # 682 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -1719,3 +1801,39 @@ RanAway_Text_1:
 # 797 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "EVERYONE IS COUNTING ON YOU! YOU CAN\n"
 	.string "DO IT$"
+
+RivalHouseSealedBox_Text_0:
+# 805 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "It's a sealed box. Better not to open it.$"
+
+RivalHouseTV_Text_0:
+# 811 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "The TV appears to be broken.$"
+
+RivalHouseMedicineCabinet_Text_0:
+# 817 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "The cabinet contains human medicine.\n"
+	.string "You spot several types of\l"
+	.string "antidepressants and antipsychotics.$"
+
+RivalHouseFridge_Text_0:
+# 824 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "The fridge is empty.$"
+
+RivalHouseSink_Text_0:
+# 830 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "The sink shows signs of recent use.$"
+
+RivalHouseSandbag_Text_0:
+# 836 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "It's a regular sandbag.$"
+
+RivalHouseBinoculars_Text_0:
+# 844 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "You open the cabinet's drawers. There's\n"
+	.string "many gadgets and strange wires, and\l"
+	.string "only one thing you might use...$"
+
+RivalHouseBinoculars_Text_1:
+# 849 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "There's nothing of use in the cabinet.$"

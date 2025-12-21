@@ -1143,7 +1143,7 @@ script Littleroot_Idletalk_Prof{
 script Littleroot_Idletalk_Pikachu1{
 			lockall
 			showmonpic(SPECIES_PIKACHU_SAFE, 10,3)
-			playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_ENCOUNTER) 
+			playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL) 
 			msgbox (format("Pura-pura?"))
 			waitmessage
 			hidemonpic
@@ -1412,7 +1412,7 @@ script LittlerootTown_Eventscript_Aideenotthere {
 }
 script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	lockall
-	applymovement (4, Profturning5)
+	applymovement (4, moves(emote_exclamation_mark face_right))
 	playse (SE_PIN)
 	waitmovement (4)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
@@ -1420,16 +1420,12 @@ script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	msgbox (format("Mind leaving the same way you entered? That is, through the DOOR."))
 	removefieldmugshot
 	waitmessage
-	applymovement (4, Profturningback5)
+	applymovement (4, moves(face_up))
 	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, Dontgoup2)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement (0)
 	releaseall	}
 
-movement Profturning5 {emote_exclamation_mark face_right}
-movement Profturningback5 {face_up}
-
-movement Dontgoup2{walk_down * 1}
 
 
 //STARTER SELECTION
@@ -1694,4 +1690,87 @@ script Lab_EventScript_Starter3{
     end
  
 }
+
+script LabBrokenGlasses {
+	lockall
+	if (!flag (FLAG_ITEM_LAB_GLASSES))
+	{msgbox (format("Amid some rugged and shredded papers, you find something..."))
+	giveitem (ITEM_WISE_GLASSES)
+	setflag (FLAG_ITEM_LAB_GLASSES)}
+	else
+	{msgbox (format("The trash can is empty."))}
+	releaseall	
+}
  
+script LabShelves {
+lockall
+msgbox (format("The shelf is full of complicated books, mostly on the subjects of Pokémon genetics
+and biology."))
+releaseall
+}
+
+script LabMonitor {
+lockall
+msgbox (format("It seems like a discarded monitor."))
+releaseall
+}
+
+script BalsamDontCheckMyPC {
+	lockall
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
+	applymovement (4, moves(face_player))
+	msgbox (format("That's kind of private, if you don't mind."))
+	removefieldmugshot
+	waitmessage
+	applymovement (4, moves(face_up))
+	releaseall	}
+
+script LabBox {
+lockall
+msgbox (format("The box is empty."))
+releaseall
+}
+
+script LabSealedBox {
+lockall
+msgbox (format("It's a sealed box. Better not to open it."))
+releaseall
+}
+
+script LabBirchBag {
+lockall
+msgbox (format("It's an old leather bag. It seems weathered from years of use."))
+releaseall
+}
+
+script LabDiglettBook {
+lockall
+msgbox (format("A curious book stands on top of the pile. Its title reads 'Diglett Tunneling for
+Dummies.'"))
+releaseall
+}
+
+script LabCoffee{
+	lockall
+	if (!flag (FLAG_ITEM_LAB_COFFEE))
+	{msgbox (format("There's a plastic cup of coffee by the mug..."))
+	giveitem (ITEM_HEAL_POWDER)
+	setflag (FLAG_ITEM_LAB_COFFEE)
+	applymovement (5, moves(face_player emote_exclamation_mark))
+	playse (SE_PIN)
+	setspeaker ([SP_NAME_AIDEE])
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	msgbox (format("Hey, that's my coffee!"))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	msgbox (format("Eh... you know what... you can have it. You look like
+	you need it more than me!"))
+	applymovement (5, moves(face_left))
+	waitmovement
+	removefieldmugshot}
+
+	else
+	{msgbox (format("It's a solitary coffee mug."))}
+	releaseall
+}

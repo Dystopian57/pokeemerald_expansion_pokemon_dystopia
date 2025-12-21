@@ -883,7 +883,7 @@ const struct Item gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Energy Bars"),
         .price = 500,
         .description = COMPOUND_STRING(
-            "A bitter but highly\n"
+            "A hard but highly\n"
             "nutritious snack that.\n"
         #if I_HEALTH_RECOVERY >= GEN_7
             "restores 60 HP."),
@@ -927,11 +927,11 @@ const struct Item gItemsInfo[] =
 
     [ITEM_HEAL_POWDER] =
     {
-        .name = ITEM_NAME("Heal Powder"),
-        .pluralName = ITEM_PLURAL_NAME("Heal Powder"),
+        .name = ITEM_NAME("Strong Coffee"),
+        .pluralName = ITEM_PLURAL_NAME("Strong Coffees"),
         .price = (I_PRICE >= GEN_7) ? 300 : 450,
         .description = COMPOUND_STRING(
-            "A bitter powder\n"
+            "A bitter coffee\n"
             "that heals all\n"
             "status problems."),
         .pocket = POCKET_ITEMS,
@@ -941,8 +941,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
         .effect = gItemEffect_HealPowder,
         .flingPower = 30,
-        .iconPic = gItemIcon_Powder,
-        .iconPalette = gItemIconPalette_HealPowder,
+        .iconPic = gItemIcon_QuickPowder,
+        .iconPalette = gItemIconPalette_QuickPowder, //could replace energyroot icon with new lemonade icon
     },
 
     [ITEM_REVIVAL_HERB] =

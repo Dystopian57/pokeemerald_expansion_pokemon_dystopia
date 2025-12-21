@@ -799,3 +799,53 @@ script RanAway {
 	releaseall
 	return
 }
+
+script RivalHouseSealedBox {
+lockall
+msgbox (format("It's a sealed box. Better not to open it."))
+releaseall
+}
+
+script RivalHouseTV {
+lockall
+msgbox (format("The TV appears to be broken."))
+releaseall
+}
+
+script RivalHouseMedicineCabinet {
+lockall
+msgbox (format("The cabinet contains human medicine. You spot several types of antidepressants
+and antipsychotics."))
+releaseall
+}
+
+script RivalHouseFridge {
+lockall
+msgbox (format("The fridge is empty."))
+releaseall
+}
+
+script RivalHouseSink {
+lockall
+msgbox (format("The sink shows signs of recent use."))
+releaseall
+}
+
+script RivalHouseSandbag {
+lockall
+msgbox (format("It's a regular sandbag."))
+releaseall
+}
+
+
+script RivalHouseBinoculars {
+	lockall
+	if (!flag (FLAG_ITEM_RIVAL1F_BINOCULARS))
+	{msgbox (format("You open the cabinet's drawers. There's many gadgets and strange wires,
+	and only one thing you might use..."))
+	giveitem (ITEM_ZOOM_LENS)
+	setflag (FLAG_ITEM_RIVAL1F_BINOCULARS)}
+	else
+	{msgbox (format("There's nothing of use in the cabinet."))}
+	releaseall	
+}

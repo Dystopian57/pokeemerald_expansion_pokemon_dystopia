@@ -249,23 +249,76 @@ Route101_Text_RouteSign:
 
 `
 
-script OrphanBattle{
+script Route101OrphanJoelBattle{
  
-	trainerbattle_single(TRAINER_ORPHAN_MALE_1, Orphan_Intro, Orphan_Outro)
-	msgbox(PostBattle_Orphan, MSGBOX_AUTOCLOSE) 
+	trainerbattle_single(TRAINER_ORPHAN_MALE_101, Orphan101_Intro, Orphan101_Outro)
+	if (!flag (JoelgivesTM))
+	{applymovement (1, moves(face_left))
+	msgbox(format("See that tent over there? It's my Secret Shelter."))
+	applymovement (1, moves(face_right))
+	msgbox (format("Lots of people lived in
+	weird places during the war, to hide from the bad guys.\pThey do it now too, if they don't
+	have anywhere else to go. You look a bit like them, so you can have this."))
 	waitmessage
+	giveitem (ITEM_TM43)
+	msgbox(format("If you teach Secret Power to a Pokémon, you can make shelters in all sorts of
+	places. \pSome have special things about them... but I won't tell you about mine!"))
+	setflag (JoelgivesTM)
+	goto (Joelfinish)}
+	else {msgbox(format("Are you using it?"))}
+	Joelfinish:
+	releaseall
     end
+ }
+
+text Orphan101_Intro{
+    "Hey! You can't go into my Secret Shelter!"}
  
-}
+text Orphan101_Outro{
+    "... you still can't go into my Secret\n Shelter."}
  
-text Orphan_Intro{
-    "Hey! You can't go into my Secret Shelter!"
+
+script Route101RebelGruntBattle{
+	if (!flag (rebel101defeated))
+	{msgbox(format("Start here"))
+	trainerbattle_no_intro(TRAINER_REBEL_GRUNT_101, Rebel101_Outro)
+	msgbox(format("Continue here"))
+	setflag (rebel101defeated)
+	goto (rebel101end)}
+	else {msgbox(format("postbattle idle"))}
+	waitmessage
+	rebel101end:
+	releaseall
+    end
+ }
+
+text Rebel101_Intro{
+    "I will rob you."}
+
+text Rebel101_Outro{
+    "Dammit... you're strong."}
+
+script Rebel101_Intro2{
+    msgbox(format("Hey girl! Wowie, that's a cute Safemon you got there."))
+	msgbox ("Hand it over")
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Obey", "Refuse")
+	waitmessage
+
+	if(var(VAR_RESULT) == 1){
+	msgbox(format("Awesome."))
+	playfirstmoncry
+	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(jump_in_place_up))
+	msgbox(format("Looks like your Pokémon has more guts than you! Hahaha!
+	\p Guess we'll have to do this the hard way!"))
+	}
+
+	if(var(VAR_RESULT) == 0){
+	msgbox(format("Playing brave huh? You really don't look the type.
+	\p Guess we'll have to do this the hard way!"))
+	}
+
 }
+
+
  
-text Orphan_Outro{
-    "... you still can't go inside."
-}
- 
-text PostBattle_Orphan{
-    "Fiiine. Just because I'm nice, I'll\p give you this."
-}
+

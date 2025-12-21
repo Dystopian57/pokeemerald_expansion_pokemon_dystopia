@@ -282,14 +282,14 @@ PlayersHouse_2F_Text_ItsAGameCube:
 `
 
 
-mapscripts LittlerootTown_BrendansHouse_2F_MapScripts2 {
-    MAP_SCRIPT_ON_TRANSITION: Respawnatplayerbed
-	MAP_SCRIPT_ON_LOAD: Respawnatplayerbed}
+//mapscripts LittlerootTown_BrendansHouse_2F_MapScripts2 {
+    //MAP_SCRIPT_ON_TRANSITION: Respawnatplayerbed
+	//MAP_SCRIPT_ON_LOAD: Respawnatplayerbed}
 
-script Respawnatplayerbed {
-   	setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
-	end 
-}
+//script Respawnatplayerbed {
+   	//setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+	//end 
+//}
 
 
 script Setclocktoleave {

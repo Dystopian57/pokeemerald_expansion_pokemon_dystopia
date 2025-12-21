@@ -1839,14 +1839,20 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 script Littleroot_Techguy_Talk {
 lockall
 applymovement (3, moves(face_player))
-if (var(VAR_LITTLEROOT_PHASE) == 5)
+if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (Donutquestaccepted))
 {msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
 you mind getting me a Crater Donut? They're to die for... \pIf you take a left on Route 101, you'll
 arrive to the Great Crater. There's a guy that sells them there. \pDo me the favour, and I'll give
 you some Pokéballs. Fair deal, right?"))
-setflag(Donutquestaccepted)}
+setflag(Donutquestaccepted)
+goto (accepteddonutquest)}
+if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (Donutquestaccepted))
+{msgbox (format("It's okay if you don't have time, but... I'd really like a taste of those donuts.
+\p I'd go myself, but I have no Pokémon to protect me, and I got robbed by a Rebel last time I left
+ town.\pBut you're a former soldier, right? They won't mess with you!"))}
 else {msgbox (format("To think that Pokémon can be altered and made safer...\p
 Technology is amazing, but it can be scary too."))}
+accepteddonutquest:
 releaseall
 }
 
@@ -2083,3 +2089,8 @@ script OldManThanks {
 		removefieldmugshot
 	//Receive Running shoes
 	releaseall}
+
+	script Respawnatplayerbed {
+   	setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+	end 
+}

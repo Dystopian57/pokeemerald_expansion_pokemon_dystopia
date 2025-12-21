@@ -493,24 +493,208 @@ Route101_Text_RouteSign:
 # 247 "data/maps/Route101/scripts.pory"
 	.string "{UP_ARROW} OLDALE TOWN$"
 
-OrphanBattle::
+Route101OrphanJoelBattle::
 # 254 "data/maps/Route101/scripts.pory"
-	trainerbattle_single TRAINER_ORPHAN_MALE_1, Orphan_Intro, Orphan_Outro
+	trainerbattle_single TRAINER_ORPHAN_MALE_101, Orphan101_Intro, Orphan101_Outro
 # 255 "data/maps/Route101/scripts.pory"
-	msgbox PostBattle_Orphan, MSGBOX_AUTOCLOSE
-# 256 "data/maps/Route101/scripts.pory"
-	waitmessage
+	goto_if_unset JoelgivesTM, Route101OrphanJoelBattle_2
+# 268 "data/maps/Route101/scripts.pory"
+	msgbox Route101OrphanJoelBattle_Text_3
+Route101OrphanJoelBattle_1:
+# 269 "data/maps/Route101/scripts.pory"
+Joelfinish:
+# 270 "data/maps/Route101/scripts.pory"
+	releaseall
 	end
 
+Route101OrphanJoelBattle_2:
+# 256 "data/maps/Route101/scripts.pory"
+	applymovement 1, Route101OrphanJoelBattle_Movement_0
+# 257 "data/maps/Route101/scripts.pory"
+	msgbox Route101OrphanJoelBattle_Text_0
+# 258 "data/maps/Route101/scripts.pory"
+	applymovement 1, Route101OrphanJoelBattle_Movement_1
+# 259 "data/maps/Route101/scripts.pory"
+	msgbox Route101OrphanJoelBattle_Text_1
+# 262 "data/maps/Route101/scripts.pory"
+	waitmessage
+# 263 "data/maps/Route101/scripts.pory"
+	giveitem ITEM_TM43
+# 264 "data/maps/Route101/scripts.pory"
+	msgbox Route101OrphanJoelBattle_Text_2
+# 266 "data/maps/Route101/scripts.pory"
+	setflag JoelgivesTM
+# 267 "data/maps/Route101/scripts.pory"
+	goto Joelfinish
+	goto Route101OrphanJoelBattle_1
 
-Orphan_Intro::
-# 261 "data/maps/Route101/scripts.pory"
+
+Route101RebelGruntBattle::
+# 282 "data/maps/Route101/scripts.pory"
+	goto_if_unset rebel101defeated, Route101RebelGruntBattle_2
+# 288 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_2
+Route101RebelGruntBattle_1:
+# 289 "data/maps/Route101/scripts.pory"
+	waitmessage
+# 290 "data/maps/Route101/scripts.pory"
+rebel101end:
+# 291 "data/maps/Route101/scripts.pory"
+	releaseall
+	end
+
+Route101RebelGruntBattle_2:
+# 283 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_0
+# 284 "data/maps/Route101/scripts.pory"
+	trainerbattle_no_intro TRAINER_REBEL_GRUNT_101, Rebel101_Outro
+# 285 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_1
+# 286 "data/maps/Route101/scripts.pory"
+	setflag rebel101defeated
+# 287 "data/maps/Route101/scripts.pory"
+	goto rebel101end
+	goto Route101RebelGruntBattle_1
+
+
+Rebel101_Intro2::
+# 302 "data/maps/Route101/scripts.pory"
+	msgbox Rebel101_Intro2_Text_0
+# 303 "data/maps/Route101/scripts.pory"
+	msgbox Rebel101_Intro2_Text_1
+# 304 "data/maps/Route101/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Rebel101_Intro2_Text_2, Rebel101_Intro2_Text_3
+# 305 "data/maps/Route101/scripts.pory"
+	waitmessage
+# 307 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq Rebel101_Intro2_2
+Rebel101_Intro2_1:
+# 315 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Rebel101_Intro2_4
+	return
+
+Rebel101_Intro2_2:
+# 308 "data/maps/Route101/scripts.pory"
+	msgbox Rebel101_Intro2_Text_4
+# 309 "data/maps/Route101/scripts.pory"
+	playfirstmoncry
+# 310 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, Rebel101_Intro2_Movement_0
+# 311 "data/maps/Route101/scripts.pory"
+	msgbox Rebel101_Intro2_Text_5
+	goto Rebel101_Intro2_1
+
+Rebel101_Intro2_4:
+# 316 "data/maps/Route101/scripts.pory"
+	msgbox Rebel101_Intro2_Text_6
+	return
+
+
+# 256 "data/maps/Route101/scripts.pory"
+Route101OrphanJoelBattle_Movement_0:
+# 256 "data/maps/Route101/scripts.pory"
+	face_left
+	step_end
+
+# 258 "data/maps/Route101/scripts.pory"
+Route101OrphanJoelBattle_Movement_1:
+# 258 "data/maps/Route101/scripts.pory"
+	face_right
+	step_end
+
+# 310 "data/maps/Route101/scripts.pory"
+Rebel101_Intro2_Movement_0:
+# 310 "data/maps/Route101/scripts.pory"
+	jump_in_place_up
+	step_end
+
+Route101OrphanJoelBattle_Text_0:
+# 257 "data/maps/Route101/scripts.pory"
+	.string "See that tent over there? It's my\n"
+	.string "Secret Shelter.$"
+
+Route101OrphanJoelBattle_Text_1:
+# 259 "data/maps/Route101/scripts.pory"
+	.string "Lots of people lived in weird places\n"
+	.string "during the war, to hide from the bad\l"
+	.string "guys.\p"
+	.string "They do it now too, if they don't have\n"
+	.string "anywhere else to go. You look a bit like\l"
+	.string "them, so you can have this.$"
+
+Route101OrphanJoelBattle_Text_2:
+# 264 "data/maps/Route101/scripts.pory"
+	.string "If you teach Secret Power to a Pokémon,\n"
+	.string "you can make shelters in all sorts of\l"
+	.string "places.\p"
+	.string "Some have special things about them...\n"
+	.string "but I won't tell you about mine!$"
+
+Route101OrphanJoelBattle_Text_3:
+# 268 "data/maps/Route101/scripts.pory"
+	.string "Are you using it?$"
+
+Route101RebelGruntBattle_Text_0:
+# 283 "data/maps/Route101/scripts.pory"
+	.string "Start here$"
+
+Route101RebelGruntBattle_Text_1:
+# 285 "data/maps/Route101/scripts.pory"
+	.string "Continue here$"
+
+Route101RebelGruntBattle_Text_2:
+# 288 "data/maps/Route101/scripts.pory"
+	.string "postbattle idle$"
+
+Rebel101_Intro2_Text_0:
+# 302 "data/maps/Route101/scripts.pory"
+	.string "Hey girl! Wowie, that's a cute Safemon\n"
+	.string "you got there.$"
+
+Rebel101_Intro2_Text_1:
+# 303 "data/maps/Route101/scripts.pory"
+	.string "Hand it over$"
+
+Rebel101_Intro2_Text_2:
+# 304 "data/maps/Route101/scripts.pory"
+	.string "Obey$"
+
+Rebel101_Intro2_Text_3:
+# 304 "data/maps/Route101/scripts.pory"
+	.string "Refuse$"
+
+Rebel101_Intro2_Text_4:
+# 308 "data/maps/Route101/scripts.pory"
+	.string "Awesome.$"
+
+Rebel101_Intro2_Text_5:
+# 311 "data/maps/Route101/scripts.pory"
+	.string "Looks like your Pokémon has more guts\n"
+	.string "than you! Hahaha!\p"
+	.string "Guess we'll have to do this the hard\n"
+	.string "way!$"
+
+Rebel101_Intro2_Text_6:
+# 316 "data/maps/Route101/scripts.pory"
+	.string "Playing brave huh? You really don't look\n"
+	.string "the type.\p"
+	.string "Guess we'll have to do this the hard\n"
+	.string "way!$"
+
+Orphan101_Intro::
+# 274 "data/maps/Route101/scripts.pory"
 	.string "Hey! You can't go into my Secret Shelter!$"
 
-Orphan_Outro::
-# 265 "data/maps/Route101/scripts.pory"
-	.string "... you still can't go inside.$"
+Orphan101_Outro::
+# 277 "data/maps/Route101/scripts.pory"
+	.string "... you still can't go into my Secret\n Shelter.$"
 
-PostBattle_Orphan::
-# 269 "data/maps/Route101/scripts.pory"
-	.string "Fiiine. Just because I'm nice, I'll\p give you this.$"
+Rebel101_Intro::
+# 295 "data/maps/Route101/scripts.pory"
+	.string "I will rob you.$"
+
+Rebel101_Outro::
+# 298 "data/maps/Route101/scripts.pory"
+	.string "Dammit... you're strong.$"

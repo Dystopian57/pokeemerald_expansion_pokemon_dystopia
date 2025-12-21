@@ -1,5 +1,5 @@
 Text_BootUpPC:
-	.string "{PLAYER} booted up dad's old PC.$"
+	.string "{PLAYER} booted up the PC.$"
 
 gText_WhichPCShouldBeAccessed::
 	.string "Which PC should be accessed?$"
