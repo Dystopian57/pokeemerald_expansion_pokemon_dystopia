@@ -675,31 +675,41 @@ script HidePokeball {
 
 script RivalWatchout {
 	
-lockall
-createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)
-setspeaker ([SP_NAME_RIVAL])
-playbgm (MUS_HELP, TRUE)
-applymovement (1, moves(face_down, emote_exclamation_mark))
-playse (SE_PIN)
-msgbox (format("{PLAYER}, don't go beyond the barricade!!"))
-removefieldmugshot
-createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
-msgbox (format("That Pokémon the Kantonians threw at us... it's too strong...!"))
-removefieldmugshot
-createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)
-setspeaker ([SP_NAME_RIVAL])
-msgbox (format("Uggh... it got me good. Leave me... I'm done for!"))
-waitmessage
-applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
-applymovement (1, moves(face_right))
-setvar(VAR_RIVALMIMIWARNINGDONE, 1)
-removefieldmugshot
-releaseall
-}
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_ANGRY)}
+	setspeaker ([SP_NAME_RIVAL])
+	playbgm (MUS_HELP, TRUE)
+	applymovement (1, moves(face_down, emote_exclamation_mark))
+	playse (SE_PIN)
+	msgbox (format("{PLAYER}, don't go beyond the barricade!!"))
+	removefieldmugshot
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
+	msgbox (format("That Pokémon the Kantonians threw at us... it's too strong...!"))
+	removefieldmugshot
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_SAD)}
+	setspeaker ([SP_NAME_RIVAL])
+	msgbox (format("Uggh... it got me good. Leave me... I'm done for!"))
+	waitmessage
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+	applymovement (1, moves(face_right))
+	setvar(VAR_RIVALMIMIWARNINGDONE, 1)
+	removefieldmugshot
+	releaseall
+	}
 
 script Littleroot_Idletalk_Rival{
 	lockall
-	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_SAD)}
 	setspeaker ([SP_NAME_RIVAL])
 	applymovement (1, moves(face_player))
 	if (!flag (rivalhouse1stdialogue))
@@ -707,6 +717,7 @@ script Littleroot_Idletalk_Rival{
 	msgbox (format("Ugh... I don't have much longer... run away, while you can..."))
 	removefieldmugshot
 	applymovement (1, moves(face_player))
+	setspeaker ([NULL])
 	msgbox (format("{RIVAL} does not seem injured... and the 'enemy Pokémon' in question seems to be
 	just a doll."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
@@ -744,12 +755,14 @@ script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
 }
  
 script Won_or_Caught {
-	setobjectxy (1, 9, 7)
-	applymovement (1, moves(face_right))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (1, moves(walk_fast_down * 2, walk_fast_right * 3, walk_fast_up * 1, face_right))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
 	hidefollower
-	fadescreen(FADE_FROM_BLACK)
 	setspeaker ([SP_NAME_RIVAL])
-	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
 	msgbox (format("{PLAYER}... you did it! You beat the fiend! \p This will go down in the history books.
 	Let me restrain it - perhaps we can put it to some use."))
 	waitmessage
@@ -768,7 +781,9 @@ script Won_or_Caught {
 	msgbox (format("Piece of cake - now that this base is secure, let's push onto the north front!
 	\pCover my rear, {PLAYER}. At the count of three, two, one..."))
 	removefieldmugshot
-	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_ANGRY)}
 	setspeaker ([SP_NAME_RIVAL])
 	msgbox (format("CHAAAAAARGE!!"))
 	waitmessage
@@ -789,11 +804,15 @@ script Won_or_Caught {
 script RanAway {
 	lockall
 	setspeaker ([SP_NAME_RIVAL])
-	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
 	msgbox (format("{PLAYER}, don't falter now!! This...! \p This is the battle that will decide the fate
 	of HOENN!"))
 	removefieldmugshot
-	createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)}
+	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_ANGRY)}
 	msgbox (format("EVERYONE IS COUNTING ON YOU! YOU CAN DO IT"))
 	removefieldmugshot
 	releaseall
@@ -840,11 +859,11 @@ releaseall
 
 script RivalHouseBinoculars {
 	lockall
-	if (!flag (FLAG_ITEM_RIVAL1F_BINOCULARS))
+	if (!flag (FLAG_ITEM_RIVAL1F_LENS))
 	{msgbox (format("You open the cabinet's drawers. There's many gadgets and strange wires,
 	and only one thing you might use..."))
 	giveitem (ITEM_ZOOM_LENS)
-	setflag (FLAG_ITEM_RIVAL1F_BINOCULARS)}
+	setflag (FLAG_ITEM_RIVAL1F_LENS)}
 	else
 	{msgbox (format("There's nothing of use in the cabinet."))}
 	releaseall	

@@ -1841,14 +1841,14 @@ lockall
 applymovement (3, moves(face_player))
 if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (Donutquestaccepted))
 {msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
-you mind getting me a Crater Donut? They're to die for... \pIf you take a left on Route 101, you'll
+you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
 arrive to the Great Crater. There's a guy that sells them there. \pDo me the favour, and I'll give
-you some Pokéballs. Fair deal, right?"))
+you some {COLOR RED}Pokéballs{COLOR DARK_GRAY}. Fair deal, right?"))
 setflag(Donutquestaccepted)
 goto (accepteddonutquest)}
 if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (Donutquestaccepted))
 {msgbox (format("It's okay if you don't have time, but... I'd really like a taste of those donuts.
-\p I'd go myself, but I have no Pokémon to protect me, and I got robbed by a Rebel last time I left
+\p I'd go myself, but I have no Pokémon to protect me, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
  town.\pBut you're a former soldier, right? They won't mess with you!"))}
 else {msgbox (format("To think that Pokémon can be altered and made safer...\p
 Technology is amazing, but it can be scary too."))}
@@ -1941,7 +1941,7 @@ script LittlerootTown_Trigger_Blockgorivalnocemetery{
 script LittlerootTown_Trigger_NoEnterRival1{
 	lockall
 	msgbox (format("Someone is yelling inside..."))
-	checkplayergender
+	//checkplayergender
 	//if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
 	//else {createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
 	msgbox (format("DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
@@ -2001,6 +2001,7 @@ script Littleroot_Idletalk_Oldman{
 
 script LittlerootTown_Eventscript_Oldmanasking {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (checkonrival))
 		{playse (SE_PIN)
 		applymovement (1, moves(emote_exclamation_mark))
@@ -2044,6 +2045,7 @@ script LittlerootTown_Eventscript_Oldmanasking {
 
 script OldManThanks {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	msgbox (format("Ah, {PLAYER}!"))
 	removefieldmugshot
 	setobjectxy (1, 14, 16)
@@ -2061,26 +2063,34 @@ script OldManThanks {
 		msgbox (format("Thank you for checking on him. Here,
 		take this as a form of thanks."))}
 	removefieldmugshot
+	setspeaker ([NULL])
 	playfanfare(MUS_OBTAIN_ITEM)
 	setflag (FLAG_SYS_B_DASH)
 	checkplayergender
-	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
-	setspeaker ([SP_NAME_BIRCH])
 		if(var(VAR_RESULT) == MALE)
 		{msgbox (format("Obtained the Better Crutches!"))
 		waitmessage
+		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("These are some old crutches of mine.\pI noticed yours are not in the best shape - these
 		should help you move around better."))}
 		else
 		{msgbox (format("Obtained the Better Arm Sling!"))
 		waitmessage
+		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("This is an old arm sling of mine.\pI noticed yours is not in the best shape - this one
 		should secure your arm better, so you can move around more easily."))}
 		setspeaker ([SP_NAME_BIRCH])
-		msgbox (format("Well, take care on your trip to Oldale now!\p There's much hardship in these parts lately, and people
-		are not as friendly as they used to.\p But have faith in your Pokémon, and you should be fine. Good bye!"))
+		msgbox (format("Well, take care on your trip to Oldale now!"))
+		setspeaker ([SP_NAME_BIRCH])
+		applymovement (1, moves(face_left))
+		msgbox (format("There's much hardship in these parts lately, and people
+		are not as friendly as they used to."))
+		setspeaker ([SP_NAME_BIRCH])
+		applymovement (1, moves(face_up))
+		msgbox (format("But have faith in your Pokémon, and you should be fine. Good bye!"))
+		closemessage
 		applymovement (1, moves(walk_down * 7))
 		waitmovement (1)
 		removeobject (1)

@@ -248,76 +248,230 @@ Route101_Text_RouteSign:
 
 
 `
+ script Route101OrphanJoelApproach0 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	applymovement (1, moves(emote_exclamation_mark))
+	msgbox(format("Hey, stop!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (orphanafterapproach)
+ }
+
+  script Route101OrphanJoelApproach1 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	applymovement (1, moves(emote_exclamation_mark))
+	waitmovement
+	msgbox(format("Hey, stop!"))
+	applymovement (1, moves(walk_down * 1))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (orphanafterapproach)
+ }
+
+   script Route101OrphanJoelApproach2 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	applymovement (1, moves(emote_exclamation_mark))
+	waitmovement
+	msgbox(format("Hey, stop!"))
+	applymovement (1, moves(walk_down * 1))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (orphanafterapproach)
+ }
+
+   script Route101OrphanJoelApproach3 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	applymovement (1, moves(emote_exclamation_mark))
+	waitmovement
+	msgbox(format("Hey, stop!"))
+	applymovement (1, moves(walk_down * 1))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (orphanafterapproach)
+ }
 
 script Route101OrphanJoelBattle{
- 
-	trainerbattle_single(TRAINER_ORPHAN_MALE_101, Orphan101_Intro, Orphan101_Outro)
+	lockall
+	orphanafterapproach:
 	if (!flag (JoelgivesTM))
-	{applymovement (1, moves(face_left))
+	{msgbox(format("You can't go into my Secret Shelter!"))
+	trainerbattle_no_intro(TRAINER_ORPHAN_MALE_101, Orphan101_Outro)
+	playbgm (MUS_ABANDONED_SHIP, TRUE)
+	applymovement (1, moves(face_left))
 	msgbox(format("See that tent over there? It's my Secret Shelter."))
-	applymovement (1, moves(face_right))
+	applymovement (1, moves(face_player))
 	msgbox (format("Lots of people lived in
-	weird places during the war, to hide from the bad guys.\pThey do it now too, if they don't
-	have anywhere else to go. You look a bit like them, so you can have this."))
+	weird places during the war, to hide from the bad guys.\pSome still do it, if they don't
+	have anywhere else to go.\pYou look a bit like them, so you can have this."))
 	waitmessage
 	giveitem (ITEM_TM43)
-	msgbox(format("If you teach Secret Power to a Pokémon, you can make shelters in all sorts of
-	places. \pSome have special things about them... but I won't tell you about mine!"))
+	msgbox(format("If you teach Secret Power to a Pokémon, you can make Secret Shelters in all
+	sorts of places. \pSome have unique things about them... but I won't tell you about mine!"))
 	setflag (JoelgivesTM)
+	setvar(VAR_JOELGIVESSECRETPOWER, 1)
 	goto (Joelfinish)}
-	else {msgbox(format("Are you using it?"))}
+	if (flag (JoelgivesTM)) {
+	applymovement (1, moves(face_player))	
+	msgbox(format("Have you made a Secret Shelter yet? \pI guess you can visit mine,
+	if you need ideas for yours...\pBut don't touch anything!"))}
 	Joelfinish:
 	releaseall
     end
  }
 
-text Orphan101_Intro{
-    "Hey! You can't go into my Secret Shelter!"}
  
 text Orphan101_Outro{
     "... you still can't go into my Secret\n Shelter."}
+
+
+ script Route101RebelApproach0 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement (3, moves(emote_exclamation_mark))
+	waitmovement
+	msgbox(format("Hey there, kid!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (rebelafterapproach)
+ }
+
+  script Route101RebelApproach1 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement (3, moves(emote_exclamation_mark))
+	waitmovement
+	msgbox(format("Hey there, kid!"))
+	applymovement (3, moves(walk_down * 1))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (rebelafterapproach)
+ }
+
+   script Route101RebelApproach2 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement (3, moves(emote_exclamation_mark))
+	waitmovement
+	msgbox(format("Hey there, kid!"))
+	applymovement (3, moves(walk_down * 2))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (rebelafterapproach)
+ }
+
+   script Route101RebelApproach3 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement (3, moves(emote_exclamation_mark))
+	waitmovement
+	msgbox(format("Hey there, kid!"))
+	applymovement (3, moves(walk_down * 3))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (rebelafterapproach)
+ }
  
 
 script Route101RebelGruntBattle{
-	if (!flag (rebel101defeated))
-	{msgbox(format("Start here"))
-	trainerbattle_no_intro(TRAINER_REBEL_GRUNT_101, Rebel101_Outro)
-	msgbox(format("Continue here"))
-	setflag (rebel101defeated)
-	goto (rebel101end)}
-	else {msgbox(format("postbattle idle"))}
+	rebelafterapproach:
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("Wowie, that's a cute Safemon you got there. Bet it's worth a ton!"))
+	msgbox ("Hand it over.")
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Obey", "Refuse")
 	waitmessage
-	rebel101end:
+
+	if(var(VAR_RESULT) == 0){
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("Hehe, you're smarter than you loo-..."))
+	playfirstmoncry
+	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(jump_in_place_up))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_fast_right, face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_down * 1, face_up))
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("What the-? Looks like your Pokémon has more guts than you! Hahaha!
+	\p Guess we'll have to do this the hard way!"))
+	}
+
+	if(var(VAR_RESULT) == 1){
+	msgbox(format("Playing brave huh? You really don't look the type.
+	\p Guess we'll have to do this the hard way!"))
+	}
+	trainerbattle_no_intro(TRAINER_REBEL_GRUNT_101, Rebel101_Outro)
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("Grr... alright, that thing of yours is strong, for a lab rat.
+	\p But you still look weak yourself! UOOOGYAA!"))
+	setflag (FLAG_TEMP_HIDE_FOLLOWER)
+	applymovement (3, moves(walk_fast_down))
+	repeathit:
+	setspeaker ([NULL])
+	msgbox(format("The rebel swings his bat to hit you.\n What will you do?"))
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Parry", "Dodge")
+
+	if(var(VAR_RESULT) == 0){
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	playse (SE_NOT_EFFECTIVE)
+	waitse
+	msgbox(format("You parry the bat with one of your crutches, and the rebel falls on his
+	back."))}
+
+	if(var(VAR_RESULT) == FEMALE){
+	call(Route101GruntBatHitShake)
+	msgbox(format("You fail to block the bat with your arms. The hit hurts like hell."))
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("You're a sturdy girl, I'll give you that!"))
+	goto (repeathit)}}
+
+	if(var(VAR_RESULT) == 1){
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	call(Route101GruntBatHitShake)
+	msgbox(format("You are too slow to dodge the hit. It hurts like hell."))
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("You're a sturdy guy, I'll give you that!"))
+	goto (repeathit)
+	if(var(VAR_RESULT) == FEMALE){
+	msgbox(format("You manage to dodge the hit, and the rebel's lost momentum makes him
+	fall on his back."))
+	}}}
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("D-damn it! They told me Littleroot kids were easy prey!"))
+	playse (SE_FLEE)
+	applymovement (3, moves(walk_fast_right *2 , walk_fast_up * 5))
+	setspeaker ([SP_NAME_RICK])
+	msgbox(format("Screw this!"))
+	removeobject(3)
+	setflag (rebel101runsaway)
+	playbgm (MUS_ABANDONED_SHIP, TRUE)
+	setvar(VAR_ROUTE101REBELFLEES, 1)
 	releaseall
     end
  }
 
-text Rebel101_Intro{
-    "I will rob you."}
-
 text Rebel101_Outro{
-    "Dammit... you're strong."}
+    "Shit..."}
 
-script Rebel101_Intro2{
-    msgbox(format("Hey girl! Wowie, that's a cute Safemon you got there."))
-	msgbox ("Hand it over")
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Obey", "Refuse")
-	waitmessage
-
-	if(var(VAR_RESULT) == 1){
-	msgbox(format("Awesome."))
-	playfirstmoncry
-	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(jump_in_place_up))
-	msgbox(format("Looks like your Pokémon has more guts than you! Hahaha!
-	\p Guess we'll have to do this the hard way!"))
+script Route101GruntBatHitShake{
+	playse (SE_EFFECTIVE) 
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
 	}
 
-	if(var(VAR_RESULT) == 0){
-	msgbox(format("Playing brave huh? You really don't look the type.
-	\p Guess we'll have to do this the hard way!"))
-	}
 
-}
 
 
  

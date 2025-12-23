@@ -1050,8 +1050,8 @@ script Littleroot_Idletalk_Aidee{
 	msgbox (format("Oh, {PLAYER} - you're a lifesaver! Yes, I could use your help with a small task."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
-	msgbox (format("There's some samples we need to collect from Route 101 - {COLOR RED}Voltorb Shards{COLOR DARK_GRAY}.
-	\pYes, they are the remains of the Voltorbs that Kanto dropped on us during the war."))
+	msgbox (format("There's some samples we need to collect from {COLOR GREEN}Route 101{COLOR DARK_GRAY}
+	 - {COLOR RED}Voltorb Shards{COLOR DARK_GRAY}.\pThey are the remains of the Voltorbs that Kanto dropped on us during the war."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 	setspeaker ([SP_NAME_AIDEE])
@@ -1207,7 +1207,7 @@ script Littleroot_Idletalk_Pikachu1{
 					waitmessage
 					applymovement (4, moves(face_left))
 					msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
-					use your help with some field work we need done in Route 101.\pIt will not take you long."))
+					use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}.\pIt will not take you long."))
 					removefieldmugshot
 					}
 
@@ -1290,7 +1290,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox(format("But now that you're out, you need some help to reconnect with
 		the world.\p Now, pick a Safemon to accompany you.\pI know they're not like your old Mankey, 
-		but they should get you through Route 101 safely enough."))
+		but they should get you through {COLOR GREEN}Route 101{COLOR DARK_GRAY} safely enough."))
     }
     elif (var(VAR_RESULT) == 1) {
         msgbox(format("Well, the 'bad' news is...\pI'm sending you to {COLOR GREEN}Oldale 
@@ -1314,7 +1314,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox(format("I know they are not like your old Mankey, but they should get you safe 
-		through Route 101."))
+		through {COLOR GREEN}Route 101{COLOR DARK_GRAY}."))
     }
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3))
@@ -1469,7 +1469,7 @@ script Lab_EventScript_Starter1{
 			waitmessage
 			applymovement (4, moves(face_left))
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
-			use your help with some field work we need done in Route 101.\pIt will not take you long."))
+			use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}.\pIt will not take you long."))
 			applymovement (4, moves(face_up))
 			waitmovement
 			waitmessage
@@ -1502,14 +1502,19 @@ applymovement(4, moves(face_down))
 createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 setspeaker ([SP_NAME_BALSAM])
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
-a trip to the next town. \p If you want more, buy some Pokéballs while you're in
-{COLOR GREEN} Oldale{COLOR DARK_GRAY}. \p You'll be surprised by how many new species inhabit Hoenn 
-now.\pGo catch some!"))
+a trip to the next town."))
 removefieldmugshot
-applymovement(4, moves(face_up))}
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+msgbox (format("If you want more, buy some Pokéballs in {COLOR GREEN}Oldale Town's{COLOR DARK_GRAY}
+{COLOR BLUE}PokéMart{COLOR DARK_GRAY}.\pYou'll be surprised by how many new species inhabit Hoenn now."))
+removefieldmugshot
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+setspeaker ([SP_NAME_BALSAM])
+msgbox(format("Go catch some!"))}
     waitmessage
 	applymovement (4, moves(face_up))
 	waitmovement
+	removefieldmugshot
     releaseall
     end
 }
@@ -1578,7 +1583,7 @@ script Lab_EventScript_Starter2{
 			waitmessage
 			applymovement (4, moves(face_left))
 			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
-			use your help with some field work we need done in Route 101. It will not take you long."))
+			use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}. It will not take you long."))
 			applymovement (4, moves(face_up))
 			waitmovement
 			waitmessage
@@ -1612,10 +1617,11 @@ msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon
 a trip to the next town."))
 removefieldmugshot
 createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-msgbox (format("If you want more, buy some Pokéballs while you're in {COLOR GREEN} Oldale{COLOR DARK_GRAY}.
- \pYou'll be surprised by how many new species inhabit Hoenn now."))
+msgbox (format("If you want more, buy some Pokéballs in {COLOR GREEN}Oldale Town's{COLOR DARK_GRAY}
+{COLOR BLUE}PokéMart{COLOR DARK_GRAY}.\pYou'll be surprised by how many new species inhabit Hoenn now."))
 removefieldmugshot
 createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+setspeaker ([SP_NAME_BALSAM])
 msgbox(format("Go catch some!"))
     waitmessage
 	applymovement (4, moves(face_up))
@@ -1724,6 +1730,7 @@ script BalsamDontCheckMyPC {
 	removefieldmugshot
 	waitmessage
 	applymovement (4, moves(face_up))
+	waitmovement
 	releaseall	}
 
 script LabBox {
@@ -1759,6 +1766,7 @@ script LabCoffee{
 	setflag (FLAG_ITEM_LAB_COFFEE)
 	applymovement (5, moves(face_player emote_exclamation_mark))
 	playse (SE_PIN)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
 	setspeaker ([SP_NAME_AIDEE])
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	msgbox (format("Hey, that's my coffee!"))

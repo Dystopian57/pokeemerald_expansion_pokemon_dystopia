@@ -34,7 +34,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101OrphanJoelBattle",
       "flag": "0"
     },
@@ -59,10 +59,10 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101RebelGruntBattle",
-      "flag": "0"
+      "flag": "rebel101runsaway"
     }
   ],
   "warp_events": [
@@ -79,8 +79,88 @@
       "elevation": 0,
       "dest_map": "MAP_GREAT_CRATER",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 5,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_JOEL_TENT",
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_JOELGIVESSECRETPOWER",
+      "var_value": "0",
+      "script": "Route101OrphanJoelApproach0"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_JOELGIVESSECRETPOWER",
+      "var_value": "0",
+      "script": "Route101OrphanJoelApproach1"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_JOELGIVESSECRETPOWER",
+      "var_value": "0",
+      "script": "Route101OrphanJoelApproach2"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_JOELGIVESSECRETPOWER",
+      "var_value": "0",
+      "script": "Route101OrphanJoelApproach3"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_ROUTE101REBELFLEES",
+      "var_value": "0",
+      "script": "Route101RebelApproach0"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ROUTE101REBELFLEES",
+      "var_value": "0",
+      "script": "Route101RebelApproach1"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE101REBELFLEES",
+      "var_value": "0",
+      "script": "Route101RebelApproach2"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ROUTE101REBELFLEES",
+      "var_value": "0",
+      "script": "Route101RebelApproach3"
+    }
+  ],
   "bg_events": []
 }

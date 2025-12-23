@@ -641,7 +641,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POTION] =
     {
-        .name = ITEM_NAME("Healspray"),
+        .name = ITEM_NAME("Band-aid"),
         .price = (I_PRICE >= GEN_7) ? 200 : 300,
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(
@@ -655,8 +655,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_Potion,
         .flingPower = 30,
-        .iconPic = gItemIcon_Potion,
-        .iconPalette = gItemIconPalette_Potion,
+        .iconPic = gItemIcon_AbilityPatch,
+        .iconPalette = gItemIconPalette_AbilityPatch,
     },
 
     [ITEM_SUPER_POTION] =
@@ -679,8 +679,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_SuperPotion,
         .flingPower = 30,
-        .iconPic = gItemIcon_Potion,
-        .iconPalette = gItemIconPalette_SuperPotion,
+        .iconPic = gItemIcon_FocusSash,
+        .iconPalette = gItemIconPalette_RareBone,
     },
 
     [ITEM_HYPER_POTION] =
@@ -709,7 +709,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_MAX_POTION] =
     {
-        .name = ITEM_NAME("Max Potion"),
+        .name = ITEM_NAME("Devotion"),
         .price = 2500,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
@@ -4631,7 +4631,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_EVERSTONE] =
     {
-        .name = ITEM_NAME("Everstone"),
+        .name = ITEM_NAME("Safe Stone"),
         .price = (I_PRICE >= GEN_7) ? 3000 : 200,
         .holdEffect = HOLD_EFFECT_PREVENT_EVOLVE,
         .description = COMPOUND_STRING(
@@ -8759,7 +8759,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BLACK_GLASSES] =
     {
-        .name = ITEM_NAME("Black Glasses"),
+        .name = ITEM_NAME("Sidney's Sunglasses"),
         .pluralName = ITEM_PLURAL_NAME("Black Glasses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_TYPE_POWER,
@@ -9467,8 +9467,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_WISE_GLASSES] =
     {
-        .name = ITEM_NAME("Wise Glasses"),
-        .pluralName = ITEM_PLURAL_NAME("Wise Glasses"),
+        .name = ITEM_NAME("Broken Glasses"),
+        .pluralName = ITEM_PLURAL_NAME("Broken Glasses"),
         .price = (I_PRICE >= GEN_9) ? 8000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_WISE_GLASSES,
         .holdEffectParam = 10,
@@ -9670,8 +9670,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BLACK_SLUDGE] =
     {
-        .name = ITEM_NAME("Black Sludge"),
-        .pluralName = ITEM_PLURAL_NAME("Black Sludge"),
+        .name = ITEM_NAME("Strange Grime"),
+        .pluralName = ITEM_PLURAL_NAME("Strange Grimes"),
         .price = (I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_BLACK_SLUDGE,
         .description = COMPOUND_STRING(
@@ -9911,7 +9911,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BINDING_BAND] =
     {
-        .name = ITEM_NAME("Binding Band"),
+        .name = ITEM_NAME("Sturdy Rope"),
         .price = (I_PRICE >= GEN_9) ? 20000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_BINDING_BAND,
         .description = COMPOUND_STRING(
