@@ -1010,6 +1010,7 @@ script Lights {
 
 script Littleroot_Idletalk_Aidee{
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (5, moves(face_player))
 	setspeaker ([SP_NAME_AIDEE])
 	//if ((flag(VOLTORBSHARDGOT)))
@@ -1020,6 +1021,7 @@ script Littleroot_Idletalk_Aidee{
 	craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("I'm counting on you, soldier!"))}
 
 	if (var(VAR_LITTLEROOT_PHASE) == 4)
@@ -1030,9 +1032,10 @@ script Littleroot_Idletalk_Aidee{
 	craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("I'm counting on you, soldier!"))}
 
-	if (var(VAR_LITTLEROOT_PHASE) == 5)
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 	msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going?"))
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
@@ -1040,7 +1043,47 @@ script Littleroot_Idletalk_Aidee{
 	craters of {COLOR GREEN}Route 101{COLOR DARK_GRAY}."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("I'm counting on you, soldier!"))}
+
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	msgbox (format("Aah, you did it - you found a {COLOR RED}Voltorb Shard{COLOR DARK_GRAY}!
+	And one in great condition!"))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Hehehe... excellent. This really helps my research..."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	setspeaker ([SP_NAME_AIDEE])
+	applymovement (5, moves(face_right))
+	msgbox (format("Now, as for your reward... Professor, do you think it's time?"))
+	applymovement (4, moves(face_left))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox (format("Yes... do it as we've discussed."))
+
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
+	applymovement (5, moves(face_player))
+	msgbox (format("Wonderful! Now, {PLAYER}, if you would be so kind as to follow me...
+	\p To my favourite place - the lab basement!"))
+	applymovement (4, moves(face_up))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Better yet, I'll follow you... I can't get my eyes off this {COLOR RED}Voltorb Shard{COLOR DARK_GRAY}
+	right now!"))
+	removeitem (ITEM_COMET_SHARD)
+	setfollowernpc (LOCALID_BALSAM_AIDEE, FNPC_ALL, AideeFollowingChat, 0)
+	setflag (Aideeleaveslab)
+	setflag (Aideearrivestobasement)
+	setvar(VAR_LITTLEROOT_PHASE, 6)
+	goto(aideeisfollowing)
+	}
 
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
@@ -1060,14 +1103,24 @@ script Littleroot_Idletalk_Aidee{
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Look inside the big craters, that's where you're most likely to find them. I'll make it worth your time, I promise!"))
-		setflag (AideeQuestAccepted)
 		setvar(VAR_LITTLEROOT_PHASE, 3)
 		}
 	applymovement (5, moves(face_left))
+	aideeisfollowing:
 	removefieldmugshot
 	releaseall
 
 }
+	script AideeFollowingChat {
+	lockall
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Ooh yes... this time it'll work! It has to!"))	
+	setspeaker (NULL)
+	removefieldmugshot
+	msgbox (format("The Aide is talking to himself while examining the {COLOR RED}Voltorb Shard{COLOR DARK_GRAY}."))
+	releaseall
+	}
 
 script SafemonLore {
 	lockall
@@ -1115,24 +1168,61 @@ script SafemonLore {
 
 script Littleroot_Idletalk_Prof{
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
 	applymovement (4, moves(face_player))
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("I'm sorry - would love to help you decide, but I'm in the middle of something here."))}
 	if(var(VAR_LITTLEROOT_PHASE) == 2)
-	{msgbox (format("If you could give my Aidee a hand, it would be a huge help. We're very busy lately."))}
+	{msgbox (format("If you could give my Aide a hand, it would be a huge help. We're very busy lately."))}
 	if(var(VAR_LITTLEROOT_PHASE) == 3)
 	{msgbox (format("You should get going now - don't be late for the therapy session. \p It's in
 	{COLOR GREEN} Oldale{COLOR DARK_GRAY}, in the first building to the right, you can't miss it. "))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 	msgbox (format("It's a group session, by the way - try to make some friends!"))}
+
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	{checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
+	like a madwoman..."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+	msgbox (format("Is she okay? Perhaps I should have signed her up for therapy too..."))
+	}
+	if(var(VAR_RESULT) == FEMALE){
+	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
+	like a madman..."))
+	removefieldmugshot
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+	msgbox (format("Is he okay? Perhaps I should have signed him up for therapy too..."))
+	}}
+
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	{
+	msgbox (format("Oh, you found a Voltorb Shard. Well done."))
+	applymovement (4, moves(face_left))
+	msgbox (format("Give it to my Aide, please. He'll make good use of it."))
+	}
+	
+	if(var(VAR_LITTLEROOT_PHASE) == 6) //&& !flag AttendedTherapy
+	{msgbox (format("Don't take too long. You still need to go to Oldale, remember?"))}
+	removefieldmugshot
+	applymovement (4, moves(face_up))
+	waitmovement
+	releaseall
+
+	if(var(VAR_LITTLEROOT_PHASE) == 7) //&& !flag AttendedTherapy
+	{msgbox (format("Oh, already done? That was quick..."))}
 	removefieldmugshot
 	applymovement (4, moves(face_up))
 	waitmovement
 	releaseall
 }
+
+
 
 //when you get VOLTORB SHARD, just set the flag
 
@@ -1206,7 +1296,7 @@ script Littleroot_Idletalk_Pikachu1{
 					msgbox (format("Well, it's yours now. Don't say I didn't warn you."))
 					waitmessage
 					applymovement (4, moves(face_left))
-					msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
+					msgbox (format("Ah, before you go - mind speaking with my Aide over there? \p We could
 					use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}.\pIt will not take you long."))
 					removefieldmugshot
 					}
@@ -1401,7 +1491,7 @@ script LittlerootTown_Eventscript_Aideenotthere {
 	playse (SE_PIN)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("{PLAYER}, my Aidee is on the left side of the room. Can't miss him."))
+	msgbox (format("{PLAYER}, my Aide is on the left side of the room. Can't miss him."))
 	removefieldmugshot
 	waitmessage
 	applymovement (4, moves(face_up))
@@ -1426,7 +1516,20 @@ script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	waitmovement (0)
 	releaseall	}
 
-
+script LittlerootTown_Eventscript_AideeGotoback {
+	lockall
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_AIDEE])
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
+	msgbox (format("You leave now, you don't get your reward, {PLAYER}!
+	\p Come on, it's only going to take a minute or two! Let's go to the basement, through
+	the tunnel next to the Professor's desk."))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	removefieldmugshot
+	releaseall
+}
 
 //STARTER SELECTION
 
@@ -1468,7 +1571,7 @@ script Lab_EventScript_Starter1{
 			msgbox (format("I hope that Bulbasynth and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
-			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
+			msgbox (format("Ah, before you go - mind speaking with my Aide over there? \p We could
 			use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}.\pIt will not take you long."))
 			applymovement (4, moves(face_up))
 			waitmovement
@@ -1582,7 +1685,7 @@ script Lab_EventScript_Starter2{
 			msgbox (format("I hope that Smothquil and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
-			msgbox (format("Ah, before you go - mind speaking with my Aidee over there? \p We could
+			msgbox (format("Ah, before you go - mind speaking with my Aide over there? \p We could
 			use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}. It will not take you long."))
 			applymovement (4, moves(face_up))
 			waitmovement

@@ -1,0 +1,21 @@
+raw `
+LittlerootLabBasement_MapScripts::
+	.byte 0
+`
+script AideeBasementUnfollow3 {
+	lockall
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Ah, here we are!"))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_up * 3,  face_down))
+	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Come, {PLAYER}! I'll show you something really cool!"))
+	removefieldmugshot
+    destroyfollowernpc
+	addobject (LOCALID_AIDEEBASEMENT)
+	clearflag (Aideearrivestobasement)
+	setvar(VAR_LITTLEROOT_PHASE, 7)
+	releaseall
+}

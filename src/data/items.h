@@ -178,28 +178,28 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POKE_BALL] =
     {
-        .name = ITEM_NAME("Poké Ball"),
+        .name = ITEM_NAME("Devon Ball"),
         .price = 200,
         .description = COMPOUND_STRING(
-            "A tool used for\n"
-            "catching wild\n"
-            "Pokémon."),
+            "A modern ball\n"
+            "designed by Devon."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_POKE_BALL,
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
         .secondaryId = BALL_POKE,
-        .iconPic = gItemIcon_PokeBall,
-        .iconPalette = gItemIconPalette_PokeBall,
+        .iconPic = gItemIcon_GreatBall,
+        .iconPalette = gItemIconPalette_GreatBall,
     },
 
     [ITEM_GREAT_BALL] =
     {
-        .name = ITEM_NAME("Devon Ball"),
+        .name = ITEM_NAME("Poké Ball"),
         .price = 600,
         .description = COMPOUND_STRING(
-            "A great Ball\n"
-            "designed by Devon."),
+            "A tool used for\n"
+            "catching wild\n"
+            "Pokémon."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_GREAT_BALL,
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
@@ -2861,13 +2861,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_COMET_SHARD] =
     {
-        .name = ITEM_NAME("Comet Shard"),
+        .name = ITEM_NAME("Voltorb Shard"),
         .price = (I_PRICE <= GEN_5) ? 0 : ((I_PRICE == GEN_6) ? 30000 : ((I_PRICE == GEN_7) ? 60000 : 25000 * TREASURE_FACTOR)),
         .description = COMPOUND_STRING(
-            "A comet's shard.\n"
-            "It would sell for a\n"
-            "high price."),
-        .pocket = POCKET_ITEMS,
+            "The shard of a\n"
+            "Voltorb that blew\n"
+            "up for the last time."),
+        .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

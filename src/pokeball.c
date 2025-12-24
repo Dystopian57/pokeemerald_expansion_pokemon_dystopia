@@ -81,8 +81,8 @@ static u16 GetBattlerPokeballItemId(u8 battler);
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
     [BALL_STRANGE] = {gBallGfx_Strange, 384, GFX_TAG_STRANGE_BALL},
-    [BALL_POKE]    = {gBallGfx_Poke,    384, GFX_TAG_POKE_BALL},
-    [BALL_GREAT]   = {gBallGfx_Great,   384, GFX_TAG_GREAT_BALL},
+    [BALL_POKE]    = {gBallGfx_Poke,   384, GFX_TAG_POKE_BALL},
+    [BALL_GREAT]   = {gBallGfx_Great,    384, GFX_TAG_GREAT_BALL},
     [BALL_ULTRA]   = {gBallGfx_Ultra,   384, GFX_TAG_ULTRA_BALL},
     [BALL_MASTER]  = {gBallGfx_Master,  384, GFX_TAG_MASTER_BALL},
     [BALL_PREMIER] = {gBallGfx_Premier, 384, GFX_TAG_PREMIER_BALL},

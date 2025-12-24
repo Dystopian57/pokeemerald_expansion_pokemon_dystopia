@@ -162,5 +162,14 @@
       "script": "Route101RebelApproach3"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "item": "ITEM_COMET_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD"
+    }
+  ]
 }

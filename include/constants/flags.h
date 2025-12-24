@@ -51,8 +51,8 @@
 #define InsistonPika1       0x25 // Unused Flag
 #define InsistonPika2       0x26 // Unused Flag
 #define GotPika             0x27 // Unused Flag
-#define Aideeaskstoread     0x28 // Unused Flag
-#define ReadGenSafemonLore  0x29 // Unused Flag
+#define Aideeleaveslab     0x28 // Unused Flag
+#define Aideearrivestobasement  0x29 // Unused Flag
 #define ReadSurSafemonLore  0x2A // Unused Flag
 #define ReadConSafemonLore  0x2B // Unused Flag
 #define ReadAllSafemonLore  0x2C // Unused Flag
@@ -543,7 +543,7 @@
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
-#define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             (FLAG_HIDDEN_ITEMS_START + 0x00)
+#define FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD             (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
