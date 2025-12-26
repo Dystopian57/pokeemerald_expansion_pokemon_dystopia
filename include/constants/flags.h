@@ -53,10 +53,10 @@
 #define GotPika             0x27 // Unused Flag
 #define Aideeleaveslab     0x28 // Unused Flag
 #define Aideearrivestobasement  0x29 // Unused Flag
-#define ReadSurSafemonLore  0x2A // Unused Flag
-#define ReadConSafemonLore  0x2B // Unused Flag
-#define ReadAllSafemonLore  0x2C // Unused Flag
-#define AideeTestMistake    0x2D // Unused Flag
+#define Unsafeningtutodone  0x2A // Unused Flag
+#define AttendedOldaleTherapy         0x2B // Unused Flag
+#define unusedflag2    0x2C // Unused Flag
+#define unusedflag3    0x2D // Unused Flag
 #define AideeQuestAccepted  0x2E // Unused Flag
 #define checkonrival        0x2F // Unused Flag
 #define rivalhouse1stdialogue    0x30 // Unused Flag

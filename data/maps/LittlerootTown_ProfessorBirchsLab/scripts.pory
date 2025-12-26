@@ -1013,8 +1013,6 @@ script Littleroot_Idletalk_Aidee{
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (5, moves(face_player))
 	setspeaker ([SP_NAME_AIDEE])
-	//if ((flag(VOLTORBSHARDGOT)))
-	//{msgbox (format("SO YOU GOT IT, HAHA thought you were DELULU like RIVAL. COME WITH ME"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	msgbox (format("Remember - there should be {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} in the big 
@@ -1104,6 +1102,7 @@ script Littleroot_Idletalk_Aidee{
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Look inside the big craters, that's where you're most likely to find them. I'll make it worth your time, I promise!"))
 		setvar(VAR_LITTLEROOT_PHASE, 3)
+		setflag (AideeQuestAccepted)
 		}
 	applymovement (5, moves(face_left))
 	aideeisfollowing:
@@ -1186,40 +1185,71 @@ script Littleroot_Idletalk_Prof{
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
 	{checkplayergender
 	if(var(VAR_RESULT) == MALE){
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
 	like a madwoman..."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Is she okay? Perhaps I should have signed her up for therapy too..."))
 	}
 	if(var(VAR_RESULT) == FEMALE){
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
 	like a madman..."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Is he okay? Perhaps I should have signed him up for therapy too..."))
 	}}
 
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
 	{
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Oh, you found a Voltorb Shard. Well done."))
 	applymovement (4, moves(face_left))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Give it to my Aide, please. He'll make good use of it."))
 	}
 	
-	if(var(VAR_LITTLEROOT_PHASE) == 6) //&& !flag AttendedTherapy
-	{msgbox (format("Don't take too long. You still need to go to Oldale, remember?"))}
+	if(var(VAR_LITTLEROOT_PHASE) == 6 && (!flag (AttendedOldaleTherapy)))
+	{	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox (format("Don't take too long. You still need to go to Oldale, remember?"))}
+
+	if(var(VAR_LITTLEROOT_PHASE) == 6 && (flag (AttendedOldaleTherapy)))
+	{
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox (format("The basement is through the tunnel on the right side. Watch your
+		step on the ladder!"))}
+
+	if(var(VAR_LITTLEROOT_PHASE) == 7)
+	{
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox (format("So you will help us with our research? We appreciate it. \p
+	Just don't go telling a word of this to anyone, understood?"))
+
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
+	setspeaker ([SP_NAME_BALSAM])
+	fadeoutbgm (0)
+	msgbox (format("Remember... we know where you live."))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_BALSAM])
+	fadeinbgm (0)
+	msgbox (format("Haha - I'm just kidding, of course!"))
+	}
+
 	removefieldmugshot
 	applymovement (4, moves(face_up))
 	waitmovement
 	releaseall
 
-	if(var(VAR_LITTLEROOT_PHASE) == 7) //&& !flag AttendedTherapy
-	{msgbox (format("Oh, already done? That was quick..."))}
-	removefieldmugshot
-	applymovement (4, moves(face_up))
-	waitmovement
-	releaseall
 }
 
 
@@ -1285,7 +1315,7 @@ script Littleroot_Idletalk_Pikachu1{
 					setflag (GotPika)
 					setflag(GOTSTARTER3)
 					removeobject (7)
-					givemon(SPECIES_PIKACHU_SAFE, 5, ITEM_MASTER_BALL)
+					givemon(SPECIES_PIKACHU_SAFE, 5)
        				
 					if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             		call(NicknamePartyMon3)
@@ -1868,6 +1898,7 @@ script LabCoffee{
 	giveitem (ITEM_HEAL_POWDER)
 	setflag (FLAG_ITEM_LAB_COFFEE)
 	applymovement (5, moves(face_player emote_exclamation_mark))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player emote_exclamation_mark))
 	playse (SE_PIN)
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
 	setspeaker ([SP_NAME_AIDEE])
@@ -1884,4 +1915,28 @@ script LabCoffee{
 	else
 	{msgbox (format("It's a solitary coffee mug."))}
 	releaseall
+}
+
+script BalsamgivesPokenav {
+lockall
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+setspeaker ([SP_NAME_BALSAM])
+applymovement (4, moves(face_player))
+if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
+ 		{msgbox (format("Oh, {PLAYER}, one last thing. Here, this is to keep in touch."))
+		fadeoutbgm (0)
+		playse (MUS_RG_OBTAIN_KEY_ITEM)
+		fadeinbgm (0)
+		setspeaker (NULL)
+		msgbox (format("Obtained the DEVONAV!"))
+		setflag(FLAG_SYS_POKENAV_GET)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox (format("My number is already registered, so call me if there's an emergency."))
+ 		}
+ else {
+		goto(finishpokenavscript)
+		}
+ finishpokenavscript:
+ applymovement (4, moves(face_up))
+ releaseall
 }

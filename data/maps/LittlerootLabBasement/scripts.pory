@@ -19,3 +19,324 @@ script AideeBasementUnfollow3 {
 	setvar(VAR_LITTLEROOT_PHASE, 7)
 	releaseall
 }
+
+script AideeBasementIdleTalk {
+	lockall
+	if (!flag (Unsafeningtutodone)){
+		applymovement (1, moves(face_player))
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Behold, the culmination of Professor Balsam's and my research..."))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("The {COLOR BLUE}UNSAFENING MACHINE{COLOR DARK_GRAY}! 
+		{COLOR LIGHT_GRAY}{SHADOW WHITE}Name in the works...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Now, I could spend several hours elucidating the
+		intricacies of this invention..."))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("But I believe it would be lost on you, so allow me to
+		perform a demonstration instead."))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("First, we take the appropriate material - in this case, the
+		{COLOR RED}Voltorb Shard{COLOR DARK_GRAY} you brought..."))
+		applymovement (1, moves(face_right))
+
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Second, we take the appropriate Safemon - in this case, this Cheerorb..."))
+		removefieldmugshot
+		setspeaker (NULL)
+		applymovement (4, moves(face_left))
+		playmoncry(SPECIES_CHEERORB, CRY_MODE_NORMAL) 
+		msgbox (format("Chee-cheeeer!"))
+		removeobject (4)
+		playse (SE_BALL_OPEN)
+		waitse
+		applymovement (1, moves(face_up))
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Third, we get them both in the same Pokéball, and place it over the
+		tray..."))
+		addobject (2)
+		setobjectxy (2, 10, 4)
+		playse (SE_BALL_BOUNCE_1)
+		setspeaker ([SP_NAME_AIDEE])
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		msgbox (format("And last but not least... we press this button!"))
+		closemessage
+		removefieldmugshot
+		playse (SE_POKENAV_ON)
+		waitse
+		fadeoutbgm (2)
+		playse (SE_ELEVATOR)
+		fadescreen (FADE_TO_WHITE)
+		waitse
+		playse (SE_SAVE)
+		waitse
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Aah... it WORKED! IT FINALLY WORKED!"))
+		fadescreen (FADE_FROM_WHITE)
+		fadeinbgm (2)
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_AIDEE])
+		removeobject (2)
+		applymovement (1, moves(face_right))
+		msgbox (format("Look, {PLAYER}!"))
+		removefieldmugshot
+		setspeaker (NULL)
+
+		addobject (5)
+		setobjectxy (5, 11, 6)
+		playse (SE_BALL_OPEN)
+		waitse
+		playmoncry(SPECIES_VOLTORB, CRY_MODE_NORMAL)
+		applymovement (5, moves(face_left))
+		msgbox (format("Vol-voooolt!"))
+
+		applymovement (1, moves(face_down))
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("We have reverted a Safemon back into a regular Pokémon! Isn't it fascinating!?
+		\p Take that, Devon Corp. - what you can do, we can undo! Bwahaha!"))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("So... I don't know how fond are you of Voltorbs, after serving in the army
+		and all..."))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("But if you want to adopt this one, I'd be happy to obligue. It's thanks to
+		you it's a Voltorb again, after all."))
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("What do you say?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Adopt", "Don't adopt")
+		waitmessage
+
+			if(var(VAR_RESULT) == 0){
+			removefieldmugshot
+			setspeaker (NULL)
+			applymovement (5, moves(jump_in_place_down))
+			applymovement (1, moves(face_right))
+			waitmovement
+			playmoncry(SPECIES_VOLTORB, CRY_MODE_HIGH_PITCH)
+			msgbox (format("Volt-Voooolt!"))
+
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Hey, I think it's happy!"))
+			playse (SE_BALL_OPEN)
+			waitse
+			removeobject (5)
+			applymovement (1, moves(face_player))
+
+				givemon(SPECIES_VOLTORB, 3)
+				if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+				setspeaker (NULL)
+				removefieldmugshot
+				msgbox("Give Voltorb a nickname...?", MSGBOX_YESNO)
+				if(var(VAR_RESULT) == YES){
+					call(Common_EventScript_GetGiftMonPartySlot)
+					call(Common_EventScript_NameReceivedPartyMon)
+					goto (nicknamedvoltorb)}}
+				if(var(VAR_RESULT) == NO){
+				goto (dontwantvoltorb)}
+				}
+				dontwantvoltorb:
+				if(var(VAR_RESULT) == 1){
+				removefieldmugshot
+				setspeaker (NULL)
+				applymovement (1, moves(face_right))
+				waitmovement
+				playmoncry(SPECIES_VOLTORB, CRY_MODE_WEAK)
+				msgbox (format("Vooolt..."))
+
+				createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+				setspeaker ([SP_NAME_AIDEE])
+				applymovement (1, moves(face_player))
+				msgbox (format("Haha... hey, I get it. Voltorbs are dangerous!"))
+				removefieldmugshot
+				createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+				setspeaker ([SP_NAME_AIDEE])
+				applymovement (1, moves(face_right))
+				msgbox (format("Don't worry - I'll take good care of it."))
+				playse (SE_BALL_OPEN)
+				removeobject (5)
+			}
+
+		nicknamedvoltorb:
+		applymovement (1, moves(face_player))
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("At any rate {PLAYER} - if you bring me Safemon, and the appropriate materials,
+		I can turn them back into Pokémon for you."))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Oh, I almost forgot - here's your ACTUAL reward! Should come in handy, if 
+		you decide to help us!"))
+
+		removefieldmugshot
+		playse (MUS_RG_OBTAIN_KEY_ITEM)
+		setspeaker (NULL)
+		msgbox (format("Obtained the DEVONDEX!"))
+		setflag(FLAG_SYS_POKEDEX_GET)
+
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("This is the latest model of the Devondex. It will store information about
+		Pokémon and Safemon native to Hoenn. \p Mind you, it will not register any data on the unsafened
+		Pokémon you get here... since they're not supposed to be found in the wild anymore."))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("However, if you bring me enough Safemon to unsafen, perhaps I can study them
+		and hack... I mean, upgrade the Pokédex later on!"))
+
+		removefieldmugshot
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("But that's enough talk from me. Go out there, and bring me tons of specimens!"))
+		removefieldmugshot
+		setflag (Unsafeningtutodone)
+		goto (finishunsafentutorial)
+}
+
+	if (flag (Unsafeningtutodone)){
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Hey there, {PLAYER}! What brings you here?"))
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Unsafen Safemon", 
+		"Materials", "Chit-chat")
+
+			if (var(VAR_RESULT) == 0) {
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Which Safemon would you like to unsafen?"))
+			dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Cheerorb", "None")
+			
+				if (var(VAR_RESULT) == 0) {
+					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("Cheerorb, huh? Well, for this one we need 
+					a {COLOR RED}Voltorb Shard{COLOR DARK_GRAY}..."))
+					
+					if (checkitem (ITEM_COMET_SHARD)  == TRUE)
+					{	msgbox (format("Which you have - excellent! Now, let's see that
+					Cheerorb!"))
+					setvar (VAR_0x8008, INGAME_TRADE_VOLTORB)
+					copyvar (VAR_0x8004, VAR_0x8008)
+					specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+					special (ChoosePartyMon)
+					waitstate
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+					copyvar (VAR_0x8005, VAR_0x8004)
+					specialvar (VAR_RESULT, GetTradeSpecies)
+					goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+					copyvar (VAR_0x8004, VAR_0x8008)
+					special (CreateInGameTradePokemon)
+					special (DoInGameTradeScene) 
+					waitstate
+					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("It's done! Another Unsafening success. \p Take good care
+					of that Pokémon!"))
+					goto (finishsafemontradescript)
+					}
+					else {msgbox (format("Of which you don't have any of! Luckily for you, I
+					have some in supply you can buy!"))
+					}
+					}
+					
+			if (var(VAR_RESULT) == 1) {
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Shop goes here"))
+			pokemart (AideMaterials)
+			msgbox (format("Pleasure doing business!"))
+			goto (finishsafemontradescript)
+			}}
+
+
+		
+
+
+		if (var(VAR_RESULT) == 2) {
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("So, {PLAYER}... What's your stance on Devon Corp. and
+		Safemon?"))
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them")
+				
+				if (var(VAR_RESULT) == 0) {
+					Aideopinion:
+					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("Hah, that's fair enough. Me, I'm indifferent - 
+					I just like the science behind it all!"))
+				}		
+
+				if (var(VAR_RESULT) == 1) {
+					goto (Aideopinion)
+					
+				}}}
+	finishunsafentutorial:
+	finishsafemontradescript:
+	releaseall
+	}
+
+	mart AideMaterials {
+		ITEM_COMET_SHARD		
+	}
+
+script CancelTradeSafemonSelection {
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Oh, changed your mind? Well, I guess some Safemon have their charm after
+		all."))
+		releaseall
+		}
+
+script SelectedIncorrectTradeSafemon {
+		bufferspeciesname (STR_VAR_1, VAR_0x8009)
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Oh, that's not a {STR_VAR_1}, {PLAYER}! You should do some reviewing 
+		with that Devondex I gave you, haha!"))
+		releaseall
+		}
+
+script CheerorbBasementIdleTalk {
+	lockall
+	playmoncry(SPECIES_CHEERORB, CRY_MODE_NORMAL) 
+	msgbox (format("Chee-cheeeer!"))
+	releaseall
+}
+
+
+
+	//Oh, not to state the obvious, but... please, don't tell anyone about the unsafening machine.
+	//This is not exactly legal research we're doing, hehe...
+	//Devon Corp. spends a lot of money turning Pokémon into
+	//Safemon, and removing the original species from the wild. \p So, if you ever leave the
+	//Exclusion Zone, either through the checkpoints in Route 103 or 104, these unsafened
+	//Pokémon may raise an eyebrow or two. But I'm sure you'll be fine - you're a former 
+	//soldier after all!"

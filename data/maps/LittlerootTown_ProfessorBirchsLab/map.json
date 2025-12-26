@@ -369,6 +369,15 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "6",
       "script": "LittlerootTown_Eventscript_AideeGotoback"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "3",
+      "script": "BalsamgivesPokenav"
     }
   ],
   "bg_events": [
