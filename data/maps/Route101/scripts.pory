@@ -440,11 +440,12 @@ script Route101RebelGruntBattle{
 	msgbox(format("You are too slow to dodge the hit. It hurts like hell."))
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("You're a sturdy guy, I'll give you that!"))
-	goto (repeathit)
+	goto (repeathit)}
 	if(var(VAR_RESULT) == FEMALE){
+	playse (SE_BALL_THROW)
 	msgbox(format("You manage to dodge the hit, and the rebel's lost momentum makes him
 	fall on his back."))
-	}}}
+	}}
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("D-damn it! They told me Littleroot kids were easy prey!"))
 	playse (SE_FLEE)

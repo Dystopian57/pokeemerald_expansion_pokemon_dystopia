@@ -2,12 +2,14 @@ raw `
 LittlerootLabBasement_MapScripts::
 	.byte 0
 `
-script AideeBasementUnfollow3 {
+
+script AideeBasementUnfollow1 {
 	lockall
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Ah, here we are!"))
-	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_up * 3,  face_down))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  face_down))
+	Aidebymachine:
 	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
@@ -18,6 +20,38 @@ script AideeBasementUnfollow3 {
 	clearflag (Aideearrivestobasement)
 	setvar(VAR_LITTLEROOT_PHASE, 7)
 	releaseall
+}
+
+script AideeBasementUnfollow2 {
+	lockall
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Ah, here we are!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1,  face_right))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  face_down))
+	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (Aidebymachine)
+
+}
+
+script AideeBasementUnfollow3 {
+	lockall
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Ah, here we are!"))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_up * 3,  face_down))
+	goto (Aidebymachine)
+}
+
+script AideeBasementUnfollow4 {
+	lockall
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Ah, here we are!"))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left *1, walk_up * 3,  face_down))
+	goto (Aidebymachine)
 }
 
 script AideeBasementIdleTalk {
@@ -49,7 +83,8 @@ script AideeBasementIdleTalk {
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 		setspeaker ([SP_NAME_AIDEE])
-		msgbox (format("First, we take the appropriate material - in this case, the
+		msgbox (format("First, we take the appropriate {COLOR BLUE}Unsafening Material{COLOR DARK_GRAY}
+		 - in this case, the
 		{COLOR RED}Voltorb Shard{COLOR DARK_GRAY} you brought..."))
 		applymovement (1, moves(face_right))
 
@@ -184,7 +219,8 @@ script AideeBasementIdleTalk {
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_AIDEE])
-		msgbox (format("At any rate {PLAYER} - if you bring me Safemon, and the appropriate materials,
+		msgbox (format("At any rate {PLAYER} - if you bring me Safemon, and the appropriate 
+		{COLOR BLUE}Unsafening Materials{COLOR DARK_GRAY},
 		I can turn them back into Pokémon for you."))
 
 		removefieldmugshot
@@ -225,7 +261,7 @@ script AideeBasementIdleTalk {
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Hey there, {PLAYER}! What brings you here?"))
 		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Unsafen Safemon", 
-		"Materials", "Chit-chat")
+		"Materials", "Chit-chat", "Nothing")
 
 			if (var(VAR_RESULT) == 0) {
 			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
@@ -261,19 +297,47 @@ script AideeBasementIdleTalk {
 					of that Pokémon!"))
 					goto (finishsafemontradescript)
 					}
-					else {msgbox (format("Of which you don't have any of! Luckily for you, I
+					else {
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("Of which you don't have any of!
+					\p Luckily for you, I
 					have some in supply you can buy!"))
 					}
+					}
+
+					if (var(VAR_RESULT) == 1) {
+					msgbox (format("Oh please - don't play with my feelings like that!"))
+					goto (finishsafemontradescript)
+						}
+
 					}
 					
 			if (var(VAR_RESULT) == 1) {
 			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 			setspeaker ([SP_NAME_AIDEE])
-			msgbox (format("Shop goes here"))
+			if (!flag (Unsafenmaterialtutodone))
+			{msgbox (format("Oh, I forgot to mention - everytime you unsafen a Pokémon, I
+			should be able to start cloning the corresponding material in the lab.
+			\pThen I can sell said materials to you for a nominal fee, just to cover the cloning
+			costs.\p That means that you won't need to hunt for {COLOR BLUE}Unsafening Materials{COLOR DARK_GRAY}
+			 after the first time!
+			 \p
+			{COLOR LIGHT_GRAY}{SHADOW WHITE}Unless you're broke, of course...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("So, with that in mind..."))
+			setflag (Unsafenmaterialtutodone)
+			goto (afterunsafenmaterialtuto)
+			}
+			else {
+			afterunsafenmaterialtuto:
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Need some Unsafening Materials?"))
 			pokemart (AideMaterials)
-			msgbox (format("Pleasure doing business!"))
+			msgbox (format("Come back for more!"))
 			goto (finishsafemontradescript)
-			}}
+			}}}
 
 
 		
@@ -282,12 +346,11 @@ script AideeBasementIdleTalk {
 		if (var(VAR_RESULT) == 2) {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_AIDEE])
-		msgbox (format("So, {PLAYER}... What's your stance on Devon Corp. and
+		msgbox (format("So, {PLAYER}... what's your stance on Devon Corp. and
 		Safemon?"))
 		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them")
 				
 				if (var(VAR_RESULT) == 0) {
-					Aideopinion:
 					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("Hah, that's fair enough. Me, I'm indifferent - 
@@ -295,17 +358,26 @@ script AideeBasementIdleTalk {
 				}		
 
 				if (var(VAR_RESULT) == 1) {
-					goto (Aideopinion)
+					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("Hah, that's fair enough. Me, I'm indifferent - 
+					I just like the science behind it all!"))
 					
-				}}}
+				}}
+
+		if (var(VAR_RESULT) == 3) {
+			goto (finishsafemontradescript)
+		}
 	finishunsafentutorial:
 	finishsafemontradescript:
+	removefieldmugshot
 	releaseall
 	}
 
 	mart AideMaterials {
 		ITEM_COMET_SHARD		
 	}
+
 
 script CancelTradeSafemonSelection {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)

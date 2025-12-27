@@ -1096,7 +1096,7 @@ script Littleroot_Idletalk_Aidee{
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 	setspeaker ([SP_NAME_AIDEE])
-	msgbox (format("Don't worry, they won't explode! I've done this myself many times."))
+	msgbox (format("Don't worry, they won't explode! {COLOR LIGHT_GRAY}{SHADOW WHITE}I think...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	setspeaker ([SP_NAME_AIDEE])
@@ -1234,11 +1234,12 @@ script Littleroot_Idletalk_Prof{
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("So you will help us with our research? We appreciate it. \p
 	Just don't go telling a word of this to anyone, understood?"))
-
+	fadeoutbgm (0)
+	msgbox (format("Remember..."))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
 	setspeaker ([SP_NAME_BALSAM])
-	fadeoutbgm (0)
-	msgbox (format("Remember... we know where you live."))
+	hidefollower
+	msgbox (format("We know where you live."))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 	setspeaker ([SP_NAME_BALSAM])
 	fadeinbgm (0)

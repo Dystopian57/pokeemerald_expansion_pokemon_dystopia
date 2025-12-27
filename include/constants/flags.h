@@ -54,8 +54,8 @@
 #define Aideeleaveslab     0x28 // Unused Flag
 #define Aideearrivestobasement  0x29 // Unused Flag
 #define Unsafeningtutodone  0x2A // Unused Flag
-#define AttendedOldaleTherapy         0x2B // Unused Flag
-#define unusedflag2    0x2C // Unused Flag
+#define Unsafenmaterialtutodone         0x2B // Unused Flag
+#define AttendedOldaleTherapy     0x2C // Unused Flag
 #define unusedflag3    0x2D // Unused Flag
 #define AideeQuestAccepted  0x2E // Unused Flag
 #define checkonrival        0x2F // Unused Flag

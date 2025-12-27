@@ -120,6 +120,33 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "6",
       "script": "AideeBasementUnfollow3"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "6",
+      "script": "AideeBasementUnfollow1"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "6",
+      "script": "AideeBasementUnfollow2"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "6",
+      "script": "AideeBasementUnfollow4"
     }
   ],
   "bg_events": []
