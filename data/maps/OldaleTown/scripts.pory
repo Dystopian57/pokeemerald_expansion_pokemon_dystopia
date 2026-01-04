@@ -1,0 +1,105 @@
+raw `
+OldaleTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+	.byte 0
+
+OldaleTown_OnTransition:
+
+
+
+
+OldaleTown_Text_TownSign:
+	.string "OLDALE TOWN\n"
+	.string "“Where things start off scarce.”$"
+
+
+`
+
+script OldaleOutsideHikerGuy {
+    lockall
+    applymovement (14, moves(face_player))
+    msgbox(format("They say those Rebels are all about fighting Devon, and things
+    like the Safemon project... \p But most of them are old Team Aqua and Team Magma members.
+    \pIf you ask me, they're the same hoodlums, with a different name!"))
+    releaseall
+    }
+
+script OldaleOutsideParkGuy {
+    lockall
+    applymovement (11, moves(face_player))
+    msgbox(format("It's tough being a trader around here lately... tons of competition.\pThere's
+    scammers taking advantage of war tourists, war victims selling their valuables to meet
+    their needs...
+    \p You be careful where you shop now."))
+    releaseall
+    }
+
+script OldaleOutsideOldGuy {
+    lockall
+    applymovement (11, moves(face_player))
+    msgbox(format("If you were wondering... it should be way past autumn now. \p The brown of
+    the trees is because they are dying... it's the Koffing poison the Kantonians doused during
+    the war.
+    \p Before long, we may not be able to live here anymore..."))
+    releaseall
+    }
+
+script OldaleTown_GotoTherapy{
+	lockall
+	special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 6))
+    waitmovement(0)
+	msgbox (format("That's the Devon Learning Center... I should attend the therapy session."))
+	special (RemoveCameraObject)
+	special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 6))
+    waitmovement(0)
+	special (RemoveCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+	waitmovement
+	releaseall	
+}
+
+script OldaleSharpyCameliaOutDLCCutscene {
+    lockall
+    msgbox(format("Sharpy... what did you even signed us up for here?"))
+
+    msgbox(format("I'm pretty sure it was a therapy session of sorts."))
+
+    msgbox(format("W-well, you know... Norman told us he wouldn't let us help him, until
+    we learnt more about the war and Safemon, right?"))
+
+    msgbox(format("So I thought we'd get some good info here!"))
+
+    msgbox(format("Right... you probably just skimmed through the ad, and clicked without
+    thinking, right...?"))
+
+    msgbox(format("W-well... oh, look!"))
+
+    msgbox(format("T-those clothes... and that injury... mister, you're a soldier, right?"))
+
+    msgbox(format("I knew it! Camelia, he can tell us all about the war!"))
+    msgbox(format("Come on, I know you are - don't be modest now!"))
+    msgbox(format("Camelia, you know what this means!? He can tell us all about the war"))
+
+    msgbox(format("Sigh... Sharpy, we've been through this. You can't just ask strangers
+    about horrible things like that!"))
+    msgbox(format("ESPECIALLY soldiers!"))
+
+    msgbox(format("O-of course...! You're right... why would he even tell me, if..."))
+    msgbox(format("If I haven't beaten him in a Pokémon battle! That's the soldier way!
+    You don't spill the beans unless you lose"))
+    //release corpish
+    msgbox(format("W-what!? Are you stupid"))
+    msgbox(format("O-oh, of course! What am I THINKING!? Thank you, Camelia!"))
+    msgbox(format("If we battle here, we may scare someone like that littlegirl again..."))
+    msgbox(format("Meet me at Route 103 - we won't bother anyone there. I'll be waiting!"))
+    msgbox(format("..."))
+
+    msgbox(format("I'm sorry about him... I know this is a lot to ask, but can you go kick
+    that idiot's ass real quick? You fought in the war, so it should be easy. He won't
+    leave until you battle him, and our tutor will be mad if we're not home soon..."))
+    releaseall
+    }
+
+//    setvar(VAR_OLDALE_PHASE, 1)

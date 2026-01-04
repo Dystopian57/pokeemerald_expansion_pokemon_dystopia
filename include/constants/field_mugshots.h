@@ -8,7 +8,9 @@
 #define MUGSHOT_BIRCH  4
 #define MUGSHOT_MPLAYER  5
 #define MUGSHOT_FPLAYER  6
-#define MUGSHOT_COUNT 7
+#define MUGSHOT_SHARPY  7
+#define MUGSHOT_CAMELIA  8
+#define MUGSHOT_COUNT 9
 
 #define EMOTE_NORMAL  0
 #define EMOTE_HAPPY   1
@@ -17,7 +19,8 @@
 #define EMOTE_MENACING     4
 #define EMOTE_SAD     5
 #define EMOTE_TALK     6
-#define EMOTE_POKEBALL     7
-#define EMOTE_COUNT   8
+#define EMOTE_SHOCK     7
+#define EMOTE_POKEBALL     8
+#define EMOTE_COUNT   9
 
 #endif // GUARD_CONSTANTS_MUGSHOTS_H

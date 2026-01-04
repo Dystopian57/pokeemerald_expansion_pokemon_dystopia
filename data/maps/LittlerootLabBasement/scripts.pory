@@ -105,7 +105,7 @@ script AideeBasementIdleTalk {
 		tray..."))
 		addobject (2)
 		setobjectxy (2, 10, 4)
-		playse (SE_BALL_BOUNCE_1)
+		playse (SE_RG_BAG_POCKET)
 		setspeaker ([SP_NAME_AIDEE])
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		msgbox (format("And last but not least... we press this button!"))
@@ -245,7 +245,7 @@ script AideeBasementIdleTalk {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("However, if you bring me enough Safemon to unsafen, perhaps I can study them
-		and hack... I mean, upgrade the Pokédex later on!"))
+		and hack... I mean, upgrade the Devondex later on!"))
 
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
@@ -306,6 +306,7 @@ script AideeBasementIdleTalk {
 					}
 
 					if (var(VAR_RESULT) == 1) {
+					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("Oh please - don't play with my feelings like that!"))
 					goto (finishsafemontradescript)
 						}
@@ -335,6 +336,8 @@ script AideeBasementIdleTalk {
 			setspeaker ([SP_NAME_AIDEE])
 			msgbox (format("Need some Unsafening Materials?"))
 			pokemart (AideMaterials)
+			setspeaker ([SP_NAME_AIDEE])
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 			msgbox (format("Come back for more!"))
 			goto (finishsafemontradescript)
 			}}}

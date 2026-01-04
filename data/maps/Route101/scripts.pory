@@ -337,6 +337,7 @@ text Orphan101_Outro{
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
+	setspeaker ([SP_NAME_RICK])
 	msgbox(format("Hey there, kid!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	goto (rebelafterapproach)
@@ -348,6 +349,7 @@ text Orphan101_Outro{
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
+	setspeaker ([SP_NAME_RICK])
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 1))
 	waitmovement
@@ -361,6 +363,7 @@ text Orphan101_Outro{
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
+	setspeaker ([SP_NAME_RICK])
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 2))
 	waitmovement
@@ -374,6 +377,7 @@ text Orphan101_Outro{
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
+	setspeaker ([SP_NAME_RICK])
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 3))
 	waitmovement
@@ -386,6 +390,7 @@ script Route101RebelGruntBattle{
 	rebelafterapproach:
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("Wowie, that's a cute Safemon you got there. Bet it's worth a ton!"))
+	setspeaker ([SP_NAME_RICK])
 	msgbox ("Hand it over.")
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Obey", "Refuse")
 	waitmessage
@@ -404,6 +409,7 @@ script Route101RebelGruntBattle{
 	}
 
 	if(var(VAR_RESULT) == 1){
+	setspeaker ([SP_NAME_RICK])
 	msgbox(format("Playing brave huh? You really don't look the type.
 	\p Guess we'll have to do this the hard way!"))
 	}
@@ -454,8 +460,11 @@ script Route101RebelGruntBattle{
 	msgbox(format("Screw this!"))
 	removeobject(3)
 	setflag (rebel101runsaway)
+	setflag (sharpynotoutsideDLC)
+	setflag (camelianotoutsideDLC)
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 	setvar(VAR_ROUTE101REBELFLEES, 1)
+	clearflag (FLAG_TEMP_HIDE_FOLLOWER)
 	releaseall
     end
  }

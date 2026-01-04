@@ -33,13 +33,34 @@ static const u16 sFieldMugshotPal_MplayerSad[] = INCBIN_U16("graphics/field_mugs
 static const u32 sFieldMugshotGfx_MplayerAngry[] = INCBIN_U32("graphics/field_mugshots/mplayer/angry.4bpp.lz");
 static const u16 sFieldMugshotPal_MplayerAngry[] = INCBIN_U16("graphics/field_mugshots/mplayer/angry.gbapal");
 //Female Player
-//Male Player
 static const u32 sFieldMugshotGfx_FplayerNormal[] = INCBIN_U32("graphics/field_mugshots/fplayer/normal.4bpp.lz");
 static const u16 sFieldMugshotPal_FplayerNormal[] = INCBIN_U16("graphics/field_mugshots/fplayer/normal.gbapal");
 static const u32 sFieldMugshotGfx_FplayerSad[] = INCBIN_U32("graphics/field_mugshots/fplayer/sad.4bpp.lz");
 static const u16 sFieldMugshotPal_FplayerSad[] = INCBIN_U16("graphics/field_mugshots/fplayer/sad.gbapal");
 static const u32 sFieldMugshotGfx_FplayerAngry[] = INCBIN_U32("graphics/field_mugshots/fplayer/angry.4bpp.lz");
 static const u16 sFieldMugshotPal_FplayerAngry[] = INCBIN_U16("graphics/field_mugshots/fplayer/angry.gbapal");
+
+//Sharpy
+static const u32 sFieldMugshotGfx_SharpyNormal[] = INCBIN_U32("graphics/field_mugshots/sharpy/normal.4bpp.lz");
+static const u16 sFieldMugshotPal_SharpyNormal[] = INCBIN_U16("graphics/field_mugshots/sharpy/normal.gbapal");
+static const u32 sFieldMugshotGfx_SharpyPokeball[] = INCBIN_U32("graphics/field_mugshots/sharpy/pokeball.4bpp.lz");
+static const u16 sFieldMugshotPal_SharpyPokeball[] = INCBIN_U16("graphics/field_mugshots/sharpy/pokeball.gbapal");
+static const u32 sFieldMugshotGfx_SharpyConfused[] = INCBIN_U32("graphics/field_mugshots/sharpy/confused.4bpp.lz");
+static const u16 sFieldMugshotPal_SharpyConfused[] = INCBIN_U16("graphics/field_mugshots/sharpy/confused.gbapal");
+static const u32 sFieldMugshotGfx_SharpySad[] = INCBIN_U32("graphics/field_mugshots/sharpy/sad.4bpp.lz");
+static const u16 sFieldMugshotPal_SharpySad[] = INCBIN_U16("graphics/field_mugshots/sharpy/sad.gbapal");
+static const u32 sFieldMugshotGfx_SharpyShock[] = INCBIN_U32("graphics/field_mugshots/sharpy/shock.4bpp.lz");
+static const u16 sFieldMugshotPal_SharpyShock[] = INCBIN_U16("graphics/field_mugshots/sharpy/shock.gbapal");
+
+//Camelia
+static const u32 sFieldMugshotGfx_CameliaNormal[] = INCBIN_U32("graphics/field_mugshots/camelia/normal.4bpp.lz");
+static const u16 sFieldMugshotPal_CameliaNormal[] = INCBIN_U16("graphics/field_mugshots/camelia/normal.gbapal");
+static const u32 sFieldMugshotGfx_CameliaSad[] = INCBIN_U32("graphics/field_mugshots/camelia/sad.4bpp.lz");
+static const u16 sFieldMugshotPal_CameliaSad[] = INCBIN_U16("graphics/field_mugshots/camelia/sad.gbapal");
+static const u32 sFieldMugshotGfx_CameliaMenacing[] = INCBIN_U32("graphics/field_mugshots/camelia/menacing.4bpp.lz");
+static const u16 sFieldMugshotPal_CameliaMenacing[] = INCBIN_U16("graphics/field_mugshots/camelia/menacing.gbapal");
+static const u32 sFieldMugshotGfx_CameliaConfused[] = INCBIN_U32("graphics/field_mugshots/camelia/confused.4bpp.lz");
+static const u16 sFieldMugshotPal_CameliaConfused[] = INCBIN_U16("graphics/field_mugshots/camelia/confused.gbapal");
 
 struct MugshotGfx
 {
@@ -50,6 +71,14 @@ struct MugshotGfx
 static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
 {
 
+    [MUGSHOT_TEST] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_TestNormal,
+            .pal = sFieldMugshotPal_TestNormal,
+        },
+            },
 
     [MUGSHOT_BALSAM] =
     {
@@ -165,13 +194,66 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
 
     },
 
-    [MUGSHOT_TEST] =
+        [MUGSHOT_SHARPY] =
     {
         [EMOTE_NORMAL] =
         {
-            .gfx = sFieldMugshotGfx_TestNormal,
-            .pal = sFieldMugshotPal_TestNormal,
+            .gfx = sFieldMugshotGfx_SharpyNormal,
+            .pal = sFieldMugshotPal_SharpyNormal,
         },
-            },
+
+        [EMOTE_POKEBALL] =
+        {
+            .gfx = sFieldMugshotGfx_SharpyPokeball,
+            .pal = sFieldMugshotPal_SharpyPokeball,
+        },
+
+         [EMOTE_CONFUSED] =
+        {
+            .gfx = sFieldMugshotGfx_SharpyConfused,
+            .pal = sFieldMugshotPal_SharpyConfused,
+        },
+
+        [EMOTE_SAD] =
+        {
+            .gfx = sFieldMugshotGfx_SharpySad,
+            .pal = sFieldMugshotPal_SharpySad,
+        },
+
+        [EMOTE_SHOCK] =
+        {
+            .gfx = sFieldMugshotGfx_SharpyShock,
+            .pal = sFieldMugshotPal_SharpyShock,
+        },
+    },
+
+    [MUGSHOT_CAMELIA] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_CameliaNormal,
+            .pal = sFieldMugshotPal_CameliaNormal,
+        },
+
+        [EMOTE_SAD] =
+        {
+            .gfx = sFieldMugshotGfx_CameliaSad,
+            .pal = sFieldMugshotPal_CameliaSad,
+        },
+
+         [EMOTE_MENACING] =
+        {
+            .gfx = sFieldMugshotGfx_CameliaMenacing,
+            .pal = sFieldMugshotPal_CameliaMenacing,
+        },
+
+        [EMOTE_CONFUSED] =
+        {
+            .gfx = sFieldMugshotGfx_CameliaConfused,
+            .pal = sFieldMugshotPal_CameliaConfused,
+        },
+    },
+
+
 
 };

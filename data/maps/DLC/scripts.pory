@@ -1,0 +1,165 @@
+raw `
+DLC_MapScripts::
+	.byte 0
+
+`
+
+script OldaleDLC_GoToSeatForTherapyLeft {
+	lockall
+	special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
+    waitmovement(0)
+	special (RemoveCameraObject)
+    msgbox(format("Ah, there you are... {PLAYER}, is it? \p Please sit down - the session is
+    about to start."))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1, walk_right * 2, face_up))
+    goto (starttherapycutscene)
+}
+
+script OldaleDLC_GoToSeatForTherapyRight {
+	lockall
+	special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
+    waitmovement(0)
+	special (RemoveCameraObject)
+    msgbox(format("Ah, there you are... {PLAYER}, is it? \p Please sit down - the session is
+    about to start."))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1, walk_right * 1, face_up))
+    goto (starttherapycutscene)
+}
+
+script OldaleTown_DLC_TherapyCutscene{
+    starttherapycutscene:
+    msgbox(format("As I was saying, we are going to start by watching some pictures of Kantonian
+    Pokémon, and sharing what feelings they evoke in us."))
+	showmonpic(SPECIES_VENUSAUR, 10,3)
+	playmoncry(SPECIES_VENUSAUR, CRY_MODE_NORMAL) 
+    msgbox(format("Let's begin with you, {PLAYER}. Take a look at this picture."))
+    hidemonpic
+    msgbox(format("What do you think about it?"))
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "It's cool", "Looks dangerous", "I don't know")
+    hidemonpic
+    playse (SE_PIN)
+    applymovement (8, moves (emote_exclamation_mark, walk_in_place_up * 2))
+    waitmovement
+
+	if (var(VAR_RESULT) == 0) {
+    msgbox(format("Cool!? That Pokémon poisoned my daugther during the war! It's horrible!")) 
+}
+
+    if (var(VAR_RESULT) == 1) {
+    msgbox(format("I agree! That Pokémon poisoned my daugther during the war! It's horrible!")) 
+    }
+
+    if (var(VAR_RESULT) == 2) {
+    msgbox(format("Well, I do know! That Pokémon poisoned my daugther during the war! It's horrible!")) 
+    }
+
+    applymovement (6, moves (walk_in_place_down * 2)) 
+    waitmovement
+    msgbox(format("You are correct, sir... Venusaurs are very dangerous. \p Thankfully, Devon Corp.
+    has safened all Bulbasaurs in Hoenn to Bulbasynths, so that no more people get hurt again."))
+    applymovement (8, moves (walk_in_place_up * 2))
+    waitmovement
+    msgbox(format("Ah, thank goodness..."))
+
+    applymovement (6, moves (walk_in_place_down * 1))
+    waitmovement
+	showmonpic(SPECIES_CHARIZARD, 10,3)
+	playmoncry(SPECIES_CHARIZARD, CRY_MODE_NORMAL) 
+    msgbox(format("Let's continue... who wants to share their thoughts about this one?"))
+    hidemonpic
+    playse (SE_PIN)
+    applymovement (7, moves (emote_exclamation_mark, walk_in_place_up * 2))
+    waitmovement
+    msgbox(format("O-oh, that one... t-that one burned my house...! Aaah, it's scary..."))
+
+    playse (SE_M_DIZZY_PUNCH)
+    applymovement (3, moves (emote_question_mark, walk_in_place_up * 2))
+    waitmovement
+    msgbox(format("Huh? Nonsense, that's a splendid Fire type."))
+
+    playse (SE_PIN)
+    applymovement (7, moves (emote_exclamation_mark, face_left))
+    waitmovement
+    msgbox(format("W-what?"))
+
+    applymovement (6, moves (walk_in_place_down * 1))
+    waitmovement
+    msgbox(format("Now now, let us be tolerant with... differences of opinion."))
+    showmonpic(SPECIES_BLASTOISE, 10,3)
+	playmoncry(SPECIES_BLASTOISE, CRY_MODE_ROAR_1) 
+    msgbox(format("Let's see about the last one - the water CANNON Pokémon, Blastoise."))
+    hidemonpic
+
+    playse (SE_PIN)
+    applymovement (1, moves (emote_exclamation_mark, walk_in_place_up * 1))
+    waitmovement
+    msgbox(format("U-uwaah, nooo... t-those are the bad turtles...!"))
+
+    applymovement (6, moves (walk_in_place_down * 2)) 
+    waitmovement
+    msgbox(format("Precisely. These Pokémon were responsible for the Assault on Route 103,
+    and they almost flooded Oldale. \p Once more, it was thanks to Devon Corp's swift action,
+    that a flood gate was built and..."))
+
+    playse (SE_PIN)
+    applymovement (2, moves (emote_exclamation_mark, walk_in_place_up * 2))
+    waitmovement
+    msgbox(format("Hey, I know that one! That's a cool as heck Blastoise! \p I love how their
+    Hydropumps sound..."))
+    playse (SE_PIN)
+    applymovement (1, moves (face_left, emote_double_exclamation_mark))
+    msgbox(format("BANG BANG!"))
+
+    applymovement (1, moves (walk_in_place_left * 10))
+    msgbox(format("N-nooo...!!"))
+
+    msgbox(format("No? Hmm, you're right... it's not a 'bang' it's more like a..."))
+    playse (SE_M_HYDRO_PUMP)
+    applymovement (2, moves (walk_in_place_up * 2))
+    msgbox(format("BWAHM BWAHM!"))
+    playse (SE_FLEE)
+    applymovement (1, moves (walk_fast_left * 1, walk_fast_down * 4))
+    msgbox(format("AAAAAHH...!!"))
+    waitmovement
+    playse (SE_DOOR)
+    waitse
+    removeobject (1)
+
+    applymovement (2, moves (emote_question_mark, face_down))
+    playse (SE_M_METRONOME)
+    waitmovement
+
+    applymovement (6, moves (walk_in_place_down * 1))
+    waitmovement
+    msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+    I think we will finish this session early. \p Next time, everyone please be mindful of
+    others' feelings."))
+
+    applymovement (3, moves (face_right))
+    waitmovement
+    applymovement (2, moves (face_left)) 
+    waitmovement
+    msgbox(format("Let's go, Sharpy... this was a waste of time."))
+    applymovement (2, moves (walk_right * 1, walk_down *2))
+    applymovement (3, moves (walk_right * 2, walk_down *2))
+    waitmovement
+    playse (SE_DOOR)
+    waitse
+    removeobject (2)
+    removeobject (3)
+
+	special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 2))
+    waitmovement(0)
+	clearflag (sharpynotoutsideDLC)
+	clearflag (camelianotoutsideDLC)
+	setflag (sharpynotinsideDLC)
+	setflag (camelianotinsideDLC)
+	special (RemoveCameraObject)
+	waitmovement
+
+	setvar(VAR_OLDALE_PHASE, 1)
+	releaseall	
+}

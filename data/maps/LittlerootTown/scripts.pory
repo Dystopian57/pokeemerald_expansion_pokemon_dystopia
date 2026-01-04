@@ -5,15 +5,6 @@ raw `
 # 2 "data/maps/LittlerootTown/scripts.pory"
 
 # 3 "data/maps/LittlerootTown/scripts.pory"
-LittlerootTown_MapScripts::
-# 4 "data/maps/LittlerootTown/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
-# 5 "data/maps/LittlerootTown/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_OnFrame
-# 6 "data/maps/LittlerootTown/scripts.pory"
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_OnWarp
-# 7 "data/maps/LittlerootTown/scripts.pory"
-	.byte 0
 # 8 "data/maps/LittlerootTown/scripts.pory"
 
 # 9 "data/maps/LittlerootTown/scripts.pory"
@@ -1818,17 +1809,7 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 //6 BROUGHT VOLTORB SHARD
 //7 UNSAFENING TUTORIAL DONE
 
-
-
 //TESTS
-
-script followertest {
-	lockall
-	msgbox ("I shall follow you with pleasure.")
-	waitmessage
-	setfollowernpc (LOCALID_FOLLOWER1, FNPC_ALL, 0, 0)
-	releaseall
-}
 
 //script Mugshottest2 {
 //lockall
@@ -1839,6 +1820,25 @@ script followertest {
 //end
 //releaseall
 //}
+
+mapscripts LittlerootTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: NoRain}
+	
+
+script NoRain {
+
+	if (var(VAR_LITTLEROOT_PHASE) == 5)
+	{setweather (WEATHER_NONE)
+}
+	if (var(VAR_LITTLEROOT_PHASE) == 6)
+	{setweather (WEATHER_NONE)
+}
+
+	if (var(VAR_LITTLEROOT_PHASE) == 7)
+	{setweather (WEATHER_NONE)
+}
+}
+
 
 script Littleroot_Techguy_Talk {
 lockall
@@ -1912,7 +1912,7 @@ releaseall
 
 script LittlerootTown_Trigger_Blocknopokes{
 	lockall
-	msgbox ("Proffessor Balsam is waiting at the lab...")
+	msgbox ("Professor Balsam is waiting at the lab...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
 	releaseall	
@@ -1990,15 +1990,27 @@ script Littleroot_Idletalk_Oldman{
 	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... it would lift a weight off my old
 	shoulders. \p I tried checking on them myself, but they wouldn't open the door.\p I hope you have
 	better luck."))}
-	if (var(VAR_LITTLEROOT_PHASE) == 5)
-	{checkplayergender
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	{
+	checkplayergender
 	if(var(VAR_RESULT) == MALE){
 	msgbox (format("How are the new crutches treating you, {PLAYER}?\pThe war left the terrain in a 
 	treacherous state, so please take care."))}
 	else
 	{msgbox (format("How is the new arm sling treating you, {PLAYER}?\pThe war left the terrain in a 
 	treacherous state, so please take care."))}}
-	endfirstgreeting:	
+	endfirstgreeting:
+
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	{msgbox (format("Oh, is that a Voltorb Shard? You should take that to Balsam's Aide at
+	once."))
+
+	}
+	if(var(VAR_LITTLEROOT_PHASE) == 7)
+	{msgbox (format("I know Professor Balsam and her Aide may seem eccentric sometimes...
+	\p But they only have the best mind for the future of Hoenn. \p I hope you can find it in you
+	to support them."))}
+
 	removefieldmugshot
 	releaseall
 }

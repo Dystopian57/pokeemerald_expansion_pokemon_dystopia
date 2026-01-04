@@ -70,10 +70,10 @@
 #define JoelgivesTM    0x38 // Unused Flag
 #define rebel101defeated    0x39 // Unused Flag
 #define rebel101runsaway   0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
+#define sharpynotoutsideDLC    0x3B // Unused Flag
+#define camelianotoutsideDLC    0x3C // Unused Flag
+#define sharpynotinsideDLC    0x3D // Unused Flag
+#define camelianotinsideDLC    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag

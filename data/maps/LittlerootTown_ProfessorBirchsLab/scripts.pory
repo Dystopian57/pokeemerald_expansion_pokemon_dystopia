@@ -1003,9 +1003,18 @@ mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Lights}
 
 script Lights {
+
 	if (var(VAR_LITTLEROOT_PHASE) == 5)
 	{setweather (WEATHER_NONE)
-}}
+}
+	if (var(VAR_LITTLEROOT_PHASE) == 6)
+	{setweather (WEATHER_NONE)
+}
+
+	if (var(VAR_LITTLEROOT_PHASE) == 7)
+	{setweather (WEATHER_NONE)
+}
+}
 
 
 script Littleroot_Idletalk_Aidee{
@@ -1190,6 +1199,7 @@ script Littleroot_Idletalk_Prof{
 	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
 	like a madwoman..."))
 	removefieldmugshot
+	playse (SE_M_LICK)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Is she okay? Perhaps I should have signed her up for therapy too..."))
@@ -1200,6 +1210,7 @@ script Littleroot_Idletalk_Prof{
 	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
 	like a madman..."))
 	removefieldmugshot
+	playse (SE_M_LICK)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Is he okay? Perhaps I should have signed him up for therapy too..."))
@@ -1239,6 +1250,7 @@ script Littleroot_Idletalk_Prof{
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
 	setspeaker ([SP_NAME_BALSAM])
 	hidefollower
+	playse (SE_M_LEER)
 	msgbox (format("We know where you live."))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 	setspeaker ([SP_NAME_BALSAM])
@@ -1287,6 +1299,7 @@ script Littleroot_Idletalk_Pikachu1{
 					applymovement (4, moves(face_right))
 					waitmovement (4)
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+					playse (SE_M_SWAGGER2)
 					msgbox (format("{PLAYER}... Leave that Purachu alone. You're going to spoil it."))
 					clearflag (InsistonPika1)
 					setflag (InsistonPika2)
@@ -1300,6 +1313,7 @@ script Littleroot_Idletalk_Pikachu1{
 				waitmovement (4)
 				setspeaker ([SP_NAME_BALSAM])
 				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+				playse (SE_M_LICK)
 				msgbox (format("... you really want to be a {COLOR RED}Red{COLOR DARK_GRAY} wannabe that bad?"))
 				removefieldmugshot
 				createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
@@ -1313,6 +1327,8 @@ script Littleroot_Idletalk_Pikachu1{
 					playfanfare(MUS_OBTAIN_ITEM)
 					msgbox(format("The Professor has been pressed into giving her Purachu!"))
 					waitmessage
+					playse (SE_M_YAWN)
+					msgbox(format("The Purachu yawns..."))
 					setflag (GotPika)
 					setflag(GOTSTARTER3)
 					removeobject (7)
@@ -1402,6 +1418,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox(format("And the 'bad' news is... I have signed you up for a therapy session there."))
 		removefieldmugshot
+		playse (SE_M_SWAGGER2)
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox(format("Don't look at me like that. Birch told me what you went through, and that you've shut
@@ -1418,6 +1435,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 		Town{COLOR DARK_GRAY} to attend a therapy
 		session."))
 		removefieldmugshot
+		playse (SE_M_SWAGGER2)
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox(format("Don't look at me like that. Birch told me what you went through, and that you've shut
@@ -1451,6 +1469,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 script LittlerootTown_Eventscript_ProffessorDontgo1 {
 	lockall
 	applymovement (4, moves(face_down))
+	playse (SE_M_SWAGGER2)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("Come on {PLAYER}, can't you at least give this a chance?"))
@@ -1464,6 +1483,7 @@ script LittlerootTown_Eventscript_ProffessorDontgo1 {
 script LittlerootTown_Eventscript_ProffessorDontgo2 {
 	lockall
 	applymovement (4, moves(face_down))
+	playse (SE_M_SWAGGER2)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("{PLAYER}, we're helping you out here - least you could do is return the favour,
@@ -1745,6 +1765,7 @@ script Lab_EventScript_Starter2{
 
 else{
 applymovement(4, moves(face_down))
+playse (SE_M_SWAGGER2)
 createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 setspeaker ([SP_NAME_BALSAM])
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for

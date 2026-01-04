@@ -106,21 +106,21 @@ AideeBasementIdleTalk_1:
 # 259 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto_if_set Unsafeningtutodone, AideeBasementIdleTalk_5
 AideeBasementIdleTalk_4:
-# 346 "data/maps/LittlerootLabBasement/scripts.pory"
+# 349 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq AideeBasementIdleTalk_11
 AideeBasementIdleTalk_10:
-# 368 "data/maps/LittlerootLabBasement/scripts.pory"
+# 371 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq AideeBasementIdleTalk_23
 AideeBasementIdleTalk_22:
-# 371 "data/maps/LittlerootLabBasement/scripts.pory"
-finishunsafentutorial:
-# 372 "data/maps/LittlerootLabBasement/scripts.pory"
-finishsafemontradescript:
-# 373 "data/maps/LittlerootLabBasement/scripts.pory"
-	removefieldmugshot
 # 374 "data/maps/LittlerootLabBasement/scripts.pory"
+finishunsafentutorial:
+# 375 "data/maps/LittlerootLabBasement/scripts.pory"
+finishsafemontradescript:
+# 376 "data/maps/LittlerootLabBasement/scripts.pory"
+	removefieldmugshot
+# 377 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
@@ -200,7 +200,7 @@ AideeBasementIdleTalk_2:
 # 107 "data/maps/LittlerootLabBasement/scripts.pory"
 	setobjectxy 2, 10, 4
 # 108 "data/maps/LittlerootLabBasement/scripts.pory"
-	playse SE_BALL_BOUNCE_1
+	playse SE_RG_BAG_POCKET
 # 109 "data/maps/LittlerootLabBasement/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
 # 110 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -382,7 +382,7 @@ AideeBasementIdleTalk_5:
 	compare VAR_RESULT, 0
 	goto_if_eq AideeBasementIdleTalk_14
 AideeBasementIdleTalk_13:
-# 315 "data/maps/LittlerootLabBasement/scripts.pory"
+# 316 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq AideeBasementIdleTalk_28
 	goto AideeBasementIdleTalk_4
@@ -428,19 +428,19 @@ AideeBasementIdleTalk_19:
 	goto AideeBasementIdleTalk_7
 
 AideeBasementIdleTalk_11:
-# 347 "data/maps/LittlerootLabBasement/scripts.pory"
+# 350 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
-# 348 "data/maps/LittlerootLabBasement/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
-# 349 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox AideeBasementIdleTalk_Text_47
 # 351 "data/maps/LittlerootLabBasement/scripts.pory"
+	setspeaker [ SP_NAME_AIDEE ]
+# 352 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox AideeBasementIdleTalk_Text_47
+# 354 "data/maps/LittlerootLabBasement/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, AideeBasementIdleTalk_Text_48, AideeBasementIdleTalk_Text_49
-# 353 "data/maps/LittlerootLabBasement/scripts.pory"
+# 356 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq AideeBasementIdleTalk_26
 AideeBasementIdleTalk_25:
-# 360 "data/maps/LittlerootLabBasement/scripts.pory"
+# 363 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq AideeBasementIdleTalk_37
 	goto AideeBasementIdleTalk_10
@@ -513,39 +513,43 @@ AideeBasementIdleTalk_20:
 	goto AideeBasementIdleTalk_19
 
 AideeBasementIdleTalk_23:
-# 369 "data/maps/LittlerootLabBasement/scripts.pory"
+# 372 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto finishsafemontradescript
 	goto AideeBasementIdleTalk_22
 
 AideeBasementIdleTalk_26:
-# 354 "data/maps/LittlerootLabBasement/scripts.pory"
+# 357 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
-# 355 "data/maps/LittlerootLabBasement/scripts.pory"
+# 358 "data/maps/LittlerootLabBasement/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
-# 356 "data/maps/LittlerootLabBasement/scripts.pory"
+# 359 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox AideeBasementIdleTalk_Text_50
 	goto AideeBasementIdleTalk_25
 
 AideeBasementIdleTalk_28:
-# 316 "data/maps/LittlerootLabBasement/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
 # 317 "data/maps/LittlerootLabBasement/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
-# 318 "data/maps/LittlerootLabBasement/scripts.pory"
-	goto_if_unset Unsafenmaterialtutodone, AideeBasementIdleTalk_39
-# 333 "data/maps/LittlerootLabBasement/scripts.pory"
-afterunsafenmaterialtuto:
-# 334 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
-# 335 "data/maps/LittlerootLabBasement/scripts.pory"
+# 318 "data/maps/LittlerootLabBasement/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
+# 319 "data/maps/LittlerootLabBasement/scripts.pory"
+	goto_if_unset Unsafenmaterialtutodone, AideeBasementIdleTalk_39
+# 334 "data/maps/LittlerootLabBasement/scripts.pory"
+afterunsafenmaterialtuto:
+# 335 "data/maps/LittlerootLabBasement/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
 # 336 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox AideeBasementIdleTalk_Text_45
+	setspeaker [ SP_NAME_AIDEE ]
 # 337 "data/maps/LittlerootLabBasement/scripts.pory"
-	pokemart AideMaterials
+	msgbox AideeBasementIdleTalk_Text_45
 # 338 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox AideeBasementIdleTalk_Text_46
+	pokemart AideMaterials
 # 339 "data/maps/LittlerootLabBasement/scripts.pory"
+	setspeaker [ SP_NAME_AIDEE ]
+# 340 "data/maps/LittlerootLabBasement/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+# 341 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox AideeBasementIdleTalk_Text_46
+# 342 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto finishsafemontradescript
 	goto AideeBasementIdleTalk_4
 
@@ -581,33 +585,35 @@ AideeBasementIdleTalk_35:
 	goto AideeBasementIdleTalk_19
 
 AideeBasementIdleTalk_37:
-# 361 "data/maps/LittlerootLabBasement/scripts.pory"
+# 364 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
-# 362 "data/maps/LittlerootLabBasement/scripts.pory"
+# 365 "data/maps/LittlerootLabBasement/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
-# 363 "data/maps/LittlerootLabBasement/scripts.pory"
+# 366 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox AideeBasementIdleTalk_Text_50
 	goto AideeBasementIdleTalk_10
 
 AideeBasementIdleTalk_39:
-# 319 "data/maps/LittlerootLabBasement/scripts.pory"
+# 320 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox AideeBasementIdleTalk_Text_43
-# 326 "data/maps/LittlerootLabBasement/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
 # 327 "data/maps/LittlerootLabBasement/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
 # 328 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox AideeBasementIdleTalk_Text_44
+	setspeaker [ SP_NAME_AIDEE ]
 # 329 "data/maps/LittlerootLabBasement/scripts.pory"
-	setflag Unsafenmaterialtutodone
+	msgbox AideeBasementIdleTalk_Text_44
 # 330 "data/maps/LittlerootLabBasement/scripts.pory"
+	setflag Unsafenmaterialtutodone
+# 331 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto afterunsafenmaterialtuto
 	goto AideeBasementIdleTalk_4
 
 AideeBasementIdleTalk_42:
 # 309 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox AideeBasementIdleTalk_Text_42
+	setspeaker [ SP_NAME_AIDEE ]
 # 310 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox AideeBasementIdleTalk_Text_42
+# 311 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto finishsafemontradescript
 	goto AideeBasementIdleTalk_13
 
@@ -652,46 +658,46 @@ AideeBasementIdleTalk_44:
 
 
 	.align 2
-# 377 "data/maps/LittlerootLabBasement/scripts.pory"
+# 380 "data/maps/LittlerootLabBasement/scripts.pory"
 AideMaterials:
-# 378 "data/maps/LittlerootLabBasement/scripts.pory"
+# 381 "data/maps/LittlerootLabBasement/scripts.pory"
 	.2byte ITEM_COMET_SHARD
 	.2byte ITEM_NONE
 
 CancelTradeSafemonSelection::
-# 383 "data/maps/LittlerootLabBasement/scripts.pory"
+# 386 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
-# 384 "data/maps/LittlerootLabBasement/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
-# 385 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox CancelTradeSafemonSelection_Text_0
 # 387 "data/maps/LittlerootLabBasement/scripts.pory"
+	setspeaker [ SP_NAME_AIDEE ]
+# 388 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox CancelTradeSafemonSelection_Text_0
+# 390 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
 
 SelectedIncorrectTradeSafemon::
-# 391 "data/maps/LittlerootLabBasement/scripts.pory"
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-# 392 "data/maps/LittlerootLabBasement/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
-# 393 "data/maps/LittlerootLabBasement/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 394 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox SelectedIncorrectTradeSafemon_Text_0
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+# 395 "data/maps/LittlerootLabBasement/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
 # 396 "data/maps/LittlerootLabBasement/scripts.pory"
+	setspeaker [ SP_NAME_AIDEE ]
+# 397 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox SelectedIncorrectTradeSafemon_Text_0
+# 399 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
 
 CheerorbBasementIdleTalk::
-# 400 "data/maps/LittlerootLabBasement/scripts.pory"
-	lockall
-# 401 "data/maps/LittlerootLabBasement/scripts.pory"
-	playmoncry SPECIES_CHEERORB, CRY_MODE_NORMAL
-# 402 "data/maps/LittlerootLabBasement/scripts.pory"
-	msgbox AideeBasementIdleTalk_Text_6
 # 403 "data/maps/LittlerootLabBasement/scripts.pory"
+	lockall
+# 404 "data/maps/LittlerootLabBasement/scripts.pory"
+	playmoncry SPECIES_CHEERORB, CRY_MODE_NORMAL
+# 405 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox AideeBasementIdleTalk_Text_6
+# 406 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
@@ -922,8 +928,8 @@ AideeBasementIdleTalk_Text_28:
 # 247 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "However, if you bring me enough Safemon\n"
 	.string "to unsafen, perhaps I can study them\l"
-	.string "and hack... I mean, upgrade the Pokédex\l"
-	.string "later on!$"
+	.string "and hack... I mean, upgrade the\l"
+	.string "Devondex later on!$"
 
 AideeBasementIdleTalk_Text_29:
 # 253 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -986,12 +992,12 @@ AideeBasementIdleTalk_Text_41:
 	.string "you can buy!$"
 
 AideeBasementIdleTalk_Text_42:
-# 309 "data/maps/LittlerootLabBasement/scripts.pory"
+# 310 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Oh please - don't play with my feelings\n"
 	.string "like that!$"
 
 AideeBasementIdleTalk_Text_43:
-# 319 "data/maps/LittlerootLabBasement/scripts.pory"
+# 320 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Oh, I forgot to mention - everytime you\n"
 	.string "unsafen a Pokémon, I should be able to\l"
 	.string "start cloning the corresponding\l"
@@ -1005,44 +1011,44 @@ AideeBasementIdleTalk_Text_43:
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Unless you're broke, of course...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 AideeBasementIdleTalk_Text_44:
-# 328 "data/maps/LittlerootLabBasement/scripts.pory"
+# 329 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "So, with that in mind...$"
 
 AideeBasementIdleTalk_Text_45:
-# 336 "data/maps/LittlerootLabBasement/scripts.pory"
+# 337 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Need some Unsafening Materials?$"
 
 AideeBasementIdleTalk_Text_46:
-# 338 "data/maps/LittlerootLabBasement/scripts.pory"
+# 341 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Come back for more!$"
 
 AideeBasementIdleTalk_Text_47:
-# 349 "data/maps/LittlerootLabBasement/scripts.pory"
+# 352 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "So, {PLAYER}... what's your stance on\n"
 	.string "Devon Corp. and Safemon?$"
 
 AideeBasementIdleTalk_Text_48:
-# 351 "data/maps/LittlerootLabBasement/scripts.pory"
+# 354 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "I like them$"
 
 AideeBasementIdleTalk_Text_49:
-# 351 "data/maps/LittlerootLabBasement/scripts.pory"
+# 354 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "I don't like them$"
 
 AideeBasementIdleTalk_Text_50:
-# 356 "data/maps/LittlerootLabBasement/scripts.pory"
+# 359 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Hah, that's fair enough. Me, I'm\n"
 	.string "indifferent - I just like the science\l"
 	.string "behind it all!$"
 
 CancelTradeSafemonSelection_Text_0:
-# 385 "data/maps/LittlerootLabBasement/scripts.pory"
+# 388 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Oh, changed your mind? Well, I guess\n"
 	.string "some Safemon have their charm after\l"
 	.string "all.$"
 
 SelectedIncorrectTradeSafemon_Text_0:
-# 394 "data/maps/LittlerootLabBasement/scripts.pory"
+# 397 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Oh, that's not a {STR_VAR_1},\n"
 	.string "{PLAYER}! You should do some\l"
 	.string "reviewing with that Devondex I gave\l"

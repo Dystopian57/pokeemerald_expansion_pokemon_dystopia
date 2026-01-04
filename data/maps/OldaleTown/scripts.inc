@@ -1,397 +1,323 @@
+# 1 "data/maps/OldaleTown/scripts.pory"
+
+# 2 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_MapScripts::
+# 3 "data/maps/OldaleTown/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+# 4 "data/maps/OldaleTown/scripts.pory"
 	.byte 0
+# 5 "data/maps/OldaleTown/scripts.pory"
 
+# 6 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
-	setflag FLAG_VISITED_OLDALE_TOWN
-	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
-	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
-	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
-	end
+# 7 "data/maps/OldaleTown/scripts.pory"
 
-@ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
-OldaleTown_EventScript_SetOldaleState::
-	setvar VAR_OLDALE_TOWN_STATE, 1
-	return
+# 8 "data/maps/OldaleTown/scripts.pory"
 
-OldaleTown_EventScript_BlockWestEntrance::
-	setobjectxyperm LOCALID_FOOTPRINTS_MAN, 1, 11
-	setobjectmovementtype LOCALID_FOOTPRINTS_MAN, MOVEMENT_TYPE_FACE_LEFT
-	return
+# 9 "data/maps/OldaleTown/scripts.pory"
 
-OldaleTown_EventScript_MoveMartEmployee::
-	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 13, 14
-	setobjectmovementtype LOCALID_OLDALE_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
-	return
+# 10 "data/maps/OldaleTown/scripts.pory"
 
-OldaleTown_EventScript_TownSign::
-	msgbox OldaleTown_Text_TownSign, MSGBOX_SIGN
-	end
-
-OldaleTown_EventScript_Girl::
-	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
-	end
-
-OldaleTown_EventScript_MartEmployee::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_ExplainPotion
-	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_ExplainPotion
-	setflag FLAG_TEMP_1
-	playbgm MUS_FOLLOW_ME, FALSE
-	msgbox OldaleTown_Text_IWorkAtPokemonMart, MSGBOX_DEFAULT
-	closemessage
-	switch VAR_FACING
-	case DIR_SOUTH, OldaleTown_EventScript_GoToMartSouth
-	case DIR_NORTH, OldaleTown_EventScript_GoToMartNorth
-	case DIR_EAST, OldaleTown_EventScript_GoToMartEast
-	end
-
-OldaleTown_EventScript_GoToMartSouth::
-	applymovement LOCALID_OLDALE_MART_EMPLOYEE, OldaleTown_Movement_EmployeeSouth
-	applymovement LOCALID_PLAYER, OldaleTown_Movement_PlayerSouth
-	waitmovement 0
-	goto OldaleTown_EventScript_ExplainPokemonMart
-	end
-
-OldaleTown_EventScript_GoToMartNorth::
-	applymovement LOCALID_OLDALE_MART_EMPLOYEE, OldaleTown_Movement_EmployeeNorth
-	applymovement LOCALID_PLAYER, OldaleTown_Movement_PlayerNorth
-	waitmovement 0
-	goto OldaleTown_EventScript_ExplainPokemonMart
-	end
-
-OldaleTown_EventScript_GoToMartEast::
-	applymovement LOCALID_PLAYER, OldaleTown_Movement_PlayerEast
-	applymovement LOCALID_OLDALE_MART_EMPLOYEE, OldaleTown_Movement_EmployeeEast
-	waitmovement 0
-	goto OldaleTown_EventScript_ExplainPokemonMart
-	end
-
-OldaleTown_EventScript_ExplainPokemonMart::
-	msgbox OldaleTown_Text_ThisIsAPokemonMart, MSGBOX_DEFAULT
-	giveitem ITEM_POTION
-	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_BagIsFull
-	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_POTION_OLDALE
-	fadedefaultbgm
-	release
-	end
-
-OldaleTown_EventScript_ExplainPotion::
-	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
-	release
-	end
-
-OldaleTown_EventScript_BagIsFull::
-	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
-	fadedefaultbgm
-	release
-	end
-
-OldaleTown_Movement_EmployeeEast:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_faster_down
-	step_end
-
-OldaleTown_Movement_EmployeeSouth:
-	walk_left
-	walk_up
-	walk_up
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_faster_down
-	step_end
-
-OldaleTown_Movement_EmployeeNorth:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_faster_down
-	step_end
-
-OldaleTown_Movement_Unknown1:
-	walk_up
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	delay_8
-	walk_in_place_faster_down
-	step_end
-
-OldaleTown_Movement_PlayerEast:
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-OldaleTown_Movement_PlayerSouth:
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-OldaleTown_Movement_PlayerNorth:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-OldaleTown_Movement_Unknown2:
-	walk_left
-	walk_up
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-OldaleTown_EventScript_FootprintsMan::
-	lock
-	faceplayer
-	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_NotBlockingPath
-	msgbox OldaleTown_Text_DiscoveredFootprints, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_FOOTPRINTS_MAN, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-OldaleTown_EventScript_BlockedPath::
-	lockall
-	applymovement LOCALID_PLAYER, OldaleTown_Movement_PlayerStepBack
-	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_BackUp
-	waitmovement 0
-	msgbox OldaleTown_Text_WaitDontComeInHere, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_ReturnToOriginalPosition
-	waitmovement 0
-	releaseall
-	end
-
-OldaleTown_EventScript_NotBlockingPath::
-	msgbox OldaleTown_Text_FinishedSketchingFootprints, MSGBOX_DEFAULT
-	release
-	end
-
-OldaleTown_EventScript_Rival::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, Common_Movement_FacePlayer
-	waitmovement 0
-	setvar VAR_0x8009, 0
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_RivalTrigger1::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalApproachPlayer1
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_0x8009, 1
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_RivalTrigger2::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalApproachPlayer2
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_0x8009, 1
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_RivalTrigger3::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalApproachPlayer3
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_0x8009, 1
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_ShowRivalMessage::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, OldaleTown_EventScript_ShowMayMessage
-	goto_if_eq VAR_RESULT, FEMALE, OldaleTown_EventScript_ShowBrendanMessage
-	end
-
-OldaleTown_EventScript_ShowMayMessage::
-	msgbox OldaleTown_Text_MayLetsGoBack, MSGBOX_DEFAULT
-	goto OldaleTown_EventScript_RivalFinish
-	end
-
-OldaleTown_EventScript_ShowBrendanMessage::
-	msgbox OldaleTown_Text_BrendanLetsGoBack, MSGBOX_DEFAULT
-	goto OldaleTown_EventScript_RivalFinish
-	end
-
-OldaleTown_EventScript_RivalFinish::
-	closemessage
-	call_if_eq VAR_0x8009, 0, OldaleTown_EventScript_DoExitMovement1
-	call_if_eq VAR_0x8009, 1, OldaleTown_EventScript_DoExitMovement2
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalExit
-	waitmovement 0
-	removeobject LOCALID_OLDALE_RIVAL
-	setvar VAR_OLDALE_RIVAL_STATE, 2
-	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
-	releaseall
-	end
-
-OldaleTown_EventScript_DoExitMovement1::
-	goto_if_ne VAR_FACING, DIR_SOUTH, OldaleTown_EventScript_DoExitMovement2
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalExit
-	waitmovement 0
-	return
-
-OldaleTown_EventScript_DoExitMovement2::
-	applymovement LOCALID_PLAYER, OldaleTown_Movement_WatchRivalExit
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalExit
-	waitmovement 0
-	return
-
-OldaleTown_Movement_RivalApproachPlayer1:
-	walk_left
-	walk_left
-	step_end
-
-OldaleTown_Movement_RivalApproachPlayer2:
-	walk_left
-	step_end
-
-OldaleTown_Movement_RivalApproachPlayer3:
-	face_left
-	step_end
-
-OldaleTown_Movement_RivalExit:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-OldaleTown_Movement_WatchRivalExit:
-	delay_8
-	delay_4
-	walk_in_place_faster_down
-	step_end
-
-OldaleTown_Movement_PlayerStepBack:
-	delay_8
-	walk_right
-	step_end
-
-OldaleTown_Movement_BackUp:
-	walk_fast_up
-	walk_in_place_faster_left
-	lock_facing_direction
-	walk_right
-	unlock_facing_direction
-	step_end
-
-OldaleTown_Movement_ReturnToOriginalPosition:
-	walk_down
-	walk_left
-	step_end
-
-OldaleTown_Text_SavingMyProgress:
-	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
-
-OldaleTown_Text_IWorkAtPokemonMart:
-	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
-	.string "Can I get you to come with me?$"
-
-OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
-	.string "Just look for our blue roof.\p"
-	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
-	.string "Here, I'd like you to have this as\n"
-	.string "a promotional item.$"
-
-OldaleTown_Text_PotionExplanation:
-	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
-	.string "in certain situations.$"
-
-OldaleTown_Text_WaitDontComeInHere:
-	.string "Aaaaah! Wait!\n"
-	.string "Please don't come in here.\p"
-	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
-	.string "Wait until I finish sketching\n"
-	.string "them, okay?$"
-
-OldaleTown_Text_DiscoveredFootprints:
-	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
-	.string "Wait until I finish sketching\n"
-	.string "them, okay?$"
-
-OldaleTown_Text_FinishedSketchingFootprints:
-	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
-	.string "But it turns out they were only my\n"
-	.string "own footprints…$"
-
-OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
-	.string "Over here!\l"
-	.string "Let's hurry home!$"
-
-OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
-	.string "LAB now.\l"
-	.string "{PLAYER}, you should hustle back, too.$"
-
+# 11 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_Text_TownSign:
+# 12 "data/maps/OldaleTown/scripts.pory"
 	.string "OLDALE TOWN\n"
+# 13 "data/maps/OldaleTown/scripts.pory"
 	.string "“Where things start off scarce.”$"
 
+OldaleOutsideHikerGuy::
+# 19 "data/maps/OldaleTown/scripts.pory"
+	lockall
+# 20 "data/maps/OldaleTown/scripts.pory"
+	applymovement 14, OldaleOutsideHikerGuy_Movement_0
+# 21 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleOutsideHikerGuy_Text_0
+# 24 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+
+OldaleOutsideParkGuy::
+# 28 "data/maps/OldaleTown/scripts.pory"
+	lockall
+# 29 "data/maps/OldaleTown/scripts.pory"
+	applymovement 11, OldaleOutsideHikerGuy_Movement_0
+# 30 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleOutsideParkGuy_Text_0
+# 34 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+
+OldaleOutsideOldGuy::
+# 38 "data/maps/OldaleTown/scripts.pory"
+	lockall
+# 39 "data/maps/OldaleTown/scripts.pory"
+	applymovement 11, OldaleOutsideHikerGuy_Movement_0
+# 40 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleOutsideOldGuy_Text_0
+# 44 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+
+OldaleTown_GotoTherapy::
+# 48 "data/maps/OldaleTown/scripts.pory"
+	lockall
+# 49 "data/maps/OldaleTown/scripts.pory"
+	special SpawnCameraObject
+# 50 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, OldaleTown_GotoTherapy_Movement_0
+# 51 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 0
+# 52 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleTown_GotoTherapy_Text_0
+# 53 "data/maps/OldaleTown/scripts.pory"
+	special RemoveCameraObject
+# 54 "data/maps/OldaleTown/scripts.pory"
+	special SpawnCameraObject
+# 55 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, OldaleTown_GotoTherapy_Movement_1
+# 56 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 0
+# 57 "data/maps/OldaleTown/scripts.pory"
+	special RemoveCameraObject
+# 58 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_GotoTherapy_Movement_2
+# 59 "data/maps/OldaleTown/scripts.pory"
+	waitmovement
+# 60 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+
+OldaleSharpyCameliaOutDLCCutscene::
+# 64 "data/maps/OldaleTown/scripts.pory"
+	lockall
+# 65 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_0
+# 67 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_1
+# 69 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_2
+# 72 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_3
+# 74 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_4
+# 77 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_5
+# 79 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_6
+# 81 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_7
+# 82 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_8
+# 83 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_9
+# 85 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_10
+# 87 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_11
+# 89 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_12
+# 90 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_13
+# 93 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_14
+# 94 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_15
+# 95 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_16
+# 96 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_17
+# 97 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_18
+# 99 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_19
+# 102 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+
+# 20 "data/maps/OldaleTown/scripts.pory"
+OldaleOutsideHikerGuy_Movement_0:
+# 20 "data/maps/OldaleTown/scripts.pory"
+	face_player
+	step_end
+
+# 50 "data/maps/OldaleTown/scripts.pory"
+OldaleTown_GotoTherapy_Movement_0:
+# 50 "data/maps/OldaleTown/scripts.pory"
+	walk_right
+# 50 "data/maps/OldaleTown/scripts.pory"
+	walk_right
+# 50 "data/maps/OldaleTown/scripts.pory"
+	walk_right
+# 50 "data/maps/OldaleTown/scripts.pory"
+	walk_right
+# 50 "data/maps/OldaleTown/scripts.pory"
+	walk_right
+# 50 "data/maps/OldaleTown/scripts.pory"
+	walk_right
+	step_end
+
+# 55 "data/maps/OldaleTown/scripts.pory"
+OldaleTown_GotoTherapy_Movement_1:
+# 55 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+# 55 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+# 55 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+# 55 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+# 55 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+# 55 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+	step_end
+
+# 58 "data/maps/OldaleTown/scripts.pory"
+OldaleTown_GotoTherapy_Movement_2:
+# 58 "data/maps/OldaleTown/scripts.pory"
+	walk_down
+	step_end
+
+OldaleOutsideHikerGuy_Text_0:
+# 21 "data/maps/OldaleTown/scripts.pory"
+	.string "They say those Rebels are all about\n"
+	.string "fighting Devon, and things like the\l"
+	.string "Safemon project...\p"
+	.string "But most of them are old Team Aqua and\n"
+	.string "Team Magma members.\p"
+	.string "If you ask me, they're the same\n"
+	.string "hoodlums, with a different name!$"
+
+OldaleOutsideParkGuy_Text_0:
+# 30 "data/maps/OldaleTown/scripts.pory"
+	.string "It's tough being a trader around here\n"
+	.string "lately... tons of competition.\p"
+	.string "There's scammers taking advantage of\n"
+	.string "war tourists, war victims selling their\l"
+	.string "valuables to meet their needs...\p"
+	.string "You be careful where you shop now.$"
+
+OldaleOutsideOldGuy_Text_0:
+# 40 "data/maps/OldaleTown/scripts.pory"
+	.string "If you were wondering... it should be way\n"
+	.string "past autumn now.\p"
+	.string "The brown of the trees is because they\n"
+	.string "are dying... it's the Koffing poison the\l"
+	.string "Kantonians doused during the war.\p"
+	.string "Before long, we may not be able to live\n"
+	.string "here anymore...$"
+
+OldaleTown_GotoTherapy_Text_0:
+# 52 "data/maps/OldaleTown/scripts.pory"
+	.string "That's the Devon Learning Center... I\n"
+	.string "should attend the therapy session.$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_0:
+# 65 "data/maps/OldaleTown/scripts.pory"
+	.string "Sharpy... what did you even signed us up\n"
+	.string "for here?$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_1:
+# 67 "data/maps/OldaleTown/scripts.pory"
+	.string "I'm pretty sure it was a therapy\n"
+	.string "session of sorts.$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_2:
+# 69 "data/maps/OldaleTown/scripts.pory"
+	.string "W-well, you know... Norman told us he\n"
+	.string "wouldn't let us help him, until we learnt\l"
+	.string "more about the war and Safemon, right?$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_3:
+# 72 "data/maps/OldaleTown/scripts.pory"
+	.string "So I thought we'd get some good info\n"
+	.string "here!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_4:
+# 74 "data/maps/OldaleTown/scripts.pory"
+	.string "Right... you probably just skimmed\n"
+	.string "through the ad, and clicked without\l"
+	.string "thinking, right...?$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_5:
+# 77 "data/maps/OldaleTown/scripts.pory"
+	.string "W-well... oh, look!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_6:
+# 79 "data/maps/OldaleTown/scripts.pory"
+	.string "T-those clothes... and that injury...\n"
+	.string "mister, you're a soldier, right?$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_7:
+# 81 "data/maps/OldaleTown/scripts.pory"
+	.string "I knew it! Camelia, he can tell us all\n"
+	.string "about the war!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_8:
+# 82 "data/maps/OldaleTown/scripts.pory"
+	.string "Come on, I know you are - don't be\n"
+	.string "modest now!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_9:
+# 83 "data/maps/OldaleTown/scripts.pory"
+	.string "Camelia, you know what this means!? He\n"
+	.string "can tell us all about the war$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_10:
+# 85 "data/maps/OldaleTown/scripts.pory"
+	.string "Sigh... Sharpy, we've been through this.\n"
+	.string "You can't just ask strangers about\l"
+	.string "horrible things like that!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_11:
+# 87 "data/maps/OldaleTown/scripts.pory"
+	.string "ESPECIALLY soldiers!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_12:
+# 89 "data/maps/OldaleTown/scripts.pory"
+	.string "O-of course...! You're right... why would\n"
+	.string "he even tell me, if...$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_13:
+# 90 "data/maps/OldaleTown/scripts.pory"
+	.string "If I haven't beaten him in a Pokémon\n"
+	.string "battle! That's the soldier way! You\l"
+	.string "don't spill the beans unless you lose$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_14:
+# 93 "data/maps/OldaleTown/scripts.pory"
+	.string "W-what!? Are you stupid$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_15:
+# 94 "data/maps/OldaleTown/scripts.pory"
+	.string "O-oh, of course! What am I THINKING!?\n"
+	.string "Thank you, Camelia!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_16:
+# 95 "data/maps/OldaleTown/scripts.pory"
+	.string "If we battle here, we may scare someone\n"
+	.string "like that littlegirl again...$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_17:
+# 96 "data/maps/OldaleTown/scripts.pory"
+	.string "Meet me at Route 103 - we won't bother\n"
+	.string "anyone there. I'll be waiting!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_18:
+# 97 "data/maps/OldaleTown/scripts.pory"
+	.string "...$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_19:
+# 99 "data/maps/OldaleTown/scripts.pory"
+	.string "I'm sorry about him... I know this is a\n"
+	.string "lot to ask, but can you go kick that\l"
+	.string "idiot's ass real quick? You fought in\l"
+	.string "the war, so it should be easy. He won't\l"
+	.string "leave until you battle him, and our\l"
+	.string "tutor will be mad if we're not home\l"
+	.string "soon...$"

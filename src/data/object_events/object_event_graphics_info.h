@@ -1981,7 +1981,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReporterF = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1994,7 +1994,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_MauvilleOldMan1,
+    .images = sPicTable_MauvilleOldMan2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
