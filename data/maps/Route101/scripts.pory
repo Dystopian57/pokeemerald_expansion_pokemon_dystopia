@@ -462,6 +462,9 @@ script Route101RebelGruntBattle{
 	setflag (rebel101runsaway)
 	setflag (sharpynotoutsideDLC)
 	setflag (camelianotoutsideDLC)
+	setflag (sharpynotinroute103)
+	setflag (sharpycorphishoutsideDLC)
+
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 	setvar(VAR_ROUTE101REBELFLEES, 1)
 	clearflag (FLAG_TEMP_HIDE_FOLLOWER)

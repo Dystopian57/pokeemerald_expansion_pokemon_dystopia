@@ -95,46 +95,345 @@ OldaleSharpyCameliaOutDLCCutscene::
 # 64 "data/maps/OldaleTown/scripts.pory"
 	lockall
 # 65 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_0
+	setspeaker [ SP_NAME_CAMELIA ]
+# 66 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
 # 67 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_1
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_0
 # 69 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_2
+	removefieldmugshot
+# 70 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 71 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
 # 72 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_3
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_1
 # 74 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_4
+	removefieldmugshot
+# 75 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 76 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
 # 77 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_5
-# 79 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_6
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_2
+# 80 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
 # 81 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_7
+	setspeaker [ SP_NAME_SHARPY ]
 # 82 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_8
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
 # 83 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_9
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_3
 # 85 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_10
+	removefieldmugshot
+# 86 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
 # 87 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_11
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
 # 89 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_12
-# 90 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_13
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_4
+# 91 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 92 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
 # 93 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_14
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_ANGRY
 # 94 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_15
-# 95 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_16
-# 96 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_17
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_5
 # 97 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_18
+	removefieldmugshot
+# 98 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
 # 99 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_19
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SAD
+# 100 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_6
 # 102 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_0
+# 103 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_1
+# 104 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_0
+# 105 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 106 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 107 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 108 "data/maps/OldaleTown/scripts.pory"
+	playse SE_PIN
+# 109 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_7
+# 111 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+# 112 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_3
+# 113 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleSharpyCameliaOutDLCCutscene_Movement_4
+# 115 "data/maps/OldaleTown/scripts.pory"
+	checkplayergender
+# 116 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_2
+OldaleSharpyCameliaOutDLCCutscene_1:
+# 147 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, FEMALE
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_5
+OldaleSharpyCameliaOutDLCCutscene_4:
+# 177 "data/maps/OldaleTown/scripts.pory"
+answeredsoldierquestion:
+# 178 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 179 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 180 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
+# 181 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_17
+# 185 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 186 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 187 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
+# 188 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_18
+# 190 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 191 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 192 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
+# 193 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_19
+# 194 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 196 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_5
+# 197 "data/maps/OldaleTown/scripts.pory"
+	clearflag sharpycorfishoutsideDLC
+# 198 "data/maps/OldaleTown/scripts.pory"
+	playse SE_BALL_OPEN
+# 199 "data/maps/OldaleTown/scripts.pory"
+	waitse
+# 200 "data/maps/OldaleTown/scripts.pory"
+	playmoncry SPECIES_CORPHISH, CRY_MODE_NORMAL
+# 201 "data/maps/OldaleTown/scripts.pory"
+	waitmoncry
+# 202 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 203 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 204 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_20
+# 207 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 208 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 209 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
+# 210 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_21
+# 212 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 213 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 214 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
+# 215 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_22
+# 217 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 218 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 219 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
+# 220 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_23
+# 222 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 223 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 224 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 225 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_24
+# 227 "data/maps/OldaleTown/scripts.pory"
+	playmoncry SPECIES_CORPHISH, CRY_MODE_NORMAL
+# 228 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_25
+# 230 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_6
+# 231 "data/maps/OldaleTown/scripts.pory"
+	applymovement 20, OldaleSharpyCameliaOutDLCCutscene_Movement_7
+# 232 "data/maps/OldaleTown/scripts.pory"
+	waitmovement
+# 233 "data/maps/OldaleTown/scripts.pory"
+	setflag sharpycorfishoutsideDLC
+# 235 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 236 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 237 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_ANGRY
+# 238 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_26
+# 239 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 240 "data/maps/OldaleTown/scripts.pory"
+	setvar VAR_OLDALE_PHASE, 2
+# 241 "data/maps/OldaleTown/scripts.pory"
+	setflag sharpynotoutsideDLC
+# 242 "data/maps/OldaleTown/scripts.pory"
+	clearflag sharpynotinroute103
+# 243 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+OldaleSharpyCameliaOutDLCCutscene_2:
+# 117 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 118 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 119 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 120 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_8
+# 122 "data/maps/OldaleTown/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, OldaleSharpyCameliaOutDLCCutscene_Text_9, OldaleSharpyCameliaOutDLCCutscene_Text_10
+# 123 "data/maps/OldaleTown/scripts.pory"
+	waitmessage
+# 125 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_8
+OldaleSharpyCameliaOutDLCCutscene_7:
+# 133 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_13
+	goto OldaleSharpyCameliaOutDLCCutscene_1
+
+OldaleSharpyCameliaOutDLCCutscene_5:
+# 148 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 149 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 150 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 151 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_14
+# 153 "data/maps/OldaleTown/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, OldaleSharpyCameliaOutDLCCutscene_Text_9, OldaleSharpyCameliaOutDLCCutscene_Text_10
+# 154 "data/maps/OldaleTown/scripts.pory"
+	waitmessage
+# 156 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_11
+OldaleSharpyCameliaOutDLCCutscene_10:
+# 163 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_16
+OldaleSharpyCameliaOutDLCCutscene_15:
+# 174 "data/maps/OldaleTown/scripts.pory"
+	goto answeredsoldierquestion
+	goto OldaleSharpyCameliaOutDLCCutscene_4
+
+OldaleSharpyCameliaOutDLCCutscene_8:
+# 126 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 127 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 128 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 129 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_4
+# 130 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_11
+# 131 "data/maps/OldaleTown/scripts.pory"
+	goto answeredsoldierquestion
+	goto OldaleSharpyCameliaOutDLCCutscene_7
+
+OldaleSharpyCameliaOutDLCCutscene_11:
+# 157 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 158 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 159 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 160 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_15
+# 161 "data/maps/OldaleTown/scripts.pory"
+	goto answeredsoldierquestion
+	goto OldaleSharpyCameliaOutDLCCutscene_10
+
+OldaleSharpyCameliaOutDLCCutscene_13:
+# 134 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 135 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 136 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 137 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_12
+# 139 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 140 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 141 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 142 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_4
+# 143 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_13
+# 144 "data/maps/OldaleTown/scripts.pory"
+	goto answeredsoldierquestion
+	goto OldaleSharpyCameliaOutDLCCutscene_1
+
+OldaleSharpyCameliaOutDLCCutscene_16:
+# 164 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 165 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 166 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 167 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_12
+# 169 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 170 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 171 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 172 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_16
+	goto OldaleSharpyCameliaOutDLCCutscene_15
+
+
+OldaleCamelia::
+# 248 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 249 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
+# 250 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleCamelia_Text_0
+# 253 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 254 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 255 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
+# 256 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleCamelia_Text_1
+# 258 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 259 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 260 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
+# 261 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleCamelia_Text_2
+# 263 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 264 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
@@ -183,6 +482,102 @@ OldaleTown_GotoTherapy_Movement_2:
 	walk_down
 	step_end
 
+# 102 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_0:
+# 102 "data/maps/OldaleTown/scripts.pory"
+	face_left
+	step_end
+
+# 103 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_1:
+# 103 "data/maps/OldaleTown/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 111 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_2:
+# 111 "data/maps/OldaleTown/scripts.pory"
+	walk_down
+# 111 "data/maps/OldaleTown/scripts.pory"
+	face_left
+	step_end
+
+# 112 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_3:
+# 112 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+# 112 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+	step_end
+
+# 113 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_4:
+# 113 "data/maps/OldaleTown/scripts.pory"
+	face_right
+	step_end
+
+# 196 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_5:
+# 196 "data/maps/OldaleTown/scripts.pory"
+	walk_right
+# 196 "data/maps/OldaleTown/scripts.pory"
+	face_left
+	step_end
+
+# 230 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_6:
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_down
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 230 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+	step_end
+
+# 231 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Movement_7:
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_down
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_left
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+# 231 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_up
+	step_end
+
 OldaleOutsideHikerGuy_Text_0:
 # 21 "data/maps/OldaleTown/scripts.pory"
 	.string "They say those Rebels are all about\n"
@@ -218,106 +613,149 @@ OldaleTown_GotoTherapy_Text_0:
 	.string "should attend the therapy session.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_0:
-# 65 "data/maps/OldaleTown/scripts.pory"
+# 67 "data/maps/OldaleTown/scripts.pory"
 	.string "Sharpy... what did you even signed us up\n"
 	.string "for here?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_1:
-# 67 "data/maps/OldaleTown/scripts.pory"
+# 72 "data/maps/OldaleTown/scripts.pory"
 	.string "I'm pretty sure it was a therapy\n"
 	.string "session of sorts.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_2:
-# 69 "data/maps/OldaleTown/scripts.pory"
+# 77 "data/maps/OldaleTown/scripts.pory"
 	.string "W-well, you know... Norman told us he\n"
 	.string "wouldn't let us help him, until we learnt\l"
 	.string "more about the war and Safemon, right?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_3:
-# 72 "data/maps/OldaleTown/scripts.pory"
+# 83 "data/maps/OldaleTown/scripts.pory"
 	.string "So I thought we'd get some good info\n"
 	.string "here!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_4:
-# 74 "data/maps/OldaleTown/scripts.pory"
-	.string "Right... you probably just skimmed\n"
-	.string "through the ad, and clicked without\l"
-	.string "thinking, right...?$"
+# 89 "data/maps/OldaleTown/scripts.pory"
+	.string "Riiight...$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_5:
-# 77 "data/maps/OldaleTown/scripts.pory"
-	.string "W-well... oh, look!$"
+# 94 "data/maps/OldaleTown/scripts.pory"
+	.string "You probably just skimmed through the\n"
+	.string "ad, and clicked without thinking,\l"
+	.string "right...?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_6:
-# 79 "data/maps/OldaleTown/scripts.pory"
+# 100 "data/maps/OldaleTown/scripts.pory"
+	.string "W-well...$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_7:
+# 109 "data/maps/OldaleTown/scripts.pory"
+	.string "Oh, look - behind you!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_8:
+# 120 "data/maps/OldaleTown/scripts.pory"
 	.string "T-those clothes... and that injury...\n"
 	.string "mister, you're a soldier, right?$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_7:
-# 81 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Text_9:
+# 122 "data/maps/OldaleTown/scripts.pory"
+	.string "Yes$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_10:
+# 122 "data/maps/OldaleTown/scripts.pory"
+	.string "No$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_11:
+# 130 "data/maps/OldaleTown/scripts.pory"
 	.string "I knew it! Camelia, he can tell us all\n"
 	.string "about the war!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_8:
-# 82 "data/maps/OldaleTown/scripts.pory"
-	.string "Come on, I know you are - don't be\n"
+OldaleSharpyCameliaOutDLCCutscene_Text_12:
+# 137 "data/maps/OldaleTown/scripts.pory"
+	.string "Oh, come on - I know you are, don't be so\n"
 	.string "modest now!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_9:
-# 83 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Text_13:
+# 143 "data/maps/OldaleTown/scripts.pory"
 	.string "Camelia, you know what this means!? He\n"
 	.string "can tell us all about the war$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_10:
-# 85 "data/maps/OldaleTown/scripts.pory"
-	.string "Sigh... Sharpy, we've been through this.\n"
+OldaleSharpyCameliaOutDLCCutscene_Text_14:
+# 151 "data/maps/OldaleTown/scripts.pory"
+	.string "T-those clothes... and that injury...\n"
+	.string "miss, you're a soldier, right?$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_15:
+# 160 "data/maps/OldaleTown/scripts.pory"
+	.string "I knew it! Camelia, she can tell us all\n"
+	.string "about the war!$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_16:
+# 172 "data/maps/OldaleTown/scripts.pory"
+	.string "Camelia, you know what this means!? She\n"
+	.string "can tell us all about the war$"
+
+OldaleSharpyCameliaOutDLCCutscene_Text_17:
+# 181 "data/maps/OldaleTown/scripts.pory"
+	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Sharpy, we've been through this.\n"
 	.string "You can't just ask strangers about\l"
 	.string "horrible things like that!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_11:
-# 87 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Text_18:
+# 188 "data/maps/OldaleTown/scripts.pory"
 	.string "ESPECIALLY soldiers!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_12:
-# 89 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Text_19:
+# 193 "data/maps/OldaleTown/scripts.pory"
 	.string "O-of course...! You're right... why would\n"
 	.string "he even tell me, if...$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_13:
-# 90 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Text_20:
+# 204 "data/maps/OldaleTown/scripts.pory"
 	.string "If I haven't beaten him in a Pokémon\n"
-	.string "battle! That's the soldier way! You\l"
-	.string "don't spill the beans unless you lose$"
+	.string "battle! That's the soldier way!\p"
+	.string "You don't spill the beans unless you\n"
+	.string "lose!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_14:
-# 93 "data/maps/OldaleTown/scripts.pory"
-	.string "W-what!? Are you stupid$"
+OldaleSharpyCameliaOutDLCCutscene_Text_21:
+# 210 "data/maps/OldaleTown/scripts.pory"
+	.string "W-what!? Are you stupid!?$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_15:
-# 94 "data/maps/OldaleTown/scripts.pory"
-	.string "O-oh, of course! What am I THINKING!?\n"
-	.string "Thank you, Camelia!$"
+OldaleSharpyCameliaOutDLCCutscene_Text_22:
+# 215 "data/maps/OldaleTown/scripts.pory"
+	.string "O-oh, right! What am I THINKING!?\n"
+	.string "Thanks again, Camelia!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_16:
-# 95 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Text_23:
+# 220 "data/maps/OldaleTown/scripts.pory"
 	.string "If we battle here, we may scare someone\n"
-	.string "like that littlegirl again...$"
+	.string "like that little girl again...$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_17:
-# 96 "data/maps/OldaleTown/scripts.pory"
-	.string "Meet me at Route 103 - we won't bother\n"
-	.string "anyone there. I'll be waiting!$"
+OldaleSharpyCameliaOutDLCCutscene_Text_24:
+# 225 "data/maps/OldaleTown/scripts.pory"
+	.string "Race you to Route 103 - we won't bother\n"
+	.string "anyone there. Last one is a Feebas!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_18:
-# 97 "data/maps/OldaleTown/scripts.pory"
-	.string "...$"
+OldaleSharpyCameliaOutDLCCutscene_Text_25:
+# 228 "data/maps/OldaleTown/scripts.pory"
+	.string "Cor-coooor!$"
 
-OldaleSharpyCameliaOutDLCCutscene_Text_19:
-# 99 "data/maps/OldaleTown/scripts.pory"
+OldaleSharpyCameliaOutDLCCutscene_Text_26:
+# 238 "data/maps/OldaleTown/scripts.pory"
+	.string "This... guy...$"
+
+OldaleCamelia_Text_0:
+# 250 "data/maps/OldaleTown/scripts.pory"
 	.string "I'm sorry about him... I know this is a\n"
 	.string "lot to ask, but can you go kick that\l"
-	.string "idiot's ass real quick? You fought in\l"
-	.string "the war, so it should be easy. He won't\l"
-	.string "leave until you battle him, and our\l"
-	.string "tutor will be mad if we're not home\l"
+	.string "idiot's ass real quick?$"
+
+OldaleCamelia_Text_1:
+# 256 "data/maps/OldaleTown/scripts.pory"
+	.string "You fought in the war, so it should be\n"
+	.string "easy right?$"
+
+OldaleCamelia_Text_2:
+# 261 "data/maps/OldaleTown/scripts.pory"
+	.string "He won't leave until you battle him, and\n"
+	.string "our tutor will be mad if we're not home\l"
 	.string "soon...$"

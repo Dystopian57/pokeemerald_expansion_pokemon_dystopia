@@ -36,7 +36,7 @@ script OldaleTown_DLC_TherapyCutscene{
 	playmoncry(SPECIES_VENUSAUR, CRY_MODE_NORMAL) 
     msgbox(format("Let's begin with you, {PLAYER}. Take a look at this picture."))
     hidemonpic
-    msgbox(format("What do you think about it?"))
+    msgbox(format("What do you think about the Pokémon in it?"))
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "It's cool", "Looks dangerous", "I don't know")
     hidemonpic
     playse (SE_PIN)
@@ -58,7 +58,7 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (6, moves (walk_in_place_down * 2)) 
     waitmovement
     msgbox(format("You are correct, sir... Venusaurs are very dangerous. \p Thankfully, Devon Corp.
-    has safened all Bulbasaurs in Hoenn to Bulbasynths, so that no more people get hurt again."))
+    has safened all Bulbasaurs in Hoenn to Bulbasynths, so that they hurt no more people."))
     applymovement (8, moves (walk_in_place_up * 2))
     waitmovement
     msgbox(format("Ah, thank goodness..."))
@@ -77,18 +77,21 @@ script OldaleTown_DLC_TherapyCutscene{
     playse (SE_M_DIZZY_PUNCH)
     applymovement (3, moves (emote_question_mark, walk_in_place_up * 2))
     waitmovement
+	createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
+	setspeaker ([SP_NAME_CAMELIA])
     msgbox(format("Huh? Nonsense, that's a splendid Fire type."))
 
     playse (SE_PIN)
     applymovement (7, moves (emote_exclamation_mark, face_left))
     waitmovement
+    removefieldmugshot
     msgbox(format("W-what?"))
 
     applymovement (6, moves (walk_in_place_down * 1))
     waitmovement
     msgbox(format("Now now, let us be tolerant with... differences of opinion."))
     showmonpic(SPECIES_BLASTOISE, 10,3)
-	playmoncry(SPECIES_BLASTOISE, CRY_MODE_ROAR_1) 
+	playmoncry(SPECIES_BLASTOISE, CRY_MODE_NORMAL) 
     msgbox(format("Let's see about the last one - the water CANNON Pokémon, Blastoise."))
     hidemonpic
 
@@ -100,30 +103,49 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (6, moves (walk_in_place_down * 2)) 
     waitmovement
     msgbox(format("Precisely. These Pokémon were responsible for the Assault on Route 103,
-    and they almost flooded Oldale. \p Once more, it was thanks to Devon Corp's swift action,
+    and they almost flooded Oldale Town. \p Once more, it was thanks to Devon Corp's swift action,
     that a flood gate was built and..."))
 
     playse (SE_PIN)
     applymovement (2, moves (emote_exclamation_mark, walk_in_place_up * 2))
     waitmovement
+    removefieldmugshot
+	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_SHARPY])
     msgbox(format("Hey, I know that one! That's a cool as heck Blastoise! \p I love how their
     Hydropumps sound..."))
     playse (SE_PIN)
+
+    removefieldmugshot
+	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_SHARPY])
     applymovement (1, moves (face_left, emote_double_exclamation_mark))
     msgbox(format("BANG BANG!"))
 
+	setspeaker (NULL)
     applymovement (1, moves (walk_in_place_left * 10))
+    removefieldmugshot
     msgbox(format("N-nooo...!!"))
 
+    removefieldmugshot
+	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+	setspeaker ([SP_NAME_SHARPY])
     msgbox(format("No? Hmm, you're right... it's not a 'bang' it's more like a..."))
     playse (SE_M_HYDRO_PUMP)
+
+    removefieldmugshot
+	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+	setspeaker ([SP_NAME_SHARPY])
     applymovement (2, moves (walk_in_place_up * 2))
     msgbox(format("BWAHM BWAHM!"))
-    playse (SE_FLEE)
-    applymovement (1, moves (walk_fast_left * 1, walk_fast_down * 4))
+    removefieldmugshot
+	setspeaker (NULL)
     msgbox(format("AAAAAHH...!!"))
-    waitmovement
+    applymovement (1, moves (walk_fast_left * 1, walk_fast_down * 4))
+    playse (SE_FLEE)
+    waitse
     playse (SE_DOOR)
+    waitmovement
     waitse
     removeobject (1)
 
@@ -141,7 +163,10 @@ script OldaleTown_DLC_TherapyCutscene{
     waitmovement
     applymovement (2, moves (face_left)) 
     waitmovement
+	createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
+	setspeaker ([SP_NAME_CAMELIA])
     msgbox(format("Let's go, Sharpy... this was a waste of time."))
+    removefieldmugshot
     applymovement (2, moves (walk_right * 1, walk_down *2))
     applymovement (3, moves (walk_right * 2, walk_down *2))
     waitmovement

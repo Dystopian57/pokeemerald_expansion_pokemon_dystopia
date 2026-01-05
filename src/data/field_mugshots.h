@@ -61,6 +61,8 @@ static const u32 sFieldMugshotGfx_CameliaMenacing[] = INCBIN_U32("graphics/field
 static const u16 sFieldMugshotPal_CameliaMenacing[] = INCBIN_U16("graphics/field_mugshots/camelia/menacing.gbapal");
 static const u32 sFieldMugshotGfx_CameliaConfused[] = INCBIN_U32("graphics/field_mugshots/camelia/confused.4bpp.lz");
 static const u16 sFieldMugshotPal_CameliaConfused[] = INCBIN_U16("graphics/field_mugshots/camelia/confused.gbapal");
+static const u32 sFieldMugshotGfx_CameliaAngry[] = INCBIN_U32("graphics/field_mugshots/camelia/angry.4bpp.lz");
+static const u16 sFieldMugshotPal_CameliaAngry[] = INCBIN_U16("graphics/field_mugshots/camelia/angry.gbapal");
 
 struct MugshotGfx
 {
@@ -251,6 +253,12 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_CameliaConfused,
             .pal = sFieldMugshotPal_CameliaConfused,
+        },
+
+        [EMOTE_ANGRY] =
+        {
+            .gfx = sFieldMugshotGfx_CameliaAngry,
+            .pal = sFieldMugshotPal_CameliaAngry,
         },
     },
 

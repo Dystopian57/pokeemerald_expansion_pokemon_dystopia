@@ -807,12 +807,14 @@ Route101RebelGruntBattle_10:
 # 464 "data/maps/Route101/scripts.pory"
 	setflag camelianotoutsideDLC
 # 465 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ABANDONED_SHIP, TRUE
+	setflag sharpynotinroute103
 # 466 "data/maps/Route101/scripts.pory"
-	setvar VAR_ROUTE101REBELFLEES, 1
+	playbgm MUS_ABANDONED_SHIP, TRUE
 # 467 "data/maps/Route101/scripts.pory"
-	clearflag FLAG_TEMP_HIDE_FOLLOWER
+	setvar VAR_ROUTE101REBELFLEES, 1
 # 468 "data/maps/Route101/scripts.pory"
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
+# 469 "data/maps/Route101/scripts.pory"
 	releaseall
 	end
 
@@ -912,17 +914,17 @@ Route101RebelGruntBattle_21:
 
 
 Route101GruntBatHitShake::
-# 476 "data/maps/Route101/scripts.pory"
-	playse SE_EFFECTIVE
 # 477 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8004, 2
+	playse SE_EFFECTIVE
 # 478 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8005, 6
+	setvar VAR_0x8004, 2
 # 479 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8006, 4
+	setvar VAR_0x8005, 6
 # 480 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 4
 # 481 "data/maps/Route101/scripts.pory"
+	setvar VAR_0x8007, 4
+# 482 "data/maps/Route101/scripts.pory"
 	special ShakeCamera
 	return
 
@@ -1162,5 +1164,5 @@ Orphan101_Outro::
 	.string "... you still can't go into my Secret\n Shelter.$"
 
 Rebel101_Outro::
-# 472 "data/maps/Route101/scripts.pory"
+# 473 "data/maps/Route101/scripts.pory"
 	.string "Shit...$"

@@ -62,44 +62,208 @@ script OldaleTown_GotoTherapy{
 
 script OldaleSharpyCameliaOutDLCCutscene {
     lockall
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
     msgbox(format("Sharpy... what did you even signed us up for here?"))
 
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
     msgbox(format("I'm pretty sure it was a therapy session of sorts."))
 
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
     msgbox(format("W-well, you know... Norman told us he wouldn't let us help him, until
     we learnt more about the war and Safemon, right?"))
-
+    
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
     msgbox(format("So I thought we'd get some good info here!"))
 
-    msgbox(format("Right... you probably just skimmed through the ad, and clicked without
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
+
+    msgbox(format("Riiight..."))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
+    msgbox(format("You probably just skimmed through the ad, and clicked without
     thinking, right...?"))
 
-    msgbox(format("W-well... oh, look!"))
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD)
+    msgbox(format("W-well..."))
 
+    applymovement (17, moves(face_left))
+    applymovement (18, moves(emote_exclamation_mark))
+    applymovement (17, moves(face_left))
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+    playse (SE_PIN)
+    msgbox(format("Oh, look - behind you!"))
+
+    applymovement (17, moves(walk_down * 1, face_left))
+    applymovement (18, moves(walk_left * 2))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
     msgbox(format("T-those clothes... and that injury... mister, you're a soldier, right?"))
 
-    msgbox(format("I knew it! Camelia, he can tell us all about the war!"))
-    msgbox(format("Come on, I know you are - don't be modest now!"))
-    msgbox(format("Camelia, you know what this means!? He can tell us all about the war"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		waitmessage
 
-    msgbox(format("Sigh... Sharpy, we've been through this. You can't just ask strangers
-    about horrible things like that!"))
+        	if(var(VAR_RESULT) == 0){
+            removefieldmugshot
+	        setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+            applymovement (18, moves(face_right))
+            msgbox(format("I knew it! Camelia, he can tell us all about the war!"))
+            goto (answeredsoldierquestion)
+            }
+        	if(var(VAR_RESULT) == 1){
+            removefieldmugshot
+	        setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+            msgbox(format("Oh, come on - I know you are, don't be so modest now!"))
+
+            removefieldmugshot
+	        setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+            applymovement (18, moves(face_right))
+            msgbox(format("Camelia, you know what this means!? He can tell us all about the war"))
+            goto (answeredsoldierquestion)
+            }
+}
+	if(var(VAR_RESULT) == FEMALE){
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+    msgbox(format("T-those clothes... and that injury... miss, you're a soldier, right?"))
+
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		waitmessage
+
+        	if(var(VAR_RESULT) == 0){
+            removefieldmugshot
+	        setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+            msgbox(format("I knew it! Camelia, she can tell us all about the war!"))
+            goto (answeredsoldierquestion)
+            }
+        	if(var(VAR_RESULT) == 1){
+            removefieldmugshot
+	        setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+            msgbox(format("Oh, come on - I know you are, don't be so modest now!"))
+
+            removefieldmugshot
+	        setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+            msgbox(format("Camelia, you know what this means!? She can tell us all about the war"))
+            }
+            goto (answeredsoldierquestion)}
+
+
+    answeredsoldierquestion:
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
+    msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} 
+    Sharpy,  we've been through this. You can't just ask strangers about horrible things like 
+    that!"))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
     msgbox(format("ESPECIALLY soldiers!"))
 
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
     msgbox(format("O-of course...! You're right... why would he even tell me, if..."))
-    msgbox(format("If I haven't beaten him in a Pokémon battle! That's the soldier way!
-    You don't spill the beans unless you lose"))
-    //release corpish
-    msgbox(format("W-what!? Are you stupid"))
-    msgbox(format("O-oh, of course! What am I THINKING!? Thank you, Camelia!"))
-    msgbox(format("If we battle here, we may scare someone like that littlegirl again..."))
-    msgbox(format("Meet me at Route 103 - we won't bother anyone there. I'll be waiting!"))
-    msgbox(format("..."))
+    removefieldmugshot
 
-    msgbox(format("I'm sorry about him... I know this is a lot to ask, but can you go kick
-    that idiot's ass real quick? You fought in the war, so it should be easy. He won't
-    leave until you battle him, and our tutor will be mad if we're not home soon..."))
+    applymovement (18, moves(walk_right * 1, face_left))
+	clearflag (sharpycorfishoutsideDLC)
+	playse (SE_BALL_OPEN)
+    waitse
+	playmoncry(SPECIES_CORPHISH, CRY_MODE_NORMAL)
+    waitmoncry
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+    msgbox(format("If I haven't beaten him in a Pokémon battle! That's the soldier way!
+    \p You don't spill the beans unless you lose!"))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
+    msgbox(format("W-what!? Are you stupid!?"))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
+    msgbox(format("O-oh, right! What am I THINKING!? Thanks again, Camelia!"))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+    msgbox(format("If we battle here, we may scare someone like that little girl again..."))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+    msgbox(format("Race you to Route 103 - we won't bother anyone there. Last one is a Feebas!"))
+
+	playmoncry(SPECIES_CORPHISH, CRY_MODE_NORMAL)
+    msgbox(format("Cor-coooor!"))
+
+    applymovement (18, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 6))
+    applymovement (20, moves(walk_down * 1, walk_left * 1, walk_fast_left * 3, walk_fast_up * 6))
+    waitmovement
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
+    msgbox(format("This... guy..."))
+    removefieldmugshot
+    setvar(VAR_OLDALE_PHASE, 2)
+    setobjectxy (18, 0, 0)
+    setobjectxy (20, 0, 0)
+	setflag (sharpynotoutsideDLC)
+	clearflag (sharpynotinroute103)
+	setflag (sharpycorfishoutsideDLC)
     releaseall
     }
 
-//    setvar(VAR_OLDALE_PHASE, 1)
+script OldaleCamelia {
+    
+    setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
+    msgbox(format("I'm sorry about him... I know this is a lot to ask, but can you go kick
+    that idiot's ass real quick?"))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
+    msgbox(format("You fought in the war, so it should be easy right?"))
+
+    removefieldmugshot
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
+    msgbox(format("He won't leave until you battle him, and our tutor will be mad if we're not 
+    home soon..."))
+    removefieldmugshot
+    releaseall
+    }
+
+//    
