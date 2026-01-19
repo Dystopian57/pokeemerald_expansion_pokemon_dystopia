@@ -139,7 +139,7 @@
 #define TRAINER_PIC_SCAVENGERM            120
 #define TRAINER_PIC_SCIENTISTF            121
 #define TRAINER_PIC_SCIENTISTM            122
-#define TRAINER_PIC_SHARPY                123
+#define TRAINER_PIC_SHARPYBATTLE          123
 #define TRAINER_PIC_SIDNEYREBEL           124
 #define TRAINER_PIC_TECHNICIANF           125
 #define TRAINER_PIC_TECHNICIANM           126

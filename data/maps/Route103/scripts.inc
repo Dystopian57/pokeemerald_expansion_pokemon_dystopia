@@ -430,3 +430,67 @@ Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
 # 216 "data/maps/Route103/scripts.pory"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
+
+Sharpy103::
+# 222 "data/maps/Route103/scripts.pory"
+	lockall
+# 223 "data/maps/Route103/scripts.pory"
+	goto_if_unset Sharpy103Rematch, Sharpy103_2
+Sharpy103_1:
+# 229 "data/maps/Route103/scripts.pory"
+	goto_if_set Sharpy103Rematch, Sharpy103_5
+Sharpy103_4:
+# 235 "data/maps/Route103/scripts.pory"
+battleSharpy103:
+# 236 "data/maps/Route103/scripts.pory"
+	trainerbattle_no_intro TRAINER_SHARPY_103, Sharpy103_Outro
+# 238 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_4
+	return
+
+Sharpy103_2:
+# 225 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_0
+# 226 "data/maps/Route103/scripts.pory"
+	setflag Sharpy103Rematch
+# 227 "data/maps/Route103/scripts.pory"
+	goto battleSharpy103
+	goto Sharpy103_1
+
+Sharpy103_5:
+# 231 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_1
+# 232 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_2
+# 233 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_3
+	goto Sharpy103_4
+
+
+Sharpy103_Text_0:
+# 225 "data/maps/Route103/scripts.pory"
+	.string "Heh, it's about time you showed up,\n"
+	.string "Slowpoke! Let's do this!$"
+
+Sharpy103_Text_1:
+# 231 "data/maps/Route103/scripts.pory"
+	.string "You can't fool me... I could tell you were\n"
+	.string "going EASY on me last time!$"
+
+Sharpy103_Text_2:
+# 232 "data/maps/Route103/scripts.pory"
+	.string "This can't be how strong a soldier is! So\n"
+	.string "our last battle doesn't count!$"
+
+Sharpy103_Text_3:
+# 233 "data/maps/Route103/scripts.pory"
+	.string "Now show me what you can REALLY do, and\n"
+	.string "don't hold back!$"
+
+Sharpy103_Text_4:
+# 238 "data/maps/Route103/scripts.pory"
+	.string "Cutscene with Camelia here$"
+
+Sharpy103_Outro::
+# 243 "data/maps/Route103/scripts.pory"
+	.string "Damn it! Guess you'll never tell me about the war now...$"

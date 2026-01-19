@@ -1954,6 +1954,7 @@ if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
 		setflag(FLAG_SYS_POKENAV_GET)
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox (format("My number is already registered, so call me if there's an emergency."))
+		removefieldmugshot
  		}
  else {
 		goto(finishpokenavscript)

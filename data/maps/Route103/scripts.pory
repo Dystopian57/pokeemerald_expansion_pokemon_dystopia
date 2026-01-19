@@ -217,3 +217,28 @@ Route103_Text_RouteSign:
 
 
 `
+
+script Sharpy103 {
+lockall
+if (!flag (Sharpy103Rematch))
+	{
+	msgbox(format("Heh, it's about time you showed up, Slowpoke! Let's do this!"))
+	setflag (Sharpy103Rematch)
+	goto (battleSharpy103)}
+
+if (flag (Sharpy103Rematch))
+	{
+	msgbox(format("You can't fool me... I could tell you were going EASY on me last time!"))
+	msgbox(format("This can't be how strong a soldier is! So our last battle doesn't count!"))
+	msgbox(format("Now show me what you can REALLY do, and don't hold back!"))
+	}
+	battleSharpy103:
+	trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
+
+	msgbox(format("Cutscene with Camelia here"))
+	//cutscene, change Devon guards dialogue.
+	//if Sharpy103Rematch never set, change dialogue in Dojo: "You never showed up!!"
+	}
+
+text Sharpy103_Outro{
+    "Damn it! Guess you'll never tell me about the war now..."}

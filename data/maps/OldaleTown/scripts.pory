@@ -36,7 +36,7 @@ script OldaleOutsideParkGuy {
 
 script OldaleOutsideOldGuy {
     lockall
-    applymovement (11, moves(face_player))
+    applymovement (13, moves(face_player))
     msgbox(format("If you were wondering... it should be way past autumn now. \p The brown of
     the trees is because they are dying... it's the Koffing poison the Kantonians doused during
     the war.
@@ -194,7 +194,8 @@ script OldaleSharpyCameliaOutDLCCutscene {
     removefieldmugshot
 
     applymovement (18, moves(walk_right * 1, face_left))
-	clearflag (sharpycorfishoutsideDLC)
+	addobject (20)
+	setobjectxy (20, 15, 18)
 	playse (SE_BALL_OPEN)
     waitse
 	playmoncry(SPECIES_CORPHISH, CRY_MODE_NORMAL)
@@ -227,8 +228,8 @@ script OldaleSharpyCameliaOutDLCCutscene {
 	playmoncry(SPECIES_CORPHISH, CRY_MODE_NORMAL)
     msgbox(format("Cor-coooor!"))
 
-    applymovement (18, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 6))
-    applymovement (20, moves(walk_down * 1, walk_left * 1, walk_fast_left * 3, walk_fast_up * 6))
+    applymovement (18, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 7))
+    applymovement (20, moves(walk_down * 1, walk_left * 1, walk_fast_left * 3, walk_fast_up * 7))
     waitmovement
 
     removefieldmugshot
@@ -241,7 +242,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     setobjectxy (20, 0, 0)
 	setflag (sharpynotoutsideDLC)
 	clearflag (sharpynotinroute103)
-	setflag (sharpycorfishoutsideDLC)
+	setflag (sharpycorphishoutsideDLC)
     releaseall
     }
 

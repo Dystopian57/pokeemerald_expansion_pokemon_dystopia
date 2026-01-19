@@ -91,7 +91,8 @@ script OldaleTown_DLC_TherapyCutscene{
     waitmovement
     msgbox(format("Now now, let us be tolerant with... differences of opinion."))
     showmonpic(SPECIES_BLASTOISE, 10,3)
-	playmoncry(SPECIES_BLASTOISE, CRY_MODE_NORMAL) 
+	playmoncry(SPECIES_BLASTOISE, CRY_MODE_NORMAL)
+    applymovement (7, moves (face_up))
     msgbox(format("Let's see about the last one - the water CANNON Pokémon, Blastoise."))
     hidemonpic
 

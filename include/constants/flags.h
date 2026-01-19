@@ -76,7 +76,7 @@
 #define camelianotinsideDLC    0x3E // Unused Flag
 #define sharpynotinroute103    0x3F // Unused Flag
 #define sharpycorphishoutsideDLC    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
+#define Sharpy103Rematch    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
