@@ -145,17 +145,24 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (1, moves (walk_fast_left * 1, walk_fast_down * 4))
     playse (SE_FLEE)
     waitse
+    applymovement (4, moves (face_left, face_down))
+    applymovement (5, moves (face_right, face_down))
+    applymovement (7, moves (face_left, face_down))
+    applymovement (8, moves (face_right, face_down))
     playse (SE_DOOR)
+    waitse
+    playse (SE_M_METRONOME)
+    applymovement (2, moves (emote_question_mark, face_down))
     waitmovement
     waitse
     removeobject (1)
-
-    applymovement (2, moves (emote_question_mark, face_down))
-    playse (SE_M_METRONOME)
     waitmovement
-
     applymovement (6, moves (walk_in_place_down * 1))
     waitmovement
+    applymovement (4, moves (face_up))
+    applymovement (5, moves (face_up))
+    applymovement (7, moves (face_up))
+    applymovement (8, moves (face_up))
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
     I think we will finish this session early. \p Next time, everyone please be mindful of
     others' feelings."))
@@ -188,4 +195,160 @@ script OldaleTown_DLC_TherapyCutscene{
 
 	setvar(VAR_OLDALE_PHASE, 1)
 	releaseall	
+}
+
+
+script LittleKidDLC {
+    lockall
+	applymovement (5, moves(face_player))
+    msgbox(format("I don't like Vinesors... Vensuros...? \n I don't know... but I think Pokémon
+    are scary."))
+	applymovement (6, moves (face_up))
+    releaseall
+}
+
+script FatManDLC {
+    lockall
+	applymovement (7, moves(face_player))
+    msgbox(format("It's true! I lived in Rustboro, and some fire Pokémon burned the apartment
+    building I lived in. \n I had to come back here with my parents. I miss the city."))
+	applymovement (7, moves (face_up))
+    releaseall
+}
+
+script SleepingKidDLC {
+    lockall
+	applymovement (4, moves(face_player))
+    msgbox(format("ZZZZ... \n ... Huh? Is Math class over? I think I overslept..."))
+	applymovement (4, moves (face_up))
+    releaseall
+}
+
+script TeacherDLC {
+    lockall
+	applymovement (6, moves(face_player))
+    msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+    I shouldn't have come to teach to this backwater place. \p But the bonus is so juicy..."))
+	applymovement (6, moves (face_up))
+    releaseall
+}
+
+
+script LibraryGuyDLC {
+    lockall
+	applymovement (9, moves(face_player))
+    msgbox(format("Welcome! This is the Devon Learning Center's library. \n You can read any
+    of the books here, but you need to be enrolled to take them on a loan - sorry!"))
+	applymovement (9, moves (face_up))
+    releaseall
+}
+
+script TeacherdeskDLC {
+    lockall
+    msgbox(format("The book on top of the desk reads 'Therapy for Beginners.'"))
+    releaseall
+}
+
+script BlackBoardDLC {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (flag (DLCmathresolved)){
+    msgbox(format("The math problem is resolved"))
+    }
+	if (!flag (DLCmathresolved)){
+    msgbox(format("The board contains an unanswered math problem from a previous lesson..."))
+
+    msgbox(format("I have ¥2404, and I buy two Devon Balls for ¥210 each. How much do I have left?"))
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "¥2194", "¥1984", "¥2025", "I don't know")
+	waitmessage
+
+	if(var(VAR_RESULT) == 0){
+    msgbox(format("You write ¥2194 on the blackboard."))
+	applymovement (6, moves(face_player))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+    msgbox(format("Uhm... that's not correct. Would you mind not writing wrong answers on the
+    board? \n Thank you."))
+	applymovement (6, moves(face_down))
+    }
+
+	if(var(VAR_RESULT) == 1){
+    msgbox(format("You write ¥1984 on the blackboard."))
+	applymovement (6, moves(face_player))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+    msgbox(format("Oh, that's correct! You're good with numbers."))
+	applymovement (6, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+    msgbox(format("I like math problems... they always have a single right answer.
+    \p If only the world worked like that."))
+	applymovement (6, moves(face_down))
+    setflag (DLCmathresolved)
+    }
+
+	if(var(VAR_RESULT) == 2){
+    msgbox(format("You write ¥2025 on the blackboard."))
+	applymovement (6, moves(face_player))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+    msgbox(format("Uhm... that's not correct. Would you mind not writing wrong answers on the
+    board? \n Thank you."))
+	applymovement (6, moves(face_down))
+    }
+
+	if(var(VAR_RESULT) == 2){
+    msgbox(format("Better not to write anything..."))
+    }
+    releaseall}
+}
+
+script OpenBoxDLC {
+    lockall
+    msgbox(format("A label on the open box reads 'To be discarded'. \p Through the open gap,
+    you glimpse a paper whose title reads: 'The grim truth behind Safemon, by Professor Balsam.'"))
+    releaseall
+}
+
+script PosterDLC {
+    lockall
+    msgbox(format("Next month's planned excursion: Petalburg Park! Sign up open on DLC's website.
+    \p Minors require written parental consent."))
+    releaseall
+}
+
+script RulesDLC {
+    lockall
+    msgbox(format("The hanged notes contain many classroom rules. \p 1) No yelling \n 2) No running
+    \p 3) No Pokémon allowed at school \n 4) Raise your hand for questions. \p The list goes on
+    and on."))
+    releaseall
+}
+
+script BoardDLC {
+    lockall
+    msgbox(format("The board contains many Devon-related news, event posters, and most of all
+    product ads."))
+    releaseall
+}
+
+script PCDLC {
+    lockall
+    msgbox(format("The computer asks for a DLC username and password. I don't have any."))
+    releaseall
+}
+
+script BookshelfDLC {
+    lockall
+    msgbox(format("It's full of books and magazines published by Devon Inc."))
+    releaseall
+}
+
+script MauvillePosterDLC {
+    lockall
+    msgbox(format("Finished using the PC? Turn it off, and save electricity! \p Let's take
+    care of Hoenn together. {COLOR BLUE}Mauville Nuclear Plant.{COLOR DARK_GRAY}"))
+    releaseall
+}
+
+script TVDLC {
+    lockall
+    msgbox(format("The TV is playing a documentary on Safemon on a loop."))
+    releaseall
 }

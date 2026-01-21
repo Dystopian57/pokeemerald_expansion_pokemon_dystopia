@@ -219,26 +219,135 @@ Route103_Text_RouteSign:
 `
 
 script Sharpy103 {
-lockall
-if (!flag (Sharpy103Rematch))
-	{
-	msgbox(format("Heh, it's about time you showed up, Slowpoke! Let's do this!"))
-	setflag (Sharpy103Rematch)
-	goto (battleSharpy103)}
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (24, moves(face_player))
+	playbgm (MUS_ENCOUNTER_AQUA, TRUE)
+	setspeaker ([SP_NAME_SHARPY])
 
-if (flag (Sharpy103Rematch))
-	{
-	msgbox(format("You can't fool me... I could tell you were going EASY on me last time!"))
-	msgbox(format("This can't be how strong a soldier is! So our last battle doesn't count!"))
-	msgbox(format("Now show me what you can REALLY do, and don't hold back!"))
-	}
-	battleSharpy103:
-	trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
+	if (!flag (Sharpy103Rematch))
+		{
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+		msgbox(format("Heh, it's about time you showed up, Slowpoke! Let's do this!"))
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Remember - if I win, you got to tell me about the war!"))
+		removefieldmugshot
+		setflag (Sharpy103Rematch)
+		goto (battleSharpy103)}
 
-	msgbox(format("Cutscene with Camelia here"))
-	//cutscene, change Devon guards dialogue.
-	//if Sharpy103Rematch never set, change dialogue in Dojo: "You never showed up!!"
-	}
+	if (flag (Sharpy103Rematch))
+		{
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+		msgbox(format("You can't fool me... I could tell you were going EASY on me last time!"))
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("This can't be how strong a soldier is! So our last battle doesn't count!"))
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Now show me what you can REALLY do, and don't hold back!"))
+		removefieldmugshot
+		}
+		battleSharpy103:
+		trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
 
-text Sharpy103_Outro{
-    "Damn it! Guess you'll never tell me about the war now..."}
+		fadescreenswapbuffers (FADE_TO_BLACK)
+		setobjectxy (24, 8, 3)
+		applymovement (24, moves(face_left))
+		setobjectxy (OBJ_EVENT_ID_PLAYER, 5, 3)
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+		addobject (25)
+		setobjectxy (25, 10, 4)
+
+		fadescreenswapbuffers (FADE_FROM_BLACK)
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Oh man... I was so close to beating you!"))
+
+    	removefieldmugshot
+		playse (SE_LEDGE)
+		applymovement (24, moves(face_right))
+		applymovement (25, moves(jump_in_place_left))
+		waitmovement (25)
+		setspeaker ([SP_NAME_CAMELIA])
+   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
+		msgbox(format("I'm the one who's beating you, if you don't hurry up! It's almost curfew!"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Y-you're right...! Norman is going to be PISSED..."))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_SHARPY])
+		applymovement (24, moves(face_left))
+		msgbox(format("But don't think I've given up, uhm... what's your name? {PLAYER} you say?"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Well, {PLAYER}... I officially challenge you to a REMATCH in Petalburg's Dojo!"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Wait... you know Petalburg, right? It's west of here, across Rout- no, ROAD 104!"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("It's so fun - it's got an arcade, and a wild zone, and a beach nearby and a..."))
+
+    	removefieldmugshot
+		playse (SE_LEDGE)
+		applymovement (25, moves(jump_in_place_left))
+		waitmovement (25)
+		applymovement (24, moves(face_right))
+		setspeaker ([SP_NAME_CAMELIA])
+   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
+		msgbox(format("SHARPY! Last WARNING!"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
+		setspeaker ([SP_NAME_SHARPY])
+		applymovement (24, moves(face_left))
+		msgbox(format("S-sorry! Just come visit - you'll see for yourself!"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Really got to go now - you better train for our rematch!"))
+		removefieldmugshot
+		playse (SE_LEDGE)
+		applymovement (25, moves(jump_2_down, walk_down * 4))
+		applymovement (24, moves(walk_fast_right * 1, walk_fast_down * 1))
+		waitmovement (24)
+		playse (SE_LEDGE)
+		applymovement (24, moves(jump_2_down, walk_fast_down * 7))
+		waitmovement (0)
+		setflag (sharpynotinroute103)
+		setobjectxy (24, 79, 0)
+		setobjectxy (25, 79, 0)
+
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 2))
+		waitmovement (OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+		setflag (camelianotoutsideDLC)
+
+		//cutscene, change Devon guards dialogue. "those kids were so fast..." "dude, you were just"
+		//on your pokenav, checking Glacia's fanpage... //... can we not in front of civilians, please?
+		//if Sharpy103Rematch never set, change dialogue in Dojo: "You never showed up!!"
+		//Glacia is just beautiful okay? She's not so young anymore, but she looks like it! They say
+		//her secret is being an Ice type specialist, because... //can you shut up!? sorry...
+		releaseall
+		playbgm (MUS_ROUTE113, TRUE)
+		}
+
+	text Sharpy103_Outro{
+		"Damn it... there goes my 100 IQ plan..."}

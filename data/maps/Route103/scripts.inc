@@ -435,62 +435,372 @@ Sharpy103::
 # 222 "data/maps/Route103/scripts.pory"
 	lockall
 # 223 "data/maps/Route103/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 224 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_0
+# 225 "data/maps/Route103/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, TRUE
+# 226 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 228 "data/maps/Route103/scripts.pory"
 	goto_if_unset Sharpy103Rematch, Sharpy103_2
 Sharpy103_1:
-# 229 "data/maps/Route103/scripts.pory"
+# 240 "data/maps/Route103/scripts.pory"
 	goto_if_set Sharpy103Rematch, Sharpy103_5
 Sharpy103_4:
-# 235 "data/maps/Route103/scripts.pory"
+# 255 "data/maps/Route103/scripts.pory"
 battleSharpy103:
-# 236 "data/maps/Route103/scripts.pory"
+# 256 "data/maps/Route103/scripts.pory"
 	trainerbattle_no_intro TRAINER_SHARPY_103, Sharpy103_Outro
-# 238 "data/maps/Route103/scripts.pory"
-	msgbox Sharpy103_Text_4
+# 258 "data/maps/Route103/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 259 "data/maps/Route103/scripts.pory"
+	setobjectxy 24, 8, 3
+# 260 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_1
+# 261 "data/maps/Route103/scripts.pory"
+	setobjectxy OBJ_EVENT_ID_PLAYER, 5, 3
+# 262 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Sharpy103_Movement_2
+# 263 "data/maps/Route103/scripts.pory"
+	addobject 25
+# 264 "data/maps/Route103/scripts.pory"
+	setobjectxy 25, 10, 4
+# 266 "data/maps/Route103/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 267 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SAD
+# 268 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 269 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_5
+# 271 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 272 "data/maps/Route103/scripts.pory"
+	playse SE_LEDGE
+# 273 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_2
+# 274 "data/maps/Route103/scripts.pory"
+	applymovement 25, Sharpy103_Movement_3
+# 275 "data/maps/Route103/scripts.pory"
+	waitmovement 25
+# 276 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 277 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_ANGRY
+# 278 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_6
+# 280 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 281 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
+# 282 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 283 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_7
+# 285 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 286 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 287 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 288 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_1
+# 289 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_8
+# 291 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 292 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 293 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 294 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_9
+# 296 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 297 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
+# 298 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 299 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_10
+# 301 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 302 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 303 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 304 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_11
+# 306 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 307 "data/maps/Route103/scripts.pory"
+	playse SE_LEDGE
+# 308 "data/maps/Route103/scripts.pory"
+	applymovement 25, Sharpy103_Movement_3
+# 309 "data/maps/Route103/scripts.pory"
+	waitmovement 25
+# 310 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_2
+# 311 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 312 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_ANGRY
+# 313 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_12
+# 315 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 316 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
+# 317 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 318 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_1
+# 319 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_13
+# 321 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 322 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 323 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 324 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_14
+# 325 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 326 "data/maps/Route103/scripts.pory"
+	playse SE_LEDGE
+# 327 "data/maps/Route103/scripts.pory"
+	applymovement 25, Sharpy103_Movement_4
+# 328 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_5
+# 329 "data/maps/Route103/scripts.pory"
+	waitmovement 24
+# 330 "data/maps/Route103/scripts.pory"
+	playse SE_LEDGE
+# 331 "data/maps/Route103/scripts.pory"
+	applymovement 24, Sharpy103_Movement_6
+# 332 "data/maps/Route103/scripts.pory"
+	waitmovement 0
+# 333 "data/maps/Route103/scripts.pory"
+	setflag sharpynotinroute103
+# 334 "data/maps/Route103/scripts.pory"
+	setobjectxy 24, 79, 0
+# 335 "data/maps/Route103/scripts.pory"
+	setobjectxy 25, 79, 0
+# 337 "data/maps/Route103/scripts.pory"
+	special SpawnCameraObject
+# 338 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Sharpy103_Movement_7
+# 339 "data/maps/Route103/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 340 "data/maps/Route103/scripts.pory"
+	special RemoveCameraObject
+# 341 "data/maps/Route103/scripts.pory"
+	setflag camelianotoutsideDLC
+# 348 "data/maps/Route103/scripts.pory"
+	releaseall
+# 349 "data/maps/Route103/scripts.pory"
+	playbgm MUS_ROUTE113, TRUE
 	return
 
 Sharpy103_2:
-# 225 "data/maps/Route103/scripts.pory"
+# 230 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 231 "data/maps/Route103/scripts.pory"
 	msgbox Sharpy103_Text_0
-# 226 "data/maps/Route103/scripts.pory"
+# 232 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 233 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 234 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 235 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_1
+# 236 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 237 "data/maps/Route103/scripts.pory"
 	setflag Sharpy103Rematch
-# 227 "data/maps/Route103/scripts.pory"
+# 238 "data/maps/Route103/scripts.pory"
 	goto battleSharpy103
 	goto Sharpy103_1
 
 Sharpy103_5:
-# 231 "data/maps/Route103/scripts.pory"
-	msgbox Sharpy103_Text_1
-# 232 "data/maps/Route103/scripts.pory"
+# 242 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 243 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
+# 244 "data/maps/Route103/scripts.pory"
 	msgbox Sharpy103_Text_2
-# 233 "data/maps/Route103/scripts.pory"
+# 245 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 246 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 247 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 248 "data/maps/Route103/scripts.pory"
 	msgbox Sharpy103_Text_3
+# 249 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
+# 250 "data/maps/Route103/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 251 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 252 "data/maps/Route103/scripts.pory"
+	msgbox Sharpy103_Text_4
+# 253 "data/maps/Route103/scripts.pory"
+	removefieldmugshot
 	goto Sharpy103_4
 
 
+# 224 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_0:
+# 224 "data/maps/Route103/scripts.pory"
+	face_player
+	step_end
+
+# 260 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_1:
+# 260 "data/maps/Route103/scripts.pory"
+	face_left
+	step_end
+
+# 262 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_2:
+# 262 "data/maps/Route103/scripts.pory"
+	face_right
+	step_end
+
+# 274 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_3:
+# 274 "data/maps/Route103/scripts.pory"
+	jump_in_place_left
+	step_end
+
+# 327 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_4:
+# 327 "data/maps/Route103/scripts.pory"
+	jump_2_down
+# 327 "data/maps/Route103/scripts.pory"
+	walk_down
+# 327 "data/maps/Route103/scripts.pory"
+	walk_down
+# 327 "data/maps/Route103/scripts.pory"
+	walk_down
+# 327 "data/maps/Route103/scripts.pory"
+	walk_down
+	step_end
+
+# 328 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_5:
+# 328 "data/maps/Route103/scripts.pory"
+	walk_fast_right
+# 328 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 331 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_6:
+# 331 "data/maps/Route103/scripts.pory"
+	jump_2_down
+# 331 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+# 331 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+# 331 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+# 331 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+# 331 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+# 331 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+# 331 "data/maps/Route103/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 338 "data/maps/Route103/scripts.pory"
+Sharpy103_Movement_7:
+# 338 "data/maps/Route103/scripts.pory"
+	walk_left
+# 338 "data/maps/Route103/scripts.pory"
+	walk_left
+	step_end
+
 Sharpy103_Text_0:
-# 225 "data/maps/Route103/scripts.pory"
+# 231 "data/maps/Route103/scripts.pory"
 	.string "Heh, it's about time you showed up,\n"
 	.string "Slowpoke! Let's do this!$"
 
 Sharpy103_Text_1:
-# 231 "data/maps/Route103/scripts.pory"
+# 235 "data/maps/Route103/scripts.pory"
+	.string "Remember - if I win, you got to tell me\n"
+	.string "about the war!$"
+
+Sharpy103_Text_2:
+# 244 "data/maps/Route103/scripts.pory"
 	.string "You can't fool me... I could tell you were\n"
 	.string "going EASY on me last time!$"
 
-Sharpy103_Text_2:
-# 232 "data/maps/Route103/scripts.pory"
+Sharpy103_Text_3:
+# 248 "data/maps/Route103/scripts.pory"
 	.string "This can't be how strong a soldier is! So\n"
 	.string "our last battle doesn't count!$"
 
-Sharpy103_Text_3:
-# 233 "data/maps/Route103/scripts.pory"
+Sharpy103_Text_4:
+# 252 "data/maps/Route103/scripts.pory"
 	.string "Now show me what you can REALLY do, and\n"
 	.string "don't hold back!$"
 
-Sharpy103_Text_4:
-# 238 "data/maps/Route103/scripts.pory"
-	.string "Cutscene with Camelia here$"
+Sharpy103_Text_5:
+# 269 "data/maps/Route103/scripts.pory"
+	.string "Oh man... I was so close to beating you!$"
+
+Sharpy103_Text_6:
+# 278 "data/maps/Route103/scripts.pory"
+	.string "I'm the one who's beating you, if you\n"
+	.string "don't hurry up! It's almost curfew!$"
+
+Sharpy103_Text_7:
+# 283 "data/maps/Route103/scripts.pory"
+	.string "Y-you're right...! Norman is going to be\n"
+	.string "PISSED...$"
+
+Sharpy103_Text_8:
+# 289 "data/maps/Route103/scripts.pory"
+	.string "But don't think I've given up, uhm...\n"
+	.string "what's your name? {PLAYER} you say?$"
+
+Sharpy103_Text_9:
+# 294 "data/maps/Route103/scripts.pory"
+	.string "Well, {PLAYER}... I officially challenge\n"
+	.string "you to a REMATCH in Petalburg's Dojo!$"
+
+Sharpy103_Text_10:
+# 299 "data/maps/Route103/scripts.pory"
+	.string "Wait... you know Petalburg, right? It's\n"
+	.string "west of here, across Rout- no, ROAD\l"
+	.string "104!$"
+
+Sharpy103_Text_11:
+# 304 "data/maps/Route103/scripts.pory"
+	.string "It's so fun - it's got an arcade, and a\n"
+	.string "wild zone, and a beach nearby and a...$"
+
+Sharpy103_Text_12:
+# 313 "data/maps/Route103/scripts.pory"
+	.string "SHARPY! Last WARNING!$"
+
+Sharpy103_Text_13:
+# 319 "data/maps/Route103/scripts.pory"
+	.string "S-sorry! Just come visit - you'll see\n"
+	.string "for yourself!$"
+
+Sharpy103_Text_14:
+# 324 "data/maps/Route103/scripts.pory"
+	.string "Really got to go now - you better train\n"
+	.string "for our rematch!$"
 
 Sharpy103_Outro::
-# 243 "data/maps/Route103/scripts.pory"
-	.string "Damn it! Guess you'll never tell me about the war now...$"
+# 352 "data/maps/Route103/scripts.pory"
+	.string "Damn it... there goes my 100 IQ plan...$"

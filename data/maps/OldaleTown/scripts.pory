@@ -1,19 +1,39 @@
 raw `
-OldaleTown_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
-	.byte 0
 
-OldaleTown_OnTransition:
-
-
-
-
-OldaleTown_Text_TownSign:
-	.string "OLDALE TOWN\n"
-	.string "“Where things start off scarce.”$"
 
 
 `
+
+
+mapscripts OldaleTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: OldaleWeather}
+	
+
+script OldaleWeather {
+
+	if (var(VAR_OLDALE_PHASE) == 0)
+	{setweather (WEATHER_SHADE)
+}
+	if (var(VAR_LITTLEROOT_PHASE) == 1)
+	{setweather (WEATHER_SHADE)
+}
+
+	if (var(VAR_LITTLEROOT_PHASE) == 2)
+	{setweather (WEATHER_SHADE)
+}
+}
+
+script OldaleTownSign {
+    lockall
+    msgbox(format("Oldale Town. \n “Where things start off scarce.”"))
+    releaseall   
+}
+
+script Oldale103Sign {
+    lockall
+    msgbox(format("Route 103 ahead. \p In case of flood, retreat behind the flood gates."))
+    releaseall   
+}
 
 script OldaleOutsideHikerGuy {
     lockall
@@ -106,10 +126,9 @@ script OldaleSharpyCameliaOutDLCCutscene {
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
     playse (SE_PIN)
-    msgbox(format("Oh, look - behind you!"))
-
-    applymovement (17, moves(walk_down * 1, face_left))
-    applymovement (18, moves(walk_left * 2))
+    applymovement (18, moves(face_left))
+    msgbox(format("Oh, you there!!"))
+    applymovement (18, moves(walk_left * 1))
     applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 
 	checkplayergender
@@ -243,11 +262,13 @@ script OldaleSharpyCameliaOutDLCCutscene {
 	setflag (sharpynotoutsideDLC)
 	clearflag (sharpynotinroute103)
 	setflag (sharpycorphishoutsideDLC)
+	setflag (camelianotinroute103)
     releaseall
     }
 
 script OldaleCamelia {
-    
+    lockall
+	applymovement (17, moves(face_player))
     setspeaker ([SP_NAME_CAMELIA])
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
     msgbox(format("I'm sorry about him... I know this is a lot to ask, but can you go kick
