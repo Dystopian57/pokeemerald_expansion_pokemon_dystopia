@@ -1944,6 +1944,7 @@ lockall
 createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 setspeaker ([SP_NAME_BALSAM])
 applymovement (4, moves(face_player))
+applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
  		{msgbox (format("Oh, {PLAYER}, one last thing. Here, this is to keep in touch."))
 		fadeoutbgm (0)

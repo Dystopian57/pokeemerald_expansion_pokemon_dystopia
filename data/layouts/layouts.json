@@ -266,7 +266,7 @@
       "name": "Route111_Layout",
       "width": 40,
       "height": 140,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route111/border.bin",
       "blockdata_filepath": "data/layouts/Route111/map.bin"
@@ -4494,7 +4494,7 @@
     {
       "id": "LAYOUT_ROUTE104DEVON_LAB",
       "name": "Route104DevonLab_Layout",
-      "width": 16,
+      "width": 17,
       "height": 18,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",

@@ -1828,14 +1828,14 @@ mapscripts LittlerootTown_MapScripts {
 script NoRain {
 
 	if (var(VAR_LITTLEROOT_PHASE) == 5)
-	{setweather (WEATHER_NONE)
+	{setweather (WEATHER_SUNNY_CLOUDS)
 }
 	if (var(VAR_LITTLEROOT_PHASE) == 6)
-	{setweather (WEATHER_NONE)
+	{setweather (WEATHER_SUNNY_CLOUDS)
 }
 
 	if (var(VAR_LITTLEROOT_PHASE) == 7)
-	{setweather (WEATHER_NONE)
+	{setweather (WEATHER_SUNNY_CLOUDS)
 }
 }
 
@@ -2112,6 +2112,8 @@ script OldManThanks {
 		removeobject (1)
 		setobjectxy (1, 4, 17)
 		setvar(VAR_LITTLEROOT_PHASE, 5)
+		setflag (anneinroute101)
+		setflag (joelinsidetent)
 		removefieldmugshot
 	//Receive Running shoes
 	releaseall}

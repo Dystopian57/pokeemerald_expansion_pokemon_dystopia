@@ -1,0 +1,42 @@
+raw `
+OldaleTown_House1_MapScripts::
+	.byte 0
+
+OldaleTown_House1_EventScript_Woman::
+	msgbox OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_NPC
+	end
+
+OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
+	.string "When a POKéMON battle starts, the one\n"
+	.string "at the left of the list goes out first.\p"
+	.string "So, when you get more POKéMON in your\n"
+	.string "party, try switching around the order\l"
+	.string "of your POKéMON.\p"
+	.string "It could give you an advantage.$"
+
+
+`
+
+script OldaleHouse1Girl {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("Don't worry Shiiko. I would never eat you, no matter how tasty you look!"))
+    releaseall
+}
+
+script OldaleHouse1Shiiko {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playmoncry(SPECIES_SHIITAKO, CRY_MODE_WEAK)
+    msgbox(format("Shiii..."))
+    releaseall
+}
+
+script OldaleHouse1Woman {
+    lockall
+	applymovement (1, moves(face_player))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("It's been hard raising my daugther alone without my husband. \p If only he
+    had not enlisted... I begged him not to."))
+    releaseall
+}

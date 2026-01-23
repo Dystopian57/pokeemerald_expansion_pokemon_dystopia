@@ -248,6 +248,16 @@ Route101_Text_RouteSign:
 
 
 `
+
+ script Route101Ziggy {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (5, moves(face_player))
+	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL) 
+	msgbox(format("Zig-ziiig!"))
+	releaseall
+ }
+
  script Route101OrphanJoelApproach0 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -266,6 +276,7 @@ Route101_Text_RouteSign:
 	waitmovement
 	msgbox(format("Hey, stop!"))
 	applymovement (1, moves(walk_down * 1))
+	applymovement (5, moves(walk_down * 1))
 	waitmovement
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	goto (orphanafterapproach)
@@ -278,7 +289,8 @@ Route101_Text_RouteSign:
 	applymovement (1, moves(emote_exclamation_mark))
 	waitmovement
 	msgbox(format("Hey, stop!"))
-	applymovement (1, moves(walk_down * 1))
+	applymovement (1, moves(walk_down * 2))
+	applymovement (5, moves(walk_down * 2))
 	waitmovement
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	goto (orphanafterapproach)
@@ -291,16 +303,17 @@ Route101_Text_RouteSign:
 	applymovement (1, moves(emote_exclamation_mark))
 	waitmovement
 	msgbox(format("Hey, stop!"))
-	applymovement (1, moves(walk_down * 1))
+	applymovement (1, moves(walk_down * 3))
+	applymovement (5, moves(walk_down * 3))
 	waitmovement
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	goto (orphanafterapproach)
  }
 
-script Route101OrphanJoelBattle{
+script Route101OrphanJoel{
 	lockall
 	orphanafterapproach:
-	if (!flag (JoelgivesTM))
+	if(var(VAR_JOELQUESTS) == 0)
 	{msgbox(format("You can't go into my Secret Shelter!"))
 	trainerbattle_no_intro(TRAINER_ORPHAN_MALE_101, Orphan101_Outro)
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
@@ -314,13 +327,15 @@ script Route101OrphanJoelBattle{
 	giveitem (ITEM_TM43)
 	msgbox(format("If you teach Secret Power to a Pokémon, you can make Secret Shelters in all
 	sorts of places. \pSome have unique things about them... but I won't tell you about mine!"))
-	setflag (JoelgivesTM)
-	setvar(VAR_JOELGIVESSECRETPOWER, 1)
+	setvar(VAR_JOELQUESTS, 1)
 	goto (Joelfinish)}
-	if (flag (JoelgivesTM)) {
+	if(var(VAR_JOELQUESTS) == 1) {
 	applymovement (1, moves(face_player))	
 	msgbox(format("Have you made a Secret Shelter yet? \pI guess you can visit mine,
 	if you need ideas for yours...\pBut don't touch anything!"))}
+
+	if(var(VAR_JOELQUESTS) == 2) {
+	goto (JoelandAnne101talk)}
 	Joelfinish:
 	releaseall
     end
@@ -329,6 +344,60 @@ script Route101OrphanJoelBattle{
  
 text Orphan101_Outro{
     "... you still can't go into my Secret\n Shelter."}
+
+script JoelandAnne101meeting {
+	JoelandAnne101talk:
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement(1, moves(walk_in_place_down * 1))
+	msgbox(format("So... you are moving?"))
+	applymovement(5, moves(walk_in_place_down * 1))
+	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL)
+	msgbox(format("Zig-zig?"))
+	applymovement(4, moves(walk_in_place_left * 1))
+	msgbox(format("Yes... I'm sorry Joel... mom has packed everything up. \p I think I'll
+	have to go... but I'll come visit soon! \p Then you can teach me all about Secret Shelters."))
+	applymovement(1, moves(walk_in_place_right * 1))
+	msgbox(format("O-oh, that's okay...! In fact, you don't need to come back at all!"))
+	playse (SE_PIN)
+	applymovement(4, moves(emote_question_mark, walk_in_place_left * 1))
+	msgbox(format("What? Why!?"))
+	applymovement(1, moves(walk_in_place_right * 1))
+	msgbox(format("Because I'll go visit you instead! \p I was thinking of making new Secret
+	Shelters anyway. I'm sure there's tons of cool places for them in Rustboro."))
+	applymovement(4, moves(walk_in_place_left * 1))
+	msgbox(format("Really!? You promise to come visit?"))
+	applymovement(1, moves(walk_in_place_right * 1))
+	msgbox(format("I do! Now get going, before your mom gets worried."))
+	applymovement(4, moves(walk_in_place_left * 1))
+	msgbox(format("Okay! It's a promise. I'll be waiting! \p See you soon Joel!"))
+	applymovement(4, moves(walk_right * 1, walk_up* 3, walk_right * 7))	
+
+	msgbox(format("... \p ... let's go inside, Ziggy."))
+	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_WEAK)
+	msgbox(format("Ziiig..."))
+	closemessage
+	applymovement(1, moves(walk_down * 2, walk_left * 3, walk_up *1))
+	applymovement(5, moves(walk_down * 3, walk_left * 3, walk_up *1))
+
+
+	waitmovement (1)
+	waitmovement (4)
+	waitmovement (5)
+
+	removeobject (1)
+	removeobject (4)
+	removeobject (5)
+
+	playse (SE_EXIT)
+	setflag (joelgoestotent)
+	setflag (anneinroute101)
+	clearflag (joelinsidetent)
+	clearflag (annegoestojoel)
+
+	setvar(VAR_JOELQUESTS, 3)
+	releaseall
+}
 
 
  script Route101RebelApproach0 {

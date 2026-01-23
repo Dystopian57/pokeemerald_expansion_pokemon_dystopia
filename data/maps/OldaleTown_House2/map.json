@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "OldaleTownHouse2Tiana",
       "flag": "0"
     },
     {
@@ -33,6 +33,32 @@
       "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTownHouse2Anne",
+      "flag": "annegoestojoel"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SKITTY_DOLL",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -64,6 +90,43 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_JOELQUESTS",
+      "var_value": "1",
+      "script": "OldaleTownHouse2ArgumentCSMov3"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JOELQUESTS",
+      "var_value": "1",
+      "script": "OldaleTownHouse2ArgumentCSMov1"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_JOELQUESTS",
+      "var_value": "1",
+      "script": "OldaleTownHouse2ArgumentCSMov2"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JOELQUESTS",
+      "var_value": "1",
+      "script": "OldaleTownHouse2ArgumentCSMov4"
+    }
+  ],
   "bg_events": []
 }

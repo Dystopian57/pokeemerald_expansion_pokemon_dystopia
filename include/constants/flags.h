@@ -67,7 +67,7 @@
 #define SinkNinkaburiGone    0x35 // Unused Flag
 #define Birchafter1stgreeting    0x36 // Unused Flag
 #define Donutquestaccepted    0x37 // Unused Flag
-#define JoelgivesTM    0x38 // Unused Flag
+#define joelgoestotent    0x38 // Unused Flag
 #define rebel101defeated    0x39 // Unused Flag
 #define rebel101runsaway   0x3A // Unused Flag
 #define sharpynotoutsideDLC    0x3B // Unused Flag
@@ -79,9 +79,9 @@
 #define Sharpy103Rematch    0x41 // Unused Flag
 #define DLCmathresolved    0x42 // Unused Flag
 #define camelianotinroute103    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
+#define annegoestojoel    0x44 // Unused Flag
+#define anneinroute101    0x45 // Unused Flag
+#define joelinsidetent    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag

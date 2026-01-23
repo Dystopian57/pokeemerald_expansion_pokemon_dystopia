@@ -1,0 +1,120 @@
+raw `
+OldaleTown_House2_MapScripts::
+	.byte 0
+
+OldaleTown_House2_EventScript_Woman::
+	msgbox OldaleTown_House2_Text_PokemonLevelUp, MSGBOX_NPC
+	end
+
+OldaleTown_House2_EventScript_Man::
+	msgbox OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon, MSGBOX_NPC
+	end
+
+OldaleTown_House2_Text_PokemonLevelUp:
+	.string "When POKéMON battle, they eventually\n"
+	.string "level up and become stronger.$"
+
+OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:
+	.string "If the POKéMON with you become\n"
+	.string "stronger, you'll be able to go farther\l"
+	.string "away from here.$"
+
+
+`
+
+script OldaleTownHouse2ArgumentCSMov1 {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_right))
+    goto (beginargument)
+}
+
+script OldaleTownHouse2ArgumentCSMov2 {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_right))
+    goto (beginargument)
+}
+
+script OldaleTownHouse2ArgumentCSMov3 {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, face_right))
+    goto (beginargument)
+}
+
+script OldaleTownHouse2ArgumentCSMov4 {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 1))
+    waitmovement (OBJ_EVENT_ID_CAMERA)
+    goto (beginargument)
+}
+
+script OldaleTownHouse2Anne {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if(var(VAR_JOELQUESTS) == 0)
+    {msgbox(format("And then Joel's Zigzagoon ate the berries from my hand - he even licked them clean! He
+	was so hungry!"))}
+
+	if(var(VAR_JOELQUESTS) == 3)
+    {msgbox(format("I'm sorry... YADDAH"))}
+}
+
+script OldaleTownHouse2Tiana {
+	lockall
+	applymovement (1, moves(face_player))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if(var(VAR_JOELQUESTS) == 0)
+    {msgbox(format("O-oh, I see...! Well, you should go wash your hands then... \p 
+	{COLOR LIGHT_GRAY}{SHADOW WHITE}Aah... I should
+	tell her and get it over with.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
+
+	if(var(VAR_JOELQUESTS) == 2)
+    {msgbox(format("That kid will be the end of me... if only she was like her brother...!\p 
+	I'm sure she's gone to {COLOR GREEN}Route 101{COLOR DARK_GRAY}
+	to play with that orphan kid again..."))}
+
+	if(var(VAR_JOELQUESTS) == 3)
+    {msgbox(format("Good, good, as long as you understand... I'm sorry for yelling at you. \p
+	Now be a good girl, and help mom pack the last things, alright?"))}
+	releaseall
+}
+
+script OldaleTownHouse2AnneArgument {
+    beginargument:
+	applymovement(2, moves(walk_in_place_right * 1))
+    msgbox(format("I don't want to move to Rustboro! I want to stay here so I can play with Joel.
+    \p He's going to teach me how to make a Secret Shelter!"))
+
+	applymovement(1, moves(walk_in_place_left * 1))
+    msgbox(format("Don't be ridiculous! You'll make many more and better friends than that orphan
+    in the city! \p Much cleaner at least - that little imp is always covered in mud!"))
+
+	applymovement(2, moves(walk_in_place_right * 1))
+    msgbox(format("He's not an imp! He's fun and cool! And you're mean!"))
+
+	applymovement(2, moves(walk_fast_left * 1, walk_fast_down * 2))
+    waitmovement (0)
+	removeobject (2)
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+    playse (SE_DOOR)
+    waitse
+
+	setflag (annegoestojoel)
+	clearflag (anneinroute101)
+
+
+	applymovement(1, moves(walk_in_place_down * 1))
+    msgbox(format("Anne! \p Come back here this instant! You hear me!?"))
+	setvar(VAR_JOELQUESTS, 2)
+
+
+    releaseall
+}

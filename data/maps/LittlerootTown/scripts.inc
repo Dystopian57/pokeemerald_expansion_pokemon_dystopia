@@ -3617,17 +3617,17 @@ NoRain_4:
 
 NoRain_2:
 # 1831 "data/maps/LittlerootTown/scripts.pory"
-	setweather WEATHER_NONE
+	setweather WEATHER_SUNNY_CLOUDS
 	goto NoRain_1
 
 NoRain_5:
 # 1834 "data/maps/LittlerootTown/scripts.pory"
-	setweather WEATHER_NONE
+	setweather WEATHER_SUNNY_CLOUDS
 	goto NoRain_4
 
 NoRain_7:
 # 1838 "data/maps/LittlerootTown/scripts.pory"
-	setweather WEATHER_NONE
+	setweather WEATHER_SUNNY_CLOUDS
 	return
 
 
@@ -4128,8 +4128,12 @@ OldManThanks_5:
 # 2114 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_PHASE, 5
 # 2115 "data/maps/LittlerootTown/scripts.pory"
-	removefieldmugshot
+	setflag anneinroute101
+# 2116 "data/maps/LittlerootTown/scripts.pory"
+	setflag joelinsidetent
 # 2117 "data/maps/LittlerootTown/scripts.pory"
+	removefieldmugshot
+# 2119 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
@@ -4153,7 +4157,7 @@ OldManThanks_6:
 
 
 Respawnatplayerbed::
-# 2120 "data/maps/LittlerootTown/scripts.pory"
+# 2122 "data/maps/LittlerootTown/scripts.pory"
 	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	end
 

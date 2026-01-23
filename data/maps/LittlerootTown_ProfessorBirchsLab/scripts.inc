@@ -3838,44 +3838,46 @@ BalsamgivesPokenav::
 # 1946 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
 # 1947 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
+# 1948 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set AideeQuestAccepted, BalsamgivesPokenav_4
 BalsamgivesPokenav_3:
-# 1960 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1961 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishpokenavscript
 BalsamgivesPokenav_1:
-# 1962 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-finishpokenavscript:
 # 1963 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+finishpokenavscript:
 # 1964 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1965 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 BalsamgivesPokenav_2:
-# 1948 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_0
 # 1949 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	fadeoutbgm 0
+	msgbox BalsamgivesPokenav_Text_0
 # 1950 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse MUS_RG_OBTAIN_KEY_ITEM
+	fadeoutbgm 0
 # 1951 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	fadeinbgm 0
+	playse MUS_RG_OBTAIN_KEY_ITEM
 # 1952 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker NULL
+	fadeinbgm 0
 # 1953 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_1
+	setspeaker NULL
 # 1954 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKENAV_GET
+	msgbox BalsamgivesPokenav_Text_1
 # 1955 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	setflag FLAG_SYS_POKENAV_GET
 # 1956 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_2
+	setspeaker [ SP_NAME_BALSAM ]
 # 1957 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox BalsamgivesPokenav_Text_2
+# 1958 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
 	goto BalsamgivesPokenav_1
 
 BalsamgivesPokenav_4:
-# 1947 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1948 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset FLAG_SYS_POKENAV_GET, BalsamgivesPokenav_2
 	goto BalsamgivesPokenav_3
 
@@ -4594,15 +4596,15 @@ LabCoffee_Text_3:
 	.string "It's a solitary coffee mug.$"
 
 BalsamgivesPokenav_Text_0:
-# 1948 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1949 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Oh, {PLAYER}, one last thing. Here,\n"
 	.string "this is to keep in touch.$"
 
 BalsamgivesPokenav_Text_1:
-# 1953 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1954 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Obtained the DEVONAV!$"
 
 BalsamgivesPokenav_Text_2:
-# 1956 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1957 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "My number is already registered, so call\n"
 	.string "me if there's an emergency.$"

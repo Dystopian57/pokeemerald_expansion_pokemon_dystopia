@@ -200,44 +200,69 @@ script OldaleTown_DLC_TherapyCutscene{
 
 script LittleKidDLC {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (5, moves(face_player))
     msgbox(format("I don't like Vinesors... Vensuros...? \n I don't know... but I think Pokémon
     are scary."))
-	applymovement (6, moves (face_up))
+	applymovement (5, moves (face_up))
     releaseall
 }
 
 script FatManDLC {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (7, moves(face_player))
     msgbox(format("It's true! I lived in Rustboro, and some fire Pokémon burned the apartment
-    building I lived in. \n I had to come back here with my parents. I miss the city."))
+    building I lived in. \p I had to come back here with my parents. I miss the city."))
 	applymovement (7, moves (face_up))
     releaseall
 }
 
 script SleepingKidDLC {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (4, moves(face_player))
     msgbox(format("ZZZZ... \n ... Huh? Is Math class over? I think I overslept..."))
 	applymovement (4, moves (face_up))
     releaseall
 }
 
+script GirlNotebookDLC {
+    lockall
+    msgbox(format("It's the notebook the scared girl left behind.\p Next to some classroom notes,
+    there's a drawing of a man with a white hat, rescuing a little girl from drowning."))
+    releaseall
+}
+
+script SleepingBoyNotebookDLC {
+    lockall
+    msgbox(format("The notebook has barely any notes, and is covered in drool."))
+    releaseall
+}
+
+script DyslexicKidNotebookDLC {
+    lockall
+    msgbox(format("The notebook contains many Pokémon names, most of them crossed out."))
+    releaseall
+}
+
+
 script TeacherDLC {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (6, moves(face_player))
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-    I shouldn't have come to teach to this backwater place. \p But the bonus is so juicy..."))
-	applymovement (6, moves (face_up))
+    I shouldn't have come to teach to this backwater town. \p But the bonus is so juicy..."))
+	applymovement (6, moves (face_down))
     releaseall
 }
 
 
 script LibraryGuyDLC {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (9, moves(face_player))
-    msgbox(format("Welcome! This is the Devon Learning Center's library. \n You can read any
+    msgbox(format("Welcome! This is the Devon Learning Center's library. \p You can read any
     of the books here, but you need to be enrolled to take them on a loan - sorry!"))
 	applymovement (9, moves (face_up))
     releaseall
@@ -245,7 +270,8 @@ script LibraryGuyDLC {
 
 script TeacherdeskDLC {
     lockall
-    msgbox(format("The book on top of the desk reads 'Therapy for Beginners.'"))
+    msgbox(format("The book on top features a Psyduck on its cover, and is titled
+    'Therapy for Beginners.'"))
     releaseall
 }
 
@@ -281,6 +307,7 @@ script BlackBoardDLC {
     msgbox(format("I like math problems... they always have a single right answer.
     \p If only the world worked like that."))
 	applymovement (6, moves(face_down))
+    waitmovement (6)
     setflag (DLCmathresolved)
     }
 
@@ -302,14 +329,15 @@ script BlackBoardDLC {
 script OpenBoxDLC {
     lockall
     msgbox(format("A label on the open box reads 'To be discarded'. \p Through the open gap,
-    you glimpse a paper whose title reads: 'The grim truth behind Safemon, by Professor Balsam.'"))
+    you glimpse a paper whose title reads: \p
+    'The grim truth behind Safemon, by {COLOR BLUE}Professor Balsam{COLOR DARK_GRAY}.'"))
     releaseall
 }
 
 script PosterDLC {
     lockall
-    msgbox(format("Next month's planned excursion: Petalburg Park! Sign up open on DLC's website.
-    \p Minors require written parental consent."))
+    msgbox(format("Next month's planned excursion: Petalburg Park! \p Sign ups open on DLC's website.
+    \n Minors require parental consent."))
     releaseall
 }
 
@@ -343,7 +371,7 @@ script BookshelfDLC {
 script MauvillePosterDLC {
     lockall
     msgbox(format("Finished using the PC? Turn it off, and save electricity! \p Let's take
-    care of Hoenn together. {COLOR BLUE}Mauville Nuclear Plant.{COLOR DARK_GRAY}"))
+    care of Hoenn together.\n{COLOR BLUE}Mauville Nuclear Plant.{COLOR DARK_GRAY}"))
     releaseall
 }
 
@@ -351,4 +379,10 @@ script TVDLC {
     lockall
     msgbox(format("The TV is playing a documentary on Safemon on a loop."))
     releaseall
+}
+
+script DLCSealedBox {
+lockall
+msgbox (format("It's a sealed box. Better not to open it."))
+releaseall
 }
