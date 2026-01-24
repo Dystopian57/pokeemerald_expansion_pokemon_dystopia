@@ -1179,7 +1179,7 @@ const struct Decoration gDecorations[] =
     [DECOR_AZURILL_DOLL] =
     {
         .id = DECOR_AZURILL_DOLL,
-        .name = _("AZURILL DOLL"),
+        .name = _("SUPER S. DOLL"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,

@@ -312,6 +312,7 @@ Route101_Text_RouteSign:
 
 script Route101OrphanJoel{
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	orphanafterapproach:
 	if(var(VAR_JOELQUESTS) == 0)
 	{msgbox(format("You can't go into my Secret Shelter!"))
@@ -363,15 +364,15 @@ script JoelandAnne101meeting {
 	applymovement(4, moves(emote_question_mark, walk_in_place_left * 1))
 	msgbox(format("What? Why!?"))
 	applymovement(1, moves(walk_in_place_right * 1))
-	msgbox(format("Because I'll go visit you instead! \p I was thinking of making new Secret
-	Shelters anyway. I'm sure there's tons of cool places for them in Rustboro."))
+	msgbox(format("Because... I'll go visit you instead! \p I was thinking of making new Secret
+	Shelters anyway.\p I'm sure there's tons of cool places for them in Rustboro."))
 	applymovement(4, moves(walk_in_place_left * 1))
 	msgbox(format("Really!? You promise to come visit?"))
 	applymovement(1, moves(walk_in_place_right * 1))
 	msgbox(format("I do! Now get going, before your mom gets worried."))
 	applymovement(4, moves(walk_in_place_left * 1))
 	msgbox(format("Okay! It's a promise. I'll be waiting! \p See you soon Joel!"))
-	applymovement(4, moves(walk_right * 1, walk_up* 3, walk_right * 7))	
+	applymovement(4, moves(walk_right * 2, walk_up* 3, walk_right * 7))	
 
 	msgbox(format("... \p ... let's go inside, Ziggy."))
 	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_WEAK)

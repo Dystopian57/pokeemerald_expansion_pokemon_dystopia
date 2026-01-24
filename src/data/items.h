@@ -15074,18 +15074,18 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POKESHI_DOLL] =
     {
-        .name = ITEM_NAME("Pokéshi Doll"),
+        .name = ITEM_NAME("Super S. Doll"),
         .price = 2000,
         .description = COMPOUND_STRING(
-            "A wooden toy\n"
-            "resembling a Poké-\n"
-            "mon. Can be sold."),
-        .pocket = POCKET_ITEMS,
+            "Anne's Super Subs.\n"
+            "doll. Joel asked you\n"
+            "to return it to her."),
+        .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_PokeshiDoll,
-        .iconPalette = gItemIconPalette_PokeshiDoll,
+        .iconPic = gItemIcon_PokeDoll,
+        .iconPalette = gItemIconPalette_PokeDoll,
     },
 };
 

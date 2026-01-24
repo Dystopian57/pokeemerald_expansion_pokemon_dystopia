@@ -37,20 +37,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "JoelTentDoll",
+      "flag": "anneandfamilygone"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON_GALAR)",
-      "x": 8,
-      "y": 4,
+      "x": 7,
+      "y": 1,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "JoelTentZigzagoon",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "JoelTentJoel",
       "flag": "0"
     }
   ],

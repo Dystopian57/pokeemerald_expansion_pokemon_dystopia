@@ -469,9 +469,9 @@ const u8 DecorDesc_KECLEON_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_AZURILL_DOLL[] = _(
-    "An AZURILL doll.\n"
-        "Place it on a mat\n"
-        "or a desk.");
+    "An Super Substitute.\n"
+        "doll you can place on\n"
+        "a mat or a desk.");
 
 const u8 DecorDesc_SKITTY_DOLL[] = _(
     "A box made.\n"

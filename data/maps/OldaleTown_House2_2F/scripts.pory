@@ -3,3 +3,30 @@ OldaleTown_House2_2F_MapScripts::
 	.byte 0
 
 `
+
+script OldaleTownHouse2Annebrother {
+	lockall
+	applymovement (2, moves(face_player))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if(var(VAR_JOELQUESTS) == 0)
+    {msgbox(format("Go, Purachu - use Thundershock! BZZZTBZ! \p
+	{COLOR LIGHT_GRAY}{SHADOW WHITE}The kid flashes a Purachu Card in front of you.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+	\p Hehe... mom says I shouldn't play with Pokémon, or even Safemon. \p So I play with cards instead!"))}
+
+	if(var(VAR_JOELQUESTS) == 1)
+    {msgbox(format("Go, Purachu - use Thundershock! BZZZTBZ! \p
+	{COLOR LIGHT_GRAY}{SHADOW WHITE}The kid flashes a Purachu Card in front of you.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+	Hehe... mom says I shouldn't play with Pokémon, or even Safemon. So I play with cards instead!"))}
+
+	if(var(VAR_JOELQUESTS) == 2)
+    {
+    msgbox(format("I just heard mom and sis arguing again... \p I hope we move to Rustboro soon.
+	Dad says he'll earn tons of money with his new job, and that we won't argue again then."))}
+
+	if(var(VAR_JOELQUESTS) == 3)
+    {
+    msgbox(format("Let's go, Purachu. We're off to Rustboro!"))}
+	//foreshadowing... they don't argue again because money separates them
+
+	releaseall
+}

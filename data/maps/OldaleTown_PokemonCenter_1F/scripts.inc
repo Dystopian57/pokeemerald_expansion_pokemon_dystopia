@@ -201,12 +201,12 @@ OldalePokeCenterInjuredGuy_Text_0:
 
 OldalePokeCenterMapBoy_Text_0:
 # 86 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "In school we learnt that the area from\n"
-	.string "Route 103 to Route 104 is called the\l"
-	.string "'Exclusion Zone'.\p"
+	.string "In school we learnt that the region\n"
+	.string "from Route 103 to Route 104 is called\l"
+	.string "the {COLOR GREEN}'Exclusion Zone'{COLOR DARK_GRAY}.\p"
 	.string "It's a dangerous place where people who\n"
 	.string "hate Devon have gathered, and you need\l"
-	.string "a special pass to get out of it.$"
+	.string "a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} to get out of it.$"
 
 OldalePokeCenterInnSign_Text_0:
 # 95 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"

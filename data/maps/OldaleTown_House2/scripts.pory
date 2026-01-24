@@ -56,11 +56,23 @@ script OldaleTownHouse2Anne {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if(var(VAR_JOELQUESTS) == 0)
-    {msgbox(format("And then Joel's Zigzagoon ate the berries from my hand - he even licked them clean! He
-	was so hungry!"))}
+    {
+	applymovement (2, moves(walk_in_place_right))	
+	msgbox(format("And then Joel's Zigzagoon ate the berries from my hand - he even licked them clean! He
+	was so hungry!"))
+	applymovement (1, moves(walk_in_place_left))	
+	msgbox(format("O-oh, I see...! Well, you should go wash your hands then... \p 
+	{COLOR LIGHT_GRAY}{SHADOW WHITE}Aah... I should
+	tell her and get it over with.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	}
 
 	if(var(VAR_JOELQUESTS) == 3)
-    {msgbox(format("I'm sorry... YADDAH"))}
+    {
+	applymovement (2, moves(walk_in_place_right))		
+	msgbox(format("I'm sorry mom... I shouldn't have said that you are mean."))
+	applymovement (1, moves(walk_in_place_left))	
+	msgbox(format("It's okay, as long as you understand... I'm sorry for yelling at you. \p
+	Now be a good girl, and help mom pack the last things, alright?"))}
 }
 
 script OldaleTownHouse2Tiana {
@@ -78,7 +90,9 @@ script OldaleTownHouse2Tiana {
 	to play with that orphan kid again..."))}
 
 	if(var(VAR_JOELQUESTS) == 3)
-    {msgbox(format("Good, good, as long as you understand... I'm sorry for yelling at you. \p
+    {
+	momrepliesafterargument:
+	msgbox(format("Good, good, as long as you understand... I'm sorry for yelling at you. \p
 	Now be a good girl, and help mom pack the last things, alright?"))}
 	releaseall
 }
@@ -110,11 +124,30 @@ script OldaleTownHouse2AnneArgument {
 	setflag (annegoestojoel)
 	clearflag (anneinroute101)
 
-
 	applymovement(1, moves(walk_in_place_down * 1))
     msgbox(format("Anne! \p Come back here this instant! You hear me!?"))
 	setvar(VAR_JOELQUESTS, 2)
 
 
     releaseall
+}
+
+script OldaleTownHouse2SealedMovingBox {
+	lockall
+    msgbox(format("It's a well sealed box. The label says 'Paul's textbooks'."))
+	releaseall
+}
+
+script OldaleTownHouse2OpenMovingBox {
+	lockall
+    msgbox(format("It's an open cardboard box. It has'My things' written on the side
+	with crayon."))
+	releaseall
+}
+
+script OldaleTownHouse2Everyonegone {
+	lockall
+    msgbox(format("The house seems awfully quiet..."))
+	setvar(VAR_JOELQUESTS, 4)
+	releaseall
 }

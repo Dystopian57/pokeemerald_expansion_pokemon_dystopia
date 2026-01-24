@@ -609,445 +609,447 @@ Route101OrphanJoel::
 # 314 "data/maps/Route101/scripts.pory"
 	lockall
 # 315 "data/maps/Route101/scripts.pory"
-orphanafterapproach:
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 316 "data/maps/Route101/scripts.pory"
+orphanafterapproach:
+# 317 "data/maps/Route101/scripts.pory"
 	compare VAR_JOELQUESTS, 0
 	goto_if_eq Route101OrphanJoel_2
 Route101OrphanJoel_1:
-# 332 "data/maps/Route101/scripts.pory"
+# 333 "data/maps/Route101/scripts.pory"
 	compare VAR_JOELQUESTS, 1
 	goto_if_eq Route101OrphanJoel_5
 Route101OrphanJoel_4:
-# 337 "data/maps/Route101/scripts.pory"
+# 338 "data/maps/Route101/scripts.pory"
 	compare VAR_JOELQUESTS, 2
 	goto_if_eq Route101OrphanJoel_8
 Route101OrphanJoel_7:
-# 339 "data/maps/Route101/scripts.pory"
-Joelfinish:
 # 340 "data/maps/Route101/scripts.pory"
+Joelfinish:
+# 341 "data/maps/Route101/scripts.pory"
 	releaseall
 	end
 
 Route101OrphanJoel_2:
-# 317 "data/maps/Route101/scripts.pory"
-	msgbox Route101OrphanJoel_Text_0
 # 318 "data/maps/Route101/scripts.pory"
-	trainerbattle_no_intro TRAINER_ORPHAN_MALE_101, Orphan101_Outro
+	msgbox Route101OrphanJoel_Text_0
 # 319 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ABANDONED_SHIP, TRUE
+	trainerbattle_no_intro TRAINER_ORPHAN_MALE_101, Orphan101_Outro
 # 320 "data/maps/Route101/scripts.pory"
-	applymovement 1, Route101OrphanJoel_Movement_0
+	playbgm MUS_ABANDONED_SHIP, TRUE
 # 321 "data/maps/Route101/scripts.pory"
-	msgbox Route101OrphanJoel_Text_1
+	applymovement 1, Route101OrphanJoel_Movement_0
 # 322 "data/maps/Route101/scripts.pory"
-	applymovement 1, Route101Ziggy_Movement_0
+	msgbox Route101OrphanJoel_Text_1
 # 323 "data/maps/Route101/scripts.pory"
+	applymovement 1, Route101Ziggy_Movement_0
+# 324 "data/maps/Route101/scripts.pory"
 	msgbox Route101OrphanJoel_Text_2
-# 326 "data/maps/Route101/scripts.pory"
-	waitmessage
 # 327 "data/maps/Route101/scripts.pory"
-	giveitem ITEM_TM43
+	waitmessage
 # 328 "data/maps/Route101/scripts.pory"
+	giveitem ITEM_TM43
+# 329 "data/maps/Route101/scripts.pory"
 	msgbox Route101OrphanJoel_Text_3
-# 330 "data/maps/Route101/scripts.pory"
-	setvar VAR_JOELQUESTS, 1
 # 331 "data/maps/Route101/scripts.pory"
+	setvar VAR_JOELQUESTS, 1
+# 332 "data/maps/Route101/scripts.pory"
 	goto Joelfinish
 	goto Route101OrphanJoel_1
 
 Route101OrphanJoel_5:
-# 333 "data/maps/Route101/scripts.pory"
-	applymovement 1, Route101Ziggy_Movement_0
 # 334 "data/maps/Route101/scripts.pory"
+	applymovement 1, Route101Ziggy_Movement_0
+# 335 "data/maps/Route101/scripts.pory"
 	msgbox Route101OrphanJoel_Text_4
 	goto Route101OrphanJoel_4
 
 Route101OrphanJoel_8:
-# 338 "data/maps/Route101/scripts.pory"
+# 339 "data/maps/Route101/scripts.pory"
 	goto JoelandAnne101talk
 	goto Route101OrphanJoel_7
 
 
 JoelandAnne101meeting::
-# 349 "data/maps/Route101/scripts.pory"
-JoelandAnne101talk:
 # 350 "data/maps/Route101/scripts.pory"
-	lockall
+JoelandAnne101talk:
 # 351 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 352 "data/maps/Route101/scripts.pory"
-	applymovement 1, JoelandAnne101meeting_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 353 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_0
+	applymovement 1, JoelandAnne101meeting_Movement_0
 # 354 "data/maps/Route101/scripts.pory"
-	applymovement 5, JoelandAnne101meeting_Movement_0
+	msgbox JoelandAnne101meeting_Text_0
 # 355 "data/maps/Route101/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL
+	applymovement 5, JoelandAnne101meeting_Movement_0
 # 356 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_1
+	playmoncry SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL
 # 357 "data/maps/Route101/scripts.pory"
-	applymovement 4, JoelandAnne101meeting_Movement_1
+	msgbox JoelandAnne101meeting_Text_1
 # 358 "data/maps/Route101/scripts.pory"
+	applymovement 4, JoelandAnne101meeting_Movement_1
+# 359 "data/maps/Route101/scripts.pory"
 	msgbox JoelandAnne101meeting_Text_2
-# 360 "data/maps/Route101/scripts.pory"
-	applymovement 1, JoelandAnne101meeting_Movement_2
 # 361 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_3
+	applymovement 1, JoelandAnne101meeting_Movement_2
 # 362 "data/maps/Route101/scripts.pory"
-	playse SE_PIN
+	msgbox JoelandAnne101meeting_Text_3
 # 363 "data/maps/Route101/scripts.pory"
-	applymovement 4, JoelandAnne101meeting_Movement_3
+	playse SE_PIN
 # 364 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_4
+	applymovement 4, JoelandAnne101meeting_Movement_3
 # 365 "data/maps/Route101/scripts.pory"
-	applymovement 1, JoelandAnne101meeting_Movement_2
+	msgbox JoelandAnne101meeting_Text_4
 # 366 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_5
-# 368 "data/maps/Route101/scripts.pory"
-	applymovement 4, JoelandAnne101meeting_Movement_1
-# 369 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_6
-# 370 "data/maps/Route101/scripts.pory"
 	applymovement 1, JoelandAnne101meeting_Movement_2
-# 371 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_7
-# 372 "data/maps/Route101/scripts.pory"
+# 367 "data/maps/Route101/scripts.pory"
+	msgbox JoelandAnne101meeting_Text_5
+# 369 "data/maps/Route101/scripts.pory"
 	applymovement 4, JoelandAnne101meeting_Movement_1
+# 370 "data/maps/Route101/scripts.pory"
+	msgbox JoelandAnne101meeting_Text_6
+# 371 "data/maps/Route101/scripts.pory"
+	applymovement 1, JoelandAnne101meeting_Movement_2
+# 372 "data/maps/Route101/scripts.pory"
+	msgbox JoelandAnne101meeting_Text_7
 # 373 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_8
+	applymovement 4, JoelandAnne101meeting_Movement_1
 # 374 "data/maps/Route101/scripts.pory"
+	msgbox JoelandAnne101meeting_Text_8
+# 375 "data/maps/Route101/scripts.pory"
 	applymovement 4, JoelandAnne101meeting_Movement_4
-# 376 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_9
 # 377 "data/maps/Route101/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON_GALAR, CRY_MODE_WEAK
+	msgbox JoelandAnne101meeting_Text_9
 # 378 "data/maps/Route101/scripts.pory"
-	msgbox JoelandAnne101meeting_Text_10
+	playmoncry SPECIES_ZIGZAGOON_GALAR, CRY_MODE_WEAK
 # 379 "data/maps/Route101/scripts.pory"
-	closemessage
+	msgbox JoelandAnne101meeting_Text_10
 # 380 "data/maps/Route101/scripts.pory"
-	applymovement 1, JoelandAnne101meeting_Movement_5
+	closemessage
 # 381 "data/maps/Route101/scripts.pory"
+	applymovement 1, JoelandAnne101meeting_Movement_5
+# 382 "data/maps/Route101/scripts.pory"
 	applymovement 5, JoelandAnne101meeting_Movement_6
-# 384 "data/maps/Route101/scripts.pory"
-	waitmovement 1
 # 385 "data/maps/Route101/scripts.pory"
-	waitmovement 4
+	waitmovement 1
 # 386 "data/maps/Route101/scripts.pory"
+	waitmovement 4
+# 387 "data/maps/Route101/scripts.pory"
 	waitmovement 5
-# 388 "data/maps/Route101/scripts.pory"
-	removeobject 1
 # 389 "data/maps/Route101/scripts.pory"
-	removeobject 4
+	removeobject 1
 # 390 "data/maps/Route101/scripts.pory"
+	removeobject 4
+# 391 "data/maps/Route101/scripts.pory"
 	removeobject 5
-# 392 "data/maps/Route101/scripts.pory"
-	playse SE_EXIT
 # 393 "data/maps/Route101/scripts.pory"
-	setflag joelgoestotent
+	playse SE_EXIT
 # 394 "data/maps/Route101/scripts.pory"
-	setflag anneinroute101
+	setflag joelgoestotent
 # 395 "data/maps/Route101/scripts.pory"
-	clearflag joelinsidetent
+	setflag anneinroute101
 # 396 "data/maps/Route101/scripts.pory"
+	clearflag joelinsidetent
+# 397 "data/maps/Route101/scripts.pory"
 	clearflag annegoestojoel
-# 398 "data/maps/Route101/scripts.pory"
-	setvar VAR_JOELQUESTS, 3
 # 399 "data/maps/Route101/scripts.pory"
+	setvar VAR_JOELQUESTS, 3
+# 400 "data/maps/Route101/scripts.pory"
 	releaseall
 	return
 
 
 Route101RebelApproach0::
-# 404 "data/maps/Route101/scripts.pory"
-	lockall
 # 405 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 406 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 407 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101OrphanJoelApproach0_Movement_0
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 408 "data/maps/Route101/scripts.pory"
-	waitmovement
+	applymovement 3, Route101OrphanJoelApproach0_Movement_0
 # 409 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
+	waitmovement
 # 410 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelApproach0_Text_0
+	setspeaker [ SP_NAME_RICK ]
 # 411 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+	msgbox Route101RebelApproach0_Text_0
 # 412 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+# 413 "data/maps/Route101/scripts.pory"
 	goto rebelafterapproach
 	return
 
 
 Route101RebelApproach1::
-# 416 "data/maps/Route101/scripts.pory"
-	lockall
 # 417 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 418 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 419 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101OrphanJoelApproach0_Movement_0
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 420 "data/maps/Route101/scripts.pory"
-	waitmovement
+	applymovement 3, Route101OrphanJoelApproach0_Movement_0
 # 421 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
-# 422 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelApproach0_Text_0
-# 423 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101OrphanJoelApproach1_Movement_0
-# 424 "data/maps/Route101/scripts.pory"
 	waitmovement
+# 422 "data/maps/Route101/scripts.pory"
+	setspeaker [ SP_NAME_RICK ]
+# 423 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelApproach0_Text_0
+# 424 "data/maps/Route101/scripts.pory"
+	applymovement 3, Route101OrphanJoelApproach1_Movement_0
 # 425 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+	waitmovement
 # 426 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+# 427 "data/maps/Route101/scripts.pory"
 	goto rebelafterapproach
 	return
 
 
 Route101RebelApproach2::
-# 430 "data/maps/Route101/scripts.pory"
-	lockall
 # 431 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 432 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 433 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101OrphanJoelApproach0_Movement_0
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 434 "data/maps/Route101/scripts.pory"
-	waitmovement
+	applymovement 3, Route101OrphanJoelApproach0_Movement_0
 # 435 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
-# 436 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelApproach0_Text_0
-# 437 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101OrphanJoelApproach2_Movement_0
-# 438 "data/maps/Route101/scripts.pory"
 	waitmovement
+# 436 "data/maps/Route101/scripts.pory"
+	setspeaker [ SP_NAME_RICK ]
+# 437 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelApproach0_Text_0
+# 438 "data/maps/Route101/scripts.pory"
+	applymovement 3, Route101OrphanJoelApproach2_Movement_0
 # 439 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+	waitmovement
 # 440 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+# 441 "data/maps/Route101/scripts.pory"
 	goto rebelafterapproach
 	return
 
 
 Route101RebelApproach3::
-# 444 "data/maps/Route101/scripts.pory"
-	lockall
 # 445 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 446 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 447 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101OrphanJoelApproach0_Movement_0
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 448 "data/maps/Route101/scripts.pory"
-	waitmovement
+	applymovement 3, Route101OrphanJoelApproach0_Movement_0
 # 449 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
-# 450 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelApproach0_Text_0
-# 451 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101OrphanJoelApproach3_Movement_0
-# 452 "data/maps/Route101/scripts.pory"
 	waitmovement
+# 450 "data/maps/Route101/scripts.pory"
+	setspeaker [ SP_NAME_RICK ]
+# 451 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelApproach0_Text_0
+# 452 "data/maps/Route101/scripts.pory"
+	applymovement 3, Route101OrphanJoelApproach3_Movement_0
 # 453 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+	waitmovement
 # 454 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route101OrphanJoelApproach0_Movement_1
+# 455 "data/maps/Route101/scripts.pory"
 	goto rebelafterapproach
 	return
 
 
 Route101RebelGruntBattle::
-# 459 "data/maps/Route101/scripts.pory"
-rebelafterapproach:
 # 460 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
+rebelafterapproach:
 # 461 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_0
-# 462 "data/maps/Route101/scripts.pory"
 	setspeaker [ SP_NAME_RICK ]
+# 462 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_0
 # 463 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_1
+	setspeaker [ SP_NAME_RICK ]
 # 464 "data/maps/Route101/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route101RebelGruntBattle_Text_2, Route101RebelGruntBattle_Text_3
+	msgbox Route101RebelGruntBattle_Text_1
 # 465 "data/maps/Route101/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route101RebelGruntBattle_Text_2, Route101RebelGruntBattle_Text_3
+# 466 "data/maps/Route101/scripts.pory"
 	waitmessage
-# 467 "data/maps/Route101/scripts.pory"
+# 468 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route101RebelGruntBattle_2
 Route101RebelGruntBattle_1:
-# 480 "data/maps/Route101/scripts.pory"
+# 481 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route101RebelGruntBattle_5
 Route101RebelGruntBattle_4:
-# 485 "data/maps/Route101/scripts.pory"
-	trainerbattle_no_intro TRAINER_REBEL_GRUNT_101, Rebel101_Outro
 # 486 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
+	trainerbattle_no_intro TRAINER_REBEL_GRUNT_101, Rebel101_Outro
 # 487 "data/maps/Route101/scripts.pory"
+	setspeaker [ SP_NAME_RICK ]
+# 488 "data/maps/Route101/scripts.pory"
 	msgbox Route101RebelGruntBattle_Text_7
-# 489 "data/maps/Route101/scripts.pory"
-	setflag FLAG_TEMP_HIDE_FOLLOWER
 # 490 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101RebelGruntBattle_Movement_3
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 # 491 "data/maps/Route101/scripts.pory"
-repeathit:
+	applymovement 3, Route101RebelGruntBattle_Movement_3
 # 492 "data/maps/Route101/scripts.pory"
-	setspeaker [ NULL ]
+repeathit:
 # 493 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_8
+	setspeaker [ NULL ]
 # 494 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_8
+# 495 "data/maps/Route101/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route101RebelGruntBattle_Text_9, Route101RebelGruntBattle_Text_10
-# 496 "data/maps/Route101/scripts.pory"
+# 497 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route101RebelGruntBattle_8
 Route101RebelGruntBattle_7:
-# 511 "data/maps/Route101/scripts.pory"
+# 512 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route101RebelGruntBattle_11
 Route101RebelGruntBattle_10:
-# 524 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
 # 525 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_17
-# 526 "data/maps/Route101/scripts.pory"
-	playse SE_FLEE
-# 527 "data/maps/Route101/scripts.pory"
-	applymovement 3, Route101RebelGruntBattle_Movement_4
-# 528 "data/maps/Route101/scripts.pory"
 	setspeaker [ SP_NAME_RICK ]
+# 526 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_17
+# 527 "data/maps/Route101/scripts.pory"
+	playse SE_FLEE
+# 528 "data/maps/Route101/scripts.pory"
+	applymovement 3, Route101RebelGruntBattle_Movement_4
 # 529 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_18
+	setspeaker [ SP_NAME_RICK ]
 # 530 "data/maps/Route101/scripts.pory"
-	removeobject 3
+	msgbox Route101RebelGruntBattle_Text_18
 # 531 "data/maps/Route101/scripts.pory"
-	setflag rebel101runsaway
+	removeobject 3
 # 532 "data/maps/Route101/scripts.pory"
-	setflag sharpynotoutsideDLC
+	setflag rebel101runsaway
 # 533 "data/maps/Route101/scripts.pory"
-	setflag camelianotoutsideDLC
+	setflag sharpynotoutsideDLC
 # 534 "data/maps/Route101/scripts.pory"
-	setflag sharpynotinroute103
+	setflag camelianotoutsideDLC
 # 535 "data/maps/Route101/scripts.pory"
+	setflag sharpynotinroute103
+# 536 "data/maps/Route101/scripts.pory"
 	setflag sharpycorphishoutsideDLC
-# 537 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ABANDONED_SHIP, TRUE
 # 538 "data/maps/Route101/scripts.pory"
-	setvar VAR_ROUTE101REBELFLEES, 1
+	playbgm MUS_ABANDONED_SHIP, TRUE
 # 539 "data/maps/Route101/scripts.pory"
-	clearflag FLAG_TEMP_HIDE_FOLLOWER
+	setvar VAR_ROUTE101REBELFLEES, 1
 # 540 "data/maps/Route101/scripts.pory"
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
+# 541 "data/maps/Route101/scripts.pory"
 	releaseall
 	end
 
 Route101RebelGruntBattle_2:
-# 468 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
 # 469 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_4
-# 470 "data/maps/Route101/scripts.pory"
-	playfirstmoncry
-# 471 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Route101RebelGruntBattle_Movement_0
-# 472 "data/maps/Route101/scripts.pory"
-	waitmovement
-# 473 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Route101RebelGruntBattle_Movement_1
-# 474 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route101RebelGruntBattle_Movement_2
-# 475 "data/maps/Route101/scripts.pory"
 	setspeaker [ SP_NAME_RICK ]
+# 470 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_4
+# 471 "data/maps/Route101/scripts.pory"
+	playfirstmoncry
+# 472 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, Route101RebelGruntBattle_Movement_0
+# 473 "data/maps/Route101/scripts.pory"
+	waitmovement
+# 474 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, Route101RebelGruntBattle_Movement_1
+# 475 "data/maps/Route101/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route101RebelGruntBattle_Movement_2
 # 476 "data/maps/Route101/scripts.pory"
+	setspeaker [ SP_NAME_RICK ]
+# 477 "data/maps/Route101/scripts.pory"
 	msgbox Route101RebelGruntBattle_Text_5
 	goto Route101RebelGruntBattle_1
 
 Route101RebelGruntBattle_5:
-# 481 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
 # 482 "data/maps/Route101/scripts.pory"
+	setspeaker [ SP_NAME_RICK ]
+# 483 "data/maps/Route101/scripts.pory"
 	msgbox Route101RebelGruntBattle_Text_6
 	goto Route101RebelGruntBattle_4
 
 Route101RebelGruntBattle_8:
-# 497 "data/maps/Route101/scripts.pory"
-	checkplayergender
 # 498 "data/maps/Route101/scripts.pory"
+	checkplayergender
+# 499 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route101RebelGruntBattle_14
 Route101RebelGruntBattle_13:
-# 504 "data/maps/Route101/scripts.pory"
+# 505 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Route101RebelGruntBattle_19
 	goto Route101RebelGruntBattle_7
 
 Route101RebelGruntBattle_11:
-# 512 "data/maps/Route101/scripts.pory"
-	checkplayergender
 # 513 "data/maps/Route101/scripts.pory"
+	checkplayergender
+# 514 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route101RebelGruntBattle_17
 Route101RebelGruntBattle_16:
-# 519 "data/maps/Route101/scripts.pory"
+# 520 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Route101RebelGruntBattle_21
 	goto Route101RebelGruntBattle_10
 
 Route101RebelGruntBattle_14:
-# 499 "data/maps/Route101/scripts.pory"
-	playse SE_NOT_EFFECTIVE
 # 500 "data/maps/Route101/scripts.pory"
-	waitse
+	playse SE_NOT_EFFECTIVE
 # 501 "data/maps/Route101/scripts.pory"
+	waitse
+# 502 "data/maps/Route101/scripts.pory"
 	msgbox Route101RebelGruntBattle_Text_11
 	goto Route101RebelGruntBattle_13
 
 Route101RebelGruntBattle_17:
-# 514 "data/maps/Route101/scripts.pory"
-	call Route101GruntBatHitShake
 # 515 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_14
+	call Route101GruntBatHitShake
 # 516 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
+	msgbox Route101RebelGruntBattle_Text_14
 # 517 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_15
+	setspeaker [ SP_NAME_RICK ]
 # 518 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_15
+# 519 "data/maps/Route101/scripts.pory"
 	goto repeathit
 	goto Route101RebelGruntBattle_16
 
 Route101RebelGruntBattle_19:
-# 505 "data/maps/Route101/scripts.pory"
-	call Route101GruntBatHitShake
 # 506 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_12
+	call Route101GruntBatHitShake
 # 507 "data/maps/Route101/scripts.pory"
-	setspeaker [ SP_NAME_RICK ]
+	msgbox Route101RebelGruntBattle_Text_12
 # 508 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelGruntBattle_Text_13
+	setspeaker [ SP_NAME_RICK ]
 # 509 "data/maps/Route101/scripts.pory"
+	msgbox Route101RebelGruntBattle_Text_13
+# 510 "data/maps/Route101/scripts.pory"
 	goto repeathit
 	goto Route101RebelGruntBattle_7
 
 Route101RebelGruntBattle_21:
-# 520 "data/maps/Route101/scripts.pory"
-	playse SE_BALL_THROW
 # 521 "data/maps/Route101/scripts.pory"
+	playse SE_BALL_THROW
+# 522 "data/maps/Route101/scripts.pory"
 	msgbox Route101RebelGruntBattle_Text_16
 	goto Route101RebelGruntBattle_10
 
 
 Route101GruntBatHitShake::
-# 548 "data/maps/Route101/scripts.pory"
-	playse SE_EFFECTIVE
 # 549 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8004, 2
+	playse SE_EFFECTIVE
 # 550 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8005, 6
+	setvar VAR_0x8004, 2
 # 551 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8006, 4
+	setvar VAR_0x8005, 6
 # 552 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 4
 # 553 "data/maps/Route101/scripts.pory"
+	setvar VAR_0x8007, 4
+# 554 "data/maps/Route101/scripts.pory"
 	special ShakeCamera
 	return
 
@@ -1094,141 +1096,143 @@ Route101OrphanJoelApproach3_Movement_0:
 	walk_down
 	step_end
 
-# 320 "data/maps/Route101/scripts.pory"
+# 321 "data/maps/Route101/scripts.pory"
 Route101OrphanJoel_Movement_0:
-# 320 "data/maps/Route101/scripts.pory"
+# 321 "data/maps/Route101/scripts.pory"
 	face_left
 	step_end
 
-# 352 "data/maps/Route101/scripts.pory"
+# 353 "data/maps/Route101/scripts.pory"
 JoelandAnne101meeting_Movement_0:
-# 352 "data/maps/Route101/scripts.pory"
+# 353 "data/maps/Route101/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 357 "data/maps/Route101/scripts.pory"
+# 358 "data/maps/Route101/scripts.pory"
 JoelandAnne101meeting_Movement_1:
-# 357 "data/maps/Route101/scripts.pory"
+# 358 "data/maps/Route101/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 360 "data/maps/Route101/scripts.pory"
+# 361 "data/maps/Route101/scripts.pory"
 JoelandAnne101meeting_Movement_2:
-# 360 "data/maps/Route101/scripts.pory"
+# 361 "data/maps/Route101/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 363 "data/maps/Route101/scripts.pory"
+# 364 "data/maps/Route101/scripts.pory"
 JoelandAnne101meeting_Movement_3:
-# 363 "data/maps/Route101/scripts.pory"
+# 364 "data/maps/Route101/scripts.pory"
 	emote_question_mark
-# 363 "data/maps/Route101/scripts.pory"
+# 364 "data/maps/Route101/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 JoelandAnne101meeting_Movement_4:
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
+	walk_right
+# 375 "data/maps/Route101/scripts.pory"
 	walk_up
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_up
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_up
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
-# 374 "data/maps/Route101/scripts.pory"
+# 375 "data/maps/Route101/scripts.pory"
 	walk_right
 	step_end
 
-# 380 "data/maps/Route101/scripts.pory"
+# 381 "data/maps/Route101/scripts.pory"
 JoelandAnne101meeting_Movement_5:
-# 380 "data/maps/Route101/scripts.pory"
+# 381 "data/maps/Route101/scripts.pory"
 	walk_down
-# 380 "data/maps/Route101/scripts.pory"
+# 381 "data/maps/Route101/scripts.pory"
 	walk_down
-# 380 "data/maps/Route101/scripts.pory"
+# 381 "data/maps/Route101/scripts.pory"
 	walk_left
-# 380 "data/maps/Route101/scripts.pory"
+# 381 "data/maps/Route101/scripts.pory"
 	walk_left
-# 380 "data/maps/Route101/scripts.pory"
+# 381 "data/maps/Route101/scripts.pory"
 	walk_left
-# 380 "data/maps/Route101/scripts.pory"
+# 381 "data/maps/Route101/scripts.pory"
 	walk_up
 	step_end
 
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 JoelandAnne101meeting_Movement_6:
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 	walk_down
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 	walk_down
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 	walk_down
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 	walk_left
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 	walk_left
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 	walk_left
-# 381 "data/maps/Route101/scripts.pory"
+# 382 "data/maps/Route101/scripts.pory"
 	walk_up
 	step_end
 
-# 471 "data/maps/Route101/scripts.pory"
+# 472 "data/maps/Route101/scripts.pory"
 Route101RebelGruntBattle_Movement_0:
-# 471 "data/maps/Route101/scripts.pory"
+# 472 "data/maps/Route101/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 473 "data/maps/Route101/scripts.pory"
+# 474 "data/maps/Route101/scripts.pory"
 Route101RebelGruntBattle_Movement_1:
-# 473 "data/maps/Route101/scripts.pory"
+# 474 "data/maps/Route101/scripts.pory"
 	walk_fast_right
-# 473 "data/maps/Route101/scripts.pory"
+# 474 "data/maps/Route101/scripts.pory"
 	face_up
 	step_end
 
-# 474 "data/maps/Route101/scripts.pory"
+# 475 "data/maps/Route101/scripts.pory"
 Route101RebelGruntBattle_Movement_2:
-# 474 "data/maps/Route101/scripts.pory"
+# 475 "data/maps/Route101/scripts.pory"
 	walk_fast_down
-# 474 "data/maps/Route101/scripts.pory"
+# 475 "data/maps/Route101/scripts.pory"
 	face_up
 	step_end
 
-# 490 "data/maps/Route101/scripts.pory"
+# 491 "data/maps/Route101/scripts.pory"
 Route101RebelGruntBattle_Movement_3:
-# 490 "data/maps/Route101/scripts.pory"
+# 491 "data/maps/Route101/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 Route101RebelGruntBattle_Movement_4:
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 	walk_fast_right
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 	walk_fast_right
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 	walk_fast_up
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 	walk_fast_up
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 	walk_fast_up
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 	walk_fast_up
-# 527 "data/maps/Route101/scripts.pory"
+# 528 "data/maps/Route101/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -1241,16 +1245,16 @@ Route101OrphanJoelApproach0_Text_0:
 	.string "Hey, stop!$"
 
 Route101OrphanJoel_Text_0:
-# 317 "data/maps/Route101/scripts.pory"
+# 318 "data/maps/Route101/scripts.pory"
 	.string "You can't go into my Secret Shelter!$"
 
 Route101OrphanJoel_Text_1:
-# 321 "data/maps/Route101/scripts.pory"
+# 322 "data/maps/Route101/scripts.pory"
 	.string "See that tent over there? It's my\n"
 	.string "Secret Shelter.$"
 
 Route101OrphanJoel_Text_2:
-# 323 "data/maps/Route101/scripts.pory"
+# 324 "data/maps/Route101/scripts.pory"
 	.string "Lots of people lived in weird places\n"
 	.string "during the war, to hide from the bad\l"
 	.string "guys.\p"
@@ -1260,7 +1264,7 @@ Route101OrphanJoel_Text_2:
 	.string "this.$"
 
 Route101OrphanJoel_Text_3:
-# 328 "data/maps/Route101/scripts.pory"
+# 329 "data/maps/Route101/scripts.pory"
 	.string "If you teach Secret Power to a Pokémon,\n"
 	.string "you can make Secret Shelters in all\l"
 	.string "sorts of places.\p"
@@ -1268,22 +1272,22 @@ Route101OrphanJoel_Text_3:
 	.string "but I won't tell you about mine!$"
 
 Route101OrphanJoel_Text_4:
-# 334 "data/maps/Route101/scripts.pory"
+# 335 "data/maps/Route101/scripts.pory"
 	.string "Have you made a Secret Shelter yet?\p"
 	.string "I guess you can visit mine, if you need\n"
 	.string "ideas for yours...\p"
 	.string "But don't touch anything!$"
 
 JoelandAnne101meeting_Text_0:
-# 353 "data/maps/Route101/scripts.pory"
+# 354 "data/maps/Route101/scripts.pory"
 	.string "So... you are moving?$"
 
 JoelandAnne101meeting_Text_1:
-# 356 "data/maps/Route101/scripts.pory"
+# 357 "data/maps/Route101/scripts.pory"
 	.string "Zig-zig?$"
 
 JoelandAnne101meeting_Text_2:
-# 358 "data/maps/Route101/scripts.pory"
+# 359 "data/maps/Route101/scripts.pory"
 	.string "Yes... I'm sorry Joel... mom has packed\n"
 	.string "everything up.\p"
 	.string "I think I'll have to go... but I'll come\n"
@@ -1292,146 +1296,147 @@ JoelandAnne101meeting_Text_2:
 	.string "Shelters.$"
 
 JoelandAnne101meeting_Text_3:
-# 361 "data/maps/Route101/scripts.pory"
+# 362 "data/maps/Route101/scripts.pory"
 	.string "O-oh, that's okay...! In fact, you don't\n"
 	.string "need to come back at all!$"
 
 JoelandAnne101meeting_Text_4:
-# 364 "data/maps/Route101/scripts.pory"
+# 365 "data/maps/Route101/scripts.pory"
 	.string "What? Why!?$"
 
 JoelandAnne101meeting_Text_5:
-# 366 "data/maps/Route101/scripts.pory"
-	.string "Because I'll go visit you instead!\p"
+# 367 "data/maps/Route101/scripts.pory"
+	.string "Because... I'll go visit you instead!\p"
 	.string "I was thinking of making new Secret\n"
-	.string "Shelters anyway. I'm sure there's tons\l"
-	.string "of cool places for them in Rustboro.$"
+	.string "Shelters anyway.\p"
+	.string "I'm sure there's tons of cool places for\n"
+	.string "them in Rustboro.$"
 
 JoelandAnne101meeting_Text_6:
-# 369 "data/maps/Route101/scripts.pory"
+# 370 "data/maps/Route101/scripts.pory"
 	.string "Really!? You promise to come visit?$"
 
 JoelandAnne101meeting_Text_7:
-# 371 "data/maps/Route101/scripts.pory"
+# 372 "data/maps/Route101/scripts.pory"
 	.string "I do! Now get going, before your mom\n"
 	.string "gets worried.$"
 
 JoelandAnne101meeting_Text_8:
-# 373 "data/maps/Route101/scripts.pory"
+# 374 "data/maps/Route101/scripts.pory"
 	.string "Okay! It's a promise. I'll be waiting!\p"
 	.string "See you soon Joel!$"
 
 JoelandAnne101meeting_Text_9:
-# 376 "data/maps/Route101/scripts.pory"
+# 377 "data/maps/Route101/scripts.pory"
 	.string "...\p"
 	.string "... let's go inside, Ziggy.$"
 
 JoelandAnne101meeting_Text_10:
-# 378 "data/maps/Route101/scripts.pory"
+# 379 "data/maps/Route101/scripts.pory"
 	.string "Ziiig...$"
 
 Route101RebelApproach0_Text_0:
-# 410 "data/maps/Route101/scripts.pory"
+# 411 "data/maps/Route101/scripts.pory"
 	.string "Hey there, kid!$"
 
 Route101RebelGruntBattle_Text_0:
-# 461 "data/maps/Route101/scripts.pory"
+# 462 "data/maps/Route101/scripts.pory"
 	.string "Wowie, that's a cute Safemon you got\n"
 	.string "there. Bet it's worth a ton!$"
 
 Route101RebelGruntBattle_Text_1:
-# 463 "data/maps/Route101/scripts.pory"
+# 464 "data/maps/Route101/scripts.pory"
 	.string "Hand it over.$"
 
 Route101RebelGruntBattle_Text_2:
-# 464 "data/maps/Route101/scripts.pory"
+# 465 "data/maps/Route101/scripts.pory"
 	.string "Obey$"
 
 Route101RebelGruntBattle_Text_3:
-# 464 "data/maps/Route101/scripts.pory"
+# 465 "data/maps/Route101/scripts.pory"
 	.string "Refuse$"
 
 Route101RebelGruntBattle_Text_4:
-# 469 "data/maps/Route101/scripts.pory"
+# 470 "data/maps/Route101/scripts.pory"
 	.string "Hehe, you're smarter than you loo-...$"
 
 Route101RebelGruntBattle_Text_5:
-# 476 "data/maps/Route101/scripts.pory"
+# 477 "data/maps/Route101/scripts.pory"
 	.string "What the-? Looks like your Pokémon has\n"
 	.string "more guts than you! Hahaha!\p"
 	.string "Guess we'll have to do this the hard\n"
 	.string "way!$"
 
 Route101RebelGruntBattle_Text_6:
-# 482 "data/maps/Route101/scripts.pory"
+# 483 "data/maps/Route101/scripts.pory"
 	.string "Playing brave huh? You really don't look\n"
 	.string "the type.\p"
 	.string "Guess we'll have to do this the hard\n"
 	.string "way!$"
 
 Route101RebelGruntBattle_Text_7:
-# 487 "data/maps/Route101/scripts.pory"
+# 488 "data/maps/Route101/scripts.pory"
 	.string "Grr... alright, that thing of yours is\n"
 	.string "strong, for a lab rat.\p"
 	.string "But you still look weak yourself!\n"
 	.string "UOOOGYAA!$"
 
 Route101RebelGruntBattle_Text_8:
-# 493 "data/maps/Route101/scripts.pory"
+# 494 "data/maps/Route101/scripts.pory"
 	.string "The rebel swings his bat to hit you.\n"
 	.string "What will you do?$"
 
 Route101RebelGruntBattle_Text_9:
-# 494 "data/maps/Route101/scripts.pory"
+# 495 "data/maps/Route101/scripts.pory"
 	.string "Parry$"
 
 Route101RebelGruntBattle_Text_10:
-# 494 "data/maps/Route101/scripts.pory"
+# 495 "data/maps/Route101/scripts.pory"
 	.string "Dodge$"
 
 Route101RebelGruntBattle_Text_11:
-# 501 "data/maps/Route101/scripts.pory"
+# 502 "data/maps/Route101/scripts.pory"
 	.string "You parry the bat with one of your\n"
 	.string "crutches, and the rebel falls on his\l"
 	.string "back.$"
 
 Route101RebelGruntBattle_Text_12:
-# 506 "data/maps/Route101/scripts.pory"
+# 507 "data/maps/Route101/scripts.pory"
 	.string "You fail to block the bat with your\n"
 	.string "arms. The hit hurts like hell.$"
 
 Route101RebelGruntBattle_Text_13:
-# 508 "data/maps/Route101/scripts.pory"
+# 509 "data/maps/Route101/scripts.pory"
 	.string "You're a sturdy girl, I'll give you that!$"
 
 Route101RebelGruntBattle_Text_14:
-# 515 "data/maps/Route101/scripts.pory"
+# 516 "data/maps/Route101/scripts.pory"
 	.string "You are too slow to dodge the hit. It\n"
 	.string "hurts like hell.$"
 
 Route101RebelGruntBattle_Text_15:
-# 517 "data/maps/Route101/scripts.pory"
+# 518 "data/maps/Route101/scripts.pory"
 	.string "You're a sturdy guy, I'll give you that!$"
 
 Route101RebelGruntBattle_Text_16:
-# 521 "data/maps/Route101/scripts.pory"
+# 522 "data/maps/Route101/scripts.pory"
 	.string "You manage to dodge the hit, and the\n"
 	.string "rebel's lost momentum makes him fall on\l"
 	.string "his back.$"
 
 Route101RebelGruntBattle_Text_17:
-# 525 "data/maps/Route101/scripts.pory"
+# 526 "data/maps/Route101/scripts.pory"
 	.string "D-damn it! They told me Littleroot kids\n"
 	.string "were easy prey!$"
 
 Route101RebelGruntBattle_Text_18:
-# 529 "data/maps/Route101/scripts.pory"
+# 530 "data/maps/Route101/scripts.pory"
 	.string "Screw this!$"
 
 Orphan101_Outro::
-# 345 "data/maps/Route101/scripts.pory"
+# 346 "data/maps/Route101/scripts.pory"
 	.string "... you still can't go into my Secret\n Shelter.$"
 
 Rebel101_Outro::
-# 544 "data/maps/Route101/scripts.pory"
+# 545 "data/maps/Route101/scripts.pory"
 	.string "Shit...$"

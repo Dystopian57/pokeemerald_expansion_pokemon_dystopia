@@ -1,0 +1,74 @@
+raw `
+JoelTent_MapScripts::
+	.byte 0
+
+`
+
+script JoelTentDoll {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("It's a Super Substitute doll... or is it? \p You poke it just to be sure. This
+    one seems like the real deal."))
+	applymovement(4, moves(walk_in_place_up * 1))
+    msgbox(format("Hey, don't touch it - it's not yours! It's not even mine..."))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, face_right))
+    goto (thisisannedoll)
+	releaseall
+}
+
+script JoelTentZigzagoon {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL)
+    msgbox(format("Giiiz!"))
+	releaseall
+}
+
+script JoelTentJoel {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+	if(var(VAR_JOELQUESTS) == 3 && !flag (anneandfamilygone))
+    {
+        thisisannedoll:
+        msgbox(format("This... this is Anne's doll! She must have forgotten it last time we
+        played here."))
+        applymovement(4, moves(face_player))
+        msgbox(format("Hey, do you mind returning it to her? I'd go myself, but her mom always
+        gets mad when I go visit."))
+        applymovement(4, moves(face_up))
+        removeobject (2)
+        waitmovement (4)
+        applymovement(4, moves(face_player))
+        waitmovement (4)
+	    giveitem (ITEM_POKESHI_DOLL)
+        msgbox(format("Hurry up, before she and her family move away!"))
+        setflag (anneandfamilygone) 
+        setflag (annegoestojoel)
+	    setvar(VAR_JOELQUESTS, 4)
+        goto (joelgivesdoll)}
+
+	if(var(VAR_JOELQUESTS) == 3 && flag (anneandfamilygone))
+    {   msgbox(format("What are you waiting for? Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!"))}
+
+	if(var(VAR_JOELQUESTS) == 4)
+    {   applymovement(4, moves(face_player))
+        msgbox(format("What? Anne was already gone!? Oh no... \p She told me she can't
+        sleep without that doll. And she'll miss it so much in her new home... \p I know
+        it's a lot to ask... but if you go to Rustboro, could you please give it to her?"))
+        applymovement(4, moves(face_right))
+        msgbox(format("I said I'd go visit her... but it was only so she wouldn't be sad. \p
+        To go to Rustboro, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
+        guards will stop you at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}."))
+        applymovement(4, moves(face_player))
+        msgbox(format("There's no way they'll let me through... but you look like a soldier. Perhaps
+        they'll let you"))
+	    setvar(VAR_JOELQUESTS, 5)
+        }
+    if(var(VAR_JOELQUESTS) == 5)
+        {msgbox(format("Please, you have to give Anne her doll back. \p She'll forget about me
+        eventually... but I still don't want her to be sad."))}
+
+    joelgivesdoll:
+    releaseall
+}

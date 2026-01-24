@@ -6,6 +6,7 @@ DLC_MapScripts::
 
 script OldaleDLC_GoToSeatForTherapyLeft {
 	lockall
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
     waitmovement(0)
@@ -18,6 +19,7 @@ script OldaleDLC_GoToSeatForTherapyLeft {
 
 script OldaleDLC_GoToSeatForTherapyRight {
 	lockall
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
     waitmovement(0)

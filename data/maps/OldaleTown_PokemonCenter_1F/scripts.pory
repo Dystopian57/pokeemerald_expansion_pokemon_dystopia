@@ -83,9 +83,9 @@ script OldalePokeCenterInjuredGuy {
 script OldalePokeCenterMapBoy {
     lockall
     applymovement (7, moves(face_player))
-    msgbox(format("In school we learnt that the area from Route 103 to Route 104 is called
-	the 'Exclusion Zone'. \p It's a dangerous place where people who hate Devon have gathered,
-	and you need a special pass to get out of it."))
+    msgbox(format("In school we learnt that the region from Route 103 to Route 104 is called
+	the {COLOR GREEN}'Exclusion Zone'{COLOR DARK_GRAY}. \p It's a dangerous place where people who hate Devon have gathered,
+	and you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} to get out of it."))
 	applymovement (7, moves(face_up))
     releaseall
     }

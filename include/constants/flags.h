@@ -82,7 +82,7 @@
 #define annegoestojoel    0x44 // Unused Flag
 #define anneinroute101    0x45 // Unused Flag
 #define joelinsidetent    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
+#define anneandfamilygone    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag

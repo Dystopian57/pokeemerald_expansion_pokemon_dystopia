@@ -37,20 +37,37 @@ script Oldale103Sign {
 
 script OldaleOutsideHikerGuy {
     lockall
-    applymovement (14, moves(face_player))
-    msgbox(format("They say those Rebels are all about fighting Devon, and things
-    like the Safemon project... \p But most of them are old Team Aqua and Team Magma members.
-    \pIf you ask me, they're the same hoodlums, with a different name!"))
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if(var(VAR_JOELQUESTS) == 0)
+    {applymovement (14, moves(face_player))
+    msgbox(format("Did you know? My son is top of the class at the DLC! \p He's as sharp as
+    his father. He'll make it big in Rustboro one day, I'm sure."))}
+
+	if(var(VAR_JOELQUESTS) == 1)
+    {applymovement (14, moves(face_player))
+    msgbox(format("Did you know? My son is top of the class at the DLC! \p He's as sharp as
+    his father. He'll make it big in Rustboro one day, I'm sure."))}
+
+	if(var(VAR_JOELQUESTS) == 2)
+    {applymovement (14, moves(face_player))
+    msgbox(format("Arf, arf... I tried catching up to my daugther, but she's so fast...!
+    \p I hope she doesn't go too far. We are moving to Rustboro today."))}
+
+	if(var(VAR_JOELQUESTS) == 3)
+    {applymovement (14, moves(face_player))
+    msgbox(format("My daugther is finally back... I can't wait to get out of
+    this place. \p I assure you, it's not what it used to be..."))}
+
     releaseall
     }
 
 script OldaleOutsideParkGuy {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (11, moves(face_player))
     msgbox(format("It's tough being a trader around here lately... tons of competition.\pThere's
-    scammers taking advantage of war tourists, war victims selling their valuables to meet
-    their needs...
-    \p You be careful where you shop now."))
+    scammers taking advantage of war tourists, war victims selling their valuables to stay afloat...
+    \p You should be careful where you shop!"))
     releaseall
     }
 
@@ -268,6 +285,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
 
 script OldaleCamelia {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (17, moves(face_player))
     setspeaker ([SP_NAME_CAMELIA])
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
