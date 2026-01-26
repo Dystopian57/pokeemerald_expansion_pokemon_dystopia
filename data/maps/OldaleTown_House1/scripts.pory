@@ -38,5 +38,6 @@ script OldaleHouse1Woman {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("It's been hard raising my daugther alone without my husband. \p If only he
     had not enlisted... I begged him not to."))
+	applymovement (1, moves(face_up))
     releaseall
 }

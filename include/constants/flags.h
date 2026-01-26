@@ -67,7 +67,7 @@
 #define SinkNinkaburiGone    0x35 // Unused Flag
 #define Birchafter1stgreeting    0x36 // Unused Flag
 #define Donutquestaccepted    0x37 // Unused Flag
-#define joelgoestotent    0x38 // Unused Flag
+#define joelin101   0x38 // Unused Flag
 #define rebel101defeated    0x39 // Unused Flag
 #define rebel101runsaway   0x3A // Unused Flag
 #define sharpynotoutsideDLC    0x3B // Unused Flag

@@ -1611,7 +1611,7 @@ script Lab_EventScript_Starter1{
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
 			removefieldmugshot
-            msgbox("Received Bulbasynth!")
+            msgbox("I received a Bulbasynth!")
             removeobject(1)
             setflag(GOTSTARTER1)
             call(NicknamePartyMon1)
@@ -1722,6 +1722,7 @@ script Lab_EventScript_Starter2{
 	waitmessage
 	msgbox("So? Do you choose it?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+		removefieldmugshot
         givemon(SPECIES_SMOTHQUIL, 5, ITEM_CHARCOAL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
@@ -1951,9 +1952,11 @@ if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
 		playse (MUS_RG_OBTAIN_KEY_ITEM)
 		fadeinbgm (0)
 		setspeaker (NULL)
+		removefieldmugshot
 		msgbox (format("Obtained the DEVONAV!"))
 		setflag(FLAG_SYS_POKENAV_GET)
 		setspeaker ([SP_NAME_BALSAM])
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 		msgbox (format("My number is already registered, so call me if there's an emergency."))
 		removefieldmugshot
  		}

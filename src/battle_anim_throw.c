@@ -567,8 +567,8 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .callback = SpriteCallbackDummy,
     },
     [BALL_PARK] = {
-        .tileTag = TAG_PARTICLES_PARKBALL,
-        .paletteTag = TAG_PARTICLES_PARKBALL,
+        .tileTag = TAG_PARTICLES_POKEBALL,
+        .paletteTag = TAG_PARTICLES_POKEBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
         .anims = sAnims_BallParticles,
         .images = NULL,

@@ -64,6 +64,7 @@ script OldaleTownHouse2Anne {
 	msgbox(format("O-oh, I see...! Well, you should go wash your hands then... \p 
 	{COLOR LIGHT_GRAY}{SHADOW WHITE}Aah... I should
 	tell her and get it over with.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	releaseall
 	}
 
 	if(var(VAR_JOELQUESTS) == 3)
@@ -73,6 +74,7 @@ script OldaleTownHouse2Anne {
 	applymovement (1, moves(walk_in_place_left))	
 	msgbox(format("It's okay, as long as you understand... I'm sorry for yelling at you. \p
 	Now be a good girl, and help mom pack the last things, alright?"))}
+	releaseall
 }
 
 script OldaleTownHouse2Tiana {
@@ -148,6 +150,6 @@ script OldaleTownHouse2OpenMovingBox {
 script OldaleTownHouse2Everyonegone {
 	lockall
     msgbox(format("The house seems awfully quiet..."))
-	setvar(VAR_JOELQUESTS, 4)
+	setvar(VAR_JOELQUESTS, 5)
 	releaseall
 }

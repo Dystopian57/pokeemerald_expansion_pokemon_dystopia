@@ -14,11 +14,10 @@ script OldaleWeather {
 	if (var(VAR_OLDALE_PHASE) == 0)
 	{setweather (WEATHER_SHADE)
 }
-	if (var(VAR_LITTLEROOT_PHASE) == 1)
+	if (var(VAR_OLDALE_PHASE) == 1)
 	{setweather (WEATHER_SHADE)
 }
-
-	if (var(VAR_LITTLEROOT_PHASE) == 2)
+	if (var(VAR_OLDALE_PHASE) == 2)
 	{setweather (WEATHER_SHADE)
 }
 }
@@ -32,6 +31,12 @@ script OldaleTownSign {
 script Oldale103Sign {
     lockall
     msgbox(format("Route 103 ahead. \p In case of flood, retreat behind the flood gates."))
+    releaseall   
+}
+
+script OldaleDLCSign {
+    lockall
+    msgbox(format("Devon Learning Center. \n “Come learn in a safe environment.”"))
     releaseall   
 }
 
@@ -51,7 +56,7 @@ script OldaleOutsideHikerGuy {
 	if(var(VAR_JOELQUESTS) == 2)
     {applymovement (14, moves(face_player))
     msgbox(format("Arf, arf... I tried catching up to my daugther, but she's so fast...!
-    \p I hope she doesn't go too far. We are moving to Rustboro today."))}
+    \p I hope she doesn't go too far. We are moving to {COLOR BLUE}Rustboro{COLOR DARK_GRAY} today."))}
 
 	if(var(VAR_JOELQUESTS) == 3)
     {applymovement (14, moves(face_player))
@@ -99,6 +104,7 @@ script OldaleTown_GotoTherapy{
 
 script OldaleSharpyCameliaOutDLCCutscene {
     lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 	setspeaker ([SP_NAME_CAMELIA])
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
     msgbox(format("Sharpy... what did you even signed us up for here?"))

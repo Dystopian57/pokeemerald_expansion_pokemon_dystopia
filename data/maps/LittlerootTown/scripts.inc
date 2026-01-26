@@ -4116,24 +4116,24 @@ OldManThanks_5:
 # 2108 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_9
 # 2109 "data/maps/LittlerootTown/scripts.pory"
-	closemessage
-# 2110 "data/maps/LittlerootTown/scripts.pory"
-	applymovement 1, OldManThanks_Movement_3
-# 2111 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 1
-# 2112 "data/maps/LittlerootTown/scripts.pory"
-	removeobject 1
-# 2113 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy 1, 4, 17
-# 2114 "data/maps/LittlerootTown/scripts.pory"
-	setvar VAR_LITTLEROOT_PHASE, 5
-# 2115 "data/maps/LittlerootTown/scripts.pory"
-	setflag anneinroute101
-# 2116 "data/maps/LittlerootTown/scripts.pory"
-	setflag joelinsidetent
-# 2117 "data/maps/LittlerootTown/scripts.pory"
 	removefieldmugshot
-# 2119 "data/maps/LittlerootTown/scripts.pory"
+# 2110 "data/maps/LittlerootTown/scripts.pory"
+	closemessage
+# 2111 "data/maps/LittlerootTown/scripts.pory"
+	applymovement 1, OldManThanks_Movement_3
+# 2112 "data/maps/LittlerootTown/scripts.pory"
+	waitmovement 1
+# 2113 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 1
+# 2114 "data/maps/LittlerootTown/scripts.pory"
+	setobjectxy 1, 4, 17
+# 2115 "data/maps/LittlerootTown/scripts.pory"
+	setvar VAR_LITTLEROOT_PHASE, 5
+# 2116 "data/maps/LittlerootTown/scripts.pory"
+	setflag anneinroute101
+# 2117 "data/maps/LittlerootTown/scripts.pory"
+	setflag joelinsidetent
+# 2120 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
@@ -4157,7 +4157,7 @@ OldManThanks_6:
 
 
 Respawnatplayerbed::
-# 2122 "data/maps/LittlerootTown/scripts.pory"
+# 2123 "data/maps/LittlerootTown/scripts.pory"
 	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	end
 
@@ -4236,21 +4236,21 @@ OldManThanks_Movement_2:
 	face_up
 	step_end
 
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 OldManThanks_Movement_3:
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
 	step_end
 

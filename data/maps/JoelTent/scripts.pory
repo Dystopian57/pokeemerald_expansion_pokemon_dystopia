@@ -9,11 +9,14 @@ script JoelTentDoll {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("It's a Super Substitute doll... or is it? \p You poke it just to be sure. This
     one seems like the real deal."))
-	applymovement(4, moves(walk_in_place_up * 1))
+    if(var(VAR_JOELQUESTS) == 3)
+	{
+    applymovement(4, moves(walk_in_place_up * 1))
     msgbox(format("Hey, don't touch it - it's not yours! It's not even mine..."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, face_right))
-    goto (thisisannedoll)
-	releaseall
+    goto (thisisannedoll)}
+    else {
+	releaseall}
 }
 
 script JoelTentZigzagoon {
@@ -48,10 +51,11 @@ script JoelTentJoel {
 	    setvar(VAR_JOELQUESTS, 4)
         goto (joelgivesdoll)}
 
-	if(var(VAR_JOELQUESTS) == 3 && flag (anneandfamilygone))
-    {   msgbox(format("What are you waiting for? Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!"))}
+	if(var(VAR_JOELQUESTS) == 4 && flag (anneandfamilygone))
+    {   applymovement(4, moves(face_player))
+        msgbox(format("What are you waiting for? Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!"))}
 
-	if(var(VAR_JOELQUESTS) == 4)
+	if(var(VAR_JOELQUESTS) == 5)
     {   applymovement(4, moves(face_player))
         msgbox(format("What? Anne was already gone!? Oh no... \p She told me she can't
         sleep without that doll. And she'll miss it so much in her new home... \p I know
@@ -62,11 +66,12 @@ script JoelTentJoel {
         guards will stop you at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}."))
         applymovement(4, moves(face_player))
         msgbox(format("There's no way they'll let me through... but you look like a soldier. Perhaps
-        they'll let you"))
-	    setvar(VAR_JOELQUESTS, 5)
+        they'll let you."))
+	    setvar(VAR_JOELQUESTS, 6)
         }
-    if(var(VAR_JOELQUESTS) == 5)
-        {msgbox(format("Please, you have to give Anne her doll back. \p She'll forget about me
+    if(var(VAR_JOELQUESTS) == 6)
+        {applymovement(4, moves(face_player))
+        msgbox(format("Please, you have to give Anne her doll back. \p She'll forget about me
         eventually... but I still don't want her to be sad."))}
 
     joelgivesdoll:

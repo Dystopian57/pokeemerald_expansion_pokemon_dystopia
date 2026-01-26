@@ -151,7 +151,8 @@
     "ArcadeElevator",
     "Sableye_Lair",
     "Hermit_Tree",
-    "Arcade_Elevator_To_Barracks"
+    "Arcade_Elevator_To_Barracks",
+    "PetLandfillMilitaryShop"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

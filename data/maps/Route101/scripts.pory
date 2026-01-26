@@ -1,21 +1,4 @@
 raw `
-Route101_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_OnFrame
-	.byte 0
-
-Route101_OnTransition:
-	call ProfBirch_EventScript_UpdateLocation
-	end
-
-Route101_OnFrame:
-	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
-	.2byte 0
-
-Route101_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE101_STATE, 1
-	end
 
 
 Route101_EventScript_PreventExitSouth::
@@ -249,6 +232,18 @@ Route101_Text_RouteSign:
 
 `
 
+mapscripts Route101_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: Route101Weather}
+	
+
+script Route101Weather {
+
+	if (var(VAR_OLDALE_PHASE) == 0)
+	{setweather (WEATHER_SHADE)
+}
+}
+
+
  script Route101Ziggy {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -315,13 +310,16 @@ script Route101OrphanJoel{
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	orphanafterapproach:
 	if(var(VAR_JOELQUESTS) == 0)
-	{msgbox(format("You can't go into my Secret Shelter!"))
+	{
+	applymovement (1, moves(face_player))
+	msgbox(format("You can't go into my Secret Shelter!"))
 	trainerbattle_no_intro(TRAINER_ORPHAN_MALE_101, Orphan101_Outro)
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (1, moves(face_left))
 	msgbox(format("See that tent over there? It's my Secret Shelter."))
 	applymovement (1, moves(face_player))
-	msgbox (format("Lots of people lived in
+	msgbox (format("Many people lived in
 	weird places during the war, to hide from the bad guys.\pSome still do it, if they don't
 	have anywhere else to go.\pYou look a bit like them, so you can have this."))
 	waitmessage
@@ -391,7 +389,7 @@ script JoelandAnne101meeting {
 	removeobject (5)
 
 	playse (SE_EXIT)
-	setflag (joelgoestotent)
+	setflag (joelin101)
 	setflag (anneinroute101)
 	clearflag (joelinsidetent)
 	clearflag (annegoestojoel)
@@ -525,7 +523,7 @@ script Route101RebelGruntBattle{
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("D-damn it! They told me Littleroot kids were easy prey!"))
 	playse (SE_FLEE)
-	applymovement (3, moves(walk_fast_right *2 , walk_fast_up * 5))
+	applymovement (3, moves(walk_fast_right *2 , walk_fast_up * 6))
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("Screw this!"))
 	removeobject(3)

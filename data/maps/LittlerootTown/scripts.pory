@@ -2106,6 +2106,7 @@ script OldManThanks {
 		setspeaker ([SP_NAME_BIRCH])
 		applymovement (1, moves(face_up))
 		msgbox (format("But have faith in your Pokémon, and you should be fine. Good bye!"))
+		removefieldmugshot
 		closemessage
 		applymovement (1, moves(walk_down * 7))
 		waitmovement (1)
@@ -2114,7 +2115,7 @@ script OldManThanks {
 		setvar(VAR_LITTLEROOT_PHASE, 5)
 		setflag (anneinroute101)
 		setflag (joelinsidetent)
-		removefieldmugshot
+
 	//Receive Running shoes
 	releaseall}
 

@@ -1282,3 +1282,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Arcade_Elevator_To_Barracks/scripts.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/PetLandfillMilitaryShop/scripts.inc"
