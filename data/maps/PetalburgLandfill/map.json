@@ -62,6 +62,13 @@
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY",
       "dest_warp_id": "8"
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_PET_LANDFILL_MILITARY_SHOP",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

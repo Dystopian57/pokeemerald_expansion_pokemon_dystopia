@@ -65,6 +65,8 @@ OldaleHouse1Woman::
 # 39 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1Woman_Text_0
 # 41 "data/maps/OldaleTown_House1/scripts.pory"
+	applymovement 1, OldaleHouse1Woman_Movement_1
+# 42 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
@@ -73,6 +75,12 @@ OldaleHouse1Woman::
 OldaleHouse1Woman_Movement_0:
 # 37 "data/maps/OldaleTown_House1/scripts.pory"
 	face_player
+	step_end
+
+# 41 "data/maps/OldaleTown_House1/scripts.pory"
+OldaleHouse1Woman_Movement_1:
+# 41 "data/maps/OldaleTown_House1/scripts.pory"
+	face_up
 	step_end
 
 OldaleHouse1Girl_Text_0:

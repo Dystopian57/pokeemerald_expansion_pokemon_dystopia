@@ -1,0 +1,147 @@
+raw `
+LittlerootMausoleum_MapScripts::
+	.byte 0
+`
+
+script LittlerootMausoleum_Shuppet {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (!flag (hexgirlshuppetmeet))
+    {
+    playmoncry(SPECIES_SHUPPET, CRY_MODE_WEAK)  
+    msgbox (format("The girl seems to be having a bad dream, while the Shuppet floats next to her..."))
+    msgbox (format("What will you do?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Battle", "Shoo away", "Leave")
+		waitmessage
+
+	if(var(VAR_RESULT) == 0){
+    goto (shuppetisjusthelping)
+    }
+
+    if(var(VAR_RESULT) == 1){
+    shuppetisjusthelping:
+    applymovement (1, moves(emote_exclamation_mark, face_right))
+    playse (SE_PIN)
+    msgbox (format("Wait... it's not... trying to hurt me...!
+    {COLOR LIGHT_GRAY}{SHADOW WHITE}Cough cough...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+    applymovement (1, moves(face_down))
+    msgbox (format("I'm just, very cold... Shuppet is trying to keep me warm... \p But Ghost
+    Pokémon can't do that... their bodies just go right through... \p Ah... if only I had...
+    a {COLOR RED}blanket{COLOR DARK_GRAY} or something to cover myself..."))
+    setflag (hexgirlshuppetmeet)
+    goto (afterhexgirl1stmeet)
+    }
+
+    if(var(VAR_RESULT) == 2){
+    closemessage
+    }}
+
+	if (flag (hexgirlshuppetmeet) && (checkitem (ITEM_SCROLL_OF_DARKNESS)  == FALSE))
+    {
+    playmoncry(SPECIES_SHUPPET, CRY_MODE_WEAK)     
+    msgbox (format("The Shuppet keeps trying to warm the girl on the floor, to no avail..."))}
+
+	if (flag (hexgirlshuppetmeet) && (checkitem (ITEM_SCROLL_OF_DARKNESS)  == TRUE))
+    {
+    playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
+    applymovement (2, moves(face_player))     
+    msgbox (format("The Shuppet regards you knowingly and lets you pass..."))
+    removeobject (2)
+    setflag (hexgirlshuppetmoves)
+    clearflag (hexgirlshuppetnormalspot)
+    playse (SE_M_CONFUSE_RAY)
+    
+    }
+    afterhexgirl1stmeet:
+	releaseall
+}
+
+
+script LittlerootMausoleum_HexGirl {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (1, moves(face_player))
+
+	if (!flag (refusedtohelphexgirl1st) && !flag (agreedtohelphexgirl1st))
+    {
+
+    msgbox (format("BRRT... o-oh... is that... for me?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		waitmessage
+    	if(var(VAR_RESULT) == 0){
+        msgbox (format("R-really...? Thank you...!"))
+        removeitem (ITEM_SCROLL_OF_DARKNESS)
+	    applymovement (1, moves(face_up))
+        waitmovement (1)
+    	clearflag (beddinginmausoleum)
+        addobject (3)
+	    applymovement (1, moves(face_down))
+        msgbox (format("Aah, yes... this is much better."))
+	    applymovement (1, moves(face_player))
+        msgbox (format("You see, I'm the caretaker of this mausoleum... \p Many of the Pokémon and
+        people that lost their lives during the war rest here now. \p It used to be visited quite
+        frequently - but not so much anymore."))
+	    applymovement (1, moves(face_down))
+        msgbox (format("I guess people move on, or mourn in different ways... that's okay..."))
+	    applymovement (1, moves(face_player))
+        msgbox (format("But my employers, at Devon Corp... they also stopped sending me supplies."))
+
+        msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+        What should I do?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "You should go home", "I will help you")
+
+            if(var(VAR_RESULT) == 0){
+            msgbox (format("W-well... I just can't leave everyone behind, you know... \p They may be dead...
+            but some still feel lonely..."))
+            applymovement (1, moves(face_player))
+            msgbox (format("I... I will figure something out. Don't worry..."))
+            setflag (refusedtohelphexgirl1st)
+            goto (endhexgirlscript)
+            
+            }
+            if(var(VAR_RESULT) == 1){
+            changedmindwillhelphexgirl:
+            msgbox (format("Y-you will... thank you! I-I will gladly accept your help... \p I mean,
+            you've done more than enough for now... \p B-but if I need something else... could I...
+            could I call you? \p Here, this is my Pokenav number..."))
+            //give pokenav number
+            msgbox (format("Oh, and this - this is for your trouble...!"))
+            //giveitemreward
+            msgbox (format("Thank so much again... now, please be safe out there."))
+            setflag (agreedtohelphexgirl1st)
+            goto (endhexgirlscript) }}
+
+        if(var(VAR_RESULT) == 1){
+        msgbox (format("O-oh, of course not... I'm sorry for assuming..."))}}
+
+	if (flag (refusedtohelphexgirl1st) && !flag (agreedtohelphexgirl1st))
+    {msgbox (format("O-oh... have you... changed your mind? Will you help me with caring
+    for the mausoleum?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+            if(var(VAR_RESULT) == 0){
+            goto (changedmindwillhelphexgirl)
+            }
+            if(var(VAR_RESULT) == 1){
+            msgbox (format("R-right, sorry... I understand... it's not a very good job...
+            \p Though I happen to like it."))
+            goto (endhexgirlscript)}}
+
+	if (flag (agreedtohelphexgirl1st))
+    
+    {
+    msgbox (format("Don't worry, I am okay now. And warm! \p And I don't feel lonely - I have Shuppet and
+    the rest, keeping me company!"))
+    //ghost poke react and noises
+    msgbox (format("I will give you a call if I need something again. Thank you..."))
+    }
+    
+endhexgirlscript:
+releaseall
+}
+    
+script LittlerootMausoleum_ShuppetPost1stquest {
+    lockall
+	playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
+    msgbox (format("Shuuu..."))
+    releaseall
+}

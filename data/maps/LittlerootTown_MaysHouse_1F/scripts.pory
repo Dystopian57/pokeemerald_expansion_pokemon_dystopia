@@ -665,12 +665,12 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "own POKéMON?$"
 
 `
-
 mapscripts LittlerootTown_RivalsHouse_1F_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: HidePokeball}
+    MAP_SCRIPT_ON_LOAD: GenderedSprite
+	}
 
-script HidePokeball {
-	
+script GenderedSprite {
+call(Common_EventScript_SetupRivalGfxId)
 }
 
 script RivalWatchout {

@@ -359,6 +359,21 @@ script PlayerRoomTrashCan {
 	releaseall		
 }
 
+script PlayerRoomWarmBedding{
+	lockall
+	if (!flag (FLAG_ITEM_WARM_BEDDING))
+	{msgbox (format("It's an extra set of bedding for the winter."))
+	removeobject (14)
+	giveitem (ITEM_SCROLL_OF_DARKNESS)
+	setflag (FLAG_ITEM_WARM_BEDDING)}
+	else
+	{msgbox (format("There's nothing here."))}
+	releaseall		
+}
+
+
+
+
 script PlayerRoomTextbooks {
 	lockall
 	msgbox (format("A pile of textbooks lies beside the bed."))

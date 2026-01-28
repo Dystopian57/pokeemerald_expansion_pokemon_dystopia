@@ -1330,12 +1330,14 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "own POKéMON?$"
 
 LittlerootTown_RivalsHouse_1F_MapScripts::
-# 670 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, HidePokeball
+# 669 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, GenderedSprite
 	.byte 0
 
 
-HidePokeball::
+GenderedSprite::
+# 673 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	call Common_EventScript_SetupRivalGfxId
 	return
 
 

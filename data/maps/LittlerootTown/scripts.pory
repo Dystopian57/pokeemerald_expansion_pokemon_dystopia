@@ -1828,14 +1828,14 @@ mapscripts LittlerootTown_MapScripts {
 script NoRain {
 
 	if (var(VAR_LITTLEROOT_PHASE) == 5)
-	{setweather (WEATHER_SUNNY_CLOUDS)
+	{setweather (WEATHER_SHADE)
 }
 	if (var(VAR_LITTLEROOT_PHASE) == 6)
-	{setweather (WEATHER_SUNNY_CLOUDS)
+	{setweather (WEATHER_SHADE)
 }
 
 	if (var(VAR_LITTLEROOT_PHASE) == 7)
-	{setweather (WEATHER_SUNNY_CLOUDS)
+	{setweather (WEATHER_SUNNY)
 }
 }
 
@@ -2017,6 +2017,8 @@ script Littleroot_Idletalk_Oldman{
 
 script LittlerootTown_Eventscript_Oldmanasking {
 	lockall
+    setflag (hexgirlshuppetnormalspot)
+	setflag (beddinginmausoleum)
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (checkonrival))
 		{playse (SE_PIN)

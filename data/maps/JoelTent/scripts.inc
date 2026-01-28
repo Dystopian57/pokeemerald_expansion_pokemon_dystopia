@@ -66,9 +66,9 @@ JoelTentJoel_11:
 	compare VAR_JOELQUESTS, 6
 	goto_if_eq JoelTentJoel_15
 JoelTentJoel_14:
-# 76 "data/maps/JoelTent/scripts.pory"
-joelgivesdoll:
 # 77 "data/maps/JoelTent/scripts.pory"
+joelgivesdoll:
+# 78 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
@@ -141,6 +141,8 @@ JoelTentJoel_12:
 
 JoelTentJoel_15:
 # 73 "data/maps/JoelTent/scripts.pory"
+	applymovement 4, JoelTentJoel_Movement_0
+# 74 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentJoel_Text_7
 	goto JoelTentJoel_14
 
@@ -235,10 +237,10 @@ JoelTentJoel_Text_6:
 # 68 "data/maps/JoelTent/scripts.pory"
 	.string "There's no way they'll let me through...\n"
 	.string "but you look like a soldier. Perhaps\l"
-	.string "they'll let you$"
+	.string "they'll let you.$"
 
 JoelTentJoel_Text_7:
-# 73 "data/maps/JoelTent/scripts.pory"
+# 74 "data/maps/JoelTent/scripts.pory"
 	.string "Please, you have to give Anne her doll\n"
 	.string "back.\p"
 	.string "She'll forget about me eventually... but\n"
