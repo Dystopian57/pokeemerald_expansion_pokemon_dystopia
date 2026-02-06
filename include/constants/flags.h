@@ -56,7 +56,7 @@
 #define Unsafeningtutodone  0x2A // Unused Flag
 #define Unsafenmaterialtutodone         0x2B // Unused Flag
 #define AttendedOldaleTherapy     0x2C // Unused Flag
-#define unusedflag3    0x2D // Unused Flag
+#define touristhelped     0x2D // Unused Flag
 #define AideeQuestAccepted  0x2E // Unused Flag
 #define checkonrival        0x2F // Unused Flag
 #define rivalhouse1stdialogue    0x30 // Unused Flag
@@ -89,7 +89,7 @@
 #define refusedtohelphexgirl1st    0x4B // Unused Flag
 #define agreedtohelphexgirl1st    0x4C // Unused Flag
 #define hexgirlshuppetnormalspot   0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
+#define touristonbike    0x4E // Unused Flag
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 
 // Scripts
@@ -445,7 +445,7 @@
 #define FLAG_REGISTERED_TRENT                (TRAINER_REGISTERED_FLAGS_START + REMATCH_TRENT)
 #define FLAG_REGISTERED_SAWYER               (TRAINER_REGISTERED_FLAGS_START + REMATCH_SAWYER)
 #define FLAG_REGISTERED_KIRA_AND_DAN         (TRAINER_REGISTERED_FLAGS_START + REMATCH_KIRA_AND_DAN)
-#define FLAG_REGISTERED_WALLY                (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLY)
+#define FLAG_REGISTERED_WALLY                (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLY_VR)
 #define FLAG_REGISTERED_ROXANNE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_ROXANNE)
 #define FLAG_REGISTERED_BRAWLY               (TRAINER_REGISTERED_FLAGS_START + REMATCH_BRAWLY)
 #define FLAG_REGISTERED_WATTSON              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WATTSON)

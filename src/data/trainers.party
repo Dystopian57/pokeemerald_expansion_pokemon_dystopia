@@ -9753,6 +9753,24 @@ Level: 4
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
+=== TRAINER_TOURISTSHANE_103 ===
+Name: Shane
+Class: Touristm
+Pic: touristmbattle
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Venonat
+Level: 3
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Krabby
+Level: 3
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: MAY

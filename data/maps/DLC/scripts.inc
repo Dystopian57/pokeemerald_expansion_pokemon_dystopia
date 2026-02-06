@@ -319,12 +319,14 @@ OldaleTown_DLC_TherapyCutscene_7:
 # 194 "data/maps/DLC/scripts.pory"
 	setflag camelianotinsideDLC
 # 195 "data/maps/DLC/scripts.pory"
-	special RemoveCameraObject
+	setflag touristonbike
 # 196 "data/maps/DLC/scripts.pory"
+	special RemoveCameraObject
+# 197 "data/maps/DLC/scripts.pory"
 	waitmovement
-# 198 "data/maps/DLC/scripts.pory"
-	setvar VAR_OLDALE_PHASE, 1
 # 199 "data/maps/DLC/scripts.pory"
+	setvar VAR_OLDALE_PHASE, 1
+# 200 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
@@ -345,312 +347,312 @@ OldaleTown_DLC_TherapyCutscene_8:
 
 
 LittleKidDLC::
-# 204 "data/maps/DLC/scripts.pory"
-	lockall
 # 205 "data/maps/DLC/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 206 "data/maps/DLC/scripts.pory"
-	applymovement 5, LittleKidDLC_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 207 "data/maps/DLC/scripts.pory"
+	applymovement 5, LittleKidDLC_Movement_0
+# 208 "data/maps/DLC/scripts.pory"
 	msgbox LittleKidDLC_Text_0
-# 209 "data/maps/DLC/scripts.pory"
-	applymovement 5, OldaleTown_DLC_TherapyCutscene_Movement_6
 # 210 "data/maps/DLC/scripts.pory"
+	applymovement 5, OldaleTown_DLC_TherapyCutscene_Movement_6
+# 211 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 FatManDLC::
-# 214 "data/maps/DLC/scripts.pory"
-	lockall
 # 215 "data/maps/DLC/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 216 "data/maps/DLC/scripts.pory"
-	applymovement 7, LittleKidDLC_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 217 "data/maps/DLC/scripts.pory"
+	applymovement 7, LittleKidDLC_Movement_0
+# 218 "data/maps/DLC/scripts.pory"
 	msgbox FatManDLC_Text_0
-# 219 "data/maps/DLC/scripts.pory"
-	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_6
 # 220 "data/maps/DLC/scripts.pory"
+	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_6
+# 221 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 SleepingKidDLC::
-# 224 "data/maps/DLC/scripts.pory"
-	lockall
 # 225 "data/maps/DLC/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 226 "data/maps/DLC/scripts.pory"
-	applymovement 4, LittleKidDLC_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 227 "data/maps/DLC/scripts.pory"
-	msgbox SleepingKidDLC_Text_0
+	applymovement 4, LittleKidDLC_Movement_0
 # 228 "data/maps/DLC/scripts.pory"
-	applymovement 4, OldaleTown_DLC_TherapyCutscene_Movement_6
+	msgbox SleepingKidDLC_Text_0
 # 229 "data/maps/DLC/scripts.pory"
+	applymovement 4, OldaleTown_DLC_TherapyCutscene_Movement_6
+# 230 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 GirlNotebookDLC::
-# 233 "data/maps/DLC/scripts.pory"
-	lockall
 # 234 "data/maps/DLC/scripts.pory"
+	lockall
+# 235 "data/maps/DLC/scripts.pory"
 	msgbox GirlNotebookDLC_Text_0
-# 236 "data/maps/DLC/scripts.pory"
+# 237 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 SleepingBoyNotebookDLC::
-# 240 "data/maps/DLC/scripts.pory"
-	lockall
 # 241 "data/maps/DLC/scripts.pory"
-	msgbox SleepingBoyNotebookDLC_Text_0
+	lockall
 # 242 "data/maps/DLC/scripts.pory"
+	msgbox SleepingBoyNotebookDLC_Text_0
+# 243 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 DyslexicKidNotebookDLC::
-# 246 "data/maps/DLC/scripts.pory"
-	lockall
 # 247 "data/maps/DLC/scripts.pory"
-	msgbox DyslexicKidNotebookDLC_Text_0
+	lockall
 # 248 "data/maps/DLC/scripts.pory"
+	msgbox DyslexicKidNotebookDLC_Text_0
+# 249 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 TeacherDLC::
-# 253 "data/maps/DLC/scripts.pory"
-	lockall
 # 254 "data/maps/DLC/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 255 "data/maps/DLC/scripts.pory"
-	applymovement 6, LittleKidDLC_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 256 "data/maps/DLC/scripts.pory"
+	applymovement 6, LittleKidDLC_Movement_0
+# 257 "data/maps/DLC/scripts.pory"
 	msgbox TeacherDLC_Text_0
-# 258 "data/maps/DLC/scripts.pory"
-	applymovement 6, TeacherDLC_Movement_0
 # 259 "data/maps/DLC/scripts.pory"
+	applymovement 6, TeacherDLC_Movement_0
+# 260 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 LibraryGuyDLC::
-# 264 "data/maps/DLC/scripts.pory"
-	lockall
 # 265 "data/maps/DLC/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 266 "data/maps/DLC/scripts.pory"
-	applymovement 9, LittleKidDLC_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 267 "data/maps/DLC/scripts.pory"
+	applymovement 9, LittleKidDLC_Movement_0
+# 268 "data/maps/DLC/scripts.pory"
 	msgbox LibraryGuyDLC_Text_0
-# 269 "data/maps/DLC/scripts.pory"
-	applymovement 9, OldaleTown_DLC_TherapyCutscene_Movement_6
 # 270 "data/maps/DLC/scripts.pory"
+	applymovement 9, OldaleTown_DLC_TherapyCutscene_Movement_6
+# 271 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 TeacherdeskDLC::
-# 274 "data/maps/DLC/scripts.pory"
-	lockall
 # 275 "data/maps/DLC/scripts.pory"
+	lockall
+# 276 "data/maps/DLC/scripts.pory"
 	msgbox TeacherdeskDLC_Text_0
-# 277 "data/maps/DLC/scripts.pory"
+# 278 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 BlackBoardDLC::
-# 281 "data/maps/DLC/scripts.pory"
-	lockall
 # 282 "data/maps/DLC/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lockall
 # 283 "data/maps/DLC/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 284 "data/maps/DLC/scripts.pory"
 	goto_if_set DLCmathresolved, BlackBoardDLC_2
 BlackBoardDLC_1:
-# 286 "data/maps/DLC/scripts.pory"
+# 287 "data/maps/DLC/scripts.pory"
 	goto_if_unset DLCmathresolved, BlackBoardDLC_4
 	return
 
 BlackBoardDLC_2:
-# 284 "data/maps/DLC/scripts.pory"
+# 285 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_0
 	goto BlackBoardDLC_1
 
 BlackBoardDLC_4:
-# 287 "data/maps/DLC/scripts.pory"
+# 288 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_1
-# 289 "data/maps/DLC/scripts.pory"
-	msgbox BlackBoardDLC_Text_2
 # 290 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, BlackBoardDLC_Text_3, BlackBoardDLC_Text_4, BlackBoardDLC_Text_5, OldaleTown_DLC_TherapyCutscene_Text_5
+	msgbox BlackBoardDLC_Text_2
 # 291 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, BlackBoardDLC_Text_3, BlackBoardDLC_Text_4, BlackBoardDLC_Text_5, OldaleTown_DLC_TherapyCutscene_Text_5
+# 292 "data/maps/DLC/scripts.pory"
 	waitmessage
-# 293 "data/maps/DLC/scripts.pory"
+# 294 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BlackBoardDLC_7
 BlackBoardDLC_6:
-# 302 "data/maps/DLC/scripts.pory"
+# 303 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq BlackBoardDLC_10
 BlackBoardDLC_9:
-# 316 "data/maps/DLC/scripts.pory"
+# 317 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq BlackBoardDLC_13
 BlackBoardDLC_12:
-# 325 "data/maps/DLC/scripts.pory"
+# 326 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq BlackBoardDLC_16
 BlackBoardDLC_15:
-# 328 "data/maps/DLC/scripts.pory"
+# 329 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 BlackBoardDLC_7:
-# 294 "data/maps/DLC/scripts.pory"
-	msgbox BlackBoardDLC_Text_6
 # 295 "data/maps/DLC/scripts.pory"
-	applymovement 6, LittleKidDLC_Movement_0
+	msgbox BlackBoardDLC_Text_6
 # 296 "data/maps/DLC/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_15
+	applymovement 6, LittleKidDLC_Movement_0
 # 297 "data/maps/DLC/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_15
+# 298 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_7
-# 299 "data/maps/DLC/scripts.pory"
+# 300 "data/maps/DLC/scripts.pory"
 	applymovement 6, TeacherDLC_Movement_0
 	goto BlackBoardDLC_6
 
 BlackBoardDLC_10:
-# 303 "data/maps/DLC/scripts.pory"
-	msgbox BlackBoardDLC_Text_8
 # 304 "data/maps/DLC/scripts.pory"
-	applymovement 6, LittleKidDLC_Movement_0
+	msgbox BlackBoardDLC_Text_8
 # 305 "data/maps/DLC/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_15
+	applymovement 6, LittleKidDLC_Movement_0
 # 306 "data/maps/DLC/scripts.pory"
-	msgbox BlackBoardDLC_Text_9
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_15
 # 307 "data/maps/DLC/scripts.pory"
-	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_6
+	msgbox BlackBoardDLC_Text_9
 # 308 "data/maps/DLC/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_6
+	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_6
 # 309 "data/maps/DLC/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_6
+# 310 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_10
-# 311 "data/maps/DLC/scripts.pory"
-	applymovement 6, TeacherDLC_Movement_0
 # 312 "data/maps/DLC/scripts.pory"
-	waitmovement 6
+	applymovement 6, TeacherDLC_Movement_0
 # 313 "data/maps/DLC/scripts.pory"
+	waitmovement 6
+# 314 "data/maps/DLC/scripts.pory"
 	setflag DLCmathresolved
 	goto BlackBoardDLC_9
 
 BlackBoardDLC_13:
-# 317 "data/maps/DLC/scripts.pory"
-	msgbox BlackBoardDLC_Text_11
 # 318 "data/maps/DLC/scripts.pory"
-	applymovement 6, LittleKidDLC_Movement_0
+	msgbox BlackBoardDLC_Text_11
 # 319 "data/maps/DLC/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_15
+	applymovement 6, LittleKidDLC_Movement_0
 # 320 "data/maps/DLC/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_15
+# 321 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_7
-# 322 "data/maps/DLC/scripts.pory"
+# 323 "data/maps/DLC/scripts.pory"
 	applymovement 6, TeacherDLC_Movement_0
 	goto BlackBoardDLC_12
 
 BlackBoardDLC_16:
-# 326 "data/maps/DLC/scripts.pory"
+# 327 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_12
 	goto BlackBoardDLC_15
 
 
 OpenBoxDLC::
-# 332 "data/maps/DLC/scripts.pory"
-	lockall
 # 333 "data/maps/DLC/scripts.pory"
+	lockall
+# 334 "data/maps/DLC/scripts.pory"
 	msgbox OpenBoxDLC_Text_0
-# 336 "data/maps/DLC/scripts.pory"
+# 337 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 PosterDLC::
-# 340 "data/maps/DLC/scripts.pory"
-	lockall
 # 341 "data/maps/DLC/scripts.pory"
+	lockall
+# 342 "data/maps/DLC/scripts.pory"
 	msgbox PosterDLC_Text_0
-# 343 "data/maps/DLC/scripts.pory"
+# 344 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 RulesDLC::
-# 347 "data/maps/DLC/scripts.pory"
-	lockall
 # 348 "data/maps/DLC/scripts.pory"
+	lockall
+# 349 "data/maps/DLC/scripts.pory"
 	msgbox RulesDLC_Text_0
-# 351 "data/maps/DLC/scripts.pory"
+# 352 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 BoardDLC::
-# 355 "data/maps/DLC/scripts.pory"
-	lockall
 # 356 "data/maps/DLC/scripts.pory"
+	lockall
+# 357 "data/maps/DLC/scripts.pory"
 	msgbox BoardDLC_Text_0
-# 358 "data/maps/DLC/scripts.pory"
+# 359 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 PCDLC::
-# 362 "data/maps/DLC/scripts.pory"
-	lockall
 # 363 "data/maps/DLC/scripts.pory"
-	msgbox PCDLC_Text_0
+	lockall
 # 364 "data/maps/DLC/scripts.pory"
+	msgbox PCDLC_Text_0
+# 365 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 BookshelfDLC::
-# 368 "data/maps/DLC/scripts.pory"
-	lockall
 # 369 "data/maps/DLC/scripts.pory"
-	msgbox BookshelfDLC_Text_0
+	lockall
 # 370 "data/maps/DLC/scripts.pory"
+	msgbox BookshelfDLC_Text_0
+# 371 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 MauvillePosterDLC::
-# 374 "data/maps/DLC/scripts.pory"
-	lockall
 # 375 "data/maps/DLC/scripts.pory"
+	lockall
+# 376 "data/maps/DLC/scripts.pory"
 	msgbox MauvillePosterDLC_Text_0
-# 377 "data/maps/DLC/scripts.pory"
+# 378 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 TVDLC::
-# 381 "data/maps/DLC/scripts.pory"
-	lockall
 # 382 "data/maps/DLC/scripts.pory"
-	msgbox TVDLC_Text_0
+	lockall
 # 383 "data/maps/DLC/scripts.pory"
+	msgbox TVDLC_Text_0
+# 384 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 DLCSealedBox::
-# 387 "data/maps/DLC/scripts.pory"
-	lockall
 # 388 "data/maps/DLC/scripts.pory"
-	msgbox DLCSealedBox_Text_0
+	lockall
 # 389 "data/maps/DLC/scripts.pory"
+	msgbox DLCSealedBox_Text_0
+# 390 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
@@ -861,15 +863,15 @@ OldaleTown_DLC_TherapyCutscene_Movement_18:
 	walk_down
 	step_end
 
-# 206 "data/maps/DLC/scripts.pory"
+# 207 "data/maps/DLC/scripts.pory"
 LittleKidDLC_Movement_0:
-# 206 "data/maps/DLC/scripts.pory"
+# 207 "data/maps/DLC/scripts.pory"
 	face_player
 	step_end
 
-# 258 "data/maps/DLC/scripts.pory"
+# 259 "data/maps/DLC/scripts.pory"
 TeacherDLC_Movement_0:
-# 258 "data/maps/DLC/scripts.pory"
+# 259 "data/maps/DLC/scripts.pory"
 	face_down
 	step_end
 
@@ -1020,13 +1022,13 @@ OldaleTown_DLC_TherapyCutscene_Text_26:
 	.string "time.$"
 
 LittleKidDLC_Text_0:
-# 207 "data/maps/DLC/scripts.pory"
+# 208 "data/maps/DLC/scripts.pory"
 	.string "I don't like Vinesors... Vensuros...?\n"
 	.string "I don't know... but I think Pokémon are\l"
 	.string "scary.$"
 
 FatManDLC_Text_0:
-# 217 "data/maps/DLC/scripts.pory"
+# 218 "data/maps/DLC/scripts.pory"
 	.string "It's true! I lived in Rustboro, and some\n"
 	.string "fire Pokémon burned the apartment\l"
 	.string "building I lived in.\p"
@@ -1034,13 +1036,13 @@ FatManDLC_Text_0:
 	.string "parents. I miss the city.$"
 
 SleepingKidDLC_Text_0:
-# 227 "data/maps/DLC/scripts.pory"
+# 228 "data/maps/DLC/scripts.pory"
 	.string "ZZZZ...\n"
 	.string "... Huh? Is Math class over? I think I\l"
 	.string "overslept...$"
 
 GirlNotebookDLC_Text_0:
-# 234 "data/maps/DLC/scripts.pory"
+# 235 "data/maps/DLC/scripts.pory"
 	.string "It's the notebook the scared girl left\n"
 	.string "behind.\p"
 	.string "Next to some classroom notes, there's a\n"
@@ -1048,23 +1050,23 @@ GirlNotebookDLC_Text_0:
 	.string "rescuing a little girl from drowning.$"
 
 SleepingBoyNotebookDLC_Text_0:
-# 241 "data/maps/DLC/scripts.pory"
+# 242 "data/maps/DLC/scripts.pory"
 	.string "The notebook has barely any notes, and\n"
 	.string "is covered in drool.$"
 
 DyslexicKidNotebookDLC_Text_0:
-# 247 "data/maps/DLC/scripts.pory"
+# 248 "data/maps/DLC/scripts.pory"
 	.string "The notebook contains many Pokémon\n"
 	.string "names, most of them crossed out.$"
 
 TeacherDLC_Text_0:
-# 256 "data/maps/DLC/scripts.pory"
+# 257 "data/maps/DLC/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} I shouldn't have come to teach\n"
 	.string "to this backwater town.\p"
 	.string "But the bonus is so juicy...$"
 
 LibraryGuyDLC_Text_0:
-# 267 "data/maps/DLC/scripts.pory"
+# 268 "data/maps/DLC/scripts.pory"
 	.string "Welcome! This is the Devon Learning\n"
 	.string "Center's library.\p"
 	.string "You can read any of the books here, but\n"
@@ -1072,72 +1074,72 @@ LibraryGuyDLC_Text_0:
 	.string "a loan - sorry!$"
 
 TeacherdeskDLC_Text_0:
-# 275 "data/maps/DLC/scripts.pory"
+# 276 "data/maps/DLC/scripts.pory"
 	.string "The book on top features a Psyduck on\n"
 	.string "its cover, and is titled 'Therapy for\l"
 	.string "Beginners.'$"
 
 BlackBoardDLC_Text_0:
-# 284 "data/maps/DLC/scripts.pory"
+# 285 "data/maps/DLC/scripts.pory"
 	.string "The math problem is resolved$"
 
 BlackBoardDLC_Text_1:
-# 287 "data/maps/DLC/scripts.pory"
+# 288 "data/maps/DLC/scripts.pory"
 	.string "The board contains an unanswered math\n"
 	.string "problem from a previous lesson...$"
 
 BlackBoardDLC_Text_2:
-# 289 "data/maps/DLC/scripts.pory"
+# 290 "data/maps/DLC/scripts.pory"
 	.string "I have ¥2404, and I buy two Devon Balls\n"
 	.string "for ¥210 each. How much do I have left?$"
 
 BlackBoardDLC_Text_3:
-# 290 "data/maps/DLC/scripts.pory"
+# 291 "data/maps/DLC/scripts.pory"
 	.string "¥2194$"
 
 BlackBoardDLC_Text_4:
-# 290 "data/maps/DLC/scripts.pory"
+# 291 "data/maps/DLC/scripts.pory"
 	.string "¥1984$"
 
 BlackBoardDLC_Text_5:
-# 290 "data/maps/DLC/scripts.pory"
+# 291 "data/maps/DLC/scripts.pory"
 	.string "¥2025$"
 
 BlackBoardDLC_Text_6:
-# 294 "data/maps/DLC/scripts.pory"
+# 295 "data/maps/DLC/scripts.pory"
 	.string "You write ¥2194 on the blackboard.$"
 
 BlackBoardDLC_Text_7:
-# 297 "data/maps/DLC/scripts.pory"
+# 298 "data/maps/DLC/scripts.pory"
 	.string "Uhm... that's not correct. Would you mind\n"
 	.string "not writing wrong answers on the board?\n"
 	.string "Thank you.$"
 
 BlackBoardDLC_Text_8:
-# 303 "data/maps/DLC/scripts.pory"
+# 304 "data/maps/DLC/scripts.pory"
 	.string "You write ¥1984 on the blackboard.$"
 
 BlackBoardDLC_Text_9:
-# 306 "data/maps/DLC/scripts.pory"
+# 307 "data/maps/DLC/scripts.pory"
 	.string "Oh, that's correct! You're good with\n"
 	.string "numbers.$"
 
 BlackBoardDLC_Text_10:
-# 309 "data/maps/DLC/scripts.pory"
+# 310 "data/maps/DLC/scripts.pory"
 	.string "I like math problems... they always have\n"
 	.string "a single right answer.\p"
 	.string "If only the world worked like that.$"
 
 BlackBoardDLC_Text_11:
-# 317 "data/maps/DLC/scripts.pory"
+# 318 "data/maps/DLC/scripts.pory"
 	.string "You write ¥2025 on the blackboard.$"
 
 BlackBoardDLC_Text_12:
-# 326 "data/maps/DLC/scripts.pory"
+# 327 "data/maps/DLC/scripts.pory"
 	.string "Better not to write anything...$"
 
 OpenBoxDLC_Text_0:
-# 333 "data/maps/DLC/scripts.pory"
+# 334 "data/maps/DLC/scripts.pory"
 	.string "A label on the open box reads 'To be\n"
 	.string "discarded'.\p"
 	.string "Through the open gap, you glimpse a\n"
@@ -1146,14 +1148,14 @@ OpenBoxDLC_Text_0:
 	.string "{COLOR BLUE}Professor Balsam{COLOR DARK_GRAY}.'$"
 
 PosterDLC_Text_0:
-# 341 "data/maps/DLC/scripts.pory"
+# 342 "data/maps/DLC/scripts.pory"
 	.string "Next month's planned excursion:\n"
 	.string "Petalburg Park!\p"
 	.string "Sign ups open on DLC's website.\n"
 	.string "Minors require parental consent.$"
 
 RulesDLC_Text_0:
-# 348 "data/maps/DLC/scripts.pory"
+# 349 "data/maps/DLC/scripts.pory"
 	.string "The hanged notes contain many\n"
 	.string "classroom rules.\p"
 	.string "1) No yelling\n"
@@ -1163,33 +1165,33 @@ RulesDLC_Text_0:
 	.string "The list goes on and on.$"
 
 BoardDLC_Text_0:
-# 356 "data/maps/DLC/scripts.pory"
+# 357 "data/maps/DLC/scripts.pory"
 	.string "The board contains many Devon-related\n"
 	.string "news, event posters, and most of all\l"
 	.string "product ads.$"
 
 PCDLC_Text_0:
-# 363 "data/maps/DLC/scripts.pory"
+# 364 "data/maps/DLC/scripts.pory"
 	.string "The computer asks for a DLC username\n"
 	.string "and password. I don't have any.$"
 
 BookshelfDLC_Text_0:
-# 369 "data/maps/DLC/scripts.pory"
+# 370 "data/maps/DLC/scripts.pory"
 	.string "It's full of books and magazines\n"
 	.string "published by Devon Inc.$"
 
 MauvillePosterDLC_Text_0:
-# 375 "data/maps/DLC/scripts.pory"
+# 376 "data/maps/DLC/scripts.pory"
 	.string "Finished using the PC? Turn it off, and\n"
 	.string "save electricity!\p"
 	.string "Let's take care of Hoenn together.\n"
 	.string "{COLOR BLUE}Mauville Nuclear Plant.{COLOR DARK_GRAY}$"
 
 TVDLC_Text_0:
-# 382 "data/maps/DLC/scripts.pory"
+# 383 "data/maps/DLC/scripts.pory"
 	.string "The TV is playing a documentary on\n"
 	.string "Safemon on a loop.$"
 
 DLCSealedBox_Text_0:
-# 388 "data/maps/DLC/scripts.pory"
+# 389 "data/maps/DLC/scripts.pory"
 	.string "It's a sealed box. Better not to open it.$"

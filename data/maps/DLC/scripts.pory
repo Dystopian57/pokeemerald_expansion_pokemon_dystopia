@@ -192,6 +192,7 @@ script OldaleTown_DLC_TherapyCutscene{
 	clearflag (camelianotoutsideDLC)
 	setflag (sharpynotinsideDLC)
 	setflag (camelianotinsideDLC)
+    setflag (touristonbike)
 	special (RemoveCameraObject)
 	waitmovement
 

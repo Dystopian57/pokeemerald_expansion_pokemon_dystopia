@@ -276,6 +276,19 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_touristm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_veteranm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_warcameramanm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_warreporterf;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_shadydealerm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_conscriptm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_conscriptf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_foreignspym;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_gangbikerf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_gangbikerm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hazarddiverm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mercenaryf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_patientf;
+
+
+
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -573,6 +586,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_WARCAMERAMANM] =            &gObjectEventGraphicsInfo_warcameramanm,
     [OBJ_EVENT_GFX_WARREPORTERF] =             &gObjectEventGraphicsInfo_warreporterf,
 
+    [OBJ_EVENT_GFX_SHADYDEALERM] =             &gObjectEventGraphicsInfo_shadydealerm,
+    [OBJ_EVENT_GFX_CONSCRIPTM] =               &gObjectEventGraphicsInfo_conscriptm,
+    [OBJ_EVENT_GFX_CONSCRIPTF] =               &gObjectEventGraphicsInfo_conscriptf,
+    [OBJ_EVENT_GFX_FOREIGNSPYM] =              &gObjectEventGraphicsInfo_foreignspym,
+    [OBJ_EVENT_GFX_GANGBIKERF] =               &gObjectEventGraphicsInfo_gangbikerf,
+    [OBJ_EVENT_GFX_GANGBIKERM] =               &gObjectEventGraphicsInfo_gangbikerm,
+    [OBJ_EVENT_GFX_HAZARDDIVERM] =             &gObjectEventGraphicsInfo_hazarddiverm,
+    [OBJ_EVENT_GFX_MERCENARYF] =               &gObjectEventGraphicsInfo_mercenaryf,
+    [OBJ_EVENT_GFX_PATIENTF] =                 &gObjectEventGraphicsInfo_patientf,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
 };
 

@@ -4,116 +4,157 @@
 const u32 gTrainerFrontPic_OrphanM[] = INCBIN_U32("graphics/trainers/front_pics/orphan_male.4bpp.lz");
 const u16 gTrainerPalette_OrphanM[] = INCBIN_U16("graphics/trainers/front_pics/orphan_male.gbapal");
 
-const u32 gTrainerFrontPic_camelia[] = INCBIN_U32("graphics/trainers/front_pics/camelia.4bpp.lz");
-const u16 gTrainerPalette_camelia[] = INCBIN_U16("graphics/trainers/front_pics/camelia.gbapal");
+const u32 gTrainerFrontPic_cameliabattle[] = INCBIN_U32("graphics/trainers/front_pics/camelia.4bpp.lz");
+const u16 gTrainerPalette_cameliabattle[] = INCBIN_U16("graphics/trainers/front_pics/camelia.gbapal");
 
-const u32 gTrainerFrontPic_clerkf[] = INCBIN_U32("graphics/trainers/front_pics/clerkf.4bpp.lz");
-const u16 gTrainerPalette_clerkf[] = INCBIN_U16("graphics/trainers/front_pics/clerkf.gbapal");
+const u32 gTrainerFrontPic_clerkfbattle[] = INCBIN_U32("graphics/trainers/front_pics/clerkf.4bpp.lz");
+const u16 gTrainerPalette_clerkfbattle[] = INCBIN_U16("graphics/trainers/front_pics/clerkf.gbapal");
 
-const u32 gTrainerFrontPic_cosplayerf[] = INCBIN_U32("graphics/trainers/front_pics/cosplayerf.4bpp.lz");
-const u16 gTrainerPalette_cosplayerf[] = INCBIN_U16("graphics/trainers/front_pics/cosplayerf.gbapal");
+const u32 gTrainerFrontPic_cosplayerfbattle[] = INCBIN_U32("graphics/trainers/front_pics/cosplayerf.4bpp.lz");
+const u16 gTrainerPalette_cosplayerfbattle[] = INCBIN_U16("graphics/trainers/front_pics/cosplayerf.gbapal");
 
-const u32 gTrainerFrontPic_cosplayerm[] = INCBIN_U32("graphics/trainers/front_pics/cosplayerm.4bpp.lz");
-const u16 gTrainerPalette_cosplayerm[] = INCBIN_U16("graphics/trainers/front_pics/cosplayerm.gbapal");
+const u32 gTrainerFrontPic_cosplayermbattle[] = INCBIN_U32("graphics/trainers/front_pics/cosplayerm.4bpp.lz");
+const u16 gTrainerPalette_cosplayermbattle[] = INCBIN_U16("graphics/trainers/front_pics/cosplayerm.gbapal");
 
-const u32 gTrainerFrontPic_devonadminf[] = INCBIN_U32("graphics/trainers/front_pics/devonadminf.4bpp.lz");
-const u16 gTrainerPalette_devonadminf[] = INCBIN_U16("graphics/trainers/front_pics/devonadminf.gbapal");
+const u32 gTrainerFrontPic_devonadminfbattle[] = INCBIN_U32("graphics/trainers/front_pics/devonadminf.4bpp.lz");
+const u16 gTrainerPalette_devonadminfbattle[] = INCBIN_U16("graphics/trainers/front_pics/devonadminf.gbapal");
 
-const u32 gTrainerFrontPic_devonadminm[] = INCBIN_U32("graphics/trainers/front_pics/devonadminm.4bpp.lz");
-const u16 gTrainerPalette_devonadminm[] = INCBIN_U16("graphics/trainers/front_pics/devonadminm.gbapal");
+const u32 gTrainerFrontPic_devonadminmbattle[] = INCBIN_U32("graphics/trainers/front_pics/devonadminm.4bpp.lz");
+const u16 gTrainerPalette_devonadminmbattle[] = INCBIN_U16("graphics/trainers/front_pics/devonadminm.gbapal");
 
-const u32 gTrainerFrontPic_devongruntf[] = INCBIN_U32("graphics/trainers/front_pics/devongruntf.4bpp.lz");
-const u16 gTrainerPalette_devongruntf[] = INCBIN_U16("graphics/trainers/front_pics/devongruntf.gbapal");
+const u32 gTrainerFrontPic_devongruntfbattle[] = INCBIN_U32("graphics/trainers/front_pics/devongruntf.4bpp.lz");
+const u16 gTrainerPalette_devongruntfbattle[] = INCBIN_U16("graphics/trainers/front_pics/devongruntf.gbapal");
 
-const u32 gTrainerFrontPic_devongruntm[] = INCBIN_U32("graphics/trainers/front_pics/devongruntm.4bpp.lz");
-const u16 gTrainerPalette_devongruntm[] = INCBIN_U16("graphics/trainers/front_pics/devongruntm.gbapal");
+const u32 gTrainerFrontPic_devongruntmbattle[] = INCBIN_U32("graphics/trainers/front_pics/devongruntm.4bpp.lz");
+const u16 gTrainerPalette_devongruntmbattle[] = INCBIN_U16("graphics/trainers/front_pics/devongruntm.gbapal");
 
-const u32 gTrainerFrontPic_hermitm[] = INCBIN_U32("graphics/trainers/front_pics/hermitm.4bpp.lz");
-const u16 gTrainerPalette_hermitm[] = INCBIN_U16("graphics/trainers/front_pics/hermitm.gbapal");
+const u32 gTrainerFrontPic_hermitmbattle[] = INCBIN_U32("graphics/trainers/front_pics/hermitm.4bpp.lz");
+const u16 gTrainerPalette_hermitmbattle[] = INCBIN_U16("graphics/trainers/front_pics/hermitm.gbapal");
 
-const u32 gTrainerFrontPic_medicm[] = INCBIN_U32("graphics/trainers/front_pics/medicm.4bpp.lz");
-const u16 gTrainerPalette_medicm[] = INCBIN_U16("graphics/trainers/front_pics/medicm.gbapal");
+const u32 gTrainerFrontPic_medicmbattle[] = INCBIN_U32("graphics/trainers/front_pics/medicm.4bpp.lz");
+const u16 gTrainerPalette_medicmbattle[] = INCBIN_U16("graphics/trainers/front_pics/medicm.gbapal");
 
-const u32 gTrainerFrontPic_mercenarym[] = INCBIN_U32("graphics/trainers/front_pics/mercenarym.4bpp.lz");
-const u16 gTrainerPalette_mercenarym[] = INCBIN_U16("graphics/trainers/front_pics/mercenarym.gbapal");
+const u32 gTrainerFrontPic_mercenarymbattle[] = INCBIN_U32("graphics/trainers/front_pics/mercenarym.4bpp.lz");
+const u16 gTrainerPalette_mercenarymbattle[] = INCBIN_U16("graphics/trainers/front_pics/mercenarym.gbapal");
 
-const u32 gTrainerFrontPic_netrunnerf[] = INCBIN_U32("graphics/trainers/front_pics/netrunnerf.4bpp.lz");
-const u16 gTrainerPalette_netrunnerf[] = INCBIN_U16("graphics/trainers/front_pics/netrunnerf.gbapal");
+const u32 gTrainerFrontPic_musashibattle[] = INCBIN_U32("graphics/trainers/front_pics/musashi.4bpp.lz");
+const u16 gTrainerPalette_musashibattle[] = INCBIN_U16("graphics/trainers/front_pics/musashi.gbapal");
 
-const u32 gTrainerFrontPic_netrunnerm[] = INCBIN_U32("graphics/trainers/front_pics/netrunnerm.4bpp.lz");
-const u16 gTrainerPalette_netrunnerm[] = INCBIN_U16("graphics/trainers/front_pics/netrunnerm.gbapal");
+const u32 gTrainerFrontPic_netrunnerfbattle[] = INCBIN_U32("graphics/trainers/front_pics/netrunnerf.4bpp.lz");
+const u16 gTrainerPalette_netrunnerfbattle[] = INCBIN_U16("graphics/trainers/front_pics/netrunnerf.gbapal");
 
-const u32 gTrainerFrontPic_oldnorman[] = INCBIN_U32("graphics/trainers/front_pics/oldnorman.4bpp.lz");
-const u16 gTrainerPalette_oldnorman[] = INCBIN_U16("graphics/trainers/front_pics/oldnorman.gbapal");
+const u32 gTrainerFrontPic_netrunnermbattle[] = INCBIN_U32("graphics/trainers/front_pics/netrunnerm.4bpp.lz");
+const u16 gTrainerPalette_netrunnermbattle[] = INCBIN_U16("graphics/trainers/front_pics/netrunnerm.gbapal");
 
-const u32 gTrainerFrontPic_orphangirlf[] = INCBIN_U32("graphics/trainers/front_pics/orphangirlf.4bpp.lz");
-const u16 gTrainerPalette_orphangirlf[] = INCBIN_U16("graphics/trainers/front_pics/orphangirlf.gbapal");
+const u32 gTrainerFrontPic_oldnormanbattle[] = INCBIN_U32("graphics/trainers/front_pics/oldnorman.4bpp.lz");
+const u16 gTrainerPalette_oldnormanbattle[] = INCBIN_U16("graphics/trainers/front_pics/oldnorman.gbapal");
 
-const u32 gTrainerFrontPic_patientm[] = INCBIN_U32("graphics/trainers/front_pics/patientm.4bpp.lz");
-const u16 gTrainerPalette_patientm[] = INCBIN_U16("graphics/trainers/front_pics/patientm.gbapal");
+const u32 gTrainerFrontPic_orphangirlfbattle[] = INCBIN_U32("graphics/trainers/front_pics/orphangirlf.4bpp.lz");
+const u16 gTrainerPalette_orphangirlfbattle[] = INCBIN_U16("graphics/trainers/front_pics/orphangirlf.gbapal");
 
-const u32 gTrainerFrontPic_punkf[] = INCBIN_U32("graphics/trainers/front_pics/punkf.4bpp.lz");
-const u16 gTrainerPalette_punkf[] = INCBIN_U16("graphics/trainers/front_pics/punkf.gbapal");
+const u32 gTrainerFrontPic_patientmbattle[] = INCBIN_U32("graphics/trainers/front_pics/patientm.4bpp.lz");
+const u16 gTrainerPalette_patientmbattle[] = INCBIN_U16("graphics/trainers/front_pics/patientm.gbapal");
 
-const u32 gTrainerFrontPic_punkm[] = INCBIN_U32("graphics/trainers/front_pics/punkm.4bpp.lz");
-const u16 gTrainerPalette_punkm[] = INCBIN_U16("graphics/trainers/front_pics/punkm.gbapal");
+const u32 gTrainerFrontPic_punkfbattle[] = INCBIN_U32("graphics/trainers/front_pics/punkf.4bpp.lz");
+const u16 gTrainerPalette_punkfbattle[] = INCBIN_U16("graphics/trainers/front_pics/punkf.gbapal");
 
-const u32 gTrainerFrontPic_rebeladminf[] = INCBIN_U32("graphics/trainers/front_pics/rebeladminf.4bpp.lz");
-const u16 gTrainerPalette_rebeladminf[] = INCBIN_U16("graphics/trainers/front_pics/rebeladminf.gbapal");
+const u32 gTrainerFrontPic_punkmbattle[] = INCBIN_U32("graphics/trainers/front_pics/punkm.4bpp.lz");
+const u16 gTrainerPalette_punkmbattle[] = INCBIN_U16("graphics/trainers/front_pics/punkm.gbapal");
 
-const u32 gTrainerFrontPic_rebeladminm[] = INCBIN_U32("graphics/trainers/front_pics/rebeladminm.4bpp.lz");
-const u16 gTrainerPalette_rebeladminm[] = INCBIN_U16("graphics/trainers/front_pics/rebeladminm.gbapal");
+const u32 gTrainerFrontPic_rebeladminfbattle[] = INCBIN_U32("graphics/trainers/front_pics/rebeladminf.4bpp.lz");
+const u16 gTrainerPalette_rebeladminfbattle[] = INCBIN_U16("graphics/trainers/front_pics/rebeladminf.gbapal");
 
-const u32 gTrainerFrontPic_rebelgruntf[] = INCBIN_U32("graphics/trainers/front_pics/rebelgruntf.4bpp.lz");
-const u16 gTrainerPalette_rebelgruntf[] = INCBIN_U16("graphics/trainers/front_pics/rebelgruntf.gbapal");
+const u32 gTrainerFrontPic_rebeladminmbattle[] = INCBIN_U32("graphics/trainers/front_pics/rebeladminm.4bpp.lz");
+const u16 gTrainerPalette_rebeladminmbattle[] = INCBIN_U16("graphics/trainers/front_pics/rebeladminm.gbapal");
+
+const u32 gTrainerFrontPic_rebelgruntfbattle[] = INCBIN_U32("graphics/trainers/front_pics/rebelgruntf.4bpp.lz");
+const u16 gTrainerPalette_rebelgruntfbattle[] = INCBIN_U16("graphics/trainers/front_pics/rebelgruntf.gbapal");
 
 const u32 gTrainerFrontPic_rebelgruntmbattle[] = INCBIN_U32("graphics/trainers/front_pics/rebelgruntmbattle.4bpp.lz");
 const u16 gTrainerPalette_rebelgruntmbattle[] = INCBIN_U16("graphics/trainers/front_pics/rebelgruntmbattle.gbapal");
 
-const u32 gTrainerFrontPic_reporters[] = INCBIN_U32("graphics/trainers/front_pics/reporters.4bpp.lz");
-const u16 gTrainerPalette_reporters[] = INCBIN_U16("graphics/trainers/front_pics/reporters.gbapal");
+const u32 gTrainerFrontPic_reportersbattle[] = INCBIN_U32("graphics/trainers/front_pics/reporters.4bpp.lz");
+const u16 gTrainerPalette_reportersbattle[] = INCBIN_U16("graphics/trainers/front_pics/reporters.gbapal");
 
-const u32 gTrainerFrontPic_roxannedevon[] = INCBIN_U32("graphics/trainers/front_pics/roxannedevon.4bpp.lz");
-const u16 gTrainerPalette_roxannedevon[] = INCBIN_U16("graphics/trainers/front_pics/roxannedevon.gbapal");
+const u32 gTrainerFrontPic_roxannedevonbattle[] = INCBIN_U32("graphics/trainers/front_pics/roxannedevon.4bpp.lz");
+const u16 gTrainerPalette_roxannedevonbattle[] = INCBIN_U16("graphics/trainers/front_pics/roxannedevon.gbapal");
 
-const u32 gTrainerFrontPic_scavengerf[] = INCBIN_U32("graphics/trainers/front_pics/scavengerf.4bpp.lz");
-const u16 gTrainerPalette_scavengerf[] = INCBIN_U16("graphics/trainers/front_pics/scavengerf.gbapal");
+const u32 gTrainerFrontPic_scavengerfbattle[] = INCBIN_U32("graphics/trainers/front_pics/scavengerf.4bpp.lz");
+const u16 gTrainerPalette_scavengerfbattle[] = INCBIN_U16("graphics/trainers/front_pics/scavengerf.gbapal");
 
-const u32 gTrainerFrontPic_scavengerm[] = INCBIN_U32("graphics/trainers/front_pics/scavengerm.4bpp.lz");
-const u16 gTrainerPalette_scavengerm[] = INCBIN_U16("graphics/trainers/front_pics/scavengerm.gbapal");
+const u32 gTrainerFrontPic_scavengermbattle[] = INCBIN_U32("graphics/trainers/front_pics/scavengerm.4bpp.lz");
+const u16 gTrainerPalette_scavengermbattle[] = INCBIN_U16("graphics/trainers/front_pics/scavengerm.gbapal");
 
-const u32 gTrainerFrontPic_scientistf[] = INCBIN_U32("graphics/trainers/front_pics/scientistf.4bpp.lz");
-const u16 gTrainerPalette_scientistf[] = INCBIN_U16("graphics/trainers/front_pics/scientistf.gbapal");
+const u32 gTrainerFrontPic_scientistfbattle[] = INCBIN_U32("graphics/trainers/front_pics/scientistf.4bpp.lz");
+const u16 gTrainerPalette_scientistfbattle[] = INCBIN_U16("graphics/trainers/front_pics/scientistf.gbapal");
 
-const u32 gTrainerFrontPic_scientistm[] = INCBIN_U32("graphics/trainers/front_pics/scientistm.4bpp.lz");
-const u16 gTrainerPalette_scientistm[] = INCBIN_U16("graphics/trainers/front_pics/scientistm.gbapal");
+const u32 gTrainerFrontPic_scientistmbattle[] = INCBIN_U32("graphics/trainers/front_pics/scientistm.4bpp.lz");
+const u16 gTrainerPalette_scientistmbattle[] = INCBIN_U16("graphics/trainers/front_pics/scientistm.gbapal");
 
 const u32 gTrainerFrontPic_sharpybattle[] = INCBIN_U32("graphics/trainers/front_pics/sharpy.4bpp.lz");
 const u16 gTrainerPalette_sharpybattle[] = INCBIN_U16("graphics/trainers/front_pics/sharpy.gbapal");
 
-const u32 gTrainerFrontPic_sidneyrebel[] = INCBIN_U32("graphics/trainers/front_pics/sidneyrebel.4bpp.lz");
-const u16 gTrainerPalette_sidneyrebel[] = INCBIN_U16("graphics/trainers/front_pics/sidneyrebel.gbapal");
+const u32 gTrainerFrontPic_sidneyrebelbattle[] = INCBIN_U32("graphics/trainers/front_pics/sidneyrebel.4bpp.lz");
+const u16 gTrainerPalette_sidneyrebelbattle[] = INCBIN_U16("graphics/trainers/front_pics/sidneyrebel.gbapal");
 
-const u32 gTrainerFrontPic_technicianf[] = INCBIN_U32("graphics/trainers/front_pics/technicianf.4bpp.lz");
-const u16 gTrainerPalette_technicianf[] = INCBIN_U16("graphics/trainers/front_pics/technicianf.gbapal");
+const u32 gTrainerFrontPic_technicianfbattle[] = INCBIN_U32("graphics/trainers/front_pics/technicianf.4bpp.lz");
+const u16 gTrainerPalette_technicianfbattle[] = INCBIN_U16("graphics/trainers/front_pics/technicianf.gbapal");
 
-const u32 gTrainerFrontPic_technicianm[] = INCBIN_U32("graphics/trainers/front_pics/technicianm.4bpp.lz");
-const u16 gTrainerPalette_technicianm[] = INCBIN_U16("graphics/trainers/front_pics/technicianm.gbapal");
+const u32 gTrainerFrontPic_technicianmbattle[] = INCBIN_U32("graphics/trainers/front_pics/technicianm.4bpp.lz");
+const u16 gTrainerPalette_technicianmbattle[] = INCBIN_U16("graphics/trainers/front_pics/technicianm.gbapal");
 
-const u32 gTrainerFrontPic_theoristm[] = INCBIN_U32("graphics/trainers/front_pics/theoristm.4bpp.lz");
-const u16 gTrainerPalette_theoristm[] = INCBIN_U16("graphics/trainers/front_pics/theoristm.gbapal");
+const u32 gTrainerFrontPic_theoristmbattle[] = INCBIN_U32("graphics/trainers/front_pics/theoristm.4bpp.lz");
+const u16 gTrainerPalette_theoristmbattle[] = INCBIN_U16("graphics/trainers/front_pics/theoristm.gbapal");
 
-const u32 gTrainerFrontPic_tomoko[] = INCBIN_U32("graphics/trainers/front_pics/tomoko.4bpp.lz");
-const u16 gTrainerPalette_tomoko[] = INCBIN_U16("graphics/trainers/front_pics/tomoko.gbapal");
+const u32 gTrainerFrontPic_tomokobattle[] = INCBIN_U32("graphics/trainers/front_pics/tomoko.4bpp.lz");
+const u16 gTrainerPalette_tomokobattle[] = INCBIN_U16("graphics/trainers/front_pics/tomoko.gbapal");
 
-const u32 gTrainerFrontPic_touristf[] = INCBIN_U32("graphics/trainers/front_pics/touristf.4bpp.lz");
-const u16 gTrainerPalette_touristf[] = INCBIN_U16("graphics/trainers/front_pics/touristf.gbapal");
+const u32 gTrainerFrontPic_touristfbattle[] = INCBIN_U32("graphics/trainers/front_pics/touristf.4bpp.lz");
+const u16 gTrainerPalette_touristfbattle[] = INCBIN_U16("graphics/trainers/front_pics/touristf.gbapal");
 
-const u32 gTrainerFrontPic_touristm[] = INCBIN_U32("graphics/trainers/front_pics/touristm.4bpp.lz");
-const u16 gTrainerPalette_touristm[] = INCBIN_U16("graphics/trainers/front_pics/touristm.gbapal");
+const u32 gTrainerFrontPic_touristmbattle[] = INCBIN_U32("graphics/trainers/front_pics/touristm.4bpp.lz");
+const u16 gTrainerPalette_touristmbattle[] = INCBIN_U16("graphics/trainers/front_pics/touristm.gbapal");
 
-const u32 gTrainerFrontPic_veteranm[] = INCBIN_U32("graphics/trainers/front_pics/veteranm.4bpp.lz");
-const u16 gTrainerPalette_veteranm[] = INCBIN_U16("graphics/trainers/front_pics/veteranm.gbapal");
+const u32 gTrainerFrontPic_veteranmbattle[] = INCBIN_U32("graphics/trainers/front_pics/veteranm.4bpp.lz");
+const u16 gTrainerPalette_veteranmbattle[] = INCBIN_U16("graphics/trainers/front_pics/veteranm.gbapal");
+
+
+
+const u32 gTrainerFrontPic_conscriptedfbattle[] = INCBIN_U32("graphics/trainers/front_pics/conscriptedf.4bpp.lz");
+const u16 gTrainerPalette_conscriptedfbattle[] = INCBIN_U16("graphics/trainers/front_pics/conscriptedf.gbapal");
+
+const u32 gTrainerFrontPic_conscriptedmbattle[] = INCBIN_U32("graphics/trainers/front_pics/conscriptedm.4bpp.lz");
+const u16 gTrainerPalette_conscriptedmbattle[] = INCBIN_U16("graphics/trainers/front_pics/conscriptedm.gbapal");
+
+const u32 gTrainerFrontPic_mercenaryfbattle[] = INCBIN_U32("graphics/trainers/front_pics/mercenaryf.4bpp.lz");
+const u16 gTrainerPalette_mercenaryfbattle[] = INCBIN_U16("graphics/trainers/front_pics/mercenaryf.gbapal");
+
+const u32 gTrainerFrontPic_shadydealermbattle[] = INCBIN_U32("graphics/trainers/front_pics/shadydealerm.4bpp.lz");
+const u16 gTrainerPalette_shadydealermbattle[] = INCBIN_U16("graphics/trainers/front_pics/shadydealerm.gbapal");
+
+const u32 gTrainerFrontPic_gangbikerfbattle[] = INCBIN_U32("graphics/trainers/front_pics/gangbikerf.4bpp.lz");
+const u16 gTrainerPalette_gangbikerfbattle[] = INCBIN_U16("graphics/trainers/front_pics/gangbikerf.gbapal");
+
+const u32 gTrainerFrontPic_gangbikermbattle[] = INCBIN_U32("graphics/trainers/front_pics/gangbikerm.4bpp.lz");
+const u16 gTrainerPalette_gangbikermbattle[] = INCBIN_U16("graphics/trainers/front_pics/gangbikerm.gbapal");
+
+const u32 gTrainerFrontPic_hazarddivermbattle[] = INCBIN_U32("graphics/trainers/front_pics/hazarddiverm.4bpp.lz");
+const u16 gTrainerPalette_hazarddivermbattle[] = INCBIN_U16("graphics/trainers/front_pics/hazarddiverm.gbapal");
+
+const u32 gTrainerFrontPic_patientfbattle[] = INCBIN_U32("graphics/trainers/front_pics/patientf.4bpp.lz");
+const u16 gTrainerPalette_patientfbattle[] = INCBIN_U16("graphics/trainers/front_pics/patientf.gbapal");
+
+const u32 gTrainerFrontPic_foreignspymbattle[] = INCBIN_U32("graphics/trainers/front_pics/foreignspym.4bpp.lz");
+const u16 gTrainerPalette_foreignspymbattle[] = INCBIN_U16("graphics/trainers/front_pics/foreignspym.gbapal");
+
+const u32 gTrainerFrontPic_hexgirlbattle[] = INCBIN_U32("graphics/trainers/front_pics/hexgirl.4bpp.lz");
+const u16 gTrainerPalette_hexgirlbattle[] = INCBIN_U16("graphics/trainers/front_pics/hexgirl.gbapal");
+
+
+
+
+
+
 
 
 const u32 gTrainerFrontPic_Hiker[] = INCBIN_U32("graphics/trainers/front_pics/hiker.4bpp.smol");
@@ -426,6 +467,61 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_ORPHAN_MALE, gTrainerFrontPic_OrphanM, gTrainerPalette_OrphanM),
     TRAINER_SPRITE(TRAINER_PIC_REBELGRUNTMBATTLE, gTrainerFrontPic_rebelgruntmbattle, gTrainerPalette_rebelgruntmbattle),
     TRAINER_SPRITE(TRAINER_PIC_SHARPYBATTLE, gTrainerFrontPic_sharpybattle, gTrainerPalette_sharpybattle),
+
+    TRAINER_SPRITE(TRAINER_PIC_CAMELIABATTLE, gTrainerFrontPic_cameliabattle, gTrainerPalette_cameliabattle),
+    TRAINER_SPRITE(TRAINER_PIC_CLERKFBATTLE, gTrainerFrontPic_clerkfbattle, gTrainerPalette_clerkfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_COSPLAYERFBATTLE, gTrainerFrontPic_cosplayerfbattle, gTrainerPalette_cosplayerfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_COSPLAYERMBATTLE, gTrainerFrontPic_cosplayermbattle, gTrainerPalette_cosplayermbattle),
+    TRAINER_SPRITE(TRAINER_PIC_DEVONADMINFBATTLE, gTrainerFrontPic_devonadminfbattle, gTrainerPalette_devonadminfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_DEVONADMINMBATTLE, gTrainerFrontPic_devonadminmbattle, gTrainerPalette_devonadminmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_DEVONGRUNTFBATTLE, gTrainerFrontPic_devongruntfbattle, gTrainerPalette_devongruntfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_DEVONGRUNTMBATTLE, gTrainerFrontPic_devongruntmbattle, gTrainerPalette_devongruntmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_HERMITMBATTLE, gTrainerFrontPic_hermitmbattle, gTrainerPalette_hermitmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_MEDICMBATTLE, gTrainerFrontPic_medicmbattle, gTrainerPalette_medicmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_MERCENARYMBATTLE, gTrainerFrontPic_mercenarymbattle, gTrainerPalette_mercenarymbattle),
+    TRAINER_SPRITE(TRAINER_PIC_MUSASHIBATTLE, gTrainerFrontPic_musashibattle, gTrainerPalette_musashibattle),
+    TRAINER_SPRITE(TRAINER_PIC_NETRUNNERFBATTLE, gTrainerFrontPic_netrunnerfbattle, gTrainerPalette_netrunnerfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_NETRUNNERMBATTLE, gTrainerFrontPic_netrunnermbattle, gTrainerPalette_netrunnermbattle),
+
+    TRAINER_SPRITE(TRAINER_PIC_OLDNORMANBATTLE, gTrainerFrontPic_oldnormanbattle, gTrainerPalette_oldnormanbattle),
+    TRAINER_SPRITE(TRAINER_PIC_ORPHANGIRLFBATTLE, gTrainerFrontPic_orphangirlfbattle, gTrainerPalette_orphangirlfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_PATIENTMBATTLE, gTrainerFrontPic_patientmbattle, gTrainerPalette_patientmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_PUNKFBATTLE, gTrainerFrontPic_punkfbattle, gTrainerPalette_punkfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_PUNKMBATTLE, gTrainerFrontPic_punkmbattle, gTrainerPalette_punkmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_REBELADMINFBATTLE, gTrainerFrontPic_rebeladminfbattle, gTrainerPalette_rebeladminfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_REBELADMINMBATTLE, gTrainerFrontPic_rebeladminmbattle, gTrainerPalette_rebeladminmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_REBELGRUNTFBATTLE, gTrainerFrontPic_rebelgruntfbattle, gTrainerPalette_rebelgruntfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_REPORTERSBATTLE, gTrainerFrontPic_reportersbattle, gTrainerPalette_reportersbattle),
+
+    TRAINER_SPRITE(TRAINER_PIC_ROXANNEDEVONBATTLE, gTrainerFrontPic_roxannedevonbattle, gTrainerPalette_roxannedevonbattle),
+    TRAINER_SPRITE(TRAINER_PIC_SCAVENGERFBATTLE, gTrainerFrontPic_scavengerfbattle, gTrainerPalette_scavengerfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_SCAVENGERMBATTLE, gTrainerFrontPic_scavengermbattle, gTrainerPalette_scavengermbattle),
+    TRAINER_SPRITE(TRAINER_PIC_SCIENTISTFBATTLE, gTrainerFrontPic_scientistfbattle, gTrainerPalette_scientistfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_SCIENTISTMBATTLE, gTrainerFrontPic_scientistmbattle, gTrainerPalette_scientistmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_SIDNEYREBELBATTLE, gTrainerFrontPic_sidneyrebelbattle, gTrainerPalette_sidneyrebelbattle),
+    TRAINER_SPRITE(TRAINER_PIC_TECHNICIANFBATTLE, gTrainerFrontPic_technicianfbattle, gTrainerPalette_technicianfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_TECHNICIANMBATTLE, gTrainerFrontPic_technicianmbattle, gTrainerPalette_technicianmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_THEORISTMBATTLE, gTrainerFrontPic_theoristmbattle, gTrainerPalette_theoristmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_TOMOKOBATTLE, gTrainerFrontPic_tomokobattle, gTrainerPalette_tomokobattle),
+
+    TRAINER_SPRITE(TRAINER_PIC_TOURISTFBATTLE, gTrainerFrontPic_touristfbattle, gTrainerPalette_touristfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_TOURISTMBATTLE, gTrainerFrontPic_touristmbattle, gTrainerPalette_touristmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_VETERANMBATTLE, gTrainerFrontPic_veteranmbattle, gTrainerPalette_veteranmbattle),
+
+
+    TRAINER_SPRITE(TRAINER_PIC_SHADYDEALERMBATTLE, gTrainerFrontPic_shadydealermbattle, gTrainerPalette_touristfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_GANGBIKERFBATTLE, gTrainerFrontPic_gangbikerfbattle, gTrainerPalette_gangbikerfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_GANGBIKERMBATTLE, gTrainerFrontPic_gangbikermbattle, gTrainerPalette_gangbikermbattle),
+    TRAINER_SPRITE(TRAINER_PIC_HAZARDDIVERMBATTLE, gTrainerFrontPic_hazarddivermbattle, gTrainerPalette_hazarddivermbattle),
+    TRAINER_SPRITE(TRAINER_PIC_MERCENARYFBATTLE, gTrainerFrontPic_mercenaryfbattle, gTrainerPalette_mercenaryfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_PATIENTFBATTLE, gTrainerFrontPic_patientfbattle, gTrainerPalette_patientfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_CONSCRIPTEDMBATTLE, gTrainerFrontPic_conscriptedmbattle, gTrainerPalette_conscriptedmbattle),
+    TRAINER_SPRITE(TRAINER_PIC_CONSCRIPTEDFBATTLE, gTrainerFrontPic_conscriptedfbattle, gTrainerPalette_conscriptedfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_FOREIGNSPYMBATTLE, gTrainerFrontPic_foreignspymbattle, gTrainerPalette_foreignspymbattle),
+    TRAINER_SPRITE(TRAINER_PIC_HEXGIRLBATTLE, gTrainerFrontPic_hexgirlbattle, gTrainerPalette_hexgirlbattle),
+
+
+
     TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),
     TRAINER_SPRITE(TRAINER_PIC_AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, gTrainerPalette_AquaGruntM),
     TRAINER_SPRITE(TRAINER_PIC_POKEMON_BREEDER_F, gTrainerFrontPic_PokemonBreederF, gTrainerPalette_PokemonBreederF),
