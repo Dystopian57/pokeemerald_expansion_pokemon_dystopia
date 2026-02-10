@@ -9772,6 +9772,20 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
 
+=== TRAINER_REBEL_OLDALE_GUARD ===
+Name: Margaret
+Class: Touristm
+Pic: rebelgruntfbattle
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Basic Trainer
+
+Manchine
+Level: 4
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: MAY
 Class: Rival

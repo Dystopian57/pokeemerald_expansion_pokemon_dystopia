@@ -27190,3 +27190,29 @@ const u8 gMonFootprint_Mimiyurui[] = INCBIN_U8("graphics/pokemon/mimiyurui/footp
 const u32 gObjectEventPic_Mimiyurui[] = INCBIN_COMP("graphics/pokemon/mimiyurui/overworld.4bpp");
 const u16 gOverworldPalette_Mimiyurui[] = INCBIN_U16("graphics/pokemon/mimiyurui/overworld_normal.gbapal");
 const u16 gShinyOverworldPalette_Mimiyurui[] = INCBIN_U16("graphics/pokemon/mimiyurui/overworld_shiny.gbapal");
+
+//Arystal
+
+const u32 gMonFrontPic_Arystal[] = INCBIN_U32("graphics/pokemon/arystal/anim_front.4bpp.lz");
+const u32 gMonBackPic_Arystal[] = INCBIN_U32("graphics/pokemon/arystal/back.4bpp.lz");
+const u16 gMonPalette_Arystal[] = INCBIN_U16("graphics/pokemon/arystal/normal.gbapal");
+const u16 gMonShinyPalette_Arystal[] = INCBIN_U16("graphics/pokemon/arystal/shiny.gbapal");
+const u8 gMonIcon_Arystal[] = INCBIN_U8("graphics/pokemon/arystal/icon.4bpp");
+const u8 gMonFootprint_Arystal[] = INCBIN_U8("graphics/pokemon/arystal/footprint.1bpp");
+
+const u32 gObjectEventPic_Arystal[] = INCBIN_COMP("graphics/pokemon/arystal/overworld.4bpp");
+const u16 gOverworldPalette_Arystal[] = INCBIN_U16("graphics/pokemon/arystal/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_Arystal[] = INCBIN_U16("graphics/pokemon/arystal/overworld_shiny.gbapal");
+
+//Verdoom
+
+const u32 gMonFrontPic_Verdoom[] = INCBIN_U32("graphics/pokemon/verdoom/anim_front.4bpp.lz");
+const u32 gMonBackPic_Verdoom[] = INCBIN_U32("graphics/pokemon/verdoom/back.4bpp.lz");
+const u16 gMonPalette_Verdoom[] = INCBIN_U16("graphics/pokemon/verdoom/normal.gbapal");
+const u16 gMonShinyPalette_Verdoom[] = INCBIN_U16("graphics/pokemon/verdoom/shiny.gbapal");
+const u8 gMonIcon_Verdoom[] = INCBIN_U8("graphics/pokemon/verdoom/icon.4bpp");
+const u8 gMonFootprint_Verdoom[] = INCBIN_U8("graphics/pokemon/verdoom/footprint.1bpp");
+
+const u32 gObjectEventPic_Verdoom[] = INCBIN_COMP("graphics/pokemon/verdoom/overworld.4bpp");
+const u16 gOverworldPalette_Verdoom[] = INCBIN_U16("graphics/pokemon/verdoom/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_Verdoom[] = INCBIN_U16("graphics/pokemon/verdoom/overworld_shiny.gbapal");

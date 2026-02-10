@@ -25,6 +25,17 @@ bool32 SetUpFieldMove_Strength(void)
         return TRUE;
     }
     return FALSE;
+
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CLEFAIRY_DOLL) == TRUE)
+    {
+        gSpecialVar_Result = GetCursorSelectionMonId();
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_Strength;
+        return TRUE;
+    }
+    return FALSE;
+
+
 }
 
 static void FieldCallback_Strength(void)

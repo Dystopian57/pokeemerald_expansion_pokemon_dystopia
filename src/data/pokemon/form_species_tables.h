@@ -2649,5 +2649,19 @@ static const u16 sMimiyuruiFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_MIMIYURUI
 
+#if P_FAMILY_ARYSTAL
+static const u16 sArystalFormSpeciesIdTable[] = {
+    SPECIES_ARYSTAL,
+    SPECIES_ARON
+};
+#endif //P_FAMILY_ARYSTAL
+
+#if P_FAMILY_VERDOOM
+static const u16 sVerdoomFormSpeciesIdTable[] = {
+    SPECIES_VERDOOM,
+    SPECIES_BELDUM
+};
+#endif //P_FAMILY_VERDOOM
+
 
 

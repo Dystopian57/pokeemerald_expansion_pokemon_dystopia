@@ -2641,6 +2641,12 @@ static const struct SpriteFrameImage sPicTable_AggronMega[] = {
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_ARON
 
+#if P_FAMILY_ARYSTAL
+static const struct SpriteFrameImage sPicTable_Arystal[] = {
+    overworld_ascending_frames(gObjectEventPic_Arystal, 4, 4),
+};
+#endif //P_FAMILY_ARYSTAL
+
 #if P_FAMILY_MEDITITE
 static const struct SpriteFrameImage sPicTable_Meditite[] = {
     overworld_ascending_frames(gObjectEventPic_Meditite, 4, 4),
@@ -3139,6 +3145,12 @@ static const struct SpriteFrameImage sPicTable_MetagrossMega[] = {
 #endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_BELDUM
+
+#if P_FAMILY_VERDOOM
+static const struct SpriteFrameImage sPicTable_Verdoom[] = {
+    overworld_ascending_frames(gObjectEventPic_Verdoom, 4, 4),
+};
+#endif //P_FAMILY_VERDOOM
 
 #if P_FAMILY_REGIROCK
 static const struct SpriteFrameImage sPicTable_Regirock[] = {

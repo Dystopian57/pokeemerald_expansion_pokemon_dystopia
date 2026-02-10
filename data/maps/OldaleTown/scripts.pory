@@ -143,6 +143,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     msgbox(format("W-well..."))
 
     applymovement (17, moves(face_left))
+    playse (SE_PIN)
     applymovement (18, moves(emote_exclamation_mark))
     applymovement (17, moves(face_left))
     removefieldmugshot
@@ -151,7 +152,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     playse (SE_PIN)
     applymovement (18, moves(face_left))
     msgbox(format("Oh, you there!!"))
-    applymovement (18, moves(walk_left * 1))
+    applymovement (18, moves(walk_left * 2))
     applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 
 	checkplayergender
@@ -269,7 +270,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
 
 	playmoncry(SPECIES_CORPHISH, CRY_MODE_NORMAL)
     msgbox(format("Cor-coooor!"))
-
+    playse (SE_FLEE)
     applymovement (18, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 7))
     applymovement (20, moves(walk_down * 1, walk_left * 1, walk_fast_left * 3, walk_fast_up * 7))
     waitmovement
@@ -279,7 +280,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
     msgbox(format("This... guy..."))
     removefieldmugshot
-    setvar(VAR_OLDALE_PHASE, 2)
+    setvar(VAR_OLDALE_PHASE, 1)
     setobjectxy (18, 0, 0)
     setobjectxy (20, 0, 0)
 	setflag (sharpynotoutsideDLC)
@@ -312,4 +313,79 @@ script OldaleCamelia {
     releaseall
     }
 
-//    
+
+script OldaleDevonGrunts {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if(var(VAR_OLDALE_PHASE) == 1)
+        {
+        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        msgbox(format("I'm sorry, but there is a dangerous, non-safened Pokémon roaming Road 002. \p Devon personnel is
+        currently on the field to remove the threat."))
+        applymovement (16, moves(face_player, walk_in_place_right * 1))
+        msgbox(format("To ensure civilian safety, we can't let anyone through right now. \p
+        {COLOR LIGHT_GRAY}{SHADOW WHITE}We also don't want you more injured than you look...
+        {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+        }
+
+	if(var(VAR_OLDALE_PHASE) == 2)
+       {applymovement (15, moves(face_player, walk_in_place_right * 1))
+        msgbox(format("Damn kids, they were fast... by the time I grabbed my Pokéball, they had
+        sprinted right past me!"))
+
+        applymovement (16, moves(walk_in_place_up * 1, face_up))
+        msgbox(format("
+        {COLOR LIGHT_GRAY}{SHADOW WHITE}Dude... you were just checking your Devon Nav.
+        {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+
+        applymovement (15, moves(walk_in_place_down * 1, face_down))
+        msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}... can we not? We're in front of a civilian!
+        {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+        applymovement (15, moves(face_right))
+        applymovement (16, moves(face_right))
+
+        }
+    releaseall
+}
+		//cutscene, change Devon guards dialogue. "those kids were so fast..." "dude, you were just"
+		//on your pokenav, checking Glacia's fanpage... //... can we not in front of civilians, please?
+		//if Sharpy103Rematch never set, change dialogue in Dojo: "You never showed up!!"
+		//Glacia is just beautiful okay? She's not so young anymore, but she looks like it! They say
+		//her secret is being an Ice type specialist, because... //can you shut up!? sorry...
+
+
+    script OldaleWarehouseRebelGuard {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("You lost, kid? Well scram, there's nothing here for you t-"))
+    applymovement (19, moves(emote_exclamation_mark))
+    playse (SE_PIN)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+
+	checkplayergender
+		if(var(VAR_RESULT) == MALE)
+		{msgbox(format("Wait a second... green hood, crutches... \p You're the guy that beat Rick!"))}
+        if(var(VAR_RESULT) == FEMALE)
+		{msgbox(format("Wait a second... green cap, arm on a sling,... \p You're the lass that beat Rick!"))}
+
+    msgbox(format("Hahaha, you beat him with THAT thing behind you? He's so pathetic!
+    \pI'll teach you, not every Rebel is like him!"))
+
+	trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, RebelOldale_Outro)
+        
+    msgbox(format("Think you're tough, huh? Well, why don't you come inside then?"))
+    applymovement (19, moves(face_up))
+    msgbox(format("We'll give you a warm welcome... hehe.")) 
+    
+    opendoor (36,7)
+    playse (SE_SLIDING_DOOR)
+    waitdooranim
+    applymovement (19, moves(walk_up * 1))
+    waitmovement
+    removeobject (19)
+    setflag (oldalerebelguardleaves)
+     }
+
+    text RebelOldale_Outro{
+    "Huh... I guess he was right after all..."}
+    

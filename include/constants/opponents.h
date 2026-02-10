@@ -8,7 +8,7 @@
 #define TRAINER_REBEL_GRUNT_101               2
 #define TRAINER_SHARPY_103                    3
 #define TRAINER_TOURISTSHANE_103              4
-#define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
+#define TRAINER_REBEL_OLDALE_GUARD          5
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8

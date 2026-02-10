@@ -355,13 +355,13 @@
       "x": 23,
       "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "touristhelped"
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TOURISTM",
@@ -465,7 +465,7 @@
       "elevation": 0,
       "var": "VAR_103TOURISTQUEST",
       "var_value": "1",
-      "script": "Route103TouristApproach0"
+      "script": "Route103TouristNotThatWay"
     }
   ],
   "bg_events": []

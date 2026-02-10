@@ -2518,4 +2518,151 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_BANETTE}),
     },
 
+
+    [SPECIES_ARYSTAL] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 70,
+        .baseDefense   = 100,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_ROCK),
+        .catchRate = 180,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 66 : 96,
+        .evYield_Defense = 1,
+        .itemRare = ITEM_HARD_STONE,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 35,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER),
+        .abilities = { ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_HEAVY_METAL },
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Arystal"),
+        .cryId = CRY_ARON,
+        .natDexNum = NATIONAL_DEX_ARYSTAL,
+        .categoryName = _("Iron Armor"),
+        .height = 4,
+        .weight = 600,
+        .description = COMPOUND_STRING(
+            "A Pokémon that is clad in steel armor.\n"
+            "A new suit of armor is made when it evolves.\n"
+            "The old, discarded armor is salvaged as\n"
+            "metal for making iron products."),
+        .pokemonScale = 419,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Arystal,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(32, 24) : MON_COORDS_SIZE(32, 40),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 20 : 14,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(1, 44),
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(1, 33),
+            ANIMCMD_FRAME(0, 11),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+        .backPic = gMonBackPic_Arystal,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 32) : MON_COORDS_SIZE(48, 40),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 17 : 12,
+        .backAnimId = BACK_ANIM_JOLT_RIGHT,
+        .palette = gMonPalette_Arystal,
+        .shinyPalette = gMonShinyPalette_Arystal,
+        .iconSprite = gMonIcon_Arystal,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
+        SHADOW(2, -3, SHADOW_SIZE_S)
+        FOOTPRINT(Aron)
+        OVERWORLD(
+            sPicTable_Aron,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Aron,
+            gShinyOverworldPalette_Aron
+        )
+        .levelUpLearnset = sAronLevelUpLearnset,
+        .teachableLearnset = sAronTeachableLearnset,
+        .eggMoveLearnset = sAronEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_LAIRON}),
+    },
+
+    [SPECIES_VERDOOM] =
+    {
+        .baseHP        = 40,
+        .baseAttack    = 55,
+        .baseDefense   = 80,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 35,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_PSYCHIC),
+        .catchRate = 3,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 103,
+        .evYield_Defense = 1,
+        .itemRare = ITEM_METAL_COAT,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 40,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_LIGHT_METAL },
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = TRUE,
+        .speciesName = _("Verdoom"),
+        .cryId = CRY_BELDUM,
+        .natDexNum = NATIONAL_DEX_VERDOOM,
+        .categoryName = _("Iron Ball"),
+        .height = 6,
+        .weight = 952,
+        .description = COMPOUND_STRING(
+            "When Beldum gather in a swarm, they move\n"
+            "in perfect unison as if they were but one\n"
+            "Pokémon. They communicate with each other\n"
+            "using brain waves."),
+        .pokemonScale = 414,
+        .pokemonOffset = -1,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Verdoom,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 40) : MON_COORDS_SIZE(48, 40),
+        .frontPicYOffset = 15,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_H_SHAKE,
+        .enemyMonElevation = 8,
+        .backPic = gMonBackPic_Verdoom,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 9,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_Verdoom,
+        .shinyPalette = gMonShinyPalette_Verdoom,
+        .iconSprite = gMonIcon_Verdoom,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 4, SHADOW_SIZE_S)
+        FOOTPRINT(Verdoom)
+        OVERWORLD(
+            sPicTable_Verdoom,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            sAnimTable_Following,
+            gOverworldPalette_Verdoom,
+            gShinyOverworldPalette_Verdoom
+        )
+        .tmIlliterate = TRUE,
+        .levelUpLearnset = sBeldumLevelUpLearnset,
+        .teachableLearnset = sBeldumTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_METANG}),
+    },
+
 };

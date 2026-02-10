@@ -222,7 +222,7 @@ script Sharpy103 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (24, moves(face_player))
-	playbgm (MUS_ENCOUNTER_AQUA, TRUE)
+	playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
 	setspeaker ([SP_NAME_SHARPY])
 
 	if (!flag (Sharpy103Rematch))
@@ -254,17 +254,11 @@ script Sharpy103 {
 		}
 		battleSharpy103:
 		trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
-
-		playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
-		fadescreenswapbuffers (FADE_TO_BLACK)
-		setobjectxy (24, 8, 3)
-		applymovement (24, moves(face_left))
-		setobjectxy (OBJ_EVENT_ID_PLAYER, 5, 3)
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 		addobject (25)
 		setobjectxy (25, 10, 4)
-
-		fadescreenswapbuffers (FADE_FROM_BLACK)
+		playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		applymovement (24, moves(face_player))
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD)
 		setspeaker ([SP_NAME_SHARPY])
 		msgbox(format("Oh man... I was so close to beating you!"))
@@ -326,7 +320,7 @@ script Sharpy103 {
 		removefieldmugshot
 		playse (SE_LEDGE)
 		applymovement (25, moves(jump_2_down, walk_down * 4))
-		applymovement (24, moves(walk_fast_right * 1, walk_fast_down * 1))
+		applymovement (24, moves(walk_fast_right * 2, walk_fast_down * 1))
 		waitmovement (24)
 		playse (SE_LEDGE)
 		applymovement (24, moves(jump_2_down, walk_fast_down * 7))
@@ -334,19 +328,8 @@ script Sharpy103 {
 		setflag (sharpynotinroute103)
 		setobjectxy (24, 79, 0)
 		setobjectxy (25, 79, 0)
-
-		special (SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 2))
-		waitmovement (OBJ_EVENT_ID_CAMERA)
-		special (RemoveCameraObject)
 		setflag (camelianotoutsideDLC)
-
-
-		//cutscene, change Devon guards dialogue. "those kids were so fast..." "dude, you were just"
-		//on your pokenav, checking Glacia's fanpage... //... can we not in front of civilians, please?
-		//if Sharpy103Rematch never set, change dialogue in Dojo: "You never showed up!!"
-		//Glacia is just beautiful okay? She's not so young anymore, but she looks like it! They say
-		//her secret is being an Ice type specialist, because... //can you shut up!? sorry...
+   		setvar(VAR_OLDALE_PHASE, 2)
 		releaseall
 		playbgm (MUS_ROUTE113, TRUE)
 		}
@@ -414,8 +397,8 @@ script Route103Tourist{
 	trainerbattle_no_intro(TRAINER_TOURISTSHANE_103, Tourist103_Outro) //Shane
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 
-	msgbox(format("Uhm... I'm sorry. I dropped my glasses, and I mistook you for that thief
-	for a second...!"))
+	msgbox(format("Uhm... I'm sorry. I dropped my glasses, and I mistook you for that thief...!"))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (27, moves(emote_exclamation_mark))
 	playse (SE_PIN)
 	msgbox(format("What thief? The one who stole all my pokeyen!"))
@@ -426,6 +409,7 @@ script Route103Tourist{
 	msgbox(format("I tried to get it out, but it's stuck real bad... if only me or my
 	Pokémon had enough {COLOR RED}STRENGTH{COLOR DARK_GRAY}!"))
 	setvar(VAR_103TOURISTQUEST, 1)
+	goto (finishtouristscript)
 	}
 
 	if(var(VAR_103TOURISTQUEST) == 1)
@@ -433,21 +417,30 @@ script Route103Tourist{
 	msgbox(format("I'm not leaving without my bike. It costed me 1,000,000¥ at Cerulean City's
 	Bike Shop!"))}
 
+	finishtouristscript:
 	releaseall
 	}
 
 
 	text Tourist103_Outro{
-		"Wait a minute... yeah, you're not that thief. Sorry!"}
+		"Wait a minute... yeah, you're not that \nthief. Sorry!"}
 
 
 script Route103Touristbikepushed {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (27, moves(emote_exclamation_mark, face_player))
+	playse (SE_PIN)
 	msgbox(format("Y-you did it! IT'S OUT! Wait, I'll take it from here!"))
+	closemessage
 
 		fadescreenswapbuffers (FADE_TO_BLACK)
+		clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_BIKE_HOP)
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 5, walk_left * 1))
+    	waitmovement(0)
+		special (RemoveCameraObject)
 		setobjectxy (27, 0, 0)
 		setobjectxy (26, 0, 0)
 		setflag (touristhelped)
@@ -456,10 +449,14 @@ script Route103Touristbikepushed {
 		setobjectxy (OBJ_EVENT_ID_PLAYER, 22, 9)
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 		fadescreenswapbuffers (FADE_FROM_BLACK)
-
-		msgbox(format("Thank you so much! Here - it's not much, but you can have it!"))
-
-		msgbox(format("Bye"))
+		msgbox(format("Thank you so much! Here - I got this as a souvenir, but you can have it!"))
+	    giveitem (ITEM_EXP_SHARE)
+		applymovement (29, moves(face_down))	
+		msgbox(format("Well, these have been some thrilling holidays... but I should catch a boat in
+		Slateport, and go back home."))
+		applymovement (29, moves(face_left))
+		msgbox(format("If you ever make a trip to Cinnabar Island, I'll return the favour properly. Safe travels
+		now!"))
 		applymovement (29, moves(walk_fast_right * 8))
 		waitmovement
 
@@ -471,7 +468,7 @@ script Route103Touristbikepushed {
 		playse (SE_M_STRENGTH)
 		waitse
 
-		msgbox(format("Owowow... I need a new pair of glasses..."))
+		msgbox(format("Ooow ow ow... I need a new pair of glasses..."))
 
 		removeobject (29)
     	setflag (touristonbike)
@@ -485,7 +482,9 @@ script Route103TouristNotThatWay {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (27, moves(emote_exclamation_mark, face_player))
+	playse (SE_PIN)
 	msgbox(format("N-no, don't touch it from that way, or I'll get even more stuck!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+	waitmovement
 	releaseall
 }

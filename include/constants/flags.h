@@ -90,10 +90,10 @@
 #define agreedtohelphexgirl1st    0x4C // Unused Flag
 #define hexgirlshuppetnormalspot   0x4D // Unused Flag
 #define touristonbike    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define oldalerebelguardleaves    0x4F // Unused Flag
 
-// Scripts
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
+// Scripts (started to replace vanilla from here)
+#define oldaledevonguardsleave                   0x50
 #define FLAG_SET_WALL_CLOCK                      0x51
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
