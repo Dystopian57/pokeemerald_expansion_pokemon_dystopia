@@ -6134,6 +6134,9 @@ u16 GetBattleBGM(void)
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_TOURISTF:
+        case TRAINER_CLASS_TOURISTM:
+            return MUS_RG_VS_TRAINER;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
             return MUS_VS_AQUA_MAGMA_LEADER;

@@ -25,6 +25,7 @@ script OldaleWeather {
 script OldaleTownSign {
     lockall
     msgbox(format("Oldale Town. \n “Where things start off scarce.”"))
+    setflag (FLAG_VISITED_LAVARIDGE_TOWN)
     releaseall   
 }
 
@@ -280,7 +281,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
     msgbox(format("This... guy..."))
     removefieldmugshot
-    setvar(VAR_OLDALE_PHASE, 1)
+    setvar(VAR_OLDALE_PHASE, 2)
     setobjectxy (18, 0, 0)
     setobjectxy (20, 0, 0)
 	setflag (sharpynotoutsideDLC)
@@ -374,6 +375,7 @@ script OldaleDevonGrunts {
 	trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, RebelOldale_Outro)
         
     msgbox(format("Think you're tough, huh? Well, why don't you come inside then?"))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (19, moves(face_up))
     msgbox(format("We'll give you a warm welcome... hehe.")) 
     
@@ -384,6 +386,10 @@ script OldaleDevonGrunts {
     waitmovement
     removeobject (19)
     setflag (oldalerebelguardleaves)
+    closedoor (36,7)
+	playbgm (MUS_RG_LAVENDER, TRUE)
+
+    releaseall
      }
 
     text RebelOldale_Outro{

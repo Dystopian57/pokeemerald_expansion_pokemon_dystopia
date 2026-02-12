@@ -58,7 +58,6 @@ enum {
     REMATCH_EDWIN,
     REMATCH_LYDIA,
     REMATCH_ISAAC,
-    REMATCH_GABRIELLE,
     REMATCH_CATHERINE,
     REMATCH_JACKSON,
     REMATCH_HALEY,
@@ -79,6 +78,7 @@ enum {
     REMATCH_GLACIA,
     REMATCH_DRAKE,
     REMATCH_WALLACE,
+    REMATCH_VETERAN103,
     REMATCH_TABLE_ENTRIES // The total number of rematch entries. Must be last in enum
 };
 

@@ -388,6 +388,11 @@ const u8 gText_MatchCallChampion_Wallace_Pokemon[] = _("I prefer POKéMON of gra
 const u8 gText_MatchCallChampion_Wallace_Intro1[] = _("I represent beauty as");
 const u8 gText_MatchCallChampion_Wallace_Intro2[] = _("well as intelligence.");
 
+const u8 gText_MatchCallVeteran103_Strategy[] = _("Trust my experience.");
+const u8 gText_MatchCallVeteran103_Pokemon[] = _("My frontline buddies.");
+const u8 gText_MatchCallVeteran103_Intro1[] = _("I am not ready to pass");
+const u8 gText_MatchCallVeteran103_Intro2[] = _("the torch yet!");
+
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] =
 {
     [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose),
@@ -446,7 +451,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_EDWIN] = MCFLAVOR(Collector_Edwin),
     [REMATCH_LYDIA] = MCFLAVOR(PkmnBreeder_Lydia),
     [REMATCH_ISAAC] = MCFLAVOR(PkmnBreeder_Isaac),
-    [REMATCH_GABRIELLE] = MCFLAVOR(PkmnBreeder_Gabrielle),
     [REMATCH_CATHERINE] = MCFLAVOR(PkmnRanger_Catherine),
     [REMATCH_JACKSON] = MCFLAVOR(PkmnRanger_Jackson),
     [REMATCH_HALEY] = MCFLAVOR(Lass_Haley),
@@ -467,4 +471,5 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_GLACIA] = MCFLAVOR(EliteFour_Glacia),
     [REMATCH_DRAKE] = MCFLAVOR(EliteFour_Drake),
     [REMATCH_WALLACE] = MCFLAVOR(Champion_Wallace),
+    [REMATCH_VETERAN103] = MCFLAVOR(Veteran103),
 };

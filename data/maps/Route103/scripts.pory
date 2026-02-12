@@ -329,7 +329,7 @@ script Sharpy103 {
 		setobjectxy (24, 79, 0)
 		setobjectxy (25, 79, 0)
 		setflag (camelianotoutsideDLC)
-   		setvar(VAR_OLDALE_PHASE, 2)
+   		setvar(VAR_OLDALE_PHASE, 3)
 		releaseall
 		playbgm (MUS_ROUTE113, TRUE)
 		}
@@ -395,6 +395,8 @@ script Route103Tourist{
 	applymovement (27, moves(face_player))
 	msgbox(format("You're the one who mugged me! You're not getting away!"))
 	trainerbattle_no_intro(TRAINER_TOURISTSHANE_103, Tourist103_Outro) //Shane
+
+
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 
 	msgbox(format("Uhm... I'm sorry. I dropped my glasses, and I mistook you for that thief...!"))
@@ -483,8 +485,45 @@ script Route103TouristNotThatWay {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (27, moves(emote_exclamation_mark, face_player))
 	playse (SE_PIN)
-	msgbox(format("N-no, don't touch it from that way, or I'll get even more stuck!"))
+
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement
 	releaseall
 }
+
+script Route103VeteranBattle {
+	trainerbattle_single(TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro, Route103VeteranRegister)
+	specialvar (VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq (VAR_RESULT, TRUE, Route103VeteranRematch)
+	msgbox(format("I guess not all of you youngsters are weak. Perhaps Hoenn is in good hands."))
+	release
+	end
+}
+
+script Route103VeteranRegister {
+	special (PlayerFaceTrainerAfterBattle)
+	waitmovement (0)
+	msgbox(format("Number registered."))
+	register_matchcall (TRAINER_VETERAN_103)
+	release
+	end
+}
+
+script Route103VeteranRematch {
+	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro)
+	msgbox(format("Rematch ended."))
+	end
+	}
+
+
+	text Veteran103_Intro{
+		"They told me I'm too old to enlist...  but I'm \nstronger than you young'uns! \p
+		I'll show you!"}
+
+	text Veteran103_Outro{
+		"Hmpf... not bad..."}
+
+	
+
+
+
