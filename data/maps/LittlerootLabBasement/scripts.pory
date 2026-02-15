@@ -247,10 +247,26 @@ script AideeBasementIdleTalk {
 		msgbox (format("However, if you bring me enough Safemon to unsafen, perhaps I can study them
 		and hack... I mean, upgrade the Devondex later on!"))
 
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Oh, one last thing - here's my Devon Nav number!"))
+
+		setflag (FLAG_ENABLE_PROF_BIRCH_MATCH_CALL)
+		playbgm (MUS_REGISTER_MATCH_CALL, TRUE)
+
+
+
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
-		msgbox (format("But that's enough talk from me. Go out there, and bring me tons of specimens!"))
+		playbgm (MUS_AQUA_MAGMA_HIDEOUT, TRUE)
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Feel free to call me if you want to discuss your Devon Dex progress. I'll even
+		throw a tip or two while we're at it!"))
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("But that's enough talk from me. Get out there, and start catching!"))
 		removefieldmugshot
 		setflag (Unsafeningtutodone)
 		goto (finishunsafentutorial)

@@ -179,7 +179,6 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 # 90 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 # 101 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 # 91 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag FLAG_MET_RIVAL_MOM
 # 92 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 # 102 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 # 93 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"

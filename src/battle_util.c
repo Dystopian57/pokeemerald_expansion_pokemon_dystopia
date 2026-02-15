@@ -5862,6 +5862,12 @@ u32 IsAbilityPreventingEscape(u32 battler)
 
 bool32 CanBattlerEscape(u32 battler) // no ability check
 {
+        //if (FlagGet(FLAG_NO_ESCAPE))
+    //{
+        //gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
+        //gBattlescriptCurrInstr = BattleScript_PrintFailedToRunString;
+        //gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
+    //}
     if (gBattleStruct->battlerState[battler].commanderSpecies != SPECIES_NONE)
         return FALSE;
     else if (GetConfig(CONFIG_GHOSTS_ESCAPE) >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))

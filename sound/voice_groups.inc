@@ -59,6 +59,8 @@
 .include "sound/voicegroups/anistarcity.inc"
 .include "sound/voicegroups/unovaroutegate.inc"
 
+.include "sound/voicegroups/mahalotrail.inc"
+
 
 .include "sound/voicegroups/b_tower_rs.inc"
 .include "sound/voicegroups/encounter_swimmer.inc"

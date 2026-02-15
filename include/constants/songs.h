@@ -521,6 +521,8 @@
 #define MUS_ANISTARCITY             586
 #define MUS_UNOVAROUTEGATE          587
 
+#define MUS_MAHALOTRAIL             588
+
 #define END_MUS                     MUS_UNOVAROUTEGATE
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).

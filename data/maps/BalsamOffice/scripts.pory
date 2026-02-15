@@ -1,0 +1,306 @@
+raw `
+
+`
+
+mapscripts BalsamOffice_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: TurnOnRotom}
+
+
+script TurnOnRotom {
+
+	if (!flag (balsamofficeemptytv))
+    {
+    addobject (2)
+    removeobject (3)
+    setflag (balsamofficeemptytv)
+    clearflag (balsamofficerotom)
+    }
+
+}
+
+
+script BalsamBedUp {
+	lockall
+    msgbox("Rest for a bit?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+	fadescreen (FADE_TO_BLACK)
+	special(HealPlayerParty)
+	playse (MUS_HEAL)
+	msgbox (format("You rest for a while."))
+    special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 1))
+	special (RemoveCameraObject)
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    goto (startBalsamBedScript)
+    }
+    releaseall
+}
+
+
+script BalsamBedRight {
+	lockall
+    msgbox("Rest for a bit?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+	fadescreen (FADE_TO_BLACK)
+	special(HealPlayerParty)
+	playse (MUS_HEAL)
+	msgbox (format("You rest for a while."))
+    special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 1, walk_left * 1))
+	special (RemoveCameraObject)
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    goto (startBalsamBedScript)
+    }
+    releaseall
+}
+
+
+script BalsamBed {
+	lockall
+    msgbox("Rest for a bit?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+	fadescreen (FADE_TO_BLACK)
+	special(HealPlayerParty)
+	playse (MUS_HEAL)
+	msgbox (format("You rest for a while."))
+
+
+    startBalsamBedScript:
+	if (!flag (balsamgavebedwarning) && !flag (balsamgavebedpermission)){
+    clearflag (balsaminherbedroom)
+	addobject (1)
+	setobjectxy (1, 4, 3)
+	applymovement (1, moves(face_right))
+	setobjectxy (OBJ_EVENT_ID_PLAYER, 5, 3)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	waitbuttonpress
+	fadescreen (FADE_FROM_BLACK)
+
+	setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+    msgbox (format("{PLAYER}... what do you think you're doing? This is not a guest room."))
+
+	setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+    msgbox (format("This is MY room."))
+
+	setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+    msgbox (format("If you're tired, your house is literally behind the lab.
+    \pNow leave. This is my one place to relax, and I don't want squatters around."))
+    applymovement (1, moves(walk_down *2, face_up))
+    waitmovement
+    setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
+
+    msgbox (format("Don't do this ever again… or ELSE."))
+    removefieldmugshot
+
+    applymovement (1, moves(walk_down *2))
+    waitmovement
+    playse (SE_DOOR)
+	removeobject (1)
+    setflag (balsaminherbedroom)
+    setflag (balsamgavebedwarning)
+    goto (finishcript)
+    }
+
+	if (flag (balsamgavebedwarning) && !flag (balsamgavebedpermission))
+    
+    {
+    clearflag (balsaminherbedroom)
+	addobject (1)
+	setobjectxy (OBJ_EVENT_ID_PLAYER, 5, 3)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+	waitbuttonpress
+	fadescreen (FADE_FROM_BLACK)
+
+	setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+    msgbox (format("{PLAYER}... don't say I didn't warn you."))
+
+    msgbox (format("If words don't work with you, perhaps a good old beating will!"))
+    setflag (FLAG_NO_ESCAPE)
+    removefieldmugshot
+
+        if (!flag (GotPika))
+        {
+            trainerbattle_no_intro(TRAINER_BALSAM_PURACHU, Balsam_Outro)
+
+        }
+
+        else {
+            trainerbattle_no_intro(TRAINER_BALSAM_NOPURACHU, Balsam_Outro)
+
+        }
+
+            setspeaker ([SP_NAME_BALSAM])
+            createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+            msgbox (format("You're making me regret helping you out, {PLAYER}."))
+
+            setspeaker ([SP_NAME_BALSAM])
+            createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+            msgbox (format("I lent you a hand when you were at your lowest, and this is how you thank me?"))
+
+            setspeaker ([SP_NAME_BALSAM])
+            createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+            msgbox (format("Why are you even sleeping here? Just to see my reaction? \p You think this is just one of your…"))
+
+            setspeaker ([SP_NAME_BALSAM])
+            createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
+            msgbox (format("Videogames?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes!", "No. I'm sorry.")
+
+                    if(var(VAR_RESULT) == 0){
+                    
+                    setspeaker ([SP_NAME_BALSAM])
+                    createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+                    msgbox (format("… right. I should have signed you up for more therapy sessions.
+                    You have a few screws lose don't you?"))
+
+                    setspeaker ([SP_NAME_BALSAM])
+                    createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+                    msgbox (format("... \p Sorry. That was a bit too much. I know you've had it rough.\p
+                    I understand if you don't want to sleep at home. It brings you painful memories, right?
+                    \p You can sleep here if that's the case. I mostly just doze on my chair these days anyway."))
+                    
+
+                    }
+
+                    if(var(VAR_RESULT) == 1){
+                    
+                    setspeaker ([SP_NAME_BALSAM])
+                    createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+                    msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+                    Apology accepted. Perhaps I have overreacted a bit too."))
+
+                    setspeaker ([SP_NAME_BALSAM])
+                    createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+                    msgbox (format("I understand if you don't want to sleep at home. It brings you painful memories, right?
+                    \p You can sleep here if that's the case. I mostly just doze on my chair these days anyway."))
+                    
+                    }
+
+                    setspeaker ([SP_NAME_BALSAM])
+                    createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+                    msgbox (format("Just don't make a mess of the place, alright?"))
+
+
+    applymovement (1, moves(walk_down *4))
+    waitmovement
+    playse (SE_DOOR)
+	removeobject (1)
+    setflag (balsamgavebedpermission)
+    setflag (balsaminherbedroom)
+    goto (finishcript)
+
+    }
+
+
+    else{
+    waitbuttonpress
+    goto (givenpermissiontosleep)
+    }
+
+    givenpermissiontosleep:
+	fadescreen (FADE_FROM_BLACK)
+    
+}
+    finishcript:
+    removefieldmugshot
+	releaseall		
+}
+
+
+text Balsam_Outro{
+"..."}
+
+
+
+script BalsamOfficeRotom {
+lockall
+setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+    msgbox("The TV is emitting a weird static.\nShould I turn it off?", MSGBOX_YESNO)
+
+    if (var(VAR_RESULT) == YES) {
+    msgbox (format("The TV begins to shake, then it attacks!"))
+
+	playse (SE_M_THUNDERBOLT) 
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+    waitse
+    playmoncry (SPECIES_ROTOM_MONITOR, CRY_MODE_NORMAL)
+    msgbox (format("Roooom!"))
+    setwildbattle(SPECIES_ROTOM_MONITOR, 2)
+	dowildbattle
+	specialvar(VAR_RESULT, GetBattleOutcome)
+
+	if(var(VAR_RESULT) == B_OUTCOME_WON){
+		call(WonRotom)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		call(CaughtRotom)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+		call(RanRotom)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+		call(RanRotom)
+	}}
+
+	
+releaseall
+}
+
+script EmptyRotomTV {
+    lockall
+    msgbox (format("The TV is turned off. If there's anything inside, it's quiet for now."))
+    releaseall
+}
+
+script WonRotom {
+    removeobject (2)
+    setflag (balsamofficerotom)
+    addobject (3)
+    clearflag (balsamofficeemptytv)
+}
+
+script CaughtRotom {
+    removeobject (2)
+    setflag (balsamofficerotom)
+}
+
+script RanRotom {
+    removeobject (2)
+    msgbox (format("The TV is left alone for now..."))
+}
+
+
+script BalsamWalkman {
+    lockall
+    msgbox("It's a Devon Music Player. Press the\n'Play' button?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+    
+    }
+    releaseall
+}
+
+script BalsamBookshelf {
+    lockall
+    msgbox (format("Among the many books on Pokémon science, there's a photo album... \p The cover
+    features a photo of a couple of kids, building a sand castle on a clean beach."))
+    releaseall
+
+}
+
+script BalsamDegree {
+    lockall
+    msgbox (format("It's a framed degree of higher education. It reads as follows: \p 'University of Alola, Degree in Pokémon
+    Genetics: Miss Balsam ¥?¿¥i. \p The surname has been crossed out."))
+    releaseall
+}

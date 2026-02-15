@@ -388,8 +388,8 @@ const u8 gText_MatchCallChampion_Wallace_Pokemon[] = _("I prefer POKéMON of gra
 const u8 gText_MatchCallChampion_Wallace_Intro1[] = _("I represent beauty as");
 const u8 gText_MatchCallChampion_Wallace_Intro2[] = _("well as intelligence.");
 
-const u8 gText_MatchCallVeteran103_Strategy[] = _("Trust my experience.");
-const u8 gText_MatchCallVeteran103_Pokemon[] = _("My frontline buddies.");
+const u8 gText_MatchCallVeteran103_Strategy[] = _("Experienced in warfare.");
+const u8 gText_MatchCallVeteran103_Pokemon[] = _("My frontline comrades.");
 const u8 gText_MatchCallVeteran103_Intro1[] = _("I am not ready to pass");
 const u8 gText_MatchCallVeteran103_Intro2[] = _("the torch yet!");
 

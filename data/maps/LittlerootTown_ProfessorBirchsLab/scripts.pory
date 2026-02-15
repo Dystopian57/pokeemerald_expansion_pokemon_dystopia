@@ -274,9 +274,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Aide::
 	lock
 	faceplayer
 	goto_if_ge VAR_BIRCH_LAB_STATE, 3, LittlerootTown_ProfessorBirchsLab_EventScript_AideReceivedStarter
-	goto_if_set FLAG_BIRCH_AIDE_MET, LittlerootTown_ProfessorBirchsLab_EventScript_AideAlreadyMet
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork, MSGBOX_DEFAULT
-	setflag FLAG_BIRCH_AIDE_MET
 	release
 	end
 
@@ -1087,7 +1085,6 @@ script Littleroot_Idletalk_Aidee{
 	removeitem (ITEM_COMET_SHARD)
 	setfollowernpc (LOCALID_BALSAM_AIDEE, FNPC_ALL, AideeFollowingChat, 0)
 	setflag (Aideeleaveslab)
-	setflag (Aideearrivestobasement)
 	setvar(VAR_LITTLEROOT_PHASE, 6)
 	goto(aideeisfollowing)
 	}
@@ -1866,7 +1863,7 @@ script LabBrokenGlasses {
  
 script LabShelves {
 lockall
-msgbox (format("The shelf is full of complicated books, mostly on the subjects of Pokémon genetics
+msgbox (format("The shelf is full of complicated books. The main subjects seem to be Pokémon genetics
 and biology."))
 releaseall
 }
@@ -1947,7 +1944,7 @@ setspeaker ([SP_NAME_BALSAM])
 applymovement (4, moves(face_player))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
- 		{msgbox (format("Oh, {PLAYER}, one last thing. Here, this is to keep in touch."))
+ 		{msgbox (format("Oh, {PLAYER}, one last thing. Here."))
 		fadeoutbgm (0)
 		playse (MUS_RG_OBTAIN_KEY_ITEM)
 		fadeinbgm (0)
@@ -1957,7 +1954,22 @@ if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
 		setflag(FLAG_SYS_POKENAV_GET)
 		setspeaker ([SP_NAME_BALSAM])
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-		msgbox (format("My number is already registered, so call me if there's an emergency."))
+		msgbox (format("This is a Devon Nav, or Devonav for short. It's got a Hoenn Map app installed. \p It will help
+        you to get around - there's many changed and new places in Hoenn. \pIt also comes
+		with this fad called 'Devon Net', a site where people upload their profiles, and call
+		each other. \p You need to add their profiles first though. Let me add mine real quick."))
+		setflag (FLAG_ENABLE_MOM_MATCH_CALL)
+		setflag (FLAG_ADDED_MATCH_CALL_TO_POKENAV)
+		removefieldmugshot
+		setspeaker ([NULL])
+		playbgm (MUS_REGISTER_MATCH_CALL, TRUE)
+		msgbox (format("Prof. Balsam's number is registered in the Devon Nav!"))
+		playbgm (MUS_AQUA_MAGMA_HIDEOUT, TRUE)
+		setspeaker ([SP_NAME_BALSAM])
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		msgbox (format("There you go. But don't call me unless there's an emergency. I'm busy."))
+		applymovement (4, moves(face_up))
+		waitmovement
 		removefieldmugshot
  		}
  else {

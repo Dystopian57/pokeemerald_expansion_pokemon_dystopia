@@ -225,6 +225,8 @@ script Sharpy103 {
 	playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
 	setspeaker ([SP_NAME_SHARPY])
 
+	special (DoTVShow)
+
 	if (!flag (Sharpy103Rematch))
 		{
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
@@ -511,14 +513,14 @@ script Route103VeteranRegister {
 
 script Route103VeteranRematch {
 	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro)
-	msgbox(format("Rematch ended."))
+	msgbox(format("You're even stronger than last time... or have I just gotten weaker...?
+	\p Old age is a cruel thing. But I plan to use the time I have left."))
 	end
 	}
 
 
 	text Veteran103_Intro{
-		"They told me I'm too old to enlist...  but I'm \nstronger than you young'uns! \p
-		I'll show you!"}
+		"They told me I'm too old to enlist...  but I'm\nstronger than you young'uns!\pI'll show you!"}
 
 	text Veteran103_Outro{
 		"Hmpf... not bad..."}

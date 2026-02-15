@@ -179,8 +179,8 @@ static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
     .type = MC_TYPE_NPC,
     .mapSec = MAPSEC_RUSTBORO_CITY,
     .flag = 0xFFFF,
-    .desc = COMPOUND_STRING("DEVON PRES"),
-    .name = COMPOUND_STRING("MR. STONE"),
+    .desc = COMPOUND_STRING("DEVON INC"),
+    .name = COMPOUND_STRING("NEWS FEED"),
     .textData = sMrStoneTextScripts
 };
 
@@ -213,8 +213,8 @@ static const struct MatchCallBirch sProfBirchMatchCallHeader =
     .type = MC_TYPE_BIRCH,
     .mapSec = 0,
     .flag = FLAG_ENABLE_PROF_BIRCH_MATCH_CALL,
-    .desc = COMPOUND_STRING("{PKMN} PROF."),
-    .name = COMPOUND_STRING("PROF. BIRCH")
+    .desc = COMPOUND_STRING("{PKMN} AIDE."),
+    .name = COMPOUND_STRING("AIDE")
 };
 
 static const match_call_text_data_t sMomTextScripts[] = {
@@ -229,8 +229,8 @@ static const struct MatchCallStructNPC sMomMatchCallHeader =
     .type = MC_TYPE_NPC,
     .mapSec = MAPSEC_LITTLEROOT_TOWN,
     .flag = FLAG_ENABLE_MOM_MATCH_CALL,
-    .desc = COMPOUND_STRING("CALM & KIND"),
-    .name = COMPOUND_STRING("MOM"),
+    .desc = COMPOUND_STRING("{PKMN} PROF"),
+    .name = COMPOUND_STRING("BALSAM"),
     .textData = sMomTextScripts
 };
 

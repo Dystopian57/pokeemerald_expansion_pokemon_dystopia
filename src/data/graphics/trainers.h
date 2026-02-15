@@ -118,7 +118,8 @@ const u16 gTrainerPalette_touristmbattle[] = INCBIN_U16("graphics/trainers/front
 const u32 gTrainerFrontPic_veteranmbattle[] = INCBIN_U32("graphics/trainers/front_pics/veteranm.4bpp.lz");
 const u16 gTrainerPalette_veteranmbattle[] = INCBIN_U16("graphics/trainers/front_pics/veteranm.gbapal");
 
-
+const u32 gTrainerFrontPic_balsambattle[] = INCBIN_U32("graphics/trainers/front_pics/birch.4bpp.lz");
+const u16 gTrainerPalette_balsambattle[] = INCBIN_U16("graphics/trainers/front_pics/birch.gbapal");
 
 const u32 gTrainerFrontPic_conscriptedfbattle[] = INCBIN_U32("graphics/trainers/front_pics/conscriptedf.4bpp.lz");
 const u16 gTrainerPalette_conscriptedfbattle[] = INCBIN_U16("graphics/trainers/front_pics/conscriptedf.gbapal");
@@ -519,7 +520,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_CONSCRIPTEDFBATTLE, gTrainerFrontPic_conscriptedfbattle, gTrainerPalette_conscriptedfbattle),
     TRAINER_SPRITE(TRAINER_PIC_FOREIGNSPYMBATTLE, gTrainerFrontPic_foreignspymbattle, gTrainerPalette_foreignspymbattle),
     TRAINER_SPRITE(TRAINER_PIC_HEXGIRLBATTLE, gTrainerFrontPic_hexgirlbattle, gTrainerPalette_hexgirlbattle),
-
+    TRAINER_SPRITE(TRAINER_PIC_BALSAMBATTLE, gTrainerFrontPic_balsambattle, gTrainerPalette_balsambattle),
 
 
     TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),

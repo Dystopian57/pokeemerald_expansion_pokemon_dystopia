@@ -25,7 +25,6 @@ script OldaleWeather {
 script OldaleTownSign {
     lockall
     msgbox(format("Oldale Town. \n “Where things start off scarce.”"))
-    setflag (FLAG_VISITED_LAVARIDGE_TOWN)
     releaseall   
 }
 
@@ -393,5 +392,5 @@ script OldaleDevonGrunts {
      }
 
     text RebelOldale_Outro{
-    "Huh... I guess he was right after all..."}
+    "Huh... I guess Rick was right after all..."}
     

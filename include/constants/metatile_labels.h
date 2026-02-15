@@ -250,6 +250,7 @@
 #define METATILE_GeneralGreen_CalmWater  0x170
 
 // gTileset_GenericBuilding
+#define METATILE_GenericBuilding_TV_On                   0x21E
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219

@@ -989,6 +989,7 @@ SECTIONS {
         sound/songs/midi/mus_inazumacity.o(.rodata);
         sound/songs/midi/mus_sinjohruins.o(.rodata);
 
+
         sound/songs/midi/mus_spikemuth.o(.rodata);
         sound/songs/midi/mus_oldchateau.o(.rodata);
         sound/songs/midi/mus_sinnohleaguextday.o(.rodata);
@@ -1001,6 +1002,8 @@ SECTIONS {
         sound/songs/midi/mus_abyssalruins.o(.rodata);
         sound/songs/midi/mus_anistarcity.o(.rodata);
         sound/songs/midi/mus_unovaroutegate.o(.rodata);
+        
+        sound/songs/midi/mus_mahalotrail.o(.rodata);
         
         sound/songs/midi/mus_gsc_route38.o(.rodata);
         sound/songs/midi/mus_caught.o(.rodata);

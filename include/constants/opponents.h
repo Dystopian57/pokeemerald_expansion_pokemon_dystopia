@@ -15,8 +15,8 @@
 #define TRAINER_VETERAN_103_4                 9
 #define TRAINER_VETERAN_103_5                10
 #define TRAINER_MARCEL                       11
-#define TRAINER_ALBERTO                      12
-#define TRAINER_ED                           13
+#define TRAINER_BALSAM_PURACHU               12
+#define TRAINER_BALSAM_NOPURACHU             13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
 #define TRAINER_DECLAN                       15
 #define TRAINER_GRUNT_RUSTURF_TUNNEL         16
