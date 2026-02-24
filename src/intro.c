@@ -1125,7 +1125,7 @@ static u8 SetUpCopyrightScreen(void)
         if (UpdatePaletteFade())
             break;
 #if EXPANSION_INTRO == TRUE
-        SetMainCallback2(CB2_InitTitleScreen);
+        SetMainCallback2(MainCB2_Intro);
         CreateTask(Task_HandleExpansionIntro, 0);
 #else
         CreateTask(Task_Scene1_Load, 0);
@@ -1474,7 +1474,7 @@ static void Task_Scene2_BikeRide(u8 taskId)
 static void Task_Scene2_End(u8 taskId)
 {
     if (gIntroFrameCounter > TIMER_START_SCENE_3)
-        gTasks[taskId].func = Task_Scene3_Load;
+        gTasks[taskId].func = Task_EndIntroMovie;
 }
 
 #define sStateDelay data[1]

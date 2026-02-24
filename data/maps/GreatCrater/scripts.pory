@@ -3,3 +3,114 @@ GreatCrater_MapScripts::
 	.byte 0
 `
 
+script GreatCrater_EventScript_TrendyPhraseBoy {
+	
+	lock
+	faceplayer
+	call (Common_EventScript_BufferTrendyPhrase)
+	msgbox (GreatCrater_Text_XIsTheBiggestHappeningThingRight, MSGBOX_YESNO)
+	goto_if_eq (VAR_RESULT, YES, GreatCrater_EventScript_ConfirmTrendyPhrase)
+	goto_if_eq (VAR_RESULT, NO, GreatCrater_EventScript_RejectTrendyPhrase)
+	end
+
+	}
+
+script GreatCrater_EventScript_ConfirmTrendyPhrase
+{
+	msgbox (GreatCrater_Text_YeahDefinitionOfInRightNow, MSGBOX_DEFAULT)
+	release
+	end}
+
+script GreatCrater_EventScript_RejectTrendyPhrase {
+	msgbox (GreatCrater_Text_TellMeWhatsNewAndIn, MSGBOX_DEFAULT)
+	setvar (VAR_0x8004, EASY_CHAT_TYPE_TRENDY_PHRASE)
+	call (Common_ShowEasyChatScreen)
+	lock
+	faceplayer
+	goto_if_eq (VAR_RESULT, TRUE, GreatCrater_EventScript_GiveNewTrendyPhrase)
+	goto_if_eq (VAR_RESULT, FALSE, GreatCrater_EventScript_CancelNewTrendyPhrase)
+	end}
+
+script GreatCrater_EventScript_GiveNewTrendyPhrase {
+	incrementgamestat (GAME_STAT_STARTED_TRENDS)
+	goto_if_eq (VAR_0x8004, FALSE, GreatCrater_EventScript_PhraseNotTrendyEnough)
+	msgbox (GreatCrater_Text_OfCourseIKnowAboutThat, MSGBOX_DEFAULT)
+	release
+	end}
+
+script GreatCrater_EventScript_CancelNewTrendyPhrase {
+	msgbox (GreatCrater_Text_HearOfAnyTrendsComeShareWithMe, MSGBOX_DEFAULT)
+	release
+	end }
+
+script GreatCrater_EventScript_PhraseNotTrendyEnough {
+	msgbox (GreatCrater_Text_XHuhIThinkYIsCool, MSGBOX_DEFAULT)
+	release
+	end }
+
+
+
+text GreatCrater_Text_XIsTheBiggestHappeningThingRight {
+"In New Rustboro, {STR_VAR_1}
+is trendy." }
+
+text GreatCrater_Text_TellMeWhatsNewAndIn {
+"{STR_VAR_1} Not trendy? Tell me
+what's trendy then."
+}
+
+text GreatCrater_Text_OfCourseIKnowAboutThat {
+"You're right. “{STR_VAR_1}” is old
+news, {STR_VAR_2} is the shit now."
+
+	}
+
+text GreatCrater_Text_XHuhIThinkYIsCool {
+"Nah, {STR_VAR_2} is lame,
+{STR_VAR_1} is the cool thing."
+
+	}
+
+text GreatCrater_Text_HearOfAnyTrendsComeShareWithMe {
+"Well, share with me later."
+
+	}
+
+text GreatCrater_Text_YeahDefinitionOfInRightNow {
+"Yeah, {STR_VAR_1} is what's in."
+
+	}
+
+
+
+script GreatCraterTouristBattle {
+	trainerbattle_single(TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro, GreatCraterTouristRegister)
+	specialvar (VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq (VAR_RESULT, TRUE, Route103VeteranRematch)
+	msgbox(format("I guess not all of you youngsters are weak. Perhaps Hoenn is in good hands."))
+	release
+	end
+}
+
+script GreatCraterTouristRegister {
+	special (PlayerFaceTrainerAfterBattle)
+	waitmovement (0)
+	msgbox(format("Number registered."))
+	register_matchcall (TRAINER_VETERAN_103)
+	release
+	end
+}
+
+script GreatCraterTouristRematch {
+	trainerbattle_rematch (TRAINER_VETERAN_103, GreatCraterTourist_Intro, GreatCraterTourist_Outro)
+	msgbox(format("You're even stronger than last time... or have I just gotten weaker...?
+	\p Old age is a cruel thing. But I plan to use the time I have left."))
+	end
+	}
+
+
+	text GreatCraterTourist_Intro{
+		"They told me I'm too old to enlist...  but I'm\nstronger than you young'uns!\pI'll show you!"}
+
+	text GreatCraterTourist_Outro{
+		"Hmpf... not bad..."}

@@ -9675,7 +9675,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
 === TRAINER_TOURISTSHANE_103 ===
-Name: Shane
+Name: Dan
 Class: Touristm
 Pic: touristmbattle
 Gender: Male
@@ -9683,11 +9683,11 @@ Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
-Poliwag
+Psyduck
 Level: 3
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Staryu
+Poliwag
 Level: 3
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
