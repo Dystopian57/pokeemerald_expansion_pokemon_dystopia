@@ -472,7 +472,29 @@ static const struct SpriteFrameImage sPicTable_patientf[] = {
     overworld_ascending_frames(gObjectEventPic_patientf, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_guitarist[] = {
+    overworld_ascending_frames(gObjectEventPic_guitarist, 2, 4),
+};
 
+static const struct SpriteFrameImage sPicTable_devonbow[] = {
+    overworld_ascending_frames(gObjectEventPic_devonbow, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_blackbeltpunch[] = {
+    overworld_ascending_frames(gObjectEventPic_blackbeltpunch, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_bikerwheelie[] = {
+    overworld_ascending_frames(gObjectEventPic_bikerwheelie, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_rebelgruntmbat[] = {
+    overworld_ascending_frames(gObjectEventPic_rebelgruntmbat, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_smalltv[] = {
+    overworld_ascending_frames(gObjectEventPic_smalltv, 2, 4),
+};
 
 
 
