@@ -291,7 +291,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devonbow;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_blackbeltpunch;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_bikerwheelie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelgruntmbat;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelgruntfsign;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smalltv;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smallninkaburi;
 
 
 
@@ -606,7 +608,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BLACKBELTPUNCH] =           &gObjectEventGraphicsInfo_blackbeltpunch,
     [OBJ_EVENT_GFX_BIKERWHEELIE] =             &gObjectEventGraphicsInfo_bikerwheelie,
     [OBJ_EVENT_GFX_REBELGRUNTMBAT] =             &gObjectEventGraphicsInfo_rebelgruntmbat,
+    [OBJ_EVENT_GFX_REBELGRUNTFSIGN] =             &gObjectEventGraphicsInfo_rebelgruntfsign,
     [OBJ_EVENT_GFX_SMALLTV] =                  &gObjectEventGraphicsInfo_smalltv,
+    [OBJ_EVENT_GFX_SMALLNINKABURI] =                  &gObjectEventGraphicsInfo_smallninkaburi,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
 };
 

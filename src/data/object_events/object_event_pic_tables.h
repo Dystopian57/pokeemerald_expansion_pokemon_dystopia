@@ -492,11 +492,17 @@ static const struct SpriteFrameImage sPicTable_rebelgruntmbat[] = {
     overworld_ascending_frames(gObjectEventPic_rebelgruntmbat, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_rebelgruntfsign[] = {
+    overworld_ascending_frames(gObjectEventPic_rebelgruntfsign, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_smalltv[] = {
     overworld_ascending_frames(gObjectEventPic_smalltv, 2, 4),
 };
 
-
+static const struct SpriteFrameImage sPicTable_smallninkaburi[] = {
+    overworld_ascending_frames(gObjectEventPic_smallninkaburi, 2, 4),
+};
 
 
 

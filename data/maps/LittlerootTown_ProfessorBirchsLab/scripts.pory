@@ -1650,6 +1650,7 @@ script Lab_EventScript_Starter1{
 
 else{
 applymovement(4, moves(face_down))
+playse (SE_M_SWAGGER2)
 createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 setspeaker ([SP_NAME_BALSAM])
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for

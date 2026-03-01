@@ -2008,7 +2008,7 @@ script Littleroot_Idletalk_Oldman{
 	}
 	if(var(VAR_LITTLEROOT_PHASE) == 7)
 	{msgbox (format("I know Professor Balsam and her Aide may seem eccentric sometimes...
-	\p But they only have the best mind for the future of Hoenn. \p I hope you can find it in you
+	\p But they only have the best in mind for the future of Hoenn. \p I hope you can find it in you
 	to support them."))}
 
 	removefieldmugshot

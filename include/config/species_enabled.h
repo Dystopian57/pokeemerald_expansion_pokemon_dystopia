@@ -635,6 +635,8 @@
 #define P_FAMILY_MIMIYURUI               P_GEN_9_POKEMON
 #define P_FAMILY_ARYSTAL                 P_GEN_9_POKEMON
 #define P_FAMILY_VERDOOM                 P_GEN_9_POKEMON
+#define P_FAMILY_HOMBROX                 P_GEN_9_POKEMON
+#define P_FAMILY_GYVEYENA                P_GEN_9_POKEMON
 
 
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H

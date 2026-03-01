@@ -1702,6 +1702,16 @@ TV_2:
 	goto TV_1
 
 
+Ninkaburihides::
+# 869 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	removeobject 8
+# 870 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	setflag ninkaburihides
+# 871 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	releaseall
+	return
+
+
 # 746 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 ShouldTurnOffTV_Movement_0:
 # 746 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

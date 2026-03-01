@@ -27216,3 +27216,29 @@ const u8 gMonFootprint_Verdoom[] = INCBIN_U8("graphics/pokemon/verdoom/footprint
 const u32 gObjectEventPic_Verdoom[] = INCBIN_COMP("graphics/pokemon/verdoom/overworld.4bpp");
 const u16 gOverworldPalette_Verdoom[] = INCBIN_U16("graphics/pokemon/verdoom/overworld_normal.gbapal");
 const u16 gShinyOverworldPalette_Verdoom[] = INCBIN_U16("graphics/pokemon/verdoom/overworld_shiny.gbapal");
+
+//Hombrox
+
+const u32 gMonFrontPic_Hombrox[] = INCBIN_U32("graphics/pokemon/hombrox/anim_front.4bpp.lz");
+const u32 gMonBackPic_Hombrox[] = INCBIN_U32("graphics/pokemon/hombrox/back.4bpp.lz");
+const u16 gMonPalette_Hombrox[] = INCBIN_U16("graphics/pokemon/hombrox/normal.gbapal");
+const u16 gMonShinyPalette_Hombrox[] = INCBIN_U16("graphics/pokemon/hombrox/shiny.gbapal");
+const u8 gMonIcon_Hombrox[] = INCBIN_U8("graphics/pokemon/hombrox/icon.4bpp");
+const u8 gMonFootprint_Hombrox[] = INCBIN_U8("graphics/pokemon/hombrox/footprint.1bpp");
+
+const u32 gObjectEventPic_Hombrox[] = INCBIN_COMP("graphics/pokemon/hombrox/overworld.4bpp");
+const u16 gOverworldPalette_Hombrox[] = INCBIN_U16("graphics/pokemon/hombrox/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_Hombrox[] = INCBIN_U16("graphics/pokemon/hombrox/overworld_shiny.gbapal");
+
+//Gyveyena
+
+const u32 gMonFrontPic_Gyveyena[] = INCBIN_U32("graphics/pokemon/gyveyena/anim_front.4bpp.lz");
+const u32 gMonBackPic_Gyveyena[] = INCBIN_U32("graphics/pokemon/gyveyena/back.4bpp.lz");
+const u16 gMonPalette_Gyveyena[] = INCBIN_U16("graphics/pokemon/gyveyena/normal.gbapal");
+const u16 gMonShinyPalette_Gyveyena[] = INCBIN_U16("graphics/pokemon/gyveyena/shiny.gbapal");
+const u8 gMonIcon_Gyveyena[] = INCBIN_U8("graphics/pokemon/gyveyena/icon.4bpp");
+const u8 gMonFootprint_Gyveyena[] = INCBIN_U8("graphics/pokemon/gyveyena/footprint.1bpp");
+
+const u32 gObjectEventPic_Gyveyena[] = INCBIN_COMP("graphics/pokemon/gyveyena/overworld.4bpp");
+const u16 gOverworldPalette_Gyveyena[] = INCBIN_U16("graphics/pokemon/gyveyena/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_Gyveyena[] = INCBIN_U16("graphics/pokemon/gyveyena/overworld_shiny.gbapal");

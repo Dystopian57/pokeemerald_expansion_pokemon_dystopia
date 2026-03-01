@@ -2344,7 +2344,12 @@ static const struct SpriteFrameImage sPicTable_Mightyena[] = {
 static const struct SpriteFrameImage sPicTable_Poochain[] = {
     overworld_ascending_frames(gObjectEventPic_Poochain, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_Gyveyena[] = {
+    overworld_ascending_frames(gObjectEventPic_Gyveyena, 4, 4),
+};
+
 #endif //P_FAMILY_POOCHAIN
+
 
 #if P_FAMILY_ZIGZAGOON
 static const struct SpriteFrameImage sPicTable_Zigzagoon[] = {
@@ -2414,6 +2419,9 @@ static const struct SpriteFrameImage sPicTable_LudicoloF[] = {
 #if P_FAMILY_LOADTAD
 static const struct SpriteFrameImage sPicTable_Loadtad[] = {
     overworld_ascending_frames(gObjectEventPic_Loadtad, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Hombrox[] = {
+    overworld_ascending_frames(gObjectEventPic_Hombrox, 4, 4),
 };
 #endif //P_FAMILY_LOADTAD
 

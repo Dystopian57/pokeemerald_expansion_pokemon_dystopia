@@ -2663,5 +2663,17 @@ static const u16 sVerdoomFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_VERDOOM
 
+#if P_FAMILY_HOMBROX
+static const u16 sHomrboxFormSpeciesIdTable[] = {
+    SPECIES_HOMBROX,
+};
+#endif //P_FAMILY_VERDOOM
+
+#if P_FAMILY_GYVEYENA
+static const u16 sGyveyenaFormSpeciesIdTable[] = {
+    SPECIES_GYVEYENA,
+};
+#endif //P_FAMILY_VERDOOM
+
 
 

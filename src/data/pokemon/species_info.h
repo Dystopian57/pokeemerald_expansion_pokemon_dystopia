@@ -2577,13 +2577,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         SHADOW(2, -3, SHADOW_SIZE_S)
         FOOTPRINT(Aron)
         OVERWORLD(
-            sPicTable_Aron,
+            sPicTable_Arystal,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Aron,
-            gShinyOverworldPalette_Aron
+            gOverworldPalette_Arystal,
+            gShinyOverworldPalette_Arystal
         )
         .levelUpLearnset = sAronLevelUpLearnset,
         .teachableLearnset = sAronTeachableLearnset,
@@ -2663,6 +2663,151 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sBeldumLevelUpLearnset,
         .teachableLearnset = sBeldumTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_METANG}),
+    },
+
+    [SPECIES_HOMBROX] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 50,
+        .baseDefense   = 50,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_WATER, TYPE_GRASS),
+        .catchRate = 120,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 119 : 141,
+        .evYield_SpDefense = 2,
+        .itemRare = ITEM_MENTAL_HERB,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_RAIN_DISH, ABILITY_OWN_TEMPO },
+        .bodyColor = BODY_COLOR_GREEN,
+        .noFlip = TRUE,
+        .speciesName = _("Hombrox"),
+        .cryId = CRY_LOMBRE,
+        .natDexNum = NATIONAL_DEX_HOMBROX,
+        .categoryName = _("Jolly"),
+        .height = 12,
+        .weight = 325,
+        .description = COMPOUND_STRING(
+            "In the evening, it takes great delight in\n"
+            "popping out of rivers and startling people.\n"
+            "It feeds on aquatic moss that grows on\n"
+            "rocks in the riverbed."),
+        .pokemonScale = 277,
+        .pokemonOffset = 9,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Hombrox,
+        .frontPicSize = MON_COORDS_SIZE(48, 48),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 10,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 6),
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(0, 6),
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(0, 7),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Hombrox,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(48, 56),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 6,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
+        .palette = gMonPalette_Hombrox,
+        .shinyPalette = gMonShinyPalette_Hombrox,
+        .iconSprite = gMonIcon_Hombrox,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 2, SHADOW_SIZE_S)
+        FOOTPRINT(Lombre)
+        OVERWORLD(
+            sPicTable_Hombrox,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Hombrox,
+            gShinyOverworldPalette_Hombrox
+        )
+        .levelUpLearnset = sLombreLevelUpLearnset,
+        .teachableLearnset = sLombreTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_LUDICOLO}),
+    },
+
+    [SPECIES_GYVEYENA] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 90,
+        .baseDefense   = 70,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_DARK),
+        .catchRate = 127,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 147 : 128,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_QUICK_FEET, ABILITY_MOXIE },
+    #else
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_MOXIE },
+    #endif
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Gyveyena"),
+        .cryId = CRY_MIGHTYENA,
+        .natDexNum = NATIONAL_DEX_MIGHTYENA,
+        .categoryName = _("Bite"),
+        .height = 10,
+        .weight = 370,
+        .description = COMPOUND_STRING(
+            "In the wild, Mightyena live in a pack.\n"
+            "They never defy their leader's orders.\n"
+            "They defeat foes with perfectly\n"
+            "coordinated teamwork."),
+        .pokemonScale = 362,
+        .pokemonOffset = 9,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Gyveyena,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 4 : 3,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 27),
+            ANIMCMD_FRAME(1, 6),
+            ANIMCMD_FRAME(0, 6),
+            ANIMCMD_FRAME(1, 6),
+            ANIMCMD_FRAME(0, 6),
+        ),
+        .frontAnimId = ANIM_V_SHAKE,
+        .backPic = gMonBackPic_Gyveyena,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 4 : 3,
+        .backAnimId = BACK_ANIM_H_SHAKE,
+        .palette = gMonPalette_Gyveyena,
+        .shinyPalette = gMonShinyPalette_Gyveyena,
+        .iconSprite = gMonIcon_Gyveyena,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 6, SHADOW_SIZE_L)
+        FOOTPRINT(Mightyena)
+        OVERWORLD(
+            sPicTable_Gyveyena,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Gyveyena,
+            gShinyOverworldPalette_Gyveyena
+        )
+        .levelUpLearnset = sMightyenaLevelUpLearnset,
+        .teachableLearnset = sMightyenaTeachableLearnset,
     },
 
 };

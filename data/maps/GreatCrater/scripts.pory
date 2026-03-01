@@ -39,21 +39,38 @@ script ReportersGreatCrater {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm (MUS_ENCOUNTER_INTERVIEWER, TRUE)
+	if (!flag (declinedcraterreporterhelp))
+
+	{ 
+
+
+
+	applymovement (3, moves(face_player))
+
 	msgbox(format("Ah, look, Dan - an interesting-looking local just approached us!
 	\p We're from Devon TV, and we're filming a documentary about the Internment Zone!
 	\p However, our footage right now is lacking a bit of... flair."))
-
+	applymovement (2, moves(walk_in_place_left))
 	msgbox(format("To put it plainly, it's quite boring."))
 
-	msgbox(format("Yes... which is why we were thinking about staging a battle!
+	msgbox(format("Indeed, Dan... which is why we were thinking about staging a battle!
 	\p We will pretend one of those dangerous rebels have assailed us, and that we escaped by
 	the skin of our teeth."))
+	applymovement (2, moves(walk_in_place_left))
 
-	msgbox(format("You look a bit like one of them. To a Rustboro snob, at least."))
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("He looks a bit like one of them. To a Rustboro snob, at least."))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("She looks a bit like one of them. To a Rustboro snob, at least."))}
 
-	msgbox(format("Indeed - which makes you perfect to play the role of 'rebel'!"))
+	applymovement (3, moves(walk_in_place_right))
 
-	msgbox(format("So, will you help us? We will pay you handsomely for your time!"))
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("Indeed - which makes him perfect to play the role of 'rebel'!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Indeed - which makes her perfect to play the role of 'rebel'!"))}
+
+	applymovement (3, moves(walk_in_place_up))
+	msgbox(format("We would need you to win, of course - it would not be very exciting
+	if we just beat a dangerous rebel like nothing!\pSo, will you help us? We will pay you handsomely for your time!"))
 	
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "No chance", "That's lying")
 
@@ -65,6 +82,7 @@ script ReportersGreatCrater {
 	\pReady? Three, two, one... action!")) 
 
 /////////////TRENDY PHRASE IMPLEMENTATION
+	retrytrendyphrase:
 	setvar (VAR_0x8004, EASY_CHAT_TYPE_TRENDY_PHRASE)
 	call (Common_ShowEasyChatScreen)
 
@@ -74,24 +92,38 @@ script ReportersGreatCrater {
 			if(var(VAR_0x8004) == FALSE){
 				
 			msgbox(format("Oh, uhm... I'm sorry. I don't think we can have you saying “{STR_VAR_2},”
-			in the documentary. \p It's got some implications I can't go over right now. Let's say many
-			people would get offended. \pWould you mind coming up with a different warcry? We'll reshoot
-			when you do!"))
+			in the documentary. \pThat term has some implications I can't go over right now. Let's say some
+			would get offended!"))
+			applymovement (2, moves(walk_in_place_down))
+			msgbox(format("She means it's censored. So come up with something else, will you?"))
+			applymovement (3, moves(walk_in_place_right))
+			msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}As eloquent as ever, Dan...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+			goto (retrytrendyphrase)
 			}
 		//goto_if_eq (VAR_0x8004, FALSE, GreatCrater_EventScript_PhraseNotTrendyEnough)
 
-		msgbox(format("KYAAA! Someone help!!"))
+		msgbox(format("KYAAA! Someone help!! I am being ASSAILED!"))
+		applymovement (2, moves(walk_in_place_left))
+		msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}'Kyaa'? Really...?{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 		trainerbattle_no_intro(TRAINER_REPORTERS_GREATCRATER , ReportersGreatCrater_Outro)
-
+		playbgm (MUS_ENCOUNTER_INTERVIEWER, TRUE)
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		msgbox(format("Thank you so much! With your help, we've captured some incredible
 		footage."))
 
 		call (Common_EventScript_BufferTrendyPhrase)
+		applymovement (2, moves(walk_in_place_up))
 		msgbox(format("{STR_VAR_1} is a great warcry. With the right editing, it may even get viral."))
-
-		msgbox(format("It just may! But before we cut the footage, we need to record in other places."))
-
+		applymovement (3, moves(walk_in_place_right))
+		msgbox(format("It just may! But before we cut the footage, we need to record some more in other locations."))
+		applymovement (3, moves(face_player))
 		msgbox(format("Thanks for your help again - stay safe!"))
+
+		fadescreenswapbuffers (FADE_TO_BLACK)
+		removeobject (2)
+		removeobject (3)
+		setflag (reportersleavecrater)
+		fadescreenswapbuffers (FADE_FROM_BLACK)
 
 		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 		goto (finishreporterscript)
@@ -99,7 +131,7 @@ script ReportersGreatCrater {
 
 		if(var(VAR_RESULT) == FALSE){
 
-		msgbox(format("Oh no... you got a bit of scenic fear, didn't you? \p It happens the first time. We'll
+		msgbox(format("Oh no... you got a bit of scenic fright, didn't you? \p It happens the first time. We'll
 	    do another take when you're ready!"))
 		} 
 		} 
@@ -112,24 +144,50 @@ script ReportersGreatCrater {
 
     if (var(VAR_RESULT) == 1) {
     msgbox(format("Oh, that's so unfortunate! Are you certain?
-	\p We'll be here a while if you reconsider - which we beg you to do!")) 
+	\p We'll be here a while if you reconsider - which we beg you to do!"))
+	applymovement (2, moves(walk_in_place_down))
+
+	setflag (declinedcraterreporterhelp)
+	goto (finishreporterscript)
     }
 
     if (var(VAR_RESULT) == 2) {
     msgbox(format("Lying? I wouldn't call it that. It's just a bit of showmanship!"))
-
+	applymovement (2, moves(walk_in_place_up))
     msgbox(format("If you won't help us, someone will. Why not take the pokeyen for yourself?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay, I'm in", "Leave me out of this")
         if (var(VAR_RESULT) == 0) {
 		goto (acceptedtoplayrebel) 
    		 }
    		 if (var(VAR_RESULT) == 1) {
+		 applymovement (3, moves(walk_in_place_up))
    		 msgbox(format("Well, suit yourself. We'll be here a while if you change your mind."))
+	     setflag (declinedcraterreporterhelp)
+	     goto (finishreporterscript)
 		}}
 
-	finishreporterscript:
-	releaseall
 }
+
+	if (flag (declinedcraterreporterhelp)){
+	
+    msgbox(format("Have you changed your mind? Will you help us stage a battle?"))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+        if (var(VAR_RESULT) == 0) {
+		goto (acceptedtoplayrebel) 
+   		 }
+   		 if (var(VAR_RESULT) == 1) {
+   		 msgbox(format("That's too bad... I think you'd be such a star!"))}
+	}
+
+	finishreporterscript:
+	playbgm (MUS_ABNORMAL_WEATHER, TRUE)
+	releaseall
+
+
+
+
+}
+
 
 	text ReportersGreatCrater_Outro{
 	"That was perfect. Here - this is for\nyour trouble!"}
@@ -163,7 +221,7 @@ script GreatCrater_EventScript_GiveNewTrendyPhrase {
 
     msgbox(format("Thanks for your help again - stay safe!"))
 
-	playbgm (MUS_ABANDONED_SHIP, TRUE)
+	playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 	releaseall
 	end}
 
@@ -171,6 +229,7 @@ script GreatCrater_EventScript_CancelNewTrendyPhrase {
 
     msgbox(format("Oh no... you got a bit of scenic fear, didn't you? \p It happens the first time. We'll
 	do another take when you're ready!"))
+	goto (finishreporterscript)
 	releaseall
 	end }
 
@@ -179,7 +238,8 @@ script GreatCrater_EventScript_PhraseNotTrendyEnough {
 	in the documentary. \p It's got some implications I can't go over right now. Let's say many
 	people would get offended. \pWould you mind coming up with a different warcry? We'll reshoot
 	when you do!"))
-	release
+	goto (finishreporterscript)
+	releaseall
 	end }
 
 
@@ -216,6 +276,23 @@ text GreatCrater_Text_YeahDefinitionOfInRightNow {
 	}
 
 
+
+script CameramanGreatCrater {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (!flag (declinedcraterreporterhelp)){
+
+	msgbox(format("The cameraman seems to disregard you entirely."))}
+
+	if (flag (declinedcraterreporterhelp)){
+	applymovement (2, moves(face_player))
+	msgbox(format("It's easy money. You won't get far in the Interment Zone by being moral."))
+	applymovement (2, moves(face_down))
+	msgbox(format("I know from experience..."))
+	}
+	releaseall
+
+}
 ///////////////////////////////////////////////////////////////
 
 script TouristGreatCraterBattle {
@@ -246,7 +323,7 @@ script TouristGreatCraterRematch {
 
 
 	text TouristGreatCrater_Intro{
-		"This crater is a breathtaking sight...\pBut it would be even more memorable after a battle!"}
+		"This crater is a breathtaking sight...\pBut it would be even more memorable\nafter a battle!"}
 
 	text TouristGreatCrater_Outro{
 		"Oh, yes... I'll never forget this!"}
@@ -292,4 +369,28 @@ script ConspiracyGreatCraterRematch {
 
 /////////////////////////////////////////////////
 
+
+script GreatCraterSouvenirShop {
+		lockall
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		applymovement (1, moves(face_player))
+		msgbox(format("Welcome to the Great Crater's Souvenir Shop!"))
+		pokemart (ShopSouvenirs)
+		releaseall
+
+}
+
+		mart ShopSouvenirs {
+		ITEM_SHALOUR_SABLE		
+	}
+
+
+script GreatCraterSouvenirShopkeeper {
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		applymovement (1, moves(face_player))
+		msgbox(format("I know this is not New Rustboro Mall, but let's be civil hey? If you want
+		to buy, go around the counter."))
+		applymovement (1, moves(face_down))
+		waitmovement (1	)
+		releaseall}
 

@@ -863,3 +863,10 @@ msgbox (format("I'm not in the mood for more TV..."))
 waitmessage
 releaseall
 }
+
+script Ninkaburihides {
+
+removeobject (8)
+setflag (ninkaburihides)
+releaseall
+}

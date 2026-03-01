@@ -176,9 +176,10 @@ const u32 gObjectEventPic_devonbow[] = INCBIN_U32("graphics/object_events/pics/p
 const u32 gObjectEventPic_blackbeltpunch[] = INCBIN_U32("graphics/object_events/pics/people/blackbeltpunch.4bpp");
 const u32 gObjectEventPic_bikerwheelie[] = INCBIN_U32("graphics/object_events/pics/people/bikerwheelie.4bpp");
 const u32 gObjectEventPic_rebelgruntmbat[] = INCBIN_U32("graphics/object_events/pics/people/rebelgruntmbat.4bpp");
-
+const u32 gObjectEventPic_rebelgruntfsign[] = INCBIN_U32("graphics/object_events/pics/people/rebelgruntfsign.4bpp");
 
 const u32 gObjectEventPic_smalltv[] = INCBIN_U32("graphics/object_events/pics/misc/smalltv.4bpp");
+const u32 gObjectEventPic_smallninkaburi[] = INCBIN_U32("graphics/object_events/pics/misc/smallninkaburi.4bpp");
 
 const u32 gObjectEventPic_ReporterM[] = INCBIN_U32("graphics/object_events/pics/people/reporter_m.4bpp");
 const u32 gObjectEventPic_ReporterF[] = INCBIN_U32("graphics/object_events/pics/people/reporter_f.4bpp");

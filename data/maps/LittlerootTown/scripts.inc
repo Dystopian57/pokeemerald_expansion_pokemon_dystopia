@@ -4410,7 +4410,7 @@ Littleroot_Idletalk_Oldman_Text_6:
 # 2010 "data/maps/LittlerootTown/scripts.pory"
 	.string "I know Professor Balsam and her Aide\n"
 	.string "may seem eccentric sometimes...\p"
-	.string "But they only have the best mind for\n"
+	.string "But they only have the best in mind for\n"
 	.string "the future of Hoenn.\p"
 	.string "I hope you can find it in you to support\n"
 	.string "them.$"
