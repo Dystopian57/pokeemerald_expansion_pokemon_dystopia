@@ -378,7 +378,7 @@ script Sharpy103 {
    script Route103TouristApproach3 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	playbgm (MUS_ENCOUNTER_RICH, TRUE)
 	applymovement (27, moves(emote_exclamation_mark))
 	waitmovement
 	msgbox(format("Hey, you!"))
@@ -396,7 +396,7 @@ script Route103Tourist{
 	{
 	applymovement (27, moves(face_player))
 	msgbox(format("You're the one who mugged me! You're not getting away!"))
-	trainerbattle_no_intro(TRAINER_TOURISTSHANE_103, Tourist103_Outro) //Shane
+	trainerbattle_no_intro(TRAINER_TOURIST_103, Tourist103_Outro)
 
 
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
@@ -493,6 +493,8 @@ script Route103TouristNotThatWay {
 	releaseall
 }
 
+///////////////////////////////////////
+
 script Route103VeteranBattle {
 	trainerbattle_single(TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro, Route103VeteranRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
@@ -505,7 +507,8 @@ script Route103VeteranBattle {
 script Route103VeteranRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("Number registered."))
+	msgbox(format("But you shouldn't lower your guard. Let's exchange Devon profiles - I'll
+	make sure you dont' slack off!"))
 	register_matchcall (TRAINER_VETERAN_103)
 	release
 	end

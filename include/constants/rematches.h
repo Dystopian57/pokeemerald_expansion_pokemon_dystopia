@@ -79,6 +79,9 @@ enum {
     REMATCH_DRAKE,
     REMATCH_WALLACE,
     REMATCH_VETERAN103,
+    REMATCH_TOURISTGREATCRATER,
+    REMATCH_CONSPIRACYGREATCRATER,
+
     REMATCH_TABLE_ENTRIES // The total number of rematch entries. Must be last in enum
 };
 

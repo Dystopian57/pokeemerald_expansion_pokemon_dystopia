@@ -711,7 +711,7 @@ Route103TouristApproach3::
 # 380 "data/maps/Route103/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 381 "data/maps/Route103/scripts.pory"
-	playbgm MUS_ENCOUNTER_SUSPICIOUS, TRUE
+	playbgm MUS_ENCOUNTER_RICH, TRUE
 # 382 "data/maps/Route103/scripts.pory"
 	applymovement 27, Route103TouristApproach0_Movement_0
 # 383 "data/maps/Route103/scripts.pory"
@@ -756,7 +756,7 @@ Route103Tourist_2:
 # 398 "data/maps/Route103/scripts.pory"
 	msgbox Route103Tourist_Text_0
 # 399 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_TOURISTSHANE_103, Tourist103_Outro
+	trainerbattle_no_intro TRAINER_TOURIST_103, Tourist103_Outro
 # 402 "data/maps/Route103/scripts.pory"
 	playbgm MUS_ABANDONED_SHIP, TRUE
 # 404 "data/maps/Route103/scripts.pory"
@@ -894,37 +894,37 @@ Route103TouristNotThatWay::
 
 
 Route103VeteranBattle::
-# 497 "data/maps/Route103/scripts.pory"
-	trainerbattle_single TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro, Route103VeteranRegister
-# 498 "data/maps/Route103/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 499 "data/maps/Route103/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route103VeteranRematch
+	trainerbattle_single TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro, Route103VeteranRegister
 # 500 "data/maps/Route103/scripts.pory"
-	msgbox Route103VeteranBattle_Text_0
+	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 501 "data/maps/Route103/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, Route103VeteranRematch
+# 502 "data/maps/Route103/scripts.pory"
+	msgbox Route103VeteranBattle_Text_0
+# 503 "data/maps/Route103/scripts.pory"
 	release
 	end
 
 
 Route103VeteranRegister::
-# 506 "data/maps/Route103/scripts.pory"
-	special PlayerFaceTrainerAfterBattle
-# 507 "data/maps/Route103/scripts.pory"
-	waitmovement 0
 # 508 "data/maps/Route103/scripts.pory"
-	msgbox Route103VeteranRegister_Text_0
+	special PlayerFaceTrainerAfterBattle
 # 509 "data/maps/Route103/scripts.pory"
-	register_matchcall TRAINER_VETERAN_103
+	waitmovement 0
 # 510 "data/maps/Route103/scripts.pory"
+	msgbox Route103VeteranRegister_Text_0
+# 512 "data/maps/Route103/scripts.pory"
+	register_matchcall TRAINER_VETERAN_103
+# 513 "data/maps/Route103/scripts.pory"
 	release
 	end
 
 
 Route103VeteranRematch::
-# 515 "data/maps/Route103/scripts.pory"
+# 518 "data/maps/Route103/scripts.pory"
 	trainerbattle_rematch TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro
-# 516 "data/maps/Route103/scripts.pory"
+# 519 "data/maps/Route103/scripts.pory"
 	msgbox Route103VeteranRematch_Text_0
 	end
 
@@ -1222,16 +1222,18 @@ Route103Touristbikepushed_Text_4:
 	.string "glasses...$"
 
 Route103VeteranBattle_Text_0:
-# 500 "data/maps/Route103/scripts.pory"
+# 502 "data/maps/Route103/scripts.pory"
 	.string "I guess not all of you youngsters are\n"
 	.string "weak. Perhaps Hoenn is in good hands.$"
 
 Route103VeteranRegister_Text_0:
-# 508 "data/maps/Route103/scripts.pory"
-	.string "Number registered.$"
+# 510 "data/maps/Route103/scripts.pory"
+	.string "But you shouldn't lower your guard.\n"
+	.string "Let's exchange Devon profiles - I'll\l"
+	.string "make sure you dont' slack off!$"
 
 Route103VeteranRematch_Text_0:
-# 516 "data/maps/Route103/scripts.pory"
+# 519 "data/maps/Route103/scripts.pory"
 	.string "You're even stronger than last time... or\n"
 	.string "have I just gotten weaker...?\p"
 	.string "Old age is a cruel thing. But I plan to\n"
@@ -1246,9 +1248,9 @@ Tourist103_Outro::
 	.string "Wait a minute... yeah, you're not that \nthief. Sorry!$"
 
 Veteran103_Intro::
-# 522 "data/maps/Route103/scripts.pory"
+# 525 "data/maps/Route103/scripts.pory"
 	.string "They told me I'm too old to enlist...  but I'm\nstronger than you young'uns!\pI'll show you!$"
 
 Veteran103_Outro::
-# 525 "data/maps/Route103/scripts.pory"
+# 528 "data/maps/Route103/scripts.pory"
 	.string "Hmpf... not bad...$"

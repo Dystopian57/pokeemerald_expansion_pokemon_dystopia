@@ -393,6 +393,16 @@ const u8 gText_MatchCallVeteran103_Pokemon[] = _("My frontline comrades.");
 const u8 gText_MatchCallVeteran103_Intro1[] = _("I am not ready to pass");
 const u8 gText_MatchCallVeteran103_Intro2[] = _("the torch yet!");
 
+const u8 gText_MatchCallTouristGreatCrater_Strategy[] = _("I love travelling.");
+const u8 gText_MatchCallTouristGreatCrater_Pokemon[] = _("Exotic ones.");
+const u8 gText_MatchCallTouristGreatCrater_Intro1[] = _("Visiting Hoenn's Exclusion");
+const u8 gText_MatchCallTouristGreatCrater_Intro2[] = _("Zone. How exciting!");
+
+const u8 gText_MatchCallConspiracyGreatCrater_Strategy[] = _("I like dystopian novels.");
+const u8 gText_MatchCallConspiracyGreatCrater_Pokemon[] = _("Extremely rare ones.");
+const u8 gText_MatchCallConspiracyGreatCrater_Intro1[] = _("Was there really a war?");
+const u8 gText_MatchCallConspiracyGreatCrater_Intro2[] = _("I think it's all made up.");
+
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] =
 {
     [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose),
@@ -472,4 +482,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_DRAKE] = MCFLAVOR(EliteFour_Drake),
     [REMATCH_WALLACE] = MCFLAVOR(Champion_Wallace),
     [REMATCH_VETERAN103] = MCFLAVOR(Veteran103),
+    [REMATCH_TOURISTGREATCRATER] = MCFLAVOR(TouristGreatCrater),
+    [REMATCH_CONSPIRACYGREATCRATER] = MCFLAVOR(ConspiracyGreatCrater),
 };

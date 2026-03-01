@@ -31,20 +31,154 @@ script GreatCrater_EventScript_RejectTrendyPhrase {
 	goto_if_eq (VAR_RESULT, FALSE, GreatCrater_EventScript_CancelNewTrendyPhrase)
 	end}
 
+
+
+
+script ReportersGreatCrater {
+	
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_INTERVIEWER, TRUE)
+	msgbox(format("Ah, look, Dan - an interesting-looking local just approached us!
+	\p We're from Devon TV, and we're filming a documentary about the Internment Zone!
+	\p However, our footage right now is lacking a bit of... flair."))
+
+	msgbox(format("To put it plainly, it's quite boring."))
+
+	msgbox(format("Yes... which is why we were thinking about staging a battle!
+	\p We will pretend one of those dangerous rebels have assailed us, and that we escaped by
+	the skin of our teeth."))
+
+	msgbox(format("You look a bit like one of them. To a Rustboro snob, at least."))
+
+	msgbox(format("Indeed - which makes you perfect to play the role of 'rebel'!"))
+
+	msgbox(format("So, will you help us? We will pay you handsomely for your time!"))
+	
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "No chance", "That's lying")
+
+	if (var(VAR_RESULT) == 0) {
+	acceptedtoplayrebel:
+    msgbox(format("Excellent - let's begin right away!
+	\pAt the count of three, please yell your most heinous insult, warcry, or similar to the camera.
+	\pThen we take out our Pokémon, and have at it!
+	\pReady? Three, two, one... action!")) 
+
+/////////////TRENDY PHRASE IMPLEMENTATION
+	setvar (VAR_0x8004, EASY_CHAT_TYPE_TRENDY_PHRASE)
+	call (Common_ShowEasyChatScreen)
+
+		if(var(VAR_RESULT) == TRUE){
+		incrementgamestat (GAME_STAT_STARTED_TRENDS)
+
+			if(var(VAR_0x8004) == FALSE){
+				
+			msgbox(format("Oh, uhm... I'm sorry. I don't think we can have you saying “{STR_VAR_2},”
+			in the documentary. \p It's got some implications I can't go over right now. Let's say many
+			people would get offended. \pWould you mind coming up with a different warcry? We'll reshoot
+			when you do!"))
+			}
+		//goto_if_eq (VAR_0x8004, FALSE, GreatCrater_EventScript_PhraseNotTrendyEnough)
+
+		msgbox(format("KYAAA! Someone help!!"))
+		trainerbattle_no_intro(TRAINER_REPORTERS_GREATCRATER , ReportersGreatCrater_Outro)
+
+		msgbox(format("Thank you so much! With your help, we've captured some incredible
+		footage."))
+
+		call (Common_EventScript_BufferTrendyPhrase)
+		msgbox(format("{STR_VAR_1} is a great warcry. With the right editing, it may even get viral."))
+
+		msgbox(format("It just may! But before we cut the footage, we need to record in other places."))
+
+		msgbox(format("Thanks for your help again - stay safe!"))
+
+		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
+		goto (finishreporterscript)
+		}
+
+		if(var(VAR_RESULT) == FALSE){
+
+		msgbox(format("Oh no... you got a bit of scenic fear, didn't you? \p It happens the first time. We'll
+	    do another take when you're ready!"))
+		} 
+		} 
+
+	//goto_if_eq (VAR_RESULT, TRUE, GreatCrater_EventScript_GiveNewTrendyPhrase)
+	//goto_if_eq (VAR_RESULT, FALSE, GreatCrater_EventScript_CancelNewTrendyPhrase)
+
+	
+	
+
+    if (var(VAR_RESULT) == 1) {
+    msgbox(format("Oh, that's so unfortunate! Are you certain?
+	\p We'll be here a while if you reconsider - which we beg you to do!")) 
+    }
+
+    if (var(VAR_RESULT) == 2) {
+    msgbox(format("Lying? I wouldn't call it that. It's just a bit of showmanship!"))
+
+    msgbox(format("If you won't help us, someone will. Why not take the pokeyen for yourself?"))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay, I'm in", "Leave me out of this")
+        if (var(VAR_RESULT) == 0) {
+		goto (acceptedtoplayrebel) 
+   		 }
+   		 if (var(VAR_RESULT) == 1) {
+   		 msgbox(format("Well, suit yourself. We'll be here a while if you change your mind."))
+		}}
+
+	finishreporterscript:
+	releaseall
+}
+
+	text ReportersGreatCrater_Outro{
+	"That was perfect. Here - this is for\nyour trouble!"}
+
+	//Tate and Liza's Cosmic Special
+
+
+script TrendyPhaseTest {
+	 lockall
+	 call (Common_EventScript_BufferTrendyPhrase)
+	 msgbox(format("{STR_VAR_1} is awesome."))
+	 releaseall
+}
+
+
 script GreatCrater_EventScript_GiveNewTrendyPhrase {
 	incrementgamestat (GAME_STAT_STARTED_TRENDS)
 	goto_if_eq (VAR_0x8004, FALSE, GreatCrater_EventScript_PhraseNotTrendyEnough)
-	msgbox (GreatCrater_Text_OfCourseIKnowAboutThat, MSGBOX_DEFAULT)
-	release
+
+	trainerbattle_no_intro(TRAINER_REPORTERS_GREATCRATER , ReportersGreatCrater_Outro)
+
+	
+	
+    msgbox(format("Thank you so much! With your help, we've captured some incredible
+	footage.\p... that's an amazing warcry"))
+
+	call (Common_EventScript_BufferTrendyPhrase)
+    msgbox(format("{STR_VAR_2} is a great warcry. With the right editing, it may even get viral."))
+
+    msgbox(format("It just may! But before we cut the footage, we need to record in other places."))
+
+    msgbox(format("Thanks for your help again - stay safe!"))
+
+	playbgm (MUS_ABANDONED_SHIP, TRUE)
+	releaseall
 	end}
 
 script GreatCrater_EventScript_CancelNewTrendyPhrase {
-	msgbox (GreatCrater_Text_HearOfAnyTrendsComeShareWithMe, MSGBOX_DEFAULT)
-	release
+
+    msgbox(format("Oh no... you got a bit of scenic fear, didn't you? \p It happens the first time. We'll
+	do another take when you're ready!"))
+	releaseall
 	end }
 
 script GreatCrater_EventScript_PhraseNotTrendyEnough {
-	msgbox (GreatCrater_Text_XHuhIThinkYIsCool, MSGBOX_DEFAULT)
+    msgbox(format("Oh, uhm... I'm sorry. I don't think we can have you saying “{STR_VAR_2},”
+	in the documentary. \p It's got some implications I can't go over right now. Let's say many
+	people would get offended. \pWould you mind coming up with a different warcry? We'll reshoot
+	when you do!"))
 	release
 	end }
 
@@ -82,35 +216,80 @@ text GreatCrater_Text_YeahDefinitionOfInRightNow {
 	}
 
 
+///////////////////////////////////////////////////////////////
 
-script GreatCraterTouristBattle {
-	trainerbattle_single(TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro, GreatCraterTouristRegister)
+script TouristGreatCraterBattle {
+	trainerbattle_single(TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro, TouristGreatCraterRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
-	goto_if_eq (VAR_RESULT, TRUE, Route103VeteranRematch)
-	msgbox(format("I guess not all of you youngsters are weak. Perhaps Hoenn is in good hands."))
+	goto_if_eq (VAR_RESULT, TRUE, TouristGreatCraterRematch)
+	msgbox(format("Pictures are great and all, but there's nothing like an exciting moment
+	to imprint a memory."))
 	release
 	end
 }
 
-script GreatCraterTouristRegister {
+script TouristGreatCraterRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("Number registered."))
-	register_matchcall (TRAINER_VETERAN_103)
+	msgbox(format("That was exciting! Say, we don't we exchange Devon profiles?"))
+	register_matchcall (TRAINER_TOURIST_GREATCRATER)
 	release
 	end
 }
 
-script GreatCraterTouristRematch {
-	trainerbattle_rematch (TRAINER_VETERAN_103, GreatCraterTourist_Intro, GreatCraterTourist_Outro)
+script TouristGreatCraterRematch {
+	trainerbattle_rematch (TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro)
 	msgbox(format("You're even stronger than last time... or have I just gotten weaker...?
 	\p Old age is a cruel thing. But I plan to use the time I have left."))
 	end
 	}
 
 
-	text GreatCraterTourist_Intro{
-		"They told me I'm too old to enlist...  but I'm\nstronger than you young'uns!\pI'll show you!"}
+	text TouristGreatCrater_Intro{
+		"This crater is a breathtaking sight...\pBut it would be even more memorable after a battle!"}
 
-	text GreatCraterTourist_Outro{
-		"Hmpf... not bad..."}
+	text TouristGreatCrater_Outro{
+		"Oh, yes... I'll never forget this!"}
+
+
+/////////////////////////////////////////////////
+
+script ConspiracyGreatCraterBattle {
+	trainerbattle_single(TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro, ConspiracyGreatCrater_Outro, ConspiracyGreatCraterRegister)
+	specialvar (VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq (VAR_RESULT, TRUE, ConspiracyGreatCraterRematch)
+	msgbox(format("Sorry, but my device has been compromised. You'll have to learn the
+	truth elsewhere! \p What? I ain't throwing my Devon Nav away. I've got games in it."))
+	release
+	end
+}
+
+script ConspiracyGreatCraterRegister {
+	special (PlayerFaceTrainerAfterBattle)
+	waitmovement (0)
+	msgbox(format("Before I tell you, let's put our Devon Navs in airplane mode.
+	Where was the option now...?"))
+	register_matchcall (TRAINER_CONSPIRACY_GREATCRATER)
+	msgbox(format("Oops, wrong button. Wait, no... I could have swore I pressed the
+	right one. \p That's it, I've been HACKED BY DEVON!"))
+	release
+	end
+}
+
+script ConspiracyGreatCraterRematch {
+	trainerbattle_rematch (TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro, ConspiracyGreatCrater_Outro)
+	msgbox(format("You're even stronger than last time... or have I just gotten weaker...?
+	\p Old age is a cruel thing. But I plan to use the time I have left."))
+	end
+	}
+
+
+	text ConspiracyGreatCrater_Intro{
+		"Hehe... do you know the real reason why\nDevon invented Safemon?\pI'll tell you if you beat me!"}
+
+	text ConspiracyGreatCrater_Outro{
+		"Very well... listen closely..."}
+
+/////////////////////////////////////////////////
+
+

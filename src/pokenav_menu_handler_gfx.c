@@ -270,7 +270,7 @@ static const struct WindowTemplate sOptionDescWindowTemplate =
 static const u8 *const sPageDescriptions[] =
 {
     [POKENAV_MENUITEM_MAP]                     = COMPOUND_STRING("Check the map of the HOENN region"),
-    [POKENAV_MENUITEM_CONDITION]               = COMPOUND_STRING("Check POKéMON's contests' stats.."),
+    [POKENAV_MENUITEM_CONDITION]               = COMPOUND_STRING("Check POKéMON's contests' stats."),
     [POKENAV_MENUITEM_MATCH_CALL]              = COMPOUND_STRING("Check a Trainer's profile."),
     [POKENAV_MENUITEM_RIBBONS]                 = COMPOUND_STRING("Check obtained RIBBONS."),
     [POKENAV_MENUITEM_SWITCH_OFF]              = COMPOUND_STRING("Put away the DEVONAV."),

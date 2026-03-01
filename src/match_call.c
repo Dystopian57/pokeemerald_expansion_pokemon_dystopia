@@ -443,15 +443,8 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 14),
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 14),
     },
-    {
-        .trainerId = TRAINER_VETERAN_103,
-        .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(11),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 28),
-        .battleFrontierRecordStreakTextIndex = 11,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
-    },
+
+
     {
         .trainerId = TRAINER_TIMOTHY_1,
         .unused = 0,
@@ -705,6 +698,18 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 1),
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 1),
     },
+
+    {
+        .trainerId = TRAINER_KIRA_AND_DAN_1,
+        .unused = 1,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(9),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 58),
+        .battleFrontierRecordStreakTextIndex = 9,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 9),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
+    },
+
+
     {
         .trainerId = TRAINER_VETERAN_103,
         .unused = 0,
@@ -716,14 +721,25 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
     },
 
     {
-        .trainerId = TRAINER_KIRA_AND_DAN_1,
-        .unused = 1,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(9),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 58),
-        .battleFrontierRecordStreakTextIndex = 9,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 9),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
+        .trainerId = TRAINER_TOURIST_GREATCRATER,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(11),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 28),
+        .battleFrontierRecordStreakTextIndex = 11,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
     },
+
+    {
+        .trainerId = TRAINER_CONSPIRACY_GREATCRATER,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(11),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 28),
+        .battleFrontierRecordStreakTextIndex = 11,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+    },
+
 };
 
 static const struct MatchCallText sMatchCallWildBattleTexts[] =
