@@ -1864,16 +1864,10 @@ script Littleroot_Player_Mailbox {
 lockall
 	if (!flag (FLAG_ITEM_LITTLEROOT_MAILBOX))
 	{msgbox (format("There's a package inside the mailbox. A letter is attached to it.
-	\p For your invaluable service to the region, and the losses you suffered while performing it,
-	please accept these tokens of gratitude, courtesy of Devon Corp."))
+	\p For your invaluable service to the region,
+	please accept this token of recognition, courtesy of Devon Corp."))
 	playse (MUS_OBTAIN_ITEM)
-	msgbox (format("Obtained the DEVONDEX!"))
-	setflag(FLAG_SYS_POKEDEX_GET)
-	waitbuttonpress
-	msgbox (format("There's something else in the package..."))
-	playse (MUS_OBTAIN_ITEM)
-	msgbox (format("Obtained the DEVONAV!"))
-	setflag(FLAG_SYS_POKENAV_GET)
+	giveitem (ITEM_BOTTLE_CAP)
 	setflag(FLAG_ITEM_LITTLEROOT_MAILBOX)}
 	else{msgbox (format("The mailbox is empty."))}
 	releaseall

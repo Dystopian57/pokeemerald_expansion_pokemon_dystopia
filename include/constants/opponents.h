@@ -35,8 +35,8 @@
 #define TRAINER_FREDRICK                     29
 #define TRAINER_MATT                         30
 #define TRAINER_ZANDER                       31
-#define TRAINER_SHELLY_WEATHER_INSTITUTE     32
-#define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
+#define TRAINER_OLDALEDEVONGRUNT_M     32
+#define TRAINER_OLDALEDEVONGRUNT_F       33
 #define TRAINER_ARCHIE                       34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36

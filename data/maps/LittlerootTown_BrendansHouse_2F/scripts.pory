@@ -318,7 +318,7 @@ script PlayerRoomWardrobe {
 	releaseall		
 }
 
-script PlayerBed {
+script PlayerBedSimple {
 	lockall
     msgbox("Rest for a bit?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
@@ -328,6 +328,20 @@ script PlayerBed {
 	msgbox (format("You rest for a while."))
 	waitbuttonpress
 	fadescreen (FADE_FROM_BLACK)}
+	releaseall		
+}
+
+script PlayerBedTime {
+	lockall
+    msgbox("Rest for a bit?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+	fadescreen (FADE_TO_BLACK)
+	playse (MUS_HEAL)
+	waitse
+	msgbox (format("When do you want to wake up?"))
+	special (StartWallClock)
+	special(HealPlayerParty)
+}
 	releaseall		
 }
 

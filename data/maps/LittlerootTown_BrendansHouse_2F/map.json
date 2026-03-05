@@ -314,7 +314,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PlayerBed"
+      "script": "PlayerBedTime"
     },
     {
       "type": "sign",
@@ -330,7 +330,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PlayerBed"
+      "script": "PlayerBedTime"
     }
   ]
 }

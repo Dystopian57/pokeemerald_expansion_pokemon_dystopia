@@ -450,13 +450,11 @@ MtChimney_EventScript_AquaPoochyena::
 MtChimney_EventScript_MeteoriteMachine::
 	lockall
 	goto_if_unset FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, MtChimney_EventScript_MachineOn
-	goto_if_set FLAG_RECEIVED_METEORITE, MtChimney_EventScript_MachineOff
 	msgbox MtChimney_Text_RemoveTheMeteorite, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MtChimney_EventScript_LeaveMeteoriteAlone
 	msgbox MtChimney_Text_PlayerRemovedMeteorite, MSGBOX_DEFAULT
 	giveitem ITEM_METEORITE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_METEORITE
 	releaseall
 	end
 

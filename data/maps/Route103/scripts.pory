@@ -229,12 +229,8 @@ script Sharpy103 {
 
 	if (!flag (Sharpy103Rematch))
 		{
-  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-		msgbox(format("Heh, it's about time you showed up, Slowpoke! Let's do this!"))
-		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
-		setspeaker ([SP_NAME_SHARPY])
-		msgbox(format("Remember - if I win, you got to tell me about the war!"))
+		msgbox(format("Heh, it's about time you showed up, Slowpoke! Let's do this!"))
 		removefieldmugshot
 		setflag (Sharpy103Rematch)
 		goto (battleSharpy103)}
@@ -271,54 +267,80 @@ script Sharpy103 {
 		applymovement (25, moves(jump_in_place_left))
 		waitmovement (25)
 		setspeaker ([SP_NAME_CAMELIA])
-   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
-		msgbox(format("I'm the one who's beating you, if you don't hurry up! It's almost curfew!"))
+   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
+		msgbox(format("If you two are done, Sharpy and I need to go back - it's almost curfew!"))
 
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
 		setspeaker ([SP_NAME_SHARPY])
 		msgbox(format("Y-you're right...! Norman is going to be PISSED..."))
 
+    if (flag (saidnotosharpyinoldale))
+    {
+
 		removefieldmugshot
-  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD)
 		setspeaker ([SP_NAME_SHARPY])
-		applymovement (24, moves(face_left))
-		msgbox(format("But don't think I've given up, uhm... what's your name? {PLAYER} you say?"))
+		msgbox(format("Well... I guess you won't be joining us after all... unless..."))
 
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
 		setspeaker ([SP_NAME_SHARPY])
-		msgbox(format("Well, {PLAYER}... I officially challenge you to a REMATCH in Petalburg's Dojo!"))
+		msgbox(format("Unless you change your mind! In which case, we'll be waiting at Petalburg's
+		Dojo!"))	
 
 		removefieldmugshot
-  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+  		createfieldmugshot (MUGSHOT_SHARPY , NORMAL)
 		setspeaker ([SP_NAME_SHARPY])
-		msgbox(format("Wait... you know Petalburg, right? It's west of here, across Rout- no, ROAD 104!"))
+		msgbox(format("It's the big, old-fashioned wooden building - can't miss it! \p So, if you want
+		to help us save Hoenn..."))
 
 		removefieldmugshot
-  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-		setspeaker ([SP_NAME_SHARPY])
-		msgbox(format("It's so fun - it's got an arcade, and a wild zone, and a beach nearby and a..."))
-
-    	removefieldmugshot
-		playse (SE_LEDGE)
-		applymovement (25, moves(jump_in_place_left))
-		waitmovement (25)
-		applymovement (24, moves(face_right))
+  		createfieldmugshot (MUGSHOT_CAMELIA , MENACING)
 		setspeaker ([SP_NAME_CAMELIA])
-   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
-		msgbox(format("SHARPY! Last WARNING!"))
+		msgbox(format("You better come!"))
+	}
 
-		removefieldmugshot
-  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
-		setspeaker ([SP_NAME_SHARPY])
-		applymovement (24, moves(face_left))
-		msgbox(format("S-sorry! Just come visit - you'll see for yourself!"))
+	else {
 
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_SHARPY])
-		msgbox(format("Really got to go now - you better train for our rematch!"))
+		applymovement (24, moves(face_down))
+		msgbox(format("Well, it goes without saying, but you passed the test with flying colors!"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Now you just need to come to Petalburg Dojo, and you can join us officially!"))
+
+		applymovement (24, moves(face_right))
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_CAMELIA])
+		msgbox(format("Technically, Norman has the last word on accepting recruits... but I
+		doubt he'll reject you."))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
+		setspeaker ([SP_NAME_CAMELIA])
+		msgbox(format("We'd love to show you the way, but we kinda need to rush back. Norman gets
+		very mad when we skip curfew..."))
+
+		applymovement (24, moves(face_left))
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("Yup - so we'll go on ahead! Petalburg Dojo is the big, old-fashioned
+		wooden building - can't miss it"))
+
+		removefieldmugshot
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+		setspeaker ([SP_NAME_SHARPY])
+		msgbox(format("We'll see you there!"))
+
+	}
+
 		removefieldmugshot
 		playse (SE_LEDGE)
 		applymovement (25, moves(jump_2_down, walk_down * 4))
@@ -337,7 +359,7 @@ script Sharpy103 {
 		}
 
 	text Sharpy103_Outro{
-		"Damn it... there goes my 100 IQ plan..."}
+		"Heh... you're a soldier alright...!"}
 
 
 
