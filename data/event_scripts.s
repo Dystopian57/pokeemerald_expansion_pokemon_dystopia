@@ -1285,3 +1285,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/apricorn_tree.inc"
 
 	.include "data/maps/PetLandfillMilitaryShop/scripts.inc"
+
+	.include "data/maps/WaterfallCave/scripts.inc"
+
+	.include "data/maps/Route104Lighthouse/scripts.inc"

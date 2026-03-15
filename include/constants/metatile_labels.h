@@ -412,7 +412,7 @@
 #define METATILE_Petalburg_Door_Oldale      0x3D3
 #define METATILE_Petalburg_Door_Oldale2     0x287
 #define METATILE_Petalburg_Door_Oldale3     0x3D4
-#define METATILE_Petalburg_LongGrass_Root   0x291
+#define METATILE_Petalburg_LongGrass_Root   0x288
 
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_Door                0x224

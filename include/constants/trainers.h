@@ -160,7 +160,13 @@
 #define TRAINER_PIC_HEXGIRLBATTLE               141
 #define TRAINER_PIC_BALSAMBATTLE                142
 
-#define TRAINER_PIC_COUNT                 143
+#define TRAINER_PIC_WAGESLAVEMBATTLE                   143
+#define TRAINER_PIC_ESCAPEDPRISONERMBATTLE             144
+#define TRAINER_PIC_LANETTEBATLE                     145
+#define TRAINER_PIC_BRIGETTEBATTLE                    146
+#define TRAINER_PIC_OLDWALLYBATTLE                    147
+
+#define TRAINER_PIC_COUNT                 148
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -456,6 +462,14 @@ enum TrainerClassID
     TRAINER_CLASS_MERCENARYF,
     TRAINER_CLASS_PATIENTF,
     TRAINER_CLASS_BALSAM,
+
+    TRAINER_CLASS_WAGESLAVEM,
+    TRAINER_CLASS_ESCAPEDPRISONERM,
+    TRAINER_CLASS_LANETTE,
+    TRAINER_CLASS_BRIGETTE,
+    TRAINER_CLASS_OLDWALLY,
+
+
     TRAINER_CLASS_COUNT,
 };
 

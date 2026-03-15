@@ -152,6 +152,22 @@ const u32 gTrainerFrontPic_hexgirlbattle[] = INCBIN_U32("graphics/trainers/front
 const u16 gTrainerPalette_hexgirlbattle[] = INCBIN_U16("graphics/trainers/front_pics/hexgirl.gbapal");
 
 
+const u32 gTrainerFrontPic_wageslavembattle[] = INCBIN_U32("graphics/trainers/front_pics/wageslavem.4bpp.lz");
+const u16 gTrainerPalette_wageslavembattle[] = INCBIN_U16("graphics/trainers/front_pics/wageslavem.gbapal");
+
+const u32 gTrainerFrontPic_escapedprisonermbattle[] = INCBIN_U32("graphics/trainers/front_pics/escapedprisonerm.4bpp.lz");
+const u16 gTrainerPalette_escapedprisonermbattle[] = INCBIN_U16("graphics/trainers/front_pics/escapedprisonerm.gbapal");
+
+const u32 gTrainerFrontPic_lanettebattle[] = INCBIN_U32("graphics/trainers/front_pics/lanette.4bpp.lz");
+const u16 gTrainerPalette_lanettebattle[] = INCBIN_U16("graphics/trainers/front_pics/lanette.gbapal");
+
+const u32 gTrainerFrontPic_brigettebattle[] = INCBIN_U32("graphics/trainers/front_pics/brigette.4bpp.lz");
+const u16 gTrainerPalette_brigettebattle[] = INCBIN_U16("graphics/trainers/front_pics/brigette.gbapal");
+
+const u32 gTrainerFrontPic_oldwallybattle[] = INCBIN_U32("graphics/trainers/front_pics/oldwally.4bpp.lz");
+const u16 gTrainerPalette_oldwallybattle[] = INCBIN_U16("graphics/trainers/front_pics/oldwally.gbapal");
+
+
 
 
 
@@ -510,7 +526,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_VETERANMBATTLE, gTrainerFrontPic_veteranmbattle, gTrainerPalette_veteranmbattle),
 
 
-    TRAINER_SPRITE(TRAINER_PIC_SHADYDEALERMBATTLE, gTrainerFrontPic_shadydealermbattle, gTrainerPalette_touristfbattle),
+    TRAINER_SPRITE(TRAINER_PIC_SHADYDEALERMBATTLE, gTrainerFrontPic_shadydealermbattle, gTrainerPalette_shadydealermbattle),
     TRAINER_SPRITE(TRAINER_PIC_GANGBIKERFBATTLE, gTrainerFrontPic_gangbikerfbattle, gTrainerPalette_gangbikerfbattle),
     TRAINER_SPRITE(TRAINER_PIC_GANGBIKERMBATTLE, gTrainerFrontPic_gangbikermbattle, gTrainerPalette_gangbikermbattle),
     TRAINER_SPRITE(TRAINER_PIC_HAZARDDIVERMBATTLE, gTrainerFrontPic_hazarddivermbattle, gTrainerPalette_hazarddivermbattle),
@@ -522,6 +538,11 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_HEXGIRLBATTLE, gTrainerFrontPic_hexgirlbattle, gTrainerPalette_hexgirlbattle),
     TRAINER_SPRITE(TRAINER_PIC_BALSAMBATTLE, gTrainerFrontPic_balsambattle, gTrainerPalette_balsambattle),
 
+    TRAINER_SPRITE(TRAINER_PIC_WAGESLAVEMBATTLE, gTrainerFrontPic_wageslavembattle, gTrainerPalette_wageslavembattle),
+    TRAINER_SPRITE(TRAINER_PIC_ESCAPEDPRISONERMBATTLE, gTrainerFrontPic_escapedprisonermbattle, gTrainerPalette_escapedprisonermbattle),
+    TRAINER_SPRITE(TRAINER_PIC_LANETTEBATLE, gTrainerFrontPic_lanettebattle, gTrainerPalette_lanettebattle),
+    TRAINER_SPRITE(TRAINER_PIC_BRIGETTEBATTLE, gTrainerFrontPic_brigettebattle, gTrainerPalette_brigettebattle),
+    TRAINER_SPRITE(TRAINER_PIC_OLDWALLYBATTLE, gTrainerFrontPic_oldwallybattle, gTrainerPalette_oldwallybattle),
 
     TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),
     TRAINER_SPRITE(TRAINER_PIC_AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, gTrainerPalette_AquaGruntM),

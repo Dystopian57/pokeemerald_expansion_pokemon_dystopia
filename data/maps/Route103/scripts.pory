@@ -290,13 +290,13 @@ script Sharpy103 {
 		Dojo!"))	
 
 		removefieldmugshot
-  		createfieldmugshot (MUGSHOT_SHARPY , NORMAL)
+  		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_SHARPY])
 		msgbox(format("It's the big, old-fashioned wooden building - can't miss it! \p So, if you want
 		to help us save Hoenn..."))
 
 		removefieldmugshot
-  		createfieldmugshot (MUGSHOT_CAMELIA , MENACING)
+  		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_MENACING)
 		setspeaker ([SP_NAME_CAMELIA])
 		msgbox(format("You better come!"))
 	}

@@ -5,7 +5,7 @@
   "music": "MUS_ABNORMAL_WEATHER",
   "region_map_section": "MAPSEC_FIERY_PATH",
   "requires_flash": false,
-  "weather": "WEATHER_SHADE",
+  "weather": "WEATHER_UNDERWATER",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,

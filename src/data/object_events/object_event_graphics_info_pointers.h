@@ -295,6 +295,14 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelgruntf
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smalltv;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smallninkaburi;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelflag;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fire;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_wageslavem;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_escapedprisonerm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_lanette;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_brigette;
+
 
 
 // Begin pokemon event objects
@@ -611,7 +619,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REBELGRUNTFSIGN] =             &gObjectEventGraphicsInfo_rebelgruntfsign,
     [OBJ_EVENT_GFX_SMALLTV] =                  &gObjectEventGraphicsInfo_smalltv,
     [OBJ_EVENT_GFX_SMALLNINKABURI] =                  &gObjectEventGraphicsInfo_smallninkaburi,
+
+    [OBJ_EVENT_GFX_REBELFLAG] =                  &gObjectEventGraphicsInfo_rebelflag,
+    [OBJ_EVENT_GFX_FIRE] =                  &gObjectEventGraphicsInfo_fire,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
+
+    [OBJ_EVENT_GFX_WAGESLAVEM] =             &gObjectEventGraphicsInfo_wageslavem,
+    [OBJ_EVENT_GFX_ESCAPEDPRISONERM] =             &gObjectEventGraphicsInfo_escapedprisonerm,
+    [OBJ_EVENT_GFX_LANETTE] =                  &gObjectEventGraphicsInfo_lanette,
+    [OBJ_EVENT_GFX_BRIGETTE] =                  &gObjectEventGraphicsInfo_brigette,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -185,7 +185,7 @@
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
       "width": 80,
-      "height": 22,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route103/border.bin",
@@ -5030,6 +5030,26 @@
       "secondary_tileset": "gTileset_InsideOfTruck",
       "border_filepath": "data/layouts/PetLandfillMilitaryShop/border.bin",
       "blockdata_filepath": "data/layouts/PetLandfillMilitaryShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_WATERFALL_CAVE",
+      "name": "WaterfallCave_Layout",
+      "width": 46,
+      "height": 37,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/WaterfallCave/border.bin",
+      "blockdata_filepath": "data/layouts/WaterfallCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104LIGHTHOUSE",
+      "name": "Route104Lighthouse_Layout",
+      "width": 7,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route104Lighthouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route104Lighthouse/map.bin"
     }
   ]
 }

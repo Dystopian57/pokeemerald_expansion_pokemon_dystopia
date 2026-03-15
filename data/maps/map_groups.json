@@ -152,7 +152,9 @@
     "Sableye_Lair",
     "Hermit_Tree",
     "Arcade_Elevator_To_Barracks",
-    "PetLandfillMilitaryShop"
+    "PetLandfillMilitaryShop",
+    "WaterfallCave",
+    "Route104Lighthouse"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

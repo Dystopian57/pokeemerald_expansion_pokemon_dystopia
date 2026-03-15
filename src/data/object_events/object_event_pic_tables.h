@@ -504,6 +504,30 @@ static const struct SpriteFrameImage sPicTable_smallninkaburi[] = {
     overworld_ascending_frames(gObjectEventPic_smallninkaburi, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_rebelflag[] = {
+    overworld_ascending_frames(gObjectEventPic_rebelflag, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_fire[] = {
+    overworld_ascending_frames(gObjectEventPic_fire, 2, 4),
+};
+
+
+static const struct SpriteFrameImage sPicTable_wageslavem[] = {
+    overworld_ascending_frames(gObjectEventPic_wageslavem, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_escapedprisonerm[] = {
+    overworld_ascending_frames(gObjectEventPic_escapedprisonerm, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_lanette[] = {
+    overworld_ascending_frames(gObjectEventPic_lanette, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_brigette[] = {
+    overworld_ascending_frames(gObjectEventPic_brigette, 2, 4),
+};
 
 
 static const struct SpriteFrameImage sPicTable_Man4[] = {
