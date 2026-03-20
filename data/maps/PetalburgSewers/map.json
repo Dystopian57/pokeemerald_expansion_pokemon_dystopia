@@ -1,0 +1,35 @@
+{
+  "id": "MAP_PETALBURG_SEWERS",
+  "name": "PetalburgSewers",
+  "layout": "LAYOUT_PETALBURG_SEWERS",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 10,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_BEACH",
+      "dest_warp_id": "7"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

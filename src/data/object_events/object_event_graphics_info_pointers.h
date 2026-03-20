@@ -303,6 +303,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_escapedpris
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_lanette;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_brigette;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_surge;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_falkner;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_artie;
+
 
 
 // Begin pokemon event objects
@@ -628,6 +632,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ESCAPEDPRISONERM] =             &gObjectEventGraphicsInfo_escapedprisonerm,
     [OBJ_EVENT_GFX_LANETTE] =                  &gObjectEventGraphicsInfo_lanette,
     [OBJ_EVENT_GFX_BRIGETTE] =                  &gObjectEventGraphicsInfo_brigette,
+
+    [OBJ_EVENT_GFX_SURGE] =             &gObjectEventGraphicsInfo_surge,
+    [OBJ_EVENT_GFX_FALKNER] =                  &gObjectEventGraphicsInfo_falkner,
+    [OBJ_EVENT_GFX_ARTIE] =                  &gObjectEventGraphicsInfo_artie,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

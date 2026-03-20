@@ -530,6 +530,20 @@ static const struct SpriteFrameImage sPicTable_brigette[] = {
 };
 
 
+static const struct SpriteFrameImage sPicTable_surge[] = {
+    overworld_ascending_frames(gObjectEventPic_surge, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_falkner[] = {
+    overworld_ascending_frames(gObjectEventPic_falkner, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_artie[] = {
+    overworld_ascending_frames(gObjectEventPic_artie, 2, 4),
+};
+
+
+
 static const struct SpriteFrameImage sPicTable_Man4[] = {
     overworld_ascending_frames(gObjectEventPic_Man4, 2, 4),
 };

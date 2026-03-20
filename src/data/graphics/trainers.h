@@ -168,7 +168,14 @@ const u32 gTrainerFrontPic_oldwallybattle[] = INCBIN_U32("graphics/trainers/fron
 const u16 gTrainerPalette_oldwallybattle[] = INCBIN_U16("graphics/trainers/front_pics/oldwally.gbapal");
 
 
+const u32 gTrainerFrontPic_surgebattle[] = INCBIN_U32("graphics/trainers/front_pics/surge.4bpp.lz");
+const u16 gTrainerPalette_surgebattle[] = INCBIN_U16("graphics/trainers/front_pics/surge.gbapal");
 
+const u32 gTrainerFrontPic_falknerbattle[] = INCBIN_U32("graphics/trainers/front_pics/falkner.4bpp.lz");
+const u16 gTrainerPalette_falknerbattle[] = INCBIN_U16("graphics/trainers/front_pics/falkner.gbapal");
+
+const u32 gTrainerFrontPic_artiebattle[] = INCBIN_U32("graphics/trainers/front_pics/artie.4bpp.lz");
+const u16 gTrainerPalette_artiebattle[] = INCBIN_U16("graphics/trainers/front_pics/artie.gbapal");
 
 
 
@@ -543,6 +550,10 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LANETTEBATLE, gTrainerFrontPic_lanettebattle, gTrainerPalette_lanettebattle),
     TRAINER_SPRITE(TRAINER_PIC_BRIGETTEBATTLE, gTrainerFrontPic_brigettebattle, gTrainerPalette_brigettebattle),
     TRAINER_SPRITE(TRAINER_PIC_OLDWALLYBATTLE, gTrainerFrontPic_oldwallybattle, gTrainerPalette_oldwallybattle),
+
+    TRAINER_SPRITE(TRAINER_PIC_SURGEBATTLE, gTrainerFrontPic_surgebattle, gTrainerPalette_surgebattle),
+    TRAINER_SPRITE(TRAINER_PIC_FALKNERBATTLE, gTrainerFrontPic_falknerbattle, gTrainerPalette_falknerbattle),
+    TRAINER_SPRITE(TRAINER_PIC_ARTIEBATTLE, gTrainerFrontPic_artiebattle, gTrainerPalette_artiebattle),
 
     TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),
     TRAINER_SPRITE(TRAINER_PIC_AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, gTrainerPalette_AquaGruntM),

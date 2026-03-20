@@ -5050,6 +5050,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Route104Lighthouse/border.bin",
       "blockdata_filepath": "data/layouts/Route104Lighthouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_SEWERS",
+      "name": "PetalburgSewers_Layout",
+      "width": 29,
+      "height": 37,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattlePalace",
+      "border_filepath": "data/layouts/PetalburgSewers/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgSewers/map.bin"
     }
   ]
 }

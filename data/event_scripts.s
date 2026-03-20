@@ -1289,3 +1289,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/WaterfallCave/scripts.inc"
 
 	.include "data/maps/Route104Lighthouse/scripts.inc"
+
+	.include "data/maps/PetalburgSewers/scripts.inc"
