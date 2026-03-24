@@ -1004,6 +1004,9 @@ SECTIONS {
         sound/songs/midi/mus_unovaroutegate.o(.rodata);
         
         sound/songs/midi/mus_mahalotrail.o(.rodata);
+        sound/songs/midi/mus_lavenderhgss.o(.rodata);
+        sound/songs/midi/mus_casteliagym.o(.rodata);
+        
         
         sound/songs/midi/mus_gsc_route38.o(.rodata);
         sound/songs/midi/mus_caught.o(.rodata);

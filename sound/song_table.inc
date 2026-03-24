@@ -598,6 +598,9 @@ gSongTable::
 
 	song mus_mahalotrail, 0, 0
 
+	song mus_lavenderhgss, 0, 0
+	song mus_casteliagym, 0, 0
+
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
 	song ph_trap_held, MUSIC_PLAYER_SE2, 2

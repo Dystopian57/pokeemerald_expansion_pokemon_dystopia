@@ -30,10 +30,17 @@
       "dest_warp_id": "4"
     },
     {
-      "x": 13,
+      "x": 12,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_ROUTE103DEVON_LAB_UPPER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104DEVON_LAB_BASEMENT",
       "dest_warp_id": "0"
     }
   ],

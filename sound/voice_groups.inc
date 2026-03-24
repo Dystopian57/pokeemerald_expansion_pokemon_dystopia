@@ -61,6 +61,10 @@
 
 .include "sound/voicegroups/mahalotrail.inc"
 
+.include "sound/voicegroups/lavenderhgss.inc"
+.include "sound/voicegroups/casteliagym.inc"
+
+
 
 .include "sound/voicegroups/b_tower_rs.inc"
 .include "sound/voicegroups/encounter_swimmer.inc"

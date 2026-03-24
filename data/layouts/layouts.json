@@ -46,7 +46,7 @@
       "name": "FortreeCity_Layout",
       "width": 40,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralGreen",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FortreeCity/border.bin",
       "blockdata_filepath": "data/layouts/FortreeCity/map.bin"
@@ -1015,9 +1015,9 @@
       "id": "LAYOUT_ROUTE104_MR_BRINEYS_HOUSE",
       "name": "Route104_MrBrineysHouse_Layout",
       "width": 12,
-      "height": 9,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/Route104_MrBrineysHouse/border.bin",
       "blockdata_filepath": "data/layouts/Route104_MrBrineysHouse/map.bin"
     },
@@ -5044,7 +5044,7 @@
     {
       "id": "LAYOUT_ROUTE104LIGHTHOUSE",
       "name": "Route104Lighthouse_Layout",
-      "width": 7,
+      "width": 8,
       "height": 10,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
@@ -5060,6 +5060,36 @@
       "secondary_tileset": "gTileset_BattlePalace",
       "border_filepath": "data/layouts/PetalburgSewers/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgSewers/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104LIGHTHOUSE_2",
+      "name": "Route104Lighthouse_2_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route104Lighthouse_2/border.bin",
+      "blockdata_filepath": "data/layouts/Route104Lighthouse_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE103_MOVE_TUTOR_HUT",
+      "name": "Route103_MoveTutorHut_Layout",
+      "width": 13,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/Route103_MoveTutorHut/border.bin",
+      "blockdata_filepath": "data/layouts/Route103_MoveTutorHut/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104DEVON_LAB_BASEMENT",
+      "name": "Route104DevonLabBasement_Layout",
+      "width": 13,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/Route104DevonLabBasement/border.bin",
+      "blockdata_filepath": "data/layouts/Route104DevonLabBasement/map.bin"
     }
   ]
 }

@@ -1291,3 +1291,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route104Lighthouse/scripts.inc"
 
 	.include "data/maps/PetalburgSewers/scripts.inc"
+
+	.include "data/maps/Route104Lighthouse_2/scripts.inc"
+
+	.include "data/maps/Route103_MoveTutorHut/scripts.inc"
+
+	.include "data/maps/Route104DevonLabBasement/scripts.inc"

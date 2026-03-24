@@ -155,7 +155,10 @@
     "PetLandfillMilitaryShop",
     "WaterfallCave",
     "Route104Lighthouse",
-    "PetalburgSewers"
+    "PetalburgSewers",
+    "Route104Lighthouse_2",
+    "Route103_MoveTutorHut",
+    "Route104DevonLabBasement"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
