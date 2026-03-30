@@ -16,7 +16,7 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 4,
+      "x": 5,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE102RALTS_SANCTUARY",

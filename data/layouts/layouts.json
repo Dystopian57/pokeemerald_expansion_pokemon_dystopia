@@ -4865,7 +4865,7 @@
       "id": "LAYOUT_GREAT_CRATER_HOT_SPRINGS",
       "name": "GreatCraterHotSprings_Layout",
       "width": 15,
-      "height": 10,
+      "height": 16,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/GreatCraterHotSprings/border.bin",
@@ -5004,7 +5004,7 @@
     {
       "id": "LAYOUT_HERMIT_TREE",
       "name": "Hermit_Tree_Layout",
-      "width": 9,
+      "width": 11,
       "height": 7,
       "primary_tileset": "gTileset_SecretBase",
       "secondary_tileset": "gTileset_SecretBaseTree",
@@ -5084,8 +5084,8 @@
     {
       "id": "LAYOUT_ROUTE104DEVON_LAB_BASEMENT",
       "name": "Route104DevonLabBasement_Layout",
-      "width": 13,
-      "height": 10,
+      "width": 17,
+      "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/Route104DevonLabBasement/border.bin",

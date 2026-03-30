@@ -292,12 +292,11 @@ script OldaleSharpyCameliaOutDLCCutscene {
 	        setspeaker ([SP_NAME_SHARPY])
             createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
             msgbox(format("Come join me in Route 103. I'll be waiting!"))
-            goto (finishOldalekidscutscene)
+            
 
     playse (SE_FLEE)
     applymovement (18, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 7))
     waitmovement
-
     thisguy:
     removefieldmugshot
 	setspeaker ([SP_NAME_CAMELIA])
