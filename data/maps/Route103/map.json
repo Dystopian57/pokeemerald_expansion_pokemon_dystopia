@@ -210,7 +210,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
       "x": 28,
-      "y": 40,
+      "y": 39,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -301,7 +301,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVONGRUNTM",
       "x": 30,
-      "y": 39,
+      "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -314,7 +314,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 30,
-      "y": 40,
+      "y": 39,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,

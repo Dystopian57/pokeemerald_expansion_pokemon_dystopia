@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
-      "x": 1,
+      "x": 2,
       "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -30,14 +30,14 @@
   ],
   "warp_events": [
     {
-      "x": 1,
+      "x": 2,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE103",
       "dest_warp_id": "0"
     },
     {
-      "x": 2,
+      "x": 3,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE103",

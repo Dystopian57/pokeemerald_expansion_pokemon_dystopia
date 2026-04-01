@@ -4855,7 +4855,7 @@
       "id": "LAYOUT_LITTLEROOT_MAUSOLEUM",
       "name": "LittlerootMausoleum_Layout",
       "width": 13,
-      "height": 18,
+      "height": 19,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/LittlerootMausoleum/border.bin",
@@ -5084,7 +5084,7 @@
     {
       "id": "LAYOUT_ROUTE104DEVON_LAB_BASEMENT",
       "name": "Route104DevonLabBasement_Layout",
-      "width": 17,
+      "width": 19,
       "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BikeShop",
