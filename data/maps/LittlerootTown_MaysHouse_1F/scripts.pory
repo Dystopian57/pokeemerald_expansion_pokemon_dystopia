@@ -675,6 +675,7 @@ script RivalWatchout {
 	setspeaker ([SP_NAME_RIVAL])
 	playbgm (MUS_HELP, TRUE)
 	applymovement (1, moves(face_down, emote_exclamation_mark))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 	playse (SE_PIN)
 	msgbox (format("{PLAYER}, don't go beyond the barricade!!"))
 	removefieldmugshot
@@ -755,6 +756,7 @@ script Won_or_Caught {
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
 	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	msgbox (format("{PLAYER}... you did it! You beat the fiend! \p This will go down in the history books.
 	Let me restrain it - perhaps we can put it to some use."))
 	waitmessage
@@ -799,6 +801,7 @@ script RanAway {
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
 	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
+	applymovement (1, moves(face_right))
 	msgbox (format("{PLAYER}, don't falter now!! This...! \p This is the battle that will decide the fate
 	of HOENN!"))
 	removefieldmugshot

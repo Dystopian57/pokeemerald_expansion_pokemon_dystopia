@@ -298,6 +298,15 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smallninkab
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelflag;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fire;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_leakripple;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pokesigil;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smoke;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_spark;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hacktv;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_researchtube;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fisherfishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_longhairguy;
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_wageslavem;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_escapedprisonerm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_lanette;
@@ -627,6 +636,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REBELFLAG] =                  &gObjectEventGraphicsInfo_rebelflag,
     [OBJ_EVENT_GFX_FIRE] =                  &gObjectEventGraphicsInfo_fire,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
+
+    [OBJ_EVENT_GFX_LEAKRIPPLE] =                  &gObjectEventGraphicsInfo_leakripple,
+    [OBJ_EVENT_GFX_POKESIGIL] =                  &gObjectEventGraphicsInfo_pokesigil,
+    [OBJ_EVENT_GFX_SMOKE] =            &gObjectEventGraphicsInfo_smoke,
+    [OBJ_EVENT_GFX_SPARK] =                  &gObjectEventGraphicsInfo_spark,
+    [OBJ_EVENT_GFX_HACKTV] =                  &gObjectEventGraphicsInfo_hacktv,
+    [OBJ_EVENT_GFX_RESEARCHTUBE] =            &gObjectEventGraphicsInfo_researchtube,
+    [OBJ_EVENT_GFX_FISHERFISHING] =                  &gObjectEventGraphicsInfo_fisherfishing,
+    [OBJ_EVENT_GFX_LONGHAIRGUY] =                  &gObjectEventGraphicsInfo_longhairguy,
 
     [OBJ_EVENT_GFX_WAGESLAVEM] =             &gObjectEventGraphicsInfo_wageslavem,
     [OBJ_EVENT_GFX_ESCAPEDPRISONERM] =             &gObjectEventGraphicsInfo_escapedprisonerm,

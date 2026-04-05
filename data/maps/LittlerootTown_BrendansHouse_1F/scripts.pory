@@ -768,7 +768,7 @@ releaseall
 script PlayerFridge {
 	
 lockall
-msgbox (format("The fridge is empty."))
+msgbox (format("There is a moldy Petalburguer in the fridge. Better to leave it there."))
 releaseall
 }
 

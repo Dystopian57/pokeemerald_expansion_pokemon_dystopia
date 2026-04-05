@@ -145,7 +145,7 @@ script AideeBasementIdleTalk {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("We have reverted a Safemon back into a regular Pokémon! Isn't it fascinating!?
-		\p Take that, Devon Corp. - what you can do, we can undo! Bwahaha!"))
+		\p Take that, Devon Co. - what you can do, we can undo! Bwahaha!"))
 
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)

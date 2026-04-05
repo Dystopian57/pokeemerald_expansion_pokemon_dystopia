@@ -403,6 +403,11 @@ const u8 gText_MatchCallConspiracyGreatCrater_Pokemon[] = _("Extremely rare ones
 const u8 gText_MatchCallConspiracyGreatCrater_Intro1[] = _("Was there really a war?");
 const u8 gText_MatchCallConspiracyGreatCrater_Intro2[] = _("I think it's all made up.");
 
+const u8 gText_MatchCallHexgirlMausoleum_Strategy[] = _("I like flowers.");
+const u8 gText_MatchCallHexgirlMausoleum_Pokemon[] = _("Those that feel lonely.");
+const u8 gText_MatchCallHexgirlMausoleum_Intro1[] = _("Still waiting for Devon");
+const u8 gText_MatchCallHexgirlMausoleum_Intro2[] = _("supplies...");
+
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] =
 {
     [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose),
@@ -484,4 +489,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_VETERAN103] = MCFLAVOR(Veteran103),
     [REMATCH_TOURISTGREATCRATER] = MCFLAVOR(TouristGreatCrater),
     [REMATCH_CONSPIRACYGREATCRATER] = MCFLAVOR(ConspiracyGreatCrater),
+    [REMATCH_HEXGIRLMAUSOLEUM] = MCFLAVOR(HexgirlMausoleum),
+    
 };

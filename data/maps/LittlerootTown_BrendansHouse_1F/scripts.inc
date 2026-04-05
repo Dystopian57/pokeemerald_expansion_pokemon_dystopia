@@ -1735,7 +1735,8 @@ PlayerRationBoxes_Text_0:
 
 PlayerFridge_Text_0:
 # 771 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "The fridge is empty.$"
+	.string "There is a moldy Petalburguer in the\n"
+	.string "fridge. Better to leave it there.$"
 
 PlayerKitchenCabinet_Text_0:
 # 778 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

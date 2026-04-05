@@ -14,11 +14,11 @@ gText_Birch_Pokemon::
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "After the war with Kanto, Devon Corp.\n"
+	.string "After the war with Kanto, Devon Co.\n"
 	.string "and Silph.Co signed a peace treaty....\p"
-	.string "Which stated that all Pokémon in both\n"
-	.string "regions should be turned into weaker\l"
-	.string "versions of themselves - Safemon.\p"
+	.string "Which stated that all Pokémon in Hoenn\n"
+	.string "should be turned into weaker versions\l"
+	.string "of themselves - Safemon.\p"
 	.string "It was to prevent them from being used\n"
 	.string "as weapons in another war.\p"
 	.string "Some say that it's cruel, that these\n"

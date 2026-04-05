@@ -1091,7 +1091,9 @@ script Littleroot_Idletalk_Aidee{
 
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
-	msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))}
+	msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))
+	applymovement (5, moves(face_left))
+	}
 	if (var(VAR_LITTLEROOT_PHASE) == 2)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 	msgbox (format("Oh, {PLAYER} - you're a lifesaver! Yes, I could use your help with a small task."))
@@ -1107,6 +1109,7 @@ script Littleroot_Idletalk_Aidee{
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Look inside the big craters, that's where you're most likely to find them. I'll make it worth your time, I promise!"))
+	applymovement (5, moves(face_left))
 		setvar(VAR_LITTLEROOT_PHASE, 3)
 		setflag (AideeQuestAccepted)
 		}
@@ -1129,41 +1132,55 @@ script Littleroot_Idletalk_Aidee{
 
 script SafemonLore {
 	lockall
+	startSafemonlore:
 	msgbox (format("'Introduction to Safemon Classification, by Devon Corporation.'
 	\p Hmm... which chapter should I read?"))
 		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "1) Genetic Safemon", "2) Surgical
 		Safemon", "3) Contraption Safemon", "4) Addendum", "Don't read")
 		if (var(VAR_RESULT) == 0) {
 			msgbox (format("As their name suggests, Genetic Safemon are those whose genes have been
-			modified to alter their biological traits, often to suppress dangerous capabilities."))
-			showmonpic(SPECIES_SMOTHQUIL, 10,3)
-			msgbox (format("An example is Smothquil, whose back fire-glands can no longer produce flames
-			to the dangerous extent they could before."))
-			hidemonpic}
+			modified to suppress dangerous capabilities."))
+			showmonpic(SPECIES_GUMMIN, 10,3)
+			msgbox (format("An example is Gummin, the Safemon version of Gulpin. Unlike Gulpin's
+			poisonous body, Gumming's is completely inocuous - albeit also rather sticky as an
+			unintended side-effect."))
+			hidemonpic
+			goto (startSafemonlore)}
 			
 
 		if (var(VAR_RESULT) == 1) {
 			msgbox (format("Surgical Safemon are Pokémon who have been subjected to surgery to remove
 			their dangerous traits, or to replace them with safe ones."))
-			showmonpic(SPECIES_BULBASYNTH, 10,3)
-			msgbox (format("Bulbasynth fall under this category, due to their native bulbs having been
-			replaced by synthetic organs that can only segregate safe substances."))
-			hidemonpic}
+			showmonpic(SPECIES_PANSELIA, 10,3)
+			msgbox (format("Panselia, the Safemon equivalent of Roselia, fall under this category, due to
+			 their thorny limbs being replace by soft, fragantly odoured ones."))
+			hidemonpic
+			goto (startSafemonlore)}
 			
 
 		if (var(VAR_RESULT) == 2) {
-			msgbox (format("When a Pokémon is made safer for human interaction simply by equipping them
-			with an artificial restrain or device, they are called Contraption Safemon."))
+			msgbox (format("When a Pokémon is made safer for human interaction simply by the action of
+			an artificial restrain or device, they are called Contraption Safemon."))
 			showmonpic(SPECIES_POOCHAIN, 10,3)
 			msgbox (format("Due to their large number in Hoenn, it was determined faster and more cost-
 			effective to make Poochyenas safer with this method - more specifically, by adjusting special
-			muzzles around their jaws."))
-			hidemonpic}
+			muzzles around their jaws. The resulting Safemon was named 'Poochain'."))
+			hidemonpic
+			goto (startSafemonlore)}
 
 		if (var(VAR_RESULT) == 3) {
-			msgbox (format("Due to their large number in Hoenn, it was determined faster and more cost-
-			effective to make Poochyenas safer with this method - more specifically, by adjusting special
-			muzzles around their jaws."))}
+			msgbox (format("Safemon Research is a novel but rapidly advancing field, and new practices
+			and terminology are being created all the time as a result."))
+			showmonpic(SPECIES_MANCHINE, 10,3)
+			msgbox (format("For example, when the synthetic parts on a Contraption Safemon surpass a certain
+			threshold, we speak of the subcategory of 'Droid Safemon'."))
+
+			showmonpic(SPECIES_LOADTAD, 10,3)
+			msgbox (format("Then there's the fringe case of 'Behavioural Safemon', which are those that have
+			its violent tendencies replaced by benign instincts. Some experts in the field do not consider
+			these Safemon - merely highly conditioned Pokémon."))
+			hidemonpic
+			}
 
 		if (var(VAR_RESULT) == 4) {
 			releaseall}
@@ -1337,6 +1354,7 @@ script Littleroot_Idletalk_Pikachu1{
 					setvar(VAR_LITTLEROOT_PHASE, 2)
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
+					applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
 					msgbox (format("Well, it's yours now. Don't say I didn't warn you."))
 					waitmessage
 					applymovement (4, moves(face_left))
@@ -1469,7 +1487,7 @@ script LittlerootTown_Eventscript_ProffessorDontgo1 {
 	playse (SE_M_SWAGGER2)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("Come on {PLAYER}, can't you at least give this a chance?"))
+	msgbox (format("{PLAYER}, can't you at least give this a chance?"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	applymovement (4, moves(face_up))
@@ -1619,6 +1637,7 @@ script Lab_EventScript_Starter1{
 			msgbox (format("I hope that Bulbasynth and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 			msgbox (format("Ah, before you go - mind speaking with my Aide over there? \p We could
 			use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}.\pIt will not take you long."))
 			applymovement (4, moves(face_up))
@@ -1735,6 +1754,7 @@ script Lab_EventScript_Starter2{
 			msgbox (format("I hope that Smothquil and you become good friends."))
 			waitmessage
 			applymovement (4, moves(face_left))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 			msgbox (format("Ah, before you go - mind speaking with my Aide over there? \p We could
 			use your help with some field work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}. It will not take you long."))
 			applymovement (4, moves(face_up))
@@ -1871,7 +1891,7 @@ releaseall
 
 script LabMonitor {
 lockall
-msgbox (format("It seems like a discarded monitor."))
+msgbox (format("It's a monitor, apparently discarded."))
 releaseall
 }
 

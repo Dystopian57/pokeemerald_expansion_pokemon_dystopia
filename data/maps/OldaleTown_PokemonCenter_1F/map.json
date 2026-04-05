@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "OldaleTown_PokemonCenter_1F_EventScript_Nurse",
+      "script": "OldaleTown_Devon_Nurse",
       "flag": "0"
     },
     {
@@ -136,6 +136,14 @@
       "type": "sign",
       "x": 2,
       "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OldalePokeCenterInnSign"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "OldalePokeCenterInnSign"

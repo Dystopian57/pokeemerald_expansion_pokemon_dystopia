@@ -540,6 +540,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LabShelves"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LabMonitor"
     }
   ]
 }

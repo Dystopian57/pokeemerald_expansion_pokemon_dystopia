@@ -78,13 +78,13 @@ script LittlerootMausoleum_HexGirl {
 	    applymovement (1, moves(face_down))
         msgbox (format("Aah, yes... this is much better."))
 	    applymovement (1, moves(face_player))
-        msgbox (format("You see, I'm the caretaker of this mausoleum... \p Many of the Pokémon and
-        people that lost their lives during the war rest here now. \p It used to be visited quite
-        frequently - but not so much anymore."))
+        msgbox (format("I'm Samantha, the caretaker of this mausoleum... \p Many of the Pokémon and
+        people that lost their lives during the war rest here now. \p We used to have visits all the time
+        - but not so much anymore."))
 	    applymovement (1, moves(face_down))
         msgbox (format("I guess people move on, or mourn in different ways... that's okay..."))
 	    applymovement (1, moves(face_player))
-        msgbox (format("But my employers, at Devon Corp... they also stopped sending me supplies."))
+        msgbox (format("But my employers at Devon Co., they also stopped sending me supplies..."))
 
         msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
         What should I do?"))
@@ -104,8 +104,10 @@ script LittlerootMausoleum_HexGirl {
             msgbox (format("Y-you will... thank you! I-I will gladly accept your help... \p I mean,
             you've done more than enough for now... \p B-but if I need something else... could I...
             could I call you? \p Here, this is my Pokenav number..."))
+            register_matchcall (TRAINER_HEXGIRL_MAUSOLEUM)
             //give pokenav number
             msgbox (format("Oh, and this - this is for your trouble...!"))
+	        giveitem (ITEM_CLEANSE_TAG)
             //giveitemreward
             msgbox (format("Thank so much again... now, please be safe out there."))
             setflag (agreedtohelphexgirl1st)
@@ -115,7 +117,7 @@ script LittlerootMausoleum_HexGirl {
         msgbox (format("O-oh, of course not... I'm sorry for assuming..."))}}
 
 	if (flag (refusedtohelphexgirl1st) && !flag (agreedtohelphexgirl1st))
-    {msgbox (format("O-oh... have you... changed your mind? Will you help me with caring
+    {msgbox (format("O-oh... have you... changed your mind? Will you help me care
     for the mausoleum?"))
             dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
             if(var(VAR_RESULT) == 0){

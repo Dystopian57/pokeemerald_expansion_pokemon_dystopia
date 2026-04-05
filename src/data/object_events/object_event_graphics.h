@@ -184,6 +184,16 @@ const u32 gObjectEventPic_smallninkaburi[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_rebelflag[] = INCBIN_U32("graphics/object_events/pics/misc/rebelflag.4bpp");
 const u32 gObjectEventPic_fire[] = INCBIN_U32("graphics/object_events/pics/misc/fire.4bpp");
 
+const u32 gObjectEventPic_leakripple[] = INCBIN_U32("graphics/object_events/pics/misc/leakripple.4bpp");
+const u32 gObjectEventPic_spark[] = INCBIN_U32("graphics/object_events/pics/misc/spark.4bpp");
+const u32 gObjectEventPic_researchtube[] = INCBIN_U32("graphics/object_events/pics/misc/researchtube.4bpp");
+const u32 gObjectEventPic_smoke[] = INCBIN_U32("graphics/object_events/pics/misc/smoke.4bpp");
+const u32 gObjectEventPic_hacktv[] = INCBIN_U32("graphics/object_events/pics/misc/hacktv.4bpp");
+const u32 gObjectEventPic_pokesigil[] = INCBIN_U32("graphics/object_events/pics/misc/pokesigil.4bpp");
+
+const u32 gObjectEventPic_fisherfishing[] = INCBIN_U32("graphics/object_events/pics/people/fisherfishing.4bpp");
+const u32 gObjectEventPic_longhairguy[] = INCBIN_U32("graphics/object_events/pics/people/longhairguy.4bpp");
+
 
 const u32 gObjectEventPic_wageslavem[] = INCBIN_U32("graphics/object_events/pics/people/wageslavem.4bpp");
 const u32 gObjectEventPic_escapedprisonerm[] = INCBIN_U32("graphics/object_events/pics/people/escapedprisonerm.4bpp");

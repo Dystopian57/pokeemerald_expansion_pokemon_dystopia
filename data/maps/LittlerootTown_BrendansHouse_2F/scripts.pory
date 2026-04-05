@@ -401,8 +401,8 @@ script PlayerRoomDiary {
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Oldest entry", "Old entry", "Newest entry", "Don't read")
 		if (var(VAR_RESULT) == 0) {
 			msgbox (format("Today dad and mom gave me the best birthday gift ever - my first
-			Pokémon! Yay!\pMommy said it's a Mankey, a Fighting type.\pIn school I learnt
-			Fighting types are strong against Normal types, like the ones grandpa uses. \pOh, about 
+			Pokémon!\pMommy said it's a Mankey, a Fighting type.\pIn school I learnt
+			Fighting types are strong against Normal types, like the ones grandpa uses. \pSpeaking of 
 			grandpa, Daddy said I am going to stay with him for a while...\pBecause him and mommy are going
 			to be very very busy with work.\pI was a bit sad. It was my birthday, but I think everyone
 			was sad today."))
@@ -410,11 +410,10 @@ script PlayerRoomDiary {
 
 		if (var(VAR_RESULT) == 1) {
 			msgbox (format("Today, Mankey and I are being drafted into the Hoenn army.\pAfter our 
-			training, we will be sent to the Kanto front. \pI used to be scared that this day 
+			training, we will be sent to the Kantonian front. \pI used to be scared that this day 
 			may come, but after all that happened, it's like I can't feel anything anymore. \pI think I have
-			ran out of all my fear, anger, and sadness. \pThis war seems to have stolen everything from me, 
-			even my feelings. \pIf anything, I am curious - who is behind all of this, and why did it have 
-			to happen?"))
+			ran out of all my fear, anger, and sadness. \pThis war has stolen everything from me, 
+			even my feelings."))
 			goto (opendiary)}
 		if (var(VAR_RESULT) == 2) {
 			msgbox (format("Grandfather was right all along. I am spineless. Useless. \pThere is nothing of him
@@ -434,7 +433,7 @@ script PlayerRoomMail {
 	msgbox (format("A laptop is on the floor, with Devon Mail open."))
 	backtomail:
 	msgbox (format("There's three mails in the inbox, from three different senders."))
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Devon Corp - Rustboro HQ", "Petalburg Gym", "Oldale DLC", "Ignore laptop")
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Devon Co. - Rustboro HQ", "Petalburg Gym", "Oldale DLC", "Ignore laptop")
 		if (var(VAR_RESULT) == 0) {
 			msgbox (format("From: Devon Corporation. \nSubject: Mail has been delivered.
 			\p After failing to deliver your package personally, our mailing staff has deposited it in your allocated

@@ -765,15 +765,15 @@ PlayerRoomDiary_1:
 	compare VAR_RESULT, 1
 	goto_if_eq PlayerRoomDiary_5
 PlayerRoomDiary_4:
-# 419 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 418 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq PlayerRoomDiary_8
 PlayerRoomDiary_7:
-# 427 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 426 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq PlayerRoomDiary_11
 PlayerRoomDiary_10:
-# 429 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 428 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
@@ -787,95 +787,95 @@ PlayerRoomDiary_2:
 PlayerRoomDiary_5:
 # 412 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomDiary_Text_6
-# 418 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 417 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto opendiary
 	goto PlayerRoomDiary_4
 
 PlayerRoomDiary_8:
-# 420 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 419 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomDiary_Text_7
-# 425 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 424 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto opendiary
 	goto PlayerRoomDiary_7
 
 PlayerRoomDiary_11:
-# 428 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 427 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	goto PlayerRoomDiary_10
 
 
 PlayerRoomMail::
-# 433 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 432 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 434 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 433 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_0
-# 435 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 434 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 backtomail:
-# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 435 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_1
-# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, PlayerRoomMail_Text_2, PlayerRoomMail_Text_3, PlayerRoomMail_Text_4, PlayerRoomMail_Text_5
-# 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PlayerRoomMail_2
 PlayerRoomMail_1:
-# 445 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 444 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PlayerRoomMail_5
 PlayerRoomMail_4:
-# 466 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 465 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq PlayerRoomMail_8
 PlayerRoomMail_7:
-# 475 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 474 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq PlayerRoomMail_15
 PlayerRoomMail_14:
-# 477 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 476 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerRoomMail_2:
-# 439 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_6
-# 443 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 442 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto backtomail
 	goto PlayerRoomMail_1
 
 PlayerRoomMail_5:
-# 446 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 445 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	checkplayergender
-# 447 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 446 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PlayerRoomMail_11
-# 457 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 456 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_8
 PlayerRoomMail_10:
-# 465 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 464 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto backtomail
 	goto PlayerRoomMail_4
 
 PlayerRoomMail_8:
-# 467 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 466 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_9
-# 473 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 472 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto backtomail
 	goto PlayerRoomMail_7
 
 PlayerRoomMail_11:
-# 448 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 447 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_7
 	goto PlayerRoomMail_10
 
 PlayerRoomMail_15:
-# 476 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 475 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	goto PlayerRoomMail_14
 
 
-# 480 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 479 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 cantleavebedroom:
-# 481 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 480 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_down
 	step_end
 
@@ -966,15 +966,14 @@ PlayerRoomDiary_Text_4:
 PlayerRoomDiary_Text_5:
 # 403 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Today dad and mom gave me the best\n"
-	.string "birthday gift ever - my first Pokémon!\l"
-	.string "Yay!\p"
+	.string "birthday gift ever - my first Pokémon!\p"
 	.string "Mommy said it's a Mankey, a Fighting\n"
 	.string "type.\p"
 	.string "In school I learnt Fighting types are\n"
 	.string "strong against Normal types, like the\l"
 	.string "ones grandpa uses.\p"
-	.string "Oh, about grandpa, Daddy said I am going\n"
-	.string "to stay with him for a while...\p"
+	.string "Speaking of grandpa, Daddy said I am\n"
+	.string "going to stay with him for a while...\p"
 	.string "Because him and mommy are going to be\n"
 	.string "very very busy with work.\p"
 	.string "I was a bit sad. It was my birthday, but\n"
@@ -985,20 +984,17 @@ PlayerRoomDiary_Text_6:
 	.string "Today, Mankey and I are being drafted\n"
 	.string "into the Hoenn army.\p"
 	.string "After our training, we will be sent to\n"
-	.string "the Kanto front.\p"
+	.string "the Kantonian front.\p"
 	.string "I used to be scared that this day may\n"
 	.string "come, but after all that happened, it's\l"
 	.string "like I can't feel anything anymore.\p"
 	.string "I think I have ran out of all my fear,\n"
 	.string "anger, and sadness.\p"
-	.string "This war seems to have stolen\n"
-	.string "everything from me, even my feelings.\p"
-	.string "If anything, I am curious - who is\n"
-	.string "behind all of this, and why did it have\l"
-	.string "to happen?$"
+	.string "This war has stolen everything from me,\n"
+	.string "even my feelings.$"
 
 PlayerRoomDiary_Text_7:
-# 420 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 419 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Grandfather was right all along. I am\n"
 	.string "spineless. Useless.\p"
 	.string "There is nothing of him or of my parents\n"
@@ -1015,33 +1011,33 @@ PlayerRoomDiary_Text_7:
 	.string "end.$"
 
 PlayerRoomMail_Text_0:
-# 434 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 433 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "A laptop is on the floor, with Devon Mail\n"
 	.string "open.$"
 
 PlayerRoomMail_Text_1:
-# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 435 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "There's three mails in the inbox, from\n"
 	.string "three different senders.$"
 
 PlayerRoomMail_Text_2:
-# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Devon Corp - Rustboro HQ$"
+# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Devon Co. - Rustboro HQ$"
 
 PlayerRoomMail_Text_3:
-# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Petalburg Gym$"
 
 PlayerRoomMail_Text_4:
-# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Oldale DLC$"
 
 PlayerRoomMail_Text_5:
-# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Ignore laptop$"
 
 PlayerRoomMail_Text_6:
-# 439 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Devon Corporation.\n"
 	.string "Subject: Mail has been delivered.\p"
 	.string "After failing to deliver your package\n"
@@ -1054,7 +1050,7 @@ PlayerRoomMail_Text_6:
 	.string "Devon Corporation$"
 
 PlayerRoomMail_Text_7:
-# 448 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 447 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Petalburg Gym.\n"
 	.string "Subject: How's it going, {PLAYER}?\p"
 	.string "Hey lad. How is your leg? Does it still\n"
@@ -1073,7 +1069,7 @@ PlayerRoomMail_Text_7:
 	.string "Norman.$"
 
 PlayerRoomMail_Text_8:
-# 457 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 456 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Petalburg Gym.\n"
 	.string "Subject: How's it going, {PLAYER}?\p"
 	.string "Hey lass. How is your arm? Does it still\n"
@@ -1092,7 +1088,7 @@ PlayerRoomMail_Text_8:
 	.string "Norman.$"
 
 PlayerRoomMail_Text_9:
-# 467 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 466 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Oldale DLC.\n"
 	.string "Subject: You are not alone.\p"
 	.string "Did you live through traumatic\n"

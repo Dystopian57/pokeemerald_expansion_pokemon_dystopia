@@ -81,6 +81,7 @@ enum {
     REMATCH_VETERAN103,
     REMATCH_TOURISTGREATCRATER,
     REMATCH_CONSPIRACYGREATCRATER,
+    REMATCH_HEXGIRLMAUSOLEUM,
 
     REMATCH_TABLE_ENTRIES // The total number of rematch entries. Must be last in enum
 };

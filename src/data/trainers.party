@@ -99,23 +99,6 @@ Shiftry
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_FREDRICK ===
-Name: FREDRICK
-Class: Expert
-Pic: Expert M
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Basic Trainer
-
-Makuhita
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Machoke
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
 === TRAINER_MATT ===
 Name: MATT
 Class: Aqua Admin
@@ -9617,7 +9600,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
 === TRAINER_REBEL_OLDALE_GUARD ===
-Name: Margaret
+Name: Haley
 Class: Rebelgruntf
 Pic: rebelgruntfbattle
 Gender: Female
@@ -9630,7 +9613,7 @@ Level: 4
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_VETERAN_103 ===
-Name: Marc
+Name: Bryan
 Class: Veteranm
 Pic: veteranmbattle
 Gender: Male
@@ -9711,6 +9694,20 @@ Level: 3
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Seedot
+Level: 3
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+
+=== TRAINER_HEXGIRL_MAUSOLEUM ===
+Name: Samantha
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Basic Trainer
+
+Shuppet
 Level: 3
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 

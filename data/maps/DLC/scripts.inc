@@ -930,7 +930,7 @@ OldaleTown_DLC_TherapyCutscene_Text_9:
 # 62 "data/maps/DLC/scripts.pory"
 	.string "You are correct, sir... Venusaurs are\n"
 	.string "very dangerous.\p"
-	.string "Thankfully, Devon Corp. has safened all\n"
+	.string "Thankfully, Devon Co. has safened all\n"
 	.string "Bulbasaurs in Hoenn to Bulbasynths, so\l"
 	.string "that they hurt no more people.$"
 
@@ -978,9 +978,9 @@ OldaleTown_DLC_TherapyCutscene_Text_18:
 	.string "responsible for the Assault on Route\l"
 	.string "103, and they almost flooded Oldale\l"
 	.string "Town.\p"
-	.string "Once more, it was thanks to Devon\n"
-	.string "Corp's swift action, that a flood gate\l"
-	.string "was built and...$"
+	.string "Once more, it was thanks to Devon Co.'s\n"
+	.string "swift action, that a flood gate was\l"
+	.string "built and...$"
 
 OldaleTown_DLC_TherapyCutscene_Text_19:
 # 118 "data/maps/DLC/scripts.pory"

@@ -513,6 +513,39 @@ static const struct SpriteFrameImage sPicTable_fire[] = {
 };
 
 
+static const struct SpriteFrameImage sPicTable_leakripple[] = {
+    overworld_ascending_frames(gObjectEventPic_leakripple, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_smoke[] = {
+    overworld_ascending_frames(gObjectEventPic_smoke, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_spark[] = {
+    overworld_ascending_frames(gObjectEventPic_spark, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_researchtube[] = {
+    overworld_ascending_frames(gObjectEventPic_researchtube, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_hacktv[] = {
+    overworld_ascending_frames(gObjectEventPic_hacktv, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_pokesigil[] = {
+    overworld_ascending_frames(gObjectEventPic_pokesigil, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_fisherfishing[] = {
+    overworld_ascending_frames(gObjectEventPic_fisherfishing, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_longhairguy[] = {
+    overworld_ascending_frames(gObjectEventPic_longhairguy, 2, 4),
+};
+
+
 static const struct SpriteFrameImage sPicTable_wageslavem[] = {
     overworld_ascending_frames(gObjectEventPic_wageslavem, 2, 4),
 };

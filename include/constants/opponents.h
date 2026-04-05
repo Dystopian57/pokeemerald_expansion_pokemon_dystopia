@@ -32,7 +32,7 @@
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_2        26
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3       27
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4        28
-#define TRAINER_FREDRICK                     29
+#define TRAINER_HEXGIRL_MAUSOLEUM                    29
 #define TRAINER_MATT                         30
 #define TRAINER_ZANDER                       31
 #define TRAINER_OLDALEDEVONGRUNT_M     32

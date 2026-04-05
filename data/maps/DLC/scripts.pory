@@ -59,7 +59,7 @@ script OldaleTown_DLC_TherapyCutscene{
 
     applymovement (6, moves (walk_in_place_down * 2)) 
     waitmovement
-    msgbox(format("You are correct, sir... Venusaurs are very dangerous. \p Thankfully, Devon Corp.
+    msgbox(format("You are correct, sir... Venusaurs are very dangerous. \p Thankfully, Devon Co.
     has safened all Bulbasaurs in Hoenn to Bulbasynths, so that they hurt no more people."))
     applymovement (8, moves (walk_in_place_up * 2))
     waitmovement
@@ -106,7 +106,7 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (6, moves (walk_in_place_down * 2)) 
     waitmovement
     msgbox(format("Precisely. These Pokémon were responsible for the Assault on Route 103,
-    and they almost flooded Oldale Town. \p Once more, it was thanks to Devon Corp's swift action,
+    and they almost flooded Oldale Town. \p Once more, it was thanks to Devon Co.'s swift action,
     that a flood gate was built and..."))
 
     playse (SE_PIN)

@@ -1846,7 +1846,7 @@ applymovement (3, moves(face_player))
 if (flag(RIVAL_LEAVES_HOME) && !flag (Donutquestaccepted))
 {msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
 you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
-arrive to the Great Crater. There's a guy that sells them there. \pDo me the favour, and I'll give
+arrive to the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there. \pDo me the favour, and I'll give
 you some {COLOR RED}Pokéballs{COLOR DARK_GRAY}. Fair deal, right?"))
 setflag(Donutquestaccepted)
 goto (accepteddonutquest)}
@@ -1865,7 +1865,7 @@ lockall
 	if (!flag (FLAG_ITEM_LITTLEROOT_MAILBOX))
 	{msgbox (format("There's a package inside the mailbox. A letter is attached to it.
 	\p For your invaluable service to the region,
-	please accept this token of recognition, courtesy of Devon Corp."))
+	please accept this token of recognition, courtesy of Devon Co."))
 	playse (MUS_OBTAIN_ITEM)
 	giveitem (ITEM_BOTTLE_CAP)
 	setflag(FLAG_ITEM_LITTLEROOT_MAILBOX)}
@@ -1942,6 +1942,7 @@ script LittlerootTown_Trigger_NoEnterRival1{
 	//checkplayergender
 	//if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
 	//else {createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
+	setspeaker ([SP_NAME_RIVAL])
 	msgbox (format("DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
 	\p Take this..."))
 	waitbuttonpress
@@ -1950,8 +1951,10 @@ script LittlerootTown_Trigger_NoEnterRival1{
 	//removefieldmugshot
 	//if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)}
 	//else {createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_ANGRY)}
+	setspeaker ([SP_NAME_RIVAL])
 	msgbox (format("ORYAAAAAAAAHH!"))
 	//removefieldmugshot
+	setspeaker ([NULL])
 	msgbox (format("Whatever is happening inside, it does not look like a good time to visit...")) 
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
@@ -1982,8 +1985,8 @@ script Littleroot_Idletalk_Oldman{
 	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things she wants to tell you about."))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3 && flag (checkonrival))
 	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... it would lift a weight off my old
-	shoulders. \p I tried checking on them myself, but they wouldn't open the door.\p I hope you have
-	better luck."))}
+	shoulders. \p I tried checking on them myself, but they wouldn't open the door.\p Perhaps they will
+	'open up' to you - no pun intended! Ho-ho-ho!"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
 	{
 	checkplayergender
@@ -2084,7 +2087,7 @@ script OldManThanks {
 		waitmessage
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
-		msgbox (format("These are some old crutches of mine.\pI noticed yours are not in the best shape - these
+		msgbox (format("These are some old crutches of mine.\pI noticed yours were not in the best shape - these
 		should help you move around better."))}
 		else
 		{msgbox (format("Obtained the Better Arm Sling!"))
@@ -2094,14 +2097,14 @@ script OldManThanks {
 		msgbox (format("This is an old arm sling of mine.\pI noticed yours is not in the best shape - this one
 		should secure your arm better, so you can move around more easily."))}
 		setspeaker ([SP_NAME_BIRCH])
-		msgbox (format("Well, take care on your trip to Oldale now!"))
+		msgbox (format("Look at you. You have gone through so much, but you are still standing."))
 		setspeaker ([SP_NAME_BIRCH])
-		applymovement (1, moves(face_left))
-		msgbox (format("There's much hardship in these parts lately, and people
-		are not as friendly as they used to."))
+		applymovement (1, moves(face_right))
+		msgbox (format("Your parents would be proud. You came out tough, just like them."))
 		setspeaker ([SP_NAME_BIRCH])
 		applymovement (1, moves(face_up))
-		msgbox (format("But have faith in your Pokémon, and you should be fine. Good bye!"))
+		msgbox (format("Well, off you go now. Please take care - despite Devon's claims, Hoenn is
+		not as safe as it used to. \p But have faith in your Pokémon, and you will be fine. Good bye!"))
 		removefieldmugshot
 		closemessage
 		applymovement (1, moves(walk_down * 7))

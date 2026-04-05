@@ -866,8 +866,8 @@ AideeBasementIdleTalk_Text_12:
 # 147 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "We have reverted a Safemon back into a\n"
 	.string "regular Pokémon! Isn't it fascinating!?\p"
-	.string "Take that, Devon Corp. - what you can\n"
-	.string "do, we can undo! Bwahaha!$"
+	.string "Take that, Devon Co. - what you can do,\n"
+	.string "we can undo! Bwahaha!$"
 
 AideeBasementIdleTalk_Text_13:
 # 153 "data/maps/LittlerootLabBasement/scripts.pory"

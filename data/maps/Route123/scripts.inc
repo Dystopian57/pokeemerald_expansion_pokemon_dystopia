@@ -115,7 +115,6 @@ Route123_EventScript_Kindra::
 	end
 
 Route123_EventScript_Frederick::
-	trainerbattle_single TRAINER_FREDRICK, Route123_Text_FrederickIntro, Route123_Text_FrederickDefeat
 	msgbox Route123_Text_FrederickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
