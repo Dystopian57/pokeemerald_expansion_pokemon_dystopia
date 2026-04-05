@@ -77,3 +77,34 @@ script JoelTentJoel {
     joelgivesdoll:
     releaseall
 }
+
+
+script JoelTentTV {
+	lockall
+    msgbox(format("The TV is not plugged to anything..."))
+	releaseall
+}
+
+script JoelTentLantern {
+	lockall
+    msgbox(format("An oil lantern. It doesn't have much oil left."))
+	releaseall
+}
+
+script JoelTentPoster {
+	lockall
+    msgbox(format("An old poster of a Treecko."))
+	releaseall
+}
+
+script JoelTentMudball {
+	lockall
+    msgbox(format("The dry, cracked remains of a mudball. They resemble a Pokéball."))
+	releaseall
+}
+
+script JoelTentCushion {
+	lockall
+    msgbox(format("A dirty cushion. It's got black and white hair all over it."))
+	releaseall
+}

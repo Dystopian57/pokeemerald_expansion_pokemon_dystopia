@@ -490,7 +490,7 @@
     },
     {
       "id": "MAPSEC_ABANDONED_SHIP",
-      "name": "S.S. BATALLIA",
+      "name": "Crater Bottom",
       "x": 6,
       "y": 14,
       "width": 1,
@@ -717,7 +717,7 @@
     },
     {
       "id": "MAPSEC_LAVENDER_TOWN",
-      "name": "LITL. GRAVEYARD",
+      "name": "LITL. CEMETERY",
       "x": 5,
       "y": 11,
       "width": 1,

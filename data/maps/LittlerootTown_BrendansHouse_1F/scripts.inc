@@ -1808,4 +1808,4 @@ TV_Text_0:
 
 TV_Text_1:
 # 861 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "I'm not in the mood for more TV...$"
+	.string "It's not the time for more TV...$"

@@ -1,0 +1,53 @@
+raw `
+GreatCraterHotSprings_MapScripts::
+	.byte 0
+
+`
+
+script GreatCraterHotSpringsPainting {
+    lockall
+    msgbox(format("It's a painting of Mt Chimney.
+    \p It evokes the immensity of the volcano, juxtaposed with
+    the gentleness of its slowly falling ash."))
+    releaseall
+    }
+
+script GreatCraterHotSpringsBaldGuy {
+    lockall
+    applymovement (4, moves(face_player))
+    msgbox(format("Please, feel free to bathe in any of the pools. Us Lavaridge refugees made this
+    place for everyone to enjoy."))
+    releaseall
+    }
+
+script GreatCraterHotSpringsOldGuy {
+    lockall
+    msgbox(format("With Devon's help, our sons and daughters built a huge thermal plant in our home of
+    Lavaridge Town. \p I'm happy they all have work in these hard times, but it changed so fast... so
+    many of us decided to move here to the countryside."))
+    releaseall
+    }
+
+script GreatCraterHotSpringsNumel {
+    lockall
+    applymovement (5, moves(face_player))
+    playmoncry (SPECIES_NUMEL, CRY_MODE_NORMAL)
+    msgbox(format("Num-num!"))
+    releaseall
+    }
+
+script GreatCraterHotSpringsBathingladyknot {
+    lockall
+    applymovement (3, moves(face_player))
+    msgbox(format("When that huge Electrode fell in this part of the forest, it revealed these
+    natural hot springs. \p It's a testament that good things sometimes come out of bad ones."))
+    releaseall
+    }
+
+script GreatCraterHotSpringsBathingladyloosehair {
+    lockall
+    applymovement (2, moves(face_player))
+    msgbox(format("The water is warm... but not as warm as back home. And the sights
+    are worse too!"))
+    releaseall
+    }

@@ -147,6 +147,56 @@ JoelTentJoel_15:
 	goto JoelTentJoel_14
 
 
+JoelTentTV::
+# 83 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 84 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentTV_Text_0
+# 85 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+
+JoelTentLantern::
+# 89 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 90 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentLantern_Text_0
+# 91 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+
+JoelTentPoster::
+# 95 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 96 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentPoster_Text_0
+# 97 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+
+JoelTentMudball::
+# 101 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 102 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentMudball_Text_0
+# 103 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+
+JoelTentCushion::
+# 107 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 108 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentCushion_Text_0
+# 109 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+
 # 14 "data/maps/JoelTent/scripts.pory"
 JoelTentDoll_Movement_0:
 # 14 "data/maps/JoelTent/scripts.pory"
@@ -245,3 +295,26 @@ JoelTentJoel_Text_7:
 	.string "back.\p"
 	.string "She'll forget about me eventually... but\n"
 	.string "I still don't want her to be sad.$"
+
+JoelTentTV_Text_0:
+# 84 "data/maps/JoelTent/scripts.pory"
+	.string "The TV is not plugged to anything...$"
+
+JoelTentLantern_Text_0:
+# 90 "data/maps/JoelTent/scripts.pory"
+	.string "An oil lantern. It doesn't have much oil\n"
+	.string "left.$"
+
+JoelTentPoster_Text_0:
+# 96 "data/maps/JoelTent/scripts.pory"
+	.string "An old poster of a Treecko.$"
+
+JoelTentMudball_Text_0:
+# 102 "data/maps/JoelTent/scripts.pory"
+	.string "The dry, cracked remains of a mudball.\n"
+	.string "They resemble a Pokéball.$"
+
+JoelTentCushion_Text_0:
+# 108 "data/maps/JoelTent/scripts.pory"
+	.string "A dirty cushion. It's got black and\n"
+	.string "white hair all over it.$"

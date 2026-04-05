@@ -136,6 +136,8 @@ LittlerootMausoleum_HexGirl_14:
 # 140 "data/maps/LittlerootMausoleum/scripts.pory"
 endhexgirlscript:
 # 141 "data/maps/LittlerootMausoleum/scripts.pory"
+	applymovement 1, LittlerootMausoleum_Shuppet_Movement_1
+# 142 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
@@ -279,13 +281,87 @@ changedmindwillhelphexgirl:
 
 
 LittlerootMausoleum_ShuppetPost1stquest::
-# 145 "data/maps/LittlerootMausoleum/scripts.pory"
-	lockall
 # 146 "data/maps/LittlerootMausoleum/scripts.pory"
-	playmoncry SPECIES_SHUPPET, CRY_MODE_NORMAL
+	lockall
 # 147 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_ShuppetPost1stquest_Text_0
+	playmoncry SPECIES_SHUPPET, CRY_MODE_NORMAL
 # 148 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_ShuppetPost1stquest_Text_0
+# 149 "data/maps/LittlerootMausoleum/scripts.pory"
+	releaseall
+	return
+
+
+MausoleumHealingSigil::
+# 154 "data/maps/LittlerootMausoleum/scripts.pory"
+	lockall
+# 155 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 156 "data/maps/LittlerootMausoleum/scripts.pory"
+	special HealPlayerParty
+# 157 "data/maps/LittlerootMausoleum/scripts.pory"
+	playse MUS_HEAL
+# 158 "data/maps/LittlerootMausoleum/scripts.pory"
+	waitse
+# 159 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 160 "data/maps/LittlerootMausoleum/scripts.pory"
+	releaseall
+	return
+
+
+MausoleumTombstone::
+# 164 "data/maps/LittlerootMausoleum/scripts.pory"
+	lockall
+# 165 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox MausoleumTombstone_Text_0
+# 166 "data/maps/LittlerootMausoleum/scripts.pory"
+	releaseall
+	return
+
+
+MausoleumBouquet::
+# 170 "data/maps/LittlerootMausoleum/scripts.pory"
+	lockall
+# 171 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox MausoleumBouquet_Text_0
+# 172 "data/maps/LittlerootMausoleum/scripts.pory"
+	releaseall
+	return
+
+
+MausoleumBlanket::
+# 176 "data/maps/LittlerootMausoleum/scripts.pory"
+	lockall
+# 177 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox MausoleumBlanket_Text_0
+# 178 "data/maps/LittlerootMausoleum/scripts.pory"
+	releaseall
+	return
+
+
+MausoleumSigns::
+# 182 "data/maps/LittlerootMausoleum/scripts.pory"
+	lockall
+# 183 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox MausoleumSigns_Text_0
+# 184 "data/maps/LittlerootMausoleum/scripts.pory"
+	releaseall
+	return
+
+
+MausoleumNogoDownstairs::
+# 188 "data/maps/LittlerootMausoleum/scripts.pory"
+	lockall
+# 189 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadeoutbgm 2
+# 190 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox MausoleumNogoDownstairs_Text_0
+# 191 "data/maps/LittlerootMausoleum/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, MausoleumNogoDownstairs_Movement_0
+# 192 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadeinbgm 2
+# 193 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
@@ -314,6 +390,12 @@ LittlerootMausoleum_Shuppet_Movement_2:
 LittlerootMausoleum_HexGirl_Movement_0:
 # 74 "data/maps/LittlerootMausoleum/scripts.pory"
 	face_up
+	step_end
+
+# 191 "data/maps/LittlerootMausoleum/scripts.pory"
+MausoleumNogoDownstairs_Movement_0:
+# 191 "data/maps/LittlerootMausoleum/scripts.pory"
+	walk_down
 	step_end
 
 LittlerootMausoleum_Shuppet_Text_0:
@@ -473,5 +555,30 @@ LittlerootMausoleum_HexGirl_Text_20:
 	.string "something again. Thank you...$"
 
 LittlerootMausoleum_ShuppetPost1stquest_Text_0:
-# 147 "data/maps/LittlerootMausoleum/scripts.pory"
+# 148 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "Shuuu...$"
+
+MausoleumTombstone_Text_0:
+# 165 "data/maps/LittlerootMausoleum/scripts.pory"
+	.string "It's a tombstone. The name on it does\n"
+	.string "not seem familiar.$"
+
+MausoleumBouquet_Text_0:
+# 171 "data/maps/LittlerootMausoleum/scripts.pory"
+	.string "A flower bouquet. The vase is far from\n"
+	.string "new, but the flowers are well tended.$"
+
+MausoleumBlanket_Text_0:
+# 177 "data/maps/LittlerootMausoleum/scripts.pory"
+	.string "A spare bedding set from home. It looks\n"
+	.string "a bit out of place...$"
+
+MausoleumSigns_Text_0:
+# 183 "data/maps/LittlerootMausoleum/scripts.pory"
+	.string "'Littleroot Mausoleum.'$"
+
+MausoleumNogoDownstairs_Text_0:
+# 190 "data/maps/LittlerootMausoleum/scripts.pory"
+	.string "...\p"
+	.string "There is... no need to go there right\n"
+	.string "now...$"

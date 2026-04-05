@@ -317,6 +317,7 @@
       "flag": "FLAG_TEMP_11"
     },
     {
+      "local_id": "LOCALID_OLDALE_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 4,
       "y": 8,

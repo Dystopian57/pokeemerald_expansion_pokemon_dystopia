@@ -336,7 +336,7 @@ script ConspiracyGreatCraterBattle {
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, ConspiracyGreatCraterRematch)
 	msgbox(format("Sorry, but my device has been compromised. You'll have to learn the
-	truth elsewhere! \p What? I ain't throwing my Devon Nav away. I've got games in it."))
+	truth elsewhere!"))
 	release
 	end
 }
@@ -388,9 +388,31 @@ script GreatCraterSouvenirShop {
 script GreatCraterSouvenirShopkeeper {
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (1, moves(face_player))
-		msgbox(format("I know this is not New Rustboro Mall, but let's be civil hey? If you want
+		msgbox(format("I know this is not New Rustboro Mall, but let's be civil hey? \p If you want
 		to buy, go around the counter."))
 		applymovement (1, moves(face_down))
-		waitmovement (1	)
+		waitmovement (1)
 		releaseall}
+
+script GreatCraterSouvenirBox {
+		msgbox(format("The box is full of questionably preserved donuts."))
+		releaseall}
+
+script GreatCraterSign {
+		msgbox(format("North - Route 102 \p East - Route 101"))
+		releaseall}
+
+script GreatCraterSouvenirSupplies {
+		msgbox(format("The articles are covered by the same dust that floats in the air."))
+		releaseall}
+
+script GreatCraterVoid {
+		msgbox(format("The pitch-black bottom of the crater is too deep beneath to see. \p With
+		the right equipment, one could climb down and explore it..."))
+		releaseall}
+
+script CraterBottomWarp {
+	warp (MAP_GREAT_CRATER_BOTTOM, 0)
+}
+	
 

@@ -5090,6 +5090,26 @@
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/Route104DevonLabBasement/border.bin",
       "blockdata_filepath": "data/layouts/Route104DevonLabBasement/map.bin"
+    },
+    {
+      "id": "LAYOUT_GREAT_CRATER_BOTTOM",
+      "name": "GreatCraterBottom_Layout",
+      "width": 16,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/GreatCraterBottom/border.bin",
+      "blockdata_filepath": "data/layouts/GreatCraterBottom/map.bin"
+    },
+    {
+      "id": "LAYOUT_SEWERS_CONSPIRACY_HIDEOUT",
+      "name": "SewersConspiracyHideout_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattlePalace",
+      "border_filepath": "data/layouts/SewersConspiracyHideout/border.bin",
+      "blockdata_filepath": "data/layouts/SewersConspiracyHideout/map.bin"
     }
   ]
 }

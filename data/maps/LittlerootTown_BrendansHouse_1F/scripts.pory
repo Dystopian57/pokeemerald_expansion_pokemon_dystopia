@@ -858,7 +858,7 @@ setvar(VAR_TV_TURNOFF , 1)
 playbgm (MUS_NONE, TRUE)
 setflag (WatchedTVathome)}
 else {
-msgbox (format("I'm not in the mood for more TV..."))
+msgbox (format("It's not the time for more TV..."))
 }
 waitmessage
 releaseall

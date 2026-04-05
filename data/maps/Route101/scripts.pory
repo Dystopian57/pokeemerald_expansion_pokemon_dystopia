@@ -521,7 +521,7 @@ script Route101RebelGruntBattle{
 	fall on his back."))
 	}}
 	setspeaker ([SP_NAME_RICK])
-	msgbox(format("D-damn it! They told me Littleroot kids were easy prey!"))
+	msgbox(format("D-damn it! They told me Littleroot hicks were easy prey!"))
 	playse (SE_FLEE)
 	applymovement (3, moves(walk_fast_right *2 , walk_fast_up * 6))
 	setspeaker ([SP_NAME_RICK])

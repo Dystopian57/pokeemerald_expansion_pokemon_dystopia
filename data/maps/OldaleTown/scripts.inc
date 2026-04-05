@@ -605,7 +605,7 @@ Rivalfollowchat::
 
 OldaleRivalFollower::
 # 368 "data/maps/OldaleTown/scripts.pory"
-	setfollowernpc 24, FNPC_ALL, Rivalfollowchat, PARTNER_STEVEN
+	setfollowernpc LOCALID_OLDALE_RIVAL, FNPC_ALL, Rivalfollowchat, PARTNER_STEVEN
 	return
 
 

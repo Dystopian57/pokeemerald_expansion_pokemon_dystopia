@@ -4297,7 +4297,7 @@ Littleroot_LabSign_Text_0:
 
 Littleroot_CemeterySign_Text_0:
 # 1896 "data/maps/LittlerootTown/scripts.pory"
-	.string "East - Littleroot Graveyard.$"
+	.string "East - Littleroot Cemetery.$"
 
 Littleroot_TownSign_Text_0:
 # 1902 "data/maps/LittlerootTown/scripts.pory"

@@ -1,0 +1,11 @@
+raw `
+LittlerootCemetery_MapScripts::
+	.byte 0
+
+`
+
+script LittlerootCemetery_CemeterySign {
+lockall
+msgbox (format("Littleroot Cemetery."))
+releaseall
+}

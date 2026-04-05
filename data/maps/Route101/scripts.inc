@@ -1415,8 +1415,8 @@ Route101RebelGruntBattle_Text_16:
 
 Route101RebelGruntBattle_Text_17:
 # 524 "data/maps/Route101/scripts.pory"
-	.string "D-damn it! They told me Littleroot kids\n"
-	.string "were easy prey!$"
+	.string "D-damn it! They told me Littleroot\n"
+	.string "hicks were easy prey!$"
 
 Route101RebelGruntBattle_Text_18:
 # 528 "data/maps/Route101/scripts.pory"

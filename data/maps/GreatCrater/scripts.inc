@@ -504,6 +504,44 @@ GreatCraterSouvenirShopkeeper::
 	return
 
 
+GreatCraterSouvenirBox::
+# 398 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterSouvenirBox_Text_0
+# 399 "data/maps/GreatCrater/scripts.pory"
+	releaseall
+	return
+
+
+GreatCraterSign::
+# 402 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterSign_Text_0
+# 403 "data/maps/GreatCrater/scripts.pory"
+	releaseall
+	return
+
+
+GreatCraterSouvenirSupplies::
+# 406 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterSouvenirSupplies_Text_0
+# 407 "data/maps/GreatCrater/scripts.pory"
+	releaseall
+	return
+
+
+GreatCraterVoid::
+# 410 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterVoid_Text_0
+# 412 "data/maps/GreatCrater/scripts.pory"
+	releaseall
+	return
+
+
+CraterBottomWarp::
+# 415 "data/maps/GreatCrater/scripts.pory"
+	warp MAP_GREAT_CRATER_BOTTOM, 0
+	return
+
+
 # 48 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_0:
 # 48 "data/maps/GreatCrater/scripts.pory"
@@ -790,9 +828,7 @@ ConspiracyGreatCraterBattle_Text_0:
 # 338 "data/maps/GreatCrater/scripts.pory"
 	.string "Sorry, but my device has been\n"
 	.string "compromised. You'll have to learn the\l"
-	.string "truth elsewhere!\p"
-	.string "What? I ain't throwing my Devon Nav\n"
-	.string "away. I've got games in it.$"
+	.string "truth elsewhere!$"
 
 ConspiracyGreatCraterRegister_Text_0:
 # 347 "data/maps/GreatCrater/scripts.pory"
@@ -814,8 +850,31 @@ GreatCraterSouvenirShop_Text_0:
 GreatCraterSouvenirShopkeeper_Text_0:
 # 391 "data/maps/GreatCrater/scripts.pory"
 	.string "I know this is not New Rustboro Mall,\n"
-	.string "but let's be civil hey? If you want to\l"
-	.string "buy, go around the counter.$"
+	.string "but let's be civil hey?\p"
+	.string "If you want to buy, go around the\n"
+	.string "counter.$"
+
+GreatCraterSouvenirBox_Text_0:
+# 398 "data/maps/GreatCrater/scripts.pory"
+	.string "The box is full of questionably\n"
+	.string "preserved donuts.$"
+
+GreatCraterSign_Text_0:
+# 402 "data/maps/GreatCrater/scripts.pory"
+	.string "North - Route 102\p"
+	.string "East - Route 101$"
+
+GreatCraterSouvenirSupplies_Text_0:
+# 406 "data/maps/GreatCrater/scripts.pory"
+	.string "The articles are covered by the same\n"
+	.string "dust that floats in the air.$"
+
+GreatCraterVoid_Text_0:
+# 410 "data/maps/GreatCrater/scripts.pory"
+	.string "The pitch-black bottom of the crater is\n"
+	.string "too deep beneath to see.\p"
+	.string "With the right equipment, one could\n"
+	.string "climb down and explore it...$"
 
 ReportersGreatCrater_Outro::
 # 192 "data/maps/GreatCrater/scripts.pory"

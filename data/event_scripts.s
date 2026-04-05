@@ -1297,3 +1297,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route103_MoveTutorHut/scripts.inc"
 
 	.include "data/maps/Route104DevonLabBasement/scripts.inc"
+
+	.include "data/maps/GreatCraterBottom/scripts.inc"
+
+	.include "data/maps/SewersConspiracyHideout/scripts.inc"

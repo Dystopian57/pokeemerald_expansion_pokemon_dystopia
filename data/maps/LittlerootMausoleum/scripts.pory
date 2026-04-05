@@ -138,6 +138,7 @@ script LittlerootMausoleum_HexGirl {
     }
     
 endhexgirlscript:
+applymovement (1, moves(face_down))
 releaseall
 }
     
@@ -146,4 +147,50 @@ script LittlerootMausoleum_ShuppetPost1stquest {
 	playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
     msgbox (format("Shuuu..."))
     releaseall
+}
+
+
+script MausoleumHealingSigil {
+	lockall
+	fadescreen (FADE_TO_WHITE)
+	special(HealPlayerParty)
+	playse (MUS_HEAL)
+    waitse
+	fadescreen (FADE_FROM_WHITE)
+	releaseall		
+}
+
+script MausoleumTombstone {
+	lockall
+    msgbox (format("It's a tombstone. The name on it does not seem familiar."))
+	releaseall		
+}
+
+script MausoleumBouquet {
+	lockall
+    msgbox (format("A flower bouquet. The vase is far from new, but the flowers are well tended."))
+	releaseall		
+}
+
+script MausoleumBlanket {
+	lockall
+    msgbox (format("A spare bedding set from home. It looks a bit out of place..."))
+	releaseall		
+}
+
+script MausoleumSigns {
+	lockall
+    msgbox (format("'Littleroot Mausoleum.'"))
+	releaseall		
+}
+
+script MausoleumNogoDownstairs {
+	lockall
+    fadeoutbgm (2)
+    msgbox (format("... \p There is... no need to go there right now..."))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    fadeinbgm (2)
+	releaseall		
+
+    
 }
