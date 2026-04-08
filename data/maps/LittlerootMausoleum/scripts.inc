@@ -360,8 +360,10 @@ MausoleumNogoDownstairs::
 # 191 "data/maps/LittlerootMausoleum/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, MausoleumNogoDownstairs_Movement_0
 # 192 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadeinbgm 2
+	waitmovement
 # 193 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadeinbgm 2
+# 194 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 

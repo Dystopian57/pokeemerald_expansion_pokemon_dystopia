@@ -29,9 +29,7 @@ PetalburgCity_WallysHouse_EventScript_WallysDad::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, PetalburgCity_WallysHouse_EventScript_DefeatedWallyInVictoryRoad
-	goto_if_set FLAG_THANKED_FOR_PLAYING_WITH_WALLY, PetalburgCity_WallysHouse_EventScript_PlayedWithWally
 	msgbox PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally, MSGBOX_DEFAULT
-	setflag FLAG_THANKED_FOR_PLAYING_WITH_WALLY
 	release
 	end
 

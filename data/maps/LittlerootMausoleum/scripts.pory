@@ -189,6 +189,7 @@ script MausoleumNogoDownstairs {
     fadeoutbgm (2)
     msgbox (format("... \p There is... no need to go there right now..."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    waitmovement
     fadeinbgm (2)
 	releaseall		
 

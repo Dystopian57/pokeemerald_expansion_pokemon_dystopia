@@ -1,8 +1,15 @@
 raw `
-DLC_MapScripts::
-	.byte 0
 
 `
+
+
+
+mapscripts DLC_MapScripts {
+    MAP_SCRIPT_ON_LOAD: DLC_TVOn}
+
+script DLC_TVOn {
+	special (TurnOnTVScreen)
+	}
 
 script OldaleDLC_GoToSeatForTherapyLeft {
 	lockall
@@ -105,7 +112,7 @@ script OldaleTown_DLC_TherapyCutscene{
 
     applymovement (6, moves (walk_in_place_down * 2)) 
     waitmovement
-    msgbox(format("Precisely. These Pokémon were responsible for the Assault on Route 103,
+    msgbox(format("Precisely. The Kantonians used many Blastoise on the Assault on Route 103,
     and they almost flooded Oldale Town. \p Once more, it was thanks to Devon Co.'s swift action,
     that a flood gate was built and..."))
 
@@ -139,13 +146,13 @@ script OldaleTown_DLC_TherapyCutscene{
     removefieldmugshot
 	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_SHARPY])
-    applymovement (2, moves (walk_in_place_up * 2))
+    applymovement (2, moves (jump_in_place_up * 2))
     msgbox(format("BWAHM BWAHM!"))
     removefieldmugshot
 	setspeaker (NULL)
-    msgbox(format("AAAAAHH...!!"))
     applymovement (1, moves (walk_fast_left * 1, walk_fast_down * 4))
     playse (SE_FLEE)
+    msgbox(format("AAAAAHH...!!"))
     waitse
     applymovement (4, moves (face_left, face_down))
     applymovement (5, moves (face_right, face_down))
@@ -245,7 +252,7 @@ script SleepingBoyNotebookDLC {
 
 script DyslexicKidNotebookDLC {
     lockall
-    msgbox(format("The notebook contains many Pokémon names, most of them crossed out."))
+    msgbox(format("The notebook contains many Pokémon names, most of them typed wrong."))
     releaseall
 }
 
@@ -262,6 +269,408 @@ script TeacherDLC {
 
 
 script LibraryGuyDLC {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (9, moves(face_player))
+    msgbox(format("Welcome! This is the Devon Learning Center's library."))
+    loantypechoicewithtext:
+    msgbox(format("Would you like to loan anything?"))
+    loantypechoice:
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Loan a book", "Loan a TM", "How do loans work?", "No, thank you")
+
+
+        if(var(VAR_RESULT) == 0){
+
+            //LOANED BOOK CHECK
+
+            //FIRE BOOK CHECK
+            if (flag (loanedfirebook)){
+            msgbox(format("Oh, my record shows you have already loaned 'The History of Mt. Chimney'. \p You
+            need to return it before loaning any more books. Is that okay?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
+            
+                if(var(VAR_RESULT) == 0){
+                msgbox(format("Very well, I'll take that off your hands then. You can loan a new book now!"))
+                removeitem (ITEM_FLAME_PLATE)
+                clearflag (loanedfirebook)
+                goto (loanbookoffer)
+                }
+
+                if(var(VAR_RESULT) == 1){
+                msgbox(format("Understandable! You can return it when you've finished with it."))
+                goto (loantypechoicewithtext)
+                }
+
+                if(var(VAR_RESULT) == 2){
+                msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
+                to refund the loss - which is 5000¥"))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
+                        if(var(VAR_RESULT) == 0){
+                        checkmoney (100)
+                            if (var(VAR_RESULT) == TRUE) {
+                            removemoney (5000)
+                            msgbox(format("Thank you. Please take better care of loans from now on. You
+                            may now loan a new book."))
+                            clearflag (loanedfirebook)
+                            goto (loanbookoffer)
+                            }
+                            
+                            if (var(VAR_RESULT) == FALSE) {
+                            msgbox(format("You don't seem to have enough funds... please return when
+                            you procure them!")) 
+                            goto (loantypechoicewithtext)
+                            }}
+
+                        if(var(VAR_RESULT) == 1){
+                        msgbox(format("Very well... we'll eagerly await for your refunding."))
+                        goto (loantypechoicewithtext)
+                        }
+                    
+                } } 
+
+            //GRASS BOOK CHECK
+
+            if (flag (loanedgrassbook)){
+            msgbox(format("Oh, my record shows you have already loaned On Fortree's Deforestation. \p You
+            need to return it before loaning any more books. Is that okay?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
+            
+                if(var(VAR_RESULT) == 0){
+                msgbox(format("Very well, I'll take that off your hands then. You can loan a new book now!"))
+                removeitem (ITEM_MEADOW_PLATE)
+                clearflag (loanedgrassbook)
+                goto (loanbookoffer)
+                }
+
+                if(var(VAR_RESULT) == 1){
+                msgbox(format("Understandable! You can return it when you've finished with it."))
+                goto (loantypechoicewithtext)
+                }
+
+                if(var(VAR_RESULT) == 2){
+                msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
+                to refund the loss - which is 5000¥"))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
+                        if(var(VAR_RESULT) == 0){
+                        checkmoney (100)
+                            if (var(VAR_RESULT) == TRUE) {
+                            removemoney (5000)
+                            msgbox(format("Thank you. Please take better care of loans from now on. You
+                            may now loan a new book."))
+                            clearflag (loanedgrassbook)
+                            goto (loanbookoffer)
+                            }
+                            
+                            if (var(VAR_RESULT) == FALSE) {
+                            msgbox(format("You don't seem to have enough funds... please return when
+                            you procure them!")) 
+                            goto (loantypechoicewithtext)
+                            }}
+
+                        if(var(VAR_RESULT) == 1){
+                        msgbox(format("Very well... we'll eagerly await for your refunding."))
+                        goto (loantypechoicewithtext)
+                        }
+                    
+                } } 
+
+
+            //ELECTRIC BOOK CHECK
+
+            if (flag (loanedelectricbook)){
+            msgbox(format("Oh, my record shows you have already loaned 'New Mauville - What Went Wrong'. \p You
+            need to return it before loaning any more books. Is that okay?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
+            
+                if(var(VAR_RESULT) == 0){
+                msgbox(format("Very well, I'll take that off your hands then. You can loan a new book now!"))
+                removeitem (ITEM_ZAP_PLATE)
+                clearflag (loanedelectricbook)
+                goto (loanbookoffer)
+                }
+
+                if(var(VAR_RESULT) == 1){
+                msgbox(format("Understandable! You can return it when you've finished with it."))
+                goto (loantypechoicewithtext)
+                }
+
+                if(var(VAR_RESULT) == 2){
+                msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
+                to refund the loss - which is 5000¥"))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
+                        if(var(VAR_RESULT) == 0){
+                        checkmoney (100)
+                            if (var(VAR_RESULT) == TRUE) {
+                            removemoney (5000)
+                            msgbox(format("Thank you. Please take better care of loans from now on. You
+                            may now loan a new book."))
+                            clearflag (loanedelectricbook)
+                            goto (loanbookoffer)
+                            }
+                            
+                            if (var(VAR_RESULT) == FALSE) {
+                            msgbox(format("You don't seem to have enough funds... please return when
+                            you procure them!")) 
+                            goto (loantypechoicewithtext)
+                            }}
+
+                        if(var(VAR_RESULT) == 1){
+                        msgbox(format("Very well... we'll eagerly await for your refunding."))
+                        goto (loantypechoicewithtext)
+                        }
+                    
+                } } 
+            
+            //NO BOOKS LOANED!
+            if(!(flag(loanedfirebook) && flag(loanedgrassbook) && flag(loanedelectricbook)))
+            {
+            
+            loanbookoffer:
+            msgbox(format("These are the books we have currently available for loans."))
+
+            dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "'The History of Mt. Chimney'", "'On Fortree's Deforestation'", "'New Mauville - What Went Wrong?'", "I changed my mind")
+
+                if(var(VAR_RESULT) == 0){
+                msgbox(format("Interested in geology? Then this is a great pick. Here you go!"))
+                applymovement (9, moves (face_left))
+                waitmovement
+                applymovement (9, moves (face_up))
+                giveitem (ITEM_FLAME_PLATE)
+                setflag (loanedfirebook)
+                msgbox(format("Hope you enjoy it! Please return it when you're finished with it."))
+                goto (finishloanscript)
+                    }}
+
+                if(var(VAR_RESULT) == 1){
+                msgbox(format("A concerning ecological study - but I am sure Devon has plans to avoid the worst."))
+                applymovement (9, moves (face_left, face_up))
+                giveitem (ITEM_MEADOW_PLATE)
+                setflag (loanedgrassbook)
+                msgbox(format("Hope you enjoy it! Please return it when you're finished with it."))
+                goto (finishloanscript)
+                }
+
+                if(var(VAR_RESULT) == 2){
+                msgbox(format("One should learn from the past to avoid repeating it... here!"))
+                applymovement (9, moves (face_left, face_up))
+                giveitem (ITEM_ZAP_PLATE)
+                setflag (loanedgrassbook)
+                msgbox(format("Hope you enjoy it! Please return it when you're finished with it."))
+                goto (finishloanscript)
+                }
+
+                if(var(VAR_RESULT) == 3){
+                msgbox(format("Fair enough. Perhaps you'd like to loan something else?"))
+                goto (loantypechoice)
+                }}
+
+
+
+
+        if(var(VAR_RESULT) == 1){
+
+        //LOANED TM CHECK
+
+            //PROTECT TM CHECK
+            if (flag (loanedprotectTM)){
+            msgbox(format("Oh, my record shows you have already loaned TM 17 - Protect. \p You
+            need to return it before loaning any more TMs. Is that okay?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
+            
+                if(var(VAR_RESULT) == 0){
+                msgbox(format("Very well, I'll take that off your hands then. You can loan a new TM now!"))
+                removeitem (ITEM_TM_PROTECT)
+                clearflag (loanedprotectTM)
+                goto (loantmoffer)
+                }
+
+                if(var(VAR_RESULT) == 1){
+                msgbox(format("Understandable! You can return it when you've finished with it."))
+                goto (loantypechoicewithtext)
+                }
+
+                if(var(VAR_RESULT) == 2){
+                msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
+                to refund the loss - which is 5000¥"))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
+                        if(var(VAR_RESULT) == 0){
+                        checkmoney (100)
+                            if (var(VAR_RESULT) == TRUE) {
+                            removemoney (5000)
+                            msgbox(format("Thank you. Please take better care of loans from now on. You
+                            may now loan a new TM."))
+                            clearflag (loanedprotectTM)
+                            goto (loantmoffer)
+                            }
+                            
+                            if (var(VAR_RESULT) == FALSE) {
+                            msgbox(format("You don't seem to have enough funds... please return when
+                            you procure them!")) 
+                            goto (loantypechoicewithtext)
+                            }}
+
+                        if(var(VAR_RESULT) == 1){
+                        msgbox(format("Very well... we'll eagerly await for your refunding."))
+                        goto (loantypechoicewithtext)
+                        }
+                    
+                } } 
+
+            //SAFEGUARD TM CHECK
+            if (flag (loanedsafeguardTM)){
+            msgbox(format("Oh, my record shows you have already loaned TM 20 - Safeguard. \p You
+            need to return it before loaning any more TMs. Is that okay?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
+            
+                if(var(VAR_RESULT) == 0){
+                msgbox(format("Very well, I'll take that off your hands then. You can loan a new TM now!"))
+                removeitem (ITEM_TM_SAFEGUARD)
+                clearflag (loanedsafeguardTM)
+                goto (loantmoffer)
+                }
+
+                if(var(VAR_RESULT) == 1){
+                msgbox(format("Understandable! You can return it when you've finished with it."))
+                goto (loantypechoicewithtext)
+                }
+
+                if(var(VAR_RESULT) == 2){
+                msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
+                to refund the loss - which is 5000¥"))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
+                        if(var(VAR_RESULT) == 0){
+                        checkmoney (100)
+                            if (var(VAR_RESULT) == TRUE) {
+                            removemoney (5000)
+                            msgbox(format("Thank you. Please take better care of loans from now on. You
+                            may now loan a new TM."))
+                            clearflag (loanedsafeguardTM)
+                            goto (loantmoffer)
+                            }
+                            
+                            if (var(VAR_RESULT) == FALSE) {
+                            msgbox(format("You don't seem to have enough funds... please return when
+                            you procure them!")) 
+                            goto (loantypechoicewithtext)
+                            }}
+
+                        if(var(VAR_RESULT) == 1){
+                        msgbox(format("Very well... we'll eagerly await for your refunding."))
+                        goto (loantypechoicewithtext)
+                        }
+                    
+                } } 
+
+
+            //REFLECT TM CHECK
+            if (flag (loanedreflectTM)){
+            msgbox(format("Oh, my record shows you have already loaned TM 33 - Reflect. \p You
+            need to return it before loaning any more TMs. Is that okay?"))
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
+            
+                if(var(VAR_RESULT) == 0){
+                msgbox(format("Very well, I'll take that off your hands then. You can loan a new TM now!"))
+                removeitem (ITEM_TM_REFLECT)
+                clearflag (loanedreflectTM)
+                goto (loantmoffer)
+                }
+
+                if(var(VAR_RESULT) == 1){
+                msgbox(format("Understandable! You can return it when you've finished with it."))
+                goto (loantypechoicewithtext)
+                }
+
+                if(var(VAR_RESULT) == 2){
+                msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
+                to refund the loss - which is 5000¥"))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
+                        if(var(VAR_RESULT) == 0){
+                        checkmoney (100)
+                            if (var(VAR_RESULT) == TRUE) {
+                            removemoney (5000)
+                            msgbox(format("Thank you. Please take better care of loans from now on. You
+                            may now loan a new TM."))
+                            clearflag (loanedreflectTM)
+                            goto (loantmoffer)
+                            }
+                            
+                            if (var(VAR_RESULT) == FALSE) {
+                            msgbox(format("You don't seem to have enough funds... please return when
+                            you procure them!")) 
+                            goto (loantypechoicewithtext)
+                            }}
+
+                        if(var(VAR_RESULT) == 1){
+                        msgbox(format("Very well... we'll eagerly await for your refunding."))
+                        goto (loantypechoicewithtext)
+                        }
+                    
+                } } 
+
+        
+        //NO LOANED TMS!
+        if(!(flag(loanedprotectTM) && flag(loanedsafeguardTM) && flag(loanedreflectTM)))
+        {
+        loantmoffer:
+        msgbox(format("These are the TMs we have currently available for loans."))
+        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "'TM 17 - Protect'", "'TM 20 - Safeguard'", "'TM 33 - Reflect'", "I changed my mind") 
+            if(var(VAR_RESULT) == 0){
+            msgbox(format("Of course - I have a copy right here!"))
+	        applymovement (9, moves (face_left, face_up))
+            giveitem (ITEM_TM_PROTECT)
+            setflag (loanedprotectTM)
+            msgbox(format("Hope you enjoy it! Please return it when you're finished with it."))
+            goto (finishloanscript)
+            }
+
+            if(var(VAR_RESULT) == 1){
+            msgbox(format("Of course - I have a copy right here!"))
+	        applymovement (9, moves (face_left, face_up))
+            giveitem (ITEM_TM_SAFEGUARD)
+            setflag (loanedsafeguardTM)
+            msgbox(format("Hope you enjoy it! Please return it when you're finished with it."))
+            goto (finishloanscript)
+            }
+
+            if(var(VAR_RESULT) == 2){
+            msgbox(format("Of course - I have a copy right here!"))
+	        applymovement (9, moves (face_left, face_up))
+            giveitem (ITEM_TM_REFLECT)
+            setflag (loanedreflectTM)
+            msgbox(format("Hope you enjoy it! Please return it when you're finished with it."))
+            goto (finishloanscript)
+            }
+
+            if(var(VAR_RESULT) == 3){
+            msgbox(format("Fair enough. Perhaps you'd like to loan something else?"))
+            goto (loantypechoice)
+            }}}
+
+    if(var(VAR_RESULT) == 2){
+        msgbox(format("It's easy! You can loan one book and one TM at any given time, at no cost. \p If you have
+        loaned a book, you'll need to return it before loaning a new one. Same goes for TMs. \p Should you lose the loaned item, you
+        will need to pay a fine before loaning anything else. So we encourage you to take good care
+        of loans. \p We are constantly updating our loan collection, so you should come check it out
+        often. \p So, now that you know how it works..."))
+        goto (loantypechoicewithtext)
+        }
+
+        if(var(VAR_RESULT) == 3){
+        msgbox(format("I'll be here if you change your mind!"))}
+
+        finishloanscript:
+        closemessage
+        releaseall
+}
+
+
+script OLDLibraryGuyDLC {
     lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (9, moves(face_player))
@@ -367,7 +776,7 @@ script PCDLC {
 
 script BookshelfDLC {
     lockall
-    msgbox(format("It's full of books and magazines published by Devon Inc."))
+    msgbox(format("It's full of books and magazines published by Devon Co."))
     releaseall
 }
 
@@ -380,7 +789,10 @@ script MauvillePosterDLC {
 
 script TVDLC {
     lockall
-    msgbox(format("The TV is playing a documentary on Safemon on a loop."))
+    msgbox(format("The TV is playing a documentary on Safemon on a loop. \p 'Before leaving Devon
+    laboratories, all Safemon are injected with the Everserum, which prevents them from evolving
+    through natural means'. \p 'This means no unplanned mutations will ever take place on a Safemon.
+    Change can be dangerous!'"))
     releaseall
 }
 

@@ -113,7 +113,6 @@ RivalsHouse_1F_EventScript_RivalMom::
 # 117 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	faceplayer
 # 118 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 # 119 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
 # 120 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"

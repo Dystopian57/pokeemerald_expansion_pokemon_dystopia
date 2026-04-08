@@ -107,7 +107,7 @@
 #define balsamofficerotom                    0x59
 #define FLAG_RECEIVED_BIKE                   0x5A
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
-#define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
+#define loanedfirebook                        0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
 #define balsamofficeemptytv                  0x5E
 #define FLAG_NO_ESCAPE                       0x5F
@@ -152,12 +152,12 @@
 #define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
-#define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
-#define FLAG_RECEIVED_DOLL_LANETTE           0x83
-#define FLAG_RECEIVED_POTION_OLDALE          0x84
-#define FLAG_RECEIVED_AMULET_COIN            0x85
+#define loanedgrassbook         0x82
+#define loanedelectricbook           0x83
+#define loanedprotectTM          0x84
+#define loanedsafeguardTM            0x85
 #define FLAG_PENDING_DAYCARE_EGG             0x86
-#define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
+#define loanedreflectTM  0x87
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
 #define FLAG_RECEIVED_HM_CUT                 0x89
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona

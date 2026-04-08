@@ -1006,6 +1006,9 @@ SECTIONS {
         sound/songs/midi/mus_mahalotrail.o(.rodata);
         sound/songs/midi/mus_lavenderhgss.o(.rodata);
         sound/songs/midi/mus_casteliagym.o(.rodata);
+
+        sound/songs/midi/mus_gymnopedie.o(.rodata);
+        sound/songs/midi/mus_monkeydeliveryservice.o(.rodata);
         
         
         sound/songs/midi/mus_gsc_route38.o(.rodata);
