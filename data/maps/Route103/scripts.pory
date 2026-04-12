@@ -406,7 +406,7 @@ script Sharpy103 {
 	msgbox(format("Hey, you!"))
 	applymovement (27, moves(walk_up * 3))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 	goto (touristafterapproach)
  }
 
@@ -440,6 +440,8 @@ script Route103Tourist{
 
 	if(var(VAR_103TOURISTQUEST) == 1)
 	{
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (27, moves(face_player))
 	msgbox(format("I'm not leaving without my bike. It costed me 1,000,000¥ at Cerulean City's
 	Bike Shop!"))}
 
@@ -550,7 +552,355 @@ script Route103VeteranRematch {
 	text Veteran103_Outro{
 		"Hmpf... not bad..."}
 
+
+
+
+script Route103ConcordBridgeGuard {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (30, moves(face_player))
+
+	if (!flag (conartistaskeddistract)){
+		msgbox(format("Due to an increase in rebel activity in this area, passage through Concord Customs is
+		heavily restricted."))}
+
+	if (flag (conartistaskeddistract) && !flag (betrayedconcordconartist) && !flag (conartistescaped))
+	{
+		msgbox(format("Hm? Yes?"))
+		guarddistractchoice:
+		dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "I need directions", "How is your day?", "Let's have a battle!", "I found someone suspicious...", "Nevermind")	
+		
+			if(var(VAR_RESULT) == 0){
+			msgbox(format("There is a signpost right next to me... if you can't read, you can learn
+			in the {COLOR BLUE}Devon Learning Center{COLOR DARK_GRAY} of {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}.
+			\p ... I'm sorry, that was rather rude. I'm just having a rough day. \p Anything else?"))
+			goto (guarddistractchoice)
+			}
+			if(var(VAR_RESULT) == 1){
+			msgbox(format("Not too exciting - lots of standing around. \p We received reports of a prowling criminal in the
+			vicinity, and I'm doing double shift because of it... \p Anything else?"))
+			goto (guarddistractchoice)
+			}
+			if(var(VAR_RESULT) == 2){
+			msgbox(format("A battle? An odd request, but it could be a fun use of my allotted recess time.\p Let's do it!"))
+			
+			trainerbattle_no_intro(TRAINER_DEVONGUARD_103, DevonGuard103_Outro)
+			setflag (helpedconcordconartist)
+
+			setflag (conartistescaped)
+
+			clearflag (conartistinoldale)
+
+			setflag (conartistegg)
+
+			msgbox(format("Thank you. That really helped stretch the good old battling muscle!"))
+			goto (finishguardscript)
+			}
+
+			if(var(VAR_RESULT) == 3){
+			msgbox(format("You don't say...? And he's right behind that truck? \p Very well... here's what we'll do.
+			I want you to distract him for a bit. \p I'll tell my partner to approach from the customs building, and we'll
+			do a pince maneuver. \p We're counting on you!"))
+			setflag (betrayedconcordconartist)
+			goto (finishguardscript)
+			
+			}
+			
+			}
+
+			if(var(VAR_RESULT) == 4){
+			goto (finishguardscript)
+			}
+
+
+	if (flag (conartistaskeddistract) && flag (betrayedconcordconartist) && !flag (conartistescaped))
+	{
+		msgbox(format("Quickly, go distract that criminal - before he notices something is off!"))}
+
+	if (flag (conartistaskeddistract) && flag (helpedconcordconartist)){
+		msgbox(format("I got to thank you for that battle. \p If I get strong enough, maybe
+		they'll send me somewhere other than this bridge in the boonies."))}
+
+	if (flag (conartistaskeddistract) && flag (betrayedconcordconartist) && flag (conartistescaped)){
+		msgbox(format("Wherever he is now, that con man is not our concern anymore.
+		\p He didn't look that dangerous anyway!"))
+	}
+
+	finishguardscript:
+	releaseall
+	end
+}
+
+
+
+	text DevonGuard103_Outro{
+		"That could have gone better..."}
+
+script Route103ConcordConartist {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (28, moves(face_player))
+
+		if (!flag (conartistaskeddistract))
+			{
+			msgbox(format("Hey kid! Wanna earn some quick and easy pokeyen? You look like you could use it!"))
+			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+				if(var(VAR_RESULT) == 0){
+				msgbox(format("Right on! So, I have some urgent deliveries to do on Petalburg...
+				\p But I went and forgot my Devon Visa at home, and I have no time to go back!
+				\p Bureaucracy, the bane of the small entrepeneur - am I right?
+				
+				\p I'm sure that guard at the end of the bridge won't let me pass without it... \p
+				So I want you to distract him for me so I can pass unnoticed. \p Easy, right? Then get going,
+				I'm on the clock here!"))
+				setflag (conartistaskeddistract)
+				goto (finishconartistscript)
+				}
+
+				if(var(VAR_RESULT) == 1){
+				msgbox(format("Eh, scram then. Some of us have work to do."))
+				applymovement (28, moves(face_left))
+				}}
+
+		if (flag (conartistaskeddistract) && !flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
+		{
+		msgbox(format("Come on, go distract him! I don't care how, that's what I'm paying you for!
+		\p And no, I'm not into upfront payments, thank you. Cash after!"))}
+
+		if (flag (conartistaskeddistract) && flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
+		{
+		clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		msgbox(format("What the hell are you doing? You barely distracted him - you got to be more of a
+		nuisance!"))
+		
+		playbgm (MUS_ENCOUNTER_AQUA, TRUE)
+		msgbox(format("Hold it right there! You're surrounded!"))
+
+		//setflag (devonbridgeguardgoestoconartist)
+
+		//femalegrunt
+
+		clearflag (devonsvsconartist)
+		addobject (31)
+		setobjectxy (31, 42, 37)
+		opendoor (42, 37)
+		playse (SE_SLIDING_DOOR)
+		waitmovement
+		applymovement (31, moves(walk_fast_down * 1, walk_fast_left * 2))
+		closedoor (42, 37)
+		
+		//malegrunt
+		addobject (32)
+		setobjectxy (32, 30, 39)
+		applymovement (32, moves(walk_fast_right * 8, face_up))
+
+		applymovement (28, moves(face_right, face_down, face_right, face_down, face_right, face_down))
+		msgbox(format("What the...?"))
+
+		applymovement (28, moves(face_player))
+
+		msgbox(format("You two-faced bastard - you set me up! You're going to get it now! 
+		\p No one slips Jimmy McGligar, best Pokémon egg seller of Hoenn!"))
+		
+		trainerbattle_no_intro(TRAINER_SHADYDEALER_103, ShadyDealer103_Outro)
+
+		applymovement (28, moves(walk_in_place_down * 1))
+		msgbox(format("You'll never catch me alive! Outta my way!"))
+
+		playse (SE_M_STRENGTH)
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_right * 1, face_left))
+
+		applymovement (28, moves(walk_fast_down * 1))
+		msgbox(format("W-wait, you're unde-...!"))
+		playse (SE_M_STRENGTH)
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+		applymovement (32, moves(walk_fast_left * 1, face_right, face_down))
+		applymovement (28, moves(walk_fast_down * 2))
+		msgbox(format("SEE YA, LOSERS...!"))
+		applymovement (28, moves(jump_down * 2))
+		playse (SE_LEDGE)
+		waitse
+		playse (SE_M_DIVE)
+		msgbox(format("GRLBGBRLB...!"))
+		
+
+
+		waitmovement
+
+		
+
+		applymovement (31, moves(walk_in_place_down))
+
+		msgbox(format("Such athleticism... he should stop conning, and become an acrobat."))
+
+		applymovement (32, moves(walk_in_place_down))
+
+		msgbox(format("Indeed... at any rate, it's not our problem any more."))
+
+		applymovement (32, moves(walk_right * 2, face_up))
+		applymovement (31, moves(walk_right * 2, face_up))
+		waitmovement
+		opendoor (42, 37)
+		playse (SE_SLIDING_DOOR)
+		applymovement (31, moves(walk_up * 1))
+		waitmovement
+		removeobject (31)
+		waitmovement
+
+		msgbox(format("Thank you for your help, civilian! Now we can put this long shift to an end."))
+		closedoor (42, 37)
+		msgbox(format("Here, this is for your trouble."))
+		playse (SE_SHOP)
+		msgbox(format("Received 1000¥!"))
+
+		applymovement (32, moves(walk_left * 8))
+		waitmovement
+
+		waitmovement
+
+		removeobject (28)
+
+		removeobject (32)
+		setflag (devonsvsconartist)
+		setflag(conartistescaped)
+		clearflag (devonbridgeguardgoestoconartist)
+		clearflag (conartistrewardsinoldale)
+		playbgm (MUS_ROUTE113, TRUE)
+		goto (finishconartistscript)	
+}
+	finishconartistscript:
+	releaseall
+	end
+}
+
+	text ShadyDealer103_Outro{
+		"I... I-I'm not going back to jail!"}
+
+
+script ConArtistEgg {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (!flag (conartistescaped))
+	{applymovement (28, moves(face_player))
+	msgbox(format("Hands off my wares, pal! This egg is mine!"))
+	releaseall
+	applymovement (28, moves(face_left))}
+
+	if (flag (conartistescaped))
+	{
+	msgbox(format("The shady dealer left this egg behind..."))
+	giveegg (SPECIES_TAMARAKKU)
+	playse (MUS_OBTAIN_ITEM)
+	msgbox(format("Obtained the Mysterious Egg!"))
+	removeobject (33)
+	setflag (conartistegg)
+	releaseall}
+}
+
+
+script ConArtist103Rewards {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (34, moves(face_player))
+	if (!flag (conartistthanked))
+	{
+	msgbox(format("You did me a solid there, champ! You're a pro performer! 
+	\p Here's your reward - Jimmy McGligar never goes back on his word!"))
+	giveegg (SPECIES_TAMARAKKU)
+	playse (MUS_OBTAIN_ITEM)
+	msgbox(format("Obtained the Mysterious Egg!"))
+
+	msgbox(format("Look, I know I said I'd give you some cash but... \p All I have is my
+	wares! The cash I get when I sell them, duh! \p Speaking of wares - would you like to
+	take a look at them?"))
+
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+	if(var(VAR_RESULT) == 0){
+		msgbox(format("Hehe, of course you do... here's what I got!"))
+		eggoffer:
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Egg Option 1", "Egg Option 2", "Egg Bundle")
+			if(var(VAR_RESULT) == 0){
+			msgbox(format("Egg 1 here"))
+			}
+
+			if(var(VAR_RESULT) == 1){
+			msgbox(format("Egg 2 here"))
+			}
+
+			if(var(VAR_RESULT) == 2){
+			msgbox(format("Egg 3 here"))
+			}
+			goto (finisheggdeal)
+	}
+
+	if(var(VAR_RESULT) == 1){
+		msgbox(format("Welp, that's your loss. \p I'll be going to Petalburg soon, so you'll have to
+		walk if you change your mind!"))
+	}}
+
+	else {
+		msgbox(format("So? Interested in some eggs?"))
+		goto (eggoffer)
+	}
+	finisheggdeal:
+	releaseall
+	}
+
+	//LATER setflag (conartistrewardsinoldale)
+
+script RiverFerryGuyUp {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (34, moves(face_player))
+	msgbox(format("Hello! Would you like to sail upstream?"))
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if(var(VAR_RESULT) == 0){
+		msgbox(format("Then hop on!"))
+		applymovement (34, moves(walk_right * 1))
+		removeobject (34)
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+		hideplayer
+		special (SpawnCameraObject)
+
+		clearflag (ferryman103up)
+		clearflag (ferryboat103up)
+		addobject (36)
+		addobject (37)
+
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 16))
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_right * 1 walk_up * 16))
+    	waitmovement(0)
+		special (RemoveCameraObject)
+		showplayer
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1 face_down * 1))
+		applymovement (34, moves(face_up * 1))
+		waitmovement
+
+		msgbox(format("Here we are. I'll be waiting for when you want to sail back."))
+
+
+		removeobject (34)
+		removeobject (35)
+		setflag (ferryman103down)
+		setflag (ferryboat103down)
+
+
+	}
+	if(var(VAR_RESULT) == 1){
+	msgbox(format("Ah, shame... tell me if you ever do!"))
+	}
 	
+	releaseall
+	}
+
+
+script RiverFerryBoat {
+	lockall
+	msgbox(format("It's an old boat, but it's well taken care of."))
+	releaseall
+	}
 
 
 

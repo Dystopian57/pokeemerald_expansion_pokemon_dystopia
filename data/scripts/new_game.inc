@@ -270,6 +270,22 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
 	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
 	setflag FLAG_HIDE_SKY_PILLAR_WALLACE
+
+    setflag hexgirlshuppetnormalspot
+	setflag beddinginmausoleum
+
+	setflag anneinroute101
+	setflag joelinsidetent
+
+	setflag sharpynotoutsideDLC
+	setflag camelianotoutsideDLC
+	setflag sharpynotinroute103
+	setflag sharpycorphishoutsideDLC
+	setflag devonsvsconartist
+
+	setflag touristonbike
+	setflag conartistinoldale
+
 	setflag Aideearrivestobasement
 	setflag balsaminherbedroom
 	setflag balsamofficeemptytv

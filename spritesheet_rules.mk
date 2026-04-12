@@ -507,6 +507,12 @@ $(OBJEVENTGFXDIR)/misc/rebelflag.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/fire.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/misc/unowneye.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/egg.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/misc/leakripple.4bpp: %.4bpp: %.png

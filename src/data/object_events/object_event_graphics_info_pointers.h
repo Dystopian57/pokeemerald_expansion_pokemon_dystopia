@@ -298,12 +298,18 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smallninkab
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rebelflag;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fire;
 
+
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_leakripple;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pokesigil;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smoke;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_spark;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hacktv;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_researchtube;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_unowneye;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_egg;
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fisherfishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_longhairguy;
 
@@ -632,25 +638,23 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REBELGRUNTFSIGN] =             &gObjectEventGraphicsInfo_rebelgruntfsign,
     [OBJ_EVENT_GFX_SMALLTV] =                  &gObjectEventGraphicsInfo_smalltv,
     [OBJ_EVENT_GFX_SMALLNINKABURI] =                  &gObjectEventGraphicsInfo_smallninkaburi,
-
     [OBJ_EVENT_GFX_REBELFLAG] =                  &gObjectEventGraphicsInfo_rebelflag,
     [OBJ_EVENT_GFX_FIRE] =                  &gObjectEventGraphicsInfo_fire,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
-
     [OBJ_EVENT_GFX_LEAKRIPPLE] =                  &gObjectEventGraphicsInfo_leakripple,
     [OBJ_EVENT_GFX_POKESIGIL] =                  &gObjectEventGraphicsInfo_pokesigil,
     [OBJ_EVENT_GFX_SMOKE] =            &gObjectEventGraphicsInfo_smoke,
     [OBJ_EVENT_GFX_SPARK] =                  &gObjectEventGraphicsInfo_spark,
     [OBJ_EVENT_GFX_HACKTV] =                  &gObjectEventGraphicsInfo_hacktv,
     [OBJ_EVENT_GFX_RESEARCHTUBE] =            &gObjectEventGraphicsInfo_researchtube,
+    [OBJ_EVENT_GFX_UNOWNEYE] =                  &gObjectEventGraphicsInfo_unowneye,
+    [OBJ_EVENT_GFX_EGG] =            &gObjectEventGraphicsInfo_egg,
     [OBJ_EVENT_GFX_FISHERFISHING] =                  &gObjectEventGraphicsInfo_fisherfishing,
     [OBJ_EVENT_GFX_LONGHAIRGUY] =                  &gObjectEventGraphicsInfo_longhairguy,
-
     [OBJ_EVENT_GFX_WAGESLAVEM] =             &gObjectEventGraphicsInfo_wageslavem,
     [OBJ_EVENT_GFX_ESCAPEDPRISONERM] =             &gObjectEventGraphicsInfo_escapedprisonerm,
     [OBJ_EVENT_GFX_LANETTE] =                  &gObjectEventGraphicsInfo_lanette,
     [OBJ_EVENT_GFX_BRIGETTE] =                  &gObjectEventGraphicsInfo_brigette,
-
     [OBJ_EVENT_GFX_SURGE] =             &gObjectEventGraphicsInfo_surge,
     [OBJ_EVENT_GFX_FALKNER] =                  &gObjectEventGraphicsInfo_falkner,
     [OBJ_EVENT_GFX_ARTIE] =                  &gObjectEventGraphicsInfo_artie,

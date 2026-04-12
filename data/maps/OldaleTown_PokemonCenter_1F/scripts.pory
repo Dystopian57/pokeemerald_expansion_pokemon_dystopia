@@ -88,7 +88,7 @@ script OldaleTown_Devon_Nurse {
 					playse (SE_SHOP)
 					waitse
 					removemoney (100)
-					msgbox(format("Thank you for your patronage. Now get out."))
+					msgbox(format("Thank you for your patronage. Now please make way for other customers..."))
 					applymovement (1, moves (nurse_joy_bow))
 					waitmovement
 				}
@@ -96,7 +96,7 @@ script OldaleTown_Devon_Nurse {
 					applymovement (1, moves (emote_exclamation_mark))
 					playse (SE_PIN)
 					waitse
-					msgbox(format("Wait... you don't have enough pokeyen. Are you dense...? \p Well,
+					msgbox(format("Wait... you don't have enough pokeyen. {COLOR LIGHT_GRAY}{SHADOW WHITE}Are you dense...?{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} \p Well,
 					you don't need to pay right now, but you will need to clear this debt before using
 					our services again. \p Now go out there, and get a job or something."))
 					setflag (devoncenterdebt)

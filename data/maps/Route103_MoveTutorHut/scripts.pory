@@ -1,0 +1,26 @@
+raw `
+Route103_MoveTutorHut_MapScripts::
+	.byte 0
+
+`
+script MoveTutor103 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (1, moves(face_player))
+	msgbox(format("Oh, hello. I don't get many visitors - I'm sorry about the mess \p My name is Colton,
+    and I'm a Move Tutor - or used to. \p Devon began a campaign to discredit Move Tutors, on account of
+    us teaching 'dangerous moves' to Pokémon.\p People bought into it, and began to treat us like
+    criminals. It's ridiculous.\p
+    I'm sorry... you didn't come here to listen to my rant. You want to teach some moves to your
+    Pokémon, right? Or have them remember old ones. \p I'll do it for only 100¥ per move. I used to
+    collect Heart Scales, but a man needs to eat."))
+
+    msgbox(format("So? What will it be?"))
+	special (ChooseMonForMoveTutor)
+    setvar (VAR_0x8005, MOVE_SWAGGER)
+    releaseall}
+
+script MoveTutor103Bookshelf {
+	lockall
+	msgbox(format("It's full of books about Pokémon moves."))
+    releaseall}

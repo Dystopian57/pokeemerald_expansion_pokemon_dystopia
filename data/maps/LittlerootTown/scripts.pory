@@ -2014,8 +2014,6 @@ script Littleroot_Idletalk_Oldman{
 
 script LittlerootTown_Eventscript_Oldmanasking {
 	lockall
-    setflag (hexgirlshuppetnormalspot)
-	setflag (beddinginmausoleum)
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (checkonrival))
 		{playse (SE_PIN)
@@ -2112,8 +2110,6 @@ script OldManThanks {
 		removeobject (1)
 		setobjectxy (1, 4, 17)
 		setvar(VAR_LITTLEROOT_PHASE, 5)
-		setflag (anneinroute101)
-		setflag (joelinsidetent)
 
 	//Receive Running shoes
 	releaseall}

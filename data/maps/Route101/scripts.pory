@@ -528,10 +528,8 @@ script Route101RebelGruntBattle{
 	msgbox(format("Screw this!"))
 	removeobject(3)
 	setflag (rebel101runsaway)
-	setflag (sharpynotoutsideDLC)
-	setflag (camelianotoutsideDLC)
-	setflag (sharpynotinroute103)
-	setflag (sharpycorphishoutsideDLC)
+
+
 
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 	setvar(VAR_ROUTE101REBELFLEES, 1)

@@ -972,13 +972,13 @@ OldaleSharpyCameliaOutDLCCutscene_Text_5:
 OldaleSharpyCameliaOutDLCCutscene_Text_6:
 # 157 "data/maps/OldaleTown/scripts.pory"
 	.string "Would you like to join us fight Devon?\n"
-	.string "You know Devon Inc., right?$"
+	.string "You know Devon Co., right?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_7:
 # 162 "data/maps/OldaleTown/scripts.pory"
-	.string "They're turning Pokémon into Safemon,\n"
-	.string "making things expensive, and many\l"
-	.string "other bad things!$"
+	.string "They're turning Pokémon into lame\n"
+	.string "Safemon, making things expensive, and\l"
+	.string "doing many other bad things!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_8:
 # 167 "data/maps/OldaleTown/scripts.pory"
@@ -1050,12 +1050,13 @@ OldaleSharpyCameliaOutDLCCutscene_Text_21:
 
 OldaleSharpyCameliaOutDLCCutscene_Text_22:
 # 251 "data/maps/OldaleTown/scripts.pory"
-	.string "Maybe - but it's for a good reason!$"
+	.string "Maybe - but the end justifies the\n"
+	.string "means! W-wait, that's what rebelssay...$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_23:
 # 257 "data/maps/OldaleTown/scripts.pory"
-	.string "Come join me in Route 103! I'll be\n"
-	.string "waiting!$"
+	.string "A-anyway, ome join me in Route 103! I'll\n"
+	.string "be waiting!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_24:
 # 274 "data/maps/OldaleTown/scripts.pory"

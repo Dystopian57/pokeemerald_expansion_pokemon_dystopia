@@ -184,6 +184,9 @@ const u32 gObjectEventPic_smallninkaburi[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_rebelflag[] = INCBIN_U32("graphics/object_events/pics/misc/rebelflag.4bpp");
 const u32 gObjectEventPic_fire[] = INCBIN_U32("graphics/object_events/pics/misc/fire.4bpp");
 
+const u32 gObjectEventPic_unowneye[] = INCBIN_U32("graphics/object_events/pics/misc/unowneye.4bpp");
+const u32 gObjectEventPic_egg[] = INCBIN_U32("graphics/object_events/pics/misc/egg.4bpp");
+
 const u32 gObjectEventPic_leakripple[] = INCBIN_U32("graphics/object_events/pics/misc/leakripple.4bpp");
 const u32 gObjectEventPic_spark[] = INCBIN_U32("graphics/object_events/pics/misc/spark.4bpp");
 const u32 gObjectEventPic_researchtube[] = INCBIN_U32("graphics/object_events/pics/misc/researchtube.4bpp");

@@ -28,13 +28,14 @@
 #define TRAINER_CONSPIRACY_GREATCRATER_4      22
 #define TRAINER_CONSPIRACY_GREATCRATER_5             23
 #define TRAINER_REPORTERS_GREATCRATER             24
+//these are not rematches, just different grunts, 4 is the admin?
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_1             25
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_2        26
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3       27
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4        28
 #define TRAINER_HEXGIRL_MAUSOLEUM                    29
-#define TRAINER_MATT                         30
-#define TRAINER_ZANDER                       31
+#define TRAINER_DEVONGUARD_103                         30
+#define TRAINER_SHADYDEALER_103                       31
 #define TRAINER_OLDALEDEVONGRUNT_M     32
 #define TRAINER_OLDALEDEVONGRUNT_F       33
 #define TRAINER_ARCHIE                       34

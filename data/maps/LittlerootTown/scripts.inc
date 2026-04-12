@@ -3969,193 +3969,185 @@ LittlerootTown_Eventscript_Oldmanasking::
 # 2016 "data/maps/LittlerootTown/scripts.pory"
 	lockall
 # 2017 "data/maps/LittlerootTown/scripts.pory"
-	setflag hexgirlshuppetnormalspot
-# 2018 "data/maps/LittlerootTown/scripts.pory"
-	setflag beddinginmausoleum
-# 2019 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 2020 "data/maps/LittlerootTown/scripts.pory"
+# 2018 "data/maps/LittlerootTown/scripts.pory"
 	goto_if_unset checkonrival, LittlerootTown_Eventscript_Oldmanasking_2
-# 2056 "data/maps/LittlerootTown/scripts.pory"
+# 2054 "data/maps/LittlerootTown/scripts.pory"
 	setflag checkonrival
 LittlerootTown_Eventscript_Oldmanasking_1:
-# 2057 "data/maps/LittlerootTown/scripts.pory"
+# 2055 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 LittlerootTown_Eventscript_Oldmanasking_2:
-# 2021 "data/maps/LittlerootTown/scripts.pory"
+# 2019 "data/maps/LittlerootTown/scripts.pory"
 	playse SE_PIN
-# 2022 "data/maps/LittlerootTown/scripts.pory"
+# 2020 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, LittlerootTown_Eventscript_Oldmanasking_Movement_0
+# 2021 "data/maps/LittlerootTown/scripts.pory"
+	createfieldmugshot MUGSHOT_BIRCH, EMOTE_NORMAL
+# 2022 "data/maps/LittlerootTown/scripts.pory"
+	setspeaker [ SP_NAME_BIRCH ]
 # 2023 "data/maps/LittlerootTown/scripts.pory"
-	createfieldmugshot MUGSHOT_BIRCH, EMOTE_NORMAL
-# 2024 "data/maps/LittlerootTown/scripts.pory"
-	setspeaker [ SP_NAME_BIRCH ]
-# 2025 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_0
-# 2026 "data/maps/LittlerootTown/scripts.pory"
+# 2024 "data/maps/LittlerootTown/scripts.pory"
 	removefieldmugshot
-# 2027 "data/maps/LittlerootTown/scripts.pory"
+# 2025 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, LittlerootTown_Eventscript_Oldmanasking_Movement_1
-# 2028 "data/maps/LittlerootTown/scripts.pory"
+# 2026 "data/maps/LittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Eventscript_Oldmanasking_Movement_2
-# 2029 "data/maps/LittlerootTown/scripts.pory"
+# 2027 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement
-# 2030 "data/maps/LittlerootTown/scripts.pory"
+# 2028 "data/maps/LittlerootTown/scripts.pory"
 	createfieldmugshot MUGSHOT_BIRCH, EMOTE_NORMAL
-# 2031 "data/maps/LittlerootTown/scripts.pory"
+# 2029 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ SP_NAME_BIRCH ]
-# 2032 "data/maps/LittlerootTown/scripts.pory"
+# 2030 "data/maps/LittlerootTown/scripts.pory"
 	goto_if_unset GotPika, LittlerootTown_Eventscript_Oldmanasking_6
-# 2039 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_2
 LittlerootTown_Eventscript_Oldmanasking_5:
-# 2042 "data/maps/LittlerootTown/scripts.pory"
+# 2040 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ SP_NAME_BIRCH ]
-# 2043 "data/maps/LittlerootTown/scripts.pory"
+# 2041 "data/maps/LittlerootTown/scripts.pory"
 	checkplayergender
-# 2044 "data/maps/LittlerootTown/scripts.pory"
+# 2042 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq LittlerootTown_Eventscript_Oldmanasking_10
-# 2049 "data/maps/LittlerootTown/scripts.pory"
+# 2047 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_4
 LittlerootTown_Eventscript_Oldmanasking_9:
-# 2052 "data/maps/LittlerootTown/scripts.pory"
+# 2050 "data/maps/LittlerootTown/scripts.pory"
 	removefieldmugshot
-# 2053 "data/maps/LittlerootTown/scripts.pory"
+# 2051 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, LittlerootTown_Eventscript_Oldmanasking_Movement_3
-# 2054 "data/maps/LittlerootTown/scripts.pory"
+# 2052 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement
-# 2055 "data/maps/LittlerootTown/scripts.pory"
+# 2053 "data/maps/LittlerootTown/scripts.pory"
 	setflag checkonrival
 	goto LittlerootTown_Eventscript_Oldmanasking_1
 
 LittlerootTown_Eventscript_Oldmanasking_6:
-# 2034 "data/maps/LittlerootTown/scripts.pory"
+# 2032 "data/maps/LittlerootTown/scripts.pory"
 	bufferleadmonspeciesname STR_VAR_1
-# 2035 "data/maps/LittlerootTown/scripts.pory"
+# 2033 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_1
 	goto LittlerootTown_Eventscript_Oldmanasking_5
 
 LittlerootTown_Eventscript_Oldmanasking_10:
-# 2045 "data/maps/LittlerootTown/scripts.pory"
+# 2043 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_3
 	goto LittlerootTown_Eventscript_Oldmanasking_9
 
 
 OldManThanks::
-# 2062 "data/maps/LittlerootTown/scripts.pory"
+# 2060 "data/maps/LittlerootTown/scripts.pory"
 	lockall
-# 2063 "data/maps/LittlerootTown/scripts.pory"
+# 2061 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 2064 "data/maps/LittlerootTown/scripts.pory"
+# 2062 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Eventscript_Oldmanasking_Text_0
-# 2065 "data/maps/LittlerootTown/scripts.pory"
+# 2063 "data/maps/LittlerootTown/scripts.pory"
 	removefieldmugshot
-# 2066 "data/maps/LittlerootTown/scripts.pory"
+# 2064 "data/maps/LittlerootTown/scripts.pory"
 	setobjectxy 1, 14, 16
-# 2067 "data/maps/LittlerootTown/scripts.pory"
+# 2065 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, OldManThanks_Movement_0
-# 2068 "data/maps/LittlerootTown/scripts.pory"
+# 2066 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement
-# 2069 "data/maps/LittlerootTown/scripts.pory"
+# 2067 "data/maps/LittlerootTown/scripts.pory"
 	createfieldmugshot MUGSHOT_BIRCH, EMOTE_NORMAL
-# 2070 "data/maps/LittlerootTown/scripts.pory"
+# 2068 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ SP_NAME_BIRCH ]
-# 2071 "data/maps/LittlerootTown/scripts.pory"
+# 2069 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_0
-# 2073 "data/maps/LittlerootTown/scripts.pory"
+# 2071 "data/maps/LittlerootTown/scripts.pory"
 	checkplayergender
-# 2074 "data/maps/LittlerootTown/scripts.pory"
+# 2072 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldManThanks_2
-# 2078 "data/maps/LittlerootTown/scripts.pory"
+# 2076 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_2
 OldManThanks_1:
-# 2080 "data/maps/LittlerootTown/scripts.pory"
+# 2078 "data/maps/LittlerootTown/scripts.pory"
 	removefieldmugshot
-# 2081 "data/maps/LittlerootTown/scripts.pory"
+# 2079 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ NULL ]
-# 2082 "data/maps/LittlerootTown/scripts.pory"
+# 2080 "data/maps/LittlerootTown/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 2083 "data/maps/LittlerootTown/scripts.pory"
+# 2081 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_SYS_B_DASH
-# 2084 "data/maps/LittlerootTown/scripts.pory"
+# 2082 "data/maps/LittlerootTown/scripts.pory"
 	checkplayergender
-# 2085 "data/maps/LittlerootTown/scripts.pory"
+# 2083 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldManThanks_6
-# 2093 "data/maps/LittlerootTown/scripts.pory"
+# 2091 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_5
-# 2094 "data/maps/LittlerootTown/scripts.pory"
+# 2092 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
-# 2095 "data/maps/LittlerootTown/scripts.pory"
+# 2093 "data/maps/LittlerootTown/scripts.pory"
 	createfieldmugshot MUGSHOT_BIRCH, EMOTE_NORMAL
-# 2096 "data/maps/LittlerootTown/scripts.pory"
+# 2094 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ SP_NAME_BIRCH ]
-# 2097 "data/maps/LittlerootTown/scripts.pory"
+# 2095 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_6
 OldManThanks_5:
+# 2097 "data/maps/LittlerootTown/scripts.pory"
+	setspeaker [ SP_NAME_BIRCH ]
+# 2098 "data/maps/LittlerootTown/scripts.pory"
+	msgbox OldManThanks_Text_7
 # 2099 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ SP_NAME_BIRCH ]
 # 2100 "data/maps/LittlerootTown/scripts.pory"
-	msgbox OldManThanks_Text_7
-# 2101 "data/maps/LittlerootTown/scripts.pory"
-	setspeaker [ SP_NAME_BIRCH ]
-# 2102 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, LittlerootTown_Eventscript_Oldmanasking_Movement_2
-# 2103 "data/maps/LittlerootTown/scripts.pory"
+# 2101 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_8
-# 2104 "data/maps/LittlerootTown/scripts.pory"
+# 2102 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ SP_NAME_BIRCH ]
-# 2105 "data/maps/LittlerootTown/scripts.pory"
+# 2103 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, OldManThanks_Movement_1
-# 2106 "data/maps/LittlerootTown/scripts.pory"
+# 2104 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_9
-# 2108 "data/maps/LittlerootTown/scripts.pory"
+# 2106 "data/maps/LittlerootTown/scripts.pory"
 	removefieldmugshot
-# 2109 "data/maps/LittlerootTown/scripts.pory"
+# 2107 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, OldManThanks_Movement_2
-# 2111 "data/maps/LittlerootTown/scripts.pory"
+# 2109 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 1
-# 2112 "data/maps/LittlerootTown/scripts.pory"
+# 2110 "data/maps/LittlerootTown/scripts.pory"
 	removeobject 1
-# 2113 "data/maps/LittlerootTown/scripts.pory"
+# 2111 "data/maps/LittlerootTown/scripts.pory"
 	setobjectxy 1, 4, 17
-# 2114 "data/maps/LittlerootTown/scripts.pory"
+# 2112 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_PHASE, 5
 # 2115 "data/maps/LittlerootTown/scripts.pory"
-	setflag anneinroute101
-# 2116 "data/maps/LittlerootTown/scripts.pory"
-	setflag joelinsidetent
-# 2119 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 OldManThanks_2:
-# 2075 "data/maps/LittlerootTown/scripts.pory"
+# 2073 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_1
 	goto OldManThanks_1
 
 OldManThanks_6:
-# 2086 "data/maps/LittlerootTown/scripts.pory"
+# 2084 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_3
-# 2087 "data/maps/LittlerootTown/scripts.pory"
+# 2085 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
-# 2088 "data/maps/LittlerootTown/scripts.pory"
+# 2086 "data/maps/LittlerootTown/scripts.pory"
 	createfieldmugshot MUGSHOT_BIRCH, EMOTE_NORMAL
-# 2089 "data/maps/LittlerootTown/scripts.pory"
+# 2087 "data/maps/LittlerootTown/scripts.pory"
 	setspeaker [ SP_NAME_BIRCH ]
-# 2090 "data/maps/LittlerootTown/scripts.pory"
+# 2088 "data/maps/LittlerootTown/scripts.pory"
 	msgbox OldManThanks_Text_4
 	goto OldManThanks_5
 
 
 Respawnatplayerbed::
-# 2122 "data/maps/LittlerootTown/scripts.pory"
+# 2118 "data/maps/LittlerootTown/scripts.pory"
 	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	end
 
@@ -4178,71 +4170,71 @@ LittlerootTown_Trigger_Blocknopokesnocemetery_Movement_0:
 	walk_left
 	step_end
 
-# 2022 "data/maps/LittlerootTown/scripts.pory"
+# 2020 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Eventscript_Oldmanasking_Movement_0:
-# 2022 "data/maps/LittlerootTown/scripts.pory"
+# 2020 "data/maps/LittlerootTown/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 2027 "data/maps/LittlerootTown/scripts.pory"
+# 2025 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Eventscript_Oldmanasking_Movement_1:
-# 2027 "data/maps/LittlerootTown/scripts.pory"
+# 2025 "data/maps/LittlerootTown/scripts.pory"
 	face_down
-# 2027 "data/maps/LittlerootTown/scripts.pory"
+# 2025 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2027 "data/maps/LittlerootTown/scripts.pory"
+# 2025 "data/maps/LittlerootTown/scripts.pory"
 	face_left
 	step_end
 
-# 2028 "data/maps/LittlerootTown/scripts.pory"
+# 2026 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Eventscript_Oldmanasking_Movement_2:
-# 2028 "data/maps/LittlerootTown/scripts.pory"
+# 2026 "data/maps/LittlerootTown/scripts.pory"
 	face_right
 	step_end
 
-# 2053 "data/maps/LittlerootTown/scripts.pory"
+# 2051 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Eventscript_Oldmanasking_Movement_3:
-# 2053 "data/maps/LittlerootTown/scripts.pory"
+# 2051 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2053 "data/maps/LittlerootTown/scripts.pory"
+# 2051 "data/maps/LittlerootTown/scripts.pory"
 	face_down
 	step_end
 
-# 2067 "data/maps/LittlerootTown/scripts.pory"
+# 2065 "data/maps/LittlerootTown/scripts.pory"
 OldManThanks_Movement_0:
-# 2067 "data/maps/LittlerootTown/scripts.pory"
+# 2065 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2067 "data/maps/LittlerootTown/scripts.pory"
+# 2065 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2067 "data/maps/LittlerootTown/scripts.pory"
+# 2065 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2067 "data/maps/LittlerootTown/scripts.pory"
+# 2065 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
-# 2067 "data/maps/LittlerootTown/scripts.pory"
+# 2065 "data/maps/LittlerootTown/scripts.pory"
 	walk_up
 	step_end
 
-# 2105 "data/maps/LittlerootTown/scripts.pory"
+# 2103 "data/maps/LittlerootTown/scripts.pory"
 OldManThanks_Movement_1:
-# 2105 "data/maps/LittlerootTown/scripts.pory"
+# 2103 "data/maps/LittlerootTown/scripts.pory"
 	face_up
 	step_end
 
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 OldManThanks_Movement_2:
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 2110 "data/maps/LittlerootTown/scripts.pory"
+# 2108 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
 	step_end
 
@@ -4391,23 +4383,23 @@ Littleroot_Idletalk_Oldman_Text_6:
 	.string "them.$"
 
 LittlerootTown_Eventscript_Oldmanasking_Text_0:
-# 2025 "data/maps/LittlerootTown/scripts.pory"
+# 2023 "data/maps/LittlerootTown/scripts.pory"
 	.string "Ah, {PLAYER}!$"
 
 LittlerootTown_Eventscript_Oldmanasking_Text_1:
-# 2035 "data/maps/LittlerootTown/scripts.pory"
+# 2033 "data/maps/LittlerootTown/scripts.pory"
 	.string "Such a cute {STR_VAR_1}! you have\n"
 	.string "there!\p"
 	.string "You see, I was wondering...$"
 
 LittlerootTown_Eventscript_Oldmanasking_Text_2:
-# 2039 "data/maps/LittlerootTown/scripts.pory"
+# 2037 "data/maps/LittlerootTown/scripts.pory"
 	.string "Such a cute Pur-...\p"
 	.string "Wait, isn't that Balsam's Purachu?\p"
 	.string "Well, nevermind. I was wondering...$"
 
 LittlerootTown_Eventscript_Oldmanasking_Text_3:
-# 2045 "data/maps/LittlerootTown/scripts.pory"
+# 2043 "data/maps/LittlerootTown/scripts.pory"
 	.string "Would you mind paying {RIVAL} a\n"
 	.string "visit? She has been making quite a\l"
 	.string "ruckus lately...\p"
@@ -4417,7 +4409,7 @@ LittlerootTown_Eventscript_Oldmanasking_Text_3:
 	.string "you? Perhaps you can calm her down.$"
 
 LittlerootTown_Eventscript_Oldmanasking_Text_4:
-# 2049 "data/maps/LittlerootTown/scripts.pory"
+# 2047 "data/maps/LittlerootTown/scripts.pory"
 	.string "Would you mind paying {RIVAL} a\n"
 	.string "visit? He has been making quite a\l"
 	.string "ruckus lately...\p"
@@ -4427,39 +4419,39 @@ LittlerootTown_Eventscript_Oldmanasking_Text_4:
 	.string "you? Perhaps you can calm him down.$"
 
 OldManThanks_Text_0:
-# 2071 "data/maps/LittlerootTown/scripts.pory"
+# 2069 "data/maps/LittlerootTown/scripts.pory"
 	.string "I saw {RIVAL} storming out like a\n"
 	.string "frenzied Linoone! What got into them?\p"
 	.string "Well, at least you got them to leave the\n"
 	.string "house. That may do them some good.$"
 
 OldManThanks_Text_1:
-# 2075 "data/maps/LittlerootTown/scripts.pory"
+# 2073 "data/maps/LittlerootTown/scripts.pory"
 	.string "Thank you for checking on her. Here,\n"
 	.string "take this as a form of thanks.$"
 
 OldManThanks_Text_2:
-# 2078 "data/maps/LittlerootTown/scripts.pory"
+# 2076 "data/maps/LittlerootTown/scripts.pory"
 	.string "Thank you for checking on him. Here,\n"
 	.string "take this as a form of thanks.$"
 
 OldManThanks_Text_3:
-# 2086 "data/maps/LittlerootTown/scripts.pory"
+# 2084 "data/maps/LittlerootTown/scripts.pory"
 	.string "Obtained the Better Crutches!$"
 
 OldManThanks_Text_4:
-# 2090 "data/maps/LittlerootTown/scripts.pory"
+# 2088 "data/maps/LittlerootTown/scripts.pory"
 	.string "These are some old crutches of mine.\p"
 	.string "I noticed yours were not in the best\n"
 	.string "shape - these should help you move\l"
 	.string "around better.$"
 
 OldManThanks_Text_5:
-# 2093 "data/maps/LittlerootTown/scripts.pory"
+# 2091 "data/maps/LittlerootTown/scripts.pory"
 	.string "Obtained the Better Arm Sling!$"
 
 OldManThanks_Text_6:
-# 2097 "data/maps/LittlerootTown/scripts.pory"
+# 2095 "data/maps/LittlerootTown/scripts.pory"
 	.string "This is an old arm sling of mine.\p"
 	.string "I noticed yours is not in the best\n"
 	.string "shape - this one should secure your arm\l"
@@ -4467,17 +4459,17 @@ OldManThanks_Text_6:
 	.string "easily.$"
 
 OldManThanks_Text_7:
-# 2100 "data/maps/LittlerootTown/scripts.pory"
+# 2098 "data/maps/LittlerootTown/scripts.pory"
 	.string "Look at you. You have gone through so\n"
 	.string "much, but you are still standing.$"
 
 OldManThanks_Text_8:
-# 2103 "data/maps/LittlerootTown/scripts.pory"
+# 2101 "data/maps/LittlerootTown/scripts.pory"
 	.string "Your parents would be proud. You came\n"
 	.string "out tough, just like them.$"
 
 OldManThanks_Text_9:
-# 2106 "data/maps/LittlerootTown/scripts.pory"
+# 2104 "data/maps/LittlerootTown/scripts.pory"
 	.string "Well, off you go now. Please take care -\n"
 	.string "despite Devon's claims, Hoenn is not as\l"
 	.string "safe as it used to.\p"

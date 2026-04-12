@@ -390,13 +390,13 @@ OldaleTown_Devon_Nurse_Text_2:
 
 OldaleTown_Devon_Nurse_Text_3:
 # 91 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Thank you for your patronage. Now get\n"
-	.string "out.$"
+	.string "Thank you for your patronage. Now\n"
+	.string "please make way for other customers...$"
 
 OldaleTown_Devon_Nurse_Text_4:
 # 99 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Wait... you don't have enough pokeyen.\n"
-	.string "Are you dense...?\p"
+	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Are you dense...?{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\p"
 	.string "Well, you don't need to pay right now,\n"
 	.string "but you will need to clear this debt\l"
 	.string "before using our services again.\p"

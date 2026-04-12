@@ -154,12 +154,12 @@ script OldaleSharpyCameliaOutDLCCutscene {
     waitmovement
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-    msgbox(format("Would you like to join us fight Devon? You know Devon Inc., right?"))
+    msgbox(format("Would you like to join us fight Devon? You know Devon Co., right?"))
 
     removefieldmugshot
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
-    msgbox(format("They're turning Pokémon into Safemon, making things expensive, and many other bad things!"))
+    msgbox(format("They're turning Pokémon into lame Safemon, making things expensive, and doing many other bad things!"))
 
     removefieldmugshot
 	setspeaker ([SP_NAME_SHARPY])
@@ -248,13 +248,13 @@ script OldaleSharpyCameliaOutDLCCutscene {
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-                    msgbox(format("Maybe - but it's for a good reason!"))
+                    msgbox(format("Maybe - but the end justifies the means! W-wait, that's what rebelssay..."))
 
                     applymovement (18, moves(face_left))
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
-                    msgbox(format("Come join me in Route 103! I'll be waiting!"))
+                    msgbox(format("A-anyway, ome join me in Route 103! I'll be waiting!"))
                     removefieldmugshot
 
                     playse (SE_FLEE)
