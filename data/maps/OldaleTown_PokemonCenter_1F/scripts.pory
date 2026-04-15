@@ -85,11 +85,14 @@ script OldaleTown_Devon_Nurse {
     		//dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "Looks dangerous")
 				checkmoney (100)
 				if (var(VAR_RESULT) == TRUE) {
+					showmoneybox (0, 0)
 					playse (SE_SHOP)
 					waitse
 					removemoney (100)
+					updatemoneybox
 					msgbox(format("Thank you for your patronage. Now please make way for other customers..."))
 					applymovement (1, moves (nurse_joy_bow))
+					hidemoneybox
 					waitmovement
 				}
 				if (var(VAR_RESULT) == FALSE) {
@@ -134,24 +137,23 @@ script OldaleTown_Devon_Nurse {
 
 script OldaleTown_Mart_Clerk {
 	lock
-	faceplayer
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (5, moves (face_player))
 	msgbox(format("Welcome to Devon Mall! How may I help you?"))
 	waitmessage
 	goto_if_set (FLAG_ADVENTURE_STARTED, OldaleTown_Mart_PostWarehouse)
-	pokemart (OldaleTown_Mart_Pokemart_Basic)
-	msgbox(format("Wait, I know what you are thinking..."))
+	pokemart (OldaleTown_Mart_Pokemart_PreWarehouse)
+	msgbox(format("Wait, I know what you are thinking... that I have no BALLS!"))
 	release
 	end
 }
 
 script OldaleTown_Mart_PostWarehouse {
-	
 
 	pokemart (OldaleTown_Mart_Pokemart_PostWarehouse)
 	msgbox(format("Thank you for your patronage - and for your help liberating our warehouse!"))
 	release
 	end}
-
 
 	mart OldaleTown_Mart_Pokemart_PreWarehouse {
 	ITEM_POTION
@@ -194,5 +196,20 @@ script OldalePokeCenterMapBoy {
 script OldalePokeCenterInnSign {
     lockall
     msgbox(format("To 2F - Inn Rooms."))
+    releaseall
+    }
+
+script OldalePokeCenterBookshelf {
+    lockall
+    msgbox(format("The shelf is full of magazines with ads about Devon products."))
+    releaseall
+    }
+
+script OldalePokeCenterTVKid {
+    lockall
+    applymovement (4, moves(face_player))
+    msgbox(format("I've been watching this TV for half an hour, and there's been nothing but ads...\p
+	They say you can watch actual programs from the TVs in the inn rooms, but I'm a bit too broke for those."))
+	applymovement (4, moves(face_up))
     releaseall
     }

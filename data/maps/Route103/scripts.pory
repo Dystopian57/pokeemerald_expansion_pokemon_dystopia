@@ -594,6 +594,7 @@ script Route103ConcordBridgeGuard {
 			setflag (conartistegg)
 
 			msgbox(format("Thank you. That really helped stretch the good old battling muscle!"))
+			clearflag (conartistrewardsinoldale)
 			goto (finishguardscript)
 			}
 
@@ -765,7 +766,6 @@ script Route103ConcordConartist {
 		setflag (devonsvsconartist)
 		setflag(conartistescaped)
 		clearflag (devonbridgeguardgoestoconartist)
-		clearflag (conartistrewardsinoldale)
 		playbgm (MUS_ROUTE113, TRUE)
 		goto (finishconartistscript)	
 }
@@ -858,33 +858,111 @@ script RiverFerryGuyUp {
 
 	if(var(VAR_RESULT) == 0){
 		msgbox(format("Then hop on!"))
+		removeobject (36)
+		removeobject (37)
+		setflag (ferryman103up)
+		setflag (ferryboat103up)
+
+		hidefollower
+		clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (34, moves(walk_right * 1))
+		waitmovement (0)
 		removeobject (34)
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
 		hideplayer
 		special (SpawnCameraObject)
-
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_right * 1, walk_up * 2))
+		waitmovement (OBJ_EVENT_ID_CAMERA)
+		msgbox(format("Off we go!"))
+		playbgm (MUS_SAILING, TRUE)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_up * 15))
+		applymovement(35, moves (walk_up * 16))
+    	waitmovement (0)
+		special (RemoveCameraObject)
+		
 		clearflag (ferryman103up)
 		clearflag (ferryboat103up)
 		addobject (36)
 		addobject (37)
 
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 16))
-		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_right * 1 walk_up * 16))
-    	waitmovement(0)
-		special (RemoveCameraObject)
 		showplayer
+		setobjectxy (OBJ_EVENT_ID_PLAYER, 27, 16)
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1 face_down * 1))
-		applymovement (34, moves(face_up * 1))
-		waitmovement
+		applymovement (37, moves(face_up * 1))
+		waitmovement (0)
 
-		msgbox(format("Here we are. I'll be waiting for when you want to sail back."))
-
-
+		playbgm (MUS_ROUTE113, TRUE)
+		msgbox(format("Here we are. I'll be waiting for when you want to sail back downstream."))
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		removeobject (34)
 		removeobject (35)
 		setflag (ferryman103down)
 		setflag (ferryboat103down)
+
+
+	}
+	if(var(VAR_RESULT) == 1){
+	msgbox(format("Ah, shame... tell me if you ever do!"))
+	}
+	
+	releaseall
+	}
+
+script RiverFerryGuyDown {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (34, moves(face_player))
+	msgbox(format("Hello! Would you like to sail downstream?"))
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if(var(VAR_RESULT) == 0){
+		msgbox(format("Then hop on!"))
+		removeobject (34)
+		removeobject (35)
+		setflag (ferryman103down)
+		setflag (ferryboat103down)
+
+		hidefollower
+		clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		applymovement (37, moves(walk_right * 1))
+		waitmovement (0)
+		removeobject (37)
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		hideplayer
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_right * 1, walk_down * 2))
+		waitmovement (OBJ_EVENT_ID_CAMERA)
+		msgbox(format("Off we go!"))
+		playbgm (MUS_SAILING, TRUE)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_down * 15))
+		applymovement(36, moves (walk_down * 16))
+    	waitmovement (0)
+		special (RemoveCameraObject)
+		
+		clearflag (ferryman103down)
+		clearflag (ferryboat103down)
+		addobject (34)
+		addobject (35)
+
+		showplayer
+		setobjectxy (OBJ_EVENT_ID_PLAYER, 27, 32)
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1 face_down * 1))
+		applymovement (34, moves(face_up * 1))
+		waitmovement (0)
+
+		playbgm (MUS_ROUTE113, TRUE)
+		msgbox(format("Here we are. I'll be waiting for when you want to sail back upstream."))
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		removeobject (36)
+		removeobject (37)
+		setflag (ferryman103up)
+		setflag (ferryboat103up)
 
 
 	}
@@ -902,5 +980,77 @@ script RiverFerryBoat {
 	releaseall
 	}
 
+script RiverFerryManNotThatEntry {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (34, moves(face_player))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down * 1))
+	msgbox(format("Not so fast, young one...! If you want to board, do it after me."))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+	waitmovement
+	releaseall
+	}
+
+script FisherGuruRoute103 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+	playse (SE_M_SURF)
+	waitse
+	playse (SE_PIN)
+	applymovement (38, moves(emote_exclamation_mark))
+	msgbox(format("Sssh... did you hear that? Something... SOMETHING IS COMING!"))
+
+	playse (SE_M_DIVE)
+	addobject (40)
+	setobjectxy (40, 27, 13)
+	playse (SE_SHINY)
+	waitse
+
+	playmoncry (SPECIES_CRAWDAUNT, CRY_MODE_ENCOUNTER)
+	msgbox(format("CRAAAAAAW!!"))
+	setobjectxy (40, 0, 0)
+	playse (SE_M_DIVE)
+
+	msgbox(format("AAH, CRAB BASKETS! \p
+	\p That is the LEGENDARY MUD CRAB of Route 103 - I've been looking for it for WEEKS! \p But I was
+	so awe-struck... that I could not do anything!! \p Still, this can't be a coincidence - you
+	both showed up at the same time!! \p HMM... my intuition tells me it saw something in you. But
+	then it left disappointed. \p But we can fix that. Here, take THIS!"))
+
+	giveitem (ITEM_OLD_ROD)
+
+	msgbox(format("I want you to take that rod and fish at least FIVE SPECIES OF POKÉMON! \p WHY?
+	Because only then will the LEGENDARY MUDCRAB judge you as worthy, and show itself again!
+	\p Do not question my intuition - just embrace it, and fulfil your destiny! The future of
+	fishing in Hoenn is in your hands!"))
 
 
+
+	setflag (fisherin103gaveoldrod)
+	
+
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "I've done what you asked!", "Did you see the Mud Crab?", "How's it going?")
+
+	if(var(VAR_RESULT) == 1){}
+
+	if(var(VAR_RESULT) == 2){}
+
+	if(var(VAR_RESULT) == 3){}
+	
+	releaseall}
+
+	//msgbox(format("It sure is tough being a fisher in the Internment Zone... \p The sea is poisoned,
+	//the rivers are muddy. Most of my fishing buddies have moved up north. \p But I am built different.
+	//I will not give up until I fish the great mudc-..."))
+
+		//secondquest: clampers. 1 giant pearl. much harder.
+	//thirdquest: learn surf. The giant mudcrab will not debase itself to go on land. It's the
+	//king of the river after all, and the river is its kingdom. So you must have a Pokémon that
+	//can carry you into the water. Speak to me when you do... // Oh, you already do? Splendid - then...
+	// *Crawdaunt appears*
+
+	//fatal flaw in my plan. I've been here waiting to fish the great mudcrab... But it seems it's
+	//only interested in you. That means, only you will be able to fish it. And that... THAT IS
+	//ALRIGHT. Passing the torch - or the rod, in this case - to the newer generation, in such a
+	//grandious way... that is reward enough for this old fisher. (crawdaunt noise, approaches)

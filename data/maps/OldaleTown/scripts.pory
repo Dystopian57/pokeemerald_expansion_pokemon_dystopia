@@ -28,6 +28,78 @@ script OldaleWeather {
 }
 }
 
+
+script OldaleVendingMachine {
+    lockall
+    msgbox(format("It's a vending machine."))
+    showmoneybox (0, 0)
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 100¥")
+    
+            if(var(VAR_RESULT) == 0){
+            		checkmoney (100)
+				if (var(VAR_RESULT) == TRUE) {
+					updatemoneybox
+
+                    random (4)
+                    goto_if_ne (VAR_RESULT, 0, freshwatergotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, gotfreshwater)
+
+                    gotfreshwater:
+                    playse (SE_VEND)
+					waitse
+					removemoney (100)
+					msgbox(format("A Fresh Water Bottle dropped on the machine's tray."))
+                    hidemoneybox
+                    giveitem (ITEM_FRESH_WATER)
+					
+                    random (20)
+                    goto_if_ne (VAR_RESULT, 0, endvendingmachine)
+                    goto_if_eq (VAR_RESULT, FALSE, gotextrafreshwater)
+
+                    gotextrafreshwater:
+                    msgbox(format("An extra Fresh Water Bottle dropped on the machine's tray!"))
+                    hidemoneybox
+					giveitem (ITEM_FRESH_WATER)
+                    goto (endvendingmachine)
+
+                    freshwatergotstuck:
+                    playse (SE_PIN)
+                    waitse
+                    msgbox(format("The machine does not push the Fresh Water enough for it to fall..."))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
+                        if(var(VAR_RESULT) == 0){
+                        call(MachineShake)
+                        goto (gotfreshwater)
+                        }
+
+                        if(var(VAR_RESULT) == 0){
+                        msgbox(format("The Fresh Water just stays on the verge of falling, mockingly.")
+                        goto (endvendingmachine))
+                        }
+				}
+
+                if (var(VAR_RESULT) == FALSE) {
+                  msgbox(format("Not enough money..."))  
+                }
+            }
+    
+    endvendingmachine:
+    hidemoneybox
+    releaseall
+    }
+
+
+script MachineShake{
+	playse (SE_M_REVERSAL) 
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+	}
+
+
 script OldaleTownSign {
     lockall
     msgbox(format("Oldale Town. \n “Where things start off scarce.”"))

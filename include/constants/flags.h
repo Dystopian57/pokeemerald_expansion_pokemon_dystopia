@@ -177,8 +177,8 @@
 #define ferryboat103down             0x98
 #define conartistrewardsinoldale    0x99
 #define conartistthanked  0x9A
-#define FLAG_FORTREE_NPC_TRADE_COMPLETED     0x9B
-#define FLAG_BATTLE_FRONTIER_TRADE_DONE      0x9C
+#define rivercrawdauntspawns     0x9B
+#define fisherin103gaveoldrod      0x9C
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
 #define FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE   0x9E
 #define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0x9F

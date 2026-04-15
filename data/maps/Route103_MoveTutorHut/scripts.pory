@@ -3,24 +3,108 @@ Route103_MoveTutorHut_MapScripts::
 	.byte 0
 
 `
+
+
+//NEED "IF NOT LEARNT" CHECKS
 script MoveTutor103 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (1, moves(face_player))
-	msgbox(format("Oh, hello. I don't get many visitors - I'm sorry about the mess \p My name is Colton,
-    and I'm a Move Tutor - or used to. \p Devon began a campaign to discredit Move Tutors, on account of
+	msgbox(format("Oh, hello. I don't get many visitors - I'm sorry about the mess. \p My name is Colton,
+    and I'm a Move Tutor - or used to be... \p Devon began a campaign to discredit Move Tutors, on account of
     us teaching 'dangerous moves' to Pokémon.\p People bought into it, and began to treat us like
     criminals. It's ridiculous.\p
-    I'm sorry... you didn't come here to listen to my rant. You want to teach some moves to your
+    I'm sorry... you didn't come here to listen to my rant. \p You want to teach some moves to your
     Pokémon, right? Or have them remember old ones. \p I'll do it for only 100¥ per move. I used to
     collect Heart Scales, but a man needs to eat."))
 
     msgbox(format("So? What will it be?"))
-	special (ChooseMonForMoveTutor)
-    setvar (VAR_0x8005, MOVE_SWAGGER)
+
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Tutor a move", "Relearn a move", "Nevermind")
+
+		if(var(VAR_RESULT) == 0){
+			msgbox(format("I could teach your Pokémon these moves."))
+			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Move 2", "Move 3")
+				if(var(VAR_RESULT) == 0){
+				msgbox(format("Which of your Pokémon should I teach?"))
+				special (ChooseMonForMoveTutor)
+				setvar (VAR_0x8005, MOVE_SWAGGER)
+				goto (endtutorscript)
+				//special (IsSelectedMonEgg)
+				}
+				if(var(VAR_RESULT) == 1){
+				msgbox(format("Which of your Pokémon should I teach?"))
+				special (ChooseMonForMoveTutor)
+				setvar (VAR_0x8005, MOVE_SWAGGER)
+				goto (endtutorscript)
+				}
+
+				if(var(VAR_RESULT) == 2){
+				msgbox(format("Which of your Pokémon should I teach?"))
+				special (ChooseMonForMoveTutor)
+				setvar (VAR_0x8005, MOVE_SWAGGER)
+				goto (endtutorscript)
+				}
+		}
+
+		if(var(VAR_RESULT) == 1)
+		{
+		msgbox(format("Which of your Pokémon should I have remember a move?"))
+		special (ChooseMonForMoveRelearner)
+		waitstate
+		goto (endtutorscript)
+		}
+		
+		if(var(VAR_RESULT) == 2)
+		{
+		msgbox(format("Fair enough. You can come back if you need my skills sometime."))
+		goto (endtutorscript)
+		}
+	endtutorscript:
+	msgbox(format("Good. Come back if you need my skills some other time."))
+    releaseall}
+
+script MoveTutor103Sink {
+	lockall
+	msgbox(format("It's just a regular sink."))
     releaseall}
 
 script MoveTutor103Bookshelf {
 	lockall
-	msgbox(format("It's full of books about Pokémon moves."))
+	msgbox(format("It's full of books about Pokémon learning patterns."))
+    releaseall}
+
+script MoveTutor103Drawer {
+	lockall
+	msgbox(format("It looks like a regular drawer. I should leave this alone."))
+    releaseall}
+
+script MoveTutor103Wardrobe {
+	lockall
+	msgbox(format("It's a fitted wardrobe. There's no real reason to open it."))
+    releaseall}
+
+script MoveTutor103BookPile {
+	lockall
+	msgbox(format("It's a pile of books about Pokémon moves."))
+    releaseall}
+
+script MoveTutor103Kotatsu {
+	lockall
+	msgbox(format("A cozy kotatsu. It makes one want to stay home."))
+    releaseall}
+
+script MoveTutor103OpenBox {
+	lockall
+	msgbox(format("The label on the box reads 'to throw away'. It should be fine to peek..."))
+    releaseall}
+
+script MoveTutor103SealedBox {
+	lockall
+	msgbox(format("It's a sealed box. Better not to open it."))
+    releaseall}
+
+script MoveTutor103ToolBox {
+	lockall
+	msgbox(format("A toolbox full of tools worn with use."))
     releaseall}

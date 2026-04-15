@@ -472,7 +472,7 @@
       "x": 27,
       "y": 33,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -485,7 +485,7 @@
       "x": 27,
       "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -503,7 +503,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RiverFerryGuyDown",
       "flag": "ferryman103up"
     },
     {
@@ -531,6 +531,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ConArtist103Rewards",
       "flag": "conartistrewardsinoldale"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CRAWDAUNT)",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -618,7 +631,16 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "RiverFerryManNotThatEntry"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "RiverFerryManNotThatEntry"
     }
   ],
   "bg_events": [
