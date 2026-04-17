@@ -1,0 +1,11 @@
+raw `
+PokeInnRoom2_MapScripts::
+	.byte 0
+
+`
+
+script DevonInnSignAboutFreezer {
+	lock
+	msgbox(format("With each visit, remember to check the freezer for a free drink!"))
+	release
+}

@@ -67,6 +67,14 @@
 .include "sound/voicegroups/gymnopedie.inc"
 .include "sound/voicegroups/monkeydeliveryservice.inc"
 
+.include "sound/voicegroups/unknown4.inc"
+.include "sound/voicegroups/darkwaterbonusstage.inc"
+.include "sound/voicegroups/graveyardstage.inc"
+.include "sound/voicegroups/gardenstage.inc"
+.include "sound/voicegroups/pinballshop.inc"
+.include "sound/voicegroups/unknown5.inc"
+.include "sound/voicegroups/tableselect.inc"
+
 .include "sound/voicegroups/b_tower_rs.inc"
 .include "sound/voicegroups/encounter_swimmer.inc"
 .include "sound/voicegroups/cave_of_origin.inc"

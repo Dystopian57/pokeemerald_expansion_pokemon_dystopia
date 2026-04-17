@@ -1009,6 +1009,14 @@ SECTIONS {
 
         sound/songs/midi/mus_gymnopedie.o(.rodata);
         sound/songs/midi/mus_monkeydeliveryservice.o(.rodata);
+
+        sound/songs/midi/mus_unknown4.o(.rodata);
+        sound/songs/midi/mus_darkwaterbonusstage.o(.rodata);
+        sound/songs/midi/mus_graveyardstage.o(.rodata);
+        sound/songs/midi/mus_gardenstage.o(.rodata);
+        sound/songs/midi/mus_pinballshop.o(.rodata);
+        sound/songs/midi/mus_unknown5.o(.rodata);
+        sound/songs/midi/mus_tableselect.o(.rodata);
         
         
         sound/songs/midi/mus_gsc_route38.o(.rodata);

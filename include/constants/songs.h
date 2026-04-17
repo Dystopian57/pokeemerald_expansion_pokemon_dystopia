@@ -528,8 +528,16 @@
 #define MUS_GYMNOPEDIE              591
 #define MUS_MONKEYDELIVERYSERVICE   592
 
+#define MUS_UNKNOWN4                593
+#define MUS_DARKWATERBONUSSTAGE     594
+#define MUS_GRAVEYARDSTAGE          595
+#define MUS_GARDENSTAGE             596
+#define MUS_PINBALLSHOP             597
+#define MUS_UNKNOWN5                598
+#define MUS_TABLESELECT             599
 
-#define END_MUS                     MUS_MONKEYDELIVERYSERVICE
+
+#define END_MUS                     MUS_TABLESELECT
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

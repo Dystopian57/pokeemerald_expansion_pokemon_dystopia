@@ -284,7 +284,7 @@ EventScript_ResetAllMapFlags::
 	setflag devonsvsconartist
 
 	setflag touristonbike
-	setflag conartistinoldale
+	setflag conartistrewardsinoldale
 
 	setflag Aideearrivestobasement
 	setflag balsaminherbedroom

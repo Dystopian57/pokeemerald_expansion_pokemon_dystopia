@@ -28,16 +28,80 @@ script OldaleWeather {
 }
 }
 
+script ConArtist103Rewards {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (34, moves(face_player))
+	if (!flag (conartistthanked))
+	{
+    setflag (conartistthanked)
+	msgbox(format("You did me a solid there, champ! You're a pro performer! 
+	\p Here's your reward - Jimmy McGligar never goes back on his word!"))
+	giveegg (SPECIES_TAMARAKKU)
+	playse (MUS_OBTAIN_ITEM)
+	msgbox(format("Obtained the Mysterious Egg!"))
+
+	msgbox(format("Look, I know I said I'd give you some cash but... \p All I have is my
+	wares! The cash I get when I sell them, duh! \p Speaking of wares - would you like to
+	take a look at them?"))
+
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+	if(var(VAR_RESULT) == 0){
+		msgbox(format("Hehe, of course you do... here's what I got! Only 500 each!"))
+		eggoffer:
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Egg Option 1", "Egg Option 2", "Rosy Egg", "Not really")
+			if(var(VAR_RESULT) == 0){
+			msgbox(format("Egg 1 here"))
+            goto (finisheggdeal)
+			}
+
+			if(var(VAR_RESULT) == 1){
+			msgbox(format("Egg 2 here"))
+            goto (finisheggdeal)
+			}
+
+			if(var(VAR_RESULT) == 2){
+			msgbox(format("Egg 3 here"))
+			// believe me, this egg can actually MULTIPLY itself upon hatching! It's a huge
+			//investment opportunity. It's a bit more expensive though... 1000. But you can't say no
+			//right?
+            goto (finisheggdeal)
+			}
+
+            if(var(VAR_RESULT) == 2){
+			goto (refusedeggs)}
+
+			
+	}
+
+	if(var(VAR_RESULT) == 1){
+        refusedeggs:
+		msgbox(format("Welp, that's your loss. \p I'm off to Petalburg soon, so you'll have to
+		walk if you change your mind!"))
+        goto (finisheggdeal)
+	}}
+
+	else {
+		msgbox(format("So? Interested in some eggs?"))
+		goto (eggoffer)
+	}
+	finisheggdeal:
+	releaseall
+	}
+
 
 script OldaleVendingMachine {
     lockall
     msgbox(format("It's a vending machine."))
-    showmoneybox (0, 0)
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 100¥")
+    showmoneybox (18, 0)
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥")
     
+            //Fresh Water
             if(var(VAR_RESULT) == 0){
-            		checkmoney (100)
+            		checkmoney (50)
 				if (var(VAR_RESULT) == TRUE) {
+                    playse (SE_SHOP)
+                    waitse
 					updatemoneybox
 
                     random (4)
@@ -47,8 +111,8 @@ script OldaleVendingMachine {
                     gotfreshwater:
                     playse (SE_VEND)
 					waitse
-					removemoney (100)
-					msgbox(format("A Fresh Water Bottle dropped on the machine's tray."))
+					removemoney (50)
+					msgbox(format("A Fresh Water bottle dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_FRESH_WATER)
 					
@@ -57,12 +121,13 @@ script OldaleVendingMachine {
                     goto_if_eq (VAR_RESULT, FALSE, gotextrafreshwater)
 
                     gotextrafreshwater:
-                    msgbox(format("An extra Fresh Water Bottle dropped on the machine's tray!"))
+                    msgbox(format("An extra Fresh Water bottle dropped on the machine's tray!"))
                     hidemoneybox
 					giveitem (ITEM_FRESH_WATER)
                     goto (endvendingmachine)
 
                     freshwatergotstuck:
+                    applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
                     playse (SE_PIN)
                     waitse
                     msgbox(format("The machine does not push the Fresh Water enough for it to fall..."))
@@ -75,6 +140,112 @@ script OldaleVendingMachine {
 
                         if(var(VAR_RESULT) == 0){
                         msgbox(format("The Fresh Water just stays on the verge of falling, mockingly.")
+                        goto (endvendingmachine))
+                        }
+				}
+
+                if (var(VAR_RESULT) == FALSE) {
+                  msgbox(format("Not enough money..."))  
+                }
+            }
+
+            //Soda
+            if(var(VAR_RESULT) == 1){
+            		checkmoney (70)
+				if (var(VAR_RESULT) == TRUE) {
+                    playse (SE_SHOP)
+                    waitse
+					updatemoneybox
+
+                    random (4)
+                    goto_if_ne (VAR_RESULT, 0, sodagotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, gotsoda)
+
+                    gotsoda:
+                    playse (SE_VEND)
+					waitse
+					removemoney (70)
+					msgbox(format("A Soda dropped on the machine's tray."))
+                    hidemoneybox
+                    giveitem (ITEM_SODA_POP)
+					
+                    random (20)
+                    goto_if_ne (VAR_RESULT, 0, endvendingmachine)
+                    goto_if_eq (VAR_RESULT, FALSE, gotextrasoda)
+
+                    gotextrasoda:
+                    msgbox(format("An extra Soda can dropped on the machine's tray!"))
+                    hidemoneybox
+					giveitem (ITEM_SODA_POP)
+                    goto (endvendingmachine)
+
+                    sodagotstuck:
+                    applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
+                    playse (SE_PIN)
+                    waitse
+                    msgbox(format("The machine does not push the Soda can enough for it to fall..."))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
+                        if(var(VAR_RESULT) == 0){
+                        call(MachineShake)
+                        goto (gotsoda)
+                        }
+
+                        if(var(VAR_RESULT) == 0){
+                        msgbox(format("The Soda can just stays on the verge of falling, mockingly.")
+                        goto (endvendingmachine))
+                        }
+				}
+
+                if (var(VAR_RESULT) == FALSE) {
+                  msgbox(format("Not enough money..."))  
+                }
+            }
+
+            //Coffee
+            if(var(VAR_RESULT) == 2){
+            		checkmoney (80)
+				if (var(VAR_RESULT) == TRUE) {
+                    playse (SE_SHOP)
+                    waitse
+					updatemoneybox
+
+                    random (4)
+                    goto_if_ne (VAR_RESULT, 0, coffeegotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, gotcoffee)
+
+                    gotcoffee:
+                    playse (SE_VEND)
+					waitse
+					removemoney (50)
+					msgbox(format("A Strong Coffee can dropped on the machine's tray."))
+                    hidemoneybox
+                    giveitem (ITEM_HEAL_POWDER)
+					
+                    random (20)
+                    goto_if_ne (VAR_RESULT, 0, endvendingmachine)
+                    goto_if_eq (VAR_RESULT, FALSE, gotextracoffee)
+
+                    gotextracoffee:
+                    msgbox(format("An extra Strong Coffee can dropped on the machine's tray!"))
+                    hidemoneybox
+					giveitem (ITEM_HEAL_POWDER)
+                    goto (endvendingmachine)
+
+                    coffeegotstuck:
+                    applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
+                    playse (SE_PIN)
+                    waitse
+                    msgbox(format("The machine does not push the Strong Coffee enough for it to fall..."))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
+                        if(var(VAR_RESULT) == 0){
+                        call(MachineShake)
+                        goto (gotcoffee)
+                        }
+
+                        if(var(VAR_RESULT) == 0){
+                        msgbox(format("The Strong Coffee just stays on the verge of falling, mockingly.")
                         goto (endvendingmachine))
                         }
 				}
@@ -148,9 +319,14 @@ script OldaleOutsideParkGuy {
     lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (11, moves(face_player))
-    msgbox(format("It's tough being a trader around here lately... tons of competition.\pThere's
-    scammers taking advantage of war tourists, war victims selling their valuables to stay afloat...
-    \p You should be careful where you shop!"))
+
+
+    msgbox(format("I hear there's people in the Internment Zone who get crazy rich by selling ores, pearls and other high value items.
+    \p Do you know where to find those though? Cause I sure don't!"))
+
+    //msgbox(format("It's tough being a trader around here lately... tons of competition.\pThere's
+    //scammers taking advantage of war tourists, war victims selling their valuables to stay afloat...
+    //\p You should be careful where you shop!"))
     releaseall
     }
 
@@ -530,3 +706,21 @@ script OldaleDevonGrunts { //karen and jerry
     text RebelOldale_Outro{
     "Huh... I guess Rick was right after all..."}
     
+
+
+script OldaleTruckRebel {
+    lock
+    call(MachineShake)
+    applymovement (26, moves(walk_in_place_left))
+    waitmovement (26)
+
+    msgbox(format("The rebel is trying to pry open the truck. Better to leave her alone."))
+
+    release
+    }
+
+script OldaleGrassRebel {
+    lock
+    msgbox(format("Damn it, there's only broken clankers in this grass! I hate clankers!"))
+    release
+    }

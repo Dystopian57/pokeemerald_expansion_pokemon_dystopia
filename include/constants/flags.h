@@ -168,7 +168,7 @@
 #define helpedconcordconartist           0x8F
 #define conartistescaped            0x90
 #define conartistegg                    0x91
-#define conartistinoldale                    0x92
+#define NOTUSEDFLAG                    0x92
 #define ferryman103up        0x93
 #define ferryman103down       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95

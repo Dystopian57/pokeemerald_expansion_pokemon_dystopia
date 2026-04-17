@@ -360,7 +360,7 @@ MausoleumNogoDownstairs::
 # 191 "data/maps/LittlerootMausoleum/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, MausoleumNogoDownstairs_Movement_0
 # 192 "data/maps/LittlerootMausoleum/scripts.pory"
-	waitmovement
+	waitmovement OBJ_EVENT_ID_PLAYER
 # 193 "data/maps/LittlerootMausoleum/scripts.pory"
 	fadeinbgm 2
 # 194 "data/maps/LittlerootMausoleum/scripts.pory"
@@ -397,7 +397,7 @@ LittlerootMausoleum_HexGirl_Movement_0:
 # 191 "data/maps/LittlerootMausoleum/scripts.pory"
 MausoleumNogoDownstairs_Movement_0:
 # 191 "data/maps/LittlerootMausoleum/scripts.pory"
-	walk_down
+	walk_slow_down
 	step_end
 
 LittlerootMausoleum_Shuppet_Text_0:

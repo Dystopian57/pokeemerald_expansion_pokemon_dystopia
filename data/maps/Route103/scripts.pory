@@ -589,7 +589,6 @@ script Route103ConcordBridgeGuard {
 
 			setflag (conartistescaped)
 
-			clearflag (conartistinoldale)
 
 			setflag (conartistegg)
 
@@ -799,55 +798,7 @@ script ConArtistEgg {
 }
 
 
-script ConArtist103Rewards {
-	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	applymovement (34, moves(face_player))
-	if (!flag (conartistthanked))
-	{
-	msgbox(format("You did me a solid there, champ! You're a pro performer! 
-	\p Here's your reward - Jimmy McGligar never goes back on his word!"))
-	giveegg (SPECIES_TAMARAKKU)
-	playse (MUS_OBTAIN_ITEM)
-	msgbox(format("Obtained the Mysterious Egg!"))
 
-	msgbox(format("Look, I know I said I'd give you some cash but... \p All I have is my
-	wares! The cash I get when I sell them, duh! \p Speaking of wares - would you like to
-	take a look at them?"))
-
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
-	if(var(VAR_RESULT) == 0){
-		msgbox(format("Hehe, of course you do... here's what I got!"))
-		eggoffer:
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Egg Option 1", "Egg Option 2", "Egg Bundle")
-			if(var(VAR_RESULT) == 0){
-			msgbox(format("Egg 1 here"))
-			}
-
-			if(var(VAR_RESULT) == 1){
-			msgbox(format("Egg 2 here"))
-			}
-
-			if(var(VAR_RESULT) == 2){
-			msgbox(format("Egg 3 here"))
-			}
-			goto (finisheggdeal)
-	}
-
-	if(var(VAR_RESULT) == 1){
-		msgbox(format("Welp, that's your loss. \p I'll be going to Petalburg soon, so you'll have to
-		walk if you change your mind!"))
-	}}
-
-	else {
-		msgbox(format("So? Interested in some eggs?"))
-		goto (eggoffer)
-	}
-	finisheggdeal:
-	releaseall
-	}
-
-	//LATER setflag (conartistrewardsinoldale)
 
 script RiverFerryGuyUp {
 	lockall
@@ -896,6 +847,7 @@ script RiverFerryGuyUp {
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back downstream."))
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
+		applymovement (37, moves(face_left * 1))
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		removeobject (34)
 		removeobject (35)
@@ -914,7 +866,7 @@ script RiverFerryGuyUp {
 script RiverFerryGuyDown {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	applymovement (34, moves(face_player))
+	applymovement (37, moves(face_player))
 	msgbox(format("Hello! Would you like to sail downstream?"))
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
@@ -938,7 +890,7 @@ script RiverFerryGuyDown {
 		waitmovement (OBJ_EVENT_ID_CAMERA)
 		msgbox(format("Off we go!"))
 		playbgm (MUS_SAILING, TRUE)
-		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_down * 15))
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_down * 13))
 		applymovement(36, moves (walk_down * 16))
     	waitmovement (0)
 		special (RemoveCameraObject)
@@ -958,6 +910,7 @@ script RiverFerryGuyDown {
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back upstream."))
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
+		applymovement (37, moves(face_left * 1))
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		removeobject (36)
 		removeobject (37)
@@ -1039,6 +992,13 @@ script FisherGuruRoute103 {
 	if(var(VAR_RESULT) == 3){}
 	
 	releaseall}
+
+
+	script MoveTutorSign {
+	lock
+	msgbox(format("Move Tutor Colton's House"))
+	release
+	}
 
 	//msgbox(format("It sure is tough being a fisher in the Internment Zone... \p The sea is poisoned,
 	//the rivers are muddy. Most of my fishing buddies have moved up north. \p But I am built different.

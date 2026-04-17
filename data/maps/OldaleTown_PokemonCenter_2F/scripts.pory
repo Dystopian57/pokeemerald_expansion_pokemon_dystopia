@@ -21,9 +21,125 @@ OldaleTown_PokemonCenter_2F_EventScript_RecordCorner::
 
 
 `
+    
+  
+script DevonInnNPC {
 
-script MyScript {
-    msgbox(format("They say those Rebels are all about fighting Devon, and things
-    like the Safemon project... \p But most of them are old Team Aqua and Team Magma members.
-    \pIf you ask me, they're the same hoodlums, with a different name!"))
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (1, moves(face_player))
+    msgbox(format("Welcome to Oldale's Devon Inn. Would you like to lodge with us for 200¥?"))
+	innroomchoice:
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes, please", "Any rules?", "No, thank you")
+		if (var(VAR_RESULT) == 0) {
+		showmoneybox (18, 0)
+		msgbox(format("Wonderful. I will take payment upfront..."))
+            	checkmoney (200)
+				if (var(VAR_RESULT) == TRUE) {
+                    playse (SE_SHOP)
+                    waitse
+					removemoney (200)
+					updatemoneybox
+					msgbox(format("You are in Room 1. Here's your Guest Key - use it on the door
+					to enter."))
+					hidemoneybox
+					giveitem (ITEM_CARD_KEY)
+					//setobjectxyperm (3, 0, 0)
+					//setmetatile (3, 1, METATILE_General_Door_PokeCenter, FALSE)
+					goto (enddevoninnscript)}
+
+				if (var(VAR_RESULT) == FALSE) {
+					msgbox(format("Ah, it would seem you are somewhat short of the 200¥..."))
+					hidemoneybox
+					msgbox(format("We hope we can welcome you in another ocassion!"))
+					goto (enddevoninnscript)}
+		}
+
+		if (var(VAR_RESULT) == 1) {
+			msgbox(format("Yes, there are three main rules... \p Rule Number 1: While in the
+			room, Pokémon must be kept inside their Pokéballs. \p Rule Number 2: No running or biking
+			allowed in the rooms. \p Rule Number 3: Lodging privileges cease upon leaving this floor."))
+
+			msgbox(format("So... would you like a room?"))
+			goto (innroomchoice)
+		}
+
+		if (var(VAR_RESULT) == 2) {
+				msgbox(format("Very well. We hope we can welcome you in another ocassion!"))
+		}
+
+	enddevoninnscript:
+	releaseall
+}
+
+script DevonInnClosedDoor {
+	lock
+	checkitem (ITEM_CARD_KEY)
+	goto_if_eq (VAR_RESULT, TRUE, inndoorisopen)
+	goto_if_eq (VAR_RESULT, FALSE, inndoorisclosed)
+	
+	inndoorisopen:
+	msgbox(format("You approach the Guest Card to the card reader. The door slides open."))
+	setflag (B_FLAG_FOLLOWERS_DISABLED) 
+	opendoor (3,1)
+    playse (SE_SLIDING_DOOR)
+    waitdooranim
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+	hideplayer
+	closedoor (3,1)
+	goto (endinndoorscript)
+
+	inndoorisclosed:
+	msgbox(format("The door does not slide open. It seems it needs a Guest Card to do so."))
+
+	endinndoorscript:
+	release
+}
+
+script DevonInnTakeKey {
+	checkitem (ITEM_CARD_KEY)
+	goto_if_eq (VAR_RESULT, TRUE, takeguestcard)
+	goto_if_eq (VAR_RESULT, FALSE, letthroughdownstairs)
+
+	takeguestcard:
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	msgbox(format("We hope you enjoyed your stay. I will take your Guest Card now. \p Please
+	visit us again!"))
+	removeitem (ITEM_CARD_KEY)
+	//setmetatile (3, 1, METATILE_General_Door_PokeCenter, TRUE)
+	//setobjectxyperm (3, 3, 1)
+
+	letthroughdownstairs:
+	release
+}
+
+script DevonInnRoom1Sign {
+	lock
+	msgbox(format("Room 1"))
+	release
+}
+
+script DevonInnRoom2Sign {
+	lock
+	msgbox(format("Room 2"))
+	release
+}
+
+script DevonInnBreakLady {
+	lock
+	msgbox(format("I'm sorry, I'm on my break here. Please do not disturb me."))
+	release
+}
+
+script DevonInnForbiddenFollower {
+	setflag (B_FLAG_FOLLOWERS_DISABLED) 
+}
+
+script DevonInnAllowedFollower {
+	clearflag (B_FLAG_FOLLOWERS_DISABLED) 
+}
+
+script DevonInnBlockDoor {
+setmetatile (3, 1, METATILE_General_Door_PokeCenter, FALSE)
 }

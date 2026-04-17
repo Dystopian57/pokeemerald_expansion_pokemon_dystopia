@@ -28,9 +28,12 @@ script MoveTutor103 {
 				if(var(VAR_RESULT) == 0){
 				msgbox(format("Which of your Pokémon should I teach?"))
 				special (ChooseMonForMoveTutor)
+				waitstate
 				setvar (VAR_0x8005, MOVE_SWAGGER)
-				goto (endtutorscript)
-				//special (IsSelectedMonEgg)
+				goto_if_eq (VAR_RESULT, FALSE, endtutorscript)
+				//goto (endtutorscript)
+				special (IsSelectedMonEgg)
+				goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
 				}
 				if(var(VAR_RESULT) == 1){
 				msgbox(format("Which of your Pokémon should I teach?"))
@@ -43,7 +46,7 @@ script MoveTutor103 {
 				msgbox(format("Which of your Pokémon should I teach?"))
 				special (ChooseMonForMoveTutor)
 				setvar (VAR_0x8005, MOVE_SWAGGER)
-				goto (endtutorscript)
+				goto (exittutorscript)
 				}
 		}
 
@@ -61,8 +64,15 @@ script MoveTutor103 {
 		goto (endtutorscript)
 		}
 	endtutorscript:
-	msgbox(format("Good. Come back if you need my skills some other time."))
+	msgbox(format("Come back if you need my skills some other time."))
+	exittutorscript:
     releaseall}
+
+
+script CantTeachEgg {
+	msgbox(format("That looks like a healthy egg... come back when it's hatched, and I may
+	have some moves to teach it."))
+}
 
 script MoveTutor103Sink {
 	lockall
@@ -97,6 +107,7 @@ script MoveTutor103Kotatsu {
 script MoveTutor103OpenBox {
 	lockall
 	msgbox(format("The label on the box reads 'to throw away'. It should be fine to peek..."))
+	//itemhere
     releaseall}
 
 script MoveTutor103SealedBox {

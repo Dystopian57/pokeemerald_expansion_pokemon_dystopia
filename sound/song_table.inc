@@ -604,6 +604,14 @@ gSongTable::
 	song mus_gymnopedie, 0, 0
 	song mus_monkeydeliveryservice, 0, 0
 
+	song mus_unknown4, 0, 0
+	song mus_darkwaterbonusstage, 0, 0
+	song mus_graveyardstage, 0, 0
+	song mus_gardenstage, 0, 0
+	song mus_pinballshop, 0, 0
+	song mus_unknown5, 0, 0
+	song mus_tableselect, 0, 0
+
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
 	song ph_trap_held, MUSIC_PLAYER_SE2, 2
