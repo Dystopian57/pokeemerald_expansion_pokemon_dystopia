@@ -945,7 +945,10 @@ script RiverFerryManNotThatEntry {
 	}
 
 script FisherGuruRoute103 {
-	lockall
+	lock
+	if (var(VAR_FISHERPROGRESS103) == 0)
+	{
+
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
 	playse (SE_M_SURF)
@@ -975,21 +978,72 @@ script FisherGuruRoute103 {
 
 	msgbox(format("I want you to take that rod and fish at least FIVE SPECIES OF POKÉMON! \p WHY?
 	Because only then will the LEGENDARY MUDCRAB judge you as worthy, and show itself again!
-	\p Do not question my intuition - just embrace it, and fulfil your destiny! The future of
-	fishing in Hoenn is in your hands!"))
+	\p Do not question my intuition - just embrace it, and fulfil your destiny!!"))
 
 
 
-	setflag (fisherin103gaveoldrod)
+	setvar(VAR_FISHERPROGRESS103 , 1)}
 	
+	if ((var(VAR_FISHERPROGRESS103) == 1) || (var(VAR_FISHERPROGRESS103) == 2) || (var(VAR_FISHERPROGRESS103) == 3))
+	{
+	msgbox(format("AHOY! How's the FISHING going!?"))
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "About your request...", "Did you see the Mud Crab?", "How's it going?")
 
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "I've done what you asked!", "Did you see the Mud Crab?", "How's it going?")
+		if(var(VAR_RESULT) == 1){
+			if (var(VAR_FISHERPROGRESS103) == 1){
+				getcaughtmon (SPECIES_SMOTHQUIL)
+				if(var(VAR_RESULT) == TRUE){
+				msgbox(format("Ah, you've fished at least 5 Pokémon? Good, GOOD! \p I'm confident the
+				Legendary Mud Crab will acknowledge you and show up. \p Let's wait a bit!"))
 
-	if(var(VAR_RESULT) == 1){}
+				fadeinbgm (1)
+				fadescreen (FADE_TO_BLACK)
+				msgbox (format("You and the fisher wait in a long, uncomfortable silence..."))
+				fadescreen (FADE_FROM_BLACK)
+				fadeoutbgm (1)
 
-	if(var(VAR_RESULT) == 2){}
+				msgbox (format("Hmm... I should have known. Such a measly fishing test... \p Is NOT ENOUGH
+				to make the Mud Crab acknowledge you! \p I suppose I've got no choice... here, TAKE THIS!"))
 
-	if(var(VAR_RESULT) == 3){}
+				giveitem (ITEM_GOOD_ROD)
+
+				msgbox (format("I want you to use that rod to bring me a BIG PEARL! \p If you are a true
+				fisher... you will know how. \p Do that, and I'm sure this time the Mud Crab will show itself!"))
+
+				setvar(VAR_FISHERPROGRESS103 , 2)
+				}
+
+				if(var(VAR_RESULT) == FALSE){
+				msgbox(format("Like I said, I need you to fish 5 species of Pokémon! \p If you are the fisher
+				the Mud Crab believes you to be, you shouldn't need any guidance! \p O-of course I could give it,
+				but that would defeat the purpose!"))
+				}
+
+			}
+
+			if (var(VAR_FISHERPROGRESS103) == 2){
+				if (checkitem (ITEM_BIG_PEARL)  == TRUE)
+				{msgbox(format("pearl"))
+				// Shiny Crawdaunt shows up
+				}
+				else 
+				{msgbox(format("no pearl"))}
+			}
+		}
+
+		if(var(VAR_RESULT) == 2){
+			msgbox(format("Regrettably, I haven't. Not even the tip of that lustruous, star-shaped crown
+			of his... \p But don't worry - he won't swim away easily. \p They say he is forever waiting for a
+			trainer who saved his life during the Assault on Route 103. \p Sadly, that trainer died that
+			day. They will never meet again... \p In spite of its beastly appearance, the Mud Crab is
+			a loyal, tender creature. That's why I wish to catch him, and help him heal!"))
+		}
+
+		if(var(VAR_RESULT) == 3){}
+			msgbox(format("Ah, well, aside from the Mud Crab business... not very good, I must say. \p It's
+			tough being a fisher in these parts nowadays. The sea is poisoned, the rivers are muddy... \p
+			Most of my buddies have moved up north. But me, I like the challenge!"))
+		}
 	
 	releaseall}
 
@@ -1014,3 +1068,12 @@ script FisherGuruRoute103 {
 	//only interested in you. That means, only you will be able to fish it. And that... THAT IS
 	//ALRIGHT. Passing the torch - or the rod, in this case - to the newer generation, in such a
 	//grandious way... that is reward enough for this old fisher. (crawdaunt noise, approaches)
+
+	//player reminds crawdaunt of Brendan / May who saved him during the war. "to show itself to you
+	// is one thing, but to accept to go with you...? Perhaps you remind him of his saviour from back
+	//when he was a Corphis."
+
+	//choice to leave Crawdaunt with fisher
+	// "hold that pearl aloft" - this reminded Crawdaunt of Brendan/May holding ball aloft and he shows
+	//up. "look its the mud crab!" (mud crab goes excl mark and then narration 'Mud Crab's eyes open
+	//as if in recognition'

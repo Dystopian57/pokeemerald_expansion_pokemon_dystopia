@@ -49,37 +49,47 @@ OldaleHouse1Shiiko::
 # 30 "data/maps/OldaleTown_House1/scripts.pory"
 	playmoncry SPECIES_SHIITAKO, CRY_MODE_WEAK
 # 31 "data/maps/OldaleTown_House1/scripts.pory"
-	msgbox OldaleHouse1Shiiko_Text_0
+	applymovement 3, OldaleHouse1Shiiko_Movement_0
 # 32 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1Shiiko_Text_0
+# 33 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouse1Woman::
-# 36 "data/maps/OldaleTown_House1/scripts.pory"
-	lockall
 # 37 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 1, OldaleHouse1Woman_Movement_0
+	lockall
 # 38 "data/maps/OldaleTown_House1/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	applymovement 1, OldaleHouse1Woman_Movement_0
 # 39 "data/maps/OldaleTown_House1/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 40 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1Woman_Text_0
-# 41 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 1, OldaleHouse1Woman_Movement_1
 # 42 "data/maps/OldaleTown_House1/scripts.pory"
+	applymovement 1, OldaleHouse1Woman_Movement_1
+# 43 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
-# 37 "data/maps/OldaleTown_House1/scripts.pory"
+# 31 "data/maps/OldaleTown_House1/scripts.pory"
+OldaleHouse1Shiiko_Movement_0:
+# 31 "data/maps/OldaleTown_House1/scripts.pory"
+	walk_in_place_slow_up
+# 31 "data/maps/OldaleTown_House1/scripts.pory"
+	walk_in_place_slow_up
+	step_end
+
+# 38 "data/maps/OldaleTown_House1/scripts.pory"
 OldaleHouse1Woman_Movement_0:
-# 37 "data/maps/OldaleTown_House1/scripts.pory"
+# 38 "data/maps/OldaleTown_House1/scripts.pory"
 	face_player
 	step_end
 
-# 41 "data/maps/OldaleTown_House1/scripts.pory"
+# 42 "data/maps/OldaleTown_House1/scripts.pory"
 OldaleHouse1Woman_Movement_1:
-# 41 "data/maps/OldaleTown_House1/scripts.pory"
+# 42 "data/maps/OldaleTown_House1/scripts.pory"
 	face_up
 	step_end
 
@@ -89,11 +99,11 @@ OldaleHouse1Girl_Text_0:
 	.string "you, no matter how tasty you look!$"
 
 OldaleHouse1Shiiko_Text_0:
-# 31 "data/maps/OldaleTown_House1/scripts.pory"
+# 32 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Shiii...$"
 
 OldaleHouse1Woman_Text_0:
-# 39 "data/maps/OldaleTown_House1/scripts.pory"
+# 40 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "It's been hard raising my daugther\n"
 	.string "alone without my husband.\p"
 	.string "If only he had not enlisted... I begged\n"

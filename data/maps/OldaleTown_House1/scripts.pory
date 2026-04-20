@@ -28,6 +28,7 @@ script OldaleHouse1Shiiko {
     lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playmoncry(SPECIES_SHIITAKO, CRY_MODE_WEAK)
+	applymovement (3, moves (walk_in_place_slow_up * 2))
     msgbox(format("Shiii..."))
     releaseall
 }

@@ -479,6 +479,42 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "1",
       "script": "OldaleSharpyCameliaOutDLCCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_OLDALECARREBEL",
+      "var_value": "0",
+      "script": "OldaleCarRebelApproach0"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_OLDALECARREBEL",
+      "var_value": "0",
+      "script": "OldaleCarBehind"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_OLDALECARREBEL",
+      "var_value": "0",
+      "script": "OldaleCarRebelApproach1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_OLDALECARREBEL",
+      "var_value": "0",
+      "script": "OldaleCarRebelApproach2"
     }
   ],
   "bg_events": [

@@ -35,8 +35,7 @@ script ConArtist103Rewards {
 	if (!flag (conartistthanked))
 	{
     setflag (conartistthanked)
-	msgbox(format("You did me a solid there, champ! You're a pro performer! 
-	\p Here's your reward - Jimmy McGligar never goes back on his word!"))
+	msgbox(format("You did me a solid there, champ! You're a pro performer! \p Here's your reward - Jimmy McGligar never goes back on his word!"))
 	giveegg (SPECIES_TAMARAKKU)
 	playse (MUS_OBTAIN_ITEM)
 	msgbox(format("Obtained the Mysterious Egg!"))
@@ -724,3 +723,92 @@ script OldaleGrassRebel {
     msgbox(format("Damn it, there's only broken clankers in this grass! I hate clankers!"))
     release
     }
+
+ script OldaleCarRebelApproach0 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement (25, moves(emote_exclamation_mark))
+	msgbox(format("Stop it, kid!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+    playse (SE_LEDGE)
+    applymovement (25, moves(jump_2_up, face_down))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (carrebeloldaleafterapproach)
+ }
+
+  script OldaleCarRebelApproach1 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement (25, moves(emote_exclamation_mark))
+	msgbox(format("Stop it, kid!"))
+    playse (SE_LEDGE)
+	applymovement (25, moves(jump_up))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+	goto (carrebeloldaleafterapproach)
+ }
+
+  script OldaleCarRebelApproach2 {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement (25, moves(emote_exclamation_mark))
+	msgbox(format("Stop it, kid!"))
+    playse (SE_LEDGE)
+	applymovement (25, moves(jump_2_up))
+	waitmovement
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+	goto (carrebeloldaleafterapproach)
+ }
+
+
+ script OldaleCarRebel{
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	carrebeloldaleafterapproach:
+	msgbox(format("This is Rebel turf! We don't want no kids nosing around! \p Gonna have to teach you a lesson... GO,
+    ELECTRIKE!"))
+        playse (SE_BALL_THROW)
+        waitse
+        fadeoutbgm (3)
+        playse (SE_BALL_TRAY_ENTER)
+        waitse
+        msgbox(format("... oh. Right. He's fainted from before... \p ... {COLOR LIGHT_GRAY}{SHADOW WHITE}Shit...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+        playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+        msgbox(format("Wait right here, you hear me!? I'll go to the Devon Center real quick!"))
+        playse (SE_FLEE)
+        applymovement (25, moves(walk_fast_left * 8))
+        waitmovement (25)
+        fadeoutbgm (1)
+        playbgm (MUS_RG_LAVENDER, TRUE)
+        setvar(VAR_OLDALECARREBEL, 1)
+        
+ }
+
+
+script OldaleCarBehind{
+
+        applymovement (25, moves(emote_exclamation_mark, face_down))
+        msgbox(format("Hey, you think you're smart or something? Trying to sneak up on me!? \p Well, you asked
+        for it - GO, ELECTRIKE!"))
+        playse (SE_BALL_THROW)
+        waitse
+        fadeoutbgm (3)
+        playse (SE_BALL_TRAY_ENTER)
+        waitse
+        msgbox(format("... oh. Right. He's fainted from before... \p ... {COLOR LIGHT_GRAY}{SHADOW WHITE}Shit...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+        playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+        msgbox(format("Wait right here, you hear me!? I'll go to the Devon Center real quick!"))
+        playse (SE_LEDGE)
+        applymovement (25, moves(jump_2_up))
+        waitmovement (25)
+        playse (SE_FLEE)
+        applymovement (25, moves(walk_fast_left * 7))
+        waitmovement (25)
+        fadeoutbgm (1)
+        playbgm (MUS_RG_LAVENDER, TRUE)
+        setvar(VAR_OLDALECARREBEL, 1)
+
+}

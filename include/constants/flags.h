@@ -178,7 +178,7 @@
 #define conartistrewardsinoldale    0x99
 #define conartistthanked  0x9A
 #define rivercrawdauntspawns     0x9B
-#define fisherin103gaveoldrod      0x9C
+#define UNUSEDHERE      0x9C
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
 #define FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE   0x9E
 #define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0x9F

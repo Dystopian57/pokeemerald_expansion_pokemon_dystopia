@@ -1620,79 +1620,166 @@ RiverFerryManNotThatEntry::
 
 FisherGuruRoute103::
 # 948 "data/maps/Route103/scripts.pory"
-	lockall
+	lock
 # 949 "data/maps/Route103/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 951 "data/maps/Route103/scripts.pory"
-	playse SE_M_SURF
-# 952 "data/maps/Route103/scripts.pory"
-	waitse
-# 953 "data/maps/Route103/scripts.pory"
-	playse SE_PIN
-# 954 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_0
-# 955 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_0
-# 957 "data/maps/Route103/scripts.pory"
-	playse SE_M_DIVE
-# 958 "data/maps/Route103/scripts.pory"
-	addobject 40
-# 959 "data/maps/Route103/scripts.pory"
-	setobjectxy 40, 27, 13
-# 960 "data/maps/Route103/scripts.pory"
-	playse SE_SHINY
-# 961 "data/maps/Route103/scripts.pory"
-	waitse
-# 963 "data/maps/Route103/scripts.pory"
-	playmoncry SPECIES_CRAWDAUNT, CRY_MODE_ENCOUNTER
-# 964 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_1
-# 965 "data/maps/Route103/scripts.pory"
-	setobjectxy 40, 0, 0
-# 966 "data/maps/Route103/scripts.pory"
-	playse SE_M_DIVE
-# 968 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_2
-# 974 "data/maps/Route103/scripts.pory"
-	giveitem ITEM_OLD_ROD
-# 976 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_3
-# 983 "data/maps/Route103/scripts.pory"
-	setflag fisherin103gaveoldrod
-# 986 "data/maps/Route103/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, FisherGuruRoute103_Text_4, FisherGuruRoute103_Text_5, FisherGuruRoute103_Text_6
-# 988 "data/maps/Route103/scripts.pory"
-	compare VAR_RESULT, 1
+	compare VAR_FISHERPROGRESS103, 0
 	goto_if_eq FisherGuruRoute103_2
 FisherGuruRoute103_1:
-# 990 "data/maps/Route103/scripts.pory"
-	compare VAR_RESULT, 2
+# 987 "data/maps/Route103/scripts.pory"
+	compare VAR_FISHERPROGRESS103, 1
+	goto_if_eq FisherGuruRoute103_5
+# 987 "data/maps/Route103/scripts.pory"
+	compare VAR_FISHERPROGRESS103, 2
+	goto_if_eq FisherGuruRoute103_5
+# 987 "data/maps/Route103/scripts.pory"
+	compare VAR_FISHERPROGRESS103, 3
 	goto_if_eq FisherGuruRoute103_5
 FisherGuruRoute103_4:
-# 992 "data/maps/Route103/scripts.pory"
-	compare VAR_RESULT, 3
-	goto_if_eq FisherGuruRoute103_8
-FisherGuruRoute103_7:
-# 994 "data/maps/Route103/scripts.pory"
+# 1048 "data/maps/Route103/scripts.pory"
 	releaseall
 	return
 
 FisherGuruRoute103_2:
+# 952 "data/maps/Route103/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 954 "data/maps/Route103/scripts.pory"
+	playse SE_M_SURF
+# 955 "data/maps/Route103/scripts.pory"
+	waitse
+# 956 "data/maps/Route103/scripts.pory"
+	playse SE_PIN
+# 957 "data/maps/Route103/scripts.pory"
+	applymovement 38, Route103TouristApproach0_Movement_0
+# 958 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_0
+# 960 "data/maps/Route103/scripts.pory"
+	playse SE_M_DIVE
+# 961 "data/maps/Route103/scripts.pory"
+	addobject 40
+# 962 "data/maps/Route103/scripts.pory"
+	setobjectxy 40, 27, 13
+# 963 "data/maps/Route103/scripts.pory"
+	playse SE_SHINY
+# 964 "data/maps/Route103/scripts.pory"
+	waitse
+# 966 "data/maps/Route103/scripts.pory"
+	playmoncry SPECIES_CRAWDAUNT, CRY_MODE_ENCOUNTER
+# 967 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_1
+# 968 "data/maps/Route103/scripts.pory"
+	setobjectxy 40, 0, 0
+# 969 "data/maps/Route103/scripts.pory"
+	playse SE_M_DIVE
+# 971 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_2
+# 977 "data/maps/Route103/scripts.pory"
+	giveitem ITEM_OLD_ROD
+# 979 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_3
+# 985 "data/maps/Route103/scripts.pory"
+	setvar VAR_FISHERPROGRESS103, 1
 	goto FisherGuruRoute103_1
 
 FisherGuruRoute103_5:
+# 989 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_4
+# 990 "data/maps/Route103/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, FisherGuruRoute103_Text_5, FisherGuruRoute103_Text_6, FisherGuruRoute103_Text_7
+# 992 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq FisherGuruRoute103_12
+FisherGuruRoute103_11:
+# 1034 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq FisherGuruRoute103_15
+FisherGuruRoute103_14:
+# 1042 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq FisherGuruRoute103_21
+FisherGuruRoute103_20:
+# 1043 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_16
 	goto FisherGuruRoute103_4
 
-FisherGuruRoute103_8:
-	goto FisherGuruRoute103_7
+FisherGuruRoute103_12:
+# 993 "data/maps/Route103/scripts.pory"
+	compare VAR_FISHERPROGRESS103, 1
+	goto_if_eq FisherGuruRoute103_18
+FisherGuruRoute103_17:
+# 1024 "data/maps/Route103/scripts.pory"
+	compare VAR_FISHERPROGRESS103, 2
+	goto_if_eq FisherGuruRoute103_23
+	goto FisherGuruRoute103_11
+
+FisherGuruRoute103_15:
+# 1035 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_15
+	goto FisherGuruRoute103_14
+
+FisherGuruRoute103_18:
+# 994 "data/maps/Route103/scripts.pory"
+	getcaughtmon SPECIES_SMOTHQUIL
+# 995 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq FisherGuruRoute103_26
+FisherGuruRoute103_25:
+# 1016 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq FisherGuruRoute103_31
+	goto FisherGuruRoute103_17
+
+FisherGuruRoute103_21:
+	goto FisherGuruRoute103_20
+
+FisherGuruRoute103_23:
+	checkitem ITEM_BIG_PEARL
+# 0 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq FisherGuruRoute103_28
+# 1030 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_14
+	goto FisherGuruRoute103_11
+
+FisherGuruRoute103_26:
+# 996 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_8
+# 999 "data/maps/Route103/scripts.pory"
+	fadeinbgm 1
+# 1000 "data/maps/Route103/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 1001 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_9
+# 1002 "data/maps/Route103/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 1003 "data/maps/Route103/scripts.pory"
+	fadeoutbgm 1
+# 1005 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_10
+# 1008 "data/maps/Route103/scripts.pory"
+	giveitem ITEM_GOOD_ROD
+# 1010 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_11
+# 1013 "data/maps/Route103/scripts.pory"
+	setvar VAR_FISHERPROGRESS103, 2
+	goto FisherGuruRoute103_25
+
+FisherGuruRoute103_28:
+# 1026 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_13
+	goto FisherGuruRoute103_11
+
+FisherGuruRoute103_31:
+# 1017 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_12
+	goto FisherGuruRoute103_17
 
 
 MoveTutorSign::
-# 998 "data/maps/Route103/scripts.pory"
+# 1052 "data/maps/Route103/scripts.pory"
 	lock
-# 999 "data/maps/Route103/scripts.pory"
+# 1053 "data/maps/Route103/scripts.pory"
 	msgbox MoveTutorSign_Text_0
-# 1000 "data/maps/Route103/scripts.pory"
+# 1054 "data/maps/Route103/scripts.pory"
 	release
 	return
 
@@ -2564,16 +2651,16 @@ RiverFerryManNotThatEntry_Text_0:
 	.string "board, do it after me.$"
 
 FisherGuruRoute103_Text_0:
-# 955 "data/maps/Route103/scripts.pory"
+# 958 "data/maps/Route103/scripts.pory"
 	.string "Sssh... did you hear that? Something...\n"
 	.string "SOMETHING IS COMING!$"
 
 FisherGuruRoute103_Text_1:
-# 964 "data/maps/Route103/scripts.pory"
+# 967 "data/maps/Route103/scripts.pory"
 	.string "CRAAAAAAW!!$"
 
 FisherGuruRoute103_Text_2:
-# 968 "data/maps/Route103/scripts.pory"
+# 971 "data/maps/Route103/scripts.pory"
 	.string "AAH, CRAB BASKETS!\p"
 	.string "\p"
 	.string "That is the LEGENDARY MUD CRAB of\n"
@@ -2589,31 +2676,109 @@ FisherGuruRoute103_Text_2:
 	.string "But we can fix that. Here, take THIS!$"
 
 FisherGuruRoute103_Text_3:
-# 976 "data/maps/Route103/scripts.pory"
+# 979 "data/maps/Route103/scripts.pory"
 	.string "I want you to take that rod and fish at\n"
 	.string "least FIVE SPECIES OF POKÉMON!\p"
 	.string "WHY? Because only then will the\n"
 	.string "LEGENDARY MUDCRAB judge you as worthy,\l"
 	.string "and show itself again!\p"
 	.string "Do not question my intuition - just\n"
-	.string "embrace it, and fulfil your destiny! The\l"
-	.string "future of fishing in Hoenn is in your\l"
-	.string "hands!$"
+	.string "embrace it, and fulfil your destiny!!$"
 
 FisherGuruRoute103_Text_4:
-# 986 "data/maps/Route103/scripts.pory"
-	.string "I've done what you asked!$"
+# 989 "data/maps/Route103/scripts.pory"
+	.string "AHOY! How's the FISHING going!?$"
 
 FisherGuruRoute103_Text_5:
-# 986 "data/maps/Route103/scripts.pory"
-	.string "Did you see the Mud Crab?$"
+# 990 "data/maps/Route103/scripts.pory"
+	.string "About your request...$"
 
 FisherGuruRoute103_Text_6:
-# 986 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
+	.string "Did you see the Mud Crab?$"
+
+FisherGuruRoute103_Text_7:
+# 990 "data/maps/Route103/scripts.pory"
 	.string "How's it going?$"
 
+FisherGuruRoute103_Text_8:
+# 996 "data/maps/Route103/scripts.pory"
+	.string "Ah, you've fished at least 5 Pokémon?\n"
+	.string "Good, GOOD!\p"
+	.string "I'm confident the Legendary Mud Crab\n"
+	.string "will acknowledge you and show up.\p"
+	.string "Let's wait a bit!$"
+
+FisherGuruRoute103_Text_9:
+# 1001 "data/maps/Route103/scripts.pory"
+	.string "You and the fisher wait in a long,\n"
+	.string "uncomfortable silence...$"
+
+FisherGuruRoute103_Text_10:
+# 1005 "data/maps/Route103/scripts.pory"
+	.string "Hmm... I should have known. Such a\n"
+	.string "measly fishing test...\p"
+	.string "Is NOT ENOUGH to make the Mud Crab\n"
+	.string "acknowledge you!\p"
+	.string "I suppose I've got no choice... here,\n"
+	.string "TAKE THIS!$"
+
+FisherGuruRoute103_Text_11:
+# 1010 "data/maps/Route103/scripts.pory"
+	.string "I want you to use that rod to bring me a\n"
+	.string "BIG PEARL!\p"
+	.string "If you are a true fisher... you will know\n"
+	.string "how.\p"
+	.string "Do that, and I'm sure this time the Mud\n"
+	.string "Crab will show itself!$"
+
+FisherGuruRoute103_Text_12:
+# 1017 "data/maps/Route103/scripts.pory"
+	.string "Like I said, I need you to fish 5 species\n"
+	.string "of Pokémon!\p"
+	.string "If you are the fisher the Mud Crab\n"
+	.string "believes you to be, you shouldn't need\l"
+	.string "any guidance!\p"
+	.string "O-of course I could give it, but that\n"
+	.string "would defeat the purpose!$"
+
+FisherGuruRoute103_Text_13:
+# 1026 "data/maps/Route103/scripts.pory"
+	.string "pearl$"
+
+FisherGuruRoute103_Text_14:
+# 1030 "data/maps/Route103/scripts.pory"
+	.string "no pearl$"
+
+FisherGuruRoute103_Text_15:
+# 1035 "data/maps/Route103/scripts.pory"
+	.string "Regrettably, I haven't. Not even the tip\n"
+	.string "of that lustruous, star-shaped crown\l"
+	.string "of his...\p"
+	.string "But don't worry - he won't swim away\n"
+	.string "easily.\p"
+	.string "They say he is forever waiting for a\n"
+	.string "trainer who saved his life during the\l"
+	.string "Assault on Route 103.\p"
+	.string "Sadly, that trainer died that day. They\n"
+	.string "will never meet again...\p"
+	.string "In spite of its beastly appearance, the\n"
+	.string "Mud Crab is a loyal, tender creature.\l"
+	.string "That's why I wish to learn more about\l"
+	.string "him!$"
+
+FisherGuruRoute103_Text_16:
+# 1043 "data/maps/Route103/scripts.pory"
+	.string "Ah, well, aside from the Mud Crab\n"
+	.string "business... not very good, I must say.\p"
+	.string "It's tough being a fisher in these parts\n"
+	.string "nowadays. The sea is poisoned, the\l"
+	.string "rivers are muddy...\p"
+	.string "Most of my buddies have moved up north.\n"
+	.string "But me, I like the challenge!$"
+
 MoveTutorSign_Text_0:
-# 999 "data/maps/Route103/scripts.pory"
+# 1053 "data/maps/Route103/scripts.pory"
 	.string "Move Tutor Colton's House$"
 
 Sharpy103_Outro::
