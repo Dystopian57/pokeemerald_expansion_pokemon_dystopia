@@ -1108,7 +1108,9 @@ script Littleroot_Idletalk_Aidee{
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	setspeaker ([SP_NAME_AIDEE])
-	msgbox (format("Look inside the big craters, that's where you're most likely to find them. I'll make it worth your time, I promise!"))
+	msgbox (format("Look inside the big craters, that's where you're most likely to find them. Take this, it should help you!"))
+	giveitem (ITEM_DOWSING_MACHINE)
+	msgbox (format("I'll make it worth your time, trust me!"))
 	applymovement (5, moves(face_left))
 		setvar(VAR_LITTLEROOT_PHASE, 3)
 		setflag (AideeQuestAccepted)
@@ -1856,7 +1858,7 @@ script Lab_EventScript_Starter3{
 	waitmovement
 	special (RemoveCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
-	msgbox(format("You are very disappointed... until your gaze falls upon a third choice...?"))
+	msgbox(format("The lack of a third choice is disappointing... or is it?"))
 	waitmessage
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 3))

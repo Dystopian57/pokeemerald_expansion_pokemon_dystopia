@@ -7,7 +7,7 @@ voice_group unknown5
 	voice_directsound 60, 65, DirectSoundWaveData_sd90_classical_detuned_ep1_high, 255, 204, 77, 246
 	voice_directsound 60, 0, DirectSoundWaveData_dance_drums_ride_bell, 255, 165, 103, 231
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_open_triangle, 255, 204, 128, 249
-	voice_directsound 60, 0, DirectSoundWaveData_register_noise, 255, 0, 255, 76
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242
 	voice_directsound 60, 0, DirectSoundWaveData_heart_of_asia_gamelan, 255, 188, 139, 239
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 195

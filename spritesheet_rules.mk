@@ -540,6 +540,9 @@ $(OBJEVENTGFXDIR)/people/longhairguy.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/fisherfishing.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/mudcrawdaunt.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/people/psychic_m.4bpp: %.4bpp: %.png

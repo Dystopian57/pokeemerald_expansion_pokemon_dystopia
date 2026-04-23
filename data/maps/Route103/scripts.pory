@@ -825,10 +825,11 @@ script RiverFerryGuyUp {
 		special (SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_right * 1, walk_up * 2))
 		waitmovement (OBJ_EVENT_ID_CAMERA)
-		msgbox(format("Off we go!"))
+		msgbox(format("Off we go! We're going upstream, so it'll be a bit slow."))
+		closemessage
 		playbgm (MUS_SAILING, TRUE)
-		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_up * 15))
-		applymovement(35, moves (walk_up * 16))
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_slow_up * 15))
+		applymovement(35, moves (walk_slow_up * 16))
     	waitmovement (0)
 		special (RemoveCameraObject)
 		
@@ -888,10 +889,11 @@ script RiverFerryGuyDown {
 		special (SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_right * 1, walk_down * 2))
 		waitmovement (OBJ_EVENT_ID_CAMERA)
-		msgbox(format("Off we go!"))
+		msgbox(format("Off we go! We're sailing downstream, so brace yourself!"))
+		closemessage
 		playbgm (MUS_SAILING, TRUE)
-		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_down * 13))
-		applymovement(36, moves (walk_down * 16))
+		applymovement(OBJ_EVENT_ID_CAMERA, moves (walk_faster_down * 13))
+		applymovement(36, moves (walk_faster_down * 16))
     	waitmovement (0)
 		special (RemoveCameraObject)
 		
@@ -957,19 +959,25 @@ script FisherGuruRoute103 {
 	applymovement (38, moves(emote_exclamation_mark))
 	msgbox(format("Sssh... did you hear that? Something... SOMETHING IS COMING!"))
 
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+
 	playse (SE_M_DIVE)
-	addobject (40)
-	setobjectxy (40, 27, 13)
+	waitse
+	clearflag (mudcrabcrawdaunt)
+	addobject (39)
 	playse (SE_SHINY)
 	waitse
 
 	playmoncry (SPECIES_CRAWDAUNT, CRY_MODE_ENCOUNTER)
 	msgbox(format("CRAAAAAAW!!"))
-	setobjectxy (40, 0, 0)
+	removeobject (39)
+	setflag (mudcrabcrawdaunt)
 	playse (SE_M_DIVE)
+	waitse
 
-	msgbox(format("AAH, CRAB BASKETS! \p
-	\p That is the LEGENDARY MUD CRAB of Route 103 - I've been looking for it for WEEKS! \p But I was
+	msgbox(format("AAH, CRAB BASKETS!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	msgbox(format("That was the LEGENDARY MUD CRAB of Route 103 - I've been looking for it for WEEKS! \p But I was
 	so awe-struck... that I could not do anything!! \p Still, this can't be a coincidence - you
 	both showed up at the same time!! \p HMM... my intuition tells me it saw something in you. But
 	then it left disappointed. \p But we can fix that. Here, take THIS!"))
@@ -979,44 +987,49 @@ script FisherGuruRoute103 {
 	msgbox(format("I want you to take that rod and fish at least FIVE SPECIES OF POKÉMON! \p WHY?
 	Because only then will the LEGENDARY MUDCRAB judge you as worthy, and show itself again!
 	\p Do not question my intuition - just embrace it, and fulfil your destiny!!"))
+	setvar(VAR_FISHERPROGRESS103 , 1)
+	goto (finishfisherscript)
 
 
 
-	setvar(VAR_FISHERPROGRESS103 , 1)}
+}
 	
 	if ((var(VAR_FISHERPROGRESS103) == 1) || (var(VAR_FISHERPROGRESS103) == 2) || (var(VAR_FISHERPROGRESS103) == 3))
 	{
 	msgbox(format("AHOY! How's the FISHING going!?"))
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "About your request...", "Did you see the Mud Crab?", "How's it going?")
 
-		if(var(VAR_RESULT) == 1){
+		if(var(VAR_RESULT) == 0){
 			if (var(VAR_FISHERPROGRESS103) == 1){
 				getcaughtmon (SPECIES_SMOTHQUIL)
 				if(var(VAR_RESULT) == TRUE){
 				msgbox(format("Ah, you've fished at least 5 Pokémon? Good, GOOD! \p I'm confident the
 				Legendary Mud Crab will acknowledge you and show up. \p Let's wait a bit!"))
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 
-				fadeinbgm (1)
+				fadeoutbgm (1)
 				fadescreen (FADE_TO_BLACK)
 				msgbox (format("You and the fisher wait in a long, uncomfortable silence..."))
 				fadescreen (FADE_FROM_BLACK)
-				fadeoutbgm (1)
+				fadeinbgm (1)
 
 				msgbox (format("Hmm... I should have known. Such a measly fishing test... \p Is NOT ENOUGH
 				to make the Mud Crab acknowledge you! \p I suppose I've got no choice... here, TAKE THIS!"))
-
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 				giveitem (ITEM_GOOD_ROD)
 
 				msgbox (format("I want you to use that rod to bring me a BIG PEARL! \p If you are a true
-				fisher... you will know how. \p Do that, and I'm sure this time the Mud Crab will show itself!"))
+				fisher... you will know how. \p Do that, and I'm sure next time the Mud Crab will show itself!"))
 
 				setvar(VAR_FISHERPROGRESS103 , 2)
+				goto (finishfisherscript)
 				}
 
 				if(var(VAR_RESULT) == FALSE){
 				msgbox(format("Like I said, I need you to fish 5 species of Pokémon! \p If you are the fisher
 				the Mud Crab believes you to be, you shouldn't need any guidance! \p O-of course I could give it,
 				but that would defeat the purpose!"))
+				goto (finishfisherscript)
 				}
 
 			}
@@ -1024,27 +1037,36 @@ script FisherGuruRoute103 {
 			if (var(VAR_FISHERPROGRESS103) == 2){
 				if (checkitem (ITEM_BIG_PEARL)  == TRUE)
 				{msgbox(format("pearl"))
+
+
+
+				goto (finishfisherscript)
 				// Shiny Crawdaunt shows up
 				}
 				else 
-				{msgbox(format("no pearl"))}
+				{msgbox(format("no pearl"))
+				goto (finishfisherscript)
+				}
 			}
 		}
 
-		if(var(VAR_RESULT) == 2){
+		if(var(VAR_RESULT) == 1){
 			msgbox(format("Regrettably, I haven't. Not even the tip of that lustruous, star-shaped crown
 			of his... \p But don't worry - he won't swim away easily. \p They say he is forever waiting for a
 			trainer who saved his life during the Assault on Route 103. \p Sadly, that trainer died that
 			day. They will never meet again... \p In spite of its beastly appearance, the Mud Crab is
 			a loyal, tender creature. That's why I wish to catch him, and help him heal!"))
+			goto (finishfisherscript)
 		}
 
-		if(var(VAR_RESULT) == 3){}
+		if(var(VAR_RESULT) == 2){}
 			msgbox(format("Ah, well, aside from the Mud Crab business... not very good, I must say. \p It's
 			tough being a fisher in these parts nowadays. The sea is poisoned, the rivers are muddy... \p
 			Most of my buddies have moved up north. But me, I like the challenge!"))
+			goto (finishfisherscript)
 		}
 	
+	finishfisherscript:
 	releaseall}
 
 
@@ -1067,7 +1089,8 @@ script FisherGuruRoute103 {
 	//fatal flaw in my plan. I've been here waiting to fish the great mudcrab... But it seems it's
 	//only interested in you. That means, only you will be able to fish it. And that... THAT IS
 	//ALRIGHT. Passing the torch - or the rod, in this case - to the newer generation, in such a
-	//grandious way... that is reward enough for this old fisher. (crawdaunt noise, approaches)
+	//grandious way... that is reward enough for this old fisher. (crawdaunt noise)
+	//NEED TO APPROCH CRAWDAUNT WITH SURF, THE KING WON'T GO TO SHORE
 
 	//player reminds crawdaunt of Brendan / May who saved him during the war. "to show itself to you
 	// is one thing, but to accept to go with you...? Perhaps you remind him of his saviour from back

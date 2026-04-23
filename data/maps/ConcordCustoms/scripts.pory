@@ -1,0 +1,401 @@
+raw `
+ConcordCustoms_MapScripts::
+	.byte 0
+
+`
+
+
+script ConcordWageSlaveAtPhone {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (!flag (concordwageslave ))
+	
+	{
+
+	msgbox(format("I-I'm sorry sir... yes sir... Concord bridge is closed, so I can't
+	won't be able to attend the Rustboro meeting... \p ... I... I'm fired? B-but sir...! Please
+	be reasonable, I...! \p Sir...? Hello? SIR!? \p ..."))
+
+	playse (SE_M_EXPLOSION)
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+	
+	msgbox(format("THAT FILTHY PIG! What am I supposed to do now!? MY FAMILY DEPENDS ON ME!"))
+	applymovement (2, moves(face_player))
+	msgbox(format("And what do YOU want!? Screw you too!!"))
+	trainerbattle_no_intro(TRAINER_CONCORDWAGESLAVE , ConcordWageSlave_Outro)
+	
+	
+	}
+
+	if (flag (concordwageslave))
+	
+	{
+	msgbox(format("I shouldn't have snapped at you like that. I was just really frustrated.
+	\p I don't know what I'm going to do now. I guess wait here a bit to figure it out."))
+	}
+
+	release}
+
+	text ConcordWageSlave_Outro{
+		"Ooof... I... I'm sorry..."}
+
+
+script ConcordFemaleDevon {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (3, moves(face_player))
+	if (!flag (conartistescaped))
+	{
+	msgbox(format("This is not a place to idle. If you're not going to cross the customs,
+	you should leave."))
+	}
+
+	else {
+	msgbox(format("We appreciate your help when we dealt with that con artist. \p He makes a profit
+	off smuggling Pokémon eggs, in and out the Internment Zone. \p If he shows his mug around here again,
+	we'll catch him for sure!"))
+	}}
+
+
+script ConcordCustomsClerk {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	msgbox(format("I'm sorry, I can't let you through unless you have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}.
+	\p Applications for visas are currently closed to the general public, but us at Devon Co. will inform as promptly as they are open anew."))
+	release
+
+}
+
+script ConcordCustomsWaterDude {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (4, moves(face_player))
+	msgbox(format("I just tried to bribe the customs officer to let me through... with some {COLOR BLUE}Fresh Water{COLOR DARK_GRAY}.
+	\p He looked at me as if I was crazy. \p I don't know why I thought that would work, it was kinda stupid, haha..."))
+	release
+
+}
+
+
+script ConcordCustomsClerkStops0 {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+	if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, face_up))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
+	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
+	public, but us at Devon Co. will inform as promptly as they are open anew."))
+	release
+}
+
+
+script ConcordCustomsClerkStops1 {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+	if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 1, face_up))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
+	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
+	public, but us at Devon Co. will inform as promptly as they are open anew."))
+	release
+}
+
+script ConcordCustomsClerkStops2 {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+	if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 2, face_up))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
+	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
+	public, but us at Devon Co. will inform as promptly as they are open anew."))
+	release
+}
+
+script ConcordCustomsClerkStops3 {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+	if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+	}
+
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 3, face_up))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
+	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
+	public, but us at Devon Co. will inform as promptly as they are open anew."))
+	release
+}
+
+
+
+
+script ConcordCustomsBookshelf {
+    lockall
+    msgbox(format("The shelf is full of travel brochures."))
+    releaseall
+    }
+
+script ConcordCustomsPoster{
+    lockall
+    msgbox(format("Devon Visa - your ticket to freedom across Hoenn.\l Applications reopening soon!"))
+    releaseall
+    }
+
+script ConcordCustomsPhone{
+    lockall
+    msgbox(format("It's a paid phone for people without Devon Navs."))
+    releaseall
+    }
+
+
+script ConcordVendingMachine {
+    lockall
+    msgbox(format("It's a vending machine."))
+    showmoneybox (18, 0)
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥")
+    
+            //Fresh Water
+            if(var(VAR_RESULT) == 0){
+            		checkmoney (50)
+				if (var(VAR_RESULT) == TRUE) {
+                    playse (SE_SHOP)
+                    waitse
+					updatemoneybox
+
+                    random (4)
+                    goto_if_ne (VAR_RESULT, 0, cfreshwatergotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotfreshwater)
+
+                    cgotfreshwater:
+                    playse (SE_VEND)
+					waitse
+					removemoney (50)
+					msgbox(format("A Fresh Water bottle dropped on the machine's tray."))
+                    hidemoneybox
+                    giveitem (ITEM_FRESH_WATER)
+					
+                    random (20)
+                    goto_if_ne (VAR_RESULT, 0, cendvendingmachine)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotextrafreshwater)
+
+                    cgotextrafreshwater:
+                    msgbox(format("An extra Fresh Water bottle dropped on the machine's tray!"))
+                    hidemoneybox
+					giveitem (ITEM_FRESH_WATER)
+                    goto (cendvendingmachine)
+
+                    cfreshwatergotstuck:
+                    applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
+                    playse (SE_PIN)
+                    waitse
+                    msgbox(format("The machine does not push the Fresh Water enough for it to fall..."))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
+                        if(var(VAR_RESULT) == 0){
+                        call(cMachineShake)
+                        goto (cgotfreshwater)
+                        }
+
+                        if(var(VAR_RESULT) == 0){
+                        msgbox(format("The Fresh Water just stays on the verge of falling, mockingly.")
+                        goto (cendvendingmachine))
+                        }
+				}
+
+                if (var(VAR_RESULT) == FALSE) {
+                  msgbox(format("Not enough money..."))  
+                }
+            }
+
+            //Soda
+            if(var(VAR_RESULT) == 1){
+            		checkmoney (70)
+				if (var(VAR_RESULT) == TRUE) {
+                    playse (SE_SHOP)
+                    waitse
+					updatemoneybox
+
+                    random (4)
+                    goto_if_ne (VAR_RESULT, 0, csodagotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotsoda)
+
+                    cgotsoda:
+                    playse (SE_VEND)
+					waitse
+					removemoney (70)
+					msgbox(format("A Soda dropped on the machine's tray."))
+                    hidemoneybox
+                    giveitem (ITEM_SODA_POP)
+					
+                    random (20)
+                    goto_if_ne (VAR_RESULT, 0, cendvendingmachine)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotextrasoda)
+
+                    cgotextrasoda:
+                    msgbox(format("An extra Soda can dropped on the machine's tray!"))
+                    hidemoneybox
+					giveitem (ITEM_SODA_POP)
+                    goto (cendvendingmachine)
+
+                    csodagotstuck:
+                    applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
+                    playse (SE_PIN)
+                    waitse
+                    msgbox(format("The machine does not push the Soda can enough for it to fall..."))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
+                        if(var(VAR_RESULT) == 0){
+                        call(MachineShake)
+                        goto (cgotsoda)
+                        }
+
+                        if(var(VAR_RESULT) == 0){
+                        msgbox(format("The Soda can just stays on the verge of falling, mockingly.")
+                        goto (cendvendingmachine))
+                        }
+				}
+
+                if (var(VAR_RESULT) == FALSE) {
+                  msgbox(format("Not enough money..."))  
+                }
+            }
+
+            //Coffee
+            if(var(VAR_RESULT) == 2){
+            		checkmoney (80)
+				if (var(VAR_RESULT) == TRUE) {
+                    playse (SE_SHOP)
+                    waitse
+					updatemoneybox
+
+                    random (4)
+                    goto_if_ne (VAR_RESULT, 0, ccoffeegotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotcoffee)
+
+                    cgotcoffee:
+                    playse (SE_VEND)
+					waitse
+					removemoney (50)
+					msgbox(format("A Strong Coffee can dropped on the machine's tray."))
+                    hidemoneybox
+                    giveitem (ITEM_HEAL_POWDER)
+					
+                    random (20)
+                    goto_if_ne (VAR_RESULT, 0, cendvendingmachine)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotextracoffee)
+
+                    cgotextracoffee:
+                    msgbox(format("An extra Strong Coffee can dropped on the machine's tray!"))
+                    hidemoneybox
+					giveitem (ITEM_HEAL_POWDER)
+                    goto (cendvendingmachine)
+
+                    ccoffeegotstuck:
+                    applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
+                    playse (SE_PIN)
+                    waitse
+                    msgbox(format("The machine does not push the Strong Coffee enough for it to fall..."))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
+                        if(var(VAR_RESULT) == 0){
+                        call(MachineShake)
+                        goto (cgotcoffee)
+                        }
+
+                        if(var(VAR_RESULT) == 0){
+                        msgbox(format("The Strong Coffee just stays on the verge of falling, mockingly.")
+                        goto (cendvendingmachine))
+                        }
+				}
+
+                if (var(VAR_RESULT) == FALSE) {
+                  msgbox(format("Not enough money..."))  
+                }
+            }
+    
+    cendvendingmachine:
+    hidemoneybox
+    releaseall
+    }
+
+
+script cMachineShake{
+	playse (SE_M_REVERSAL) 
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+	}
+
+
+
+
+# there was an explosion at Mauville's Nuclear Plant, they evacuated us all. I'm not sure whether
+# to wait the crisis out in the Azure Resort, or go relax at Slateport Hotel. Decisions!
+
+
+script ConcordCustomsClerkBAD {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (!flag (FLAG_SAFE_FOLLOWER_MOVEMENT))
+	{
+	msgbox(format("I'm so thirsty... what I wouldn't do for some {COLOR BLUE}Fresh Water!{COLOR DARK_GRAY} \p But I don't
+	have any coins for the vending machine. {COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+
+	if (checkitem (ITEM_FRESH_WATER)  == TRUE)
+	{msgbox(format("Wait... you've got a bottle! Please, I'm dying of thirst here!"))
+
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Give Fresh Water", "Sorry, I need this")
+		if(var(VAR_RESULT) == 0)
+		{msgbox(format("Thank you so much! {COLOR BLUE}Gulp gulp gulp...{COLOR DARK_GRAY} \p {COLOR LIGHT_GRAY}{SHADOW WHITE}Aaah...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+		\p That hit the spot. Thank you. Hm? Why are you staring like that? \p I appreciate the water, but if you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY},
+		I can't let you through."))}
+
+		if(var(VAR_RESULT) == 1)
+		{msgbox(format("Ah... you are a cold fellow, you know that?"))
+		}
+
+	}}
+
+	else {
+	msgbox(format("We appreciate your help when we dealt with that scammer. \p He makes a profit
+	off smuggling Pokémon eggs, in and out the Internment Zone. \p If he shows his mug around here again,
+	we'll catch him for sure!"))
+	}}

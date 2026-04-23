@@ -725,7 +725,7 @@ script OldaleGrassRebel {
     }
 
  script OldaleCarRebelApproach0 {
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 	applymovement (25, moves(emote_exclamation_mark))
@@ -733,12 +733,13 @@ script OldaleGrassRebel {
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
     playse (SE_LEDGE)
     applymovement (25, moves(jump_2_up, face_down))
+    waitmovement (25)
     applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	goto (carrebeloldaleafterapproach)
  }
 
   script OldaleCarRebelApproach1 {
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 	applymovement (25, moves(emote_exclamation_mark))
@@ -751,7 +752,7 @@ script OldaleGrassRebel {
  }
 
   script OldaleCarRebelApproach2 {
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 	applymovement (25, moves(emote_exclamation_mark))
@@ -765,7 +766,7 @@ script OldaleGrassRebel {
 
 
  script OldaleCarRebel{
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	carrebeloldaleafterapproach:
 	msgbox(format("This is Rebel turf! We don't want no kids nosing around! \p Gonna have to teach you a lesson... GO,
@@ -784,6 +785,10 @@ script OldaleGrassRebel {
         fadeoutbgm (1)
         playbgm (MUS_RG_LAVENDER, TRUE)
         setvar(VAR_OLDALECARREBEL, 1)
+        removeobject (25)
+        setflag (carrebelleavescar)
+        clearflag (carrebelatDC)
+        release
         
  }
 
@@ -810,5 +815,9 @@ script OldaleCarBehind{
         fadeoutbgm (1)
         playbgm (MUS_RG_LAVENDER, TRUE)
         setvar(VAR_OLDALECARREBEL, 1)
+        removeobject (25)
+        setflag (carrebelleavescar)
+        clearflag (carrebelatDC)
+        release
 
 }

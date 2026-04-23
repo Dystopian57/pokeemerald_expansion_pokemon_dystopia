@@ -935,18 +935,18 @@ gText_PlayerWhitedOut::
 	.string "POKéMON!\p{PLAYER} whited out!$"
 
 gText_FirstShouldRestoreMonsHealth::
-	.string "First, you should restore your\n"
-	.string "POKéMON to full health.$"
+	.string "Yeah yeah, I'm on it.\n"
+	.string "Don't be in such a jiffy.$"
 
 gText_MonsHealedShouldBuyPotions::
-	.string "Your POKéMON have been healed\n"
-	.string "to perfect health.\p"
-	.string "If your POKéMON's energy, HP,\n"
-	.string "is down, please come see us.\p"
-	.string "If you're planning to go far in the\n"
-	.string "field, you should buy some POTIONS\l"
-	.string "at the POKéMON MART.\p"
-	.string "We hope you excel!$"
+	.string "Your POKéMON should be fine.\p"
+	.string "We at Devon Centers provide.\n"
+	.string "emergency care for free, but\l"
+	.string "fore non-emergency care, you\n"
+	.string "will still need to pay the fee\p"
+	.string "Do your Pokémon a favour, and\n"
+	.string "get some medicine at our mart.\p"
+	.string "Now please clear the way.$"
 
 gText_MonsHealed::
 	.string "Your POKéMON have been healed\n"

@@ -328,14 +328,15 @@
 
 #define OBJ_EVENT_GFX_FISHERFISHING              315
 #define OBJ_EVENT_GFX_LONGHAIRGUY                316
+#define OBJ_EVENT_GFX_MUDCRAWDAUNT               317
 
 
-#define OBJ_EVENT_GFX_APRICORN_TREE              317
+#define OBJ_EVENT_GFX_APRICORN_TREE              318
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        318
+#define NUM_OBJ_EVENT_GFX                        319
 
 
 // These are dynamic object gfx ids.

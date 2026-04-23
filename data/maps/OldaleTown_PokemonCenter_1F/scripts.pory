@@ -57,20 +57,18 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 `
 
 mapscripts OldaleTown_PokemonCenter_1F_MapScripts {
-    MAP_SCRIPT_ON_LOAD: OldaleDevonCenter_TVOn
-	MAP_SCRIPT_ON_LOAD: CarRebelSpawn}
+    MAP_SCRIPT_ON_LOAD: OldaleDevonCenter_TVOn}
 
 script OldaleDevonCenter_TVOn {
 	setrespawn (HEAL_LOCATION_OLDALE_TOWN)
 	special (TurnOnTVScreen)
 	}
 
-script CarRebelSpawn {
-	if (var(VAR_OLDALECARREBEL) == 1)
-	{setobjectxy (9, 8, 4)}
-
-	else {setobjectxy (9, -4, -5)}
-}
+//script CarRebelSpawn {
+	//if (var(VAR_OLDALECARREBEL) == 1)
+	//{setobjectxy (9, 8, 4)}
+	//else {setobjectxy (9, -4, -5)}
+//}
 
 script CarRebel {
 	lock

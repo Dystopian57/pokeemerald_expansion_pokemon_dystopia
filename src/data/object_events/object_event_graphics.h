@@ -195,6 +195,10 @@ const u32 gObjectEventPic_hacktv[] = INCBIN_U32("graphics/object_events/pics/mis
 const u32 gObjectEventPic_pokesigil[] = INCBIN_U32("graphics/object_events/pics/misc/pokesigil.4bpp");
 
 const u32 gObjectEventPic_fisherfishing[] = INCBIN_U32("graphics/object_events/pics/people/fisherfishing.4bpp");
+
+const u32 gObjectEventPic_mudcrawdaunt[] = INCBIN_U32("graphics/object_events/pics/misc/mudcrawdaunt.4bpp");
+
+
 const u32 gObjectEventPic_longhairguy[] = INCBIN_U32("graphics/object_events/pics/people/longhairguy.4bpp");
 
 

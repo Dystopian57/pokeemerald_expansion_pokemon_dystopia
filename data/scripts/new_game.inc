@@ -285,6 +285,8 @@ EventScript_ResetAllMapFlags::
 
 	setflag touristonbike
 	setflag conartistrewardsinoldale
+	setflag carrebelatDC
+	setflag mudcrabcrawdaunt
 
 	setflag Aideearrivestobasement
 	setflag balsaminherbedroom

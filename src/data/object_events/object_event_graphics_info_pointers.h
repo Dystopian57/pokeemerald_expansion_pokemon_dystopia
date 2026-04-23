@@ -311,6 +311,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_unowneye;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_egg;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fisherfishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mudcrawdaunt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_longhairguy;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_wageslavem;
@@ -650,6 +651,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_UNOWNEYE] =                  &gObjectEventGraphicsInfo_unowneye,
     [OBJ_EVENT_GFX_EGG] =            &gObjectEventGraphicsInfo_egg,
     [OBJ_EVENT_GFX_FISHERFISHING] =                  &gObjectEventGraphicsInfo_fisherfishing,
+    [OBJ_EVENT_GFX_MUDCRAWDAUNT] =                  &gObjectEventGraphicsInfo_mudcrawdaunt,
     [OBJ_EVENT_GFX_LONGHAIRGUY] =                  &gObjectEventGraphicsInfo_longhairguy,
     [OBJ_EVENT_GFX_WAGESLAVEM] =             &gObjectEventGraphicsInfo_wageslavem,
     [OBJ_EVENT_GFX_ESCAPEDPRISONERM] =             &gObjectEventGraphicsInfo_escapedprisonerm,

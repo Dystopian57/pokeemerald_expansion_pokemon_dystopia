@@ -125,7 +125,6 @@ MtPyre_Summit_Movement_ArchieFacePlayer2:
 MtPyre_Summit_EventScript_OldMan::
 	lock
 	faceplayer
-	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, MtPyre_Summit_EventScript_OldManAfterRayquaza
 	msgbox MtPyre_Summit_Text_WillYouHearOutMyTale, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, MtPyre_Summit_EventScript_OldManTale
 	call_if_eq VAR_RESULT, NO, MtPyre_Summit_EventScript_DeclineOldManTale

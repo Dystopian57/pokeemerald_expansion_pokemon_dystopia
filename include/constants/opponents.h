@@ -38,7 +38,7 @@
 #define TRAINER_SHADYDEALER_103                       31
 #define TRAINER_OLDALEDEVONGRUNT_M     32
 #define TRAINER_OLDALEDEVONGRUNT_F       33
-#define TRAINER_ARCHIE                       34
+#define TRAINER_CONCORDWAGESLAVE                       34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36
 #define TRAINER_ROSE_1                       37

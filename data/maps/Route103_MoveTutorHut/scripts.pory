@@ -7,71 +7,126 @@ Route103_MoveTutorHut_MapScripts::
 
 //NEED "IF NOT LEARNT" CHECKS
 script MoveTutor103 {
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (1, moves(face_player))
-	msgbox(format("Oh, hello. I don't get many visitors - I'm sorry about the mess. \p My name is Colton,
+
+	if (!flag (movetutorintro))
+
+	{msgbox(format("Oh, hello. I don't get many visitors - I'm sorry about the mess. \p My name is Colton,
     and I'm a Move Tutor - or used to be... \p Devon began a campaign to discredit Move Tutors, on account of
     us teaching 'dangerous moves' to Pokémon.\p People bought into it, and began to treat us like
     criminals. It's ridiculous.\p
     I'm sorry... you didn't come here to listen to my rant. \p You want to teach some moves to your
     Pokémon, right? Or have them remember old ones. \p I'll do it for only 100¥ per move. I used to
-    collect Heart Scales, but a man needs to eat."))
-
-    msgbox(format("So? What will it be?"))
+    collect Heart Scales, but a man needs to eat. So..."))
+	setflag (movetutorintro)
+	movetutorchoice:
+    msgbox(format("Do any of your Pokémon need teaching?"))
 
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Tutor a move", "Relearn a move", "Nevermind")
 
-		if(var(VAR_RESULT) == 0){
-			msgbox(format("I could teach your Pokémon these moves."))
-			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Move 2", "Move 3")
-				if(var(VAR_RESULT) == 0){
-				msgbox(format("Which of your Pokémon should I teach?"))
-				special (ChooseMonForMoveTutor)
-				waitstate
-				setvar (VAR_0x8005, MOVE_SWAGGER)
-				goto_if_eq (VAR_RESULT, FALSE, endtutorscript)
-				//goto (endtutorscript)
-				special (IsSelectedMonEgg)
-				goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
-				}
-				if(var(VAR_RESULT) == 1){
-				msgbox(format("Which of your Pokémon should I teach?"))
-				special (ChooseMonForMoveTutor)
-				setvar (VAR_0x8005, MOVE_SWAGGER)
-				goto (endtutorscript)
-				}
+		if(var(VAR_RESULT) == 0)
+		{
+			checkmoney (100)
+			if (var(VAR_RESULT) == TRUE) {
 
-				if(var(VAR_RESULT) == 2){
-				msgbox(format("Which of your Pokémon should I teach?"))
-				special (ChooseMonForMoveTutor)
-				setvar (VAR_0x8005, MOVE_SWAGGER)
-				goto (exittutorscript)
-				}
-		}
+				msgbox(format("I could teach your Pokémon these moves."))
+				dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Move 2", "Move 3")
+					if(var(VAR_RESULT) == 0){
+					msgbox(format("Which of your Pokémon should I teach?"))
+					special (ChooseMonForMoveTutor)
+					waitstate
+					setvar (VAR_0x8005, MOVE_SWAGGER)
+					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
+					//goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
+
+					
+					showmoneybox (0, 0)
+					msgbox(format("Very well. I'll collect your 100¥ now..."))
+					playse (SE_SHOP)
+					removemoney (100)
+					updatemoneybox
+					goto (endtutorscript)
+					//special (IsSelectedMonEgg)
+					//goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
+					}
+					if(var(VAR_RESULT) == 1){
+					msgbox(format("Which of your Pokémon should I teach?"))
+					special (ChooseMonForMoveTutor)
+					setvar (VAR_0x8005, MOVE_SWAGGER)
+					goto (endtutorscript)
+					}
+
+					if(var(VAR_RESULT) == 2){
+					msgbox(format("Which of your Pokémon should I teach?"))
+					special (ChooseMonForMoveTutor)
+					setvar (VAR_0x8005, MOVE_SWAGGER)
+					goto (exittutorscript)
+					}
+			}
+		
+			if (var(VAR_RESULT) == FALSE) {
+				showmoneybox (0, 0)
+				msgbox(format("I'm sorry... you seem a bit short on the 100¥. We'll have to do this
+				later."))
+				hidemoneybox
+				}}
 
 		if(var(VAR_RESULT) == 1)
 		{
+		checkmoney (100)
+			if (var(VAR_RESULT) == TRUE) {
+
 		msgbox(format("Which of your Pokémon should I have remember a move?"))
 		special (ChooseMonForMoveRelearner)
 		waitstate
+		goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
+		special (IsSelectedMonEgg)
+		goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
+		goto_if_eq (VAR_0x8005, 0, NoMoveToTeachMon)
+		showmoneybox (0, 0)
+		msgbox(format("Very well. I'll collect your 100¥ now..."))
+		playse (SE_SHOP)
+		removemoney (100)
+		updatemoneybox
+		
 		goto (endtutorscript)
+		}
+			
+			if (var(VAR_RESULT) == FALSE) {
+				showmoneybox (0, 0)
+				msgbox(format("I'm sorry... you seem a bit short on the 100¥. We'll have to do this
+				later."))
+				hidemoneybox
+			}
+		
 		}
 		
 		if(var(VAR_RESULT) == 2)
 		{
-		msgbox(format("Fair enough. You can come back if you need my skills sometime."))
-		goto (endtutorscript)
+		canceltutor:
+		msgbox(format("Changed your mind? Well, I'll be here if you need me."))
+		goto (exittutorscript)
 		}
 	endtutorscript:
 	msgbox(format("Come back if you need my skills some other time."))
+	hidemoneybox
 	exittutorscript:
     releaseall}
+	
+	else {goto (movetutorchoice)}
 
+	}
+
+script NoMoveToTeachMon {
+	msgbox(format("This Pokémon... I don't think it has forgotten any moves. Ah, to be young again..."))
+}
 
 script CantTeachEgg {
 	msgbox(format("That looks like a healthy egg... come back when it's hatched, and I may
 	have some moves to teach it."))
+	release
 }
 
 script MoveTutor103Sink {

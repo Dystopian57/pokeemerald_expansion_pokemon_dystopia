@@ -786,14 +786,26 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 
+    if (trainerClass == TRAINER_CLASS_SHARPY
+        || trainerClass == TRAINER_CLASS_BALSAM)
+        return B_TRANSITION_MUGSHOT;
+
     if (trainerClass == TRAINER_CLASS_TEAM_MAGMA
         || trainerClass == TRAINER_CLASS_MAGMA_LEADER
-        || trainerClass == TRAINER_CLASS_MAGMA_ADMIN)
+        || trainerClass == TRAINER_CLASS_MAGMA_ADMIN
+        || trainerClass == TRAINER_CLASS_REBELGRUNTM
+        || trainerClass == TRAINER_CLASS_REBELGRUNTF
+        || trainerClass == TRAINER_CLASS_REBELADMINM
+        || trainerClass == TRAINER_CLASS_REBELADMINF)
         return B_TRANSITION_MAGMA;
 
     if (trainerClass == TRAINER_CLASS_TEAM_AQUA
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
-        || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
+        || trainerClass == TRAINER_CLASS_AQUA_ADMIN
+        || trainerClass == TRAINER_CLASS_DEVONGRUNTM
+        || trainerClass == TRAINER_CLASS_DEVONGRUNTF
+        || trainerClass == TRAINER_CLASS_DEVONADMINM
+        || trainerClass == TRAINER_CLASS_DEVONADMINF)
         return B_TRANSITION_AQUA;
 
     switch (GetTrainerBattleType(trainerId))

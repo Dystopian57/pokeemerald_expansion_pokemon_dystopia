@@ -1190,7 +1190,7 @@ OldaleGrassRebel::
 
 OldaleCarRebelApproach0::
 # 728 "data/maps/OldaleTown/scripts.pory"
-	lockall
+	lock
 # 729 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 730 "data/maps/OldaleTown/scripts.pory"
@@ -1206,139 +1206,157 @@ OldaleCarRebelApproach0::
 # 735 "data/maps/OldaleTown/scripts.pory"
 	applymovement 25, OldaleCarRebelApproach0_Movement_1
 # 736 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseRebelGuard_Movement_0
+	waitmovement 25
 # 737 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseRebelGuard_Movement_0
+# 738 "data/maps/OldaleTown/scripts.pory"
 	goto carrebeloldaleafterapproach
 	return
 
 
 OldaleCarRebelApproach1::
-# 741 "data/maps/OldaleTown/scripts.pory"
-	lockall
 # 742 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 743 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 744 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleVendingMachine_Movement_0
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 745 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebelApproach0_Text_0
+	applymovement 25, OldaleVendingMachine_Movement_0
 # 746 "data/maps/OldaleTown/scripts.pory"
-	playse SE_LEDGE
+	msgbox OldaleCarRebelApproach0_Text_0
 # 747 "data/maps/OldaleTown/scripts.pory"
-	applymovement 27, OldaleCarRebelApproach1_Movement_0
+	playse SE_LEDGE
 # 748 "data/maps/OldaleTown/scripts.pory"
-	waitmovement
+	applymovement 25, OldaleCarRebelApproach1_Movement_0
 # 749 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleCarRebelApproach0_Movement_0
+	waitmovement
 # 750 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleCarRebelApproach0_Movement_0
+# 751 "data/maps/OldaleTown/scripts.pory"
 	goto carrebeloldaleafterapproach
 	return
 
 
 OldaleCarRebelApproach2::
-# 754 "data/maps/OldaleTown/scripts.pory"
-	lockall
 # 755 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 756 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 757 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleVendingMachine_Movement_0
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 758 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebelApproach0_Text_0
+	applymovement 25, OldaleVendingMachine_Movement_0
 # 759 "data/maps/OldaleTown/scripts.pory"
-	playse SE_LEDGE
+	msgbox OldaleCarRebelApproach0_Text_0
 # 760 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarRebelApproach2_Movement_0
+	playse SE_LEDGE
 # 761 "data/maps/OldaleTown/scripts.pory"
-	waitmovement
+	applymovement 25, OldaleCarRebelApproach2_Movement_0
 # 762 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleCarRebelApproach0_Movement_0
+	waitmovement
 # 763 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleCarRebelApproach0_Movement_0
+# 764 "data/maps/OldaleTown/scripts.pory"
 	goto carrebeloldaleafterapproach
 	return
 
 
 OldaleCarRebel::
-# 768 "data/maps/OldaleTown/scripts.pory"
-	lockall
 # 769 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 770 "data/maps/OldaleTown/scripts.pory"
-carrebeloldaleafterapproach:
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 771 "data/maps/OldaleTown/scripts.pory"
+carrebeloldaleafterapproach:
+# 772 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleCarRebel_Text_0
-# 773 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_THROW
 # 774 "data/maps/OldaleTown/scripts.pory"
-	waitse
+	playse SE_BALL_THROW
 # 775 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 3
-# 776 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_TRAY_ENTER
-# 777 "data/maps/OldaleTown/scripts.pory"
 	waitse
+# 776 "data/maps/OldaleTown/scripts.pory"
+	fadeoutbgm 3
+# 777 "data/maps/OldaleTown/scripts.pory"
+	playse SE_BALL_TRAY_ENTER
 # 778 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_1
+	waitse
 # 779 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	msgbox OldaleCarRebel_Text_1
 # 780 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_2
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 781 "data/maps/OldaleTown/scripts.pory"
-	playse SE_FLEE
+	msgbox OldaleCarRebel_Text_2
 # 782 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarRebel_Movement_0
+	playse SE_FLEE
 # 783 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 25
+	applymovement 25, OldaleCarRebel_Movement_0
 # 784 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 1
+	waitmovement 25
 # 785 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_RG_LAVENDER, TRUE
+	fadeoutbgm 1
 # 786 "data/maps/OldaleTown/scripts.pory"
+	playbgm MUS_RG_LAVENDER, TRUE
+# 787 "data/maps/OldaleTown/scripts.pory"
 	setvar VAR_OLDALECARREBEL, 1
+# 788 "data/maps/OldaleTown/scripts.pory"
+	removeobject 25
+# 789 "data/maps/OldaleTown/scripts.pory"
+	setflag carrebelleavescar
+# 790 "data/maps/OldaleTown/scripts.pory"
+	clearflag carrebelatDC
+# 791 "data/maps/OldaleTown/scripts.pory"
+	release
 	return
 
 
 OldaleCarBehind::
-# 793 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarBehind_Movement_0
-# 794 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarBehind_Text_0
-# 796 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_THROW
-# 797 "data/maps/OldaleTown/scripts.pory"
-	waitse
 # 798 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 3
+	applymovement 25, OldaleCarBehind_Movement_0
 # 799 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_TRAY_ENTER
-# 800 "data/maps/OldaleTown/scripts.pory"
-	waitse
+	msgbox OldaleCarBehind_Text_0
 # 801 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_1
+	playse SE_BALL_THROW
 # 802 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	waitse
 # 803 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_2
+	fadeoutbgm 3
 # 804 "data/maps/OldaleTown/scripts.pory"
-	playse SE_LEDGE
+	playse SE_BALL_TRAY_ENTER
 # 805 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarRebelApproach2_Movement_0
+	waitse
 # 806 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 25
+	msgbox OldaleCarRebel_Text_1
 # 807 "data/maps/OldaleTown/scripts.pory"
-	playse SE_FLEE
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 808 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarRebel_Movement_0
+	msgbox OldaleCarRebel_Text_2
 # 809 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 25
+	playse SE_LEDGE
 # 810 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 1
+	applymovement 25, OldaleCarRebelApproach2_Movement_0
 # 811 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_RG_LAVENDER, TRUE
+	waitmovement 25
 # 812 "data/maps/OldaleTown/scripts.pory"
+	playse SE_FLEE
+# 813 "data/maps/OldaleTown/scripts.pory"
+	applymovement 25, OldaleCarBehind_Movement_1
+# 814 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 25
+# 815 "data/maps/OldaleTown/scripts.pory"
+	fadeoutbgm 1
+# 816 "data/maps/OldaleTown/scripts.pory"
+	playbgm MUS_RG_LAVENDER, TRUE
+# 817 "data/maps/OldaleTown/scripts.pory"
 	setvar VAR_OLDALECARREBEL, 1
+# 818 "data/maps/OldaleTown/scripts.pory"
+	removeobject 25
+# 819 "data/maps/OldaleTown/scripts.pory"
+	setflag carrebelleavescar
+# 820 "data/maps/OldaleTown/scripts.pory"
+	clearflag carrebelatDC
+# 821 "data/maps/OldaleTown/scripts.pory"
+	release
 	return
 
 
@@ -1506,42 +1524,62 @@ OldaleCarRebelApproach0_Movement_1:
 	face_down
 	step_end
 
-# 747 "data/maps/OldaleTown/scripts.pory"
+# 748 "data/maps/OldaleTown/scripts.pory"
 OldaleCarRebelApproach1_Movement_0:
-# 747 "data/maps/OldaleTown/scripts.pory"
+# 748 "data/maps/OldaleTown/scripts.pory"
 	jump_up
 	step_end
 
-# 760 "data/maps/OldaleTown/scripts.pory"
+# 761 "data/maps/OldaleTown/scripts.pory"
 OldaleCarRebelApproach2_Movement_0:
-# 760 "data/maps/OldaleTown/scripts.pory"
+# 761 "data/maps/OldaleTown/scripts.pory"
 	jump_2_up
 	step_end
 
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
 OldaleCarRebel_Movement_0:
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 783 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 783 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 793 "data/maps/OldaleTown/scripts.pory"
+# 798 "data/maps/OldaleTown/scripts.pory"
 OldaleCarBehind_Movement_0:
-# 793 "data/maps/OldaleTown/scripts.pory"
+# 798 "data/maps/OldaleTown/scripts.pory"
 	emote_exclamation_mark
-# 793 "data/maps/OldaleTown/scripts.pory"
+# 798 "data/maps/OldaleTown/scripts.pory"
 	face_down
+	step_end
+
+# 813 "data/maps/OldaleTown/scripts.pory"
+OldaleCarBehind_Movement_1:
+# 813 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 813 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 813 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 813 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 813 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 813 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
+# 813 "data/maps/OldaleTown/scripts.pory"
+	walk_fast_left
 	step_end
 
 ConArtist103Rewards_Text_0:
@@ -2022,24 +2060,24 @@ OldaleCarRebelApproach0_Text_0:
 	.string "Stop it, kid!$"
 
 OldaleCarRebel_Text_0:
-# 771 "data/maps/OldaleTown/scripts.pory"
+# 772 "data/maps/OldaleTown/scripts.pory"
 	.string "This is Rebel turf! We don't want no kids\n"
 	.string "nosing around!\p"
 	.string "Gonna have to teach you a lesson... GO,\n"
 	.string "ELECTRIKE!$"
 
 OldaleCarRebel_Text_1:
-# 778 "data/maps/OldaleTown/scripts.pory"
+# 779 "data/maps/OldaleTown/scripts.pory"
 	.string "... oh. Right. He's fainted from before...\p"
 	.string "... {COLOR LIGHT_GRAY}{SHADOW WHITE}Shit...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleCarRebel_Text_2:
-# 780 "data/maps/OldaleTown/scripts.pory"
+# 781 "data/maps/OldaleTown/scripts.pory"
 	.string "Wait right here, you hear me!? I'll go to\n"
 	.string "the Devon Center real quick!$"
 
 OldaleCarBehind_Text_0:
-# 794 "data/maps/OldaleTown/scripts.pory"
+# 799 "data/maps/OldaleTown/scripts.pory"
 	.string "Hey, you think you're smart or\n"
 	.string "something? Trying to sneak up on me!?\p"
 	.string "Well, you asked for it - GO, ELECTRIKE!$"

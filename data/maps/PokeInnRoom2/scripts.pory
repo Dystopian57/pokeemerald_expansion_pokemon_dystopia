@@ -1,8 +1,19 @@
 raw `
-PokeInnRoom2_MapScripts::
-	.byte 0
 
 `
+
+
+
+
+mapscripts PokeInnRoom2_MapScripts {
+    MAP_SCRIPT_ON_LOAD: DisableInnFollowers}
+
+script DisableInnFollowers {
+	setflag (FLAG_TEMP_HIDE_FOLLOWER)
+	//setrespawn (HEAL_LOCATION_OLDALE_TOWN)
+	//special (TurnOnTVScreen)
+	}
+
 
 script DevonInnSignAboutFreezer {
 	lock
