@@ -13,6 +13,7 @@ SINGLE_BATTLE_TEST("Burmy changes form based on the environment it appeared in-b
 
     for (u32 j = 0; j < ARRAY_COUNT(sBurmyForms); j++) {
         PARAMETRIZE { currentForm = sBurmyForms[j]; newForm = SPECIES_BURMY_PLANT; environment = BATTLE_ENVIRONMENT_GRASS; }
+        PARAMETRIZE { currentForm = sBurmyForms[j]; newForm = SPECIES_BURMY_PLANT; environment = BATTLE_ENVIRONMENT_GREENGRASS; }
         PARAMETRIZE { currentForm = sBurmyForms[j]; newForm = SPECIES_BURMY_PLANT; environment = BATTLE_ENVIRONMENT_LONG_GRASS; }
         PARAMETRIZE { currentForm = sBurmyForms[j]; newForm = SPECIES_BURMY_PLANT; environment = BATTLE_ENVIRONMENT_POND; }
         PARAMETRIZE { currentForm = sBurmyForms[j]; newForm = SPECIES_BURMY_PLANT; environment = BATTLE_ENVIRONMENT_MOUNTAIN; }

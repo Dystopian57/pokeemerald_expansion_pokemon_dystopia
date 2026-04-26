@@ -226,6 +226,13 @@ extern const u32 gBattleEnvironmentTilemap_TallGrass[];
 extern const u32 gBattleEnvironmentAnimTiles_TallGrass[];
 extern const u32 gBattleEnvironmentAnimTilemap_TallGrass[];
 extern const u16 gBattleEnvironmentPalette_TallGrass[];
+
+extern const u32 gBattleEnvironmentTiles_GreenGrass[];
+extern const u32 gBattleEnvironmentTilemap_GreenGrass[];
+extern const u32 gBattleEnvironmentAnimTiles_GreenGrass[];
+extern const u32 gBattleEnvironmentAnimTilemap_GreenGrass[];
+extern const u16 gBattleEnvironmentPalette_GreenGrass[];
+
 extern const u32 gBattleEnvironmentTiles_LongGrass[];
 extern const u32 gBattleEnvironmentTilemap_LongGrass[];
 extern const u32 gBattleEnvironmentAnimTiles_LongGrass[];

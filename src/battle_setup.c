@@ -654,7 +654,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_PLAIN;
     case MAP_TYPE_ROUTE:
         if (MetatileBehavior_IsShortGrass(tileBehavior))
-            return BATTLE_ENVIRONMENT_GRASS;
+            return BATTLE_ENVIRONMENT_GREENGRASS;
         if (MetatileBehavior_IsTallGrass(tileBehavior))
             return BATTLE_ENVIRONMENT_GRASS;
         return BATTLE_ENVIRONMENT_CAVE;
@@ -693,6 +693,10 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113))
         return BATTLE_ENVIRONMENT_SAND;
+    
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE102RALTS_SANCTUARY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE102RALTS_SANCTUARY))
+        return BATTLE_ENVIRONMENT_GREENGRASS;
+
     if (GetSavedWeather() == WEATHER_SANDSTORM)
         return BATTLE_ENVIRONMENT_SAND;
 
