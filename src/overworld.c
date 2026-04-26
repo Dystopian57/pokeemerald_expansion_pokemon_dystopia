@@ -3736,3 +3736,10 @@ bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
     SetTimeOfDay(ScriptReadByte(ctx));
     return FALSE;
 }
+
+
+void Script_GetGameStat(struct ScriptContext *ctx)
+{
+    u8 stat = ScriptReadByte(ctx);
+    gSpecialVar_Result = GetGameStat(stat);
+}

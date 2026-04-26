@@ -2741,3 +2741,9 @@
 	callnative ScrCmd_istmrelearneractive, requests_effects=1
 	.4byte \destination
 	.endm
+
+
+    .macro getgamestat stat:req
+    callnative Script_GetGameStat
+    .byte \stat
+    .endm

@@ -314,20 +314,32 @@ script OldaleOutsideHikerGuy {
     releaseall
     }
 
-script OldaleOutsideParkGuy {
-    lockall
+script OldaleOutsideParkNPC {
+    lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (11, moves(face_player))
 
-
+    if (!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN))
+    {
     msgbox(format("I hear there's people in the Internment Zone who get crazy rich by selling ores, pearls and other high value items.
-    \p Do you know where to find those though? Cause I sure don't!"))
+    \p Do you know where to find those though? Cause I sure don't, or I wouldn't be sitting here!"))
+    }
+
+    else {
+        msgbox(format("Uhm... did you just dig through that trash can over there? \p If you need pokeyen,
+        you should get a Devon Radar and find scrap to sell. There's lots lying around. \p Other people
+        get rich by selling items like ores and pearls, but I wouldn't know where to start looking
+        for those."))
+    release
+    }}
+
+ 
+
 
     //msgbox(format("It's tough being a trader around here lately... tons of competition.\pThere's
     //scammers taking advantage of war tourists, war victims selling their valuables to stay afloat...
     //\p You should be careful where you shop!"))
-    releaseall
-    }
+
 
 script OldaleOutsideOldGuy {
     lockall

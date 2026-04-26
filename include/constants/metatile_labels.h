@@ -334,6 +334,7 @@
 #define METATILE_Mauville_MirageTower_TileE   0x3DD
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
 #define METATILE_Mauville_NormalGrass         0x212
+#define METATILE_Mauville_ShortGrass          0x205
 
 // gTileset_MauvilleGameCorner
 #define METATILE_MauvilleGameCorner_Door_Bathroom  0x249

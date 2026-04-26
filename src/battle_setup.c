@@ -625,6 +625,8 @@ static void CB2_EndScriptedWildBattle(void)
     }
 }
 
+//HEREFORBATTLEENVIRONMENTS
+
 enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 {
     u16 tileBehavior;
@@ -647,8 +649,15 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     switch (gMapHeader.mapType)
     {
     case MAP_TYPE_TOWN:
+        return BATTLE_ENVIRONMENT_PLAIN;
     case MAP_TYPE_CITY:
+        return BATTLE_ENVIRONMENT_PLAIN;
     case MAP_TYPE_ROUTE:
+        if (MetatileBehavior_IsShortGrass(tileBehavior))
+            return BATTLE_ENVIRONMENT_GRASS;
+        if (MetatileBehavior_IsTallGrass(tileBehavior))
+            return BATTLE_ENVIRONMENT_GRASS;
+        return BATTLE_ENVIRONMENT_CAVE;
         break;
     case MAP_TYPE_UNDERGROUND:
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
@@ -657,6 +666,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_POND;
         return BATTLE_ENVIRONMENT_CAVE;
     case MAP_TYPE_INDOOR:
+            return BATTLE_ENVIRONMENT_BUILDING;
     case MAP_TYPE_SECRET_BASE:
         return BATTLE_ENVIRONMENT_BUILDING;
     case MAP_TYPE_UNDERWATER:

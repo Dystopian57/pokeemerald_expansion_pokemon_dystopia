@@ -698,9 +698,11 @@ ConcordVendingMachine_Movement_0:
 
 ConcordWageSlaveAtPhone_Text_0:
 # 15 "data/maps/ConcordCustoms/scripts.pory"
-	.string "I-I'm sorry sir... yes sir... Concord\n"
-	.string "bridge is closed, so I can't won't be\l"
-	.string "able to attend the Rustboro meeting...\p"
+	.string "I-I'm sorry sir... yes sir... they're not\n"
+	.string "letting our trucks through - Concord\l"
+	.string "Bridge is closed...\p"
+	.string "N-no, there's nothing I can do, sir...\n"
+	.string "Yes, I already aske-...\p"
 	.string "... I... I'm fired? B-but sir...! Please be\n"
 	.string "reasonable, I...!\p"
 	.string "Sir...? Hello? SIR!?\p"

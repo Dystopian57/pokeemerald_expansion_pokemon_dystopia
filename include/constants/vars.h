@@ -259,6 +259,7 @@
 #define VAR_SECRET_BASE_HIGH_TV_FLAGS                    0x40EF // Used by Secret Base TV programs
 #define VAR_SECRET_BASE_IS_NOT_LOCAL                     0x40F0 // Set to TRUE while in another player's secret base.
 #define VAR_DAILY_BP                                     0x40F1
+
 #define VAR_WALLY_CALL_STEP_COUNTER                      0x40F2
 #define VAR_SCOTT_FORTREE_CALL_STEP_COUNTER              0x40F3
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
@@ -271,7 +272,7 @@
 #define VAR_JOELQUESTS                         0x40FB // Unused Var
 #define VAR_ROUTE101REBELFLEES                           0x40FC // Unused Var
 #define VAR_OLDALE_PHASE                                 0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
+#define VAR_DEVONCENTERLOYALTY                           0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

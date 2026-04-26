@@ -12,9 +12,9 @@ script ConcordWageSlaveAtPhone {
 	
 	{
 
-	msgbox(format("I-I'm sorry sir... yes sir... Concord bridge is closed, so I can't
-	won't be able to attend the Rustboro meeting... \p ... I... I'm fired? B-but sir...! Please
-	be reasonable, I...! \p Sir...? Hello? SIR!? \p ..."))
+	msgbox(format("I-I'm sorry sir... yes sir... they're not letting our trucks through - Concord
+	Bridge is closed... \p N-no, there's nothing I can do, sir... Yes, I already aske-...
+	\p ... I... I'm fired? B-but sir...! Please be reasonable, I...! \p Sir...? Hello? SIR!? \p ..."))
 
 	playse (SE_M_EXPLOSION)
 	setvar(VAR_0x8004, 2)  //@ vertical pan
