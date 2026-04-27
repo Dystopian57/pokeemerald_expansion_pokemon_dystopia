@@ -308,7 +308,7 @@
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
 // gTileset_Mauville
-#define METATILE_Mauville_AshGrass            0x36C
+#define METATILE_Mauville_AshGrass            0x20A
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251
 #define METATILE_Mauville_Door                0x2AC

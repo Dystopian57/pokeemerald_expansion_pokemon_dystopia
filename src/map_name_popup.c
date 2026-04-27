@@ -32,6 +32,7 @@ enum MapPopUp_Themes
     MAPPOPUP_THEME_BRICK,
     MAPPOPUP_THEME_UNDERWATER,
     MAPPOPUP_THEME_STONE2,
+    MAPPOPUP_THEME_GOODWOOD,
 };
 
 enum MapPopUp_Themes_BW
@@ -57,6 +58,8 @@ static const u8 sMapPopUp_Table[][960] =
     [MAPPOPUP_THEME_BRICK]      = INCBIN_U8("graphics/map_popup/brick.4bpp"),
     [MAPPOPUP_THEME_UNDERWATER] = INCBIN_U8("graphics/map_popup/underwater.4bpp"),
     [MAPPOPUP_THEME_STONE2]     = INCBIN_U8("graphics/map_popup/stone2.4bpp"),
+    [MAPPOPUP_THEME_GOODWOOD]       = INCBIN_U8("graphics/map_popup/goodwood.4bpp"),
+
 };
 
 static const u8 sMapPopUp_OutlineTable[][960] =
@@ -67,6 +70,7 @@ static const u8 sMapPopUp_OutlineTable[][960] =
     [MAPPOPUP_THEME_BRICK]      = INCBIN_U8("graphics/map_popup/brick_outline.4bpp"),
     [MAPPOPUP_THEME_UNDERWATER] = INCBIN_U8("graphics/map_popup/underwater_outline.4bpp"),
     [MAPPOPUP_THEME_STONE2]     = INCBIN_U8("graphics/map_popup/stone2_outline.4bpp"),
+    [MAPPOPUP_THEME_GOODWOOD]   = INCBIN_U8("graphics/map_popup/goodwood_outline.4bpp"),
 };
 
 static const u16 sMapPopUp_PaletteTable[][16] =
@@ -77,6 +81,7 @@ static const u16 sMapPopUp_PaletteTable[][16] =
     [MAPPOPUP_THEME_BRICK]      = INCBIN_U16("graphics/map_popup/brick_outline.gbapal"),
     [MAPPOPUP_THEME_UNDERWATER] = INCBIN_U16("graphics/map_popup/underwater_outline.gbapal"),
     [MAPPOPUP_THEME_STONE2]     = INCBIN_U16("graphics/map_popup/stone2_outline.gbapal"),
+    [MAPPOPUP_THEME_GOODWOOD]       = INCBIN_U16("graphics/map_popup/goodwood.gbapal"),
 };
 
 static const u16 sMapPopUp_Palette_Underwater[16] = INCBIN_U16("graphics/map_popup/underwater.gbapal");
@@ -106,7 +111,7 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
     [MAPSEC_ROUTE_102] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ROUTE_103] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ROUTE_104] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_ROUTE_105] = MAPPOPUP_THEME_UNDERWATER,
+    [MAPSEC_ROUTE_105] = MAPPOPUP_THEME_GOODWOOD,
     [MAPSEC_ROUTE_106] = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_ROUTE_107] = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_ROUTE_108] = MAPPOPUP_THEME_UNDERWATER,

@@ -940,12 +940,12 @@ gText_FirstShouldRestoreMonsHealth::
 
 gText_MonsHealedShouldBuyPotions::
 	.string "Your POKéMON should be fine.\p"
-	.string "We at Devon Centers provide.\n"
-	.string "emergency care for free, but\l"
-	.string "fore non-emergency care, you\n"
-	.string "will still need to pay the fee\p"
-	.string "Do your Pokémon a favour, and\n"
-	.string "get some medicine at our mart.\p"
+	.string "We at Devon Centers provide\n"
+	.string "emergency care for free, but for\l"
+	.string "non-emergency care, you will still\l"
+	.string "need to pay the fee\p"
+	.string "Do your Pokémon a favour, and get\n"
+	.string "some medicine at our mart.\p"
 	.string "Now please clear the way.$"
 
 gText_MonsHealed::

@@ -1,9 +1,14 @@
 raw `
 Route102_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, Route102_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, Route102_OnTransition
 	.byte 0
 
 Route102_OnResume:
 	setstepcallback STEP_CB_ASH
+	end
+
+Route102_OnTransition:
 	end
 
 Route102_EventScript_LittleBoy::

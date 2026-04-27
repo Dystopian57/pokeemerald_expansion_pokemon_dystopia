@@ -761,8 +761,11 @@ static void AshGrassPerStepCallback(u8 taskId)
     if (MetatileBehavior_IsAshGrass(MapGridGetMetatileBehaviorAt(x, y)))
     {
         // Remove ash from grass
+        if (MapGridGetMetatileIdAt(x, y) == METATILE_Fallarbor_AshGrass)
+            StartAshFieldEffect(x, y, METATILE_Fallarbor_NormalGrass, 4);
+
         if (MapGridGetMetatileIdAt(x, y) == METATILE_Mauville_AshGrass)
-            StartAshFieldEffect(x, y, METATILE_Mauville_NormalGrass, 4);
+            StartAshFieldEffect(x, y, METATILE_Mauville_NormalGrass, 6);
         else
             StartAshFieldEffect(x, y, METATILE_Lavaridge_NormalGrass, 4);
 
