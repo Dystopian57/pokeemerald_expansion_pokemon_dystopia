@@ -294,6 +294,49 @@ extern const u16 gBattleEnvironmentPalette_StadiumGlacia[];
 extern const u16 gBattleEnvironmentPalette_StadiumDrake[];
 extern const u16 gBattleEnvironmentPalette_StadiumWallace[];
 
+
+extern const u32 gBattleEnvironmentTiles_longgreengrass[];
+extern const u32 gBattleEnvironmentTilemap_longgreengrass[];
+extern const u32 gBattleEnvironmentAnimTiles_longgreengrass[];
+extern const u32 gBattleEnvironmentAnimTilemap_longgreengrass[];
+extern const u16 gBattleEnvironmentPalette_longgreengrass[];
+
+extern const u32 gBattleEnvironmentTiles_whitesand[];
+extern const u32 gBattleEnvironmentTilemap_whitesand[];
+extern const u32 gBattleEnvironmentAnimTiles_whitesand[];
+extern const u32 gBattleEnvironmentAnimTilemap_whitesand[];
+extern const u16 gBattleEnvironmentPalette_whitesand[];
+
+extern const u32 gBattleEnvironmentTiles_brownwater[];
+extern const u32 gBattleEnvironmentTilemap_brownwater[];
+extern const u32 gBattleEnvironmentAnimTiles_brownwater[];
+extern const u32 gBattleEnvironmentAnimTilemap_brownwater[];
+extern const u16 gBattleEnvironmentPalette_brownwater[];
+
+extern const u32 gBattleEnvironmentTiles_greenwater[];
+extern const u32 gBattleEnvironmentTilemap_greenwater[];
+extern const u32 gBattleEnvironmentAnimTiles_greenwater[];
+extern const u32 gBattleEnvironmentAnimTilemap_greenwater[];
+extern const u16 gBattleEnvironmentPalette_greenwater[];
+
+extern const u32 gBattleEnvironmentTiles_snowy[];
+extern const u32 gBattleEnvironmentTilemap_snowy[];
+extern const u32 gBattleEnvironmentAnimTiles_snowy[];
+extern const u32 gBattleEnvironmentAnimTilemap_snowy[];
+extern const u16 gBattleEnvironmentPalette_snowy[];
+
+extern const u32 gBattleEnvironmentTiles_greensand[];
+extern const u32 gBattleEnvironmentTilemap_greensand[];
+extern const u32 gBattleEnvironmentAnimTiles_greensand[];
+extern const u32 gBattleEnvironmentAnimTilemap_greensand[];
+extern const u16 gBattleEnvironmentPalette_greensand[];
+
+extern const u32 gBattleEnvironmentTiles_greycave[];
+extern const u32 gBattleEnvironmentTilemap_greycave[];
+extern const u32 gBattleEnvironmentAnimTiles_greycave[];
+extern const u32 gBattleEnvironmentAnimTilemap_greycave[];
+extern const u16 gBattleEnvironmentPalette_greycave[];
+
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
 extern const u16 gPokedexBgHoenn_Pal[];

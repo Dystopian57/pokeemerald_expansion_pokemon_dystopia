@@ -30311,7 +30311,7 @@ gBattleAnimMove_SecretPower::
 	jumpargeq 0, STATUS_FIELD_PSYCHIC_TERRAIN,  gBattleAnimMove_Confusion
 	createvisualtask AnimTask_GetBattleEnvironment, 5
 	jumpargeq 0, BATTLE_ENVIRONMENT_GRASS,          gBattleAnimMove_NeedleArm
-	jumpargeq 0, BATTLE_ENVIRONMENT_GREENGRASS,          gBattleAnimMove_NeedleArm
+	jumpargeq 0, BATTLE_ENVIRONMENT_GREENGRASS,     gBattleAnimMove_NeedleArm
 	jumpargeq 0, BATTLE_ENVIRONMENT_LONG_GRASS,     gBattleAnimMove_MagicalLeaf
 	jumpargeq 0, BATTLE_ENVIRONMENT_SAND,           gBattleAnimMove_MudShot
 	jumpargeq 0, BATTLE_ENVIRONMENT_UNDERWATER,     gBattleAnimMove_Waterfall
@@ -30331,6 +30331,15 @@ gBattleAnimMove_SecretPower::
 	jumpargeq 0, BATTLE_ENVIRONMENT_DISTORTION_WORLD, gBattleAnimMove_Pound
 	jumpargeq 0, BATTLE_ENVIRONMENT_SPACE,          gBattleAnimMove_Swift
 	jumpargeq 0, BATTLE_ENVIRONMENT_ULTRA_SPACE,    gBattleAnimMove_Psywave
+
+	jumpargeq 0, BATTLE_ENVIRONMENT_LONGGREENGRASS,gBattleAnimMove_MagicalLeaf
+	jumpargeq 0, BATTLE_ENVIRONMENT_WHITESAND,     gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_BROWNWATER,    gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_GREENWATER,    gBattleAnimMove_Psywave
+	jumpargeq 0, BATTLE_ENVIRONMENT_SNOWY,         gBattleAnimMove_Avalanche
+	jumpargeq 0, BATTLE_ENVIRONMENT_GREYCAVE,      gBattleAnimMove_Bite
+	jumpargeq 0, BATTLE_ENVIRONMENT_GREENSAND,     gBattleAnimMove_MudShot
+
 .if B_SECRET_POWER_ANIMATION >= GEN_7
 	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_IceShard
 	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_SpitUp

@@ -25,14 +25,21 @@ static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG
 static const TaskFunc sBattleIntroSlideFuncs[] =
 {
     [BATTLE_ENVIRONMENT_GRASS]      = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_GREENGRASS]      = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_GREENGRASS] = BattleIntroSlide1,
     [BATTLE_ENVIRONMENT_LONG_GRASS] = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_LONGGREENGRASS] = BattleIntroSlide1,
     [BATTLE_ENVIRONMENT_SAND]       = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_WHITESAND]       = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_GREENSAND]       = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_SNOWY]       = BattleIntroSlide2,
     [BATTLE_ENVIRONMENT_UNDERWATER] = BattleIntroSlide2,
     [BATTLE_ENVIRONMENT_WATER]      = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_BROWNWATER]      = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_GREENWATER]      = BattleIntroSlide2,
     [BATTLE_ENVIRONMENT_POND]       = BattleIntroSlide1,
     [BATTLE_ENVIRONMENT_MOUNTAIN]   = BattleIntroSlide1,
     [BATTLE_ENVIRONMENT_CAVE]       = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_GREYCAVE]       = BattleIntroSlide1,
     [BATTLE_ENVIRONMENT_BUILDING]   = BattleIntroSlide3,
     [BATTLE_ENVIRONMENT_PLAIN]      = BattleIntroSlide3,
 };
@@ -299,7 +306,12 @@ static void BattleIntroSlide2(u8 taskId)
     switch (gTasks[taskId].tEnvironment)
     {
     case BATTLE_ENVIRONMENT_SAND:
+    case BATTLE_ENVIRONMENT_WHITESAND:
+    case BATTLE_ENVIRONMENT_GREENSAND:
+    case BATTLE_ENVIRONMENT_SNOWY:
     case BATTLE_ENVIRONMENT_WATER:
+    //case BATTLE_ENVIRONMENT_BROWNWATER:
+    case BATTLE_ENVIRONMENT_GREENWATER:
         gBattle_BG1_X += 8;
         break;
     case BATTLE_ENVIRONMENT_UNDERWATER:
