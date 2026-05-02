@@ -310,7 +310,7 @@ static void BattleIntroSlide2(u8 taskId)
     case BATTLE_ENVIRONMENT_GREENSAND:
     case BATTLE_ENVIRONMENT_SNOWY:
     case BATTLE_ENVIRONMENT_WATER:
-    //case BATTLE_ENVIRONMENT_BROWNWATER:
+    case BATTLE_ENVIRONMENT_BROWNWATER:
     case BATTLE_ENVIRONMENT_GREENWATER:
         gBattle_BG1_X += 8;
         break;
