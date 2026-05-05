@@ -8,7 +8,7 @@ ConcordCustoms_MapScripts::
 script ConcordWageSlaveAtPhone {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	if (!flag (concordwageslave ))
+	if (!flag (concordwageslave))
 	
 	{
 
@@ -27,7 +27,7 @@ script ConcordWageSlaveAtPhone {
 	applymovement (2, moves(face_player))
 	msgbox(format("And what do YOU want!? Screw you too!!"))
 	trainerbattle_no_intro(TRAINER_CONCORDWAGESLAVE , ConcordWageSlave_Outro)
-	
+	setflag (concordwageslave)
 	
 	}
 
@@ -35,7 +35,7 @@ script ConcordWageSlaveAtPhone {
 	
 	{
 	msgbox(format("I shouldn't have snapped at you like that. I was just really frustrated.
-	\p I don't know what I'm going to do now. I guess wait here a bit to figure it out."))
+	\p I don't know what I'm going to do now. I guess I'll wait here to figure it out."))
 	}
 
 	release}
@@ -56,7 +56,7 @@ script ConcordFemaleDevon {
 
 	else {
 	msgbox(format("We appreciate your help when we dealt with that con artist. \p He makes a profit
-	off smuggling Pokémon eggs, in and out the Internment Zone. \p If he shows his mug around here again,
+	off smuggling Pokémon eggs, in and out the Rebel Zone. \p If he shows his mug around here again,
 	we'll catch him for sure!"))
 	}}
 
@@ -166,29 +166,29 @@ script ConcordCustomsClerkStops3 {
 
 
 script ConcordCustomsBookshelf {
-    lockall
+    lock
     msgbox(format("The shelf is full of travel brochures."))
     releaseall
     }
 
 script ConcordCustomsPoster{
-    lockall
+    lock
     msgbox(format("Devon Visa - your ticket to freedom across Hoenn.\l Applications reopening soon!"))
     releaseall
     }
 
 script ConcordCustomsPhone{
-    lockall
+    lock
     msgbox(format("It's a paid phone for people without Devon Navs."))
     releaseall
     }
 
 
 script ConcordVendingMachine {
-    lockall
+    lock
     msgbox(format("It's a vending machine."))
     showmoneybox (18, 0)
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥")
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥", "Leave")
     
             //Fresh Water
             if(var(VAR_RESULT) == 0){
@@ -349,6 +349,9 @@ script ConcordVendingMachine {
                 }
             }
     
+		if(var(VAR_RESULT) == 3){
+		goto (cendvendingmachine)
+		}
     cendvendingmachine:
     hidemoneybox
     releaseall

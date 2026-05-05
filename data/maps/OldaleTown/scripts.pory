@@ -7,7 +7,10 @@ raw `
 
 mapscripts OldaleTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: OldaleWeather
-    MAP_SCRIPT_ON_TRANSITION: GenderedSpriteOldale}
+    MAP_SCRIPT_ON_TRANSITION: GenderedSpriteOldale
+    
+    MAP_SCRIPT_ON_LOAD: OldaleWeather
+    MAP_SCRIPT_ON_LOAD: GenderedSpriteOldale}
 	
 
 
@@ -90,10 +93,10 @@ script ConArtist103Rewards {
 
 
 script OldaleVendingMachine {
-    lockall
+    lock
     msgbox(format("It's a vending machine."))
     showmoneybox (18, 0)
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥")
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥", "Leave")
     
             //Fresh Water
             if(var(VAR_RESULT) == 0){
@@ -254,6 +257,9 @@ script OldaleVendingMachine {
                 }
             }
     
+    if(var(VAR_RESULT) == 4){
+        goto (endvendingmachine)
+    }
     endvendingmachine:
     hidemoneybox
     releaseall
@@ -271,19 +277,19 @@ script MachineShake{
 
 
 script OldaleTownSign {
-    lockall
+    lock
     msgbox(format("Oldale Town. \n “Where things start off scarce.”"))
     releaseall   
 }
 
 script Oldale103Sign {
-    lockall
+    lock
     msgbox(format("Route 103 ahead. \p In case of flood, retreat behind the flood gates."))
     releaseall   
 }
 
 script OldaleDLCSign {
-    lockall
+    lock
     msgbox(format("Devon Learning Center.\n“Come learn in a safe environment.”"))
     releaseall   
 }
@@ -321,7 +327,7 @@ script OldaleOutsideParkNPC {
 
     if (!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN))
     {
-    msgbox(format("I hear there's people in the Internment Zone who get crazy rich by selling ores, pearls and other high value items.
+    msgbox(format("I hear there's people in the Rebel Zone who get crazy rich by selling ores, pearls and other high value items.
     \p Do you know where to find those though? Cause I sure don't, or I wouldn't be sitting here!"))
     }
 
@@ -352,7 +358,7 @@ script OldaleOutsideOldGuy {
     }
 
 script OldaleTown_GotoTherapy{
-	lockall
+	lock
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 6))
     waitmovement(0)
@@ -368,7 +374,7 @@ script OldaleTown_GotoTherapy{
 }
 
 script OldaleSharpyCameliaOutDLCCutscene {
-    lockall
+    lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
@@ -575,7 +581,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     }
 
 script OldaleCamelia {
-    lockall
+    lock
 
     if (flag (saidnotosharpyinoldale))
     {
@@ -618,13 +624,19 @@ script OldaleCamelia {
     }
 
 script Rivalfollowchat {
-    lockall
+    lock
     msgbox(format("Let's quick some Devon ass."))
     releaseall   
 }
 
 script OldaleRivalFollower {
-  	setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, Rivalfollowchat, PARTNER_STEVEN)  
+	checkplayergender
+		if(var(VAR_RESULT) == MALE)
+        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, Rivalfollowchat, PARTNER_RIVAL_FEMALE)}
+
+        if(var(VAR_RESULT) == FEMALE)
+        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, Rivalfollowchat, PARTNER_RIVAL_MALE)}
+
 }
 
 text DevonGruntFOutro{
@@ -635,7 +647,7 @@ text DevonGruntMOutro{
 
 
 script OldaleDevonGrunts { //karen and jerry
-    lockall
+    lock
     msgbox(format("Multi-battle test."))
     trainerbattle_two_trainers (TRAINER_OLDALEDEVONGRUNT_F, DevonGruntFOutro, TRAINER_OLDALEDEVONGRUNT_M, DevonGruntMOutro)
 

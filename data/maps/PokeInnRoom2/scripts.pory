@@ -20,3 +20,69 @@ script DevonInnSignAboutFreezer {
 	msgbox(format("With each visit, remember to check the freezer for a free drink!"))
 	release
 }
+
+
+
+script OldalePokeCenterInnPrograms {
+    lock
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Devon News", "Weather Channel")
+
+	if (var(VAR_RESULT) == 0) {
+		random (0)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0: goto (OldaleWarehouseNews)
+		//case 1: goto (Devotionad)
+		//case 2: goto (Safemonad)
+		//case 3: goto (Lifeindustriesad)
+		//case 4: goto (Devoncenterad)
+		//case 5: goto (Rebelhackersad)
+		//case 6: goto (Devonnetad)
+		}
+	}
+
+	if (var(VAR_RESULT) == 1) {
+		if (!flag (seenweatheratinnvisit))
+			{random (1)
+			copyvar (VAR_TEMP_1, VAR_RESULT)
+			switch (var(VAR_RESULT))
+			{case 0: goto (Route103WeatherNews)
+			case 1: goto (Route102WeatherNews)
+			//case 2: goto (Safemonad)
+			//case 3: goto (Lifeindustriesad)
+			//case 4: goto (Devoncenterad)
+			//case 5: goto (Rebelhackersad)
+			//case 6: goto (Devonnetad)
+			}
+
+			setflag (seenweatheratinnvisit)}
+		else {msgbox(format("The weather broadcast has ended..."))}
+	}
+	
+	
+
+
+    releaseall
+    }
+
+	//NEWS BELOW
+
+	script OldaleWarehouseNews {
+		msgbox(format("Oldale Warehouse News go here."))
+		end	
+	}
+
+	//WEATHERS BELOW
+
+	script Route103WeatherNews {
+		msgbox(format("There is rain in Route 103!"))
+		setvar(VAR_ROUTE103_WEATHER, 1)
+		release
+	}
+
+	script Route102WeatherNews {
+		msgbox(format("There is a sandstorm in Route 102!"))
+		//setvar(VAR_ROUTE103_WEATHER, 1)
+		release
+	}

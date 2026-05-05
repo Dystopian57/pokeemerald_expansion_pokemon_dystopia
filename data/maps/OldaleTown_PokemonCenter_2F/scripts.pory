@@ -51,6 +51,7 @@ script InnNPCStopsPlayerfromInn {
 					to enter."))
 					hidemoneybox
 					giveitem (ITEM_CARD_KEY)
+					clearflag (seenweatheratinnvisit)
 					//setobjectxyperm (3, 0, 0)
 					//setmetatile (3, 1, METATILE_General_Door_PokeCenter, FALSE)
 					goto (enddevoninnscript2)}
@@ -61,6 +62,8 @@ script InnNPCStopsPlayerfromInn {
 					msgbox(format("We hope we can welcome you in another ocassion!"))
 					applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 					waitmovement (OBJ_EVENT_ID_PLAYER)
+					applymovement (1, moves(face_down))
+					waitmovement (1)
 					goto (enddevoninnscript2)}
 		}
 
@@ -84,7 +87,10 @@ script InnNPCStopsPlayerfromInn {
 }
   
 script DevonInnNPC {
-	startinnnpcscript:
+	checkitem (ITEM_CARD_KEY)
+	goto_if_eq (VAR_RESULT, TRUE, pleaseenjoystay)
+	goto_if_eq (VAR_RESULT, FALSE, startinnnpcdialogue)
+	startinnnpcdialogue:
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (1, moves(face_player))
@@ -126,7 +132,10 @@ script DevonInnNPC {
 
 		if (var(VAR_RESULT) == 2) {
 				msgbox(format("Very well. We hope we can welcome you in another ocassion!"))
+				goto (enddevoninnscript)
 		}
+	pleaseenjoystay:
+	msgbox(format("Please enjoy your stay! And keep your Pokémon in their Pokéballs."))
 
 	enddevoninnscript:
 	releaseall
@@ -141,6 +150,9 @@ script DevonInnTakeKey {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	applymovement (1, moves(face_down))
+	waitmovement (1)
 	msgbox(format("We hope you enjoyed your stay. I will take your Guest Card now. \p Please
 	visit us again!"))
 	removeitem (ITEM_CARD_KEY)

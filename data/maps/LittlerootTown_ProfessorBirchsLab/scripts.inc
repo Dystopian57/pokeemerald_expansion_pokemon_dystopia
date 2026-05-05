@@ -2029,7 +2029,7 @@ Lights_7:
 
 Littleroot_Idletalk_Aidee::
 # 1019 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1020 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 1021 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -2249,7 +2249,7 @@ Littleroot_Idletalk_Aidee_21:
 
 AideeFollowingChat::
 # 1125 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1126 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
 # 1127 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -2269,7 +2269,7 @@ AideeFollowingChat::
 
 SafemonLore::
 # 1136 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1137 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 startSafemonlore:
 # 1138 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -2362,7 +2362,7 @@ SafemonLore_14:
 
 Littleroot_Idletalk_Prof::
 # 1194 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1195 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 1196 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -2842,7 +2842,7 @@ NicknameBoxMon3_2:
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue::
 # 1414 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1415 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	special SpawnCameraObject
 # 1416 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -2971,7 +2971,7 @@ LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_3:
 
 LittlerootTown_Eventscript_ProffessorDontgo1::
 # 1487 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1488 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
 # 1489 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -2999,7 +2999,7 @@ LittlerootTown_Eventscript_ProffessorDontgo1::
 
 LittlerootTown_Eventscript_ProffessorDontgo2::
 # 1501 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1502 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
 # 1503 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3027,7 +3027,7 @@ LittlerootTown_Eventscript_ProffessorDontgo2::
 
 LittlerootTown_Eventscript_ProffessorNoPokesUpstairs::
 # 1516 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1517 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1518 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3063,7 +3063,7 @@ LittlerootTown_Eventscript_ProffessorNoPokesUpstairs::
 
 LittlerootTown_Eventscript_ProffessorNoDoor::
 # 1534 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1535 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1536 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3099,7 +3099,7 @@ LittlerootTown_Eventscript_ProffessorNoDoor::
 
 LittlerootTown_Eventscript_Aideenotthere::
 # 1554 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1555 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1556 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3135,7 +3135,7 @@ LittlerootTown_Eventscript_Aideenotthere::
 
 LittlerootTown_Eventscript_ProffessorGotoOldale::
 # 1572 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1573 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, LittlerootTown_Eventscript_ProffessorGotoOldale_Movement_0
 # 1574 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3167,7 +3167,7 @@ LittlerootTown_Eventscript_ProffessorGotoOldale::
 
 LittlerootTown_Eventscript_AideeGotoback::
 # 1588 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1589 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_POKEBALL
 # 1590 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3191,7 +3191,7 @@ LittlerootTown_Eventscript_AideeGotoback::
 
 Lab_EventScript_Starter1::
 # 1606 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1607 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1608 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3424,7 +3424,7 @@ Profturningback1:
 
 Lab_EventScript_Starter2::
 # 1732 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1733 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1734 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3631,7 +3631,7 @@ NicknameBoxMon2_2:
 
 Lab_EventScript_Starter3::
 # 1841 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1842 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER1, Lab_EventScript_Starter3_4
 Lab_EventScript_Starter3_3:
@@ -3706,7 +3706,7 @@ Lab_EventScript_Starter3_6:
 
 LabBrokenGlasses::
 # 1877 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1878 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset FLAG_ITEM_LAB_GLASSES, LabBrokenGlasses_2
 # 1883 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3728,7 +3728,7 @@ LabBrokenGlasses_2:
 
 LabShelves::
 # 1888 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1889 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabShelves_Text_0
 # 1891 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3738,7 +3738,7 @@ LabShelves::
 
 LabMonitor::
 # 1895 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1896 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabMonitor_Text_0
 # 1897 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3748,7 +3748,7 @@ LabMonitor::
 
 BalsamDontCheckMyPC::
 # 1901 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1902 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1903 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3772,7 +3772,7 @@ BalsamDontCheckMyPC::
 
 LabBox::
 # 1913 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1914 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabBox_Text_0
 # 1915 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3782,7 +3782,7 @@ LabBox::
 
 LabSealedBox::
 # 1919 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1920 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabSealedBox_Text_0
 # 1921 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3792,7 +3792,7 @@ LabSealedBox::
 
 LabBirchBag::
 # 1925 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1926 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabBirchBag_Text_0
 # 1927 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3802,7 +3802,7 @@ LabBirchBag::
 
 LabDiglettBook::
 # 1931 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1932 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabDiglettBook_Text_0
 # 1934 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3812,7 +3812,7 @@ LabDiglettBook::
 
 LabCoffee::
 # 1938 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1939 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset FLAG_ITEM_LAB_COFFEE, LabCoffee_2
 # 1959 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -3860,7 +3860,7 @@ LabCoffee_2:
 
 BalsamgivesPokenav::
 # 1964 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	lock
 # 1965 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1966 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"

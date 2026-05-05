@@ -48,7 +48,7 @@ script ReportersGreatCrater {
 	applymovement (3, moves(face_player))
 
 	msgbox(format("Ah, look, Dan - an interesting-looking local just approached us!
-	\p We're from Devon TV, and we're filming a documentary about the Internment Zone!
+	\p We're from Devon TV, and we're filming a documentary about the Rebel Zone!
 	\p However, our footage right now is lacking a bit of... flair."))
 	applymovement (2, moves(walk_in_place_left))
 	msgbox(format("To put it plainly, it's quite boring."))

@@ -1861,7 +1861,7 @@ releaseall
 }
 
 script Littleroot_Player_Mailbox {
-lockall
+lock
 	if (!flag (FLAG_ITEM_LITTLEROOT_MAILBOX))
 	{msgbox (format("There's a package inside the mailbox. A letter is attached to it.
 	\p For your invaluable service to the region,
@@ -1874,38 +1874,38 @@ lockall
 }
 
 script Littleroot_Rival_Mailbox {
-lockall
+lock
 msgbox (format("The mailbox is empty."))
 releaseall
 }
 
 script Littleroot_RivalHouseSign {
-lockall
+lock
 msgbox (format("{RIVAL}'s house."))
 releaseall
 }
 
 script Littleroot_LabSign {
-lockall
+lock
 msgbox (format("Littleroot's Pokémon Lab."))
 releaseall
 }
 
 script Littleroot_CemeterySign {
-lockall
+lock
 msgbox (format("East - Littleroot Cemetery."))
 releaseall
 }
 
 script Littleroot_TownSign {
-lockall
+lock
 msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Littleroot Town\pA t-wn t-at -an't be sh--ed -ny -ue.'\p
 {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The elements have faded most of the writing."))
 releaseall
 }
 
 script LittlerootTown_Trigger_Blocknopokes{
-	lockall
+	lock
 	msgbox ("Professor Balsam is waiting at the lab...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
@@ -1913,7 +1913,7 @@ script LittlerootTown_Trigger_Blocknopokes{
 }
 
 script LittlerootTown_Trigger_Blockgorival{
-	lockall
+	lock
 	msgbox ("I should check on {RIVAL}...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
@@ -1921,7 +1921,7 @@ script LittlerootTown_Trigger_Blockgorival{
 }
 
 script LittlerootTown_Trigger_Blocknopokesnocemetery{
-	lockall
+	lock
 	msgbox ("I better go to the lab first...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 	waitmovement
@@ -1929,7 +1929,7 @@ script LittlerootTown_Trigger_Blocknopokesnocemetery{
 }
 
 script LittlerootTown_Trigger_Blockgorivalnocemetery{
-	lockall
+	lock
 	msgbox ("I should check on {RIVAL}...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 	waitmovement
@@ -1937,7 +1937,7 @@ script LittlerootTown_Trigger_Blockgorivalnocemetery{
 }
 
 script LittlerootTown_Trigger_NoEnterRival1{
-	lockall
+	lock
 	msgbox (format("Someone is yelling inside..."))
 	//checkplayergender
 	//if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
@@ -1972,7 +1972,7 @@ script RivalShake {
 }
 
 script Littleroot_Idletalk_Oldman{
-	lockall
+	lock
 	applymovement (1, moves(face_player))
 	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BIRCH])
@@ -2013,7 +2013,7 @@ script Littleroot_Idletalk_Oldman{
 }
 
 script LittlerootTown_Eventscript_Oldmanasking {
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (checkonrival))
 		{playse (SE_PIN)
@@ -2057,7 +2057,7 @@ script LittlerootTown_Eventscript_Oldmanasking {
 }
 
 script OldManThanks {
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	msgbox (format("Ah, {PLAYER}!"))
 	removefieldmugshot

@@ -1,16 +1,4 @@
 raw `
-Route103_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route103_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, Route103_OnLoad
-	.byte 0
-
-Route103_OnLoad:
-end
-
-Route103_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
-	call ProfBirch_EventScript_UpdateLocation
-	end
 
 Route103_Movement_RivalExitFacingNorth1:
 	walk_left
@@ -217,6 +205,44 @@ Route103_Text_RouteSign:
 
 
 `
+
+
+mapscripts Route103_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: Route103Weather}
+
+
+
+
+
+script Route103Weather {
+
+			goto_if_eq (VAR_ROUTE103_WEATHER, 0, Route103Shade)
+			goto_if_eq (VAR_ROUTE103_WEATHER, 1, Route103Rain1)
+			goto_if_eq (VAR_ROUTE103_WEATHER, 2, Route103Rain2)
+			goto_if_eq (VAR_ROUTE103_WEATHER, 3, Route103EndRain)
+
+	release
+}
+
+script Route103Shade {
+	setweather (WEATHER_SHADE)
+}
+
+script Route103Rain1 {
+	setweather (WEATHER_RAIN)
+	setvar(VAR_ROUTE103_WEATHER, 2)
+}
+
+script Route103Rain2 {
+	setweather (WEATHER_RAIN)
+	setvar(VAR_ROUTE103_WEATHER, 3)
+}
+
+
+script Route103EndRain {
+	setweather (WEATHER_RAIN)
+	setvar(VAR_ROUTE103_WEATHER, 0)
+}
 
 script Sharpy103 {
 	lockall
@@ -1076,7 +1102,7 @@ script FisherGuruRoute103 {
 	release
 	}
 
-	//msgbox(format("It sure is tough being a fisher in the Internment Zone... \p The sea is poisoned,
+	//msgbox(format("It sure is tough being a fisher in the Rebel Zone... \p The sea is poisoned,
 	//the rivers are muddy. Most of my fishing buddies have moved up north. \p But I am built different.
 	//I will not give up until I fish the great mudc-..."))
 

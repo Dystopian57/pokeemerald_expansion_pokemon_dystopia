@@ -3678,7 +3678,7 @@ Littleroot_Techguy_Talk_9:
 
 Littleroot_Player_Mailbox::
 # 1864 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1865 "data/maps/LittlerootTown/scripts.pory"
 	goto_if_unset FLAG_ITEM_LITTLEROOT_MAILBOX, Littleroot_Player_Mailbox_2
 # 1872 "data/maps/LittlerootTown/scripts.pory"
@@ -3702,7 +3702,7 @@ Littleroot_Player_Mailbox_2:
 
 Littleroot_Rival_Mailbox::
 # 1877 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1878 "data/maps/LittlerootTown/scripts.pory"
 	msgbox Littleroot_Player_Mailbox_Text_1
 # 1879 "data/maps/LittlerootTown/scripts.pory"
@@ -3712,7 +3712,7 @@ Littleroot_Rival_Mailbox::
 
 Littleroot_RivalHouseSign::
 # 1883 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1884 "data/maps/LittlerootTown/scripts.pory"
 	msgbox Littleroot_RivalHouseSign_Text_0
 # 1885 "data/maps/LittlerootTown/scripts.pory"
@@ -3722,7 +3722,7 @@ Littleroot_RivalHouseSign::
 
 Littleroot_LabSign::
 # 1889 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1890 "data/maps/LittlerootTown/scripts.pory"
 	msgbox Littleroot_LabSign_Text_0
 # 1891 "data/maps/LittlerootTown/scripts.pory"
@@ -3732,7 +3732,7 @@ Littleroot_LabSign::
 
 Littleroot_CemeterySign::
 # 1895 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1896 "data/maps/LittlerootTown/scripts.pory"
 	msgbox Littleroot_CemeterySign_Text_0
 # 1897 "data/maps/LittlerootTown/scripts.pory"
@@ -3742,7 +3742,7 @@ Littleroot_CemeterySign::
 
 Littleroot_TownSign::
 # 1901 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1902 "data/maps/LittlerootTown/scripts.pory"
 	msgbox Littleroot_TownSign_Text_0
 # 1904 "data/maps/LittlerootTown/scripts.pory"
@@ -3752,7 +3752,7 @@ Littleroot_TownSign::
 
 LittlerootTown_Trigger_Blocknopokes::
 # 1908 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1909 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_Blocknopokes_Text_0
 # 1910 "data/maps/LittlerootTown/scripts.pory"
@@ -3766,7 +3766,7 @@ LittlerootTown_Trigger_Blocknopokes::
 
 LittlerootTown_Trigger_Blockgorival::
 # 1916 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1917 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_Blockgorival_Text_0
 # 1918 "data/maps/LittlerootTown/scripts.pory"
@@ -3780,7 +3780,7 @@ LittlerootTown_Trigger_Blockgorival::
 
 LittlerootTown_Trigger_Blocknopokesnocemetery::
 # 1924 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1925 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_Blocknopokesnocemetery_Text_0
 # 1926 "data/maps/LittlerootTown/scripts.pory"
@@ -3794,7 +3794,7 @@ LittlerootTown_Trigger_Blocknopokesnocemetery::
 
 LittlerootTown_Trigger_Blockgorivalnocemetery::
 # 1932 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1933 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_Blockgorival_Text_0
 # 1934 "data/maps/LittlerootTown/scripts.pory"
@@ -3808,7 +3808,7 @@ LittlerootTown_Trigger_Blockgorivalnocemetery::
 
 LittlerootTown_Trigger_NoEnterRival1::
 # 1940 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1941 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Trigger_NoEnterRival1_Text_0
 # 1945 "data/maps/LittlerootTown/scripts.pory"
@@ -3856,7 +3856,7 @@ RivalShake::
 
 Littleroot_Idletalk_Oldman::
 # 1975 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 1976 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 1, Littleroot_Techguy_Talk_Movement_0
 # 1977 "data/maps/LittlerootTown/scripts.pory"
@@ -3967,7 +3967,7 @@ Littleroot_Idletalk_Oldman_30:
 
 LittlerootTown_Eventscript_Oldmanasking::
 # 2016 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 2017 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 2018 "data/maps/LittlerootTown/scripts.pory"
@@ -4042,7 +4042,7 @@ LittlerootTown_Eventscript_Oldmanasking_10:
 
 OldManThanks::
 # 2060 "data/maps/LittlerootTown/scripts.pory"
-	lockall
+	lock
 # 2061 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 2062 "data/maps/LittlerootTown/scripts.pory"

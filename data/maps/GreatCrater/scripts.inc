@@ -583,8 +583,7 @@ ReportersGreatCrater_Text_0:
 	.string "Ah, look, Dan - an interesting-looking\n"
 	.string "local just approached us!\p"
 	.string "We're from Devon TV, and we're filming a\n"
-	.string "documentary about the Internment\l"
-	.string "Zone!\p"
+	.string "documentary about the Rebel Zone!\p"
 	.string "However, our footage right now is\n"
 	.string "lacking a bit of... flair.$"
 

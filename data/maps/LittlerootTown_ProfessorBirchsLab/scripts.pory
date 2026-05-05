@@ -1016,7 +1016,7 @@ script Lights {
 
 
 script Littleroot_Idletalk_Aidee{
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (5, moves(face_player))
 	setspeaker ([SP_NAME_AIDEE])
@@ -1122,7 +1122,7 @@ script Littleroot_Idletalk_Aidee{
 
 }
 	script AideeFollowingChat {
-	lockall
+	lock
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Ooh yes... this time it'll work! It has to!"))	
@@ -1133,7 +1133,7 @@ script Littleroot_Idletalk_Aidee{
 	}
 
 script SafemonLore {
-	lockall
+	lock
 	startSafemonlore:
 	msgbox (format("'Introduction to Safemon Classification, by Devon Corporation.'
 	\p Hmm... which chapter should I read?"))
@@ -1191,7 +1191,7 @@ script SafemonLore {
 
 
 script Littleroot_Idletalk_Prof{
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
@@ -1411,7 +1411,7 @@ script NicknameBoxMon3{
 //TRIGGER SCRIPTS
 
 script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
-	lockall
+	lock
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 3))
     waitmovement(0)
@@ -1484,7 +1484,7 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 	releaseall}
 
 script LittlerootTown_Eventscript_ProffessorDontgo1 {
-	lockall
+	lock
 	applymovement (4, moves(face_down))
 	playse (SE_M_SWAGGER2)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
@@ -1498,7 +1498,7 @@ script LittlerootTown_Eventscript_ProffessorDontgo1 {
 	releaseall}
 
 script LittlerootTown_Eventscript_ProffessorDontgo2 {
-	lockall
+	lock
 	applymovement (4, moves(face_down))
 	playse (SE_M_SWAGGER2)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
@@ -1513,7 +1513,7 @@ script LittlerootTown_Eventscript_ProffessorDontgo2 {
 	releaseall}
 
 script LittlerootTown_Eventscript_ProffessorNoPokesUpstairs {
-	lockall
+	lock
 	applymovement (4, moves(face_right))
 	waitmovement (4)
 	applymovement (4, moves(emote_exclamation_mark))
@@ -1531,7 +1531,7 @@ script LittlerootTown_Eventscript_ProffessorNoPokesUpstairs {
 	releaseall}
 
 script LittlerootTown_Eventscript_ProffessorNoDoor {
-	lockall
+	lock
 	applymovement (4, moves(face_right))
 	waitmovement (4)
 	applymovement (4, moves(emote_exclamation_mark))
@@ -1551,7 +1551,7 @@ script LittlerootTown_Eventscript_ProffessorNoDoor {
 }
 
 script LittlerootTown_Eventscript_Aideenotthere {
-	lockall
+	lock
 	applymovement (4, moves(face_right))
 	waitmovement (4)
 	applymovement (4, moves(emote_exclamation_mark))
@@ -1569,7 +1569,7 @@ script LittlerootTown_Eventscript_Aideenotthere {
 	releaseall
 }
 script LittlerootTown_Eventscript_ProffessorGotoOldale {
-	lockall
+	lock
 	applymovement (4, moves(emote_exclamation_mark face_right))
 	playse (SE_PIN)
 	waitmovement (4)
@@ -1585,7 +1585,7 @@ script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	releaseall	}
 
 script LittlerootTown_Eventscript_AideeGotoback {
-	lockall
+	lock
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
@@ -1603,7 +1603,7 @@ script LittlerootTown_Eventscript_AideeGotoback {
 
 script Lab_EventScript_Starter1{
  
-    lockall
+    lock
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
@@ -1729,7 +1729,7 @@ movement Profturningback1 {
 
 script Lab_EventScript_Starter2{
  
-    lockall
+    lock
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
 	applymovement (4, moves(face_down))
@@ -1838,7 +1838,7 @@ script NicknameBoxMon2{
 
 script Lab_EventScript_Starter3{
  
-    lockall
+    lock
 	if(!(flag(GOTSTARTER1) || flag(GOTSTARTER2) || flag(GOTSTARTER3)))
     {msgbox(format("The Pokéball is empty..."))
 	waitmessage
@@ -1874,7 +1874,7 @@ script Lab_EventScript_Starter3{
 }
 
 script LabBrokenGlasses {
-	lockall
+	lock
 	if (!flag (FLAG_ITEM_LAB_GLASSES))
 	{msgbox (format("Amid some rugged and shredded papers, you find something..."))
 	giveitem (ITEM_WISE_GLASSES)
@@ -1885,20 +1885,20 @@ script LabBrokenGlasses {
 }
  
 script LabShelves {
-lockall
+lock
 msgbox (format("The shelf is full of complicated books. The main subjects seem to be Pokémon genetics
 and biology."))
 releaseall
 }
 
 script LabMonitor {
-lockall
+lock
 msgbox (format("It's a monitor, apparently discarded."))
 releaseall
 }
 
 script BalsamDontCheckMyPC {
-	lockall
+	lock
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
 	applymovement (4, moves(face_player))
@@ -1910,32 +1910,32 @@ script BalsamDontCheckMyPC {
 	releaseall	}
 
 script LabBox {
-lockall
+lock
 msgbox (format("The box is empty."))
 releaseall
 }
 
 script LabSealedBox {
-lockall
+lock
 msgbox (format("It's a sealed box. Better not to open it."))
 releaseall
 }
 
 script LabBirchBag {
-lockall
+lock
 msgbox (format("It's an old leather bag. It seems weathered from years of use."))
 releaseall
 }
 
 script LabDiglettBook {
-lockall
+lock
 msgbox (format("A curious book stands on top of the pile. Its title reads 'Diglett Tunneling for
 Dummies.'"))
 releaseall
 }
 
 script LabCoffee{
-	lockall
+	lock
 	if (!flag (FLAG_ITEM_LAB_COFFEE))
 	{msgbox (format("There's a plastic cup of coffee by the mug..."))
 	giveitem (ITEM_HEAL_POWDER)
@@ -1961,7 +1961,7 @@ script LabCoffee{
 }
 
 script BalsamgivesPokenav {
-lockall
+lock
 createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 setspeaker ([SP_NAME_BALSAM])
 applymovement (4, moves(face_player))

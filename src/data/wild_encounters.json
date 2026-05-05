@@ -153,6 +153,144 @@
         },
         {
           "map": "MAP_ROUTE101",
+          "base_label": "gRoute101_Day",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_NINKABURI"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_SHIITAKO"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_POOCHAIN"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_ZIGZAGOON_GALAR"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NINKABURI"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SHIITAKO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_POOCHAIN"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ZIGZAGOON_GALAR"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_NINKABURI"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_SHIITAKO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_POOCHAIN"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON_GALAR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE101",
+          "base_label": "gRoute101_Evening",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_NINKABURI"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_SHIITAKO"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_POOCHAIN"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_ZIGZAGOON_GALAR"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NINKABURI"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SHIITAKO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_POOCHAIN"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ZIGZAGOON_GALAR"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_NINKABURI"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_SHIITAKO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_POOCHAIN"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON_GALAR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE101",
           "base_label": "gRoute101_Night",
           "land_mons": {
             "encounter_rate": 20,

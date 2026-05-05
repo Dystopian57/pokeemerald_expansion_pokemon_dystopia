@@ -141,6 +141,7 @@ script OldaleTown_Devon_Nurse {
 					incrementgamestat (GAME_STAT_USED_POKECENTER)
 					//if (GetGameStat(GAME_STAT_USED_POKECENTER) == 3)
 					//{msgbox(format("This is your third visit. This is for you."))}
+					hidemoneybox
 					goto (finishhealscript)
 
 					hidemoneybox
@@ -222,7 +223,8 @@ script OldalePokeCenterOldLady {
     lockall
     applymovement (3, moves(face_player))
     msgbox(format("It's so sad... it's mostly kids and old people like me round these parts.
-    \p Most people your age were sent to the war, and never returned. \p Like my son..."))
+    \p Most people your age were sent to the war, and never returned. \p Like my... ah, I'm sorry.
+	vent to strangers like this..."))
     releaseall
     }
 
@@ -238,7 +240,7 @@ script OldalePokeCenterMapBoy {
     lockall
     applymovement (7, moves(face_player))
     msgbox(format("In school we learnt that the region from Route 103 to Route 104 is called
-	the {COLOR GREEN}'Internment Zone'{COLOR DARK_GRAY}. \p It's a dangerous place where people who hate Devon have gathered,
+	the {COLOR GREEN}'Rebel Zone'{COLOR DARK_GRAY}. \p It's a dangerous place where people who hate Devon have gathered,
 	and you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} to get out of it."))
 	applymovement (7, moves(face_up))
     releaseall
@@ -258,10 +260,10 @@ script OldalePokeCenterBookshelf {
 
 script OldalePokeCenterTVKid {
     lockall
-    applymovement (4, moves(face_player))
+    applymovement (8, moves(face_player))
     msgbox(format("I've been watching this TV for half an hour, and there's been nothing but ads...\p
 	They say you can watch actual programs from the TVs in the inn rooms, but I'm a bit too broke for those."))
-	applymovement (4, moves(face_up))
+	applymovement (8, moves(face_up))
     releaseall
     }
 
@@ -272,89 +274,113 @@ script OldalePokeCenterTVAds {
 	copyvar (VAR_TEMP_1, VAR_RESULT)
 
 	switch (var(VAR_RESULT))
-	{case 0: goto (Devotionad)
-	case 1: goto (Devonballad)
+	{case 0: goto (Devonballad)
+	case 1: goto (Devotionad)
 	case 2: goto (Safemonad)
 	case 3: goto (Lifeindustriesad)
 	case 4: goto (Devoncenterad)
 	case 5: goto (Rebelhackersad)
+	case 6: goto (Devonnetad)
+
+
 	}
     releaseall
     }
 
-script Devotionad {
-	 msgbox(format("Health points, Power Points, Status Ailments... keeping your companions
-	 healthy requires a full bag! \p Is there not an easier way? \n Devon Co.'s answer is...
-	 yes!"))
-	 showmonpic(SPECIES_BULBASAUR, 10,3)
-	 msgbox(format("Our newest potion, 'Devotion', is the only medicine your Pokémon will ever
-	 need. \p Only for 1000¥, now available at Devon Centers all over Hoenn! \p Devotion -
-	 the only potion devoted to health. \n {COLOR LIGHT_GRAY}{SHADOW WHITE}Side effects not tested on all species.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
-	 hidemonpic
-	 releaseall
-}
-
 script Devonballad {
-	 showmonpic(SPECIES_BULBASAUR, 10,3)
-	 msgbox(format("Enhanced catch rate. Better grip. Light as a feather \n In short: engineered
+	 showmonpic(SPECIES_VIVILLON_ARCHIPELAGO, 10,3)
+	 msgbox(format("Enhanced catch rate. Better grip. Light as a feather. \p In short: engineered
 	 to perfection.\p Save time choosing the perfect ball, because it's always the same - the
 	 Devon Ball."))
 	 hidemonpic
-	 showmonpic(SPECIES_BULBASAUR, 10,3)
+	 showmonpic(SPECIES_VIVILLON_CONTINENTAL, 10,3)
 	 msgbox(format("Devon Ball. The only ball with no catch."))
 	 hidemonpic
 	 releaseall
 }
 
+script Devotionad {
+	 msgbox(format("Health points, Power Points, Status Ailments... keeping your companions
+	 healthy requires a full bag! \p Is there not an easier way? \n Devon Co.'s answer is...
+	 yes!"))
+	 showmonpic(SPECIES_VIVILLON_ELEGANT, 10,3)
+	 msgbox(format("Our newest potion, 'Devotion', is the only medicine your Pokémon will ever
+	 need. \p Only for 1000¥, now available at Devon Centers all over Hoenn! \p Devotion -
+	 the only potion devoted to health. \p {COLOR LIGHT_GRAY}{SHADOW WHITE}Side effects not tested on all species.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	 hidemonpic
+	 releaseall
+}
+
+
+
 script Safemonad {
-	 showmonpic(SPECIES_BULBASAUR, 10,3)
+	 showmonpic(SPECIES_VIVILLON_FANCY, 10,3)
 	 msgbox(format("Power. Volatility. Danger. \n Those are the defining traits of Pokémon."))
-
+	 hidemonpic
+	 showmonpic(SPECIES_VIVILLON_GARDEN, 10,3)
 	 msgbox(format("Control. Trust. Safety. \n Those are for Safemon."))
-
+	 hidemonpic
 	 msgbox(format("We at Devon choose the latter. And you?"))
 	 releaseall
 }
 
 script Lifeindustriesad {
-	showmonpic(SPECIES_BULBASAUR, 10,3)
+	showmonpic(SPECIES_VIVILLON_HIGH_PLAINS, 10,3)
 	msgbox(format("This is Davis. Every morning, in Route 116, Davis wakes up before dawn to
 	care for his crops, tend to his farm, and create the best produce in Hoenn."))
 	hidemonpic
-	showmonpic(SPECIES_HELIPIP, 10,3)
+	showmonpic(SPECIES_VIVILLON_JUNGLE, 10,3)
 	msgbox(format("The same produce that us, in Devon Life Industries, take fresh from his
 	land, directly to your plate."))
 	hidemonpic
+	showmonpic(SPECIES_VIVILLON_MARINE, 10,3)
 	msgbox(format("Devon Life Industries. Quality food, for quality people."))
+	hidemonpic
 	releaseall
 }
 
 script Devoncenterad {
-	showmonpic(SPECIES_BULBASAUR, 10,3)
+	showmonpic(SPECIES_VIVILLON_MEADOW, 10,3)
 	msgbox(format("When you are tired. When you are ill. When you are scared.
 	\p Whenever you are in need, Devon Centers are your one safe haven."))
 	hidemonpic
-	showmonpic(SPECIES_HELIPIP, 10,3)
-	msgbox(format("Devon Centers. Keeping you safe, 24/7. \l
+	showmonpic(SPECIES_VIVILLON_MODERN, 10,3)
+	msgbox(format("Devon Centers. Keeping you safe, 24/7. \p
 	{COLOR LIGHT_GRAY}{SHADOW WHITE}Fees may apply. Loitering not allowed.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	hidemonpic
 	 releaseall
 }
 
 script Rebelhackersad {
-	showmonpic(SPECIES_BULBASAUR, 10,3)
-	msgbox(format("We interrupt this commercial broadcast to announce our signal is be-ing
-	 compr*mised b-by Reb-… BZZT..."))
+	showmonpic(SPECIES_VIVILLON_MONSOON, 10,3)
+	msgbox(format("We interrupt this commercial broadcast to announce our signal is be-1ng
+	 c0mPromi!iis¥Ed b-bY R3b-… BZZT..."))
 	hidemonpic
-	showmonpic(SPECIES_HELIPIP, 10,3)
+	showmonpic(SPECIES_VIVILLON_OCEAN, 10,3)
 	msgbox(format("Hey. You. Are you sick of Safemon? Me too. Because they suck."))
-	showmonpic(SPECIES_HELIPIP, 10,3)
+	hidemonpic
+	showmonpic(SPECIES_VIVILLON_POKEBALL, 10,3)
 	msgbox(format("Everyday, Devon converts more than 100 Pokémon into Safemon.
-	\n But if you help us, we can get them down to 0."))
-	showmonpic(SPECIES_HELIPIP, 10,3)
+	\p But if you help us, we can get them down to 0."))
+	showmonpic(SPECIES_VIVILLON_POLAR, 10,3)
 	msgbox(format("If you are a coder - join us. If you aren't, we'll make you one."))
-	showmonpic(SPECIES_HELIPIP, 10,3)
+	showmonpic(SPECIES_VIVILLON_RIVER, 10,3)
 	msgbox(format("Join the Rebel Hackers today. For a world where we decide."))
 	hidemonpic
 	 releaseall
+}
+
+script Devonnetad {
+	showmonpic(SPECIES_VIVILLON_SANDSTORM, 10,3)
+	msgbox(format("In this day and age, people move fast.\p
+	So fast, you can feel you can't keep up with their lives.
+	Like you're being left behind."))
+	hidemonpic
+	showmonpic(SPECIES_VIVILLON_SAVANNA, 10,3)
+	msgbox(format("If you're feeling like that - then Devon Net is for you!
+	\p Devon Net is the place to check what your loved ones are up to - and meet new ones too! "))
+	hidemonpic
+	showmonpic(SPECIES_VIVILLON_SUN, 10,3)
+	msgbox(format("Devon Net - keeping you closer to yours."))
+	releaseall
 }

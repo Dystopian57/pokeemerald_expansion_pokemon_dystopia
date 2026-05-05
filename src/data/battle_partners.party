@@ -6,6 +6,45 @@ Gender: Male
 Music: Male
 Back Pic: Brendan
 
+
+=== PARTNER_RIVAL_MALE ===
+Name: {RIVAL}
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Basic Trainer
+
+Mimiyurui
+Quirky Nature
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Shadow Claw
+- Helping Hand
+- Substitute
+- Shadow Sneak
+
+=== PARTNER_RIVAL_FEMALE ===
+Name: {RIVAL}
+Class: Rival
+Pic: Brendan
+Gender: Female
+Music: Male
+Back Pic: MAY
+AI: Basic Trainer
+
+Mimiyurui
+Quirky Nature
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Shadow Claw
+- Helping Hand
+- Substitute
+- Shadow Sneak
+
 === PARTNER_STEVEN ===
 Name: STEVEN
 Class: Rival

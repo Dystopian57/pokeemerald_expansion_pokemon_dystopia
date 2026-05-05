@@ -2,7 +2,7 @@
   "id": "MAP_CONCORD_CUSTOMS",
   "name": "ConcordCustoms",
   "layout": "LAYOUT_CONCORD_CUSTOMS",
-  "music": "MUS_RG_NEW_GAME_INTRO",
+  "music": "MUS_UNOVAROUTEGATE",
   "region_map_section": "MAPSEC_BOND_BRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
