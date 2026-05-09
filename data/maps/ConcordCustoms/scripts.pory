@@ -12,10 +12,14 @@ script ConcordWageSlaveAtPhone {
 	
 	{
 
-	msgbox(format("I-I'm sorry sir... yes sir... they're not letting our trucks through - Concord
-	Bridge is closed... \p N-no, there's nothing I can do, sir... Yes, I already aske-...
-	\p ... I... I'm fired? B-but sir...! Please be reasonable, I...! \p Sir...? Hello? SIR!? \p ..."))
-
+	msgbox(format("I-I'm sorry sir... they're not letting our trucks through - Concord
+	Bridge is closed... \p N-no, there's nothing I can do, sir... Yes, I already aske-..."))
+	applymovement (2, moves(emote_exclamation_mark))
+	playse (SE_PIN)
+	msgbox(format("... I... I'm fired? B-but sir...! Please be reasonable, I...!"))
+	playse (SE_POKENAV_HANG_UP)
+	msgbox(format("Sir...? Hello? SIR!? \p ..."))
+	playbgm (MUS_HELP, TRUE)
 	playse (SE_M_EXPLOSION)
 	setvar(VAR_0x8004, 2)  //@ vertical pan
 	setvar(VAR_0x8005, 6)  //@ horizontal pan

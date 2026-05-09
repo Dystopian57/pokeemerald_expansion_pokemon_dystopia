@@ -611,6 +611,8 @@ gSongTable::
 	song mus_pinballshop, 0, 0
 	song mus_unknown5, 0, 0
 	song mus_tableselect, 0, 0
+	song mus_monsterhouse, 0, 0
+	song mus_stopthief, 0, 0
 
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2

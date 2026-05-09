@@ -133,10 +133,12 @@ script OldaleTown_Devon_Nurse {
 				if (var(VAR_RESULT) == TRUE) {
 					showmoneybox (0, 0)
 					playse (SE_SHOP)
-					waitse
 					removemoney (100)
 					updatemoneybox
-					msgbox(format("Thank you for your patronage. Now please make way for other customers..."))
+					waitse
+					msgbox(format("Thank you for your patronage. \n
+					{COLOR LIGHT_GRAY}{SHADOW WHITE}Now get out...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+					//msgbox(format("Thank you for your patronage. Now please make way for other customers..."))
 					applymovement (1, moves (nurse_joy_bow))
 					incrementgamestat (GAME_STAT_USED_POKECENTER)
 					//if (GetGameStat(GAME_STAT_USED_POKECENTER) == 3)
@@ -238,7 +240,7 @@ script OldalePokeCenterInjuredGuy {
 
 script OldalePokeCenterMapBoy {
     lockall
-    applymovement (7, moves(face_player))
+    applymovement (6, moves(face_player))
     msgbox(format("In school we learnt that the region from Route 103 to Route 104 is called
 	the {COLOR GREEN}'Rebel Zone'{COLOR DARK_GRAY}. \p It's a dangerous place where people who hate Devon have gathered,
 	and you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} to get out of it."))

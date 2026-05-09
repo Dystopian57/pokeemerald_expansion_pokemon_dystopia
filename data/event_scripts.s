@@ -891,8 +891,8 @@ gText_PokemartSign::
 	.string "POKéMON MART$"
 
 gText_PokemonCenterSign::
-	.string "“Rejuvenate your tired partners!”\n"
-	.string "POKéMON CENTER$"
+	.string "“Devon Center”\n"
+	.string "Your one safe haven.$"
 
 gText_MomOrDadMightLikeThisProgram::
 	.string "{STR_VAR_1} might like this program.\n"

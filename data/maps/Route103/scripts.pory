@@ -537,7 +537,7 @@ script Route103TouristNotThatWay {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (27, moves(emote_exclamation_mark, face_player))
 	playse (SE_PIN)
-
+	msgbox(format("Don't push it from there - you'll get it more stuck!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement
 	releaseall

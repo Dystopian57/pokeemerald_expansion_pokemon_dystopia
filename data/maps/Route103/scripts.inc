@@ -930,6 +930,8 @@ Route103TouristNotThatWay::
 	applymovement 27, Route103Touristbikepushed_Movement_0
 # 539 "data/maps/Route103/scripts.pory"
 	playse SE_PIN
+# 540 "data/maps/Route103/scripts.pory"
+	msgbox Route103TouristNotThatWay_Text_0
 # 541 "data/maps/Route103/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach1_Movement_0
 # 542 "data/maps/Route103/scripts.pory"
@@ -2450,6 +2452,11 @@ Route103Touristbikepushed_Text_4:
 # 525 "data/maps/Route103/scripts.pory"
 	.string "Ooow ow ow... I need a new pair of\n"
 	.string "glasses...$"
+
+Route103TouristNotThatWay_Text_0:
+# 540 "data/maps/Route103/scripts.pory"
+	.string "Don't push it from there - you'll get it\n"
+	.string "more stuck!$"
 
 Route103VeteranBattle_Text_0:
 # 552 "data/maps/Route103/scripts.pory"

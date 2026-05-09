@@ -74,6 +74,9 @@
 .include "sound/voicegroups/pinballshop.inc"
 .include "sound/voicegroups/unknown5.inc"
 .include "sound/voicegroups/tableselect.inc"
+.include "sound/voicegroups/monsterhouse.inc"
+.include "sound/voicegroups/stopthief.inc"
+
 
 .include "sound/voicegroups/b_tower_rs.inc"
 .include "sound/voicegroups/encounter_swimmer.inc"
