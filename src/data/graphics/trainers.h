@@ -177,7 +177,11 @@ const u16 gTrainerPalette_falknerbattle[] = INCBIN_U16("graphics/trainers/front_
 const u32 gTrainerFrontPic_artiebattle[] = INCBIN_U32("graphics/trainers/front_pics/artie.4bpp.lz");
 const u16 gTrainerPalette_artiebattle[] = INCBIN_U16("graphics/trainers/front_pics/artie.gbapal");
 
+const u32 gTrainerFrontPic_moxiebattle[] = INCBIN_U32("graphics/trainers/front_pics/moxie.4bpp.lz");
+const u16 gTrainerPalette_moxiebattle[] = INCBIN_U16("graphics/trainers/front_pics/moxie.gbapal");
 
+const u32 gTrainerFrontPic_devondronebattle[] = INCBIN_U32("graphics/trainers/front_pics/devondrone.4bpp.lz");
+const u16 gTrainerPalette_devondronebattle[] = INCBIN_U16("graphics/trainers/front_pics/devondrone.gbapal");
 
 
 
@@ -469,8 +473,19 @@ const u8 gTrainerBackPic_RubySapphireMay[] = INCBIN_U8("graphics/trainers/back_p
 const u8 gTrainerBackPic_Wally[] = INCBIN_U8("graphics/trainers/back_pics/wally.4bpp");
 const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steven.4bpp");
 
+const u8 gTrainerBackPic_Sharpy[] = INCBIN_U8("graphics/trainers/back_pics/sharpy.4bpp");
+const u8 gTrainerBackPic_Camelia[] = INCBIN_U8("graphics/trainers/back_pics/camelia.4bpp");
+const u8 gTrainerBackPic_Norman[] = INCBIN_U8("graphics/trainers/back_pics/norman.4bpp");
+const u8 gTrainerBackPic_Lanette[] = INCBIN_U8("graphics/trainers/back_pics/lanette.4bpp");
+
 const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
+
+const u16 gTrainerBackPicPalette_Sharpy[] = INCBIN_U16("graphics/trainers/back_pics/sharpy.gbapal");
+const u16 gTrainerBackPicPalette_Camelia[] = INCBIN_U16("graphics/trainers/back_pics/camelia.gbapal");
+const u16 gTrainerBackPicPalette_Norman[] = INCBIN_U16("graphics/trainers/back_pics/norman.gbapal");
+const u16 gTrainerBackPicPalette_Lanette[] = INCBIN_U16("graphics/trainers/back_pics/lanette.gbapal");
+
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -554,6 +569,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_SURGEBATTLE, gTrainerFrontPic_surgebattle, gTrainerPalette_surgebattle),
     TRAINER_SPRITE(TRAINER_PIC_FALKNERBATTLE, gTrainerFrontPic_falknerbattle, gTrainerPalette_falknerbattle),
     TRAINER_SPRITE(TRAINER_PIC_ARTIEBATTLE, gTrainerFrontPic_artiebattle, gTrainerPalette_artiebattle),
+
+    TRAINER_SPRITE(TRAINER_PIC_MOXIEBATTLE, gTrainerFrontPic_moxiebattle, gTrainerPalette_moxiebattle),
+    TRAINER_SPRITE(TRAINER_PIC_DEVONDRONEBATTLE, gTrainerFrontPic_devondronebattle, gTrainerPalette_devondronebattle),
 
     TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),
     TRAINER_SPRITE(TRAINER_PIC_AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, gTrainerPalette_AquaGruntM),
@@ -723,4 +741,9 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, 4, gTrainerBackPic_RubySapphireMay, gTrainerPalette_RubySapphireMay, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
+
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_SHARPY, 4, gTrainerBackPic_Sharpy, gTrainerBackPicPalette_Sharpy, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_CAMELIA, 4, gTrainerBackPic_Camelia, gTrainerBackPicPalette_Camelia, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_NORMAN, 4, gTrainerBackPic_Norman, gTrainerBackPicPalette_Norman, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_LANETTE, 4, gTrainerBackPic_Lanette, gTrainerBackPicPalette_Lanette, sBackAnims_Hoenn),
 };

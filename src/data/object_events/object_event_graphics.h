@@ -212,6 +212,11 @@ const u32 gObjectEventPic_surge[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_falkner[] = INCBIN_U32("graphics/object_events/pics/people/falkner.4bpp");
 const u32 gObjectEventPic_artie[] = INCBIN_U32("graphics/object_events/pics/people/artie.4bpp");
 
+const u32 gObjectEventPic_helipipflying[] = INCBIN_U32("graphics/object_events/pics/misc/helipipflying.4bpp");
+const u32 gObjectEventPic_devondrone[] = INCBIN_U32("graphics/object_events/pics/misc/devondrone.4bpp");
+const u32 gObjectEventPic_injureddevongruntm[] = INCBIN_U32("graphics/object_events/pics/people/injureddevongruntm.4bpp");
+const u32 gObjectEventPic_injuredrebelgruntf[] = INCBIN_U32("graphics/object_events/pics/people/injuredrebelgruntf.4bpp");
+const u32 gObjectEventPic_moxie[] = INCBIN_U32("graphics/object_events/pics/people/moxie.4bpp");
 
 const u32 gObjectEventPic_ReporterM[] = INCBIN_U32("graphics/object_events/pics/people/reporter_m.4bpp");
 const u32 gObjectEventPic_ReporterF[] = INCBIN_U32("graphics/object_events/pics/people/reporter_f.4bpp");

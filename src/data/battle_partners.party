@@ -45,6 +45,22 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Substitute
 - Shadow Sneak
 
+=== PARTNER_SHARPY ===
+Name: SHARPY
+Class: Sharpy
+Pic: sharpybattle
+Gender: Male
+Music: Male
+Back Pic: SHARPY
+AI: Basic Trainer
+
+Corphish
+Quirky Nature
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Aqua Jet
+
 === PARTNER_STEVEN ===
 Name: STEVEN
 Class: Rival

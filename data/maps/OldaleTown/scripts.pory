@@ -18,6 +18,30 @@ script GenderedSpriteOldale {
 call(Common_EventScript_SetupRivalGfxId)
 }
 
+
+script TimeofDayTest {
+	lockall
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{msgbox(format("Morning."))
+        goto (endoftimeofdaytest)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{msgbox(format("Day."))
+        goto (endoftimeofdaytest)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{msgbox(format("Evening."))
+        goto (endoftimeofdaytest)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{msgbox(format("Night."))
+        goto (endoftimeofdaytest)}
+endoftimeofdaytest:
+releaseall
+}
+
+
 script OldaleWeather {
 
 	if (var(VAR_OLDALE_PHASE) == 0)

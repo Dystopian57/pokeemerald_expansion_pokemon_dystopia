@@ -400,12 +400,14 @@ script PlayerRoomDiary {
 	msgbox (format("A diary is open on top of the desk."))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Oldest entry", "Old entry", "Newest entry", "Don't read")
 		if (var(VAR_RESULT) == 0) {
+			showmonpic(SPECIES_ALCREMIE, 10,3)
 			msgbox (format("Today dad and mom gave me the best birthday gift ever - my first
 			Pokémon!\pMommy said it's a Mankey, a Fighting type.\pIn school I learnt
 			Fighting types are strong against Normal types, like the ones grandpa uses. \pSpeaking of 
 			grandpa, Daddy said I am going to stay with him for a while...\pBecause him and mommy are going
 			to be very very busy with work.\pI was a bit sad. It was my birthday, but I think everyone
 			was sad today."))
+			hidemonpic
 			goto (opendiary)}
 
 		if (var(VAR_RESULT) == 1) {

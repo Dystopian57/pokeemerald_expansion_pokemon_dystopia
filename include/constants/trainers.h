@@ -170,7 +170,10 @@
 #define TRAINER_PIC_FALKNERBATTLE               149
 #define TRAINER_PIC_ARTIEBATTLE                 150
 
-#define TRAINER_PIC_COUNT                       151
+#define TRAINER_PIC_MOXIEBATTLE                 151
+#define TRAINER_PIC_DEVONDRONEBATTLE            152
+
+#define TRAINER_PIC_COUNT                       153
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -181,6 +184,11 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
+
+#define TRAINER_BACK_PIC_SHARPY                 8
+#define TRAINER_BACK_PIC_CAMELIA                9
+#define TRAINER_BACK_PIC_NORMAN                 10
+#define TRAINER_BACK_PIC_LANETTE                11
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1
@@ -476,6 +484,8 @@ enum TrainerClassID
     TRAINER_CLASS_SURGE,
     TRAINER_CLASS_FALKNER,
     TRAINER_CLASS_ARTIE,
+    TRAINER_CLASS_MOXIE,
+    TRAINER_CLASS_DEVONDRONE,
 
 
     TRAINER_CLASS_COUNT,

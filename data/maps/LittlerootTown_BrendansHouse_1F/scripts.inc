@@ -1677,12 +1677,12 @@ TV::
 	lockall
 # 851 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	goto_if_unset WatchedTVathome, TV_2
-# 861 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 863 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox TV_Text_1
 TV_1:
-# 863 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 865 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	waitmessage
-# 864 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 866 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
@@ -1690,24 +1690,28 @@ TV_2:
 # 852 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	playbgm MUS_INTRO_BATTLE, FALSE
 # 853 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	showmonpic SPECIES_ALCREMIE_CLOVER, 10, 3
+# 854 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox TV_Text_0
-# 856 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	special TurnOffTVScreen
 # 857 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setvar VAR_TV_TURNOFF, 1
+	hidemonpic
 # 858 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	playbgm MUS_NONE, TRUE
+	special TurnOffTVScreen
 # 859 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	setvar VAR_TV_TURNOFF, 1
+# 860 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	playbgm MUS_NONE, TRUE
+# 861 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setflag WatchedTVathome
 	goto TV_1
 
 
 Ninkaburihides::
-# 869 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	removeobject 8
-# 870 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setflag ninkaburihides
 # 871 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	removeobject 8
+# 872 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+	setflag ninkaburihides
+# 873 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	releaseall
 	return
 
@@ -1797,7 +1801,7 @@ PlayerDirtySink_Text_2:
 	.string "around the sink.$"
 
 TV_Text_0:
-# 853 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 854 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Is it a plane!? Is it a Wingull!? No, it's\n"
 	.string "SUPER SUBSTITUTE!\p"
 	.string "The hero that protects you from danger\n"
@@ -1807,5 +1811,5 @@ TV_Text_0:
 	.string "Stay tuned, and stay safe!$"
 
 TV_Text_1:
-# 861 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+# 863 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "It's not the time for more TV...$"

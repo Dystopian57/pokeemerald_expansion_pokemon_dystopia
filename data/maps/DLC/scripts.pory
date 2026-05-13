@@ -681,8 +681,10 @@ script OLDLibraryGuyDLC {
 
 script TeacherdeskDLC {
     lockall
+    showmonpic(SPECIES_ALCREMIE_CARAMEL_SWIRL, 10,3)
     msgbox(format("The book on top features a Psyduck on its cover, and is titled
     'Therapy for Beginners.'"))
+    hidemonpic
     releaseall
 }
 

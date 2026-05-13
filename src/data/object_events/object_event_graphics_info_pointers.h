@@ -323,7 +323,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_surge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_falkner;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_artie;
 
-
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_injureddevongruntm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_injuredrebelgruntf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_helipipflying;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devondrone;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_moxie;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
@@ -660,6 +664,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SURGE] =             &gObjectEventGraphicsInfo_surge,
     [OBJ_EVENT_GFX_FALKNER] =                  &gObjectEventGraphicsInfo_falkner,
     [OBJ_EVENT_GFX_ARTIE] =                  &gObjectEventGraphicsInfo_artie,
+    [OBJ_EVENT_GFX_INJUREDDEVONGRUNTM] =                  &gObjectEventGraphicsInfo_injureddevongruntm,
+    [OBJ_EVENT_GFX_INJUREDREBELGRUNTF] =                  &gObjectEventGraphicsInfo_injuredrebelgruntf,
+    [OBJ_EVENT_GFX_HELIPIPFLYING] =             &gObjectEventGraphicsInfo_helipipflying,
+    [OBJ_EVENT_GFX_DEVONDRONE] =                  &gObjectEventGraphicsInfo_devondrone,
+    [OBJ_EVENT_GFX_MOXIE] =                  &gObjectEventGraphicsInfo_moxie,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
