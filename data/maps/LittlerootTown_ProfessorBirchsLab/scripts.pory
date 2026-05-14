@@ -1929,7 +1929,7 @@ releaseall
 
 script LabDiglettBook {
 lock
-showmonpic(SPECIES_ALCREMIE_BERRY, 10,3)
+showmonpic(SPECIES_BURMY_SANDY, 10,3)
 msgbox (format("A curious book stands on top of the pile. Its title reads 'Diglett Tunneling for
 Dummies.'"))
 hidemonpic

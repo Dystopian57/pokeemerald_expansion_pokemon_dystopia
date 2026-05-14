@@ -88,10 +88,10 @@ script OldaleTown_Devon_Nurse {
 	if (var(VAR_RESULT) == 10)
 	{setvar(VAR_DEVONCENTERLOYALTY, 1)}
 
-	if (var(VAR_RESULT) == 50)
+	if (var(VAR_RESULT) == 20)
 	{setvar(VAR_DEVONCENTERLOYALTY, 2)}
 
-	if (var(VAR_RESULT) == 100)
+	if (var(VAR_RESULT) == 50)
 	{setvar(VAR_DEVONCENTERLOYALTY, 3)}
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 0)
@@ -101,18 +101,21 @@ script OldaleTown_Devon_Nurse {
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 1)
 	{
-	msgbox("Hello. Will it be the usual?", MSGBOX_YESNO)
+	msgbox("Morning. The usual?", MSGBOX_YESNO)
 	}
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 2)
 	{
-	msgbox("Welcome back! Do you wish to heal your Pokémon?", MSGBOX_YESNO)
+	msgbox("Good morning, and welcome back. Need some healing, d-... 
+	{COLOR LIGHT_GRAY}{SHADOW WHITE}sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+	\n DEAR customer?", MSGBOX_YESNO)
 	}
 
-	if (var(VAR_DEVONCENTERLOYALTY) == 2)
+	if (var(VAR_DEVONCENTERLOYALTY) == 3)
 	{
-	msgbox("We're overjoyed to have you with us again, esteemed customer! \p May I take
-	your companions?", MSGBOX_YESNO)
+	msgbox("Oh, {PLAYER}, we're SOO happy to have you back! 
+	{COLOR LIGHT_GRAY}{SHADOW WHITE}As if...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} 
+	\p May I take your WONDERFUL Pokémon?", MSGBOX_YESNO)	
 	}
 
 	if (var(VAR_RESULT) == YES) {
@@ -273,7 +276,7 @@ script OldalePokeCenterTVKid {
 
 script OldalePokeCenterTVAds {
     lock
-	random (6)
+	random (7)
 	copyvar (VAR_TEMP_1, VAR_RESULT)
 
 	switch (var(VAR_RESULT))
@@ -284,6 +287,8 @@ script OldalePokeCenterTVAds {
 	case 4: goto (Devoncenterad)
 	case 5: goto (Rebelhackersad)
 	case 6: goto (Devonnetad)
+	case 7: goto (Devongruntad)
+
 
 
 	}
@@ -352,7 +357,7 @@ script Devoncenterad {
 	msgbox(format("Devon Centers. Keeping you safe, 24/7. \p
 	{COLOR LIGHT_GRAY}{SHADOW WHITE}Fees may apply. Loitering not allowed.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	hidemonpic
-	 releaseall
+	releaseall
 }
 
 script Rebelhackersad {
@@ -386,5 +391,16 @@ script Devonnetad {
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_SUN, 10,3)
 	msgbox(format("Devon Net - keeping you closer to yours."))
+	releaseall
+}
+
+script Devongruntad {
+	msgbox(format("Do you seek a stable job in these times of uncertainty?\p
+	One when you can make a difference in getting Hoenn in a better shape?"))
+	hidemonpic
+	showmonpic(SPECIES_PIKACHU_COSPLAY, 10,3)
+	msgbox(format("Then enlist in the Devon Guards today. First 100 recruits get their own Manchine!"))
+	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by Devon Co. upon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	hidemonpic
 	releaseall
 }

@@ -850,7 +850,7 @@ script TV {
 lockall
 if (!flag (WatchedTVathome))
 {playbgm (MUS_INTRO_BATTLE, FALSE)
-showmonpic(SPECIES_ALCREMIE_CLOVER, 10,3)
+showmonpic(SPECIES_PIKACHU_ALOLA, 10,3)
 msgbox (format("Is it a plane!? Is it a Wingull!? No, it's SUPER SUBSTITUTE! \pThe hero that protects you from
 danger with a wall of fluffy justice! \pNew season of Devon TV's most loved cartoon is airing soon, so...
 \p Stay tuned, and stay safe!"))

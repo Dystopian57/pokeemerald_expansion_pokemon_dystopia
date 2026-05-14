@@ -3804,7 +3804,7 @@ LabDiglettBook::
 # 1931 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
 # 1932 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	showmonpic SPECIES_ALCREMIE_BERRY, 10, 3
+	showmonpic SPECIES_BURMY_SANDY, 10, 3
 # 1933 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabDiglettBook_Text_0
 # 1935 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"

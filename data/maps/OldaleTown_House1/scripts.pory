@@ -1,26 +1,56 @@
 raw `
-OldaleTown_House1_MapScripts::
-	.byte 0
-
-OldaleTown_House1_EventScript_Woman::
-	msgbox OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_NPC
-	end
-
-OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
-	.string "When a POKéMON battle starts, the one\n"
-	.string "at the left of the list goes out first.\p"
-	.string "So, when you get more POKéMON in your\n"
-	.string "party, try switching around the order\l"
-	.string "of your POKéMON.\p"
-	.string "It could give you an advantage.$"
 
 
 `
 
-script OldaleHouse1Girl {
+mapscripts OldaleTown_House1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightNPC}
+
+
+
+
+
+script DayNightNPC {
+
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{	clearflag (daynpc)
+			setflag (nightnpc)
+        goto (endofdaynightnpc)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{	clearflag (daynpc)
+			setflag (nightnpc)
+        goto (endofdaynightnpc)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{	clearflag (nightnpc)
+			setflag (daynpc)
+        goto (endofdaynightnpc)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{	clearflag (nightnpc)
+			setflag (daynpc)
+        goto (endofdaynightnpc)}
+
+endofdaynightnpc:
+	release
+}
+
+
+
+script OldaleHouse1GirlDay {
     lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("Don't worry Shiiko. I would never eat you, no matter how tasty you look!"))
+    releaseall
+}
+
+script OldaleHouse1GirlNight {
+    lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("Come on Shiiko… I know I bit you, but I was sleep walking!\p I swear I won't
+	eat you, so come down here! "))
     releaseall
 }
 
@@ -33,12 +63,30 @@ script OldaleHouse1Shiiko {
     releaseall
 }
 
-script OldaleHouse1Woman {
+script OldaleHouse1WomanDay {
     lockall
 	applymovement (1, moves(face_player))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("It's been hard raising my daugther alone without my husband. \p If only he
     had not enlisted... I begged him not to."))
 	applymovement (1, moves(face_up))
+    releaseall
+}
+
+
+script OldaleHouse1WomanNight {
+    lockall
+	applymovement (1, moves(face_player))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("Don't yOu thInk it's... {COLOR LIGHT_GRAY}{SHADOW WHITE}Hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+	a bIt lAte tO... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} vIssIt
+	random houses? \p I nEed tO ssAve Up... frr a lOck... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	applymovement (1, moves(face_up))
+    releaseall
+}
+
+script OldaleHouseOldWomanNight {
+    lock
+    msgbox(format("Dear, I think you've drank enough... let's get you to bed."))
     releaseall
 }

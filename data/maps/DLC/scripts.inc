@@ -359,1080 +359,1168 @@ LittleKidDLC::
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 213 "data/maps/DLC/scripts.pory"
 	applymovement 5, LittleKidDLC_Movement_0
-# 214 "data/maps/DLC/scripts.pory"
-	msgbox LittleKidDLC_Text_0
 # 216 "data/maps/DLC/scripts.pory"
-	applymovement 5, OldaleTown_DLC_TherapyCutscene_Movement_6
+	checkplayergender
 # 217 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq LittleKidDLC_2
+LittleKidDLC_1:
+# 220 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, FEMALE
+	goto_if_eq LittleKidDLC_5
+LittleKidDLC_4:
+# 223 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3
+# 224 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq LittleKidDLC_8
+LittleKidDLC_7:
+# 231 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq LittleKidDLC_11
+LittleKidDLC_10:
+# 234 "data/maps/DLC/scripts.pory"
+	applymovement 5, OldaleTown_DLC_TherapyCutscene_Movement_6
+# 235 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
+LittleKidDLC_2:
+# 218 "data/maps/DLC/scripts.pory"
+	msgbox LittleKidDLC_Text_0
+	goto LittleKidDLC_1
+
+LittleKidDLC_5:
+# 221 "data/maps/DLC/scripts.pory"
+	msgbox LittleKidDLC_Text_1
+	goto LittleKidDLC_4
+
+LittleKidDLC_8:
+# 225 "data/maps/DLC/scripts.pory"
+	showmonpic SPECIES_PIKACHU_BELLE, 10, 3
+# 226 "data/maps/DLC/scripts.pory"
+	msgbox LittleKidDLC_Text_4
+	goto LittleKidDLC_7
+
+LittleKidDLC_11:
+# 232 "data/maps/DLC/scripts.pory"
+	msgbox LittleKidDLC_Text_5
+	goto LittleKidDLC_10
+
 
 FatManDLC::
-# 221 "data/maps/DLC/scripts.pory"
+# 240 "data/maps/DLC/scripts.pory"
 	lockall
-# 222 "data/maps/DLC/scripts.pory"
+# 241 "data/maps/DLC/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 223 "data/maps/DLC/scripts.pory"
+# 242 "data/maps/DLC/scripts.pory"
 	applymovement 7, LittleKidDLC_Movement_0
-# 224 "data/maps/DLC/scripts.pory"
+# 243 "data/maps/DLC/scripts.pory"
 	msgbox FatManDLC_Text_0
-# 226 "data/maps/DLC/scripts.pory"
+# 245 "data/maps/DLC/scripts.pory"
 	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 227 "data/maps/DLC/scripts.pory"
+# 246 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 SleepingKidDLC::
-# 231 "data/maps/DLC/scripts.pory"
-	lockall
-# 232 "data/maps/DLC/scripts.pory"
+# 252 "data/maps/DLC/scripts.pory"
+	lock
+# 253 "data/maps/DLC/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 233 "data/maps/DLC/scripts.pory"
+# 254 "data/maps/DLC/scripts.pory"
 	applymovement 4, LittleKidDLC_Movement_0
-# 234 "data/maps/DLC/scripts.pory"
+# 255 "data/maps/DLC/scripts.pory"
 	msgbox SleepingKidDLC_Text_0
-# 235 "data/maps/DLC/scripts.pory"
+# 256 "data/maps/DLC/scripts.pory"
 	applymovement 4, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 236 "data/maps/DLC/scripts.pory"
+# 257 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 GirlNotebookDLC::
-# 240 "data/maps/DLC/scripts.pory"
-	lockall
-# 241 "data/maps/DLC/scripts.pory"
+# 261 "data/maps/DLC/scripts.pory"
+	lock
+# 262 "data/maps/DLC/scripts.pory"
 	msgbox GirlNotebookDLC_Text_0
-# 243 "data/maps/DLC/scripts.pory"
+# 264 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 SleepingBoyNotebookDLC::
-# 247 "data/maps/DLC/scripts.pory"
-	lockall
-# 248 "data/maps/DLC/scripts.pory"
+# 268 "data/maps/DLC/scripts.pory"
+	lock
+# 269 "data/maps/DLC/scripts.pory"
 	msgbox SleepingBoyNotebookDLC_Text_0
-# 249 "data/maps/DLC/scripts.pory"
+# 270 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
-DyslexicKidNotebookDLC::
-# 253 "data/maps/DLC/scripts.pory"
-	lockall
-# 254 "data/maps/DLC/scripts.pory"
-	msgbox DyslexicKidNotebookDLC_Text_0
-# 255 "data/maps/DLC/scripts.pory"
+SnorlaxKidNotebookDLC::
+# 274 "data/maps/DLC/scripts.pory"
+	lock
+# 275 "data/maps/DLC/scripts.pory"
+	showmonpic SPECIES_PIKACHU_BELLE, 10, 3
+# 276 "data/maps/DLC/scripts.pory"
+	msgbox SnorlaxKidNotebookDLC_Text_0
+# 278 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 279 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 TeacherDLC::
-# 260 "data/maps/DLC/scripts.pory"
+# 284 "data/maps/DLC/scripts.pory"
 	lockall
-# 261 "data/maps/DLC/scripts.pory"
+# 285 "data/maps/DLC/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 262 "data/maps/DLC/scripts.pory"
+# 286 "data/maps/DLC/scripts.pory"
 	applymovement 6, LittleKidDLC_Movement_0
-# 263 "data/maps/DLC/scripts.pory"
+# 287 "data/maps/DLC/scripts.pory"
 	msgbox TeacherDLC_Text_0
-# 265 "data/maps/DLC/scripts.pory"
+# 289 "data/maps/DLC/scripts.pory"
 	applymovement 6, TeacherDLC_Movement_0
-# 266 "data/maps/DLC/scripts.pory"
+# 290 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 LibraryGuyDLC::
-# 271 "data/maps/DLC/scripts.pory"
+# 295 "data/maps/DLC/scripts.pory"
 	lockall
-# 272 "data/maps/DLC/scripts.pory"
+# 296 "data/maps/DLC/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 273 "data/maps/DLC/scripts.pory"
+# 297 "data/maps/DLC/scripts.pory"
 	applymovement 9, LittleKidDLC_Movement_0
-# 274 "data/maps/DLC/scripts.pory"
+# 298 "data/maps/DLC/scripts.pory"
 	msgbox LibraryGuyDLC_Text_0
-# 275 "data/maps/DLC/scripts.pory"
+# 299 "data/maps/DLC/scripts.pory"
 loantypechoicewithtext:
-# 276 "data/maps/DLC/scripts.pory"
+# 300 "data/maps/DLC/scripts.pory"
 	msgbox LibraryGuyDLC_Text_1
-# 277 "data/maps/DLC/scripts.pory"
+# 301 "data/maps/DLC/scripts.pory"
 loantypechoice:
-# 278 "data/maps/DLC/scripts.pory"
+# 302 "data/maps/DLC/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_2, LibraryGuyDLC_Text_3, LibraryGuyDLC_Text_4, LibraryGuyDLC_Text_5
-# 281 "data/maps/DLC/scripts.pory"
+# 305 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_2
 LibraryGuyDLC_1:
-# 472 "data/maps/DLC/scripts.pory"
+# 496 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_5
 LibraryGuyDLC_4:
-# 654 "data/maps/DLC/scripts.pory"
+# 678 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_11
 LibraryGuyDLC_10:
-# 663 "data/maps/DLC/scripts.pory"
+# 687 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq LibraryGuyDLC_23
 LibraryGuyDLC_22:
-# 666 "data/maps/DLC/scripts.pory"
+# 690 "data/maps/DLC/scripts.pory"
 finishloanscript:
-# 667 "data/maps/DLC/scripts.pory"
+# 691 "data/maps/DLC/scripts.pory"
 	closemessage
-# 668 "data/maps/DLC/scripts.pory"
+# 692 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 LibraryGuyDLC_2:
-# 286 "data/maps/DLC/scripts.pory"
+# 310 "data/maps/DLC/scripts.pory"
 	goto_if_set loanedfirebook, LibraryGuyDLC_8
 LibraryGuyDLC_7:
-# 333 "data/maps/DLC/scripts.pory"
+# 357 "data/maps/DLC/scripts.pory"
 	goto_if_set loanedgrassbook, LibraryGuyDLC_17
 LibraryGuyDLC_16:
-# 381 "data/maps/DLC/scripts.pory"
+# 405 "data/maps/DLC/scripts.pory"
 	goto_if_set loanedelectricbook, LibraryGuyDLC_32
 LibraryGuyDLC_31:
-# 427 "data/maps/DLC/scripts.pory"
+# 451 "data/maps/DLC/scripts.pory"
 	goto_if_unset loanedfirebook, LibraryGuyDLC_50
-# 427 "data/maps/DLC/scripts.pory"
+# 451 "data/maps/DLC/scripts.pory"
 	goto_if_unset loanedgrassbook, LibraryGuyDLC_50
-# 427 "data/maps/DLC/scripts.pory"
+# 451 "data/maps/DLC/scripts.pory"
 	goto_if_unset loanedelectricbook, LibraryGuyDLC_50
 LibraryGuyDLC_49:
-# 446 "data/maps/DLC/scripts.pory"
+# 470 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_79
 LibraryGuyDLC_78:
-# 455 "data/maps/DLC/scripts.pory"
+# 479 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_103
 LibraryGuyDLC_102:
-# 464 "data/maps/DLC/scripts.pory"
+# 488 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq LibraryGuyDLC_128
 	goto LibraryGuyDLC_1
 
 LibraryGuyDLC_5:
-# 477 "data/maps/DLC/scripts.pory"
+# 501 "data/maps/DLC/scripts.pory"
 	goto_if_set loanedprotectTM, LibraryGuyDLC_14
 LibraryGuyDLC_13:
-# 523 "data/maps/DLC/scripts.pory"
+# 547 "data/maps/DLC/scripts.pory"
 	goto_if_set loanedsafeguardTM, LibraryGuyDLC_26
 LibraryGuyDLC_25:
-# 570 "data/maps/DLC/scripts.pory"
+# 594 "data/maps/DLC/scripts.pory"
 	goto_if_set loanedreflectTM, LibraryGuyDLC_41
 LibraryGuyDLC_40:
-# 617 "data/maps/DLC/scripts.pory"
+# 641 "data/maps/DLC/scripts.pory"
 	goto_if_unset loanedprotectTM, LibraryGuyDLC_64
-# 617 "data/maps/DLC/scripts.pory"
+# 641 "data/maps/DLC/scripts.pory"
 	goto_if_unset loanedsafeguardTM, LibraryGuyDLC_64
-# 617 "data/maps/DLC/scripts.pory"
+# 641 "data/maps/DLC/scripts.pory"
 	goto_if_unset loanedreflectTM, LibraryGuyDLC_64
 	goto LibraryGuyDLC_4
 
 LibraryGuyDLC_8:
-# 287 "data/maps/DLC/scripts.pory"
+# 311 "data/maps/DLC/scripts.pory"
 	msgbox LibraryGuyDLC_Text_6
-# 289 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_7, LibraryGuyDLC_Text_8, LibraryGuyDLC_Text_9
-# 291 "data/maps/DLC/scripts.pory"
+# 313 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3, LibraryGuyDLC_Text_7
+# 315 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_20
 LibraryGuyDLC_19:
-# 298 "data/maps/DLC/scripts.pory"
+# 322 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_38
 LibraryGuyDLC_37:
-# 303 "data/maps/DLC/scripts.pory"
+# 327 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_62
 	goto LibraryGuyDLC_7
 
 LibraryGuyDLC_11:
-# 655 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_40
-# 660 "data/maps/DLC/scripts.pory"
+# 679 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_38
+# 684 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_10
 
 LibraryGuyDLC_14:
-# 478 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_30
-# 480 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_7, LibraryGuyDLC_Text_8, LibraryGuyDLC_Text_9
-# 482 "data/maps/DLC/scripts.pory"
+# 502 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_28
+# 504 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3, LibraryGuyDLC_Text_7
+# 506 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_29
 LibraryGuyDLC_28:
-# 489 "data/maps/DLC/scripts.pory"
+# 513 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_47
 LibraryGuyDLC_46:
-# 494 "data/maps/DLC/scripts.pory"
+# 518 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_76
 	goto LibraryGuyDLC_13
 
 LibraryGuyDLC_17:
-# 334 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_18
-# 336 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_7, LibraryGuyDLC_Text_8, LibraryGuyDLC_Text_9
-# 338 "data/maps/DLC/scripts.pory"
+# 358 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_16
+# 360 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3, LibraryGuyDLC_Text_7
+# 362 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_35
 LibraryGuyDLC_34:
-# 345 "data/maps/DLC/scripts.pory"
+# 369 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_60
 LibraryGuyDLC_59:
-# 350 "data/maps/DLC/scripts.pory"
+# 374 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_86
 	goto LibraryGuyDLC_16
 
 LibraryGuyDLC_20:
-# 292 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_10
-# 293 "data/maps/DLC/scripts.pory"
+# 316 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_8
+# 317 "data/maps/DLC/scripts.pory"
 	removeitem ITEM_FLAME_PLATE
-# 294 "data/maps/DLC/scripts.pory"
+# 318 "data/maps/DLC/scripts.pory"
 	clearflag loanedfirebook
-# 295 "data/maps/DLC/scripts.pory"
+# 319 "data/maps/DLC/scripts.pory"
 	goto loanbookoffer
 	goto LibraryGuyDLC_19
 
 LibraryGuyDLC_23:
-# 664 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_41
+# 688 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_39
 	goto LibraryGuyDLC_22
 
 LibraryGuyDLC_26:
-# 524 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_33
-# 526 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_7, LibraryGuyDLC_Text_8, LibraryGuyDLC_Text_9
-# 528 "data/maps/DLC/scripts.pory"
+# 548 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_31
+# 550 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3, LibraryGuyDLC_Text_7
+# 552 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_44
 LibraryGuyDLC_43:
-# 535 "data/maps/DLC/scripts.pory"
+# 559 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_74
 LibraryGuyDLC_73:
-# 540 "data/maps/DLC/scripts.pory"
+# 564 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_97
 	goto LibraryGuyDLC_25
 
 LibraryGuyDLC_29:
-# 483 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_31
-# 484 "data/maps/DLC/scripts.pory"
+# 507 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_29
+# 508 "data/maps/DLC/scripts.pory"
 	removeitem ITEM_TM_PROTECT
-# 485 "data/maps/DLC/scripts.pory"
+# 509 "data/maps/DLC/scripts.pory"
 	clearflag loanedprotectTM
-# 486 "data/maps/DLC/scripts.pory"
+# 510 "data/maps/DLC/scripts.pory"
 	goto loantmoffer
 	goto LibraryGuyDLC_28
 
 LibraryGuyDLC_32:
-# 382 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_19
-# 384 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_7, LibraryGuyDLC_Text_8, LibraryGuyDLC_Text_9
-# 386 "data/maps/DLC/scripts.pory"
+# 406 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_17
+# 408 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3, LibraryGuyDLC_Text_7
+# 410 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_57
 LibraryGuyDLC_56:
-# 393 "data/maps/DLC/scripts.pory"
+# 417 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_84
 LibraryGuyDLC_83:
-# 398 "data/maps/DLC/scripts.pory"
+# 422 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_105
 	goto LibraryGuyDLC_31
 
 LibraryGuyDLC_35:
-# 339 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_10
-# 340 "data/maps/DLC/scripts.pory"
+# 363 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_8
+# 364 "data/maps/DLC/scripts.pory"
 	removeitem ITEM_MEADOW_PLATE
-# 341 "data/maps/DLC/scripts.pory"
+# 365 "data/maps/DLC/scripts.pory"
 	clearflag loanedgrassbook
-# 342 "data/maps/DLC/scripts.pory"
+# 366 "data/maps/DLC/scripts.pory"
 	goto loanbookoffer
 	goto LibraryGuyDLC_34
 
 LibraryGuyDLC_38:
-# 299 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_11
-# 300 "data/maps/DLC/scripts.pory"
+# 323 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_9
+# 324 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_37
 
 LibraryGuyDLC_41:
-# 571 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_34
-# 573 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_7, LibraryGuyDLC_Text_8, LibraryGuyDLC_Text_9
-# 575 "data/maps/DLC/scripts.pory"
+# 595 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_32
+# 597 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3, LibraryGuyDLC_Text_7
+# 599 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_71
 LibraryGuyDLC_70:
-# 582 "data/maps/DLC/scripts.pory"
+# 606 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_95
 LibraryGuyDLC_94:
-# 587 "data/maps/DLC/scripts.pory"
+# 611 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_118
 	goto LibraryGuyDLC_40
 
 LibraryGuyDLC_44:
-# 529 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_31
-# 530 "data/maps/DLC/scripts.pory"
+# 553 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_29
+# 554 "data/maps/DLC/scripts.pory"
 	removeitem ITEM_TM_SAFEGUARD
-# 531 "data/maps/DLC/scripts.pory"
+# 555 "data/maps/DLC/scripts.pory"
 	clearflag loanedsafeguardTM
-# 532 "data/maps/DLC/scripts.pory"
+# 556 "data/maps/DLC/scripts.pory"
 	goto loantmoffer
 	goto LibraryGuyDLC_43
 
 LibraryGuyDLC_47:
-# 490 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_11
-# 491 "data/maps/DLC/scripts.pory"
+# 514 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_9
+# 515 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_46
 
 LibraryGuyDLC_50:
-# 430 "data/maps/DLC/scripts.pory"
+# 454 "data/maps/DLC/scripts.pory"
 loanbookoffer:
-# 431 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_20
-# 433 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_21, LibraryGuyDLC_Text_22, LibraryGuyDLC_Text_23, LibraryGuyDLC_Text_24
-# 435 "data/maps/DLC/scripts.pory"
+# 455 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_18
+# 457 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_19, LibraryGuyDLC_Text_20, LibraryGuyDLC_Text_21, LibraryGuyDLC_Text_22
+# 459 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_81
 	goto LibraryGuyDLC_49
 
 LibraryGuyDLC_57:
-# 387 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_10
-# 388 "data/maps/DLC/scripts.pory"
+# 411 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_8
+# 412 "data/maps/DLC/scripts.pory"
 	removeitem ITEM_ZAP_PLATE
-# 389 "data/maps/DLC/scripts.pory"
+# 413 "data/maps/DLC/scripts.pory"
 	clearflag loanedelectricbook
-# 390 "data/maps/DLC/scripts.pory"
+# 414 "data/maps/DLC/scripts.pory"
 	goto loanbookoffer
 	goto LibraryGuyDLC_56
 
 LibraryGuyDLC_60:
-# 346 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_11
-# 347 "data/maps/DLC/scripts.pory"
+# 370 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_9
+# 371 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_59
 
 LibraryGuyDLC_62:
-# 304 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_12
-# 307 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_13, LibraryGuyDLC_Text_14
-# 308 "data/maps/DLC/scripts.pory"
+# 328 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_10
+# 331 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_11, LibraryGuyDLC_Text_12
+# 332 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_89
 LibraryGuyDLC_88:
-# 324 "data/maps/DLC/scripts.pory"
+# 348 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_110
 	goto LibraryGuyDLC_7
 
 LibraryGuyDLC_64:
-# 619 "data/maps/DLC/scripts.pory"
+# 643 "data/maps/DLC/scripts.pory"
 loantmoffer:
-# 620 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_35
-# 621 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_36, LibraryGuyDLC_Text_37, LibraryGuyDLC_Text_38, LibraryGuyDLC_Text_24
-# 622 "data/maps/DLC/scripts.pory"
+# 644 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_33
+# 645 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_34, LibraryGuyDLC_Text_35, LibraryGuyDLC_Text_36, LibraryGuyDLC_Text_22
+# 646 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_92
 LibraryGuyDLC_91:
-# 631 "data/maps/DLC/scripts.pory"
+# 655 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_116
 LibraryGuyDLC_115:
-# 640 "data/maps/DLC/scripts.pory"
+# 664 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq LibraryGuyDLC_141
 LibraryGuyDLC_140:
-# 649 "data/maps/DLC/scripts.pory"
+# 673 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq LibraryGuyDLC_160
 	goto LibraryGuyDLC_4
 
 LibraryGuyDLC_71:
-# 576 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_31
-# 577 "data/maps/DLC/scripts.pory"
+# 600 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_29
+# 601 "data/maps/DLC/scripts.pory"
 	removeitem ITEM_TM_REFLECT
-# 578 "data/maps/DLC/scripts.pory"
+# 602 "data/maps/DLC/scripts.pory"
 	clearflag loanedreflectTM
-# 579 "data/maps/DLC/scripts.pory"
+# 603 "data/maps/DLC/scripts.pory"
 	goto loantmoffer
 	goto LibraryGuyDLC_70
 
 LibraryGuyDLC_74:
-# 536 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_11
-# 537 "data/maps/DLC/scripts.pory"
+# 560 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_9
+# 561 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_73
 
 LibraryGuyDLC_76:
-# 495 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_12
-# 498 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_13, LibraryGuyDLC_Text_14
-# 499 "data/maps/DLC/scripts.pory"
+# 519 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_10
+# 522 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_11, LibraryGuyDLC_Text_12
+# 523 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_100
 LibraryGuyDLC_99:
-# 515 "data/maps/DLC/scripts.pory"
+# 539 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_123
 	goto LibraryGuyDLC_13
 
 LibraryGuyDLC_79:
-# 447 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_27
-# 448 "data/maps/DLC/scripts.pory"
+# 471 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_25
+# 472 "data/maps/DLC/scripts.pory"
 	applymovement 9, LibraryGuyDLC_Movement_0
-# 449 "data/maps/DLC/scripts.pory"
+# 473 "data/maps/DLC/scripts.pory"
 	giveitem ITEM_MEADOW_PLATE
-# 450 "data/maps/DLC/scripts.pory"
+# 474 "data/maps/DLC/scripts.pory"
 	setflag loanedgrassbook
-# 451 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_26
-# 452 "data/maps/DLC/scripts.pory"
+# 475 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_24
+# 476 "data/maps/DLC/scripts.pory"
 	goto finishloanscript
 	goto LibraryGuyDLC_78
 
 LibraryGuyDLC_81:
-# 436 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_25
-# 437 "data/maps/DLC/scripts.pory"
+# 460 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_23
+# 461 "data/maps/DLC/scripts.pory"
 	applymovement 9, OldaleTown_DLC_TherapyCutscene_Movement_16
-# 438 "data/maps/DLC/scripts.pory"
+# 462 "data/maps/DLC/scripts.pory"
 	waitmovement
-# 439 "data/maps/DLC/scripts.pory"
+# 463 "data/maps/DLC/scripts.pory"
 	applymovement 9, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 440 "data/maps/DLC/scripts.pory"
+# 464 "data/maps/DLC/scripts.pory"
 	giveitem ITEM_FLAME_PLATE
-# 441 "data/maps/DLC/scripts.pory"
+# 465 "data/maps/DLC/scripts.pory"
 	setflag loanedfirebook
-# 442 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_26
-# 443 "data/maps/DLC/scripts.pory"
+# 466 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_24
+# 467 "data/maps/DLC/scripts.pory"
 	goto finishloanscript
 	goto LibraryGuyDLC_49
 
 LibraryGuyDLC_84:
-# 394 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_11
-# 395 "data/maps/DLC/scripts.pory"
+# 418 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_9
+# 419 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_83
 
 LibraryGuyDLC_86:
-# 351 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_12
-# 354 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_13, LibraryGuyDLC_Text_14
-# 355 "data/maps/DLC/scripts.pory"
+# 375 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_10
+# 378 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_11, LibraryGuyDLC_Text_12
+# 379 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_108
 LibraryGuyDLC_107:
-# 371 "data/maps/DLC/scripts.pory"
+# 395 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_133
 	goto LibraryGuyDLC_16
 
 LibraryGuyDLC_89:
-# 309 "data/maps/DLC/scripts.pory"
+# 333 "data/maps/DLC/scripts.pory"
 	checkmoney 100
-# 310 "data/maps/DLC/scripts.pory"
+# 334 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq LibraryGuyDLC_113
 LibraryGuyDLC_112:
-# 318 "data/maps/DLC/scripts.pory"
+# 342 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LibraryGuyDLC_138
 	goto LibraryGuyDLC_88
 
 LibraryGuyDLC_92:
-# 623 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_39
-# 624 "data/maps/DLC/scripts.pory"
+# 647 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_37
+# 648 "data/maps/DLC/scripts.pory"
 	applymovement 9, LibraryGuyDLC_Movement_0
-# 625 "data/maps/DLC/scripts.pory"
+# 649 "data/maps/DLC/scripts.pory"
 	giveitem ITEM_TM_PROTECT
-# 626 "data/maps/DLC/scripts.pory"
+# 650 "data/maps/DLC/scripts.pory"
 	setflag loanedprotectTM
-# 627 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_26
-# 628 "data/maps/DLC/scripts.pory"
+# 651 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_24
+# 652 "data/maps/DLC/scripts.pory"
 	goto finishloanscript
 	goto LibraryGuyDLC_91
 
 LibraryGuyDLC_95:
-# 583 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_11
-# 584 "data/maps/DLC/scripts.pory"
+# 607 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_9
+# 608 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_94
 
 LibraryGuyDLC_97:
-# 541 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_12
-# 544 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_13, LibraryGuyDLC_Text_14
-# 545 "data/maps/DLC/scripts.pory"
+# 565 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_10
+# 568 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_11, LibraryGuyDLC_Text_12
+# 569 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_121
 LibraryGuyDLC_120:
-# 561 "data/maps/DLC/scripts.pory"
+# 585 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_146
 	goto LibraryGuyDLC_25
 
 LibraryGuyDLC_100:
-# 500 "data/maps/DLC/scripts.pory"
+# 524 "data/maps/DLC/scripts.pory"
 	checkmoney 100
-# 501 "data/maps/DLC/scripts.pory"
+# 525 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq LibraryGuyDLC_126
 LibraryGuyDLC_125:
-# 509 "data/maps/DLC/scripts.pory"
+# 533 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LibraryGuyDLC_151
 	goto LibraryGuyDLC_99
 
 LibraryGuyDLC_103:
-# 456 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_28
-# 457 "data/maps/DLC/scripts.pory"
-	applymovement 9, LibraryGuyDLC_Movement_0
-# 458 "data/maps/DLC/scripts.pory"
-	giveitem ITEM_ZAP_PLATE
-# 459 "data/maps/DLC/scripts.pory"
-	setflag loanedgrassbook
-# 460 "data/maps/DLC/scripts.pory"
+# 480 "data/maps/DLC/scripts.pory"
 	msgbox LibraryGuyDLC_Text_26
-# 461 "data/maps/DLC/scripts.pory"
+# 481 "data/maps/DLC/scripts.pory"
+	applymovement 9, LibraryGuyDLC_Movement_0
+# 482 "data/maps/DLC/scripts.pory"
+	giveitem ITEM_ZAP_PLATE
+# 483 "data/maps/DLC/scripts.pory"
+	setflag loanedgrassbook
+# 484 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_24
+# 485 "data/maps/DLC/scripts.pory"
 	goto finishloanscript
 	goto LibraryGuyDLC_102
 
 LibraryGuyDLC_105:
-# 399 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_12
-# 402 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_13, LibraryGuyDLC_Text_14
-# 403 "data/maps/DLC/scripts.pory"
+# 423 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_10
+# 426 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_11, LibraryGuyDLC_Text_12
+# 427 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_131
 LibraryGuyDLC_130:
-# 419 "data/maps/DLC/scripts.pory"
+# 443 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_153
 	goto LibraryGuyDLC_31
 
 LibraryGuyDLC_108:
-# 356 "data/maps/DLC/scripts.pory"
+# 380 "data/maps/DLC/scripts.pory"
 	checkmoney 100
-# 357 "data/maps/DLC/scripts.pory"
+# 381 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq LibraryGuyDLC_136
 LibraryGuyDLC_135:
-# 365 "data/maps/DLC/scripts.pory"
+# 389 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LibraryGuyDLC_158
 	goto LibraryGuyDLC_107
 
 LibraryGuyDLC_110:
-# 325 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_17
-# 326 "data/maps/DLC/scripts.pory"
+# 349 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_15
+# 350 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_7
 
 LibraryGuyDLC_113:
-# 311 "data/maps/DLC/scripts.pory"
+# 335 "data/maps/DLC/scripts.pory"
 	removemoney 5000
-# 312 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_15
-# 314 "data/maps/DLC/scripts.pory"
+# 336 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_13
+# 338 "data/maps/DLC/scripts.pory"
 	clearflag loanedfirebook
-# 315 "data/maps/DLC/scripts.pory"
+# 339 "data/maps/DLC/scripts.pory"
 	goto loanbookoffer
 	goto LibraryGuyDLC_112
 
 LibraryGuyDLC_116:
-# 632 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_39
-# 633 "data/maps/DLC/scripts.pory"
+# 656 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_37
+# 657 "data/maps/DLC/scripts.pory"
 	applymovement 9, LibraryGuyDLC_Movement_0
-# 634 "data/maps/DLC/scripts.pory"
+# 658 "data/maps/DLC/scripts.pory"
 	giveitem ITEM_TM_SAFEGUARD
-# 635 "data/maps/DLC/scripts.pory"
+# 659 "data/maps/DLC/scripts.pory"
 	setflag loanedsafeguardTM
-# 636 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_26
-# 637 "data/maps/DLC/scripts.pory"
+# 660 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_24
+# 661 "data/maps/DLC/scripts.pory"
 	goto finishloanscript
 	goto LibraryGuyDLC_115
 
 LibraryGuyDLC_118:
-# 588 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_12
-# 591 "data/maps/DLC/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_13, LibraryGuyDLC_Text_14
-# 592 "data/maps/DLC/scripts.pory"
+# 612 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_10
+# 615 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LibraryGuyDLC_Text_11, LibraryGuyDLC_Text_12
+# 616 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LibraryGuyDLC_144
 LibraryGuyDLC_143:
-# 608 "data/maps/DLC/scripts.pory"
+# 632 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LibraryGuyDLC_162
 	goto LibraryGuyDLC_40
 
 LibraryGuyDLC_121:
-# 546 "data/maps/DLC/scripts.pory"
+# 570 "data/maps/DLC/scripts.pory"
 	checkmoney 100
-# 547 "data/maps/DLC/scripts.pory"
+# 571 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq LibraryGuyDLC_149
 LibraryGuyDLC_148:
-# 555 "data/maps/DLC/scripts.pory"
+# 579 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LibraryGuyDLC_167
 	goto LibraryGuyDLC_120
 
 LibraryGuyDLC_123:
-# 516 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_17
-# 517 "data/maps/DLC/scripts.pory"
+# 540 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_15
+# 541 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_13
 
 LibraryGuyDLC_126:
-# 502 "data/maps/DLC/scripts.pory"
+# 526 "data/maps/DLC/scripts.pory"
 	removemoney 5000
-# 503 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_32
-# 505 "data/maps/DLC/scripts.pory"
+# 527 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_30
+# 529 "data/maps/DLC/scripts.pory"
 	clearflag loanedprotectTM
-# 506 "data/maps/DLC/scripts.pory"
+# 530 "data/maps/DLC/scripts.pory"
 	goto loantmoffer
 	goto LibraryGuyDLC_125
 
 LibraryGuyDLC_128:
-# 465 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_29
-# 466 "data/maps/DLC/scripts.pory"
+# 489 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_27
+# 490 "data/maps/DLC/scripts.pory"
 	goto loantypechoice
 	goto LibraryGuyDLC_1
 
 LibraryGuyDLC_131:
-# 404 "data/maps/DLC/scripts.pory"
+# 428 "data/maps/DLC/scripts.pory"
 	checkmoney 100
-# 405 "data/maps/DLC/scripts.pory"
+# 429 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq LibraryGuyDLC_156
 LibraryGuyDLC_155:
-# 413 "data/maps/DLC/scripts.pory"
+# 437 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LibraryGuyDLC_169
 	goto LibraryGuyDLC_130
 
 LibraryGuyDLC_133:
-# 372 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_17
-# 373 "data/maps/DLC/scripts.pory"
+# 396 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_15
+# 397 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_16
 
 LibraryGuyDLC_136:
-# 358 "data/maps/DLC/scripts.pory"
+# 382 "data/maps/DLC/scripts.pory"
 	removemoney 5000
-# 359 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_15
-# 361 "data/maps/DLC/scripts.pory"
+# 383 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_13
+# 385 "data/maps/DLC/scripts.pory"
 	clearflag loanedgrassbook
-# 362 "data/maps/DLC/scripts.pory"
+# 386 "data/maps/DLC/scripts.pory"
 	goto loanbookoffer
 	goto LibraryGuyDLC_135
 
 LibraryGuyDLC_138:
-# 319 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_16
-# 321 "data/maps/DLC/scripts.pory"
+# 343 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_14
+# 345 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_88
 
 LibraryGuyDLC_141:
-# 641 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_39
-# 642 "data/maps/DLC/scripts.pory"
+# 665 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_37
+# 666 "data/maps/DLC/scripts.pory"
 	applymovement 9, LibraryGuyDLC_Movement_0
-# 643 "data/maps/DLC/scripts.pory"
+# 667 "data/maps/DLC/scripts.pory"
 	giveitem ITEM_TM_REFLECT
-# 644 "data/maps/DLC/scripts.pory"
+# 668 "data/maps/DLC/scripts.pory"
 	setflag loanedreflectTM
-# 645 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_26
-# 646 "data/maps/DLC/scripts.pory"
+# 669 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_24
+# 670 "data/maps/DLC/scripts.pory"
 	goto finishloanscript
 	goto LibraryGuyDLC_140
 
 LibraryGuyDLC_144:
-# 593 "data/maps/DLC/scripts.pory"
+# 617 "data/maps/DLC/scripts.pory"
 	checkmoney 100
-# 594 "data/maps/DLC/scripts.pory"
+# 618 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq LibraryGuyDLC_165
 LibraryGuyDLC_164:
-# 602 "data/maps/DLC/scripts.pory"
+# 626 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LibraryGuyDLC_171
 	goto LibraryGuyDLC_143
 
 LibraryGuyDLC_146:
-# 562 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_17
-# 563 "data/maps/DLC/scripts.pory"
+# 586 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_15
+# 587 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_25
 
 LibraryGuyDLC_149:
-# 548 "data/maps/DLC/scripts.pory"
+# 572 "data/maps/DLC/scripts.pory"
 	removemoney 5000
-# 549 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_32
-# 551 "data/maps/DLC/scripts.pory"
+# 573 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_30
+# 575 "data/maps/DLC/scripts.pory"
 	clearflag loanedsafeguardTM
-# 552 "data/maps/DLC/scripts.pory"
+# 576 "data/maps/DLC/scripts.pory"
 	goto loantmoffer
 	goto LibraryGuyDLC_148
 
 LibraryGuyDLC_151:
-# 510 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_16
-# 512 "data/maps/DLC/scripts.pory"
+# 534 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_14
+# 536 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_99
 
 LibraryGuyDLC_153:
-# 420 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_17
-# 421 "data/maps/DLC/scripts.pory"
+# 444 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_15
+# 445 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_31
 
 LibraryGuyDLC_156:
-# 406 "data/maps/DLC/scripts.pory"
+# 430 "data/maps/DLC/scripts.pory"
 	removemoney 5000
-# 407 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_15
-# 409 "data/maps/DLC/scripts.pory"
+# 431 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_13
+# 433 "data/maps/DLC/scripts.pory"
 	clearflag loanedelectricbook
-# 410 "data/maps/DLC/scripts.pory"
+# 434 "data/maps/DLC/scripts.pory"
 	goto loanbookoffer
 	goto LibraryGuyDLC_155
 
 LibraryGuyDLC_158:
-# 366 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_16
-# 368 "data/maps/DLC/scripts.pory"
+# 390 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_14
+# 392 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_107
 
 LibraryGuyDLC_160:
-# 650 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_29
-# 651 "data/maps/DLC/scripts.pory"
+# 674 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_27
+# 675 "data/maps/DLC/scripts.pory"
 	goto loantypechoice
 	goto LibraryGuyDLC_4
 
 LibraryGuyDLC_162:
-# 609 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_17
-# 610 "data/maps/DLC/scripts.pory"
+# 633 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_15
+# 634 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_40
 
 LibraryGuyDLC_165:
-# 595 "data/maps/DLC/scripts.pory"
+# 619 "data/maps/DLC/scripts.pory"
 	removemoney 5000
-# 596 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_32
-# 598 "data/maps/DLC/scripts.pory"
+# 620 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_30
+# 622 "data/maps/DLC/scripts.pory"
 	clearflag loanedreflectTM
-# 599 "data/maps/DLC/scripts.pory"
+# 623 "data/maps/DLC/scripts.pory"
 	goto loantmoffer
 	goto LibraryGuyDLC_164
 
 LibraryGuyDLC_167:
-# 556 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_16
-# 558 "data/maps/DLC/scripts.pory"
+# 580 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_14
+# 582 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_120
 
 LibraryGuyDLC_169:
-# 414 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_16
-# 416 "data/maps/DLC/scripts.pory"
+# 438 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_14
+# 440 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_130
 
 LibraryGuyDLC_171:
-# 603 "data/maps/DLC/scripts.pory"
-	msgbox LibraryGuyDLC_Text_16
-# 605 "data/maps/DLC/scripts.pory"
+# 627 "data/maps/DLC/scripts.pory"
+	msgbox LibraryGuyDLC_Text_14
+# 629 "data/maps/DLC/scripts.pory"
 	goto loantypechoicewithtext
 	goto LibraryGuyDLC_143
 
 
 OLDLibraryGuyDLC::
-# 673 "data/maps/DLC/scripts.pory"
+# 697 "data/maps/DLC/scripts.pory"
 	lockall
-# 674 "data/maps/DLC/scripts.pory"
+# 698 "data/maps/DLC/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 675 "data/maps/DLC/scripts.pory"
+# 699 "data/maps/DLC/scripts.pory"
 	applymovement 9, LittleKidDLC_Movement_0
-# 676 "data/maps/DLC/scripts.pory"
+# 700 "data/maps/DLC/scripts.pory"
 	msgbox OLDLibraryGuyDLC_Text_0
-# 678 "data/maps/DLC/scripts.pory"
+# 702 "data/maps/DLC/scripts.pory"
 	applymovement 9, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 679 "data/maps/DLC/scripts.pory"
+# 703 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 TeacherdeskDLC::
-# 683 "data/maps/DLC/scripts.pory"
+# 707 "data/maps/DLC/scripts.pory"
 	lockall
-# 684 "data/maps/DLC/scripts.pory"
-	showmonpic SPECIES_ALCREMIE_CARAMEL_SWIRL, 10, 3
-# 685 "data/maps/DLC/scripts.pory"
+# 708 "data/maps/DLC/scripts.pory"
+	showmonpic SPECIES_BURMY_TRASH, 10, 3
+# 709 "data/maps/DLC/scripts.pory"
 	msgbox TeacherdeskDLC_Text_0
-# 687 "data/maps/DLC/scripts.pory"
+# 711 "data/maps/DLC/scripts.pory"
 	hidemonpic
-# 688 "data/maps/DLC/scripts.pory"
+# 712 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 BlackBoardDLC::
-# 692 "data/maps/DLC/scripts.pory"
+# 716 "data/maps/DLC/scripts.pory"
 	lockall
-# 693 "data/maps/DLC/scripts.pory"
+# 717 "data/maps/DLC/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 694 "data/maps/DLC/scripts.pory"
+# 718 "data/maps/DLC/scripts.pory"
 	goto_if_set DLCmathresolved, BlackBoardDLC_2
 BlackBoardDLC_1:
-# 697 "data/maps/DLC/scripts.pory"
+# 721 "data/maps/DLC/scripts.pory"
 	goto_if_unset DLCmathresolved, BlackBoardDLC_4
 	return
 
 BlackBoardDLC_2:
-# 695 "data/maps/DLC/scripts.pory"
+# 719 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_0
 	goto BlackBoardDLC_1
 
 BlackBoardDLC_4:
-# 698 "data/maps/DLC/scripts.pory"
+# 722 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_1
-# 700 "data/maps/DLC/scripts.pory"
+# 724 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_2
-# 701 "data/maps/DLC/scripts.pory"
+# 725 "data/maps/DLC/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, BlackBoardDLC_Text_3, BlackBoardDLC_Text_4, BlackBoardDLC_Text_5, OldaleTown_DLC_TherapyCutscene_Text_5
-# 702 "data/maps/DLC/scripts.pory"
+# 726 "data/maps/DLC/scripts.pory"
 	waitmessage
-# 704 "data/maps/DLC/scripts.pory"
+# 728 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BlackBoardDLC_7
 BlackBoardDLC_6:
-# 713 "data/maps/DLC/scripts.pory"
+# 737 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq BlackBoardDLC_10
 BlackBoardDLC_9:
-# 727 "data/maps/DLC/scripts.pory"
+# 751 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq BlackBoardDLC_13
 BlackBoardDLC_12:
-# 736 "data/maps/DLC/scripts.pory"
+# 760 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq BlackBoardDLC_16
 BlackBoardDLC_15:
-# 739 "data/maps/DLC/scripts.pory"
+# 763 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 BlackBoardDLC_7:
-# 705 "data/maps/DLC/scripts.pory"
+# 729 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_6
-# 706 "data/maps/DLC/scripts.pory"
+# 730 "data/maps/DLC/scripts.pory"
 	applymovement 6, LittleKidDLC_Movement_0
-# 707 "data/maps/DLC/scripts.pory"
+# 731 "data/maps/DLC/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_16
-# 708 "data/maps/DLC/scripts.pory"
+# 732 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_7
-# 710 "data/maps/DLC/scripts.pory"
+# 734 "data/maps/DLC/scripts.pory"
 	applymovement 6, TeacherDLC_Movement_0
 	goto BlackBoardDLC_6
 
 BlackBoardDLC_10:
-# 714 "data/maps/DLC/scripts.pory"
+# 738 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_8
-# 715 "data/maps/DLC/scripts.pory"
+# 739 "data/maps/DLC/scripts.pory"
 	applymovement 6, LittleKidDLC_Movement_0
-# 716 "data/maps/DLC/scripts.pory"
+# 740 "data/maps/DLC/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_16
-# 717 "data/maps/DLC/scripts.pory"
+# 741 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_9
-# 718 "data/maps/DLC/scripts.pory"
+# 742 "data/maps/DLC/scripts.pory"
 	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 719 "data/maps/DLC/scripts.pory"
+# 743 "data/maps/DLC/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 720 "data/maps/DLC/scripts.pory"
+# 744 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_10
-# 722 "data/maps/DLC/scripts.pory"
+# 746 "data/maps/DLC/scripts.pory"
 	applymovement 6, TeacherDLC_Movement_0
-# 723 "data/maps/DLC/scripts.pory"
+# 747 "data/maps/DLC/scripts.pory"
 	waitmovement 6
-# 724 "data/maps/DLC/scripts.pory"
+# 748 "data/maps/DLC/scripts.pory"
 	setflag DLCmathresolved
 	goto BlackBoardDLC_9
 
 BlackBoardDLC_13:
-# 728 "data/maps/DLC/scripts.pory"
+# 752 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_11
-# 729 "data/maps/DLC/scripts.pory"
+# 753 "data/maps/DLC/scripts.pory"
 	applymovement 6, LittleKidDLC_Movement_0
-# 730 "data/maps/DLC/scripts.pory"
+# 754 "data/maps/DLC/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_DLC_TherapyCutscene_Movement_16
-# 731 "data/maps/DLC/scripts.pory"
+# 755 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_7
-# 733 "data/maps/DLC/scripts.pory"
+# 757 "data/maps/DLC/scripts.pory"
 	applymovement 6, TeacherDLC_Movement_0
 	goto BlackBoardDLC_12
 
 BlackBoardDLC_16:
-# 737 "data/maps/DLC/scripts.pory"
+# 761 "data/maps/DLC/scripts.pory"
 	msgbox BlackBoardDLC_Text_12
 	goto BlackBoardDLC_15
 
 
 OpenBoxDLC::
-# 743 "data/maps/DLC/scripts.pory"
-	lockall
-# 744 "data/maps/DLC/scripts.pory"
+# 767 "data/maps/DLC/scripts.pory"
+	lock
+# 768 "data/maps/DLC/scripts.pory"
 	msgbox OpenBoxDLC_Text_0
-# 747 "data/maps/DLC/scripts.pory"
+# 771 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 PosterDLC::
-# 751 "data/maps/DLC/scripts.pory"
-	lockall
-# 752 "data/maps/DLC/scripts.pory"
+# 775 "data/maps/DLC/scripts.pory"
+	lock
+# 776 "data/maps/DLC/scripts.pory"
 	msgbox PosterDLC_Text_0
-# 754 "data/maps/DLC/scripts.pory"
+# 778 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 RulesDLC::
-# 758 "data/maps/DLC/scripts.pory"
-	lockall
-# 759 "data/maps/DLC/scripts.pory"
+# 782 "data/maps/DLC/scripts.pory"
+	lock
+# 783 "data/maps/DLC/scripts.pory"
 	msgbox RulesDLC_Text_0
-# 762 "data/maps/DLC/scripts.pory"
+# 786 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 BoardDLC::
-# 766 "data/maps/DLC/scripts.pory"
-	lockall
-# 767 "data/maps/DLC/scripts.pory"
+# 790 "data/maps/DLC/scripts.pory"
+	lock
+# 791 "data/maps/DLC/scripts.pory"
 	msgbox BoardDLC_Text_0
-# 769 "data/maps/DLC/scripts.pory"
+# 793 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 PCDLC::
-# 773 "data/maps/DLC/scripts.pory"
-	lockall
-# 774 "data/maps/DLC/scripts.pory"
+# 797 "data/maps/DLC/scripts.pory"
+	lock
+# 798 "data/maps/DLC/scripts.pory"
 	msgbox PCDLC_Text_0
-# 775 "data/maps/DLC/scripts.pory"
+# 799 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 BookshelfDLC::
-# 779 "data/maps/DLC/scripts.pory"
-	lockall
-# 780 "data/maps/DLC/scripts.pory"
+# 803 "data/maps/DLC/scripts.pory"
+	lock
+# 804 "data/maps/DLC/scripts.pory"
 	msgbox BookshelfDLC_Text_0
-# 781 "data/maps/DLC/scripts.pory"
+# 805 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 MauvillePosterDLC::
-# 785 "data/maps/DLC/scripts.pory"
-	lockall
-# 786 "data/maps/DLC/scripts.pory"
+# 809 "data/maps/DLC/scripts.pory"
+	lock
+# 810 "data/maps/DLC/scripts.pory"
 	msgbox MauvillePosterDLC_Text_0
-# 788 "data/maps/DLC/scripts.pory"
+# 812 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 TVDLC::
-# 792 "data/maps/DLC/scripts.pory"
-	lockall
-# 793 "data/maps/DLC/scripts.pory"
+# 816 "data/maps/DLC/scripts.pory"
+	lock
+# 817 "data/maps/DLC/scripts.pory"
 	msgbox TVDLC_Text_0
-# 797 "data/maps/DLC/scripts.pory"
+# 821 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 
 DLCSealedBox::
-# 801 "data/maps/DLC/scripts.pory"
+# 825 "data/maps/DLC/scripts.pory"
 	lockall
-# 802 "data/maps/DLC/scripts.pory"
+# 826 "data/maps/DLC/scripts.pory"
 	msgbox DLCSealedBox_Text_0
-# 803 "data/maps/DLC/scripts.pory"
+# 827 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
+
+
+KantonianWarHistoryVol1DLC::
+# 831 "data/maps/DLC/scripts.pory"
+	lock
+# 832 "data/maps/DLC/scripts.pory"
+	msgbox KantonianWarHistoryVol1DLC_Text_0
+# 834 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LittleKidDLC_Text_2, LittleKidDLC_Text_3
+# 836 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq KantonianWarHistoryVol1DLC_2
+KantonianWarHistoryVol1DLC_1:
+# 847 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq KantonianWarHistoryVol1DLC_5
+KantonianWarHistoryVol1DLC_4:
+# 850 "data/maps/DLC/scripts.pory"
+endkantonianwar:
+# 851 "data/maps/DLC/scripts.pory"
+	releaseall
+	return
+
+KantonianWarHistoryVol1DLC_2:
+# 837 "data/maps/DLC/scripts.pory"
+	showmonpic SPECIES_PIKACHU_HOENN, 10, 3
+# 838 "data/maps/DLC/scripts.pory"
+	msgbox KantonianWarHistoryVol1DLC_Text_1
+# 841 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 842 "data/maps/DLC/scripts.pory"
+	showmonpic SPECIES_PIKACHU_KALOS, 10, 3
+# 843 "data/maps/DLC/scripts.pory"
+	msgbox KantonianWarHistoryVol1DLC_Text_2
+# 845 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 846 "data/maps/DLC/scripts.pory"
+	goto endkantonianwar
+	goto KantonianWarHistoryVol1DLC_1
+
+KantonianWarHistoryVol1DLC_5:
+# 848 "data/maps/DLC/scripts.pory"
+	goto endkantonianwar
+	goto KantonianWarHistoryVol1DLC_4
 
 
 # 18 "data/maps/DLC/scripts.pory"
@@ -1655,17 +1743,17 @@ LittleKidDLC_Movement_0:
 	face_player
 	step_end
 
-# 265 "data/maps/DLC/scripts.pory"
+# 289 "data/maps/DLC/scripts.pory"
 TeacherDLC_Movement_0:
-# 265 "data/maps/DLC/scripts.pory"
+# 289 "data/maps/DLC/scripts.pory"
 	face_down
 	step_end
 
-# 448 "data/maps/DLC/scripts.pory"
+# 472 "data/maps/DLC/scripts.pory"
 LibraryGuyDLC_Movement_0:
-# 448 "data/maps/DLC/scripts.pory"
+# 472 "data/maps/DLC/scripts.pory"
 	face_left
-# 448 "data/maps/DLC/scripts.pory"
+# 472 "data/maps/DLC/scripts.pory"
 	face_up
 	step_end
 
@@ -1815,13 +1903,40 @@ OldaleTown_DLC_TherapyCutscene_Text_26:
 	.string "time.$"
 
 LittleKidDLC_Text_0:
-# 214 "data/maps/DLC/scripts.pory"
-	.string "I don't like Vinesors... Vensuros...?\n"
-	.string "I don't know... but I think Pokémon are\l"
-	.string "scary.$"
+# 218 "data/maps/DLC/scripts.pory"
+	.string "Hello mister! Want to see my drawing?$"
+
+LittleKidDLC_Text_1:
+# 221 "data/maps/DLC/scripts.pory"
+	.string "Hello miss! Want to see my drawing?$"
+
+LittleKidDLC_Text_2:
+# 223 "data/maps/DLC/scripts.pory"
+	.string "Yes$"
+
+LittleKidDLC_Text_3:
+# 223 "data/maps/DLC/scripts.pory"
+	.string "No$"
+
+LittleKidDLC_Text_4:
+# 226 "data/maps/DLC/scripts.pory"
+	.string "Look - I drew Munchies! It's my Snorlax!\n"
+	.string "Well... it was my Snorlax.\p"
+	.string "Munchie used to be small, but then it\n"
+	.string "EVOLVED! And mom got scared of it.\p"
+	.string "So we said goodbye to Munchy - we\n"
+	.string "released him. Munchy and I were very\l"
+	.string "sad...\p"
+	.string "When I become a trainer, I'll go find him,\n"
+	.string "and give him tons of yummy things to\l"
+	.string "eat!”$"
+
+LittleKidDLC_Text_5:
+# 232 "data/maps/DLC/scripts.pory"
+	.string "Hehe - okay! Your loss!$"
 
 FatManDLC_Text_0:
-# 224 "data/maps/DLC/scripts.pory"
+# 243 "data/maps/DLC/scripts.pory"
 	.string "It's true! I lived in Rustboro, and some\n"
 	.string "fire Pokémon burned the apartment\l"
 	.string "building I lived in.\p"
@@ -1829,13 +1944,13 @@ FatManDLC_Text_0:
 	.string "parents. I miss the city.$"
 
 SleepingKidDLC_Text_0:
-# 234 "data/maps/DLC/scripts.pory"
+# 255 "data/maps/DLC/scripts.pory"
 	.string "ZZZZ...\n"
 	.string "... Huh? Is Math class over? I think I\l"
 	.string "overslept...$"
 
 GirlNotebookDLC_Text_0:
-# 241 "data/maps/DLC/scripts.pory"
+# 262 "data/maps/DLC/scripts.pory"
 	.string "It's the notebook the scared girl left\n"
 	.string "behind.\p"
 	.string "Next to some classroom notes, there's a\n"
@@ -1843,222 +1958,214 @@ GirlNotebookDLC_Text_0:
 	.string "rescuing a little girl from drowning.$"
 
 SleepingBoyNotebookDLC_Text_0:
-# 248 "data/maps/DLC/scripts.pory"
+# 269 "data/maps/DLC/scripts.pory"
 	.string "The notebook has barely any notes, and\n"
 	.string "is covered in drool.$"
 
-DyslexicKidNotebookDLC_Text_0:
-# 254 "data/maps/DLC/scripts.pory"
-	.string "The notebook contains many Pokémon\n"
-	.string "names, most of them typed wrong.$"
+SnorlaxKidNotebookDLC_Text_0:
+# 276 "data/maps/DLC/scripts.pory"
+	.string "It's a drawing of a Snorlax, sleeping\n"
+	.string "soundly..$"
 
 TeacherDLC_Text_0:
-# 263 "data/maps/DLC/scripts.pory"
+# 287 "data/maps/DLC/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} I shouldn't have come to teach\n"
 	.string "to this backwater town.\p"
 	.string "But the bonus is so juicy...$"
 
 LibraryGuyDLC_Text_0:
-# 274 "data/maps/DLC/scripts.pory"
+# 298 "data/maps/DLC/scripts.pory"
 	.string "Welcome! This is the Devon Learning\n"
 	.string "Center's library.$"
 
 LibraryGuyDLC_Text_1:
-# 276 "data/maps/DLC/scripts.pory"
+# 300 "data/maps/DLC/scripts.pory"
 	.string "Would you like to loan anything?$"
 
 LibraryGuyDLC_Text_2:
-# 278 "data/maps/DLC/scripts.pory"
+# 302 "data/maps/DLC/scripts.pory"
 	.string "Loan a book$"
 
 LibraryGuyDLC_Text_3:
-# 278 "data/maps/DLC/scripts.pory"
+# 302 "data/maps/DLC/scripts.pory"
 	.string "Loan a TM$"
 
 LibraryGuyDLC_Text_4:
-# 278 "data/maps/DLC/scripts.pory"
+# 302 "data/maps/DLC/scripts.pory"
 	.string "How do loans work?$"
 
 LibraryGuyDLC_Text_5:
-# 278 "data/maps/DLC/scripts.pory"
+# 302 "data/maps/DLC/scripts.pory"
 	.string "No, thank you$"
 
 LibraryGuyDLC_Text_6:
-# 287 "data/maps/DLC/scripts.pory"
+# 311 "data/maps/DLC/scripts.pory"
 	.string "Oh, my record shows you have already\n"
 	.string "loaned 'The History of Mt. Chimney'.\p"
 	.string "You need to return it before loaning\n"
 	.string "any more books. Is that okay?$"
 
 LibraryGuyDLC_Text_7:
-# 289 "data/maps/DLC/scripts.pory"
-	.string "Yes$"
-
-LibraryGuyDLC_Text_8:
-# 289 "data/maps/DLC/scripts.pory"
-	.string "No$"
-
-LibraryGuyDLC_Text_9:
-# 289 "data/maps/DLC/scripts.pory"
+# 313 "data/maps/DLC/scripts.pory"
 	.string "I lost it...$"
 
-LibraryGuyDLC_Text_10:
-# 292 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_8:
+# 316 "data/maps/DLC/scripts.pory"
 	.string "Very well, I'll take that off your hands\n"
 	.string "then. You can loan a new book now!$"
 
-LibraryGuyDLC_Text_11:
-# 299 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_9:
+# 323 "data/maps/DLC/scripts.pory"
 	.string "Understandable! You can return it when\n"
 	.string "you've finished with it.$"
 
-LibraryGuyDLC_Text_12:
-# 304 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_10:
+# 328 "data/maps/DLC/scripts.pory"
 	.string "Oh, that's unfortunate...\p"
 	.string "If you want to continue loaning, you'll\n"
 	.string "need to refund the loss - which is\l"
 	.string "5000¥$"
 
-LibraryGuyDLC_Text_13:
-# 307 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_11:
+# 331 "data/maps/DLC/scripts.pory"
 	.string "I will pay$"
 
-LibraryGuyDLC_Text_14:
-# 307 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_12:
+# 331 "data/maps/DLC/scripts.pory"
 	.string "Not right now$"
 
-LibraryGuyDLC_Text_15:
-# 312 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_13:
+# 336 "data/maps/DLC/scripts.pory"
 	.string "Thank you. Please take better care of\n"
 	.string "loans from now on. You may now loan a\l"
 	.string "new book.$"
 
-LibraryGuyDLC_Text_16:
-# 319 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_14:
+# 343 "data/maps/DLC/scripts.pory"
 	.string "You don't seem to have enough funds...\n"
 	.string "please return when you procure them!$"
 
-LibraryGuyDLC_Text_17:
-# 325 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_15:
+# 349 "data/maps/DLC/scripts.pory"
 	.string "Very well... we'll eagerly await for your\n"
 	.string "refunding.$"
 
-LibraryGuyDLC_Text_18:
-# 334 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_16:
+# 358 "data/maps/DLC/scripts.pory"
 	.string "Oh, my record shows you have already\n"
 	.string "loaned On Fortree's Deforestation.\p"
 	.string "You need to return it before loaning\n"
 	.string "any more books. Is that okay?$"
 
-LibraryGuyDLC_Text_19:
-# 382 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_17:
+# 406 "data/maps/DLC/scripts.pory"
 	.string "Oh, my record shows you have already\n"
 	.string "loaned 'New Mauville - What Went Wrong'.\p"
 	.string "You need to return it before loaning\n"
 	.string "any more books. Is that okay?$"
 
-LibraryGuyDLC_Text_20:
-# 431 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_18:
+# 455 "data/maps/DLC/scripts.pory"
 	.string "These are the books we have currently\n"
 	.string "available for loans.$"
 
-LibraryGuyDLC_Text_21:
-# 433 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_19:
+# 457 "data/maps/DLC/scripts.pory"
 	.string "'The History of Mt. Chimney'$"
 
-LibraryGuyDLC_Text_22:
-# 433 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_20:
+# 457 "data/maps/DLC/scripts.pory"
 	.string "'On Fortree's Deforestation'$"
 
-LibraryGuyDLC_Text_23:
-# 433 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_21:
+# 457 "data/maps/DLC/scripts.pory"
 	.string "'New Mauville - What Went Wrong?'$"
 
-LibraryGuyDLC_Text_24:
-# 433 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_22:
+# 457 "data/maps/DLC/scripts.pory"
 	.string "I changed my mind$"
 
-LibraryGuyDLC_Text_25:
-# 436 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_23:
+# 460 "data/maps/DLC/scripts.pory"
 	.string "Interested in geology? Then this is a\n"
 	.string "great pick. Here you go!$"
 
-LibraryGuyDLC_Text_26:
-# 442 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_24:
+# 466 "data/maps/DLC/scripts.pory"
 	.string "Hope you enjoy it! Please return it when\n"
 	.string "you're finished with it.$"
 
-LibraryGuyDLC_Text_27:
-# 447 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_25:
+# 471 "data/maps/DLC/scripts.pory"
 	.string "A concerning ecological study - but I\n"
 	.string "am sure Devon has plans to avoid the\l"
 	.string "worst.$"
 
-LibraryGuyDLC_Text_28:
-# 456 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_26:
+# 480 "data/maps/DLC/scripts.pory"
 	.string "One should learn from the past to avoid\n"
 	.string "repeating it... here!$"
 
-LibraryGuyDLC_Text_29:
-# 465 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_27:
+# 489 "data/maps/DLC/scripts.pory"
 	.string "Fair enough. Perhaps you'd like to loan\n"
 	.string "something else?$"
 
-LibraryGuyDLC_Text_30:
-# 478 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_28:
+# 502 "data/maps/DLC/scripts.pory"
 	.string "Oh, my record shows you have already\n"
 	.string "loaned TM 17 - Protect.\p"
 	.string "You need to return it before loaning\n"
 	.string "any more TMs. Is that okay?$"
 
-LibraryGuyDLC_Text_31:
-# 483 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_29:
+# 507 "data/maps/DLC/scripts.pory"
 	.string "Very well, I'll take that off your hands\n"
 	.string "then. You can loan a new TM now!$"
 
-LibraryGuyDLC_Text_32:
-# 503 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_30:
+# 527 "data/maps/DLC/scripts.pory"
 	.string "Thank you. Please take better care of\n"
 	.string "loans from now on. You may now loan a\l"
 	.string "new TM.$"
 
-LibraryGuyDLC_Text_33:
-# 524 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_31:
+# 548 "data/maps/DLC/scripts.pory"
 	.string "Oh, my record shows you have already\n"
 	.string "loaned TM 20 - Safeguard.\p"
 	.string "You need to return it before loaning\n"
 	.string "any more TMs. Is that okay?$"
 
-LibraryGuyDLC_Text_34:
-# 571 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_32:
+# 595 "data/maps/DLC/scripts.pory"
 	.string "Oh, my record shows you have already\n"
 	.string "loaned TM 33 - Reflect.\p"
 	.string "You need to return it before loaning\n"
 	.string "any more TMs. Is that okay?$"
 
-LibraryGuyDLC_Text_35:
-# 620 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_33:
+# 644 "data/maps/DLC/scripts.pory"
 	.string "These are the TMs we have currently\n"
 	.string "available for loans.$"
 
-LibraryGuyDLC_Text_36:
-# 621 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_34:
+# 645 "data/maps/DLC/scripts.pory"
 	.string "'TM 17 - Protect'$"
 
-LibraryGuyDLC_Text_37:
-# 621 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_35:
+# 645 "data/maps/DLC/scripts.pory"
 	.string "'TM 20 - Safeguard'$"
 
-LibraryGuyDLC_Text_38:
-# 621 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_36:
+# 645 "data/maps/DLC/scripts.pory"
 	.string "'TM 33 - Reflect'$"
 
-LibraryGuyDLC_Text_39:
-# 623 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_37:
+# 647 "data/maps/DLC/scripts.pory"
 	.string "Of course - I have a copy right here!$"
 
-LibraryGuyDLC_Text_40:
-# 655 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_38:
+# 679 "data/maps/DLC/scripts.pory"
 	.string "It's easy! You can loan one book and\n"
 	.string "one TM at any given time, at no cost.\p"
 	.string "If you have loaned a book, you'll need\n"
@@ -2073,12 +2180,12 @@ LibraryGuyDLC_Text_40:
 	.string "out often.\p"
 	.string "So, now that you know how it works...$"
 
-LibraryGuyDLC_Text_41:
-# 664 "data/maps/DLC/scripts.pory"
+LibraryGuyDLC_Text_39:
+# 688 "data/maps/DLC/scripts.pory"
 	.string "I'll be here if you change your mind!$"
 
 OLDLibraryGuyDLC_Text_0:
-# 676 "data/maps/DLC/scripts.pory"
+# 700 "data/maps/DLC/scripts.pory"
 	.string "Welcome! This is the Devon Learning\n"
 	.string "Center's library.\p"
 	.string "You can read any of the books here, but\n"
@@ -2086,72 +2193,72 @@ OLDLibraryGuyDLC_Text_0:
 	.string "a loan - sorry!$"
 
 TeacherdeskDLC_Text_0:
-# 685 "data/maps/DLC/scripts.pory"
+# 709 "data/maps/DLC/scripts.pory"
 	.string "The book on top features a Psyduck on\n"
 	.string "its cover, and is titled 'Therapy for\l"
 	.string "Beginners.'$"
 
 BlackBoardDLC_Text_0:
-# 695 "data/maps/DLC/scripts.pory"
-	.string "The math problem is resolved$"
+# 719 "data/maps/DLC/scripts.pory"
+	.string "The math problem is solved.$"
 
 BlackBoardDLC_Text_1:
-# 698 "data/maps/DLC/scripts.pory"
+# 722 "data/maps/DLC/scripts.pory"
 	.string "The board contains an unanswered math\n"
 	.string "problem from a previous lesson...$"
 
 BlackBoardDLC_Text_2:
-# 700 "data/maps/DLC/scripts.pory"
+# 724 "data/maps/DLC/scripts.pory"
 	.string "I have ¥2404, and I buy two Devon Balls\n"
 	.string "for ¥210 each. How much do I have left?$"
 
 BlackBoardDLC_Text_3:
-# 701 "data/maps/DLC/scripts.pory"
+# 725 "data/maps/DLC/scripts.pory"
 	.string "¥2194$"
 
 BlackBoardDLC_Text_4:
-# 701 "data/maps/DLC/scripts.pory"
+# 725 "data/maps/DLC/scripts.pory"
 	.string "¥1984$"
 
 BlackBoardDLC_Text_5:
-# 701 "data/maps/DLC/scripts.pory"
+# 725 "data/maps/DLC/scripts.pory"
 	.string "¥2025$"
 
 BlackBoardDLC_Text_6:
-# 705 "data/maps/DLC/scripts.pory"
+# 729 "data/maps/DLC/scripts.pory"
 	.string "You write ¥2194 on the blackboard.$"
 
 BlackBoardDLC_Text_7:
-# 708 "data/maps/DLC/scripts.pory"
+# 732 "data/maps/DLC/scripts.pory"
 	.string "Uhm... that's not correct. Would you mind\n"
 	.string "not writing wrong answers on the board?\n"
 	.string "Thank you.$"
 
 BlackBoardDLC_Text_8:
-# 714 "data/maps/DLC/scripts.pory"
+# 738 "data/maps/DLC/scripts.pory"
 	.string "You write ¥1984 on the blackboard.$"
 
 BlackBoardDLC_Text_9:
-# 717 "data/maps/DLC/scripts.pory"
+# 741 "data/maps/DLC/scripts.pory"
 	.string "Oh, that's correct! You're good with\n"
 	.string "numbers.$"
 
 BlackBoardDLC_Text_10:
-# 720 "data/maps/DLC/scripts.pory"
+# 744 "data/maps/DLC/scripts.pory"
 	.string "I like math problems... they always have\n"
 	.string "a single right answer.\p"
 	.string "If only the world worked like that.$"
 
 BlackBoardDLC_Text_11:
-# 728 "data/maps/DLC/scripts.pory"
+# 752 "data/maps/DLC/scripts.pory"
 	.string "You write ¥2025 on the blackboard.$"
 
 BlackBoardDLC_Text_12:
-# 737 "data/maps/DLC/scripts.pory"
+# 761 "data/maps/DLC/scripts.pory"
 	.string "Better not to write anything...$"
 
 OpenBoxDLC_Text_0:
-# 744 "data/maps/DLC/scripts.pory"
+# 768 "data/maps/DLC/scripts.pory"
 	.string "A label on the open box reads 'To be\n"
 	.string "discarded'.\p"
 	.string "Through the open gap, you glimpse a\n"
@@ -2160,14 +2267,14 @@ OpenBoxDLC_Text_0:
 	.string "{COLOR BLUE}Professor Balsam{COLOR DARK_GRAY}.'$"
 
 PosterDLC_Text_0:
-# 752 "data/maps/DLC/scripts.pory"
+# 776 "data/maps/DLC/scripts.pory"
 	.string "Next month's planned excursion:\n"
 	.string "Petalburg Park!\p"
 	.string "Sign ups open on DLC's website.\n"
 	.string "Minors require parental consent.$"
 
 RulesDLC_Text_0:
-# 759 "data/maps/DLC/scripts.pory"
+# 783 "data/maps/DLC/scripts.pory"
 	.string "The hanged notes contain many\n"
 	.string "classroom rules.\p"
 	.string "1) No yelling\n"
@@ -2177,30 +2284,30 @@ RulesDLC_Text_0:
 	.string "The list goes on and on.$"
 
 BoardDLC_Text_0:
-# 767 "data/maps/DLC/scripts.pory"
+# 791 "data/maps/DLC/scripts.pory"
 	.string "The board contains many Devon-related\n"
 	.string "news, event posters, and most of all\l"
 	.string "product ads.$"
 
 PCDLC_Text_0:
-# 774 "data/maps/DLC/scripts.pory"
+# 798 "data/maps/DLC/scripts.pory"
 	.string "The computer asks for a DLC username\n"
 	.string "and password. I don't have any.$"
 
 BookshelfDLC_Text_0:
-# 780 "data/maps/DLC/scripts.pory"
+# 804 "data/maps/DLC/scripts.pory"
 	.string "It's full of books and magazines\n"
 	.string "published by Devon Co.$"
 
 MauvillePosterDLC_Text_0:
-# 786 "data/maps/DLC/scripts.pory"
+# 810 "data/maps/DLC/scripts.pory"
 	.string "Finished using the PC? Turn it off, and\n"
 	.string "save electricity!\p"
 	.string "Let's take care of Hoenn together.\n"
 	.string "{COLOR BLUE}Mauville Nuclear Plant.{COLOR DARK_GRAY}$"
 
 TVDLC_Text_0:
-# 793 "data/maps/DLC/scripts.pory"
+# 817 "data/maps/DLC/scripts.pory"
 	.string "The TV is playing a documentary on\n"
 	.string "Safemon on a loop.\p"
 	.string "'Before leaving Devon laboratories, all\n"
@@ -2212,5 +2319,26 @@ TVDLC_Text_0:
 	.string "can be dangerous!'$"
 
 DLCSealedBox_Text_0:
-# 802 "data/maps/DLC/scripts.pory"
+# 826 "data/maps/DLC/scripts.pory"
 	.string "It's a sealed box. Better not to open it.$"
+
+KantonianWarHistoryVol1DLC_Text_0:
+# 832 "data/maps/DLC/scripts.pory"
+	.string "A book stands out in the shelf. It's\n"
+	.string "called 'History of the Kantonian War,\l"
+	.string "Volume 1.\p"
+	.string "Read it?$"
+
+KantonianWarHistoryVol1DLC_Text_1:
+# 838 "data/maps/DLC/scripts.pory"
+	.string "February, 1996. Team Rocket, a criminal\n"
+	.string "organization with a strong presence in\l"
+	.string "the Kanto region, invades the\l"
+	.string "headquarters of Silph Co., a\l"
+	.string "technological company in Saffron City.$"
+
+KantonianWarHistoryVol1DLC_Text_2:
+# 843 "data/maps/DLC/scripts.pory"
+	.string "They defeat all opposition, and the\n"
+	.string "leader of Team Rocket, Giovanni,\l"
+	.string "assumes control of the company.$"

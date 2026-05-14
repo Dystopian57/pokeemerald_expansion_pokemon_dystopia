@@ -1690,7 +1690,7 @@ TV_2:
 # 852 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	playbgm MUS_INTRO_BATTLE, FALSE
 # 853 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	showmonpic SPECIES_ALCREMIE_CLOVER, 10, 3
+	showmonpic SPECIES_PIKACHU_ALOLA, 10, 3
 # 854 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox TV_Text_0
 # 857 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

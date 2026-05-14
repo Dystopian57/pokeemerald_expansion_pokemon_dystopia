@@ -190,8 +190,8 @@
 #define concordwageslave           0xA6
 
 #define seenweatheratinnvisit          0xA7
-#define FLAG_RECEIVED_TM_OVERHEAT            0xA8
-#define FLAG_RECEIVED_TM_FACADE              0xA9
+#define daynpc            0xA8
+#define nightnpc              0xA9
 #define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
 #define FLAG_RECEIVED_TM_CALM_MIND           0xAB
 #define FLAG_RECEIVED_TM_WATER_PULSE         0xAC
