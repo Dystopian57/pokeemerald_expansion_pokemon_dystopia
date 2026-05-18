@@ -52,7 +52,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldalePokeCenterOldLady",
-      "flag": "0"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
@@ -64,8 +64,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "OldalePokeCenterInjuredGuy",
-      "flag": "0"
+      "script": "OldalePokeCenterInjuredGuyDay",
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
@@ -90,8 +90,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "OldalePokeCenterMapBoy",
-      "flag": "0"
+      "script": "OldalePokeCenterMapBoyDay",
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SKITTY_DOLL",
@@ -117,7 +117,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldalePokeCenterTVKid",
-      "flag": "0"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
@@ -131,6 +131,58 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CarRebel",
       "flag": "carrebelatDC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CLERKF",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldalePokeCenterInjuredGuyNight",
+      "flag": "nightnpc"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldalePokeCenterMapBoyNight",
+      "flag": "nightnpc"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOODTRAY",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [

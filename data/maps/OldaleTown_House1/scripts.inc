@@ -69,138 +69,249 @@ DayNightNPC_11:
 	goto DayNightNPC_10
 
 
-OldaleHouse1GirlDay::
-# 43 "data/maps/OldaleTown_House1/scripts.pory"
+OldaleHouse1Fridge::
+# 42 "data/maps/OldaleTown_House1/scripts.pory"
 	lockall
+# 43 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1Fridge_Text_0
 # 44 "data/maps/OldaleTown_House1/scripts.pory"
+	releaseall
+	return
+
+
+OldaleHouse1Cabinet::
+# 48 "data/maps/OldaleTown_House1/scripts.pory"
+	lockall
+# 49 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1Cabinet_Text_0
+# 50 "data/maps/OldaleTown_House1/scripts.pory"
+	releaseall
+	return
+
+
+OldaleHouse1Bookshelf::
+# 54 "data/maps/OldaleTown_House1/scripts.pory"
+	lockall
+# 55 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1Bookshelf_Text_0
+# 56 "data/maps/OldaleTown_House1/scripts.pory"
+	releaseall
+	return
+
+
+OldaleHouse1Drawer::
+# 60 "data/maps/OldaleTown_House1/scripts.pory"
+	lockall
+# 61 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1Drawer_Text_0
+# 62 "data/maps/OldaleTown_House1/scripts.pory"
+	releaseall
+	return
+
+
+OldaleHouse1BoyNight::
+# 67 "data/maps/OldaleTown_House1/scripts.pory"
+	lockall
+# 68 "data/maps/OldaleTown_House1/scripts.pory"
+	applymovement 8, OldaleHouse1BoyNight_Movement_0
+# 69 "data/maps/OldaleTown_House1/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 45 "data/maps/OldaleTown_House1/scripts.pory"
+# 70 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1BoyNight_Text_0
+# 72 "data/maps/OldaleTown_House1/scripts.pory"
+	releaseall
+	return
+
+
+OldaleHouse1TVDay::
+# 76 "data/maps/OldaleTown_House1/scripts.pory"
+	lockall
+# 77 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1TVDay_Text_0
+# 78 "data/maps/OldaleTown_House1/scripts.pory"
+	releaseall
+	return
+
+
+OldaleHouse1TVNight::
+# 82 "data/maps/OldaleTown_House1/scripts.pory"
+	lockall
+# 83 "data/maps/OldaleTown_House1/scripts.pory"
+	showmonpic SPECIES_PIKACHU_HOENN, 10, 3
+# 84 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouse1TVNight_Text_0
+# 86 "data/maps/OldaleTown_House1/scripts.pory"
+	hidemonpic
+# 87 "data/maps/OldaleTown_House1/scripts.pory"
+	releaseall
+	return
+
+
+OldaleHouse1GirlDay::
+# 91 "data/maps/OldaleTown_House1/scripts.pory"
+	lockall
+# 92 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1GirlDay_Text_0
-# 46 "data/maps/OldaleTown_House1/scripts.pory"
+# 93 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouse1GirlNight::
-# 50 "data/maps/OldaleTown_House1/scripts.pory"
+# 97 "data/maps/OldaleTown_House1/scripts.pory"
 	lockall
-# 51 "data/maps/OldaleTown_House1/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 52 "data/maps/OldaleTown_House1/scripts.pory"
+# 98 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1GirlNight_Text_0
-# 54 "data/maps/OldaleTown_House1/scripts.pory"
+# 100 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouse1Shiiko::
-# 58 "data/maps/OldaleTown_House1/scripts.pory"
+# 104 "data/maps/OldaleTown_House1/scripts.pory"
 	lockall
-# 59 "data/maps/OldaleTown_House1/scripts.pory"
+# 105 "data/maps/OldaleTown_House1/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 60 "data/maps/OldaleTown_House1/scripts.pory"
+# 106 "data/maps/OldaleTown_House1/scripts.pory"
 	playmoncry SPECIES_SHIITAKO, CRY_MODE_WEAK
-# 61 "data/maps/OldaleTown_House1/scripts.pory"
+# 107 "data/maps/OldaleTown_House1/scripts.pory"
 	applymovement 3, OldaleHouse1Shiiko_Movement_0
-# 62 "data/maps/OldaleTown_House1/scripts.pory"
+# 108 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1Shiiko_Text_0
-# 63 "data/maps/OldaleTown_House1/scripts.pory"
+# 109 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouse1WomanDay::
-# 67 "data/maps/OldaleTown_House1/scripts.pory"
+# 113 "data/maps/OldaleTown_House1/scripts.pory"
 	lockall
-# 68 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 1, OldaleHouse1WomanDay_Movement_0
-# 69 "data/maps/OldaleTown_House1/scripts.pory"
+# 114 "data/maps/OldaleTown_House1/scripts.pory"
+	applymovement 1, OldaleHouse1BoyNight_Movement_0
+# 115 "data/maps/OldaleTown_House1/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 70 "data/maps/OldaleTown_House1/scripts.pory"
+# 116 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1WomanDay_Text_0
-# 72 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 1, OldaleHouse1WomanDay_Movement_1
-# 73 "data/maps/OldaleTown_House1/scripts.pory"
+# 118 "data/maps/OldaleTown_House1/scripts.pory"
+	applymovement 1, OldaleHouse1WomanDay_Movement_0
+# 119 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouse1WomanNight::
-# 78 "data/maps/OldaleTown_House1/scripts.pory"
+# 124 "data/maps/OldaleTown_House1/scripts.pory"
 	lockall
-# 79 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 1, OldaleHouse1WomanDay_Movement_0
-# 80 "data/maps/OldaleTown_House1/scripts.pory"
+# 125 "data/maps/OldaleTown_House1/scripts.pory"
+	applymovement 1, OldaleHouse1BoyNight_Movement_0
+# 126 "data/maps/OldaleTown_House1/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 81 "data/maps/OldaleTown_House1/scripts.pory"
+# 127 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1WomanNight_Text_0
-# 84 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 1, OldaleHouse1WomanDay_Movement_1
-# 85 "data/maps/OldaleTown_House1/scripts.pory"
+# 130 "data/maps/OldaleTown_House1/scripts.pory"
+	applymovement 1, OldaleHouse1WomanDay_Movement_0
+# 131 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouseOldWomanNight::
-# 89 "data/maps/OldaleTown_House1/scripts.pory"
+# 135 "data/maps/OldaleTown_House1/scripts.pory"
 	lock
-# 90 "data/maps/OldaleTown_House1/scripts.pory"
+# 136 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouseOldWomanNight_Text_0
-# 91 "data/maps/OldaleTown_House1/scripts.pory"
+# 137 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
-# 61 "data/maps/OldaleTown_House1/scripts.pory"
-OldaleHouse1Shiiko_Movement_0:
-# 61 "data/maps/OldaleTown_House1/scripts.pory"
-	walk_in_place_slow_up
-# 61 "data/maps/OldaleTown_House1/scripts.pory"
-	walk_in_place_slow_up
-	step_end
-
 # 68 "data/maps/OldaleTown_House1/scripts.pory"
-OldaleHouse1WomanDay_Movement_0:
+OldaleHouse1BoyNight_Movement_0:
 # 68 "data/maps/OldaleTown_House1/scripts.pory"
 	face_player
 	step_end
 
-# 72 "data/maps/OldaleTown_House1/scripts.pory"
-OldaleHouse1WomanDay_Movement_1:
-# 72 "data/maps/OldaleTown_House1/scripts.pory"
+# 107 "data/maps/OldaleTown_House1/scripts.pory"
+OldaleHouse1Shiiko_Movement_0:
+# 107 "data/maps/OldaleTown_House1/scripts.pory"
+	walk_in_place_slow_up
+# 107 "data/maps/OldaleTown_House1/scripts.pory"
+	walk_in_place_slow_up
+	step_end
+
+# 118 "data/maps/OldaleTown_House1/scripts.pory"
+OldaleHouse1WomanDay_Movement_0:
+# 118 "data/maps/OldaleTown_House1/scripts.pory"
 	face_up
 	step_end
 
+OldaleHouse1Fridge_Text_0:
+# 43 "data/maps/OldaleTown_House1/scripts.pory"
+	.string "The fridge contains a few cheap, home\n"
+	.string "cooked meals.$"
+
+OldaleHouse1Cabinet_Text_0:
+# 49 "data/maps/OldaleTown_House1/scripts.pory"
+	.string "It's probably full of clothes. Better\n"
+	.string "not to open it.$"
+
+OldaleHouse1Bookshelf_Text_0:
+# 55 "data/maps/OldaleTown_House1/scripts.pory"
+	.string "None of the books seem too interesting.$"
+
+OldaleHouse1Drawer_Text_0:
+# 61 "data/maps/OldaleTown_House1/scripts.pory"
+	.string "The drawers are full of worthless\n"
+	.string "knicknacks.$"
+
+OldaleHouse1BoyNight_Text_0:
+# 70 "data/maps/OldaleTown_House1/scripts.pory"
+	.string "We can't afford a Devon TV License… so\n"
+	.string "I'm watching video tapes!\p"
+	.string "This one is a bit scary, though...$"
+
+OldaleHouse1TVDay_Text_0:
+# 77 "data/maps/OldaleTown_House1/scripts.pory"
+	.string "The TV is turned off.$"
+
+OldaleHouse1TVNight_Text_0:
+# 84 "data/maps/OldaleTown_House1/scripts.pory"
+	.string "It's the movie 'War of the Worlds' by H.G.\n"
+	.string "Weedle. A giant, spider-like robot is\l"
+	.string "capturing panicked humans.\p"
+	.string "Some people think it's a critique on\n"
+	.string "Pokémon training.$"
+
 OldaleHouse1GirlDay_Text_0:
-# 45 "data/maps/OldaleTown_House1/scripts.pory"
+# 92 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Don't worry Shiiko. I would never eat\n"
 	.string "you, no matter how tasty you look!$"
 
 OldaleHouse1GirlNight_Text_0:
-# 52 "data/maps/OldaleTown_House1/scripts.pory"
+# 98 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Come on Shiiko… I know I bit you, but I\n"
 	.string "was sleep walking!\p"
 	.string "I swear I won't eat you, so come down\n"
 	.string "here!$"
 
 OldaleHouse1Shiiko_Text_0:
-# 62 "data/maps/OldaleTown_House1/scripts.pory"
+# 108 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Shiii...$"
 
 OldaleHouse1WomanDay_Text_0:
-# 70 "data/maps/OldaleTown_House1/scripts.pory"
+# 116 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "It's been hard raising my daugther\n"
 	.string "alone without my husband.\p"
 	.string "If only he had not enlisted... I begged\n"
 	.string "him not to.$"
 
 OldaleHouse1WomanNight_Text_0:
-# 81 "data/maps/OldaleTown_House1/scripts.pory"
+# 127 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Don't yOu thInk it's... {COLOR LIGHT_GRAY}{SHADOW WHITE}Hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} a bIt lAte\n"
 	.string "tO... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} vIssIt random houses?\p"
 	.string "I nEed tO ssAve Up... frr a lOck... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleHouseOldWomanNight_Text_0:
-# 90 "data/maps/OldaleTown_House1/scripts.pory"
+# 136 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Dear, I think you've drank enough...\n"
 	.string "let's get you to bed.$"

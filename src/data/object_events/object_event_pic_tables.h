@@ -579,6 +579,14 @@ static const struct SpriteFrameImage sPicTable_moxie[] = {
     overworld_ascending_frames(gObjectEventPic_moxie, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_patientm[] = {
+    overworld_ascending_frames(gObjectEventPic_patientm, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_foodtray[] = {
+    overworld_ascending_frames(gObjectEventPic_foodtray, 2, 4),
+};
+
 
 
 

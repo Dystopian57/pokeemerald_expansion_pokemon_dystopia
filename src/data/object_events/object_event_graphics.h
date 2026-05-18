@@ -218,6 +218,10 @@ const u32 gObjectEventPic_injureddevongruntm[] = INCBIN_U32("graphics/object_eve
 const u32 gObjectEventPic_injuredrebelgruntf[] = INCBIN_U32("graphics/object_events/pics/people/injuredrebelgruntf.4bpp");
 const u32 gObjectEventPic_moxie[] = INCBIN_U32("graphics/object_events/pics/people/moxie.4bpp");
 
+
+const u32 gObjectEventPic_patientm[] = INCBIN_U32("graphics/object_events/pics/people/patientm.4bpp");
+const u32 gObjectEventPic_foodtray[] = INCBIN_U32("graphics/object_events/pics/misc/foodtray.4bpp");
+
 const u32 gObjectEventPic_ReporterM[] = INCBIN_U32("graphics/object_events/pics/people/reporter_m.4bpp");
 const u32 gObjectEventPic_ReporterF[] = INCBIN_U32("graphics/object_events/pics/people/reporter_f.4bpp");
 const u32 gObjectEventPic_MauvilleOldMan1[] = INCBIN_U32("graphics/object_events/pics/people/mauville_old_man_1.4bpp");

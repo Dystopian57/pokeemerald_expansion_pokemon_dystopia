@@ -38,17 +38,63 @@ endofdaynightnpc:
 }
 
 
+script OldaleHouse1Fridge {
+    lockall
+    msgbox(format("The fridge contains a few cheap, home cooked meals."))
+    releaseall
+}
+
+script OldaleHouse1Cabinet {
+    lockall
+    msgbox(format("It's probably full of clothes. Better not to open it."))
+    releaseall
+}
+
+script OldaleHouse1Bookshelf {
+    lockall
+    msgbox(format("None of the books seem too interesting."))
+    releaseall
+}
+
+script OldaleHouse1Drawer {
+    lockall
+    msgbox(format("The drawers are full of worthless knicknacks."))
+    releaseall
+}
+
+
+script OldaleHouse1BoyNight {
+    lockall
+	applymovement (8, moves(face_player))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("We can't afford a Devon TV License… so I'm watching video tapes! \p This one
+	is a bit scary, though..."))
+    releaseall
+}
+
+script OldaleHouse1TVDay {
+    lockall
+    msgbox(format("The TV is turned off."))
+    releaseall
+}
+
+script OldaleHouse1TVNight {
+    lockall
+    showmonpic(SPECIES_PIKACHU_HOENN, 10,3)
+    msgbox(format("It's the movie 'War of the Worlds' by H.G. Weedle. A giant, spider-like robot is
+	capturing panicked humans. \p Some people think it's a critique on Pokémon training."))
+    hidemonpic
+    releaseall
+}
 
 script OldaleHouse1GirlDay {
     lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("Don't worry Shiiko. I would never eat you, no matter how tasty you look!"))
     releaseall
 }
 
 script OldaleHouse1GirlNight {
     lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("Come on Shiiko… I know I bit you, but I was sleep walking!\p I swear I won't
 	eat you, so come down here! "))
     releaseall

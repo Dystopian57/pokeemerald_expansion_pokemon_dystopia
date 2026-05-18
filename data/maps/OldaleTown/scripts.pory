@@ -6,6 +6,7 @@ raw `
 
 
 mapscripts OldaleTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightNPC
     MAP_SCRIPT_ON_TRANSITION: OldaleWeather
     MAP_SCRIPT_ON_TRANSITION: GenderedSpriteOldale
     
@@ -71,7 +72,7 @@ script ConArtist103Rewards {
 	wares! The cash I get when I sell them, duh! \p Speaking of wares - would you like to
 	take a look at them?"))
 
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 	if(var(VAR_RESULT) == 0){
 		msgbox(format("Hehe, of course you do... here's what I got! Only 500 each!"))
 		eggoffer:
@@ -349,19 +350,32 @@ script OldaleOutsideParkNPC {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (11, moves(face_player))
 
-    if (!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN))
+    if ((!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == FALSE)
+        {
+        msgbox(format("I hear there's people in the Rebel Zone who get crazy rich by selling ores, pearls and other high value items.
+        \p Do you know where to find those though? Cause I sure don't, or I wouldn't be sitting here!"))
+        }
+    if ((flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == FALSE)
     {
-    msgbox(format("I hear there's people in the Rebel Zone who get crazy rich by selling ores, pearls and other high value items.
-    \p Do you know where to find those though? Cause I sure don't, or I wouldn't be sitting here!"))
-    }
-
-    else {
-        msgbox(format("Uhm... did you just dig through that trash can over there? \p If you need pokeyen,
-        you should get a Devon Radar and find scrap to sell. There's lots lying around. \p Other people
+        msgbox(format("So... I did see you dig through that trash can. \p If you need pokeyen,
+        you should get a {COLOR BLUE}Devon Radar{COLOR DARK_GRAY} and find scrap to sell. There's lots lying around. \p Other people
         get rich by selling items like ores and pearls, but I wouldn't know where to start looking
-        for those."))
+        for those."))}
+        
+    if ((!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == TRUE)
+    {
+        msgbox(format("Oh, is that a Devon Radar? That's handy. \p If you're short on pokeyen,
+        you should use it as much as you can. You might find some valuables to sell\p
+        Why don't you try it right now? Who knows, you might find something!"))}
+
+    if ((flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == TRUE)
+    {
+        msgbox(format("Oh, is that a Devon Radar? That's handy. \p If you're short on pokeyen,
+        you should use it as much as you can. You might find some valuables to sell\p
+        Hopefully something better than what you found in that trash can... ha-ha-ha!"))}
+
     release
-    }}
+    }
 
  
 
@@ -378,6 +392,14 @@ script OldaleOutsideOldGuy {
     because they are sick. It's the Koffing poison the Kantonians doused during
     the war.
     \p Before long, we may not be able to live here anymore..."))
+    releaseall
+    }
+
+script OldaleOutsideOldWoman {
+    lockall
+    applymovement (31, moves(face_player))
+    msgbox(format("Did you see the greenish rain just now...? \p The Weather Institute says
+    it's not harmful on the short-term. But I worry about the long term..."))
     releaseall
     }
 
