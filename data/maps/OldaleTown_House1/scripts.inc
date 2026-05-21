@@ -137,7 +137,7 @@ OldaleHouse1TVNight::
 # 82 "data/maps/OldaleTown_House1/scripts.pory"
 	lockall
 # 83 "data/maps/OldaleTown_House1/scripts.pory"
-	showmonpic SPECIES_PIKACHU_HOENN, 10, 3
+	showmonpic SPECIES_PIKACHU_LIBRE, 10, 3
 # 84 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1TVNight_Text_0
 # 86 "data/maps/OldaleTown_House1/scripts.pory"

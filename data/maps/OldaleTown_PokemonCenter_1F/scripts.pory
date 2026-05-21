@@ -116,23 +116,28 @@ script OldaleTown_Devon_Nurse {
 	pastfirstnursegreeting:
 	if (var(VAR_DEVONCENTERLOYALTY) == 0)
 	{
-	msgbox("Hey... Heal?", MSGBOX_YESNO)
+	msgbox("Hey... Heal?")
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 	}}
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 1)
 	{
 		gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
-		{msgbox("Morning. The usual?", MSGBOX_YESNO)}
+		{msgbox("Morning. The usual?")
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")}
 
 		if (var(VAR_0x8000) == TIME_DAY)
-		{msgbox("G'day. The usual?", MSGBOX_YESNO)}
+		{msgbox("G'day. The usual?")
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")}
 
 		if (var(VAR_0x8000) == TIME_EVENING)
-		{msgbox("Evening. The usual?", MSGBOX_YESNO)}
+		{msgbox("Evening. The usual?")
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")}
 
 		if (var(VAR_0x8000) == TIME_NIGHT)
-		{msgbox("Night. The usual?", MSGBOX_YESNO)}
+		{msgbox("Night. The usual?")
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")}
 	}
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 2)
@@ -140,38 +145,47 @@ script OldaleTown_Devon_Nurse {
 		gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{
-		msgbox("Good morning, and welcome back. Need some healing, d-... 
+		msgbox(format("Good morning, and welcome back. Need some healing, d-... 
 		{COLOR LIGHT_GRAY}{SHADOW WHITE}sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-		\n DEAR customer?", MSGBOX_YESNO)}
+		\n DEAR customer?"))
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		}
 
 		if (var(VAR_0x8000) == TIME_DAY)
 		{
-		msgbox("Good day, and welcome back. Need some healing, d-... 
+		msgbox(format("Good day, and welcome back. Need some healing, d-... 
 		{COLOR LIGHT_GRAY}{SHADOW WHITE}sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-		\n DEAR customer?", MSGBOX_YESNO)}
+		\n DEAR customer?"))
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		}
 
 		if (var(VAR_0x8000) == TIME_EVENING)
 		{
-		msgbox("Good evening, and welcome back. Need some healing, d-... 
+		msgbox(format("Good evening, and welcome back. Need some healing, d-... 
 		{COLOR LIGHT_GRAY}{SHADOW WHITE}sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-		\n DEAR customer?", MSGBOX_YESNO)}
+		\n DEAR customer?"))
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		}
 
 		if (var(VAR_0x8000) == TIME_NIGHT)
 		{
-		msgbox("Good night, and welcome back. Need some healing, d-... 
+		msgbox(format("Good night, and welcome back. Need some healing, d-... 
 		{COLOR LIGHT_GRAY}{SHADOW WHITE}sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-		\n DEAR customer?", MSGBOX_YESNO)}
+		\n DEAR customer?"))
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		}
 	}
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 3)
 	{
 	
-	msgbox("Oh, {PLAYER}, we're SOO happy to have you back! 
+	msgbox(format("Oh, {PLAYER}, we're SOO happy to have you back! 
 	{COLOR LIGHT_GRAY}{SHADOW WHITE}As if...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} 
-	\p May I take your WONDERFUL Pokémon for some express healing?", MSGBOX_YESNO)	
+	\p May I take your WONDERFUL Pokémon for some express healing?"))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")	
 	}
 
-	if (var(VAR_RESULT) == YES) {
+	if (var(VAR_RESULT) == 0) {
 
 		if (!flag (devoncenterdebt))
 		{
@@ -389,7 +403,7 @@ script OldaleTown_Devon_Nurse {
 
 	}
 
-	if (var(VAR_RESULT) == NO) {
+	if (var(VAR_RESULT) == 1) {
 
 		if (var(VAR_DEVONCENTERLOYALTY) == 0){
 		msgbox(format("Then please get off the way."))}

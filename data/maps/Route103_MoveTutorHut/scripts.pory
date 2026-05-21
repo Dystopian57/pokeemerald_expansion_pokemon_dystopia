@@ -6,6 +6,20 @@ Route103_MoveTutorHut_MapScripts::
 
 
 //NEED "IF NOT LEARNT" CHECKS
+
+script MoveTutor103Night
+{
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playse (SE_M_SNORE)
+	msgbox(format("ZZZZZZ..."))
+
+	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}He is fast asleep. It would be better to
+	return during daytime.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+
+}
+
+
 script MoveTutor103 {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)

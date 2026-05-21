@@ -65,29 +65,26 @@ OldalePokeCenterInnPrograms_8:
 
 OldalePokeCenterInnPrograms_9:
 # 47 "data/maps/PokeInnRoom2/scripts.pory"
-	random 1
+	random 2
 # 48 "data/maps/PokeInnRoom2/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
 # 49 "data/maps/PokeInnRoom2/scripts.pory"
 	switch VAR_RESULT
 # 50 "data/maps/PokeInnRoom2/scripts.pory"
-	case 0, OldalePokeCenterInnPrograms_14
+	case 0, OldalePokeCenterInnPrograms_13
 # 51 "data/maps/PokeInnRoom2/scripts.pory"
-	case 1, OldalePokeCenterInnPrograms_15
-OldalePokeCenterInnPrograms_12:
-# 59 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
+	case 1, OldalePokeCenterInnPrograms_14
+	goto OldalePokeCenterInnPrograms_4
+
+OldalePokeCenterInnPrograms_13:
+# 50 "data/maps/PokeInnRoom2/scripts.pory"
+	goto Route103WeatherNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_14:
-# 50 "data/maps/PokeInnRoom2/scripts.pory"
-	goto Route103WeatherNews
-	goto OldalePokeCenterInnPrograms_12
-
-OldalePokeCenterInnPrograms_15:
 # 51 "data/maps/PokeInnRoom2/scripts.pory"
 	goto Route102WeatherNews
-	goto OldalePokeCenterInnPrograms_12
+	goto OldalePokeCenterInnPrograms_4
 
 
 OldaleWarehouseNews::
@@ -102,14 +99,22 @@ Route103WeatherNews::
 # 80 "data/maps/PokeInnRoom2/scripts.pory"
 	setvar VAR_ROUTE103_WEATHER, 1
 # 81 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 82 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 Route102WeatherNews::
-# 85 "data/maps/PokeInnRoom2/scripts.pory"
+# 86 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox Route102WeatherNews_Text_0
 # 87 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_ROUTE102_WEATHER, 1
+# 88 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 89 "data/maps/PokeInnRoom2/scripts.pory"
+	clearflag sandshrewin102
+# 90 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
@@ -140,5 +145,5 @@ Route103WeatherNews_Text_0:
 	.string "There is rain in Route 103!$"
 
 Route102WeatherNews_Text_0:
-# 85 "data/maps/PokeInnRoom2/scripts.pory"
+# 86 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "There is a sandstorm in Route 102!$"

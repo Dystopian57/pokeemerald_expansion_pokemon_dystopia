@@ -210,10 +210,6 @@ Route103_Text_RouteSign:
 mapscripts Route103_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Route103Weather}
 
-
-
-
-
 script Route103Weather {
 
 			goto_if_eq (VAR_ROUTE103_WEATHER, 0, Route103Shade)

@@ -80,7 +80,7 @@ script OldaleHouse1TVDay {
 
 script OldaleHouse1TVNight {
     lockall
-    showmonpic(SPECIES_PIKACHU_HOENN, 10,3)
+    showmonpic(SPECIES_PIKACHU_LIBRE, 10,3)
     msgbox(format("It's the movie 'War of the Worlds' by H.G. Weedle. A giant, spider-like robot is
 	capturing panicked humans. \p Some people think it's a critique on Pokémon training."))
     hidemonpic

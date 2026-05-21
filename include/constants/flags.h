@@ -95,7 +95,7 @@
 // Scripts (started to replace vanilla from here)
 #define oldaledevonguardsleave                   0x50
 #define FLAG_SET_WALL_CLOCK                      0x51
-#define FLAG_RESCUED_BIRCH                       0x52
+#define sandshrewin102                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define VSSEEKER                             0x54  // Unused Flag

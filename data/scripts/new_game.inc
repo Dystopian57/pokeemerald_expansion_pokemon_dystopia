@@ -291,5 +291,6 @@ EventScript_ResetAllMapFlags::
 	setflag Aideearrivestobasement
 	setflag balsaminherbedroom
 	setflag balsamofficeemptytv
+	setflag sandshrewin102
 	call EventScript_ResetAllBerries
 	end

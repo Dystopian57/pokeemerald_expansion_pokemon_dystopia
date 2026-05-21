@@ -44,7 +44,7 @@ script OldalePokeCenterInnPrograms {
 
 	if (var(VAR_RESULT) == 1) {
 		if (!flag (seenweatheratinnvisit))
-			{random (1)
+			{random (2)
 			copyvar (VAR_TEMP_1, VAR_RESULT)
 			switch (var(VAR_RESULT))
 			{case 0: goto (Route103WeatherNews)
@@ -56,7 +56,7 @@ script OldalePokeCenterInnPrograms {
 			//case 6: goto (Devonnetad)
 			}
 
-			setflag (seenweatheratinnvisit)}
+}
 		else {msgbox(format("The weather broadcast has ended..."))}
 	}
 	
@@ -78,11 +78,14 @@ script OldalePokeCenterInnPrograms {
 	script Route103WeatherNews {
 		msgbox(format("There is rain in Route 103!"))
 		setvar(VAR_ROUTE103_WEATHER, 1)
+		setflag (seenweatheratinnvisit)
 		release
 	}
 
 	script Route102WeatherNews {
 		msgbox(format("There is a sandstorm in Route 102!"))
-		//setvar(VAR_ROUTE103_WEATHER, 1)
+		setvar(VAR_ROUTE102_WEATHER, 1)
+		setflag (seenweatheratinnvisit)
+		clearflag (sandshrewin102)
 		release
 	}

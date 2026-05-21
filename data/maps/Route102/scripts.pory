@@ -1,15 +1,4 @@
 raw `
-Route102_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, Route102_OnResume
-	map_script MAP_SCRIPT_ON_TRANSITION, Route102_OnTransition
-	.byte 0
-
-Route102_OnResume:
-	setstepcallback STEP_CB_ASH
-	end
-
-Route102_OnTransition:
-	end
 
 Route102_EventScript_LittleBoy::
 	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
@@ -120,6 +109,44 @@ Route102_Text_RouteSignPetalburg:
 
 `
 
+
+mapscripts Route102_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: Route102Weather
+    MAP_SCRIPT_ON_LOAD: Route102Weather}
+
+
+script Route102Weather {
+
+			goto_if_eq (VAR_ROUTE102_WEATHER, 0, Route102Shade)
+			goto_if_eq (VAR_ROUTE102_WEATHER, 1, Route102Sandstorm1)
+			goto_if_eq (VAR_ROUTE102_WEATHER, 2, Route102Sandstorm2)
+			goto_if_eq (VAR_ROUTE102_WEATHER, 3, Route102EndSandtorm)
+
+	release
+}
+
+script Route102Shade {
+	setweather (WEATHER_SHADE)
+}
+
+script Route102Sandstorm1 {
+	setweather (WEATHER_SANDSTORM)
+	setvar(VAR_ROUTE102_WEATHER, 2)
+}
+
+script Route102Sandstorm2 {
+	setweather (WEATHER_SANDSTORM)
+	setvar(VAR_ROUTE102_WEATHER, 3)
+}
+
+script Route102EndSandtorm {
+	setweather (WEATHER_SANDSTORM)
+	setvar(VAR_ROUTE102_WEATHER, 0)
+}
+
+
+
+
 script BridgeItem {
 	lockall
 	if (!flag (FLAG_ITEM_PLAYER1F_RATION))
@@ -130,3 +157,43 @@ script BridgeItem {
 	{msgbox (format("The box is empty."))
 	releaseall
 }}
+
+
+
+script Route102Sandshrewinsandstorm {
+	lock
+	applymovement (8, moves(face_player))
+    msgbox (format("The Sandshrew is just enjoying the weather. Battle it?"))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+	waitmessage
+	setwildbattle(SPECIES_SANDSHREW, 3)
+	dowildbattle
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		setflag (sandshrewin102)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_WON){
+		goto (endsandshrewinsandstormscript)
+		setflag (sandshrewin102)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+		goto (endsandshrewinsandstormscript)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+		goto (endsandshrewinsandstormscript)
+	}
+
+
+	}
+
+	if (var(VAR_RESULT) == 1) {
+		goto (endsandshrewinsandstormscript)
+	}
+
+	endsandshrewinsandstormscript:
+	waitmessage
+	releaseall
+}
+
