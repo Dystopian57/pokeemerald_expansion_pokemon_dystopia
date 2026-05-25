@@ -851,5 +851,86 @@ script KantonianWarHistoryVol1DLC {
     releaseall
 }
 
+ script MoneyTipBook {
+    lock
+	showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
+        msgbox(format("'The book cover reads: 'Money in post-war Hoenn - how to THRIVE.'"))
+        moneychapterselection:
+	showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
+
+        msgbox(format("Which chapter to read?"))
+	dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "1) Devon Relief", "2) Foraging", "3) Object Spotter", "4) Thief and You", "5) Pawning and Gambling", "None")
+    
+
+	if (var(VAR_RESULT) == 0) {
+    hidemonpic
+    msgbox(format("If you're reading this, it must be for one reason only. You are BROKE. \p Don't worry,
+    I've been there. In the absolute bottom. And I'll teach you how to climb out of it!
+    \p First step is to check your mailbox. If you served during the war, or had some sort of
+    insurance, chances are Devon has mailed you some money. \p It won't be much, but it's
+    a start"))
+    goto (moneychapterselection)
+    }
+
+    if (var(VAR_RESULT) == 1) {
+    hidemonpic
+    msgbox(format("Mother nature does not provide as much as it used to, but with some luck, it won't
+    be drained dry by the time you read this. \p Take Route 101 for example - Shiitako mushrooms
+    grow in that place. Even if you pick them up once, they regrow on the daily, so that's
+    steady income! \p Too lazy to forage yourself? Get a Pokémon with the Pickup ability,
+    and have it do it for you. Now that's steady AND passive income! \p Lastly, if you're
+    lucky enough to find a berry field in this day and age, well... you better exploit it,
+    and sell those bad girls for a fortune."))
+    goto (moneychapterselection)
+    }
+
+	if (var(VAR_RESULT) == 2) {
+    hidemonpic
+    msgbox(format("Now this is where the real money flows in! \p It's only been a year since
+    the war, and Hoenn is still full of stuff people dropped during the chaos. \p Now, you can
+    comb the ground of Hoenn till your hair turns grey, or you can get your hands on an Object Spotter -
+    an ugly pair of goggles that does the spotting for you.\p They are expensive, and due to some
+    anti-theft nonsense, they don't work indoors... \p But if you want not only to survive, but THRIVE...
+     it's a pretty worthy investment!")) 
+    }
+
+	if (var(VAR_RESULT) == 3) {
+    hidemonpic
+    msgbox(format("If you're reading this far, you must be a greedy bastard. And I like that.
+    \p Sadly, you can only get so far playing by 'the book' so to speak... \p However, imagine you were
+    bold enough to use the move Thief against wild Pokémon... or even trainer Pokémon. \p Of course, the latter
+    would fall under the realm of criminality, and this humble writer would never encourage such behaviour. \p
+    So whatever you do, do NOT... {COLOR LIGHT_GRAY}{SHADOW WHITE}not{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} do it...! "))
+    goto (moneychapterselection)
+    }
+
+	if (var(VAR_RESULT) == 4) {
+    hidemonpic
+    msgbox(format("Be warned - this last money-making method is only for the boldest of the bold. \p I can't
+    tell you exactly where, but there's this cool shop near Petalburg City where you can pawn your most valuable
+    items... \p I'm talking Devon Dexes, Devon Navs, motorcycles - that sort of stuff.\p Of course, it's very
+    inconvenient to do without these things, but you will get a small fortune for pawning them, and you can get them back
+    by returning the amount you were given. \p So what's the point, you may be asking? Well... the point is gambling it
+    all in Petalburg Arcade, what else!? \p Rake in those tokens, buy expensive stuff with them, and sell it for huge
+    profit! \p Risky? Perhaps. You may lose it all. But that's a loser's mentality."))
+    goto (moneychapterselection)
+    }
+//EPILOGUE
+	if (var(VAR_RESULT) == 5) {
+    }
+    hidemonpic
+    releaseall
+
+ }
+
+    //imagine you've somehow picked all the trash in Hoenn or that you are getting greedy.
+    //well, Pokémon sometimes have valuable stuff. catch them, or use Thief. hells, you can
+    //even use thief on trainers, they won't realize until it's too late, those dumbos!
+
+    //this is for the real masters. can't tell you where it is exactly, but there's this cool
+    //store near petalburg where you can pawn shit, like devon dexes, a motorbike, your rod -
+    //cool expensive shit! the pawn shop folks will keep your item temporarily and give you
+    //a bunch of pokeyen in return. now don't go spending it all, because then you might be
+    //in a pickle. you want to GAMBLE IT.
 
 

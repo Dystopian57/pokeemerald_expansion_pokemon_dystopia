@@ -1523,6 +1523,98 @@ KantonianWarHistoryVol1DLC_5:
 	goto KantonianWarHistoryVol1DLC_4
 
 
+MoneyTipBook::
+# 855 "data/maps/DLC/scripts.pory"
+	lock
+# 856 "data/maps/DLC/scripts.pory"
+	showmonpic SPECIES_BASCULIN_BLUE_STRIPED, 10, 3
+# 857 "data/maps/DLC/scripts.pory"
+	msgbox MoneyTipBook_Text_0
+# 858 "data/maps/DLC/scripts.pory"
+moneychapterselection:
+# 859 "data/maps/DLC/scripts.pory"
+	showmonpic SPECIES_BASCULIN_BLUE_STRIPED, 10, 3
+# 861 "data/maps/DLC/scripts.pory"
+	msgbox MoneyTipBook_Text_1
+# 862 "data/maps/DLC/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, MoneyTipBook_Text_2, MoneyTipBook_Text_3, MoneyTipBook_Text_4, MoneyTipBook_Text_5, MoneyTipBook_Text_6, MoneyTipBook_Text_7
+# 865 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq MoneyTipBook_2
+MoneyTipBook_1:
+# 875 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq MoneyTipBook_5
+MoneyTipBook_4:
+# 887 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq MoneyTipBook_8
+MoneyTipBook_7:
+# 897 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq MoneyTipBook_11
+MoneyTipBook_10:
+# 907 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 4
+	goto_if_eq MoneyTipBook_14
+MoneyTipBook_13:
+# 919 "data/maps/DLC/scripts.pory"
+	compare VAR_RESULT, 5
+	goto_if_eq MoneyTipBook_17
+MoneyTipBook_16:
+# 921 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 922 "data/maps/DLC/scripts.pory"
+	releaseall
+	return
+
+MoneyTipBook_2:
+# 866 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 867 "data/maps/DLC/scripts.pory"
+	msgbox MoneyTipBook_Text_8
+# 872 "data/maps/DLC/scripts.pory"
+	goto moneychapterselection
+	goto MoneyTipBook_1
+
+MoneyTipBook_5:
+# 876 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 877 "data/maps/DLC/scripts.pory"
+	msgbox MoneyTipBook_Text_9
+# 884 "data/maps/DLC/scripts.pory"
+	goto moneychapterselection
+	goto MoneyTipBook_4
+
+MoneyTipBook_8:
+# 888 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 889 "data/maps/DLC/scripts.pory"
+	msgbox MoneyTipBook_Text_10
+	goto MoneyTipBook_7
+
+MoneyTipBook_11:
+# 898 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 899 "data/maps/DLC/scripts.pory"
+	msgbox MoneyTipBook_Text_11
+# 904 "data/maps/DLC/scripts.pory"
+	goto moneychapterselection
+	goto MoneyTipBook_10
+
+MoneyTipBook_14:
+# 908 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 909 "data/maps/DLC/scripts.pory"
+	msgbox MoneyTipBook_Text_12
+# 916 "data/maps/DLC/scripts.pory"
+	goto moneychapterselection
+	goto MoneyTipBook_13
+
+MoneyTipBook_17:
+	goto MoneyTipBook_16
+
+
 # 18 "data/maps/DLC/scripts.pory"
 OldaleDLC_GoToSeatForTherapyLeft_Movement_0:
 # 18 "data/maps/DLC/scripts.pory"
@@ -2342,3 +2434,127 @@ KantonianWarHistoryVol1DLC_Text_2:
 	.string "They defeat all opposition, and the\n"
 	.string "leader of Team Rocket, Giovanni,\l"
 	.string "assumes control of the company.$"
+
+MoneyTipBook_Text_0:
+# 857 "data/maps/DLC/scripts.pory"
+	.string "'The book cover reads: 'Money in\n"
+	.string "post-war Hoenn - how to THRIVE.'$"
+
+MoneyTipBook_Text_1:
+# 861 "data/maps/DLC/scripts.pory"
+	.string "Which chapter to read?$"
+
+MoneyTipBook_Text_2:
+# 862 "data/maps/DLC/scripts.pory"
+	.string "1) Devon Relief$"
+
+MoneyTipBook_Text_3:
+# 862 "data/maps/DLC/scripts.pory"
+	.string "2) Foraging$"
+
+MoneyTipBook_Text_4:
+# 862 "data/maps/DLC/scripts.pory"
+	.string "3) Object Spotter$"
+
+MoneyTipBook_Text_5:
+# 862 "data/maps/DLC/scripts.pory"
+	.string "4) Thief and You$"
+
+MoneyTipBook_Text_6:
+# 862 "data/maps/DLC/scripts.pory"
+	.string "5) Pawning and Gambling$"
+
+MoneyTipBook_Text_7:
+# 862 "data/maps/DLC/scripts.pory"
+	.string "None$"
+
+MoneyTipBook_Text_8:
+# 867 "data/maps/DLC/scripts.pory"
+	.string "If you're reading this, it must be for\n"
+	.string "one reason only. You are BROKE.\p"
+	.string "Don't worry, I've been there. In the\n"
+	.string "absolute bottom. And I'll teach you how\l"
+	.string "to climb out of it!\p"
+	.string "First step is to check your mailbox. If\n"
+	.string "you served during the war, or had some\l"
+	.string "sort of insurance, chances are Devon\l"
+	.string "has mailed you some money.\p"
+	.string "It won't be much, but it's a start$"
+
+MoneyTipBook_Text_9:
+# 877 "data/maps/DLC/scripts.pory"
+	.string "Mother nature does not provide as much\n"
+	.string "as it used to, but with some luck, it\l"
+	.string "won't be drained dry by the time you\l"
+	.string "read this.\p"
+	.string "Take Route 101 for example - Shiitako\n"
+	.string "mushrooms grow in that place. Even if\l"
+	.string "you pick them up once, they regrow on\l"
+	.string "the daily, so that's steady income!\p"
+	.string "Too lazy to forage yourself? Get a\n"
+	.string "Pokémon with the Pickup ability, and\l"
+	.string "have it do it for you. Now that's steady\l"
+	.string "AND passive income!\p"
+	.string "Lastly, if you're lucky enough to find a\n"
+	.string "berry field in this day and age, well...\l"
+	.string "you better exploit it, and sell those\l"
+	.string "bad girls for a fortune.$"
+
+MoneyTipBook_Text_10:
+# 889 "data/maps/DLC/scripts.pory"
+	.string "Now this is where the real money flows\n"
+	.string "in!\p"
+	.string "It's only been a year since the war, and\n"
+	.string "Hoenn is still full of stuff people\l"
+	.string "dropped during the chaos.\p"
+	.string "Now, you can comb the ground of Hoenn\n"
+	.string "till your hair turns grey, or you can get\l"
+	.string "your hands on an Object Spotter - an\l"
+	.string "ugly pair of goggles that does the\l"
+	.string "spotting for you.\p"
+	.string "They are expensive, and due to some\n"
+	.string "anti-theft nonsense, they don't work\l"
+	.string "indoors...\p"
+	.string "But if you want not only to survive, but\n"
+	.string "THRIVE... it's a pretty worthy\l"
+	.string "investment!$"
+
+MoneyTipBook_Text_11:
+# 899 "data/maps/DLC/scripts.pory"
+	.string "If you're reading this far, you must be\n"
+	.string "a greedy bastard. And I like that.\p"
+	.string "Sadly, you can only get so far playing\n"
+	.string "by 'the book' so to speak...\p"
+	.string "However, imagine you were bold enough\n"
+	.string "to use the move Thief against wild\l"
+	.string "Pokémon... or even trainer Pokémon.\p"
+	.string "Of course, the latter would fall under\n"
+	.string "the realm of criminality, and this\l"
+	.string "humble writer would never encourage\l"
+	.string "such behaviour.\p"
+	.string "So whatever you do, do NOT... {COLOR LIGHT_GRAY}{SHADOW WHITE}not{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} do it...!$"
+
+MoneyTipBook_Text_12:
+# 909 "data/maps/DLC/scripts.pory"
+	.string "Be warned - this last money-making\n"
+	.string "method is only for the boldest of the\l"
+	.string "bold.\p"
+	.string "I can't tell you exactly where, but\n"
+	.string "there's this cool shop near Petalburg\l"
+	.string "City where you can pawn your most\l"
+	.string "valuable items...\p"
+	.string "I'm talking Devon Dexes, Devon Navs,\n"
+	.string "motorcycles - that sort of stuff.\p"
+	.string "Of course, it's very inconvenient to do\n"
+	.string "without these things, but you will get a\l"
+	.string "small fortune for pawning them, and you\l"
+	.string "can get them back by returning the\l"
+	.string "amount you were given.\p"
+	.string "So what's the point, you may be asking?\n"
+	.string "Well... the point is gambling it all in\l"
+	.string "Petalburg Arcade, what else!?\p"
+	.string "Rake in those tokens, buy expensive\n"
+	.string "stuff with them, and sell it for huge\l"
+	.string "profit!\p"
+	.string "Risky? Perhaps. You may lose it all. But\n"
+	.string "that's a loser's mentality.$"

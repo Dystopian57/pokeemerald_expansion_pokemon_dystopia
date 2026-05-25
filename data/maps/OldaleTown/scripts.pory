@@ -357,7 +357,7 @@ script OldaleOutsideParkNPC {
         }
     if ((flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == FALSE)
     {
-        msgbox(format("So... I did see you dig through that trash can. \p If you need pokeyen,
+        msgbox(format("So... I saw you digging through that trash can. \p If you need pokeyen,
         you should get a {COLOR BLUE}Devon Radar{COLOR DARK_GRAY} and find scrap to sell. There's lots lying around. \p Other people
         get rich by selling items like ores and pearls, but I wouldn't know where to start looking
         for those."))}
@@ -365,8 +365,8 @@ script OldaleOutsideParkNPC {
     if ((!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == TRUE)
     {
         msgbox(format("Oh, is that a Devon Radar? That's handy. \p If you're short on pokeyen,
-        you should use it as much as you can. You might find some valuables to sell\p
-        Why don't you try it right now? Who knows, you might find something!"))}
+        you should use it as much as you can. You might find some valuables to sell.\p
+        Why don't you try it right here? Who knows, you might find something!"))}
 
     if ((flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == TRUE)
     {
@@ -376,8 +376,6 @@ script OldaleOutsideParkNPC {
 
     release
     }
-
- 
 
 
     //msgbox(format("It's tough being a trader around here lately... tons of competition.\pThere's
@@ -484,7 +482,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     msgbox(format("So, will you help us?"))
 
 
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 	waitmessage
 
         if(var(VAR_RESULT) == 0){

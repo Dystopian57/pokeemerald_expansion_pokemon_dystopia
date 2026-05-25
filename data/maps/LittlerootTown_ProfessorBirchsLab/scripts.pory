@@ -1040,7 +1040,7 @@ script Littleroot_Idletalk_Aidee{
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("I'm counting on you, soldier!"))}
 
-	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == FALSE)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 	msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going?"))
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
@@ -1051,7 +1051,7 @@ script Littleroot_Idletalk_Aidee{
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("I'm counting on you, soldier!"))}
 
-	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == TRUE)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	msgbox (format("Aah, you did it - you found a {COLOR RED}Voltorb Shard{COLOR DARK_GRAY}!
 	And one in great condition!"))

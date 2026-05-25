@@ -24,6 +24,7 @@ static const u32 speciesToCheck[] = {
     SPECIES_PIKACHU_PARTNER,
     SPECIES_PIKACHU_WORLD,
     SPECIES_PIKACHU_GMAX,
+    SPECIES_PIKACHU_SAFE,
 };
 
 SINGLE_BATTLE_TEST("Light Ball doubles Pikachu's Special Attack", s16 damage)

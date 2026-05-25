@@ -3,10 +3,9 @@ const u8 gItemEffect_Potion[7] = {
     [6] = 20, // Amount of HP to recover
 };
 
-const u8 gItemEffect_GumminGum[7] = {
+const u8 gItemEffect_CommonCandy[7] = {
     [3] = ITEM4_HEAL_HP,
-    [4] = ITEM3_BURN,
-    [6] = 20, // Amount of HP to recover
+    [6] = 1, // Amount of HP to recover
 };
 
 const u8 gItemEffect_Antidote[6] = {
@@ -71,7 +70,7 @@ const u8 gItemEffect_FreshWater[7] = {
 
 const u8 gItemEffect_SodaPop[7] = {
     [4] = ITEM4_HEAL_HP,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 70 : 70, // Amount of HP to recover
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 60 : 60, // Amount of HP to recover
 };
 
 
@@ -104,9 +103,11 @@ const u8 gItemEffect_EnergyRoot[10] = {
 };
 
 const u8 gItemEffect_HealPowder[9] = {
-    [1] = I_HEALTH_RECOVERY >= GEN_7 ? 90 : 90, // Amount of HP to recover
-    [3] = ITEM3_SLEEP,
-    [6] = ITEM1_X_SPEED,
+    //[3] = ITEM3_SLEEP,
+    //[4] = ITEM4_HEAL_HP,
+    //[6] = I_HEALTH_RECOVERY >= GEN_7 ? 80 : 80, // Amount of HP to recover
+    //[7] = ITEM1_X_SPEED,
+    [1] = ITEM1_X_SPEED,
 };
 
 const u8 gItemEffect_RevivalHerb[10] = {

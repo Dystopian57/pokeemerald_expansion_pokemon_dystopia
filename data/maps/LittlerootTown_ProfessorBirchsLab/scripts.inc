@@ -2124,8 +2124,10 @@ Littleroot_Idletalk_Aidee_8:
 	goto Littleroot_Idletalk_Aidee_7
 
 Littleroot_Idletalk_Aidee_9:
-# 1043 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	goto_if_unset FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD, Littleroot_Idletalk_Aidee_8
+	checkitem ITEM_COMET_SHARD
+# 0 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Littleroot_Idletalk_Aidee_8
 	goto Littleroot_Idletalk_Aidee_7
 
 Littleroot_Idletalk_Aidee_13:
@@ -2194,8 +2196,10 @@ Littleroot_Idletalk_Aidee_13:
 	goto Littleroot_Idletalk_Aidee_12
 
 Littleroot_Idletalk_Aidee_14:
-# 1054 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	goto_if_set FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD, Littleroot_Idletalk_Aidee_13
+	checkitem ITEM_COMET_SHARD
+# 0 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Littleroot_Idletalk_Aidee_13
 	goto Littleroot_Idletalk_Aidee_12
 
 Littleroot_Idletalk_Aidee_18:

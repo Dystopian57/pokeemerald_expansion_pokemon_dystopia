@@ -80,18 +80,12 @@ static const union AnimCmd sAnim_ORASDowseWiggleNorthSlow[] =
 static const union AnimCmd sAnim_ORASDowseWiggleWestSlow[] =
 {
     ANIMCMD_FRAME(2, 32),
-    ANIMCMD_FRAME(2, 32),
-    ANIMCMD_FRAME(8, 32),
-    ANIMCMD_FRAME(8, 32),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleEastSlow[] =
 {
     ANIMCMD_FRAME(2, 32, .hFlip = TRUE),
-    ANIMCMD_FRAME(2, 32, .hFlip = TRUE),
-    ANIMCMD_FRAME(8, 32, .hFlip = TRUE),
-    ANIMCMD_FRAME(8, 32, .hFlip = TRUE),
     ANIMCMD_JUMP(0),
 };
 
@@ -116,18 +110,12 @@ static const union AnimCmd sAnim_ORASDowseWiggleNorth[] =
 static const union AnimCmd sAnim_ORASDowseWiggleWest[] =
 {
     ANIMCMD_FRAME(2, 32),
-    ANIMCMD_FRAME(7, 32),
-    ANIMCMD_FRAME(2, 32),
-    ANIMCMD_FRAME(8, 32),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleEast[] =
 {
     ANIMCMD_FRAME(2, 32, .hFlip = TRUE),
-    ANIMCMD_FRAME(7, 32, .hFlip = TRUE),
-    ANIMCMD_FRAME(2, 32, .hFlip = TRUE),
-    ANIMCMD_FRAME(8, 32, .hFlip = TRUE),
     ANIMCMD_JUMP(0),
 };
 
@@ -152,18 +140,12 @@ static const union AnimCmd sAnim_ORASDowseWiggleNorthFast[] =
 static const union AnimCmd sAnim_ORASDowseWiggleWestFast[] =
 {
     ANIMCMD_FRAME(2, 16),
-    ANIMCMD_FRAME(7, 16),
-    ANIMCMD_FRAME(2, 16),
-    ANIMCMD_FRAME(8, 16),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleEastFast[] =
 {
     ANIMCMD_FRAME(2, 16, .hFlip = TRUE),
-    ANIMCMD_FRAME(7, 16, .hFlip = TRUE),
-    ANIMCMD_FRAME(2, 16, .hFlip = TRUE),
-    ANIMCMD_FRAME(8, 16, .hFlip = TRUE),
     ANIMCMD_JUMP(0),
 };
 
@@ -188,18 +170,12 @@ static const union AnimCmd sAnim_ORASDowseWiggleNorthFaster[] =
 static const union AnimCmd sAnim_ORASDowseWiggleWestFaster[] =
 {
     ANIMCMD_FRAME(2, 8),
-    ANIMCMD_FRAME(7, 8),
-    ANIMCMD_FRAME(2, 8),
-    ANIMCMD_FRAME(8, 8),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleEastFaster[] =
 {
     ANIMCMD_FRAME(2, 8, .hFlip = TRUE),
-    ANIMCMD_FRAME(7, 8, .hFlip = TRUE),
-    ANIMCMD_FRAME(2, 8, .hFlip = TRUE),
-    ANIMCMD_FRAME(8, 8, .hFlip = TRUE),
     ANIMCMD_JUMP(0),
 };
 
