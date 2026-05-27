@@ -1301,3 +1301,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/GreatCraterBottom/scripts.inc"
 
 	.include "data/maps/SewersConspiracyHideout/scripts.inc"
+
+	.include "data/maps/RebelChillRoom/scripts.inc"
+
+	.include "data/maps/JimmyEggStore/scripts.inc"

@@ -62,18 +62,12 @@ static const union AnimCmd sAnim_FaceEast[] =
 static const union AnimCmd sAnim_ORASDowseWiggleSouthSlow[] =
 {
     ANIMCMD_FRAME(0, 32),
-    ANIMCMD_FRAME(0, 32),
-    ANIMCMD_FRAME(4, 32),
-    ANIMCMD_FRAME(4, 32),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleNorthSlow[] =
 {
     ANIMCMD_FRAME(1, 32),
-    ANIMCMD_FRAME(1, 32),
-    ANIMCMD_FRAME(6, 32),
-    ANIMCMD_FRAME(6, 32),
     ANIMCMD_JUMP(0),
 };
 
@@ -92,18 +86,12 @@ static const union AnimCmd sAnim_ORASDowseWiggleEastSlow[] =
 static const union AnimCmd sAnim_ORASDowseWiggleSouth[] =
 {
     ANIMCMD_FRAME(0, 32),
-    ANIMCMD_FRAME(3, 32),
-    ANIMCMD_FRAME(0, 32),
-    ANIMCMD_FRAME(4, 32),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleNorth[] =
 {
     ANIMCMD_FRAME(1, 32),
-    ANIMCMD_FRAME(5, 32),
-    ANIMCMD_FRAME(1, 32),
-    ANIMCMD_FRAME(6, 32),
     ANIMCMD_JUMP(0),
 };
 
@@ -122,18 +110,12 @@ static const union AnimCmd sAnim_ORASDowseWiggleEast[] =
 static const union AnimCmd sAnim_ORASDowseWiggleSouthFast[] =
 {
     ANIMCMD_FRAME(0, 16),
-    ANIMCMD_FRAME(3, 16),
-    ANIMCMD_FRAME(0, 16),
-    ANIMCMD_FRAME(4, 16),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleNorthFast[] =
 {
     ANIMCMD_FRAME(1, 16),
-    ANIMCMD_FRAME(5, 16),
-    ANIMCMD_FRAME(1, 16),
-    ANIMCMD_FRAME(6, 16),
     ANIMCMD_JUMP(0),
 };
 
@@ -152,18 +134,12 @@ static const union AnimCmd sAnim_ORASDowseWiggleEastFast[] =
 static const union AnimCmd sAnim_ORASDowseWiggleSouthFaster[] =
 {
     ANIMCMD_FRAME(0, 8),
-    ANIMCMD_FRAME(3, 8),
-    ANIMCMD_FRAME(0, 8),
-    ANIMCMD_FRAME(4, 8),
     ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd sAnim_ORASDowseWiggleNorthFaster[] =
 {
     ANIMCMD_FRAME(1, 8),
-    ANIMCMD_FRAME(5, 8),
-    ANIMCMD_FRAME(1, 8),
-    ANIMCMD_FRAME(6, 8),
     ANIMCMD_JUMP(0),
 };
 

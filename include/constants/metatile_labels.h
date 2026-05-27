@@ -736,7 +736,7 @@
 #define METATILE_SecretBaseRedCave_PC  0x379
 
 // gTileset_SecretBaseShrub
-#define METATILE_SecretBaseShrub_PC  0x379
+#define METATILE_SecretBaseShrub_PC  0x360
 
 // gTileset_SecretBaseTree
 #define METATILE_SecretBaseTree_PC  0x380

@@ -2960,8 +2960,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
-        .iconPic = gItemIcon_StarPiece,
-        .iconPalette = gItemIconPalette_Star,
+        .iconPic = gItemIcon_DecidiumZ,
+        .iconPalette = gItemIconPalette_DecidiumZ,
     },
 
     [ITEM_SHOAL_SALT] =

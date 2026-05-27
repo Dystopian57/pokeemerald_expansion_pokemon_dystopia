@@ -160,7 +160,9 @@
     "Route103_MoveTutorHut",
     "Route104DevonLabBasement",
     "GreatCraterBottom",
-    "SewersConspiracyHideout"
+    "SewersConspiracyHideout",
+    "RebelChillRoom",
+    "JimmyEggStore"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

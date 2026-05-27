@@ -32,7 +32,7 @@ gText_Birch_MainSpeech::
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "So I need your info to fill a new one.\p"
+	.string "So I need your info to renew it.\p"
 	.string "$"
 gText_Birch_BoyOrGirl::
 	.string "Send me a picture of you."
@@ -40,16 +40,17 @@ gText_Birch_BoyOrGirl::
 
 gText_Birch_WhatsYourName::
 	.string "Wow, you look terrible!\p"
-	.string "Oh, I need a name as well.$"
+	.string "Okay, I need a name as well.$"
 
 gText_Birch_SoItsPlayer::
 	.string "What did you say? {PLAYER}?$"
 
 gText_Birch_YourePlayer::
-	.string "Got it. I'll send your ID for you to\n"
-	.string "print. Don't leave home without it.\p"
-	.string "Who am I? I'm Professor Balsam, the new\n"
-	.string "lead of Littleroot's Pokémon lab.\p"
+	.string "Got it. That's one less thing...\p"
+	.string "Who am I? Oh, I guess you wanted\n"
+	.string "to talk to Professor Birch.\p"
+	.string "Well, he's retired now. I'm Professor\n"
+	.string "Balsam, the new lab lead.\p"
 	.string "If it wasn't obvious, I've been tasked\n"
 	.string "with babysitting you for a while.\p"
 	.string "At least until you get used to society\n"

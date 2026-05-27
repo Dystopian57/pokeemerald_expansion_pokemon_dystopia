@@ -16,34 +16,49 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 12,
+      "x": 15,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CASINO",
       "dest_warp_id": "0"
     },
     {
-      "x": 5,
+      "x": 8,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_SIDNEY_OFFICE",
       "dest_warp_id": "0"
     },
     {
-      "x": 1,
+      "x": 4,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_REBEL_ROOM1",
       "dest_warp_id": "0"
     },
     {
-      "x": 9,
+      "x": 12,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_REBEL_ROOM2",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_REBEL_CHILL_ROOM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "secret_base",
+      "x": 15,
+      "y": 5,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_SHRUB1_1"
+    }
+  ]
 }
