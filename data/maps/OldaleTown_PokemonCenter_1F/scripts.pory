@@ -531,7 +531,7 @@ script OldalePokeCenterTVKid {
 
 script OldalePokeCenterTVAds {
     lock
-	random (7)
+	random (8)
 	copyvar (VAR_TEMP_1, VAR_RESULT)
 
 	switch (var(VAR_RESULT))
@@ -543,6 +543,7 @@ script OldalePokeCenterTVAds {
 	case 5: goto (Rebelhackersad)
 	case 6: goto (Devonnetad)
 	case 7: goto (Devongruntad)
+	case 8: goto (Azuresortad)
 
 
 
@@ -659,3 +660,17 @@ script Devongruntad {
 	hidemonpic
 	releaseall
 }
+
+script Azuresortad {
+	showmonpic(SPECIES_BASCULIN, 10,3)
+	msgbox(format("Don't you hate it when you go to the beach, and the sea is deadly poisoned?\p
+	\p Devon Co. hears you, and is thus proud to present..."))
+	hidemonpic
+	showmonpic(SPECIES_BASCULIN_WHITE_STRIPED, 10,3)
+	msgbox(format("The Azuresort! \p Exciting water sports, relaxing bathing spots -
+	all in the cleanest bathing spot in all of Hoenn. \p Azuresort. Because there's never too much water."))
+	hidemonpic
+	releaseall
+}
+
+//or when you go to the river, and it's all muddy?

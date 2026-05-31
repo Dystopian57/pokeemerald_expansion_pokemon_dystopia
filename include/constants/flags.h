@@ -61,14 +61,14 @@
 #define checkonrival        0x2F // Unused Flag
 #define rivalhouse1stdialogue    0x30 // Unused Flag
 #define WatchedTVathome      0x31 // Unused Flag
-#define Oldmantyhide         0x32 // Unused Flag
+#define fatguyseesplayerleavelittl         0x32 // Unused Flag
 #define FLAG_UNUSED_0x033     0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define SinkNinkaburiGone    0x35 // Unused Flag
 #define Birchafter1stgreeting    0x36 // Unused Flag
 #define Donutquestaccepted    0x37 // Unused Flag
 #define joelin101   0x38 // Unused Flag
-#define rebel101defeated    0x39 // Unused Flag
+#define rickhitsplayer    0x39 // Unused Flag
 #define rebel101runsaway   0x3A // Unused Flag
 #define sharpynotoutsideDLC    0x3B // Unused Flag
 #define camelianotoutsideDLC    0x3C // Unused Flag
@@ -99,7 +99,8 @@
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define VSSEEKER                             0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define rivalappearsinOldale                    0x55  // Unused Flag
+
 
 #define balsaminherbedroom          0x56  // Always set after new game, object it hides is added directly
 #define balsamgavebedwarning                 0x57
@@ -136,7 +137,7 @@
 #define oldalerivalfollower              0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
 #define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define FLAG_MET_HIDDEN_POWER_GIVER          0x76
+#define devonsdontblock102          0x76
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
 
@@ -1055,7 +1056,7 @@
 #define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6
 #define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7
 
-// Item Ball Flags
+// Item Ball Flags (and other items honestly)
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
 #define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
 #define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
@@ -1237,9 +1238,9 @@
 #define FLAG_ITEM_LAB_COFFEE                                        0x499 // Unused Flag
 #define FLAG_ITEM_RIVAL1F_LENS                                0x49A // Unused Flag
 #define FLAG_ITEM_WARM_BEDDING                                         0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
+#define FLAG_ITEM_OLDALEHOUSE1VASE                                           0x49C // Unused Flag
+#define FLAG_ITEM_OLDALE_FOUNTAIN                                           0x49D // Unused Flag
+#define FLAG_ITEM_OLDALE_HOUSE2GARDEN                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag

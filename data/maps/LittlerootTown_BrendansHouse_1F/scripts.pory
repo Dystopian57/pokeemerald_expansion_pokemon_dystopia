@@ -758,7 +758,8 @@ releaseall
 script PlayerRationBoxes {
 	
 lockall
-msgbox (format("It's a sealed box full of canned rations."))
+msgbox (format("It's a sealed box full of canned rations.\pShould leave them here in
+case of an emergency."))
 releaseall
 }
 
@@ -768,7 +769,7 @@ releaseall
 script PlayerFridge {
 	
 lockall
-msgbox (format("There is a moldy Petalburguer in the fridge. Better to leave it there."))
+msgbox (format("There is a moldy Petalburguer in the fridge. Let's just leave it there."))
 releaseall
 }
 
@@ -789,7 +790,7 @@ releaseall
 script Player1FPlant {
 	
 lockall
-msgbox (format("Despite the lack of care, the plant clings to life.\pIt is sort of inspiring."))
+msgbox (format("Despite the lack of care, the plant has somehow clinged to life.\pIt is sort of inspiring."))
 releaseall
 }
 
@@ -808,7 +809,7 @@ script PlayerFirstAidKit {
 	lockall
 	if (!flag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION))
 	{msgbox (format("You open the first aid kit..."))
-	giveitem (ITEM_POTION)
+	giveitem (ITEM_SUPER_POTION)
 	setflag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION)}
 	else
 	{msgbox (format("There's nothing of use in the first aid kit."))}
@@ -850,7 +851,7 @@ script TV {
 lockall
 if (!flag (WatchedTVathome))
 {playbgm (MUS_INTRO_BATTLE, FALSE)
-showmonpic(SPECIES_PIKACHU_ALOLA, 10,3)
+showmonpic(SPECIES_ALCREMIE_CLOVER, 10,3)
 msgbox (format("Is it a plane!? Is it a Wingull!? No, it's SUPER SUBSTITUTE! \pThe hero that protects you from
 danger with a wall of fluffy justice! \pNew season of Devon TV's most loved cartoon is airing soon, so...
 \p Stay tuned, and stay safe!"))

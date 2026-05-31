@@ -352,13 +352,13 @@ script OldaleOutsideParkNPC {
 
     if ((!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == FALSE)
         {
-        msgbox(format("I hear there's people in the Rebel Zone who get crazy rich by selling ores, pearls and other high value items.
-        \p Do you know where to find those though? Cause I sure don't, or I wouldn't be sitting here!"))
+        msgbox(format("I hear there's people in the Rebel Zone who get crazy rich by finding treasure with their {COLOR BLUE}Object Spotters{COLOR DARK_GRAY}.
+        \p Haven't managed to get my hands on one, or I wouldn't be sitting here!"))
         }
     if ((flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == FALSE)
     {
         msgbox(format("So... I saw you digging through that trash can. \p If you need pokeyen,
-        you should get a {COLOR BLUE}Devon Radar{COLOR DARK_GRAY} and find scrap to sell. There's lots lying around. \p Other people
+        you should get an {COLOR BLUE}Object Spotter{COLOR DARK_GRAY} and find scrap to sell. There's lots lying around. \p Other people
         get rich by selling items like ores and pearls, but I wouldn't know where to start looking
         for those."))}
         
@@ -371,7 +371,7 @@ script OldaleOutsideParkNPC {
     if ((flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == TRUE)
     {
         msgbox(format("Oh, is that a Devon Radar? That's handy. \p If you're short on pokeyen,
-        you should use it as much as you can. You might find some valuables to sell\p
+        you should use it as much as you can. You might find some valuables to sell.\p
         Hopefully something better than what you found in that trash can... ha-ha-ha!"))}
 
     release
@@ -667,49 +667,34 @@ script OldaleCamelia {
     releaseall
     }
 
-script Rivalfollowchat {
-    lock
-    msgbox(format("Let's quick some Devon ass."))
-    releaseall   
-}
 
-script OldaleRivalFollower {
-	checkplayergender
-		if(var(VAR_RESULT) == MALE)
-        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, Rivalfollowchat, PARTNER_RIVAL_FEMALE)}
-
-        if(var(VAR_RESULT) == FEMALE)
-        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, Rivalfollowchat, PARTNER_RIVAL_MALE)}
-
-}
 
 text DevonGruntFOutro{
     "... were you checking your Devon Nav while battling?"}
 
 text DevonGruntMOutro{
-    "No I was not!."}
+    "No, not this time!"}
 
 
 script OldaleDevonGrunts { //karen and jerry
     lock
-    msgbox(format("Multi-battle test."))
-    trainerbattle_two_trainers (TRAINER_OLDALEDEVONGRUNT_F, DevonGruntFOutro, TRAINER_OLDALEDEVONGRUNT_M, DevonGruntMOutro)
-
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if(var(VAR_OLDALE_PHASE) == 1)
         {
         applymovement (15, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("I'm sorry, but due to the level of Rebel activity on the eastern warehouse, we can't let anyone leave Oldale at present."))
+        msgbox(format("I'm sorry, but we can't let anyone through until the
+        {COLOR RED}Rebels{COLOR DARK_GRAY} occupying {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY},
+        are dealt with."))
         applymovement (16, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("We can't allow these criminals to get closer to Rustboro... but don't worry!\p
-        To deal with the threat, we have requested reinforcements from Devon HQ."))
-                applymovement (15, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("Indeed! With the current pace of administrative protocols, they should be here in about 6 months."))
+        msgbox(format("We can't allow these criminals to get closer to New Rustboro... but don't worry!\p
+        Reinforcements from Devon HQ are currently on the way."))
+        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        msgbox(format("Yup! With the current pace of administrative protocols, they should be here in about 6 months."))
         }
 
 	if(var(VAR_OLDALE_PHASE) == 2)
        {applymovement (15, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("Damn kids, they were fast... by the time I grabbed my Pokéball, they had
+        msgbox(format("Damn kids, they were fast... by the time I grabbed my Devon Ball, they had
         sprinted right past me!"))
 
         applymovement (16, moves(walk_in_place_up * 1, face_up))
@@ -724,7 +709,197 @@ script OldaleDevonGrunts { //karen and jerry
         applymovement (16, moves(face_right))
 
         }
+
+	if(var(VAR_OLDALE_PHASE) == 3)
+       {applymovement (15, moves(face_player, walk_in_place_right * 1))
+        msgbox(format("Hello there, civilian! We have great news! \pThose pesky {COLOR RED}Rebels{COLOR DARK_GRAY}
+        have finally left Oldale Warehouse. The town is safe again!"))
+
+        applymovement (16, moves(walk_in_place_up * 1, face_up))
+        msgbox(format("They must have caught wind of reinforcements coming, and didn't feel like
+        spending the rest of their lives on {COLOR RED}Dewford Prison{COLOR DARK_GRAY}."))
+        applymovement (16, moves(face_right))
+        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        msgbox(format("Most likely! So... I suppose you want to go through Route 102?"))
+	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+        if(var(VAR_RESULT) == 0){
+        msgbox(format("I see... well, I'm sorry to say... \p In the Rebel Zone, when it's not one thing,
+        it's the other, you know?"))
+        applymovement (16, moves(walk_in_place_right * 1))
+        msgbox(format("We have one of our scientists searching Route 102 for a very dangerous Pokémon.
+        \p It's the next species on the list of Pokémon to be {COLOR BLUE}safened{COLOR DARK_GRAY}, and we can't let his work be
+        disturbed"))
+
+        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        msgbox(format("I'm afraid so. But don't worry - these tasks usually take from 3 to 4 months.
+        \p And what's a little waiting if it means Hoenn becomes safer?"))
+        }
+
+        if(var(VAR_RESULT) == 1){
+        msgbox(format("Grand, then please enjoy this shith-... I mean, this cozy, cute sleepy town!")) 
+        }
+        applymovement (15, moves(face_right))
+        applymovement (16, moves(face_right))
+
+        clearflag (rivalappearsinOldale)
+
+
+        }
+
+        trainerbattle_two_trainers (TRAINER_OLDALEDEVONGRUNT_F, DevonGruntFOutro, TRAINER_OLDALEDEVONGRUNT_M, DevonGruntMOutro)
+    
+        setflag (devonsdontblock102)
     releaseall
+}
+
+script OldaleRival {
+        lock
+	    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+        msgbox(format("{PLAYER}... I saw you talking with those enemy soldiers just now.\p Don't you
+        KNOW by now!? You cannot reason with the enemy."))
+        msgbox(format("You can only {COLOR RED}FIGHT{COLOR DARK_GRAY} it!"))
+        msgbox(format("But I understand. It was two versus one. Don't worry, I am here now."))
+        msgbox(format("Let's show those Kantonians they can't take our country! LEAD THE WAY, {PLAYER}."))
+
+        setvar(VAR_OLDALE_PHASE, 4)
+
+	checkplayergender
+		if(var(VAR_RESULT) == MALE)
+        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_FEMALE)}
+
+        if(var(VAR_RESULT) == FEMALE)
+        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_MALE)}
+        removeobject (22)
+        setflag (rivalappearsinOldale)
+}
+
+script OldaleRivalfollowchat {
+        msgbox(format("Let's go, {PLAYER} - those Kantonians are on the {COLOR RED}western exit of Oldale Town!{COLOR DARK_GRAY}"))
+
+        msgbox(format("Let's kick their ass all the way to their miserable region across the sea!"))  
+}
+script OldaleRivalDontLeaveOldaleto101 {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+    msgbox(format("{PLAYER}, where are you going!?"))
+
+    msgbox(format("We have already secured the southern front, remember!?
+    Thanks to your glorious victory!"))
+
+    msgbox(format("Wait... do you need to get ready before the next battle?"))
+	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+        if(var(VAR_RESULT) == 0){
+        msgbox(format("Very well... I'll be keeping an eye on them. Don't take long!"))
+		fadescreenswapbuffers (FADE_TO_BLACK)
+        destroyfollowernpc
+        addobject (22)
+        clearflag (rivalappearsinOldale)
+		fadescreenswapbuffers (FADE_FROM_BLACK)
+        setvar(VAR_OLDALE_PHASE, 3)
+
+        }
+        if(var(VAR_RESULT) == 1)
+        {
+        msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+        waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+    releaseall   
+}
+
+script OldaleBike {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
+    msgbox(format("The bike has tons of locks on the wheels, to discourage theft."))
+}
+
+script OldalePlant {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
+    msgbox(format("The plants are on the same state than the trees around... \p On their way
+    to wither."))
+}
+
+script OldaleDLCWindow {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
+    msgbox(format("You can see the DLC's library through the window. \p The library's clerk
+    is browsing an... 'explicit' website."))
+}
+
+script OldaleFountain {
+	lock
+	if (!flag (FLAG_ITEM_LAB_GLASSES))
+	{msgbox(format("There's a foreign coin on the fountain's bottom..."))
+	giveitem (ITEM_AMULET_COIN)
+	setflag (FLAG_ITEM_OLDALE_FOUNTAIN)}
+	else
+	{msgbox(format("The fountain's water is stagnated."))}
+	releaseall	
+}
+
+script OldaleHouse2GardenItem {
+	lock
+    giveitem (ITEM_SOFT_SAND)
+	setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    removeobject (4)
+	releaseall}
+    
+
+script OldaleRivalDontLeaveOldaleto103 {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+    msgbox(format("{PLAYER}, where are you going!? The enemy is not this way!"))
+
+    msgbox(format("Wait... do you need to get ready before the battle?"))
+	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+        if(var(VAR_RESULT) == 0){
+        msgbox(format("Very well... I'll be keeping an eye on them. Don't take long!"))
+		fadescreenswapbuffers (FADE_TO_BLACK)
+        destroyfollowernpc
+        addobject (22)
+        clearflag (rivalappearsinOldale)
+		fadescreenswapbuffers (FADE_FROM_BLACK)
+        setvar(VAR_OLDALE_PHASE, 3)
+
+        }
+        if(var(VAR_RESULT) == 1)
+        {
+        msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+        waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+    releaseall   
+}
+
+script OldaleRivalnoleavetoWhouse {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+    msgbox(format("{PLAYER}, where are you going!? This way is to the {COLOR GREEN}warehouse{COLOR DARK_GRAY}!"))
+
+    msgbox(format("Wait... do you want to resupply there before the battle?"))
+	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+        if(var(VAR_RESULT) == 0){
+        msgbox(format("Aah, smart thinking! I'll keep an eye on those Kantonians. Don't take long!"))
+		fadescreenswapbuffers (FADE_TO_BLACK)
+        destroyfollowernpc
+        addobject (22)
+        clearflag (rivalappearsinOldale)
+		fadescreenswapbuffers (FADE_FROM_BLACK)
+        setvar(VAR_OLDALE_PHASE, 3)
+
+        }
+        if(var(VAR_RESULT) == 1)
+        {
+        msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+        waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+    releaseall   
 }
 		//cutscene, change Devon guards dialogue. "those kids were so fast..." "dude, you were just"
 		//on your pokenav, checking Glacia's fanpage... //... can we not in front of civilians, please?
@@ -748,7 +923,7 @@ script OldaleDevonGrunts { //karen and jerry
 		{msgbox(format("Wait a second... green cap, arm on a sling,... \p You're the lass that beat Rick!"))}
 
     msgbox(format("Hahaha, you beat him with THAT thing behind you? He's so pathetic!
-    \pI'll teach you, not every Rebel is like him!"))
+    \pI'll teach you that not every Rebel is like him!"))
 
 	trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, RebelOldale_Outro)
         

@@ -454,6 +454,26 @@ script JoelandAnne101meeting {
  }
  
 
+script Pokemonlickswound {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (flag (rickhitsplayer))
+		{
+		playfirstmoncry
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+		applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left * 2))
+		bufferleadmonspeciesname(STR_VAR_1)
+		msgbox (format("{STR_VAR_1} approaches you slowly..."))
+		playse (SE_M_LICK)
+		waitse
+		msgbox (format("{STR_VAR_1} licks {PLAYER}'s wound from the hit just now.\p ...{PLAYER}'s pain is somewhat soothed."))
+		clearflag (rickhitsplayer)
+		}
+
+	else {release}
+	release
+}
+
 script Route101RebelGruntBattle{
 	rebelafterapproach:
 	setspeaker ([SP_NAME_RICK])
@@ -489,7 +509,7 @@ script Route101RebelGruntBattle{
 	applymovement (3, moves(walk_fast_down))
 	repeathit:
 	setspeaker ([NULL])
-	msgbox(format("The rebel swings his bat to hit you.\n What will you do?"))
+	msgbox(format("The rebel swings his bat to hit {PLAYER}!"))
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Parry", "Dodge")
 
 	if(var(VAR_RESULT) == 0){
@@ -497,12 +517,12 @@ script Route101RebelGruntBattle{
 	if(var(VAR_RESULT) == MALE){
 	playse (SE_NOT_EFFECTIVE)
 	waitse
-	msgbox(format("You parry the bat with one of your crutches, and the rebel falls on his
+	msgbox(format("{PLAYER} parries the bat with one of his crutches, and the rebel falls on his
 	back."))}
 
 	if(var(VAR_RESULT) == FEMALE){
 	call(Route101GruntBatHitShake)
-	msgbox(format("You fail to block the bat with your arms. The hit hurts like hell."))
+	msgbox(format("{PLAYER} fails to block the bat with her arms. That must have hurted..."))
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("You're a sturdy girl, I'll give you that!"))
 	goto (repeathit)}}
@@ -511,13 +531,14 @@ script Route101RebelGruntBattle{
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
 	call(Route101GruntBatHitShake)
-	msgbox(format("You are too slow to dodge the hit. It hurts like hell."))
+	msgbox(format("{PLAYER} is too slow to dodge the hit. That must have hurted..."))
+	setflag (rickhitsplayer)
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("You're a sturdy guy, I'll give you that!"))
 	goto (repeathit)}
 	if(var(VAR_RESULT) == FEMALE){
 	playse (SE_BALL_THROW)
-	msgbox(format("You manage to dodge the hit, and the rebel's lost momentum makes him
+	msgbox(format("{PLAYER} manages to dodge the hit, and the rebel's lost momentum makes him
 	fall on his back."))
 	}}
 	setspeaker ([SP_NAME_RICK])

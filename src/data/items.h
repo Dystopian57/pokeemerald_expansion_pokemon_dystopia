@@ -939,7 +939,7 @@ const struct Item gItemsInfo[] =
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
             "A bitter coffee\n"
-            "that heals and\n"
+            "that drastically\n"
             "increases speed."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
@@ -9806,8 +9806,8 @@ const struct Item gItemsInfo[] =
         .holdEffect = HOLD_EFFECT_WISE_GLASSES,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
-            "A pair of glasses\n"
-            "that ups the power\n"
+            "Broken spectacles\n"
+            "that up the power\n"
             "of special moves."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,

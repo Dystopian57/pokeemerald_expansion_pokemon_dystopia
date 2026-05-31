@@ -551,8 +551,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 10,
-      "y": 14,
+      "x": 17,
+      "y": 9,
       "elevation": 0,
       "item": "ITEM_WISE_GLASSES",
       "flag": "FLAG_ITEM_LAB_GLASSES"

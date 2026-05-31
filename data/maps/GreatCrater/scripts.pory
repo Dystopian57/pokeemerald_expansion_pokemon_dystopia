@@ -50,7 +50,7 @@ script ReportersGreatCrater {
 	msgbox(format("Ah, look, Dan - an interesting-looking local just approached us!
 	\p We're from Devon TV, and we're filming a documentary about the Rebel Zone!
 	\p However, our footage right now is lacking a bit of... flair."))
-	applymovement (2, moves(walk_in_place_left))
+	applymovement (2, moves(walk_in_place_left * 2))
 	msgbox(format("To put it plainly, it's quite boring."))
 
 	msgbox(format("Indeed, Dan... which is why we were thinking about staging a battle!
@@ -113,7 +113,7 @@ script ReportersGreatCrater {
 
 		call (Common_EventScript_BufferTrendyPhrase)
 		applymovement (2, moves(walk_in_place_up))
-		msgbox(format("{STR_VAR_1} is a great warcry. With the right editing, it may even get viral."))
+		msgbox(format("{STR_VAR_1} is a great warcry. \p With the right editing, it may even get viral."))
 		applymovement (3, moves(walk_in_place_right))
 		msgbox(format("It just may! But before we cut the footage, we need to record some more in other locations."))
 		applymovement (3, moves(face_player))
@@ -133,6 +133,8 @@ script ReportersGreatCrater {
 
 		msgbox(format("Oh no... you got a bit of scenic fright, didn't you? \p It happens the first time. We'll
 	    do another take when you're ready!"))
+		goto (finishreporterscript)
+
 		} 
 		} 
 
@@ -146,6 +148,9 @@ script ReportersGreatCrater {
     msgbox(format("Oh, that's so unfortunate! Are you certain?
 	\p We'll be here a while if you reconsider - which we beg you to do!"))
 	applymovement (2, moves(walk_in_place_down))
+	waitmovement (2)
+	applymovement (3, moves(walk_in_place_down))
+	waitmovement(3)
 
 	setflag (declinedcraterreporterhelp)
 	goto (finishreporterscript)
@@ -163,6 +168,8 @@ script ReportersGreatCrater {
 		 applymovement (3, moves(walk_in_place_up))
    		 msgbox(format("Well, suit yourself. We'll be here a while if you change your mind."))
 	     setflag (declinedcraterreporterhelp)
+		 applymovement (2, moves(face_down))
+		 applymovement (3, moves(face_down))
 	     goto (finishreporterscript)
 		}}
 
@@ -176,7 +183,9 @@ script ReportersGreatCrater {
 		goto (acceptedtoplayrebel) 
    		 }
    		 if (var(VAR_RESULT) == 1) {
-   		 msgbox(format("That's too bad... I think you'd be such a star!"))}
+   		 msgbox(format("That's too bad... I think you'd be such a star!"))
+		 applymovement (2, moves(face_down))
+		 applymovement (3, moves(face_down))}
 	}
 
 	finishreporterscript:
@@ -282,11 +291,11 @@ script CameramanGreatCrater {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (declinedcraterreporterhelp)){
 
-	msgbox(format("The cameraman seems to disregard you entirely."))}
+	msgbox(format("The cameraman seems to disregard {PLAYER} entirely."))}
 
 	if (flag (declinedcraterreporterhelp)){
 	applymovement (2, moves(face_player))
-	msgbox(format("It's easy money. You won't get far in the Interment Zone by being moral."))
+	msgbox(format("It's easy money. You won't get far in the Rebel Zone by being moral."))
 	applymovement (2, moves(face_down))
 	msgbox(format("I know from experience..."))
 	}
@@ -308,7 +317,7 @@ script TouristGreatCraterBattle {
 script TouristGreatCraterRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("That was exciting! Say, we don't we exchange Devon profiles?"))
+	msgbox(format("That was exciting! Say, we don't we exchange Devonav profiles?"))
 	register_matchcall (TRAINER_TOURIST_GREATCRATER)
 	release
 	end
@@ -381,7 +390,10 @@ script GreatCraterSouvenirShop {
 }
 
 		mart ShopSouvenirs {
-		ITEM_SHALOUR_SABLE		
+		ITEM_SHALOUR_SABLE
+		ITEM_BEAD_MAIL
+		ITEM_COMET_SHARD
+		ITEM_ZOOM_LENS		
 	}
 
 
@@ -415,4 +427,20 @@ script CraterBottomWarp {
 	warp (MAP_GREAT_CRATER_BOTTOM, 0)
 }
 	
+script GreatCraterDevonGrunts { 
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (8, moves(face_player))
+    applymovement (9, moves(face_player))
+	msgbox(format("I'm sorry, but one of our scientists is currently searching for a dangerous
+	Pokémon in Route 102."))
+    applymovement (9, moves(walk_in_place_up * 1))
+	msgbox(format("The creature in question is next on the list of Pokémon to be safened, and
+	we can't risk civilians interfering with his work."))
+    applymovement (9, moves(walk_in_place_down * 1))
+	msgbox(format("You have been hurt by a Pokémon, do you? Surely you understand."))
+    applymovement (8, moves(face_down))
+    applymovement (9, moves(face_down))
+	release
+	}
 

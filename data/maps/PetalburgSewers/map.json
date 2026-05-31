@@ -145,9 +145,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
+      "graphics_id": "OBJ_EVENT_GFX_BIG_SNORLAX_DOLL",
       "x": 3,
-      "y": 18,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -158,9 +158,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BIG_SNORLAX_DOLL",
+      "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
       "x": 3,
-      "y": 6,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,

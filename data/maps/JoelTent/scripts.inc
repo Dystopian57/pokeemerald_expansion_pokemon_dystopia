@@ -232,8 +232,8 @@ JoelTentJoel_Movement_2:
 JoelTentDoll_Text_0:
 # 10 "data/maps/JoelTent/scripts.pory"
 	.string "It's a Super Substitute doll... or is it?\p"
-	.string "You poke it just to be sure. This one\n"
-	.string "seems like the real deal.$"
+	.string "After a gentle poke, this one seems like\n"
+	.string "the real deal.$"
 
 JoelTentDoll_Text_1:
 # 15 "data/maps/JoelTent/scripts.pory"

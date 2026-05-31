@@ -44,6 +44,12 @@ script OldaleHouse1Fridge {
     releaseall
 }
 
+script OldaleHouse1Sink {
+    lockall
+    msgbox(format("The sink is pristine."))
+    releaseall
+}
+
 script OldaleHouse1Cabinet {
     lockall
     msgbox(format("It's probably full of clothes. Better not to open it."))
@@ -69,6 +75,8 @@ script OldaleHouse1BoyNight {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("We can't afford a Devon TV License… so I'm watching video tapes! \p This one
 	is a bit scary, though..."))
+	applymovement (8, moves(face_up))
+    waitmovement (8)
     releaseall
 }
 
@@ -95,8 +103,12 @@ script OldaleHouse1GirlDay {
 
 script OldaleHouse1GirlNight {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("Come on Shiiko… I know I bit you, but I was sleep walking!\p I swear I won't
 	eat you, so come down here! "))
+	playmoncry(SPECIES_SHIITAKO, CRY_MODE_WEAK)
+	applymovement (5, moves (walk_in_place_slow_up * 2))
+    msgbox(format("S-shiii..."))
     releaseall
 }
 
@@ -122,12 +134,12 @@ script OldaleHouse1WomanDay {
 
 script OldaleHouse1WomanNight {
     lockall
-	applymovement (1, moves(face_player))
+	applymovement (7, moves(face_player))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("Don't yOu thInk it's... {COLOR LIGHT_GRAY}{SHADOW WHITE}Hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
 	a bIt lAte tO... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} vIssIt
 	random houses? \p I nEed tO ssAve Up... frr a lOck... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
-	applymovement (1, moves(face_up))
+	applymovement (7, moves(face_up))
     releaseall
 }
 

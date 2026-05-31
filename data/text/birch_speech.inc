@@ -50,7 +50,7 @@ gText_Birch_YourePlayer::
 	.string "Who am I? Oh, I guess you wanted\n"
 	.string "to talk to Professor Birch.\p"
 	.string "Well, he's retired now. I'm Professor\n"
-	.string "Balsam, the new lab lead.\p"
+	.string "Balsam, the new Littleroot Lab lead.\p"
 	.string "If it wasn't obvious, I've been tasked\n"
 	.string "with babysitting you for a while.\p"
 	.string "At least until you get used to society\n"

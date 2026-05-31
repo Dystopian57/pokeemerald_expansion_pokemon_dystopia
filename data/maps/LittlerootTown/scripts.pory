@@ -1837,22 +1837,38 @@ script NoRain {
 }
 }
 
+script FatGuyExclMark {
+	if (!flag (Donutquestaccepted) && !flag (fatguyseesplayerleavelittl))
+	{applymovement (3, moves(face_player, emote_exclamation_mark))
+	setflag (fatguyseesplayerleavelittl)
+	goto (endfatguyexlmarkscript)}
+
+	else {release}
+    endfatguyexlmarkscript:
+	release
+}
 
 script Littleroot_Techguy_Talk {
 lockall
 applymovement (3, moves(face_player))
-if (flag(RIVAL_LEAVES_HOME) && !flag (Donutquestaccepted))
+if (var(VAR_LITTLEROOT_PHASE) == 4)
+{bufferleadmonspeciesname(STR_VAR_1)
+
+msgbox (format("Wait, did Balsam give you that {STR_VAR_1}!? \p Last time I asked her for
+one, she gave me a Digglett instead..."))}
+
+if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (Donutquestaccepted))
 {msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
 you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
-arrive to the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there. \pDo me the favour, and I'll give
+arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there. \pDo me the favour, and I'll give
 you some {COLOR RED}Pokéballs{COLOR DARK_GRAY}. Fair deal, right?"))
 setflag(Donutquestaccepted)
 goto (accepteddonutquest)}
-if (flag(RIVAL_LEAVES_HOME) && flag (Donutquestaccepted))
+if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (Donutquestaccepted))
 {msgbox (format("It's okay if you don't have time, but... I'd really like a taste of those donuts.
-\p I'd go myself, but I have no Pokémon to protect me, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
+\p I'd go myself, but my Digglet is weak, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
  town.\pBut you're a former soldier, right? They won't mess with you!"))}
-else {msgbox (format("To think that Pokémon can be altered and made safer...\p
+else {msgbox (format("To think that Pokémon can be altered and made 'safer' to be around humans...\p
 Technology is amazing, but it can be scary too."))}
 accepteddonutquest:
 releaseall
@@ -1876,6 +1892,13 @@ lock
 msgbox (format("The mailbox is empty."))
 releaseall
 }
+
+script Littleroot_PlayerHouseSign {
+lock
+msgbox (format("{PLAYER}'s house."))
+releaseall
+}
+
 
 script Littleroot_RivalHouseSign {
 lock
@@ -1975,25 +1998,25 @@ script Littleroot_Idletalk_Oldman{
 	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BIRCH])
 	if (var(VAR_LITTLEROOT_PHASE) == 0 && !flag(Birchafter1stgreeting))
-	{msgbox (format("Ah, {PLAYER}! You're finally outside! I'm so glad to see you.\pPlease, go inside - Professor Balsam is waiting
-	for you.\pI've retired, you see, and left her in charge of things."))
+	{msgbox (format("Ah, {PLAYER}! You're finally outside! I'm so glad to see you.\p Please, go inside - Professor Balsam is waiting
+	for you.\p I've retired, you see, and left her in charge of things."))
 	setflag (Birchafter1stgreeting)
 	goto (endfirstgreeting)}
 	if (var(VAR_LITTLEROOT_PHASE) == 0 && flag(Birchafter1stgreeting))
 	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things she wants to tell you about."))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3 && flag (checkonrival))
-	{msgbox (format("Have you paid {RIVAL} a visit yet? Please... it would lift a weight off my old
+	{msgbox (format("Have you paid {RIVAL} a visit yet?\p Please... it would lift a weight off my old
 	shoulders. \p I tried checking on them myself, but they wouldn't open the door.\p Perhaps they will
 	'open up' to you - no pun intended! Ho-ho-ho!"))}
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
 	{
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
-	msgbox (format("How are the new crutches treating you, {PLAYER}?\pThe war left the terrain in a 
-	treacherous state, so please take care."))}
+	msgbox (format("How are the new crutches treating you, {PLAYER}?\p The war left the terrain in a 
+	bad state, so watch your footing."))}
 	else
-	{msgbox (format("How is the new arm sling treating you, {PLAYER}?\pThe war left the terrain in a 
-	treacherous state, so please take care."))}}
+	{msgbox (format("How is the new arm sling treating you, {PLAYER}?\p The war left the terrain in a 
+	bad state, so watch your footing."))}}
 	endfirstgreeting:
 
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
@@ -2039,11 +2062,11 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		checkplayergender
 		if(var(VAR_RESULT) == MALE){
 		msgbox (format("Would you mind paying {RIVAL} a visit? She has been making quite a ruckus lately...\p
-		It's as if she is reliving things that happened during the war.\pYou went to the front together, 
+		It's as if she is reliving things that happened during the war.\p You went to the front together, 
 		didn't you? Perhaps you can calm her down."))}
 		else {
 		msgbox (format("Would you mind paying {RIVAL} a visit? He has been making quite a ruckus lately...\p
-		It's as if he is reliving things that happened during the war.\pYou went to the front together, 
+		It's as if he is reliving things that happened during the war.\p You went to the front together, 
 		didn't you? Perhaps you can calm him down."))}
 		removefieldmugshot
 		applymovement (1, moves(walk_up * 1, face_down))
@@ -2064,15 +2087,15 @@ script OldManThanks {
 	waitmovement
 	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BIRCH])
-	msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! What got into them?\p Well, at
-	least you got them to leave the house. That may do them some good."))
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
-		msgbox (format("Thank you for checking on her. Here,
-		take this as a form of thanks."))}
-		else {
-		msgbox (format("Thank you for checking on him. Here,
-		take this as a form of thanks."))}
+	msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! What got into her?
+	\p Well, at least you got her to leave the house. That may do her some good.
+	\p Thank you for checking on her. Here, take this as a form of thanks."))}
+	if(var(VAR_RESULT) == FEMALE){
+	msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! What got into her?\p
+	Well, at least you got him to leave the house. That may do him some good.\p
+	Thank you for checking on him. Here, take this as a form of thanks."))}
 	removefieldmugshot
 	setspeaker ([NULL])
 	playfanfare(MUS_OBTAIN_ITEM)
@@ -2083,14 +2106,14 @@ script OldManThanks {
 		waitmessage
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
-		msgbox (format("These are some old crutches of mine.\pI noticed yours were not in the best shape - these
+		msgbox (format("These are some old crutches of mine.\p I noticed yours were not in the best shape - these
 		should help you move around better."))}
 		else
 		{msgbox (format("Obtained the Better Arm Sling!"))
 		waitmessage
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
-		msgbox (format("This is an old arm sling of mine.\pI noticed yours is not in the best shape - this one
+		msgbox (format("This is an old arm sling of mine.\p I noticed yours is not in the best shape - this one
 		should secure your arm better, so you can move around more easily."))}
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("Look at you. You have gone through so much, but you are still standing."))
@@ -2099,8 +2122,8 @@ script OldManThanks {
 		msgbox (format("Your parents would be proud. You came out tough, just like them."))
 		setspeaker ([SP_NAME_BIRCH])
 		applymovement (1, moves(face_up))
-		msgbox (format("Well, off you go now. Please take care - despite Devon's claims, Hoenn is
-		not as safe as it used to. \p But have faith in your Pokémon, and you will be fine. Good bye!"))
+		msgbox (format("Well, off you go now! Please, take care out there. \p Despite Devon's claims, Hoenn is
+		far from a 'safe' place these days... \p But have faith in your Pokémon, and you will be fine. Good bye!"))
 		removefieldmugshot
 		closemessage
 		applymovement (1, moves(walk_down * 7))

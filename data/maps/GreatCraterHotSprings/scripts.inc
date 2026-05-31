@@ -91,8 +91,9 @@ GreatCraterHotSpringsPainting_Text_0:
 GreatCraterHotSpringsBaldGuy_Text_0:
 # 18 "data/maps/GreatCraterHotSprings/scripts.pory"
 	.string "Please, feel free to bathe in any of the\n"
-	.string "pools. Us Lavaridge refugees made this\l"
-	.string "place for everyone to enjoy.$"
+	.string "pools.\p"
+	.string "Us Lavaridge refugees built this place\n"
+	.string "for everyone to enjoy.$"
 
 GreatCraterHotSpringsOldGuy_Text_0:
 # 25 "data/maps/GreatCraterHotSprings/scripts.pory"
@@ -100,8 +101,8 @@ GreatCraterHotSpringsOldGuy_Text_0:
 	.string "daughters built a huge thermal plant in\l"
 	.string "our home of Lavaridge Town.\p"
 	.string "I'm happy they all have work in these\n"
-	.string "hard times, but it changed so fast... so\l"
-	.string "many of us decided to move here to the\l"
+	.string "hard times, but it changed so fast...\p"
+	.string "Many of us decided to move here to the\n"
 	.string "countryside.$"
 
 GreatCraterHotSpringsNumel_Text_0:
@@ -119,5 +120,5 @@ GreatCraterHotSpringsBathingladyknot_Text_0:
 GreatCraterHotSpringsBathingladyloosehair_Text_0:
 # 50 "data/maps/GreatCraterHotSprings/scripts.pory"
 	.string "The water is warm... but not as warm as\n"
-	.string "back home. And the sights are worse\l"
-	.string "too!$"
+	.string "back home.\p"
+	.string "And the sights are worse too!$"

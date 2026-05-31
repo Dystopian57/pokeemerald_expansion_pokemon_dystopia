@@ -306,6 +306,56 @@ script PlayerRoomGamecube {
 	releaseall		
 }
 
+script PlayerRoomTV {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}It's a portable TV. The batteries are spent."))
+	releaseall		
+}
+
+script PlayerRoomHeadphones {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}A pair of headphones. One of the sides is mute."))
+	releaseall		
+}
+
+script PlayerRoomSodas {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}It's two empty cans of Soda."))
+	releaseall		
+}
+
+script PlayerRoomSoda {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}A toppled soda can. It's made a bit of a mess in the carpet."))
+	releaseall		
+}
+
+script PlayerRoomChips {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}It's the remains of a chip bag. The chips are a bit moldy."))
+	releaseall		
+}
+
+script PlayerRoomPokeball {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}It's Primeape's old Pokéball..."))
+	releaseall		
+}
+
+script PlayerRoomShirt {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}It's a shirt with the Devon Co. logo that came in the mail."))
+	releaseall		
+}
+
+
+script PlayerRoomPizza {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}It's an empty 'Slateport Pizza' cardboard box."))
+	releaseall		
+}
+
+
 script PlayerRoomBookshelf {
 	lockall
 	msgbox (format("The shelf is full of novels. Most of them are science fiction ones."))
@@ -366,7 +416,7 @@ script PlayerRoomTrashCan {
 	lockall
 	if (!flag (FLAG_ITEM_BEDROOM_TRASHCAN))
 	{msgbox (format("There's something in the trash can..."))
-	giveitem (ITEM_LEFTOVERS)
+	giveitem (ITEM_FOCUS_BAND)
 	setflag (FLAG_ITEM_BEDROOM_TRASHCAN)}
 	else
 	{msgbox (format("The trash can is empty."))}

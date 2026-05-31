@@ -161,7 +161,7 @@ static const struct CaptureStar sCaptureStars[] =
 static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
 {
     [BALL_STRANGE]  = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_STRANGEBALL},
-    [BALL_POKE]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_POKEBALL},
+    [BALL_POKE]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_GREATBALL},
     [BALL_GREAT]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_GREATBALL},
     [BALL_ULTRA]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_ULTRABALL},
     [BALL_MASTER]   = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_MASTERBALL},
@@ -185,7 +185,7 @@ static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
     [BALL_DREAM]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_DREAMBALL},
     [BALL_SAFARI]   = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_SAFARIBALL},
     [BALL_SPORT]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_SPORTBALL},
-    [BALL_PARK]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_POKEBALL},
+    [BALL_PARK]     = {gBattleAnimSpriteGfx_Particles2,      0x100, TAG_PARTICLES_POKEBALL},
     [BALL_BEAST]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_BEASTBALL},
     [BALL_CHERISH]  = {gBattleAnimSpriteGfx_Particles2,     0x100, TAG_PARTICLES_CHERISHBALL},
 };
@@ -193,7 +193,7 @@ static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
 static const struct SpritePalette sBallParticlePalettes[] =
 {
     [BALL_STRANGE]  = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_STRANGEBALL},
-    [BALL_POKE]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_POKEBALL},
+    [BALL_POKE]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_GREATBALL},
     [BALL_GREAT]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_GREATBALL},
     [BALL_ULTRA]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_ULTRABALL},
     [BALL_MASTER]   = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_MASTERBALL},
@@ -217,7 +217,7 @@ static const struct SpritePalette sBallParticlePalettes[] =
     [BALL_DREAM]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_DREAMBALL},
     [BALL_SAFARI]   = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_SAFARIBALL},
     [BALL_SPORT]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_SPORTBALL},
-    [BALL_PARK]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_PARKBALL},
+    [BALL_PARK]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_POKEBALL},
     [BALL_BEAST]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_BEASTBALL},
     [BALL_CHERISH]  = {gBattleAnimSpritePal_Particles2,     TAG_PARTICLES_CHERISHBALL},
 };
@@ -310,7 +310,7 @@ static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
 {
     // Todo: assign and possibly create different particles
     [BALL_STRANGE] = GreatBallOpenParticleAnimation,
-    [BALL_POKE]    = PokeBallOpenParticleAnimation,
+    [BALL_POKE]    = GreatBallOpenParticleAnimation,
     [BALL_GREAT]   = GreatBallOpenParticleAnimation,
     [BALL_ULTRA]   = UltraBallOpenParticleAnimation,
     [BALL_MASTER]  = MasterBallOpenParticleAnimation,
@@ -351,8 +351,8 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .callback = SpriteCallbackDummy,
     },
     [BALL_POKE] = {
-        .tileTag = TAG_PARTICLES_POKEBALL,
-        .paletteTag = TAG_PARTICLES_POKEBALL,
+        .tileTag = TAG_PARTICLES_GREATBALL,
+        .paletteTag = TAG_PARTICLES_GREATBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
         .anims = sAnims_BallParticles,
         .images = NULL,

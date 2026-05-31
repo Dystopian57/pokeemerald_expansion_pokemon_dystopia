@@ -710,11 +710,16 @@ script Littleroot_Idletalk_Rival{
 	removefieldmugshot
 	applymovement (1, moves(face_player))
 	setspeaker ([NULL])
-	msgbox (format("{RIVAL} does not seem injured... and the 'enemy Pokémon' in question seems to be
+	msgbox (format("{RIVAL} does not look injured... and the 'Pokémon' in question seems to be
 	just a doll."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
-	msgbox (format("{RIVAL} seems to be having another episode... perhaps they'll calm down if the 'enemy'
-	is dealt with."))
+
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox (format("{RIVAL} seems to be having another episode... perhaps she will calm down if the 'enemy'
+	is dealt with."))}
+	if(var(VAR_RESULT) == FEMALE){msgbox (format("{RIVAL} seems to be having another episode... perhaps he will calm down if the 'enemy'
+	is dealt with."))}
+
 	setflag (rivalhouse1stdialogue)}
 	else {msgbox(format("{PLAYER}... it's been an honour... to share battlefield... with you."))}
 	applymovement (1, moves(face_right))
@@ -724,7 +729,7 @@ script Littleroot_Idletalk_Rival{
 
 script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
 	lockall
-    msgbox (format("As I thought, it's just a doll... one of Super Substitute, Devon's mascot. \p Wait... i-it's
+    msgbox (format("It's just a doll... one of Super Substitute, Devon's mascot. \p Wait... i-it's
 	moving!?"))
     waitmessage
 	setwildbattle(SPECIES_MIMIYURUI, 3)
@@ -771,7 +776,7 @@ script Won_or_Caught {
 	removeobject(3)
 	applymovement (1, moves(face_down))
 	setspeaker ([SP_NAME_RIVAL])
-	msgbox (format("Piece of cake - now that this base is secure, let's push onto the north front!
+	msgbox (format("Easy! Now that this base is secure, let's push onto the north front!
 	\pCover my rear, {PLAYER}. At the count of three, two, one..."))
 	removefieldmugshot
 	checkplayergender
@@ -785,11 +790,18 @@ script Won_or_Caught {
     waitmovement (1)
     removeobject (1)
 	playse (SE_DOOR)
+
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+
 	removefieldmugshot
     setflag(RIVAL_LEAVES_HOME)
     setflag(DOLL_BATTLE)
     setvar(VAR_LITTLEROOT_PHASE, 4)
-	clearflag (Oldmantyhide)
+	//clearflag (Oldmantyhide)
 	playbgm (MUS_LITTLEROOT_TEST, TRUE)
 	return
 }
@@ -807,7 +819,7 @@ script RanAway {
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)}
 	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_ANGRY)}
-	msgbox (format("EVERYONE IS COUNTING ON YOU! YOU CAN DO IT"))
+	msgbox (format("EVERYONE IS COUNTING ON YOU! YOU CAN DO IT!"))
 	removefieldmugshot
 	releaseall
 	return
@@ -819,6 +831,12 @@ msgbox (format("It's a sealed box. Better not to open it."))
 releaseall
 }
 
+script RivalHouseBrokenVase {
+lockall
+msgbox (format("It's just a broken vase."))
+releaseall
+}
+
 script RivalHouseTV {
 lockall
 msgbox (format("The TV appears to be broken."))
@@ -827,7 +845,7 @@ releaseall
 
 script RivalHouseMedicineCabinet {
 lockall
-msgbox (format("The cabinet contains human medicine. You spot several types of antidepressants
+msgbox (format("The cabinet contains human medicine.\p You spot several types of antidepressants
 and antipsychotics."))
 releaseall
 }
@@ -854,8 +872,8 @@ releaseall
 script RivalHouseBinoculars {
 	lockall
 	if (!flag (FLAG_ITEM_RIVAL1F_LENS))
-	{msgbox (format("You open the cabinet's drawers. There's many gadgets and strange wires,
-	and only one thing you might use..."))
+	{msgbox (format("There's many gadgets and strange wires in the cabinets,
+	and only one thing of use..."))
 	giveitem (ITEM_ZOOM_LENS)
 	setflag (FLAG_ITEM_RIVAL1F_LENS)}
 	else
