@@ -4725,7 +4725,7 @@
       "id": "LAYOUT_POKE_INN_ROOM1",
       "name": "PokeInnRoom1_Layout",
       "width": 6,
-      "height": 7,
+      "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/PokeInnRoom1/border.bin",

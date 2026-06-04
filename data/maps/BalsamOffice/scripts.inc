@@ -235,7 +235,7 @@ BalsamBed_10:
 # 125 "data/maps/BalsamOffice/scripts.pory"
 	removefieldmugshot
 # 127 "data/maps/BalsamOffice/scripts.pory"
-	goto_if_unset GotPika, BalsamBed_16
+	goto_if_unset GOTSTARTER3, BalsamBed_16
 # 134 "data/maps/BalsamOffice/scripts.pory"
 	trainerbattle_no_intro TRAINER_BALSAM_NOPURACHU, Balsam_Outro
 BalsamBed_15:

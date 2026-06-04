@@ -523,6 +523,7 @@ script Route101RebelGruntBattle{
 	if(var(VAR_RESULT) == FEMALE){
 	call(Route101GruntBatHitShake)
 	msgbox(format("{PLAYER} fails to block the bat with her arms. That must have hurted..."))
+	setflag (rickhitsplayer)
 	setspeaker ([SP_NAME_RICK])
 	msgbox(format("You're a sturdy girl, I'll give you that!"))
 	goto (repeathit)}}
@@ -546,10 +547,15 @@ script Route101RebelGruntBattle{
 	playse (SE_FLEE)
 	applymovement (3, moves(walk_fast_right *2 , walk_fast_up * 6))
 	setspeaker ([SP_NAME_RICK])
+	waitse
+	playse (SE_BALL_BOUNCE_1)
 	msgbox(format("Screw this!"))
 	removeobject(3)
 	setflag (rebel101runsaway)
-
+	clearflag (FLAG_ITEM_ROUTE101REBELITEM)
+	addobject (6)
+	waitmovement (3)
+	
 
 
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
@@ -558,6 +564,18 @@ script Route101RebelGruntBattle{
 	releaseall
     end
  }
+
+
+
+script Route101RebelItem {
+	lock
+	msgbox(format("It seems the rebel dropped this while fleeing..."))
+    giveitem (ITEM_TM46)
+	setflag (FLAG_ITEM_ROUTE101REBELITEM)
+    removeobject (6)
+	releaseall}
+
+
 
 text Rebel101_Outro{
     "Shit..."}

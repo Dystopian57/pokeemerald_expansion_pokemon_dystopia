@@ -627,8 +627,10 @@ script Rebelhackersad {
 	showmonpic(SPECIES_VIVILLON_POKEBALL, 10,3)
 	msgbox(format("Everyday, Devon converts more than 100 Pokémon into Safemon.
 	\p But if you help us, we can get them down to 0."))
+	hidemonpic
 	showmonpic(SPECIES_VIVILLON_POLAR, 10,3)
 	msgbox(format("If you are a coder - join us. If you aren't, we'll make you one."))
+	hidemonpic
 	showmonpic(SPECIES_VIVILLON_RIVER, 10,3)
 	msgbox(format("Join the Rebel Hackers today. For a world where we decide."))
 	hidemonpic
@@ -647,6 +649,7 @@ script Devonnetad {
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_SUN, 10,3)
 	msgbox(format("Devon Net - keeping you closer to yours."))
+	hidemonpic
 	releaseall
 }
 
@@ -656,7 +659,7 @@ script Devongruntad {
 	hidemonpic
 	showmonpic(SPECIES_PIKACHU_COSPLAY, 10,3)
 	msgbox(format("Then enlist in the Devon Guards today. First 100 recruits get their own Manchine!"))
-	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by Devon Co. upon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by Devon Co. \lupon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	hidemonpic
 	releaseall
 }

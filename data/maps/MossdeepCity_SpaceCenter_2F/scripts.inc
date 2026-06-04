@@ -9,7 +9,6 @@ MossdeepCity_SpaceCenter_2F_OnTransition:
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians::
-	clearflag FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER
 	setobjectxyperm LOCALID_SPACE_CENTER_2F_SCIENTIST, 5, 3
 	setobjectmovementtype LOCALID_SPACE_CENTER_2F_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm LOCALID_SPACE_CENTER_2F_RICH_BOY, 3, 2
@@ -178,8 +177,6 @@ MossdeepCity_SpaceCenter_2F_EventScript_Maxie::
 
 MossdeepCity_SpaceCenter_2F_EventScript_Steven::
 	lockall
-	goto_if_set FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER, MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt
-	setflag FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel, MSGBOX_DEFAULT
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano, MSGBOX_DEFAULT
 	closemessage

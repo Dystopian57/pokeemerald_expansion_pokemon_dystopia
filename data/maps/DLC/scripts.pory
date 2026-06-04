@@ -235,12 +235,21 @@ script LittleKidDLC {
     releaseall
 }
 
+script FatManDLCAfterClass {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (15, moves(face_player))
+    msgbox(format("Devon Browser automatically hides all distressing content on the web. \p But
+    it also replaces it with Devon ads. It's kind of annoying."))
+	applymovement (15, moves (face_right))
+    releaseall
+}
 
 script FatManDLC {
-    lockall
+    lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (7, moves(face_player))
-    msgbox(format("It's true! I lived in Rustboro, and some fire Pokémon burned the apartment
+    msgbox(format("I lived in Rustboro, and some fire Pokémon burned the apartment
     building I lived in. \p I had to come back here with my parents. I miss the city."))
 	applymovement (7, moves (face_up))
     releaseall
@@ -248,12 +257,38 @@ script FatManDLC {
 
 
 
+script ObsessedGirlDLC {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (12, moves(face_player))
+    msgbox(format("I searched for the origin of the word 'Pokémon'... and would you know it?
+    \p It comes from the old term 'Pocket Monsters'. They are 'monsters'.
+    \p Who thought it was a good idea to live with them?
+    \p Please, get that one away from me. I don't want to get hurt."))
+	applymovement (12, moves (face_right))
+    waitmovement (12)
+    playfirstmoncry
+    msgbox(format("..."))
+    releaseall
+}
+
+script SleepingKidDLCAfterClass {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (14, moves(face_player))
+    msgbox(format("Since I slept through class, I'm trying to catch up..."))
+	applymovement (14, moves (face_up))
+    waitmovement (14)
+    releaseall
+}
+
 script SleepingKidDLC {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (4, moves(face_player))
-    msgbox(format("ZZZZ... \n ... Huh? Is Math class over? I think I overslept..."))
+    msgbox(format("ZZZZ... \n ... Huh? Is class over? I think I slept through it..."))
 	applymovement (4, moves (face_up))
+    waitmovement (4)
     releaseall
 }
 
@@ -270,10 +305,22 @@ script SleepingBoyNotebookDLC {
     releaseall
 }
 
+script OldManDLC {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (8, moves(face_player))
+    msgbox(format("My daugther's health has never been the same since she breathed that Venusaur's
+    Poison Powder. \p She's been surfing the web as a way to deal with it... I wish she went out
+    a bit more."))
+	applymovement (8, moves (face_up))
+    releaseall
+}
+
+
 script SnorlaxKidNotebookDLC {
     lock
     showmonpic(SPECIES_PIKACHU_BELLE, 10,3)
-    msgbox(format("It's a drawing of a Snorlax, sleeping soundly.."))
+    msgbox(format("It's a drawing of a Snorlax, sleeping soundly... while blocking a bridge."))
     //msgbox(format("The notebook contains many Pokémon names, most of them typed wrong."))
     hidemonpic
     releaseall
@@ -728,33 +775,44 @@ script BlackBoardDLC {
 	if(var(VAR_RESULT) == 0){
     msgbox(format("You write ¥2194 on the blackboard."))
 	applymovement (6, moves(face_player))
+	applymovement (14, moves(face_player))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
     msgbox(format("Uhm... that's not correct. Would you mind not writing wrong answers on the
     board? \n Thank you."))
 	applymovement (6, moves(face_down))
+    waitmovement (6)
+	applymovement (14, moves(face_up))
+    waitmovement (14)
     }
 
 	if(var(VAR_RESULT) == 1){
     msgbox(format("You write ¥1984 on the blackboard."))
 	applymovement (6, moves(face_player))
+	applymovement (14, moves(face_player))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
     msgbox(format("Oh, that's correct! You're good with numbers."))
 	applymovement (6, moves(face_up))
+	applymovement (14, moves(face_up))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
     msgbox(format("I like math problems... they always have a single right answer.
     \p If only the world worked like that."))
 	applymovement (6, moves(face_down))
+	applymovement (14, moves(face_up))
     waitmovement (6)
+    waitmovement (14)
     setflag (DLCmathresolved)
     }
 
 	if(var(VAR_RESULT) == 2){
     msgbox(format("You write ¥2025 on the blackboard."))
 	applymovement (6, moves(face_player))
+	applymovement (14, moves(face_player))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
     msgbox(format("Uhm... that's not correct. Would you mind not writing wrong answers on the
     board? \n Thank you."))
 	applymovement (6, moves(face_down))
+	applymovement (14, moves(face_up))
+    waitmovement (14)
     }
 
 	if(var(VAR_RESULT) == 2){
@@ -856,9 +914,10 @@ script KantonianWarHistoryVol1DLC {
 	showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
         msgbox(format("'The book cover reads: 'Money in post-war Hoenn - how to THRIVE.'"))
         moneychapterselection:
-	showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
+	    showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
 
         msgbox(format("Which chapter to read?"))
+        hidemonpic
 	dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "1) Devon Relief", "2) Foraging", "3) Object Spotter", "4) Thief and You", "5) Pawning and Gambling", "None")
     
 
@@ -868,7 +927,7 @@ script KantonianWarHistoryVol1DLC {
     I've been there. In the absolute bottom. And I'll teach you how to climb out of it!
     \p First step is to check your mailbox. If you served during the war, or had some sort of
     insurance, chances are Devon has mailed you some money. \p It won't be much, but it's
-    a start"))
+    a start."))
     goto (moneychapterselection)
     }
 
@@ -876,9 +935,9 @@ script KantonianWarHistoryVol1DLC {
     hidemonpic
     msgbox(format("Mother nature does not provide as much as it used to, but with some luck, it won't
     be drained dry by the time you read this. \p Take Route 101 for example - Shiitako mushrooms
-    grow in that place. Even if you pick them up once, they regrow on the daily, so that's
+    grow in that place. \p Even if you pick them up once, they regrow on the daily, so that's
     steady income! \p Too lazy to forage yourself? Get a Pokémon with the Pickup ability,
-    and have it do it for you. Now that's steady AND passive income! \p Lastly, if you're
+    and have it do it for you. \p Now that's steady AND passive income! \p Lastly, if you're
     lucky enough to find a berry field in this day and age, well... you better exploit it,
     and sell those bad girls for a fortune."))
     goto (moneychapterselection)
@@ -888,10 +947,11 @@ script KantonianWarHistoryVol1DLC {
     hidemonpic
     msgbox(format("Now this is where the real money flows in! \p It's only been a year since
     the war, and Hoenn is still full of stuff people dropped during the chaos. \p Now, you can
-    comb the ground of Hoenn till your hair turns grey, or you can get your hands on an Object Spotter -
-    an ugly pair of goggles that does the spotting for you.\p They are expensive, and due to some
+    comb the ground of Hoenn till your hair turns grey, or you can get your hands on an {COLOR BLUE}Object Spotter{COLOR DARK_GRAY}.
+    Basically, it's an ugly pair of goggles that does the spotting for you.\p They are expensive, and due to some
     anti-theft nonsense, they don't work indoors... \p But if you want not only to survive, but THRIVE...
-     it's a pretty worthy investment!")) 
+     it's a pretty worthy investment!"))
+    goto (moneychapterselection)
     }
 
 	if (var(VAR_RESULT) == 3) {

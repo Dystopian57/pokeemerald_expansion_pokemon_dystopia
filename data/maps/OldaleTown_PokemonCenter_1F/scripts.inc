@@ -1242,7 +1242,7 @@ Devongruntad::
 # 658 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Devongruntad_Text_1
 # 659 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devongruntad_Text_2
+	messageautoscroll Devongruntad_Text_2
 # 660 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
 # 661 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
@@ -1818,7 +1818,8 @@ Devongruntad_Text_1:
 Devongruntad_Text_2:
 # 659 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by\n"
-	.string "Devon Co. upon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
+	.string "Devon Co.\l"
+	.string "upon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 Azuresortad_Text_0:
 # 666 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"

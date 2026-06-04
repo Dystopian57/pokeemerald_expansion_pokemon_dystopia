@@ -375,6 +375,8 @@ script Sharpy103 {
 		setobjectxy (24, 79, 0)
 		setobjectxy (25, 79, 0)
 		setflag (camelianotoutsideDLC)
+		setflag (DLCclassends)
+		clearflag (DLCrecesstarts)
    		setvar(VAR_OLDALE_PHASE, 3)
 		releaseall
 		playbgm (MUS_ROUTE113, TRUE)

@@ -21,7 +21,7 @@ call(Common_EventScript_SetupRivalGfxId)
 
 
 script TimeofDayTest {
-	lockall
+	lock
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{msgbox(format("Morning."))
@@ -319,8 +319,15 @@ script OldaleDLCSign {
     releaseall   
 }
 
+
+script Oldale102Sign {
+    lock
+    msgbox(format("West - Road 002."))
+    releaseall      
+}
+
 script OldaleOutsideHikerGuy {
-    lockall
+    lock
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if(var(VAR_JOELQUESTS) == 0)
     {applymovement (14, moves(face_player))
@@ -384,7 +391,7 @@ script OldaleOutsideParkNPC {
 
 
 script OldaleOutsideOldGuy {
-    lockall
+    lock
     applymovement (13, moves(face_player))
     msgbox(format("If you were wondering... it should be way past autumn now. \p The trees are brown
     because they are sick. It's the Koffing poison the Kantonians doused during
@@ -394,11 +401,26 @@ script OldaleOutsideOldGuy {
     }
 
 script OldaleOutsideOldWoman {
-    lockall
+    lock
     applymovement (31, moves(face_player))
     msgbox(format("Did you see the greenish rain just now...? \p The Weather Institute says
     it's not harmful on the short-term. But I worry about the long term..."))
     releaseall
+    }
+
+script DLCTeacherOutside {
+    lock
+    applymovement (34, moves(face_player))
+	if(var(VAR_OLDALE_PHASE) == 2)
+    {msgbox(format("I'm really dying for a smoke here... \p If only those loser Rebels left the Warehouse,
+    Devon Co. would start sending supplies again."))}
+
+    if(var(VAR_OLDALE_PHASE) == 3)
+    {msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+    \p Ah, sorry for blowing the smoke on your face. Haven't smoked in days... \p With the Rebels
+    gone, the mart is getting stocked again.\p Was about time!
+    {COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
+    releaseall  
     }
 
 script OldaleTown_GotoTherapy{
@@ -406,7 +428,7 @@ script OldaleTown_GotoTherapy{
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 6))
     waitmovement(0)
-	msgbox (format("That's the Devon Learning Center... I should attend the therapy session."))
+	msgbox (format("That's the Devon Learning Center... the therapy session should be about to start."))
 	special (RemoveCameraObject)
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 6))
@@ -500,7 +522,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
             removefieldmugshot
             setspeaker ([SP_NAME_CAMELIA])
             createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
-            msgbox(format("We're not with the Rebels, if that's what you're worried about."))
+            msgbox(format("We're not with the {COLOR RED}Rebels{COLOR DARK_GRAY}, if that's what you're worried about."))
             
             removefieldmugshot
             setspeaker ([SP_NAME_CAMELIA])
@@ -536,11 +558,13 @@ script OldaleSharpyCameliaOutDLCCutscene {
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD)
+                    applymovement (18, moves(face_right))
                     msgbox(format("Grr... you give up too easily, Camelia. But I'm not like that!"))
 
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+                    applymovement (18, moves(face_left))
                     msgbox(format("You leave me with no other choice... I challenge you... to a BATTLE!"))
                 
                     removefieldmugshot
@@ -557,13 +581,13 @@ script OldaleSharpyCameliaOutDLCCutscene {
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-                    msgbox(format("Maybe - but the end justifies the means! W-wait, that's what rebelssay..."))
+                    msgbox(format("Maybe - but the end justifies the means! W-wait, that's {COLOR RED}Rebels{COLOR DARK_GRAY} talk..."))
 
                     applymovement (18, moves(face_left))
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
-                    msgbox(format("A-anyway, ome join me in Route 103! I'll be waiting!"))
+                    msgbox(format("A-anyway, come to Route 103! I'll be waiting!"))
                     removefieldmugshot
 
                     playse (SE_FLEE)
@@ -809,10 +833,30 @@ script OldaleRivalDontLeaveOldaleto101 {
     releaseall   
 }
 
+
+script OldaleWareHouseSign {
+    lock
+    msgbox(format("East - Oldale Warehouse."))
+    release 
+}
+
+script OldaleMotorBike {
+    lock
+    msgbox(format("A motorbike. A decal on its die reads 'Rebel 4 Life'."))
+    release 
+}
+
+script OldaleCar {
+    lock
+    msgbox(format("The car seems to have been parked for some time.")) 
+    release 
+}
+
 script OldaleBike {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
     msgbox(format("The bike has tons of locks on the wheels, to discourage theft."))
+    release 
 }
 
 script OldalePlant {
@@ -820,6 +864,7 @@ script OldalePlant {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
     msgbox(format("The plants are on the same state than the trees around... \p On their way
     to wither."))
+    release 
 }
 
 script OldaleDLCWindow {
@@ -827,23 +872,21 @@ script OldaleDLCWindow {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
     msgbox(format("You can see the DLC's library through the window. \p The library's clerk
     is browsing an... 'explicit' website."))
-}
-
-script OldaleFountain {
-	lock
-	if (!flag (FLAG_ITEM_LAB_GLASSES))
-	{msgbox(format("There's a foreign coin on the fountain's bottom..."))
-	giveitem (ITEM_AMULET_COIN)
-	setflag (FLAG_ITEM_OLDALE_FOUNTAIN)}
-	else
-	{msgbox(format("The fountain's water is stagnated."))}
-	releaseall	
+    release 
 }
 
 script OldaleHouse2GardenItem {
 	lock
-    giveitem (ITEM_SOFT_SAND)
-	setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    finditem (ITEM_SOFT_SAND)
+    //giveitem (ITEM_SOFT_SAND)
+	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    removeobject (4)
+	releaseall}
+
+script OldaleParkingItem {
+	lock
+    giveitem (ITEM_METAL_COAT)
+	setflag (FLAG_ITEM_OLDALE_PARKING)
     removeobject (4)
 	releaseall}
     
@@ -909,7 +952,7 @@ script OldaleRivalnoleavetoWhouse {
 
 
     script OldaleWarehouseRebelGuard {
-    lockall
+    lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("You lost, kid? Well scram, there's nothing here for you t-"))
     applymovement (19, moves(emote_exclamation_mark))

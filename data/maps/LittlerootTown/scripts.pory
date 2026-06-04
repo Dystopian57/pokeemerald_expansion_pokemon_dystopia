@@ -1838,6 +1838,7 @@ script NoRain {
 }
 
 script FatGuyExclMark {
+	lock
 	if (!flag (Donutquestaccepted) && !flag (fatguyseesplayerleavelittl))
 	{applymovement (3, moves(face_player, emote_exclamation_mark))
 	setflag (fatguyseesplayerleavelittl)
@@ -1851,11 +1852,13 @@ script FatGuyExclMark {
 script Littleroot_Techguy_Talk {
 lockall
 applymovement (3, moves(face_player))
-if (var(VAR_LITTLEROOT_PHASE) == 4)
+if (var(VAR_LITTLEROOT_PHASE) == 3)
 {bufferleadmonspeciesname(STR_VAR_1)
 
 msgbox (format("Wait, did Balsam give you that {STR_VAR_1}!? \p Last time I asked her for
-one, she gave me a Digglett instead..."))}
+one, she gave me a Digglett instead..."))
+goto (accepteddonutquest)
+}
 
 if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (Donutquestaccepted))
 {msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
@@ -1868,6 +1871,7 @@ if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (Donutquestaccepted))
 {msgbox (format("It's okay if you don't have time, but... I'd really like a taste of those donuts.
 \p I'd go myself, but my Digglet is weak, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
  town.\pBut you're a former soldier, right? They won't mess with you!"))}
+
 else {msgbox (format("To think that Pokémon can be altered and made 'safer' to be around humans...\p
 Technology is amazing, but it can be scary too."))}
 accepteddonutquest:
@@ -2048,7 +2052,7 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		waitmovement
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
-			if (!flag (GotPika))
+			if (!flag (GOTSTARTER3))
 
 			{bufferleadmonspeciesname(STR_VAR_1)
 			msgbox (format("Such a cute {STR_VAR_1}! you have there! \p You see, I was wondering..."))}
@@ -2131,6 +2135,8 @@ script OldManThanks {
 		removeobject (1)
 		setobjectxy (1, 4, 17)
 		setvar(VAR_LITTLEROOT_PHASE, 5)
+		setweather (WEATHER_SHADE)
+		doweather
 
 	//Receive Running shoes
 	releaseall}

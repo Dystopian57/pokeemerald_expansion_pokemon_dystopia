@@ -1,0 +1,202 @@
+raw `
+
+
+`
+
+mapscripts PokeInnRoom1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightNPC
+    MAP_SCRIPT_ON_LOAD: DayNightNPC}
+
+
+
+#define GOTSTARTER1         0x20 // Obtained first starter
+#define GOTSTARTER2         0x21 // Obtained second starter
+#define GOTSTARTER3 
+
+script OldaleUsedInnBin {
+	lock
+	if (!flag (FLAG_ITEM_OLDALEUSEDINNBIN))
+	{msgbox (format("There's something on the trash can..."))
+	giveitem (ITEM_X_SP_DEF)
+	setflag (FLAG_ITEM_OLDALEUSEDINNBIN)}
+	else
+	{msgbox (format("The trash can is empty."))}
+	releaseall	
+}
+
+
+script OldaleInnRoomOldLady {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (10, moves(face_player))
+    msgbox(format("Our grandson pushes himself too hard. You look like you do as well.
+    \p It's okay to accept help, you know?"))
+    releaseall
+}
+
+script OldaleInnRoomOldMan {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (1, moves(face_player))
+    msgbox(format("My grandson was injured during the war, but if it wasn't for one of the
+    Littleroot's Heroes, he wouldn't be here at all..."))
+
+    msgbox(format("Hmm... you have an odd resemblance to him."))
+    releaseall
+}
+
+script PokeInnRoom1Girl {
+    lock
+	applymovement (3, moves(face_player))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+    if (!flag (showedoldaleinngirldoll))
+    {
+    msgbox(format("Oh, you're the one who arrived late at therapy. \p I'm sorry for yelling in class.
+    I hope the teacher did't get mad. \p I saw my brother get hurt by a Blastoise during the
+    war, and I'm a bit scared of them."))
+    if (flag (GOTSTARTER3))
+        {applymovement (3, moves(face_up))
+        msgbox(format("I prefer dolls over Pokémon now. Like this Purachu doll!
+        Isn't it cute? \p I want to see a real Purachu one day. But only from afar..."))
+        checkspecies (SPECIES_PIKACHU_SAFE, NO_PARTY_SCREEN)
+        if (var(VAR_RESULT) == TRUE)
+        { 
+            applymovement(3, moves(emote_exclamation_mark, face_player))
+            playse (SE_PIN)
+            msgbox(format("Wait... is that a Purachu you have there? Ca-... can I see it?"))
+            dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+            if(var(VAR_RESULT) == 0){
+            fadescreenswapbuffers (FADE_TO_BLACK)
+            playse (SE_BALL_OPEN)
+	        setflag (FLAG_TEMP_HIDE_FOLLOWER)
+
+            applymovement(3, moves(face_down))
+
+            setobjectxy (OBJ_EVENT_ID_PLAYER, 2, 9)
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(face_left))
+
+		    //special (SpawnCameraObject)
+		    //applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 5, walk_left * 1))
+
+            setobjectxy (5, 1, 10)
+            fadescreenswapbuffers (FADE_FROM_BLACK)
+
+            msgbox(format("Wow... it's so plumpy! I'll try petting it!"))
+            playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL) 
+            msgbox(format("Puuu..."))
+
+            msgbox(format("Hehe... it liked it. I guess Pokémon aren't so scary after all."))
+            playse (SE_BALL_OPEN)
+            fadescreenswapbuffers (FADE_TO_BLACK)
+
+            clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+            
+
+            setobjectxy (5, 0, 0)
+            applymovement(3, moves(face_right))
+            fadescreenswapbuffers (FADE_FROM_BLACK)
+
+
+
+            msgbox(format("Thank you for showing me. Here, I want you to have this as thanks."))
+            giveitem (ITEM_SOOTHE_BELL)
+            msgbox(format("I use my doll as pillow, so I don't need this. But someday, perhaps I'll
+            get a real Pokémon!"))
+            applymovement(3, moves(face_up))
+            setflag (showedoldaleinngirldoll)
+            goto (endoldalepokeinnroom1girl)
+            }
+
+            if(var(VAR_RESULT) == 1){
+            msgbox(format("O-oh, okay... I guess it must be dangerous to take it out. Sorry for asking."))
+            goto (endoldalepokeinnroom1girl)
+            }
+            }
+
+            else {goto (endoldalepokeinnroom1girl)}
+            }
+            //if (flag (GOTSTARTER1))
+            }
+
+
+    if (flag (showedoldaleinngirldoll) && !flag(anneandfamilygone))
+        { msgbox(format("I can't wait to tell Anne about me petting a real Pokémon!"))}
+
+    if (flag (showedoldaleinngirldoll) && flag(anneandfamilygone))
+        { msgbox(format("I went to tell Anne about me petting a real Pokémon, but she and her
+        family are gone. \p She was the only girl my age in town... \p I'm sad, but Joel must be
+        sadder. They were so close!."))}
+        
+
+    endoldalepokeinnroom1girl:
+    releaseall
+}
+
+script PokeInnRoom1WheelchairBoy {
+    lock
+	applymovement (3, moves(face_player))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("Hey… does it hurt?"))
+
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+    if(var(VAR_RESULT) == 0){
+    msgbox(format("I see… I envy you."))
+    }
+
+    if(var(VAR_RESULT) == 1){
+    msgbox(format("I see… mine don't hurt either."))}
+    
+    msgbox(format("Say, can you do me a favour?
+    My grandparents are caring for me, but they struggle to push my chair.\p
+    So I do it myself, but my arms get tired after a while...
+    \p Do you think you can find a Fighting Pokémon for me?
+    \pOne that is not evolved, since I'm a novice trainer.
+    \pPlease, I'll give you something in return."))
+    
+    //checkspecies (SPECIES_MAKUHITA, OPEN_PARTY_SCREEN)
+		//special (ChoosePartyMon)
+		//waitstate
+        //copyvar (VAR_0x8005, VAR_0x8004)
+        //checkspecies (VAR_0x8005, OPEN_PARTY_SCREEN)
+        getseenmon (SPECIES_POOCHAIN)
+
+        //special (IsGrassTypeInParty)
+        //setorcopyvar
+        if (var(VAR_RESULT) == TRUE)
+
+        {bufferspeciesname (STR_VAR_1, SPECIES_POOCHAIN)}
+
+        if (var(VAR_RESULT) == FALSE)
+        {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+        getseenmon (SPECIES_MAKUHITA)
+
+        if (var(VAR_RESULT) == TRUE)
+
+        {bufferspeciesname (STR_VAR_2, SPECIES_MAKUHITA)}
+
+        if (var(VAR_RESULT) == FALSE)
+        {bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+
+    msgbox(format("Show me a Pokémon."))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}")
+
+
+        //if (var(VAR_RESULT) == SPECIES_MAKUHITA)
+        //{ msgbox(format("A Makuhita!"))}
+
+        //if (var(VAR_RESULT) == SPECIES_MACHOP)
+        //{ msgbox(format("A Machop!"))}
+
+        //else {goto (endofwheelchairinnkidscript)}
+
+    endofwheelchairinnkidscript:
+    release
+    }
+
+
+
+

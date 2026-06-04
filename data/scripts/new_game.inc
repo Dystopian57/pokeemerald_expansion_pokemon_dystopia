@@ -292,5 +292,13 @@ EventScript_ResetAllMapFlags::
 	setflag balsaminherbedroom
 	setflag balsamofficeemptytv
 	setflag sandshrewin102
+
+	setflag purachudollatoldaleinn
+	setflag bulbasynthdollatoldaleinn
+	setflag smothquildollatoldaleinn
+	setflag DLCrecesstarts
+	setflag rivalappearsinOldale
+	setflag FLAG_ITEM_ROUTE101REBELITEM
+	
 	call EventScript_ResetAllBerries
 	end

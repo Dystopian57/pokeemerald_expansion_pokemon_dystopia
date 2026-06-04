@@ -50,7 +50,7 @@
 #define RIVAL_LEAVES_HOME   0x24 // Unused Flag
 #define InsistonPika1       0x25 // Unused Flag
 #define InsistonPika2       0x26 // Unused Flag
-#define GotPika             0x27 // Unused Flag
+#define purachudollatoldaleinn             0x27 // Unused Flag
 #define Aideeleaveslab     0x28 // Unused Flag
 #define Aideearrivestobasement  0x29 // Unused Flag
 #define Unsafeningtutodone  0x2A // Unused Flag
@@ -167,7 +167,8 @@
 #define helpedconcordconartist           0x8F
 #define conartistescaped            0x90
 #define conartistegg                    0x91
-#define NOTUSEDFLAG                    0x92
+
+#define bulbasynthdollatoldaleinn                    0x92
 #define ferryman103up        0x93
 #define ferryman103down       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
@@ -228,7 +229,7 @@
 #define FLAG_RECEIVED_PINK_SCARF             0xCA
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC
-#define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD
+#define DLCrecesstarts    0xCD
 #define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
 #define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
@@ -244,9 +245,9 @@
 #define FLAG_MET_WAILMER_TRAINER             0xDA
 #define FLAG_EVIL_LEADER_PLEASE_STOP         0xDB
 
-#define FLAG_NEVER_SET_0x0DC                 0xDC // This flag is read, but never written to
+#define smothquildollatoldaleinn                 0xDC // This flag is read, but never written to
 
-#define FLAG_RECEIVED_GO_GOGGLES             0xDD
+#define showedoldaleinngirldoll            0xDD
 #define FLAG_WINGULL_SENT_ON_ERRAND          0xDE
 #define FLAG_RECEIVED_MENTAL_HERB            0xDF
 #define FLAG_WINGULL_DELIVERED_MAIL          0xE0
@@ -259,7 +260,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
+#define DLCclassends                    0xE9 // Unused Flag
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -553,7 +554,7 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD             (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN                     (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
+#define FLAG_HIDDEN_ITEM_OLDALE_FOUNTAIN                     (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
@@ -1239,10 +1240,10 @@
 #define FLAG_ITEM_RIVAL1F_LENS                                0x49A // Unused Flag
 #define FLAG_ITEM_WARM_BEDDING                                         0x49B // Unused Flag
 #define FLAG_ITEM_OLDALEHOUSE1VASE                                           0x49C // Unused Flag
-#define FLAG_ITEM_OLDALE_FOUNTAIN                                           0x49D // Unused Flag
+#define FLAG_ITEM_OLDALE_PARKING                                           0x49D // Unused Flag
 #define FLAG_ITEM_OLDALE_HOUSE2GARDEN                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
+#define FLAG_ITEM_OLDALEUSEDINNBIN                                           0x49F // Unused Flag
+#define FLAG_ITEM_ROUTE101REBELITEM                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag

@@ -1292,6 +1292,8 @@ script Littleroot_Idletalk_Prof{
 
 script Littleroot_Idletalk_Pikachu1{
 			lockall
+			setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+			applymovement (7, moves (face_player))
 			showmonpic(SPECIES_PIKACHU_SAFE, 10,3)
 			playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL) 
 			msgbox (format("Pura-pura?"))
@@ -1324,7 +1326,7 @@ script Littleroot_Idletalk_Pikachu1{
 					removefieldmugshot
 					goto(finishPikascript)}
 
-			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika2) && !flag (GotPika))
+			if (var(VAR_LITTLEROOT_PHASE) == 1 && flag (InsistonPika2) && !flag (GOTSTARTER3))
 				{setspeaker ([SP_NAME_BALSAM])
 				applymovement (4, moves(face_right))
 				waitmovement (4)
@@ -1346,8 +1348,8 @@ script Littleroot_Idletalk_Pikachu1{
 					waitmessage
 					playse (SE_M_YAWN)
 					msgbox(format("The Purachu yawns..."))
-					setflag (GotPika)
 					setflag(GOTSTARTER3)
+					clearflag (purachudollatoldaleinn)
 					removeobject (7)
 					givemon(SPECIES_PIKACHU_SAFE, 5)
        				
@@ -1633,6 +1635,7 @@ script Lab_EventScript_Starter1{
             msgbox("I received a Bulbasynth!")
             removeobject(1)
             setflag(GOTSTARTER1)
+			clearflag (bulbasynthdollatoldaleinn)
             call(NicknamePartyMon1)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)
@@ -1750,6 +1753,7 @@ script Lab_EventScript_Starter2{
             msgbox("I received a Smothquil!")
             removeobject(2)
             setflag(GOTSTARTER2)
+			clearflag (smothquildollatoldaleinn)
             call(NicknamePartyMon2)
             setflag(FLAG_SYS_POKEMON_GET)
 			setvar(VAR_LITTLEROOT_PHASE, 2)

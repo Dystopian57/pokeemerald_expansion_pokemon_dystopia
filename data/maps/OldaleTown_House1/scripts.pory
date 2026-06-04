@@ -38,39 +38,53 @@ endofdaynightnpc:
 }
 
 
+
+
+script OldaleHouse1Vase {
+	lock
+	if (!flag (FLAG_ITEM_OLDALEHOUSE1VASE))
+	{msgbox (format("There's something at the bottom of the vase..."))
+	giveitem (ITEM_RED_SHARD)
+	setflag (FLAG_ITEM_OLDALEHOUSE1VASE)}
+	else
+	{msgbox (format("The vase is empty."))}
+	releaseall	
+}
+
+
 script OldaleHouse1Fridge {
-    lockall
+    lock
     msgbox(format("The fridge contains a few cheap, home cooked meals."))
     releaseall
 }
 
 script OldaleHouse1Sink {
-    lockall
+    lock
     msgbox(format("The sink is pristine."))
     releaseall
 }
 
 script OldaleHouse1Cabinet {
-    lockall
+    lock
     msgbox(format("It's probably full of clothes. Better not to open it."))
     releaseall
 }
 
 script OldaleHouse1Bookshelf {
-    lockall
+    lock
     msgbox(format("None of the books seem too interesting."))
     releaseall
 }
 
 script OldaleHouse1Drawer {
-    lockall
+    lock
     msgbox(format("The drawers are full of worthless knicknacks."))
     releaseall
 }
 
 
 script OldaleHouse1BoyNight {
-    lockall
+    lock
 	applymovement (8, moves(face_player))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("We can't afford a Devon TV License… so I'm watching video tapes! \p This one
@@ -81,13 +95,13 @@ script OldaleHouse1BoyNight {
 }
 
 script OldaleHouse1TVDay {
-    lockall
+    lock
     msgbox(format("The TV is turned off."))
     releaseall
 }
 
 script OldaleHouse1TVNight {
-    lockall
+    lock
     showmonpic(SPECIES_PIKACHU_LIBRE, 10,3)
     msgbox(format("It's the movie 'War of the Worlds' by H.G. Weedle. A giant, spider-like robot is
 	capturing panicked humans. \p Some people think it's a critique on Pokémon training."))
@@ -96,13 +110,13 @@ script OldaleHouse1TVNight {
 }
 
 script OldaleHouse1GirlDay {
-    lockall
+    lock
     msgbox(format("Don't worry Shiiko. I would never eat you, no matter how tasty you look!"))
     releaseall
 }
 
 script OldaleHouse1GirlNight {
-    lockall
+    lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("Come on Shiiko… I know I bit you, but I was sleep walking!\p I swear I won't
 	eat you, so come down here! "))
@@ -113,7 +127,7 @@ script OldaleHouse1GirlNight {
 }
 
 script OldaleHouse1Shiiko {
-    lockall
+    lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playmoncry(SPECIES_SHIITAKO, CRY_MODE_WEAK)
 	applymovement (3, moves (walk_in_place_slow_up * 2))
@@ -122,7 +136,7 @@ script OldaleHouse1Shiiko {
 }
 
 script OldaleHouse1WomanDay {
-    lockall
+    lock
 	applymovement (1, moves(face_player))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("It's been hard raising my daugther alone without my husband. \p If only he
@@ -133,7 +147,7 @@ script OldaleHouse1WomanDay {
 
 
 script OldaleHouse1WomanNight {
-    lockall
+    lock
 	applymovement (7, moves(face_player))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("Don't yOu thInk it's... {COLOR LIGHT_GRAY}{SHADOW WHITE}Hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}

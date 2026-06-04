@@ -124,7 +124,7 @@ script BalsamBed {
     setflag (FLAG_NO_ESCAPE)
     removefieldmugshot
 
-        if (!flag (GotPika))
+        if (!flag (GOTSTARTER3))
         {
             trainerbattle_no_intro(TRAINER_BALSAM_PURACHU, Balsam_Outro)
 
