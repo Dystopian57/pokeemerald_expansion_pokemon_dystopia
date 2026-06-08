@@ -291,7 +291,6 @@ EventScript_ResetAllMapFlags::
 	setflag Aideearrivestobasement
 	setflag balsaminherbedroom
 	setflag balsamofficeemptytv
-	setflag sandshrewin102
 
 	setflag purachudollatoldaleinn
 	setflag bulbasynthdollatoldaleinn
@@ -299,6 +298,7 @@ EventScript_ResetAllMapFlags::
 	setflag DLCrecesstarts
 	setflag rivalappearsinOldale
 	setflag FLAG_ITEM_ROUTE101REBELITEM
+	setflag route102weathermon
 	
 	call EventScript_ResetAllBerries
 	end

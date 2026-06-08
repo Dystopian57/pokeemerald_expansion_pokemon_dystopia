@@ -86,6 +86,5 @@ script OldalePokeCenterInnPrograms {
 		msgbox(format("There is a sandstorm in Route 102!"))
 		setvar(VAR_ROUTE102_WEATHER, 1)
 		setflag (seenweatheratinnvisit)
-		clearflag (sandshrewin102)
 		release
 	}

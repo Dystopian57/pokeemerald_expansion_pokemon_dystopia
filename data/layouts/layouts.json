@@ -5130,6 +5130,16 @@
       "secondary_tileset": "gTileset_BattlePalace",
       "border_filepath": "data/layouts/JimmyEggStore/border.bin",
       "blockdata_filepath": "data/layouts/JimmyEggStore/map.bin"
+    },
+    {
+      "id": "LAYOUT_REBEL_HARBOUR_LOUNGE",
+      "name": "RebelHarbourLounge_Layout",
+      "width": 13,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/RebelHarbourLounge/border.bin",
+      "blockdata_filepath": "data/layouts/RebelHarbourLounge/map.bin"
     }
   ]
 }

@@ -103,6 +103,34 @@
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_SEWERS",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 23,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_HARBOR",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 15,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_REBEL_HARBOUR_LOUNGE",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 15,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_REBEL_HARBOUR_LOUNGE",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 23,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_HARBOR",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

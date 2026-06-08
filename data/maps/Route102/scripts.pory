@@ -111,9 +111,9 @@ Route102_Text_RouteSignPetalburg:
 
 
 mapscripts Route102_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: Route102Weather
-    MAP_SCRIPT_ON_LOAD: Route102Weather}
-
+    //MAP_SCRIPT_ON_TRANSITION: Route102Weather
+    MAP_SCRIPT_ON_LOAD: Route102Weather
+	MAP_SCRIPT_ON_LOAD: PopWeatherMon102}
 
 script Route102Weather {
 
@@ -144,6 +144,22 @@ script Route102EndSandtorm {
 	setvar(VAR_ROUTE102_WEATHER, 0)
 }
 
+script PopWeatherMon102 {
+	if (var(VAR_ROUTE102_WEATHER) == 0)
+	{setflag (route102weathermon)}
+
+	if (var(VAR_ROUTE102_WEATHER) == 1)
+	{clearflag (route102weathermon)}
+
+	if (var(VAR_ROUTE102_WEATHER) == 2)
+	{clearflag (route102weathermon)}
+
+	if (var(VAR_ROUTE102_WEATHER) == 3)
+	{clearflag (route102weathermon)}
+
+	}
+
+
 
 
 
@@ -160,10 +176,11 @@ script BridgeItem {
 
 
 
-script Route102Sandshrewinsandstorm {
+script Route102Weathermon {
 	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (8, moves(face_player))
-    msgbox (format("The Sandshrew is just enjoying the weather. Battle it?"))
+    msgbox (format("The Sandshrew is just enjoying the sandstorm. Battle it?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {
@@ -172,11 +189,11 @@ script Route102Sandshrewinsandstorm {
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
-		setflag (sandshrewin102)
+		setflag (route102weathermon)
 	}
 	elif(var(VAR_RESULT) == B_OUTCOME_WON){
 		goto (endsandshrewinsandstormscript)
-		setflag (sandshrewin102)
+		setflag (route102weathermon)
 	}
 	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
 		goto (endsandshrewinsandstormscript)
@@ -184,7 +201,6 @@ script Route102Sandshrewinsandstorm {
 	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
 		goto (endsandshrewinsandstormscript)
 	}
-
 
 	}
 
@@ -194,6 +210,6 @@ script Route102Sandshrewinsandstorm {
 
 	endsandshrewinsandstormscript:
 	waitmessage
-	releaseall
+	release
 }
 

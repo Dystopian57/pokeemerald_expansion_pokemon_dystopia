@@ -9039,8 +9039,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_FLAME_ORB] =
     {
-        .name = ITEM_NAME("Broken Lighter"),
-        .pluralName = ITEM_PLURAL_NAME("Broken Lighters"),
+        .name = ITEM_NAME("Leaky Lighter"),
+        .pluralName = ITEM_PLURAL_NAME("Leaky Lighters"),
     #if I_PRICE >= GEN_9
         .price = 3000,
     #elif I_PRICE >= GEN_7

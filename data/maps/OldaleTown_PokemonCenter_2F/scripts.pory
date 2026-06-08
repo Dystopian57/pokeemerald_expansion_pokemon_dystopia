@@ -135,6 +135,7 @@ script DevonInnNPC {
 				goto (enddevoninnscript)
 		}
 	pleaseenjoystay:
+	applymovement (1, moves(face_player))
 	msgbox(format("Please enjoy your stay! And keep your Pokémon in their Pokéballs."))
 
 	enddevoninnscript:

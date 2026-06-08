@@ -1196,74 +1196,80 @@ Rebelhackersad::
 # 628 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Rebelhackersad_Text_2
 # 630 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_POLAR, 10, 3
-# 631 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Rebelhackersad_Text_3
-# 632 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_RIVER, 10, 3
-# 633 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Rebelhackersad_Text_4
-# 634 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
+# 631 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_POLAR, 10, 3
+# 632 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Rebelhackersad_Text_3
+# 633 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 634 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_RIVER, 10, 3
 # 635 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Rebelhackersad_Text_4
+# 636 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 637 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Devonnetad::
-# 639 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 641 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	showmonpic SPECIES_VIVILLON_SANDSTORM, 10, 3
-# 640 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 642 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Devonnetad_Text_0
-# 643 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 644 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_SAVANNA, 10, 3
 # 645 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devonnetad_Text_1
-# 647 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 648 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_SUN, 10, 3
+# 646 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_SAVANNA, 10, 3
+# 647 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devonnetad_Text_1
 # 649 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devonnetad_Text_2
+	hidemonpic
 # 650 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_SUN, 10, 3
+# 651 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devonnetad_Text_2
+# 652 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 653 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Devongruntad::
-# 654 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devongruntad_Text_0
-# 656 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
 # 657 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_PIKACHU_COSPLAY, 10, 3
-# 658 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devongruntad_Text_1
+	msgbox Devongruntad_Text_0
 # 659 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	messageautoscroll Devongruntad_Text_2
-# 660 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
+# 660 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_PIKACHU_COSPLAY, 10, 3
 # 661 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devongruntad_Text_1
+# 662 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devongruntad_Text_2
+# 663 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 664 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Azuresortad::
-# 665 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_BASCULIN, 10, 3
-# 666 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Azuresortad_Text_0
 # 668 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
+	showmonpic SPECIES_BASCULIN, 10, 3
 # 669 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_BASCULIN_WHITE_STRIPED, 10, 3
-# 670 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Azuresortad_Text_1
-# 672 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Azuresortad_Text_0
+# 671 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
+# 672 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_BASCULIN_WHITE_STRIPED, 10, 3
 # 673 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Azuresortad_Text_1
+# 675 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 676 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
@@ -1773,24 +1779,24 @@ Rebelhackersad_Text_2:
 	.string "to 0.$"
 
 Rebelhackersad_Text_3:
-# 631 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 632 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "If you are a coder - join us. If you\n"
 	.string "aren't, we'll make you one.$"
 
 Rebelhackersad_Text_4:
-# 633 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 635 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Join the Rebel Hackers today. For a\n"
 	.string "world where we decide.$"
 
 Devonnetad_Text_0:
-# 640 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 642 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "In this day and age, people move fast.\p"
 	.string "So fast, you can feel you can't keep up\n"
 	.string "with their lives. Like you're being left\l"
 	.string "behind.$"
 
 Devonnetad_Text_1:
-# 645 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 647 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "If you're feeling like that - then Devon\n"
 	.string "Net is for you!\p"
 	.string "Devon Net is the place to check what\n"
@@ -1798,31 +1804,31 @@ Devonnetad_Text_1:
 	.string "new ones too!$"
 
 Devonnetad_Text_2:
-# 649 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 651 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Devon Net - keeping you closer to\n"
 	.string "yours.$"
 
 Devongruntad_Text_0:
-# 654 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 657 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Do you seek a stable job in these times\n"
 	.string "of uncertainty?\p"
 	.string "One when you can make a difference in\n"
 	.string "getting Hoenn in a better shape?$"
 
 Devongruntad_Text_1:
-# 658 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 661 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Then enlist in the Devon Guards today.\n"
 	.string "First 100 recruits get their own\l"
 	.string "Manchine!$"
 
 Devongruntad_Text_2:
-# 659 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 662 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by\n"
 	.string "Devon Co.\l"
 	.string "upon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 Azuresortad_Text_0:
-# 666 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 669 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Don't you hate it when you go to the\n"
 	.string "beach, and the sea is deadly poisoned?\p"
 	.string "\p"
@@ -1830,7 +1836,7 @@ Azuresortad_Text_0:
 	.string "to present...$"
 
 Azuresortad_Text_1:
-# 670 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 673 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "The Azuresort!\p"
 	.string "Exciting water sports, relaxing bathing\n"
 	.string "spots - all in the cleanest bathing\l"

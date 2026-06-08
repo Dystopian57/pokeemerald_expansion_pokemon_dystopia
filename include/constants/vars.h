@@ -273,7 +273,7 @@
 #define VAR_ROUTE101REBELFLEES                           0x40FC // Unused Var
 #define VAR_OLDALE_PHASE                                 0x40FD // Unused Var
 #define VAR_DEVONCENTERLOYALTY                           0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_GREATCRATERTOURIST                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

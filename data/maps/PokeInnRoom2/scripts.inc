@@ -113,8 +113,6 @@ Route102WeatherNews::
 # 88 "data/maps/PokeInnRoom2/scripts.pory"
 	setflag seenweatheratinnvisit
 # 89 "data/maps/PokeInnRoom2/scripts.pory"
-	clearflag sandshrewin102
-# 90 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 

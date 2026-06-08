@@ -36,7 +36,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route102_EventScript_Boy",
-      "flag": "0"
+      "flag": "route102weathermon"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -118,16 +118,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDSHREW)",
-      "x": 53,
-      "y": 14,
+      "x": 20,
+      "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route102Sandshrewinsandstorm",
-      "flag": "sandshrewin102"
+      "script": "Route102Weathermon",
+      "flag": "route102weathermon"
     }
   ],
   "warp_events": [

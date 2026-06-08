@@ -130,6 +130,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GreatCraterDevonGrunts",
       "flag": "devonsdontblock102"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "craterbottomtouristleaves"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ROPE",
+      "x": 11,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CraterTrappedTouristandRope",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -177,13 +203,50 @@
     },
     {
       "x": 11,
-      "y": 16,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_GREAT_CRATER_BOTTOM",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_GREATCRATERTOURIST",
+      "var_value": "0",
+      "script": "Cratertouristasksforhelp"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Cratertouristasksforhelp"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Cratertouristasksforhelp"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Cratertouristasksforhelp"
+    }
+  ],
   "bg_events": [
     {
       "type": "secret_base",
@@ -250,8 +313,8 @@
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 14,
+      "x": 13,
+      "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "GreatCraterVoid"
@@ -354,11 +417,11 @@
     },
     {
       "type": "sign",
-      "x": 11,
-      "y": 14,
+      "x": 12,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "CraterBottomWarp"
+      "script": "GreatCraterVoid"
     }
   ]
 }

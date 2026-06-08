@@ -1,7 +1,19 @@
 raw `
-GreatCrater_MapScripts::
-	.byte 0
+
 `
+
+
+mapscripts GreatCrater_MapScripts {
+    MAP_SCRIPT_ON_LOAD: RopePop}
+
+script RopePop {
+
+if (var(VAR_GREATCRATERTOURIST) == 3)
+	{showobjectat (11, MAP_GREAT_CRATER)}
+	else {hideobjectat (11, MAP_GREAT_CRATER)}
+
+}
+
 
 script GreatCrater_EventScript_TrendyPhraseBoy {
 	
@@ -42,8 +54,6 @@ script ReportersGreatCrater {
 	if (!flag (declinedcraterreporterhelp))
 
 	{ 
-
-
 
 	applymovement (3, moves(face_player))
 
@@ -423,10 +433,120 @@ script GreatCraterVoid {
 		the right equipment, one could climb down and explore it..."))
 		releaseall}
 
-script CraterBottomWarp {
-	warp (MAP_GREAT_CRATER_BOTTOM, 0)
-}
+
 	
+
+script Cratertouristasksforhelp {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		applymovement (10, moves(walk_left * 1, emote_exclamation_mark))
+		playse (SE_PIN)
+		waitmovement
+		msgbox(format("O-oh, hey! HEEEY! Is there anyone up there? Somebody HELP ME!"))
+		applymovement (10, moves(walk_right * 1))
+		waitmovement
+		setvar(VAR_GREATCRATERTOURIST, 1)
+		release
+}
+
+script CraterTrappedTouristandRope {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		if (var(VAR_GREATCRATERTOURIST) == 1)
+		{msgbox(format("Aah, thank the heavens! You may not be able to see me, but I'm down
+		here! \p I wanted to take a good picture of the crater, so I leaned in and... \p I slipped
+		with the sand and fell! \p I'm alright really, the sand cushioned my fall... but I can't
+		get out! \p Can you go get some rope? Something like a strong {COLOR RED}Sailor Knot{COLOR DARK_GRAY} would do. \p
+		Please hurry up... there's a suspicious old man down here, and I want nothing to do with
+		him!"))
+		setvar(VAR_GREATCRATERTOURIST, 2)
+
+			if (checkitem (ITEM_BINDING_BAND)  == TRUE)
+			{
+			helpcratertourist:
+			msgbox(format("Use the {COLOR RED}Sailor Knot{COLOR DARK_GRAY} to help the person?"))
+			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+			if (var(VAR_RESULT) == 0) {
+			showobjectat (11, MAP_GREAT_CRATER)
+			msgbox(format("{PLAYER} ties the knot firmly to a rock and lets the rest fall down."))
+			playse (SE_PIN)
+			applymovement (10, moves(walk_left * 1, emote_exclamation_mark))
+			msgbox(format("Ah, you're a life-saver!"))
+			hidefollower
+			applymovement (10, moves(face_up))
+			showobjectat (10, MAP_GREAT_CRATER)
+
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right, face_left))
+			applymovement (10, moves(jump_up * 1, walk_up * 1))
+			playse (SE_LEDGE)
+			waitmovement
+			waitse
+
+			applymovement (10, moves(face_right))
+			msgbox(format("My hero! I don't know what I would have done without you! \p But I know what
+			I'll do know. Reward you for your generosity!"))
+			giveitem (ITEM_EVIOLITE)
+			msgbox(format("A friend gifted me this before my trip, saying it'll keep me safe... well, it
+			clearly doesn't work, so you can have it!"))
+			applymovement (10, moves(face_down))
+			msgbox(format("Wait... maybe it's thanks to it that you found me?"))
+			applymovement (10, moves(face_right))
+			msgbox(format("Well, nevermind. I don't plan to leave New Rustboro ever again, so I won't
+			need it. \p Goodbye now, and watch your footing!"))
+
+			applymovement (10, moves(walk_up * 7))
+			waitmovement (10)
+			removeobject (7)
+			setobjectxyperm (10, 0, 0)
+			hideobjectat (10, MAP_GREAT_CRATER)
+			setvar(VAR_GREATCRATERTOURIST, 3)
+			hidefollower
+			goto (endcraterbottomtouristscript)
+			}
+
+			if (var(VAR_RESULT) == 1) {
+			msgbox(format("Hey... HEY! What are you waiting for!? Why are you HESITATING!?
+			\p Do you think it'd be FUNNY to leave me here a while longer, you... \p YOU CRIPPLED
+			PSYCHOPATH! \p {COLOR LIGHT_GRAY}{SHADOW WHITE}... oh no. {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+			Oh no no no. I'm so sorry. I didn't mean that! It was the panic!
+			\p Please, you need to help me. I'm turning crazy down here.
+			Just use the rope, I'm begging you!"))
+			goto (endcraterbottomtouristscript)
+			}}
+
+			
+			else {goto (endcraterbottomtouristscript)}
+			}
+
+	
+
+		if (var(VAR_GREATCRATERTOURIST) == 2){
+		if (checkitem (ITEM_BINDING_BAND)  == FALSE)
+		{msgbox(format("You're back! But... I don't see that {COLOR RED}Sailor Knot{COLOR DARK_GRAY}
+		on you! \p I appreciate you checking on me, but I'd appreciate it even more if you focused
+		on helping me to get out! \p I'm begging you here!"))
+		goto (endcraterbottomtouristscript)}
+
+		if (checkitem (ITEM_BINDING_BAND)  == TRUE)
+		{msgbox(format("There you are! And I see you've brought the {COLOR RED}Sailor Knot{COLOR DARK_GRAY}!
+		\p Quick, tie it to something and let it fall!"))
+		goto (helpcratertourist)}
+		}
+
+		if (var(VAR_GREATCRATERTOURIST) == 3)
+		{
+		msgbox(format("Use the {COLOR RED}Sailor Knot{COLOR DARK_GRAY} to climb down?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		warp (MAP_GREAT_CRATER_BOTTOM, 0)}
+
+endcraterbottomtouristscript:
+release
+
+
+}
+
+
 script GreatCraterDevonGrunts { 
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -440,7 +560,9 @@ script GreatCraterDevonGrunts {
     applymovement (9, moves(walk_in_place_down * 1))
 	msgbox(format("You have been hurt by a Pokémon, do you? Surely you understand."))
     applymovement (8, moves(face_down))
+	waitmovement
     applymovement (9, moves(face_down))
+	waitmovement
 	release
 	}
 

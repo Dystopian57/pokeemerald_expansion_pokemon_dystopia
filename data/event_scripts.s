@@ -1305,3 +1305,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RebelChillRoom/scripts.inc"
 
 	.include "data/maps/JimmyEggStore/scripts.inc"
+
+	.include "data/maps/RebelHarbourLounge/scripts.inc"

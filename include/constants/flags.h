@@ -95,7 +95,7 @@
 // Scripts (started to replace vanilla from here)
 #define oldaledevonguardsleave                   0x50
 #define FLAG_SET_WALL_CLOCK                      0x51
-#define sandshrewin102                       0x52
+#define route102weathermon                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define VSSEEKER                             0x54  // Unused Flag
@@ -248,9 +248,10 @@
 #define smothquildollatoldaleinn                 0xDC // This flag is read, but never written to
 
 #define showedoldaleinngirldoll            0xDD
-#define FLAG_WINGULL_SENT_ON_ERRAND          0xDE
-#define FLAG_RECEIVED_MENTAL_HERB            0xDF
-#define FLAG_WINGULL_DELIVERED_MAIL          0xE0
+
+#define oldalefountainsparkle         0xDE
+#define craterbottomtouristleaves            0xDF
+#define UNUSEDFLAGGY1          0xE0
 #define FLAG_RECEIVED_20_COINS               0xE1
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2
 #define FLAG_RECEIVED_GOOD_ROD               0xE3

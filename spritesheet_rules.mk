@@ -566,6 +566,12 @@ $(OBJEVENTGFXDIR)/misc/foodtray.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/patientm.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/misc/cigarette.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/rope.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 

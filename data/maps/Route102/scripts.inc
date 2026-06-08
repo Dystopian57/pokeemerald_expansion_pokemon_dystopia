@@ -216,10 +216,10 @@ Route102_Text_RouteSignPetalburg:
 	.string "{LEFT_ARROW} PETALBURG CITY$"
 
 Route102_MapScripts::
-# 114 "data/maps/Route102/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, Route102Weather
 # 115 "data/maps/Route102/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, Route102Weather
+# 116 "data/maps/Route102/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, PopWeatherMon102
 	.byte 0
 
 
@@ -267,122 +267,163 @@ Route102EndSandtorm::
 	return
 
 
-BridgeItem::
+PopWeatherMon102::
+# 148 "data/maps/Route102/scripts.pory"
+	compare VAR_ROUTE102_WEATHER, 0
+	goto_if_eq PopWeatherMon102_2
+PopWeatherMon102_1:
 # 151 "data/maps/Route102/scripts.pory"
-	lockall
-# 152 "data/maps/Route102/scripts.pory"
-	goto_if_unset FLAG_ITEM_PLAYER1F_RATION, BridgeItem_1
+	compare VAR_ROUTE102_WEATHER, 1
+	goto_if_eq PopWeatherMon102_5
+PopWeatherMon102_4:
+# 154 "data/maps/Route102/scripts.pory"
+	compare VAR_ROUTE102_WEATHER, 2
+	goto_if_eq PopWeatherMon102_8
+PopWeatherMon102_7:
 # 157 "data/maps/Route102/scripts.pory"
-	msgbox BridgeItem_Text_0
+	compare VAR_ROUTE102_WEATHER, 3
+	goto_if_eq PopWeatherMon102_10
+	return
+
+PopWeatherMon102_2:
+# 149 "data/maps/Route102/scripts.pory"
+	setflag route102weathermon
+	goto PopWeatherMon102_1
+
+PopWeatherMon102_5:
+# 152 "data/maps/Route102/scripts.pory"
+	clearflag route102weathermon
+	goto PopWeatherMon102_4
+
+PopWeatherMon102_8:
+# 155 "data/maps/Route102/scripts.pory"
+	clearflag route102weathermon
+	goto PopWeatherMon102_7
+
+PopWeatherMon102_10:
 # 158 "data/maps/Route102/scripts.pory"
+	clearflag route102weathermon
+	return
+
+
+BridgeItem::
+# 167 "data/maps/Route102/scripts.pory"
+	lockall
+# 168 "data/maps/Route102/scripts.pory"
+	goto_if_unset FLAG_ITEM_PLAYER1F_RATION, BridgeItem_1
+# 173 "data/maps/Route102/scripts.pory"
+	msgbox BridgeItem_Text_0
+# 174 "data/maps/Route102/scripts.pory"
 	releaseall
 	return
 
 BridgeItem_1:
-# 153 "data/maps/Route102/scripts.pory"
+# 169 "data/maps/Route102/scripts.pory"
 	giveitem ITEM_ENERGY_ROOT, 3
-# 154 "data/maps/Route102/scripts.pory"
+# 170 "data/maps/Route102/scripts.pory"
 	setflag FLAG_ITEM_PLAYER1F_RATION
-# 155 "data/maps/Route102/scripts.pory"
+# 171 "data/maps/Route102/scripts.pory"
 	removeobject 8
 	return
 
 
-Route102Sandshrewinsandstorm::
-# 164 "data/maps/Route102/scripts.pory"
+Route102Weathermon::
+# 180 "data/maps/Route102/scripts.pory"
 	lock
-# 165 "data/maps/Route102/scripts.pory"
-	applymovement 8, Route102Sandshrewinsandstorm_Movement_0
-# 166 "data/maps/Route102/scripts.pory"
-	msgbox Route102Sandshrewinsandstorm_Text_0
-# 167 "data/maps/Route102/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Sandshrewinsandstorm_Text_1, Route102Sandshrewinsandstorm_Text_2
-# 169 "data/maps/Route102/scripts.pory"
+# 181 "data/maps/Route102/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 182 "data/maps/Route102/scripts.pory"
+	applymovement 8, Route102Weathermon_Movement_0
+# 183 "data/maps/Route102/scripts.pory"
+	msgbox Route102Weathermon_Text_0
+# 184 "data/maps/Route102/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Weathermon_Text_1, Route102Weathermon_Text_2
+# 186 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq Route102Sandshrewinsandstorm_2
-Route102Sandshrewinsandstorm_1:
-# 191 "data/maps/Route102/scripts.pory"
+	goto_if_eq Route102Weathermon_2
+Route102Weathermon_1:
+# 207 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
-	goto_if_eq Route102Sandshrewinsandstorm_5
-Route102Sandshrewinsandstorm_4:
-# 195 "data/maps/Route102/scripts.pory"
+	goto_if_eq Route102Weathermon_5
+Route102Weathermon_4:
+# 211 "data/maps/Route102/scripts.pory"
 endsandshrewinsandstormscript:
-# 196 "data/maps/Route102/scripts.pory"
+# 212 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 197 "data/maps/Route102/scripts.pory"
-	releaseall
+# 213 "data/maps/Route102/scripts.pory"
+	release
 	return
 
-Route102Sandshrewinsandstorm_2:
-# 170 "data/maps/Route102/scripts.pory"
+Route102Weathermon_2:
+# 187 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 171 "data/maps/Route102/scripts.pory"
+# 188 "data/maps/Route102/scripts.pory"
 	setwildbattle SPECIES_SANDSHREW, 3
-# 172 "data/maps/Route102/scripts.pory"
+# 189 "data/maps/Route102/scripts.pory"
 	dowildbattle
-# 173 "data/maps/Route102/scripts.pory"
+# 190 "data/maps/Route102/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 174 "data/maps/Route102/scripts.pory"
+# 191 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Route102Sandshrewinsandstorm_7
-# 177 "data/maps/Route102/scripts.pory"
+	goto_if_eq Route102Weathermon_7
+# 194 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Route102Sandshrewinsandstorm_8
-# 181 "data/maps/Route102/scripts.pory"
+	goto_if_eq Route102Weathermon_8
+# 198 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
-	goto_if_eq Route102Sandshrewinsandstorm_9
-# 184 "data/maps/Route102/scripts.pory"
+	goto_if_eq Route102Weathermon_9
+# 201 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
-	goto_if_eq Route102Sandshrewinsandstorm_10
-	goto Route102Sandshrewinsandstorm_1
+	goto_if_eq Route102Weathermon_10
+	goto Route102Weathermon_1
 
-Route102Sandshrewinsandstorm_5:
+Route102Weathermon_5:
+# 208 "data/maps/Route102/scripts.pory"
+	goto endsandshrewinsandstormscript
+	goto Route102Weathermon_4
+
+Route102Weathermon_7:
 # 192 "data/maps/Route102/scripts.pory"
+	setflag route102weathermon
+	goto Route102Weathermon_1
+
+Route102Weathermon_8:
+# 195 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
-	goto Route102Sandshrewinsandstorm_4
+# 196 "data/maps/Route102/scripts.pory"
+	setflag route102weathermon
+	goto Route102Weathermon_1
 
-Route102Sandshrewinsandstorm_7:
-# 175 "data/maps/Route102/scripts.pory"
-	setflag sandshrewin102
-	goto Route102Sandshrewinsandstorm_1
-
-Route102Sandshrewinsandstorm_8:
-# 178 "data/maps/Route102/scripts.pory"
+Route102Weathermon_9:
+# 199 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
-# 179 "data/maps/Route102/scripts.pory"
-	setflag sandshrewin102
-	goto Route102Sandshrewinsandstorm_1
+	goto Route102Weathermon_1
 
-Route102Sandshrewinsandstorm_9:
+Route102Weathermon_10:
+# 202 "data/maps/Route102/scripts.pory"
+	goto endsandshrewinsandstormscript
+	goto Route102Weathermon_1
+
+
 # 182 "data/maps/Route102/scripts.pory"
-	goto endsandshrewinsandstormscript
-	goto Route102Sandshrewinsandstorm_1
-
-Route102Sandshrewinsandstorm_10:
-# 185 "data/maps/Route102/scripts.pory"
-	goto endsandshrewinsandstormscript
-	goto Route102Sandshrewinsandstorm_1
-
-
-# 165 "data/maps/Route102/scripts.pory"
-Route102Sandshrewinsandstorm_Movement_0:
-# 165 "data/maps/Route102/scripts.pory"
+Route102Weathermon_Movement_0:
+# 182 "data/maps/Route102/scripts.pory"
 	face_player
 	step_end
 
 BridgeItem_Text_0:
-# 157 "data/maps/Route102/scripts.pory"
+# 173 "data/maps/Route102/scripts.pory"
 	.string "The box is empty.$"
 
-Route102Sandshrewinsandstorm_Text_0:
-# 166 "data/maps/Route102/scripts.pory"
+Route102Weathermon_Text_0:
+# 183 "data/maps/Route102/scripts.pory"
 	.string "The Sandshrew is just enjoying the\n"
-	.string "weather. Battle it?$"
+	.string "sandstorm. Battle it?$"
 
-Route102Sandshrewinsandstorm_Text_1:
-# 167 "data/maps/Route102/scripts.pory"
+Route102Weathermon_Text_1:
+# 184 "data/maps/Route102/scripts.pory"
 	.string "Yes$"
 
-Route102Sandshrewinsandstorm_Text_2:
-# 167 "data/maps/Route102/scripts.pory"
+Route102Weathermon_Text_2:
+# 184 "data/maps/Route102/scripts.pory"
 	.string "No$"

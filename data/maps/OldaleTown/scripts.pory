@@ -18,7 +18,14 @@ mapscripts OldaleTown_MapScripts {
 script GenderedSpriteOldale {
 call(Common_EventScript_SetupRivalGfxId)
 }
+script FountainCoinSparkle {
+    if (!flag (oldalefountainsparkle))
+    {dofieldeffectsparkle (10, 9, 1)
+    setflag (oldalefountainsparkle)}
 
+    else {release}
+    release
+}
 
 script TimeofDayTest {
 	lock
@@ -416,7 +423,8 @@ script DLCTeacherOutside {
     Devon Co. would start sending supplies again."))}
 
     if(var(VAR_OLDALE_PHASE) == 3)
-    {msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+    {removeobject (35)
+    msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
     \p Ah, sorry for blowing the smoke on your face. Haven't smoked in days... \p With the Rebels
     gone, the mart is getting stocked again.\p Was about time!
     {COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
