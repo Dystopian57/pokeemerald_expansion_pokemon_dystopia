@@ -62,15 +62,15 @@ voice_group monkeydeliveryservice
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
-	voice_directsound 60, 0, DirectSoundWaveData_pinball_52_clarinet, 255, 0, 255, 127 
+	voice_directsound 60, 0, DirectSoundWaveData_pinball_52_clarinet, 200, 0, 255, 127 
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
-	voice_directsound 60, 0, DirectSoundWaveData_pinball_52_clarinet, 255, 0, 255, 127  
-	voice_directsound 60, 0, DirectSoundWaveData_pinball_52_clarinet, 255, 0, 255, 127  
+	voice_directsound 60, 0, DirectSoundWaveData_pinball_52_clarinet, 200, 0, 255, 127  
+	voice_directsound 60, 0, DirectSoundWaveData_pinball_52_clarinet, 200, 0, 255, 127  
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127

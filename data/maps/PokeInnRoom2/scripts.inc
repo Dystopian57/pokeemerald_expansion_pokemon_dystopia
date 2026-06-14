@@ -95,24 +95,28 @@ OldaleWarehouseNews::
 
 Route103WeatherNews::
 # 79 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox Route103WeatherNews_Text_0
+	playse SE_M_RAIN_DANCE
 # 80 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_ROUTE103_WEATHER, 1
+	msgbox Route103WeatherNews_Text_0
 # 81 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
+	setvar VAR_ROUTE103_WEATHER, 1
 # 82 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 83 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 Route102WeatherNews::
-# 86 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox Route102WeatherNews_Text_0
 # 87 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_ROUTE102_WEATHER, 1
+	playse SE_M_SANDSTORM
 # 88 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
+	msgbox Route102WeatherNews_Text_0
 # 89 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_ROUTE102_WEATHER, 1
+# 90 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 91 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
@@ -139,9 +143,9 @@ OldaleWarehouseNews_Text_0:
 	.string "Oldale Warehouse News go here.$"
 
 Route103WeatherNews_Text_0:
-# 79 "data/maps/PokeInnRoom2/scripts.pory"
+# 80 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "There is rain in Route 103!$"
 
 Route102WeatherNews_Text_0:
-# 86 "data/maps/PokeInnRoom2/scripts.pory"
+# 88 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "There is a sandstorm in Route 102!$"

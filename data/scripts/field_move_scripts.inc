@@ -264,7 +264,7 @@ EventScript_CancelStrength::
 	end
 
 Text_WantToStrength:
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It looks heavy, but a POKéMON\n"
 	.string "may be able to push it aside.\p"
 	.string "Would you like to use STRENGTH?$"
 
@@ -274,7 +274,7 @@ Text_MonUsedStrength:
 	.string "possible to move boulders around!$"
 
 Text_CantStrength:
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It looks heavy, but a POKéMON\n"
 	.string "may be able to push it aside.$"
 
 Text_StrengthActivated:

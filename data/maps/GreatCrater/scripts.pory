@@ -443,8 +443,10 @@ script Cratertouristasksforhelp {
 		playse (SE_PIN)
 		waitmovement
 		msgbox(format("O-oh, hey! HEEEY! Is there anyone up there? Somebody HELP ME!"))
+		dofieldeffectsparkle (11, 15, 9)
 		applymovement (10, moves(walk_right * 1))
 		waitmovement
+		setobjectxyperm (10, 11, 15)
 		setvar(VAR_GREATCRATERTOURIST, 1)
 		release
 }
@@ -469,6 +471,8 @@ script CraterTrappedTouristandRope {
 
 			if (var(VAR_RESULT) == 0) {
 			showobjectat (11, MAP_GREAT_CRATER)
+			clearflag (greatcraterrope)
+			playse (SE_BALL_THROW)
 			msgbox(format("{PLAYER} ties the knot firmly to a rock and lets the rest fall down."))
 			playse (SE_PIN)
 			applymovement (10, moves(walk_left * 1, emote_exclamation_mark))
@@ -478,9 +482,12 @@ script CraterTrappedTouristandRope {
 			showobjectat (10, MAP_GREAT_CRATER)
 
             applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right, face_left))
-			applymovement (10, moves(jump_up * 1, walk_up * 1))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+			applymovement (10, moves(jump_up))
 			playse (SE_LEDGE)
-			waitmovement
+			waitmovement (10)
+			//applymovement (10, moves(walk_up * 1))
+			
 			waitse
 
 			applymovement (10, moves(face_right))
@@ -547,10 +554,9 @@ release
 }
 
 
-script GreatCraterDevonGrunts { 
+script GreatCraterDevonGruntFemale { 
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-    applymovement (8, moves(face_player))
     applymovement (9, moves(face_player))
 	msgbox(format("I'm sorry, but one of our scientists is currently searching for a dangerous
 	Pokémon in Route 102."))
@@ -559,9 +565,20 @@ script GreatCraterDevonGrunts {
 	we can't risk civilians interfering with his work."))
     applymovement (9, moves(walk_in_place_down * 1))
 	msgbox(format("You have been hurt by a Pokémon, do you? Surely you understand."))
-    applymovement (8, moves(face_down))
+    applymovement (9, moves(face_down))
 	waitmovement
     applymovement (9, moves(face_down))
+	waitmovement
+	release
+	}
+
+script GreatCraterDevonGruntMale { 
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (8, moves(face_player))
+	msgbox(format("By regulation of Devon Co.'s Wildlife Protocol, section 75, titled 'Area Enclosures
+	for the purpose of Safemon Research...' \p This area is closed off to civilians until further notice."))
+    applymovement (8, moves(face_down))
 	waitmovement
 	release
 	}

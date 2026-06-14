@@ -559,6 +559,7 @@ script Devonballad {
 	 Devon Ball."))
 	 hidemonpic
 	 showmonpic(SPECIES_VIVILLON_CONTINENTAL, 10,3)
+	 //playse (se_ball_)
 	 msgbox(format("Devon Ball. The only ball with no catch."))
 	 hidemonpic
 	 releaseall
@@ -580,9 +581,11 @@ script Devotionad {
 
 script Safemonad {
 	 showmonpic(SPECIES_VIVILLON_FANCY, 10,3)
+	 playse (SE_M_FLAMETHROWER)
 	 msgbox(format("Power. Volatility. Danger. \n Those are the defining traits of Pokémon."))
 	 hidemonpic
 	 showmonpic(SPECIES_VIVILLON_GARDEN, 10,3)
+	 playse (SE_M_ABSORB_2)
 	 msgbox(format("Control. Trust. Safety. \n Those are for Safemon."))
 	 hidemonpic
 	 msgbox(format("We at Devon choose the latter. And you?"))
@@ -625,6 +628,7 @@ script Rebelhackersad {
 	msgbox(format("Hey. You. Are you sick of Safemon? Me too. Because they suck."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_POKEBALL, 10,3)
+	playmoncry(SPECIES_JIGGLYPUFF, CRY_MODE_WEAK)
 	msgbox(format("Everyday, Devon converts more than 100 Pokémon into Safemon.
 	\p But if you help us, we can get them down to 0."))
 	hidemonpic
@@ -639,15 +643,19 @@ script Rebelhackersad {
 
 script Devonnetad {
 	showmonpic(SPECIES_VIVILLON_SANDSTORM, 10,3)
+	playse (SE_M_SWIFT)
 	msgbox(format("In this day and age, people move fast.\p
 	So fast, you can feel you can't keep up with their lives.
 	Like you're being left behind."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_SAVANNA, 10,3)
+	playse (SE_DEX_SEARCH)
 	msgbox(format("If you're feeling like that - then Devon Net is for you!
 	\p Devon Net is the place to check what your loved ones are up to - and meet new ones too! "))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_SUN, 10,3)
+	//playse (SE_M_HEAL_BELL)
+	playse (SE_M_PETAL_DANCE)
 	msgbox(format("Devon Net - keeping you closer to yours."))
 	hidemonpic
 	releaseall
@@ -658,6 +666,7 @@ script Devongruntad {
 	One when you can make a difference in getting Hoenn in a better shape?"))
 	hidemonpic
 	showmonpic(SPECIES_PIKACHU_COSPLAY, 10,3)
+	playse (SE_M_ENCORE2)
 	msgbox(format("Then enlist in the Devon Guards today. First 100 recruits get their own Manchine!"))
 	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by Devon Co. \lupon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	hidemonpic
@@ -666,6 +675,7 @@ script Devongruntad {
 
 script Azuresortad {
 	showmonpic(SPECIES_BASCULIN, 10,3)
+	playse (SE_M_HAZE)
 	msgbox(format("Don't you hate it when you go to the beach, and the sea is deadly poisoned?\p
 	\p Devon Co. hears you, and is thus proud to present..."))
 	hidemonpic

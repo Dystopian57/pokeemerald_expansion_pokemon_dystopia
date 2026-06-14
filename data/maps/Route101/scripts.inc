@@ -1023,7 +1023,7 @@ Route101RebelGruntBattle_16:
 
 Route101RebelGruntBattle_14:
 # 518 "data/maps/Route101/scripts.pory"
-	playse SE_NOT_EFFECTIVE
+	playse SE_ICE_STAIRS
 # 519 "data/maps/Route101/scripts.pory"
 	waitse
 # 520 "data/maps/Route101/scripts.pory"

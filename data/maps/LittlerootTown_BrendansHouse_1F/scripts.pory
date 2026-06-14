@@ -830,8 +830,8 @@ script PlayerOpenRationBox {
 script PlayerDirtySink {
 lockall
 if(!(flag(FLAG_SYS_POKEMON_GET)))
-{msgbox (format("A NINKABURI has just retreated below the dirty sink.\p If I had a Pokémon
-and a Pokéball, perhaps I could catch it..."))}
+{msgbox (format("A NINKABURI has just retreated below the dirty sink.\p With a Pokémon, perhaps
+it could be defeated or caught..."))}
 if((flag(FLAG_SYS_POKEMON_GET)) && !(flag(SinkNinkaburiGone)))
 {msgbox (format("A NINKABURI appears boldly from below the sink!"))
 	setwildbattle(SPECIES_NINKABURI, 2)

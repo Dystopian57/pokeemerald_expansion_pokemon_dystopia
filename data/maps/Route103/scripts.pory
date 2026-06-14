@@ -240,6 +240,34 @@ script Route103EndRain {
 	setvar(VAR_ROUTE103_WEATHER, 0)
 }
 
+script Route103IteminMud {
+	lock
+    finditem (ITEM_SILK_SCARF)
+    //giveitem (ITEM_SOFT_SAND)
+	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    removeobject (21)
+	releaseall}
+
+script Route103DevonGruntCheckingDriver {
+    lock
+    applymovement (22, moves(walk_in_place_down))
+    msgbox(format("I'm telling you, sir - Oldale's Warehouse is occupied by Rebels.
+	\p Even if we let you through, your stock would just get stolen."))
+    applymovement (23, moves(walk_in_place_up))
+    msgbox(format("Then go do something about it, instead of just blocking traffic!"))
+    releaseall
+    }
+
+script Route103DevonDrivercheckedby {
+    lock
+    applymovement (23, moves(face_player))
+    msgbox(format("This is ridiculous. Is this what our taxes are being spent in?
+	\p If I don't deliver these goods soon, my boss will have my head!"))
+	applymovement (23, moves(face_up))
+    releaseall
+    }
+
+
 script Sharpy103 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -275,7 +303,7 @@ script Sharpy103 {
 		battleSharpy103:
 		trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
 		addobject (25)
-		setobjectxy (25, 10, 4)
+		setobjectxy (25, 10, 32)
 		playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (24, moves(face_player))
@@ -678,6 +706,8 @@ script Route103ConcordConartist {
 				\p I'm sure that guard at the end of the bridge won't let me pass without it... \p
 				So I want you to distract him for me so I can pass unnoticed. \p Easy, right? Then get going,
 				I'm on the clock here!"))
+				applymovement (28, moves(face_left))
+				waitmovement (28)
 				setflag (conartistaskeddistract)
 				goto (finishconartistscript)
 				}
@@ -685,6 +715,7 @@ script Route103ConcordConartist {
 				if(var(VAR_RESULT) == 1){
 				msgbox(format("Eh, scram then. Some of us have work to do."))
 				applymovement (28, moves(face_left))
+				waitmovement (28)
 				}}
 
 		if (flag (conartistaskeddistract) && !flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
@@ -694,7 +725,7 @@ script Route103ConcordConartist {
 
 		if (flag (conartistaskeddistract) && flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
 		{
-		clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		msgbox(format("What the hell are you doing? You barely distracted him - you got to be more of a
 		nuisance!"))
 		
@@ -732,18 +763,18 @@ script Route103ConcordConartist {
 		applymovement (28, moves(walk_in_place_down * 1))
 		msgbox(format("You'll never catch me alive! Outta my way!"))
 
-		playse (SE_M_STRENGTH)
+		playse (SE_M_COMET_PUNCH)
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_right * 1, face_left))
 
 		applymovement (28, moves(walk_fast_down * 1))
 		msgbox(format("W-wait, you're unde-...!"))
-		playse (SE_M_STRENGTH)
+		playse (SE_M_MEGA_KICK2)
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 		applymovement (32, moves(walk_fast_left * 1, face_right, face_down))
 		applymovement (28, moves(walk_fast_down * 2))
 		msgbox(format("SEE YA, LOSERS...!"))
 		applymovement (28, moves(jump_down * 2))
-		playse (SE_LEDGE)
+		playse (SE_M_JUMP_KICK)
 		waitse
 		playse (SE_M_DIVE)
 		msgbox(format("GRLBGBRLB...!"))
@@ -771,9 +802,9 @@ script Route103ConcordConartist {
 		waitmovement
 		removeobject (31)
 		waitmovement
-
-		msgbox(format("Thank you for your help, civilian! Now we can put this long shift to an end."))
 		closedoor (42, 37)
+		msgbox(format("Thank you for your help, civilian! Now we can put this long shift to an end."))
+		
 		msgbox(format("Here, this is for your trouble."))
 		playse (SE_SHOP)
 		msgbox(format("Received 1000¥!"))
@@ -805,7 +836,8 @@ script ConArtistEgg {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (conartistescaped))
-	{applymovement (28, moves(face_player))
+	{playse (SE_PIN)
+	applymovement (28, moves(face_player, emote_exclamation_mark))
 	msgbox(format("Hands off my wares, pal! This egg is mine!"))
 	releaseall
 	applymovement (28, moves(face_left))}

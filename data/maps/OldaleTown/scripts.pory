@@ -333,6 +333,14 @@ script Oldale102Sign {
     releaseall      
 }
 
+script OldalePeekingOldman {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(format("Those Rebel hoodlums... just when we start to get back on our feet,
+    they come to ruin things! \p Murkrows, the lot of them!"))
+    releaseall
+}
+
 script OldaleOutsideHikerGuy {
     lock
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -424,6 +432,7 @@ script DLCTeacherOutside {
 
     if(var(VAR_OLDALE_PHASE) == 3)
     {removeobject (35)
+    playse (SE_TRUCK_UNLOAD)
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
     \p Ah, sorry for blowing the smoke on your face. Haven't smoked in days... \p With the Rebels
     gone, the mart is getting stocked again.\p Was about time!
@@ -895,7 +904,7 @@ script OldaleParkingItem {
 	lock
     giveitem (ITEM_METAL_COAT)
 	setflag (FLAG_ITEM_OLDALE_PARKING)
-    removeobject (4)
+    removeobject (3)
 	releaseall}
     
 
@@ -1068,7 +1077,13 @@ script OldaleGrassRebel {
         playse (SE_BALL_THROW)
         waitse
         fadeoutbgm (3)
-        playse (SE_BALL_TRAY_ENTER)
+        playse (SE_BALL_BOUNCE_1)
+        waitse
+        playse (SE_BALL_BOUNCE_2)
+        waitse
+        playse (SE_BALL_BOUNCE_3)
+        waitse
+        playse (SE_BALL_BOUNCE_4)
         waitse
         msgbox(format("... oh. Right. He's fainted from before... \p ... {COLOR LIGHT_GRAY}{SHADOW WHITE}Shit...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
         playbgm (MUS_ENCOUNTER_MAGMA, TRUE)

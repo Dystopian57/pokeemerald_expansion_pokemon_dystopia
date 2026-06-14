@@ -1638,7 +1638,7 @@ Won_or_Caught_10:
 # 791 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	removeobject 1
 # 792 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playse SE_DOOR
+	playse SE_BREAKABLE_DOOR
 # 794 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	setvar VAR_0x8004, 2
 # 795 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"

@@ -8,9 +8,18 @@ LittlerootTown_BrendansHouse_2F_OnTransition:
 	call_if_lt VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan
 	call_if_ge VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
+	call_if_eq VAR_LITTLEROOT_PHASE, 0, NewGameRain
+	call_if_eq VAR_LITTLEROOT_PHASE, 1, NewGameRain
+	call_if_eq VAR_LITTLEROOT_PHASE, 2, NewGameRain
+	call_if_eq VAR_LITTLEROOT_PHASE, 3, NewGameRain
+	call_if_eq VAR_LITTLEROOT_PHASE, 4, NewGameRain
+	call_if_eq VAR_LITTLEROOT_PHASE, 5, NewGameRain
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
 	end
+
+NewGameRain:
+//playse SE_RAIN
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
 	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
@@ -294,7 +303,7 @@ PlayersHouse_2F_Text_ItsAGameCube:
 
 script Setclocktoleave {
 	lockall
-	msgbox (format("Is it too early to leave...? I should check the clock."))
+	msgbox (format("Is it too early to leave...? The clock will tell."))
 	applymovement (OBJ_EVENT_ID_PLAYER, cantleavebedroom)
 	waitmovement(0)
 	releaseall	
@@ -314,7 +323,7 @@ script PlayerRoomTV {
 
 script PlayerRoomHeadphones {
 	lockall
-	msgbox (format("{COLOR DARK_GRAY}A pair of headphones. One of the sides is mute."))
+	msgbox (format("{COLOR DARK_GRAY}A pair of headphones. The left side is mute."))
 	releaseall		
 }
 
@@ -326,7 +335,7 @@ script PlayerRoomSodas {
 
 script PlayerRoomSoda {
 	lockall
-	msgbox (format("{COLOR DARK_GRAY}A toppled soda can. It's made a bit of a mess in the carpet."))
+	msgbox (format("{COLOR DARK_GRAY}A toppled soda can. It has made a bit of a mess in the carpet."))
 	releaseall		
 }
 
@@ -348,6 +357,11 @@ script PlayerRoomShirt {
 	releaseall		
 }
 
+script PlayerRoomCushion {
+	lockall
+	msgbox (format("{COLOR DARK_GRAY}The cushion has sweat stains all over it."))
+	releaseall		
+}
 
 script PlayerRoomPizza {
 	lockall
@@ -408,9 +422,33 @@ script PlayerRoomDadPrize {
 
 script PlayerRoomBox {
 	lockall
-	msgbox (format("A Pokéball Rifle is dissasembled inside the box."))
-	releaseall		
-}
+
+	if (!flag (FLAG_ITEM_BEDROOM_TRASHCAN))
+
+		{msgbox (format("A Pokéball Rifle is dissasembled inside the box."))
+		msgbox (format("Assemble it?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+		if (var(VAR_RESULT) == 0) {
+		playse (SE_SWITCH)
+		waitse	
+		playse (SE_CLICK)
+		waitse
+		giveitem (ITEM_CATCHING_CHARM)
+		setflag (FLAG_ITEM_BEDROOM_RIFLE)
+		}
+
+		if (var(VAR_RESULT) == 0) {
+		goto (endplayerroomboxscript)
+		}}
+
+	else
+	{msgbox (format("The box is empty."))}
+
+	endplayerroomboxscript:
+	releaseall	
+	}
+	
+
 
 script PlayerRoomTrashCan {
 	lockall

@@ -163,7 +163,9 @@
     "SewersConspiracyHideout",
     "RebelChillRoom",
     "JimmyEggStore",
-    "RebelHarbourLounge"
+    "RebelHarbourLounge",
+    "RebelHarbourCargoBay",
+    "WaterfallCaveHermitlAIR"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

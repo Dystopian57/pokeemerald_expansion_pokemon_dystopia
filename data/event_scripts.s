@@ -1307,3 +1307,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/JimmyEggStore/scripts.inc"
 
 	.include "data/maps/RebelHarbourLounge/scripts.inc"
+
+	.include "data/maps/RebelHarbourCargoBay/scripts.inc"
+
+	.include "data/maps/WaterfallCaveHermitlAIR/scripts.inc"

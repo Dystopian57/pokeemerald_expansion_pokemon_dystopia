@@ -206,7 +206,7 @@ beginargument:
 # 122 "data/maps/OldaleTown_House2/scripts.pory"
 	special ShakeCamera
 # 123 "data/maps/OldaleTown_House2/scripts.pory"
-	playse SE_DOOR
+	playse SE_BREAKABLE_DOOR
 # 124 "data/maps/OldaleTown_House2/scripts.pory"
 	waitse
 # 126 "data/maps/OldaleTown_House2/scripts.pory"

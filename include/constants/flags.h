@@ -251,7 +251,7 @@
 
 #define oldalefountainsparkle         0xDE
 #define craterbottomtouristleaves            0xDF
-#define UNUSEDFLAGGY1          0xE0
+#define greatcraterrope          0xE0
 #define FLAG_RECEIVED_20_COINS               0xE1
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2
 #define FLAG_RECEIVED_GOOD_ROD               0xE3
@@ -1245,8 +1245,8 @@
 #define FLAG_ITEM_OLDALE_HOUSE2GARDEN                                           0x49E // Unused Flag
 #define FLAG_ITEM_OLDALEUSEDINNBIN                                           0x49F // Unused Flag
 #define FLAG_ITEM_ROUTE101REBELITEM                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_ITEM_ROUTE103INMUD                                           0x4A1 // Unused Flag
+#define FLAG_ITEM_BEDROOM_RIFLE                                           0x4A2 // Unused Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag

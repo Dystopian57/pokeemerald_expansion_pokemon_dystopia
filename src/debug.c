@@ -3654,24 +3654,38 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_CASINO_PLUS_9)            \
     X(MUS_CASINO_PLUS_GACHA)        \
     X(MUS_SNOWPOINT)                \
-
-    X(MUS_TEAMGRDUEL)                \
-    X(MUS_GREATCANYON)                \
-    X(MUS_UNDERPIZZA)                \
-    X(MUS_INAZUMACITY)                \
-    X(MUS_SINJOHRUINS)                \
-    X(MUS_SPIKEMUTH)                \
-    X(MUS_OLDCHATEAU)                \
-    X(MUS_SINNOHLEAGUEXTDAY)                \
-    X(MUS_ETERNAFOREST)                \
-    X(MUS_UNOVAROUTE10)                \
+    X(MUS_TEAMGRDUEL)            \
+    X(MUS_GREATCANYON)            \
+    X(MUS_UNDERPIZZA)            \
+    X(MUS_INAZUMACITY)            \
+    X(MUS_SINJOHRUINS)            \
+    X(MUS_SPIKEMUTH)            \
+    X(MUS_OLDCHATEAU)            \
+    X(MUS_SINNOHLEAGUEXTDAY)            \
+    X(MUS_ETERNAFOREST)            \
+    X(MUS_UNOVAROUTE10)        \
     X(MUS_OPELUCIDCITY)                \
-    X(MUS_VIRBANKCOMPLEX)                \
-    X(MUS_COLDSTORAGE)                \
-    X(MUS_STRANGEHOUSE)                \
-    X(MUS_ABYSSALRUINS)                \
-    X(MUS_UNOVAROUTEGATE)                \
-
+    X(MUS_VIRBANKCOMPLEX)            \
+    X(MUS_COLDSTORAGE)            \
+    X(MUS_STRANGEHOUSE)            \
+    X(MUS_ABYSSALRUINS)            \
+    X(MUS_ANISTARCITY)            \
+    X(MUS_UNOVAROUTEGATE)            \
+    X(MUS_MAHALOTRAIL)            \
+    X(MUS_LAVENDERHGSS)            \
+    X(MUS_CASTELIAGYM)            \
+    X(MUS_GYMNOPEDIE)            \
+    X(MUS_MONKEYDELIVERYSERVICE)            \
+    X(MUS_UNKNOWN4)            \
+    X(MUS_DARKWATERBONUSSTAGE)            \
+    X(MUS_GRAVEYARDSTAGE)            \
+    X(MUS_GARDENSTAGE)            \
+    X(MUS_PINBALLSHOP)            \
+    X(MUS_UNKNOWN5)            \
+    X(MUS_TABLESELECT)            \
+    X(MUS_MONSTERHOUSE)            \
+    X(MUS_STOPTHIEF)            \
+ 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \
     X(SE_PC_LOGIN)                  \

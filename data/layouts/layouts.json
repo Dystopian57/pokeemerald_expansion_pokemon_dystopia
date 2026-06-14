@@ -564,8 +564,8 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
       "name": "LittlerootTown_MaysHouse_2F_Layout",
-      "width": 9,
-      "height": 8,
+      "width": 6,
+      "height": 6,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/border.bin",
@@ -5140,6 +5140,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/RebelHarbourLounge/border.bin",
       "blockdata_filepath": "data/layouts/RebelHarbourLounge/map.bin"
+    },
+    {
+      "id": "LAYOUT_REBEL_HARBOUR_CARGO_BAY",
+      "name": "RebelHarbourCargoBay_Layout",
+      "width": 11,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_IslandHarbor",
+      "border_filepath": "data/layouts/RebelHarbourCargoBay/border.bin",
+      "blockdata_filepath": "data/layouts/RebelHarbourCargoBay/map.bin"
+    },
+    {
+      "id": "LAYOUT_WATERFALL_CAVE_HERMITL_AIR",
+      "name": "WaterfallCaveHermitlAIR_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/WaterfallCaveHermitlAIR/border.bin",
+      "blockdata_filepath": "data/layouts/WaterfallCaveHermitlAIR/map.bin"
     }
   ]
 }

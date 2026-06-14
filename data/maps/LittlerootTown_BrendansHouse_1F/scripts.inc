@@ -1789,8 +1789,8 @@ PlayerDirtySink_Text_0:
 # 833 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "A NINKABURI has just retreated below\n"
 	.string "the dirty sink.\p"
-	.string "If I had a Pokémon and a Pokéball,\n"
-	.string "perhaps I could catch it...$"
+	.string "With a Pokémon, perhaps it could be\n"
+	.string "defeated or caught...$"
 
 PlayerDirtySink_Text_1:
 # 836 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

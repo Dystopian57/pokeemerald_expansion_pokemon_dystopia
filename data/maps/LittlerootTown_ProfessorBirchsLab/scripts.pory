@@ -1091,7 +1091,8 @@ script Littleroot_Idletalk_Aidee{
 
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
-	msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose!"))
+	msgbox (format("Hm? Sorry, I'm a bit busy here. Can't help you choose! \p There's
+	a book about Safemon in the shelf next to the Storage PC. It may help you decide."))
 	applymovement (5, moves(face_left))
 	waitmovement (5)
 	}
@@ -1146,7 +1147,7 @@ script SafemonLore {
 			showmonpic(SPECIES_GUMMIN, 10,3)
 			msgbox (format("An example is Gummin, the Safemon version of Gulpin.\p Unlike Gulpin's
 			poisonous body, Gumming's has been made inocuous - albeit also rather adhesive as an
-			unintended side-effect, hence 'Gum' part of its name."))
+			unintended side-effect.."))
 			hidemonpic
 			goto (startSafemonlore)}
 			
@@ -1156,7 +1157,7 @@ script SafemonLore {
 			their dangerous traits, or to replace them with safe ones."))
 			showmonpic(SPECIES_PANSELIA, 10,3)
 			msgbox (format("Panselia, the Safemon equivalent of Roselia, fall under this category, due to
-			 their thorny limbs being replace by soft, fragantly odoured ones."))
+			 their thorny limbs being replaced by soft, fragant ones."))
 			hidemonpic
 			goto (startSafemonlore)}
 			
@@ -1190,6 +1191,12 @@ script SafemonLore {
 		releaseall
 }
 
+script AidePC {
+		lock
+		msgbox (format("A complex research paper is displayed on the screen. Can't
+		make sense of it."))
+		release
+}
 
 script Littleroot_Idletalk_Prof{
 	lock
@@ -1677,7 +1684,7 @@ script Lab_EventScript_Starter1{
 else{
 applymovement(4, moves(face_down))
 playse (SE_M_SWAGGER2)
-createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 setspeaker ([SP_NAME_BALSAM])
 msgbox(format("{PLAYER}, you're not going to the front lines again. One Pokémon should be enough for
 a trip to the next town."))

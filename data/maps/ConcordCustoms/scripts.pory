@@ -94,7 +94,7 @@ script ConcordCustomsClerkStops0 {
 		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
 	}
 	if(var(VAR_RESULT) == FEMALE){
-		msgbox(format("Excuse me, sir. Would you be so kind as to approach the counter?"))
+		msgbox(format("Excuse me, miss. Would you be so kind as to approach the counter?"))
 	}
 
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, face_up))
@@ -183,8 +183,30 @@ script ConcordCustomsPoster{
 
 script ConcordCustomsPhone{
     lock
-    msgbox(format("It's a paid phone for people without Devon Navs."))
-    releaseall
+	showmoneybox (18, 0)
+    msgbox(format("It's a paid phone. The cost is 50¥."))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Insert coin", "Leave")
+
+            if(var(VAR_RESULT) == 0){
+            		checkmoney (50)
+				if (var(VAR_RESULT) == TRUE) {
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					playse (SE_CLICK)
+					msgbox(format("Call who?"))
+					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Balsam") //Birch, Rival, Norman
+						if(var(VAR_RESULT) == 0){
+						playse (SE_POKENAV_CALL)
+						msgbox(format("Balsam Call here"))
+						playse (SE_POKENAV_HANG_UP)
+						goto (endofpayphone)
+						}}}
+			if(var(VAR_RESULT) == 1){
+				
+			}
+	endofpayphone:
+    release
     }
 
 

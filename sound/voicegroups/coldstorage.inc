@@ -36,7 +36,7 @@ voice_group coldstorage
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 188
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_trinity_30303_mega_bass, 255, 0, 255, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_16, 0, 7, 15, 1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

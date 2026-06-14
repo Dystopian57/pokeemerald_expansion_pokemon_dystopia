@@ -76,6 +76,7 @@ script OldalePokeCenterInnPrograms {
 	//WEATHERS BELOW
 
 	script Route103WeatherNews {
+		playse (SE_M_RAIN_DANCE)
 		msgbox(format("There is rain in Route 103!"))
 		setvar(VAR_ROUTE103_WEATHER, 1)
 		setflag (seenweatheratinnvisit)
@@ -83,6 +84,7 @@ script OldalePokeCenterInnPrograms {
 	}
 
 	script Route102WeatherNews {
+		playse (SE_M_SANDSTORM)
 		msgbox(format("There is a sandstorm in Route 102!"))
 		setvar(VAR_ROUTE102_WEATHER, 1)
 		setflag (seenweatheratinnvisit)

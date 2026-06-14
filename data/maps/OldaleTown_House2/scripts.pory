@@ -120,7 +120,7 @@ script OldaleTownHouse2AnneArgument {
 	setvar(VAR_0x8006, 4)  //@ num shakes
 	setvar(VAR_0x8007, 4)  //@ shake delay
 	special(ShakeCamera)
-    playse (SE_DOOR)
+    playse (SE_BREAKABLE_DOOR)
     waitse
 
 	setflag (annegoestojoel)

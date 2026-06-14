@@ -54,15 +54,15 @@
       "x": 12,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_PETALBURG_BEACH",
-      "dest_warp_id": "8"
+      "dest_map": "MAP_REBEL_HARBOUR_CARGO_BAY",
+      "dest_warp_id": "3"
     },
     {
       "x": 12,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_PETALBURG_BEACH",
-      "dest_warp_id": "11"
+      "dest_map": "MAP_REBEL_HARBOUR_CARGO_BAY",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

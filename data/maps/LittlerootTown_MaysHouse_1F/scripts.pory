@@ -789,7 +789,7 @@ script Won_or_Caught {
     applymovement (1, moves(walk_fast_left * 1, walk_fast_down * 1, walk_fast_left * 7, face_down))
     waitmovement (1)
     removeobject (1)
-	playse (SE_DOOR)
+	playse (SE_BREAKABLE_DOOR)
 
 	setvar(VAR_0x8004, 2)  //@ vertical pan
 	setvar(VAR_0x8005, 6)  //@ horizontal pan

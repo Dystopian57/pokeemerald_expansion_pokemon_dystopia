@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "GreatCraterDevonGrunts",
+      "script": "GreatCraterDevonGruntMale",
       "flag": "devonsdontblock102"
     },
     {
@@ -128,7 +128,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "GreatCraterDevonGrunts",
+      "script": "GreatCraterDevonGruntFemale",
       "flag": "devonsdontblock102"
     },
     {
@@ -155,7 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CraterTrappedTouristandRope",
-      "flag": "0"
+      "flag": "greatcraterrope"
     }
   ],
   "warp_events": [
@@ -224,7 +224,7 @@
       "x": 11,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_GREATCRATERTOURIST",
       "var_value": "0",
       "script": "Cratertouristasksforhelp"
     },
@@ -233,7 +233,7 @@
       "x": 12,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_GREATCRATERTOURIST",
       "var_value": "0",
       "script": "Cratertouristasksforhelp"
     },
@@ -242,7 +242,7 @@
       "x": 13,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_GREATCRATERTOURIST",
       "var_value": "0",
       "script": "Cratertouristasksforhelp"
     }

@@ -49,7 +49,7 @@ voice_group casteliagym
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_72, 255, 0, 255, 165
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 128, 165, 128, 188
 	voice_directsound 60, 0, DirectSoundWaveData_unknown_female_voice, 128, 165, 128, 204
