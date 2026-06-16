@@ -1857,24 +1857,64 @@ if (var(VAR_LITTLEROOT_PHASE) == 3)
 
 msgbox (format("Wait, did Balsam give you that {STR_VAR_1}!? \p Last time I asked her for
 one, she gave me a Digglett instead..."))
-goto (accepteddonutquest)
+goto (endlitlfatguy)
 }
 
 if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (Donutquestaccepted))
-{msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
-you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
-arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there. \pDo me the favour, and I'll give
-you some {COLOR RED}Pokéballs{COLOR DARK_GRAY}. Fair deal, right?"))
-setflag(Donutquestaccepted)
-goto (accepteddonutquest)}
+	{msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
+	you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
+	arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there. \pDo me the favour, and I'll give
+	you some {COLOR RED}Pokéballs{COLOR DARK_GRAY}. Fair deal, right?"))
+	setflag(Donutquestaccepted)
+	goto (endlitlfatguy)}
 if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (Donutquestaccepted))
-{msgbox (format("It's okay if you don't have time, but... I'd really like a taste of those donuts.
-\p I'd go myself, but my Digglet is weak, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
- town.\pBut you're a former soldier, right? They won't mess with you!"))}
+	{if (!flag (donutquestcomplete))
+	{
+
+		if (checkitem (ITEM_SHALOUR_SABLE)  == FALSE)
+		{
+		msgbox (format("SO, {PLAYER}... it's okay if you don't have time, but... \p I'd really like a taste of those
+		{COLOR RED}Crater Donuts{COLOR DARK_GRAY}.
+		\p I'd go myself, but my Digglet is weak, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
+		town.\pBut you're a former soldier, right? They won't mess with you!"))
+		goto (endlitlfatguy)}
+		
+		else {msgbox (format("I-I can smell it from your bag - that's a {COLOR RED}Crater Donut{COLOR DARK_GRAY}!
+		\p My mouth is already watering..."))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Give Crater Donut", "Don't give Crater Donut")
+
+			if (var(VAR_RESULT) == 0) {
+			removeitem (ITEM_SHALOUR_SABLE, 1)
+			msgbox (format("Thank you! Well, as they say in Kalos... bon appétit!"))
+			playse (SE_M_BITE)
+			waitse
+			playse (SE_M_BITE)
+			waitse
+			playse (SE_M_SCRATCH)
+			waitse
+			msgbox (format("Hmm - delicious... \p O-oh, I'm sorry... a deal is a deal. Here are your
+			Pokéballs!"))
+			giveitem (ITEM_PARK_BALL, 5)
+			msgbox (format("I know they're a bit busted, but they still work. Go try them out!"))
+			setflag (donutquestcomplete)
+			goto (endlitlfatguy)}
+			
+
+			if (var(VAR_RESULT) == 1) {
+			msgbox (format("O-oh, so that one is for you? I see..."))
+			goto (endlitlfatguy)
+			}
+			}}}
+	
+
+	if (flag (donutquestcomplete))
+	{msgbox (format("I find lots of those old balls laying around, from the time of the war.
+	\p Next time I get a craving for donuts, we could make the same deal!"))}
 
 else {msgbox (format("To think that Pokémon can be altered and made 'safer' to be around humans...\p
-Technology is amazing, but it can be scary too."))}
-accepteddonutquest:
+	Technology is amazing, but it can be scary too."))}
+
+endlitlfatguy:
 releaseall
 }
 

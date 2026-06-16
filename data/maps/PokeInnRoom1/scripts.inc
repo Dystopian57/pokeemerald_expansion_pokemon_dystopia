@@ -208,79 +208,522 @@ PokeInnRoom1WheelchairBoy::
 	applymovement 3, OldaleInnRoomOldLady_Movement_0
 # 139 "data/maps/PokeInnRoom1/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 140 "data/maps/PokeInnRoom1/scripts.pory"
-	msgbox PokeInnRoom1WheelchairBoy_Text_0
-# 142 "data/maps/PokeInnRoom1/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PokeInnRoom1Girl_Text_3, PokeInnRoom1Girl_Text_4
-# 144 "data/maps/PokeInnRoom1/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq PokeInnRoom1WheelchairBoy_2
+# 141 "data/maps/PokeInnRoom1/scripts.pory"
+	goto_if_unset wheelchairboyaskedpokemon, PokeInnRoom1WheelchairBoy_2
 PokeInnRoom1WheelchairBoy_1:
-# 148 "data/maps/PokeInnRoom1/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq PokeInnRoom1WheelchairBoy_5
-PokeInnRoom1WheelchairBoy_4:
-# 151 "data/maps/PokeInnRoom1/scripts.pory"
-	msgbox PokeInnRoom1WheelchairBoy_Text_3
 # 163 "data/maps/PokeInnRoom1/scripts.pory"
+	goto_if_set wheelchairboyaskedpokemon, PokeInnRoom1WheelchairBoy_5
+PokeInnRoom1WheelchairBoy_4:
+# 174 "data/maps/PokeInnRoom1/scripts.pory"
+didyoubringanyfighttypes:
+# 175 "data/maps/PokeInnRoom1/scripts.pory"
 	getseenmon SPECIES_POOCHAIN
-# 167 "data/maps/PokeInnRoom1/scripts.pory"
+# 177 "data/maps/PokeInnRoom1/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq PokeInnRoom1WheelchairBoy_8
-PokeInnRoom1WheelchairBoy_7:
-# 171 "data/maps/PokeInnRoom1/scripts.pory"
-	compare VAR_RESULT, FALSE
 	goto_if_eq PokeInnRoom1WheelchairBoy_11
 PokeInnRoom1WheelchairBoy_10:
-# 174 "data/maps/PokeInnRoom1/scripts.pory"
-	getseenmon SPECIES_MAKUHITA
-# 176 "data/maps/PokeInnRoom1/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq PokeInnRoom1WheelchairBoy_14
-PokeInnRoom1WheelchairBoy_13:
-# 180 "data/maps/PokeInnRoom1/scripts.pory"
+# 179 "data/maps/PokeInnRoom1/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq PokeInnRoom1WheelchairBoy_17
 PokeInnRoom1WheelchairBoy_16:
+# 182 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_MAKUHITA
 # 184 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_20
+PokeInnRoom1WheelchairBoy_19:
+# 186 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_23
+PokeInnRoom1WheelchairBoy_22:
+# 189 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_SCRAGGY
+# 191 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_26
+PokeInnRoom1WheelchairBoy_25:
+# 193 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_29
+PokeInnRoom1WheelchairBoy_28:
+# 198 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_4
-# 185 "data/maps/PokeInnRoom1/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PokeInnRoom1WheelchairBoy_Text_5, PokeInnRoom1WheelchairBoy_Text_6
-# 196 "data/maps/PokeInnRoom1/scripts.pory"
+# 199 "data/maps/PokeInnRoom1/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, PokeInnRoom1WheelchairBoy_Text_5, PokeInnRoom1WheelchairBoy_Text_6, PokeInnRoom1WheelchairBoy_Text_7, PokeInnRoom1WheelchairBoy_Text_8, PokeInnRoom1WheelchairBoy_Text_9
+# 201 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq PokeInnRoom1WheelchairBoy_32
+PokeInnRoom1WheelchairBoy_31:
+# 211 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq PokeInnRoom1WheelchairBoy_35
+PokeInnRoom1WheelchairBoy_34:
+# 221 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq PokeInnRoom1WheelchairBoy_41
+PokeInnRoom1WheelchairBoy_40:
+# 231 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 4
+	goto_if_eq PokeInnRoom1WheelchairBoy_49
+PokeInnRoom1WheelchairBoy_48:
+# 233 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq PokeInnRoom1WheelchairBoy_57
+PokeInnRoom1WheelchairBoy_56:
+# 371 "data/maps/PokeInnRoom1/scripts.pory"
+donthaveanyfightingtotrade:
+# 372 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_19
+# 373 "data/maps/PokeInnRoom1/scripts.pory"
 endofwheelchairinnkidscript:
-# 197 "data/maps/PokeInnRoom1/scripts.pory"
+# 374 "data/maps/PokeInnRoom1/scripts.pory"
 	release
 	return
 
 PokeInnRoom1WheelchairBoy_2:
+# 143 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_0
 # 145 "data/maps/PokeInnRoom1/scripts.pory"
-	msgbox PokeInnRoom1WheelchairBoy_Text_1
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PokeInnRoom1Girl_Text_3, PokeInnRoom1Girl_Text_4
+# 147 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq PokeInnRoom1WheelchairBoy_8
+PokeInnRoom1WheelchairBoy_7:
+# 151 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq PokeInnRoom1WheelchairBoy_14
+PokeInnRoom1WheelchairBoy_13:
+# 154 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_3
+# 161 "data/maps/PokeInnRoom1/scripts.pory"
+	setflag wheelchairboyaskedpokemon
 	goto PokeInnRoom1WheelchairBoy_1
 
 PokeInnRoom1WheelchairBoy_5:
-# 149 "data/maps/PokeInnRoom1/scripts.pory"
-	msgbox PokeInnRoom1WheelchairBoy_Text_2
+# 164 "data/maps/PokeInnRoom1/scripts.pory"
+	goto didyoubringanyfighttypes
 	goto PokeInnRoom1WheelchairBoy_4
 
 PokeInnRoom1WheelchairBoy_8:
-# 169 "data/maps/PokeInnRoom1/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_POOCHAIN
+# 148 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_1
 	goto PokeInnRoom1WheelchairBoy_7
 
 PokeInnRoom1WheelchairBoy_11:
-# 172 "data/maps/PokeInnRoom1/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_NONE
+# 178 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_POOCHAIN
 	goto PokeInnRoom1WheelchairBoy_10
 
 PokeInnRoom1WheelchairBoy_14:
-# 178 "data/maps/PokeInnRoom1/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_MAKUHITA
+# 152 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_2
 	goto PokeInnRoom1WheelchairBoy_13
 
 PokeInnRoom1WheelchairBoy_17:
-# 181 "data/maps/PokeInnRoom1/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_NONE
+# 180 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_NONE
 	goto PokeInnRoom1WheelchairBoy_16
+
+PokeInnRoom1WheelchairBoy_20:
+# 185 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_MAKUHITA
+	goto PokeInnRoom1WheelchairBoy_19
+
+PokeInnRoom1WheelchairBoy_23:
+# 187 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_22
+
+PokeInnRoom1WheelchairBoy_26:
+# 192 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_SCRAGGY
+	goto PokeInnRoom1WheelchairBoy_25
+
+PokeInnRoom1WheelchairBoy_29:
+# 194 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_28
+
+PokeInnRoom1WheelchairBoy_32:
+# 202 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_POOCHAIN
+# 203 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_38
+PokeInnRoom1WheelchairBoy_37:
+# 207 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_46
+	goto PokeInnRoom1WheelchairBoy_31
+
+PokeInnRoom1WheelchairBoy_35:
+# 212 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_MAKUHITA
+# 213 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_44
+PokeInnRoom1WheelchairBoy_43:
+# 217 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_54
+	goto PokeInnRoom1WheelchairBoy_34
+
+PokeInnRoom1WheelchairBoy_38:
+# 205 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_10
+	goto PokeInnRoom1WheelchairBoy_37
+
+PokeInnRoom1WheelchairBoy_41:
+# 222 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_SCRAGGY
+# 223 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_52
+PokeInnRoom1WheelchairBoy_51:
+# 227 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_59
+	goto PokeInnRoom1WheelchairBoy_40
+
+PokeInnRoom1WheelchairBoy_44:
+# 215 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_11
+	goto PokeInnRoom1WheelchairBoy_43
+
+PokeInnRoom1WheelchairBoy_46:
+# 208 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_31
+
+PokeInnRoom1WheelchairBoy_49:
+# 231 "data/maps/PokeInnRoom1/scripts.pory"
+	goto donthaveanyfightingtotrade
+	goto PokeInnRoom1WheelchairBoy_48
+
+PokeInnRoom1WheelchairBoy_52:
+# 225 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_12
+	goto PokeInnRoom1WheelchairBoy_51
+
+PokeInnRoom1WheelchairBoy_54:
+# 218 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_34
+
+PokeInnRoom1WheelchairBoy_57:
+# 237 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_CROAGUNK
+# 239 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_62
+PokeInnRoom1WheelchairBoy_61:
+# 241 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_65
+PokeInnRoom1WheelchairBoy_64:
+# 244 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_MEDITITE
+# 246 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_68
+PokeInnRoom1WheelchairBoy_67:
+# 248 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_71
+PokeInnRoom1WheelchairBoy_70:
+# 251 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_KAMOKEN
+# 253 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_74
+PokeInnRoom1WheelchairBoy_73:
+# 255 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_77
+PokeInnRoom1WheelchairBoy_76:
+# 260 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_4
+# 261 "data/maps/PokeInnRoom1/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, PokeInnRoom1WheelchairBoy_Text_5, PokeInnRoom1WheelchairBoy_Text_6, PokeInnRoom1WheelchairBoy_Text_7, PokeInnRoom1WheelchairBoy_Text_8, PokeInnRoom1WheelchairBoy_Text_9
+# 264 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq PokeInnRoom1WheelchairBoy_80
+PokeInnRoom1WheelchairBoy_79:
+# 274 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq PokeInnRoom1WheelchairBoy_83
+PokeInnRoom1WheelchairBoy_82:
+# 284 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq PokeInnRoom1WheelchairBoy_89
+PokeInnRoom1WheelchairBoy_88:
+# 294 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 4
+	goto_if_eq PokeInnRoom1WheelchairBoy_97
+PokeInnRoom1WheelchairBoy_96:
+# 296 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq PokeInnRoom1WheelchairBoy_104
+	goto PokeInnRoom1WheelchairBoy_56
+
+PokeInnRoom1WheelchairBoy_59:
+# 228 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_40
+
+PokeInnRoom1WheelchairBoy_62:
+# 240 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_CROAGUNK
+	goto PokeInnRoom1WheelchairBoy_61
+
+PokeInnRoom1WheelchairBoy_65:
+# 242 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_64
+
+PokeInnRoom1WheelchairBoy_68:
+# 247 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_MEDITITE
+	goto PokeInnRoom1WheelchairBoy_67
+
+PokeInnRoom1WheelchairBoy_71:
+# 249 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_70
+
+PokeInnRoom1WheelchairBoy_74:
+# 254 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_KAMOKEN
+	goto PokeInnRoom1WheelchairBoy_73
+
+PokeInnRoom1WheelchairBoy_77:
+# 256 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_76
+
+PokeInnRoom1WheelchairBoy_80:
+# 265 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_CROAGUNK
+# 266 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_86
+PokeInnRoom1WheelchairBoy_85:
+# 270 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_94
+	goto PokeInnRoom1WheelchairBoy_79
+
+PokeInnRoom1WheelchairBoy_83:
+# 275 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_MEDITITE
+# 276 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_92
+PokeInnRoom1WheelchairBoy_91:
+# 280 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_102
+	goto PokeInnRoom1WheelchairBoy_82
+
+PokeInnRoom1WheelchairBoy_86:
+# 268 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_13
+	goto PokeInnRoom1WheelchairBoy_85
+
+PokeInnRoom1WheelchairBoy_89:
+# 285 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_KAMOKEN
+# 286 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_100
+PokeInnRoom1WheelchairBoy_99:
+# 290 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_106
+	goto PokeInnRoom1WheelchairBoy_88
+
+PokeInnRoom1WheelchairBoy_92:
+# 278 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_14
+	goto PokeInnRoom1WheelchairBoy_91
+
+PokeInnRoom1WheelchairBoy_94:
+# 271 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_79
+
+PokeInnRoom1WheelchairBoy_97:
+# 294 "data/maps/PokeInnRoom1/scripts.pory"
+	goto donthaveanyfightingtotrade
+	goto PokeInnRoom1WheelchairBoy_96
+
+PokeInnRoom1WheelchairBoy_100:
+# 288 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_15
+	goto PokeInnRoom1WheelchairBoy_99
+
+PokeInnRoom1WheelchairBoy_102:
+# 281 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_82
+
+PokeInnRoom1WheelchairBoy_104:
+# 300 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_TYROGUE
+# 302 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_109
+PokeInnRoom1WheelchairBoy_108:
+# 304 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_112
+PokeInnRoom1WheelchairBoy_111:
+# 307 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_RIOLU
+# 309 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_115
+PokeInnRoom1WheelchairBoy_114:
+# 311 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_118
+PokeInnRoom1WheelchairBoy_117:
+# 314 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_PANCHAM
+# 316 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_121
+PokeInnRoom1WheelchairBoy_120:
+# 318 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_124
+PokeInnRoom1WheelchairBoy_123:
+# 323 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_4
+# 324 "data/maps/PokeInnRoom1/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, PokeInnRoom1WheelchairBoy_Text_5, PokeInnRoom1WheelchairBoy_Text_6, PokeInnRoom1WheelchairBoy_Text_7, PokeInnRoom1WheelchairBoy_Text_9
+# 327 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq PokeInnRoom1WheelchairBoy_127
+PokeInnRoom1WheelchairBoy_126:
+# 337 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq PokeInnRoom1WheelchairBoy_130
+PokeInnRoom1WheelchairBoy_129:
+# 347 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq PokeInnRoom1WheelchairBoy_136
+PokeInnRoom1WheelchairBoy_135:
+# 357 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq PokeInnRoom1WheelchairBoy_143
+	goto PokeInnRoom1WheelchairBoy_56
+
+PokeInnRoom1WheelchairBoy_106:
+# 291 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_88
+
+PokeInnRoom1WheelchairBoy_109:
+# 303 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_TYROGUE
+	goto PokeInnRoom1WheelchairBoy_108
+
+PokeInnRoom1WheelchairBoy_112:
+# 305 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_111
+
+PokeInnRoom1WheelchairBoy_115:
+# 310 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_RIOLU
+	goto PokeInnRoom1WheelchairBoy_114
+
+PokeInnRoom1WheelchairBoy_118:
+# 312 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_117
+
+PokeInnRoom1WheelchairBoy_121:
+# 317 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_PANCHAM
+	goto PokeInnRoom1WheelchairBoy_120
+
+PokeInnRoom1WheelchairBoy_124:
+# 319 "data/maps/PokeInnRoom1/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_NONE
+	goto PokeInnRoom1WheelchairBoy_123
+
+PokeInnRoom1WheelchairBoy_127:
+# 328 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_TYROGUE
+# 329 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_133
+PokeInnRoom1WheelchairBoy_132:
+# 333 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_141
+	goto PokeInnRoom1WheelchairBoy_126
+
+PokeInnRoom1WheelchairBoy_130:
+# 338 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_RIOLU
+# 339 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_139
+PokeInnRoom1WheelchairBoy_138:
+# 343 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_148
+	goto PokeInnRoom1WheelchairBoy_129
+
+PokeInnRoom1WheelchairBoy_133:
+# 331 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_16
+	goto PokeInnRoom1WheelchairBoy_132
+
+PokeInnRoom1WheelchairBoy_136:
+# 348 "data/maps/PokeInnRoom1/scripts.pory"
+	getseenmon SPECIES_PANCHAM
+# 349 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq PokeInnRoom1WheelchairBoy_146
+PokeInnRoom1WheelchairBoy_145:
+# 353 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokeInnRoom1WheelchairBoy_150
+	goto PokeInnRoom1WheelchairBoy_135
+
+PokeInnRoom1WheelchairBoy_139:
+# 341 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_17
+	goto PokeInnRoom1WheelchairBoy_138
+
+PokeInnRoom1WheelchairBoy_141:
+# 334 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_126
+
+PokeInnRoom1WheelchairBoy_143:
+# 357 "data/maps/PokeInnRoom1/scripts.pory"
+	goto donthaveanyfightingtotrade
+	goto PokeInnRoom1WheelchairBoy_56
+
+PokeInnRoom1WheelchairBoy_146:
+# 351 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox PokeInnRoom1WheelchairBoy_Text_18
+	goto PokeInnRoom1WheelchairBoy_145
+
+PokeInnRoom1WheelchairBoy_148:
+# 344 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_129
+
+PokeInnRoom1WheelchairBoy_150:
+# 354 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_RG_HELP_ERROR
+	goto PokeInnRoom1WheelchairBoy_135
 
 
 # 31 "data/maps/PokeInnRoom1/scripts.pory"
@@ -422,19 +865,19 @@ PokeInnRoom1Girl_Text_12:
 	.string "were so close!.$"
 
 PokeInnRoom1WheelchairBoy_Text_0:
-# 140 "data/maps/PokeInnRoom1/scripts.pory"
+# 143 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Hey… does it hurt?$"
 
 PokeInnRoom1WheelchairBoy_Text_1:
-# 145 "data/maps/PokeInnRoom1/scripts.pory"
+# 148 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "I see… I envy you.$"
 
 PokeInnRoom1WheelchairBoy_Text_2:
-# 149 "data/maps/PokeInnRoom1/scripts.pory"
+# 152 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "I see… mine don't hurt either.$"
 
 PokeInnRoom1WheelchairBoy_Text_3:
-# 151 "data/maps/PokeInnRoom1/scripts.pory"
+# 154 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Say, can you do me a favour? My\n"
 	.string "grandparents are caring for me, but\l"
 	.string "they struggle to push my chair.\p"
@@ -448,13 +891,79 @@ PokeInnRoom1WheelchairBoy_Text_3:
 	.string "return.$"
 
 PokeInnRoom1WheelchairBoy_Text_4:
-# 184 "data/maps/PokeInnRoom1/scripts.pory"
-	.string "Show me a Pokémon.$"
+# 198 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "Did you bring any Fighting type\n"
+	.string "Pokémon? Which one?$"
 
 PokeInnRoom1WheelchairBoy_Text_5:
-# 185 "data/maps/PokeInnRoom1/scripts.pory"
+# 199 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "{STR_VAR_1}$"
 
 PokeInnRoom1WheelchairBoy_Text_6:
-# 185 "data/maps/PokeInnRoom1/scripts.pory"
+# 199 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "{STR_VAR_2}$"
+
+PokeInnRoom1WheelchairBoy_Text_7:
+# 199 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "{STR_VAR_3}$"
+
+PokeInnRoom1WheelchairBoy_Text_8:
+# 199 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A different Pokémon$"
+
+PokeInnRoom1WheelchairBoy_Text_9:
+# 199 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "None$"
+
+PokeInnRoom1WheelchairBoy_Text_10:
+# 205 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "Oh, a Manchine! I saw one of those by\n"
+	.string "the Warehouse, but I never managed to\l"
+	.string "catch one.$"
+
+PokeInnRoom1WheelchairBoy_Text_11:
+# 215 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Makuhita? Wow, they are my favourites\n"
+	.string "- they're always full of energy!$"
+
+PokeInnRoom1WheelchairBoy_Text_12:
+# 225 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Scraggy!? Wow, they're so cool! I\n"
+	.string "didn't know there were Scraggy in Hoenn\l"
+	.string "now.$"
+
+PokeInnRoom1WheelchairBoy_Text_13:
+# 268 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Croagunk? Hmm… its arm is not\n"
+	.string "poisonous, is it?$"
+
+PokeInnRoom1WheelchairBoy_Text_14:
+# 278 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Meditite? Oh, those are both strong\n"
+	.string "and smart…$"
+
+PokeInnRoom1WheelchairBoy_Text_15:
+# 288 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Kamoken? They look just like\n"
+	.string "Far'fetch... but they are Fightying\l"
+	.string "type, right?$"
+
+PokeInnRoom1WheelchairBoy_Text_16:
+# 331 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Tyrogue!? Wow, that's a rare Pokémon!\n"
+	.string "It must have been hard to find it.$"
+
+PokeInnRoom1WheelchairBoy_Text_17:
+# 341 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Riolu? Ah, it's both strong and cute -\n"
+	.string "I think my sister will spoil it, hehe.$"
+
+PokeInnRoom1WheelchairBoy_Text_18:
+# 351 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "A Pancham? Wow, its gaze is so\n"
+	.string "determined. I like that.$"
+
+PokeInnRoom1WheelchairBoy_Text_19:
+# 372 "data/maps/PokeInnRoom1/scripts.pory"
+	.string "Don't have any to trade? Well, that's\n"
+	.string "okay... come back when you do!$"

@@ -442,6 +442,7 @@ script DLCTeacherOutside {
 
 script OldaleTown_GotoTherapy{
 	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 6))
     waitmovement(0)
@@ -484,7 +485,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     }
 
     removefieldmugshot
-    applymovement (18, moves(face_left, emote_exclamation_mark))
+    applymovement (17, moves(face_left, emote_exclamation_mark))
     playse (SE_PIN)
     waitse
 	setspeaker ([SP_NAME_SHARPY])
@@ -497,7 +498,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     msgbox(format("O-oh, hello there miss! You're just in time!"))
     }
     removefieldmugshot
-    applymovement (18, moves(walk_left * 2))
+    applymovement (17, moves(walk_left * 2))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
     waitmovement
 	setspeaker ([SP_NAME_SHARPY])
@@ -535,7 +536,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
             msgbox(format("Whaaat!? But you look like a soldier - which means you're strong,
             and brave, right?"))
             
-            applymovement (18, moves(face_right))
+            applymovement (17, moves(face_right))
             removefieldmugshot
             setspeaker ([SP_NAME_CAMELIA])
             createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
@@ -548,7 +549,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
             
             
             removefieldmugshot
-            applymovement (18, moves(face_left))
+            applymovement (17, moves(face_left))
 	        setspeaker ([SP_NAME_SHARPY])
             createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
             msgbox(format("Exactly! So, now that you know that, you'll join us, right?")) 
@@ -608,7 +609,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
                     removefieldmugshot
 
                     playse (SE_FLEE)
-                    applymovement (18, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 7))
+                    applymovement (17, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 7))
                     waitmovement
 
 
@@ -645,7 +646,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
             
 
     playse (SE_FLEE)
-    applymovement (18, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 7))
+    applymovement (17, moves(walk_fast_down * 1, walk_fast_left * 5, walk_fast_up * 7))
     waitmovement
     thisguy:
     removefieldmugshot
@@ -656,8 +657,8 @@ script OldaleSharpyCameliaOutDLCCutscene {
     finishOldalekidscutscene:
     removefieldmugshot
     setvar(VAR_OLDALE_PHASE, 2)
-    setobjectxy (18, 0, 0)
-    setobjectxy (20, 0, 0)
+    setobjectxy (17, 0, 0)
+    //setobjectxy (20, 0, 0)
 	setflag (sharpynotoutsideDLC)
 	clearflag (sharpynotinroute103)
 	setflag (sharpycorphishoutsideDLC)
@@ -722,57 +723,57 @@ script OldaleDevonGrunts { //karen and jerry
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if(var(VAR_OLDALE_PHASE) == 1)
         {
-        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("I'm sorry, but we can't let anyone through until the
         {COLOR RED}Rebels{COLOR DARK_GRAY} occupying {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY},
         are dealt with."))
-        applymovement (16, moves(face_player, walk_in_place_right * 1))
+        applymovement (15, moves(face_player, walk_in_place_right * 1))
         msgbox(format("We can't allow these criminals to get closer to New Rustboro... but don't worry!\p
         Reinforcements from Devon HQ are currently on the way."))
-        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Yup! With the current pace of administrative protocols, they should be here in about 6 months."))
         }
 
 	if(var(VAR_OLDALE_PHASE) == 2)
-       {applymovement (15, moves(face_player, walk_in_place_right * 1))
+       {applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Damn kids, they were fast... by the time I grabbed my Devon Ball, they had
         sprinted right past me!"))
 
-        applymovement (16, moves(walk_in_place_up * 1, face_up))
+        applymovement (15, moves(walk_in_place_up * 1, face_up))
         msgbox(format("
         {COLOR LIGHT_GRAY}{SHADOW WHITE}Dude... you were just checking your Devon Nav.
         {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 
-        applymovement (15, moves(walk_in_place_down * 1, face_down))
+        applymovement (14, moves(walk_in_place_down * 1, face_down))
         msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}... can we not? We're in front of a civilian!
         {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+        applymovement (14, moves(face_right))
         applymovement (15, moves(face_right))
-        applymovement (16, moves(face_right))
 
         }
 
 	if(var(VAR_OLDALE_PHASE) == 3)
-       {applymovement (15, moves(face_player, walk_in_place_right * 1))
+       {applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Hello there, civilian! We have great news! \pThose pesky {COLOR RED}Rebels{COLOR DARK_GRAY}
         have finally left Oldale Warehouse. The town is safe again!"))
 
-        applymovement (16, moves(walk_in_place_up * 1, face_up))
+        applymovement (15, moves(walk_in_place_up * 1, face_up))
         msgbox(format("They must have caught wind of reinforcements coming, and didn't feel like
         spending the rest of their lives on {COLOR RED}Dewford Prison{COLOR DARK_GRAY}."))
-        applymovement (16, moves(face_right))
-        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        applymovement (15, moves(face_right))
+        applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Most likely! So... I suppose you want to go through Route 102?"))
 	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
         if(var(VAR_RESULT) == 0){
         msgbox(format("I see... well, I'm sorry to say... \p In the Rebel Zone, when it's not one thing,
         it's the other, you know?"))
-        applymovement (16, moves(walk_in_place_right * 1))
+        applymovement (15, moves(walk_in_place_right * 1))
         msgbox(format("We have one of our scientists searching Route 102 for a very dangerous Pokémon.
         \p It's the next species on the list of Pokémon to be {COLOR BLUE}safened{COLOR DARK_GRAY}, and we can't let his work be
         disturbed"))
 
-        applymovement (15, moves(face_player, walk_in_place_right * 1))
+        applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("I'm afraid so. But don't worry - these tasks usually take from 3 to 4 months.
         \p And what's a little waiting if it means Hoenn becomes safer?"))
         }
@@ -780,8 +781,8 @@ script OldaleDevonGrunts { //karen and jerry
         if(var(VAR_RESULT) == 1){
         msgbox(format("Grand, then please enjoy this shith-... I mean, this cozy, cute sleepy town!")) 
         }
+        applymovement (14, moves(face_right))
         applymovement (15, moves(face_right))
-        applymovement (16, moves(face_right))
 
         clearflag (rivalappearsinOldale)
 
@@ -811,7 +812,7 @@ script OldaleRival {
 
         if(var(VAR_RESULT) == FEMALE)
         { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_MALE)}
-        removeobject (22)
+        removeobject (21)
         setflag (rivalappearsinOldale)
 }
 
@@ -835,7 +836,7 @@ script OldaleRivalDontLeaveOldaleto101 {
         msgbox(format("Very well... I'll be keeping an eye on them. Don't take long!"))
 		fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
-        addobject (22)
+        addobject (21)
         clearflag (rivalappearsinOldale)
 		fadescreenswapbuffers (FADE_FROM_BLACK)
         setvar(VAR_OLDALE_PHASE, 3)
@@ -972,7 +973,7 @@ script OldaleRivalnoleavetoWhouse {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("You lost, kid? Well scram, there's nothing here for you t-"))
-    applymovement (19, moves(emote_exclamation_mark))
+    applymovement (18, moves(emote_exclamation_mark))
     playse (SE_PIN)
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
 
@@ -989,15 +990,15 @@ script OldaleRivalnoleavetoWhouse {
         
     msgbox(format("Think you're tough, huh? Well, why don't you come inside then?"))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-    applymovement (19, moves(face_up))
+    applymovement (18, moves(face_up))
     msgbox(format("We'll give you a warm welcome... hehe.")) 
     
     opendoor (36,7)
     playse (SE_SLIDING_DOOR)
     waitdooranim
-    applymovement (19, moves(walk_up * 1))
+    applymovement (18, moves(walk_up * 1))
     waitmovement
-    removeobject (19)
+    removeobject (18)
     setflag (oldalerebelguardleaves)
     closedoor (36,7)
 	playbgm (MUS_RG_LAVENDER, TRUE)
@@ -1013,8 +1014,8 @@ script OldaleRivalnoleavetoWhouse {
 script OldaleTruckRebel {
     lock
     call(MachineShake)
-    applymovement (26, moves(walk_in_place_left))
-    waitmovement (26)
+    applymovement (25, moves(walk_in_place_left))
+    waitmovement (25)
 
     msgbox(format("The rebel is trying to pry open the truck. Better to leave her alone."))
 
@@ -1031,12 +1032,12 @@ script OldaleGrassRebel {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
-	applymovement (25, moves(emote_exclamation_mark))
+	applymovement (24, moves(emote_exclamation_mark))
 	msgbox(format("Stop it, kid!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
     playse (SE_LEDGE)
-    applymovement (25, moves(jump_2_up, face_down))
-    waitmovement (25)
+    applymovement (24, moves(jump_2_up, face_down))
+    waitmovement (24)
     applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	goto (carrebeloldaleafterapproach)
  }
@@ -1045,10 +1046,10 @@ script OldaleGrassRebel {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
-	applymovement (25, moves(emote_exclamation_mark))
+	applymovement (24, moves(emote_exclamation_mark))
 	msgbox(format("Stop it, kid!"))
     playse (SE_LEDGE)
-	applymovement (25, moves(jump_up))
+	applymovement (24, moves(jump_up))
 	waitmovement
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 	goto (carrebeloldaleafterapproach)
@@ -1058,10 +1059,10 @@ script OldaleGrassRebel {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
-	applymovement (25, moves(emote_exclamation_mark))
+	applymovement (24, moves(emote_exclamation_mark))
 	msgbox(format("Stop it, kid!"))
     playse (SE_LEDGE)
-	applymovement (25, moves(jump_2_up))
+	applymovement (24, moves(jump_2_up))
 	waitmovement
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 	goto (carrebeloldaleafterapproach)
@@ -1089,12 +1090,12 @@ script OldaleGrassRebel {
         playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
         msgbox(format("Wait right here, you hear me!? I'll go to the Devon Center real quick!"))
         playse (SE_FLEE)
-        applymovement (25, moves(walk_fast_left * 8))
-        waitmovement (25)
+        applymovement (24, moves(walk_fast_left * 8))
+        waitmovement (24)
         fadeoutbgm (1)
         playbgm (MUS_RG_LAVENDER, TRUE)
         setvar(VAR_OLDALECARREBEL, 1)
-        removeobject (25)
+        removeobject (24)
         setflag (carrebelleavescar)
         clearflag (carrebelatDC)
         release
@@ -1103,7 +1104,7 @@ script OldaleGrassRebel {
 
 
 script OldaleCarBehind{
-
+        lock
         applymovement (25, moves(emote_exclamation_mark, face_down))
         msgbox(format("Hey, you think you're smart or something? Trying to sneak up on me!? \p Well, you asked
         for it - GO, ELECTRIKE!"))
@@ -1129,4 +1130,13 @@ script OldaleCarBehind{
         clearflag (carrebelatDC)
         release
 
+}
+
+
+script SamanthaCall1 {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    pokenavcall(format("Test!"))
+    setvar(VAR_MAUSOLEUM_HEXGIRL, 1)
+    release
 }

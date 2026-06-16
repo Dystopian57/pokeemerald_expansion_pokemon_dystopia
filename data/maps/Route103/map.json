@@ -637,7 +637,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Route103WaterfallCaveSign"
     },
     {
       "type": "sign",
@@ -646,6 +646,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MoveTutorSign"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route103ConcordBridgeSign"
     }
   ]
 }

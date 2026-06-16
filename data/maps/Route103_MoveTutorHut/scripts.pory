@@ -14,8 +14,8 @@ script MoveTutor103Night
 	playse (SE_M_SNORE)
 	msgbox(format("ZZZZZZ..."))
 
-	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}He is fast asleep. It would be better to
-	return during daytime.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	msgbox(format("He is fast asleep. It would be better to return during daytime."))
+	release
 
 }
 
@@ -53,7 +53,7 @@ script MoveTutor103 {
 					waitstate
 					setvar (VAR_0x8005, MOVE_SWAGGER)
 					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
-					//goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
 
 					
 					showmoneybox (0, 0)

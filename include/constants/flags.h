@@ -252,9 +252,10 @@
 #define oldalefountainsparkle         0xDE
 #define craterbottomtouristleaves            0xDF
 #define greatcraterrope          0xE0
+
 #define FLAG_RECEIVED_20_COINS               0xE1
-#define FLAG_RECEIVED_STARTER_DOLL           0xE2
-#define FLAG_RECEIVED_GOOD_ROD               0xE3
+#define cigarrettepop           0xE2
+#define wheelchairboyaskedpokemon               0xE3
 #define FLAG_REGI_DOORS_OPENED               0xE4
 #define FLAG_RECEIVED_TM_RETURN              0xE5
 #define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
@@ -1580,12 +1581,12 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define donutquestcomplete                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
-#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
-#define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
+#define dailymushroom101_1                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define dailymushroom101_2                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
+#define dailymushroom101_3                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
 #define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag

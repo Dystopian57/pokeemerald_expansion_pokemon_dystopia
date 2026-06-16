@@ -240,6 +240,19 @@ script Route103EndRain {
 	setvar(VAR_ROUTE103_WEATHER, 0)
 }
 
+
+script Route103ConcordBridgeSign {
+	lock
+    msgbox(format("East - Concord Bridge \n North - Waterfall Cave."))
+	release
+}
+
+script Route103WaterfallCaveSign {
+	lock
+    msgbox(format("Waterfall Cave to Route 117."))
+	release
+}
+
 script Route103IteminMud {
 	lock
     finditem (ITEM_SILK_SCARF)
@@ -264,6 +277,7 @@ script Route103DevonDrivercheckedby {
     msgbox(format("This is ridiculous. Is this what our taxes are being spent in?
 	\p If I don't deliver these goods soon, my boss will have my head!"))
 	applymovement (23, moves(face_up))
+	waitmovement
     releaseall
     }
 
@@ -301,9 +315,9 @@ script Sharpy103 {
 		removefieldmugshot
 		}
 		battleSharpy103:
-		trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
 		addobject (25)
 		setobjectxy (25, 10, 32)
+		trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
 		playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (24, moves(face_player))
@@ -356,7 +370,7 @@ script Sharpy103 {
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_SHARPY])
-		applymovement (24, moves(face_down))
+		applymovement (24, moves(face_player))
 		msgbox(format("Well, it goes without saying, but you passed the test with flying colors!"))
 
 		removefieldmugshot
@@ -382,7 +396,7 @@ script Sharpy103 {
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_SHARPY])
 		msgbox(format("Yup - so we'll go on ahead! Petalburg Dojo is the big, old-fashioned
-		wooden building - can't miss it"))
+		wooden building - can't miss it."))
 
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
@@ -1064,9 +1078,9 @@ script FisherGuruRoute103 {
 				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 
 				fadeoutbgm (1)
-				fadescreen (FADE_TO_BLACK)
-				msgbox (format("You and the fisher wait in a long, uncomfortable silence..."))
-				fadescreen (FADE_FROM_BLACK)
+				fadescreenswapbuffers (FADE_TO_BLACK)
+				msgbox (format("{PLAYER} and the fisher wait in a long, uncomfortable silence..."))
+				fadescreenswapbuffers (FADE_FROM_BLACK)
 				fadeinbgm (1)
 
 				msgbox (format("Hmm... I should have known. Such a measly fishing test... \p Is NOT ENOUGH

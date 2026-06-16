@@ -62,7 +62,9 @@ script ConcordFemaleDevon {
 	msgbox(format("We appreciate your help when we dealt with that con artist. \p He makes a profit
 	off smuggling Pokémon eggs, in and out the Rebel Zone. \p If he shows his mug around here again,
 	we'll catch him for sure!"))
-	}}
+	}
+	
+	release}
 
 
 script ConcordCustomsClerk {
@@ -190,6 +192,7 @@ script ConcordCustomsPhone{
             if(var(VAR_RESULT) == 0){
             		checkmoney (50)
 				if (var(VAR_RESULT) == TRUE) {
+					removemoney (50)
                     updatemoneybox
 					playse (SE_SHOP)
 					waitse
@@ -197,6 +200,7 @@ script ConcordCustomsPhone{
 					msgbox(format("Call who?"))
 					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Balsam") //Birch, Rival, Norman
 						if(var(VAR_RESULT) == 0){
+						hidemoneybox
 						playse (SE_POKENAV_CALL)
 						msgbox(format("Balsam Call here"))
 						playse (SE_POKENAV_HANG_UP)
@@ -427,4 +431,6 @@ script ConcordCustomsClerkBAD {
 	msgbox(format("We appreciate your help when we dealt with that scammer. \p He makes a profit
 	off smuggling Pokémon eggs, in and out the Internment Zone. \p If he shows his mug around here again,
 	we'll catch him for sure!"))
-	}}
+	release
+	}
+	release}

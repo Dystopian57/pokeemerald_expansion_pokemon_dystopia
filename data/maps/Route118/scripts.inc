@@ -23,7 +23,6 @@ Route118_OnFrame:
 Route118_EventScript_GoodRodFisherman::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_GOOD_ROD, Route118_EventScript_ReceivedGoodRod
 	msgbox Route118_Text_YouAgreeGoodRodIsGood, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route118_EventScript_ReceiveGoodRod
 	goto_if_eq VAR_RESULT, NO, Route118_EventScript_DeclineGoodRod
@@ -33,7 +32,6 @@ Route118_EventScript_ReceiveGoodRod::
 	msgbox Route118_Text_IdenticalMindsTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_GOOD_ROD
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_GOOD_ROD
 	msgbox Route118_Text_TryYourLuckFishing, MSGBOX_DEFAULT
 	release
 	end

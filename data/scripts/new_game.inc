@@ -299,6 +299,7 @@ EventScript_ResetAllMapFlags::
 	setflag rivalappearsinOldale
 	setflag FLAG_ITEM_ROUTE101REBELITEM
 	setflag route102weathermon
+	setflag cigarrettepop
 	
 	call EventScript_ResetAllBerries
 	end

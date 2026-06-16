@@ -263,6 +263,30 @@
       "elevation": 0,
       "item": "ITEM_COMET_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD"
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "item": "ITEM_BALM_MUSHROOM",
+      "flag": "dailymushroom101_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_BALM_MUSHROOM",
+      "flag": "dailymushroom101_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 15,
+      "elevation": 0,
+      "item": "ITEM_BALM_MUSHROOM",
+      "flag": "dailymushroom101_3"
     }
   ]
 }

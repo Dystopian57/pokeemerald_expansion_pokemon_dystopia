@@ -16,6 +16,8 @@ MoveTutor103Night::
 	msgbox MoveTutor103Night_Text_0
 # 17 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Night_Text_1
+# 18 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	release
 	return
 
 
@@ -167,6 +169,8 @@ MoveTutor103_22:
 	setvar VAR_0x8005, MOVE_SWAGGER
 # 55 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, canceltutor
+# 56 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor
 # 59 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmoneybox 0, 0
 # 60 "data/maps/Route103_MoveTutorHut/scripts.pory"
@@ -329,8 +333,8 @@ MoveTutor103Night_Text_0:
 
 MoveTutor103Night_Text_1:
 # 17 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}He is fast asleep. It would be better to\n"
-	.string "return during daytime.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
+	.string "He is fast asleep. It would be better to\n"
+	.string "return during daytime.$"
 
 MoveTutor103_Text_0:
 # 30 "data/maps/Route103_MoveTutorHut/scripts.pory"

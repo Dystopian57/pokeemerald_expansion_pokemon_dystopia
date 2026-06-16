@@ -135,9 +135,12 @@ script PokeInnRoom1Girl {
 
 script PokeInnRoom1WheelchairBoy {
     lock
-	applymovement (3, moves(face_player))
+	applymovement (2, moves(face_player))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-    msgbox(format("Hey… does it hurt?"))
+
+if (!flag (wheelchairboyaskedpokemon))
+
+    {msgbox(format("Hey… does it hurt?"))
 
     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
@@ -154,37 +157,210 @@ script PokeInnRoom1WheelchairBoy {
     \p Do you think you can find a Fighting Pokémon for me?
     \pOne that is not evolved, since I'm a novice trainer.
     \pPlease, I'll give you something in return."))
+
+    setflag (wheelchairboyaskedpokemon)
+    goto (endofwheelchairinnkidscript)}
+
+if (flag (wheelchairboyaskedpokemon))
+    {goto (didyoubringanyfighttypes)}
     
     //checkspecies (SPECIES_MAKUHITA, OPEN_PARTY_SCREEN)
 		//special (ChoosePartyMon)
 		//waitstate
         //copyvar (VAR_0x8005, VAR_0x8004)
         //checkspecies (VAR_0x8005, OPEN_PARTY_SCREEN)
-        getseenmon (SPECIES_POOCHAIN)
-
         //special (IsGrassTypeInParty)
         //setorcopyvar
+
+        didyoubringanyfighttypes:
+        getseenmon (SPECIES_POOCHAIN)
+
         if (var(VAR_RESULT) == TRUE)
-
-        {bufferspeciesname (STR_VAR_1, SPECIES_POOCHAIN)}
-
+         {bufferspeciesname (STR_VAR_1, SPECIES_POOCHAIN)}
         if (var(VAR_RESULT) == FALSE)
-        {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+         {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
 
         getseenmon (SPECIES_MAKUHITA)
 
         if (var(VAR_RESULT) == TRUE)
+         {bufferspeciesname (STR_VAR_2, SPECIES_MAKUHITA)}
+        if (var(VAR_RESULT) == FALSE)
+         {bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
 
-        {bufferspeciesname (STR_VAR_2, SPECIES_MAKUHITA)}
+        getseenmon (SPECIES_SCRAGGY)
+
+        if (var(VAR_RESULT) == TRUE)
+         {bufferspeciesname (STR_VAR_3, SPECIES_SCRAGGY)}
+         if (var(VAR_RESULT) == FALSE)
+        {bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
+
+
+
+    msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Pokémon", "None")
+
+    if(var(VAR_RESULT) == 0){
+    getseenmon (SPECIES_POOCHAIN)
+        if (var(VAR_RESULT) == TRUE)
+
+        {msgbox(format("Oh, a Manchine! I saw one of those by the Warehouse, but I never managed to catch one."))}
 
         if (var(VAR_RESULT) == FALSE)
-        {bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+        {playse (SE_RG_HELP_ERROR)}
+    }
+
+     if(var(VAR_RESULT) == 1){
+    getseenmon (SPECIES_MAKUHITA)
+        if (var(VAR_RESULT) == TRUE)
+
+        {msgbox(format("A Makuhita? Wow, they are my favourites - they're always full of energy!"))}
+
+        if (var(VAR_RESULT) == FALSE)
+        {playse (SE_RG_HELP_ERROR)}
+    }
+
+     if(var(VAR_RESULT) == 2){
+    getseenmon (SPECIES_SCRAGGY)
+        if (var(VAR_RESULT) == TRUE)
+
+        {msgbox(format("A Scraggy!? Wow, they're so cool! I didn't know there were Scraggy in Hoenn now."))}
+
+        if (var(VAR_RESULT) == FALSE)
+        {playse (SE_RG_HELP_ERROR)}
+    }
+
+         if(var(VAR_RESULT) == 4){goto (donthaveanyfightingtotrade)}
+
+         if(var(VAR_RESULT) == 3){
+
+//Second list code
+
+            getseenmon (SPECIES_CROAGUNK)
+
+            if (var(VAR_RESULT) == TRUE)
+            {bufferspeciesname (STR_VAR_1, SPECIES_CROAGUNK)}
+            if (var(VAR_RESULT) == FALSE)
+            {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+            getseenmon (SPECIES_MEDITITE)
+
+            if (var(VAR_RESULT) == TRUE)
+            {bufferspeciesname (STR_VAR_2, SPECIES_MEDITITE)}
+            if (var(VAR_RESULT) == FALSE)
+            {bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+            getseenmon (SPECIES_KAMOKEN)
+
+            if (var(VAR_RESULT) == TRUE)
+            {bufferspeciesname (STR_VAR_3, SPECIES_KAMOKEN)}
+            if (var(VAR_RESULT) == FALSE)
+            {bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
 
 
-    msgbox(format("Show me a Pokémon."))
-    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}")
+
+        msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
+        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Pokémon", "None") 
+            
+            
+        if(var(VAR_RESULT) == 0){
+        getseenmon (SPECIES_CROAGUNK)
+            if (var(VAR_RESULT) == TRUE)
+
+            {msgbox(format("A Croagunk? Hmm… its arm is not poisonous, is it?"))}
+
+            if (var(VAR_RESULT) == FALSE)
+            {playse (SE_RG_HELP_ERROR)}
+        }
+
+        if(var(VAR_RESULT) == 1){
+        getseenmon (SPECIES_MEDITITE)
+            if (var(VAR_RESULT) == TRUE)
+
+            {msgbox(format("A Meditite? Oh, those are both strong and smart…"))}
+
+            if (var(VAR_RESULT) == FALSE)
+            {playse (SE_RG_HELP_ERROR)}
+        }
+
+        if(var(VAR_RESULT) == 2){
+        getseenmon (SPECIES_KAMOKEN)
+            if (var(VAR_RESULT) == TRUE)
+
+            {msgbox(format("A Kamoken? They look just like Far'fetch... but they are Fightying type, right?"))}
+
+            if (var(VAR_RESULT) == FALSE)
+            {playse (SE_RG_HELP_ERROR)}
+        }   
+
+        if(var(VAR_RESULT) == 4){goto (donthaveanyfightingtotrade)}
+
+        if(var(VAR_RESULT) == 3){
+
+      //Third list code
+
+                getseenmon (SPECIES_TYROGUE)
+
+                if (var(VAR_RESULT) == TRUE)
+                {bufferspeciesname (STR_VAR_1, SPECIES_TYROGUE)}
+                if (var(VAR_RESULT) == FALSE)
+                {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+                getseenmon (SPECIES_RIOLU)
+
+                if (var(VAR_RESULT) == TRUE)
+                {bufferspeciesname (STR_VAR_2, SPECIES_RIOLU)}
+                if (var(VAR_RESULT) == FALSE)
+                {bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+                getseenmon (SPECIES_PANCHAM)
+
+                if (var(VAR_RESULT) == TRUE)
+                {bufferspeciesname (STR_VAR_3, SPECIES_PANCHAM)}
+                if (var(VAR_RESULT) == FALSE)
+                {bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
 
 
+
+            msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
+            dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "None") 
+                
+                
+            if(var(VAR_RESULT) == 0){
+            getseenmon (SPECIES_TYROGUE)
+                if (var(VAR_RESULT) == TRUE)
+
+                {msgbox(format("A Tyrogue!? Wow, that's a rare Pokémon! It must have been hard to find it."))}
+
+                if (var(VAR_RESULT) == FALSE)
+                {playse (SE_RG_HELP_ERROR)}
+            }
+
+            if(var(VAR_RESULT) == 1){
+            getseenmon (SPECIES_RIOLU)
+                if (var(VAR_RESULT) == TRUE)
+
+                {msgbox(format("A Riolu? Ah, it's both strong and cute - I think my sister will spoil it, hehe."))}
+
+                if (var(VAR_RESULT) == FALSE)
+                {playse (SE_RG_HELP_ERROR)}
+            }
+
+            if(var(VAR_RESULT) == 2){
+            getseenmon (SPECIES_PANCHAM)
+                if (var(VAR_RESULT) == TRUE)
+
+                {msgbox(format("A Pancham? Wow, its gaze is so determined. I like that."))}
+
+                if (var(VAR_RESULT) == FALSE)
+                {playse (SE_RG_HELP_ERROR)}
+            }   
+
+            if(var(VAR_RESULT) == 3){goto (donthaveanyfightingtotrade)}
+
+
+        }
+            
+        }
         //if (var(VAR_RESULT) == SPECIES_MAKUHITA)
         //{ msgbox(format("A Makuhita!"))}
 
@@ -193,6 +369,8 @@ script PokeInnRoom1WheelchairBoy {
 
         //else {goto (endofwheelchairinnkidscript)}
 
+    donthaveanyfightingtotrade:
+    msgbox(format("Don't have any to trade? Well, that's okay... come back when you do!"))
     endofwheelchairinnkidscript:
     release
     }

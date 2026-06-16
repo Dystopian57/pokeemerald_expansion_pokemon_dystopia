@@ -668,7 +668,7 @@ script Devongruntad {
 	showmonpic(SPECIES_PIKACHU_COSPLAY, 10,3)
 	playse (SE_M_ENCORE2)
 	msgbox(format("Then enlist in the Devon Guards today. First 100 recruits get their own Manchine!"))
-	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by Devon Co. \lupon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}All Manchines will be collected by Devon Co. upon contract expiration.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	hidemonpic
 	releaseall
 }

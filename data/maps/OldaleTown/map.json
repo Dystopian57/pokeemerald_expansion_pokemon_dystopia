@@ -458,7 +458,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "cigarrettepop"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVONADMINF",
@@ -750,6 +750,15 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "0",
       "script": "FountainCoinSparkle"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "0",
+      "script": "SamanthaCall1"
     }
   ],
   "bg_events": [
