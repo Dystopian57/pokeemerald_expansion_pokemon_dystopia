@@ -179,7 +179,6 @@ if (flag (wheelchairboyaskedpokemon))
          {bufferspeciesname (STR_VAR_1, SPECIES_POOCHAIN)}
         if (var(VAR_RESULT) == FALSE)
          {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
-
         getseenmon (SPECIES_MAKUHITA)
 
         if (var(VAR_RESULT) == TRUE)

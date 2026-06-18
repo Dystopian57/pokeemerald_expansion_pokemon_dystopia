@@ -1204,6 +1204,7 @@ script Littleroot_Idletalk_Prof{
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
 	applymovement (4, moves(face_player))
+
 	if(var(VAR_LITTLEROOT_PHASE) == 1)
 	{msgbox (format("I'm sorry - would love to help you decide, but I'm in the middle of something here."))}
 	if(var(VAR_LITTLEROOT_PHASE) == 2)
@@ -1215,77 +1216,144 @@ script Littleroot_Idletalk_Prof{
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 	msgbox (format("It's a group session, by the way - try to make some friends!"))}
 
-	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
-	{checkplayergender
-	if(var(VAR_RESULT) == MALE){
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
-	like a madwoman..."))
+	if(var(VAR_LITTLEROOT_PHASE) == 4)
+	{msgbox (format("Hm? Birch asked you to check on {RIVAL}?"))
 	removefieldmugshot
-	playse (SE_M_LICK)
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
-	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("Is she okay? Perhaps I should have signed her up for therapy too..."))
-	}
-	if(var(VAR_RESULT) == FEMALE){
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
-	like a madman..."))
-	removefieldmugshot
-	playse (SE_M_LICK)
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
-	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("Is he okay? Perhaps I should have signed him up for therapy too..."))
-	}}
-
-	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
-	{
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("Oh, you found a Voltorb Shard. Well done."))
-	applymovement (4, moves(face_left))
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("Give it to my Aide, please. He'll make good use of it."))
-	}
-	
-	if(var(VAR_LITTLEROOT_PHASE) == 6 && (!flag (AttendedOldaleTherapy)))
-	{	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-		setspeaker ([SP_NAME_BALSAM])
-		msgbox (format("Don't take too long. You still need to go to Oldale, remember?"))}
-
-	if(var(VAR_LITTLEROOT_PHASE) == 6 && (flag (AttendedOldaleTherapy)))
-	{
-		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-		setspeaker ([SP_NAME_BALSAM])
-		msgbox (format("The basement is through the tunnel on the right side. Watch your
-		step on the ladder!"))}
-
-	if(var(VAR_LITTLEROOT_PHASE) == 7)
-	{
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("So you will help us with our research? We appreciate it. \p
-	Just don't go telling a word of this to anyone, understood?"))
-	fadeoutbgm (0)
-	msgbox (format("Remember..."))
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
-	setspeaker ([SP_NAME_BALSAM])
-	hidefollower
-	playse (SE_M_LEER)
-	msgbox (format("We know where you live."))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
-	setspeaker ([SP_NAME_BALSAM])
-	fadeinbgm (0)
-	msgbox (format("Haha - I'm just kidding, of course!"))
+	msgbox (format("Well, then... go do that. You don't need my permission, I'm not your mom."))}
+	msgbox (format("It's fine, the therapy is not starting yet. But head there right after checking on {RIVAL}"))
+	if (var(VAR_LITTLEROOT_PHASE) > 5)
+	{
+		if(var(VAR_OLDALE_PHASE) == 0)
+		{bufferstring(STR_VAR_1, "Where is the therapy?")}
+		if(var(VAR_OLDALE_PHASE) == 1)
+		{bufferstring(STR_VAR_1, "I'm back from therapy.")}
+
+		if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 0)
+		{bufferstring(STR_VAR_1, "What should I do?")}
+
+		if (var(VAR_LITTLEROOT_PHASE) == 5)
+		{bufferstring(STR_VAR_2, "About the Voltorb Shard...")}
+
+		if(var(VAR_LITTLEROOT_PHASE) == 6)
+		{bufferstring(STR_VAR_2, "Where is the basement?")}
+
+		if(var(VAR_LITTLEROOT_PHASE) == 7)
+		{bufferstring(STR_VAR_2, "About the Unsafening Project...")}
+
+		msgbox (format("Ah, {PLAYER}. What is it?"))
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}")
+			if (var(VAR_RESULT) == 0) {
+				if(var(VAR_OLDALE_PHASE) == 0)
+				{msgbox (format("It's in Oldale Town, the first building to the right as you enter from Route 101.
+				\p If you're lost, check the map on that Devon Nav I gave you. It's handy."))
+				checkplayergender
+					if(var(VAR_RESULT) == MALE){
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("By the way, I saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
+					like a madwoman..."))
+					removefieldmugshot
+					playse (SE_M_LICK)
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Is she okay? Perhaps I should have signed her up for therapy too..."))
+					}
+
+					if(var(VAR_RESULT) == FEMALE){
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("By the way, I just saw {RIVAL} yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}
+					like a madman..."))
+					removefieldmugshot
+					playse (SE_M_LICK)
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Is he okay? Perhaps I should have signed him up for therapy too..."))
+					}
+				}
+				
+				if(var(VAR_OLDALE_PHASE) == 1 && flag(!BalsamtoldtogoseeNorman))
+					{msgbox (format("That's great. How did it go? Maybe you should go see Norman now,
+					when you stopped picking the phone, he called here instead to see how you were doing.
+					I hear all routes to Petalburg are blocked though. Yaddah yaddah rebels you may need for things to calm
+					down in Oldale. I'm sure Devon will take care of it sooner or later. Just don't go
+					doing anything stupid."))}
+
+				if(var(VAR_OLDALE_PHASE) == 1 && flag(BalsamtoldtogoseeNorman))
+					{msgbox (format("How did it go? Yaddah yaddah rebels you may need for things to calm
+					down in Oldale. I'm sure Devon will take care of it sooner or later. Just don't go
+					doing anything stupid."))}
+
+				if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 0)
+					{msgbox (format("Path is free for you now."))}
+
+				//if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 1)
+					//{msgbox (format("You saw Norman."))}
+				
+			if (var(VAR_RESULT) == 1) {
+				if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == TRUE)
+					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Oh, you found a Voltorb Shard. Well done."))
+					applymovement (4, moves(face_left))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Give it to my Aide, please. He'll make good use of it."))}
+
+				if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == FALSE)
+					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("A Voltorb Shard? Ah, you mean my Aide's errand"))
+					applymovement (4, moves(face_left))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("If you have trouble finding one, ask my Aide about it. He's
+					in charge of the field research."))}
+
+				if(var(VAR_LITTLEROOT_PHASE) == 6 && var(VAR_OLDALE_PHASE) == 0)
+					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("It's through the hole to the right side of the lab... it's
+					hard to miss. \p Just watch your step on the ladder."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("I appreciate you're helping us so quick, but don't forget
+					to head for therapy right after, or you'll miss it."))}
+
+				if(var(VAR_LITTLEROOT_PHASE) == 6 && var(VAR_OLDALE_PHASE) == 1)
+					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("It's through the hole to the right side of the lab... it's
+					hard to miss."))
+					}
+
+				if(var(VAR_LITTLEROOT_PHASE) == 7)
+					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("So you will help us with our research? We appreciate it. \p
+					Just don't go telling a word of this to anyone, understood?"))
+					fadeoutbgm (0)
+					msgbox (format("Remember..."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
+					setspeaker ([SP_NAME_BALSAM])
+					hidefollower
+					playse (SE_M_LEER)
+					msgbox (format("We know where you live."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_BALSAM])
+					fadeinbgm (0)
+					msgbox (format("Haha - I'm just kidding, of course!"))
+					}
+			}
 	}
 
 	removefieldmugshot
 	applymovement (4, moves(face_up))
 	waitmovement
 	releaseall
+
+}
 
 }
 
@@ -2004,7 +2072,8 @@ if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
 		playbgm (MUS_AQUA_MAGMA_HIDEOUT, TRUE)
 		setspeaker ([SP_NAME_BALSAM])
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-		msgbox (format("There you go. But don't call me unless there's an emergency. I'm busy."))
+		msgbox (format("There you go. But don't call me unless there's an emergency. I'm busy.
+		\p Come back after the therapy. We'll do some more things to readjust you."))
 		applymovement (4, moves(face_up))
 		waitmovement
 		removefieldmugshot

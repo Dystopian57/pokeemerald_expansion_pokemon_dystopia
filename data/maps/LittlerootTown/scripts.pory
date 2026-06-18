@@ -2105,13 +2105,15 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		setspeaker ([SP_NAME_BIRCH])
 		checkplayergender
 		if(var(VAR_RESULT) == MALE){
-		msgbox (format("Would you mind paying {RIVAL} a visit? She has been making quite a ruckus lately...\p
-		It's as if she is reliving things that happened during the war.\p You went to the front together, 
-		didn't you? Perhaps you can calm her down."))}
+		msgbox (format("Would you mind paying {RIVAL} a visit? You remember {RIVAL}, right? You went to the
+		front together. Her house was destroyed during the war, so I let her stay in mine. \p She has been making quite a ruckus lately...\p
+		It's as if she is reliving things that happened during the war.\p You must know what she's going through...
+		Perhaps you can calm her down."))}
 		else {
-		msgbox (format("Would you mind paying {RIVAL} a visit? He has been making quite a ruckus lately...\p
-		It's as if he is reliving things that happened during the war.\p You went to the front together, 
-		didn't you? Perhaps you can calm him down."))}
+		msgbox (format("Would you mind paying {RIVAL} a visit? You remember {RIVAL}, right? You went to the
+		front together. His house was destroyed during the war, so I let him stay in mine. \p He has been making quite a ruckus lately...\p
+		It's as if he is reliving things that happened during the war.\p You must know what he's going through...
+		Perhaps you can calm him down."))}
 		removefieldmugshot
 		applymovement (1, moves(walk_up * 1, face_down))
 		waitmovement

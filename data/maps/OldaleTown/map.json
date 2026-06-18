@@ -613,7 +613,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalDontLeaveOldaleto101"
     },
     {
@@ -622,7 +622,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalDontLeaveOldaleto101"
     },
     {
@@ -631,7 +631,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalDontLeaveOldaleto101"
     },
     {
@@ -640,7 +640,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalDontLeaveOldaleto101"
     },
     {
@@ -649,7 +649,7 @@
       "y": 1,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalDontLeaveOldaleto103"
     },
     {
@@ -658,7 +658,7 @@
       "y": 1,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalDontLeaveOldaleto103"
     },
     {
@@ -667,7 +667,7 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalnoleavetoWhouse"
     },
     {
@@ -676,7 +676,7 @@
       "y": 10,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalnoleavetoWhouse"
     },
     {
@@ -685,7 +685,7 @@
       "y": 11,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalnoleavetoWhouse"
     },
     {
@@ -694,7 +694,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "OldaleRivalnoleavetoWhouse"
     },
     {
@@ -703,7 +703,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "FountainCoinSparkle"
     },
     {
@@ -712,7 +712,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "FountainCoinSparkle"
     },
     {
@@ -721,7 +721,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "FountainCoinSparkle"
     },
     {
@@ -730,7 +730,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "FountainCoinSparkle"
     },
     {
@@ -739,7 +739,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "FountainCoinSparkle"
     },
     {
@@ -748,7 +748,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "FountainCoinSparkle"
     },
     {

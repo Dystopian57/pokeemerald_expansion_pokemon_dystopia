@@ -55,7 +55,7 @@
 #define Aideearrivestobasement  0x29 // Unused Flag
 #define Unsafeningtutodone  0x2A // Unused Flag
 #define Unsafenmaterialtutodone         0x2B // Unused Flag
-#define AttendedOldaleTherapy     0x2C // Unused Flag
+#define BalsamtoldtogoseeNorman     0x2C // Unused Flag
 #define touristhelped     0x2D // Unused Flag
 #define AideeQuestAccepted  0x2E // Unused Flag
 #define checkonrival        0x2F // Unused Flag
@@ -256,7 +256,7 @@
 #define FLAG_RECEIVED_20_COINS               0xE1
 #define cigarrettepop           0xE2
 #define wheelchairboyaskedpokemon               0xE3
-#define FLAG_REGI_DOORS_OPENED               0xE4
+#define Sharpydefeatedat103               0xE4
 #define FLAG_RECEIVED_TM_RETURN              0xE5
 #define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
 #define FLAG_RECEIVED_TM_ROAR                0xE7

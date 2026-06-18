@@ -426,11 +426,11 @@ script OldaleOutsideOldWoman {
 script DLCTeacherOutside {
     lock
     applymovement (34, moves(face_player))
-	if(var(VAR_OLDALE_PHASE) == 2)
+	if(var(VAR_OLDALE_PHASE) == 1)
     {msgbox(format("I'm really dying for a smoke here... \p If only those loser Rebels left the Warehouse,
     Devon Co. would start sending supplies again."))}
 
-    if(var(VAR_OLDALE_PHASE) == 3)
+    if(var(VAR_OLDALE_PHASE) == 2)
     {removeobject (35)
     playse (SE_TRUCK_UNLOAD)
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
@@ -656,7 +656,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
 
     finishOldalekidscutscene:
     removefieldmugshot
-    setvar(VAR_OLDALE_PHASE, 2)
+    setvar(VAR_OLDALE_PHASE, 1)
     setobjectxy (17, 0, 0)
     //setobjectxy (20, 0, 0)
 	setflag (sharpynotoutsideDLC)
@@ -721,7 +721,7 @@ text DevonGruntMOutro{
 script OldaleDevonGrunts { //karen and jerry
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	if(var(VAR_OLDALE_PHASE) == 1)
+	if(var(VAR_OLDALE_PHASE) == 1 && !flag (Sharpydefeatedat103))
         {
         applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("I'm sorry, but we can't let anyone through until the
@@ -734,7 +734,7 @@ script OldaleDevonGrunts { //karen and jerry
         msgbox(format("Yup! With the current pace of administrative protocols, they should be here in about 6 months."))
         }
 
-	if(var(VAR_OLDALE_PHASE) == 2)
+	if(var(VAR_OLDALE_PHASE) == 1 && flag (Sharpydefeatedat103))
        {applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Damn kids, they were fast... by the time I grabbed my Devon Ball, they had
         sprinted right past me!"))
@@ -752,7 +752,7 @@ script OldaleDevonGrunts { //karen and jerry
 
         }
 
-	if(var(VAR_OLDALE_PHASE) == 3)
+	if(var(VAR_OLDALE_PHASE) == 2)
        {applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Hello there, civilian! We have great news! \pThose pesky {COLOR RED}Rebels{COLOR DARK_GRAY}
         have finally left Oldale Warehouse. The town is safe again!"))
@@ -804,7 +804,7 @@ script OldaleRival {
         msgbox(format("But I understand. It was two versus one. Don't worry, I am here now."))
         msgbox(format("Let's show those Kantonians they can't take our country! LEAD THE WAY, {PLAYER}."))
 
-        setvar(VAR_OLDALE_PHASE, 4)
+        setvar(VAR_OLDALE_PHASE, 3)
 
 	checkplayergender
 		if(var(VAR_RESULT) == MALE)
@@ -839,7 +839,7 @@ script OldaleRivalDontLeaveOldaleto101 {
         addobject (21)
         clearflag (rivalappearsinOldale)
 		fadescreenswapbuffers (FADE_FROM_BLACK)
-        setvar(VAR_OLDALE_PHASE, 3)
+        setvar(VAR_OLDALE_PHASE, 2)
 
         }
         if(var(VAR_RESULT) == 1)
@@ -924,7 +924,7 @@ script OldaleRivalDontLeaveOldaleto103 {
         addobject (22)
         clearflag (rivalappearsinOldale)
 		fadescreenswapbuffers (FADE_FROM_BLACK)
-        setvar(VAR_OLDALE_PHASE, 3)
+        setvar(VAR_OLDALE_PHASE, 2)
 
         }
         if(var(VAR_RESULT) == 1)
@@ -951,7 +951,7 @@ script OldaleRivalnoleavetoWhouse {
         addobject (22)
         clearflag (rivalappearsinOldale)
 		fadescreenswapbuffers (FADE_FROM_BLACK)
-        setvar(VAR_OLDALE_PHASE, 3)
+        setvar(VAR_OLDALE_PHASE, 2)
 
         }
         if(var(VAR_RESULT) == 1)

@@ -419,7 +419,8 @@ script Sharpy103 {
 		setflag (camelianotoutsideDLC)
 		setflag (DLCclassends)
 		clearflag (DLCrecesstarts)
-   		setvar(VAR_OLDALE_PHASE, 3)
+		setflag (Sharpydefeatedat103)
+   		//setvar(VAR_OLDALE_PHASE, 3)
 		releaseall
 		playbgm (MUS_ROUTE113, TRUE)
 		}

@@ -1,0 +1,46 @@
+raw `
+GreatCraterBottom_MapScripts::
+	.byte 0
+
+`
+
+
+script CraterHermit {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (1, moves(face_player))
+
+    if (!flag (FLAG_RECEIVED_HM_FLASH))
+    {msgbox(format("You helped that woman return to the surface, did you? Commendable.
+    \p The powerless should not venture into places like these. \p And with 'powerless'...
+    I am speaking of you as well."))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes. I better leave", "I am not powerless")
+        if (var(VAR_RESULT) == 0) {
+        msgbox(format("Good. The first step to power is to recognize one's lack of it."))
+        }
+            
+        if (var(VAR_RESULT) == 1) {
+        msgbox(format("You're not? Hmm... show to me your power, then."))
+        trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, CraterHermit_Outro)
+        
+        msgbox(format("Not only do you possess power... you are also deserving of it.
+        \p Here, take this."))
+        playse (MUS_OBTAIN_BADGE)
+        msgbox(format("Obtained the Light Token!"))
+        setflag (FLAG_BADGE02_GET)
+        msgbox(format("... and this as well."))
+        playse (MUS_OBTAIN_TMHM)
+        setflag (FLAG_RECEIVED_HM_FLASH)
+        giveitem (ITEM_HM05)
+        msgbox(format("Obtained the Hermit Move - Flash!"))
+        }}
+
+    else {
+    msgbox(format("Good job."))
+    }
+
+    release
+}
+
+    text CraterHermit_Outro{
+    "I see... it was not mere hubris, then."}

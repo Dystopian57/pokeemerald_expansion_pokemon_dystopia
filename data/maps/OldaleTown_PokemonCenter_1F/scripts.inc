@@ -1839,9 +1839,8 @@ Devongruntad_Text_1:
 
 Devongruntad_Text_2:
 # 671 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}(All Manchines will be collected by\n"
-	.string "Devon Co.\l"
-	.string "upon contract expiration).{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
+	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}All Manchines will be collected by Devon\n"
+	.string "Co. upon contract expiration.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 Azuresortad_Text_0:
 # 679 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"

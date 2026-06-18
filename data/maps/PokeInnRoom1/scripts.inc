@@ -205,24 +205,24 @@ PokeInnRoom1WheelchairBoy::
 # 137 "data/maps/PokeInnRoom1/scripts.pory"
 	lock
 # 138 "data/maps/PokeInnRoom1/scripts.pory"
-	applymovement 3, OldaleInnRoomOldLady_Movement_0
+	applymovement 2, OldaleInnRoomOldLady_Movement_0
 # 139 "data/maps/PokeInnRoom1/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 141 "data/maps/PokeInnRoom1/scripts.pory"
 	goto_if_unset wheelchairboyaskedpokemon, PokeInnRoom1WheelchairBoy_2
 PokeInnRoom1WheelchairBoy_1:
-# 163 "data/maps/PokeInnRoom1/scripts.pory"
+# 164 "data/maps/PokeInnRoom1/scripts.pory"
 	goto_if_set wheelchairboyaskedpokemon, PokeInnRoom1WheelchairBoy_5
 PokeInnRoom1WheelchairBoy_4:
-# 174 "data/maps/PokeInnRoom1/scripts.pory"
-didyoubringanyfighttypes:
 # 175 "data/maps/PokeInnRoom1/scripts.pory"
+didyoubringanyfighttypes:
+# 176 "data/maps/PokeInnRoom1/scripts.pory"
 	getseenmon SPECIES_POOCHAIN
-# 177 "data/maps/PokeInnRoom1/scripts.pory"
+# 178 "data/maps/PokeInnRoom1/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq PokeInnRoom1WheelchairBoy_11
 PokeInnRoom1WheelchairBoy_10:
-# 179 "data/maps/PokeInnRoom1/scripts.pory"
+# 180 "data/maps/PokeInnRoom1/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq PokeInnRoom1WheelchairBoy_17
 PokeInnRoom1WheelchairBoy_16:
@@ -297,10 +297,12 @@ PokeInnRoom1WheelchairBoy_13:
 	msgbox PokeInnRoom1WheelchairBoy_Text_3
 # 161 "data/maps/PokeInnRoom1/scripts.pory"
 	setflag wheelchairboyaskedpokemon
+# 162 "data/maps/PokeInnRoom1/scripts.pory"
+	goto endofwheelchairinnkidscript
 	goto PokeInnRoom1WheelchairBoy_1
 
 PokeInnRoom1WheelchairBoy_5:
-# 164 "data/maps/PokeInnRoom1/scripts.pory"
+# 165 "data/maps/PokeInnRoom1/scripts.pory"
 	goto didyoubringanyfighttypes
 	goto PokeInnRoom1WheelchairBoy_4
 
@@ -310,7 +312,7 @@ PokeInnRoom1WheelchairBoy_8:
 	goto PokeInnRoom1WheelchairBoy_7
 
 PokeInnRoom1WheelchairBoy_11:
-# 178 "data/maps/PokeInnRoom1/scripts.pory"
+# 179 "data/maps/PokeInnRoom1/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_POOCHAIN
 	goto PokeInnRoom1WheelchairBoy_10
 
@@ -320,7 +322,7 @@ PokeInnRoom1WheelchairBoy_14:
 	goto PokeInnRoom1WheelchairBoy_13
 
 PokeInnRoom1WheelchairBoy_17:
-# 180 "data/maps/PokeInnRoom1/scripts.pory"
+# 181 "data/maps/PokeInnRoom1/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_NONE
 	goto PokeInnRoom1WheelchairBoy_16
 
