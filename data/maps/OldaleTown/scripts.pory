@@ -343,24 +343,25 @@ script OldalePeekingOldman {
 
 script OldaleOutsideHikerGuy {
     lock
+    applymovement (13, moves(face_player))
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if(var(VAR_JOELQUESTS) == 0)
-    {applymovement (14, moves(face_player))
+    {
     msgbox(format("Did you know? My son is top of the class at the DLC! \p He's as sharp as
     his father. He'll make it big in Rustboro one day, I'm sure."))}
 
 	if(var(VAR_JOELQUESTS) == 1)
-    {applymovement (14, moves(face_player))
+    {
     msgbox(format("Did you know? My son is top of the class at the DLC! \p He's as sharp as
     his father. He'll make it big in Rustboro one day, I'm sure."))}
 
 	if(var(VAR_JOELQUESTS) == 2)
-    {applymovement (14, moves(face_player))
+    {
     msgbox(format("Arf, arf... I tried catching up to my daugther, but she's so fast...!
     \p I hope she doesn't go too far. We are moving to {COLOR BLUE}Rustboro{COLOR DARK_GRAY} today."))}
 
 	if(var(VAR_JOELQUESTS) == 3)
-    {applymovement (14, moves(face_player))
+    {
     msgbox(format("My daugther is finally back... I can't wait to get out of
     this place. \p I assure you, it's not what it used to be..."))}
 
@@ -407,7 +408,7 @@ script OldaleOutsideParkNPC {
 
 script OldaleOutsideOldGuy {
     lock
-    applymovement (13, moves(face_player))
+    applymovement (12, moves(face_player))
     msgbox(format("If you were wondering... it should be way past autumn now. \p The trees are brown
     because they are sick. It's the Koffing poison the Kantonians doused during
     the war.
@@ -417,7 +418,7 @@ script OldaleOutsideOldGuy {
 
 script OldaleOutsideOldWoman {
     lock
-    applymovement (31, moves(face_player))
+    applymovement (30, moves(face_player))
     msgbox(format("Did you see the greenish rain just now...? \p The Weather Institute says
     it's not harmful on the short-term. But I worry about the long term..."))
     releaseall
@@ -458,7 +459,10 @@ script OldaleTown_GotoTherapy{
 }
 
 script OldaleSharpyCameliaOutDLCCutscene {
-    lock
+
+    if (flag (finishedtherapy))
+
+    {lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
@@ -663,7 +667,12 @@ script OldaleSharpyCameliaOutDLCCutscene {
 	clearflag (sharpynotinroute103)
 	setflag (sharpycorphishoutsideDLC)
 	setflag (camelianotinroute103)
+    setflag (finishedtherapy)
     releaseall
+    }
+    
+else {release}
+    
     }
 
 script OldaleCamelia {
@@ -817,9 +826,11 @@ script OldaleRival {
 }
 
 script OldaleRivalfollowchat {
+        lock
         msgbox(format("Let's go, {PLAYER} - those Kantonians are on the {COLOR RED}western exit of Oldale Town!{COLOR DARK_GRAY}"))
 
-        msgbox(format("Let's kick their ass all the way to their miserable region across the sea!"))  
+        msgbox(format("Let's kick their ass all the way to their miserable region across the sea!")) 
+        release 
 }
 script OldaleRivalDontLeaveOldaleto101 {
     lock
@@ -903,8 +914,7 @@ script OldaleHouse2GardenItem {
 
 script OldaleParkingItem {
 	lock
-    giveitem (ITEM_METAL_COAT)
-	setflag (FLAG_ITEM_OLDALE_PARKING)
+    finditem (ITEM_METAL_COAT)
     removeobject (3)
 	releaseall}
     
@@ -1135,8 +1145,58 @@ script OldaleCarBehind{
 
 script SamanthaCall1 {
     lock
+    if (var(VAR_OLDALE_PHASE) > 1){
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-    pokenavcall(format("Test!"))
-    setvar(VAR_MAUSOLEUM_HEXGIRL, 1)
-    release
+    pokenavcall(format("U-uhm... hi, {PLAYER}! It's me, Samantha.\p I hope I haven't caught you at a bad time...
+    B-but, since you said you'd help me out here in the Mausoleum, I... \p I-I was wondering
+    if you could, like... come do me a favour?\p I-it's okay if you're too busy, and there's no
+    hurry, but... I-I'll be here if you decide to come!\p Sorry for bothering. S-see you!"))
+    setvar(VAR_MAUSOLEUM_HEXGIRL, 2)
+    release}
+
+    else {release}
+}
+
+
+ script SamanthaDontgoto102 {
+lock
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+playse (SE_PIN)
+msgbox (format("O-oh, {PLAYER}... that way leads to Route 103, right?"))
+
+msgbox (format("W-we don't need to go that far... I'm sure there's another vending machine in Petalburg,
+b-but... the one here in Oldale will do!"))
+
+applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+
+releaseall
+}
+
+ script SamanthaDontgoto103 {
+lock
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+playse (SE_PIN)
+msgbox (format("O-oh, {PLAYER}... that way leads to Route 102, right?"))
+
+msgbox (format("B-but Slateport is very far... t-the food here in Oldale will do!"))
+
+applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+
+releaseall
+}
+
+script SamanthaDontgotoWarehouse {
+lock
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+playse (SE_PIN)
+msgbox (format("O-oh, {PLAYER}... Oldale's Warehouse is over there, right?"))
+
+msgbox (format("I-I dont' think they sell any food over there... I-I'll just get
+some snacks from the vending machine there, o-okay?"))
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+msgbox (format("I-I'll just get some snacks from the vending machine there, o-okay?"))
+
+applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+
+releaseall
 }

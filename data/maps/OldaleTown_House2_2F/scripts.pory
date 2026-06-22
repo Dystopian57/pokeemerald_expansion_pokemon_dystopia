@@ -20,8 +20,8 @@ script OldaleTownHouse2Annebrother {
 
 	if(var(VAR_JOELQUESTS) == 2)
     {
-    msgbox(format("I just heard mom and sis arguing again... \p I hope we move to Rustboro soon.
-	Dad says he'll earn tons of money with his new job, and that we won't argue again then."))}
+    msgbox(format("I just heard mom and sis arguing again... I hope we move to Rustboro soon.
+	\p Dad says he'll earn tons of money with his new job, and that we won't argue again then!"))}
 
 	if(var(VAR_JOELQUESTS) == 3)
     {
@@ -30,3 +30,9 @@ script OldaleTownHouse2Annebrother {
 
 	releaseall
 }
+
+script AnnesHouseUpstairsItem {
+	lock
+    finditem (ITEM_FULL_INCENSE)
+    removeobject (3)
+	releaseall}

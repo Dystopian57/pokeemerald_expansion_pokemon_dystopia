@@ -139,17 +139,17 @@ Helipip
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_LEAH ===
-Name: LEAH
-Class: Hex Maniac
-Pic: Hex Maniac
-Gender: Female
-Music: Suspicious
+=== TRAINER_FISHER_103 ===
+Name: Ivan
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Spoink
-Level: 31
+Corphish
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAISY ===
@@ -9346,7 +9346,7 @@ Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ORPHAN_MALE_101 ===
-Name: Joel
+Name: JOEL
 Class: Orphan
 Pic: orphan_male
 Gender: Male
@@ -9657,7 +9657,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
 === TRAINER_HEXGIRL_MAUSOLEUM ===
-Name: Samantha
+Name: SAMANTHA
 Class: Hex Maniac
 Pic: Hex Maniac
 Gender: Female

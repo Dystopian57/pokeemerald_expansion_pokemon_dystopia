@@ -253,6 +253,24 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "0",
       "script": "Pokemonlickswound"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoCrater"
     }
   ],
   "bg_events": [

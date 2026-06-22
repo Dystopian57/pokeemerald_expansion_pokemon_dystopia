@@ -305,9 +305,82 @@ script Route101Weather {
 	goto (orphanafterapproach)
  }
 
+ script SamanthaDontgotoCrater {
+lock
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+playse (SE_PIN)
+msgbox (format("O-oh, {PLAYER}... that way is the... Great Crater, isn't it?"))
+
+msgbox (format("I know they sell donuts there, but... I don't like them much. \p Can we go
+to Oldale's vending machine instead?"))
+
+applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+
+releaseall
+}
+
 script Route101OrphanJoel{
-	lockall
+	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+	if(var(VAR_JOELQUESTS) > 0 && var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+		if(var(VAR_JOELQUESTS) == 2) {
+		applymovement (1, moves(face_player))
+		msgbox(format("Hey Player! And strange lady! Where are you two going?"))
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+		playse (SE_PIN)
+		msgbox(format("S-... strange lady...?"))
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+		msgbox(format("W-well, we went out to get food at Oldale..."))
+
+		msgbox(format("Food? I've got some Oran berries here if you'd like!"))
+		applymovement (4, moves(face_left))
+
+		checkplayergender
+		if(var(VAR_RESULT) == MALE)
+		{msgbox(format("Don't be silly, Joel! They're going on a date to a nice place!"))
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+		playse (SE_PIN)
+		msgbox(format("D-date!? N-no, it's not like that...!"))
+		}
+
+		if(var(VAR_RESULT) == FEMALE)
+		{msgbox(format("Don't be silly, Joel! They're on a girls' day out!\p So they're going to a
+		nice place to eat yummy food!"))
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+		playse (SE_PIN)
+		msgbox(format("N-no, it's not like t-..."))
+		}
+
+		msgbox(format("Really? Well, more for me!"))
+		playse (SE_M_BITE)
+		msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+		
+		if(var(VAR_RESULT) == MALE)
+		{msgbox(format("Hehe... well, have fun! I'm rooting for you two"))}
+
+		if(var(VAR_RESULT) == FEMALE)
+		{msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Boys, am I right?"))}
+
+
+		}
+
+		else{
+		applymovement (1, moves(face_player))
+		msgbox(format("Food? I've got some Oran berries if you'd like!"))
+
+		msgbox(format("B-berries...? Y-you eat them raw? You don't get... s-sick...?"))
+
+		msgbox(format("I did at firt, but I got used to them. Here, try them!"))
+
+		msgbox(format("T-thank you, b-but I'll have... some more p-processed food..."))
+		}
+
+		goto (Joelfinish)
+
+	}
+
+	else {
 	orphanafterapproach:
 	if(var(VAR_JOELQUESTS) == 0)
 	{
@@ -338,13 +411,28 @@ script Route101OrphanJoel{
 	Joelfinish:
 	releaseall
     end
- }
+ }}
 
  
 text Orphan101_Outro{
     "... you still can't go into my Secret\n Shelter."}
 
 script JoelandAnne101meeting {
+
+
+if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	applymovement(4, moves(face_player))
+	msgbox(format("Hehe... you look good together!"))}
+
+	if(var(VAR_RESULT) == FEMALE){
+	applymovement(4, moves(face_player))
+	msgbox(format("Please invite me to the girls' day next time! Pleeeease!"))}
+}
+
+else {
+
 	JoelandAnne101talk:
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -396,7 +484,7 @@ script JoelandAnne101meeting {
 
 	setvar(VAR_JOELQUESTS, 3)
 	releaseall
-}
+}}
 
 
  script Route101RebelApproach0 {

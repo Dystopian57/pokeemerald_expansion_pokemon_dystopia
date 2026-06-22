@@ -53,21 +53,25 @@ script JoelTentJoel {
 
 	if(var(VAR_JOELQUESTS) == 4 && flag (anneandfamilygone))
     {   applymovement(4, moves(face_player))
-        msgbox(format("What are you waiting for? Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!"))}
+        msgbox(format("You should hurry up! Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!
+        \p She lives in Oldale, in the house with the metallic roof."))}
 
 	if(var(VAR_JOELQUESTS) == 5)
     {   applymovement(4, moves(face_player))
         msgbox(format("What? Anne was already gone!? Oh no... \p She told me she can't
-        sleep without that doll. And she'll miss it so much in her new home... \p I know
-        it's a lot to ask... but if you go to Rustboro, could you please give it to her?"))
+        sleep without that doll. She'll miss it so much in her new home... \p I know
+        it's a big ask... but if you go to Rustboro, could you give it to her?"))
         applymovement(4, moves(face_right))
-        msgbox(format("I said I'd go visit her... but it was only so she wouldn't be sad. \p
-        To go to Rustboro, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
-        guards will stop you at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}."))
+        msgbox(format("I said I'd go visit her... but it was only so she wouldn't be sad."))
         applymovement(4, moves(face_player))
+        msgbox(format("To go to Rustboro, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
+        guards will stop you at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}."))
         msgbox(format("There's no way they'll let me through... but you look like a soldier. Perhaps
         they'll let you."))
+        msgbox(format("Here's my Devon Nav number - let's keep in touch about this!"))
+        register_matchcall (TRAINER_ORPHAN_MALE_101)
 	    setvar(VAR_JOELQUESTS, 6)
+        goto (joelgivesdoll)
         }
     if(var(VAR_JOELQUESTS) == 6)
         {applymovement(4, moves(face_player))

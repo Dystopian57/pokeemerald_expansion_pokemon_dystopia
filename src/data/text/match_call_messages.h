@@ -388,9 +388,9 @@ const u8 gText_MatchCallChampion_Wallace_Pokemon[] = _("I prefer POKéMON of gra
 const u8 gText_MatchCallChampion_Wallace_Intro1[] = _("I represent beauty as");
 const u8 gText_MatchCallChampion_Wallace_Intro2[] = _("well as intelligence.");
 
-const u8 gText_MatchCallVeteran103_Strategy[] = _("Experienced in warfare.");
-const u8 gText_MatchCallVeteran103_Pokemon[] = _("My frontline comrades.");
-const u8 gText_MatchCallVeteran103_Intro1[] = _("I am not ready to pass");
+const u8 gText_MatchCallVeteran103_Strategy[] = _("Experienced in warfare."); //About me
+const u8 gText_MatchCallVeteran103_Pokemon[] = _("My frontline comrades."); //Favourite Pokémon
+const u8 gText_MatchCallVeteran103_Intro1[] = _("I am not ready to pass"); //Pinned post
 const u8 gText_MatchCallVeteran103_Intro2[] = _("the torch yet!");
 
 const u8 gText_MatchCallTouristGreatCrater_Strategy[] = _("I love travelling.");
@@ -407,6 +407,23 @@ const u8 gText_MatchCallHexgirlMausoleum_Strategy[] = _("I like flowers.");
 const u8 gText_MatchCallHexgirlMausoleum_Pokemon[] = _("Those that feel lonely.");
 const u8 gText_MatchCallHexgirlMausoleum_Intro1[] = _("Still waiting for Devon");
 const u8 gText_MatchCallHexgirlMausoleum_Intro2[] = _("supplies...");
+
+const u8 gText_MatchCallTrainerOrphanMale101_Strategy[] = _("King of Route 101! Haha!");
+const u8 gText_MatchCallTrainerOrphanMale101_Pokemon[] = _("Ziggy is my bestie!");
+const u8 gText_MatchCallTrainerOrphanMale101_Intro1[] = _("I only show my Secret");
+const u8 gText_MatchCallTrainerOrphanMale101_Intro2[] = _("Shelter to my best friends!");
+
+const u8 gText_MatchCallTrainerFisher103_Strategy[] = _("Best fisher in Hoenn");
+const u8 gText_MatchCallTrainerFisher103_Pokemon[] = _("Baron, my Barboach!");
+const u8 gText_MatchCallTrainerFisher103_Intro1[] = _("Only real pros fish");
+const u8 gText_MatchCallTrainerFisher103_Intro2[] = _("in the Rebel Zone!");
+
+const u8 gText_MatchCallTrainerShadyDealer103_Strategy[] = _("Gotta Hatch them all!");
+const u8 gText_MatchCallTrainerShadyDealer103_Pokemon[] = _("The most... 'eggciting'!");
+const u8 gText_MatchCallTrainerShadyDealer103_Intro1[] = _("Open every night at");
+const u8 gText_MatchCallTrainerShadyDealer103_Intro2[] = _("Petalburg Sewers!");
+
+
 
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] =
 {
@@ -490,5 +507,10 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_TOURISTGREATCRATER] = MCFLAVOR(TouristGreatCrater),
     [REMATCH_CONSPIRACYGREATCRATER] = MCFLAVOR(ConspiracyGreatCrater),
     [REMATCH_HEXGIRLMAUSOLEUM] = MCFLAVOR(HexgirlMausoleum),
+    [REMATCH_TRAINER_ORPHAN_MALE_101] = MCFLAVOR(TrainerOrphanMale101),
+    [REMATCH_TRAINER_FISHER_103] = MCFLAVOR(TrainerFisher103),
+    [REMATCH_TRAINER_SHADYDEALER_103] = MCFLAVOR(TrainerShadyDealer103),
+
+    
     
 };

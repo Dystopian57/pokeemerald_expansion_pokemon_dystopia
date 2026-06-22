@@ -39,7 +39,7 @@
 #define TRAINER_OLDALEDEVONGRUNT_M     32
 #define TRAINER_OLDALEDEVONGRUNT_F       33
 #define TRAINER_CONCORDWAGESLAVE                       34
-#define TRAINER_LEAH                         35
+#define TRAINER_FISHER_103                         35
 #define TRAINER_DAISY                        36
 #define TRAINER_ROSE_1                       37
 #define TRAINER_FELIX                        38

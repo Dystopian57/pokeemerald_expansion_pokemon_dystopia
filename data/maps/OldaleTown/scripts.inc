@@ -619,81 +619,75 @@ OldaleOutsideHikerGuy::
 # 345 "data/maps/OldaleTown/scripts.pory"
 	lock
 # 346 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	applymovement 13, ConArtist103Rewards_Movement_0
 # 347 "data/maps/OldaleTown/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 348 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_JOELQUESTS, 0
 	goto_if_eq OldaleOutsideHikerGuy_2
 OldaleOutsideHikerGuy_1:
-# 352 "data/maps/OldaleTown/scripts.pory"
+# 353 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_JOELQUESTS, 1
 	goto_if_eq OldaleOutsideHikerGuy_5
 OldaleOutsideHikerGuy_4:
-# 357 "data/maps/OldaleTown/scripts.pory"
+# 358 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_JOELQUESTS, 2
 	goto_if_eq OldaleOutsideHikerGuy_8
 OldaleOutsideHikerGuy_7:
-# 362 "data/maps/OldaleTown/scripts.pory"
+# 363 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_JOELQUESTS, 3
 	goto_if_eq OldaleOutsideHikerGuy_11
 OldaleOutsideHikerGuy_10:
-# 367 "data/maps/OldaleTown/scripts.pory"
+# 368 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 OldaleOutsideHikerGuy_2:
-# 348 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, ConArtist103Rewards_Movement_0
-# 349 "data/maps/OldaleTown/scripts.pory"
+# 350 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideHikerGuy_Text_0
 	goto OldaleOutsideHikerGuy_1
 
 OldaleOutsideHikerGuy_5:
-# 353 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, ConArtist103Rewards_Movement_0
-# 354 "data/maps/OldaleTown/scripts.pory"
+# 355 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideHikerGuy_Text_0
 	goto OldaleOutsideHikerGuy_4
 
 OldaleOutsideHikerGuy_8:
-# 358 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, ConArtist103Rewards_Movement_0
-# 359 "data/maps/OldaleTown/scripts.pory"
+# 360 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideHikerGuy_Text_1
 	goto OldaleOutsideHikerGuy_7
 
 OldaleOutsideHikerGuy_11:
-# 363 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, ConArtist103Rewards_Movement_0
-# 364 "data/maps/OldaleTown/scripts.pory"
+# 365 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideHikerGuy_Text_2
 	goto OldaleOutsideHikerGuy_10
 
 
 OldaleOutsideParkNPC::
-# 371 "data/maps/OldaleTown/scripts.pory"
-	lock
 # 372 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 373 "data/maps/OldaleTown/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 374 "data/maps/OldaleTown/scripts.pory"
 	applymovement 11, ConArtist103Rewards_Movement_0
-# 375 "data/maps/OldaleTown/scripts.pory"
+# 376 "data/maps/OldaleTown/scripts.pory"
 	goto_if_unset FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN, OldaleOutsideParkNPC_3
 OldaleOutsideParkNPC_1:
-# 380 "data/maps/OldaleTown/scripts.pory"
+# 381 "data/maps/OldaleTown/scripts.pory"
 	goto_if_set FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN, OldaleOutsideParkNPC_8
 OldaleOutsideParkNPC_6:
-# 387 "data/maps/OldaleTown/scripts.pory"
+# 388 "data/maps/OldaleTown/scripts.pory"
 	goto_if_unset FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN, OldaleOutsideParkNPC_13
 OldaleOutsideParkNPC_11:
-# 393 "data/maps/OldaleTown/scripts.pory"
+# 394 "data/maps/OldaleTown/scripts.pory"
 	goto_if_set FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN, OldaleOutsideParkNPC_18
 OldaleOutsideParkNPC_16:
-# 399 "data/maps/OldaleTown/scripts.pory"
+# 400 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 OldaleOutsideParkNPC_2:
-# 377 "data/maps/OldaleTown/scripts.pory"
+# 378 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideParkNPC_Text_0
 	goto OldaleOutsideParkNPC_1
 
@@ -705,7 +699,7 @@ OldaleOutsideParkNPC_3:
 	goto OldaleOutsideParkNPC_1
 
 OldaleOutsideParkNPC_7:
-# 382 "data/maps/OldaleTown/scripts.pory"
+# 383 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideParkNPC_Text_1
 	goto OldaleOutsideParkNPC_6
 
@@ -717,7 +711,7 @@ OldaleOutsideParkNPC_8:
 	goto OldaleOutsideParkNPC_6
 
 OldaleOutsideParkNPC_12:
-# 389 "data/maps/OldaleTown/scripts.pory"
+# 390 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideParkNPC_Text_2
 	goto OldaleOutsideParkNPC_11
 
@@ -729,7 +723,7 @@ OldaleOutsideParkNPC_13:
 	goto OldaleOutsideParkNPC_11
 
 OldaleOutsideParkNPC_17:
-# 395 "data/maps/OldaleTown/scripts.pory"
+# 396 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideParkNPC_Text_3
 	goto OldaleOutsideParkNPC_16
 
@@ -742,1215 +736,1292 @@ OldaleOutsideParkNPC_18:
 
 
 OldaleOutsideOldGuy::
-# 409 "data/maps/OldaleTown/scripts.pory"
-	lock
 # 410 "data/maps/OldaleTown/scripts.pory"
-	applymovement 13, ConArtist103Rewards_Movement_0
+	lock
 # 411 "data/maps/OldaleTown/scripts.pory"
+	applymovement 12, ConArtist103Rewards_Movement_0
+# 412 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideOldGuy_Text_0
-# 415 "data/maps/OldaleTown/scripts.pory"
+# 416 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 
 OldaleOutsideOldWoman::
-# 419 "data/maps/OldaleTown/scripts.pory"
-	lock
 # 420 "data/maps/OldaleTown/scripts.pory"
-	applymovement 31, ConArtist103Rewards_Movement_0
+	lock
 # 421 "data/maps/OldaleTown/scripts.pory"
+	applymovement 30, ConArtist103Rewards_Movement_0
+# 422 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleOutsideOldWoman_Text_0
-# 423 "data/maps/OldaleTown/scripts.pory"
+# 424 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 
 DLCTeacherOutside::
-# 427 "data/maps/OldaleTown/scripts.pory"
-	lock
 # 428 "data/maps/OldaleTown/scripts.pory"
-	applymovement 34, ConArtist103Rewards_Movement_0
+	lock
 # 429 "data/maps/OldaleTown/scripts.pory"
+	applymovement 34, ConArtist103Rewards_Movement_0
+# 430 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_eq DLCTeacherOutside_2
 DLCTeacherOutside_1:
-# 433 "data/maps/OldaleTown/scripts.pory"
+# 434 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_OLDALE_PHASE, 2
 	goto_if_eq DLCTeacherOutside_5
 DLCTeacherOutside_4:
-# 440 "data/maps/OldaleTown/scripts.pory"
+# 441 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 DLCTeacherOutside_2:
-# 430 "data/maps/OldaleTown/scripts.pory"
+# 431 "data/maps/OldaleTown/scripts.pory"
 	msgbox DLCTeacherOutside_Text_0
 	goto DLCTeacherOutside_1
 
 DLCTeacherOutside_5:
-# 434 "data/maps/OldaleTown/scripts.pory"
-	removeobject 35
 # 435 "data/maps/OldaleTown/scripts.pory"
-	playse SE_TRUCK_UNLOAD
+	removeobject 35
 # 436 "data/maps/OldaleTown/scripts.pory"
+	playse SE_TRUCK_UNLOAD
+# 437 "data/maps/OldaleTown/scripts.pory"
 	msgbox DLCTeacherOutside_Text_1
 	goto DLCTeacherOutside_4
 
 
 OldaleTown_GotoTherapy::
-# 444 "data/maps/OldaleTown/scripts.pory"
-	lock
 # 445 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 446 "data/maps/OldaleTown/scripts.pory"
-	special SpawnCameraObject
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 447 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, OldaleTown_GotoTherapy_Movement_0
-# 448 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 0
-# 449 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleTown_GotoTherapy_Text_0
-# 450 "data/maps/OldaleTown/scripts.pory"
-	special RemoveCameraObject
-# 451 "data/maps/OldaleTown/scripts.pory"
 	special SpawnCameraObject
-# 452 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, OldaleTown_GotoTherapy_Movement_1
-# 453 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, OldaleTown_GotoTherapy_Movement_0
+# 449 "data/maps/OldaleTown/scripts.pory"
 	waitmovement 0
-# 454 "data/maps/OldaleTown/scripts.pory"
+# 450 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleTown_GotoTherapy_Text_0
+# 451 "data/maps/OldaleTown/scripts.pory"
 	special RemoveCameraObject
+# 452 "data/maps/OldaleTown/scripts.pory"
+	special SpawnCameraObject
+# 453 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, OldaleTown_GotoTherapy_Movement_1
+# 454 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 0
 # 455 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_GotoTherapy_Movement_2
+	special RemoveCameraObject
 # 456 "data/maps/OldaleTown/scripts.pory"
-	waitmovement
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_GotoTherapy_Movement_2
 # 457 "data/maps/OldaleTown/scripts.pory"
+	waitmovement
+# 458 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 
 OldaleSharpyCameliaOutDLCCutscene::
-# 461 "data/maps/OldaleTown/scripts.pory"
-	lock
-# 462 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 463 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 464 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
-# 465 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_0
-# 467 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 468 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 469 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
-# 470 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_1
-# 473 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 474 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 475 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
-# 477 "data/maps/OldaleTown/scripts.pory"
-	checkplayergender
-# 478 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, MALE
-	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_2
+	goto_if_set finishedtherapy, OldaleSharpyCameliaOutDLCCutscene_1
+# 674 "data/maps/OldaleTown/scripts.pory"
+	release
+	return
+
 OldaleSharpyCameliaOutDLCCutscene_1:
-# 483 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, FEMALE
+# 465 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 466 "data/maps/OldaleTown/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 467 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 468 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
+# 469 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_0
+# 471 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 472 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 473 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
+# 474 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_1
+# 477 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 478 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 479 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
+# 481 "data/maps/OldaleTown/scripts.pory"
+	checkplayergender
+# 482 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, MALE
 	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_5
 OldaleSharpyCameliaOutDLCCutscene_4:
 # 487 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 488 "data/maps/OldaleTown/scripts.pory"
-	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_0
-# 489 "data/maps/OldaleTown/scripts.pory"
-	playse SE_PIN
-# 490 "data/maps/OldaleTown/scripts.pory"
-	waitse
-# 491 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 492 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
-# 494 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, MALE
+	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_8
 OldaleSharpyCameliaOutDLCCutscene_7:
-# 497 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, FEMALE
+# 491 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 492 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_0
+# 493 "data/maps/OldaleTown/scripts.pory"
+	playse SE_PIN
+# 494 "data/maps/OldaleTown/scripts.pory"
+	waitse
+# 495 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 496 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
+# 498 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, MALE
 	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_11
 OldaleSharpyCameliaOutDLCCutscene_10:
-# 500 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
 # 501 "data/maps/OldaleTown/scripts.pory"
-	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_1
-# 502 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleSharpyCameliaOutDLCCutscene_Movement_2
-# 503 "data/maps/OldaleTown/scripts.pory"
-	waitmovement
-# 504 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 505 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
-# 506 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_6
-# 508 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 509 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 510 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
-# 511 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_7
-# 513 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 514 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 515 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
-# 516 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_8
-# 519 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 520 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 521 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
-# 522 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_9
-# 525 "data/maps/OldaleTown/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
-# 526 "data/maps/OldaleTown/scripts.pory"
-	waitmessage
-# 528 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, 0
+	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_14
 OldaleSharpyCameliaOutDLCCutscene_13:
+# 504 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 505 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_1
+# 506 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+# 507 "data/maps/OldaleTown/scripts.pory"
+	waitmovement
+# 508 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 509 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 510 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_6
+# 512 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 513 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 514 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
+# 515 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_7
+# 517 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 518 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 519 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 520 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_8
+# 523 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 524 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 525 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 526 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_9
+# 529 "data/maps/OldaleTown/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
+# 530 "data/maps/OldaleTown/scripts.pory"
+	waitmessage
 # 532 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, 1
+	compare VAR_RESULT, 0
 	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_17
 OldaleSharpyCameliaOutDLCCutscene_16:
-# 621 "data/maps/OldaleTown/scripts.pory"
-saidyestoSharpy:
-# 622 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 623 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 624 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 536 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_20
+OldaleSharpyCameliaOutDLCCutscene_19:
 # 625 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_22
+saidyestoSharpy:
+# 626 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
 # 627 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
+	setspeaker [ SP_NAME_SHARPY ]
 # 628 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 629 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
-# 630 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_23
-# 632 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 633 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 634 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
-# 635 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_24
-# 637 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 638 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 639 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SAD
-# 640 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_25
-# 642 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 643 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 644 "data/maps/OldaleTown/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
-# 645 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_26
+# 629 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_22
+# 631 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 632 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 633 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
+# 634 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_23
+# 636 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 637 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 638 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 639 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_24
+# 641 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 642 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 643 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SAD
+# 644 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_25
+# 646 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 647 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
 # 648 "data/maps/OldaleTown/scripts.pory"
-	playse SE_FLEE
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
 # 649 "data/maps/OldaleTown/scripts.pory"
-	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_4
-# 650 "data/maps/OldaleTown/scripts.pory"
-	waitmovement
-# 651 "data/maps/OldaleTown/scripts.pory"
-thisguy:
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_26
 # 652 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
+	playse SE_FLEE
 # 653 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_4
 # 654 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_ANGRY
+	waitmovement
 # 655 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_27
-# 657 "data/maps/OldaleTown/scripts.pory"
-finishOldalekidscutscene:
-# 658 "data/maps/OldaleTown/scripts.pory"
+thisguy:
+# 656 "data/maps/OldaleTown/scripts.pory"
 	removefieldmugshot
+# 657 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 658 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_ANGRY
 # 659 "data/maps/OldaleTown/scripts.pory"
-	setvar VAR_OLDALE_PHASE, 1
-# 660 "data/maps/OldaleTown/scripts.pory"
-	setobjectxy 17, 0, 0
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_27
+# 661 "data/maps/OldaleTown/scripts.pory"
+finishOldalekidscutscene:
 # 662 "data/maps/OldaleTown/scripts.pory"
-	setflag sharpynotoutsideDLC
+	removefieldmugshot
 # 663 "data/maps/OldaleTown/scripts.pory"
-	clearflag sharpynotinroute103
+	setvar VAR_OLDALE_PHASE, 1
 # 664 "data/maps/OldaleTown/scripts.pory"
-	setflag sharpycorphishoutsideDLC
-# 665 "data/maps/OldaleTown/scripts.pory"
-	setflag camelianotinroute103
+	setobjectxy 17, 0, 0
 # 666 "data/maps/OldaleTown/scripts.pory"
+	setflag sharpynotoutsideDLC
+# 667 "data/maps/OldaleTown/scripts.pory"
+	clearflag sharpynotinroute103
+# 668 "data/maps/OldaleTown/scripts.pory"
+	setflag sharpycorphishoutsideDLC
+# 669 "data/maps/OldaleTown/scripts.pory"
+	setflag camelianotinroute103
+# 670 "data/maps/OldaleTown/scripts.pory"
+	setflag finishedtherapy
+# 671 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
-OldaleSharpyCameliaOutDLCCutscene_2:
-# 479 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_2
-	goto OldaleSharpyCameliaOutDLCCutscene_1
-
 OldaleSharpyCameliaOutDLCCutscene_5:
-# 484 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_3
+# 483 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_2
 	goto OldaleSharpyCameliaOutDLCCutscene_4
 
 OldaleSharpyCameliaOutDLCCutscene_8:
-# 495 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_4
+# 488 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_3
 	goto OldaleSharpyCameliaOutDLCCutscene_7
 
 OldaleSharpyCameliaOutDLCCutscene_11:
-# 498 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_5
+# 499 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_4
 	goto OldaleSharpyCameliaOutDLCCutscene_10
 
 OldaleSharpyCameliaOutDLCCutscene_14:
-# 529 "data/maps/OldaleTown/scripts.pory"
-	goto saidyestoSharpy
+# 502 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_5
 	goto OldaleSharpyCameliaOutDLCCutscene_13
 
 OldaleSharpyCameliaOutDLCCutscene_17:
 # 533 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 534 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 535 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
-# 536 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_10
-# 539 "data/maps/OldaleTown/scripts.pory"
-	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_2
-# 540 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 541 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 542 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
-# 543 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_11
-# 545 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 546 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 547 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
-# 548 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_12
-# 551 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 552 "data/maps/OldaleTown/scripts.pory"
-	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_3
-# 553 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 554 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
-# 555 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_13
-# 557 "data/maps/OldaleTown/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
-# 558 "data/maps/OldaleTown/scripts.pory"
-	waitmessage
-# 560 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_20
-OldaleSharpyCameliaOutDLCCutscene_19:
-# 564 "data/maps/OldaleTown/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_23
-OldaleSharpyCameliaOutDLCCutscene_22:
-# 570 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 571 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 572 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
-# 573 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_15
-# 576 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 577 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 578 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SAD
-# 579 "data/maps/OldaleTown/scripts.pory"
-	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_2
-# 580 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_16
-# 582 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 583 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 584 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
-# 585 "data/maps/OldaleTown/scripts.pory"
-	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_3
-# 586 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_17
-# 588 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 589 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 590 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
-# 591 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_18
-# 593 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 594 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 595 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
-# 596 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_19
-# 598 "data/maps/OldaleTown/scripts.pory"
-	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_2
-# 599 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 600 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 601 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
-# 602 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_20
-# 604 "data/maps/OldaleTown/scripts.pory"
-	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_3
-# 605 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 606 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 607 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
-# 608 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_21
-# 609 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 611 "data/maps/OldaleTown/scripts.pory"
-	playse SE_FLEE
-# 612 "data/maps/OldaleTown/scripts.pory"
-	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_4
-# 613 "data/maps/OldaleTown/scripts.pory"
-	waitmovement
-# 616 "data/maps/OldaleTown/scripts.pory"
-	setflag saidnotosharpyinoldale
-# 617 "data/maps/OldaleTown/scripts.pory"
-	goto thisguy
+	goto saidyestoSharpy
 	goto OldaleSharpyCameliaOutDLCCutscene_16
 
 OldaleSharpyCameliaOutDLCCutscene_20:
+# 537 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 538 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 539 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
+# 540 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_10
+# 543 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+# 544 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 545 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 546 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
+# 547 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_11
+# 549 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 550 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 551 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
+# 552 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_12
+# 555 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 556 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_3
+# 557 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 558 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 559 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_13
 # 561 "data/maps/OldaleTown/scripts.pory"
-	goto saidyestoSharpy
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
+# 562 "data/maps/OldaleTown/scripts.pory"
+	waitmessage
+# 564 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_23
+OldaleSharpyCameliaOutDLCCutscene_22:
+# 568 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq OldaleSharpyCameliaOutDLCCutscene_26
+OldaleSharpyCameliaOutDLCCutscene_25:
+# 574 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 575 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 576 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
+# 577 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_15
+# 580 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 581 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 582 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SAD
+# 583 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+# 584 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_16
+# 586 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 587 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 588 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 589 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_3
+# 590 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_17
+# 592 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 593 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 594 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 595 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_18
+# 597 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 598 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 599 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
+# 600 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_19
+# 602 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+# 603 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 604 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 605 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 606 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_20
+# 608 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleSharpyCameliaOutDLCCutscene_Movement_3
+# 609 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 610 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 611 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 612 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_21
+# 613 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 615 "data/maps/OldaleTown/scripts.pory"
+	playse SE_FLEE
+# 616 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, OldaleSharpyCameliaOutDLCCutscene_Movement_4
+# 617 "data/maps/OldaleTown/scripts.pory"
+	waitmovement
+# 620 "data/maps/OldaleTown/scripts.pory"
+	setflag saidnotosharpyinoldale
+# 621 "data/maps/OldaleTown/scripts.pory"
+	goto thisguy
 	goto OldaleSharpyCameliaOutDLCCutscene_19
 
 OldaleSharpyCameliaOutDLCCutscene_23:
 # 565 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 566 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 567 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
-# 568 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_14
+	goto saidyestoSharpy
 	goto OldaleSharpyCameliaOutDLCCutscene_22
+
+OldaleSharpyCameliaOutDLCCutscene_26:
+# 569 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 570 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 571 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_SHOCK
+# 572 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleSharpyCameliaOutDLCCutscene_Text_14
+	goto OldaleSharpyCameliaOutDLCCutscene_25
 
 
 OldaleCamelia::
-# 670 "data/maps/OldaleTown/scripts.pory"
+# 679 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 672 "data/maps/OldaleTown/scripts.pory"
+# 681 "data/maps/OldaleTown/scripts.pory"
 	goto_if_set saidnotosharpyinoldale, OldaleCamelia_2
-# 697 "data/maps/OldaleTown/scripts.pory"
+# 706 "data/maps/OldaleTown/scripts.pory"
 	removefieldmugshot
-# 698 "data/maps/OldaleTown/scripts.pory"
+# 707 "data/maps/OldaleTown/scripts.pory"
 	setspeaker [ SP_NAME_CAMELIA ]
-# 699 "data/maps/OldaleTown/scripts.pory"
+# 708 "data/maps/OldaleTown/scripts.pory"
 	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
-# 700 "data/maps/OldaleTown/scripts.pory"
+# 709 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleCamelia_Text_3
-# 702 "data/maps/OldaleTown/scripts.pory"
+# 711 "data/maps/OldaleTown/scripts.pory"
 	removefieldmugshot
-# 703 "data/maps/OldaleTown/scripts.pory"
+# 712 "data/maps/OldaleTown/scripts.pory"
 	setspeaker [ SP_NAME_CAMELIA ]
-# 704 "data/maps/OldaleTown/scripts.pory"
+# 713 "data/maps/OldaleTown/scripts.pory"
 	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_MENACING
-# 705 "data/maps/OldaleTown/scripts.pory"
+# 714 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleCamelia_Text_4
 OldaleCamelia_1:
-# 708 "data/maps/OldaleTown/scripts.pory"
+# 717 "data/maps/OldaleTown/scripts.pory"
 	removefieldmugshot
-# 709 "data/maps/OldaleTown/scripts.pory"
+# 718 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 OldaleCamelia_2:
-# 675 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 676 "data/maps/OldaleTown/scripts.pory"
-	applymovement 17, ConArtist103Rewards_Movement_0
-# 677 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 678 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
-# 679 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCamelia_Text_0
-# 682 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 683 "data/maps/OldaleTown/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
 # 684 "data/maps/OldaleTown/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 685 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCamelia_Text_1
-# 687 "data/maps/OldaleTown/scripts.pory"
-	removefieldmugshot
-# 688 "data/maps/OldaleTown/scripts.pory"
+	applymovement 17, ConArtist103Rewards_Movement_0
+# 686 "data/maps/OldaleTown/scripts.pory"
 	setspeaker [ SP_NAME_CAMELIA ]
-# 689 "data/maps/OldaleTown/scripts.pory"
+# 687 "data/maps/OldaleTown/scripts.pory"
 	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
-# 690 "data/maps/OldaleTown/scripts.pory"
+# 688 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleCamelia_Text_0
+# 691 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 692 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 693 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
+# 694 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleCamelia_Text_1
+# 696 "data/maps/OldaleTown/scripts.pory"
+	removefieldmugshot
+# 697 "data/maps/OldaleTown/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 698 "data/maps/OldaleTown/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
+# 699 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleCamelia_Text_2
 	goto OldaleCamelia_1
 
 
 OldaleDevonGrunts::
-# 722 "data/maps/OldaleTown/scripts.pory"
+# 731 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 723 "data/maps/OldaleTown/scripts.pory"
+# 732 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 724 "data/maps/OldaleTown/scripts.pory"
+# 733 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_eq OldaleDevonGrunts_3
 OldaleDevonGrunts_1:
-# 737 "data/maps/OldaleTown/scripts.pory"
+# 746 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_eq OldaleDevonGrunts_8
 OldaleDevonGrunts_6:
-# 755 "data/maps/OldaleTown/scripts.pory"
+# 764 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_OLDALE_PHASE, 2
 	goto_if_eq OldaleDevonGrunts_12
 OldaleDevonGrunts_11:
-# 792 "data/maps/OldaleTown/scripts.pory"
+# 801 "data/maps/OldaleTown/scripts.pory"
 	trainerbattle_two_trainers TRAINER_OLDALEDEVONGRUNT_F, DevonGruntFOutro, TRAINER_OLDALEDEVONGRUNT_M, DevonGruntMOutro
-# 794 "data/maps/OldaleTown/scripts.pory"
+# 803 "data/maps/OldaleTown/scripts.pory"
 	setflag devonsdontblock102
-# 795 "data/maps/OldaleTown/scripts.pory"
+# 804 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 OldaleDevonGrunts_2:
-# 726 "data/maps/OldaleTown/scripts.pory"
+# 735 "data/maps/OldaleTown/scripts.pory"
 	applymovement 14, OldaleDevonGrunts_Movement_0
-# 727 "data/maps/OldaleTown/scripts.pory"
+# 736 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDevonGrunts_Text_0
-# 730 "data/maps/OldaleTown/scripts.pory"
+# 739 "data/maps/OldaleTown/scripts.pory"
 	applymovement 15, OldaleDevonGrunts_Movement_0
-# 731 "data/maps/OldaleTown/scripts.pory"
+# 740 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDevonGrunts_Text_1
-# 733 "data/maps/OldaleTown/scripts.pory"
+# 742 "data/maps/OldaleTown/scripts.pory"
 	applymovement 14, OldaleDevonGrunts_Movement_0
-# 734 "data/maps/OldaleTown/scripts.pory"
+# 743 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDevonGrunts_Text_2
 	goto OldaleDevonGrunts_1
 
 OldaleDevonGrunts_3:
-# 724 "data/maps/OldaleTown/scripts.pory"
+# 733 "data/maps/OldaleTown/scripts.pory"
 	goto_if_unset Sharpydefeatedat103, OldaleDevonGrunts_2
 	goto OldaleDevonGrunts_1
 
 OldaleDevonGrunts_7:
-# 738 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, OldaleDevonGrunts_Movement_0
-# 739 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleDevonGrunts_Text_3
-# 742 "data/maps/OldaleTown/scripts.pory"
-	applymovement 15, OldaleDevonGrunts_Movement_1
-# 743 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleDevonGrunts_Text_4
 # 747 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, OldaleDevonGrunts_Movement_2
+	applymovement 14, OldaleDevonGrunts_Movement_0
 # 748 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleDevonGrunts_Text_5
-# 750 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+	msgbox OldaleDevonGrunts_Text_3
 # 751 "data/maps/OldaleTown/scripts.pory"
+	applymovement 15, OldaleDevonGrunts_Movement_1
+# 752 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleDevonGrunts_Text_4
+# 756 "data/maps/OldaleTown/scripts.pory"
+	applymovement 14, OldaleDevonGrunts_Movement_2
+# 757 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleDevonGrunts_Text_5
+# 759 "data/maps/OldaleTown/scripts.pory"
+	applymovement 14, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+# 760 "data/maps/OldaleTown/scripts.pory"
 	applymovement 15, OldaleSharpyCameliaOutDLCCutscene_Movement_2
 	goto OldaleDevonGrunts_6
 
 OldaleDevonGrunts_8:
-# 737 "data/maps/OldaleTown/scripts.pory"
+# 746 "data/maps/OldaleTown/scripts.pory"
 	goto_if_set Sharpydefeatedat103, OldaleDevonGrunts_7
 	goto OldaleDevonGrunts_6
 
 OldaleDevonGrunts_12:
-# 756 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, OldaleDevonGrunts_Movement_0
-# 757 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleDevonGrunts_Text_6
-# 760 "data/maps/OldaleTown/scripts.pory"
-	applymovement 15, OldaleDevonGrunts_Movement_1
-# 761 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleDevonGrunts_Text_7
-# 763 "data/maps/OldaleTown/scripts.pory"
-	applymovement 15, OldaleSharpyCameliaOutDLCCutscene_Movement_2
-# 764 "data/maps/OldaleTown/scripts.pory"
-	applymovement 14, OldaleDevonGrunts_Movement_0
 # 765 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleDevonGrunts_Text_8
+	applymovement 14, OldaleDevonGrunts_Movement_0
 # 766 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleDevonGrunts_Text_6
+# 769 "data/maps/OldaleTown/scripts.pory"
+	applymovement 15, OldaleDevonGrunts_Movement_1
+# 770 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleDevonGrunts_Text_7
+# 772 "data/maps/OldaleTown/scripts.pory"
+	applymovement 15, OldaleSharpyCameliaOutDLCCutscene_Movement_2
+# 773 "data/maps/OldaleTown/scripts.pory"
+	applymovement 14, OldaleDevonGrunts_Movement_0
+# 774 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleDevonGrunts_Text_8
+# 775 "data/maps/OldaleTown/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
-# 768 "data/maps/OldaleTown/scripts.pory"
+# 777 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleDevonGrunts_15
 OldaleDevonGrunts_14:
-# 781 "data/maps/OldaleTown/scripts.pory"
+# 790 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleDevonGrunts_18
 OldaleDevonGrunts_17:
-# 784 "data/maps/OldaleTown/scripts.pory"
+# 793 "data/maps/OldaleTown/scripts.pory"
 	applymovement 14, OldaleSharpyCameliaOutDLCCutscene_Movement_2
-# 785 "data/maps/OldaleTown/scripts.pory"
+# 794 "data/maps/OldaleTown/scripts.pory"
 	applymovement 15, OldaleSharpyCameliaOutDLCCutscene_Movement_2
-# 787 "data/maps/OldaleTown/scripts.pory"
+# 796 "data/maps/OldaleTown/scripts.pory"
 	clearflag rivalappearsinOldale
 	goto OldaleDevonGrunts_11
 
 OldaleDevonGrunts_15:
-# 769 "data/maps/OldaleTown/scripts.pory"
+# 778 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDevonGrunts_Text_9
-# 771 "data/maps/OldaleTown/scripts.pory"
+# 780 "data/maps/OldaleTown/scripts.pory"
 	applymovement 15, OldaleDevonGrunts_Movement_3
-# 772 "data/maps/OldaleTown/scripts.pory"
+# 781 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDevonGrunts_Text_10
-# 776 "data/maps/OldaleTown/scripts.pory"
+# 785 "data/maps/OldaleTown/scripts.pory"
 	applymovement 14, OldaleDevonGrunts_Movement_0
-# 777 "data/maps/OldaleTown/scripts.pory"
+# 786 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDevonGrunts_Text_11
 	goto OldaleDevonGrunts_14
 
 OldaleDevonGrunts_18:
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 791 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDevonGrunts_Text_12
 	goto OldaleDevonGrunts_17
 
 
 OldaleRival::
-# 799 "data/maps/OldaleTown/scripts.pory"
+# 808 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 800 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 801 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleRival_Text_0
-# 803 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleRival_Text_1
-# 804 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleRival_Text_2
-# 805 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleRival_Text_3
-# 807 "data/maps/OldaleTown/scripts.pory"
-	setvar VAR_OLDALE_PHASE, 3
 # 809 "data/maps/OldaleTown/scripts.pory"
-	checkplayergender
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 810 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleRival_Text_0
+# 812 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleRival_Text_1
+# 813 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleRival_Text_2
+# 814 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleRival_Text_3
+# 816 "data/maps/OldaleTown/scripts.pory"
+	setvar VAR_OLDALE_PHASE, 3
+# 818 "data/maps/OldaleTown/scripts.pory"
+	checkplayergender
+# 819 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldaleRival_2
 OldaleRival_1:
-# 813 "data/maps/OldaleTown/scripts.pory"
+# 822 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleRival_5
 OldaleRival_4:
-# 815 "data/maps/OldaleTown/scripts.pory"
+# 824 "data/maps/OldaleTown/scripts.pory"
 	removeobject 21
-# 816 "data/maps/OldaleTown/scripts.pory"
+# 825 "data/maps/OldaleTown/scripts.pory"
 	setflag rivalappearsinOldale
 	return
 
 OldaleRival_2:
-# 811 "data/maps/OldaleTown/scripts.pory"
+# 820 "data/maps/OldaleTown/scripts.pory"
 	setfollowernpc LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_FEMALE
 	goto OldaleRival_1
 
 OldaleRival_5:
-# 814 "data/maps/OldaleTown/scripts.pory"
+# 823 "data/maps/OldaleTown/scripts.pory"
 	setfollowernpc LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_MALE
 	goto OldaleRival_4
 
 
 OldaleRivalfollowchat::
-# 820 "data/maps/OldaleTown/scripts.pory"
+# 829 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 830 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalfollowchat_Text_0
-# 822 "data/maps/OldaleTown/scripts.pory"
+# 832 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalfollowchat_Text_1
+# 833 "data/maps/OldaleTown/scripts.pory"
+	release
 	return
 
 
 OldaleRivalDontLeaveOldaleto101::
-# 825 "data/maps/OldaleTown/scripts.pory"
+# 836 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 826 "data/maps/OldaleTown/scripts.pory"
+# 837 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 827 "data/maps/OldaleTown/scripts.pory"
+# 838 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto101_Movement_0
-# 828 "data/maps/OldaleTown/scripts.pory"
+# 839 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_0
-# 830 "data/maps/OldaleTown/scripts.pory"
+# 841 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_1
-# 833 "data/maps/OldaleTown/scripts.pory"
+# 844 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_2
-# 834 "data/maps/OldaleTown/scripts.pory"
+# 845 "data/maps/OldaleTown/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
-# 835 "data/maps/OldaleTown/scripts.pory"
+# 846 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleRivalDontLeaveOldaleto101_2
 OldaleRivalDontLeaveOldaleto101_1:
-# 845 "data/maps/OldaleTown/scripts.pory"
+# 856 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleRivalDontLeaveOldaleto101_5
 OldaleRivalDontLeaveOldaleto101_4:
-# 851 "data/maps/OldaleTown/scripts.pory"
+# 862 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 OldaleRivalDontLeaveOldaleto101_2:
-# 836 "data/maps/OldaleTown/scripts.pory"
+# 847 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_3
-# 837 "data/maps/OldaleTown/scripts.pory"
+# 848 "data/maps/OldaleTown/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 838 "data/maps/OldaleTown/scripts.pory"
+# 849 "data/maps/OldaleTown/scripts.pory"
 	destroyfollowernpc
-# 839 "data/maps/OldaleTown/scripts.pory"
+# 850 "data/maps/OldaleTown/scripts.pory"
 	addobject 21
-# 840 "data/maps/OldaleTown/scripts.pory"
+# 851 "data/maps/OldaleTown/scripts.pory"
 	clearflag rivalappearsinOldale
-# 841 "data/maps/OldaleTown/scripts.pory"
+# 852 "data/maps/OldaleTown/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 842 "data/maps/OldaleTown/scripts.pory"
+# 853 "data/maps/OldaleTown/scripts.pory"
 	setvar VAR_OLDALE_PHASE, 2
 	goto OldaleRivalDontLeaveOldaleto101_1
 
 OldaleRivalDontLeaveOldaleto101_5:
-# 847 "data/maps/OldaleTown/scripts.pory"
+# 858 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_4
-# 848 "data/maps/OldaleTown/scripts.pory"
+# 859 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto101_Movement_1
-# 849 "data/maps/OldaleTown/scripts.pory"
+# 860 "data/maps/OldaleTown/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OldaleRivalDontLeaveOldaleto101_4
 
 
 OldaleWareHouseSign::
-# 856 "data/maps/OldaleTown/scripts.pory"
+# 867 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 857 "data/maps/OldaleTown/scripts.pory"
+# 868 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleWareHouseSign_Text_0
-# 858 "data/maps/OldaleTown/scripts.pory"
+# 869 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleMotorBike::
-# 862 "data/maps/OldaleTown/scripts.pory"
+# 873 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 863 "data/maps/OldaleTown/scripts.pory"
+# 874 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleMotorBike_Text_0
-# 864 "data/maps/OldaleTown/scripts.pory"
+# 875 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleCar::
-# 868 "data/maps/OldaleTown/scripts.pory"
+# 879 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 869 "data/maps/OldaleTown/scripts.pory"
+# 880 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleCar_Text_0
-# 870 "data/maps/OldaleTown/scripts.pory"
+# 881 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleBike::
-# 874 "data/maps/OldaleTown/scripts.pory"
+# 885 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 875 "data/maps/OldaleTown/scripts.pory"
+# 886 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 876 "data/maps/OldaleTown/scripts.pory"
+# 887 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleBike_Text_0
-# 877 "data/maps/OldaleTown/scripts.pory"
+# 888 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldalePlant::
-# 881 "data/maps/OldaleTown/scripts.pory"
+# 892 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 882 "data/maps/OldaleTown/scripts.pory"
+# 893 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 883 "data/maps/OldaleTown/scripts.pory"
+# 894 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldalePlant_Text_0
-# 885 "data/maps/OldaleTown/scripts.pory"
+# 896 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleDLCWindow::
-# 889 "data/maps/OldaleTown/scripts.pory"
+# 900 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 890 "data/maps/OldaleTown/scripts.pory"
+# 901 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 891 "data/maps/OldaleTown/scripts.pory"
+# 902 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleDLCWindow_Text_0
-# 893 "data/maps/OldaleTown/scripts.pory"
+# 904 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleHouse2GardenItem::
-# 897 "data/maps/OldaleTown/scripts.pory"
+# 908 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 898 "data/maps/OldaleTown/scripts.pory"
+# 909 "data/maps/OldaleTown/scripts.pory"
 	finditem ITEM_SOFT_SAND
-# 901 "data/maps/OldaleTown/scripts.pory"
+# 912 "data/maps/OldaleTown/scripts.pory"
 	removeobject 4
-# 902 "data/maps/OldaleTown/scripts.pory"
+# 913 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 
 OldaleParkingItem::
-# 905 "data/maps/OldaleTown/scripts.pory"
+# 916 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 906 "data/maps/OldaleTown/scripts.pory"
-	giveitem ITEM_METAL_COAT
-# 907 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_ITEM_OLDALE_PARKING
-# 908 "data/maps/OldaleTown/scripts.pory"
+# 917 "data/maps/OldaleTown/scripts.pory"
+	finditem ITEM_METAL_COAT
+# 918 "data/maps/OldaleTown/scripts.pory"
 	removeobject 3
-# 909 "data/maps/OldaleTown/scripts.pory"
+# 919 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 
 OldaleRivalDontLeaveOldaleto103::
-# 913 "data/maps/OldaleTown/scripts.pory"
+# 923 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 914 "data/maps/OldaleTown/scripts.pory"
+# 924 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 915 "data/maps/OldaleTown/scripts.pory"
+# 925 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto103_Movement_0
-# 916 "data/maps/OldaleTown/scripts.pory"
+# 926 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto103_Text_0
-# 918 "data/maps/OldaleTown/scripts.pory"
+# 928 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto103_Text_1
-# 919 "data/maps/OldaleTown/scripts.pory"
+# 929 "data/maps/OldaleTown/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
-# 920 "data/maps/OldaleTown/scripts.pory"
+# 930 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleRivalDontLeaveOldaleto103_2
 OldaleRivalDontLeaveOldaleto103_1:
-# 930 "data/maps/OldaleTown/scripts.pory"
+# 940 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleRivalDontLeaveOldaleto103_5
 OldaleRivalDontLeaveOldaleto103_4:
-# 936 "data/maps/OldaleTown/scripts.pory"
+# 946 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 OldaleRivalDontLeaveOldaleto103_2:
-# 921 "data/maps/OldaleTown/scripts.pory"
+# 931 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_3
-# 922 "data/maps/OldaleTown/scripts.pory"
+# 932 "data/maps/OldaleTown/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 923 "data/maps/OldaleTown/scripts.pory"
+# 933 "data/maps/OldaleTown/scripts.pory"
 	destroyfollowernpc
-# 924 "data/maps/OldaleTown/scripts.pory"
+# 934 "data/maps/OldaleTown/scripts.pory"
 	addobject 22
-# 925 "data/maps/OldaleTown/scripts.pory"
+# 935 "data/maps/OldaleTown/scripts.pory"
 	clearflag rivalappearsinOldale
-# 926 "data/maps/OldaleTown/scripts.pory"
+# 936 "data/maps/OldaleTown/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 927 "data/maps/OldaleTown/scripts.pory"
+# 937 "data/maps/OldaleTown/scripts.pory"
 	setvar VAR_OLDALE_PHASE, 2
 	goto OldaleRivalDontLeaveOldaleto103_1
 
 OldaleRivalDontLeaveOldaleto103_5:
-# 932 "data/maps/OldaleTown/scripts.pory"
+# 942 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_4
-# 933 "data/maps/OldaleTown/scripts.pory"
+# 943 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_GotoTherapy_Movement_2
-# 934 "data/maps/OldaleTown/scripts.pory"
+# 944 "data/maps/OldaleTown/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OldaleRivalDontLeaveOldaleto103_4
 
 
 OldaleRivalnoleavetoWhouse::
-# 940 "data/maps/OldaleTown/scripts.pory"
+# 950 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 941 "data/maps/OldaleTown/scripts.pory"
+# 951 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 942 "data/maps/OldaleTown/scripts.pory"
+# 952 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleSharpyCameliaOutDLCCutscene_Movement_3
-# 943 "data/maps/OldaleTown/scripts.pory"
+# 953 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalnoleavetoWhouse_Text_0
-# 945 "data/maps/OldaleTown/scripts.pory"
+# 955 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalnoleavetoWhouse_Text_1
-# 946 "data/maps/OldaleTown/scripts.pory"
+# 956 "data/maps/OldaleTown/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConArtist103Rewards_Text_3, ConArtist103Rewards_Text_4
-# 947 "data/maps/OldaleTown/scripts.pory"
+# 957 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleRivalnoleavetoWhouse_2
 OldaleRivalnoleavetoWhouse_1:
-# 957 "data/maps/OldaleTown/scripts.pory"
+# 967 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleRivalnoleavetoWhouse_5
 OldaleRivalnoleavetoWhouse_4:
-# 963 "data/maps/OldaleTown/scripts.pory"
+# 973 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 OldaleRivalnoleavetoWhouse_2:
-# 948 "data/maps/OldaleTown/scripts.pory"
+# 958 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalnoleavetoWhouse_Text_2
-# 949 "data/maps/OldaleTown/scripts.pory"
+# 959 "data/maps/OldaleTown/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 950 "data/maps/OldaleTown/scripts.pory"
+# 960 "data/maps/OldaleTown/scripts.pory"
 	destroyfollowernpc
-# 951 "data/maps/OldaleTown/scripts.pory"
+# 961 "data/maps/OldaleTown/scripts.pory"
 	addobject 22
-# 952 "data/maps/OldaleTown/scripts.pory"
+# 962 "data/maps/OldaleTown/scripts.pory"
 	clearflag rivalappearsinOldale
-# 953 "data/maps/OldaleTown/scripts.pory"
+# 963 "data/maps/OldaleTown/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 954 "data/maps/OldaleTown/scripts.pory"
+# 964 "data/maps/OldaleTown/scripts.pory"
 	setvar VAR_OLDALE_PHASE, 2
 	goto OldaleRivalnoleavetoWhouse_1
 
 OldaleRivalnoleavetoWhouse_5:
-# 959 "data/maps/OldaleTown/scripts.pory"
+# 969 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleRivalDontLeaveOldaleto101_Text_4
-# 960 "data/maps/OldaleTown/scripts.pory"
+# 970 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalnoleavetoWhouse_Movement_0
-# 961 "data/maps/OldaleTown/scripts.pory"
+# 971 "data/maps/OldaleTown/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OldaleRivalnoleavetoWhouse_4
 
 
 OldaleWarehouseRebelGuard::
-# 973 "data/maps/OldaleTown/scripts.pory"
+# 983 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 974 "data/maps/OldaleTown/scripts.pory"
+# 984 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 975 "data/maps/OldaleTown/scripts.pory"
+# 985 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleWarehouseRebelGuard_Text_0
-# 976 "data/maps/OldaleTown/scripts.pory"
+# 986 "data/maps/OldaleTown/scripts.pory"
 	applymovement 18, OldaleVendingMachine_Movement_0
-# 977 "data/maps/OldaleTown/scripts.pory"
+# 987 "data/maps/OldaleTown/scripts.pory"
 	playse SE_PIN
-# 978 "data/maps/OldaleTown/scripts.pory"
+# 988 "data/maps/OldaleTown/scripts.pory"
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
-# 980 "data/maps/OldaleTown/scripts.pory"
+# 990 "data/maps/OldaleTown/scripts.pory"
 	checkplayergender
-# 981 "data/maps/OldaleTown/scripts.pory"
+# 991 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldaleWarehouseRebelGuard_2
 OldaleWarehouseRebelGuard_1:
-# 983 "data/maps/OldaleTown/scripts.pory"
+# 993 "data/maps/OldaleTown/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleWarehouseRebelGuard_5
 OldaleWarehouseRebelGuard_4:
-# 986 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleWarehouseRebelGuard_Text_3
-# 989 "data/maps/OldaleTown/scripts.pory"
-	trainerbattle_no_intro TRAINER_REBEL_OLDALE_GUARD, RebelOldale_Outro
-# 991 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleWarehouseRebelGuard_Text_4
-# 992 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 993 "data/maps/OldaleTown/scripts.pory"
-	applymovement 18, OldaleRivalDontLeaveOldaleto101_Movement_0
-# 994 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleWarehouseRebelGuard_Text_5
 # 996 "data/maps/OldaleTown/scripts.pory"
-	opendoor 36, 7
-# 997 "data/maps/OldaleTown/scripts.pory"
-	playse SE_SLIDING_DOOR
-# 998 "data/maps/OldaleTown/scripts.pory"
-	waitdooranim
+	msgbox OldaleWarehouseRebelGuard_Text_3
 # 999 "data/maps/OldaleTown/scripts.pory"
-	applymovement 18, OldaleRivalDontLeaveOldaleto101_Movement_1
-# 1000 "data/maps/OldaleTown/scripts.pory"
-	waitmovement
+	trainerbattle_no_intro TRAINER_REBEL_OLDALE_GUARD, RebelOldale_Outro
 # 1001 "data/maps/OldaleTown/scripts.pory"
-	removeobject 18
+	msgbox OldaleWarehouseRebelGuard_Text_4
 # 1002 "data/maps/OldaleTown/scripts.pory"
-	setflag oldalerebelguardleaves
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 1003 "data/maps/OldaleTown/scripts.pory"
-	closedoor 36, 7
+	applymovement 18, OldaleRivalDontLeaveOldaleto101_Movement_0
 # 1004 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_RG_LAVENDER, TRUE
+	msgbox OldaleWarehouseRebelGuard_Text_5
 # 1006 "data/maps/OldaleTown/scripts.pory"
+	opendoor 36, 7
+# 1007 "data/maps/OldaleTown/scripts.pory"
+	playse SE_SLIDING_DOOR
+# 1008 "data/maps/OldaleTown/scripts.pory"
+	waitdooranim
+# 1009 "data/maps/OldaleTown/scripts.pory"
+	applymovement 18, OldaleRivalDontLeaveOldaleto101_Movement_1
+# 1010 "data/maps/OldaleTown/scripts.pory"
+	waitmovement
+# 1011 "data/maps/OldaleTown/scripts.pory"
+	removeobject 18
+# 1012 "data/maps/OldaleTown/scripts.pory"
+	setflag oldalerebelguardleaves
+# 1013 "data/maps/OldaleTown/scripts.pory"
+	closedoor 36, 7
+# 1014 "data/maps/OldaleTown/scripts.pory"
+	playbgm MUS_RG_LAVENDER, TRUE
+# 1016 "data/maps/OldaleTown/scripts.pory"
 	releaseall
 	return
 
 OldaleWarehouseRebelGuard_2:
-# 982 "data/maps/OldaleTown/scripts.pory"
+# 992 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleWarehouseRebelGuard_Text_1
 	goto OldaleWarehouseRebelGuard_1
 
 OldaleWarehouseRebelGuard_5:
-# 984 "data/maps/OldaleTown/scripts.pory"
+# 994 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleWarehouseRebelGuard_Text_2
 	goto OldaleWarehouseRebelGuard_4
 
 
 OldaleTruckRebel::
-# 1015 "data/maps/OldaleTown/scripts.pory"
+# 1025 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 1016 "data/maps/OldaleTown/scripts.pory"
+# 1026 "data/maps/OldaleTown/scripts.pory"
 	call MachineShake
-# 1017 "data/maps/OldaleTown/scripts.pory"
+# 1027 "data/maps/OldaleTown/scripts.pory"
 	applymovement 25, OldaleTruckRebel_Movement_0
-# 1018 "data/maps/OldaleTown/scripts.pory"
+# 1028 "data/maps/OldaleTown/scripts.pory"
 	waitmovement 25
-# 1020 "data/maps/OldaleTown/scripts.pory"
+# 1030 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleTruckRebel_Text_0
-# 1022 "data/maps/OldaleTown/scripts.pory"
+# 1032 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleGrassRebel::
-# 1026 "data/maps/OldaleTown/scripts.pory"
+# 1036 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 1027 "data/maps/OldaleTown/scripts.pory"
+# 1037 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleGrassRebel_Text_0
-# 1028 "data/maps/OldaleTown/scripts.pory"
+# 1038 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleCarRebelApproach0::
-# 1032 "data/maps/OldaleTown/scripts.pory"
-	lock
-# 1033 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1034 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
-# 1035 "data/maps/OldaleTown/scripts.pory"
-	applymovement 24, OldaleVendingMachine_Movement_0
-# 1036 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebelApproach0_Text_0
-# 1037 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto103_Movement_0
-# 1038 "data/maps/OldaleTown/scripts.pory"
-	playse SE_LEDGE
-# 1039 "data/maps/OldaleTown/scripts.pory"
-	applymovement 24, OldaleCarRebelApproach0_Movement_0
-# 1040 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 24
-# 1041 "data/maps/OldaleTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto101_Movement_0
 # 1042 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 1043 "data/maps/OldaleTown/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1044 "data/maps/OldaleTown/scripts.pory"
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+# 1045 "data/maps/OldaleTown/scripts.pory"
+	applymovement 24, OldaleVendingMachine_Movement_0
+# 1046 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleCarRebelApproach0_Text_0
+# 1047 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto103_Movement_0
+# 1048 "data/maps/OldaleTown/scripts.pory"
+	playse SE_LEDGE
+# 1049 "data/maps/OldaleTown/scripts.pory"
+	applymovement 24, OldaleCarRebelApproach0_Movement_0
+# 1050 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 24
+# 1051 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto101_Movement_0
+# 1052 "data/maps/OldaleTown/scripts.pory"
 	goto carrebeloldaleafterapproach
 	return
 
 
 OldaleCarRebelApproach1::
-# 1046 "data/maps/OldaleTown/scripts.pory"
+# 1056 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 1047 "data/maps/OldaleTown/scripts.pory"
+# 1057 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1048 "data/maps/OldaleTown/scripts.pory"
+# 1058 "data/maps/OldaleTown/scripts.pory"
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
-# 1049 "data/maps/OldaleTown/scripts.pory"
+# 1059 "data/maps/OldaleTown/scripts.pory"
 	applymovement 24, OldaleVendingMachine_Movement_0
-# 1050 "data/maps/OldaleTown/scripts.pory"
+# 1060 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleCarRebelApproach0_Text_0
-# 1051 "data/maps/OldaleTown/scripts.pory"
+# 1061 "data/maps/OldaleTown/scripts.pory"
 	playse SE_LEDGE
-# 1052 "data/maps/OldaleTown/scripts.pory"
+# 1062 "data/maps/OldaleTown/scripts.pory"
 	applymovement 24, OldaleCarRebelApproach1_Movement_0
-# 1053 "data/maps/OldaleTown/scripts.pory"
+# 1063 "data/maps/OldaleTown/scripts.pory"
 	waitmovement
-# 1054 "data/maps/OldaleTown/scripts.pory"
+# 1064 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto103_Movement_0
-# 1055 "data/maps/OldaleTown/scripts.pory"
+# 1065 "data/maps/OldaleTown/scripts.pory"
 	goto carrebeloldaleafterapproach
 	return
 
 
 OldaleCarRebelApproach2::
-# 1059 "data/maps/OldaleTown/scripts.pory"
+# 1069 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 1060 "data/maps/OldaleTown/scripts.pory"
+# 1070 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1061 "data/maps/OldaleTown/scripts.pory"
+# 1071 "data/maps/OldaleTown/scripts.pory"
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
-# 1062 "data/maps/OldaleTown/scripts.pory"
+# 1072 "data/maps/OldaleTown/scripts.pory"
 	applymovement 24, OldaleVendingMachine_Movement_0
-# 1063 "data/maps/OldaleTown/scripts.pory"
+# 1073 "data/maps/OldaleTown/scripts.pory"
 	msgbox OldaleCarRebelApproach0_Text_0
-# 1064 "data/maps/OldaleTown/scripts.pory"
+# 1074 "data/maps/OldaleTown/scripts.pory"
 	playse SE_LEDGE
-# 1065 "data/maps/OldaleTown/scripts.pory"
+# 1075 "data/maps/OldaleTown/scripts.pory"
 	applymovement 24, OldaleCarRebelApproach2_Movement_0
-# 1066 "data/maps/OldaleTown/scripts.pory"
+# 1076 "data/maps/OldaleTown/scripts.pory"
 	waitmovement
-# 1067 "data/maps/OldaleTown/scripts.pory"
+# 1077 "data/maps/OldaleTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalDontLeaveOldaleto103_Movement_0
-# 1068 "data/maps/OldaleTown/scripts.pory"
+# 1078 "data/maps/OldaleTown/scripts.pory"
 	goto carrebeloldaleafterapproach
 	return
 
 
 OldaleCarRebel::
-# 1073 "data/maps/OldaleTown/scripts.pory"
-	lock
-# 1074 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1075 "data/maps/OldaleTown/scripts.pory"
-carrebeloldaleafterapproach:
-# 1076 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_0
-# 1078 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_THROW
-# 1079 "data/maps/OldaleTown/scripts.pory"
-	waitse
-# 1080 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 3
-# 1081 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_BOUNCE_1
-# 1082 "data/maps/OldaleTown/scripts.pory"
-	waitse
 # 1083 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_BOUNCE_2
+	lock
 # 1084 "data/maps/OldaleTown/scripts.pory"
-	waitse
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 1085 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_BOUNCE_3
+carrebeloldaleafterapproach:
 # 1086 "data/maps/OldaleTown/scripts.pory"
-	waitse
-# 1087 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_BOUNCE_4
+	msgbox OldaleCarRebel_Text_0
 # 1088 "data/maps/OldaleTown/scripts.pory"
-	waitse
+	playse SE_BALL_THROW
 # 1089 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_1
+	waitse
 # 1090 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	fadeoutbgm 3
 # 1091 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_2
+	playse SE_BALL_BOUNCE_1
 # 1092 "data/maps/OldaleTown/scripts.pory"
-	playse SE_FLEE
+	waitse
 # 1093 "data/maps/OldaleTown/scripts.pory"
-	applymovement 24, OldaleCarRebel_Movement_0
+	playse SE_BALL_BOUNCE_2
 # 1094 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 24
+	waitse
 # 1095 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 1
+	playse SE_BALL_BOUNCE_3
 # 1096 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_RG_LAVENDER, TRUE
+	waitse
 # 1097 "data/maps/OldaleTown/scripts.pory"
-	setvar VAR_OLDALECARREBEL, 1
+	playse SE_BALL_BOUNCE_4
 # 1098 "data/maps/OldaleTown/scripts.pory"
-	removeobject 24
+	waitse
 # 1099 "data/maps/OldaleTown/scripts.pory"
-	setflag carrebelleavescar
+	msgbox OldaleCarRebel_Text_1
 # 1100 "data/maps/OldaleTown/scripts.pory"
-	clearflag carrebelatDC
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 1101 "data/maps/OldaleTown/scripts.pory"
+	msgbox OldaleCarRebel_Text_2
+# 1102 "data/maps/OldaleTown/scripts.pory"
+	playse SE_FLEE
+# 1103 "data/maps/OldaleTown/scripts.pory"
+	applymovement 24, OldaleCarRebel_Movement_0
+# 1104 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 24
+# 1105 "data/maps/OldaleTown/scripts.pory"
+	fadeoutbgm 1
+# 1106 "data/maps/OldaleTown/scripts.pory"
+	playbgm MUS_RG_LAVENDER, TRUE
+# 1107 "data/maps/OldaleTown/scripts.pory"
+	setvar VAR_OLDALECARREBEL, 1
+# 1108 "data/maps/OldaleTown/scripts.pory"
+	removeobject 24
+# 1109 "data/maps/OldaleTown/scripts.pory"
+	setflag carrebelleavescar
+# 1110 "data/maps/OldaleTown/scripts.pory"
+	clearflag carrebelatDC
+# 1111 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 OldaleCarBehind::
-# 1107 "data/maps/OldaleTown/scripts.pory"
-	lock
-# 1108 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarBehind_Movement_0
-# 1109 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarBehind_Text_0
-# 1111 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_THROW
-# 1112 "data/maps/OldaleTown/scripts.pory"
-	waitse
-# 1113 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 3
-# 1114 "data/maps/OldaleTown/scripts.pory"
-	playse SE_BALL_TRAY_ENTER
-# 1115 "data/maps/OldaleTown/scripts.pory"
-	waitse
-# 1116 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_1
 # 1117 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, TRUE
+	lock
 # 1118 "data/maps/OldaleTown/scripts.pory"
-	msgbox OldaleCarRebel_Text_2
+	applymovement 25, OldaleCarBehind_Movement_0
 # 1119 "data/maps/OldaleTown/scripts.pory"
-	playse SE_LEDGE
-# 1120 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarRebelApproach2_Movement_0
+	msgbox OldaleCarBehind_Text_0
 # 1121 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 25
+	playse SE_BALL_THROW
 # 1122 "data/maps/OldaleTown/scripts.pory"
-	playse SE_FLEE
+	waitse
 # 1123 "data/maps/OldaleTown/scripts.pory"
-	applymovement 25, OldaleCarBehind_Movement_1
+	fadeoutbgm 3
 # 1124 "data/maps/OldaleTown/scripts.pory"
-	waitmovement 25
+	playse SE_BALL_TRAY_ENTER
 # 1125 "data/maps/OldaleTown/scripts.pory"
-	fadeoutbgm 1
+	waitse
 # 1126 "data/maps/OldaleTown/scripts.pory"
-	playbgm MUS_RG_LAVENDER, TRUE
+	msgbox OldaleCarRebel_Text_1
 # 1127 "data/maps/OldaleTown/scripts.pory"
-	setvar VAR_OLDALECARREBEL, 1
+	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 # 1128 "data/maps/OldaleTown/scripts.pory"
-	removeobject 25
+	msgbox OldaleCarRebel_Text_2
 # 1129 "data/maps/OldaleTown/scripts.pory"
-	setflag carrebelleavescar
+	playse SE_LEDGE
 # 1130 "data/maps/OldaleTown/scripts.pory"
-	clearflag carrebelatDC
+	applymovement 25, OldaleCarRebelApproach2_Movement_0
 # 1131 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 25
+# 1132 "data/maps/OldaleTown/scripts.pory"
+	playse SE_FLEE
+# 1133 "data/maps/OldaleTown/scripts.pory"
+	applymovement 25, OldaleCarBehind_Movement_1
+# 1134 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 25
+# 1135 "data/maps/OldaleTown/scripts.pory"
+	fadeoutbgm 1
+# 1136 "data/maps/OldaleTown/scripts.pory"
+	playbgm MUS_RG_LAVENDER, TRUE
+# 1137 "data/maps/OldaleTown/scripts.pory"
+	setvar VAR_OLDALECARREBEL, 1
+# 1138 "data/maps/OldaleTown/scripts.pory"
+	removeobject 25
+# 1139 "data/maps/OldaleTown/scripts.pory"
+	setflag carrebelleavescar
+# 1140 "data/maps/OldaleTown/scripts.pory"
+	clearflag carrebelatDC
+# 1141 "data/maps/OldaleTown/scripts.pory"
 	release
 	return
 
 
 SamanthaCall1::
-# 1137 "data/maps/OldaleTown/scripts.pory"
+# 1147 "data/maps/OldaleTown/scripts.pory"
 	lock
-# 1138 "data/maps/OldaleTown/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1139 "data/maps/OldaleTown/scripts.pory"
-	pokenavcall SamanthaCall1_Text_0
-# 1140 "data/maps/OldaleTown/scripts.pory"
-	setvar VAR_MAUSOLEUM_HEXGIRL, 1
-# 1141 "data/maps/OldaleTown/scripts.pory"
+# 1148 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_OLDALE_PHASE, 1
+	goto_if_gt SamanthaCall1_1
+# 1157 "data/maps/OldaleTown/scripts.pory"
 	release
+	return
+
+SamanthaCall1_1:
+# 1149 "data/maps/OldaleTown/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1150 "data/maps/OldaleTown/scripts.pory"
+	pokenavcall SamanthaCall1_Text_0
+# 1154 "data/maps/OldaleTown/scripts.pory"
+	setvar VAR_MAUSOLEUM_HEXGIRL, 2
+# 1155 "data/maps/OldaleTown/scripts.pory"
+	release
+	return
+
+
+SamanthaDontgoto102::
+# 1162 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 1163 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, SamanthaDontgoto102_Movement_0
+# 1164 "data/maps/OldaleTown/scripts.pory"
+	playse SE_PIN
+# 1165 "data/maps/OldaleTown/scripts.pory"
+	msgbox SamanthaDontgoto102_Text_0
+# 1167 "data/maps/OldaleTown/scripts.pory"
+	msgbox SamanthaDontgoto102_Text_1
+# 1170 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, SamanthaDontgoto102_Movement_1
+# 1172 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+
+SamanthaDontgoto103::
+# 1176 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 1177 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, SamanthaDontgoto102_Movement_0
+# 1178 "data/maps/OldaleTown/scripts.pory"
+	playse SE_PIN
+# 1179 "data/maps/OldaleTown/scripts.pory"
+	msgbox SamanthaDontgoto103_Text_0
+# 1181 "data/maps/OldaleTown/scripts.pory"
+	msgbox SamanthaDontgoto103_Text_1
+# 1183 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, SamanthaDontgoto102_Movement_1
+# 1185 "data/maps/OldaleTown/scripts.pory"
+	releaseall
+	return
+
+
+SamanthaDontgotoWarehouse::
+# 1189 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 1190 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, SamanthaDontgoto102_Movement_0
+# 1191 "data/maps/OldaleTown/scripts.pory"
+	playse SE_PIN
+# 1192 "data/maps/OldaleTown/scripts.pory"
+	msgbox SamanthaDontgotoWarehouse_Text_0
+# 1194 "data/maps/OldaleTown/scripts.pory"
+	msgbox SamanthaDontgotoWarehouse_Text_1
+# 1196 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, OldaleRivalDontLeaveOldaleto101_Movement_0
+# 1197 "data/maps/OldaleTown/scripts.pory"
+	msgbox SamanthaDontgotoWarehouse_Text_2
+# 1199 "data/maps/OldaleTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleRivalnoleavetoWhouse_Movement_0
+# 1201 "data/maps/OldaleTown/scripts.pory"
+	releaseall
 	return
 
 
@@ -1966,226 +2037,240 @@ OldaleVendingMachine_Movement_0:
 	emote_exclamation_mark
 	step_end
 
-# 447 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_GotoTherapy_Movement_0:
-# 447 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
 	walk_right
-# 447 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
 	walk_right
-# 447 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
 	walk_right
-# 447 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
 	walk_right
-# 447 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
 	walk_right
-# 447 "data/maps/OldaleTown/scripts.pory"
+# 448 "data/maps/OldaleTown/scripts.pory"
 	walk_right
 	step_end
 
-# 452 "data/maps/OldaleTown/scripts.pory"
+# 453 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_GotoTherapy_Movement_1:
-# 452 "data/maps/OldaleTown/scripts.pory"
+# 453 "data/maps/OldaleTown/scripts.pory"
 	walk_left
-# 452 "data/maps/OldaleTown/scripts.pory"
+# 453 "data/maps/OldaleTown/scripts.pory"
 	walk_left
-# 452 "data/maps/OldaleTown/scripts.pory"
+# 453 "data/maps/OldaleTown/scripts.pory"
 	walk_left
-# 452 "data/maps/OldaleTown/scripts.pory"
+# 453 "data/maps/OldaleTown/scripts.pory"
 	walk_left
-# 452 "data/maps/OldaleTown/scripts.pory"
+# 453 "data/maps/OldaleTown/scripts.pory"
 	walk_left
-# 452 "data/maps/OldaleTown/scripts.pory"
+# 453 "data/maps/OldaleTown/scripts.pory"
 	walk_left
 	step_end
 
-# 455 "data/maps/OldaleTown/scripts.pory"
+# 456 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_GotoTherapy_Movement_2:
-# 455 "data/maps/OldaleTown/scripts.pory"
+# 456 "data/maps/OldaleTown/scripts.pory"
 	walk_down
 	step_end
 
-# 488 "data/maps/OldaleTown/scripts.pory"
+# 492 "data/maps/OldaleTown/scripts.pory"
 OldaleSharpyCameliaOutDLCCutscene_Movement_0:
-# 488 "data/maps/OldaleTown/scripts.pory"
+# 492 "data/maps/OldaleTown/scripts.pory"
 	face_left
-# 488 "data/maps/OldaleTown/scripts.pory"
+# 492 "data/maps/OldaleTown/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 501 "data/maps/OldaleTown/scripts.pory"
+# 505 "data/maps/OldaleTown/scripts.pory"
 OldaleSharpyCameliaOutDLCCutscene_Movement_1:
-# 501 "data/maps/OldaleTown/scripts.pory"
+# 505 "data/maps/OldaleTown/scripts.pory"
 	walk_left
-# 501 "data/maps/OldaleTown/scripts.pory"
+# 505 "data/maps/OldaleTown/scripts.pory"
 	walk_left
 	step_end
 
-# 502 "data/maps/OldaleTown/scripts.pory"
+# 506 "data/maps/OldaleTown/scripts.pory"
 OldaleSharpyCameliaOutDLCCutscene_Movement_2:
-# 502 "data/maps/OldaleTown/scripts.pory"
+# 506 "data/maps/OldaleTown/scripts.pory"
 	face_right
 	step_end
 
-# 552 "data/maps/OldaleTown/scripts.pory"
+# 556 "data/maps/OldaleTown/scripts.pory"
 OldaleSharpyCameliaOutDLCCutscene_Movement_3:
-# 552 "data/maps/OldaleTown/scripts.pory"
+# 556 "data/maps/OldaleTown/scripts.pory"
 	face_left
 	step_end
 
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 OldaleSharpyCameliaOutDLCCutscene_Movement_4:
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_down
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_up
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_up
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_up
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_up
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_up
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_up
-# 612 "data/maps/OldaleTown/scripts.pory"
+# 616 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 726 "data/maps/OldaleTown/scripts.pory"
+# 735 "data/maps/OldaleTown/scripts.pory"
 OldaleDevonGrunts_Movement_0:
-# 726 "data/maps/OldaleTown/scripts.pory"
+# 735 "data/maps/OldaleTown/scripts.pory"
 	face_player
-# 726 "data/maps/OldaleTown/scripts.pory"
+# 735 "data/maps/OldaleTown/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 742 "data/maps/OldaleTown/scripts.pory"
+# 751 "data/maps/OldaleTown/scripts.pory"
 OldaleDevonGrunts_Movement_1:
-# 742 "data/maps/OldaleTown/scripts.pory"
+# 751 "data/maps/OldaleTown/scripts.pory"
 	walk_in_place_up
-# 742 "data/maps/OldaleTown/scripts.pory"
+# 751 "data/maps/OldaleTown/scripts.pory"
 	face_up
 	step_end
 
-# 747 "data/maps/OldaleTown/scripts.pory"
+# 756 "data/maps/OldaleTown/scripts.pory"
 OldaleDevonGrunts_Movement_2:
-# 747 "data/maps/OldaleTown/scripts.pory"
+# 756 "data/maps/OldaleTown/scripts.pory"
 	walk_in_place_down
-# 747 "data/maps/OldaleTown/scripts.pory"
+# 756 "data/maps/OldaleTown/scripts.pory"
 	face_down
 	step_end
 
-# 771 "data/maps/OldaleTown/scripts.pory"
+# 780 "data/maps/OldaleTown/scripts.pory"
 OldaleDevonGrunts_Movement_3:
-# 771 "data/maps/OldaleTown/scripts.pory"
+# 780 "data/maps/OldaleTown/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 827 "data/maps/OldaleTown/scripts.pory"
+# 838 "data/maps/OldaleTown/scripts.pory"
 OldaleRivalDontLeaveOldaleto101_Movement_0:
-# 827 "data/maps/OldaleTown/scripts.pory"
+# 838 "data/maps/OldaleTown/scripts.pory"
 	face_up
 	step_end
 
-# 848 "data/maps/OldaleTown/scripts.pory"
+# 859 "data/maps/OldaleTown/scripts.pory"
 OldaleRivalDontLeaveOldaleto101_Movement_1:
-# 848 "data/maps/OldaleTown/scripts.pory"
+# 859 "data/maps/OldaleTown/scripts.pory"
 	walk_up
 	step_end
 
-# 915 "data/maps/OldaleTown/scripts.pory"
+# 925 "data/maps/OldaleTown/scripts.pory"
 OldaleRivalDontLeaveOldaleto103_Movement_0:
-# 915 "data/maps/OldaleTown/scripts.pory"
+# 925 "data/maps/OldaleTown/scripts.pory"
 	face_down
 	step_end
 
-# 960 "data/maps/OldaleTown/scripts.pory"
+# 970 "data/maps/OldaleTown/scripts.pory"
 OldaleRivalnoleavetoWhouse_Movement_0:
-# 960 "data/maps/OldaleTown/scripts.pory"
+# 970 "data/maps/OldaleTown/scripts.pory"
 	walk_left
 	step_end
 
-# 1017 "data/maps/OldaleTown/scripts.pory"
+# 1027 "data/maps/OldaleTown/scripts.pory"
 OldaleTruckRebel_Movement_0:
-# 1017 "data/maps/OldaleTown/scripts.pory"
+# 1027 "data/maps/OldaleTown/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 1039 "data/maps/OldaleTown/scripts.pory"
+# 1049 "data/maps/OldaleTown/scripts.pory"
 OldaleCarRebelApproach0_Movement_0:
-# 1039 "data/maps/OldaleTown/scripts.pory"
+# 1049 "data/maps/OldaleTown/scripts.pory"
 	jump_2_up
-# 1039 "data/maps/OldaleTown/scripts.pory"
+# 1049 "data/maps/OldaleTown/scripts.pory"
 	face_down
 	step_end
 
-# 1052 "data/maps/OldaleTown/scripts.pory"
+# 1062 "data/maps/OldaleTown/scripts.pory"
 OldaleCarRebelApproach1_Movement_0:
-# 1052 "data/maps/OldaleTown/scripts.pory"
+# 1062 "data/maps/OldaleTown/scripts.pory"
 	jump_up
 	step_end
 
-# 1065 "data/maps/OldaleTown/scripts.pory"
+# 1075 "data/maps/OldaleTown/scripts.pory"
 OldaleCarRebelApproach2_Movement_0:
-# 1065 "data/maps/OldaleTown/scripts.pory"
+# 1075 "data/maps/OldaleTown/scripts.pory"
 	jump_2_up
 	step_end
 
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 OldaleCarRebel_Movement_0:
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1093 "data/maps/OldaleTown/scripts.pory"
+# 1103 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 1108 "data/maps/OldaleTown/scripts.pory"
+# 1118 "data/maps/OldaleTown/scripts.pory"
 OldaleCarBehind_Movement_0:
-# 1108 "data/maps/OldaleTown/scripts.pory"
+# 1118 "data/maps/OldaleTown/scripts.pory"
 	emote_exclamation_mark
-# 1108 "data/maps/OldaleTown/scripts.pory"
+# 1118 "data/maps/OldaleTown/scripts.pory"
 	face_down
 	step_end
 
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 OldaleCarBehind_Movement_1:
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
-# 1123 "data/maps/OldaleTown/scripts.pory"
+# 1133 "data/maps/OldaleTown/scripts.pory"
 	walk_fast_left
+	step_end
+
+# 1163 "data/maps/OldaleTown/scripts.pory"
+SamanthaDontgoto102_Movement_0:
+# 1163 "data/maps/OldaleTown/scripts.pory"
+	face_player
+# 1163 "data/maps/OldaleTown/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 1170 "data/maps/OldaleTown/scripts.pory"
+SamanthaDontgoto102_Movement_1:
+# 1170 "data/maps/OldaleTown/scripts.pory"
+	walk_right
 	step_end
 
 TimeofDayTest_Text_0:
@@ -2390,28 +2475,28 @@ OldalePeekingOldman_Text_0:
 	.string "Murkrows, the lot of them!$"
 
 OldaleOutsideHikerGuy_Text_0:
-# 349 "data/maps/OldaleTown/scripts.pory"
+# 350 "data/maps/OldaleTown/scripts.pory"
 	.string "Did you know? My son is top of the class\n"
 	.string "at the DLC!\p"
 	.string "He's as sharp as his father. He'll make\n"
 	.string "it big in Rustboro one day, I'm sure.$"
 
 OldaleOutsideHikerGuy_Text_1:
-# 359 "data/maps/OldaleTown/scripts.pory"
+# 360 "data/maps/OldaleTown/scripts.pory"
 	.string "Arf, arf... I tried catching up to my\n"
 	.string "daugther, but she's so fast...!\p"
 	.string "I hope she doesn't go too far. We are\n"
 	.string "moving to {COLOR BLUE}Rustboro{COLOR DARK_GRAY} today.$"
 
 OldaleOutsideHikerGuy_Text_2:
-# 364 "data/maps/OldaleTown/scripts.pory"
+# 365 "data/maps/OldaleTown/scripts.pory"
 	.string "My daugther is finally back... I can't\n"
 	.string "wait to get out of this place.\p"
 	.string "I assure you, it's not what it used to\n"
 	.string "be...$"
 
 OldaleOutsideParkNPC_Text_0:
-# 377 "data/maps/OldaleTown/scripts.pory"
+# 378 "data/maps/OldaleTown/scripts.pory"
 	.string "I hear there's people in the Rebel Zone\n"
 	.string "who get crazy rich by finding treasure\l"
 	.string "with their {COLOR BLUE}Object Spotters{COLOR DARK_GRAY}.\p"
@@ -2419,7 +2504,7 @@ OldaleOutsideParkNPC_Text_0:
 	.string "or I wouldn't be sitting here!$"
 
 OldaleOutsideParkNPC_Text_1:
-# 382 "data/maps/OldaleTown/scripts.pory"
+# 383 "data/maps/OldaleTown/scripts.pory"
 	.string "So... I saw you digging through that\n"
 	.string "trash can.\p"
 	.string "If you need pokeyen, you should get an\n"
@@ -2430,7 +2515,7 @@ OldaleOutsideParkNPC_Text_1:
 	.string "know where to start looking for those.$"
 
 OldaleOutsideParkNPC_Text_2:
-# 389 "data/maps/OldaleTown/scripts.pory"
+# 390 "data/maps/OldaleTown/scripts.pory"
 	.string "Oh, is that a Devon Radar? That's handy.\p"
 	.string "If you're short on pokeyen, you should\n"
 	.string "use it as much as you can. You might\l"
@@ -2439,7 +2524,7 @@ OldaleOutsideParkNPC_Text_2:
 	.string "knows, you might find something!$"
 
 OldaleOutsideParkNPC_Text_3:
-# 395 "data/maps/OldaleTown/scripts.pory"
+# 396 "data/maps/OldaleTown/scripts.pory"
 	.string "Oh, is that a Devon Radar? That's handy.\p"
 	.string "If you're short on pokeyen, you should\n"
 	.string "use it as much as you can. You might\l"
@@ -2448,7 +2533,7 @@ OldaleOutsideParkNPC_Text_3:
 	.string "you found in that trash can... ha-ha-ha!$"
 
 OldaleOutsideOldGuy_Text_0:
-# 411 "data/maps/OldaleTown/scripts.pory"
+# 412 "data/maps/OldaleTown/scripts.pory"
 	.string "If you were wondering... it should be way\n"
 	.string "past autumn now.\p"
 	.string "The trees are brown because they are\n"
@@ -2458,7 +2543,7 @@ OldaleOutsideOldGuy_Text_0:
 	.string "here anymore...$"
 
 OldaleOutsideOldWoman_Text_0:
-# 421 "data/maps/OldaleTown/scripts.pory"
+# 422 "data/maps/OldaleTown/scripts.pory"
 	.string "Did you see the greenish rain just\n"
 	.string "now...?\p"
 	.string "The Weather Institute says it's not\n"
@@ -2466,14 +2551,14 @@ OldaleOutsideOldWoman_Text_0:
 	.string "about the long term...$"
 
 DLCTeacherOutside_Text_0:
-# 430 "data/maps/OldaleTown/scripts.pory"
+# 431 "data/maps/OldaleTown/scripts.pory"
 	.string "I'm really dying for a smoke here...\p"
 	.string "If only those loser Rebels left the\n"
 	.string "Warehouse, Devon Co. would start\l"
 	.string "sending supplies again.$"
 
 DLCTeacherOutside_Text_1:
-# 436 "data/maps/OldaleTown/scripts.pory"
+# 437 "data/maps/OldaleTown/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\p"
 	.string "Ah, sorry for blowing the smoke on your\n"
 	.string "face. Haven't smoked in days...\p"
@@ -2482,187 +2567,187 @@ DLCTeacherOutside_Text_1:
 	.string "Was about time! {COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleTown_GotoTherapy_Text_0:
-# 449 "data/maps/OldaleTown/scripts.pory"
+# 450 "data/maps/OldaleTown/scripts.pory"
 	.string "That's the Devon Learning Center... the\n"
 	.string "therapy session should be about to\l"
 	.string "start.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_0:
-# 465 "data/maps/OldaleTown/scripts.pory"
+# 469 "data/maps/OldaleTown/scripts.pory"
 	.string "Hmm... I don't think we'll find any\n"
 	.string "volunteers here...$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_1:
-# 470 "data/maps/OldaleTown/scripts.pory"
+# 474 "data/maps/OldaleTown/scripts.pory"
 	.string "I hate to agree. Everyone was either\n"
 	.string "scared of Pokémon, a Devon supporter,\l"
 	.string "or both.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_2:
-# 479 "data/maps/OldaleTown/scripts.pory"
+# 483 "data/maps/OldaleTown/scripts.pory"
 	.string "Someone caught my eye though... and\n"
 	.string "he's behind you now.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_3:
-# 484 "data/maps/OldaleTown/scripts.pory"
+# 488 "data/maps/OldaleTown/scripts.pory"
 	.string "Someone caught my eye though... and\n"
 	.string "she's behind you now.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_4:
-# 495 "data/maps/OldaleTown/scripts.pory"
+# 499 "data/maps/OldaleTown/scripts.pory"
 	.string "O-oh, hello there mister! You're just in\n"
 	.string "time!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_5:
-# 498 "data/maps/OldaleTown/scripts.pory"
+# 502 "data/maps/OldaleTown/scripts.pory"
 	.string "O-oh, hello there miss! You're just in\n"
 	.string "time!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_6:
-# 506 "data/maps/OldaleTown/scripts.pory"
+# 510 "data/maps/OldaleTown/scripts.pory"
 	.string "Would you like to join us fight Devon?\n"
 	.string "You know Devon Co., right?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_7:
-# 511 "data/maps/OldaleTown/scripts.pory"
+# 515 "data/maps/OldaleTown/scripts.pory"
 	.string "They're turning Pokémon into lame\n"
 	.string "Safemon, making things expensive, and\l"
 	.string "doing many other bad things!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_8:
-# 516 "data/maps/OldaleTown/scripts.pory"
+# 520 "data/maps/OldaleTown/scripts.pory"
 	.string "Camelia and I want to stop them - well,\n"
 	.string "us and old man Norman!\p"
 	.string "Oh, name is Sharpy, by the way! What's\n"
 	.string "yours? {PLAYER}? Cool name!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_9:
-# 522 "data/maps/OldaleTown/scripts.pory"
+# 526 "data/maps/OldaleTown/scripts.pory"
 	.string "So, will you help us?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_10:
-# 536 "data/maps/OldaleTown/scripts.pory"
+# 540 "data/maps/OldaleTown/scripts.pory"
 	.string "Whaaat!? But you look like a soldier -\n"
 	.string "which means you're strong, and brave,\l"
 	.string "right?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_11:
-# 543 "data/maps/OldaleTown/scripts.pory"
+# 547 "data/maps/OldaleTown/scripts.pory"
 	.string "We're not with the {COLOR RED}Rebels{COLOR DARK_GRAY}, if that's\n"
 	.string "what you're worried about.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_12:
-# 548 "data/maps/OldaleTown/scripts.pory"
+# 552 "data/maps/OldaleTown/scripts.pory"
 	.string "Unlike them, we want to change things\n"
 	.string "through peaceful means.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_13:
-# 555 "data/maps/OldaleTown/scripts.pory"
+# 559 "data/maps/OldaleTown/scripts.pory"
 	.string "Exactly! So, now that you know that,\n"
 	.string "you'll join us, right?$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_14:
-# 568 "data/maps/OldaleTown/scripts.pory"
+# 572 "data/maps/OldaleTown/scripts.pory"
 	.string "W-what!? But listen, we have to-$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_15:
-# 573 "data/maps/OldaleTown/scripts.pory"
+# 577 "data/maps/OldaleTown/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} It's alright, Sharpy. We'll keep\n"
 	.string "looking tomorrow.$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_16:
-# 580 "data/maps/OldaleTown/scripts.pory"
+# 584 "data/maps/OldaleTown/scripts.pory"
 	.string "Grr... you give up too easily, Camelia.\n"
 	.string "But I'm not like that!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_17:
-# 586 "data/maps/OldaleTown/scripts.pory"
+# 590 "data/maps/OldaleTown/scripts.pory"
 	.string "You leave me with no other choice... I\n"
 	.string "challenge you... to a BATTLE!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_18:
-# 591 "data/maps/OldaleTown/scripts.pory"
+# 595 "data/maps/OldaleTown/scripts.pory"
 	.string "If you win, I'll leave you alone forever\n"
 	.string "- but if I do, you'll have to join us!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_19:
-# 596 "data/maps/OldaleTown/scripts.pory"
+# 600 "data/maps/OldaleTown/scripts.pory"
 	.string "Sharpy, that's essentially harrasment...$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_20:
-# 602 "data/maps/OldaleTown/scripts.pory"
+# 606 "data/maps/OldaleTown/scripts.pory"
 	.string "Maybe - but the end justifies the\n"
 	.string "means! W-wait, that's {COLOR RED}Rebels{COLOR DARK_GRAY} talk...$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_21:
-# 608 "data/maps/OldaleTown/scripts.pory"
+# 612 "data/maps/OldaleTown/scripts.pory"
 	.string "A-anyway, come to Route 103! I'll be\n"
 	.string "waiting!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_22:
-# 625 "data/maps/OldaleTown/scripts.pory"
+# 629 "data/maps/OldaleTown/scripts.pory"
 	.string "Awesome - I knew you would just by\n"
 	.string "looking at you!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_23:
-# 630 "data/maps/OldaleTown/scripts.pory"
+# 634 "data/maps/OldaleTown/scripts.pory"
 	.string "But there's one thing... Norman told us\n"
 	.string "we'd need strong people...$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_24:
-# 635 "data/maps/OldaleTown/scripts.pory"
+# 639 "data/maps/OldaleTown/scripts.pory"
 	.string "So we need to battle first - if you win,\n"
 	.string "that means you're strong enough!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_25:
-# 640 "data/maps/OldaleTown/scripts.pory"
+# 644 "data/maps/OldaleTown/scripts.pory"
 	.string "We can't battle here though - I don't\n"
 	.string "want to scare any more kids...$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_26:
-# 645 "data/maps/OldaleTown/scripts.pory"
+# 649 "data/maps/OldaleTown/scripts.pory"
 	.string "Come join me in Route 103. I'll be\n"
 	.string "waiting!$"
 
 OldaleSharpyCameliaOutDLCCutscene_Text_27:
-# 655 "data/maps/OldaleTown/scripts.pory"
+# 659 "data/maps/OldaleTown/scripts.pory"
 	.string "This guy...$"
 
 OldaleCamelia_Text_0:
-# 679 "data/maps/OldaleTown/scripts.pory"
+# 688 "data/maps/OldaleTown/scripts.pory"
 	.string "I'm sorry about him... I know this is a\n"
 	.string "lot to ask, but can you go kick that\l"
 	.string "idiot's ass real quick?$"
 
 OldaleCamelia_Text_1:
-# 685 "data/maps/OldaleTown/scripts.pory"
+# 694 "data/maps/OldaleTown/scripts.pory"
 	.string "You fought in the war, so it should be\n"
 	.string "easy right?$"
 
 OldaleCamelia_Text_2:
-# 690 "data/maps/OldaleTown/scripts.pory"
+# 699 "data/maps/OldaleTown/scripts.pory"
 	.string "He won't leave until you battle him, and\n"
 	.string "Norman will be mad if we're not back at\l"
 	.string "the dojo soon...$"
 
 OldaleCamelia_Text_3:
-# 700 "data/maps/OldaleTown/scripts.pory"
+# 709 "data/maps/OldaleTown/scripts.pory"
 	.string "Don't worry, I'm sure you won't have any\n"
 	.string "issues beating Sharpy.$"
 
 OldaleCamelia_Text_4:
-# 705 "data/maps/OldaleTown/scripts.pory"
+# 714 "data/maps/OldaleTown/scripts.pory"
 	.string "I do it all the time, and I have the type\n"
 	.string "disadvantage.$"
 
 OldaleDevonGrunts_Text_0:
-# 727 "data/maps/OldaleTown/scripts.pory"
+# 736 "data/maps/OldaleTown/scripts.pory"
 	.string "I'm sorry, but we can't let anyone\n"
 	.string "through until the {COLOR RED}Rebels{COLOR DARK_GRAY} occupying\l"
 	.string "{COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY}, are dealt with.$"
 
 OldaleDevonGrunts_Text_1:
-# 731 "data/maps/OldaleTown/scripts.pory"
+# 740 "data/maps/OldaleTown/scripts.pory"
 	.string "We can't allow these criminals to get\n"
 	.string "closer to New Rustboro... but don't\l"
 	.string "worry!\p"
@@ -2670,29 +2755,29 @@ OldaleDevonGrunts_Text_1:
 	.string "currently on the way.$"
 
 OldaleDevonGrunts_Text_2:
-# 734 "data/maps/OldaleTown/scripts.pory"
+# 743 "data/maps/OldaleTown/scripts.pory"
 	.string "Yup! With the current pace of\n"
 	.string "administrative protocols, they should\l"
 	.string "be here in about 6 months.$"
 
 OldaleDevonGrunts_Text_3:
-# 739 "data/maps/OldaleTown/scripts.pory"
+# 748 "data/maps/OldaleTown/scripts.pory"
 	.string "Damn kids, they were fast... by the time\n"
 	.string "I grabbed my Devon Ball, they had\l"
 	.string "sprinted right past me!$"
 
 OldaleDevonGrunts_Text_4:
-# 743 "data/maps/OldaleTown/scripts.pory"
+# 752 "data/maps/OldaleTown/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Dude... you were just checking your\n"
 	.string "Devon Nav. {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleDevonGrunts_Text_5:
-# 748 "data/maps/OldaleTown/scripts.pory"
+# 757 "data/maps/OldaleTown/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}... can we not? We're in front of a\n"
 	.string "civilian! {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleDevonGrunts_Text_6:
-# 757 "data/maps/OldaleTown/scripts.pory"
+# 766 "data/maps/OldaleTown/scripts.pory"
 	.string "Hello there, civilian! We have great\n"
 	.string "news!\p"
 	.string "Those pesky {COLOR RED}Rebels{COLOR DARK_GRAY} have finally left\n"
@@ -2700,25 +2785,25 @@ OldaleDevonGrunts_Text_6:
 	.string "again!$"
 
 OldaleDevonGrunts_Text_7:
-# 761 "data/maps/OldaleTown/scripts.pory"
+# 770 "data/maps/OldaleTown/scripts.pory"
 	.string "They must have caught wind of\n"
 	.string "reinforcements coming, and didn't feel\l"
 	.string "like spending the rest of their lives on\l"
 	.string "{COLOR RED}Dewford Prison{COLOR DARK_GRAY}.$"
 
 OldaleDevonGrunts_Text_8:
-# 765 "data/maps/OldaleTown/scripts.pory"
+# 774 "data/maps/OldaleTown/scripts.pory"
 	.string "Most likely! So... I suppose you want to\n"
 	.string "go through Route 102?$"
 
 OldaleDevonGrunts_Text_9:
-# 769 "data/maps/OldaleTown/scripts.pory"
+# 778 "data/maps/OldaleTown/scripts.pory"
 	.string "I see... well, I'm sorry to say...\p"
 	.string "In the Rebel Zone, when it's not one\n"
 	.string "thing, it's the other, you know?$"
 
 OldaleDevonGrunts_Text_10:
-# 772 "data/maps/OldaleTown/scripts.pory"
+# 781 "data/maps/OldaleTown/scripts.pory"
 	.string "We have one of our scientists searching\n"
 	.string "Route 102 for a very dangerous\l"
 	.string "Pokémon.\p"
@@ -2727,212 +2812,261 @@ OldaleDevonGrunts_Text_10:
 	.string "his work be disturbed$"
 
 OldaleDevonGrunts_Text_11:
-# 777 "data/maps/OldaleTown/scripts.pory"
+# 786 "data/maps/OldaleTown/scripts.pory"
 	.string "I'm afraid so. But don't worry - these\n"
 	.string "tasks usually take from 3 to 4 months.\p"
 	.string "And what's a little waiting if it means\n"
 	.string "Hoenn becomes safer?$"
 
 OldaleDevonGrunts_Text_12:
-# 782 "data/maps/OldaleTown/scripts.pory"
+# 791 "data/maps/OldaleTown/scripts.pory"
 	.string "Grand, then please enjoy this shith-... I\n"
 	.string "mean, this cozy, cute sleepy town!$"
 
 OldaleRival_Text_0:
-# 801 "data/maps/OldaleTown/scripts.pory"
+# 810 "data/maps/OldaleTown/scripts.pory"
 	.string "{PLAYER}... I saw you talking with\n"
 	.string "those enemy soldiers just now.\p"
 	.string "Don't you KNOW by now!? You cannot\n"
 	.string "reason with the enemy.$"
 
 OldaleRival_Text_1:
-# 803 "data/maps/OldaleTown/scripts.pory"
+# 812 "data/maps/OldaleTown/scripts.pory"
 	.string "You can only {COLOR RED}FIGHT{COLOR DARK_GRAY} it!$"
 
 OldaleRival_Text_2:
-# 804 "data/maps/OldaleTown/scripts.pory"
+# 813 "data/maps/OldaleTown/scripts.pory"
 	.string "But I understand. It was two versus\n"
 	.string "one. Don't worry, I am here now.$"
 
 OldaleRival_Text_3:
-# 805 "data/maps/OldaleTown/scripts.pory"
+# 814 "data/maps/OldaleTown/scripts.pory"
 	.string "Let's show those Kantonians they can't\n"
 	.string "take our country! LEAD THE WAY,\l"
 	.string "{PLAYER}.$"
 
 OldaleRivalfollowchat_Text_0:
-# 820 "data/maps/OldaleTown/scripts.pory"
+# 830 "data/maps/OldaleTown/scripts.pory"
 	.string "Let's go, {PLAYER} - those Kantonians\n"
 	.string "are on the {COLOR RED}western exit of Oldale Town!{COLOR DARK_GRAY}$"
 
 OldaleRivalfollowchat_Text_1:
-# 822 "data/maps/OldaleTown/scripts.pory"
+# 832 "data/maps/OldaleTown/scripts.pory"
 	.string "Let's kick their ass all the way to their\n"
 	.string "miserable region across the sea!$"
 
 OldaleRivalDontLeaveOldaleto101_Text_0:
-# 828 "data/maps/OldaleTown/scripts.pory"
+# 839 "data/maps/OldaleTown/scripts.pory"
 	.string "{PLAYER}, where are you going!?$"
 
 OldaleRivalDontLeaveOldaleto101_Text_1:
-# 830 "data/maps/OldaleTown/scripts.pory"
+# 841 "data/maps/OldaleTown/scripts.pory"
 	.string "We have already secured the southern\n"
 	.string "front, remember!? Thanks to your\l"
 	.string "glorious victory!$"
 
 OldaleRivalDontLeaveOldaleto101_Text_2:
-# 833 "data/maps/OldaleTown/scripts.pory"
+# 844 "data/maps/OldaleTown/scripts.pory"
 	.string "Wait... do you need to get ready before\n"
 	.string "the next battle?$"
 
 OldaleRivalDontLeaveOldaleto101_Text_3:
-# 836 "data/maps/OldaleTown/scripts.pory"
+# 847 "data/maps/OldaleTown/scripts.pory"
 	.string "Very well... I'll be keeping an eye on\n"
 	.string "them. Don't take long!$"
 
 OldaleRivalDontLeaveOldaleto101_Text_4:
-# 847 "data/maps/OldaleTown/scripts.pory"
+# 858 "data/maps/OldaleTown/scripts.pory"
 	.string "Let's not delay then. I'm as ready as\n"
 	.string "I'll ever be!$"
 
 OldaleWareHouseSign_Text_0:
-# 857 "data/maps/OldaleTown/scripts.pory"
+# 868 "data/maps/OldaleTown/scripts.pory"
 	.string "East - Oldale Warehouse.$"
 
 OldaleMotorBike_Text_0:
-# 863 "data/maps/OldaleTown/scripts.pory"
+# 874 "data/maps/OldaleTown/scripts.pory"
 	.string "A motorbike. A decal on its die reads\n"
 	.string "'Rebel 4 Life'.$"
 
 OldaleCar_Text_0:
-# 869 "data/maps/OldaleTown/scripts.pory"
+# 880 "data/maps/OldaleTown/scripts.pory"
 	.string "The car seems to have been parked for\n"
 	.string "some time.$"
 
 OldaleBike_Text_0:
-# 876 "data/maps/OldaleTown/scripts.pory"
+# 887 "data/maps/OldaleTown/scripts.pory"
 	.string "The bike has tons of locks on the\n"
 	.string "wheels, to discourage theft.$"
 
 OldalePlant_Text_0:
-# 883 "data/maps/OldaleTown/scripts.pory"
+# 894 "data/maps/OldaleTown/scripts.pory"
 	.string "The plants are on the same state than\n"
 	.string "the trees around...\p"
 	.string "On their way to wither.$"
 
 OldaleDLCWindow_Text_0:
-# 891 "data/maps/OldaleTown/scripts.pory"
+# 902 "data/maps/OldaleTown/scripts.pory"
 	.string "You can see the DLC's library through\n"
 	.string "the window.\p"
 	.string "The library's clerk is browsing an...\n"
 	.string "'explicit' website.$"
 
 OldaleRivalDontLeaveOldaleto103_Text_0:
-# 916 "data/maps/OldaleTown/scripts.pory"
+# 926 "data/maps/OldaleTown/scripts.pory"
 	.string "{PLAYER}, where are you going!? The\n"
 	.string "enemy is not this way!$"
 
 OldaleRivalDontLeaveOldaleto103_Text_1:
-# 918 "data/maps/OldaleTown/scripts.pory"
+# 928 "data/maps/OldaleTown/scripts.pory"
 	.string "Wait... do you need to get ready before\n"
 	.string "the battle?$"
 
 OldaleRivalnoleavetoWhouse_Text_0:
-# 943 "data/maps/OldaleTown/scripts.pory"
+# 953 "data/maps/OldaleTown/scripts.pory"
 	.string "{PLAYER}, where are you going!? This\n"
 	.string "way is to the {COLOR GREEN}warehouse{COLOR DARK_GRAY}!$"
 
 OldaleRivalnoleavetoWhouse_Text_1:
-# 945 "data/maps/OldaleTown/scripts.pory"
+# 955 "data/maps/OldaleTown/scripts.pory"
 	.string "Wait... do you want to resupply there\n"
 	.string "before the battle?$"
 
 OldaleRivalnoleavetoWhouse_Text_2:
-# 948 "data/maps/OldaleTown/scripts.pory"
+# 958 "data/maps/OldaleTown/scripts.pory"
 	.string "Aah, smart thinking! I'll keep an eye on\n"
 	.string "those Kantonians. Don't take long!$"
 
 OldaleWarehouseRebelGuard_Text_0:
-# 975 "data/maps/OldaleTown/scripts.pory"
+# 985 "data/maps/OldaleTown/scripts.pory"
 	.string "You lost, kid? Well scram, there's\n"
 	.string "nothing here for you t-$"
 
 OldaleWarehouseRebelGuard_Text_1:
-# 982 "data/maps/OldaleTown/scripts.pory"
+# 992 "data/maps/OldaleTown/scripts.pory"
 	.string "Wait a second... green hood, crutches...\p"
 	.string "You're the guy that beat Rick!$"
 
 OldaleWarehouseRebelGuard_Text_2:
-# 984 "data/maps/OldaleTown/scripts.pory"
+# 994 "data/maps/OldaleTown/scripts.pory"
 	.string "Wait a second... green cap, arm on a\n"
 	.string "sling,...\p"
 	.string "You're the lass that beat Rick!$"
 
 OldaleWarehouseRebelGuard_Text_3:
-# 986 "data/maps/OldaleTown/scripts.pory"
+# 996 "data/maps/OldaleTown/scripts.pory"
 	.string "Hahaha, you beat him with THAT thing\n"
 	.string "behind you? He's so pathetic!\p"
 	.string "I'll teach you that not every Rebel is\n"
 	.string "like him!$"
 
 OldaleWarehouseRebelGuard_Text_4:
-# 991 "data/maps/OldaleTown/scripts.pory"
+# 1001 "data/maps/OldaleTown/scripts.pory"
 	.string "Think you're tough, huh? Well, why don't\n"
 	.string "you come inside then?$"
 
 OldaleWarehouseRebelGuard_Text_5:
-# 994 "data/maps/OldaleTown/scripts.pory"
+# 1004 "data/maps/OldaleTown/scripts.pory"
 	.string "We'll give you a warm welcome... hehe.$"
 
 OldaleTruckRebel_Text_0:
-# 1020 "data/maps/OldaleTown/scripts.pory"
+# 1030 "data/maps/OldaleTown/scripts.pory"
 	.string "The rebel is trying to pry open the\n"
 	.string "truck. Better to leave her alone.$"
 
 OldaleGrassRebel_Text_0:
-# 1027 "data/maps/OldaleTown/scripts.pory"
+# 1037 "data/maps/OldaleTown/scripts.pory"
 	.string "Damn it, there's only broken clankers in\n"
 	.string "this grass! I hate clankers!$"
 
 OldaleCarRebelApproach0_Text_0:
-# 1036 "data/maps/OldaleTown/scripts.pory"
+# 1046 "data/maps/OldaleTown/scripts.pory"
 	.string "Stop it, kid!$"
 
 OldaleCarRebel_Text_0:
-# 1076 "data/maps/OldaleTown/scripts.pory"
+# 1086 "data/maps/OldaleTown/scripts.pory"
 	.string "This is Rebel turf! We don't want no kids\n"
 	.string "nosing around!\p"
 	.string "Gonna have to teach you a lesson... GO,\n"
 	.string "ELECTRIKE!$"
 
 OldaleCarRebel_Text_1:
-# 1089 "data/maps/OldaleTown/scripts.pory"
+# 1099 "data/maps/OldaleTown/scripts.pory"
 	.string "... oh. Right. He's fainted from before...\p"
 	.string "... {COLOR LIGHT_GRAY}{SHADOW WHITE}Shit...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleCarRebel_Text_2:
-# 1091 "data/maps/OldaleTown/scripts.pory"
+# 1101 "data/maps/OldaleTown/scripts.pory"
 	.string "Wait right here, you hear me!? I'll go to\n"
 	.string "the Devon Center real quick!$"
 
 OldaleCarBehind_Text_0:
-# 1109 "data/maps/OldaleTown/scripts.pory"
+# 1119 "data/maps/OldaleTown/scripts.pory"
 	.string "Hey, you think you're smart or\n"
 	.string "something? Trying to sneak up on me!?\p"
 	.string "Well, you asked for it - GO, ELECTRIKE!$"
 
 SamanthaCall1_Text_0:
-# 1139 "data/maps/OldaleTown/scripts.pory"
-	.string "Test!$"
+# 1150 "data/maps/OldaleTown/scripts.pory"
+	.string "U-uhm... hi, {PLAYER}! It's me,\n"
+	.string "Samantha.\p"
+	.string "I hope I haven't caught you at a bad\n"
+	.string "time... B-but, since you said you'd help\l"
+	.string "me out here in the Mausoleum, I...\p"
+	.string "I-I was wondering if you could, like...\n"
+	.string "come do me a favour?\p"
+	.string "I-it's okay if you're too busy, and\n"
+	.string "there's no hurry, but... I-I'll be here if\l"
+	.string "you decide to come!\p"
+	.string "Sorry for bothering. S-see you!$"
+
+SamanthaDontgoto102_Text_0:
+# 1165 "data/maps/OldaleTown/scripts.pory"
+	.string "O-oh, {PLAYER}... that way leads to\n"
+	.string "Route 103, right?$"
+
+SamanthaDontgoto102_Text_1:
+# 1167 "data/maps/OldaleTown/scripts.pory"
+	.string "W-we don't need to go that far... I'm\n"
+	.string "sure there's another vending machine in\l"
+	.string "Petalburg, b-but... the one here in\l"
+	.string "Oldale will do!$"
+
+SamanthaDontgoto103_Text_0:
+# 1179 "data/maps/OldaleTown/scripts.pory"
+	.string "O-oh, {PLAYER}... that way leads to\n"
+	.string "Route 102, right?$"
+
+SamanthaDontgoto103_Text_1:
+# 1181 "data/maps/OldaleTown/scripts.pory"
+	.string "B-but Slateport is very far... t-the\n"
+	.string "food here in Oldale will do!$"
+
+SamanthaDontgotoWarehouse_Text_0:
+# 1192 "data/maps/OldaleTown/scripts.pory"
+	.string "O-oh, {PLAYER}... Oldale's Warehouse is\n"
+	.string "over there, right?$"
+
+SamanthaDontgotoWarehouse_Text_1:
+# 1194 "data/maps/OldaleTown/scripts.pory"
+	.string "I-I dont' think they sell any food over\n"
+	.string "there... I-I'll just get some snacks\l"
+	.string "from the vending machine there,\l"
+	.string "o-okay?$"
+
+SamanthaDontgotoWarehouse_Text_2:
+# 1197 "data/maps/OldaleTown/scripts.pory"
+	.string "I-I'll just get some snacks from the\n"
+	.string "vending machine there, o-okay?$"
 
 DevonGruntFOutro::
-# 714 "data/maps/OldaleTown/scripts.pory"
+# 723 "data/maps/OldaleTown/scripts.pory"
 	.string "... were you checking your Devon Nav while battling?$"
 
 DevonGruntMOutro::
-# 717 "data/maps/OldaleTown/scripts.pory"
+# 726 "data/maps/OldaleTown/scripts.pory"
 	.string "No, not this time!$"
 
 RebelOldale_Outro::
-# 1009 "data/maps/OldaleTown/scripts.pory"
+# 1019 "data/maps/OldaleTown/scripts.pory"
 	.string "Huh... I guess Rick was right after all...$"

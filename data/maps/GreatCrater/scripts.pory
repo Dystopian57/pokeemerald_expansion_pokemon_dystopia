@@ -443,14 +443,14 @@ script GreatCraterVoid {
 script Cratertouristasksforhelp {
 		lock
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-		applymovement (10, moves(walk_left * 1, emote_exclamation_mark))
+		applymovement (10, moves(emote_exclamation_mark))
 		playse (SE_PIN)
 		waitmovement
 		msgbox(format("O-oh, hey! HEEEY! Is there anyone up there? Somebody HELP ME!"))
 		closemessage
-		applymovement (10, moves(walk_right * 1))
-		waitmovement
-		setobjectxyperm (10, 11, 15)
+		//applymovement (10, moves(walk_right * 1))
+		//waitmovement
+		//setobjectxyperm (10, 11, 15)
 		setvar(VAR_GREATCRATERTOURIST, 1)
 		dofieldeffectsparkle (11, 15, 9)
 		release
@@ -475,12 +475,14 @@ script CraterTrappedTouristandRope {
 			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 			if (var(VAR_RESULT) == 0) {
-			showobjectat (11, MAP_GREAT_CRATER)
 			clearflag (greatcraterrope)
+			setobjectxyperm (10, 11, 15)
+			//showobjectat (11, MAP_GREAT_CRATER)
+
 			playse (SE_BALL_THROW)
 			msgbox(format("{PLAYER} ties the knot firmly to a rock and lets the rest fall down."))
 			playse (SE_PIN)
-			applymovement (10, moves(walk_left * 1, emote_exclamation_mark))
+			applymovement (10, moves(emote_exclamation_mark))
 			msgbox(format("Ah, you're a life-saver!"))
 			hidefollower
 			applymovement (10, moves(face_up))

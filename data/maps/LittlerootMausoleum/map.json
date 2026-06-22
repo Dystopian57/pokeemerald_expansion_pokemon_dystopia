@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_SAMANTHA",
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
       "x": 1,
       "y": 9,

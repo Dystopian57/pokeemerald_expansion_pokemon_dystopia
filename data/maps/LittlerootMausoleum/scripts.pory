@@ -114,6 +114,7 @@ script LittlerootMausoleum_HexGirl {
             //giveitemreward
             msgbox (format("Thank so much again... now, please be safe out there."))
             setflag (agreedtohelphexgirl1st)
+            setvar (VAR_MAUSOLEUM_HEXGIRL, 1)
             goto (endhexgirlscript) }}
 
         if(var(VAR_RESULT) == 1){
@@ -140,21 +141,68 @@ script LittlerootMausoleum_HexGirl {
     msgbox (format("I will give you a call if I need something again. Thank you..."))
     }
     
+
+
+}
+
+
+    if (var(VAR_MAUSOLEUM_HEXGIRL) == 2)
+{
+        msgbox (format("O-oh, {PLAYER}, you've come to help!? I'm glad... \p Y-you see, my employers at
+        Devon Co.... stopped sending me food. \p I-I'm not mad at them, I'm sure they're busy with
+        the Safemon project, but..."))
+	    playse (SE_M_SNORE)
+        msgbox (format("...I'm very hungry. \p I want to get some snacks in Oldale, but I'm
+        scared of Rebels... \p C-can... can you come with me?"))
+
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes, let's go", "Sorry, not right now")
+
+        if(var(VAR_RESULT) == 0)
+        {msgbox (format("R-really!? T-thank you...! Well, let's go then!\p O-oh, and... {PLAYER}? If you have time, can you, uhm...
+        \p Can you introduce me to some of your friends? I've been a bit lonely...\p You must have tons, since you're so
+        kind... \p D-don't get me wrong, I love talking with you - but you're a bit silent...
+        \p S-sorry, that wasn't a complaint - I actually like that you...! \p A-aah, forget about it! Let's go
+        to Oldane Town's vending machine!"))
+        setvar (VAR_MAUSOLEUM_HEXGIRL, 3)
+        setfollowernpc (LOCALID_SAMANTHA, FNPC_ALL, Samanthafollowchat, PARTNER_RIVAL_FEMALE)
+        
+        }
+
+        if(var(VAR_RESULT) == 1){
+        msgbox (format("O-oh, that's okay... it's a hassle, I know... and it's something I should
+        do on my own.\p I'll just... try to muster the courage to go. Yes. I'll do that..."))
+        msgbox (format("..."))
+        playse (SE_M_SNORE)
+        }
+}
+goto (endhexgirlscript)
 endhexgirlscript:
 applymovement (1, moves(face_down))
-
-}
-
-
-    if (var(VAR_MAUSOLEUM_HEXGIRL) == 1)
-{
-        msgbox (format("Need to go for snacks!"))
-}
-
-
-
 releaseall
 }
+
+script Samanthafollowchat {
+    lock
+    msgbox(format("{PLAYER}... what's the matter?"))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "What's up?", "Where to?", "I need to go")
+        if(var(VAR_RESULT) == 0)
+        { msgbox(format("I'm good... just a bit hungry."))}
+
+        if(var(VAR_RESULT) == 1)
+        { //if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
+            msgbox(format("I-I want to go to the vending machine next to Oldale Town's Devon Center.
+            \p There's some... tasty snacks there..."))}
+
+        if(var(VAR_RESULT) == 2)
+        { msgbox(format("I'm good... just a bit hungry."))
+        fadescreenswapbuffers (FADE_TO_BLACK)
+        destroyfollowernpc
+        fadescreenswapbuffers (FADE_FROM_BLACK)
+        setvar (VAR_MAUSOLEUM_HEXGIRL, 2)}
+        
+        
+    release
+  }
     
 script LittlerootMausoleum_ShuppetPost1stquest {
     lockall

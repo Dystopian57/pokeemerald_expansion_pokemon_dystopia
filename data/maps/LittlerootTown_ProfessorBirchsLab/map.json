@@ -378,6 +378,15 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "3",
       "script": "BalsamgivesPokenav"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "2",
+      "script": "WithSamanthadontgothere"
     }
   ],
   "bg_events": [

@@ -730,6 +730,8 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
     },
 
+
+
     {
         .trainerId = TRAINER_CONSPIRACY_GREATCRATER,
         .unused = 0,
@@ -740,6 +742,48 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
     },
 
+    {
+        .trainerId = TRAINER_HEXGIRL_MAUSOLEUM,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(11),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 28),
+        .battleFrontierRecordStreakTextIndex = 11,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+    },
+
+    {
+        .trainerId = TRAINER_ORPHAN_MALE_101,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(1),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 1),
+        .battleFrontierRecordStreakTextIndex = 11,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+    },
+
+    {
+        .trainerId = TRAINER_SHADYDEALER_103,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(3),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 3),
+        .battleFrontierRecordStreakTextIndex = 11,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+    },
+
+    {
+        .trainerId = TRAINER_FISHER_103,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(4),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 4),
+        .battleFrontierRecordStreakTextIndex = 11,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+    },
+
+
+ 
 };
 
 static const struct MatchCallText sMatchCallWildBattleTexts[] =

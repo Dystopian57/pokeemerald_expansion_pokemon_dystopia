@@ -53,6 +53,18 @@ OldaleTownHouse2Annebrother_11:
 	goto OldaleTownHouse2Annebrother_10
 
 
+AnnesHouseUpstairsItem::
+# 35 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	lock
+# 36 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	finditem ITEM_FULL_INCENSE
+# 37 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	removeobject 3
+# 38 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	releaseall
+	return
+
+
 # 9 "data/maps/OldaleTown_House2_2F/scripts.pory"
 OldaleTownHouse2Annebrother_Movement_0:
 # 9 "data/maps/OldaleTown_House2_2F/scripts.pory"
@@ -80,11 +92,11 @@ OldaleTownHouse2Annebrother_Text_1:
 
 OldaleTownHouse2Annebrother_Text_2:
 # 23 "data/maps/OldaleTown_House2_2F/scripts.pory"
-	.string "I just heard mom and sis arguing again...\p"
-	.string "I hope we move to Rustboro soon. Dad\n"
-	.string "says he'll earn tons of money with his\l"
-	.string "new job, and that we won't argue again\l"
-	.string "then.$"
+	.string "I just heard mom and sis arguing again...\n"
+	.string "I hope we move to Rustboro soon.\p"
+	.string "Dad says he'll earn tons of money with\n"
+	.string "his new job, and that we won't argue\l"
+	.string "again then!$"
 
 OldaleTownHouse2Annebrother_Text_3:
 # 28 "data/maps/OldaleTown_House2_2F/scripts.pory"

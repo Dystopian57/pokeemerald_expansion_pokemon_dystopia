@@ -1838,9 +1838,10 @@ script NoRain {
 }
 
 script FatGuyExclMark {
-	lock
+
 	if (!flag (Donutquestaccepted) && !flag (fatguyseesplayerleavelittl))
-	{applymovement (3, moves(face_player, emote_exclamation_mark))
+	{
+	applymovement (3, moves(face_player, emote_exclamation_mark))
 	setflag (fatguyseesplayerleavelittl)
 	goto (endfatguyexlmarkscript)}
 
@@ -1917,6 +1918,41 @@ else {msgbox (format("To think that Pokémon can be altered and made 'safer' to 
 endlitlfatguy:
 releaseall
 }
+
+
+script SamanthaDontgotoRivals {
+lock
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+playse (SE_PIN)
+msgbox (format("O-oh, {PLAYER}... this is... {RIVAL}'s house, right?"))
+
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	msgbox (format("She comes to the graveyard sometimes... \p I think we shouldn't intrude, she is a bit scary..."))
+	}
+
+	if(var(VAR_RESULT) == FEMALE){
+		msgbox (format("He comes to the graveyard sometimes... \p I think we shouldn't intrude, he is a bit scary..."))
+	}
+applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+
+releaseall
+}
+
+script SamanthaDontgotoPlayers {
+lock
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+playse (SE_PIN)
+msgbox (format("O-oh, {PLAYER}... this is... your house, right? Your name is on the sign..."))
+
+msgbox (format("I-I appreciate it, but... I can't take your food! \p I have saved money for mine. So let's
+go to Oldale to get it."))
+
+applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+
+releaseall
+}
+
 
 script Littleroot_Player_Mailbox {
 lock

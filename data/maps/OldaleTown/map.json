@@ -757,8 +757,89 @@
       "y": 12,
       "elevation": 0,
       "var": "VAR_MAUSOLEUM_HEXGIRL",
-      "var_value": "0",
+      "var_value": "1",
       "script": "SamanthaCall1"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoWarehouse"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoWarehouse"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoWarehouse"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoWarehouse"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgoto103"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgoto103"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgoto102"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgoto102"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoWarehouse"
     }
   ],
   "bg_events": [

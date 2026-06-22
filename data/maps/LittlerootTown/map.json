@@ -277,6 +277,24 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "5",
       "script": "FatGuyExclMark"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoRivals"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoPlayers"
     }
   ],
   "bg_events": [
@@ -306,7 +324,7 @@
     },
     {
       "type": "sign",
-      "x": 13,
+      "x": 14,
       "y": 9,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

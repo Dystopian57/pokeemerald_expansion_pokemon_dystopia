@@ -58,17 +58,17 @@ JoelTentJoel_1:
 	compare VAR_JOELQUESTS, 4
 	goto_if_eq JoelTentJoel_8
 JoelTentJoel_6:
-# 58 "data/maps/JoelTent/scripts.pory"
+# 59 "data/maps/JoelTent/scripts.pory"
 	compare VAR_JOELQUESTS, 5
 	goto_if_eq JoelTentJoel_12
 JoelTentJoel_11:
-# 72 "data/maps/JoelTent/scripts.pory"
+# 76 "data/maps/JoelTent/scripts.pory"
 	compare VAR_JOELQUESTS, 6
 	goto_if_eq JoelTentJoel_15
 JoelTentJoel_14:
-# 77 "data/maps/JoelTent/scripts.pory"
+# 81 "data/maps/JoelTent/scripts.pory"
 joelgivesdoll:
-# 78 "data/maps/JoelTent/scripts.pory"
+# 82 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
@@ -123,76 +123,84 @@ JoelTentJoel_8:
 	goto JoelTentJoel_6
 
 JoelTentJoel_12:
-# 59 "data/maps/JoelTent/scripts.pory"
-	applymovement 4, JoelTentJoel_Movement_0
 # 60 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentJoel_Text_4
-# 63 "data/maps/JoelTent/scripts.pory"
-	applymovement 4, JoelTentJoel_Movement_2
-# 64 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentJoel_Text_5
-# 67 "data/maps/JoelTent/scripts.pory"
 	applymovement 4, JoelTentJoel_Movement_0
-# 68 "data/maps/JoelTent/scripts.pory"
+# 61 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_4
+# 64 "data/maps/JoelTent/scripts.pory"
+	applymovement 4, JoelTentJoel_Movement_2
+# 65 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_5
+# 66 "data/maps/JoelTent/scripts.pory"
+	applymovement 4, JoelTentJoel_Movement_0
+# 67 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentJoel_Text_6
-# 70 "data/maps/JoelTent/scripts.pory"
+# 69 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_7
+# 71 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_8
+# 72 "data/maps/JoelTent/scripts.pory"
+	register_matchcall TRAINER_ORPHAN_MALE_101
+# 73 "data/maps/JoelTent/scripts.pory"
 	setvar VAR_JOELQUESTS, 6
+# 74 "data/maps/JoelTent/scripts.pory"
+	goto joelgivesdoll
 	goto JoelTentJoel_11
 
 JoelTentJoel_15:
-# 73 "data/maps/JoelTent/scripts.pory"
+# 77 "data/maps/JoelTent/scripts.pory"
 	applymovement 4, JoelTentJoel_Movement_0
-# 74 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentJoel_Text_7
+# 78 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_9
 	goto JoelTentJoel_14
 
 
 JoelTentTV::
-# 83 "data/maps/JoelTent/scripts.pory"
+# 87 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 84 "data/maps/JoelTent/scripts.pory"
+# 88 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentTV_Text_0
-# 85 "data/maps/JoelTent/scripts.pory"
+# 89 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentLantern::
-# 89 "data/maps/JoelTent/scripts.pory"
+# 93 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 90 "data/maps/JoelTent/scripts.pory"
+# 94 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentLantern_Text_0
-# 91 "data/maps/JoelTent/scripts.pory"
+# 95 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentPoster::
-# 95 "data/maps/JoelTent/scripts.pory"
+# 99 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 96 "data/maps/JoelTent/scripts.pory"
+# 100 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentPoster_Text_0
-# 97 "data/maps/JoelTent/scripts.pory"
+# 101 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentMudball::
-# 101 "data/maps/JoelTent/scripts.pory"
+# 105 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 102 "data/maps/JoelTent/scripts.pory"
+# 106 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentMudball_Text_0
-# 103 "data/maps/JoelTent/scripts.pory"
+# 107 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentCushion::
-# 107 "data/maps/JoelTent/scripts.pory"
+# 111 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 108 "data/maps/JoelTent/scripts.pory"
+# 112 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentCushion_Text_0
-# 109 "data/maps/JoelTent/scripts.pory"
+# 113 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
@@ -223,9 +231,9 @@ JoelTentJoel_Movement_1:
 	face_up
 	step_end
 
-# 63 "data/maps/JoelTent/scripts.pory"
+# 64 "data/maps/JoelTent/scripts.pory"
 JoelTentJoel_Movement_2:
-# 63 "data/maps/JoelTent/scripts.pory"
+# 64 "data/maps/JoelTent/scripts.pory"
 	face_right
 	step_end
 
@@ -262,59 +270,68 @@ JoelTentJoel_Text_2:
 
 JoelTentJoel_Text_3:
 # 56 "data/maps/JoelTent/scripts.pory"
-	.string "What are you waiting for? Go return\n"
-	.string "Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!$"
+	.string "You should hurry up! Go return Anne her\n"
+	.string "{COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!\p"
+	.string "She lives in Oldale, in the house with\n"
+	.string "the metallic roof.$"
 
 JoelTentJoel_Text_4:
-# 60 "data/maps/JoelTent/scripts.pory"
+# 61 "data/maps/JoelTent/scripts.pory"
 	.string "What? Anne was already gone!? Oh no...\p"
 	.string "She told me she can't sleep without\n"
-	.string "that doll. And she'll miss it so much in\l"
-	.string "her new home...\p"
-	.string "I know it's a lot to ask... but if you go\n"
-	.string "to Rustboro, could you please give it to\l"
-	.string "her?$"
+	.string "that doll. She'll miss it so much in her\l"
+	.string "new home...\p"
+	.string "I know it's a big ask... but if you go to\n"
+	.string "Rustboro, could you give it to her?$"
 
 JoelTentJoel_Text_5:
-# 64 "data/maps/JoelTent/scripts.pory"
+# 65 "data/maps/JoelTent/scripts.pory"
 	.string "I said I'd go visit her... but it was only\n"
-	.string "so she wouldn't be sad.\p"
+	.string "so she wouldn't be sad.$"
+
+JoelTentJoel_Text_6:
+# 67 "data/maps/JoelTent/scripts.pory"
 	.string "To go to Rustboro, you need a {COLOR BLUE}Devon\n"
 	.string "Visa{COLOR DARK_GRAY}, or the Devon guards will stop you\l"
 	.string "at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}.$"
 
-JoelTentJoel_Text_6:
-# 68 "data/maps/JoelTent/scripts.pory"
+JoelTentJoel_Text_7:
+# 69 "data/maps/JoelTent/scripts.pory"
 	.string "There's no way they'll let me through...\n"
 	.string "but you look like a soldier. Perhaps\l"
 	.string "they'll let you.$"
 
-JoelTentJoel_Text_7:
-# 74 "data/maps/JoelTent/scripts.pory"
+JoelTentJoel_Text_8:
+# 71 "data/maps/JoelTent/scripts.pory"
+	.string "Here's my Devon Nav number - let's keep\n"
+	.string "in touch about this!$"
+
+JoelTentJoel_Text_9:
+# 78 "data/maps/JoelTent/scripts.pory"
 	.string "Please, you have to give Anne her doll\n"
 	.string "back.\p"
 	.string "She'll forget about me eventually... but\n"
 	.string "I still don't want her to be sad.$"
 
 JoelTentTV_Text_0:
-# 84 "data/maps/JoelTent/scripts.pory"
+# 88 "data/maps/JoelTent/scripts.pory"
 	.string "The TV is not plugged to anything...$"
 
 JoelTentLantern_Text_0:
-# 90 "data/maps/JoelTent/scripts.pory"
+# 94 "data/maps/JoelTent/scripts.pory"
 	.string "An oil lantern. It doesn't have much oil\n"
 	.string "left.$"
 
 JoelTentPoster_Text_0:
-# 96 "data/maps/JoelTent/scripts.pory"
+# 100 "data/maps/JoelTent/scripts.pory"
 	.string "An old poster of a Treecko.$"
 
 JoelTentMudball_Text_0:
-# 102 "data/maps/JoelTent/scripts.pory"
+# 106 "data/maps/JoelTent/scripts.pory"
 	.string "The dry, cracked remains of a mudball.\n"
 	.string "They resemble a Pokéball.$"
 
 JoelTentCushion_Text_0:
-# 108 "data/maps/JoelTent/scripts.pory"
+# 112 "data/maps/JoelTent/scripts.pory"
 	.string "A dirty cushion. It's got black and\n"
 	.string "white hair all over it.$"
