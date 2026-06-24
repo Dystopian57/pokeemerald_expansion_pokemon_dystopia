@@ -10042,13 +10042,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_DESTINY_KNOT] =
     {
-        .name = ITEM_NAME("Destiny Knot"),
+        .name = ITEM_NAME("Hand-knit Scarf"),
     #if I_PRICE >= GEN_9
-        .price = 20000,
+        .price = 1000,
     #elif I_PRICE >= GEN_7
-        .price = 4000,
+        .price = 1000,
     #else
-        .price = 200,
+        .price = 1000,
     #endif
         .holdEffect = HOLD_EFFECT_DESTINY_KNOT,
         .description = COMPOUND_STRING(
@@ -10060,8 +10060,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
-        .iconPic = gItemIcon_DestinyKnot,
-        .iconPalette = gItemIconPalette_DestinyKnot,
+        .iconPic = gItemIcon_ReaperCloth,
+        .iconPalette = gItemIconPalette_ReaperCloth,
     },
 
     [ITEM_BLACK_SLUDGE] =

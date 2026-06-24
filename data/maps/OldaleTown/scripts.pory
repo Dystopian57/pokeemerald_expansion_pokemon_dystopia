@@ -74,13 +74,14 @@ script ConArtist103Rewards {
 	giveegg (SPECIES_TAMARAKKU)
 	playse (MUS_OBTAIN_ITEM)
 	msgbox(format("Obtained the Mysterious Egg!"))
-
+    setspeaker ([SP_NAME_JOEL])
 	msgbox(format("Look, I know I said I'd give you some cash but... \p All I have is my
 	wares! The cash I get when I sell them, duh! \p Speaking of wares - would you like to
 	take a look at them?"))
 
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 	if(var(VAR_RESULT) == 0){
+        setspeaker ([SP_NAME_JOEL])
 		msgbox(format("Hehe, of course you do... here's what I got! Only 500 each!"))
 		eggoffer:
 		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Egg Option 1", "Egg Option 2", "Rosy Egg", "Not really")
@@ -110,12 +111,14 @@ script ConArtist103Rewards {
 
 	if(var(VAR_RESULT) == 1){
         refusedeggs:
+        setspeaker ([SP_NAME_JOEL])
 		msgbox(format("Welp, that's your loss. \p I'm off to Petalburg soon, so you'll have to
 		walk if you change your mind!"))
         goto (finisheggdeal)
 	}}
 
 	else {
+        setspeaker ([SP_NAME_JOEL])
 		msgbox(format("So? Interested in some eggs?"))
 		goto (eggoffer)
 	}
@@ -460,7 +463,7 @@ script OldaleTown_GotoTherapy{
 
 script OldaleSharpyCameliaOutDLCCutscene {
 
-    if (flag (finishedtherapy))
+    if (flag (sharpycameliaDLCcs))
 
     {lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -660,9 +663,10 @@ script OldaleSharpyCameliaOutDLCCutscene {
 
     finishOldalekidscutscene:
     removefieldmugshot
-    setvar(VAR_OLDALE_PHASE, 1)
+    //setvar(VAR_OLDALE_PHASE, 1)
     setobjectxy (17, 0, 0)
     //setobjectxy (20, 0, 0)
+    setflag (sharpycameliaDLCcs)
 	setflag (sharpynotoutsideDLC)
 	clearflag (sharpynotinroute103)
 	setflag (sharpycorphishoutsideDLC)
@@ -917,6 +921,12 @@ script OldaleParkingItem {
     finditem (ITEM_METAL_COAT)
     removeobject (3)
 	releaseall}
+
+script OldalebyTruckItem {
+	lock
+    finditem (ITEM_RAZOR_FANG)
+    removeobject (35)
+	releaseall}
     
 
 script OldaleRivalDontLeaveOldaleto103 {
@@ -1145,7 +1155,7 @@ script OldaleCarBehind{
 
 script SamanthaCall1 {
     lock
-    if (var(VAR_OLDALE_PHASE) > 1){
+    if (var(VAR_MAUSOLEUM_HEXGIRL) > 0){
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     pokenavcall(format("U-uhm... hi, {PLAYER}! It's me, Samantha.\p I hope I haven't caught you at a bad time...
     B-but, since you said you'd help me out here in the Mausoleum, I... \p I-I was wondering
@@ -1157,46 +1167,127 @@ script SamanthaCall1 {
     else {release}
 }
 
+//actually the script below is never going to be triggered, oops
+ script SamanthaDontgotoDLC {
+    
+    if (var(VAR_OLDALE_PHASE) == 0)
+    {
+    lock
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+    playse (SE_PIN)
+    setspeaker ([SP_NAME_JOEL])
+    msgbox (format("O-oh, {PLAYER}... is this the Devon Learning Center?"))
+    msgbox (format("It seems like they are holding a lesson now... \p I have not signed up for it, so
+    I would not like to interrupt."))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    releaseall}
+
+    else {release}
+}
 
  script SamanthaDontgoto102 {
-lock
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
-playse (SE_PIN)
-msgbox (format("O-oh, {PLAYER}... that way leads to Route 103, right?"))
+    lock
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+    playse (SE_PIN)
+    setspeaker ([SP_NAME_JOEL])
+    msgbox (format("O-oh, {PLAYER}... that way leads to Route 103, right?"))
 
-msgbox (format("W-we don't need to go that far... I'm sure there's another vending machine in Petalburg,
-b-but... the one here in Oldale will do!"))
+    msgbox (format("W-we don't need to go that far... I'm sure there's another vending machine in Petalburg,
+    b-but... the one here in Oldale will do!"))
 
-applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
-
-releaseall
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    releaseall
 }
 
  script SamanthaDontgoto103 {
-lock
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
-playse (SE_PIN)
-msgbox (format("O-oh, {PLAYER}... that way leads to Route 102, right?"))
+    lock
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+    playse (SE_PIN)
+    setspeaker ([SP_NAME_JOEL])
+    msgbox (format("O-oh, {PLAYER}... that way leads to Route 102, right?"))
 
-msgbox (format("B-but Slateport is very far... t-the food here in Oldale will do!"))
+    msgbox (format("B-but Slateport is very far... t-the food here in Oldale will do!"))
 
-applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
-
-releaseall
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    releaseall
 }
 
 script SamanthaDontgotoWarehouse {
-lock
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
-playse (SE_PIN)
-msgbox (format("O-oh, {PLAYER}... Oldale's Warehouse is over there, right?"))
+    lock
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+    playse (SE_PIN)
+    setspeaker ([SP_NAME_JOEL])
+    msgbox (format("O-oh, {PLAYER}... Oldale's Warehouse is over there, right?"))
 
-msgbox (format("I-I dont' think they sell any food over there... I-I'll just get
-some snacks from the vending machine there, o-okay?"))
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
-msgbox (format("I-I'll just get some snacks from the vending machine there, o-okay?"))
+    if (var(VAR_OLDALE_PHASE)  > 3)
+        {
+        msgbox (format("I-I dont' think they sell any food over there..."))
+        }
 
-applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+    else {
+        msgbox (format("I-I see some scary Rebels over there... m-maybe we shouldn't get near..."))
+    } 
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+    msgbox (format("I-I'll just get some snacks from the vending machine there, o-okay?"))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
 
-releaseall
+    releaseall
 }
+
+script SamanthaGetSnacksCutscene {
+
+    if (!flag (Samanthagotsnacks))
+    {
+    lock
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 2))
+    msgbox (format("A-ah... here we are, {PLAYER}! Give me a moment..."))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1, face_up))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 2, walk_right * 2, face_up))
+
+    msgbox (format("Hmm... I'll have some of these..."))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+    playse (SE_VEND) 
+
+    msgbox (format("And of these..."))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+    playse (SE_VEND)
+    waitse
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+    playse (SE_VEND) 
+
+    msgbox (format("O-oh, and these too...!"))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+    playse (SE_VEND)
+    waitse
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+    playse (SE_VEND) 
+    waitse
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+    playse (SE_VEND) 
+    waitse
+
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, face_down))
+    waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+    msgbox (format("Hehehe... I've got tons. We can go back. \p T-thank you..."))
+
+    setflag (Samanthagotsnacks)
+
+    releaseall
+}
+
+else {release}
+
+}
+
+script SamanthaShake{
+	playse (SE_VEND) 
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+	}

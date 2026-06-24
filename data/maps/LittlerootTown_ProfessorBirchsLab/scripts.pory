@@ -1020,6 +1020,27 @@ script Littleroot_Idletalk_Aidee{
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (5, moves(face_player))
 	setspeaker ([SP_NAME_AIDEE])
+
+if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+	msgbox (format("Oh, {PLAYER}! Did you ask your friend to help with finding a
+	{COLOR RED}Voltorb Shard{COLOR DARK_GRAY}?"))
+	removefieldmugshot
+	setspeaker ([SP_NAME_SAMANTHA])
+	msgbox (format("A... {COLOR RED}Voltorb Shard{COLOR DARK_GRAY}...?"))
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Aah, so you didn't... don't worry about it then."))
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Just some boring research {PLAYER} and I are doing."))
+	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+	setspeaker ([SP_NAME_AIDEE])
+	msgbox (format("Bring that shard to me later, okay {PLAYER}? But come alone!"))
+	goto(aideeisfollowing)
+}
+
+else {
 	if (var(VAR_LITTLEROOT_PHASE) == 3)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	msgbox (format("Remember - there should be {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} in the big 
@@ -1121,6 +1142,8 @@ script Littleroot_Idletalk_Aidee{
 	aideeisfollowing:
 	removefieldmugshot
 	releaseall
+
+}
 
 }
 	script AideeFollowingChat {
@@ -1246,12 +1269,15 @@ script Littleroot_Idletalk_Prof{
 	applymovement (4, moves(face_player))
 
 if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
-		msgbox (format("Hmm, {PLAYER}. So you ended up making a friend in therapy session?"))
+
+	if (!flag (SamanthaBalsamInteraction)) 
+	
+		{msgbox (format("Hmm, {PLAYER}. So you ended up making a friend in the therapy session?"))
 		removefieldmugshot
-		setspeaker (NULL)
+		setspeaker ([SP_NAME_SAMANTHA])
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
 		msgbox (format("N-no... we met in the mausoleum..."))
-		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox (format("The mausoleum... is that where people socialize these days?"))
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
@@ -1266,7 +1292,15 @@ if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox (format("Just don't make too much noise, I'm working here."))
-		goto (finishbalsamidletalk)
+		setflag (SamanthaBalsamInteraction)
+		goto (finishbalsamidletalk)}
+
+	if (flag (SamanthaBalsamInteraction)) 
+	
+		{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox (format("... why don't you read a book together or something? We have plenty."))
+		goto (finishbalsamidletalk)}
 }
 
 else
@@ -1291,33 +1325,40 @@ else
 	msgbox (format("Well, then... go do that. You don't need my permission, I'm not your mom."))
 	msgbox (format("It's fine, the therapy is not starting yet. But head there right after checking on {RIVAL}."))
 	goto (finishbalsamidletalk)}
-	if (var(VAR_LITTLEROOT_PHASE) > 5)
+	if (var(VAR_LITTLEROOT_PHASE) > 4)
 	{
+
+		//startBalsammultichoice:
+		msgbox (format("Ah, {PLAYER}. What is it?"))
 			if(var(VAR_OLDALE_PHASE) == 0)
 			{bufferstring(STR_VAR_1, "Where is the therapy?")
-			goto (startBalsammultichoice)}
+			//goto (startBalsammultichoice)
+			}
 			if(var(VAR_OLDALE_PHASE) == 1)
 			{bufferstring(STR_VAR_1, "I'm back from therapy.")
-			goto (startBalsammultichoice)}
+			//goto (startBalsammultichoice)
+			}
 
 			if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 0)
 			{bufferstring(STR_VAR_1, "What should I do?")
-			goto (startBalsammultichoice)}
+			//goto (startBalsammultichoice)
+			}
 
 			if (var(VAR_LITTLEROOT_PHASE) == 5)
 			{bufferstring(STR_VAR_2, "About the Voltorb Shard...")
-			goto (startBalsammultichoice)}
+			//goto (startBalsammultichoice)
+			}
 
 			if(var(VAR_LITTLEROOT_PHASE) == 6)
 			{bufferstring(STR_VAR_2, "Where is the basement?")
-			goto (startBalsammultichoice)}
+			//goto (startBalsammultichoice)
+			}
 
 			if(var(VAR_LITTLEROOT_PHASE) == 7)
 			{bufferstring(STR_VAR_2, "About the Unsafening Project...")
-			goto (startBalsammultichoice)}
-		startBalsammultichoice:
-		msgbox (format("Ah, {PLAYER}. What is it?"))
-		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}")
+			//goto (startBalsammultichoice)
+			}
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "It's nothing")
 			if (var(VAR_RESULT) == 0) {
 				if(var(VAR_OLDALE_PHASE) == 0)
 				{msgbox (format("It's in Oldale Town, the first building to the right as you enter from Route 101.
@@ -1361,7 +1402,7 @@ else
 					doing anything stupid."))}
 
 				if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 0)
-					{msgbox (format("Path is free for you now."))}
+					{msgbox (format("Path is free for you now."))}}
 
 				//if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 1)
 					//{msgbox (format("You saw Norman."))}
@@ -1396,7 +1437,7 @@ else
 					msgbox (format("I appreciate you're helping us so quick, but don't forget
 					to head for therapy right after, or you'll miss it."))}
 
-				if(var(VAR_LITTLEROOT_PHASE) == 6 && var(VAR_OLDALE_PHASE) == 1)
+				if(var(VAR_LITTLEROOT_PHASE) == 6 && var(VAR_OLDALE_PHASE) > 0)
 					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
 					msgbox (format("It's through the hole to the right side of the lab... it's
@@ -1420,7 +1461,12 @@ else
 					fadeinbgm (0)
 					msgbox (format("Haha - I'm just kidding, of course!"))
 					}
-			}
+				}
+
+				if (var(VAR_RESULT) == 2) {
+					msgbox (format("It's in Oldale Town, the first building to the right as you enter from Route 101.
+					\p If you're lost, check the map on that Devon Nav I gave you. It's handy."))
+				}
 	}
 
 	finishbalsamidletalk:
@@ -1433,7 +1479,7 @@ else
 
 }
 
-}
+
 
 
 
@@ -1451,12 +1497,12 @@ script Littleroot_Idletalk_Pikachu1{
 if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 	playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL)
 	msgbox (format("Pura-pura?"))
-
-	msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Purachu sniffs at the newcomer.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	playse (SE_M_MIST)
 	waitse
 	playse (SE_M_MIST)
+	msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Purachu sniffs at the newcomer.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 
+	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("H-hehe... that tickles!"))
 	goto(finishPikascript)
 }

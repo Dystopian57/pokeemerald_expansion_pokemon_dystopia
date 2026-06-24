@@ -1924,17 +1924,21 @@ script SamanthaDontgotoRivals {
 lock
 applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
 playse (SE_PIN)
+setspeaker ([SP_NAME_SAMANTHA])
 msgbox (format("O-oh, {PLAYER}... this is... {RIVAL}'s house, right?"))
 
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
+	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("She comes to the graveyard sometimes... \p I think we shouldn't intrude, she is a bit scary..."))
 	}
 
 	if(var(VAR_RESULT) == FEMALE){
-		msgbox (format("He comes to the graveyard sometimes... \p I think we shouldn't intrude, he is a bit scary..."))
+	setspeaker ([SP_NAME_SAMANTHA])
+	msgbox (format("He comes to the graveyard sometimes... \p I think we shouldn't intrude, he is a bit scary..."))
 	}
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+waitmovement (OBJ_EVENT_ID_PLAYER)
 
 releaseall
 }
@@ -1949,6 +1953,7 @@ msgbox (format("I-I appreciate it, but... I can't take your food! \p I have save
 go to Oldale to get it."))
 
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+waitmovement (OBJ_EVENT_ID_PLAYER)
 
 releaseall
 }
@@ -2073,6 +2078,49 @@ script RivalShake {
 }
 
 script Littleroot_Idletalk_Oldman{
+
+if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+	if (!flag (SamanthaBirchInteraction)) {
+	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("Hello, {PLAYER} - and hello to you too! What's your name?"))
+	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
+	removefieldmugshot
+	setspeaker ([SP_NAME_SAMANTHA])
+	msgbox (format("I-I'm Samantha... nice to meet you, sir."))
+	setflag (SamanthaBirchInteraction)
+	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BIRCH])
+	checkplayergender
+		if(var(VAR_RESULT) == MALE){
+		msgbox (format("It's nice to meet you too. Thanks for taking care of my grandson."))
+		setspeaker ([SP_NAME_SAMANTHA])
+		removefieldmugshot
+		msgbox (format("O-oh, i-it's actually the... other way a-... n-nevermind!"))
+		}
+
+		if(var(VAR_RESULT) == FEMALE){
+		msgbox (format("It's nice to meet you too. Thanks for being friends with my granddaughter."))
+		removefieldmugshot
+		setspeaker ([SP_NAME_SAMANTHA])
+		msgbox (format("F-friends...? W-well... o-of course!"))}
+
+		goto (endofbirchscript)
+	
+	}
+
+	if (flag (SamanthaBirchInteraction)) {
+	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("Why don't you come in? Balsam could use a distraction."))
+	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("She may complain, but that's just how she talks. Don't take it personal."))
+	goto (endofbirchscript)
+	}
+}
+	
+else {
 	lock
 	applymovement (1, moves(face_player))
 	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
@@ -2109,8 +2157,10 @@ script Littleroot_Idletalk_Oldman{
 	\p But they only have the best in mind for the future of Hoenn. \p I hope you can find it in you
 	to support them."))}
 
+	endofbirchscript:
 	removefieldmugshot
 	releaseall
+}
 }
 
 script LittlerootTown_Eventscript_Oldmanasking {

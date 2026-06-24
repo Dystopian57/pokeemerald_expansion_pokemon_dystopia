@@ -12,6 +12,7 @@ script JoelTentDoll {
     if(var(VAR_JOELQUESTS) == 3)
 	{
     applymovement(4, moves(walk_in_place_up * 1))
+    setspeaker ([SP_NAME_JOEL])
     msgbox(format("Hey, don't touch it - it's not yours! It's not even mine..."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, face_right))
     goto (thisisannedoll)}
@@ -31,12 +32,46 @@ script JoelTentJoel {
     lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
+    if(var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+
+				applymovement (4, moves(face_player))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Hey {PLAYER}! And strange lady! Where are you two going?"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+				playse (SE_PIN)
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("S-... strange lady...?"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+				msgbox(format("W-well, we went out to get food at Oldale..."))
+				setspeaker ([SP_NAME_JOEL])
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+				waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+				msgbox(format("Food? I've got some Oran berries if you'd like!"))
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("B-berries...? Y-you eat them raw? You don't get... s-sick...?"))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("I did at first, but I got used to them. Here, try them!"))
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("T-thank you, b-but I'll have... some more p-processed food..."))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Really? Well, more for me!"))
+				playse (SE_M_BITE)
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				setflag (SamanthaJoelInteraction)
+				goto (Joelfinish)
+			}
+
+    else {
+
 	if(var(VAR_JOELQUESTS) == 3 && !flag (anneandfamilygone))
     {
         thisisannedoll:
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("This... this is Anne's doll! She must have forgotten it last time we
         played here."))
         applymovement(4, moves(face_player))
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("Hey, do you mind returning it to her? I'd go myself, but her mom always
         gets mad when I go visit."))
         applymovement(4, moves(face_up))
@@ -45,6 +80,7 @@ script JoelTentJoel {
         applymovement(4, moves(face_player))
         waitmovement (4)
 	    giveitem (ITEM_POKESHI_DOLL)
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("Hurry up, before she and her family move away!"))
         setflag (anneandfamilygone) 
         setflag (annegoestojoel)
@@ -53,21 +89,27 @@ script JoelTentJoel {
 
 	if(var(VAR_JOELQUESTS) == 4 && flag (anneandfamilygone))
     {   applymovement(4, moves(face_player))
+    setspeaker ([SP_NAME_JOEL])
         msgbox(format("You should hurry up! Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!
         \p She lives in Oldale, in the house with the metallic roof."))}
 
 	if(var(VAR_JOELQUESTS) == 5)
     {   applymovement(4, moves(face_player))
+    setspeaker ([SP_NAME_JOEL])
         msgbox(format("What? Anne was already gone!? Oh no... \p She told me she can't
         sleep without that doll. She'll miss it so much in her new home... \p I know
         it's a big ask... but if you go to Rustboro, could you give it to her?"))
         applymovement(4, moves(face_right))
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("I said I'd go visit her... but it was only so she wouldn't be sad."))
         applymovement(4, moves(face_player))
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("To go to Rustboro, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
         guards will stop you at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}."))
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("There's no way they'll let me through... but you look like a soldier. Perhaps
         they'll let you."))
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("Here's my Devon Nav number - let's keep in touch about this!"))
         register_matchcall (TRAINER_ORPHAN_MALE_101)
 	    setvar(VAR_JOELQUESTS, 6)
@@ -75,12 +117,13 @@ script JoelTentJoel {
         }
     if(var(VAR_JOELQUESTS) == 6)
         {applymovement(4, moves(face_player))
+        setspeaker ([SP_NAME_JOEL])
         msgbox(format("Please, you have to give Anne her doll back. \p She'll forget about me
         eventually... but I still don't want her to be sad."))}
 
     joelgivesdoll:
     releaseall
-}
+}}
 
 
 script JoelTentTV {

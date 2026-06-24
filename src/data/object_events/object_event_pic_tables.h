@@ -595,7 +595,9 @@ static const struct SpriteFrameImage sPicTable_rope[] = {
     overworld_ascending_frames(gObjectEventPic_rope, 2, 4),
 };
 
-
+static const struct SpriteFrameImage sPicTable_newbard[] = {
+    overworld_ascending_frames(gObjectEventPic_newbard, 2, 4),
+};
 
 
 static const struct SpriteFrameImage sPicTable_wageslavem[] = {

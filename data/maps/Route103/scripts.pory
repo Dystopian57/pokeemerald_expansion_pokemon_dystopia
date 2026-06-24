@@ -776,6 +776,7 @@ script Route103ConcordConartist {
 		trainerbattle_no_intro(TRAINER_SHADYDEALER_103, ShadyDealer103_Outro)
 
 		applymovement (28, moves(walk_in_place_down * 1))
+		setspeaker ([SP_NAME_JIMMY])
 		msgbox(format("You'll never catch me alive! Outta my way!"))
 
 		playse (SE_M_COMET_PUNCH)
@@ -787,18 +788,16 @@ script Route103ConcordConartist {
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 		applymovement (32, moves(walk_fast_left * 1, face_right, face_down))
 		applymovement (28, moves(walk_fast_down * 2))
+		setspeaker ([SP_NAME_JOEL])
 		msgbox(format("SEE YA, LOSERS...!"))
 		applymovement (28, moves(jump_down * 2))
 		playse (SE_M_JUMP_KICK)
 		waitse
 		playse (SE_M_DIVE)
+		setspeaker ([SP_NAME_JOEL])
 		msgbox(format("GRLBGBRLB...!"))
 		
-
-
 		waitmovement
-
-		
 
 		applymovement (31, moves(walk_in_place_down))
 
@@ -1019,6 +1018,7 @@ script RiverFerryManNotThatEntry {
 
 script FisherGuruRoute103 {
 	lock
+	applymovement (38, moves(face_player))
 	if (var(VAR_FISHERPROGRESS103) == 0)
 	{
 
@@ -1028,7 +1028,7 @@ script FisherGuruRoute103 {
 	waitse
 	playse (SE_PIN)
 	applymovement (38, moves(emote_exclamation_mark))
-	msgbox(format("Sssh... did you hear that? Something... SOMETHING IS COMING!"))
+	msgbox(format("Sssh... did you hear that? It's... IT'S COMING!"))
 
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 
@@ -1057,46 +1057,48 @@ script FisherGuruRoute103 {
 
 	msgbox(format("I want you to take that rod and fish at least FIVE SPECIES OF POKÉMON! \p WHY?
 	Because only then will the LEGENDARY MUDCRAB judge you as worthy, and show itself again!
-	\p Do not question my intuition - just embrace it, and fulfil your destiny!!"))
+	\p Do not question the intuition of Ivan, the Legendary Releer - just embrace it, and fulfil your destiny!!"))
 	setvar(VAR_FISHERPROGRESS103 , 1)
 	goto (finishfisherscript)
 
-
-
 }
 	
-	if ((var(VAR_FISHERPROGRESS103) == 1) || (var(VAR_FISHERPROGRESS103) == 2) || (var(VAR_FISHERPROGRESS103) == 3))
+	if ((var(VAR_FISHERPROGRESS103) > 0))
 	{
+	setspeaker ([SP_NAME_IVAN])
 	msgbox(format("AHOY! How's the FISHING going!?"))
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "About your request...", "Did you see the Mud Crab?", "How's it going?")
 
 		if(var(VAR_RESULT) == 0){
-			if (var(VAR_FISHERPROGRESS103) == 1){
+			if (var(VAR_FISHERPROGRESS103) == 2){
 				getcaughtmon (SPECIES_SMOTHQUIL)
 				if(var(VAR_RESULT) == TRUE){
+				setspeaker ([SP_NAME_IVAN])
 				msgbox(format("Ah, you've fished at least 5 Pokémon? Good, GOOD! \p I'm confident the
 				Legendary Mud Crab will acknowledge you and show up. \p Let's wait a bit!"))
 				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 
 				fadeoutbgm (1)
 				fadescreenswapbuffers (FADE_TO_BLACK)
+				setspeaker (NULL)
 				msgbox (format("{PLAYER} and the fisher wait in a long, uncomfortable silence..."))
 				fadescreenswapbuffers (FADE_FROM_BLACK)
 				fadeinbgm (1)
-
+				setspeaker ([SP_NAME_IVAN])
 				msgbox (format("Hmm... I should have known. Such a measly fishing test... \p Is NOT ENOUGH
 				to make the Mud Crab acknowledge you! \p I suppose I've got no choice... here, TAKE THIS!"))
 				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 				giveitem (ITEM_GOOD_ROD)
-
+				setspeaker ([SP_NAME_IVAN])
 				msgbox (format("I want you to use that rod to bring me a BIG PEARL! \p If you are a true
 				fisher... you will know how. \p Do that, and I'm sure next time the Mud Crab will show itself!"))
 
-				setvar(VAR_FISHERPROGRESS103 , 2)
+				setvar(VAR_FISHERPROGRESS103 , 3)
 				goto (finishfisherscript)
 				}
 
 				if(var(VAR_RESULT) == FALSE){
+				setspeaker ([SP_NAME_IVAN])
 				msgbox(format("Like I said, I need you to fish 5 species of Pokémon! \p If you are the fisher
 				the Mud Crab believes you to be, you shouldn't need any guidance! \p O-of course I could give it,
 				but that would defeat the purpose!"))
@@ -1105,9 +1107,11 @@ script FisherGuruRoute103 {
 
 			}
 
-			if (var(VAR_FISHERPROGRESS103) == 2){
+			if (var(VAR_FISHERPROGRESS103) == 3){
 				if (checkitem (ITEM_BIG_PEARL)  == TRUE)
-				{msgbox(format("pearl"))
+				{
+				setspeaker ([SP_NAME_IVAN])
+				msgbox(format("pearl"))
 
 
 
@@ -1115,13 +1119,16 @@ script FisherGuruRoute103 {
 				// Shiny Crawdaunt shows up
 				}
 				else 
-				{msgbox(format("no pearl"))
+				{
+				setspeaker ([SP_NAME_IVAN])
+				msgbox(format("no pearl"))
 				goto (finishfisherscript)
 				}
 			}
 		}
 
 		if(var(VAR_RESULT) == 1){
+			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("Regrettably, I haven't. Not even the tip of that lustruous, star-shaped crown
 			of his... \p But don't worry - he won't swim away easily. \p They say he is forever waiting for a
 			trainer who saved his life during the Assault on Route 103. \p Sadly, that trainer died that
@@ -1130,14 +1137,17 @@ script FisherGuruRoute103 {
 			goto (finishfisherscript)
 		}
 
-		if(var(VAR_RESULT) == 2){}
+		if(var(VAR_RESULT) == 2){
+			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("Ah, well, aside from the Mud Crab business... not very good, I must say. \p It's
 			tough being a fisher in these parts nowadays. The sea is poisoned, the rivers are muddy... \p
 			Most of my buddies have moved up north. But me, I like the challenge!"))
 			goto (finishfisherscript)
 		}
+		}
 	
 	finishfisherscript:
+	setspeaker (NULL)
 	releaseall}
 
 
@@ -1146,6 +1156,18 @@ script FisherGuruRoute103 {
 	msgbox(format("Move Tutor Colton's House"))
 	release
 	}
+
+script Fishercallsfornumber {
+	lock
+	applymovement (38, moves(face_player, emote_exclamation_mark))
+	playse (SE_PIN)
+	msgbox(format("Wait - add me on Devon Net! We must keep in touch about this!"))
+	register_matchcall (TRAINER_FISHER_103)
+	setvar(VAR_FISHERPROGRESS103 , 2)
+	release
+	
+
+}
 
 	//msgbox(format("It sure is tough being a fisher in the Rebel Zone... \p The sea is poisoned,
 	//the rivers are muddy. Most of my fishing buddies have moved up north. \p But I am built different.
@@ -1167,7 +1189,7 @@ script FisherGuruRoute103 {
 	// is one thing, but to accept to go with you...? Perhaps you remind him of his saviour from back
 	//when he was a Corphis."
 
-	//choice to leave Crawdaunt with fisher
+	//choice to leave Crawdaunt with fisher: maybe here confession about being horrible fisher.
 	// "hold that pearl aloft" - this reminded Crawdaunt of Brendan/May holding ball aloft and he shows
 	//up. "look its the mud crab!" (mud crab goes excl mark and then narration 'Mud Crab's eyes open
 	//as if in recognition'

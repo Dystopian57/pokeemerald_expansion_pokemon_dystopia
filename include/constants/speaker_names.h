@@ -12,6 +12,16 @@ enum SpeakerNames {
     SP_NAME_RICK,
     SP_NAME_SHARPY,
     SP_NAME_CAMELIA,
+
+    SP_NAME_JOEL,
+    SP_NAME_ANNE,
+    SP_NAME_SAMANTHA,
+    SP_NAME_KIRA,
+    SP_NAME_DAN,
+    SP_NAME_HERMIT,
+    SP_NAME_JIMMY,
+    SP_NAME_IVAN,
+
     SP_NAME_COUNT
 };
 

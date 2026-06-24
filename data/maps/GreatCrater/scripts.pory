@@ -64,32 +64,38 @@ script ReportersGreatCrater {
 	msgbox(format("Ah, look, Dan - an interesting-looking local just approached us!
 	\p We're from Devon TV, and we're filming a documentary about the Rebel Zone!
 	\p However, our footage right now is lacking a bit of... flair."))
-	applymovement (2, moves(walk_in_place_left * 2))
-	msgbox(format("To put it plainly, it's quite boring."))
-
-	msgbox(format("Indeed, Dan... which is why we were thinking about staging a battle!
-	\p We will pretend one of those dangerous rebels have assailed us, and that we escaped by
+	applymovement (2, moves(walk_in_place_left * 1))
+	setspeaker ([SP_NAME_DAN])
+	msgbox(format("Don't sugarcoat it, Kira. It's boring."))
+	applymovement (3, moves(walk_in_place_right * 1))
+	setspeaker ([SP_NAME_KIRA])
+	msgbox(format("... a bit, maybe. which is why we were thinking about staging a battle!"))
+	applymovement (3, moves(walk_in_place_up * 1))
+	setspeaker ([SP_NAME_KIRA])
+	msgbox(format("We will pretend one of those dangerous rebels have assailed us, and that we escaped by
 	the skin of our teeth."))
 	applymovement (2, moves(walk_in_place_left))
-
+	setspeaker ([SP_NAME_DAN])
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){msgbox(format("He looks a bit like one of them. To a Rustboro snob, at least."))}
 	if(var(VAR_RESULT) == FEMALE){msgbox(format("She looks a bit like one of them. To a Rustboro snob, at least."))}
 
 	applymovement (3, moves(walk_in_place_right))
-
+	setspeaker ([SP_NAME_KIRA])
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){msgbox(format("Indeed - which makes him perfect to play the role of 'rebel'!"))}
 	if(var(VAR_RESULT) == FEMALE){msgbox(format("Indeed - which makes her perfect to play the role of 'rebel'!"))}
 
 	applymovement (3, moves(walk_in_place_up))
-	msgbox(format("We would need you to win, of course - it would not be very exciting
+	setspeaker ([SP_NAME_KIRA])
+	msgbox(format("We need you to win, of course - it would not be very exciting
 	if we just beat a dangerous rebel like nothing!\pSo, will you help us? We will pay you handsomely for your time!"))
 	
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "No chance", "That's lying")
 
 	if (var(VAR_RESULT) == 0) {
 	acceptedtoplayrebel:
+	setspeaker ([SP_NAME_KIRA])
     msgbox(format("Excellent - let's begin right away!
 	\pAt the count of three, please yell your most heinous insult, warcry, or similar to the camera.
 	\pThen we take out our Pokémon, and have at it!
@@ -104,33 +110,40 @@ script ReportersGreatCrater {
 		incrementgamestat (GAME_STAT_STARTED_TRENDS)
 
 			if(var(VAR_0x8004) == FALSE){
-				
+			setspeaker ([SP_NAME_KIRA])
 			msgbox(format("Oh, uhm... I'm sorry. I don't think we can have you saying “{STR_VAR_2},”
 			in the documentary. \pThat term has some implications I can't go over right now. Let's say some
 			would get offended!"))
 			applymovement (2, moves(walk_in_place_down))
+			setspeaker ([SP_NAME_DAN])
 			msgbox(format("She means it's censored. So come up with something else, will you?"))
 			applymovement (3, moves(walk_in_place_right))
+			setspeaker ([SP_NAME_KIRA])
 			msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}As eloquent as ever, Dan...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 			goto (retrytrendyphrase)
 			}
 		//goto_if_eq (VAR_0x8004, FALSE, GreatCrater_EventScript_PhraseNotTrendyEnough)
-
+		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("KYAAA! Someone help!! I am being ASSAILED!"))
 		applymovement (2, moves(walk_in_place_left))
+		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}'Kyaa'? Really...?{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 		trainerbattle_no_intro(TRAINER_REPORTERS_GREATCRATER , ReportersGreatCrater_Outro)
 		playbgm (MUS_ENCOUNTER_INTERVIEWER, TRUE)
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("Thank you so much! With your help, we've captured some incredible
 		footage."))
 
 		call (Common_EventScript_BufferTrendyPhrase)
 		applymovement (2, moves(walk_in_place_up))
+		setspeaker ([SP_NAME_DAN])
 		msgbox(format("{STR_VAR_1} is a great warcry. \p With the right editing, it may even get viral."))
 		applymovement (3, moves(walk_in_place_right))
+		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("It just may! But before we cut the footage, we need to record some more in other locations."))
 		applymovement (3, moves(face_player))
+		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("Thanks for your help again - stay safe!"))
 
 		fadescreenswapbuffers (FADE_TO_BLACK)
@@ -144,7 +157,7 @@ script ReportersGreatCrater {
 		}
 
 		if(var(VAR_RESULT) == FALSE){
-
+		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("Oh no... you got a bit of scenic fright, didn't you? \p It happens the first time. We'll
 	    do another take when you're ready!"))
 		goto (finishreporterscript)
@@ -159,6 +172,7 @@ script ReportersGreatCrater {
 	
 
     if (var(VAR_RESULT) == 1) {
+	setspeaker ([SP_NAME_KIRA])
     msgbox(format("Oh, that's so unfortunate! Are you certain?
 	\p We'll be here a while if you reconsider - which we beg you to do!"))
 	applymovement (2, moves(walk_in_place_down))
@@ -171,8 +185,10 @@ script ReportersGreatCrater {
     }
 
     if (var(VAR_RESULT) == 2) {
+	setspeaker ([SP_NAME_KIRA])
     msgbox(format("Lying? I wouldn't call it that. It's just a bit of showmanship!"))
 	applymovement (2, moves(walk_in_place_up))
+	setspeaker ([SP_NAME_DAN])
     msgbox(format("If you won't help us, someone will. Why not take the pokeyen for yourself?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay, I'm in", "Leave me out of this")
         if (var(VAR_RESULT) == 0) {
@@ -180,6 +196,7 @@ script ReportersGreatCrater {
    		 }
    		 if (var(VAR_RESULT) == 1) {
 		 applymovement (3, moves(walk_in_place_up))
+		 setspeaker ([SP_NAME_KIRA])
    		 msgbox(format("Well, suit yourself. We'll be here a while if you change your mind."))
 	     setflag (declinedcraterreporterhelp)
 		 applymovement (2, moves(face_down))
@@ -190,13 +207,14 @@ script ReportersGreatCrater {
 }
 
 	if (flag (declinedcraterreporterhelp)){
-	
+	setspeaker ([SP_NAME_KIRA])
     msgbox(format("Have you changed your mind? Will you help us stage a battle?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
         if (var(VAR_RESULT) == 0) {
 		goto (acceptedtoplayrebel) 
    		 }
    		 if (var(VAR_RESULT) == 1) {
+		 setspeaker ([SP_NAME_KIRA])
    		 msgbox(format("That's too bad... I think you'd be such a star!"))
 		 applymovement (2, moves(face_down))
 		 applymovement (3, moves(face_down))}
@@ -308,6 +326,7 @@ script CameramanGreatCrater {
 	msgbox(format("The cameraman seems to disregard {PLAYER} entirely."))}
 
 	if (flag (declinedcraterreporterhelp)){
+	setspeaker ([SP_NAME_DAN])
 	applymovement (2, moves(face_player))
 	msgbox(format("It's easy money. You won't get far in the Rebel Zone by being moral."))
 	applymovement (2, moves(face_down))

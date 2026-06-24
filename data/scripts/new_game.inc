@@ -300,6 +300,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_ITEM_ROUTE101REBELITEM
 	setflag route102weathermon
 	setflag cigarrettepop
+	setflag FLAG_ITEM_OLDALE_BYTRUCK
 	
 	call EventScript_ResetAllBerries
 	end

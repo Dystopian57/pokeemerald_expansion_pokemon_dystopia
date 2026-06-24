@@ -95,6 +95,13 @@
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_CEMETERY",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 22,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_CEMETERY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -290,7 +297,7 @@
     {
       "type": "trigger",
       "x": 5,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",

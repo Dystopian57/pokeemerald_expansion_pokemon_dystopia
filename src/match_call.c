@@ -745,8 +745,8 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
     {
         .trainerId = TRAINER_HEXGIRL_MAUSOLEUM,
         .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(11),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 28),
+        .battleTopicTextIds = BATTLE_TEXT_IDS(2),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 2),
         .battleFrontierRecordStreakTextIndex = 11,
         .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),

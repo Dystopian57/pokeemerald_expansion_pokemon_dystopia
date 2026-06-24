@@ -257,15 +257,14 @@
 #define cigarrettepop           0xE2
 #define wheelchairboyaskedpokemon               0xE3
 #define Sharpydefeatedat103               0xE4
-#define FLAG_RECEIVED_TM_RETURN              0xE5
-#define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
-#define FLAG_RECEIVED_TM_ROAR                0xE7
-#define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
+#define Samanthagotsnacks             0xE5
+#define SamanthaBalsamInteraction         0xE6
+#define SamanthaJoelInteraction                0xE7
+#define SamanthaBirchInteraction          0xE8
 
 #define DLCclassends                    0xE9 // Unused Flag
-
-#define FLAG_RECEIVED_TM_REST                0xEA
-#define FLAG_RECEIVED_TM_ATTRACT             0xEB
+#define Samanthaleavesmausoleum                0xEA
+#define sharpycameliaDLCcs             0xEB
 #define FLAG_RECEIVED_GLASS_ORNAMENT         0xEC
 #define FLAG_RECEIVED_SILVER_SHIELD          0xED
 #define FLAG_RECEIVED_GOLD_SHIELD            0xEE
@@ -1250,7 +1249,7 @@
 #define FLAG_ITEM_ROUTE101REBELITEM                                           0x4A0 // Unused Flag
 #define FLAG_ITEM_ROUTE103INMUD                                           0x4A1 // Unused Flag
 #define FLAG_ITEM_BEDROOM_RIFLE                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
+#define FLAG_ITEM_OLDALE_BYTRUCK                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag

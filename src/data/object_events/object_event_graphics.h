@@ -225,6 +225,8 @@ const u32 gObjectEventPic_foodtray[] = INCBIN_U32("graphics/object_events/pics/m
 const u32 gObjectEventPic_cigarette[] = INCBIN_U32("graphics/object_events/pics/misc/cigarette.4bpp");
 const u32 gObjectEventPic_rope[] = INCBIN_U32("graphics/object_events/pics/misc/rope.4bpp");
 
+const u32 gObjectEventPic_newbard[] = INCBIN_U32("graphics/object_events/pics/people/newbard.4bpp");
+
 const u32 gObjectEventPic_ReporterM[] = INCBIN_U32("graphics/object_events/pics/people/reporter_m.4bpp");
 const u32 gObjectEventPic_ReporterF[] = INCBIN_U32("graphics/object_events/pics/people/reporter_f.4bpp");
 const u32 gObjectEventPic_MauvilleOldMan1[] = INCBIN_U32("graphics/object_events/pics/people/mauville_old_man_1.4bpp");

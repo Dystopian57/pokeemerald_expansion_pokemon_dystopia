@@ -325,55 +325,115 @@ script Route101OrphanJoel{
 
 	if(var(VAR_JOELQUESTS) > 0 && var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 		if(var(VAR_JOELQUESTS) == 2) {
-		applymovement (1, moves(face_player))
-		msgbox(format("Hey Player! And strange lady! Where are you two going?"))
-		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
-		playse (SE_PIN)
-		msgbox(format("S-... strange lady...?"))
-		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
-		msgbox(format("W-well, we went out to get food at Oldale..."))
 
-		msgbox(format("Food? I've got some Oran berries here if you'd like!"))
-		applymovement (4, moves(face_left))
+			if (flag (SamanthaJoelInteraction)) {
+				playse (SE_M_BITE)
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				}
 
-		checkplayergender
-		if(var(VAR_RESULT) == MALE)
-		{msgbox(format("Don't be silly, Joel! They're going on a date to a nice place!"))
-		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
-		playse (SE_PIN)
-		msgbox(format("D-date!? N-no, it's not like that...!"))
-		}
+			if (!flag (SamanthaJoelInteraction)) {
+				applymovement (1, moves(face_player))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Hey {PLAYER}! And strange lady! Where are you two going?"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+				playse (SE_PIN)
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("S-... strange lady...?"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+				msgbox(format("W-well, we went out to get food at Oldale..."))
+				setspeaker ([SP_NAME_JOEL])
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+				msgbox(format("Food? I've got some Oran berries here if you'd like!"))
+				applymovement (4, moves(face_left))
 
-		if(var(VAR_RESULT) == FEMALE)
-		{msgbox(format("Don't be silly, Joel! They're on a girls' day out!\p So they're going to a
-		nice place to eat yummy food!"))
-		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
-		playse (SE_PIN)
-		msgbox(format("N-no, it's not like t-..."))
-		}
+				checkplayergender
+				if(var(VAR_RESULT) == MALE)
+				{setspeaker ([SP_NAME_ANNE])
+				msgbox(format("Don't be silly, Joel! They're going on a date to a nice place!"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+				playse (SE_PIN)
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("D-date!? N-no, it's not like that...!"))
+				}
 
-		msgbox(format("Really? Well, more for me!"))
-		playse (SE_M_BITE)
-		msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
-		
-		if(var(VAR_RESULT) == MALE)
-		{msgbox(format("Hehe... well, have fun! I'm rooting for you two"))}
+				if(var(VAR_RESULT) == FEMALE)
+				{setspeaker ([SP_NAME_ANNE])
+				msgbox(format("Don't be silly, Joel! They're on a girls' day out!\p So they're going to a
+				nice place to eat yummy food!"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+				playse (SE_PIN)
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("N-no, it's not like t-..."))
+				}
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Really? Well, more for me!"))
+				playse (SE_M_BITE)
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				
+				if(var(VAR_RESULT) == MALE)
+				{setspeaker ([SP_NAME_ANNE])
+				msgbox(format("Hehe... well, have fun! I'm rooting for you two"))}
 
-		if(var(VAR_RESULT) == FEMALE)
-		{msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Boys, am I right?"))}
+				if(var(VAR_RESULT) == FEMALE)
+				{setspeaker ([SP_NAME_ANNE])
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Boys, am I right?"))}
+				setflag (SamanthaJoelInteraction)
 
+			}}
 
-		}
+		if(var(VAR_JOELQUESTS) == 1){
 
-		else{
-		applymovement (1, moves(face_player))
-		msgbox(format("Food? I've got some Oran berries if you'd like!"))
+			if (flag (SamanthaJoelInteraction) && !flag (Samanthagotsnacks)) {
+				playse (SE_M_BITE)
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				goto (Joelfinish)
+			}
 
-		msgbox(format("B-berries...? Y-you eat them raw? You don't get... s-sick...?"))
+			if (flag (SamanthaJoelInteraction) && flag (Samanthagotsnacks)) {
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("That's a lot of snacks you got! Can I have some?"))
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("O-of course... here!"))
+				applymovement (1, moves(face_down))
+				playse (SE_M_BITE)
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				applymovement (1, moves(face_player))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Hmm... they're alright! But I still prefer berries."))
+				goto (Joelfinish)
+			}
 
-		msgbox(format("I did at firt, but I got used to them. Here, try them!"))
-
-		msgbox(format("T-thank you, b-but I'll have... some more p-processed food..."))
+			if (!flag (SamanthaJoelInteraction)) {
+				applymovement (1, moves(face_player))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Hey {PLAYER}! And strange lady! Where are you two going?"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+				playse (SE_PIN)
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("S-... strange lady...?"))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+				msgbox(format("W-well, we went out to get food at Oldale..."))
+				setspeaker ([SP_NAME_JOEL])
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+				waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+				msgbox(format("Food? I've got some Oran berries if you'd like!"))
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("B-berries...? Y-you eat them raw? You don't get... s-sick...?"))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("I did at first, but I got used to them. Here, try them!"))
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("T-thank you, b-but I'll have... some more p-processed food..."))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Really? Well, more for me!"))
+				playse (SE_M_BITE)
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				setflag (SamanthaJoelInteraction)
+				goto (Joelfinish)
+			}
 		}
 
 		goto (Joelfinish)
@@ -390,19 +450,22 @@ script Route101OrphanJoel{
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (1, moves(face_left))
-	msgbox(format("See that tent over there? It's my Secret Shelter."))
+	msgbox(format("I'm Joel. See that tent over there? It's my Secret Shelter."))
 	applymovement (1, moves(face_player))
+	setspeaker ([SP_NAME_JOEL])
 	msgbox (format("Many people lived in
 	weird places during the war, to hide from the bad guys.\pSome still do it, if they don't
 	have anywhere else to go.\pYou look a bit like them, so you can have this."))
 	waitmessage
 	giveitem (ITEM_TM43)
+	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("If you teach Secret Power to a Pokémon, you can make Secret Shelters in all
 	sorts of places. \pSome have unique things about them... but I won't tell you about mine!"))
 	setvar(VAR_JOELQUESTS, 1)
 	goto (Joelfinish)}
 	if(var(VAR_JOELQUESTS) == 1) {
 	applymovement (1, moves(face_player))	
+	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("Have you made a Secret Shelter yet? \pI guess you can visit mine,
 	if you need ideas for yours...\pBut don't touch anything!"))}
 
@@ -424,10 +487,12 @@ if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
 	applymovement(4, moves(face_player))
+	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Hehe... you look good together!"))}
 
 	if(var(VAR_RESULT) == FEMALE){
 	applymovement(4, moves(face_player))
+	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Please invite me to the girls' day next time! Pleeeease!"))}
 }
 
@@ -437,29 +502,38 @@ else {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement(1, moves(walk_in_place_down * 1))
+	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("So... you are moving?"))
 	applymovement(5, moves(walk_in_place_down * 1))
 	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL)
 	msgbox(format("Zig-zig?"))
 	applymovement(4, moves(walk_in_place_left * 1))
+	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Yes... I'm sorry Joel... mom has packed everything up. \p I think I'll
 	have to go... but I'll come visit soon! \p Then you can teach me all about Secret Shelters."))
 	applymovement(1, moves(walk_in_place_right * 1))
+	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("O-oh, that's okay...! In fact, you don't need to come back at all!"))
 	playse (SE_PIN)
 	applymovement(4, moves(emote_question_mark, walk_in_place_left * 1))
+	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("What? Why!?"))
 	applymovement(1, moves(walk_in_place_right * 1))
+	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("Because... I'll go visit you instead! \p I was thinking of making new Secret
 	Shelters anyway.\p I'm sure there's tons of cool places for them in Rustboro."))
 	applymovement(4, moves(walk_in_place_left * 1))
+	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Really!? You promise to come visit?"))
 	applymovement(1, moves(walk_in_place_right * 1))
+	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("I do! Now get going, before your mom gets worried."))
 	applymovement(4, moves(walk_in_place_left * 1))
+	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Okay! It's a promise. I'll be waiting! \p See you soon Joel!"))
 	applymovement(4, moves(walk_right * 2, walk_up* 3, walk_right * 7))	
 
+	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("... \p ... let's go inside, Ziggy."))
 	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_WEAK)
 	msgbox(format("Ziiig..."))
