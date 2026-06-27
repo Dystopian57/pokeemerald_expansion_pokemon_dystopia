@@ -27,6 +27,21 @@ script FountainCoinSparkle {
     release
 }
 
+script BalsamCallAfterWarehouse {
+
+    if (!flag(BalsamtoldtogoseeNorman))
+    {
+    pokenavcall(format("Prof Balsam: Hey there, {PLAYER}. It's me, Balsam.\p Are you alright?
+    Therapy should have finished ages ago, but you haven't returned like we discussed.\p It's
+    alright if you want to stretch your legs, but you should have told us. Your grandpa Birch
+    was worried sick.\p Since you're feeling adventurous - why don't you go visit your
+    other grandpa at Petalburg? \p A change of scenery will do you good. It's very close, but
+    give me a call if you get lost.\p It's backto work for me. Take care, {PLAYER}."))
+    }
+
+    else {release}
+}
+
 script TimeofDayTest {
 	lock
 	gettimeofday
@@ -520,7 +535,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     removefieldmugshot
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-    msgbox(format("Camelia and I want to stop them - well, us and old man Norman! \p Oh, name is Sharpy,
+    msgbox(format("Camelia and I want to stop them - well, us and our caretaker! \p Oh, name is Sharpy,
     by the way! What's yours? {PLAYER}? Cool name!"))
 
     removefieldmugshot
@@ -634,7 +649,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
             removefieldmugshot
 	        setspeaker ([SP_NAME_SHARPY])
             createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
-            msgbox(format("But there's one thing... Norman told us we'd need strong people..."))
+            msgbox(format("But there's one thing... he told us we'd need strong people..."))
 
             removefieldmugshot
 	        setspeaker ([SP_NAME_SHARPY])
@@ -666,7 +681,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     //setvar(VAR_OLDALE_PHASE, 1)
     setobjectxy (17, 0, 0)
     //setobjectxy (20, 0, 0)
-    setflag (sharpycameliaDLCcs)
+    clearflag (sharpycameliaDLCcs)
 	setflag (sharpynotoutsideDLC)
 	clearflag (sharpynotinroute103)
 	setflag (sharpycorphishoutsideDLC)
@@ -1196,7 +1211,7 @@ script SamanthaCall1 {
     msgbox (format("W-we don't need to go that far... I'm sure there's another vending machine in Petalburg,
     b-but... the one here in Oldale will do!"))
 
-    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall
 }
@@ -1243,22 +1258,23 @@ script SamanthaGetSnacksCutscene {
     if (!flag (Samanthagotsnacks))
     {
     lock
+    setspeaker ([SP_NAME_SAMANTHA])
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 2))
     msgbox (format("A-ah... here we are, {PLAYER}! Give me a moment..."))
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1, face_up))
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 2, walk_right * 2, face_up))
-
+    setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("Hmm... I'll have some of these..."))
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
     playse (SE_VEND) 
-
+    setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("And of these..."))
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
     playse (SE_VEND)
     waitse
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
     playse (SE_VEND) 
-
+    setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("O-oh, and these too...!"))
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
     playse (SE_VEND)
@@ -1269,6 +1285,7 @@ script SamanthaGetSnacksCutscene {
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
     playse (SE_VEND) 
     waitse
+    waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
 
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, face_down))
     waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)

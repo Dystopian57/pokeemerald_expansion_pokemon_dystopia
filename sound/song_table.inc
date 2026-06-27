@@ -582,7 +582,6 @@ gSongTable::
 	song mus_underpizza, 0, 0
 	song mus_inazumacity, 0, 0
 	song mus_sinjohruins, 0, 0
-
 	song mus_spikemuth, 0, 0
 	song mus_oldchateau, 0, 0
 	song mus_sinnohleaguextday, 0, 0
@@ -595,15 +594,11 @@ gSongTable::
 	song mus_abyssalruins, 0, 0
 	song mus_anistarcity, 0, 0
 	song mus_unovaroutegate, 0, 0
-
 	song mus_mahalotrail, 0, 0
-
 	song mus_lavenderhgss, 0, 0
 	song mus_casteliagym, 0, 0
-
 	song mus_gymnopedie, 0, 0
 	song mus_monkeydeliveryservice, 0, 0
-
 	song mus_unknown4, 0, 0
 	song mus_darkwaterbonusstage, 0, 0
 	song mus_graveyardstage, 0, 0
@@ -613,6 +608,62 @@ gSongTable::
 	song mus_tableselect, 0, 0
 	song mus_monsterhouse, 0, 0
 	song mus_stopthief, 0, 0
+
+	song mus_abestore, 0, 0
+	song mus_altrubuilding, 0, 0
+	song mus_altrutower, 0, 0
+	song mus_anxiousheart, 0, 0
+	song mus_asiatravelshop, 0, 0
+	song mus_battleagainstamachine, 0, 0
+	song mus_battleroyal, 0, 0
+	song mus_belltower, 0, 0
+	song mus_bossbattle, 0, 0
+	song mus_buysomethingwillya, 0, 0
+	song mus_calm, 0, 0
+	song mus_chaos, 0, 0
+	song mus_darkcave, 0, 0
+	song mus_darknesstemple, 0, 0
+	song mus_dolceisland, 0, 0
+	song mus_drowzee, 0, 0
+	song mus_duskfactory, 0, 0
+	song mus_encounterpinchers, 0, 0
+	song mus_endinglong, 0, 0
+	song mus_excitement, 0, 0
+	song mus_fieryfurnacebattle, 0, 0
+	song mus_gameover, 0, 0
+	song mus_gorockgrunt, 0, 0
+	song mus_gorockquads, 0, 0
+	song mus_happymusic, 0, 0
+	song mus_hazukibasement, 0, 0
+	song mus_izumoindespair, 0, 0
+	song mus_lemuria, 0, 0
+	song mus_lighttemple, 0, 0
+	song mus_makoreactor, 0, 0
+	song mus_nationalpark, 0, 0
+	song mus_nozomi, 0, 0
+
+	song mus_ominousorgan, 0, 0
+	song mus_panulacave, 0, 0
+	song mus_piratesguige, 0, 0
+	song mus_relaxing, 0, 0
+	song mus_renbouparty, 0, 0
+	song mus_rockycave, 0, 0
+	song mus_rockycavebattle, 0, 0
+	song mus_ruinsmusic, 0, 0
+	song mus_sadstory, 0, 0
+	song mus_schoolatnight, 0, 0
+	song mus_secretsleepingatsea, 0, 0
+	song mus_sekrarange, 0, 0
+	song mus_sinnohvictoryroad, 0, 0
+	song mus_soothing, 0, 0
+	song mus_storm, 0, 0
+	song mus_stressful, 0, 0
+	song mus_suspense, 0, 0
+	song mus_takarasushi, 0, 0
+	song mus_terminal, 0, 0
+	song mus_theplace, 0, 0
+	song mus_unwaveringemotions, 0, 0
+	song mus_windyprairiebattle, 0, 0
 
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2

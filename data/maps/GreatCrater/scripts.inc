@@ -553,130 +553,138 @@ GreatCraterSouvenirShop::
 # 419 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterSouvenirShop_Text_0
 # 420 "data/maps/GreatCrater/scripts.pory"
-	pokemart ShopSouvenirs
+	fadeoutbgm 0
 # 421 "data/maps/GreatCrater/scripts.pory"
+	playbgm MUS_BUYSOMETHINGWILLYA, FALSE
+# 422 "data/maps/GreatCrater/scripts.pory"
+	pokemart ShopSouvenirs
+# 423 "data/maps/GreatCrater/scripts.pory"
+	fadeinbgm 0
+# 424 "data/maps/GreatCrater/scripts.pory"
+	playbgm MUS_ABNORMAL_WEATHER, TRUE
+# 425 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
 	.align 2
-# 425 "data/maps/GreatCrater/scripts.pory"
-ShopSouvenirs:
-# 426 "data/maps/GreatCrater/scripts.pory"
-	.2byte ITEM_SHALOUR_SABLE
-# 427 "data/maps/GreatCrater/scripts.pory"
-	.2byte ITEM_BEAD_MAIL
-# 428 "data/maps/GreatCrater/scripts.pory"
-	.2byte ITEM_COMET_SHARD
 # 429 "data/maps/GreatCrater/scripts.pory"
+ShopSouvenirs:
+# 430 "data/maps/GreatCrater/scripts.pory"
+	.2byte ITEM_SHALOUR_SABLE
+# 431 "data/maps/GreatCrater/scripts.pory"
+	.2byte ITEM_BEAD_MAIL
+# 432 "data/maps/GreatCrater/scripts.pory"
+	.2byte ITEM_COMET_SHARD
+# 433 "data/maps/GreatCrater/scripts.pory"
 	.2byte ITEM_ZOOM_LENS
 	.2byte ITEM_NONE
 
 GreatCraterSouvenirShopkeeper::
-# 434 "data/maps/GreatCrater/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 435 "data/maps/GreatCrater/scripts.pory"
-	applymovement 1, ReportersGreatCrater_Movement_0
-# 436 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSouvenirShopkeeper_Text_0
 # 438 "data/maps/GreatCrater/scripts.pory"
-	applymovement 1, ReportersGreatCrater_Movement_5
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 439 "data/maps/GreatCrater/scripts.pory"
-	waitmovement 1
+	applymovement 1, ReportersGreatCrater_Movement_0
 # 440 "data/maps/GreatCrater/scripts.pory"
-	releaseall
-	return
-
-
-GreatCraterSouvenirBox::
+	msgbox GreatCraterSouvenirShopkeeper_Text_0
+# 442 "data/maps/GreatCrater/scripts.pory"
+	applymovement 1, ReportersGreatCrater_Movement_5
 # 443 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSouvenirBox_Text_0
+	waitmovement 1
 # 444 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
-GreatCraterSign::
+GreatCraterSouvenirBox::
 # 447 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSign_Text_0
+	msgbox GreatCraterSouvenirBox_Text_0
 # 448 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
-GreatCraterSouvenirSupplies::
+GreatCraterSign::
 # 451 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSouvenirSupplies_Text_0
+	msgbox GreatCraterSign_Text_0
 # 452 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
-GreatCraterVoid::
+GreatCraterSouvenirSupplies::
 # 455 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterSouvenirSupplies_Text_0
+# 456 "data/maps/GreatCrater/scripts.pory"
+	releaseall
+	return
+
+
+GreatCraterVoid::
+# 459 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterVoid_Text_0
-# 457 "data/maps/GreatCrater/scripts.pory"
+# 461 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
 Cratertouristasksforhelp::
-# 463 "data/maps/GreatCrater/scripts.pory"
-	lock
-# 464 "data/maps/GreatCrater/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 465 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, Cratertouristasksforhelp_Movement_0
-# 466 "data/maps/GreatCrater/scripts.pory"
-	playse SE_PIN
 # 467 "data/maps/GreatCrater/scripts.pory"
-	waitmovement
+	lock
 # 468 "data/maps/GreatCrater/scripts.pory"
-	msgbox Cratertouristasksforhelp_Text_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 469 "data/maps/GreatCrater/scripts.pory"
-	closemessage
+	applymovement 10, Cratertouristasksforhelp_Movement_0
+# 470 "data/maps/GreatCrater/scripts.pory"
+	playse SE_PIN
+# 471 "data/maps/GreatCrater/scripts.pory"
+	waitmovement
+# 472 "data/maps/GreatCrater/scripts.pory"
+	msgbox Cratertouristasksforhelp_Text_0
 # 473 "data/maps/GreatCrater/scripts.pory"
+	closemessage
+# 477 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATERTOURIST, 1
-# 474 "data/maps/GreatCrater/scripts.pory"
+# 478 "data/maps/GreatCrater/scripts.pory"
 	dofieldeffectsparkle 11, 15, 9
-# 475 "data/maps/GreatCrater/scripts.pory"
+# 479 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 
 CraterTrappedTouristandRope::
-# 479 "data/maps/GreatCrater/scripts.pory"
+# 483 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 480 "data/maps/GreatCrater/scripts.pory"
+# 484 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 481 "data/maps/GreatCrater/scripts.pory"
+# 485 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_GREATCRATERTOURIST, 1
 	goto_if_eq CraterTrappedTouristandRope_2
 CraterTrappedTouristandRope_1:
-# 557 "data/maps/GreatCrater/scripts.pory"
+# 563 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_GREATCRATERTOURIST, 2
 	goto_if_eq CraterTrappedTouristandRope_5
 CraterTrappedTouristandRope_4:
-# 570 "data/maps/GreatCrater/scripts.pory"
+# 576 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_GREATCRATERTOURIST, 3
 	goto_if_eq CraterTrappedTouristandRope_11
 CraterTrappedTouristandRope_10:
-# 576 "data/maps/GreatCrater/scripts.pory"
+# 582 "data/maps/GreatCrater/scripts.pory"
 endcraterbottomtouristscript:
-# 577 "data/maps/GreatCrater/scripts.pory"
+# 583 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 CraterTrappedTouristandRope_2:
-# 482 "data/maps/GreatCrater/scripts.pory"
+# 486 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_0
-# 488 "data/maps/GreatCrater/scripts.pory"
+# 492 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATERTOURIST, 2
 	checkitem ITEM_BINDING_BAND
 # 0 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq CraterTrappedTouristandRope_7
-# 552 "data/maps/GreatCrater/scripts.pory"
+# 558 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_1
 
@@ -693,163 +701,169 @@ CraterTrappedTouristandRope_13:
 	goto CraterTrappedTouristandRope_4
 
 CraterTrappedTouristandRope_7:
-# 492 "data/maps/GreatCrater/scripts.pory"
-helpcratertourist:
-# 493 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_1
-# 494 "data/maps/GreatCrater/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_30, ReportersGreatCrater_Text_31
 # 496 "data/maps/GreatCrater/scripts.pory"
+helpcratertourist:
+# 497 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_1
+# 498 "data/maps/GreatCrater/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_30, ReportersGreatCrater_Text_31
+# 500 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq CraterTrappedTouristandRope_17
 CraterTrappedTouristandRope_16:
-# 541 "data/maps/GreatCrater/scripts.pory"
+# 547 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq CraterTrappedTouristandRope_21
 	goto CraterTrappedTouristandRope_1
 
 CraterTrappedTouristandRope_11:
-# 572 "data/maps/GreatCrater/scripts.pory"
+# 578 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_11
-# 573 "data/maps/GreatCrater/scripts.pory"
+# 579 "data/maps/GreatCrater/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_30, ReportersGreatCrater_Text_31
-# 574 "data/maps/GreatCrater/scripts.pory"
+# 580 "data/maps/GreatCrater/scripts.pory"
 	warp MAP_GREAT_CRATER_BOTTOM, 0
 	goto CraterTrappedTouristandRope_10
 
 CraterTrappedTouristandRope_14:
-# 559 "data/maps/GreatCrater/scripts.pory"
+# 565 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_9
-# 562 "data/maps/GreatCrater/scripts.pory"
+# 568 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_13
 
 CraterTrappedTouristandRope_17:
-# 497 "data/maps/GreatCrater/scripts.pory"
-	clearflag greatcraterrope
-# 498 "data/maps/GreatCrater/scripts.pory"
-	setobjectxyperm 10, 11, 15
 # 501 "data/maps/GreatCrater/scripts.pory"
-	playse SE_BALL_THROW
+	clearflag greatcraterrope
 # 502 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_2
+	addobject 11
 # 503 "data/maps/GreatCrater/scripts.pory"
-	playse SE_PIN
+	setobjectxyperm 10, 11, 15
 # 504 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, Cratertouristasksforhelp_Movement_0
+	setobjectxyperm 11, 11, 15
 # 505 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_3
-# 506 "data/maps/GreatCrater/scripts.pory"
-	hidefollower
+	showobjectat 11, MAP_GREAT_CRATER
 # 507 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_0
+	playse SE_BALL_THROW
 # 508 "data/maps/GreatCrater/scripts.pory"
-	showobjectat 10, MAP_GREAT_CRATER
+	msgbox CraterTrappedTouristandRope_Text_2
+# 509 "data/maps/GreatCrater/scripts.pory"
+	playse SE_PIN
 # 510 "data/maps/GreatCrater/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CraterTrappedTouristandRope_Movement_1
+	applymovement 10, Cratertouristasksforhelp_Movement_0
 # 511 "data/maps/GreatCrater/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox CraterTrappedTouristandRope_Text_3
 # 512 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_2
-# 513 "data/maps/GreatCrater/scripts.pory"
-	playse SE_LEDGE
-# 514 "data/maps/GreatCrater/scripts.pory"
-	waitmovement 10
-# 517 "data/maps/GreatCrater/scripts.pory"
-	waitse
-# 519 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_3
-# 520 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_4
-# 522 "data/maps/GreatCrater/scripts.pory"
-	giveitem ITEM_EVIOLITE
-# 523 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_5
-# 525 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, ReportersGreatCrater_Movement_5
-# 526 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_6
-# 527 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_3
-# 528 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_7
-# 531 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_4
-# 532 "data/maps/GreatCrater/scripts.pory"
-	waitmovement 10
-# 533 "data/maps/GreatCrater/scripts.pory"
-	removeobject 7
-# 534 "data/maps/GreatCrater/scripts.pory"
-	setobjectxyperm 10, 0, 0
-# 535 "data/maps/GreatCrater/scripts.pory"
-	hideobjectat 10, MAP_GREAT_CRATER
-# 536 "data/maps/GreatCrater/scripts.pory"
-	setvar VAR_GREATCRATERTOURIST, 3
-# 537 "data/maps/GreatCrater/scripts.pory"
 	hidefollower
+# 513 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_0
+# 514 "data/maps/GreatCrater/scripts.pory"
+	showobjectat 10, MAP_GREAT_CRATER
+# 516 "data/maps/GreatCrater/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, CraterTrappedTouristandRope_Movement_1
+# 517 "data/maps/GreatCrater/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 518 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_2
+# 519 "data/maps/GreatCrater/scripts.pory"
+	playse SE_LEDGE
+# 520 "data/maps/GreatCrater/scripts.pory"
+	waitmovement 10
+# 523 "data/maps/GreatCrater/scripts.pory"
+	waitse
+# 525 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_3
+# 526 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_4
+# 528 "data/maps/GreatCrater/scripts.pory"
+	giveitem ITEM_EVIOLITE
+# 529 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_5
+# 531 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, ReportersGreatCrater_Movement_5
+# 532 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_6
+# 533 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_3
+# 534 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_7
+# 537 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_4
 # 538 "data/maps/GreatCrater/scripts.pory"
+	waitmovement 10
+# 539 "data/maps/GreatCrater/scripts.pory"
+	removeobject 10
+# 540 "data/maps/GreatCrater/scripts.pory"
+	setobjectxyperm 10, 0, 0
+# 541 "data/maps/GreatCrater/scripts.pory"
+	hideobjectat 10, MAP_GREAT_CRATER
+# 542 "data/maps/GreatCrater/scripts.pory"
+	setvar VAR_GREATCRATERTOURIST, 3
+# 543 "data/maps/GreatCrater/scripts.pory"
+	hidefollower
+# 544 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_16
 
 CraterTrappedTouristandRope_19:
-# 565 "data/maps/GreatCrater/scripts.pory"
+# 571 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_10
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 573 "data/maps/GreatCrater/scripts.pory"
 	goto helpcratertourist
 	goto CraterTrappedTouristandRope_4
 
 CraterTrappedTouristandRope_21:
-# 542 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_8
 # 548 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_8
+# 554 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_1
 
 
 GreatCraterDevonGruntFemale::
-# 584 "data/maps/GreatCrater/scripts.pory"
-	lock
-# 585 "data/maps/GreatCrater/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 586 "data/maps/GreatCrater/scripts.pory"
-	applymovement 9, ReportersGreatCrater_Movement_0
-# 587 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterDevonGruntFemale_Text_0
-# 589 "data/maps/GreatCrater/scripts.pory"
-	applymovement 9, ReportersGreatCrater_Movement_3
 # 590 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterDevonGruntFemale_Text_1
+	lock
+# 591 "data/maps/GreatCrater/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 592 "data/maps/GreatCrater/scripts.pory"
-	applymovement 9, ReportersGreatCrater_Movement_4
+	applymovement 9, ReportersGreatCrater_Movement_0
 # 593 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterDevonGruntFemale_Text_2
-# 594 "data/maps/GreatCrater/scripts.pory"
-	applymovement 9, ReportersGreatCrater_Movement_5
+	msgbox GreatCraterDevonGruntFemale_Text_0
 # 595 "data/maps/GreatCrater/scripts.pory"
-	waitmovement
+	applymovement 9, ReportersGreatCrater_Movement_3
 # 596 "data/maps/GreatCrater/scripts.pory"
-	applymovement 9, ReportersGreatCrater_Movement_5
-# 597 "data/maps/GreatCrater/scripts.pory"
-	waitmovement
+	msgbox GreatCraterDevonGruntFemale_Text_1
 # 598 "data/maps/GreatCrater/scripts.pory"
+	applymovement 9, ReportersGreatCrater_Movement_4
+# 599 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterDevonGruntFemale_Text_2
+# 600 "data/maps/GreatCrater/scripts.pory"
+	applymovement 9, ReportersGreatCrater_Movement_5
+# 601 "data/maps/GreatCrater/scripts.pory"
+	waitmovement
+# 602 "data/maps/GreatCrater/scripts.pory"
+	applymovement 9, ReportersGreatCrater_Movement_5
+# 603 "data/maps/GreatCrater/scripts.pory"
+	waitmovement
+# 604 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 
 GreatCraterDevonGruntMale::
-# 602 "data/maps/GreatCrater/scripts.pory"
-	lock
-# 603 "data/maps/GreatCrater/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 604 "data/maps/GreatCrater/scripts.pory"
-	applymovement 8, ReportersGreatCrater_Movement_0
-# 605 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterDevonGruntMale_Text_0
-# 607 "data/maps/GreatCrater/scripts.pory"
-	applymovement 8, ReportersGreatCrater_Movement_5
 # 608 "data/maps/GreatCrater/scripts.pory"
-	waitmovement
+	lock
 # 609 "data/maps/GreatCrater/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 610 "data/maps/GreatCrater/scripts.pory"
+	applymovement 8, ReportersGreatCrater_Movement_0
+# 611 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterDevonGruntMale_Text_0
+# 613 "data/maps/GreatCrater/scripts.pory"
+	applymovement 8, ReportersGreatCrater_Movement_5
+# 614 "data/maps/GreatCrater/scripts.pory"
+	waitmovement
+# 615 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
@@ -890,53 +904,53 @@ ReportersGreatCrater_Movement_5:
 	face_down
 	step_end
 
-# 465 "data/maps/GreatCrater/scripts.pory"
+# 469 "data/maps/GreatCrater/scripts.pory"
 Cratertouristasksforhelp_Movement_0:
-# 465 "data/maps/GreatCrater/scripts.pory"
+# 469 "data/maps/GreatCrater/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 507 "data/maps/GreatCrater/scripts.pory"
+# 513 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_0:
-# 507 "data/maps/GreatCrater/scripts.pory"
+# 513 "data/maps/GreatCrater/scripts.pory"
 	face_up
 	step_end
 
-# 510 "data/maps/GreatCrater/scripts.pory"
+# 516 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_1:
-# 510 "data/maps/GreatCrater/scripts.pory"
+# 516 "data/maps/GreatCrater/scripts.pory"
 	walk_right
-# 510 "data/maps/GreatCrater/scripts.pory"
+# 516 "data/maps/GreatCrater/scripts.pory"
 	face_left
 	step_end
 
-# 512 "data/maps/GreatCrater/scripts.pory"
+# 518 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_2:
-# 512 "data/maps/GreatCrater/scripts.pory"
+# 518 "data/maps/GreatCrater/scripts.pory"
 	jump_up
 	step_end
 
-# 519 "data/maps/GreatCrater/scripts.pory"
+# 525 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_3:
-# 519 "data/maps/GreatCrater/scripts.pory"
+# 525 "data/maps/GreatCrater/scripts.pory"
 	face_right
 	step_end
 
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_4:
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
 	step_end
 
@@ -1213,41 +1227,41 @@ GreatCraterSouvenirShop_Text_0:
 	.string "Shop!$"
 
 GreatCraterSouvenirShopkeeper_Text_0:
-# 436 "data/maps/GreatCrater/scripts.pory"
+# 440 "data/maps/GreatCrater/scripts.pory"
 	.string "I know this is not New Rustboro Mall,\n"
 	.string "but let's be civil hey?\p"
 	.string "If you want to buy, go around the\n"
 	.string "counter.$"
 
 GreatCraterSouvenirBox_Text_0:
-# 443 "data/maps/GreatCrater/scripts.pory"
+# 447 "data/maps/GreatCrater/scripts.pory"
 	.string "The box is full of questionably\n"
 	.string "preserved donuts.$"
 
 GreatCraterSign_Text_0:
-# 447 "data/maps/GreatCrater/scripts.pory"
+# 451 "data/maps/GreatCrater/scripts.pory"
 	.string "North - Route 102\p"
 	.string "East - Route 101$"
 
 GreatCraterSouvenirSupplies_Text_0:
-# 451 "data/maps/GreatCrater/scripts.pory"
+# 455 "data/maps/GreatCrater/scripts.pory"
 	.string "The articles are covered by the same\n"
 	.string "dust that floats in the air.$"
 
 GreatCraterVoid_Text_0:
-# 455 "data/maps/GreatCrater/scripts.pory"
+# 459 "data/maps/GreatCrater/scripts.pory"
 	.string "The pitch-black bottom of the crater is\n"
 	.string "too deep beneath to see.\p"
 	.string "With the right equipment, one could\n"
 	.string "climb down and explore it...$"
 
 Cratertouristasksforhelp_Text_0:
-# 468 "data/maps/GreatCrater/scripts.pory"
+# 472 "data/maps/GreatCrater/scripts.pory"
 	.string "O-oh, hey! HEEEY! Is there anyone up\n"
 	.string "there? Somebody HELP ME!$"
 
 CraterTrappedTouristandRope_Text_0:
-# 482 "data/maps/GreatCrater/scripts.pory"
+# 486 "data/maps/GreatCrater/scripts.pory"
 	.string "Aah, thank the heavens! You may not be\n"
 	.string "able to see me, but I'm down here!\p"
 	.string "I wanted to take a good picture of the\n"
@@ -1262,46 +1276,46 @@ CraterTrappedTouristandRope_Text_0:
 	.string "do with him!$"
 
 CraterTrappedTouristandRope_Text_1:
-# 493 "data/maps/GreatCrater/scripts.pory"
+# 497 "data/maps/GreatCrater/scripts.pory"
 	.string "Use the {COLOR RED}Sailor Knot{COLOR DARK_GRAY} to help the person?$"
 
 CraterTrappedTouristandRope_Text_2:
-# 502 "data/maps/GreatCrater/scripts.pory"
+# 508 "data/maps/GreatCrater/scripts.pory"
 	.string "{PLAYER} ties the knot firmly to a\n"
 	.string "rock and lets the rest fall down.$"
 
 CraterTrappedTouristandRope_Text_3:
-# 505 "data/maps/GreatCrater/scripts.pory"
+# 511 "data/maps/GreatCrater/scripts.pory"
 	.string "Ah, you're a life-saver!$"
 
 CraterTrappedTouristandRope_Text_4:
-# 520 "data/maps/GreatCrater/scripts.pory"
+# 526 "data/maps/GreatCrater/scripts.pory"
 	.string "My hero! I don't know what I would have\n"
 	.string "done without you!\p"
-	.string "But I know what I'll do know. Reward you\n"
+	.string "But I know what I'll do now. Reward you\n"
 	.string "for your generosity!$"
 
 CraterTrappedTouristandRope_Text_5:
-# 523 "data/maps/GreatCrater/scripts.pory"
+# 529 "data/maps/GreatCrater/scripts.pory"
 	.string "A friend gifted me this before my trip,\n"
-	.string "saying it'll keep me safe... well, it\l"
-	.string "clearly doesn't work, so you can have\l"
-	.string "it!$"
+	.string "saying it'll keep me safe...\p"
+	.string "Well, it clearly doesn't work, so you can\n"
+	.string "have it!$"
 
 CraterTrappedTouristandRope_Text_6:
-# 526 "data/maps/GreatCrater/scripts.pory"
+# 532 "data/maps/GreatCrater/scripts.pory"
 	.string "Wait... maybe it's thanks to it that you\n"
 	.string "found me?$"
 
 CraterTrappedTouristandRope_Text_7:
-# 528 "data/maps/GreatCrater/scripts.pory"
+# 534 "data/maps/GreatCrater/scripts.pory"
 	.string "Well, nevermind. I don't plan to leave\n"
 	.string "New Rustboro ever again, so I won't\l"
 	.string "need it.\p"
 	.string "Goodbye now, and watch your footing!$"
 
 CraterTrappedTouristandRope_Text_8:
-# 542 "data/maps/GreatCrater/scripts.pory"
+# 548 "data/maps/GreatCrater/scripts.pory"
 	.string "Hey... HEY! What are you waiting for!?\n"
 	.string "Why are you HESITATING!?\p"
 	.string "Do you think it'd be FUNNY to leave me\n"
@@ -1314,7 +1328,7 @@ CraterTrappedTouristandRope_Text_8:
 	.string "begging you!$"
 
 CraterTrappedTouristandRope_Text_9:
-# 559 "data/maps/GreatCrater/scripts.pory"
+# 565 "data/maps/GreatCrater/scripts.pory"
 	.string "You're back! But... I don't see that\n"
 	.string "{COLOR RED}Sailor Knot{COLOR DARK_GRAY} on you!\p"
 	.string "I appreciate you checking on me, but I'd\n"
@@ -1323,36 +1337,36 @@ CraterTrappedTouristandRope_Text_9:
 	.string "I'm begging you here!$"
 
 CraterTrappedTouristandRope_Text_10:
-# 565 "data/maps/GreatCrater/scripts.pory"
+# 571 "data/maps/GreatCrater/scripts.pory"
 	.string "There you are! And I see you've brought\n"
 	.string "the {COLOR RED}Sailor Knot{COLOR DARK_GRAY}!\p"
 	.string "Quick, tie it to something and let it\n"
 	.string "fall!$"
 
 CraterTrappedTouristandRope_Text_11:
-# 572 "data/maps/GreatCrater/scripts.pory"
+# 578 "data/maps/GreatCrater/scripts.pory"
 	.string "Use the {COLOR RED}Sailor Knot{COLOR DARK_GRAY} to climb down?$"
 
 GreatCraterDevonGruntFemale_Text_0:
-# 587 "data/maps/GreatCrater/scripts.pory"
+# 593 "data/maps/GreatCrater/scripts.pory"
 	.string "I'm sorry, but one of our scientists is\n"
 	.string "currently searching for a dangerous\l"
 	.string "Pokémon in Route 102.$"
 
 GreatCraterDevonGruntFemale_Text_1:
-# 590 "data/maps/GreatCrater/scripts.pory"
+# 596 "data/maps/GreatCrater/scripts.pory"
 	.string "The creature in question is next on the\n"
 	.string "list of Pokémon to be safened, and we\l"
 	.string "can't risk civilians interfering with his\l"
 	.string "work.$"
 
 GreatCraterDevonGruntFemale_Text_2:
-# 593 "data/maps/GreatCrater/scripts.pory"
+# 599 "data/maps/GreatCrater/scripts.pory"
 	.string "You have been hurt by a Pokémon, do\n"
 	.string "you? Surely you understand.$"
 
 GreatCraterDevonGruntMale_Text_0:
-# 605 "data/maps/GreatCrater/scripts.pory"
+# 611 "data/maps/GreatCrater/scripts.pory"
 	.string "By regulation of Devon Co.'s Wildlife\n"
 	.string "Protocol, section 75, titled 'Area\l"
 	.string "Enclosures for the purpose of Safemon\l"

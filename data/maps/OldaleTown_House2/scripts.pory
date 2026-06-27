@@ -102,13 +102,14 @@ script OldaleTownHouse2Tiana {
 script OldaleTownHouse2AnneArgument {
     beginargument:
 	applymovement(2, moves(walk_in_place_right * 1))
-    msgbox(format("I don't want to move to Rustboro! I want to stay here so I can play with Joel.
+	setspeaker ([SP_NAME_ANNE])
+    msgbox(format("I don't want to move to Rustboro! I want to stay here and play with Joel.
     \p He's going to teach me how to make a Secret Shelter!"))
-
+	setspeaker (NULL)
 	applymovement(1, moves(walk_in_place_left * 1))
     msgbox(format("Don't be ridiculous! You'll make many more and better friends than that orphan
     in the city! \p Much cleaner at least - that little imp is always covered in mud!"))
-
+	setspeaker ([SP_NAME_ANNE])
 	applymovement(2, moves(walk_in_place_right * 1))
     msgbox(format("He's not an imp! He's fun and cool! And you're mean!"))
 

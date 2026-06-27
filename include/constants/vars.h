@@ -241,7 +241,7 @@
 #define VAR_GIFT_PICHU_SLOT                               0x40DD
 #define VAR_ROUTE103_WEATHER                               0x40DE // Var is written to, but never read
 #define VAR_ROUTE102_WEATHER                                0x40DF // Var is written to, but never read
-#define VAR_GIFT_UNUSED_3                                0x40E0 // Var is written to, but never read
+#define VAR_JIMMYQUESTPROGRESS                                0x40E0 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_4                                0x40E1 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read

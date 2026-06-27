@@ -149,7 +149,8 @@ script LittlerootMausoleum_HexGirl {
      the rest, keeping me company!"))
      //ghost poke react and noises
      setspeaker ([SP_NAME_SAMANTHA])
-     msgbox (format("I will give you a call if I need something again. Thank you..."))}
+     msgbox (format("I will give you a call if I need something again. Thank you..."))
+     goto (endhexgirlscript)}
 
     if (var(VAR_MAUSOLEUM_HEXGIRL) == 2)
 {
@@ -183,11 +184,12 @@ script LittlerootMausoleum_HexGirl {
         do on my own.\p I'll just... try to muster the courage to go by myself. Yes. I'll do that..."))
         playse (SE_M_SNORE)
         msgbox (format("..."))
+        goto (endhexgirlscript)
         }
 }
 
 
-    if (var(VAR_MAUSOLEUM_HEXGIRL) == 4)
+    if (var(VAR_MAUSOLEUM_HEXGIRL) == 3)
     {   setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("T-thank you for your help... these snacks will last me a while..."))
 
@@ -221,7 +223,8 @@ script LittlerootMausoleum_HexGirl {
         msgbox (format("I-I'm sorry I don't have... m-more to give you... for your help... \p T-thanks again...
         it was... v-very fun!"))
 
-        setvar (VAR_MAUSOLEUM_HEXGIRL, 5)
+        setvar (VAR_MAUSOLEUM_HEXGIRL, 4)
+        goto (endhexgirlscript)
     }
 
 
@@ -243,16 +246,27 @@ script Samanthafollowchat {
     applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
     waitmovement (OBJ_EVENT_ID_FOLLOWER)
     msgbox(format("{PLAYER}... what's the matter?"))
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "What's up?", "Where to?", "I need to go")
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "What's up?", "Where to?", "I need to go", "It's nothing")
         if(var(VAR_RESULT) == 0)
-        { setspeaker ([SP_NAME_SAMANTHA])
-        msgbox(format("I'm good... just a bit hungry."))}
+        { if (!flag (Samanthagotsnacks))
+          {setspeaker ([SP_NAME_SAMANTHA])
+            msgbox(format("I-I'm good... just a big hungry..."))}
+           playse (SE_M_SNORE)
+
+           if (flag (Samanthagotsnacks))//if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
+           {
+            setspeaker ([SP_NAME_SAMANTHA])
+            msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom... gulp.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+            \p O-oh, I'm sorry! I couldn't help myself..."))
+           }
+        
+        }
 
         if(var(VAR_RESULT) == 1)
         {  if (!flag (Samanthagotsnacks))//if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
            {setspeaker ([SP_NAME_SAMANTHA])
            msgbox(format("I-I want to go to the vending machine next to Oldale Town's Devon Center.
-            \p There's some... tasty snacks there..."))}
+            \p There's some... t-tasty snacks there..."))}
             
             if (flag (Samanthagotsnacks))//if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
            {setspeaker ([SP_NAME_SAMANTHA])
@@ -268,7 +282,8 @@ script Samanthafollowchat {
         fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
         fadescreenswapbuffers (FADE_FROM_BLACK)
-        setvar (VAR_MAUSOLEUM_HEXGIRL, 2)}
+        setvar (VAR_MAUSOLEUM_HEXGIRL, 2)
+        clearflag (Samanthaleavesmausoleum)}
 
         if (flag (Samanthagotsnacks)){
         setspeaker ([SP_NAME_SAMANTHA])
@@ -278,8 +293,12 @@ script Samanthafollowchat {
         destroyfollowernpc
         fadescreenswapbuffers (FADE_FROM_BLACK)
         setvar (VAR_MAUSOLEUM_HEXGIRL, 4)
+        clearflag (Samanthaleavesmausoleum)
         }
-}
+        }
+
+        if(var(VAR_RESULT) == 3)
+        {release }
         
     release
   }
@@ -335,5 +354,59 @@ script MausoleumNogoDownstairs {
     fadeinbgm (2)
 	releaseall		
 
+    
+}
+
+script MausoleumFinishedSnackQuest {
+
+    if (flag (Samanthagotsnacks)){
+
+	lock
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_up))
+    waitmovement (OBJ_EVENT_ID_FOLLOWER)
+    setspeaker ([SP_NAME_SAMANTHA])
+        msgbox (format("T-thank you for your help... these snacks will last me a while..."))
+
+         if (flag (SamanthaBirchInteraction)){
+            setspeaker ([SP_NAME_SAMANTHA])
+            msgbox (format("I didn't know Professor Birch was your grandfather... \p He is so kind,
+            but he also looks very sad..."))
+             }
+
+        if (flag (SamanthaBalsamInteraction)){
+            setspeaker ([SP_NAME_SAMANTHA])
+            msgbox (format("And thank you for introducing me to Professor Balsam. \p S-she is...
+            not as scary as I thought..."))
+             }
+
+        if (flag (SamanthaJoelInteraction)){
+            setspeaker ([SP_NAME_SAMANTHA])
+            msgbox (format("I liked meeting Joel too. He is a tough kid."))
+             }
+        setspeaker ([SP_NAME_SAMANTHA])
+        msgbox (format("H-here... I want to give you this as... t-thanks...!"))
+        giveitem (ITEM_SPELL_TAG)
+
+        if (flag (SamanthaBirchInteraction) && flag (SamanthaBalsamInteraction) && flag (SamanthaJoelInteraction) )
+        {
+        setspeaker ([SP_NAME_SAMANTHA])
+        msgbox (format("A-and... I also m-made... this...!"))
+        giveitem (ITEM_DESTINY_KNOT)}
+
+        setspeaker ([SP_NAME_SAMANTHA])
+        msgbox (format("I-I'm sorry I don't have... m-more to give you... for your help... \p T-thanks again...
+        it was... v-very fun!"))
+        fadescreenswapbuffers (FADE_TO_BLACK)
+        destroyfollowernpc
+        fadescreenswapbuffers (FADE_FROM_BLACK)
+        setvar (VAR_MAUSOLEUM_HEXGIRL, 4)
+        clearflag (Samanthaleavesmausoleum)
+        
+	    releaseall		
+}
+
+else {release}
     
 }

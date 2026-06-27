@@ -180,78 +180,84 @@ beginargument:
 # 104 "data/maps/OldaleTown_House2/scripts.pory"
 	applymovement 2, OldaleTownHouse2Anne_Movement_0
 # 105 "data/maps/OldaleTown_House2/scripts.pory"
+	setspeaker [ SP_NAME_ANNE ]
+# 106 "data/maps/OldaleTown_House2/scripts.pory"
 	msgbox OldaleTownHouse2AnneArgument_Text_0
 # 108 "data/maps/OldaleTown_House2/scripts.pory"
-	applymovement 1, OldaleTownHouse2Anne_Movement_1
+	setspeaker NULL
 # 109 "data/maps/OldaleTown_House2/scripts.pory"
+	applymovement 1, OldaleTownHouse2Anne_Movement_1
+# 110 "data/maps/OldaleTown_House2/scripts.pory"
 	msgbox OldaleTownHouse2AnneArgument_Text_1
 # 112 "data/maps/OldaleTown_House2/scripts.pory"
-	applymovement 2, OldaleTownHouse2Anne_Movement_0
+	setspeaker [ SP_NAME_ANNE ]
 # 113 "data/maps/OldaleTown_House2/scripts.pory"
+	applymovement 2, OldaleTownHouse2Anne_Movement_0
+# 114 "data/maps/OldaleTown_House2/scripts.pory"
 	msgbox OldaleTownHouse2AnneArgument_Text_2
-# 115 "data/maps/OldaleTown_House2/scripts.pory"
-	applymovement 2, OldaleTownHouse2AnneArgument_Movement_0
 # 116 "data/maps/OldaleTown_House2/scripts.pory"
-	waitmovement 0
+	applymovement 2, OldaleTownHouse2AnneArgument_Movement_0
 # 117 "data/maps/OldaleTown_House2/scripts.pory"
-	removeobject 2
+	waitmovement 0
 # 118 "data/maps/OldaleTown_House2/scripts.pory"
-	setvar VAR_0x8004, 2
+	removeobject 2
 # 119 "data/maps/OldaleTown_House2/scripts.pory"
-	setvar VAR_0x8005, 6
+	setvar VAR_0x8004, 2
 # 120 "data/maps/OldaleTown_House2/scripts.pory"
-	setvar VAR_0x8006, 4
+	setvar VAR_0x8005, 6
 # 121 "data/maps/OldaleTown_House2/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 4
 # 122 "data/maps/OldaleTown_House2/scripts.pory"
-	special ShakeCamera
+	setvar VAR_0x8007, 4
 # 123 "data/maps/OldaleTown_House2/scripts.pory"
-	playse SE_BREAKABLE_DOOR
+	special ShakeCamera
 # 124 "data/maps/OldaleTown_House2/scripts.pory"
+	playse SE_BREAKABLE_DOOR
+# 125 "data/maps/OldaleTown_House2/scripts.pory"
 	waitse
-# 126 "data/maps/OldaleTown_House2/scripts.pory"
-	setflag annegoestojoel
 # 127 "data/maps/OldaleTown_House2/scripts.pory"
+	setflag annegoestojoel
+# 128 "data/maps/OldaleTown_House2/scripts.pory"
 	clearflag anneinroute101
-# 129 "data/maps/OldaleTown_House2/scripts.pory"
-	applymovement 1, OldaleTownHouse2AnneArgument_Movement_1
 # 130 "data/maps/OldaleTown_House2/scripts.pory"
-	msgbox OldaleTownHouse2AnneArgument_Text_3
+	applymovement 1, OldaleTownHouse2AnneArgument_Movement_1
 # 131 "data/maps/OldaleTown_House2/scripts.pory"
+	msgbox OldaleTownHouse2AnneArgument_Text_3
+# 132 "data/maps/OldaleTown_House2/scripts.pory"
 	setvar VAR_JOELQUESTS, 2
-# 134 "data/maps/OldaleTown_House2/scripts.pory"
+# 135 "data/maps/OldaleTown_House2/scripts.pory"
 	releaseall
 	return
 
 
 OldaleTownHouse2SealedMovingBox::
-# 138 "data/maps/OldaleTown_House2/scripts.pory"
-	lockall
 # 139 "data/maps/OldaleTown_House2/scripts.pory"
-	msgbox OldaleTownHouse2SealedMovingBox_Text_0
+	lockall
 # 140 "data/maps/OldaleTown_House2/scripts.pory"
+	msgbox OldaleTownHouse2SealedMovingBox_Text_0
+# 141 "data/maps/OldaleTown_House2/scripts.pory"
 	releaseall
 	return
 
 
 OldaleTownHouse2OpenMovingBox::
-# 144 "data/maps/OldaleTown_House2/scripts.pory"
-	lockall
 # 145 "data/maps/OldaleTown_House2/scripts.pory"
+	lockall
+# 146 "data/maps/OldaleTown_House2/scripts.pory"
 	msgbox OldaleTownHouse2OpenMovingBox_Text_0
-# 147 "data/maps/OldaleTown_House2/scripts.pory"
+# 148 "data/maps/OldaleTown_House2/scripts.pory"
 	releaseall
 	return
 
 
 OldaleTownHouse2Everyonegone::
-# 151 "data/maps/OldaleTown_House2/scripts.pory"
-	lockall
 # 152 "data/maps/OldaleTown_House2/scripts.pory"
-	msgbox OldaleTownHouse2Everyonegone_Text_0
+	lockall
 # 153 "data/maps/OldaleTown_House2/scripts.pory"
-	setvar VAR_JOELQUESTS, 5
+	msgbox OldaleTownHouse2Everyonegone_Text_0
 # 154 "data/maps/OldaleTown_House2/scripts.pory"
+	setvar VAR_JOELQUESTS, 5
+# 155 "data/maps/OldaleTown_House2/scripts.pory"
 	releaseall
 	return
 
@@ -300,19 +306,19 @@ OldaleTownHouse2Tiana_Movement_0:
 	face_player
 	step_end
 
-# 115 "data/maps/OldaleTown_House2/scripts.pory"
+# 116 "data/maps/OldaleTown_House2/scripts.pory"
 OldaleTownHouse2AnneArgument_Movement_0:
-# 115 "data/maps/OldaleTown_House2/scripts.pory"
+# 116 "data/maps/OldaleTown_House2/scripts.pory"
 	walk_fast_left
-# 115 "data/maps/OldaleTown_House2/scripts.pory"
+# 116 "data/maps/OldaleTown_House2/scripts.pory"
 	walk_fast_down
-# 115 "data/maps/OldaleTown_House2/scripts.pory"
+# 116 "data/maps/OldaleTown_House2/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 129 "data/maps/OldaleTown_House2/scripts.pory"
+# 130 "data/maps/OldaleTown_House2/scripts.pory"
 OldaleTownHouse2AnneArgument_Movement_1:
-# 129 "data/maps/OldaleTown_House2/scripts.pory"
+# 130 "data/maps/OldaleTown_House2/scripts.pory"
 	walk_in_place_down
 	step_end
 
@@ -356,15 +362,14 @@ OldaleTownHouse2Tiana_Text_1:
 	.string "the last things, alright?$"
 
 OldaleTownHouse2AnneArgument_Text_0:
-# 105 "data/maps/OldaleTown_House2/scripts.pory"
+# 106 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "I don't want to move to Rustboro! I\n"
-	.string "want to stay here so I can play with\l"
-	.string "Joel.\p"
+	.string "want to stay here and play with Joel.\p"
 	.string "He's going to teach me how to make a\n"
 	.string "Secret Shelter!$"
 
 OldaleTownHouse2AnneArgument_Text_1:
-# 109 "data/maps/OldaleTown_House2/scripts.pory"
+# 110 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "Don't be ridiculous! You'll make many\n"
 	.string "more and better friends than that\l"
 	.string "orphan in the city!\p"
@@ -372,26 +377,26 @@ OldaleTownHouse2AnneArgument_Text_1:
 	.string "is always covered in mud!$"
 
 OldaleTownHouse2AnneArgument_Text_2:
-# 113 "data/maps/OldaleTown_House2/scripts.pory"
+# 114 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "He's not an imp! He's fun and cool! And\n"
 	.string "you're mean!$"
 
 OldaleTownHouse2AnneArgument_Text_3:
-# 130 "data/maps/OldaleTown_House2/scripts.pory"
+# 131 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "Anne!\p"
 	.string "Come back here this instant! You hear\n"
 	.string "me!?$"
 
 OldaleTownHouse2SealedMovingBox_Text_0:
-# 139 "data/maps/OldaleTown_House2/scripts.pory"
+# 140 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "It's a well sealed box. The label says\n"
 	.string "'Paul's textbooks'.$"
 
 OldaleTownHouse2OpenMovingBox_Text_0:
-# 145 "data/maps/OldaleTown_House2/scripts.pory"
+# 146 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "It's an open cardboard box. It has'My\n"
 	.string "things' written on the side with crayon.$"
 
 OldaleTownHouse2Everyonegone_Text_0:
-# 152 "data/maps/OldaleTown_House2/scripts.pory"
+# 153 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "The house seems awfully quiet...$"

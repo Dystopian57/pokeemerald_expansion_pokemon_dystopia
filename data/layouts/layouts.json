@@ -4615,7 +4615,7 @@
       "id": "LAYOUT_REBEL_BASEMENT",
       "name": "RebelBasement_Layout",
       "width": 21,
-      "height": 12,
+      "height": 17,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BattleFactory",
       "border_filepath": "data/layouts/RebelBasement/border.bin",

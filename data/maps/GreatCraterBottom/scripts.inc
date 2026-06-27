@@ -14,10 +14,10 @@ CraterHermit::
 	applymovement 1, CraterHermit_Movement_0
 # 13 "data/maps/GreatCraterBottom/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_HM_FLASH, CraterHermit_2
-# 39 "data/maps/GreatCraterBottom/scripts.pory"
-	msgbox CraterHermit_Text_9
+# 38 "data/maps/GreatCraterBottom/scripts.pory"
+	msgbox CraterHermit_Text_8
 CraterHermit_1:
-# 42 "data/maps/GreatCraterBottom/scripts.pory"
+# 41 "data/maps/GreatCraterBottom/scripts.pory"
 	release
 	return
 
@@ -61,8 +61,6 @@ CraterHermit_8:
 	setflag FLAG_RECEIVED_HM_FLASH
 # 34 "data/maps/GreatCraterBottom/scripts.pory"
 	giveitem ITEM_HM05
-# 35 "data/maps/GreatCraterBottom/scripts.pory"
-	msgbox CraterHermit_Text_8
 	goto CraterHermit_1
 
 
@@ -114,13 +112,9 @@ CraterHermit_Text_7:
 	.string "... and this as well.$"
 
 CraterHermit_Text_8:
-# 35 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "Obtained the Hermit Move - Flash!$"
-
-CraterHermit_Text_9:
-# 39 "data/maps/GreatCraterBottom/scripts.pory"
+# 38 "data/maps/GreatCraterBottom/scripts.pory"
 	.string "Good job.$"
 
 CraterHermit_Outro::
-# 45 "data/maps/GreatCraterBottom/scripts.pory"
+# 44 "data/maps/GreatCraterBottom/scripts.pory"
 	.string "I see... it was not mere hubris, then.$"

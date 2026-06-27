@@ -328,6 +328,7 @@ script Route101OrphanJoel{
 
 			if (flag (SamanthaJoelInteraction)) {
 				playse (SE_M_BITE)
+				playse (SE_M_BITE)
 				setspeaker ([SP_NAME_JOEL])
 				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 				}
@@ -361,7 +362,7 @@ script Route101OrphanJoel{
 				{setspeaker ([SP_NAME_ANNE])
 				msgbox(format("Don't be silly, Joel! They're on a girls' day out!\p So they're going to a
 				nice place to eat yummy food!"))
-				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
 				playse (SE_PIN)
 				setspeaker ([SP_NAME_SAMANTHA])
 				msgbox(format("N-no, it's not like t-..."))
@@ -374,7 +375,7 @@ script Route101OrphanJoel{
 				
 				if(var(VAR_RESULT) == MALE)
 				{setspeaker ([SP_NAME_ANNE])
-				msgbox(format("Hehe... well, have fun! I'm rooting for you two"))}
+				msgbox(format("Hehe... well, have fun! I'm rooting for you two."))}
 
 				if(var(VAR_RESULT) == FEMALE)
 				{setspeaker ([SP_NAME_ANNE])
@@ -488,12 +489,18 @@ if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 	if(var(VAR_RESULT) == MALE){
 	applymovement(4, moves(face_player))
 	setspeaker ([SP_NAME_ANNE])
-	msgbox(format("Hehe... you look good together!"))}
+	msgbox(format("Hehe... you look good together!"))
+	applymovement(4, moves(face_left))
+	waitmovement (4)
+	goto (endofjoelandannemeeting)}
 
 	if(var(VAR_RESULT) == FEMALE){
 	applymovement(4, moves(face_player))
 	setspeaker ([SP_NAME_ANNE])
-	msgbox(format("Please invite me to the girls' day next time! Pleeeease!"))}
+	msgbox(format("Please invite me to the girls' day next time! Pleeeease!"))
+	applymovement(4, moves(face_left))
+	waitmovement (4)
+	goto (endofjoelandannemeeting)}
 }
 
 else {
@@ -557,6 +564,7 @@ else {
 	clearflag (annegoestojoel)
 
 	setvar(VAR_JOELQUESTS, 3)
+	endofjoelandannemeeting:
 	releaseall
 }}
 

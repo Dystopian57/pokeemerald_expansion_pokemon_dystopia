@@ -1,8 +1,30 @@
 raw `
-LittlerootCemetery_MapScripts::
-	.byte 0
 
 `
+mapscripts LittlerootCemetery_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicCemetery
+    MAP_SCRIPT_ON_LOAD: DayNightMusicCemetery}
+	
+
+script DayNightMusicCemetery {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynightmusiccemetery)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynightmusiccemetery)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{playbgm (MUS_SCHOOLATNIGHT, TRUE)
+		goto (enddaynightmusiccemetery)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_SCHOOLATNIGHT, TRUE)
+		goto (enddaynightmusiccemetery)}
+
+enddaynightmusiccemetery:
+}
+
 
 script LittlerootCemetery_CemeterySign {
 lockall

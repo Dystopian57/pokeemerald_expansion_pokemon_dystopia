@@ -989,7 +989,6 @@ SECTIONS {
         sound/songs/midi/mus_inazumacity.o(.rodata);
         sound/songs/midi/mus_sinjohruins.o(.rodata);
 
-
         sound/songs/midi/mus_spikemuth.o(.rodata);
         sound/songs/midi/mus_oldchateau.o(.rodata);
         sound/songs/midi/mus_sinnohleaguextday.o(.rodata);
@@ -1002,14 +1001,11 @@ SECTIONS {
         sound/songs/midi/mus_abyssalruins.o(.rodata);
         sound/songs/midi/mus_anistarcity.o(.rodata);
         sound/songs/midi/mus_unovaroutegate.o(.rodata);
-        
         sound/songs/midi/mus_mahalotrail.o(.rodata);
         sound/songs/midi/mus_lavenderhgss.o(.rodata);
         sound/songs/midi/mus_casteliagym.o(.rodata);
-
         sound/songs/midi/mus_gymnopedie.o(.rodata);
         sound/songs/midi/mus_monkeydeliveryservice.o(.rodata);
-
         sound/songs/midi/mus_unknown4.o(.rodata);
         sound/songs/midi/mus_darkwaterbonusstage.o(.rodata);
         sound/songs/midi/mus_graveyardstage.o(.rodata);
@@ -1017,6 +1013,63 @@ SECTIONS {
         sound/songs/midi/mus_pinballshop.o(.rodata);
         sound/songs/midi/mus_unknown5.o(.rodata);
         sound/songs/midi/mus_tableselect.o(.rodata);
+
+        sound/songs/midi/mus_abestore.o(.rodata);
+        sound/songs/midi/mus_altrubuilding.o(.rodata);
+        sound/songs/midi/mus_altrutower.o(.rodata);
+        sound/songs/midi/mus_anxiousheart.o(.rodata);
+        sound/songs/midi/mus_asiatravelshop.o(.rodata);
+        sound/songs/midi/mus_battleagainstamachine.o(.rodata);
+        sound/songs/midi/mus_battleroyal.o(.rodata);
+        sound/songs/midi/mus_belltower.o(.rodata);
+        sound/songs/midi/mus_bossbattle.o(.rodata);
+        sound/songs/midi/mus_buysomethingwillya.o(.rodata);
+        sound/songs/midi/mus_calm.o(.rodata);
+        sound/songs/midi/mus_chaos.o(.rodata);
+        sound/songs/midi/mus_darkcave.o(.rodata);
+        sound/songs/midi/mus_darknesstemple.o(.rodata);
+        sound/songs/midi/mus_dolceisland.o(.rodata);
+        sound/songs/midi/mus_drowzee.o(.rodata);
+        sound/songs/midi/mus_duskfactory.o(.rodata);
+        sound/songs/midi/mus_encounterpinchers.o(.rodata);
+        sound/songs/midi/mus_endinglong.o(.rodata);
+        sound/songs/midi/mus_excitement.o(.rodata);
+        sound/songs/midi/mus_fieryfurnacebattle.o(.rodata);
+        sound/songs/midi/mus_gameover.o(.rodata);
+        sound/songs/midi/mus_gorockgrunt.o(.rodata);
+        sound/songs/midi/mus_gorockquads.o(.rodata);
+
+        sound/songs/midi/mus_happymusic.o(.rodata);
+        sound/songs/midi/mus_hazukibasement.o(.rodata);
+        sound/songs/midi/mus_izumoindespair.o(.rodata);
+        sound/songs/midi/mus_lemuria.o(.rodata);
+        sound/songs/midi/mus_lighttemple.o(.rodata);
+        sound/songs/midi/mus_makoreactor.o(.rodata);
+        sound/songs/midi/mus_nationalpark.o(.rodata);
+        sound/songs/midi/mus_nozomi.o(.rodata);
+        sound/songs/midi/mus_ominousorgan.o(.rodata);
+        sound/songs/midi/mus_panulacave.o(.rodata);
+        sound/songs/midi/mus_piratesguige.o(.rodata);
+        sound/songs/midi/mus_relaxing.o(.rodata);
+        sound/songs/midi/mus_renbouparty.o(.rodata);
+        sound/songs/midi/mus_rockycave.o(.rodata);
+        sound/songs/midi/mus_rockycavebattle.o(.rodata);
+        sound/songs/midi/mus_ruinsmusic.o(.rodata);
+        sound/songs/midi/mus_sadstory.o(.rodata);
+        sound/songs/midi/mus_schoolatnight.o(.rodata);
+        sound/songs/midi/mus_secretsleepingatsea.o(.rodata);
+        sound/songs/midi/mus_sekrarange.o(.rodata);
+        sound/songs/midi/mus_sinnohvictoryroad.o(.rodata);
+        sound/songs/midi/mus_soothing.o(.rodata);
+        sound/songs/midi/mus_storm.o(.rodata);
+        sound/songs/midi/mus_stressful.o(.rodata);
+        sound/songs/midi/mus_suspense.o(.rodata);
+        sound/songs/midi/mus_takarasushi.o(.rodata);
+        sound/songs/midi/mus_terminal.o(.rodata);
+        sound/songs/midi/mus_theplace.o(.rodata);
+        sound/songs/midi/mus_unwaveringemotions.o(.rodata);
+        sound/songs/midi/mus_windyprairiebattle.o(.rodata);
+
         
         
         sound/songs/midi/mus_gsc_route38.o(.rodata);

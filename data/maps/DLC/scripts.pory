@@ -200,6 +200,7 @@ script OldaleTown_DLC_TherapyCutscene{
 	setflag (sharpynotinsideDLC)
 	setflag (camelianotinsideDLC)
     setflag (finishedtherapy)
+    setflag (sharpycameliaDLCcs)
 	special (RemoveCameraObject)
 	waitmovement
 
@@ -228,6 +229,7 @@ script LittleKidDLC {
         \p Munchie used to be small, but then it EVOLVED! And mom got scared of it.
         \p So we said goodbye to Munchy - we released him. Munchy and I were very sad...
         \pWhen I become a trainer, I'll go find him, and give him tons of yummy things to eat!”"))
+        hidemonpic
         }
         if(var(VAR_RESULT) == 1){
         msgbox(format("Hehe - okay! Your loss!"))
@@ -243,6 +245,7 @@ script FatManDLCAfterClass {
     msgbox(format("Devon Browser automatically hides all distressing content on the web. \p But
     it also replaces it with Devon ads. It's kind of annoying."))
 	applymovement (15, moves (face_right))
+    waitmovement (15)
     releaseall
 }
 
@@ -765,6 +768,7 @@ script BlackBoardDLC {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (flag (DLCmathresolved)){
     msgbox(format("The math problem is solved."))
+    release
     }
 	if (!flag (DLCmathresolved)){
     msgbox(format("The board contains an unanswered math problem from a previous lesson..."))
@@ -876,7 +880,7 @@ script TVDLC {
     msgbox(format("The TV is playing a documentary on Safemon on a loop. \p 'Before leaving Devon
     laboratories, all Safemon are injected with the Everserum, which prevents them from evolving
     through natural means'. \p 'This means no unplanned mutations will ever take place on a Safemon.
-    Change can be dangerous!'"))
+    \pChange can be dangerous!'"))
     releaseall
 }
 

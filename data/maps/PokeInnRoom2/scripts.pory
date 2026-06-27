@@ -25,7 +25,7 @@ script DevonInnSignAboutFreezer {
 
 script OldalePokeCenterInnPrograms {
     lock
-	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Devon News", "Weather Channel")
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Devon News", "Weather Channel", "Don't watch TV")
 
 	if (var(VAR_RESULT) == 0) {
 		random (0)
@@ -69,7 +69,13 @@ script OldalePokeCenterInnPrograms {
 	//NEWS BELOW
 
 	script OldaleWarehouseNews {
-		msgbox(format("Oldale Warehouse News go here."))
+		if(var(VAR_OLDALE_PHASE) <2) {
+		msgbox(format("Oldale Warehouse is taken by rebels."))}
+
+		else {
+		msgbox(format("Oldale Warehouse is free."))
+		}
+
 		end	
 	}
 

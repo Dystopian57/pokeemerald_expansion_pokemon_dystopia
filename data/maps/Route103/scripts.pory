@@ -315,9 +315,9 @@ script Sharpy103 {
 		removefieldmugshot
 		}
 		battleSharpy103:
+		trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
 		addobject (25)
 		setobjectxy (25, 10, 32)
-		trainerbattle_no_intro(TRAINER_SHARPY_103 , Sharpy103_Outro)
 		playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (24, moves(face_player))
@@ -337,7 +337,7 @@ script Sharpy103 {
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
 		setspeaker ([SP_NAME_SHARPY])
-		msgbox(format("Y-you're right...! Norman is going to be PISSED..."))
+		msgbox(format("Y-you're right...! We're going to get scolded..."))
 
     if (flag (saidnotosharpyinoldale))
     {
@@ -382,14 +382,13 @@ script Sharpy103 {
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_CAMELIA])
-		msgbox(format("Technically, Norman has the last word on accepting recruits... but I
+		msgbox(format("Well, someone else has the last word on accepting recruits... but I
 		doubt he'll reject you."))
 
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
 		setspeaker ([SP_NAME_CAMELIA])
-		msgbox(format("We'd love to show you the way, but we kinda need to rush back. Norman gets
-		very mad when we skip curfew..."))
+		msgbox(format("We'd love to show you the way, but we kinda need to rush back."))
 
 		applymovement (24, moves(face_left))
 		removefieldmugshot
@@ -614,7 +613,7 @@ script Route103VeteranRematch {
 
 
 	text Veteran103_Intro{
-		"They told me I'm too old to enlist...  but I'm\nstronger than you young'uns!\pI'll show you!"}
+		"They told me I'm too old to enlist...  but \nI'm stronger than you young'uns!\pI'll show you!"}
 
 	text Veteran103_Outro{
 		"Hmpf... not bad..."}
@@ -626,7 +625,6 @@ script Route103ConcordBridgeGuard {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (30, moves(face_player))
-
 	if (!flag (conartistaskeddistract)){
 		msgbox(format("Due to an increase in rebel activity in this area, passage through Concord Customs is
 		heavily restricted."))}
@@ -835,6 +833,7 @@ script Route103ConcordConartist {
 		setflag(conartistescaped)
 		clearflag (devonbridgeguardgoestoconartist)
 		playbgm (MUS_ROUTE113, TRUE)
+		setvar (VAR_JIMMYQUESTPROGRESS, 1)
 		goto (finishconartistscript)	
 }
 	finishconartistscript:

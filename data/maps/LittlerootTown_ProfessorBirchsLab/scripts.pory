@@ -1318,13 +1318,13 @@ else
 	msgbox (format("It's a group session, by the way - try to make some friends!"))
 	goto (finishbalsamidletalk)}
 
-	if(var(VAR_LITTLEROOT_PHASE) == 4)
-	{msgbox (format("Hm? Birch asked you to check on {RIVAL}?"))
-	removefieldmugshot
-	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
-	msgbox (format("Well, then... go do that. You don't need my permission, I'm not your mom."))
-	msgbox (format("It's fine, the therapy is not starting yet. But head there right after checking on {RIVAL}."))
-	goto (finishbalsamidletalk)}
+	//if(var(VAR_LITTLEROOT_PHASE) == 4)
+	//{msgbox (format("Hm? Birch asked you to check on {RIVAL}?"))
+	//removefieldmugshot
+	//createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+	//msgbox (format("Well, then... go do that. You don't need my permission, I'm not your mom."))
+	//msgbox (format("It's fine, the therapy is not starting yet. But head there right after checking on {RIVAL}."))
+	//goto (finishbalsamidletalk)}
 	if (var(VAR_LITTLEROOT_PHASE) > 4)
 	{
 
@@ -1334,8 +1334,13 @@ else
 			{bufferstring(STR_VAR_1, "Where is the therapy?")
 			//goto (startBalsammultichoice)
 			}
-			if(var(VAR_OLDALE_PHASE) == 1)
+			if(var(VAR_OLDALE_PHASE) == 1 && !flag (BalsamtoldtogoseeNorman))
 			{bufferstring(STR_VAR_1, "I'm back from therapy.")
+			//goto (startBalsammultichoice)
+			}
+
+			if(var(VAR_OLDALE_PHASE) == 1 && flag (BalsamtoldtogoseeNorman))
+			{bufferstring(STR_VAR_1, "About going to Petalburg...")
 			//goto (startBalsammultichoice)
 			}
 
@@ -1389,17 +1394,49 @@ else
 					}
 				}
 				
-				if(var(VAR_OLDALE_PHASE) == 1 && flag(!BalsamtoldtogoseeNorman))
-					{msgbox (format("That's great. How did it go? Maybe you should go see Norman now,
-					when you stopped picking the phone, he called here instead to see how you were doing.
-					I hear all routes to Petalburg are blocked though. Yaddah yaddah rebels you may need for things to calm
-					down in Oldale. I'm sure Devon will take care of it sooner or later. Just don't go
-					doing anything stupid."))}
+				if(var(VAR_OLDALE_PHASE) == 1 && !flag(BalsamtoldtogoseeNorman))
+					{
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("That's great. I hope it went well."))
+
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					
+					msgbox (format("Say, why don't you go visit your grandfather Norman, at Petalburg City?"))
+
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("I'm sure he misses you, and a chance of scenery will do you good."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					
+					msgbox (format("You may need to wait a bit, though - I hear Route 102 is closed off, until
+					the {COLOR RED}Rebel invasion{COLOR DARK_GRAY} of {COLOR BLUE}Oldale Warehouse{COLOR DARK_GRAY} is dealt with."))
+					setflag (BalsamtoldtogoseeNorman)}
 
 				if(var(VAR_OLDALE_PHASE) == 1 && flag(BalsamtoldtogoseeNorman))
-					{msgbox (format("How did it go? Yaddah yaddah rebels you may need for things to calm
-					down in Oldale. I'm sure Devon will take care of it sooner or later. Just don't go
-					doing anything stupid."))}
+					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Like I told you, those Devon Guards won't open Route 102 to Petalburg until
+					the Rebel situation in Oldale is under control."))
+
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("They are told to keep trouble as far as possible from fancy Rustboro..."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Nothing to do about it but sit and wait. Unless you go and beat
+					those rebels yourself."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("..."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("That was a joke. You can laugh at it!"))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Seriously, don't do anything stupid."))}
 
 				if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 0)
 					{msgbox (format("Path is free for you now."))}}
@@ -2214,7 +2251,7 @@ if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
 		setspeaker ([SP_NAME_BALSAM])
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 		msgbox (format("There you go. But don't call me unless there's an emergency. I'm busy.
-		\p Come back after the therapy. We'll do some more things to readjust you."))
+		\p Come back right after therapy. We'll do some more things to readjust you."))
 		applymovement (4, moves(face_up))
 		waitmovement
 		removefieldmugshot

@@ -27,7 +27,7 @@ OldalePokeCenterInnPrograms::
 # 27 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
 # 28 "data/maps/PokeInnRoom2/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, OldalePokeCenterInnPrograms_Text_0, OldalePokeCenterInnPrograms_Text_1
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, OldalePokeCenterInnPrograms_Text_0, OldalePokeCenterInnPrograms_Text_1, OldalePokeCenterInnPrograms_Text_2
 # 30 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldalePokeCenterInnPrograms_2
@@ -55,7 +55,7 @@ OldalePokeCenterInnPrograms_5:
 # 46 "data/maps/PokeInnRoom2/scripts.pory"
 	goto_if_unset seenweatheratinnvisit, OldalePokeCenterInnPrograms_9
 # 60 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox OldalePokeCenterInnPrograms_Text_2
+	msgbox OldalePokeCenterInnPrograms_Text_3
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_8:
@@ -89,34 +89,43 @@ OldalePokeCenterInnPrograms_14:
 
 OldaleWarehouseNews::
 # 72 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox OldaleWarehouseNews_Text_0
+	compare VAR_OLDALE_PHASE, 2
+	goto_if_lt OldaleWarehouseNews_2
+# 76 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox OldaleWarehouseNews_Text_1
+OldaleWarehouseNews_1:
 	end
+
+OldaleWarehouseNews_2:
+# 73 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox OldaleWarehouseNews_Text_0
+	goto OldaleWarehouseNews_1
 
 
 Route103WeatherNews::
-# 79 "data/maps/PokeInnRoom2/scripts.pory"
+# 85 "data/maps/PokeInnRoom2/scripts.pory"
 	playse SE_M_RAIN_DANCE
-# 80 "data/maps/PokeInnRoom2/scripts.pory"
+# 86 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox Route103WeatherNews_Text_0
-# 81 "data/maps/PokeInnRoom2/scripts.pory"
+# 87 "data/maps/PokeInnRoom2/scripts.pory"
 	setvar VAR_ROUTE103_WEATHER, 1
-# 82 "data/maps/PokeInnRoom2/scripts.pory"
+# 88 "data/maps/PokeInnRoom2/scripts.pory"
 	setflag seenweatheratinnvisit
-# 83 "data/maps/PokeInnRoom2/scripts.pory"
+# 89 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 Route102WeatherNews::
-# 87 "data/maps/PokeInnRoom2/scripts.pory"
+# 93 "data/maps/PokeInnRoom2/scripts.pory"
 	playse SE_M_SANDSTORM
-# 88 "data/maps/PokeInnRoom2/scripts.pory"
+# 94 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox Route102WeatherNews_Text_0
-# 89 "data/maps/PokeInnRoom2/scripts.pory"
+# 95 "data/maps/PokeInnRoom2/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 1
-# 90 "data/maps/PokeInnRoom2/scripts.pory"
+# 96 "data/maps/PokeInnRoom2/scripts.pory"
 	setflag seenweatheratinnvisit
-# 91 "data/maps/PokeInnRoom2/scripts.pory"
+# 97 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
@@ -135,17 +144,25 @@ OldalePokeCenterInnPrograms_Text_1:
 	.string "Weather Channel$"
 
 OldalePokeCenterInnPrograms_Text_2:
+# 28 "data/maps/PokeInnRoom2/scripts.pory"
+	.string "Don't watch TV$"
+
+OldalePokeCenterInnPrograms_Text_3:
 # 60 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "The weather broadcast has ended...$"
 
 OldaleWarehouseNews_Text_0:
-# 72 "data/maps/PokeInnRoom2/scripts.pory"
-	.string "Oldale Warehouse News go here.$"
+# 73 "data/maps/PokeInnRoom2/scripts.pory"
+	.string "Oldale Warehouse is taken by rebels.$"
+
+OldaleWarehouseNews_Text_1:
+# 76 "data/maps/PokeInnRoom2/scripts.pory"
+	.string "Oldale Warehouse is free.$"
 
 Route103WeatherNews_Text_0:
-# 80 "data/maps/PokeInnRoom2/scripts.pory"
+# 86 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "There is rain in Route 103!$"
 
 Route102WeatherNews_Text_0:
-# 88 "data/maps/PokeInnRoom2/scripts.pory"
+# 94 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "There is a sandstorm in Route 102!$"

@@ -7,13 +7,16 @@ MatchCall_WildBattleText1::
 	.string "Well, see you again!$"
 
 MatchCall_WildBattleText2::
-	.string "Hello, {PLAYER}{KUN}.\n"
-	.string "It's {STR_VAR_1}.\p"
-	.string "I tried to catch a nice {STR_VAR_2}\n"
-	.string "a little while ago.\p"
-	.string "But, it got away.\n"
-	.string "I was sure disappointed!\p"
-	.string "Okay, bye!$"
+	.string "O-oh, hi {PLAYER}. I-it's nice.\n"
+	.string "of you to call, but...\p"
+	.string "It's not the best time. SHUPPET\n"
+	.string "and I are watering the flowers.\p"
+	.string "After that, we will clean the\n"
+	.string "tombstones.\p"
+	.string "The Mausoleum can be a lot of\n"
+	.string "work, but I like doing it.\p"
+	.string "I-I hope you enjoy your day.\n"
+	.string "as well. Goodbye, {PLAYER}!$"
 
 MatchCall_WildBattleText3::
 	.string "Hey there, {PLAYER}!\n"
@@ -139,12 +142,19 @@ MatchCall_NegativeBattleText1::
 	.string "Well, see you again!$"
 
 MatchCall_NegativeBattleText2::
-	.string "Hello, {PLAYER}{KUN}.\n"
-	.string "It's {STR_VAR_1}.\p"
-	.string "I challenged someone else after\n"
-	.string "we battled.\p"
-	.string "I came close, but I ended up\n"
-	.string "losing. Oh, well!$"
+	.string "H-hi, {PLAYER}! I-it's good to.\n"
+	.string "hear from you.\p"
+	.string "You know, I was wondering - your\n"
+	.string "parents... t-they are....\p"
+	.string "They are resting here in the\n"
+	.string "Mausoleum, are they not?\p"
+	.string "I-it's really none of my\n"
+	.string "business, but...\p"
+	.string "I think you visited them more\n"
+	.string "often. They would like that.\p"
+	.string "S-sorry... I probably said too\n"
+	.string "much. Please don't get mad...\p"
+	.string "I-I... talk to you soon!$"
 
 MatchCall_NegativeBattleText3::
 	.string "Hey there, {PLAYER}!\n"
@@ -254,14 +264,14 @@ MatchCall_PositiveBattleText1::
 	.string "Talk to you later!$"
 
 MatchCall_PositiveBattleText2::
-	.string "O-oh, {STR_VAR_1}...! You called!\n"
+	.string "O-oh, {PLAYER}...! You called!\n"
 	.string "Hello!\p"
 	.string "T-thank you for your help earlier...\n"
 	.string "I don't know what I would have done.\p"
 	.string "I hope you've been safe out there.\n"
 	.string "Things have been quiet here.\p"
 	.string "... perhaps too quiet. W-what\n"
-	.string "if you...?.\p"
+	.string "if you...?\p"
 	.string "A-ah, nevermind! I-I'm sorry\n"
 	.string "I'm probably annoying you.\p"
 	.string "I-I'll hang up now, b-but...\n"
@@ -670,8 +680,8 @@ MatchCall_PersonalizedText1::
 	.string "Anyway, nice talking to you. Bye!.$"
 
 MatchCall_PersonalizedText2::
-	.string "{STR_VAR_1}...! H-hi! What a\n"
-	.string "coindence...!\p"
+	.string "{PLAYER}...! H-hi! What a\n"
+	.string "coincidence...!\p"
 	.string "I-I was just, dreaming about you...\p"
 	.string "O-oh, but it was nothing weird, NO!\p"
 	.string "I-I just... dreamt that something\n"
@@ -680,9 +690,9 @@ MatchCall_PersonalizedText2::
 	.string "Sometimes I have dreams like these.\p"
 	.string "Of things that happened, a-and\n"
 	.string "also of things that... will happen.\p"
-	.string "I-I'm sorry, I'm not making any sense,\n"
+	.string "I'm sorry, I'm not making any sense,\n"
 	.string "am I...? Ah, please don't worry...!\p"
-	.string "But, {STR_VAR_1}...? Please... take\n"
+	.string "But, {PLAYER}...? Please... take\n"
 	.string "care out there!$"
 
 MatchCall_PersonalizedText3::

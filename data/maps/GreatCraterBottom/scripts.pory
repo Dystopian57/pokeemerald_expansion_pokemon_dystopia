@@ -32,7 +32,6 @@ script CraterHermit {
         playse (MUS_OBTAIN_TMHM)
         setflag (FLAG_RECEIVED_HM_FLASH)
         giveitem (ITEM_HM05)
-        msgbox(format("Obtained the Hermit Move - Flash!"))
         }}
 
     else {

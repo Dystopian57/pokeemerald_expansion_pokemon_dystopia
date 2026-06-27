@@ -507,7 +507,6 @@
 #define MUS_UNDERPIZZA              573
 #define MUS_INAZUMACITY             574
 #define MUS_SINJOHRUINS             575
-
 #define MUS_SPIKEMUTH               576
 #define MUS_OLDCHATEAU              577
 #define MUS_SINNOHLEAGUEXTDAY       578
@@ -520,14 +519,11 @@
 #define MUS_ABYSSALRUINS            585
 #define MUS_ANISTARCITY             586
 #define MUS_UNOVAROUTEGATE          587
-
 #define MUS_MAHALOTRAIL             588
 #define MUS_LAVENDERHGSS            589
 #define MUS_CASTELIAGYM             590
-
 #define MUS_GYMNOPEDIE              591
 #define MUS_MONKEYDELIVERYSERVICE   592
-
 #define MUS_UNKNOWN4                593
 #define MUS_DARKWATERBONUSSTAGE     594
 #define MUS_GRAVEYARDSTAGE          595
@@ -538,8 +534,65 @@
 #define MUS_MONSTERHOUSE            600
 #define MUS_STOPTHIEF               601
 
+#define MUS_ABESTORE                602
+#define MUS_ALTRUBUILDING           603
+#define MUS_ALTRUTOWER              604
+#define MUS_ANXIOUSHEART            605
+#define MUS_ASIATRAVELSHOP          606
+#define MUS_BATTLEAGAINSTAMACHINE   607
+#define MUS_BATTLEROYAL             608
+#define MUS_BELLTOWER               609
+#define MUS_BOSSBATTLE              610
+#define MUS_BUYSOMETHINGWILLYA      611
+#define MUS_CALM                    612
+#define MUS_CHAOS                   613
+#define MUS_DARKCAVE                614
+#define MUS_DARKNESSTEMPLE          615
+#define MUS_DOLCEISLAND             616
+#define MUS_DROWZEE                 617
+#define MUS_DUSKFACTORY             618
+#define MUS_ENCOUNTERPINCHERS       619
+#define MUS_ENDINGLONG              620
+#define MUS_EXCITEMENT              621
+#define MUS_FIERYFURNACEBATTLE      622
+#define MUS_GAMEOVER                623
+#define MUS_GOROCKGRUNT             624
+#define MUS_GOROCKQUADS             625
+#define MUS_HAPPYMUSIC              626
+#define MUS_HAZUKIBASEMENT          627
+#define MUS_IZUMOINDESPAIR          628
+#define MUS_LEMURIA                 629
+#define MUS_LIGHTTEMPLE             630
+#define MUS_MAKOREACTOR             631
+#define MUS_NATIONALPARK            632
+#define MUS_NOZOMI                  633
+#define MUS_OMINOUSORGAN            634
+#define MUS_PANULACAVE              635
+#define MUS_PIRATESGUIGE            636
+#define MUS_RELAXING                637
+#define MUS_RENBOUPARTY             638
+#define MUS_ROCKYCAVE               639
+#define MUS_ROCKYCAVEBATTLE         640
+#define MUS_RUINSMUSIC              641
+#define MUS_SADSTORY                642
+#define MUS_SCHOOLATNIGHT           643
+#define MUS_SECRETSLEEPINGATSEA     644
+#define MUS_SEKRARANGE              645
+#define MUS_SINNOHVICTORYROAD       646
+#define MUS_SOOTHING                647
+#define MUS_STORM                   648
+#define MUS_STRESSFUL               649
+#define MUS_SUSPENSE                650
+#define MUS_TAKARASUSHI             651
+#define MUS_TERMINAL                652
+#define MUS_THEPLACE                653
+#define MUS_UNWAVERINGEMOTIONS      654
+#define MUS_WINDYPRAIRIEBATTLE      655
 
-#define END_MUS                     MUS_STOPTHIEF
+
+
+
+#define END_MUS                     MUS_WINDYPRAIRIEBATTLE
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

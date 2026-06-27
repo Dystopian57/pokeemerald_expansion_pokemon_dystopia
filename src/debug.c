@@ -3685,7 +3685,62 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_TABLESELECT)            \
     X(MUS_MONSTERHOUSE)            \
     X(MUS_STOPTHIEF)            \
- 
+    X(MUS_ABESTORE)                \
+    X(MUS_ALTRUBUILDING)            \
+    X(MUS_ALTRUTOWER)            \
+    X(MUS_ANXIOUSHEART)            \
+    X(MUS_ASIATRAVELSHOP)            \
+    X(MUS_BATTLEAGAINSTAMACHINE)            \
+    X(MUS_BATTLEROYAL)            \
+    X(MUS_BELLTOWER)            \
+    X(MUS_BOSSBATTLE)            \
+    X(MUS_BUYSOMETHINGWILLYA)            \
+    X(MUS_CALM)        \
+    X(MUS_CHAOS)                \
+    X(MUS_DARKCAVE)            \
+    X(MUS_DARKNESSTEMPLE)            \
+    X(MUS_DOLCEISLAND)            \
+    X(MUS_DROWZEE)            \
+    X(MUS_DUSKFACTORY)            \
+    X(MUS_ENCOUNTERPINCHERS)            \
+    X(MUS_ENDINGLONG)            \
+    X(MUS_EXCITEMENT)            \
+    X(MUS_FIERYFURNACEBATTLE)            \
+    X(MUS_GAMEOVER)            \
+    X(MUS_GOROCKGRUNT)            \
+    X(MUS_GOROCKQUADS)            \
+    X(MUS_HAPPYMUSIC)            \
+    X(MUS_HAZUKIBASEMENT)            \
+    X(MUS_IZUMOINDESPAIR)            \
+    X(MUS_LEMURIA)            \
+    X(MUS_LIGHTTEMPLE)            \
+    X(MUS_MAKOREACTOR)            \
+    X(MUS_NATIONALPARK)            \
+    X(MUS_NOZOMI)            \
+    X(MUS_OMINOUSORGAN)            \
+    X(MUS_PANULACAVE)            \
+    X(MUS_PIRATESGUIGE)            \
+    X(MUS_RELAXING)            \
+    X(MUS_RENBOUPARTY)            \
+    X(MUS_ROCKYCAVE)            \
+    X(MUS_ROCKYCAVEBATTLE)            \
+    X(MUS_RUINSMUSIC)            \
+    X(MUS_SADSTORY)            \
+    X(MUS_SCHOOLATNIGHT)            \
+    X(MUS_SECRETSLEEPINGATSEA)            \
+    X(MUS_SEKRARANGE)            \
+    X(MUS_SINNOHVICTORYROAD)            \
+    X(MUS_SOOTHING)            \
+    X(MUS_STORM)            \
+    X(MUS_STRESSFUL)            \
+    X(MUS_SUSPENSE)            \
+    X(MUS_TAKARASUSHI)            \
+    X(MUS_TERMINAL)            \
+    X(MUS_THEPLACE)            \
+    X(MUS_UNWAVERINGEMOTIONS)            \
+    X(MUS_WINDYPRAIRIEBATTLE)            \
+
+
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \
     X(SE_PC_LOGIN)                  \

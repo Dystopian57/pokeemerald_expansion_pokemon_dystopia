@@ -554,12 +554,13 @@ script OldalePokeCenterTVAds {
 
 script Devonballad {
 	 showmonpic(SPECIES_VIVILLON_ARCHIPELAGO, 10,3)
+	 playse (SE_ESCALATOR)
 	 msgbox(format("Enhanced catch rate. Better grip. Light as a feather. \p In short: engineered
 	 to perfection.\p Save time choosing the perfect ball, because it's always the same - the
 	 Devon Ball."))
 	 hidemonpic
 	 showmonpic(SPECIES_VIVILLON_CONTINENTAL, 10,3)
-	 //playse (se_ball_)
+	 playse (SE_BALL_THROW)
 	 msgbox(format("Devon Ball. The only ball with no catch."))
 	 hidemonpic
 	 releaseall
@@ -569,6 +570,7 @@ script Devotionad {
 	 msgbox(format("Health points, Power Points, Status Ailments... keeping your companions
 	 healthy requires a full bag! \p Is there not an easier way? \n Devon Co.'s answer is...
 	 yes!"))
+	 playse (SE_USE_ITEM)
 	 showmonpic(SPECIES_VIVILLON_ELEGANT, 10,3)
 	 msgbox(format("Our newest potion, 'Devotion', is the only medicine your Pokémon will ever
 	 need. \p Only for 1000¥, now available at Devon Centers all over Hoenn! \p Devotion -
@@ -598,10 +600,12 @@ script Lifeindustriesad {
 	care for his crops, tend to his farm, and create the best produce in Hoenn."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_JUNGLE, 10,3)
+	playse (SE_M_FLY)
 	msgbox(format("The same produce that us, in Devon Life Industries, take fresh from his
 	land, directly to your plate."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_MARINE, 10,3)
+	playse (SE_M_ABSORB_2)
 	msgbox(format("Devon Life Industries. Quality food, for quality people."))
 	hidemonpic
 	releaseall
@@ -609,9 +613,11 @@ script Lifeindustriesad {
 
 script Devoncenterad {
 	showmonpic(SPECIES_VIVILLON_MEADOW, 10,3)
+	playmoncry (SPECIES_CHANSEY, CRY_MODE_NORMAL)
 	msgbox(format("When you are tired. When you are ill. When you are scared.
 	\p Whenever you are in need, Devon Centers are your one safe haven."))
 	hidemonpic
+	playfanfare (MUS_HEAL)
 	showmonpic(SPECIES_VIVILLON_MODERN, 10,3)
 	msgbox(format("Devon Centers. Keeping you safe, 24/7. \p
 	{COLOR LIGHT_GRAY}{SHADOW WHITE}Fees may apply. Loitering not allowed.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
@@ -621,10 +627,12 @@ script Devoncenterad {
 
 script Rebelhackersad {
 	showmonpic(SPECIES_VIVILLON_MONSOON, 10,3)
+	playse (SE_FAILURE)
 	msgbox(format("We interrupt this commercial broadcast to announce our signal is be-1ng
 	 c0mPromi!iis¥Ed b-bY R3b-… BZZT..."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_OCEAN, 10,3)
+	playse (SE_MUGSHOT)
 	msgbox(format("Hey. You. Are you sick of Safemon? Me too. Because they suck."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_POKEBALL, 10,3)
@@ -633,6 +641,7 @@ script Rebelhackersad {
 	\p But if you help us, we can get them down to 0."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_POLAR, 10,3)
+	playse (SE_DEX_SEARCH)
 	msgbox(format("If you are a coder - join us. If you aren't, we'll make you one."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_RIVER, 10,3)
@@ -649,7 +658,7 @@ script Devonnetad {
 	Like you're being left behind."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_SAVANNA, 10,3)
-	playse (SE_DEX_SEARCH)
+	playse (SE_PC_LOGIN)
 	msgbox(format("If you're feeling like that - then Devon Net is for you!
 	\p Devon Net is the place to check what your loved ones are up to - and meet new ones too! "))
 	hidemonpic
@@ -680,6 +689,7 @@ script Azuresortad {
 	\p Devon Co. hears you, and is thus proud to present..."))
 	hidemonpic
 	showmonpic(SPECIES_BASCULIN_WHITE_STRIPED, 10,3)
+	playse (SE_M_SURF)
 	msgbox(format("The Azuresort! \p Exciting water sports, relaxing bathing spots -
 	all in the cleanest bathing spot in all of Hoenn. \p Azuresort. Because there's never too much water."))
 	hidemonpic

@@ -31,8 +31,21 @@ script OldaleTownHouse2Annebrother {
 	releaseall
 }
 
-script AnnesHouseUpstairsItem {
+script AnnesHouseBrotherItem {
 	lock
     finditem (ITEM_FULL_INCENSE)
     removeobject (3)
 	releaseall}
+
+script AnnesHouseDrawerItem {
+	lock
+	if (flag (FLAG_ITEM_OLDALE_HOUSE2DRAWER))
+	{msgbox(format("There's something left behind in the drawer..."))
+    finditem (ITEM_METRONOME)
+	setflag (FLAG_ITEM_OLDALE_HOUSE2DRAWER)
+	releaseall}
+
+	else {
+	msgbox(format("There's nothing in the drawer."))
+	}
+}

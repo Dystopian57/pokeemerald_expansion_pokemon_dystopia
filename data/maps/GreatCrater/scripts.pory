@@ -417,7 +417,11 @@ script GreatCraterSouvenirShop {
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (1, moves(face_player))
 		msgbox(format("Welcome to the Great Crater's Souvenir Shop!"))
+		fadeoutbgm (0)
+		playbgm (MUS_BUYSOMETHINGWILLYA, FALSE)
 		pokemart (ShopSouvenirs)
+		fadeinbgm (0)
+		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 		releaseall
 
 }
@@ -495,8 +499,10 @@ script CraterTrappedTouristandRope {
 
 			if (var(VAR_RESULT) == 0) {
 			clearflag (greatcraterrope)
+			addobject (11)
 			setobjectxyperm (10, 11, 15)
-			//showobjectat (11, MAP_GREAT_CRATER)
+			setobjectxyperm (11, 11, 15)
+			showobjectat (11, MAP_GREAT_CRATER)
 
 			playse (SE_BALL_THROW)
 			msgbox(format("{PLAYER} ties the knot firmly to a rock and lets the rest fall down."))
@@ -518,9 +524,9 @@ script CraterTrappedTouristandRope {
 
 			applymovement (10, moves(face_right))
 			msgbox(format("My hero! I don't know what I would have done without you! \p But I know what
-			I'll do know. Reward you for your generosity!"))
+			I'll do now. Reward you for your generosity!"))
 			giveitem (ITEM_EVIOLITE)
-			msgbox(format("A friend gifted me this before my trip, saying it'll keep me safe... well, it
+			msgbox(format("A friend gifted me this before my trip, saying it'll keep me safe... \p Well, it
 			clearly doesn't work, so you can have it!"))
 			applymovement (10, moves(face_down))
 			msgbox(format("Wait... maybe it's thanks to it that you found me?"))
@@ -530,7 +536,7 @@ script CraterTrappedTouristandRope {
 
 			applymovement (10, moves(walk_up * 7))
 			waitmovement (10)
-			removeobject (7)
+			removeobject (10)
 			setobjectxyperm (10, 0, 0)
 			hideobjectat (10, MAP_GREAT_CRATER)
 			setvar(VAR_GREATCRATERTOURIST, 3)

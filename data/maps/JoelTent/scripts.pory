@@ -33,8 +33,30 @@ script JoelTentJoel {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
     if(var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+            applymovement(4, moves(face_player))
+			if (flag (SamanthaJoelInteraction) && !flag (Samanthagotsnacks)) {
+				playse (SE_M_BITE)
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				goto (Joeltentfinish)
+			}
 
-				applymovement (4, moves(face_player))
+			if (flag (SamanthaJoelInteraction) && flag (Samanthagotsnacks)) {
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("That's a lot of snacks you got! Can I have some?"))
+				setspeaker ([SP_NAME_SAMANTHA])
+				msgbox(format("O-of course... here!"))
+				applymovement (1, moves(face_down))
+				playse (SE_M_BITE)
+				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				applymovement (1, moves(face_player))
+				setspeaker ([SP_NAME_JOEL])
+				msgbox(format("Hmm... they're alright! But I still prefer berries."))
+				goto (Joeltentfinish)
+			}
+
+			if (!flag (SamanthaJoelInteraction)) {
+				applymovement (1, moves(face_player))
 				setspeaker ([SP_NAME_JOEL])
 				msgbox(format("Hey {PLAYER}! And strange lady! Where are you two going?"))
 				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
@@ -59,7 +81,8 @@ script JoelTentJoel {
 				setspeaker ([SP_NAME_JOEL])
 				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 				setflag (SamanthaJoelInteraction)
-				goto (Joelfinish)
+				goto (Joeltentfinish)
+			}
 			}
 
     else {
@@ -122,6 +145,7 @@ script JoelTentJoel {
         eventually... but I still don't want her to be sad."))}
 
     joelgivesdoll:
+    Joeltentfinish:
     releaseall
 }}
 

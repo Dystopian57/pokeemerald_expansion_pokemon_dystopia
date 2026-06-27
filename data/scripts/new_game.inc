@@ -301,6 +301,7 @@ EventScript_ResetAllMapFlags::
 	setflag route102weathermon
 	setflag cigarrettepop
 	setflag FLAG_ITEM_OLDALE_BYTRUCK
+	setflag greatcraterrope
 	
 	call EventScript_ResetAllBerries
 	end

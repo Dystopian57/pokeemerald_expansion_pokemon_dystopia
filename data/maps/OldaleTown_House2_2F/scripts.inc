@@ -53,7 +53,7 @@ OldaleTownHouse2Annebrother_11:
 	goto OldaleTownHouse2Annebrother_10
 
 
-AnnesHouseUpstairsItem::
+AnnesHouseBrotherItem::
 # 35 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	lock
 # 36 "data/maps/OldaleTown_House2_2F/scripts.pory"
@@ -61,6 +61,27 @@ AnnesHouseUpstairsItem::
 # 37 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	removeobject 3
 # 38 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	releaseall
+	return
+
+
+AnnesHouseDrawerItem::
+# 41 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	lock
+# 42 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	goto_if_set FLAG_ITEM_OLDALE_HOUSE2DRAWER, AnnesHouseDrawerItem_1
+# 49 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	msgbox AnnesHouseDrawerItem_Text_1
+	return
+
+AnnesHouseDrawerItem_1:
+# 43 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	msgbox AnnesHouseDrawerItem_Text_0
+# 44 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	finditem ITEM_METRONOME
+# 45 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	setflag FLAG_ITEM_OLDALE_HOUSE2DRAWER
+# 46 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	releaseall
 	return
 
@@ -102,3 +123,12 @@ OldaleTownHouse2Annebrother_Text_3:
 # 28 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	.string "Let's go, Purachu. We're off to\n"
 	.string "Rustboro!$"
+
+AnnesHouseDrawerItem_Text_0:
+# 43 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	.string "There's something left behind in the\n"
+	.string "drawer...$"
+
+AnnesHouseDrawerItem_Text_1:
+# 49 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	.string "There's nothing in the drawer.$"

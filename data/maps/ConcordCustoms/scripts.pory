@@ -198,16 +198,20 @@ script ConcordCustomsPhone{
 					waitse
 					playse (SE_CLICK)
 					msgbox(format("Call who?"))
-					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Balsam") //Birch, Rival, Norman
+					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Balsam", "No one") //Norman
 						if(var(VAR_RESULT) == 0){
 						hidemoneybox
 						playse (SE_POKENAV_CALL)
-						msgbox(format("Balsam Call here"))
+						waitse
+						msgbox(format("Hm? Who's this? Oh, {PLAYER}? \p Why are you calling from a public phone?
+						Did you lose the Devon Nav I gave you?\p Well, if you want to talk to me... you'll have to
+						get a new one, or come to the lab. \p I don't like speaking with public phones involved. You
+						never know who is listening... \p Well, that's all from me. Later."))
 						playse (SE_POKENAV_HANG_UP)
 						goto (endofpayphone)
 						}}}
 			if(var(VAR_RESULT) == 1){
-				
+			goto (endofpayphone)
 			}
 	endofpayphone:
     release
