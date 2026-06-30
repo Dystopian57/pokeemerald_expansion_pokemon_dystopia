@@ -266,21 +266,21 @@ script OldaleTown_Devon_Nurse {
 					GetGameStat(GAME_STAT_USED_POKECENTER)
 					copyvar(VAR_0x8000, VAR_RESULT)
 						if (var(VAR_RESULT) == 10)
-						{msgbox(format("Wait... this is your 10th visit, so I'm contractually
-						obligated to give you this."))
-						giveitem (ITEM_POKE_BALL, 5)}
+						{msgbox(format("Wait... this is your 10th visit...\p You are now a
+						Bronze Client, so I'm contractually obligated to give you this."))
+						givedecoration (DECOR_BALL_CUSHION)}
 
 						if (var(VAR_RESULT) == 25)
-						{msgbox(format("Ah, this marks your 25th visit. As per the Devon Center
-						Loyalty Program, this is for you."))
-						giveitem (ITEM_POKE_BALL, 5)
+						{msgbox(format("Ah, this marks your 25th visit. \pAs per the Devon Center
+						Loyalty Program, you are now a Silver Client. And this is for you."))
+						givedecoration (DECOR_AZURILL_DOLL)
 						}
 
 						if (var(VAR_RESULT) == 50)
 						{msgbox(format("Oh, but please wait, dear customer! This is a special occassion
 						- it's the 50th time you've used our services! {COLOR LIGHT_GRAY}{SHADOW WHITE}Yay...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-						\p Please, accept this humble present on behalf of Devon Co.!"))
-						giveitem (ITEM_POKE_BALL, 10)
+						\p You are now a esteemed Gold Client. Please, accept this humble present on behalf of Devon Co.!"))
+						givedecoration (DECOR_FIRE_BLAST_MAT)
 						applymovement (1, moves (nurse_joy_bow))
 						waitmovement (1)
 						}
@@ -412,7 +412,7 @@ script OldaleTown_Devon_Nurse {
 		msgbox(format("See you then."))}
 
 		if (var(VAR_DEVONCENTERLOYALTY) == 2){
-		msgbox(format("Of course - till next time then!."))
+		msgbox(format("Of course - till next time then!"))
 		applymovement (1, moves (nurse_joy_bow))
 		waitmovement (1)
 		}
@@ -429,6 +429,99 @@ script OldaleTown_Devon_Nurse {
 }
 
 
+script OldaleATM {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	msgbox(format("Hello! I am a Devon Pokeyen Card Terminal. Which card will you buy?"))
+	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Gem Card - 1000¥", "Gold Card - 5000¥", "Diamond Card - 10000¥", "Information", "Leave")
+
+	if(var(VAR_RESULT) == 0){
+		checkmoney (1000)
+		if (var(VAR_RESULT) == TRUE) {
+		showmoneybox (0, 0)
+		playse (SE_SHOP)
+		removemoney (1000)
+		updatemoneybox
+		waitse
+		msgbox(format("Transaction Completed. Your card is coming out!"))
+		playse (SE_CLICK)
+		giveitem (ITEM_STRAWBERRY_SWEET)
+		goto (endofatm)
+		}
+
+		else{
+		playse (SE_FAILURE)
+		msgbox(format("Error - insufficient funds."))
+		}
+	
+	}
+
+	if(var(VAR_RESULT) == 1){
+		if (var(VAR_DEVONCENTERLOYALTY) < 1){
+		playse (SE_FAILURE)
+		msgbox(format("Error. This card is only available to Bronze Clients."))
+		}
+
+		else {
+		checkmoney (5000)
+		if (var(VAR_RESULT) == TRUE) {
+		showmoneybox (0, 0)
+		playse (SE_SHOP)
+		removemoney (1000)
+		updatemoneybox
+		waitse
+		msgbox(format("Transaction Completed. Your card is coming out!"))
+		hidemoneybox
+		playse (SE_CLICK)
+		giveitem (ITEM_BERRY_SWEET)
+		goto (endofatm)
+		}
+
+		else{
+		playse (SE_FAILURE)
+		msgbox(format("Error - insufficient funds."))
+		}}
+	}
+
+	if(var(VAR_RESULT) == 2){
+		if (var(VAR_DEVONCENTERLOYALTY) < 2){
+		playse (SE_FAILURE)
+		msgbox(format("Error. This card is only available to Silver Clients."))
+		}
+
+		else {
+		checkmoney (10000)
+		if (var(VAR_RESULT) == TRUE) {
+		showmoneybox (0, 0)
+		playse (SE_SHOP)
+		removemoney (1000)
+		updatemoneybox
+		waitse
+		msgbox(format("Transaction Completed. Your card is coming out!"))
+		hidemoneybox
+		playse (SE_CLICK)
+		giveitem (ITEM_CLOVER_SWEET)
+		goto (endofatm)
+		}
+
+		else{
+		playse (SE_FAILURE)
+		msgbox(format("Error - insufficient funds."))
+		}}
+	}
+
+
+		if(var(VAR_RESULT) == 3){
+		msgbox(format("Carrying cash is not only old-fashioned - but risky too. \p You may drop it,
+		need to give it after losing a battle - even have it mugged from you.\p That's where Pokeyen
+		Cards can help!\p Buy them before braving the dangers of the world, and keep your funds safe
+		in them. \pThen, when you need to buy things, sell them for the same amounts you bought them for.
+		\pEase and convenience, all in small and charming designs. That's Pokeyen Cards for you!"))	
+		}
+	endofatm:
+	releaseall
+
+}
 
 
 script OldaleTown_Mart_Clerk {

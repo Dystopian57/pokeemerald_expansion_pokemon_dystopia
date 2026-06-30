@@ -63,20 +63,13 @@ JoelTentJoel_9:
 	compare VAR_JOELQUESTS, 4
 	goto_if_eq JoelTentJoel_21
 JoelTentJoel_19:
-# 119 "data/maps/JoelTent/scripts.pory"
+# 120 "data/maps/JoelTent/scripts.pory"
 	compare VAR_JOELQUESTS, 5
 	goto_if_eq JoelTentJoel_27
 JoelTentJoel_26:
-# 141 "data/maps/JoelTent/scripts.pory"
+# 142 "data/maps/JoelTent/scripts.pory"
 	compare VAR_JOELQUESTS, 6
-	goto_if_eq JoelTentJoel_30
-JoelTentJoel_29:
-# 147 "data/maps/JoelTent/scripts.pory"
-joelgivesdoll:
-# 148 "data/maps/JoelTent/scripts.pory"
-Joeltentfinish:
-# 149 "data/maps/JoelTent/scripts.pory"
-	releaseall
+	goto_if_eq JoelTentJoel_29
 	return
 
 JoelTentJoel_1:
@@ -189,6 +182,8 @@ JoelTentJoel_20:
 	setspeaker [ SP_NAME_JOEL ]
 # 116 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentJoel_Text_15
+# 118 "data/maps/JoelTent/scripts.pory"
+	release
 	goto JoelTentJoel_19
 
 JoelTentJoel_21:
@@ -252,96 +247,246 @@ JoelTentJoel_24:
 	return
 
 JoelTentJoel_27:
-# 120 "data/maps/JoelTent/scripts.pory"
-	applymovement 4, JoelTentJoel_Movement_0
 # 121 "data/maps/JoelTent/scripts.pory"
-	setspeaker [ SP_NAME_JOEL ]
-# 122 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentJoel_Text_16
-# 125 "data/maps/JoelTent/scripts.pory"
-	applymovement 4, JoelTentJoel_Movement_4
-# 126 "data/maps/JoelTent/scripts.pory"
-	setspeaker [ SP_NAME_JOEL ]
-# 127 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentJoel_Text_17
-# 128 "data/maps/JoelTent/scripts.pory"
 	applymovement 4, JoelTentJoel_Movement_0
+# 122 "data/maps/JoelTent/scripts.pory"
+	setspeaker [ SP_NAME_JOEL ]
+# 123 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_16
+# 126 "data/maps/JoelTent/scripts.pory"
+	applymovement 4, JoelTentJoel_Movement_4
+# 127 "data/maps/JoelTent/scripts.pory"
+	setspeaker [ SP_NAME_JOEL ]
+# 128 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_17
 # 129 "data/maps/JoelTent/scripts.pory"
-	setspeaker [ SP_NAME_JOEL ]
+	applymovement 4, JoelTentJoel_Movement_0
 # 130 "data/maps/JoelTent/scripts.pory"
+	setspeaker [ SP_NAME_JOEL ]
+# 131 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentJoel_Text_18
-# 132 "data/maps/JoelTent/scripts.pory"
-	setspeaker [ SP_NAME_JOEL ]
 # 133 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentJoel_Text_19
-# 135 "data/maps/JoelTent/scripts.pory"
 	setspeaker [ SP_NAME_JOEL ]
+# 134 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_19
 # 136 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentJoel_Text_20
+	setspeaker [ SP_NAME_JOEL ]
 # 137 "data/maps/JoelTent/scripts.pory"
-	register_matchcall TRAINER_ORPHAN_MALE_101
+	msgbox JoelTentJoel_Text_20
 # 138 "data/maps/JoelTent/scripts.pory"
-	setvar VAR_JOELQUESTS, 6
+	register_matchcall TRAINER_ORPHAN_MALE_101
 # 139 "data/maps/JoelTent/scripts.pory"
+	setvar VAR_JOELQUESTS, 6
+# 140 "data/maps/JoelTent/scripts.pory"
 	goto joelgivesdoll
 	goto JoelTentJoel_26
 
-JoelTentJoel_30:
-# 142 "data/maps/JoelTent/scripts.pory"
-	applymovement 4, JoelTentJoel_Movement_0
+JoelTentJoel_29:
 # 143 "data/maps/JoelTent/scripts.pory"
-	setspeaker [ SP_NAME_JOEL ]
+	applymovement 4, JoelTentJoel_Movement_0
 # 144 "data/maps/JoelTent/scripts.pory"
+	setspeaker [ SP_NAME_JOEL ]
+# 145 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentJoel_Text_21
-	goto JoelTentJoel_29
+# 146 "data/maps/JoelTent/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, JoelTentJoel_Text_22, JoelTentJoel_Text_23
+# 148 "data/maps/JoelTent/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq JoelTentJoel_32
+JoelTentJoel_31:
+# 152 "data/maps/JoelTent/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq JoelTentJoel_35
+JoelTentJoel_34:
+# 195 "data/maps/JoelTent/scripts.pory"
+joelgivesdoll:
+# 196 "data/maps/JoelTent/scripts.pory"
+Joeltentfinish:
+# 197 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+JoelTentJoel_32:
+# 149 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_24
+	goto JoelTentJoel_31
+
+JoelTentJoel_35:
+# 153 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_25
+# 154 "data/maps/JoelTent/scripts.pory"
+	compare VAR_SECRETSHELTERSVISITED, 0
+	goto_if_eq JoelTentJoel_38
+JoelTentJoel_37:
+# 160 "data/maps/JoelTent/scripts.pory"
+	compare VAR_SECRETSHELTERSVISITED, 1
+	goto_if_eq JoelTentJoel_41
+JoelTentJoel_40:
+# 166 "data/maps/JoelTent/scripts.pory"
+	compare VAR_SECRETSHELTERSVISITED, 2
+	goto_if_eq JoelTentJoel_44
+JoelTentJoel_43:
+# 172 "data/maps/JoelTent/scripts.pory"
+	compare VAR_SECRETSHELTERSVISITED, 3
+	goto_if_eq JoelTentJoel_47
+JoelTentJoel_46:
+# 178 "data/maps/JoelTent/scripts.pory"
+	compare VAR_SECRETSHELTERSVISITED, 4
+	goto_if_eq JoelTentJoel_50
+JoelTentJoel_49:
+# 184 "data/maps/JoelTent/scripts.pory"
+	compare VAR_SECRETSHELTERSVISITED, 5
+	goto_if_eq JoelTentJoel_52
+	goto JoelTentJoel_34
+
+JoelTentJoel_38:
+# 155 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_26
+	goto JoelTentJoel_37
+
+JoelTentJoel_41:
+# 161 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_27
+# 163 "data/maps/JoelTent/scripts.pory"
+	goto joelgivespresent
+	goto JoelTentJoel_40
+
+JoelTentJoel_44:
+# 167 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_28
+# 169 "data/maps/JoelTent/scripts.pory"
+	goto joelgivespresent
+	goto JoelTentJoel_43
+
+JoelTentJoel_47:
+# 173 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_29
+# 175 "data/maps/JoelTent/scripts.pory"
+	goto joelgivespresent
+	goto JoelTentJoel_46
+
+JoelTentJoel_50:
+# 179 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_30
+# 181 "data/maps/JoelTent/scripts.pory"
+	goto joelgivespresent
+	goto JoelTentJoel_49
+
+JoelTentJoel_52:
+# 185 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentJoel_Text_31
+# 188 "data/maps/JoelTent/scripts.pory"
+	goto joelgivespresent
+	goto JoelTentJoel_34
+
+
+Joelgivesdebutshelterreward::
+# 202 "data/maps/JoelTent/scripts.pory"
+joelgivespresent:
+# 203 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset joeldebutshelterreward, Joelgivesdebutshelterreward_1
+# 214 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+Joelgivesdebutshelterreward_1:
+# 204 "data/maps/JoelTent/scripts.pory"
+	compare VAR_SECRETSHELTERSVISITED, 0
+	goto_if_gt Joelgivesdebutshelterreward_4
+# 212 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+Joelgivesdebutshelterreward_4:
+# 205 "data/maps/JoelTent/scripts.pory"
+	msgbox Joelgivesdebutshelterreward_Text_0
+# 206 "data/maps/JoelTent/scripts.pory"
+	givedecoration DECOR_MUD_BALL
+# 207 "data/maps/JoelTent/scripts.pory"
+	msgbox Joelgivesdebutshelterreward_Text_1
+# 209 "data/maps/JoelTent/scripts.pory"
+	setflag joeldebutshelterreward
+# 210 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+
+VisitedOldaleSShelter::
+# 218 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visitedoldalesecretshelter, VisitedOldaleSShelter_1
+# 223 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+VisitedOldaleSShelter_1:
+# 220 "data/maps/JoelTent/scripts.pory"
+	addvar VAR_SECRETSHELTERSVISITED, + 1
+# 221 "data/maps/JoelTent/scripts.pory"
+	setflag visitedoldalesecretshelter
+	return
+
+
+Visited102Shelter::
+# 227 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visited102secretshelter, Visited102Shelter_1
+# 231 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+Visited102Shelter_1:
+# 228 "data/maps/JoelTent/scripts.pory"
+	addvar VAR_SECRETSHELTERSVISITED, + 1
+# 229 "data/maps/JoelTent/scripts.pory"
+	setflag visited102secretshelter
+	return
 
 
 JoelTentTV::
-# 154 "data/maps/JoelTent/scripts.pory"
+# 237 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 155 "data/maps/JoelTent/scripts.pory"
+# 238 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentTV_Text_0
-# 156 "data/maps/JoelTent/scripts.pory"
+# 239 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentLantern::
-# 160 "data/maps/JoelTent/scripts.pory"
+# 243 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 161 "data/maps/JoelTent/scripts.pory"
+# 244 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentLantern_Text_0
-# 162 "data/maps/JoelTent/scripts.pory"
+# 245 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentPoster::
-# 166 "data/maps/JoelTent/scripts.pory"
+# 249 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 167 "data/maps/JoelTent/scripts.pory"
+# 250 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentPoster_Text_0
-# 168 "data/maps/JoelTent/scripts.pory"
+# 251 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentMudball::
-# 172 "data/maps/JoelTent/scripts.pory"
+# 255 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 173 "data/maps/JoelTent/scripts.pory"
+# 256 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentMudball_Text_0
-# 174 "data/maps/JoelTent/scripts.pory"
+# 257 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentCushion::
-# 178 "data/maps/JoelTent/scripts.pory"
+# 261 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 179 "data/maps/JoelTent/scripts.pory"
+# 262 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentCushion_Text_0
-# 180 "data/maps/JoelTent/scripts.pory"
+# 263 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
@@ -386,9 +531,9 @@ JoelTentJoel_Movement_3:
 	face_up
 	step_end
 
-# 125 "data/maps/JoelTent/scripts.pory"
+# 126 "data/maps/JoelTent/scripts.pory"
 JoelTentJoel_Movement_4:
-# 125 "data/maps/JoelTent/scripts.pory"
+# 126 "data/maps/JoelTent/scripts.pory"
 	face_right
 	step_end
 
@@ -487,7 +632,7 @@ JoelTentJoel_Text_15:
 	.string "the metallic roof.$"
 
 JoelTentJoel_Text_16:
-# 122 "data/maps/JoelTent/scripts.pory"
+# 123 "data/maps/JoelTent/scripts.pory"
 	.string "What? Anne was already gone!? Oh no...\p"
 	.string "She told me she can't sleep without\n"
 	.string "that doll. She'll miss it so much in her\l"
@@ -496,53 +641,125 @@ JoelTentJoel_Text_16:
 	.string "Rustboro, could you give it to her?$"
 
 JoelTentJoel_Text_17:
-# 127 "data/maps/JoelTent/scripts.pory"
+# 128 "data/maps/JoelTent/scripts.pory"
 	.string "I said I'd go visit her... but it was only\n"
 	.string "so she wouldn't be sad.$"
 
 JoelTentJoel_Text_18:
-# 130 "data/maps/JoelTent/scripts.pory"
+# 131 "data/maps/JoelTent/scripts.pory"
 	.string "To go to Rustboro, you need a {COLOR BLUE}Devon\n"
 	.string "Visa{COLOR DARK_GRAY}, or the Devon guards will stop you\l"
 	.string "at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}.$"
 
 JoelTentJoel_Text_19:
-# 133 "data/maps/JoelTent/scripts.pory"
+# 134 "data/maps/JoelTent/scripts.pory"
 	.string "There's no way they'll let me through...\n"
 	.string "but you look like a soldier. Perhaps\l"
 	.string "they'll let you.$"
 
 JoelTentJoel_Text_20:
-# 136 "data/maps/JoelTent/scripts.pory"
+# 137 "data/maps/JoelTent/scripts.pory"
 	.string "Here's my Devon Nav number - let's keep\n"
 	.string "in touch about this!$"
 
 JoelTentJoel_Text_21:
-# 144 "data/maps/JoelTent/scripts.pory"
+# 145 "data/maps/JoelTent/scripts.pory"
+	.string "Hey, {PLAYER}! What's up?$"
+
+JoelTentJoel_Text_22:
+# 146 "data/maps/JoelTent/scripts.pory"
+	.string "About Anne's doll...$"
+
+JoelTentJoel_Text_23:
+# 146 "data/maps/JoelTent/scripts.pory"
+	.string "About Secret Shelters...$"
+
+JoelTentJoel_Text_24:
+# 149 "data/maps/JoelTent/scripts.pory"
 	.string "Please, you have to give Anne her doll\n"
 	.string "back.\p"
 	.string "She'll forget about me eventually... but\n"
 	.string "I still don't want her to be sad.$"
 
-JoelTentTV_Text_0:
+JoelTentJoel_Text_25:
+# 153 "data/maps/JoelTent/scripts.pory"
+	.string "How many spots have you made a Secret\n"
+	.string "Shelter on, {PLAYER}?$"
+
+JoelTentJoel_Text_26:
 # 155 "data/maps/JoelTent/scripts.pory"
+	.string "None? Wow, you should make at least\n"
+	.string "one!\p"
+	.string "Come back when you do, and I'll give you\n"
+	.string "something cool!$"
+
+JoelTentJoel_Text_27:
+# 161 "data/maps/JoelTent/scripts.pory"
+	.string "One? Well, that's a start!\p"
+	.string "I bet it's either in that truck in Oldale,\n"
+	.string "or the sandy cave in the Great Crater.\l"
+	.string "I've been in those before!$"
+
+JoelTentJoel_Text_28:
+# 167 "data/maps/JoelTent/scripts.pory"
+	.string "Two? Not bad.\p"
+	.string "You should try a few more places\n"
+	.string "though.\p"
+	.string "I moved around a lot, before I found\n"
+	.string "the perfect one for me!$"
+
+JoelTentJoel_Text_29:
+# 173 "data/maps/JoelTent/scripts.pory"
+	.string "Three? You're getting around!\p"
+	.string "Have you checked the places around\n"
+	.string "Petalburg City? There's at least three\l"
+	.string "shelter spots across them.$"
+
+JoelTentJoel_Text_30:
+# 179 "data/maps/JoelTent/scripts.pory"
+	.string "Four? Wow, you've been in more than me\n"
+	.string "already! You should tell me about them\l"
+	.string "sometime.$"
+
+JoelTentJoel_Text_31:
+# 185 "data/maps/JoelTent/scripts.pory"
+	.string "Five? {PLAYER}, you're moving around\n"
+	.string "a lot!\p"
+	.string "Are you sure you're giving the spots a\n"
+	.string "proper chance? Sometimes it takes a bit\l"
+	.string "of time to get used to them.$"
+
+Joelgivesdebutshelterreward_Text_0:
+# 205 "data/maps/JoelTent/scripts.pory"
+	.string "Your first shelters may be a bit empty\n"
+	.string "at firt. Here, you can have this.$"
+
+Joelgivesdebutshelterreward_Text_1:
+# 207 "data/maps/JoelTent/scripts.pory"
+	.string "... why the face? It's a Pokéball I made\n"
+	.string "from mud!\p"
+	.string "Of course, it doesn't work, but it's one\n"
+	.string "of my best ones.$"
+
+JoelTentTV_Text_0:
+# 238 "data/maps/JoelTent/scripts.pory"
 	.string "The TV is not plugged to anything...$"
 
 JoelTentLantern_Text_0:
-# 161 "data/maps/JoelTent/scripts.pory"
+# 244 "data/maps/JoelTent/scripts.pory"
 	.string "An oil lantern. It doesn't have much oil\n"
 	.string "left.$"
 
 JoelTentPoster_Text_0:
-# 167 "data/maps/JoelTent/scripts.pory"
+# 250 "data/maps/JoelTent/scripts.pory"
 	.string "An old poster of a Treecko.$"
 
 JoelTentMudball_Text_0:
-# 173 "data/maps/JoelTent/scripts.pory"
+# 256 "data/maps/JoelTent/scripts.pory"
 	.string "The dry, cracked remains of a mudball.\n"
 	.string "They resemble a Pokéball.$"
 
 JoelTentCushion_Text_0:
-# 179 "data/maps/JoelTent/scripts.pory"
+# 262 "data/maps/JoelTent/scripts.pory"
 	.string "A dirty cushion. It's got black and\n"
 	.string "white hair all over it.$"

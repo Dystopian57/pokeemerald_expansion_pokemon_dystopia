@@ -36,8 +36,14 @@ script BalsamCallAfterWarehouse {
     alright if you want to stretch your legs, but you should have told us. Your grandpa Birch
     was worried sick.\p Since you're feeling adventurous - why don't you go visit your
     other grandpa at Petalburg? \p A change of scenery will do you good. It's very close, but
-    give me a call if you get lost.\p It's backto work for me. Take care, {PLAYER}."))
-    }
+    give me a call if you get lost."))
+
+	if (var(VAR_OLDALE_PHASE) < 6)
+	{msgbox(format("Oh, and we still need help with finding that Voltorb Shard my Aide asked
+    you about.\p It's not urgent, but we'd really appreciate it."))}
+    
+
+    msgbox(format("It's back to work for me. Take care, {PLAYER}."))}
 
     else {release}
 }
@@ -790,14 +796,14 @@ script OldaleDevonGrunts { //karen and jerry
         spending the rest of their lives on {COLOR RED}Dewford Prison{COLOR DARK_GRAY}."))
         applymovement (15, moves(face_right))
         applymovement (14, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("Most likely! So... I suppose you want to go through Route 102?"))
+        msgbox(format("Most likely! So... I suppose you want to go through Road 002?"))
 	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
         if(var(VAR_RESULT) == 0){
         msgbox(format("I see... well, I'm sorry to say... \p In the Rebel Zone, when it's not one thing,
         it's the other, you know?"))
         applymovement (15, moves(walk_in_place_right * 1))
-        msgbox(format("We have one of our scientists searching Route 102 for a very dangerous Pokémon.
+        msgbox(format("We have one of our scientists searching Road 002 for a very dangerous Pokémon.
         \p It's the next species on the list of Pokémon to be {COLOR BLUE}safened{COLOR DARK_GRAY}, and we can't let his work be
         disturbed"))
 
@@ -1221,7 +1227,7 @@ script SamanthaCall1 {
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
     playse (SE_PIN)
     setspeaker ([SP_NAME_JOEL])
-    msgbox (format("O-oh, {PLAYER}... that way leads to Route 102, right?"))
+    msgbox (format("O-oh, {PLAYER}... that way leads to Road 002, right?"))
 
     msgbox (format("B-but Slateport is very far... t-the food here in Oldale will do!"))
 

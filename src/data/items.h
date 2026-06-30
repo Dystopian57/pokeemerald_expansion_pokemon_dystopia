@@ -12,7 +12,7 @@
 
 #define X_ITEM_STAGES ((B_X_ITEMS_BUFF >= GEN_7) ? 2 : 1)
 
-#define TREASURE_FACTOR ((I_SELL_VALUE_FRACTION >= GEN_9) ? 2 : 1)
+#define TREASURE_FACTOR ((I_SELL_VALUE_FRACTION >= GEN_9) ? 1 : 1)  //2 : 1
 
 #define ITEM_NAME(str) COMPOUND_STRING_SIZE_LIMIT(str, ITEM_NAME_LENGTH)
 #define ITEM_PLURAL_NAME(str) COMPOUND_STRING_SIZE_LIMIT(str, ITEM_NAME_PLURAL_LENGTH)
@@ -4638,26 +4638,26 @@ const struct Item gItemsInfo[] =
 
     [ITEM_STRAWBERRY_SWEET] =
     {
-        .name = ITEM_NAME("Strawberry Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Gem Card"),
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
-            "Strawberry-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "A prepaid card.\n"
+            "Can be bought and\n"
+            "sold for 1000¥."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_EVOLUTION_ITEM,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
-        .iconPic = gItemIcon_StrawberrySweet,
-        .iconPalette = gItemIconPalette_StrawberrySweet,
+        .iconPic = gItemIcon_PrimariumZ,
+        .iconPalette = gItemIconPalette_PrimariumZ,
     },
 
     [ITEM_LOVE_SWEET] =
     {
         .name = ITEM_NAME("Slowpoke Tail"),
         .pluralName = ITEM_PLURAL_NAME("Slowpoke Tails"),
-        .price = 50000,
+        .price = 50000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A highly demanded\n"
             "delicacy in the\n"
@@ -4673,36 +4673,36 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BERRY_SWEET] =
     {
-        .name = ITEM_NAME("Berry Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Gold Card"),
+        .price = 5000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
-            "A berry-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "A prepaid card.\n"
+            "Can be bought and\n"
+            "sold for 5000¥."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_EVOLUTION_ITEM,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
-        .iconPic = gItemIcon_BerrySweet,
-        .iconPalette = gItemIconPalette_BerrySweet,
+        .iconPic = gItemIcon_SolganiumZ,
+        .iconPalette = gItemIconPalette_SolganiumZ,
     },
 
     [ITEM_CLOVER_SWEET] =
     {
-        .name = ITEM_NAME("Clover Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Diamond Card"),
+        .price = 10000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
-            "A clover-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "A prepaid card.\n"
+            "Can be bought and\n"
+            "sold for 10000¥."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_EVOLUTION_ITEM,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
-        .iconPic = gItemIcon_CloverSweet,
-        .iconPalette = gItemIconPalette_CloverSweet,
+        .iconPic = gItemIcon_UltranecroziumZ,
+        .iconPalette = gItemIconPalette_UltranecroziumZ,
     },
 
     [ITEM_FLOWER_SWEET] =
@@ -14266,18 +14266,18 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BIKE_VOUCHER] =
     {
-        .name = ITEM_NAME("Bike Voucher"),
+        .name = ITEM_NAME("Mystery Number 0"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A voucher for\n"
-            "obtaining a bicycle\n"
-            "from the Bike Shop."),
+            "The number 2557 is\n"
+            "written on it. Can be\n"
+            "called from a pay phone."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_BikeVoucher,
-        .iconPalette = gItemIconPalette_BikeVoucher,
+        .iconPic = gItemIcon_ChippedPot,
+        .iconPalette = gItemIconPalette_Pot,
     },
 
     [ITEM_GOLD_TEETH] =

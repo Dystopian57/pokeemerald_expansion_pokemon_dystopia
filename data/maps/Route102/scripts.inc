@@ -268,39 +268,12 @@ Route102EndSandtorm::
 
 
 PopWeatherMon102::
-# 148 "data/maps/Route102/scripts.pory"
-	compare VAR_ROUTE102_WEATHER, 0
-	goto_if_eq PopWeatherMon102_2
-PopWeatherMon102_1:
-# 151 "data/maps/Route102/scripts.pory"
-	compare VAR_ROUTE102_WEATHER, 1
-	goto_if_eq PopWeatherMon102_5
-PopWeatherMon102_4:
-# 154 "data/maps/Route102/scripts.pory"
-	compare VAR_ROUTE102_WEATHER, 2
-	goto_if_eq PopWeatherMon102_8
-PopWeatherMon102_7:
 # 157 "data/maps/Route102/scripts.pory"
 	compare VAR_ROUTE102_WEATHER, 3
-	goto_if_eq PopWeatherMon102_10
+	goto_if_eq PopWeatherMon102_1
 	return
 
-PopWeatherMon102_2:
-# 149 "data/maps/Route102/scripts.pory"
-	setflag route102weathermon
-	goto PopWeatherMon102_1
-
-PopWeatherMon102_5:
-# 152 "data/maps/Route102/scripts.pory"
-	clearflag route102weathermon
-	goto PopWeatherMon102_4
-
-PopWeatherMon102_8:
-# 155 "data/maps/Route102/scripts.pory"
-	clearflag route102weathermon
-	goto PopWeatherMon102_7
-
-PopWeatherMon102_10:
+PopWeatherMon102_1:
 # 158 "data/maps/Route102/scripts.pory"
 	clearflag route102weathermon
 	return

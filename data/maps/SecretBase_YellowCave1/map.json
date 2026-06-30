@@ -220,6 +220,34 @@
       "dest_warp_id": "WARP_ID_SECRET_BASE"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "Visited102Shelter"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "Visited102Shelter"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "Visited102Shelter"
+    }
+  ],
   "bg_events": []
 }

@@ -387,6 +387,24 @@
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",
       "script": "WithSamanthadontgothere"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "5",
+      "script": "BalsamHowdidyoufindbackentrance"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "5",
+      "script": "BalsamHowdidyoufindbackentrance"
     }
   ],
   "bg_events": [

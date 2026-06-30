@@ -4834,7 +4834,7 @@
     {
       "id": "LAYOUT_ROUTE103DEVON_LAB_UPPER",
       "name": "Route103DevonLabUpper_Layout",
-      "width": 16,
+      "width": 18,
       "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
@@ -5160,6 +5160,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/WaterfallCaveHermitlAIR/border.bin",
       "blockdata_filepath": "data/layouts/WaterfallCaveHermitlAIR/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_SEWERS_ARENA",
+      "name": "PetalburgSewersArena_Layout",
+      "width": 17,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattlePalace",
+      "border_filepath": "data/layouts/PetalburgSewersArena/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgSewersArena/map.bin"
     }
   ]
 }

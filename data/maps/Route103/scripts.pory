@@ -659,6 +659,7 @@ script Route103ConcordBridgeGuard {
 
 			msgbox(format("Thank you. That really helped stretch the good old battling muscle!"))
 			clearflag (conartistrewardsinoldale)
+			setvar (VAR_JIMMYQUESTPROGRESS, 1)
 			goto (finishguardscript)
 			}
 
@@ -834,6 +835,7 @@ script Route103ConcordConartist {
 		clearflag (devonbridgeguardgoestoconartist)
 		playbgm (MUS_ROUTE113, TRUE)
 		setvar (VAR_JIMMYQUESTPROGRESS, 1)
+		//addvar (VAR_DEVON_REPUTATION, + 1)
 		goto (finishconartistscript)	
 }
 	finishconartistscript:

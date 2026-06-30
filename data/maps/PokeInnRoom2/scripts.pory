@@ -33,12 +33,14 @@ script OldalePokeCenterInnPrograms {
 
 		switch (var(VAR_RESULT))
 		{case 0: goto (OldaleWarehouseNews)
-		//case 1: goto (Devotionad)
-		//case 2: goto (Safemonad)
-		//case 3: goto (Lifeindustriesad)
-		//case 4: goto (Devoncenterad)
-		//case 5: goto (Rebelhackersad)
-		//case 6: goto (Devonnetad)
+		case 1: goto (JimmyNews)
+		case 2: goto (LittlerootLabNews)
+		case 3: goto (PetalburgRiotNews)
+		case 4: goto (LittlerootLabNews)
+		case 5: goto (DevonSpaceNews)
+		case 6: goto (MauvillePlantNews)
+		case 7: goto (RebelHarbourNews)
+		case 8: goto (Route104LabNews)
 		}
 	}
 
@@ -68,15 +70,217 @@ script OldalePokeCenterInnPrograms {
 
 	//NEWS BELOW
 
-	script OldaleWarehouseNews {
-		if(var(VAR_OLDALE_PHASE) <2) {
-		msgbox(format("Oldale Warehouse is taken by rebels."))}
 
-		else {
-		msgbox(format("Oldale Warehouse is free."))
+	script JimmyNews {
+		lock
+	
+		if(var(VAR_JIMMYQUESTPROGRESS) == 0){
+		
+		msgbox(format("Breaking news on the chase for Jimmy McGligar, the infamous Pokémon egg
+		smuggler - he has been seen in Route 110.\p We urge our viewers to extreme caution, and
+		inform authorities if they see him. An image of him is now onscreen. \p 
+		We take this chance to remind our viewers that only official Devon Breeders are
+		authorized to match Pokémon and handle their offspring. \pThis is part of the efforts
+		to prevent dangerous practices such as genetic enhancing, also referred to as
+		'IV breeding'."))}
+
+		if(var(VAR_JIMMYQUESTPROGRESS) == 1){
+
+		if (!flag (helpedconcordconartist))
+		{msgbox(format("We have news on egg smuggler Jimmy McGligar's whereabouts.\p
+		Civilians have reported sighting him in Petalburg City, and there's speculation he recently
+		crossed the checkpoint at Concord Bridge unnoticed.\p Due to the high rebel activity in
+		Petalburg, an arrest will prove difficult, and efforts are focused on preventing him
+		from leaving the Rebel Zone once more.\pSecurity checks are thus being reinforced
+		in the checkpoints of Petalburg Park, Concord Bridge and Rustboro Road.\p
+		Please carry your Devon Visa when travelling."))
 		}
 
-		end	
+		else {msgbox(format("We have news on egg smuggler Jimmy McGligar's whereabouts.\p
+		After a close encounter with Devon Guards and a brave civilian at Concord Bridge,
+		he's been reported to have moved to Petalburg City.\p
+		Due to the high rebel activity in the area, an arrest will prove difficult,
+		and efforts are focused on preventing him from leaving the Rebel Zone once more.
+		\p Security checks are thus being reinforced in the checkpoints of Petalburg Park,
+		Concord Bridge and Rustboro Road.\pPlease carry your Devon Visa when travelling."))}
+
+	}
+	
+	release}
+
+
+	script OldaleWarehouseNews {
+		lock
+	
+		if(var(VAR_OLDALE_PHASE) == 0){
+		
+		msgbox(format("In other unfortunate piece of news, the Devon Warehouse of Oldale town is
+		still under rebel control.\p Devon Inc. has promised to send a taskforce to the facility
+		as soon as Devon Guards can be freed from the evacuation efforts of Mauville City,
+		whose Nuclear Plant has suffered a great accident.\p
+		We will continue to apprise you of the situation."))}
+
+		if(var(VAR_OLDALE_PHASE) > 0){
+
+
+		msgbox(format("Breaking News: our Verdooms have recently caught this footage of
+		the Devon Warehouse of Oldale Town, where rebels can be seen leaving the facility
+		in droves."))
+
+		checkplayergender
+		
+		if(var(VAR_RESULT) == MALE)
+
+		{msgbox(format("Not soon after, a young man in soldier-like clothes was seen leaving
+		the warehouse. Some early hypothesis see him as a prisoner who freed himself after the
+		rebels were called out, while others point at this person being a mercenary sent to
+		defeat said rebels for yet unknown reasons.\p We will provide more information as
+		soon as we have it."))}
+
+		if(var(VAR_RESULT) == FEMALE)
+
+		{msgbox(format("Not soon after, a young woman in soldier-like clothes was seen leaving
+		the warehouse. Some early hypothesis see her as a prisoner who freed himself after the
+		rebels were called out, while others point at this person being a mercenary sent to
+		defeat said rebels for yet unknown reasons.\p We will provide more information as
+		soon as we have it."))}
+
+	}
+		release
+	}
+
+
+
+	script PetalburgRiotNews {
+		
+		lock
+		if (!flag (helpedconcordconartist))
+		//GET ACTUAL FLAG HERE
+		
+		{msgbox(format("Breaking news: a violent, rebel-led riot has broken out in the vicinity
+		of Petalburg City's Devon Center. Devon Guards have already been dispatched to put an end
+		to the violence, and we advise residents of the city to steer clear off the Devon facility
+		until the situation is under control."))}
+
+		else {
+
+		msgbox(format("Breaking news: rebels have been vacated from a violent riot mounted
+		around Petalburg City's Devon Center. The property damage is great, but no human or
+		Pokémon injury has ensued.\p The situation was apparently defused by a young person
+		garbed in camouflage clothes, who some believe to be the same that appears in the footage
+		of Rebels leaving Oldale's Devon Warehouse.\p Could this be the rise of a bold vigilante
+		in the Rebel Zone, or perhaps that of an enforcer acting for a nefarious faction?\p
+		We will keep you informed of these developments."))}
+
+		release
+
+	}
+
+
+	script LittlerootLabNews {
+		lock
+		if (!flag (helpedconcordconartist))
+		//GET ACTUAL FLAG HERE
+		
+		{msgbox(format("Now, for some more analysis on the latest issue of Devon's Inc 'Safemon
+		Progress Report'. \pFor the third consecutive month, Littleroot's Lab has been at the bottom
+		of contributions to the Safemon project, with only 2 Pokémon species successfully turned into
+		Safemon.\pIn spite of its decades-long history of academic brilliance, the laboratory took a
+		turn for the worse when the illustrious Professor Birch retired, and the torch was passed to
+		the Alolan Professor Balsam.\pAfter continuous downsizing of the laboratory, she is now one of
+		the only two scientists working in Littleroot, and the closure of the institution seems imminent.
+		\pIt would be a sad farewell to a once iconic landmark in Hoenn's history. "))}
+
+		else {
+
+		msgbox(format("after raid to the lab, another news!"))}
+		release
+	}
+
+	script DevonSpaceNews {
+		
+		lock
+		msgbox(format("“Space is no longer the limit” was claimed in unison by the new administrators
+		of Mossdeep's Devon Space Center - former gym leaders Tate and Liza - during the announcement of
+		the new MDSS program.\pLast year, the space agency sent several Lunatellites into orbit, which
+		made the popular Devon Net possible.\p This year, with the help of business partner Silph Co.,
+		the 'Gemini Mission' has started, with goals to build the Devon Space Station - the firt man-made,
+		long-term habitat to exist outside the planet.\p Everyone in Hoenn looks forward to the exciting
+		discoveries that this new era of space flight might bring. Stay tuned!"))
+		release
+
+	}
+
+	script MauvillePlantNews {
+		
+		lock
+		msgbox(format("Next up, we bring you some unfortunate news.\pAn accident in Mauville's Nuclear
+		Plant has claimed the lifes of 7 dozen Devon workers and 5 Safemon. Many others have been
+		injured, and some are in critical condition. \pIn a recent press conference, Plant Manager
+		Wattson has sent his condolences to the affected families, and has assured an investigation
+		into the incident is underway.\p Meanwhile, voices are being raised advocating for the phasing
+		out of nuclear technology, in favour of the safer, cleaner energy provided by the thermal plant
+		of Lavaridge City.\p Mister Stone has promised to look into the matter, and to assess whether
+		Lavaridge can keep up with the energy demands of our rapidly developing region."))
+		release
+
+	}
+
+	script RebelHarbourNews {
+
+		lock
+		if(var(VAR_JIMMYQUESTPROGRESS) == 0){
+			//REPLACE WITH HARBOUR PROGRESS VARIABLE
+		
+		msgbox(format("We have received news about Rebels building an illegal harbour on the coast
+		south of Petalburg City.\pAlthough available information rules out any war-equipped vessels
+		being built or acquired by anti-Devon radicals, the place sees regular traffic of small foreign
+		boats.\pIf conjectures are to be believed, this could point to a collaboration between the
+		Rebels and foreign crime organizations, and the establishment of a supply chain.\p
+		Devon Co. continues to monitor the situation, and Mister Stone has promised to deal with any
+		threats to the region's safety that dare arise from southern Hoenn in a 'swift, stern, and safe
+		manner'"))}
+
+		if(var(VAR_JIMMYQUESTPROGRESS) == 1){
+
+
+		msgbox(format("after foreign missions, INFORM ABOUT THEM!"))
+		}
+		release
+
+	}
+
+
+	script Route104LabNews {
+
+		lock
+		if(var(VAR_JIMMYQUESTPROGRESS) == 0){
+			//REPLACE WITH 104 DEVON LAB PROGRESS VARIABLE
+		
+		msgbox(format("We continue with more insight into the latest issue of the Safemon Progress
+		Report that Devon Co. recently published. \p The metrics place the Devon Lab in Route 104 as one
+		of the lead contributors to Safemon Research this past month, with 4 species successfully
+		safened only this past week. \p In a recent interview, Lab Director X shared that 'Although the
+		Rebel Zone can be a hazardous work environment, the abundance of regular Pokémon here has
+		provided us with a satisfactory number of samples, which has contributed to our pace of
+		research'.\p We wish our valiant and hard-working scientists the best of lucks in their noble 
+		endeavor of making Hoenn a safer place."))}
+
+		if(var(VAR_JIMMYQUESTPROGRESS) == 1){
+
+
+		msgbox(format("Breaking news. We have just received reports of an assault on the Devon Lab of
+		Route 104, presumably perpetrated by a band of rebels led by former gym leader of the
+		neighbouring Petalburg City - Norman.\p While there is no footage of the incident, witnesses
+		claim he was accompanied by 4 young trainers, with whom he seized control of the facility by
+		use of violent, unsafened Pokémon. \pFortunately, Devon Admin Roxanne was swiftly dispatched to
+		the location, and ensured the safe retreat of the laboratory's personnel. Norman and his acolytes'
+		goals are unknown, but speculated to be of lucrative nature, similar to those of the rebels that
+		recently stripped the Devon Warehouse of Oldale Town of all its valuable assets.\p
+		The lab will remain unmanned until it can be safely reclaimed. That is all we have for the moment."))
+		}
+		release
+
 	}
 
 	//WEATHERS BELOW
@@ -93,6 +297,7 @@ script OldalePokeCenterInnPrograms {
 		playse (SE_M_SANDSTORM)
 		msgbox(format("There is a sandstorm in Route 102!"))
 		setvar(VAR_ROUTE102_WEATHER, 1)
+		clearflag (route102weathermon)
 		setflag (seenweatheratinnvisit)
 		release
 	}

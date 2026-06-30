@@ -448,7 +448,7 @@ script GreatCraterSouvenirBox {
 		releaseall}
 
 script GreatCraterSign {
-		msgbox(format("North - Route 102 \p East - Route 101"))
+		msgbox(format("North - Road 002 \p East - Route 101"))
 		releaseall}
 
 script GreatCraterSouvenirSupplies {
@@ -591,7 +591,7 @@ script GreatCraterDevonGruntFemale {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (9, moves(face_player))
 	msgbox(format("I'm sorry, but one of our scientists is currently searching for a dangerous
-	Pokémon in Route 102."))
+	Pokémon in Road 002."))
     applymovement (9, moves(walk_in_place_up * 1))
 	msgbox(format("The creature in question is next on the list of Pokémon to be safened, and
 	we can't risk civilians interfering with his work."))

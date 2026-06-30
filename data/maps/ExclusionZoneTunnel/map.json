@@ -266,6 +266,43 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 59,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "5",
+      "script": "EnterSecretLabPreUnsafeningCheck"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "5",
+      "script": "EnterSecretLabPreUnsafeningCheck"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "5",
+      "script": "EnterSecretLabPreUnsafeningCheck"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
+  ]
 }

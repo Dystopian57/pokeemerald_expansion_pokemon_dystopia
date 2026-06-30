@@ -4371,11 +4371,35 @@ void EnterCode(void)
 void GetCodeFeedback(void)
 {
     static const u8 sText_SampleCode[] = _("SampleCode");
-    if (!StringCompare(gStringVar2, sText_SampleCode))
+
+//Full Pokedex Cheat
+
+
+//Forgivemons
+    static const u8 sText_CodeCelebi[] = _("Celebi");
+    static const u8 sText_CodeJirachi[] = _("Jirachi");
+    if (!StringCompare(gStringVar2, sText_CodeCelebi))
         gSpecialVar_Result = 1;
+    else if (!StringCompare(gStringVar2, sText_CodeJirachi))
+        gSpecialVar_Result = 2;
+    else
+        gSpecialVar_Result = 0;
+
+//Demo Gift
+
+{
+    static const u8 sText_Code2557[] = _("2557");
+
+    if (!StringCompare(gStringVar2, sText_Code2557))
+        gSpecialVar_Result = 1;
+
     else
         gSpecialVar_Result = 0;
 }
+
+}
+
+
 
 void SetHiddenNature(void)
 {

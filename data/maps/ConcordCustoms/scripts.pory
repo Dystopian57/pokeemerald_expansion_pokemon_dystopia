@@ -197,19 +197,71 @@ script ConcordCustomsPhone{
 					playse (SE_SHOP)
 					waitse
 					playse (SE_CLICK)
-					msgbox(format("Call who?"))
-					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Balsam", "No one") //Norman
+					msgbox(format("Which number to dial?"))
+					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Littleroot Lab", "Petalburg Gym" , "Dial Manually", "No one") //Petalburg Gym. Voice mail.
 						if(var(VAR_RESULT) == 0){
 						hidemoneybox
 						playse (SE_POKENAV_CALL)
 						waitse
-						msgbox(format("Hm? Who's this? Oh, {PLAYER}? \p Why are you calling from a public phone?
+						msgbox(format("Prof. Balsam: Hm? Who's this? Oh, {PLAYER}? \p Why are you calling from a public phone?
 						Did you lose the Devon Nav I gave you?\p Well, if you want to talk to me... you'll have to
 						get a new one, or come to the lab. \p I don't like speaking with public phones involved. You
 						never know who is listening... \p Well, that's all from me. Later."))
 						playse (SE_POKENAV_HANG_UP)
 						goto (endofpayphone)
-						}}}
+						}
+
+						if(var(VAR_RESULT) == 1){
+						hidemoneybox
+						playse (SE_POKENAV_CALL)
+						waitse
+						msgbox(format("Norman: Hello. You have reached the voice mail of Petalburg Dojo.\p If you're calling to
+						schedule a gym fight, I'm afraid this center is no longer part of the Hoenn Pokémon League.\p If it's you,
+						{PLAYER}... I'll call you as soon as I can.\p And if it's you, Sidney... stop calling me!"))
+						playse (SE_POKENAV_HANG_UP)
+						goto (endofpayphone)
+						}
+
+						if(var(VAR_RESULT) == 3){
+						hidemoneybox						
+						playse (SE_POKENAV_HANG_UP)
+						goto (endofpayphone)
+						}
+
+						if(var(VAR_RESULT) == 2){
+						hidemoneybox
+						msgbox(format("Let's dial a number..."))
+						special (EnterCode)
+						waitstate
+						special (GetCodeFeedback)
+							if(var(VAR_RESULT) == 0){
+							playse (SE_POKENAV_CALL)
+							waitse
+							msgbox(format("You have reached the Devon Call Logistics Center.\p The number
+							you have just called is not assigned to any Hoenn citizen. \p Please try again."))
+							playse (SE_POKENAV_HANG_UP)
+							goto (endofpayphone)
+							}
+							if(var(VAR_RESULT) == 1){
+							playse (SE_POKENAV_CALL)
+							waitse
+							msgbox(format("Success."))
+							playse (SE_POKENAV_HANG_UP)
+							goto (endofpayphone)
+							}
+
+						
+						waitse
+
+
+
+
+						playse (SE_POKENAV_HANG_UP)
+						goto (endofpayphone)
+						}
+						
+						
+						}}
 			if(var(VAR_RESULT) == 1){
 			goto (endofpayphone)
 			}

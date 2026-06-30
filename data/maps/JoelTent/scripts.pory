@@ -112,9 +112,10 @@ script JoelTentJoel {
 
 	if(var(VAR_JOELQUESTS) == 4 && flag (anneandfamilygone))
     {   applymovement(4, moves(face_player))
-    setspeaker ([SP_NAME_JOEL])
+    	setspeaker ([SP_NAME_JOEL])
         msgbox(format("You should hurry up! Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!
-        \p She lives in Oldale, in the house with the metallic roof."))}
+        \p She lives in Oldale, in the house with the metallic roof."))
+		release}
 
 	if(var(VAR_JOELQUESTS) == 5)
     {   applymovement(4, moves(face_player))
@@ -141,13 +142,95 @@ script JoelTentJoel {
     if(var(VAR_JOELQUESTS) == 6)
         {applymovement(4, moves(face_player))
         setspeaker ([SP_NAME_JOEL])
-        msgbox(format("Please, you have to give Anne her doll back. \p She'll forget about me
-        eventually... but I still don't want her to be sad."))}
+		msgbox(format("Hey, {PLAYER}! What's up?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "About Anne's doll...", "About Secret Shelters...")
+
+			if(var(VAR_RESULT) == 0){
+			msgbox(format("Please, you have to give Anne her doll back. \p She'll forget about me
+			eventually... but I still don't want her to be sad."))}
+
+			if(var(VAR_RESULT) == 1){
+			msgbox(format("How many spots have you made a Secret Shelter on, {PLAYER}?"))
+				if(var(VAR_SECRETSHELTERSVISITED) == 0){
+					msgbox(format("None? Wow, you should make at least one!\p Come back when you do,
+					and I'll give you something cool!"))
+					//goto (Joelgivesdebutshelterreward)
+			}
+
+				if(var(VAR_SECRETSHELTERSVISITED) == 1){
+					msgbox(format("One? Well, that's a start!\p I bet it's either in that truck in Oldale,
+					or the sandy cave in the Great Crater. I've been in those before!"))
+					goto (joelgivespresent)
+			}
+
+				if(var(VAR_SECRETSHELTERSVISITED) == 2){
+					msgbox(format("Two? Not bad.\pYou should try a few more places though.\p I
+					moved around a lot, before I found the perfect one for me!"))
+					goto (joelgivespresent)
+			}
+
+				if(var(VAR_SECRETSHELTERSVISITED) == 3){
+					msgbox(format("Three? You're getting around! \p Have you checked the places around Petalburg
+					City? There's at least three shelter spots across them."))
+					goto (joelgivespresent)
+			}
+
+				if(var(VAR_SECRETSHELTERSVISITED) == 4){
+					msgbox(format("Four? Wow, you've been in more than me already! You should tell
+					me about them sometime."))
+					goto (joelgivespresent)
+			}
+
+				if(var(VAR_SECRETSHELTERSVISITED) == 5){
+					msgbox(format("Five? {PLAYER}, you're moving around a lot! \p Are you sure you're
+					giving the spots a proper chance? Sometimes it takes a bit of time to get used to
+					them."))
+					goto (joelgivespresent)
+			}
+			
+
+
+			}
 
     joelgivesdoll:
     Joeltentfinish:
     releaseall
-}}
+}}}
+
+
+script Joelgivesdebutshelterreward {
+	joelgivespresent:
+	if (!flag(joeldebutshelterreward))
+	{if(var(VAR_SECRETSHELTERSVISITED) > 0){
+		msgbox(format("Your first shelters may be a bit empty at firt. Here, you can have this."))
+		givedecoration (DECOR_MUD_BALL)
+		msgbox(format("... why the face? It's a Pokéball I made from mud!\p Of course, it doesn't work,
+		but it's one of my best ones."))
+		setflag (joeldebutshelterreward)
+		release}
+		
+		else {release}}
+
+	else {release}
+}
+
+script VisitedOldaleSShelter {
+	if (!flag (visitedoldalesecretshelter))
+	{
+	addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	setflag (visitedoldalesecretshelter)}
+
+	else {release}
+}
+
+script Visited102Shelter {
+	if (!flag (visited102secretshelter))
+	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	setflag (visited102secretshelter)}
+
+	else {release}
+}
+
 
 
 script JoelTentTV {

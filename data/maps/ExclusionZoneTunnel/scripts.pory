@@ -1,0 +1,21 @@
+raw `
+ExclusionZoneTunnel_MapScripts::
+	.byte 0
+
+`
+
+script EnterSecretLabPreUnsafeningCheck {
+
+    setflag (enteredsecretlabbeforetime)
+
+    
+}
+
+
+script MinefieldLever {
+    lock
+    msgbox(format("A warning sign by the terminal reads: \p'Minefield Detonation Device. Property of
+    Littleroot's Pokémon Lab.' \p 'DO NOT TOUCH'. \p Better to leave this alone..."))
+    release
+    
+}

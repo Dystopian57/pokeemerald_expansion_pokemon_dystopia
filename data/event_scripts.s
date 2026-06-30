@@ -1311,3 +1311,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RebelHarbourCargoBay/scripts.inc"
 
 	.include "data/maps/WaterfallCaveHermitlAIR/scripts.inc"
+
+	.include "data/maps/PetalburgSewersArena/scripts.inc"

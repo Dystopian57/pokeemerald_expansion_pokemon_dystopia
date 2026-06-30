@@ -242,9 +242,9 @@
 #define VAR_ROUTE103_WEATHER                               0x40DE // Var is written to, but never read
 #define VAR_ROUTE102_WEATHER                                0x40DF // Var is written to, but never read
 #define VAR_JIMMYQUESTPROGRESS                                0x40E0 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_4                                0x40E1 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
+#define VAR_DEVON_REPUTATION                                0x40E1 // Var is written to, but never read
+#define VAR_REBEL_REPUTATION                                0x40E2 // Var is written to, but never read
+#define VAR_SECRETSHELTERSVISITED                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
 #define VAR_103TOURISTQUEST                                 0x40E5 // Unused Var
 #define VAR_DAILY_SLOTS                                  0x40E6

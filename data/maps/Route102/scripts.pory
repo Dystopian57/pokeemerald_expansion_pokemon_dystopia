@@ -145,14 +145,14 @@ script Route102EndSandtorm {
 }
 
 script PopWeatherMon102 {
-	if (var(VAR_ROUTE102_WEATHER) == 0)
-	{setflag (route102weathermon)}
+	//if (var(VAR_ROUTE102_WEATHER) == 0)
+	//{setflag (route102weathermon)}
 
-	if (var(VAR_ROUTE102_WEATHER) == 1)
-	{clearflag (route102weathermon)}
+	//if (var(VAR_ROUTE102_WEATHER) == 1)
+	//{clearflag (route102weathermon)}
 
-	if (var(VAR_ROUTE102_WEATHER) == 2)
-	{clearflag (route102weathermon)}
+	//if (var(VAR_ROUTE102_WEATHER) == 2)
+	//{clearflag (route102weathermon)}
 
 	if (var(VAR_ROUTE102_WEATHER) == 3)
 	{clearflag (route102weathermon)}

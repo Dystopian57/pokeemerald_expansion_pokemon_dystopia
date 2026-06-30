@@ -1240,7 +1240,7 @@ GreatCraterSouvenirBox_Text_0:
 
 GreatCraterSign_Text_0:
 # 451 "data/maps/GreatCrater/scripts.pory"
-	.string "North - Route 102\p"
+	.string "North - Road 002\p"
 	.string "East - Route 101$"
 
 GreatCraterSouvenirSupplies_Text_0:
@@ -1351,7 +1351,7 @@ GreatCraterDevonGruntFemale_Text_0:
 # 593 "data/maps/GreatCrater/scripts.pory"
 	.string "I'm sorry, but one of our scientists is\n"
 	.string "currently searching for a dangerous\l"
-	.string "Pokémon in Route 102.$"
+	.string "Pokémon in Road 002.$"
 
 GreatCraterDevonGruntFemale_Text_1:
 # 596 "data/maps/GreatCrater/scripts.pory"

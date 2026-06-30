@@ -1200,12 +1200,14 @@ script SafemonLore {
 			and terminology are being created all the time as a result."))
 			showmonpic(SPECIES_MANCHINE, 10,3)
 			msgbox (format("For example, when the synthetic parts on a Contraption Safemon surpass a certain
-			threshold, we speak of the subcategory of 'Droid Safemon'."))
+			threshold, we speak of the subcategory of 'Droid Safemon'\p The minds of these Safemon have been
+			replaced with chips to achieve great obedience, and their bodies with prosthetics to ensure
+			high performance."))
 			hidemonpic
 			showmonpic(SPECIES_LOADTAD, 10,3)
 			msgbox (format("Then there's the fringe case of 'Behavioural Safemon', which are those that have
-			its violent tendencies replaced by benign instincts.\p Some experts in the field do not consider
-			these Safemon - merely highly conditioned Pokémon."))
+			had its violent tendencies replaced by benign instincts - such as carrying heavy loads!
+			\p Some experts in the field do not consider these Safemon - merely highly conditioned Pokémon."))
 			hidemonpic
 			}
 
@@ -1396,9 +1398,31 @@ else
 				
 				if(var(VAR_OLDALE_PHASE) == 1 && !flag(BalsamtoldtogoseeNorman))
 					{
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Good. Did it help you sort out your feelings?"))
+					dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "It did", "Not really")
+
+					if (var(VAR_RESULT) == 0) {
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 					setspeaker ([SP_NAME_BALSAM])
-					msgbox (format("That's great. I hope it went well."))
+					msgbox (format("That's great. I heard some rumours the DLC is just a propaganda
+					machine, but I guess it's not that bad. \p Now, let's keep up the momentum of your
+					recovery. Hmm..."))
+					}
+
+					if (var(VAR_RESULT) == 1) {
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Really? You were being receptive, weren't you?"))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("I guess the rumours might be true, about the DLC being an outlet for Devon propaganda."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("I'm sorry, but it was worth a try. Let's try something else..."))
+					
+					}
 
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
@@ -1411,14 +1435,14 @@ else
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
 					
-					msgbox (format("You may need to wait a bit, though - I hear Route 102 is closed off, until
+					msgbox (format("You may need to wait a bit, though - I hear Route 102 - or Road 002, as it's called now - is closed off, until
 					the {COLOR RED}Rebel invasion{COLOR DARK_GRAY} of {COLOR BLUE}Oldale Warehouse{COLOR DARK_GRAY} is dealt with."))
 					setflag (BalsamtoldtogoseeNorman)}
 
 				if(var(VAR_OLDALE_PHASE) == 1 && flag(BalsamtoldtogoseeNorman))
 					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
-					msgbox (format("Like I told you, those Devon Guards won't open Route 102 to Petalburg until
+					msgbox (format("Like I told you, those Devon Guards won't open Road 002 to Petalburg until
 					the Rebel situation in Oldale is under control."))
 
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
@@ -1822,6 +1846,39 @@ script LittlerootTown_Eventscript_Aideenotthere {
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	releaseall
 }
+
+
+script BalsamHowdidyoufindbackentrance {
+	lock
+	if (flag (enteredsecretlabbeforetime))
+	{setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (4, moves(emote_exclamation_mark face_right))
+	playse (SE_PIN)
+	waitmovement (4)
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox (format("W-what the...? How did you come out from there?"))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox (format("You sure are an explorer, aren't you {PLAYER}?"))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox (format("If you're so curious about that part of the lab, why don't you help us
+	with that field work?\p Then you could explore it all you like. Until then, it's off limits."))
+	removefieldmugshot
+	waitmessage
+	applymovement (4, moves(face_up))
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+	waitmovement (0)
+	clearflag (enteredsecretlabbeforetime)}
+	
+	else {release}
+
+	releaseall	
+	}
+
+
 script LittlerootTown_Eventscript_ProffessorGotoOldale {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)

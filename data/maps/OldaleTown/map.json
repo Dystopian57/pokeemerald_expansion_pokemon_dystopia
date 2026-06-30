@@ -397,10 +397,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOWNEYE",
-      "x": 11,
-      "y": 5,
+      "x": 14,
+      "y": 4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
