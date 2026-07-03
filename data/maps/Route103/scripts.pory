@@ -675,6 +675,7 @@ script Route103ConcordBridgeGuard {
 			}
 
 			if(var(VAR_RESULT) == 4){
+			msgbox(format("Be on your way, then - and stay out of trouble."))
 			goto (finishguardscript)
 			}
 
@@ -734,7 +735,8 @@ script Route103ConcordConartist {
 
 		if (flag (conartistaskeddistract) && !flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
 		{
-		msgbox(format("Come on, go distract him! I don't care how, that's what I'm paying you for!
+		msgbox(format("Come on, go distract him! Tell him there's a flying Grumpig being him or something!
+		\p I don't care how, that's what I'm paying you for!
 		\p And no, I'm not into upfront payments, thank you. Cash after!"))}
 
 		if (flag (conartistaskeddistract) && flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
@@ -1194,3 +1196,6 @@ script Fishercallsfornumber {
 	// "hold that pearl aloft" - this reminded Crawdaunt of Brendan/May holding ball aloft and he shows
 	//up. "look its the mud crab!" (mud crab goes excl mark and then narration 'Mud Crab's eyes open
 	//as if in recognition'
+
+	//Fisher Ivan confession post crawdaunt: truth is… I am a horrible fisher. I enjoy the process, but I barely catch anything. I’m such a failure amidst my peers, I came here to the Rebel Zone to prove them wrong. To catch smething worthwhile. 
+	//But this whole ordeal made me realize something… who cares if I suck at it? I enjoy it! I will no longer be ashamed. If I am to be the worst fisher in Hoenn, so be it! I will also be the most confident one!

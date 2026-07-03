@@ -214,10 +214,9 @@ script Joelgivesdebutshelterreward {
 	else {release}
 }
 
-script VisitedOldaleSShelter {
+script VisitedOldaleShelter {
 	if (!flag (visitedoldalesecretshelter))
-	{
-	addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
 	setflag (visitedoldalesecretshelter)}
 
 	else {release}
@@ -227,6 +226,45 @@ script Visited102Shelter {
 	if (!flag (visited102secretshelter))
 	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
 	setflag (visited102secretshelter)}
+
+	else {release}
+}
+
+script VisitedGreatCraterShelter {
+	if (!flag (visitedcratersecretshelter))
+	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	setflag (visitedcratersecretshelter)}
+
+	else {release}
+}
+script VisitedRaltsSanctumShelter {
+	if (!flag (visitedsanctumsecretshelter))
+	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	setflag (visitedsanctumsecretshelter)}
+
+	else {release}
+}
+
+script VisitedPetalburgSewersShelter {
+	if (!flag (visitedsewerssecretshelter))
+	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	setflag (visitedsewerssecretshelter)}
+
+	else {release}
+}
+
+script VisitedPetalburgLandfillShelter {
+	if (!flag (visitedlandfillsecretshelter))
+	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	setflag (visitedlandfillsecretshelter)}
+
+	else {release}
+}
+
+script VisitedRebelRoomShelter {
+	if (!flag (visitedrebelsecretshelter))
+	{addvar (VAR_SECRETSHELTERSVISITED, + 1)
+	setflag (visitedrebelsecretshelter)}
 
 	else {release}
 }

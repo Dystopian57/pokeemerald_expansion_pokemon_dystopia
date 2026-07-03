@@ -10,10 +10,13 @@ script ConcordWageSlaveAtPhone {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (concordwageslave))
 	
-	{
+	{if (var(VAR_OLDALE_PHASE)  < 2){
 
 	msgbox(format("I-I'm sorry sir... they're not letting our trucks through - Concord
-	Bridge is closed... \p N-no, there's nothing I can do, sir... Yes, I already aske-..."))
+	Bridge is closed... \p N-no, there's nothing I can do, sir... Yes, I already aske-..."))}
+
+	else { msgbox(format("I-I'm sorry sir... I know there was a delay, but Concord Bridge
+	was closed until recently, and...\p B-but sir, it was out of my control - the customs guards...!"))}
 	applymovement (2, moves(emote_exclamation_mark))
 	playse (SE_PIN)
 	msgbox(format("... I... I'm fired? B-but sir...! Please be reasonable, I...!"))
@@ -33,6 +36,10 @@ script ConcordWageSlaveAtPhone {
 	trainerbattle_no_intro(TRAINER_CONCORDWAGESLAVE , ConcordWageSlave_Outro)
 	setflag (concordwageslave)
 	
+	
+	
+
+
 	}
 
 	if (flag (concordwageslave))
@@ -246,6 +253,8 @@ script ConcordCustomsPhone{
 							playse (SE_POKENAV_CALL)
 							waitse
 							msgbox(format("Success."))
+							givemon(SPECIES_SNOVER, 5, ITEM_MIRACLE_SEED, ITEM_CHERISH_BALL, NATURE_QUIRKY, 1, MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_BLIZZARD)
+							
 							playse (SE_POKENAV_HANG_UP)
 							goto (endofpayphone)
 							}

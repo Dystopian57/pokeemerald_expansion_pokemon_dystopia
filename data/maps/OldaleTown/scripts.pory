@@ -3,13 +3,20 @@ raw `
 
 
 `
-
+//OLDALE PHASES
+//0: Just arrived
+//1: Therapy done
+//2: Warehouse cleared
+//3: Rival following
+//4: Devon block left
+//5: Devon warehouse inhabited again
 
 mapscripts OldaleTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: DayNightNPC
     MAP_SCRIPT_ON_TRANSITION: OldaleWeather
     MAP_SCRIPT_ON_TRANSITION: GenderedSpriteOldale
     
+    MAP_SCRIPT_ON_LOAD: DayNightNPC
     MAP_SCRIPT_ON_LOAD: OldaleWeather
     MAP_SCRIPT_ON_LOAD: GenderedSpriteOldale}
 	
@@ -38,7 +45,7 @@ script BalsamCallAfterWarehouse {
     other grandpa at Petalburg? \p A change of scenery will do you good. It's very close, but
     give me a call if you get lost."))
 
-	if (var(VAR_OLDALE_PHASE) < 6)
+	if (var(VAR_LITTLEROOT_PHASE) < 6)
 	{msgbox(format("Oh, and we still need help with finding that Voltorb Shard my Aide asked
     you about.\p It's not urgent, but we'd really appreciate it."))}
     
@@ -929,6 +936,17 @@ script OldaleDLCWindow {
     release 
 }
 
+
+
+
+script OldalePostFenceItem {
+	lock
+    finditem (ITEM_BIKE_VOUCHER)
+    //giveitem (ITEM_SOFT_SAND)
+	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    removeobject (4)
+	releaseall}
+
 script OldaleHouse2GardenItem {
 	lock
     finditem (ITEM_SOFT_SAND)
@@ -1243,7 +1261,7 @@ script SamanthaDontgotoWarehouse {
     setspeaker ([SP_NAME_JOEL])
     msgbox (format("O-oh, {PLAYER}... Oldale's Warehouse is over there, right?"))
 
-    if (var(VAR_OLDALE_PHASE)  > 3)
+    if (var(VAR_OLDALE_PHASE)  < 2)
         {
         msgbox (format("I-I dont' think they sell any food over there..."))
         }

@@ -4,14 +4,62 @@ raw `
 `
 
 mapscripts PokeInnRoom1_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: DayNightNPC
-    MAP_SCRIPT_ON_LOAD: DayNightNPC}
-
+    MAP_SCRIPT_ON_TRANSITION: DayNightNPCInn
+    MAP_SCRIPT_ON_TRANSITION: LoadTradedFightingTypeOW
+    MAP_SCRIPT_ON_LOAD: DayNightNPCInn
+    MAP_SCRIPT_ON_LOAD: LoadTradedFightingTypeOW
+    }
 
 
 #define GOTSTARTER1         0x20 // Obtained first starter
 #define GOTSTARTER2         0x21 // Obtained second starter
 #define GOTSTARTER3 
+
+
+script LoadTradedFightingTypeOW {
+    if (var(VAR_FIGHTINGTRADECHOICE) == 1){
+        addobject (11)
+        setobjectxy (11, 5, 11)
+        applymovement (11, moves(face_left))
+        //setobjectxyperm (11, 5, 11)
+    }
+
+    if (var(VAR_FIGHTINGTRADECHOICE) == 2){
+        addobject (12)
+        setobjectxy (12, 5, 11)
+        applymovement (12, moves(face_left))
+        //setobjectxyperm (12, 5, 11)
+    }
+    release
+}
+
+
+script DayNightNPCInn {
+
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{	clearflag (daynpc)
+			setflag (nightnpc)
+        goto (endofdaynightnpcinn)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{	clearflag (daynpc)
+			setflag (nightnpc)
+        goto (endofdaynightnpcinn)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{	clearflag (nightnpc)
+			setflag (daynpc)
+        goto (endofdaynightnpcinn)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{	clearflag (nightnpc)
+			setflag (daynpc)
+        goto (endofdaynightnpcinn)}
+
+endofdaynightnpcinn:
+	release
+}
 
 script OldaleUsedInnBin {
 	lock
@@ -138,6 +186,18 @@ script PokeInnRoom1WheelchairBoy {
 	applymovement (2, moves(face_player))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
+
+if (flag (wheelchairtradequestdone)){
+    
+    msgbox(format("I won't let my injury get in the way of being awesome. Just like you!"))
+    //playse (SE_M_SWAGGER2)
+    //msgbox(format("Again! GRRR!"))
+
+    goto (endofwheelchairkidscript)}
+
+if (!flag (wheelchairtradequestdone))
+{
+
 if (!flag (wheelchairboyaskedpokemon))
 
     {msgbox(format("Hey… does it hurt?"))
@@ -159,7 +219,7 @@ if (!flag (wheelchairboyaskedpokemon))
     \pPlease, I'll give you something in return."))
 
     setflag (wheelchairboyaskedpokemon)
-    goto (endofwheelchairinnkidscript)}
+    goto (endofwheelchairkidscript)}
 
 if (flag (wheelchairboyaskedpokemon))
     {goto (didyoubringanyfighttypes)}
@@ -173,21 +233,19 @@ if (flag (wheelchairboyaskedpokemon))
         //setorcopyvar
 
         didyoubringanyfighttypes:
-        getseenmon (SPECIES_POOCHAIN)
-
+        getseenmon (SPECIES_MANCHINE)
         if (var(VAR_RESULT) == TRUE)
-         {bufferspeciesname (STR_VAR_1, SPECIES_POOCHAIN)}
+         {bufferspeciesname (STR_VAR_1, SPECIES_MANCHINE)}
         if (var(VAR_RESULT) == FALSE)
          {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
-        getseenmon (SPECIES_MAKUHITA)
 
+        getseenmon (SPECIES_MAKUHITA)
         if (var(VAR_RESULT) == TRUE)
          {bufferspeciesname (STR_VAR_2, SPECIES_MAKUHITA)}
         if (var(VAR_RESULT) == FALSE)
          {bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
 
         getseenmon (SPECIES_SCRAGGY)
-
         if (var(VAR_RESULT) == TRUE)
          {bufferspeciesname (STR_VAR_3, SPECIES_SCRAGGY)}
          if (var(VAR_RESULT) == FALSE)
@@ -199,10 +257,13 @@ if (flag (wheelchairboyaskedpokemon))
     dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Pokémon", "None")
 
     if(var(VAR_RESULT) == 0){
-    getseenmon (SPECIES_POOCHAIN)
+    getseenmon (SPECIES_MANCHINE)
         if (var(VAR_RESULT) == TRUE)
 
-        {msgbox(format("Oh, a Manchine! I saw one of those by the Warehouse, but I never managed to catch one."))}
+        {msgbox(format("Oh, a Manchine! I saw one of those by the Warehouse, but I never managed to catch one."))
+        setvar (VAR_FIGHTINGTRADECHOICE, 1)
+        goto (fightingtypetradescript)
+        }
 
         if (var(VAR_RESULT) == FALSE)
         {playse (SE_RG_HELP_ERROR)}
@@ -212,7 +273,9 @@ if (flag (wheelchairboyaskedpokemon))
     getseenmon (SPECIES_MAKUHITA)
         if (var(VAR_RESULT) == TRUE)
 
-        {msgbox(format("A Makuhita? Wow, they are my favourites - they're always full of energy!"))}
+        {msgbox(format("A Makuhita? Wow, they are my favourites - they're always full of energy!"))
+        setvar (VAR_FIGHTINGTRADECHOICE, 2)
+        goto (fightingtypetradescript)}
 
         if (var(VAR_RESULT) == FALSE)
         {playse (SE_RG_HELP_ERROR)}
@@ -295,7 +358,7 @@ if (flag (wheelchairboyaskedpokemon))
 
         if(var(VAR_RESULT) == 3){
 
-      //Third list code
+      //Third list code: Tyrogue, Riolu, Pancham
 
                 getseenmon (SPECIES_TYROGUE)
 
@@ -321,7 +384,7 @@ if (flag (wheelchairboyaskedpokemon))
 
 
             msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
-            dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "None") 
+            dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different one", "None") 
                 
                 
             if(var(VAR_RESULT) == 0){
@@ -354,26 +417,167 @@ if (flag (wheelchairboyaskedpokemon))
                 {playse (SE_RG_HELP_ERROR)}
             }   
 
-            if(var(VAR_RESULT) == 3){goto (donthaveanyfightingtotrade)}
+            if(var(VAR_RESULT) == 4){goto (donthaveanyfightingtotrade)}
+
+        if(var(VAR_RESULT) == 3){
+        
+
+        //Last list
+
+            getseenmon (SPECIES_MACHOP)
+
+            if (var(VAR_RESULT) == TRUE)
+            {bufferspeciesname (STR_VAR_1, SPECIES_MACHOP)}
+            if (var(VAR_RESULT) == FALSE)
+            {bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
 
 
-        }
+        msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
+        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "None") 
             
+            
+        if(var(VAR_RESULT) == 0){
+        getseenmon (SPECIES_MACHOP)
+            if (var(VAR_RESULT) == TRUE)
+
+            {msgbox(format("A Machop!? I thought Devon Co. had turned them all into Manchines..."))}
+
+            if (var(VAR_RESULT) == FALSE)
+            {playse (SE_RG_HELP_ERROR)}
         }
-        //if (var(VAR_RESULT) == SPECIES_MAKUHITA)
-        //{ msgbox(format("A Makuhita!"))}
 
-        //if (var(VAR_RESULT) == SPECIES_MACHOP)
-        //{ msgbox(format("A Machop!"))}
+        if(var(VAR_RESULT) == 1){goto (donthaveanyfightingtotrade)}
+         }
 
-        //else {goto (endofwheelchairinnkidscript)}
+        }}
+    
+
+
+        backtowheelchairkidaftertrade:
+        msgbox(format("It's so cooool! Alright - time to test this. Three, two, one..."))
+        call(ArmWrestleShake)
+        msgbox(format("Arm Wrestle!"))
+        playse (SE_M_SWAGGER2)
+        waitse
+        playse (SE_M_SWAGGER2)
+        msgbox(format("GRRRR..."))
+        playse (SE_M_YAWN)
+        msgbox(format("Gah... I lost! But I did better than I thought"))
+        applymovement (2, moves(face_player))
+        msgbox(format("Hm? You look surprised. Why did you think I wanted a Fighting Type?
+        \p Well, it wasn't to push my chair - it's to get strong enough so I can push it
+        myself! \p I was using this till now, but you can have it. Getting stronger with
+        Pokémon is much more fun!"))
+        giveitem (ITEM_MACHO_BRACE)
+
+        applymovement (1, moves(walk_in_place_down))
+        applymovement (10, moves(walk_in_place_down))
+        msgbox(format("Thank you for helping my grandson. Please, take good care of Taillow."))
+        applymovement (1, moves(walk_up * 1, face_down))
+        applymovement (10, moves(walk_up * 1, face_down))
+        applymovement (2, moves(face_right))
+        setflag (wheelchairtradequestdone)
+        goto (endofwheelchairkidscript)
 
     donthaveanyfightingtotrade:
     msgbox(format("Don't have any to trade? Well, that's okay... come back when you do!"))
-    endofwheelchairinnkidscript:
+    setvar (VAR_FIGHTINGTRADECHOICE, 0)
+    endofwheelchairkidscript:
     release
-    }
+    }}
+
+
+script fightingtypetradescript {
+        playse (SE_PIN)
+        applymovement (1, moves(face_down, emote_exclamation_mark))
+        applymovement (10, moves(face_down, emote_exclamation_mark))
+        applymovement (2, moves(face_up))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves (face_up))
+        msgbox(format("Wait... did you really bring my grandson a Pokémon?"))
+        applymovement (1, moves(walk_down))
+        applymovement (10, moves(walk_down))
+        msgbox(format("It is good to see there are still good people left in Hoenn. \p And you must be a
+        good trainer too, if you caught that Pokémon... \p You see, I have this Taillow that needs care.
+        It's my late son's.\p Would you like to set up a trade? The Fighting type you'll give to my grandson,
+        for this Taillow."))
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 1){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW1)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 2){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW2)}
+
+
+					copyvar (VAR_0x8004, VAR_0x8008)
+					specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+					special (ChoosePartyMon)
+					waitstate
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTaillowTrade)
+					copyvar (VAR_0x8005, VAR_0x8004)
+					specialvar (VAR_RESULT, GetTradeSpecies)
+					goto_if_ne (VAR_RESULT, VAR_0x8009, IncorrectFightingType)
+					copyvar (VAR_0x8004, VAR_0x8008)
+					special (CreateInGameTradePokemon)
+					special (DoInGameTradeScene) 
+					waitstate
+        playse (SE_BALL_OPEN)
+        applymovement (OBJ_EVENT_ID_PLAYER, moves (face_right))
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 1){
+            applymovement (2, moves(face_right))
+            //clearflag (wheelchairtradedpokemon)
+            addobject (11)
+            setobjectxy (11, 5, 11)
+            //setobjectxyperm (11, 5, 11)
+            waitse
+
+            playmoncry(SPECIES_MANCHINE, CRY_MODE_NORMAL) 
+            msgbox(format("Man-maaaan!"))
+            }
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 2){
+            applymovement (2, moves(face_right))
+            addobject (12)
+            setobjectxy (12, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_MANCHINE, CRY_MODE_NORMAL) 
+            msgbox(format("Ma-kkuuuu!"))
+            }
 
 
 
 
+}
+
+
+script ArmWrestleShake{
+	playse (SE_M_DOUBLE_SLAP) 
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+	}
+
+script CancelTaillowTrade {
+		msgbox (format("Oh, changed your mind? That is well... \p Pokémon should not be traded
+        away lightly."))
+        applymovement (1, moves(walk_up * 1, face_down))
+        applymovement (10, moves(walk_up * 1, face_down))
+        applymovement (2, moves(face_player))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(face_player))
+        msgbox (format("Aw, I guess grandpa is right... but if you want to trade, come back please!"))
+		releaseall
+		}
+
+script IncorrectFightingType {
+		bufferspeciesname (STR_VAR_1, VAR_0x8009)
+		msgbox (format("Hmm... that's not the Pokémon you promised my grandson, is it?\p If you have
+        changed your mind... that is well."))
+        applymovement (1, moves(walk_up * 1, face_down))
+        applymovement (10, moves(walk_up * 1, face_down))
+        applymovement (2, moves(face_player))
+        msgbox (format("Aw, I guess grandpa is right... but if you change it again, come back please!"))
+		releaseall
+		}

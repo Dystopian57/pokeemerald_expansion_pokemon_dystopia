@@ -411,82 +411,157 @@ Joelgivesdebutshelterreward_4:
 	return
 
 
-VisitedOldaleSShelter::
+VisitedOldaleShelter::
 # 218 "data/maps/JoelTent/scripts.pory"
-	goto_if_unset visitedoldalesecretshelter, VisitedOldaleSShelter_1
-# 223 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visitedoldalesecretshelter, VisitedOldaleShelter_1
+# 222 "data/maps/JoelTent/scripts.pory"
 	release
 	return
 
-VisitedOldaleSShelter_1:
-# 220 "data/maps/JoelTent/scripts.pory"
+VisitedOldaleShelter_1:
+# 219 "data/maps/JoelTent/scripts.pory"
 	addvar VAR_SECRETSHELTERSVISITED, + 1
-# 221 "data/maps/JoelTent/scripts.pory"
+# 220 "data/maps/JoelTent/scripts.pory"
 	setflag visitedoldalesecretshelter
 	return
 
 
 Visited102Shelter::
-# 227 "data/maps/JoelTent/scripts.pory"
+# 226 "data/maps/JoelTent/scripts.pory"
 	goto_if_unset visited102secretshelter, Visited102Shelter_1
-# 231 "data/maps/JoelTent/scripts.pory"
+# 230 "data/maps/JoelTent/scripts.pory"
 	release
 	return
 
 Visited102Shelter_1:
-# 228 "data/maps/JoelTent/scripts.pory"
+# 227 "data/maps/JoelTent/scripts.pory"
 	addvar VAR_SECRETSHELTERSVISITED, + 1
-# 229 "data/maps/JoelTent/scripts.pory"
+# 228 "data/maps/JoelTent/scripts.pory"
 	setflag visited102secretshelter
 	return
 
 
-JoelTentTV::
-# 237 "data/maps/JoelTent/scripts.pory"
-	lockall
+VisitedGreatCraterShelter::
+# 234 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visitedcratersecretshelter, VisitedGreatCraterShelter_1
 # 238 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+VisitedGreatCraterShelter_1:
+# 235 "data/maps/JoelTent/scripts.pory"
+	addvar VAR_SECRETSHELTERSVISITED, + 1
+# 236 "data/maps/JoelTent/scripts.pory"
+	setflag visitedcratersecretshelter
+	return
+
+
+VisitedRaltsSanctumShelter::
+# 241 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visitedsanctumsecretshelter, VisitedRaltsSanctumShelter_1
+# 245 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+VisitedRaltsSanctumShelter_1:
+# 242 "data/maps/JoelTent/scripts.pory"
+	addvar VAR_SECRETSHELTERSVISITED, + 1
+# 243 "data/maps/JoelTent/scripts.pory"
+	setflag visitedsanctumsecretshelter
+	return
+
+
+VisitedPetalburgSewersShelter::
+# 249 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visitedsewerssecretshelter, VisitedPetalburgSewersShelter_1
+# 253 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+VisitedPetalburgSewersShelter_1:
+# 250 "data/maps/JoelTent/scripts.pory"
+	addvar VAR_SECRETSHELTERSVISITED, + 1
+# 251 "data/maps/JoelTent/scripts.pory"
+	setflag visitedsewerssecretshelter
+	return
+
+
+VisitedPetalburgLandfillShelter::
+# 257 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visitedlandfillsecretshelter, VisitedPetalburgLandfillShelter_1
+# 261 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+VisitedPetalburgLandfillShelter_1:
+# 258 "data/maps/JoelTent/scripts.pory"
+	addvar VAR_SECRETSHELTERSVISITED, + 1
+# 259 "data/maps/JoelTent/scripts.pory"
+	setflag visitedlandfillsecretshelter
+	return
+
+
+VisitedRebelRoomShelter::
+# 265 "data/maps/JoelTent/scripts.pory"
+	goto_if_unset visitedrebelsecretshelter, VisitedRebelRoomShelter_1
+# 269 "data/maps/JoelTent/scripts.pory"
+	release
+	return
+
+VisitedRebelRoomShelter_1:
+# 266 "data/maps/JoelTent/scripts.pory"
+	addvar VAR_SECRETSHELTERSVISITED, + 1
+# 267 "data/maps/JoelTent/scripts.pory"
+	setflag visitedrebelsecretshelter
+	return
+
+
+JoelTentTV::
+# 275 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 276 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentTV_Text_0
-# 239 "data/maps/JoelTent/scripts.pory"
+# 277 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentLantern::
-# 243 "data/maps/JoelTent/scripts.pory"
+# 281 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 244 "data/maps/JoelTent/scripts.pory"
+# 282 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentLantern_Text_0
-# 245 "data/maps/JoelTent/scripts.pory"
+# 283 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentPoster::
-# 249 "data/maps/JoelTent/scripts.pory"
+# 287 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 250 "data/maps/JoelTent/scripts.pory"
+# 288 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentPoster_Text_0
-# 251 "data/maps/JoelTent/scripts.pory"
+# 289 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentMudball::
-# 255 "data/maps/JoelTent/scripts.pory"
+# 293 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 256 "data/maps/JoelTent/scripts.pory"
+# 294 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentMudball_Text_0
-# 257 "data/maps/JoelTent/scripts.pory"
+# 295 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
 
 JoelTentCushion::
-# 261 "data/maps/JoelTent/scripts.pory"
+# 299 "data/maps/JoelTent/scripts.pory"
 	lockall
-# 262 "data/maps/JoelTent/scripts.pory"
+# 300 "data/maps/JoelTent/scripts.pory"
 	msgbox JoelTentCushion_Text_0
-# 263 "data/maps/JoelTent/scripts.pory"
+# 301 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
@@ -742,24 +817,24 @@ Joelgivesdebutshelterreward_Text_1:
 	.string "of my best ones.$"
 
 JoelTentTV_Text_0:
-# 238 "data/maps/JoelTent/scripts.pory"
+# 276 "data/maps/JoelTent/scripts.pory"
 	.string "The TV is not plugged to anything...$"
 
 JoelTentLantern_Text_0:
-# 244 "data/maps/JoelTent/scripts.pory"
+# 282 "data/maps/JoelTent/scripts.pory"
 	.string "An oil lantern. It doesn't have much oil\n"
 	.string "left.$"
 
 JoelTentPoster_Text_0:
-# 250 "data/maps/JoelTent/scripts.pory"
+# 288 "data/maps/JoelTent/scripts.pory"
 	.string "An old poster of a Treecko.$"
 
 JoelTentMudball_Text_0:
-# 256 "data/maps/JoelTent/scripts.pory"
+# 294 "data/maps/JoelTent/scripts.pory"
 	.string "The dry, cracked remains of a mudball.\n"
 	.string "They resemble a Pokéball.$"
 
 JoelTentCushion_Text_0:
-# 262 "data/maps/JoelTent/scripts.pory"
+# 300 "data/maps/JoelTent/scripts.pory"
 	.string "A dirty cushion. It's got black and\n"
 	.string "white hair all over it.$"

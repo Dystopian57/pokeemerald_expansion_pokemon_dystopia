@@ -868,6 +868,24 @@ GreatCraterDevonGruntMale::
 	return
 
 
+GreatCraterTouristMaleIdle::
+# 619 "data/maps/GreatCrater/scripts.pory"
+	lock
+# 620 "data/maps/GreatCrater/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 621 "data/maps/GreatCrater/scripts.pory"
+	applymovement 12, ReportersGreatCrater_Movement_0
+# 622 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterTouristMaleIdle_Text_0
+# 624 "data/maps/GreatCrater/scripts.pory"
+	applymovement 12, GreatCraterTouristMaleIdle_Movement_0
+# 625 "data/maps/GreatCrater/scripts.pory"
+	waitmovement
+# 626 "data/maps/GreatCrater/scripts.pory"
+	release
+	return
+
+
 # 62 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_0:
 # 62 "data/maps/GreatCrater/scripts.pory"
@@ -952,6 +970,12 @@ CraterTrappedTouristandRope_Movement_4:
 	walk_up
 # 537 "data/maps/GreatCrater/scripts.pory"
 	walk_up
+	step_end
+
+# 624 "data/maps/GreatCrater/scripts.pory"
+GreatCraterTouristMaleIdle_Movement_0:
+# 624 "data/maps/GreatCrater/scripts.pory"
+	face_left
 	step_end
 
 ReportersGreatCrater_Text_0:
@@ -1373,6 +1397,13 @@ GreatCraterDevonGruntMale_Text_0:
 	.string "Research...'\p"
 	.string "This area is closed off to civilians\n"
 	.string "until further notice.$"
+
+GreatCraterTouristMaleIdle_Text_0:
+# 622 "data/maps/GreatCrater/scripts.pory"
+	.string "I once ordered a donut in Pewter City,\n"
+	.string "and they gave me a riceball!\p"
+	.string "At least you know what donuts are here\n"
+	.string "in Hoenn.$"
 
 ReportersGreatCrater_Outro::
 # 233 "data/maps/GreatCrater/scripts.pory"

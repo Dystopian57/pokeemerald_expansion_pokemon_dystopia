@@ -2572,7 +2572,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .palette = gMonPalette_Arystal,
         .shinyPalette = gMonShinyPalette_Arystal,
         .iconSprite = gMonIcon_Arystal,
-        .iconPalIndex = 2,
+        .iconPalIndex = 3,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
         SHADOW(2, -3, SHADOW_SIZE_S)
         FOOTPRINT(Aron)
@@ -2646,7 +2646,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .palette = gMonPalette_Verdoom,
         .shinyPalette = gMonShinyPalette_Verdoom,
         .iconSprite = gMonIcon_Verdoom,
-        .iconPalIndex = 0,
+        .iconPalIndex = 3,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 4, SHADOW_SIZE_S)
         FOOTPRINT(Verdoom)

@@ -75,10 +75,30 @@ GreatCraterHotSpringsBathingladyloosehair::
 	return
 
 
+GreatCraterHotSpringsYoungerWoman::
+# 56 "data/maps/GreatCraterHotSprings/scripts.pory"
+	lockall
+# 57 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 6, GreatCraterHotSpringsBaldGuy_Movement_0
+# 58 "data/maps/GreatCraterHotSprings/scripts.pory"
+	msgbox GreatCraterHotSpringsYoungerWoman_Text_0
+# 61 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 6, GreatCraterHotSpringsYoungerWoman_Movement_0
+# 62 "data/maps/GreatCraterHotSprings/scripts.pory"
+	releaseall
+	return
+
+
 # 17 "data/maps/GreatCraterHotSprings/scripts.pory"
 GreatCraterHotSpringsBaldGuy_Movement_0:
 # 17 "data/maps/GreatCraterHotSprings/scripts.pory"
 	face_player
+	step_end
+
+# 61 "data/maps/GreatCraterHotSprings/scripts.pory"
+GreatCraterHotSpringsYoungerWoman_Movement_0:
+# 61 "data/maps/GreatCraterHotSprings/scripts.pory"
+	face_up
 	step_end
 
 GreatCraterHotSpringsPainting_Text_0:
@@ -122,3 +142,10 @@ GreatCraterHotSpringsBathingladyloosehair_Text_0:
 	.string "The water is warm... but not as warm as\n"
 	.string "back home.\p"
 	.string "And the sights are worse too!$"
+
+GreatCraterHotSpringsYoungerWoman_Text_0:
+# 58 "data/maps/GreatCraterHotSprings/scripts.pory"
+	.string "I'm a bit worried about Flannery... she\n"
+	.string "got so upset when Devon built that\l"
+	.string "thermal plant in our town of Lavaridge.\p"
+	.string "I fear she may do something reckless...$"

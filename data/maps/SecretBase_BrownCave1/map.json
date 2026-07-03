@@ -218,22 +218,36 @@
       "elevation": 0,
       "dest_map": "MAP_DYNAMIC",
       "dest_warp_id": "WARP_ID_SECRET_BASE"
-    },
+    }
+  ],
+  "coord_events": [
     {
-      "x": 4,
-      "y": 9,
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_SECRET_BASE"
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "VisitedPetalburgSewersShelter"
     },
     {
+      "type": "trigger",
       "x": 6,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_SECRET_BASE"
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "VisitedPetalburgSewersShelter"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "VisitedPetalburgSewersShelter"
     }
   ],
-  "coord_events": [],
   "bg_events": []
 }

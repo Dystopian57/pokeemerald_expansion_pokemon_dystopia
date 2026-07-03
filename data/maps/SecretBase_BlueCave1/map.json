@@ -235,7 +235,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "VisitedOldaleSShelter"
+      "script": "VisitedOldaleShelter"
     },
     {
       "type": "trigger",
@@ -244,7 +244,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "VisitedOldaleSShelter"
+      "script": "VisitedOldaleShelter"
     },
     {
       "type": "trigger",
@@ -253,7 +253,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "VisitedOldaleSShelter"
+      "script": "VisitedOldaleShelter"
     },
     {
       "type": "trigger",
@@ -262,7 +262,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "VisitedOldaleSShelter"
+      "script": "VisitedOldaleShelter"
     }
   ],
   "bg_events": []

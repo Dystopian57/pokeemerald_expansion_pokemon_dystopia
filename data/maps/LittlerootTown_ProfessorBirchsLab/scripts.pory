@@ -1079,7 +1079,7 @@ else {
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 	setspeaker ([SP_NAME_AIDEE])
-	msgbox (format("Hehehe... excellent. This really helps my research..."))
+	msgbox (format("Hehehe... excellent. This will really helps our research..."))
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	setspeaker ([SP_NAME_AIDEE])
@@ -1365,7 +1365,7 @@ else
 			{bufferstring(STR_VAR_2, "About the Unsafening Project...")
 			//goto (startBalsammultichoice)
 			}
-		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "It's nothing")
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "It's nothing")
 			if (var(VAR_RESULT) == 0) {
 				if(var(VAR_OLDALE_PHASE) == 0)
 				{msgbox (format("It's in Oldale Town, the first building to the right as you enter from Route 101.
@@ -1435,9 +1435,10 @@ else
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
 					
-					msgbox (format("You may need to wait a bit, though - I hear Route 102 - or Road 002, as it's called now - is closed off, until
+					msgbox (format("You may need to wait a bit, though - I hear Road 002 is closed off, until
 					the {COLOR RED}Rebel invasion{COLOR DARK_GRAY} of {COLOR BLUE}Oldale Warehouse{COLOR DARK_GRAY} is dealt with."))
-					setflag (BalsamtoldtogoseeNorman)}
+					setflag (BalsamtoldtogoseeNorman)
+					goto (finishbalsamidletalk)}
 
 				if(var(VAR_OLDALE_PHASE) == 1 && flag(BalsamtoldtogoseeNorman))
 					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
@@ -1460,7 +1461,8 @@ else
 					msgbox (format("That was a joke. You can laugh at it!"))
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 					setspeaker ([SP_NAME_BALSAM])
-					msgbox (format("Seriously, don't do anything stupid."))}
+					msgbox (format("Seriously, don't do anything stupid."))
+					goto (finishbalsamidletalk)}
 
 				if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 0)
 					{msgbox (format("Path is free for you now."))}}
@@ -1525,8 +1527,12 @@ else
 				}
 
 				if (var(VAR_RESULT) == 2) {
-					msgbox (format("It's in Oldale Town, the first building to the right as you enter from Route 101.
-					\p If you're lost, check the map on that Devon Nav I gave you. It's handy."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("... very funny."))
+					goto (finishbalsamidletalk)
+					//msgbox (format("It's in Oldale Town, the first building to the right as you enter from Route 101.
+					//\p If you're lost, check the map on that Devon Nav I gave you. It's handy."))
 				}
 	}
 

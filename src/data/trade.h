@@ -1055,7 +1055,7 @@ static const struct InGameTrade sIngameTrades[] =
         .species = SPECIES_VOLTORB,
         .ivs = {4, 5, 4, 5, 4, 4},
         .abilityNum = 0,
-        .otId = 251225,
+        .otId = 000000,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x8B,
         .heldItem = ITEM_RETRO_MAIL,
@@ -1064,6 +1064,57 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_CHEERORB
+    },
+
+    [INGAME_TRADE_PIKACHU] =
+    {
+        .nickname = _("Pikachu"),
+        .species = SPECIES_PIKACHU,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_PIKACHU_SAFE
+    },
+
+    [INGAME_TRADE_TAILLOW1] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {4, 5, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MANCHINE
+    },
+
+    [INGAME_TRADE_TAILLOW2] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {4, 5, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MAKUHITA
     }
 };
 

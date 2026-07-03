@@ -14269,9 +14269,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Mystery Number 0"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "The number 2557 is\n"
-            "written on it. Can be\n"
-            "called from a pay phone."),
+            "A note with the\n"
+            "number 2557 written\n"
+            "on it."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

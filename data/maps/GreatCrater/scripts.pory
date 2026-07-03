@@ -615,3 +615,13 @@ script GreatCraterDevonGruntMale {
 	release
 	}
 
+script GreatCraterTouristMaleIdle { 
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (12, moves(face_player))
+	msgbox(format("I once ordered a donut in Pewter City, and they gave me a riceball!
+	\p At least you know what donuts are here in Hoenn."))
+    applymovement (12, moves(face_left))
+	waitmovement
+	release
+	}

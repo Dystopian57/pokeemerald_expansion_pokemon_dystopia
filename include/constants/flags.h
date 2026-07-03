@@ -269,13 +269,13 @@
 #define visitedoldalesecretshelter          0xED
 #define joeldebutshelterreward            0xEE
 #define visited102secretshelter               0xEF
-#define FLAG_USED_ROOM_1_KEY                 0xF0
-#define FLAG_USED_ROOM_2_KEY                 0xF1
-#define FLAG_USED_ROOM_4_KEY                 0xF2
-#define FLAG_USED_ROOM_6_KEY                 0xF3
-#define FLAG_MET_PROF_COZMO                  0xF4
-#define FLAG_RECEIVED_WAILMER_DOLL           0xF5
-#define FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104 0xF6
+#define visitedcratersecretshelter                 0xF0
+#define visitedsewerssecretshelter                 0xF1
+#define visitedlandfillsecretshelter                 0xF2
+#define visitedrebelsecretshelter                 0xF3
+#define visitedsanctumsecretshelter                 0xF4
+#define wheelchairtradequestdone           0xF5
+#define wheelchairboyandpokeoutside 0xF6
 #define FLAG_DEFEATED_SS_TIDAL_TRAINERS      0xF7
 #define FLAG_RECEIVED_SPELON_BERRY           0xF8
 #define FLAG_RECEIVED_PAMTRE_BERRY           0xF9
@@ -1252,7 +1252,7 @@
 #define FLAG_ITEM_OLDALE_BYTRUCK                                           0x4A3 // Unused Flag
 #define FLAG_ITEM_OLDALE_HOUSE2DRAWER                                          0x4A4 // Unused Flag
 #define FLAG_ITEM_OLDALE_HOUSE2BALLITEM                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_ITEM_OLDALE_POSTFENCEITEM                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag

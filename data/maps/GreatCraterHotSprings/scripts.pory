@@ -51,3 +51,13 @@ script GreatCraterHotSpringsBathingladyloosehair {
     are worse too!"))
     releaseall
     }
+
+script GreatCraterHotSpringsYoungerWoman {
+    lockall
+    applymovement (6, moves(face_player))
+    msgbox(format("I'm a bit worried about Flannery... she got so upset when Devon built
+    that thermal plant in our town of Lavaridge. \p I fear she may do something
+    reckless..."))
+    applymovement (6, moves(face_up))
+    releaseall
+    }
