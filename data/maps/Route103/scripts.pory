@@ -597,7 +597,7 @@ script Route103VeteranBattle {
 script Route103VeteranRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("But you shouldn't lower your guard. Let's exchange Devon profiles - I'll
+	msgbox(format("Good job, but don't lower your guard.\p Let's exchange Devon profiles - I'll
 	make sure you dont' slack off!"))
 	register_matchcall (TRAINER_VETERAN_103)
 	release
@@ -605,7 +605,7 @@ script Route103VeteranRegister {
 }
 
 script Route103VeteranRematch {
-	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro)
+	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro2, Veteran103_Outro2)
 	msgbox(format("You're even stronger than last time... or have I just gotten weaker...?
 	\p Old age is a cruel thing. But I plan to use the time I have left."))
 	end
@@ -616,9 +616,13 @@ script Route103VeteranRematch {
 		"They told me I'm too old to enlist...  but \nI'm stronger than you young'uns!\pI'll show you!"}
 
 	text Veteran103_Outro{
-		"Hmpf... not bad..."}
+		"Grr... you won the battle, but not the war!"}
 
+	text Veteran103_Intro2{
+		"There you are - I've been preparing my counterattack! CHAAARGE!"}
 
+	text Veteran103_Outro2{
+		"... I surrender. Again."}
 
 
 script Route103ConcordBridgeGuard {
@@ -877,7 +881,17 @@ script RiverFerryGuyUp {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (34, moves(face_player))
-	msgbox(format("Hello! Would you like to sail upstream?"))
+	if (var(VAR_ROUTE103_WEATHER) > 0) {
+		checkplayergender
+		if(var(VAR_RESULT) == MALE){
+		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lad?"))}
+		if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lass?"))}
+		}
+
+	//else {goto (continueferryscriptnoweather)}
+	//continueferryscriptnoweather:
+	msgbox(format("Would you like to sail upstream?"))
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if(var(VAR_RESULT) == 0){
@@ -941,6 +955,13 @@ script RiverFerryGuyDown {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (37, moves(face_player))
+		if (var(VAR_ROUTE103_WEATHER) > 0) {
+		checkplayergender
+		if(var(VAR_RESULT) == MALE){
+		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lad?"))}
+		if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lass?"))}
+		}
 	msgbox(format("Hello! Would you like to sail downstream?"))
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
@@ -1034,6 +1055,7 @@ script FisherGuruRoute103 {
 	msgbox(format("Sssh... did you hear that? It's... IT'S COMING!"))
 
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+	applymovement (38, moves(face_right))
 
 	playse (SE_M_DIVE)
 	waitse
@@ -1051,16 +1073,22 @@ script FisherGuruRoute103 {
 
 	msgbox(format("AAH, CRAB BASKETS!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (38, moves(face_down))
 	msgbox(format("That was the LEGENDARY MUD CRAB of Route 103 - I've been looking for it for WEEKS! \p But I was
-	so awe-struck... that I could not do anything!! \p Still, this can't be a coincidence - you
+	so awe-struck... that I could not do anything!!"))
+	applymovement (38, moves(face_right))
+	msgbox(format("Still, this can't be a coincidence - you
 	both showed up at the same time!! \p HMM... my intuition tells me it saw something in you. But
-	then it left disappointed. \p But we can fix that. Here, take THIS!"))
+	then it left disappointed."))
+	applymovement (38, moves(face_down))
+	msgbox(format("But we can fix that. Here, take THIS!"))
 
 	giveitem (ITEM_OLD_ROD)
 
 	msgbox(format("I want you to take that rod and fish at least FIVE SPECIES OF POKÉMON! \p WHY?
 	Because only then will the LEGENDARY MUDCRAB judge you as worthy, and show itself again!
 	\p Do not question the intuition of Ivan, the Legendary Releer - just embrace it, and fulfil your destiny!!"))
+	applymovement (38, moves(face_right))
 	setvar(VAR_FISHERPROGRESS103 , 1)
 	goto (finishfisherscript)
 
@@ -1070,6 +1098,7 @@ script FisherGuruRoute103 {
 	{
 	setspeaker ([SP_NAME_IVAN])
 	msgbox(format("AHOY! How's the FISHING going!?"))
+	applymovement (38, moves(face_down))
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "About your request...", "Did you see the Mud Crab?", "How's it going?")
 
 		if(var(VAR_RESULT) == 0){
@@ -1080,7 +1109,8 @@ script FisherGuruRoute103 {
 				msgbox(format("Ah, you've fished at least 5 Pokémon? Good, GOOD! \p I'm confident the
 				Legendary Mud Crab will acknowledge you and show up. \p Let's wait a bit!"))
 				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
-
+				applymovement (38, moves(face_right))
+				waitmovement
 				fadeoutbgm (1)
 				fadescreenswapbuffers (FADE_TO_BLACK)
 				setspeaker (NULL)
@@ -1089,7 +1119,9 @@ script FisherGuruRoute103 {
 				fadeinbgm (1)
 				setspeaker ([SP_NAME_IVAN])
 				msgbox (format("Hmm... I should have known. Such a measly fishing test... \p Is NOT ENOUGH
-				to make the Mud Crab acknowledge you! \p I suppose I've got no choice... here, TAKE THIS!"))
+				to make the Mud Crab acknowledge you!"))
+				applymovement (38, moves(face_down))
+				msgbox (format("I suppose I've got no choice... here, TAKE THIS!"))
 				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 				giveitem (ITEM_GOOD_ROD)
 				setspeaker ([SP_NAME_IVAN])
@@ -1103,7 +1135,10 @@ script FisherGuruRoute103 {
 				if(var(VAR_RESULT) == FALSE){
 				setspeaker ([SP_NAME_IVAN])
 				msgbox(format("Like I said, I need you to fish 5 species of Pokémon! \p If you are the fisher
-				the Mud Crab believes you to be, you shouldn't need any guidance! \p O-of course I could give it,
+				the Mud Crab believes you to be, you shouldn't need any guidance!"))
+				applymovement (38, moves(face_right))
+				setspeaker ([SP_NAME_IVAN])
+				msgbox(format("O-of course I could give it,
 				but that would defeat the purpose!"))
 				goto (finishfisherscript)
 				}
@@ -1133,23 +1168,35 @@ script FisherGuruRoute103 {
 		if(var(VAR_RESULT) == 1){
 			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("Regrettably, I haven't. Not even the tip of that lustruous, star-shaped crown
-			of his... \p But don't worry - he won't swim away easily. \p They say he is forever waiting for a
+			of his... \p But don't worry - he won't swim away easily."))
+			applymovement (38, moves(face_right))
+			setspeaker ([SP_NAME_IVAN])
+			msgbox(format("They say he is forever waiting for a
 			trainer who saved his life during the Assault on Route 103. \p Sadly, that trainer died that
-			day. They will never meet again... \p In spite of its beastly appearance, the Mud Crab is
+			day. They will never meet again..."))
+			applymovement (38, moves(face_down))
+			setspeaker ([SP_NAME_IVAN])
+			msgbox(format("In spite of its beastly appearance, the Mud Crab is
 			a loyal, tender creature. That's why I wish to catch him, and help him heal!"))
 			goto (finishfisherscript)
 		}
 
 		if(var(VAR_RESULT) == 2){
 			setspeaker ([SP_NAME_IVAN])
-			msgbox(format("Ah, well, aside from the Mud Crab business... not very good, I must say. \p It's
-			tough being a fisher in these parts nowadays. The sea is poisoned, the rivers are muddy... \p
+			msgbox(format("Ah, well, aside from the Mud Crab business... not very good, I must say."))
+			applymovement (38, moves(face_right))
+			setspeaker ([SP_NAME_IVAN])
+			msgbox(format("The sea is poisoned, the rivers are muddy... \p
 			Most of my buddies have moved up north. But me, I like the challenge!"))
+			applymovement (38, moves(face_down))
+			setspeaker ([SP_NAME_IVAN])
+			msgbox(format("But me, I like the challenge!"))
 			goto (finishfisherscript)
 		}
 		}
 	
 	finishfisherscript:
+	applymovement (38, moves(face_right))
 	setspeaker (NULL)
 	releaseall}
 

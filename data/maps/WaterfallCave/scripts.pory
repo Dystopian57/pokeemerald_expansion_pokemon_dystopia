@@ -1,0 +1,147 @@
+raw `
+WaterfallCave_MapScripts::
+	.byte 0
+
+`
+
+
+
+script WaterfallHazardDiverBattle {
+	trainerbattle_single(TRAINER_VETERAN_103, WaterfallHazardDiver_Intro, WaterfallHazardDiver_Outro, WaterfallHazardDiverRegister)
+	specialvar (VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq (VAR_RESULT, TRUE, WaterfallHazardDiverRematch)
+    applymovement (1, moves(face_up))
+	msgbox(format("I want to swim past that waterfall. Now that's some hardcore swimming, hey?"))
+	applymovement (1, moves(face_player))
+	msgbox(format("Right now, I can barely get past the first part of it though... but I don't give up easily."))
+	release
+	end
+}
+
+script WaterfallHazardDiverRegister {
+	special (PlayerFaceTrainerAfterBattle)
+	waitmovement (0)
+	msgbox(format("That was a great workout. We should do this again sometime! \p Let me fetch my phone
+    so I can add you on the Devon Net..."))
+    applymovement (1, moves(face_right))
+    playse (SE_BALL_OPEN)
+    showobjectat (4, MAP_WATERFALL_CAVE)
+    waitse
+    playmoncry (SPECIES_SHELLDER, CRY_MODE_WEAK)
+	msgbox(format("S-sheee..."))
+    applymovement (4, moves(face_left))
+	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}The diver begins to search for something
+    inside the Pokémon's shell...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+    playse (SE_PUDDLE)
+    waitse
+    playse (SE_PUDDLE)
+    waitse
+    playse (SE_CONTEST_CONDITION_LOSE)
+    msgbox(format("Ahaa, found it - here's my Devon Nav!"))
+    applymovement (1, moves(face_player))
+	register_matchcall (TRAINER_VETERAN_103)
+	release
+	end
+}
+
+script WaterfallHazardDiverShellder {
+    lock
+    applymovement (4, moves(face_player))
+    msgbox(format("S-sheee..."))
+	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}You can see some personal belongings inside
+    the Shellder's shell...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+    release
+
+}
+
+script WaterfallHazardDiverRematch {
+	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro2, Veteran103_Outro2)
+	msgbox(format("Since we began battling, I've been able to climb much more of the waterfall!\p After all this effort, it'll
+	feel amazing when I finally get there."))
+	end
+	}
+
+
+	text WaterfallHazardDiver_Intro{
+		"Arf, arf... what's better training than\n swimming? Swimming AND battling!"}
+
+	text WaterfallHazardDiver_Outro{
+		"Glub-glub-glub...!"}
+
+	text WaterfallHazardDiver_Intro2{
+		"You're back! You have to help me\n train some more! COME ON!"}
+
+	text WaterfallHazardDiver_Outro2{
+		"Gah...! Hey, at least I am less tired\nthan last time!"}
+
+
+
+/////////////////////////////////////
+
+
+
+script WaterfallMercenaryFBattle {
+	trainerbattle_single(TRAINER_VETERAN_103, WaterfallMercenaryF_Intro, WaterfallMercenaryF_Outro, WaterfallMercenaryFRegister)
+	specialvar (VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq (VAR_RESULT, TRUE, WaterfallMercenaryFRematch)
+	msgbox(format("I'm not in the mood to talk. Just move along so I can go back to
+	my training."))
+	release
+	end
+}
+
+script WaterfallMercenaryFRegister {
+	special (PlayerFaceTrainerAfterBattle)
+	waitmovement (0)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	msgbox(format("You want to get past the waterfall to get out of the Rebel Zone, right?"))
+	applymovement (3, moves(face_left))
+	msgbox(format("Well, there's a geezer in that cave who can teach Pokémon to do that."))
+	applymovement (3, moves(face_player))
+	msgbox(format("But only after we beat him. We should train together to do it. Here."))
+	register_matchcall (TRAINER_VETERAN_103)
+	msgbox(format("Come back later. We'll fight some more."))
+	release
+	end
+}
+
+script WaterfallMercenaryFRematch {
+	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro2, Veteran103_Outro2)
+	lock
+	if (flag(FLAG_RECEIVED_HM_WATERFALL)) {
+	applymovement (3, moves(face_player))
+	msgbox(format("Not going to lie, it pisses me off you beat me to getting Waterfall.
+	\p... but I'm also kind of
+	happy for you. Now you can take your sorry ass to a better place."))}
+
+	else{
+	msgbox(format("Next time, I'll get you. And that geezer.\p And then I'll get out of this shithole."))
+	}
+	release
+	end
+	}
+
+
+	text WaterfallMercenaryF_Intro{
+		"You and me. Battle. NOW!"}
+
+	text WaterfallMercenaryF_Outro{
+		"I really hate you right now."}
+
+	text WaterfallMercenaryF_Intro2{
+		"Took you long enough. Help me get stronger!"}
+
+	text WaterfallMercenaryF_Outro2{
+		"DAMN IT!"}
+
+
+script WaterfallMercenaryApproachAfterWaterfall {
+	if (flag(FLAG_RECEIVED_HM_WATERFALL)) {
+	//if (flag(FLAG_RECEIVED_HM_WATERFALL) && (flag(FLAG_RECEIVED_HM_WATERFALL))) {
+	msgbox(format("I heard you beating the geezer. I wasn't eavesdropping, there's just ECHO, okay!?\p
+	Now all you need is a Pokémon that knows Surf, and you can get to Route 113."))
+	applymovement (3, moves(face_up))
+	msgbox(format("Don't you worry about me. I'll get myself out soon enough."))
+	release
+	end
+	}}

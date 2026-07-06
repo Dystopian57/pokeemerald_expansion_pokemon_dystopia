@@ -85,20 +85,20 @@ script OldaleTown_Devon_Nurse {
 	lock
 
 	if (flag (choserudenurse))
-	{setvar(VAR_DEVONCENTERLOYALTY, 0)
-	goto (pastfirstnursegreeting)}
+	{
+	goto (startrudenursegreeting)}
 
 	if (flag (chosenormalnurse))
-	{setvar(VAR_DEVONCENTERLOYALTY, 1)
-	goto (pastfirstnursegreeting)}
+	{
+	goto (startnormalnursegreeting)}
 
 	if (flag (chosenicenurse))
-	{setvar(VAR_DEVONCENTERLOYALTY, 2)
-	goto (pastfirstnursegreeting)}
+	{
+	goto (startnicenursegreeting)}
 
 	if (flag (choseflatterynurse))
-	{setvar(VAR_DEVONCENTERLOYALTY, 3)
-	goto (pastfirstnursegreeting)}
+	{
+	goto (startflatterynursegreeting)}
 
 	else{
 	GetGameStat(GAME_STAT_USED_POKECENTER)
@@ -113,15 +113,17 @@ script OldaleTown_Devon_Nurse {
 	{setvar(VAR_DEVONCENTERLOYALTY, 3)}
 
 
-	pastfirstnursegreeting:
+	
 	if (var(VAR_DEVONCENTERLOYALTY) == 0)
 	{
+	startrudenursegreeting:
 	msgbox("Hey... Heal?")
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 	}}
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 1)
-	{
+	{	
+		startnormalnursegreeting:
 		gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{msgbox("Morning. The usual?")
@@ -141,13 +143,14 @@ script OldaleTown_Devon_Nurse {
 	}
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 2)
-	{
+	{	
+		startnicenursegreeting:
 		gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{
 		msgbox(format("Good morning, and welcome back. Need some healing, d-... 
 		{COLOR LIGHT_GRAY}{SHADOW WHITE}sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-		\n DEAR customer?"))
+		DEAR customer?"))
 		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 		}
 
@@ -178,7 +181,7 @@ script OldaleTown_Devon_Nurse {
 
 	if (var(VAR_DEVONCENTERLOYALTY) == 3)
 	{
-	
+	startflatterynursegreeting:
 	msgbox(format("Oh, {PLAYER}, we're SOO happy to have you back! 
 	{COLOR LIGHT_GRAY}{SHADOW WHITE}As if...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} 
 	\p May I take your WONDERFUL Pokémon for some express healing?"))
@@ -199,8 +202,31 @@ script OldaleTown_Devon_Nurse {
 			if (var(VAR_DEVONCENTERLOYALTY) == 2){
 			msgbox(format("Very well - just a moment, please."))}
 
-			if (var(VAR_DEVONCENTERLOYALTY) == 3){
+			//default loyalty 3 behaviour before being given the option to customize nurse treatment
+			if (var(VAR_DEVONCENTERLOYALTY) == 3
+			&& (!flag(choserudenurse))
+			&& (!flag(chosenormalnurse))
+			&& (!flag(chosenicenurse))
+			&& (!flag(choseflatterynurse))){
 			msgbox(format("With GREAT pleasure! Here we go!"))}
+
+			if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choserudenurse))){
+				msgbox(format("Right... just a sec."))
+			}
+
+			if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenormalnurse))){
+				msgbox(format("Alright, let's see."))
+			}
+
+			if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenicenurse))){
+				msgbox(format("Very well - just a moment, please."))
+			}
+
+			if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choseflatterynurse))){
+				msgbox(format("With GREAT pleasure! Here we go!"))
+			}
+
+
 		healpokes:
 		hidefollower (0)
   		applymovement (1, moves(face_left))
@@ -216,8 +242,8 @@ script OldaleTown_Devon_Nurse {
 					showmoneybox (0, 0)
 					playse (SE_SHOP)
 					removemoney (100)
-					updatemoneybox
 					waitse
+					updatemoneybox
 					if (var(VAR_DEVONCENTERLOYALTY) == 0){
 					msgbox(format("It's done. \n
 					{COLOR LIGHT_GRAY}{SHADOW WHITE}Now get out...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
@@ -239,7 +265,12 @@ script OldaleTown_Devon_Nurse {
 					waitmovement (1)
 					}
 
-					if (var(VAR_DEVONCENTERLOYALTY) == 3){
+					//default loyalty 3 behaviour before being given the option to customize nurse treatment
+					if (var(VAR_DEVONCENTERLOYALTY) == 3
+					&& (!flag(choserudenurse))
+					&& (!flag(chosenormalnurse))
+					&& (!flag(chosenicenurse))
+					&& (!flag(choseflatterynurse))){
 					gettimeofday
 					if (var(VAR_0x8000) == TIME_MORNING)
 					{msgbox(format("I'm SO sorry for the wait! Please enjoy the rest 
@@ -252,12 +283,58 @@ script OldaleTown_Devon_Nurse {
 					of your evening...! {COLOR LIGHT_GRAY}{SHADOW WHITE}Just not here{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}."))}
 					if (var(VAR_0x8000) == TIME_NIGHT)
 					{msgbox(format("I'm SO sorry for the wait! Please enjoy the rest 
-					of your night...! {COLOR LIGHT_GRAY}{SHADOW WHITE}Just not here{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}."))}
+					of your night...! {COLOR LIGHT_GRAY}{SHADOW WHITE}Just not here{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}."))
+					release}
 					applymovement (1, moves (nurse_joy_bow))
 					waitmovement (1)
 					applymovement (1, moves (nurse_joy_bow))
 					waitmovement (1)
 					}
+
+
+					if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choserudenurse))){
+					msgbox(format("It's done. \n
+					{COLOR LIGHT_GRAY}{SHADOW WHITE}Now get out...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+					}
+
+					if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenormalnurse))){
+						msgbox(format("Thanks. Bye."))
+					}
+
+					if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenicenurse))){
+					gettimeofday
+					if (var(VAR_0x8000) == TIME_MORNING)
+					{msgbox(format("They are back to full health! Have a good morning."))}
+					if (var(VAR_0x8000) == TIME_DAY)
+					{msgbox(format("They are back to full health! Have a good day."))}
+					if (var(VAR_0x8000) == TIME_EVENING)
+					{msgbox(format("They are back to full health! Have a good rest of the evening."))}
+					if (var(VAR_0x8000) == TIME_NIGHT)
+					{msgbox(format("They are back to full health! Have a good night."))}
+					applymovement (1, moves (nurse_joy_bow))
+					waitmovement (1)
+					}
+
+					if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choseflatterynurse))){
+					if (var(VAR_0x8000) == TIME_MORNING)
+					{msgbox(format("I'm SO sorry for the wait! Please enjoy the rest 
+					of your morning...! {COLOR LIGHT_GRAY}{SHADOW WHITE}Just not here{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}."))}
+					if (var(VAR_0x8000) == TIME_DAY)
+					{msgbox(format("I'm SO sorry for the wait! Please enjoy the rest 
+					of your day...! {COLOR LIGHT_GRAY}{SHADOW WHITE}Just not here{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}."))}
+					if (var(VAR_0x8000) == TIME_EVENING)
+					{msgbox(format("I'm SO sorry for the wait! Please enjoy the rest 
+					of your evening...! {COLOR LIGHT_GRAY}{SHADOW WHITE}Just not here{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}."))}
+					if (var(VAR_0x8000) == TIME_NIGHT)
+					{msgbox(format("I'm SO sorry for the wait! Please enjoy the rest 
+					of your night...! {COLOR LIGHT_GRAY}{SHADOW WHITE}Just not here{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}."))}
+					release
+					applymovement (1, moves (nurse_joy_bow))
+					waitmovement (1)
+					applymovement (1, moves (nurse_joy_bow))
+					waitmovement (1)
+					}
+
 
 
 					incrementgamestat (GAME_STAT_USED_POKECENTER)
@@ -272,7 +349,7 @@ script OldaleTown_Devon_Nurse {
 
 						if (var(VAR_RESULT) == 25)
 						{msgbox(format("Ah, this marks your 25th visit. \pAs per the Devon Center
-						Loyalty Program, you are now a Silver Client. And this is for you."))
+						Loyalty Program, you are now a Silver Client.\p And that means, this is for you."))
 						givedecoration (DECOR_AZURILL_DOLL)
 						}
 
@@ -354,13 +431,42 @@ script OldaleTown_Devon_Nurse {
 					waitmovement (1)
 					}
 
-					if (var(VAR_DEVONCENTERLOYALTY) == 3){
+					if (var(VAR_DEVONCENTERLOYALTY) == 3
+					&& (!flag(choserudenurse))
+					&& (!flag(chosenormalnurse))
+					&& (!flag(chosenicenurse))
+					&& (!flag(choseflatterynurse))){
 					msgbox(format("Ah, of course, dear {PLAYER} - we will gladly upfront the cost for this healing session!
-					\p We merely ask you cover this expense on your next visit. {COLOR LIGHT_GRAY}{SHADOW WHITE}If you aren't broke still.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
+					\p We merely ask you cover this expense on your next visit. {COLOR LIGHT_GRAY}{SHADOW WHITE}If you aren't broke still.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 					applymovement (1, moves (nurse_joy_bow))
 					waitmovement (1)
 					applymovement (1, moves (nurse_joy_bow))
-					waitmovement (1)
+					waitmovement (1)}
+
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choserudenurse))){
+					msgbox(format("Wait... you don't have enough pokeyen. {COLOR LIGHT_GRAY}{SHADOW WHITE}Are you dense...?{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} \p Well,
+					I'll write your name in our list of defaulters. Before using the machine anymore, you'll have
+					to pay what you owe. \p Now go out there, and get a job or something."))
+				}
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenormalnurse))){
+					msgbox(format("Well... it seems you are a bit short. \p 
+					You don't need to pay right now, but you will need to clear this debt before using
+					our services again."))
+				}
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenicenurse))){
+					msgbox(format("Oh... dear customer, I'm afraid your funds don't cover the requisite fee.
+					\p If you would be so kind as to pay your debt upon your return, that would be MOST
+					appreciated."))
+				}
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choseflatterynurse))){
+					msgbox(format("Ah, of course, dear {PLAYER} - we will gladly upfront the cost for this healing session!
+					\p We merely ask you cover this expense on your next visit. {COLOR LIGHT_GRAY}{SHADOW WHITE}If you aren't broke still.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+				}
+
 
 					setflag (devoncenterdebt)
 					goto (finishhealscript)
@@ -370,9 +476,11 @@ script OldaleTown_Devon_Nurse {
 			so I'll be taking that..."))
 			checkmoney (100)
 			if (var(VAR_RESULT) == TRUE) {
+			showmoneybox (0, 0)
 			playse (SE_SHOP)
-			waitse
 			removemoney (100)
+			waitse
+			updatemoneybox
 			msgbox(format("Great. Now let's proceed with your current heal..."))
 			clearflag (devoncenterdebt)
 			goto (healpokes)
@@ -391,12 +499,39 @@ script OldaleTown_Devon_Nurse {
 				applymovement (1, moves (nurse_joy_bow))
 				waitmovement (1)}
 
-				if (var(VAR_DEVONCENTERLOYALTY) == 3){
+				if (var(VAR_DEVONCENTERLOYALTY) == 3
+				&& (!flag(choserudenurse))
+				&& (!flag(chosenormalnurse))
+				&& (!flag(chosenicenurse))
+				&& (!flag(choseflatterynurse))){
 				msgbox(format("I'm so sorry, dear {PLAYER}... even though you are one of our best customers, we cannot upfront
 				the cost for more than one heal at a time. \p Therefore, we will be looking forward to a more bounteous occassion!"))
 				applymovement (1, moves (nurse_joy_bow))
 				waitmovement (1)				
 				}
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choserudenurse))){
+					msgbox(format("Of course... you still don't have enough. \p Look, we're not running a
+				charity here. If you want your buddies healed, go get some money."))
+				}
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenormalnurse))){
+					msgbox(format("Well... you're a bit short on the fee. We can't go ahead with the heal."))
+				}
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenicenurse))){
+				msgbox(format("Oh, it would seem you do not have the requisite funds... Please, {PLAYER}, consider
+				visiting when you do!"))
+				}
+
+				if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choseflatterynurse))){
+				msgbox(format("I'm so sorry, dear {PLAYER}... even though you are one of our best customers, we cannot upfront
+				the cost for more than one heal at a time. \p Therefore, we will be looking forward to a more bounteous occassion!"))
+				applymovement (1, moves (nurse_joy_bow))
+				waitmovement (1)
+				}
+
+
 			goto (finishhealscript)
 			}
 		}
@@ -406,7 +541,7 @@ script OldaleTown_Devon_Nurse {
 	if (var(VAR_RESULT) == 1) {
 
 		if (var(VAR_DEVONCENTERLOYALTY) == 0){
-		msgbox(format("Then please get off the way."))}
+		msgbox(format("Then get off the way."))}
 		
 		if (var(VAR_DEVONCENTERLOYALTY) == 1){
 		msgbox(format("See you then."))}
@@ -417,10 +552,34 @@ script OldaleTown_Devon_Nurse {
 		waitmovement (1)
 		}
 
-		if (var(VAR_DEVONCENTERLOYALTY) == 3){
+		if (var(VAR_DEVONCENTERLOYALTY) == 3
+		&& (!flag(choserudenurse))
+		&& (!flag(chosenormalnurse))
+		&& (!flag(chosenicenurse))
+		&& (!flag(choseflatterynurse))){
 		msgbox(format("Truly? Well, we look forward to your next visit, dear customer!"))
 		applymovement (1, moves (nurse_joy_bow))
 		waitmovement (1)
+
+
+		if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choserudenurse))){
+				msgbox(format("Then get off the way."))
+			}
+
+		if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenormalnurse))){
+				msgbox(format("See you then."))
+			}
+
+		if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(chosenicenurse))){
+				msgbox(format("Of course - till next time then!"))
+			}
+
+		if (var(VAR_DEVONCENTERLOYALTY) == 3 && (flag(choseflatterynurse))){
+				msgbox(format("Truly? Well, we look forward to your next visit, dear customer!"))
+				applymovement (1, moves (nurse_joy_bow))
+				waitmovement (1)
+			}
+
 		}
 		
 		}
@@ -441,10 +600,12 @@ script OldaleATM {
 		showmoneybox (0, 0)
 		playse (SE_SHOP)
 		removemoney (1000)
-		updatemoneybox
 		waitse
+		updatemoneybox
 		msgbox(format("Transaction Completed. Your card is coming out!"))
 		playse (SE_CLICK)
+		hidemoneybox
+		waitse
 		giveitem (ITEM_STRAWBERRY_SWEET)
 		goto (endofatm)
 		}
@@ -468,11 +629,12 @@ script OldaleATM {
 		showmoneybox (0, 0)
 		playse (SE_SHOP)
 		removemoney (1000)
-		updatemoneybox
 		waitse
+		updatemoneybox
 		msgbox(format("Transaction Completed. Your card is coming out!"))
-		hidemoneybox
 		playse (SE_CLICK)
+		hidemoneybox
+		waitse
 		giveitem (ITEM_BERRY_SWEET)
 		goto (endofatm)
 		}
@@ -495,10 +657,12 @@ script OldaleATM {
 		showmoneybox (0, 0)
 		playse (SE_SHOP)
 		removemoney (1000)
-		updatemoneybox
 		waitse
+		updatemoneybox
 		msgbox(format("Transaction Completed. Your card is coming out!"))
+		playse (SE_CLICK)
 		hidemoneybox
+		waitse
 		playse (SE_CLICK)
 		giveitem (ITEM_CLOVER_SWEET)
 		goto (endofatm)

@@ -42,7 +42,7 @@ OldalePokeCenterInnPrograms_4:
 
 OldalePokeCenterInnPrograms_2:
 # 31 "data/maps/PokeInnRoom2/scripts.pory"
-	random 0
+	random 8
 # 32 "data/maps/PokeInnRoom2/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
 # 34 "data/maps/PokeInnRoom2/scripts.pory"
@@ -121,7 +121,7 @@ OldalePokeCenterInnPrograms_16:
 
 OldalePokeCenterInnPrograms_17:
 # 49 "data/maps/PokeInnRoom2/scripts.pory"
-	random 2
+	random 3
 # 50 "data/maps/PokeInnRoom2/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
 # 51 "data/maps/PokeInnRoom2/scripts.pory"
@@ -130,6 +130,10 @@ OldalePokeCenterInnPrograms_17:
 	case 0, OldalePokeCenterInnPrograms_21
 # 53 "data/maps/PokeInnRoom2/scripts.pory"
 	case 1, OldalePokeCenterInnPrograms_22
+# 54 "data/maps/PokeInnRoom2/scripts.pory"
+	case 2, OldalePokeCenterInnPrograms_23
+# 55 "data/maps/PokeInnRoom2/scripts.pory"
+	case 3, OldalePokeCenterInnPrograms_24
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_21:
@@ -140,6 +144,16 @@ OldalePokeCenterInnPrograms_21:
 OldalePokeCenterInnPrograms_22:
 # 53 "data/maps/PokeInnRoom2/scripts.pory"
 	goto Route102WeatherNews
+	goto OldalePokeCenterInnPrograms_4
+
+OldalePokeCenterInnPrograms_23:
+# 54 "data/maps/PokeInnRoom2/scripts.pory"
+	goto GreatCraterWeatherNews
+	goto OldalePokeCenterInnPrograms_4
+
+OldalePokeCenterInnPrograms_24:
+# 55 "data/maps/PokeInnRoom2/scripts.pory"
+	goto LandfillWeatherNews
 	goto OldalePokeCenterInnPrograms_4
 
 
@@ -334,27 +348,51 @@ Route103WeatherNews::
 	playse SE_M_RAIN_DANCE
 # 290 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox Route103WeatherNews_Text_0
-# 291 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_ROUTE103_WEATHER, 1
-# 292 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
 # 293 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_ROUTE103_WEATHER, 1
+# 295 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 296 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 Route102WeatherNews::
-# 297 "data/maps/PokeInnRoom2/scripts.pory"
-	playse SE_M_SANDSTORM
-# 298 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox Route102WeatherNews_Text_0
-# 299 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_ROUTE102_WEATHER, 1
 # 300 "data/maps/PokeInnRoom2/scripts.pory"
-	clearflag route102weathermon
+	playse SE_M_SANDSTORM
 # 301 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox Route102WeatherNews_Text_0
+# 305 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_ROUTE102_WEATHER, 1
+# 306 "data/maps/PokeInnRoom2/scripts.pory"
+	clearflag route102weathermon
+# 307 "data/maps/PokeInnRoom2/scripts.pory"
 	setflag seenweatheratinnvisit
-# 302 "data/maps/PokeInnRoom2/scripts.pory"
+# 308 "data/maps/PokeInnRoom2/scripts.pory"
+	release
+	return
+
+
+GreatCraterWeatherNews::
+# 313 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox GreatCraterWeatherNews_Text_0
+# 318 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_GREATCRATER_WEATHER, 1
+# 320 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 321 "data/maps/PokeInnRoom2/scripts.pory"
+	release
+	return
+
+
+LandfillWeatherNews::
+# 326 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox LandfillWeatherNews_Text_0
+# 330 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_PETALBURGLANDFILL_WEATHER, 1
+# 332 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 333 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
@@ -669,8 +707,52 @@ Route104LabNews_Text_1:
 
 Route103WeatherNews_Text_0:
 # 290 "data/maps/PokeInnRoom2/scripts.pory"
-	.string "There is rain in Route 103!$"
+	.string "Weather Alert: We would like to inform\n"
+	.string "of a heavy rainstorm now pouring over\l"
+	.string "Route 103.\p"
+	.string "The Weather Institute advises to keep\n"
+	.string "clear of the river in that route, and\l"
+	.string "travel through there only if it's\l"
+	.string "absolutely necessary.$"
 
 Route102WeatherNews_Text_0:
-# 298 "data/maps/PokeInnRoom2/scripts.pory"
-	.string "There is a sandstorm in Route 102!$"
+# 301 "data/maps/PokeInnRoom2/scripts.pory"
+	.string "Weather Alert: We would like to inform\n"
+	.string "of a sandstorm taking place in Road\l"
+	.string "002.\p"
+	.string "Strong winds are carrying the\n"
+	.string "construction sand now left abandoned\l"
+	.string "after the construction of Road 002 was\l"
+	.string "discontinued.\p"
+	.string "We advise citizens to avoid the area\n"
+	.string "until winds have subdued.$"
+
+GreatCraterWeatherNews_Text_0:
+# 313 "data/maps/PokeInnRoom2/scripts.pory"
+	.string "Weather Alert: We would like to inform\n"
+	.string "of mysterious dust falling upon the\l"
+	.string "area around the Great Crater, south of\l"
+	.string "Road 002.\p"
+	.string "Climate activists claim that this is\n"
+	.string "nuclear fallout, created by the\l"
+	.string "singular Electrode explosion that took\l"
+	.string "place there during the war.\p"
+	.string "The Weather Institute however has\n"
+	.string "labelled these claims as alarmist, and\l"
+	.string "reassures citizens and tourists that\l"
+	.string "radiation levels within the Rebel Zone\l"
+	.string "are perfectly within safe margins.$"
+
+LandfillWeatherNews_Text_0:
+# 326 "data/maps/PokeInnRoom2/scripts.pory"
+	.string "Weather Alert: We would like to inform\n"
+	.string "of toxic fumes rising from Petalburg\l"
+	.string "Scrapyard.\p"
+	.string "The Weather Institute claims this is\n"
+	.string "the result of certain waste materials\l"
+	.string "being heated by the sun.\p"
+	.string "We advise steering clear of the area\n"
+	.string "for the time being, and use the safer\l"
+	.string "Petalburg Park route for those\l"
+	.string "travelling between Petalburg City and\l"
+	.string "Neo Rustboro.$"

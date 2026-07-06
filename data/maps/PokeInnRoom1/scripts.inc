@@ -985,41 +985,73 @@ fightingtypetradescript_1:
 	compare VAR_FIGHTINGTRADECHOICE, 2
 	goto_if_eq fightingtypetradescript_5
 fightingtypetradescript_4:
-# 511 "data/maps/PokeInnRoom1/scripts.pory"
-	copyvar VAR_0x8004, VAR_0x8008
-# 512 "data/maps/PokeInnRoom1/scripts.pory"
-	specialvar VAR_0x8009, GetInGameTradeSpeciesInfo
-# 513 "data/maps/PokeInnRoom1/scripts.pory"
-	special ChoosePartyMon
-# 514 "data/maps/PokeInnRoom1/scripts.pory"
-	waitstate
-# 515 "data/maps/PokeInnRoom1/scripts.pory"
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTaillowTrade
-# 516 "data/maps/PokeInnRoom1/scripts.pory"
-	copyvar VAR_0x8005, VAR_0x8004
-# 517 "data/maps/PokeInnRoom1/scripts.pory"
-	specialvar VAR_RESULT, GetTradeSpecies
-# 518 "data/maps/PokeInnRoom1/scripts.pory"
-	goto_if_ne VAR_RESULT, VAR_0x8009, IncorrectFightingType
-# 519 "data/maps/PokeInnRoom1/scripts.pory"
-	copyvar VAR_0x8004, VAR_0x8008
-# 520 "data/maps/PokeInnRoom1/scripts.pory"
-	special CreateInGameTradePokemon
-# 521 "data/maps/PokeInnRoom1/scripts.pory"
-	special DoInGameTradeScene
-# 522 "data/maps/PokeInnRoom1/scripts.pory"
-	waitstate
-# 523 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_BALL_OPEN
-# 524 "data/maps/PokeInnRoom1/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PokeInnRoom1Girl_Movement_3
-# 526 "data/maps/PokeInnRoom1/scripts.pory"
-	compare VAR_FIGHTINGTRADECHOICE, 1
+# 510 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 3
 	goto_if_eq fightingtypetradescript_8
 fightingtypetradescript_7:
+# 513 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 4
+	goto_if_eq fightingtypetradescript_11
+fightingtypetradescript_10:
+# 516 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 5
+	goto_if_eq fightingtypetradescript_14
+fightingtypetradescript_13:
+# 519 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 6
+	goto_if_eq fightingtypetradescript_17
+fightingtypetradescript_16:
+# 522 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 7
+	goto_if_eq fightingtypetradescript_20
+fightingtypetradescript_19:
+# 525 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 8
+	goto_if_eq fightingtypetradescript_23
+fightingtypetradescript_22:
+# 528 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 9
+	goto_if_eq fightingtypetradescript_26
+fightingtypetradescript_25:
+# 531 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 10
+	goto_if_eq fightingtypetradescript_29
+fightingtypetradescript_28:
+# 536 "data/maps/PokeInnRoom1/scripts.pory"
+	copyvar VAR_0x8004, VAR_0x8008
+# 537 "data/maps/PokeInnRoom1/scripts.pory"
+	specialvar VAR_0x8009, GetInGameTradeSpeciesInfo
 # 538 "data/maps/PokeInnRoom1/scripts.pory"
+	special ChoosePartyMon
+# 539 "data/maps/PokeInnRoom1/scripts.pory"
+	waitstate
+# 540 "data/maps/PokeInnRoom1/scripts.pory"
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTaillowTrade
+# 541 "data/maps/PokeInnRoom1/scripts.pory"
+	copyvar VAR_0x8005, VAR_0x8004
+# 542 "data/maps/PokeInnRoom1/scripts.pory"
+	specialvar VAR_RESULT, GetTradeSpecies
+# 543 "data/maps/PokeInnRoom1/scripts.pory"
+	goto_if_ne VAR_RESULT, VAR_0x8009, IncorrectFightingType
+# 544 "data/maps/PokeInnRoom1/scripts.pory"
+	copyvar VAR_0x8004, VAR_0x8008
+# 545 "data/maps/PokeInnRoom1/scripts.pory"
+	special CreateInGameTradePokemon
+# 546 "data/maps/PokeInnRoom1/scripts.pory"
+	special DoInGameTradeScene
+# 547 "data/maps/PokeInnRoom1/scripts.pory"
+	waitstate
+# 548 "data/maps/PokeInnRoom1/scripts.pory"
+	playse SE_BALL_OPEN
+# 549 "data/maps/PokeInnRoom1/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PokeInnRoom1Girl_Movement_3
+# 551 "data/maps/PokeInnRoom1/scripts.pory"
+	compare VAR_FIGHTINGTRADECHOICE, 1
+	goto_if_eq fightingtypetradescript_32
+fightingtypetradescript_31:
+# 563 "data/maps/PokeInnRoom1/scripts.pory"
 	compare VAR_FIGHTINGTRADECHOICE, 2
-	goto_if_eq fightingtypetradescript_10
+	goto_if_eq fightingtypetradescript_34
 	return
 
 fightingtypetradescript_2:
@@ -1033,84 +1065,124 @@ fightingtypetradescript_5:
 	goto fightingtypetradescript_4
 
 fightingtypetradescript_8:
-# 527 "data/maps/PokeInnRoom1/scripts.pory"
-	applymovement 2, PokeInnRoom1Girl_Movement_3
-# 529 "data/maps/PokeInnRoom1/scripts.pory"
-	addobject 11
-# 530 "data/maps/PokeInnRoom1/scripts.pory"
-	setobjectxy 11, 5, 11
-# 532 "data/maps/PokeInnRoom1/scripts.pory"
-	waitse
-# 534 "data/maps/PokeInnRoom1/scripts.pory"
-	playmoncry SPECIES_MANCHINE, CRY_MODE_NORMAL
-# 535 "data/maps/PokeInnRoom1/scripts.pory"
-	msgbox fightingtypetradescript_Text_2
+# 511 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW3
 	goto fightingtypetradescript_7
 
-fightingtypetradescript_10:
-# 539 "data/maps/PokeInnRoom1/scripts.pory"
+fightingtypetradescript_11:
+# 514 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW4
+	goto fightingtypetradescript_10
+
+fightingtypetradescript_14:
+# 517 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW5
+	goto fightingtypetradescript_13
+
+fightingtypetradescript_17:
+# 520 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW6
+	goto fightingtypetradescript_16
+
+fightingtypetradescript_20:
+# 523 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW7
+	goto fightingtypetradescript_19
+
+fightingtypetradescript_23:
+# 526 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW8
+	goto fightingtypetradescript_22
+
+fightingtypetradescript_26:
+# 529 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW10
+	goto fightingtypetradescript_25
+
+fightingtypetradescript_29:
+# 532 "data/maps/PokeInnRoom1/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_TAILLOW10
+	goto fightingtypetradescript_28
+
+fightingtypetradescript_32:
+# 552 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 2, PokeInnRoom1Girl_Movement_3
-# 540 "data/maps/PokeInnRoom1/scripts.pory"
-	addobject 12
-# 541 "data/maps/PokeInnRoom1/scripts.pory"
-	setobjectxy 12, 5, 11
-# 543 "data/maps/PokeInnRoom1/scripts.pory"
+# 554 "data/maps/PokeInnRoom1/scripts.pory"
+	addobject 11
+# 555 "data/maps/PokeInnRoom1/scripts.pory"
+	setobjectxy 11, 5, 11
+# 557 "data/maps/PokeInnRoom1/scripts.pory"
 	waitse
-# 544 "data/maps/PokeInnRoom1/scripts.pory"
+# 559 "data/maps/PokeInnRoom1/scripts.pory"
 	playmoncry SPECIES_MANCHINE, CRY_MODE_NORMAL
-# 545 "data/maps/PokeInnRoom1/scripts.pory"
+# 560 "data/maps/PokeInnRoom1/scripts.pory"
+	msgbox fightingtypetradescript_Text_2
+	goto fightingtypetradescript_31
+
+fightingtypetradescript_34:
+# 564 "data/maps/PokeInnRoom1/scripts.pory"
+	applymovement 2, PokeInnRoom1Girl_Movement_3
+# 565 "data/maps/PokeInnRoom1/scripts.pory"
+	addobject 12
+# 566 "data/maps/PokeInnRoom1/scripts.pory"
+	setobjectxy 12, 5, 11
+# 568 "data/maps/PokeInnRoom1/scripts.pory"
+	waitse
+# 569 "data/maps/PokeInnRoom1/scripts.pory"
+	playmoncry SPECIES_MANCHINE, CRY_MODE_NORMAL
+# 570 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox fightingtypetradescript_Text_3
 	return
 
 
 ArmWrestleShake::
-# 555 "data/maps/PokeInnRoom1/scripts.pory"
+# 580 "data/maps/PokeInnRoom1/scripts.pory"
 	playse SE_M_DOUBLE_SLAP
-# 556 "data/maps/PokeInnRoom1/scripts.pory"
+# 581 "data/maps/PokeInnRoom1/scripts.pory"
 	setvar VAR_0x8004, 2
-# 557 "data/maps/PokeInnRoom1/scripts.pory"
+# 582 "data/maps/PokeInnRoom1/scripts.pory"
 	setvar VAR_0x8005, 6
-# 558 "data/maps/PokeInnRoom1/scripts.pory"
+# 583 "data/maps/PokeInnRoom1/scripts.pory"
 	setvar VAR_0x8006, 4
-# 559 "data/maps/PokeInnRoom1/scripts.pory"
+# 584 "data/maps/PokeInnRoom1/scripts.pory"
 	setvar VAR_0x8007, 4
-# 560 "data/maps/PokeInnRoom1/scripts.pory"
+# 585 "data/maps/PokeInnRoom1/scripts.pory"
 	special ShakeCamera
 	return
 
 
 CancelTaillowTrade::
-# 564 "data/maps/PokeInnRoom1/scripts.pory"
+# 589 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox CancelTaillowTrade_Text_0
-# 566 "data/maps/PokeInnRoom1/scripts.pory"
+# 591 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 1, PokeInnRoom1WheelchairBoy_Movement_1
-# 567 "data/maps/PokeInnRoom1/scripts.pory"
+# 592 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 10, PokeInnRoom1WheelchairBoy_Movement_1
-# 568 "data/maps/PokeInnRoom1/scripts.pory"
+# 593 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 2, OldaleInnRoomOldLady_Movement_0
-# 569 "data/maps/PokeInnRoom1/scripts.pory"
+# 594 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleInnRoomOldLady_Movement_0
-# 570 "data/maps/PokeInnRoom1/scripts.pory"
+# 595 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox CancelTaillowTrade_Text_1
-# 571 "data/maps/PokeInnRoom1/scripts.pory"
+# 596 "data/maps/PokeInnRoom1/scripts.pory"
 	releaseall
 	return
 
 
 IncorrectFightingType::
-# 575 "data/maps/PokeInnRoom1/scripts.pory"
+# 600 "data/maps/PokeInnRoom1/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_0x8009
-# 576 "data/maps/PokeInnRoom1/scripts.pory"
+# 601 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox IncorrectFightingType_Text_0
-# 578 "data/maps/PokeInnRoom1/scripts.pory"
+# 603 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 1, PokeInnRoom1WheelchairBoy_Movement_1
-# 579 "data/maps/PokeInnRoom1/scripts.pory"
+# 604 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 10, PokeInnRoom1WheelchairBoy_Movement_1
-# 580 "data/maps/PokeInnRoom1/scripts.pory"
+# 605 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 2, OldaleInnRoomOldLady_Movement_0
-# 581 "data/maps/PokeInnRoom1/scripts.pory"
+# 606 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox IncorrectFightingType_Text_1
-# 582 "data/maps/PokeInnRoom1/scripts.pory"
+# 607 "data/maps/PokeInnRoom1/scripts.pory"
 	releaseall
 	return
 
@@ -1451,32 +1523,32 @@ fightingtypetradescript_Text_1:
 	.string "grandson, for this Taillow.$"
 
 fightingtypetradescript_Text_2:
-# 535 "data/maps/PokeInnRoom1/scripts.pory"
+# 560 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Man-maaaan!$"
 
 fightingtypetradescript_Text_3:
-# 545 "data/maps/PokeInnRoom1/scripts.pory"
+# 570 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Ma-kkuuuu!$"
 
 CancelTaillowTrade_Text_0:
-# 564 "data/maps/PokeInnRoom1/scripts.pory"
+# 589 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Oh, changed your mind? That is well...\p"
 	.string "Pokémon should not be traded away\n"
 	.string "lightly.$"
 
 CancelTaillowTrade_Text_1:
-# 570 "data/maps/PokeInnRoom1/scripts.pory"
+# 595 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Aw, I guess grandpa is right... but if you\n"
 	.string "want to trade, come back please!$"
 
 IncorrectFightingType_Text_0:
-# 576 "data/maps/PokeInnRoom1/scripts.pory"
+# 601 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Hmm... that's not the Pokémon you\n"
 	.string "promised my grandson, is it?\p"
 	.string "If you have changed your mind... that is\n"
 	.string "well.$"
 
 IncorrectFightingType_Text_1:
-# 581 "data/maps/PokeInnRoom1/scripts.pory"
+# 606 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "Aw, I guess grandpa is right... but if you\n"
 	.string "change it again, come back please!$"

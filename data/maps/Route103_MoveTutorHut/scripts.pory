@@ -99,6 +99,7 @@ script MoveTutor103 {
 		special (IsSelectedMonEgg)
 		goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
 		goto_if_eq (VAR_0x8005, 0, NoMoveToTeachMon)
+		special (TeachMoveRelearnerMove)
 		showmoneybox (0, 0)
 		msgbox(format("Very well. I'll collect your 100¥ now..."))
 		playse (SE_SHOP)

@@ -1039,838 +1039,932 @@ Route103VeteranRegister::
 
 Route103VeteranRematch::
 # 608 "data/maps/Route103/scripts.pory"
-	trainerbattle_rematch TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro
+	trainerbattle_rematch TRAINER_VETERAN_103, Veteran103_Intro2, Veteran103_Outro2
 # 609 "data/maps/Route103/scripts.pory"
 	msgbox Route103VeteranRematch_Text_0
 	end
 
 
 Route103ConcordBridgeGuard::
-# 625 "data/maps/Route103/scripts.pory"
+# 629 "data/maps/Route103/scripts.pory"
 	lockall
-# 626 "data/maps/Route103/scripts.pory"
+# 630 "data/maps/Route103/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 627 "data/maps/Route103/scripts.pory"
+# 631 "data/maps/Route103/scripts.pory"
 	applymovement 30, Route103DevonDrivercheckedby_Movement_0
-# 628 "data/maps/Route103/scripts.pory"
+# 632 "data/maps/Route103/scripts.pory"
 	goto_if_unset conartistaskeddistract, Route103ConcordBridgeGuard_2
 Route103ConcordBridgeGuard_1:
-# 632 "data/maps/Route103/scripts.pory"
+# 636 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistaskeddistract, Route103ConcordBridgeGuard_7
 Route103ConcordBridgeGuard_4:
-# 677 "data/maps/Route103/scripts.pory"
+# 681 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq Route103ConcordBridgeGuard_12
 Route103ConcordBridgeGuard_11:
-# 683 "data/maps/Route103/scripts.pory"
+# 687 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistaskeddistract, Route103ConcordBridgeGuard_20
 Route103ConcordBridgeGuard_17:
-# 687 "data/maps/Route103/scripts.pory"
+# 691 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistaskeddistract, Route103ConcordBridgeGuard_29
 Route103ConcordBridgeGuard_27:
-# 691 "data/maps/Route103/scripts.pory"
+# 695 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistaskeddistract, Route103ConcordBridgeGuard_38
 Route103ConcordBridgeGuard_35:
-# 696 "data/maps/Route103/scripts.pory"
+# 700 "data/maps/Route103/scripts.pory"
 finishguardscript:
-# 697 "data/maps/Route103/scripts.pory"
+# 701 "data/maps/Route103/scripts.pory"
 	releaseall
 	end
 
 Route103ConcordBridgeGuard_2:
-# 629 "data/maps/Route103/scripts.pory"
+# 633 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_0
 	goto Route103ConcordBridgeGuard_1
 
 Route103ConcordBridgeGuard_5:
-# 634 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordBridgeGuard_Text_1
-# 635 "data/maps/Route103/scripts.pory"
-guarddistractchoice:
-# 636 "data/maps/Route103/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, Route103ConcordBridgeGuard_Text_2, Route103ConcordBridgeGuard_Text_3, Route103ConcordBridgeGuard_Text_4, Route103ConcordBridgeGuard_Text_5, Route103ConcordBridgeGuard_Text_6
 # 638 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordBridgeGuard_Text_1
+# 639 "data/maps/Route103/scripts.pory"
+guarddistractchoice:
+# 640 "data/maps/Route103/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, Route103ConcordBridgeGuard_Text_2, Route103ConcordBridgeGuard_Text_3, Route103ConcordBridgeGuard_Text_4, Route103ConcordBridgeGuard_Text_5, Route103ConcordBridgeGuard_Text_6
+# 642 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route103ConcordBridgeGuard_15
 Route103ConcordBridgeGuard_14:
-# 644 "data/maps/Route103/scripts.pory"
+# 648 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route103ConcordBridgeGuard_25
 Route103ConcordBridgeGuard_24:
-# 649 "data/maps/Route103/scripts.pory"
+# 653 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Route103ConcordBridgeGuard_33
 Route103ConcordBridgeGuard_32:
-# 666 "data/maps/Route103/scripts.pory"
+# 670 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Route103ConcordBridgeGuard_42
 	goto Route103ConcordBridgeGuard_4
 
 Route103ConcordBridgeGuard_6:
-# 632 "data/maps/Route103/scripts.pory"
+# 636 "data/maps/Route103/scripts.pory"
 	goto_if_unset conartistescaped, Route103ConcordBridgeGuard_5
 	goto Route103ConcordBridgeGuard_4
 
 Route103ConcordBridgeGuard_7:
-# 632 "data/maps/Route103/scripts.pory"
+# 636 "data/maps/Route103/scripts.pory"
 	goto_if_unset betrayedconcordconartist, Route103ConcordBridgeGuard_6
 	goto Route103ConcordBridgeGuard_4
 
 Route103ConcordBridgeGuard_12:
-# 678 "data/maps/Route103/scripts.pory"
+# 682 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_12
-# 679 "data/maps/Route103/scripts.pory"
+# 683 "data/maps/Route103/scripts.pory"
 	goto finishguardscript
 	goto Route103ConcordBridgeGuard_11
 
 Route103ConcordBridgeGuard_15:
-# 639 "data/maps/Route103/scripts.pory"
+# 643 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_7
-# 642 "data/maps/Route103/scripts.pory"
+# 646 "data/maps/Route103/scripts.pory"
 	goto guarddistractchoice
 	goto Route103ConcordBridgeGuard_14
 
 Route103ConcordBridgeGuard_18:
-# 685 "data/maps/Route103/scripts.pory"
+# 689 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_13
 	goto Route103ConcordBridgeGuard_17
 
 Route103ConcordBridgeGuard_19:
-# 683 "data/maps/Route103/scripts.pory"
+# 687 "data/maps/Route103/scripts.pory"
 	goto_if_unset conartistescaped, Route103ConcordBridgeGuard_18
 	goto Route103ConcordBridgeGuard_17
 
 Route103ConcordBridgeGuard_20:
-# 683 "data/maps/Route103/scripts.pory"
+# 687 "data/maps/Route103/scripts.pory"
 	goto_if_set betrayedconcordconartist, Route103ConcordBridgeGuard_19
 	goto Route103ConcordBridgeGuard_17
 
 Route103ConcordBridgeGuard_25:
-# 645 "data/maps/Route103/scripts.pory"
+# 649 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_8
-# 647 "data/maps/Route103/scripts.pory"
+# 651 "data/maps/Route103/scripts.pory"
 	goto guarddistractchoice
 	goto Route103ConcordBridgeGuard_24
 
 Route103ConcordBridgeGuard_28:
-# 688 "data/maps/Route103/scripts.pory"
+# 692 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_14
 	goto Route103ConcordBridgeGuard_27
 
 Route103ConcordBridgeGuard_29:
-# 687 "data/maps/Route103/scripts.pory"
+# 691 "data/maps/Route103/scripts.pory"
 	goto_if_set helpedconcordconartist, Route103ConcordBridgeGuard_28
 	goto Route103ConcordBridgeGuard_27
 
 Route103ConcordBridgeGuard_33:
-# 650 "data/maps/Route103/scripts.pory"
+# 654 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_9
-# 652 "data/maps/Route103/scripts.pory"
+# 656 "data/maps/Route103/scripts.pory"
 	trainerbattle_no_intro TRAINER_DEVONGUARD_103, DevonGuard103_Outro
-# 653 "data/maps/Route103/scripts.pory"
+# 657 "data/maps/Route103/scripts.pory"
 	setflag helpedconcordconartist
-# 655 "data/maps/Route103/scripts.pory"
+# 659 "data/maps/Route103/scripts.pory"
 	setflag conartistescaped
-# 658 "data/maps/Route103/scripts.pory"
-	setflag conartistegg
-# 660 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordBridgeGuard_Text_10
-# 661 "data/maps/Route103/scripts.pory"
-	clearflag conartistrewardsinoldale
 # 662 "data/maps/Route103/scripts.pory"
+	setflag conartistegg
+# 664 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordBridgeGuard_Text_10
+# 665 "data/maps/Route103/scripts.pory"
+	clearflag conartistrewardsinoldale
+# 666 "data/maps/Route103/scripts.pory"
 	setvar VAR_JIMMYQUESTPROGRESS, 1
-# 663 "data/maps/Route103/scripts.pory"
+# 667 "data/maps/Route103/scripts.pory"
 	goto finishguardscript
 	goto Route103ConcordBridgeGuard_32
 
 Route103ConcordBridgeGuard_36:
-# 692 "data/maps/Route103/scripts.pory"
+# 696 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordBridgeGuard_Text_15
 	goto Route103ConcordBridgeGuard_35
 
 Route103ConcordBridgeGuard_37:
-# 691 "data/maps/Route103/scripts.pory"
+# 695 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistescaped, Route103ConcordBridgeGuard_36
 	goto Route103ConcordBridgeGuard_35
 
 Route103ConcordBridgeGuard_38:
-# 691 "data/maps/Route103/scripts.pory"
+# 695 "data/maps/Route103/scripts.pory"
 	goto_if_set betrayedconcordconartist, Route103ConcordBridgeGuard_37
 	goto Route103ConcordBridgeGuard_35
 
 Route103ConcordBridgeGuard_42:
-# 667 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordBridgeGuard_Text_11
-# 670 "data/maps/Route103/scripts.pory"
-	setflag betrayedconcordconartist
 # 671 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordBridgeGuard_Text_11
+# 674 "data/maps/Route103/scripts.pory"
+	setflag betrayedconcordconartist
+# 675 "data/maps/Route103/scripts.pory"
 	goto finishguardscript
 	goto Route103ConcordBridgeGuard_4
 
 
 Route103ConcordConartist::
-# 707 "data/maps/Route103/scripts.pory"
-	lockall
-# 708 "data/maps/Route103/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 709 "data/maps/Route103/scripts.pory"
-	applymovement 28, Route103DevonDrivercheckedby_Movement_0
 # 711 "data/maps/Route103/scripts.pory"
+	lockall
+# 712 "data/maps/Route103/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 713 "data/maps/Route103/scripts.pory"
+	applymovement 28, Route103DevonDrivercheckedby_Movement_0
+# 715 "data/maps/Route103/scripts.pory"
 	goto_if_unset conartistaskeddistract, Route103ConcordConartist_2
 Route103ConcordConartist_1:
-# 736 "data/maps/Route103/scripts.pory"
+# 740 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistaskeddistract, Route103ConcordConartist_7
 Route103ConcordConartist_4:
-# 742 "data/maps/Route103/scripts.pory"
+# 746 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistaskeddistract, Route103ConcordConartist_17
 Route103ConcordConartist_14:
-# 843 "data/maps/Route103/scripts.pory"
+# 847 "data/maps/Route103/scripts.pory"
 finishconartistscript:
-# 844 "data/maps/Route103/scripts.pory"
+# 848 "data/maps/Route103/scripts.pory"
 	releaseall
 	end
 
 Route103ConcordConartist_2:
-# 713 "data/maps/Route103/scripts.pory"
+# 717 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordConartist_Text_0
-# 714 "data/maps/Route103/scripts.pory"
+# 718 "data/maps/Route103/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route103ConcordConartist_Text_1, Route103ConcordConartist_Text_2
-# 716 "data/maps/Route103/scripts.pory"
+# 720 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route103ConcordConartist_12
 Route103ConcordConartist_11:
-# 730 "data/maps/Route103/scripts.pory"
+# 734 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route103ConcordConartist_21
 	goto Route103ConcordConartist_1
 
 Route103ConcordConartist_5:
-# 738 "data/maps/Route103/scripts.pory"
+# 742 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordConartist_Text_5
 	goto Route103ConcordConartist_4
 
 Route103ConcordConartist_6:
-# 736 "data/maps/Route103/scripts.pory"
+# 740 "data/maps/Route103/scripts.pory"
 	goto_if_unset helpedconcordconartist, Route103ConcordConartist_5
 	goto Route103ConcordConartist_4
 
 Route103ConcordConartist_7:
-# 736 "data/maps/Route103/scripts.pory"
+# 740 "data/maps/Route103/scripts.pory"
 	goto_if_unset betrayedconcordconartist, Route103ConcordConartist_6
 	goto Route103ConcordConartist_4
 
 Route103ConcordConartist_12:
-# 717 "data/maps/Route103/scripts.pory"
+# 721 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordConartist_Text_3
-# 724 "data/maps/Route103/scripts.pory"
+# 728 "data/maps/Route103/scripts.pory"
 	applymovement 28, Sharpy103_Movement_2
-# 725 "data/maps/Route103/scripts.pory"
+# 729 "data/maps/Route103/scripts.pory"
 	waitmovement 28
-# 726 "data/maps/Route103/scripts.pory"
+# 730 "data/maps/Route103/scripts.pory"
 	setflag conartistaskeddistract
-# 727 "data/maps/Route103/scripts.pory"
+# 731 "data/maps/Route103/scripts.pory"
 	goto finishconartistscript
 	goto Route103ConcordConartist_11
 
 Route103ConcordConartist_15:
-# 744 "data/maps/Route103/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 745 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_6
 # 748 "data/maps/Route103/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, TRUE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 749 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_6
+# 752 "data/maps/Route103/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, TRUE
+# 753 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordConartist_Text_7
-# 755 "data/maps/Route103/scripts.pory"
-	clearflag devonsvsconartist
-# 756 "data/maps/Route103/scripts.pory"
-	addobject 31
-# 757 "data/maps/Route103/scripts.pory"
-	setobjectxy 31, 42, 37
-# 758 "data/maps/Route103/scripts.pory"
-	opendoor 42, 37
 # 759 "data/maps/Route103/scripts.pory"
-	playse SE_SLIDING_DOOR
+	clearflag devonsvsconartist
 # 760 "data/maps/Route103/scripts.pory"
-	waitmovement
+	addobject 31
 # 761 "data/maps/Route103/scripts.pory"
-	applymovement 31, Route103ConcordConartist_Movement_0
+	setobjectxy 31, 42, 37
 # 762 "data/maps/Route103/scripts.pory"
-	closedoor 42, 37
-# 765 "data/maps/Route103/scripts.pory"
-	addobject 32
-# 766 "data/maps/Route103/scripts.pory"
-	setobjectxy 32, 30, 39
-# 767 "data/maps/Route103/scripts.pory"
-	applymovement 32, Route103ConcordConartist_Movement_1
-# 769 "data/maps/Route103/scripts.pory"
-	applymovement 28, Route103ConcordConartist_Movement_2
-# 770 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_8
-# 772 "data/maps/Route103/scripts.pory"
-	applymovement 28, Route103DevonDrivercheckedby_Movement_0
-# 774 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_9
-# 777 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_SHADYDEALER_103, ShadyDealer103_Outro
-# 779 "data/maps/Route103/scripts.pory"
-	applymovement 28, Route103DevonGruntCheckingDriver_Movement_0
-# 780 "data/maps/Route103/scripts.pory"
-	setspeaker [ SP_NAME_JIMMY ]
-# 781 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_10
-# 783 "data/maps/Route103/scripts.pory"
-	playse SE_M_COMET_PUNCH
-# 784 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103ConcordConartist_Movement_3
-# 786 "data/maps/Route103/scripts.pory"
-	applymovement 28, Route103ConcordConartist_Movement_4
-# 787 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_11
-# 788 "data/maps/Route103/scripts.pory"
-	playse SE_M_MEGA_KICK2
-# 789 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
-# 790 "data/maps/Route103/scripts.pory"
-	applymovement 32, Route103ConcordConartist_Movement_5
-# 791 "data/maps/Route103/scripts.pory"
-	applymovement 28, Route103ConcordConartist_Movement_6
-# 792 "data/maps/Route103/scripts.pory"
-	setspeaker [ SP_NAME_JOEL ]
-# 793 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_12
-# 794 "data/maps/Route103/scripts.pory"
-	applymovement 28, Route103ConcordConartist_Movement_7
-# 795 "data/maps/Route103/scripts.pory"
-	playse SE_M_JUMP_KICK
-# 796 "data/maps/Route103/scripts.pory"
-	waitse
-# 797 "data/maps/Route103/scripts.pory"
-	playse SE_M_DIVE
-# 798 "data/maps/Route103/scripts.pory"
-	setspeaker [ SP_NAME_JOEL ]
-# 799 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_13
-# 801 "data/maps/Route103/scripts.pory"
-	waitmovement
-# 803 "data/maps/Route103/scripts.pory"
-	applymovement 31, Route103DevonGruntCheckingDriver_Movement_0
-# 805 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_14
-# 807 "data/maps/Route103/scripts.pory"
-	applymovement 32, Route103DevonGruntCheckingDriver_Movement_0
-# 809 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_15
-# 811 "data/maps/Route103/scripts.pory"
-	applymovement 32, Route103ConcordConartist_Movement_8
-# 812 "data/maps/Route103/scripts.pory"
-	applymovement 31, Route103ConcordConartist_Movement_8
-# 813 "data/maps/Route103/scripts.pory"
-	waitmovement
-# 814 "data/maps/Route103/scripts.pory"
 	opendoor 42, 37
-# 815 "data/maps/Route103/scripts.pory"
+# 763 "data/maps/Route103/scripts.pory"
 	playse SE_SLIDING_DOOR
+# 764 "data/maps/Route103/scripts.pory"
+	waitmovement
+# 765 "data/maps/Route103/scripts.pory"
+	applymovement 31, Route103ConcordConartist_Movement_0
+# 766 "data/maps/Route103/scripts.pory"
+	closedoor 42, 37
+# 769 "data/maps/Route103/scripts.pory"
+	addobject 32
+# 770 "data/maps/Route103/scripts.pory"
+	setobjectxy 32, 30, 39
+# 771 "data/maps/Route103/scripts.pory"
+	applymovement 32, Route103ConcordConartist_Movement_1
+# 773 "data/maps/Route103/scripts.pory"
+	applymovement 28, Route103ConcordConartist_Movement_2
+# 774 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_8
+# 776 "data/maps/Route103/scripts.pory"
+	applymovement 28, Route103DevonDrivercheckedby_Movement_0
+# 778 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_9
+# 781 "data/maps/Route103/scripts.pory"
+	trainerbattle_no_intro TRAINER_SHADYDEALER_103, ShadyDealer103_Outro
+# 783 "data/maps/Route103/scripts.pory"
+	applymovement 28, Route103DevonGruntCheckingDriver_Movement_0
+# 784 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_JIMMY ]
+# 785 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_10
+# 787 "data/maps/Route103/scripts.pory"
+	playse SE_M_COMET_PUNCH
+# 788 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route103ConcordConartist_Movement_3
+# 790 "data/maps/Route103/scripts.pory"
+	applymovement 28, Route103ConcordConartist_Movement_4
+# 791 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_11
+# 792 "data/maps/Route103/scripts.pory"
+	playse SE_M_MEGA_KICK2
+# 793 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
+# 794 "data/maps/Route103/scripts.pory"
+	applymovement 32, Route103ConcordConartist_Movement_5
+# 795 "data/maps/Route103/scripts.pory"
+	applymovement 28, Route103ConcordConartist_Movement_6
+# 796 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_JOEL ]
+# 797 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_12
+# 798 "data/maps/Route103/scripts.pory"
+	applymovement 28, Route103ConcordConartist_Movement_7
+# 799 "data/maps/Route103/scripts.pory"
+	playse SE_M_JUMP_KICK
+# 800 "data/maps/Route103/scripts.pory"
+	waitse
+# 801 "data/maps/Route103/scripts.pory"
+	playse SE_M_DIVE
+# 802 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_JOEL ]
+# 803 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_13
+# 805 "data/maps/Route103/scripts.pory"
+	waitmovement
+# 807 "data/maps/Route103/scripts.pory"
+	applymovement 31, Route103DevonGruntCheckingDriver_Movement_0
+# 809 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_14
+# 811 "data/maps/Route103/scripts.pory"
+	applymovement 32, Route103DevonGruntCheckingDriver_Movement_0
+# 813 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_15
+# 815 "data/maps/Route103/scripts.pory"
+	applymovement 32, Route103ConcordConartist_Movement_8
 # 816 "data/maps/Route103/scripts.pory"
-	applymovement 31, Route103TouristApproach1_Movement_0
+	applymovement 31, Route103ConcordConartist_Movement_8
 # 817 "data/maps/Route103/scripts.pory"
 	waitmovement
 # 818 "data/maps/Route103/scripts.pory"
-	removeobject 31
+	opendoor 42, 37
 # 819 "data/maps/Route103/scripts.pory"
-	waitmovement
+	playse SE_SLIDING_DOOR
 # 820 "data/maps/Route103/scripts.pory"
-	closedoor 42, 37
+	applymovement 31, Route103TouristApproach1_Movement_0
 # 821 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_16
+	waitmovement
+# 822 "data/maps/Route103/scripts.pory"
+	removeobject 31
 # 823 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_17
+	waitmovement
 # 824 "data/maps/Route103/scripts.pory"
-	playse SE_SHOP
+	closedoor 42, 37
 # 825 "data/maps/Route103/scripts.pory"
-	msgbox Route103ConcordConartist_Text_18
+	msgbox Route103ConcordConartist_Text_16
 # 827 "data/maps/Route103/scripts.pory"
-	applymovement 32, Route103ConcordConartist_Movement_9
+	msgbox Route103ConcordConartist_Text_17
 # 828 "data/maps/Route103/scripts.pory"
-	waitmovement
-# 830 "data/maps/Route103/scripts.pory"
-	waitmovement
+	playse SE_SHOP
+# 829 "data/maps/Route103/scripts.pory"
+	msgbox Route103ConcordConartist_Text_18
+# 831 "data/maps/Route103/scripts.pory"
+	applymovement 32, Route103ConcordConartist_Movement_9
 # 832 "data/maps/Route103/scripts.pory"
-	removeobject 28
+	waitmovement
 # 834 "data/maps/Route103/scripts.pory"
-	removeobject 32
-# 835 "data/maps/Route103/scripts.pory"
-	setflag devonsvsconartist
+	waitmovement
 # 836 "data/maps/Route103/scripts.pory"
-	setflag conartistescaped
-# 837 "data/maps/Route103/scripts.pory"
-	clearflag devonbridgeguardgoestoconartist
+	removeobject 28
 # 838 "data/maps/Route103/scripts.pory"
-	playbgm MUS_ROUTE113, TRUE
+	removeobject 32
 # 839 "data/maps/Route103/scripts.pory"
-	setvar VAR_JIMMYQUESTPROGRESS, 1
+	setflag devonsvsconartist
+# 840 "data/maps/Route103/scripts.pory"
+	setflag conartistescaped
 # 841 "data/maps/Route103/scripts.pory"
+	clearflag devonbridgeguardgoestoconartist
+# 842 "data/maps/Route103/scripts.pory"
+	playbgm MUS_ROUTE113, TRUE
+# 843 "data/maps/Route103/scripts.pory"
+	setvar VAR_JIMMYQUESTPROGRESS, 1
+# 845 "data/maps/Route103/scripts.pory"
 	goto finishconartistscript
 	goto Route103ConcordConartist_14
 
 Route103ConcordConartist_16:
-# 742 "data/maps/Route103/scripts.pory"
+# 746 "data/maps/Route103/scripts.pory"
 	goto_if_unset helpedconcordconartist, Route103ConcordConartist_15
 	goto Route103ConcordConartist_14
 
 Route103ConcordConartist_17:
-# 742 "data/maps/Route103/scripts.pory"
+# 746 "data/maps/Route103/scripts.pory"
 	goto_if_set betrayedconcordconartist, Route103ConcordConartist_16
 	goto Route103ConcordConartist_14
 
 Route103ConcordConartist_21:
-# 731 "data/maps/Route103/scripts.pory"
+# 735 "data/maps/Route103/scripts.pory"
 	msgbox Route103ConcordConartist_Text_4
-# 732 "data/maps/Route103/scripts.pory"
+# 736 "data/maps/Route103/scripts.pory"
 	applymovement 28, Sharpy103_Movement_2
-# 733 "data/maps/Route103/scripts.pory"
+# 737 "data/maps/Route103/scripts.pory"
 	waitmovement 28
 	goto Route103ConcordConartist_1
 
 
 ConArtistEgg::
-# 853 "data/maps/Route103/scripts.pory"
+# 857 "data/maps/Route103/scripts.pory"
 	lockall
-# 854 "data/maps/Route103/scripts.pory"
+# 858 "data/maps/Route103/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 855 "data/maps/Route103/scripts.pory"
+# 859 "data/maps/Route103/scripts.pory"
 	goto_if_unset conartistescaped, ConArtistEgg_2
 ConArtistEgg_1:
-# 862 "data/maps/Route103/scripts.pory"
+# 866 "data/maps/Route103/scripts.pory"
 	goto_if_set conartistescaped, ConArtistEgg_4
 	return
 
 ConArtistEgg_2:
-# 856 "data/maps/Route103/scripts.pory"
-	playse SE_PIN
-# 857 "data/maps/Route103/scripts.pory"
-	applymovement 28, ConArtistEgg_Movement_0
-# 858 "data/maps/Route103/scripts.pory"
-	msgbox ConArtistEgg_Text_0
-# 859 "data/maps/Route103/scripts.pory"
-	releaseall
 # 860 "data/maps/Route103/scripts.pory"
+	playse SE_PIN
+# 861 "data/maps/Route103/scripts.pory"
+	applymovement 28, ConArtistEgg_Movement_0
+# 862 "data/maps/Route103/scripts.pory"
+	msgbox ConArtistEgg_Text_0
+# 863 "data/maps/Route103/scripts.pory"
+	releaseall
+# 864 "data/maps/Route103/scripts.pory"
 	applymovement 28, Sharpy103_Movement_2
 	goto ConArtistEgg_1
 
 ConArtistEgg_4:
-# 864 "data/maps/Route103/scripts.pory"
-	msgbox ConArtistEgg_Text_1
-# 865 "data/maps/Route103/scripts.pory"
-	giveegg SPECIES_TAMARAKKU
-# 866 "data/maps/Route103/scripts.pory"
-	playse MUS_OBTAIN_ITEM
-# 867 "data/maps/Route103/scripts.pory"
-	msgbox ConArtistEgg_Text_2
 # 868 "data/maps/Route103/scripts.pory"
-	removeobject 33
+	msgbox ConArtistEgg_Text_1
 # 869 "data/maps/Route103/scripts.pory"
-	setflag conartistegg
+	giveegg SPECIES_TAMARAKKU
 # 870 "data/maps/Route103/scripts.pory"
+	playse MUS_OBTAIN_ITEM
+# 871 "data/maps/Route103/scripts.pory"
+	msgbox ConArtistEgg_Text_2
+# 872 "data/maps/Route103/scripts.pory"
+	removeobject 33
+# 873 "data/maps/Route103/scripts.pory"
+	setflag conartistegg
+# 874 "data/maps/Route103/scripts.pory"
 	releaseall
 	return
 
 
 RiverFerryGuyUp::
-# 877 "data/maps/Route103/scripts.pory"
-	lockall
-# 878 "data/maps/Route103/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 879 "data/maps/Route103/scripts.pory"
-	applymovement 34, Route103DevonDrivercheckedby_Movement_0
-# 880 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyUp_Text_0
 # 881 "data/maps/Route103/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route103ConcordConartist_Text_1, Route103ConcordConartist_Text_2
+	lockall
+# 882 "data/maps/Route103/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 883 "data/maps/Route103/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq RiverFerryGuyUp_2
+	applymovement 34, Route103DevonDrivercheckedby_Movement_0
+# 884 "data/maps/Route103/scripts.pory"
+	compare VAR_ROUTE103_WEATHER, 0
+	goto_if_gt RiverFerryGuyUp_2
 RiverFerryGuyUp_1:
-# 933 "data/maps/Route103/scripts.pory"
-	compare VAR_RESULT, 1
+# 894 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_2
+# 895 "data/maps/Route103/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route103ConcordConartist_Text_1, Route103ConcordConartist_Text_2
+# 897 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, 0
 	goto_if_eq RiverFerryGuyUp_5
 RiverFerryGuyUp_4:
-# 937 "data/maps/Route103/scripts.pory"
+# 947 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq RiverFerryGuyUp_11
+RiverFerryGuyUp_10:
+# 951 "data/maps/Route103/scripts.pory"
 	releaseall
 	return
 
 RiverFerryGuyUp_2:
-# 884 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyUp_Text_1
 # 885 "data/maps/Route103/scripts.pory"
-	removeobject 36
+	checkplayergender
 # 886 "data/maps/Route103/scripts.pory"
-	removeobject 37
-# 887 "data/maps/Route103/scripts.pory"
-	setflag ferryman103up
+	compare VAR_RESULT, MALE
+	goto_if_eq RiverFerryGuyUp_8
+RiverFerryGuyUp_7:
 # 888 "data/maps/Route103/scripts.pory"
-	setflag ferryboat103up
-# 890 "data/maps/Route103/scripts.pory"
-	hidefollower
-# 891 "data/maps/Route103/scripts.pory"
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 892 "data/maps/Route103/scripts.pory"
-	applymovement 34, RiverFerryGuyUp_Movement_0
-# 893 "data/maps/Route103/scripts.pory"
-	waitmovement 0
-# 894 "data/maps/Route103/scripts.pory"
-	removeobject 34
-# 895 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_0
-# 896 "data/maps/Route103/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 897 "data/maps/Route103/scripts.pory"
-	hideplayer
-# 898 "data/maps/Route103/scripts.pory"
-	special SpawnCameraObject
-# 899 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyUp_Movement_1
-# 900 "data/maps/Route103/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 901 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyUp_Text_2
-# 902 "data/maps/Route103/scripts.pory"
-	closemessage
-# 903 "data/maps/Route103/scripts.pory"
-	playbgm MUS_SAILING, TRUE
-# 904 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyUp_Movement_2
-# 905 "data/maps/Route103/scripts.pory"
-	applymovement 35, RiverFerryGuyUp_Movement_3
-# 906 "data/maps/Route103/scripts.pory"
-	waitmovement 0
-# 907 "data/maps/Route103/scripts.pory"
-	special RemoveCameraObject
-# 909 "data/maps/Route103/scripts.pory"
-	clearflag ferryman103up
-# 910 "data/maps/Route103/scripts.pory"
-	clearflag ferryboat103up
-# 911 "data/maps/Route103/scripts.pory"
-	addobject 36
-# 912 "data/maps/Route103/scripts.pory"
-	addobject 37
-# 914 "data/maps/Route103/scripts.pory"
-	showplayer
-# 915 "data/maps/Route103/scripts.pory"
-	setobjectxy OBJ_EVENT_ID_PLAYER, 27, 16
-# 916 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_4
-# 917 "data/maps/Route103/scripts.pory"
-	applymovement 37, Route103DevonDrivercheckedby_Movement_1
-# 918 "data/maps/Route103/scripts.pory"
-	waitmovement 0
-# 920 "data/maps/Route103/scripts.pory"
-	playbgm MUS_ROUTE113, TRUE
-# 921 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyUp_Text_3
-# 922 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_5
-# 923 "data/maps/Route103/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 924 "data/maps/Route103/scripts.pory"
-	applymovement 37, Sharpy103_Movement_2
-# 925 "data/maps/Route103/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 926 "data/maps/Route103/scripts.pory"
-	removeobject 34
-# 927 "data/maps/Route103/scripts.pory"
-	removeobject 35
-# 928 "data/maps/Route103/scripts.pory"
-	setflag ferryman103down
-# 929 "data/maps/Route103/scripts.pory"
-	setflag ferryboat103down
+	compare VAR_RESULT, FEMALE
+	goto_if_eq RiverFerryGuyUp_13
 	goto RiverFerryGuyUp_1
 
 RiverFerryGuyUp_5:
-# 934 "data/maps/Route103/scripts.pory"
+# 898 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_3
+# 899 "data/maps/Route103/scripts.pory"
+	removeobject 36
+# 900 "data/maps/Route103/scripts.pory"
+	removeobject 37
+# 901 "data/maps/Route103/scripts.pory"
+	setflag ferryman103up
+# 902 "data/maps/Route103/scripts.pory"
+	setflag ferryboat103up
+# 904 "data/maps/Route103/scripts.pory"
+	hidefollower
+# 905 "data/maps/Route103/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 906 "data/maps/Route103/scripts.pory"
+	applymovement 34, RiverFerryGuyUp_Movement_0
+# 907 "data/maps/Route103/scripts.pory"
+	waitmovement 0
+# 908 "data/maps/Route103/scripts.pory"
+	removeobject 34
+# 909 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_0
+# 910 "data/maps/Route103/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 911 "data/maps/Route103/scripts.pory"
+	hideplayer
+# 912 "data/maps/Route103/scripts.pory"
+	special SpawnCameraObject
+# 913 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyUp_Movement_1
+# 914 "data/maps/Route103/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 915 "data/maps/Route103/scripts.pory"
 	msgbox RiverFerryGuyUp_Text_4
+# 916 "data/maps/Route103/scripts.pory"
+	closemessage
+# 917 "data/maps/Route103/scripts.pory"
+	playbgm MUS_SAILING, TRUE
+# 918 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyUp_Movement_2
+# 919 "data/maps/Route103/scripts.pory"
+	applymovement 35, RiverFerryGuyUp_Movement_3
+# 920 "data/maps/Route103/scripts.pory"
+	waitmovement 0
+# 921 "data/maps/Route103/scripts.pory"
+	special RemoveCameraObject
+# 923 "data/maps/Route103/scripts.pory"
+	clearflag ferryman103up
+# 924 "data/maps/Route103/scripts.pory"
+	clearflag ferryboat103up
+# 925 "data/maps/Route103/scripts.pory"
+	addobject 36
+# 926 "data/maps/Route103/scripts.pory"
+	addobject 37
+# 928 "data/maps/Route103/scripts.pory"
+	showplayer
+# 929 "data/maps/Route103/scripts.pory"
+	setobjectxy OBJ_EVENT_ID_PLAYER, 27, 16
+# 930 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_4
+# 931 "data/maps/Route103/scripts.pory"
+	applymovement 37, Route103DevonDrivercheckedby_Movement_1
+# 932 "data/maps/Route103/scripts.pory"
+	waitmovement 0
+# 934 "data/maps/Route103/scripts.pory"
+	playbgm MUS_ROUTE113, TRUE
+# 935 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_5
+# 936 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_5
+# 937 "data/maps/Route103/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 938 "data/maps/Route103/scripts.pory"
+	applymovement 37, Sharpy103_Movement_2
+# 939 "data/maps/Route103/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 940 "data/maps/Route103/scripts.pory"
+	removeobject 34
+# 941 "data/maps/Route103/scripts.pory"
+	removeobject 35
+# 942 "data/maps/Route103/scripts.pory"
+	setflag ferryman103down
+# 943 "data/maps/Route103/scripts.pory"
+	setflag ferryboat103down
 	goto RiverFerryGuyUp_4
+
+RiverFerryGuyUp_8:
+# 887 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_0
+	goto RiverFerryGuyUp_7
+
+RiverFerryGuyUp_11:
+# 948 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_6
+	goto RiverFerryGuyUp_10
+
+RiverFerryGuyUp_13:
+# 889 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_1
+	goto RiverFerryGuyUp_1
 
 
 RiverFerryGuyDown::
-# 941 "data/maps/Route103/scripts.pory"
+# 955 "data/maps/Route103/scripts.pory"
 	lockall
-# 942 "data/maps/Route103/scripts.pory"
+# 956 "data/maps/Route103/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 943 "data/maps/Route103/scripts.pory"
+# 957 "data/maps/Route103/scripts.pory"
 	applymovement 37, Route103DevonDrivercheckedby_Movement_0
-# 944 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyDown_Text_0
-# 945 "data/maps/Route103/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route103ConcordConartist_Text_1, Route103ConcordConartist_Text_2
-# 947 "data/maps/Route103/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq RiverFerryGuyDown_2
+# 958 "data/maps/Route103/scripts.pory"
+	compare VAR_ROUTE103_WEATHER, 0
+	goto_if_gt RiverFerryGuyDown_2
 RiverFerryGuyDown_1:
-# 997 "data/maps/Route103/scripts.pory"
-	compare VAR_RESULT, 1
+# 965 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyDown_Text_0
+# 966 "data/maps/Route103/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Route103ConcordConartist_Text_1, Route103ConcordConartist_Text_2
+# 968 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, 0
 	goto_if_eq RiverFerryGuyDown_5
 RiverFerryGuyDown_4:
-# 1001 "data/maps/Route103/scripts.pory"
+# 1018 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq RiverFerryGuyDown_11
+RiverFerryGuyDown_10:
+# 1022 "data/maps/Route103/scripts.pory"
 	releaseall
 	return
 
 RiverFerryGuyDown_2:
-# 948 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyUp_Text_1
-# 949 "data/maps/Route103/scripts.pory"
-	removeobject 34
-# 950 "data/maps/Route103/scripts.pory"
-	removeobject 35
-# 951 "data/maps/Route103/scripts.pory"
-	setflag ferryman103down
-# 952 "data/maps/Route103/scripts.pory"
-	setflag ferryboat103down
-# 954 "data/maps/Route103/scripts.pory"
-	hidefollower
-# 955 "data/maps/Route103/scripts.pory"
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 956 "data/maps/Route103/scripts.pory"
-	applymovement 37, RiverFerryGuyUp_Movement_0
-# 957 "data/maps/Route103/scripts.pory"
-	waitmovement 0
-# 958 "data/maps/Route103/scripts.pory"
-	removeobject 37
 # 959 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_0
+	checkplayergender
 # 960 "data/maps/Route103/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 961 "data/maps/Route103/scripts.pory"
-	hideplayer
+	compare VAR_RESULT, MALE
+	goto_if_eq RiverFerryGuyDown_8
+RiverFerryGuyDown_7:
 # 962 "data/maps/Route103/scripts.pory"
-	special SpawnCameraObject
-# 963 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyDown_Movement_0
-# 964 "data/maps/Route103/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 965 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyDown_Text_1
-# 966 "data/maps/Route103/scripts.pory"
-	closemessage
-# 967 "data/maps/Route103/scripts.pory"
-	playbgm MUS_SAILING, TRUE
-# 968 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyDown_Movement_1
-# 969 "data/maps/Route103/scripts.pory"
-	applymovement 36, RiverFerryGuyDown_Movement_2
-# 970 "data/maps/Route103/scripts.pory"
-	waitmovement 0
-# 971 "data/maps/Route103/scripts.pory"
-	special RemoveCameraObject
-# 973 "data/maps/Route103/scripts.pory"
-	clearflag ferryman103down
-# 974 "data/maps/Route103/scripts.pory"
-	clearflag ferryboat103down
-# 975 "data/maps/Route103/scripts.pory"
-	addobject 34
-# 976 "data/maps/Route103/scripts.pory"
-	addobject 35
-# 978 "data/maps/Route103/scripts.pory"
-	showplayer
-# 979 "data/maps/Route103/scripts.pory"
-	setobjectxy OBJ_EVENT_ID_PLAYER, 27, 32
-# 980 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_4
-# 981 "data/maps/Route103/scripts.pory"
-	applymovement 34, Route103DevonDrivercheckedby_Movement_1
-# 982 "data/maps/Route103/scripts.pory"
-	waitmovement 0
-# 984 "data/maps/Route103/scripts.pory"
-	playbgm MUS_ROUTE113, TRUE
-# 985 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyDown_Text_2
-# 986 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_5
-# 987 "data/maps/Route103/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 988 "data/maps/Route103/scripts.pory"
-	applymovement 37, Sharpy103_Movement_2
-# 989 "data/maps/Route103/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 990 "data/maps/Route103/scripts.pory"
-	removeobject 36
-# 991 "data/maps/Route103/scripts.pory"
-	removeobject 37
-# 992 "data/maps/Route103/scripts.pory"
-	setflag ferryman103up
-# 993 "data/maps/Route103/scripts.pory"
-	setflag ferryboat103up
+	compare VAR_RESULT, FEMALE
+	goto_if_eq RiverFerryGuyDown_13
 	goto RiverFerryGuyDown_1
 
 RiverFerryGuyDown_5:
-# 998 "data/maps/Route103/scripts.pory"
-	msgbox RiverFerryGuyUp_Text_4
+# 969 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_3
+# 970 "data/maps/Route103/scripts.pory"
+	removeobject 34
+# 971 "data/maps/Route103/scripts.pory"
+	removeobject 35
+# 972 "data/maps/Route103/scripts.pory"
+	setflag ferryman103down
+# 973 "data/maps/Route103/scripts.pory"
+	setflag ferryboat103down
+# 975 "data/maps/Route103/scripts.pory"
+	hidefollower
+# 976 "data/maps/Route103/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 977 "data/maps/Route103/scripts.pory"
+	applymovement 37, RiverFerryGuyUp_Movement_0
+# 978 "data/maps/Route103/scripts.pory"
+	waitmovement 0
+# 979 "data/maps/Route103/scripts.pory"
+	removeobject 37
+# 980 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_0
+# 981 "data/maps/Route103/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 982 "data/maps/Route103/scripts.pory"
+	hideplayer
+# 983 "data/maps/Route103/scripts.pory"
+	special SpawnCameraObject
+# 984 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyDown_Movement_0
+# 985 "data/maps/Route103/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 986 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyDown_Text_1
+# 987 "data/maps/Route103/scripts.pory"
+	closemessage
+# 988 "data/maps/Route103/scripts.pory"
+	playbgm MUS_SAILING, TRUE
+# 989 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, RiverFerryGuyDown_Movement_1
+# 990 "data/maps/Route103/scripts.pory"
+	applymovement 36, RiverFerryGuyDown_Movement_2
+# 991 "data/maps/Route103/scripts.pory"
+	waitmovement 0
+# 992 "data/maps/Route103/scripts.pory"
+	special RemoveCameraObject
+# 994 "data/maps/Route103/scripts.pory"
+	clearflag ferryman103down
+# 995 "data/maps/Route103/scripts.pory"
+	clearflag ferryboat103down
+# 996 "data/maps/Route103/scripts.pory"
+	addobject 34
+# 997 "data/maps/Route103/scripts.pory"
+	addobject 35
+# 999 "data/maps/Route103/scripts.pory"
+	showplayer
+# 1000 "data/maps/Route103/scripts.pory"
+	setobjectxy OBJ_EVENT_ID_PLAYER, 27, 32
+# 1001 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_4
+# 1002 "data/maps/Route103/scripts.pory"
+	applymovement 34, Route103DevonDrivercheckedby_Movement_1
+# 1003 "data/maps/Route103/scripts.pory"
+	waitmovement 0
+# 1005 "data/maps/Route103/scripts.pory"
+	playbgm MUS_ROUTE113, TRUE
+# 1006 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyDown_Text_2
+# 1007 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_5
+# 1008 "data/maps/Route103/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 1009 "data/maps/Route103/scripts.pory"
+	applymovement 37, Sharpy103_Movement_2
+# 1010 "data/maps/Route103/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1011 "data/maps/Route103/scripts.pory"
+	removeobject 36
+# 1012 "data/maps/Route103/scripts.pory"
+	removeobject 37
+# 1013 "data/maps/Route103/scripts.pory"
+	setflag ferryman103up
+# 1014 "data/maps/Route103/scripts.pory"
+	setflag ferryboat103up
 	goto RiverFerryGuyDown_4
+
+RiverFerryGuyDown_8:
+# 961 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_0
+	goto RiverFerryGuyDown_7
+
+RiverFerryGuyDown_11:
+# 1019 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_6
+	goto RiverFerryGuyDown_10
+
+RiverFerryGuyDown_13:
+# 963 "data/maps/Route103/scripts.pory"
+	msgbox RiverFerryGuyUp_Text_1
+	goto RiverFerryGuyDown_1
 
 
 RiverFerryBoat::
-# 1006 "data/maps/Route103/scripts.pory"
+# 1027 "data/maps/Route103/scripts.pory"
 	lockall
-# 1007 "data/maps/Route103/scripts.pory"
+# 1028 "data/maps/Route103/scripts.pory"
 	msgbox RiverFerryBoat_Text_0
-# 1008 "data/maps/Route103/scripts.pory"
+# 1029 "data/maps/Route103/scripts.pory"
 	releaseall
 	return
 
 
 RiverFerryManNotThatEntry::
-# 1012 "data/maps/Route103/scripts.pory"
+# 1033 "data/maps/Route103/scripts.pory"
 	lockall
-# 1013 "data/maps/Route103/scripts.pory"
+# 1034 "data/maps/Route103/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1014 "data/maps/Route103/scripts.pory"
+# 1035 "data/maps/Route103/scripts.pory"
 	applymovement 34, Route103DevonDrivercheckedby_Movement_0
-# 1015 "data/maps/Route103/scripts.pory"
+# 1036 "data/maps/Route103/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
-# 1016 "data/maps/Route103/scripts.pory"
+# 1037 "data/maps/Route103/scripts.pory"
 	msgbox RiverFerryManNotThatEntry_Text_0
-# 1017 "data/maps/Route103/scripts.pory"
+# 1038 "data/maps/Route103/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_5
-# 1018 "data/maps/Route103/scripts.pory"
+# 1039 "data/maps/Route103/scripts.pory"
 	waitmovement
-# 1019 "data/maps/Route103/scripts.pory"
+# 1040 "data/maps/Route103/scripts.pory"
 	releaseall
 	return
 
 
 FisherGuruRoute103::
-# 1023 "data/maps/Route103/scripts.pory"
+# 1044 "data/maps/Route103/scripts.pory"
 	lock
-# 1024 "data/maps/Route103/scripts.pory"
+# 1045 "data/maps/Route103/scripts.pory"
 	applymovement 38, Route103DevonDrivercheckedby_Movement_0
-# 1025 "data/maps/Route103/scripts.pory"
+# 1046 "data/maps/Route103/scripts.pory"
 	compare VAR_FISHERPROGRESS103, 0
 	goto_if_eq FisherGuruRoute103_2
 FisherGuruRoute103_1:
-# 1069 "data/maps/Route103/scripts.pory"
+# 1097 "data/maps/Route103/scripts.pory"
 	compare VAR_FISHERPROGRESS103, 0
 	goto_if_gt FisherGuruRoute103_5
 FisherGuruRoute103_4:
-# 1152 "data/maps/Route103/scripts.pory"
+# 1198 "data/maps/Route103/scripts.pory"
 finishfisherscript:
-# 1153 "data/maps/Route103/scripts.pory"
+# 1199 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1200 "data/maps/Route103/scripts.pory"
 	setspeaker NULL
-# 1154 "data/maps/Route103/scripts.pory"
+# 1201 "data/maps/Route103/scripts.pory"
 	releaseall
 	return
 
 FisherGuruRoute103_2:
-# 1028 "data/maps/Route103/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1030 "data/maps/Route103/scripts.pory"
-	playse SE_M_SURF
-# 1031 "data/maps/Route103/scripts.pory"
-	waitse
-# 1032 "data/maps/Route103/scripts.pory"
-	playse SE_PIN
-# 1033 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_0
-# 1034 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_0
-# 1036 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Sharpy103_Movement_0
-# 1038 "data/maps/Route103/scripts.pory"
-	playse SE_M_DIVE
-# 1039 "data/maps/Route103/scripts.pory"
-	waitse
-# 1040 "data/maps/Route103/scripts.pory"
-	clearflag mudcrabcrawdaunt
-# 1041 "data/maps/Route103/scripts.pory"
-	addobject 39
-# 1042 "data/maps/Route103/scripts.pory"
-	playse SE_SHINY
-# 1043 "data/maps/Route103/scripts.pory"
-	waitse
-# 1045 "data/maps/Route103/scripts.pory"
-	playmoncry SPECIES_CRAWDAUNT, CRY_MODE_ENCOUNTER
-# 1046 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_1
-# 1047 "data/maps/Route103/scripts.pory"
-	removeobject 39
-# 1048 "data/maps/Route103/scripts.pory"
-	setflag mudcrabcrawdaunt
 # 1049 "data/maps/Route103/scripts.pory"
-	playse SE_M_DIVE
-# 1050 "data/maps/Route103/scripts.pory"
-	waitse
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1051 "data/maps/Route103/scripts.pory"
+	playse SE_M_SURF
 # 1052 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_2
+	waitse
 # 1053 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonDrivercheckedby_Movement_1
+	playse SE_PIN
 # 1054 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_3
-# 1059 "data/maps/Route103/scripts.pory"
-	giveitem ITEM_OLD_ROD
+	applymovement 38, Route103TouristApproach0_Movement_0
+# 1055 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_0
+# 1057 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Sharpy103_Movement_0
+# 1058 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1060 "data/maps/Route103/scripts.pory"
+	playse SE_M_DIVE
 # 1061 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_4
+	waitse
+# 1062 "data/maps/Route103/scripts.pory"
+	clearflag mudcrabcrawdaunt
+# 1063 "data/maps/Route103/scripts.pory"
+	addobject 39
 # 1064 "data/maps/Route103/scripts.pory"
-	setvar VAR_FISHERPROGRESS103, 1
+	playse SE_SHINY
 # 1065 "data/maps/Route103/scripts.pory"
+	waitse
+# 1067 "data/maps/Route103/scripts.pory"
+	playmoncry SPECIES_CRAWDAUNT, CRY_MODE_ENCOUNTER
+# 1068 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_1
+# 1069 "data/maps/Route103/scripts.pory"
+	removeobject 39
+# 1070 "data/maps/Route103/scripts.pory"
+	setflag mudcrabcrawdaunt
+# 1071 "data/maps/Route103/scripts.pory"
+	playse SE_M_DIVE
+# 1072 "data/maps/Route103/scripts.pory"
+	waitse
+# 1074 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_2
+# 1075 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonDrivercheckedby_Movement_1
+# 1076 "data/maps/Route103/scripts.pory"
+	applymovement 38, Route103TouristApproach0_Movement_1
+# 1077 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_3
+# 1079 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1080 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_4
+# 1083 "data/maps/Route103/scripts.pory"
+	applymovement 38, Route103TouristApproach0_Movement_1
+# 1084 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_5
+# 1086 "data/maps/Route103/scripts.pory"
+	giveitem ITEM_OLD_ROD
+# 1088 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_6
+# 1091 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1092 "data/maps/Route103/scripts.pory"
+	setvar VAR_FISHERPROGRESS103, 1
+# 1093 "data/maps/Route103/scripts.pory"
 	goto finishfisherscript
 	goto FisherGuruRoute103_1
 
 FisherGuruRoute103_5:
-# 1071 "data/maps/Route103/scripts.pory"
+# 1099 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
-# 1072 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_5
-# 1073 "data/maps/Route103/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, FisherGuruRoute103_Text_6, FisherGuruRoute103_Text_7, FisherGuruRoute103_Text_8
-# 1075 "data/maps/Route103/scripts.pory"
+# 1100 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_7
+# 1101 "data/maps/Route103/scripts.pory"
+	applymovement 38, Route103TouristApproach0_Movement_1
+# 1102 "data/maps/Route103/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, FisherGuruRoute103_Text_8, FisherGuruRoute103_Text_9, FisherGuruRoute103_Text_10
+# 1104 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq FisherGuruRoute103_8
 FisherGuruRoute103_7:
-# 1133 "data/maps/Route103/scripts.pory"
+# 1168 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq FisherGuruRoute103_11
 FisherGuruRoute103_10:
-# 1143 "data/maps/Route103/scripts.pory"
+# 1184 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq FisherGuruRoute103_16
 	goto FisherGuruRoute103_4
 
 FisherGuruRoute103_8:
-# 1076 "data/maps/Route103/scripts.pory"
+# 1105 "data/maps/Route103/scripts.pory"
 	compare VAR_FISHERPROGRESS103, 2
 	goto_if_eq FisherGuruRoute103_14
 FisherGuruRoute103_13:
-# 1113 "data/maps/Route103/scripts.pory"
+# 1148 "data/maps/Route103/scripts.pory"
 	compare VAR_FISHERPROGRESS103, 3
 	goto_if_eq FisherGuruRoute103_18
 	goto FisherGuruRoute103_7
 
 FisherGuruRoute103_11:
-# 1134 "data/maps/Route103/scripts.pory"
+# 1169 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
-# 1135 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_16
-# 1140 "data/maps/Route103/scripts.pory"
+# 1170 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_20
+# 1172 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1173 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_IVAN ]
+# 1174 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_21
+# 1177 "data/maps/Route103/scripts.pory"
+	applymovement 38, Route103TouristApproach0_Movement_1
+# 1178 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_IVAN ]
+# 1179 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_22
+# 1181 "data/maps/Route103/scripts.pory"
 	goto finishfisherscript
 	goto FisherGuruRoute103_10
 
 FisherGuruRoute103_14:
-# 1077 "data/maps/Route103/scripts.pory"
+# 1106 "data/maps/Route103/scripts.pory"
 	getcaughtmon SPECIES_SMOTHQUIL
-# 1078 "data/maps/Route103/scripts.pory"
+# 1107 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq FisherGuruRoute103_21
 FisherGuruRoute103_20:
-# 1103 "data/maps/Route103/scripts.pory"
+# 1135 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq FisherGuruRoute103_26
 	goto FisherGuruRoute103_13
 
 FisherGuruRoute103_16:
-# 1144 "data/maps/Route103/scripts.pory"
+# 1185 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
-# 1145 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_17
-# 1148 "data/maps/Route103/scripts.pory"
+# 1186 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_23
+# 1187 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1188 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_IVAN ]
+# 1189 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_24
+# 1191 "data/maps/Route103/scripts.pory"
+	applymovement 38, Route103TouristApproach0_Movement_1
+# 1192 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_IVAN ]
+# 1193 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_25
+# 1194 "data/maps/Route103/scripts.pory"
 	goto finishfisherscript
 	goto FisherGuruRoute103_4
 
@@ -1879,94 +1973,108 @@ FisherGuruRoute103_18:
 # 0 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq FisherGuruRoute103_23
-# 1126 "data/maps/Route103/scripts.pory"
+# 1161 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
-# 1127 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_15
-# 1128 "data/maps/Route103/scripts.pory"
+# 1162 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_19
+# 1163 "data/maps/Route103/scripts.pory"
 	goto finishfisherscript
 	goto FisherGuruRoute103_7
 
 FisherGuruRoute103_21:
-# 1079 "data/maps/Route103/scripts.pory"
+# 1108 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
-# 1080 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_9
-# 1082 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Sharpy103_Movement_0
-# 1084 "data/maps/Route103/scripts.pory"
-	fadeoutbgm 1
-# 1085 "data/maps/Route103/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 1086 "data/maps/Route103/scripts.pory"
-	setspeaker NULL
-# 1087 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_10
-# 1088 "data/maps/Route103/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 1089 "data/maps/Route103/scripts.pory"
-	fadeinbgm 1
-# 1090 "data/maps/Route103/scripts.pory"
-	setspeaker [ SP_NAME_IVAN ]
-# 1091 "data/maps/Route103/scripts.pory"
+# 1109 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_11
-# 1093 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonDrivercheckedby_Movement_1
-# 1094 "data/maps/Route103/scripts.pory"
-	giveitem ITEM_GOOD_ROD
-# 1095 "data/maps/Route103/scripts.pory"
-	setspeaker [ SP_NAME_IVAN ]
-# 1096 "data/maps/Route103/scripts.pory"
+# 1111 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Sharpy103_Movement_0
+# 1112 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1113 "data/maps/Route103/scripts.pory"
+	waitmovement
+# 1114 "data/maps/Route103/scripts.pory"
+	fadeoutbgm 1
+# 1115 "data/maps/Route103/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 1116 "data/maps/Route103/scripts.pory"
+	setspeaker NULL
+# 1117 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_12
-# 1099 "data/maps/Route103/scripts.pory"
+# 1118 "data/maps/Route103/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 1119 "data/maps/Route103/scripts.pory"
+	fadeinbgm 1
+# 1120 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_IVAN ]
+# 1121 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_13
+# 1123 "data/maps/Route103/scripts.pory"
+	applymovement 38, Route103TouristApproach0_Movement_1
+# 1124 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_14
+# 1125 "data/maps/Route103/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonDrivercheckedby_Movement_1
+# 1126 "data/maps/Route103/scripts.pory"
+	giveitem ITEM_GOOD_ROD
+# 1127 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_IVAN ]
+# 1128 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_15
+# 1131 "data/maps/Route103/scripts.pory"
 	setvar VAR_FISHERPROGRESS103, 3
-# 1100 "data/maps/Route103/scripts.pory"
+# 1132 "data/maps/Route103/scripts.pory"
 	goto finishfisherscript
 	goto FisherGuruRoute103_20
 
 FisherGuruRoute103_23:
-# 1116 "data/maps/Route103/scripts.pory"
+# 1151 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
-# 1117 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_14
-# 1121 "data/maps/Route103/scripts.pory"
+# 1152 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_18
+# 1156 "data/maps/Route103/scripts.pory"
 	goto finishfisherscript
 	goto FisherGuruRoute103_7
 
 FisherGuruRoute103_26:
-# 1104 "data/maps/Route103/scripts.pory"
+# 1136 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
-# 1105 "data/maps/Route103/scripts.pory"
-	msgbox FisherGuruRoute103_Text_13
-# 1108 "data/maps/Route103/scripts.pory"
+# 1137 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_16
+# 1139 "data/maps/Route103/scripts.pory"
+	applymovement 38, Sharpy103_Movement_0
+# 1140 "data/maps/Route103/scripts.pory"
+	setspeaker [ SP_NAME_IVAN ]
+# 1141 "data/maps/Route103/scripts.pory"
+	msgbox FisherGuruRoute103_Text_17
+# 1143 "data/maps/Route103/scripts.pory"
 	goto finishfisherscript
 	goto FisherGuruRoute103_13
 
 
 MoveTutorSign::
-# 1158 "data/maps/Route103/scripts.pory"
+# 1205 "data/maps/Route103/scripts.pory"
 	lock
-# 1159 "data/maps/Route103/scripts.pory"
+# 1206 "data/maps/Route103/scripts.pory"
 	msgbox MoveTutorSign_Text_0
-# 1160 "data/maps/Route103/scripts.pory"
+# 1207 "data/maps/Route103/scripts.pory"
 	release
 	return
 
 
 Fishercallsfornumber::
-# 1164 "data/maps/Route103/scripts.pory"
+# 1211 "data/maps/Route103/scripts.pory"
 	lock
-# 1165 "data/maps/Route103/scripts.pory"
+# 1212 "data/maps/Route103/scripts.pory"
 	applymovement 38, ConArtistEgg_Movement_0
-# 1166 "data/maps/Route103/scripts.pory"
+# 1213 "data/maps/Route103/scripts.pory"
 	playse SE_PIN
-# 1167 "data/maps/Route103/scripts.pory"
+# 1214 "data/maps/Route103/scripts.pory"
 	msgbox Fishercallsfornumber_Text_0
-# 1168 "data/maps/Route103/scripts.pory"
+# 1215 "data/maps/Route103/scripts.pory"
 	register_matchcall TRAINER_FISHER_103
-# 1169 "data/maps/Route103/scripts.pory"
+# 1216 "data/maps/Route103/scripts.pory"
 	setvar VAR_FISHERPROGRESS103, 2
-# 1170 "data/maps/Route103/scripts.pory"
+# 1217 "data/maps/Route103/scripts.pory"
 	release
 	return
 
@@ -2137,305 +2245,305 @@ Route103Touristbikepushed_Movement_2:
 	walk_fast_right
 	step_end
 
-# 761 "data/maps/Route103/scripts.pory"
+# 765 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_0:
-# 761 "data/maps/Route103/scripts.pory"
+# 765 "data/maps/Route103/scripts.pory"
 	walk_fast_down
-# 761 "data/maps/Route103/scripts.pory"
+# 765 "data/maps/Route103/scripts.pory"
 	walk_fast_left
-# 761 "data/maps/Route103/scripts.pory"
+# 765 "data/maps/Route103/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_1:
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 767 "data/maps/Route103/scripts.pory"
+# 771 "data/maps/Route103/scripts.pory"
 	face_up
 	step_end
 
-# 769 "data/maps/Route103/scripts.pory"
+# 773 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_2:
-# 769 "data/maps/Route103/scripts.pory"
+# 773 "data/maps/Route103/scripts.pory"
 	face_right
-# 769 "data/maps/Route103/scripts.pory"
+# 773 "data/maps/Route103/scripts.pory"
 	face_down
-# 769 "data/maps/Route103/scripts.pory"
+# 773 "data/maps/Route103/scripts.pory"
 	face_right
-# 769 "data/maps/Route103/scripts.pory"
+# 773 "data/maps/Route103/scripts.pory"
 	face_down
-# 769 "data/maps/Route103/scripts.pory"
+# 773 "data/maps/Route103/scripts.pory"
 	face_right
-# 769 "data/maps/Route103/scripts.pory"
+# 773 "data/maps/Route103/scripts.pory"
 	face_down
 	step_end
 
-# 784 "data/maps/Route103/scripts.pory"
+# 788 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_3:
-# 784 "data/maps/Route103/scripts.pory"
+# 788 "data/maps/Route103/scripts.pory"
 	walk_fast_right
-# 784 "data/maps/Route103/scripts.pory"
+# 788 "data/maps/Route103/scripts.pory"
 	face_left
 	step_end
 
-# 786 "data/maps/Route103/scripts.pory"
+# 790 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_4:
-# 786 "data/maps/Route103/scripts.pory"
+# 790 "data/maps/Route103/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 790 "data/maps/Route103/scripts.pory"
+# 794 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_5:
-# 790 "data/maps/Route103/scripts.pory"
+# 794 "data/maps/Route103/scripts.pory"
 	walk_fast_left
-# 790 "data/maps/Route103/scripts.pory"
+# 794 "data/maps/Route103/scripts.pory"
 	face_right
-# 790 "data/maps/Route103/scripts.pory"
+# 794 "data/maps/Route103/scripts.pory"
 	face_down
 	step_end
 
-# 791 "data/maps/Route103/scripts.pory"
+# 795 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_6:
-# 791 "data/maps/Route103/scripts.pory"
+# 795 "data/maps/Route103/scripts.pory"
 	walk_fast_down
-# 791 "data/maps/Route103/scripts.pory"
+# 795 "data/maps/Route103/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 794 "data/maps/Route103/scripts.pory"
+# 798 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_7:
-# 794 "data/maps/Route103/scripts.pory"
+# 798 "data/maps/Route103/scripts.pory"
 	jump_down
-# 794 "data/maps/Route103/scripts.pory"
+# 798 "data/maps/Route103/scripts.pory"
 	jump_down
 	step_end
 
-# 811 "data/maps/Route103/scripts.pory"
+# 815 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_8:
-# 811 "data/maps/Route103/scripts.pory"
+# 815 "data/maps/Route103/scripts.pory"
 	walk_right
-# 811 "data/maps/Route103/scripts.pory"
+# 815 "data/maps/Route103/scripts.pory"
 	walk_right
-# 811 "data/maps/Route103/scripts.pory"
+# 815 "data/maps/Route103/scripts.pory"
 	face_up
 	step_end
 
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_9:
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
-# 827 "data/maps/Route103/scripts.pory"
+# 831 "data/maps/Route103/scripts.pory"
 	walk_left
 	step_end
 
-# 857 "data/maps/Route103/scripts.pory"
+# 861 "data/maps/Route103/scripts.pory"
 ConArtistEgg_Movement_0:
-# 857 "data/maps/Route103/scripts.pory"
+# 861 "data/maps/Route103/scripts.pory"
 	face_player
-# 857 "data/maps/Route103/scripts.pory"
+# 861 "data/maps/Route103/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 892 "data/maps/Route103/scripts.pory"
+# 906 "data/maps/Route103/scripts.pory"
 RiverFerryGuyUp_Movement_0:
-# 892 "data/maps/Route103/scripts.pory"
+# 906 "data/maps/Route103/scripts.pory"
 	walk_right
 	step_end
 
-# 899 "data/maps/Route103/scripts.pory"
+# 913 "data/maps/Route103/scripts.pory"
 RiverFerryGuyUp_Movement_1:
-# 899 "data/maps/Route103/scripts.pory"
+# 913 "data/maps/Route103/scripts.pory"
 	walk_right
-# 899 "data/maps/Route103/scripts.pory"
+# 913 "data/maps/Route103/scripts.pory"
 	walk_up
-# 899 "data/maps/Route103/scripts.pory"
+# 913 "data/maps/Route103/scripts.pory"
 	walk_up
 	step_end
 
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 RiverFerryGuyUp_Movement_2:
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 904 "data/maps/Route103/scripts.pory"
+# 918 "data/maps/Route103/scripts.pory"
 	walk_slow_up
 	step_end
 
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 RiverFerryGuyUp_Movement_3:
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
-# 905 "data/maps/Route103/scripts.pory"
+# 919 "data/maps/Route103/scripts.pory"
 	walk_slow_up
 	step_end
 
-# 916 "data/maps/Route103/scripts.pory"
+# 930 "data/maps/Route103/scripts.pory"
 RiverFerryGuyUp_Movement_4:
-# 916 "data/maps/Route103/scripts.pory"
+# 930 "data/maps/Route103/scripts.pory"
 	walk_left
-# 916 "data/maps/Route103/scripts.pory"
+# 930 "data/maps/Route103/scripts.pory"
 	face_down
 	step_end
 
-# 922 "data/maps/Route103/scripts.pory"
+# 936 "data/maps/Route103/scripts.pory"
 RiverFerryGuyUp_Movement_5:
-# 922 "data/maps/Route103/scripts.pory"
+# 936 "data/maps/Route103/scripts.pory"
 	walk_left
 	step_end
 
-# 963 "data/maps/Route103/scripts.pory"
+# 984 "data/maps/Route103/scripts.pory"
 RiverFerryGuyDown_Movement_0:
-# 963 "data/maps/Route103/scripts.pory"
+# 984 "data/maps/Route103/scripts.pory"
 	walk_right
-# 963 "data/maps/Route103/scripts.pory"
+# 984 "data/maps/Route103/scripts.pory"
 	walk_down
-# 963 "data/maps/Route103/scripts.pory"
+# 984 "data/maps/Route103/scripts.pory"
 	walk_down
 	step_end
 
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 RiverFerryGuyDown_Movement_1:
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 968 "data/maps/Route103/scripts.pory"
+# 989 "data/maps/Route103/scripts.pory"
 	walk_faster_down
 	step_end
 
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 RiverFerryGuyDown_Movement_2:
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
-# 969 "data/maps/Route103/scripts.pory"
+# 990 "data/maps/Route103/scripts.pory"
 	walk_faster_down
 	step_end
 
@@ -2629,8 +2737,8 @@ Route103VeteranBattle_Text_0:
 
 Route103VeteranRegister_Text_0:
 # 600 "data/maps/Route103/scripts.pory"
-	.string "But you shouldn't lower your guard.\n"
-	.string "Let's exchange Devon profiles - I'll\l"
+	.string "Good job, but don't lower your guard.\p"
+	.string "Let's exchange Devon profiles - I'll\n"
 	.string "make sure you dont' slack off!$"
 
 Route103VeteranRematch_Text_0:
@@ -2641,37 +2749,37 @@ Route103VeteranRematch_Text_0:
 	.string "use the time I have left.$"
 
 Route103ConcordBridgeGuard_Text_0:
-# 629 "data/maps/Route103/scripts.pory"
+# 633 "data/maps/Route103/scripts.pory"
 	.string "Due to an increase in rebel activity in\n"
 	.string "this area, passage through Concord\l"
 	.string "Customs is heavily restricted.$"
 
 Route103ConcordBridgeGuard_Text_1:
-# 634 "data/maps/Route103/scripts.pory"
+# 638 "data/maps/Route103/scripts.pory"
 	.string "Hm? Yes?$"
 
 Route103ConcordBridgeGuard_Text_2:
-# 636 "data/maps/Route103/scripts.pory"
+# 640 "data/maps/Route103/scripts.pory"
 	.string "I need directions$"
 
 Route103ConcordBridgeGuard_Text_3:
-# 636 "data/maps/Route103/scripts.pory"
+# 640 "data/maps/Route103/scripts.pory"
 	.string "How is your day?$"
 
 Route103ConcordBridgeGuard_Text_4:
-# 636 "data/maps/Route103/scripts.pory"
+# 640 "data/maps/Route103/scripts.pory"
 	.string "Let's have a battle!$"
 
 Route103ConcordBridgeGuard_Text_5:
-# 636 "data/maps/Route103/scripts.pory"
+# 640 "data/maps/Route103/scripts.pory"
 	.string "I found someone suspicious...$"
 
 Route103ConcordBridgeGuard_Text_6:
-# 636 "data/maps/Route103/scripts.pory"
+# 640 "data/maps/Route103/scripts.pory"
 	.string "Nevermind$"
 
 Route103ConcordBridgeGuard_Text_7:
-# 639 "data/maps/Route103/scripts.pory"
+# 643 "data/maps/Route103/scripts.pory"
 	.string "There is a signpost right next to me...\n"
 	.string "if you can't read, you can learn in the\l"
 	.string "{COLOR BLUE}Devon Learning Center{COLOR DARK_GRAY} of {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}.\p"
@@ -2680,7 +2788,7 @@ Route103ConcordBridgeGuard_Text_7:
 	.string "Anything else?$"
 
 Route103ConcordBridgeGuard_Text_8:
-# 645 "data/maps/Route103/scripts.pory"
+# 649 "data/maps/Route103/scripts.pory"
 	.string "Not too exciting - lots of standing\n"
 	.string "around.\p"
 	.string "We received reports of a prowling\n"
@@ -2689,18 +2797,18 @@ Route103ConcordBridgeGuard_Text_8:
 	.string "Anything else?$"
 
 Route103ConcordBridgeGuard_Text_9:
-# 650 "data/maps/Route103/scripts.pory"
+# 654 "data/maps/Route103/scripts.pory"
 	.string "A battle? An odd request, but it could\n"
 	.string "be a fun use of my allotted recess time.\p"
 	.string "Let's do it!$"
 
 Route103ConcordBridgeGuard_Text_10:
-# 660 "data/maps/Route103/scripts.pory"
+# 664 "data/maps/Route103/scripts.pory"
 	.string "Thank you. That really helped stretch\n"
 	.string "the good old battling muscle!$"
 
 Route103ConcordBridgeGuard_Text_11:
-# 667 "data/maps/Route103/scripts.pory"
+# 671 "data/maps/Route103/scripts.pory"
 	.string "You don't say...? And he's right behind\n"
 	.string "that truck?\p"
 	.string "Very well... here's what we'll do. I want\n"
@@ -2711,43 +2819,43 @@ Route103ConcordBridgeGuard_Text_11:
 	.string "We're counting on you!$"
 
 Route103ConcordBridgeGuard_Text_12:
-# 678 "data/maps/Route103/scripts.pory"
+# 682 "data/maps/Route103/scripts.pory"
 	.string "Be on your way, then - and stay out of\n"
 	.string "trouble.$"
 
 Route103ConcordBridgeGuard_Text_13:
-# 685 "data/maps/Route103/scripts.pory"
+# 689 "data/maps/Route103/scripts.pory"
 	.string "Quickly, go distract that criminal -\n"
 	.string "before he notices something is off!$"
 
 Route103ConcordBridgeGuard_Text_14:
-# 688 "data/maps/Route103/scripts.pory"
+# 692 "data/maps/Route103/scripts.pory"
 	.string "I got to thank you for that battle.\p"
 	.string "If I get strong enough, maybe they'll\n"
 	.string "send me somewhere other than this\l"
 	.string "bridge in the boonies.$"
 
 Route103ConcordBridgeGuard_Text_15:
-# 692 "data/maps/Route103/scripts.pory"
+# 696 "data/maps/Route103/scripts.pory"
 	.string "Wherever he is now, that con man is not\n"
 	.string "our concern anymore.\p"
 	.string "He didn't look that dangerous anyway!$"
 
 Route103ConcordConartist_Text_0:
-# 713 "data/maps/Route103/scripts.pory"
+# 717 "data/maps/Route103/scripts.pory"
 	.string "Hey kid! Wanna earn some quick and easy\n"
 	.string "pokeyen? You look like you could use it!$"
 
 Route103ConcordConartist_Text_1:
-# 714 "data/maps/Route103/scripts.pory"
+# 718 "data/maps/Route103/scripts.pory"
 	.string "Yes$"
 
 Route103ConcordConartist_Text_2:
-# 714 "data/maps/Route103/scripts.pory"
+# 718 "data/maps/Route103/scripts.pory"
 	.string "No$"
 
 Route103ConcordConartist_Text_3:
-# 717 "data/maps/Route103/scripts.pory"
+# 721 "data/maps/Route103/scripts.pory"
 	.string "Right on! So, I have some urgent\n"
 	.string "deliveries to do on Petalburg...\p"
 	.string "But I went and forgot my Devon Visa at\n"
@@ -2762,12 +2870,12 @@ Route103ConcordConartist_Text_3:
 	.string "clock here!$"
 
 Route103ConcordConartist_Text_4:
-# 731 "data/maps/Route103/scripts.pory"
+# 735 "data/maps/Route103/scripts.pory"
 	.string "Eh, scram then. Some of us have work to\n"
 	.string "do.$"
 
 Route103ConcordConartist_Text_5:
-# 738 "data/maps/Route103/scripts.pory"
+# 742 "data/maps/Route103/scripts.pory"
 	.string "Come on, go distract him! Tell him\n"
 	.string "there's a flying Grumpig being him or\l"
 	.string "something!\p"
@@ -2777,155 +2885,171 @@ Route103ConcordConartist_Text_5:
 	.string "thank you. Cash after!$"
 
 Route103ConcordConartist_Text_6:
-# 745 "data/maps/Route103/scripts.pory"
+# 749 "data/maps/Route103/scripts.pory"
 	.string "What the hell are you doing? You barely\n"
 	.string "distracted him - you got to be more of a\l"
 	.string "nuisance!$"
 
 Route103ConcordConartist_Text_7:
-# 749 "data/maps/Route103/scripts.pory"
+# 753 "data/maps/Route103/scripts.pory"
 	.string "Hold it right there! You're surrounded!$"
 
 Route103ConcordConartist_Text_8:
-# 770 "data/maps/Route103/scripts.pory"
+# 774 "data/maps/Route103/scripts.pory"
 	.string "What the...?$"
 
 Route103ConcordConartist_Text_9:
-# 774 "data/maps/Route103/scripts.pory"
+# 778 "data/maps/Route103/scripts.pory"
 	.string "You two-faced bastard - you set me up!\n"
 	.string "You're going to get it now!\p"
 	.string "No one slips Jimmy McGligar, best\n"
 	.string "Pokémon egg seller of Hoenn!$"
 
 Route103ConcordConartist_Text_10:
-# 781 "data/maps/Route103/scripts.pory"
+# 785 "data/maps/Route103/scripts.pory"
 	.string "You'll never catch me alive! Outta my\n"
 	.string "way!$"
 
 Route103ConcordConartist_Text_11:
-# 787 "data/maps/Route103/scripts.pory"
+# 791 "data/maps/Route103/scripts.pory"
 	.string "W-wait, you're unde-...!$"
 
 Route103ConcordConartist_Text_12:
-# 793 "data/maps/Route103/scripts.pory"
+# 797 "data/maps/Route103/scripts.pory"
 	.string "SEE YA, LOSERS...!$"
 
 Route103ConcordConartist_Text_13:
-# 799 "data/maps/Route103/scripts.pory"
+# 803 "data/maps/Route103/scripts.pory"
 	.string "GRLBGBRLB...!$"
 
 Route103ConcordConartist_Text_14:
-# 805 "data/maps/Route103/scripts.pory"
+# 809 "data/maps/Route103/scripts.pory"
 	.string "Such athleticism... he should stop\n"
 	.string "conning, and become an acrobat.$"
 
 Route103ConcordConartist_Text_15:
-# 809 "data/maps/Route103/scripts.pory"
+# 813 "data/maps/Route103/scripts.pory"
 	.string "Indeed... at any rate, it's not our\n"
 	.string "problem any more.$"
 
 Route103ConcordConartist_Text_16:
-# 821 "data/maps/Route103/scripts.pory"
+# 825 "data/maps/Route103/scripts.pory"
 	.string "Thank you for your help, civilian! Now we\n"
 	.string "can put this long shift to an end.$"
 
 Route103ConcordConartist_Text_17:
-# 823 "data/maps/Route103/scripts.pory"
+# 827 "data/maps/Route103/scripts.pory"
 	.string "Here, this is for your trouble.$"
 
 Route103ConcordConartist_Text_18:
-# 825 "data/maps/Route103/scripts.pory"
+# 829 "data/maps/Route103/scripts.pory"
 	.string "Received 1000¥!$"
 
 ConArtistEgg_Text_0:
-# 858 "data/maps/Route103/scripts.pory"
+# 862 "data/maps/Route103/scripts.pory"
 	.string "Hands off my wares, pal! This egg is\n"
 	.string "mine!$"
 
 ConArtistEgg_Text_1:
-# 864 "data/maps/Route103/scripts.pory"
+# 868 "data/maps/Route103/scripts.pory"
 	.string "The shady dealer left this egg behind...$"
 
 ConArtistEgg_Text_2:
-# 867 "data/maps/Route103/scripts.pory"
+# 871 "data/maps/Route103/scripts.pory"
 	.string "Obtained the Mysterious Egg!$"
 
 RiverFerryGuyUp_Text_0:
-# 880 "data/maps/Route103/scripts.pory"
-	.string "Hello! Would you like to sail upstream?$"
+# 887 "data/maps/Route103/scripts.pory"
+	.string "He-he, it's raining Skitties and\n"
+	.string "Poochyenas, hey lad?$"
 
 RiverFerryGuyUp_Text_1:
-# 884 "data/maps/Route103/scripts.pory"
-	.string "Then hop on!$"
+# 889 "data/maps/Route103/scripts.pory"
+	.string "He-he, it's raining Skitties and\n"
+	.string "Poochyenas, hey lass?$"
 
 RiverFerryGuyUp_Text_2:
-# 901 "data/maps/Route103/scripts.pory"
+# 894 "data/maps/Route103/scripts.pory"
+	.string "Would you like to sail upstream?$"
+
+RiverFerryGuyUp_Text_3:
+# 898 "data/maps/Route103/scripts.pory"
+	.string "Then hop on!$"
+
+RiverFerryGuyUp_Text_4:
+# 915 "data/maps/Route103/scripts.pory"
 	.string "Off we go! We're going upstream, so it'll\n"
 	.string "be a bit slow.$"
 
-RiverFerryGuyUp_Text_3:
-# 921 "data/maps/Route103/scripts.pory"
+RiverFerryGuyUp_Text_5:
+# 935 "data/maps/Route103/scripts.pory"
 	.string "Here we are. I'll be waiting for when you\n"
 	.string "want to sail back downstream.$"
 
-RiverFerryGuyUp_Text_4:
-# 934 "data/maps/Route103/scripts.pory"
+RiverFerryGuyUp_Text_6:
+# 948 "data/maps/Route103/scripts.pory"
 	.string "Ah, shame... tell me if you ever do!$"
 
 RiverFerryGuyDown_Text_0:
-# 944 "data/maps/Route103/scripts.pory"
+# 965 "data/maps/Route103/scripts.pory"
 	.string "Hello! Would you like to sail\n"
 	.string "downstream?$"
 
 RiverFerryGuyDown_Text_1:
-# 965 "data/maps/Route103/scripts.pory"
+# 986 "data/maps/Route103/scripts.pory"
 	.string "Off we go! We're sailing downstream, so\n"
 	.string "brace yourself!$"
 
 RiverFerryGuyDown_Text_2:
-# 985 "data/maps/Route103/scripts.pory"
+# 1006 "data/maps/Route103/scripts.pory"
 	.string "Here we are. I'll be waiting for when you\n"
 	.string "want to sail back upstream.$"
 
 RiverFerryBoat_Text_0:
-# 1007 "data/maps/Route103/scripts.pory"
+# 1028 "data/maps/Route103/scripts.pory"
 	.string "It's an old boat, but it's well taken\n"
 	.string "care of.$"
 
 RiverFerryManNotThatEntry_Text_0:
-# 1016 "data/maps/Route103/scripts.pory"
+# 1037 "data/maps/Route103/scripts.pory"
 	.string "Not so fast, young one...! If you want to\n"
 	.string "board, do it after me.$"
 
 FisherGuruRoute103_Text_0:
-# 1034 "data/maps/Route103/scripts.pory"
+# 1055 "data/maps/Route103/scripts.pory"
 	.string "Sssh... did you hear that? It's... IT'S\n"
 	.string "COMING!$"
 
 FisherGuruRoute103_Text_1:
-# 1046 "data/maps/Route103/scripts.pory"
+# 1068 "data/maps/Route103/scripts.pory"
 	.string "CRAAAAAAW!!$"
 
 FisherGuruRoute103_Text_2:
-# 1052 "data/maps/Route103/scripts.pory"
+# 1074 "data/maps/Route103/scripts.pory"
 	.string "AAH, CRAB BASKETS!$"
 
 FisherGuruRoute103_Text_3:
-# 1054 "data/maps/Route103/scripts.pory"
+# 1077 "data/maps/Route103/scripts.pory"
 	.string "That was the LEGENDARY MUD CRAB of\n"
 	.string "Route 103 - I've been looking for it for\l"
 	.string "WEEKS!\p"
 	.string "But I was so awe-struck... that I could\n"
-	.string "not do anything!!\p"
+	.string "not do anything!!$"
+
+FisherGuruRoute103_Text_4:
+# 1080 "data/maps/Route103/scripts.pory"
 	.string "Still, this can't be a coincidence - you\n"
 	.string "both showed up at the same time!!\p"
 	.string "HMM... my intuition tells me it saw\n"
 	.string "something in you. But then it left\l"
-	.string "disappointed.\p"
+	.string "disappointed.$"
+
+FisherGuruRoute103_Text_5:
+# 1084 "data/maps/Route103/scripts.pory"
 	.string "But we can fix that. Here, take THIS!$"
 
-FisherGuruRoute103_Text_4:
-# 1061 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_6:
+# 1088 "data/maps/Route103/scripts.pory"
 	.string "I want you to take that rod and fish at\n"
 	.string "least FIVE SPECIES OF POKÉMON!\p"
 	.string "WHY? Because only then will the\n"
@@ -2935,46 +3059,49 @@ FisherGuruRoute103_Text_4:
 	.string "the Legendary Releer - just embrace it,\l"
 	.string "and fulfil your destiny!!$"
 
-FisherGuruRoute103_Text_5:
-# 1072 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_7:
+# 1100 "data/maps/Route103/scripts.pory"
 	.string "AHOY! How's the FISHING going!?$"
 
-FisherGuruRoute103_Text_6:
-# 1073 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_8:
+# 1102 "data/maps/Route103/scripts.pory"
 	.string "About your request...$"
 
-FisherGuruRoute103_Text_7:
-# 1073 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_9:
+# 1102 "data/maps/Route103/scripts.pory"
 	.string "Did you see the Mud Crab?$"
 
-FisherGuruRoute103_Text_8:
-# 1073 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_10:
+# 1102 "data/maps/Route103/scripts.pory"
 	.string "How's it going?$"
 
-FisherGuruRoute103_Text_9:
-# 1080 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_11:
+# 1109 "data/maps/Route103/scripts.pory"
 	.string "Ah, you've fished at least 5 Pokémon?\n"
 	.string "Good, GOOD!\p"
 	.string "I'm confident the Legendary Mud Crab\n"
 	.string "will acknowledge you and show up.\p"
 	.string "Let's wait a bit!$"
 
-FisherGuruRoute103_Text_10:
-# 1087 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_12:
+# 1117 "data/maps/Route103/scripts.pory"
 	.string "{PLAYER} and the fisher wait in a\n"
 	.string "long, uncomfortable silence...$"
 
-FisherGuruRoute103_Text_11:
-# 1091 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_13:
+# 1121 "data/maps/Route103/scripts.pory"
 	.string "Hmm... I should have known. Such a\n"
 	.string "measly fishing test...\p"
 	.string "Is NOT ENOUGH to make the Mud Crab\n"
-	.string "acknowledge you!\p"
+	.string "acknowledge you!$"
+
+FisherGuruRoute103_Text_14:
+# 1124 "data/maps/Route103/scripts.pory"
 	.string "I suppose I've got no choice... here,\n"
 	.string "TAKE THIS!$"
 
-FisherGuruRoute103_Text_12:
-# 1096 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_15:
+# 1128 "data/maps/Route103/scripts.pory"
 	.string "I want you to use that rod to bring me a\n"
 	.string "BIG PEARL!\p"
 	.string "If you are a true fisher... you will know\n"
@@ -2982,57 +3109,72 @@ FisherGuruRoute103_Text_12:
 	.string "Do that, and I'm sure next time the Mud\n"
 	.string "Crab will show itself!$"
 
-FisherGuruRoute103_Text_13:
-# 1105 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_16:
+# 1137 "data/maps/Route103/scripts.pory"
 	.string "Like I said, I need you to fish 5 species\n"
 	.string "of Pokémon!\p"
 	.string "If you are the fisher the Mud Crab\n"
 	.string "believes you to be, you shouldn't need\l"
-	.string "any guidance!\p"
+	.string "any guidance!$"
+
+FisherGuruRoute103_Text_17:
+# 1141 "data/maps/Route103/scripts.pory"
 	.string "O-of course I could give it, but that\n"
 	.string "would defeat the purpose!$"
 
-FisherGuruRoute103_Text_14:
-# 1117 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_18:
+# 1152 "data/maps/Route103/scripts.pory"
 	.string "pearl$"
 
-FisherGuruRoute103_Text_15:
-# 1127 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_19:
+# 1162 "data/maps/Route103/scripts.pory"
 	.string "no pearl$"
 
-FisherGuruRoute103_Text_16:
-# 1135 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_20:
+# 1170 "data/maps/Route103/scripts.pory"
 	.string "Regrettably, I haven't. Not even the tip\n"
 	.string "of that lustruous, star-shaped crown\l"
 	.string "of his...\p"
 	.string "But don't worry - he won't swim away\n"
-	.string "easily.\p"
+	.string "easily.$"
+
+FisherGuruRoute103_Text_21:
+# 1174 "data/maps/Route103/scripts.pory"
 	.string "They say he is forever waiting for a\n"
 	.string "trainer who saved his life during the\l"
 	.string "Assault on Route 103.\p"
 	.string "Sadly, that trainer died that day. They\n"
-	.string "will never meet again...\p"
+	.string "will never meet again...$"
+
+FisherGuruRoute103_Text_22:
+# 1179 "data/maps/Route103/scripts.pory"
 	.string "In spite of its beastly appearance, the\n"
 	.string "Mud Crab is a loyal, tender creature.\l"
 	.string "That's why I wish to catch him, and help\l"
 	.string "him heal!$"
 
-FisherGuruRoute103_Text_17:
-# 1145 "data/maps/Route103/scripts.pory"
+FisherGuruRoute103_Text_23:
+# 1186 "data/maps/Route103/scripts.pory"
 	.string "Ah, well, aside from the Mud Crab\n"
-	.string "business... not very good, I must say.\p"
-	.string "It's tough being a fisher in these parts\n"
-	.string "nowadays. The sea is poisoned, the\l"
-	.string "rivers are muddy...\p"
+	.string "business... not very good, I must say.$"
+
+FisherGuruRoute103_Text_24:
+# 1189 "data/maps/Route103/scripts.pory"
+	.string "The sea is poisoned, the rivers are\n"
+	.string "muddy...\p"
 	.string "Most of my buddies have moved up north.\n"
 	.string "But me, I like the challenge!$"
 
+FisherGuruRoute103_Text_25:
+# 1193 "data/maps/Route103/scripts.pory"
+	.string "But me, I like the challenge!$"
+
 MoveTutorSign_Text_0:
-# 1159 "data/maps/Route103/scripts.pory"
+# 1206 "data/maps/Route103/scripts.pory"
 	.string "Move Tutor Colton's House$"
 
 Fishercallsfornumber_Text_0:
-# 1167 "data/maps/Route103/scripts.pory"
+# 1214 "data/maps/Route103/scripts.pory"
 	.string "Wait - add me on Devon Net! We must\n"
 	.string "keep in touch about this!$"
 
@@ -3050,12 +3192,20 @@ Veteran103_Intro::
 
 Veteran103_Outro::
 # 618 "data/maps/Route103/scripts.pory"
-	.string "Hmpf... not bad...$"
+	.string "Grr... you won the battle, but not the war!$"
+
+Veteran103_Intro2::
+# 621 "data/maps/Route103/scripts.pory"
+	.string "There you are - I've been preparing my counterattack! CHAAARGE!$"
+
+Veteran103_Outro2::
+# 624 "data/maps/Route103/scripts.pory"
+	.string "... I surrender. Again.$"
 
 DevonGuard103_Outro::
-# 703 "data/maps/Route103/scripts.pory"
+# 707 "data/maps/Route103/scripts.pory"
 	.string "That could have gone better...$"
 
 ShadyDealer103_Outro::
-# 848 "data/maps/Route103/scripts.pory"
+# 852 "data/maps/Route103/scripts.pory"
 	.string "I... I-I'm not going back to jail!$"

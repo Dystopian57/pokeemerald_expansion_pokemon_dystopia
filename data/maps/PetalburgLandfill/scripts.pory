@@ -1,0 +1,38 @@
+raw `
+
+`
+
+mapscripts PetalburgLandfill_MapScripts {
+    MAP_SCRIPT_ON_LOAD: PetalburgLandfillWeather}
+
+
+
+script PetalburgLandfillWeather {
+
+			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 0, PetalburgLandfillShade)
+			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 1, PetalburgLandfillFog1)
+			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 2, PetalburgLandfillFog2)
+			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 3, PetalburgLandfillEndAsh)
+
+	release
+}
+
+script PetalburgLandfillShade {
+	setweather (WEATHER_SHADE)
+}
+
+script PetalburgLandfillFog1 {
+	setweather (WEATHER_FOG_HORIZONTAL)
+	setvar(VAR_PETALBURGLANDFILL_WEATHER, 2)
+}
+
+script PetalburgLandfillFog2 {
+	setweather (WEATHER_FOG_HORIZONTAL)
+	setvar(VAR_PETALBURGLANDFILL_WEATHER, 3)
+}
+
+
+script PetalburgLandfillEndAsh {
+	setweather (WEATHER_FOG_HORIZONTAL)
+	setvar(VAR_PETALBURGLANDFILL_WEATHER, 0)
+}

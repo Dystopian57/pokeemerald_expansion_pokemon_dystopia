@@ -17,29 +17,43 @@ script CraterHermit {
     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes. I better leave", "I am not powerless")
         if (var(VAR_RESULT) == 0) {
         msgbox(format("Good. The first step to power is to recognize one's lack of it."))
+        goto (endcraterhermitscript)
         }
             
         if (var(VAR_RESULT) == 1) {
-        msgbox(format("You're not? Hmm... show to me your power, then."))
+        msgbox(format("You're not? Hmm... show me your power, then."))
         trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, CraterHermit_Outro)
         
-        msgbox(format("Not only do you possess power... you are also deserving of it.
-        \p Here, take this."))
+
+        if (!flag (hermitmovesexplained)){
+        msgbox(format("I am one of the Eight Hermits. My brothers and I keep the lore of the
+        Hermit Moves. \p We do not grant this lore just to anyone - in these times of strife,
+        much damage can be done with them. But you..."))}
+
+        msgbox(format("You demonstrated kindness in saving
+        that woman. \p And just now, you showed resolve when battling me
+        in the darkness.\p Therefore, as one of the Eight Hermits, I deem you worthy to have these."))
+
+
+
         playse (MUS_OBTAIN_BADGE)
-        msgbox(format("Obtained the Light Token!"))
+        msgbox(format("Obtained the Light Token"))
         setflag (FLAG_BADGE02_GET)
-        msgbox(format("... and this as well."))
-        playse (MUS_OBTAIN_TMHM)
         setflag (FLAG_RECEIVED_HM_FLASH)
         giveitem (ITEM_HM05)
+        setflag (hermitmovesexplained)
+        msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
+        back here. \p Only then I will grant you passage into the depths beyond."))
         }}
 
     else {
-    msgbox(format("Good job."))
+        msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
+        back here. \p Only then I will grant you passage into the depths beyond. \p Four of my brothers
+        live here in the Rebel Zone, but the rest dwell further away."))
     }
-
+    endcraterhermitscript:
     release
 }
 
     text CraterHermit_Outro{
-    "I see... it was not mere hubris, then."}
+    "Well done. Allow me to shed light onto\n a matter..."}

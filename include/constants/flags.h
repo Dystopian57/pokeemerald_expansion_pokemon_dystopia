@@ -276,9 +276,9 @@
 #define visitedsanctumsecretshelter                 0xF4
 #define wheelchairtradequestdone           0xF5
 #define wheelchairboyandpokeoutside 0xF6
-#define FLAG_DEFEATED_SS_TIDAL_TRAINERS      0xF7
-#define FLAG_RECEIVED_SPELON_BERRY           0xF8
-#define FLAG_RECEIVED_PAMTRE_BERRY           0xF9
+#define sentdemomysterygift      0xF7
+#define receiveddemomysterygift           0xF8
+#define hermitmovesexplained           0xF9
 #define FLAG_RECEIVED_WATMEL_BERRY           0xFA
 #define FLAG_RECEIVED_DURIN_BERRY            0xFB
 #define FLAG_RECEIVED_BELUE_BERRY            0xFC

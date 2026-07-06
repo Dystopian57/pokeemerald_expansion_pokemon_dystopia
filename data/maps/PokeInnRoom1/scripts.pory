@@ -295,7 +295,7 @@ if (flag (wheelchairboyaskedpokemon))
 
          if(var(VAR_RESULT) == 3){
 
-//Second list code
+//Second list code: Croagunk, Meditite, Kamoken
 
             getseenmon (SPECIES_CROAGUNK)
 
@@ -358,7 +358,7 @@ if (flag (wheelchairboyaskedpokemon))
 
         if(var(VAR_RESULT) == 3){
 
-      //Third list code: Tyrogue, Riolu, Pancham
+//Third list code: Tyrogue, Riolu, Pancham
 
                 getseenmon (SPECIES_TYROGUE)
 
@@ -506,6 +506,31 @@ script fightingtypetradescript {
 
             if (var(VAR_FIGHTINGTRADECHOICE) == 2){
 			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW2)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 3){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW3)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 4){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW4)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 5){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW5)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 6){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW6)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 7){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW7)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 8){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW8)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 9){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW10)}
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 10){
+			setvar (VAR_0x8008, INGAME_TRADE_TAILLOW10)}
+
 
 
 					copyvar (VAR_0x8004, VAR_0x8008)

@@ -14,10 +14,12 @@ CraterHermit::
 	applymovement 1, CraterHermit_Movement_0
 # 13 "data/maps/GreatCraterBottom/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_HM_FLASH, CraterHermit_2
-# 38 "data/maps/GreatCraterBottom/scripts.pory"
-	msgbox CraterHermit_Text_8
+# 50 "data/maps/GreatCraterBottom/scripts.pory"
+	msgbox CraterHermit_Text_9
 CraterHermit_1:
-# 41 "data/maps/GreatCraterBottom/scripts.pory"
+# 54 "data/maps/GreatCraterBottom/scripts.pory"
+endcraterhermitscript:
+# 55 "data/maps/GreatCraterBottom/scripts.pory"
 	release
 	return
 
@@ -30,7 +32,7 @@ CraterHermit_2:
 	compare VAR_RESULT, 0
 	goto_if_eq CraterHermit_6
 CraterHermit_5:
-# 22 "data/maps/GreatCraterBottom/scripts.pory"
+# 23 "data/maps/GreatCraterBottom/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq CraterHermit_8
 	goto CraterHermit_1
@@ -38,30 +40,40 @@ CraterHermit_5:
 CraterHermit_6:
 # 19 "data/maps/GreatCraterBottom/scripts.pory"
 	msgbox CraterHermit_Text_3
+# 20 "data/maps/GreatCraterBottom/scripts.pory"
+	goto endcraterhermitscript
 	goto CraterHermit_5
 
 CraterHermit_8:
-# 23 "data/maps/GreatCraterBottom/scripts.pory"
-	msgbox CraterHermit_Text_4
 # 24 "data/maps/GreatCraterBottom/scripts.pory"
+	msgbox CraterHermit_Text_4
+# 25 "data/maps/GreatCraterBottom/scripts.pory"
 	trainerbattle_no_intro TRAINER_REBEL_OLDALE_GUARD, CraterHermit_Outro
-# 26 "data/maps/GreatCraterBottom/scripts.pory"
-	msgbox CraterHermit_Text_5
 # 28 "data/maps/GreatCraterBottom/scripts.pory"
-	playse MUS_OBTAIN_BADGE
-# 29 "data/maps/GreatCraterBottom/scripts.pory"
-	msgbox CraterHermit_Text_6
-# 30 "data/maps/GreatCraterBottom/scripts.pory"
-	setflag FLAG_BADGE02_GET
-# 31 "data/maps/GreatCraterBottom/scripts.pory"
-	msgbox CraterHermit_Text_7
-# 32 "data/maps/GreatCraterBottom/scripts.pory"
-	playse MUS_OBTAIN_TMHM
+	goto_if_unset hermitmovesexplained, CraterHermit_11
+CraterHermit_10:
 # 33 "data/maps/GreatCraterBottom/scripts.pory"
+	msgbox CraterHermit_Text_6
+# 39 "data/maps/GreatCraterBottom/scripts.pory"
+	playse MUS_OBTAIN_BADGE
+# 40 "data/maps/GreatCraterBottom/scripts.pory"
+	msgbox CraterHermit_Text_7
+# 41 "data/maps/GreatCraterBottom/scripts.pory"
+	setflag FLAG_BADGE02_GET
+# 42 "data/maps/GreatCraterBottom/scripts.pory"
 	setflag FLAG_RECEIVED_HM_FLASH
-# 34 "data/maps/GreatCraterBottom/scripts.pory"
+# 43 "data/maps/GreatCraterBottom/scripts.pory"
 	giveitem ITEM_HM05
+# 44 "data/maps/GreatCraterBottom/scripts.pory"
+	setflag hermitmovesexplained
+# 45 "data/maps/GreatCraterBottom/scripts.pory"
+	msgbox CraterHermit_Text_8
 	goto CraterHermit_1
+
+CraterHermit_11:
+# 29 "data/maps/GreatCraterBottom/scripts.pory"
+	msgbox CraterHermit_Text_5
+	goto CraterHermit_10
 
 
 # 11 "data/maps/GreatCraterBottom/scripts.pory"
@@ -93,28 +105,51 @@ CraterHermit_Text_3:
 	.string "recognize one's lack of it.$"
 
 CraterHermit_Text_4:
-# 23 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "You're not? Hmm... show to me your power,\n"
+# 24 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "You're not? Hmm... show me your power,\n"
 	.string "then.$"
 
 CraterHermit_Text_5:
-# 26 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "Not only do you possess power... you are\n"
-	.string "also deserving of it.\p"
-	.string "Here, take this.$"
+# 29 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "I am one of the Eight Hermits. My\n"
+	.string "brothers and I keep the lore of the\l"
+	.string "Hermit Moves.\p"
+	.string "We do not grant this lore just to\n"
+	.string "anyone - in these times of strife, much\l"
+	.string "damage can be done with them. But you...$"
 
 CraterHermit_Text_6:
-# 29 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "Obtained the Light Token!$"
+# 33 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "You demonstrated kindness in saving\n"
+	.string "that woman.\p"
+	.string "And just now, you showed resolve when\n"
+	.string "battling me in the darkness.\p"
+	.string "Therefore, as one of the Eight Hermits,\n"
+	.string "I deem you worthy to have these.$"
 
 CraterHermit_Text_7:
-# 31 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "... and this as well.$"
+# 40 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "Obtained the Light Token$"
 
 CraterHermit_Text_8:
-# 38 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "Good job.$"
+# 45 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "If you gather all of the Hermit Moves\n"
+	.string "from my 8 brothers... you may come back\l"
+	.string "here.\p"
+	.string "Only then I will grant you passage into\n"
+	.string "the depths beyond.$"
+
+CraterHermit_Text_9:
+# 50 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "If you gather all of the Hermit Moves\n"
+	.string "from my 8 brothers... you may come back\l"
+	.string "here.\p"
+	.string "Only then I will grant you passage into\n"
+	.string "the depths beyond.\p"
+	.string "Four of my brothers live here in the\n"
+	.string "Rebel Zone, but the rest dwell further\l"
+	.string "away.$"
 
 CraterHermit_Outro::
-# 44 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "I see... it was not mere hubris, then.$"
+# 58 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "Well done. Allow me to shed light onto\n a matter...$"

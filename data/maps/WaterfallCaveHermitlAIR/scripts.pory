@@ -1,0 +1,76 @@
+raw `
+WaterfallCaveHermitlAIR_MapScripts::
+	.byte 0
+
+`
+
+script WaterfallHermit {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (1, moves(face_player))
+
+    if (!flag (FLAG_RECEIVED_HM_WATERFALL))
+    {
+        msgbox(format("Welcome, young traveller, to Waterfall Cave - a place who has been
+		hidden for centuries.\pIt used to be that things like nature and time
+		 were the shole shapers of our world.\pBut now, the acts of humans - born from
+		 conflict, or in the name of progress - are threatening to become just as strong
+		 a changing force. Some say they will replace all others."))
+
+		msgbox(format("Tell me - do you think this should be so?"))
+    	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+		"Yes. We will take care of the world",
+		"No. We should stop changing the world",
+		"All forces must coexist",
+		"I don't know the answer",)
+        if (var(VAR_RESULT) == 0) {
+        msgbox(format("So you have such faith in humanity... it's commendable."))
+        }
+
+		if (var(VAR_RESULT) == 1) {
+        msgbox(format("You seem to hold a great respect for nature. It's admirable."))
+        }
+            
+        if (var(VAR_RESULT) == 2) {
+        msgbox(format("A compromise...? It is often the hardest path to achieve. You must possess
+		great ambition."))}
+
+        if (var(VAR_RESULT) == 3) {
+        msgbox(format("So you don't dare cast judgment on a matter of such magnitude. Many would say
+		that is wise."))}
+
+        msgbox(format("You intrigue me. Let us do battle, so I may learn more about you."))
+
+        trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, WaterfallHermit_Outro)
+		 
+        
+        if (!flag (hermitmovesexplained)){
+        msgbox(format("I am one of the Eight Hermits. My brothers and I keep the lore of the
+        Hermit Moves. \p We do not grant this lore just to anyone - in these times of strife,
+        much damage can be done with them. But you..."))}
+
+        msgbox(format("You demonstrated a great level of instrospection in your answer. And you
+		command your Pokémon with kindness... \pThe kindness of one who knows the pain that people
+		can bring.\pTherefore, as one of the Eight Hermits, I deem you worthy to have these."))
+
+
+
+        playse (MUS_OBTAIN_BADGE)
+        msgbox(format("Obtained the Cascade Token"))
+        setflag (FLAG_BADGE07_GET)
+        setflag (FLAG_RECEIVED_HM_WATERFALL)
+        giveitem (ITEM_HM07)
+        setflag (hermitmovesexplained)
+        //msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
+        //back here. \p Only then I will grant you passage into the depths beyond."))
+        }
+
+    else {
+        msgbox(format("I have nothing else to teach you. I wish you luck on your travels."))
+    }
+
+    release
+}
+
+    text WaterfallHermit_Outro{
+    "I see... a few parting words, if I may."}

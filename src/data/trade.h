@@ -1053,7 +1053,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Voltorb"),
         .species = SPECIES_VOLTORB,
-        .ivs = {4, 5, 4, 5, 4, 4},
+        .ivs = {25, 25, 25, 25, 25, 25},
         .abilityNum = 0,
         .otId = 000000,
         .conditions = {5, 5, 5, 30, 5},
@@ -1073,7 +1073,7 @@ static const struct InGameTrade sIngameTrades[] =
         .ivs = {25, 25, 25, 25, 25, 25},
         .abilityNum = 0,
         .otId = 000000,
-        .conditions = {5, 5, 5, 30, 5},
+        .conditions = {5, 5, 5, 5, 5},
         .personality = 0x8B,
         .heldItem = ITEM_NONE,
         .mailNum = 2,
@@ -1083,11 +1083,503 @@ static const struct InGameTrade sIngameTrades[] =
         .requestedSpecies = SPECIES_PIKACHU_SAFE
     },
 
+    [INGAME_TRADE_BULBASAUR] =
+    {
+        .nickname = _("Bulbasaur"),
+        .species = SPECIES_BULBASAUR,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_BULBASYNTH
+    },
+
+    [INGAME_TRADE_CYNDAQUIL] =
+    {
+        .nickname = _("Cyndaquil"),
+        .species = SPECIES_CYNDAQUIL,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SMOTHQUIL
+    },
+
+    [INGAME_TRADE_NINCADA] =
+    {
+        .nickname = _("Nincada"),
+        .species = SPECIES_NINCADA,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_NINKABURI
+    },
+    [INGAME_TRADE_SHROOMISH] =
+    {
+        .nickname = _("Shroomish"),
+        .species = SPECIES_SHROOMISH,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SHIITAKO
+    },
+    [INGAME_TRADE_POOCHYENA] =
+    {
+        .nickname = _("Poochyena"),
+        .species = SPECIES_POOCHYENA,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_POOCHAIN
+    },
+
+    [INGAME_TRADE_KOFFING] =
+    {
+        .nickname = _("Koffing"),
+        .species = SPECIES_KOFFING,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_FOOMING
+    },
+
+    [INGAME_TRADE_SLUGMA] =
+    {
+        .nickname = _("Slugma"),
+        .species = SPECIES_SLUGMA,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_GEOSLUG
+    },
+
+    [INGAME_TRADE_NIDORAN_M] =
+    {
+        .nickname = _("Nidoran♂"),
+        .species = SPECIES_NIDORAN_M,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_NIDORAN_I
+    },
+
+    [INGAME_TRADE_NIDORAN_F] =
+    {
+        .nickname = _("Nidoran♀"),
+        .species = SPECIES_NIDORAN_F,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_NIDORAN_I
+    },
+
+    [INGAME_TRADE_GRIMER] =
+    {
+        .nickname = _("Grimer"),
+        .species = SPECIES_GRIMER,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MUDDER
+    },
+
+    [INGAME_TRADE_LOTAD] =
+    {
+        .nickname = _("Lotad"),
+        .species = SPECIES_LOTAD,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_LOADTAD
+    },
+
+    [INGAME_TRADE_HOPPIP] =
+    {
+        .nickname = _("Hoppip"),
+        .species = SPECIES_HOPPIP,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_HELIPIP
+    },
+
+    [INGAME_TRADE_MACHOP] =
+    {
+        .nickname = _("Machop"),
+        .species = SPECIES_MACHOP,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MANCHINE
+    },
+
+    [INGAME_TRADE_BELDUM] =
+    {
+        .nickname = _("Beldum"),
+        .species = SPECIES_BELDUM,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_VERDOOM
+    },
+
+    [INGAME_TRADE_TANGELA] =
+    {
+        .nickname = _("Tangela"),
+        .species = SPECIES_TANGELA,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_TUMBELA
+    },
+
+    [INGAME_TRADE_ARON] =
+    {
+        .nickname = _("Aron"),
+        .species = SPECIES_ARON,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_ARYSTAL
+    },
+
+    [INGAME_TRADE_RALTS] =
+    {
+        .nickname = _("Ralts"),
+        .species = SPECIES_RALTS,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_WARTZ
+    },
+
+    [INGAME_TRADE_SUDOWOODO] =
+    {
+        .nickname = _("Sudowoodo"),
+        .species = SPECIES_SUDOWOODO,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_VERIWOODO
+    },
+
+    [INGAME_TRADE_GULPIN] =
+    {
+        .nickname = _("Gulpin"),
+        .species = SPECIES_GULPIN,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_GUMMIN
+    },
+
+    [INGAME_TRADE_DRIFLOON] =
+    {
+        .nickname = _("Drifloon"),
+        .species = SPECIES_DRIFLOON,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_ROLLOON
+    },
+
+    [INGAME_TRADE_TRUBBISH] =
+    {
+        .nickname = _("Trubbish"),
+        .species = SPECIES_TRUBBISH,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_TRASHEAL
+    },
+
+    [INGAME_TRADE_FARFETCHD] =
+    {
+        .nickname = _("Farfetch'd"),
+        .species = SPECIES_FARFETCHD,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_KAMOKEN
+    },
+
+    [INGAME_TRADE_DELIBIRD] =
+    {
+        .nickname = _("Delibird"),
+        .species = SPECIES_DELIBIRD,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_DELIBIN
+    },
+
+    [INGAME_TRADE_DODUO] =
+    {
+        .nickname = _("Doduo"),
+        .species = SPECIES_DODUO,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_DOUNO
+    },
+
+    [INGAME_TRADE_KANGASKHAN] =
+    {
+        .nickname = _("Kangaskhan"),
+        .species = SPECIES_KANGASKHAN,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_KANGASKID
+    },
+
+    [INGAME_TRADE_DITTO] =
+    {
+        .nickname = _("Ditto"),
+        .species = SPECIES_DITTO,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_GACHAPOD
+    },
+
+    [INGAME_TRADE_TOGEPI] =
+    {
+        .nickname = _("Togepi"),
+        .species = SPECIES_TOGEPI,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_TAMARAKKU
+    },
+
+    [INGAME_TRADE_ROTOM] =
+    {
+        .nickname = _("Rotom"),
+        .species = SPECIES_ROTOM,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_ROTOM_MONITOR
+    },
+
+    [INGAME_TRADE_MIMIKYU] =
+    {
+        .nickname = _("Mimikyu"),
+        .species = SPECIES_MIMIKYU,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 000000,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = 2,
+        .otName = _("UNSAFENER"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MIMIYURUI
+    },
+
+
     [INGAME_TRADE_TAILLOW1] =
     {
         .nickname = _("Tally"),
         .species = SPECIES_TAILLOW,
-        .ivs = {4, 5, 4, 5, 4, 4},
+        .ivs = {25, 25, 25, 25, 25, 25},
         .abilityNum = 0,
         .otId = 251225,
         .conditions = {5, 5, 5, 30, 5},
@@ -1104,7 +1596,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Tally"),
         .species = SPECIES_TAILLOW,
-        .ivs = {4, 5, 4, 5, 4, 4},
+        .ivs = {25, 25, 25, 25, 25, 25},
         .abilityNum = 0,
         .otId = 251225,
         .conditions = {5, 5, 5, 30, 5},
@@ -1115,6 +1607,142 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_MAKUHITA
+    },
+
+    [INGAME_TRADE_TAILLOW3] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SCRAGGY
+    },
+
+    [INGAME_TRADE_TAILLOW4] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_CROAGUNK
+    },
+
+    [INGAME_TRADE_TAILLOW5] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MEDITITE
+    },
+
+    [INGAME_TRADE_TAILLOW6] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_KAMOKEN
+    },
+
+    [INGAME_TRADE_TAILLOW7] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_TYROGUE
+    },
+
+    [INGAME_TRADE_TAILLOW8] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_RIOLU
+    },
+
+    [INGAME_TRADE_TAILLOW9] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_PANCHAM
+    },
+
+    [INGAME_TRADE_TAILLOW10] =
+    {
+        .nickname = _("Tally"),
+        .species = SPECIES_TAILLOW,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_RETRO_MAIL,
+        .mailNum = 2,
+        .otName = _("BENNY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MACHOP
     }
 };
 

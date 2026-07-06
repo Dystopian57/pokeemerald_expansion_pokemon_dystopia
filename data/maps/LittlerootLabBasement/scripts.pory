@@ -239,6 +239,10 @@ script AideeBasementIdleTalk {
 		msgbox (format("This is the Devondex. It will store information about
 		Pokémon and Safemon native to Hoenn. \p Mind you, it will not register any data on the unsafened
 		Pokémon you get here... since they're not supposed to be found in the wild anymore."))
+		setseenmon (SPECIES_BULBASYNTH)
+		setseenmon (SPECIES_SMOTHQUIL)
+		setseenmon (SPECIES_PIKACHU_SAFE)
+		setseenmon (SPECIES_MIMIYURUI)
 
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
@@ -348,6 +352,8 @@ script AideeBasementIdleTalk {
 			}
 
 
+	#FIRST PAGE
+
 			if (var(VAR_RESULT) == 0) {
 			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 			setspeaker ([SP_NAME_AIDEE])
@@ -389,11 +395,94 @@ script AideeBasementIdleTalk {
 						}
 					else {
 						setspeaker ([SP_NAME_AIDEE])
-						msgbox (format("Of which you don't have any of!
+						msgbox (format("Of which you don't have any!
 						\p Luckily for you, I
 						have some in supply you can buy!"))
 						}
 					}
+
+
+				//BULBASYNTH UNSAFEN
+				if (var(VAR_RESULT) == 1) {
+					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("Bulbasynth, huh? Well, to unsafen this one we need 
+					a {COLOR RED}INSERT MATERIAL{COLOR DARK_GRAY}..."))
+					
+					if (checkitem (ITEM_MAGNET)  == TRUE)
+						{msgbox (format("Which you have - excellent! Now, let's see that
+						Bulbasynth!"))
+						setvar (VAR_0x8008, INGAME_TRADE_BULBASAUR)
+									copyvar (VAR_0x8004, VAR_0x8008)
+									specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+									special (ChoosePartyMon)
+									waitstate
+									goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+									copyvar (VAR_0x8005, VAR_0x8004)
+									specialvar (VAR_RESULT, GetTradeSpecies)
+									goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+									copyvar (VAR_0x8004, VAR_0x8008)
+									special (CreateInGameTradePokemon)
+									special (DoInGameTradeScene) 
+									waitstate
+									createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+									setspeaker ([SP_NAME_AIDEE])
+									incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+						
+						msgbox (format("It's done! Another Unsafening success - take good care
+						of that Bulbasaur!"))
+						removeitem (ITEM_MAGNET, 1)
+						goto (finishsafemontradescript)
+						}
+					else {
+						setspeaker ([SP_NAME_AIDEE])
+						msgbox (format("Of which you don't have any!
+						\p Well, check my stock of Unsafening Materials - I
+						might just have it!"))
+						}
+					}
+
+
+				//SMOTHQUIL UNSAFEN
+				if (var(VAR_RESULT) == 2) {
+					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("Smothquil, huh? Well, to unsafen this one we'd need 
+					some {COLOR RED}Fuel{COLOR DARK_GRAY}..."))
+					
+					if (checkitem (ITEM_MAGNET)  == TRUE)
+						{msgbox (format("Which you have - excellent! Now, let's see that
+						Smothquil!"))
+						setvar (VAR_0x8008, INGAME_TRADE_CYNDAQUIL)
+									copyvar (VAR_0x8004, VAR_0x8008)
+									specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+									special (ChoosePartyMon)
+									waitstate
+									goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+									copyvar (VAR_0x8005, VAR_0x8004)
+									specialvar (VAR_RESULT, GetTradeSpecies)
+									goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+									copyvar (VAR_0x8004, VAR_0x8008)
+									special (CreateInGameTradePokemon)
+									special (DoInGameTradeScene) 
+									waitstate
+									createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+									setspeaker ([SP_NAME_AIDEE])
+									incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+						
+						msgbox (format("It's done! Another Unsafening success - take good care
+						of that Cyndaquil!"))
+						removeitem (ITEM_MAGNET, 1)
+						goto (finishsafemontradescript)
+						}
+					else {
+						setspeaker ([SP_NAME_AIDEE])
+						msgbox (format("Of which you don't have any!
+						\p Well, check my stock of Unsafening Materials - I
+						might just have it!"))
+						}
+					}
+
 
 				//PURACHU UNSAFEN
 				if (var(VAR_RESULT) == 3) {
@@ -429,7 +518,7 @@ script AideeBasementIdleTalk {
 						}
 					else {
 						setspeaker ([SP_NAME_AIDEE])
-						msgbox (format("Of which you don't have any of!
+						msgbox (format("Of which you don't have any!
 						\p Well, check my stock of Unsafening Materials - I
 						might just have it!"))
 						}
@@ -441,8 +530,10 @@ script AideeBasementIdleTalk {
 					goto (finishsafemontradescript)
 						}
 
+		#SECOND PAGE
 
 					if (var(VAR_RESULT) == 4) {
+					secondsafemonlistreturn:
 						getseenmon (SPECIES_NINKABURI)
 						if (var(VAR_RESULT) == TRUE)
 						{bufferspeciesname (STR_VAR_1, SPECIES_NINKABURI)}
@@ -455,21 +546,20 @@ script AideeBasementIdleTalk {
 						if (var(VAR_RESULT) == FALSE)
 						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
 
-						getseenmon (SPECIES_NINKABURI)
+						getseenmon (SPECIES_POOCHAIN)
 						if (var(VAR_RESULT) == TRUE)
 						{bufferspeciesname (STR_VAR_3, SPECIES_POOCHAIN)}
 						if (var(VAR_RESULT) == FALSE)
 						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
 
-
+					
 					msgbox (format("Maybe one of these?"))
-					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
 
-
+					//NINKABURI UNSAFEN
 					if(var(VAR_RESULT) == 0){
 					getseenmon (SPECIES_NINKABURI)
 						if (var(VAR_RESULT) == TRUE)
-					//NINKABURI UNSAFEN
 							{				
 							createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 							setspeaker ([SP_NAME_AIDEE])
@@ -479,7 +569,7 @@ script AideeBasementIdleTalk {
 							if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 								{msgbox (format("Which you have - excellent! Now, let's see that
 								Ninkaburi!"))
-								setvar (VAR_0x8008, INGAME_TRADE_PIKACHU)
+								setvar (VAR_0x8008, INGAME_TRADE_NINCADA)
 											copyvar (VAR_0x8004, VAR_0x8008)
 											specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
 											special (ChoosePartyMon)
@@ -503,16 +593,20 @@ script AideeBasementIdleTalk {
 								}
 							else {
 								setspeaker ([SP_NAME_AIDEE])
-								msgbox (format("Of which you don't have any of!
+								msgbox (format("Of which you don't have any!
 								\p Well, check my stock of Unsafening Materials - I
 								might just have it!"))
 								goto (finishsafemontradescript)
-								}
-
-						}
+								}}
 
 						if (var(VAR_RESULT) == FALSE)
-						{playse (SE_RG_HELP_ERROR)}
+						{playse (SE_RG_HELP_ERROR)
+							setspeaker ([SP_NAME_AIDEE])
+							msgbox (format("{PLAYER}, you haven't registered the data for this
+							Safemon on your Devon Dex! \pI need that data to figure out how to
+							Unsafen it - sorry!"))
+							goto (secondsafemonlistreturn)
+							}
 					}
 					//SHIITAKO UNSAFEN
 					if(var(VAR_RESULT) == 1){
@@ -528,7 +622,7 @@ script AideeBasementIdleTalk {
 							if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 								{msgbox (format("Which you have - excellent! Now, let's see that
 								Shiitako!"))
-								setvar (VAR_0x8008, INGAME_TRADE_PIKACHU)
+								setvar (VAR_0x8008, INGAME_TRADE_SHROOMISH)
 											copyvar (VAR_0x8004, VAR_0x8008)
 											specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
 											special (ChoosePartyMon)
@@ -552,24 +646,29 @@ script AideeBasementIdleTalk {
 								}
 							else {
 								setspeaker ([SP_NAME_AIDEE])
-								msgbox (format("Of which you don't have any of!
+								msgbox (format("Of which you don't have any!
 								\p Well, check my stock of Unsafening Materials - I
 								might just have it!"))
 								goto (finishsafemontradescript)
-								}
+								}}
 
-						}
+						
 
 						if (var(VAR_RESULT) == FALSE)
-						{playse (SE_RG_HELP_ERROR)}
+						{playse (SE_RG_HELP_ERROR)
+							setspeaker ([SP_NAME_AIDEE])
+							msgbox (format("{PLAYER}, you haven't registered the data for this
+							Safemon on your Devon Dex! \pI need that data to figure out how to
+							Unsafen it - sorry!"))
+							goto (secondsafemonlistreturn)
+							}
 					}
 
 					//POOCHAIN UNSAFEN
 					if(var(VAR_RESULT) == 2){
 					getseenmon (SPECIES_POOCHAIN)
 						if (var(VAR_RESULT) == TRUE)
-					
-							{				
+						{				
 							createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 							setspeaker ([SP_NAME_AIDEE])
 							msgbox (format("Poochain, huh? Well, to unsafen this one we need 
@@ -578,7 +677,7 @@ script AideeBasementIdleTalk {
 							if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 								{msgbox (format("Which you have - excellent! Now, let's see that
 								Poochain!"))
-								setvar (VAR_0x8008, INGAME_TRADE_PIKACHU)
+								setvar (VAR_0x8008, INGAME_TRADE_POOCHYENA)
 											copyvar (VAR_0x8004, VAR_0x8008)
 											specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
 											special (ChoosePartyMon)
@@ -602,7 +701,7 @@ script AideeBasementIdleTalk {
 								}
 							else {
 								setspeaker ([SP_NAME_AIDEE])
-								msgbox (format("Of which you don't have any of!
+								msgbox (format("Of which you don't have any!
 								\p Well, check my stock of Unsafening Materials - I
 								might just have it!"))
 								goto (finishsafemontradescript)
@@ -611,7 +710,13 @@ script AideeBasementIdleTalk {
 						}
 
 						if (var(VAR_RESULT) == FALSE)
-						{playse (SE_RG_HELP_ERROR)}
+						{playse (SE_RG_HELP_ERROR)
+							setspeaker ([SP_NAME_AIDEE])
+							msgbox (format("{PLAYER}, you haven't registered the data for this
+							Safemon on your Devon Dex! \pI need that data to figure out how to
+							Unsafen it - sorry!"))
+							goto (secondsafemonlistreturn)
+							}
 					}
 
 					if (var(VAR_RESULT) == 4) {
@@ -620,8 +725,10 @@ script AideeBasementIdleTalk {
 					goto (finishsafemontradescript)
 						}
 
-
+		#THIRD PAGE
+					
 					if (var(VAR_RESULT) == 3) {
+						thirdsafemonlistreturn:
 						getseenmon (SPECIES_FOOMING)
 						if (var(VAR_RESULT) == TRUE)
 						{bufferspeciesname (STR_VAR_1, SPECIES_FOOMING)}
@@ -642,12 +749,12 @@ script AideeBasementIdleTalk {
 					}
 					
 					msgbox (format("What about one of these?"))
-					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
-
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+					//FOOMING UNSAFEN
 								if(var(VAR_RESULT) == 0){
 								getseenmon (SPECIES_FOOMING)
 									if (var(VAR_RESULT) == TRUE)
-								//FOOMING UNSAFEN
+								
 										{				
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
@@ -657,7 +764,7 @@ script AideeBasementIdleTalk {
 										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Fooming!"))
-											setvar (VAR_0x8008, INGAME_TRADE_PIKACHU)
+											setvar (VAR_0x8008, INGAME_TRADE_KOFFING)
 														copyvar (VAR_0x8004, VAR_0x8008)
 														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
 														special (ChoosePartyMon)
@@ -675,13 +782,13 @@ script AideeBasementIdleTalk {
 														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
-											of that Nincada!"))
+											of that Koffing!"))
 											removeitem (ITEM_BLACK_SLUDGE, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
 											setspeaker ([SP_NAME_AIDEE])
-											msgbox (format("Of which you don't have any of!
+											msgbox (format("Of which you don't have any!
 											\p Well, check my stock of Unsafening Materials - I
 											might just have it!"))
 											goto (finishsafemontradescript)
@@ -690,7 +797,13 @@ script AideeBasementIdleTalk {
 									}
 
 									if (var(VAR_RESULT) == FALSE)
-									{playse (SE_RG_HELP_ERROR)}
+									{playse (SE_RG_HELP_ERROR)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("{PLAYER}, you haven't registered the data for this
+										Safemon on your Devon Dex! \pI need that data to figure out how to
+										Unsafen it - sorry!"))
+										goto (thirdsafemonlistreturn)
+										}
 								}
 								//GEOSLUG UNSAFEN
 								if(var(VAR_RESULT) == 1){
@@ -706,7 +819,7 @@ script AideeBasementIdleTalk {
 										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Geoslug!"))
-											setvar (VAR_0x8008, INGAME_TRADE_PIKACHU)
+											setvar (VAR_0x8008, INGAME_TRADE_SLUGMA)
 														copyvar (VAR_0x8004, VAR_0x8008)
 														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
 														special (ChoosePartyMon)
@@ -730,7 +843,7 @@ script AideeBasementIdleTalk {
 											}
 										else {
 											setspeaker ([SP_NAME_AIDEE])
-											msgbox (format("Of which you don't have any of!
+											msgbox (format("Of which you don't have any!
 											\p Well, check my stock of Unsafening Materials - I
 											might just have it!"))
 											goto (finishsafemontradescript)
@@ -738,8 +851,14 @@ script AideeBasementIdleTalk {
 
 									}
 
-									if (var(VAR_RESULT) == FALSE)
-									{playse (SE_RG_HELP_ERROR)}
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (thirdsafemonlistreturn)
+									}
 								}
 
 								//NIDORAN INTERSEX UNSAFEN
@@ -756,7 +875,13 @@ script AideeBasementIdleTalk {
 										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Nidoran!"))
-											setvar (VAR_0x8008, INGAME_TRADE_PIKACHU)
+
+											random (1)
+											copyvar (VAR_TEMP_1, VAR_RESULT)
+											switch (var(VAR_RESULT))
+											{case 0: setvar (VAR_0x8008, INGAME_TRADE_NIDORAN_M)
+											case 1: setvar (VAR_0x8008, INGAME_TRADE_NIDORAN_F)
+											}
 														copyvar (VAR_0x8004, VAR_0x8008)
 														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
 														special (ChoosePartyMon)
@@ -774,13 +899,13 @@ script AideeBasementIdleTalk {
 														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
-											of that Nidorn!"))
+											of that Nidoran!"))
 											removeitem (ITEM_BLACK_SLUDGE, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
 											setspeaker ([SP_NAME_AIDEE])
-											msgbox (format("Of which you don't have any of!
+											msgbox (format("Of which you don't have any!
 											\p Well, check my stock of Unsafening Materials - I
 											might just have it!"))
 											goto (finishsafemontradescript)
@@ -788,8 +913,14 @@ script AideeBasementIdleTalk {
 
 									}
 
-									if (var(VAR_RESULT) == FALSE)
-									{playse (SE_RG_HELP_ERROR)}
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (thirdsafemonlistreturn)
+									}
 								}
 
 								if (var(VAR_RESULT) == 4) {
@@ -799,12 +930,1325 @@ script AideeBasementIdleTalk {
 									}
 
 
+		#FOURTH PAGE
 
+						if (var(VAR_RESULT) == 3) {
+						fourthsafemonlistreturn:
+						getseenmon (SPECIES_MUDDER)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_MUDDER)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
 
+						getseenmon (SPECIES_LOADTAD)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_LOADTAD)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
 
-
-
+						getseenmon (SPECIES_HELIPIP)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_HELIPIP)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
 					}
+					
+					msgbox (format("What about one of these?"))
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+								//MUDDER UNSAFEN
+								if(var(VAR_RESULT) == 0){
+								getseenmon (SPECIES_MUDDER)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Mudder, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Mudder!"))
+											setvar (VAR_0x8008, INGAME_TRADE_GRIMER)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Grimer!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}
+
+									}
+
+										if (var(VAR_RESULT) == FALSE)
+										{playse (SE_RG_HELP_ERROR)
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("{PLAYER}, you haven't registered the data for this
+											Safemon on your Devon Dex! \pI need that data to figure out how to
+											Unsafen it - sorry!"))
+											goto (fourthsafemonlistreturn)
+											}
+								}
+
+								//LOADTAD UNSAFEN
+								if(var(VAR_RESULT) == 1){
+								getseenmon (SPECIES_LOADTAD)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Loadtad, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Loadtad!"))
+											setvar (VAR_0x8008, INGAME_TRADE_LOTAD)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Lotad!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (fourthsafemonlistreturn)
+									}
+									
+									}
+
+									
+								//HELIPIP UNSAFEN
+								if(var(VAR_RESULT) == 2){
+								getseenmon (SPECIES_HELIPIP)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Helipip, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Loadtad!"))
+											setvar (VAR_0x8008, INGAME_TRADE_HOPPIP)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Hoppip!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (fourthsafemonlistreturn)
+									}
+									
+									}
+
+		#FIFTH PAGE
+
+						if (var(VAR_RESULT) == 3) {
+						fifthsafemonlistreturn:
+						getseenmon (SPECIES_MANCHINE)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_MANCHINE)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+						getseenmon (SPECIES_VERDOOM)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_VERDOOM)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+						getseenmon (SPECIES_TUMBELA)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_TUMBELA)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
+					}
+					
+					msgbox (format("What about one of these?"))
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+								//MANCHINE UNSAFEN
+								if(var(VAR_RESULT) == 0){
+								getseenmon (SPECIES_MANCHINE)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Manchine, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Mudder!"))
+											setvar (VAR_0x8008, INGAME_TRADE_MACHOP)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Machop!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}
+
+									}
+
+										if (var(VAR_RESULT) == FALSE)
+										{playse (SE_RG_HELP_ERROR)
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("{PLAYER}, you haven't registered the data for this
+											Safemon on your Devon Dex! \pI need that data to figure out how to
+											Unsafen it - sorry!"))
+											goto (fifthsafemonlistreturn)
+											}
+								}
+
+								//VERDOOM UNSAFEN
+								if(var(VAR_RESULT) == 1){
+								getseenmon (SPECIES_VERDOOM)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Verdoom, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Verdoom!"))
+											setvar (VAR_0x8008, INGAME_TRADE_BELDUM)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Beldum!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (fifthsafemonlistreturn)
+									}
+									
+									}
+
+									
+								//TUMBELA UNSAFEN
+								if(var(VAR_RESULT) == 2){
+								getseenmon (SPECIES_HELIPIP)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Tumbela, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Tumbela!"))
+											setvar (VAR_0x8008, INGAME_TRADE_TANGELA)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Tangela!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (fifthsafemonlistreturn)
+									}
+									
+									}
+
+			#SIXTH PAGE
+
+						if (var(VAR_RESULT) == 3) {
+						sixthsafemonlistreturn:
+						getseenmon (SPECIES_ARYSTAL)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_ARYSTAL)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+						getseenmon (SPECIES_WARTZ)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_WARTZ)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+						getseenmon (SPECIES_VERIWOODO)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_VERIWOODO)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
+					}
+					
+					msgbox (format("What about one of these?"))
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+								//ARYSTAL UNSAFEN
+								if(var(VAR_RESULT) == 0){
+								getseenmon (SPECIES_ARYSTAL)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Arystal, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Mudder!"))
+											setvar (VAR_0x8008, INGAME_TRADE_ARON)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Aron!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}
+
+									}
+
+										if (var(VAR_RESULT) == FALSE)
+										{playse (SE_RG_HELP_ERROR)
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("{PLAYER}, you haven't registered the data for this
+											Safemon on your Devon Dex! \pI need that data to figure out how to
+											Unsafen it - sorry!"))
+											goto (sixthsafemonlistreturn)
+											}
+								}
+
+								//WARTZ UNSAFEN
+								if(var(VAR_RESULT) == 1){
+								getseenmon (SPECIES_WARTZ)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Wartz, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Wartz!"))
+											setvar (VAR_0x8008, INGAME_TRADE_RALTS)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Ralts!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (sixthsafemonlistreturn)
+									}
+									
+									}
+
+									
+								//VERIWOODO UNSAFEN
+								if(var(VAR_RESULT) == 2){
+								getseenmon (SPECIES_HELIPIP)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Veriwoodo, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Veriwoodo!"))
+											setvar (VAR_0x8008, INGAME_TRADE_SUDOWOODO)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Sudowoodo!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (sixthsafemonlistreturn)
+									}
+									
+									}
+
+			#SEVENTH PAGE
+
+						if (var(VAR_RESULT) == 3) {
+						seventhsafemonlistreturn:
+						getseenmon (SPECIES_GUMMIN)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_GUMMIN)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+						getseenmon (SPECIES_ROLLOON)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_ROLLOON)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+						getseenmon (SPECIES_TRASHEAL)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_TRASHEAL)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
+					}
+					
+					msgbox (format("What about one of these?"))
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+								//GUMMIN UNSAFEN
+								if(var(VAR_RESULT) == 0){
+								getseenmon (SPECIES_GUMMIN)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Gummin, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Gummin!"))
+											setvar (VAR_0x8008, INGAME_TRADE_GULPIN)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Gulpin!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}
+
+									}
+
+										if (var(VAR_RESULT) == FALSE)
+										{playse (SE_RG_HELP_ERROR)
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("{PLAYER}, you haven't registered the data for this
+											Safemon on your Devon Dex! \pI need that data to figure out how to
+											Unsafen it - sorry!"))
+											goto (seventhsafemonlistreturn)
+											}
+								}
+
+								//ROLLOON UNSAFEN
+								if(var(VAR_RESULT) == 1){
+								getseenmon (SPECIES_ROLLOON)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Rolloon, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Rolloon!"))
+											setvar (VAR_0x8008, INGAME_TRADE_DRIFLOON)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Drifloon!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (seventhsafemonlistreturn)
+									}
+									
+									}
+
+									
+								//TRASHEALED UNSAFEN
+								if(var(VAR_RESULT) == 2){
+								getseenmon (SPECIES_TRASHEAL)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Trashealed, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Trashealed!"))
+											setvar (VAR_0x8008, INGAME_TRADE_TRUBBISH)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Trubbish!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (seventhsafemonlistreturn)
+									}
+									
+									}
+
+
+
+			#EIGHTH PAGE
+
+						if (var(VAR_RESULT) == 3) {
+						eighthsafemonlistreturn:
+						getseenmon (SPECIES_KAMOKEN)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_KAMOKEN)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+						getseenmon (SPECIES_DELIBIN)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_DELIBIN)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+						getseenmon (SPECIES_DOUNO)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_DOUNO)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
+					}
+					
+					msgbox (format("What about one of these?"))
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+								//KAMOKEN UNSAFEN
+								if(var(VAR_RESULT) == 0){
+								getseenmon (SPECIES_KAMOKEN)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Kamoken, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Kamoken!"))
+											setvar (VAR_0x8008, INGAME_TRADE_FARFETCHD)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Farfetch'd!!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}
+
+									}
+
+										if (var(VAR_RESULT) == FALSE)
+										{playse (SE_RG_HELP_ERROR)
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("{PLAYER}, you haven't registered the data for this
+											Safemon on your Devon Dex! \pI need that data to figure out how to
+											Unsafen it - sorry!"))
+											goto (eighthsafemonlistreturn)
+											}
+								}
+
+								//DELIBIN UNSAFEN
+								if(var(VAR_RESULT) == 1){
+								getseenmon (SPECIES_DELIBIN)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Delibin, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Delibin!"))
+											setvar (VAR_0x8008, INGAME_TRADE_DELIBIRD)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Delibird!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (eighthsafemonlistreturn)
+									}
+									
+									}
+
+									
+								//DOUNO UNSAFEN
+								if(var(VAR_RESULT) == 2){
+								getseenmon (SPECIES_DOUNO)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Douno, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Douno!"))
+											setvar (VAR_0x8008, INGAME_TRADE_DODUO)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Doduo!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (eighthsafemonlistreturn)
+									}
+									
+									}
+
+			#NINTH PAGE
+
+						if (var(VAR_RESULT) == 3) {
+						ninthsafemonlistreturn:
+						getseenmon (SPECIES_KANGASKID)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_KANGASKID)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+						getseenmon (SPECIES_GACHAPOD)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_GACHAPOD)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+						getseenmon (SPECIES_TAMARAKKU)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_TAMARAKKU)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
+					}
+					
+					msgbox (format("What about one of these?"))
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+								//KANGASKID UNSAFEN
+								if(var(VAR_RESULT) == 0){
+								getseenmon (SPECIES_KANGASKHAN)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Kangaskid, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Kangaskid!"))
+											setvar (VAR_0x8008, INGAME_TRADE_KANGASKHAN)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Kangaskhan!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}
+
+									}
+
+										if (var(VAR_RESULT) == FALSE)
+										{playse (SE_RG_HELP_ERROR)
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("{PLAYER}, you haven't registered the data for this
+											Safemon on your Devon Dex! \pI need that data to figure out how to
+											Unsafen it - sorry!"))
+											goto (ninthsafemonlistreturn)
+											}
+								}
+
+								//GACHAPOD UNSAFEN
+								if(var(VAR_RESULT) == 1){
+								getseenmon (SPECIES_GACHAPOD)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Gachapod, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Gachapod!"))
+											setvar (VAR_0x8008, INGAME_TRADE_DITTO)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Ditto!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (ninthsafemonlistreturn)
+									}
+									
+									}
+
+									
+								//TAMARAKKU UNSAFEN
+								if(var(VAR_RESULT) == 2){
+								getseenmon (SPECIES_TAMARAKKU)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Tamarakku, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Tamarakku!"))
+											setvar (VAR_0x8008, INGAME_TRADE_TOGEPI)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Togepi!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (ninthsafemonlistreturn)
+									}
+									
+									}
+		
+			#TENTH PAGE
+
+						if (var(VAR_RESULT) == 3) {
+						tenthsafemonlistreturn:
+						getseenmon (SPECIES_ROTOM_MONITOR)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_ROTOM_MONITOR)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_1, SPECIES_NONE)}
+
+						getseenmon (SPECIES_MIMIYURUI)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_MIMIYURUI)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_2, SPECIES_NONE)}
+
+						getseenmon (SPECIES_WARABBIT)
+						if (var(VAR_RESULT) == TRUE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_WARABBIT)}
+						if (var(VAR_RESULT) == FALSE)
+						{bufferspeciesname (STR_VAR_3, SPECIES_NONE)}
+					}
+					
+					msgbox (format("What about one of these?"))
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Safemon", "None")
+								//ROTOM MONITOR UNSAFEN
+								if(var(VAR_RESULT) == 0){
+								getseenmon (SPECIES_ROTOM_MONITOR)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Rotom Monitor, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Rotom Monitor!"))
+											setvar (VAR_0x8008, INGAME_TRADE_ROTOM)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Rotom!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}
+
+									}
+
+										if (var(VAR_RESULT) == FALSE)
+										{playse (SE_RG_HELP_ERROR)
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("{PLAYER}, you haven't registered the data for this
+											Safemon on your Devon Dex! \pI need that data to figure out how to
+											Unsafen it - sorry!"))
+											goto (tenthsafemonlistreturn)
+											}
+								}
+
+								//MIMIYURUI UNSAFEN
+								if(var(VAR_RESULT) == 1){
+								getseenmon (SPECIES_MIMIYURUI)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{				
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("Mimiyurui, huh? Well, to unsafen this one we need 
+										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										
+										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+											{msgbox (format("Which you have - excellent! Now, let's see that
+											Mimiyurui!"))
+											setvar (VAR_0x8008, INGAME_TRADE_MIMIKYU)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+														special (ChoosePartyMon)
+														waitstate
+														goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, CancelTradeSafemonSelection)
+														copyvar (VAR_0x8005, VAR_0x8004)
+														specialvar (VAR_RESULT, GetTradeSpecies)
+														goto_if_ne (VAR_RESULT, VAR_0x8009, SelectedIncorrectTradeSafemon)
+														copyvar (VAR_0x8004, VAR_0x8008)
+														special (CreateInGameTradePokemon)
+														special (DoInGameTradeScene) 
+														waitstate
+														createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+														setspeaker ([SP_NAME_AIDEE])
+														incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+											
+											msgbox (format("It's done! Another Unsafening success - take good care
+											of that Mimikyu!"))
+											removeitem (ITEM_BLACK_SLUDGE, 1)
+											goto (finishsafemontradescript)
+											}
+										else {
+											setspeaker ([SP_NAME_AIDEE])
+											msgbox (format("Of which you don't have any!
+											\p Well, check my stock of Unsafening Materials - I
+											might just have it!"))
+											goto (finishsafemontradescript)
+											}}
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (tenthsafemonlistreturn)
+									}
+									
+									}
+
+									
+								//WARABBIT UNSAFEN
+								if(var(VAR_RESULT) == 2){
+								getseenmon (SPECIES_WARABBIT)
+									if (var(VAR_RESULT) == TRUE)
+								
+										{msgbox (format("Uuhm, {PLAYER}...? The Unsafener is not detecting
+										this one as a Safemon... \p But I've also never seen or heard of a
+										Pokémon like this before...\p I think you might just have discovered
+										a new species!"))
+										goto (finishsafemontradescript)}
+
+									
+								if (var(VAR_RESULT) == FALSE)
+								{playse (SE_RG_HELP_ERROR)
+									setspeaker ([SP_NAME_AIDEE])
+									msgbox (format("{PLAYER}, you haven't registered the data for this
+									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Unsafen it - sorry!"))
+									goto (tenthsafemonlistreturn)
+									}
+									
+									}
 					}
 
 
@@ -816,7 +2260,7 @@ script AideeBasementIdleTalk {
 	finishsafemontradescript:
 	removefieldmugshot
 	releaseall
-	}}
+	}}}
 
 	mart AideMaterials0 {
 		ITEM_COMET_SHARD
@@ -840,7 +2284,7 @@ script TradeSafemonCode {
 script CancelTradeSafemonSelection {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
-		msgbox (format("Oh, changed your mind? Well, I guess some Safemon have their charm after
+		msgbox (format("Oh, changed your mind? I guess some Safemon have their charm after
 		all."))
 		releaseall
 		}

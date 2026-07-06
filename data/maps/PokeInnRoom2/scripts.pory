@@ -28,7 +28,7 @@ script OldalePokeCenterInnPrograms {
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Devon News", "Weather Channel", "Don't watch TV")
 
 	if (var(VAR_RESULT) == 0) {
-		random (0)
+		random (8)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 
 		switch (var(VAR_RESULT))
@@ -46,13 +46,13 @@ script OldalePokeCenterInnPrograms {
 
 	if (var(VAR_RESULT) == 1) {
 		if (!flag (seenweatheratinnvisit))
-			{random (2)
+			{random (3)
 			copyvar (VAR_TEMP_1, VAR_RESULT)
 			switch (var(VAR_RESULT))
 			{case 0: goto (Route103WeatherNews)
 			case 1: goto (Route102WeatherNews)
-			//case 2: goto (Safemonad)
-			//case 3: goto (Lifeindustriesad)
+			case 2: goto (GreatCraterWeatherNews)
+			case 3: goto (LandfillWeatherNews)
 			//case 4: goto (Devoncenterad)
 			//case 5: goto (Rebelhackersad)
 			//case 6: goto (Devonnetad)
@@ -287,17 +287,48 @@ script OldalePokeCenterInnPrograms {
 
 	script Route103WeatherNews {
 		playse (SE_M_RAIN_DANCE)
-		msgbox(format("There is rain in Route 103!"))
+		msgbox(format("Weather Alert: We would like to inform of a heavy
+		rainstorm now pouring over Route 103.\p The Weather Institute advises to keep clear of
+		the river in that route, and travel through there only if it's absolutely necessary."))
 		setvar(VAR_ROUTE103_WEATHER, 1)
+		//clearflag (route103weathermon)
 		setflag (seenweatheratinnvisit)
 		release
 	}
 
 	script Route102WeatherNews {
 		playse (SE_M_SANDSTORM)
-		msgbox(format("There is a sandstorm in Route 102!"))
+		msgbox(format("Weather Alert: We would like to inform of a sandstorm taking place in
+		Road 002.\p Strong winds are carrying the construction sand now left abandoned after
+		the construction of Road 002 was discontinued.\p We advise citizens to avoid the area until
+		winds have subdued."))
 		setvar(VAR_ROUTE102_WEATHER, 1)
 		clearflag (route102weathermon)
+		setflag (seenweatheratinnvisit)
+		release
+	}
+
+	script GreatCraterWeatherNews {
+		//playse (SE_M_SANDSTORM)
+		msgbox(format("Weather Alert: We would like to inform of mysterious dust falling upon
+		the area around the Great Crater, south of Road 002.\p Climate activists claim that this is
+		nuclear fallout, created by the singular Electrode explosion that took place there during the
+		 war.\p The Weather Institute however has labelled these claims as alarmist, and reassures citizens
+		 and tourists that radiation levels within the Rebel Zone are perfectly within safe margins."))
+		setvar(VAR_GREATCRATER_WEATHER, 1)
+		//clearflag (greatcraterweathermon)
+		setflag (seenweatheratinnvisit)
+		release
+	}
+
+	script LandfillWeatherNews {
+		//playse (SE_M_SANDSTORM)
+		msgbox(format("Weather Alert: We would like to inform of toxic fumes rising from Petalburg
+		Scrapyard.\p The Weather Institute claims this is the result of certain waste materials being
+		heated by the sun. \p We advise steering clear of the area for the time being, and use the
+		safer Petalburg Park route for those travelling between Petalburg City and Neo Rustboro."))
+		setvar(VAR_PETALBURGLANDFILL_WEATHER, 1)
+		//clearflag (greatcraterweathermon)
 		setflag (seenweatheratinnvisit)
 		release
 	}

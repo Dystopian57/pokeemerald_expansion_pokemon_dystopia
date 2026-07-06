@@ -6,16 +6,36 @@ raw `
 mapscripts GreatCrater_MapScripts {
     MAP_SCRIPT_ON_LOAD: GreatCraterWeather}
 
-//script RopePop {
 
-//if (var(VAR_GREATCRATERTOURIST) == 3)
-	//{showobjectat (11, MAP_GREAT_CRATER)}
-	//else {hideobjectat (11, MAP_GREAT_CRATER)}
-
-//}
 
 script GreatCraterWeather {
+
+			goto_if_eq (VAR_GREATCRATER_WEATHER, 0, GreatCraterShade)
+			goto_if_eq (VAR_GREATCRATER_WEATHER, 1, GreatCraterAsh1)
+			goto_if_eq (VAR_GREATCRATER_WEATHER, 2, GreatCraterAsh2)
+			goto_if_eq (VAR_GREATCRATER_WEATHER, 3, GreatCraterEndAsh)
+
 	release
+}
+
+script GreatCraterShade {
+	setweather (WEATHER_SHADE)
+}
+
+script GreatCraterAsh1 {
+	setweather (WEATHER_VOLCANIC_ASH)
+	setvar(VAR_GREATCRATER_WEATHER, 2)
+}
+
+script GreatCraterAsh2 {
+	setweather (WEATHER_VOLCANIC_ASH)
+	setvar(VAR_GREATCRATER_WEATHER, 3)
+}
+
+
+script GreatCraterEndAsh {
+	setweather (WEATHER_VOLCANIC_ASH)
+	setvar(VAR_GREATCRATER_WEATHER, 0)
 }
 
 
@@ -396,9 +416,9 @@ script ConspiracyGreatCraterRegister {
 }
 
 script ConspiracyGreatCraterRematch {
-	trainerbattle_rematch (TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro, ConspiracyGreatCrater_Outro)
-	msgbox(format("You're even stronger than last time... or have I just gotten weaker...?
-	\p Old age is a cruel thing. But I plan to use the time I have left."))
+	trainerbattle_rematch (TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro2, ConspiracyGreatCrater_Outro2)
+	msgbox(format("The truth is... I don't know any of Devon's secrets.\p I just like to make things up
+	to look interesting. It's a problem I have."))
 	end
 	}
 
@@ -408,6 +428,13 @@ script ConspiracyGreatCraterRematch {
 
 	text ConspiracyGreatCrater_Outro{
 		"Very well... listen closely..."}
+
+	text ConspiracyGreatCrater_Intro2{
+		"You're back! This time, I'll really tell\n you the truth behind Safemon...\p But only if
+		you beat me!"}
+
+	text ConspiracyGreatCrater_Outro2{
+		"You've earned the right to the truth. Listen..."}
 
 /////////////////////////////////////////////////
 
