@@ -22,7 +22,7 @@ script CraterHermit {
             
         if (var(VAR_RESULT) == 1) {
         msgbox(format("You're not? Hmm... show me your power, then."))
-        trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, CraterHermit_Outro)
+        trainerbattle_no_intro(TRAINER_HERMIT_CRATER, CraterHermit_Outro)
         
 
         if (!flag (hermitmovesexplained)){
@@ -37,7 +37,7 @@ script CraterHermit {
 
 
         playse (MUS_OBTAIN_BADGE)
-        msgbox(format("Obtained the Light Token"))
+        msgbox(format("Obtained the Light Token!"))
         setflag (FLAG_BADGE02_GET)
         setflag (FLAG_RECEIVED_HM_FLASH)
         giveitem (ITEM_HM05)

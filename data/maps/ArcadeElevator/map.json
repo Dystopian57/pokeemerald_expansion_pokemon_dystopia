@@ -3,7 +3,7 @@
   "name": "ArcadeElevator",
   "layout": "LAYOUT_ARCADE_ELEVATOR",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_CELADON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

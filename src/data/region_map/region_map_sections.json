@@ -443,8 +443,8 @@
     {
       "id": "MAPSEC_GRANITE_CAVE",
       "name": "EXCLUSION TUNNEL",
-      "x": 1,
-      "y": 13,
+      "x": 2,
+      "y": 11,
       "width": 1,
       "height": 1
     },
@@ -467,8 +467,8 @@
     {
       "id": "MAPSEC_BATTLE_FRONTIER",
       "name": "REBEL HIDEOUT",
-      "x": 22,
-      "y": 12,
+      "x": 1,
+      "y": 9,
       "width": 1,
       "height": 1
     },
@@ -490,15 +490,15 @@
     },
     {
       "id": "MAPSEC_ABANDONED_SHIP",
-      "name": "Crater Bottom",
-      "x": 6,
-      "y": 14,
+      "name": "SS. BATALLIA",
+      "x": 0,
+      "y": 9,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_NEW_MAUVILLE",
-      "name": "DEVON LAB 104",
+      "name": "NEW MAUVILLE",
       "x": 8,
       "y": 7,
       "width": 1,
@@ -506,17 +506,17 @@
     },
     {
       "id": "MAPSEC_METEOR_FALLS",
-      "name": "METEOR FALLS",
-      "x": 0,
-      "y": 3,
+      "name": "WATERFALL CAVE",
+      "x": 4,
+      "y": 7,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_METEOR_FALLS2",
-      "name": "METEOR FALLS",
-      "x": 1,
-      "y": 2,
+      "name": "HERMIT'S LAIR",
+      "x": 4,
+      "y": 7,
       "width": 1,
       "height": 1
     },
@@ -531,8 +531,8 @@
     {
       "id": "MAPSEC_AQUA_HIDEOUT_OLD",
       "name": "UNDERGROUND LAB",
-      "x": 19,
-      "y": 3,
+      "x": 4,
+      "y": 11,
       "width": 1,
       "height": 1
     },
@@ -578,9 +578,9 @@
     },
     {
       "id": "MAPSEC_CAVE_OF_ORIGIN",
-      "name": "LITTL. MAUSOLEUM",
-      "x": 21,
-      "y": 7,
+      "name": "CRATER'S BOTTOM",
+      "x": 3,
+      "y": 10,
       "width": 1,
       "height": 1
     },
@@ -596,15 +596,15 @@
       "id": "MAPSEC_FIERY_PATH",
       "name": "GREAT CRATER",
       "x": 3,
-      "y": 8,
+      "y": 10,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_FIERY_PATH2",
       "name": "CRATER HOT SPRINGS",
-      "x": 7,
-      "y": 3,
+      "x": 3,
+      "y": 6,
       "width": 1,
       "height": 1
     },
@@ -618,7 +618,7 @@
     },
     {
       "id": "MAPSEC_JAGGED_PASS2",
-      "name": "JAGGED PASS",
+      "name": "GREEN SANCTUM",
       "x": 7,
       "y": 2,
       "width": 1,
@@ -627,8 +627,8 @@
     {
       "id": "MAPSEC_SEALED_CHAMBER",
       "name": "BALSAM'S ROOM",
-      "x": 11,
-      "y": 10,
+      "x": 4,
+      "y": 11,
       "width": 1,
       "height": 1
     },
@@ -658,9 +658,9 @@
     },
     {
       "id": "MAPSEC_DESERT_RUINS",
-      "name": "DESERT RUINS",
-      "x": 8,
-      "y": 3,
+      "name": "WATERFALL CAVE",
+      "x": 4,
+      "y": 8,
       "width": 1,
       "height": 1
     },
@@ -935,7 +935,7 @@
       "id": "MAPSEC_ROCK_TUNNEL",
       "name": "EXCLUSION TUNNEL",
       "x": 2,
-      "y": 10,
+      "y": 7,
       "width": 1,
       "height": 1
     },
@@ -945,7 +945,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_TOWER",
-      "name": "LITTLEROOT MAUSOLEUM",
+      "name": "LITL. MAUSOLEUM",
       "x": 5,
       "y": 11,
       "width": 1,
@@ -1064,12 +1064,16 @@
       "name": "GREEN SANCTUM",
       "x": 3,
       "y": 8,
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_WATER_PATH",
-      "name": "PETALBURG BEACH"
+      "name": "PETALBURG BEACH",
+      "x": 1,
+      "y": 10,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_RUIN_VALLEY",
@@ -1177,7 +1181,11 @@
     },
     {
       "id": "MAPSEC_WEEPTH_CHAMBER",
-      "name": "PETALBURG SEWERS"
+      "name": "PETALBURG SEWERS",
+      "x": 1,
+      "y": 9,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_DILFORD_CHAMBER",
@@ -1222,7 +1230,7 @@
     {
       "id": "MAPSEC_MAGMA_HIDEOUT",
       "name": "OLDALE WAREHOUSE",
-      "x": 1,
+      "x": 5,
       "y": 9,
       "width": 1,
       "height": 1
@@ -1253,7 +1261,11 @@
     },
     {
       "id": "MAPSEC_MARINE_CAVE",
-      "name": "REBEL HARBOR"
+      "name": "REBEL HARBOR",
+      "x": 1,
+      "y": 10,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_UNDERWATER_MARINE_CAVE",

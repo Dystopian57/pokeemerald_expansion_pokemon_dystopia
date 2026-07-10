@@ -175,20 +175,20 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
     {
         .trainerId = TRAINER_ROSE_1,
         .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(8),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 3),
-        .battleFrontierRecordStreakTextIndex = 8,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 8),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
+        .battleTopicTextIds = BATTLE_TEXT_IDS(15),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 15),
+        .battleFrontierRecordStreakTextIndex = 15,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 15),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 15),
     },
     {
         .trainerId = TRAINER_ANDRES_1,
         .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(12),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 62),
-        .battleFrontierRecordStreakTextIndex = 12,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 12),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 12),
+        .battleTopicTextIds = BATTLE_TEXT_IDS(15),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 15),
+        .battleFrontierRecordStreakTextIndex = 15,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 15),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 15),
     },
     {
         .trainerId = TRAINER_DUSTY_1,
@@ -711,35 +711,66 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
 
 
     {
-        .trainerId = TRAINER_VETERAN_103,
-        .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(3),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 57),
-        .battleFrontierRecordStreakTextIndex = 3,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 3),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
-    },
-
-    {
         .trainerId = TRAINER_TOURIST_GREATCRATER,
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(11),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 28),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 11),
         .battleFrontierRecordStreakTextIndex = 11,
         .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
     },
-
-
 
     {
         .trainerId = TRAINER_CONSPIRACY_GREATCRATER,
         .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(11),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 28),
-        .battleFrontierRecordStreakTextIndex = 11,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+        .battleTopicTextIds = BATTLE_TEXT_IDS(12),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 12),
+        .battleFrontierRecordStreakTextIndex = 12,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 12),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 12),
+    },
+
+
+    {
+        .trainerId = TRAINER_VETERAN_103,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(13),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 13),
+        .battleFrontierRecordStreakTextIndex = 13,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 13),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 13),
+    },
+
+    {
+        .trainerId = TRAINER_HAZARDIVER_WATERFALL,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(14),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 14),
+        .battleFrontierRecordStreakTextIndex = 14,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 14),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 14),
+    },
+
+
+    {
+        .trainerId = TRAINER_MERCENARYF_WATERFALL,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(15),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 15),
+        .battleFrontierRecordStreakTextIndex = 15,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 15),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 15),
+    },
+
+
+    {
+        .trainerId = TRAINER_ORPHAN_MALE_101,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(1),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 1),
+        .battleFrontierRecordStreakTextIndex = 1,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 1),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 1),
     },
 
     {
@@ -747,29 +778,20 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(2),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 2),
-        .battleFrontierRecordStreakTextIndex = 11,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+        .battleFrontierRecordStreakTextIndex = 2,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 2),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 2),
     },
 
-    {
-        .trainerId = TRAINER_ORPHAN_MALE_101,
-        .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(1),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 1),
-        .battleFrontierRecordStreakTextIndex = 11,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
-    },
 
     {
         .trainerId = TRAINER_SHADYDEALER_103,
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(3),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 3),
-        .battleFrontierRecordStreakTextIndex = 11,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+        .battleFrontierRecordStreakTextIndex = 3,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 3),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
 
     {
@@ -777,10 +799,12 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(4),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 4),
-        .battleFrontierRecordStreakTextIndex = 11,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 11),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
+        .battleFrontierRecordStreakTextIndex = 4,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 4),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 4),
     },
+
+
 
 
  
@@ -821,6 +845,7 @@ static const struct MatchCallText sMatchCallNegativeBattleTexts[] =
     { .text = MatchCall_NegativeBattleText12, .stringVarFuncIds = STRS_BATTLE_NEGATIVE },
     { .text = MatchCall_NegativeBattleText13, .stringVarFuncIds = STRS_BATTLE_NEGATIVE },
     { .text = MatchCall_NegativeBattleText14, .stringVarFuncIds = STRS_BATTLE_NEGATIVE },
+    { .text = MatchCall_NegativeBattleText15, .stringVarFuncIds = STRS_BATTLE_NEGATIVE },
 };
 
 static const struct MatchCallText sMatchCallPositiveBattleTexts[] =
@@ -839,6 +864,7 @@ static const struct MatchCallText sMatchCallPositiveBattleTexts[] =
     { .text = MatchCall_PositiveBattleText12, .stringVarFuncIds = STRS_BATTLE_POSITIVE },
     { .text = MatchCall_PositiveBattleText13, .stringVarFuncIds = STRS_BATTLE_POSITIVE },
     { .text = MatchCall_PositiveBattleText14, .stringVarFuncIds = STRS_BATTLE_POSITIVE },
+    { .text = MatchCall_PositiveBattleText15, .stringVarFuncIds = STRS_BATTLE_POSITIVE },
 };
 
 static const struct MatchCallText sMatchCallSameRouteBattleRequestTexts[] =
@@ -1579,21 +1605,22 @@ bool32 SelectMatchCallMessage(int trainerId, u8 *str)
 
     // If the player is on the same route as the trainer
     // and they can be rematched, they will always request a battle
-    if (TrainerIsEligibleForRematch(matchCallId)
-     && GetRematchTrainerLocation(matchCallId) == gMapHeader.regionMapSectionId)
-    {
-        matchCallText = GetSameRouteMatchCallText(matchCallId, str);
-    }
+
+    //if (TrainerIsEligibleForRematch(matchCallId)
+     //&& GetRematchTrainerLocation(matchCallId) == gMapHeader.regionMapSectionId)
+    //{
+        //matchCallText = GetSameRouteMatchCallText(matchCallId, str);
+    //}
     // If the player is not on the same route as the trainer
     // and they can be rematched, there is a random chance for
     // the trainer to request a battle
-    else if (ShouldTrainerRequestBattle(matchCallId))
-    {
-        matchCallText = GetDifferentRouteMatchCallText(matchCallId, str);
-        newRematchRequest = TRUE;
-        UpdateRematchIfDefeated(matchCallId);
-    }
-    else if (Random() % 3)
+    //else if (ShouldTrainerRequestBattle(matchCallId))
+    //{
+        //matchCallText = GetDifferentRouteMatchCallText(matchCallId, str);
+        //newRematchRequest = TRUE;
+        //UpdateRematchIfDefeated(matchCallId);
+    //}
+    if (Random() % 3)
     {
         // Message talking about a battle the NPC had
         matchCallText = GetBattleMatchCallText(matchCallId, str);

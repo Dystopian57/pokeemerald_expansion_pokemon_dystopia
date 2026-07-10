@@ -198,7 +198,7 @@ OldaleWarehouseNews::
 	goto_if_eq OldaleWarehouseNews_2
 OldaleWarehouseNews_1:
 # 123 "data/maps/PokeInnRoom2/scripts.pory"
-	compare VAR_OLDALE_PHASE, 0
+	compare VAR_OLDALE_PHASE, 2
 	goto_if_gt OldaleWarehouseNews_5
 OldaleWarehouseNews_4:
 # 149 "data/maps/PokeInnRoom2/scripts.pory"
@@ -480,7 +480,7 @@ OldaleWarehouseNews_Text_0:
 	.string "In other unfortunate piece of news,\n"
 	.string "the Devon Warehouse of Oldale town is\l"
 	.string "still under rebel control.\p"
-	.string "Devon Inc. has promised to send a\n"
+	.string "Devon Co. has promised to send a\n"
 	.string "taskforce to the facility as soon as\l"
 	.string "Devon Guards can be freed from the\l"
 	.string "evacuation efforts of Mauville City,\l"
@@ -527,12 +527,13 @@ PetalburgRiotNews_Text_0:
 # 160 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Breaking news: a violent, rebel-led riot\n"
 	.string "has broken out in the vicinity of\l"
-	.string "Petalburg City's Devon Center. Devon\l"
-	.string "Guards have already been dispatched to\l"
-	.string "put an end to the violence, and we\l"
-	.string "advise residents of the city to steer\l"
-	.string "clear off the Devon facility until the\l"
-	.string "situation is under control.$"
+	.string "Petalburg City's Devon Center.\p"
+	.string "Devon Guards have already been\n"
+	.string "dispatched to put an end to the\l"
+	.string "violence, and we advise residents of\l"
+	.string "the city to steer clear off the Devon\l"
+	.string "facility until the situation is under\l"
+	.string "control.$"
 
 PetalburgRiotNews_Text_1:
 # 167 "data/maps/PokeInnRoom2/scripts.pory"
@@ -557,7 +558,7 @@ PetalburgRiotNews_Text_1:
 LittlerootLabNews_Text_0:
 # 185 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Now, for some more analysis on the\n"
-	.string "latest issue of Devon's Inc 'Safemon\l"
+	.string "latest issue of Devon Co's 'Safemon\l"
 	.string "Progress Report'.\p"
 	.string "For the third consecutive month,\n"
 	.string "Littleroot's Lab has been at the bottom\l"
@@ -574,7 +575,7 @@ LittlerootLabNews_Text_0:
 	.string "laboratory, she is now one of the only\l"
 	.string "two scientists working in Littleroot,\l"
 	.string "and the closure of the institution\l"
-	.string "seems imminent.\p"
+	.string "seems all but imminent.\p"
 	.string "It would be a sad farewell to a once\n"
 	.string "iconic landmark in Hoenn's history.$"
 
@@ -596,7 +597,7 @@ DevonSpaceNews_Text_0:
 	.string "This year, with the help of business\n"
 	.string "partner Silph Co., the 'Gemini Mission'\l"
 	.string "has started, with goals to build the\l"
-	.string "Devon Space Station - the firt\l"
+	.string "Devon Space Station - the first\l"
 	.string "man-made, long-term habitat to exist\l"
 	.string "outside the planet.\p"
 	.string "Everyone in Hoenn looks forward to the\n"

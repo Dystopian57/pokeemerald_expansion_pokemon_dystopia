@@ -1,12 +1,12 @@
-const u8 gText_MatchCallAromaLady_Rose_Strategy[] = _("Becalm fighting emotions.");
-const u8 gText_MatchCallAromaLady_Rose_Pokemon[] = _("Fragrant GRASS POKéMON.");
-const u8 gText_MatchCallAromaLady_Rose_Intro1[] = _("Soothing aromas make the");
-const u8 gText_MatchCallAromaLady_Rose_Intro2[] = _("body and mind healthy.");
+const u8 gText_MatchCallAromaLady_Rose_Strategy[] = _("Sick of the Rebel Zone.");
+const u8 gText_MatchCallAromaLady_Rose_Pokemon[] = _("Raised for a long time.");
+const u8 gText_MatchCallAromaLady_Rose_Intro1[] = _("I'm getting out of here,");
+const u8 gText_MatchCallAromaLady_Rose_Intro2[] = _("one way or another!");
 
-const u8 gText_MatchCallRuinManiac_Andres_Strategy[] = _("I'm not very good at this.");
-const u8 gText_MatchCallRuinManiac_Andres_Pokemon[] = _("Ruin-exploration partners.");
-const u8 gText_MatchCallRuinManiac_Andres_Intro1[] = _("I am searching for undersea");
-const u8 gText_MatchCallRuinManiac_Andres_Intro2[] = _("ruins and relics.");
+const u8 gText_MatchCallRuinManiac_Andres_Strategy[] = _("Pusher of limits!");
+const u8 gText_MatchCallRuinManiac_Andres_Pokemon[] = _("Shellder - keeps my stuff!");
+const u8 gText_MatchCallRuinManiac_Andres_Intro1[] = _("More than a Diver, I'm a");
+const u8 gText_MatchCallRuinManiac_Andres_Intro2[] = _("Waterfaller!");
 
 const u8 gText_MatchCallRuinManiac_Dusty_Strategy[] = _("Overwhelm with power!");
 const u8 gText_MatchCallRuinManiac_Dusty_Pokemon[] = _("Craggy ROCK POKéMON.");
@@ -423,12 +423,22 @@ const u8 gText_MatchCallTrainerShadyDealer103_Pokemon[] = _("The most... 'eggcit
 const u8 gText_MatchCallTrainerShadyDealer103_Intro1[] = _("Open every night at");
 const u8 gText_MatchCallTrainerShadyDealer103_Intro2[] = _("Petalburg Sewers!");
 
+const u8 gText_MatchCallHazardDiverWaterfall_Strategy[] = _("Pusher of limits!");
+const u8 gText_MatchCallHazardDiverWaterfall_Pokemon[] = _("Shellder - keeps my stuff!");
+const u8 gText_MatchCallHazardDiverWaterfall_Intro1[] = _("More than a Diver,");
+const u8 gText_MatchCallHazardDiverWaterfall_Intro2[] = _("I'm a Waterfaller!");
+
+const u8 gText_MatchCallMercenaryFWaterfall_Strategy[] = _("Sick of the Rebel Zone");
+const u8 gText_MatchCallMercenaryFWaterfall_Pokemon[] = _("Raised for a long time.");
+const u8 gText_MatchCallMercenaryFWaterfall_Intro1[] = _("I'm getting out of here,");
+const u8 gText_MatchCallMercenaryFWaterfall_Intro2[] = _("one way or another!");
+
 
 
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] =
 {
-    [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose),
-    [REMATCH_ANDRES] = MCFLAVOR(RuinManiac_Andres),
+    [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose), //waterfall mercenary
+    [REMATCH_ANDRES] = MCFLAVOR(RuinManiac_Andres), //waterfall hazard diver
     [REMATCH_DUSTY] = MCFLAVOR(RuinManiac_Dusty),
     [REMATCH_LOLA] = MCFLAVOR(Tuber_Lola),
     [REMATCH_RICKY] = MCFLAVOR(Tuber_Ricky),
@@ -510,7 +520,8 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_TRAINER_ORPHAN_MALE_101] = MCFLAVOR(TrainerOrphanMale101),
     [REMATCH_TRAINER_FISHER_103] = MCFLAVOR(TrainerFisher103),
     [REMATCH_TRAINER_SHADYDEALER_103] = MCFLAVOR(TrainerShadyDealer103),
-
+    //[REMATCH_HAZARDIVER_WATERFALL] = MCFLAVOR(HazardDiverWaterfall), 
+    //[REMATCH_MERCENARYF_WATERFALL] = MCFLAVOR(MercenaryFWaterfall),
     
     
 };

@@ -3,17 +3,49 @@ WaterfallCave_MapScripts::
 	.byte 0
 
 `
+script WaterfallMonk {
+	lock
+	if (!flag(waterfallmonkgivestm))
+	{
+	msgbox(format("They told me meditating under a waterfall would make me stronger..."))
+	msgbox(format("But this ROAR OF WATER is making me pumped up instead! HYAH HYAH!"))
+	msgbox(format("Here, TAKE THIS!"))
+	giveitem (ITEM_TM31)
+	setflag (waterfallmonkgivestm)
+	msgbox(format("Everyone improves on their own way. Find the way that works for you!
+	\p HYAH-HYAH!"))}
 
+	else {msgbox(format("Everyone improves on their own way. Find the way that works for you!
+	\p HYAH-HYAH!"))}
+	release
+	end
+}
+
+script WaterfallActivist {
+	lock
+	applymovement (5, moves(face_player))
+	waitmovement (5)
+	msgbox(format("Did you know? The river outside is being contaminated by construction
+	waste.\p Specifically, that of the construction of Road 003 - which is being built over
+	Route 117.\p The canals here have been spared so far, but it's only a matter of time.
+	\p I'm with Neo Rustboro Activist Group, recording evidence."))
+	applymovement (5, moves(face_up))
+	waitmovement (5)
+	msgbox(format("It's an uphill battle, but we must stop Devon from trampling over the environment!"))
+	release
+	end
+}
 
 
 script WaterfallHazardDiverBattle {
-	trainerbattle_single(TRAINER_VETERAN_103, WaterfallHazardDiver_Intro, WaterfallHazardDiver_Outro, WaterfallHazardDiverRegister)
+	trainerbattle_single(TRAINER_ANDRES_1, WaterfallHazardDiver_Intro, WaterfallHazardDiver_Outro, WaterfallHazardDiverRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, WaterfallHazardDiverRematch)
     applymovement (1, moves(face_up))
-	msgbox(format("I want to swim past that waterfall. Now that's some hardcore swimming, hey?"))
+	msgbox(format("I want to swim past that waterfall. Now that's hardcore swimming, hey?"))
 	applymovement (1, moves(face_player))
-	msgbox(format("Right now, I can barely get past the first part of it though... but I don't give up easily."))
+	msgbox(format("It's tough as nails, and progress is very slow...\p
+	But that will only make it feel better when I get there!"))
 	release
 	end
 }
@@ -21,9 +53,10 @@ script WaterfallHazardDiverBattle {
 script WaterfallHazardDiverRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("That was a great workout. We should do this again sometime! \p Let me fetch my phone
+	msgbox(format("That was a great workout. We should do this again sometime! \p Let me fetch my Devon Nav
     so I can add you on the Devon Net..."))
     applymovement (1, moves(face_right))
+	waitmovement (1)
     playse (SE_BALL_OPEN)
     showobjectat (4, MAP_WATERFALL_CAVE)
     waitse
@@ -39,7 +72,10 @@ script WaterfallHazardDiverRegister {
     playse (SE_CONTEST_CONDITION_LOSE)
     msgbox(format("Ahaa, found it - here's my Devon Nav!"))
     applymovement (1, moves(face_player))
-	register_matchcall (TRAINER_VETERAN_103)
+	register_matchcall (TRAINER_ANDRES_1)
+    applymovement (1, moves(face_right))
+	waitmovement (1)
+	playse (SE_BALL_OPEN)
 	release
 	end
 }
@@ -55,7 +91,7 @@ script WaterfallHazardDiverShellder {
 }
 
 script WaterfallHazardDiverRematch {
-	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro2, Veteran103_Outro2)
+	trainerbattle_rematch (TRAINER_ANDRES_1, Veteran103_Intro2, Veteran103_Outro2)
 	msgbox(format("Since we began battling, I've been able to climb much more of the waterfall!\p After all this effort, it'll
 	feel amazing when I finally get there."))
 	end
@@ -81,11 +117,12 @@ script WaterfallHazardDiverRematch {
 
 
 script WaterfallMercenaryFBattle {
-	trainerbattle_single(TRAINER_VETERAN_103, WaterfallMercenaryF_Intro, WaterfallMercenaryF_Outro, WaterfallMercenaryFRegister)
+	trainerbattle_single(TRAINER_ROSE_1, WaterfallMercenaryF_Intro, WaterfallMercenaryF_Outro, WaterfallMercenaryFRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, WaterfallMercenaryFRematch)
-	msgbox(format("I'm not in the mood to talk. Just move along so I can go back to
-	my training."))
+	msgbox(format("Next time, I'll get you. And that geezer.\p And then I'll get out of this shithole."))
+	//msgbox(format("I'm not in the mood to talk. Just move along so I can go back to
+	//my training."))
 	release
 	end
 }
@@ -99,14 +136,14 @@ script WaterfallMercenaryFRegister {
 	msgbox(format("Well, there's a geezer in that cave who can teach Pokémon to do that."))
 	applymovement (3, moves(face_player))
 	msgbox(format("But only after we beat him. We should train together to do it. Here."))
-	register_matchcall (TRAINER_VETERAN_103)
+	register_matchcall (TRAINER_ROSE_1)
 	msgbox(format("Come back later. We'll fight some more."))
 	release
 	end
 }
 
 script WaterfallMercenaryFRematch {
-	trainerbattle_rematch (TRAINER_VETERAN_103, Veteran103_Intro2, Veteran103_Outro2)
+	trainerbattle_rematch (TRAINER_ROSE_1, Veteran103_Intro2, Veteran103_Outro2)
 	lock
 	if (flag(FLAG_RECEIVED_HM_WATERFALL)) {
 	applymovement (3, moves(face_player))

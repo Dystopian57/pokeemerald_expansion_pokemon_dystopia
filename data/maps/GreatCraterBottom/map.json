@@ -3,7 +3,7 @@
   "name": "GreatCraterBottom",
   "layout": "LAYOUT_GREAT_CRATER_BOTTOM",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_FIERY_PATH",
+  "region_map_section": "MAPSEC_CAVE_OF_ORIGIN",
   "requires_flash": true,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_UNDERGROUND",

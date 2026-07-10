@@ -208,8 +208,12 @@ Route103_Text_RouteSign:
 
 
 mapscripts Route103_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: Route103Weather}
+	//MAP_SCRIPT_ON_LOAD: Route103WeatherSong
+	//MAP_SCRIPT_ON_TRANSITION: Route103WeatherSong
+    MAP_SCRIPT_ON_TRANSITION: Route103Weather
+	MAP_SCRIPT_ON_TRANSITION: FerryManReturnsSouth}
 
+ 
 script Route103Weather {
 
 			goto_if_eq (VAR_ROUTE103_WEATHER, 0, Route103Shade)
@@ -218,6 +222,13 @@ script Route103Weather {
 			goto_if_eq (VAR_ROUTE103_WEATHER, 3, Route103EndRain)
 
 	release
+} 
+
+script Route103WeatherSong {
+	if (var(VAR_ROUTE103_WEATHER) > 0)
+	{playbgm (MUS_STORM, TRUE)}
+
+	else {release}
 }
 
 script Route103Shade {
@@ -227,19 +238,35 @@ script Route103Shade {
 script Route103Rain1 {
 	setweather (WEATHER_RAIN)
 	setvar(VAR_ROUTE103_WEATHER, 2)
+	fadeoutbgm (1)
+	playbgm (MUS_STORM, TRUE)
 }
 
 script Route103Rain2 {
 	setweather (WEATHER_RAIN)
 	setvar(VAR_ROUTE103_WEATHER, 3)
+	fadeoutbgm (1)
+	playbgm (MUS_STORM, TRUE)
 }
 
 
 script Route103EndRain {
 	setweather (WEATHER_RAIN)
 	setvar(VAR_ROUTE103_WEATHER, 0)
+	fadeoutbgm (1)
+	playbgm (MUS_STORM, TRUE)
 }
 
+
+
+script FerryManReturnsSouth {
+	
+		clearflag (ferryman103down)
+		clearflag (ferryboat103down)
+		setflag (ferryman103up)
+		setflag (ferryboat103up)
+		
+}
 
 script Route103ConcordBridgeSign {
 	lock
@@ -250,6 +277,12 @@ script Route103ConcordBridgeSign {
 script Route103WaterfallCaveSign {
 	lock
     msgbox(format("Waterfall Cave to Route 117."))
+	release
+}
+
+script Route103FisherBucket {
+	lock
+    msgbox(format("The bucket, which seems meant to store catches, is empty."))
 	release
 }
 
@@ -421,7 +454,9 @@ script Sharpy103 {
 		setflag (Sharpydefeatedat103)
    		//setvar(VAR_OLDALE_PHASE, 3)
 		releaseall
-		playbgm (MUS_ROUTE113, TRUE)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{playbgm (MUS_STORM, TRUE)}
+		else{playbgm (MUS_ROUTE113, TRUE)}
 		}
 
 	text Sharpy103_Outro{
@@ -487,7 +522,9 @@ script Route103Tourist{
 	trainerbattle_no_intro(TRAINER_TOURIST_103, Tourist103_Outro)
 
 
-	playbgm (MUS_ABANDONED_SHIP, TRUE)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{playbgm (MUS_STORM, TRUE)}
+		else{playbgm (MUS_ROUTE113, TRUE)}
 
 	msgbox(format("Uhm... I'm sorry. I dropped my glasses, and I mistook you for that thief...!"))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -616,10 +653,10 @@ script Route103VeteranRematch {
 		"They told me I'm too old to enlist...  but \nI'm stronger than you young'uns!\pI'll show you!"}
 
 	text Veteran103_Outro{
-		"Grr... you won the battle, but not the war!"}
+		"Grr... you won the battle, but\n not the war!"}
 
 	text Veteran103_Intro2{
-		"There you are - I've been preparing my counterattack! CHAAARGE!"}
+		"There you are - I've been preparing\n my counterattack! CHAAARGE!"}
 
 	text Veteran103_Outro2{
 		"... I surrender. Again."}
@@ -839,7 +876,9 @@ script Route103ConcordConartist {
 		setflag (devonsvsconartist)
 		setflag(conartistescaped)
 		clearflag (devonbridgeguardgoestoconartist)
-		playbgm (MUS_ROUTE113, TRUE)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{playbgm (MUS_STORM, TRUE)}
+		else{playbgm (MUS_ROUTE113, TRUE)}
 		setvar (VAR_JIMMYQUESTPROGRESS, 1)
 		//addvar (VAR_DEVON_REPUTATION, + 1)
 		goto (finishconartistscript)	
@@ -931,7 +970,9 @@ script RiverFerryGuyUp {
 		applymovement (37, moves(face_up * 1))
 		waitmovement (0)
 
-		playbgm (MUS_ROUTE113, TRUE)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{playbgm (MUS_STORM, TRUE)}
+		else{playbgm (MUS_ROUTE113, TRUE)}
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back downstream."))
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
@@ -1002,7 +1043,9 @@ script RiverFerryGuyDown {
 		applymovement (34, moves(face_up * 1))
 		waitmovement (0)
 
-		playbgm (MUS_ROUTE113, TRUE)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{playbgm (MUS_STORM, TRUE)}
+		else{playbgm (MUS_ROUTE113, TRUE)}
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back upstream."))
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
@@ -1099,7 +1142,7 @@ script FisherGuruRoute103 {
 	setspeaker ([SP_NAME_IVAN])
 	msgbox(format("AHOY! How's the FISHING going!?"))
 	applymovement (38, moves(face_down))
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "About your request...", "Did you see the Mud Crab?", "How's it going?")
+	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "About your request...", "Did you see the Mud Crab?", "How's it going?", "It's nothing")
 
 		if(var(VAR_RESULT) == 0){
 			if (var(VAR_FISHERPROGRESS103) == 2){
@@ -1187,12 +1230,23 @@ script FisherGuruRoute103 {
 			applymovement (38, moves(face_right))
 			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("The sea is poisoned, the rivers are muddy... \p
-			Most of my buddies have moved up north. But me, I like the challenge!"))
+			Most of my buddies have moved up north."))
 			applymovement (38, moves(face_down))
 			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("But me, I like the challenge!"))
 			goto (finishfisherscript)
 		}
+
+
+		if(var(VAR_RESULT) == 3){
+			setspeaker ([SP_NAME_IVAN])
+			msgbox(format("Then don't distract me! Does it look like I'm doing nothing here!?"))
+			applymovement (38, moves(face_right))
+			setspeaker ([SP_NAME_IVAN])
+			msgbox(format("... don't answer that."))
+			goto (finishfisherscript)
+		}
+
 		}
 	
 	finishfisherscript:

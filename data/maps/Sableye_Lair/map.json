@@ -3,7 +3,7 @@
   "name": "Sableye_Lair",
   "layout": "LAYOUT_SABLEYE_LAIR",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_GRANITE_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

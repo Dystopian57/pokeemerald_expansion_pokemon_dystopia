@@ -664,6 +664,7 @@ gSongTable::
 	song mus_theplace, 0, 0
 	song mus_unwaveringemotions, 0, 0
 	song mus_windyprairiebattle, 0, 0
+	song mus_nfinalbattle, 0, 0
 
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2

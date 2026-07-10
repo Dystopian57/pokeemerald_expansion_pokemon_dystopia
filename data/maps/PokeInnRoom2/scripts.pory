@@ -115,12 +115,12 @@ script OldalePokeCenterInnPrograms {
 		if(var(VAR_OLDALE_PHASE) == 0){
 		
 		msgbox(format("In other unfortunate piece of news, the Devon Warehouse of Oldale town is
-		still under rebel control.\p Devon Inc. has promised to send a taskforce to the facility
+		still under rebel control.\p Devon Co. has promised to send a taskforce to the facility
 		as soon as Devon Guards can be freed from the evacuation efforts of Mauville City,
 		whose Nuclear Plant has suffered a great accident.\p
 		We will continue to apprise you of the situation."))}
 
-		if(var(VAR_OLDALE_PHASE) > 0){
+		if(var(VAR_OLDALE_PHASE) > 2){
 
 
 		msgbox(format("Breaking News: our Verdooms have recently caught this footage of
@@ -158,7 +158,7 @@ script OldalePokeCenterInnPrograms {
 		//GET ACTUAL FLAG HERE
 		
 		{msgbox(format("Breaking news: a violent, rebel-led riot has broken out in the vicinity
-		of Petalburg City's Devon Center. Devon Guards have already been dispatched to put an end
+		of Petalburg City's Devon Center.\p Devon Guards have already been dispatched to put an end
 		to the violence, and we advise residents of the city to steer clear off the Devon facility
 		until the situation is under control."))}
 
@@ -182,13 +182,13 @@ script OldalePokeCenterInnPrograms {
 		if (!flag (helpedconcordconartist))
 		//GET ACTUAL FLAG HERE
 		
-		{msgbox(format("Now, for some more analysis on the latest issue of Devon's Inc 'Safemon
+		{msgbox(format("Now, for some more analysis on the latest issue of Devon Co's 'Safemon
 		Progress Report'. \pFor the third consecutive month, Littleroot's Lab has been at the bottom
 		of contributions to the Safemon project, with only 2 Pokémon species successfully turned into
 		Safemon.\pIn spite of its decades-long history of academic brilliance, the laboratory took a
 		turn for the worse when the illustrious Professor Birch retired, and the torch was passed to
 		the Alolan Professor Balsam.\pAfter continuous downsizing of the laboratory, she is now one of
-		the only two scientists working in Littleroot, and the closure of the institution seems imminent.
+		the only two scientists working in Littleroot, and the closure of the institution seems all but imminent.
 		\pIt would be a sad farewell to a once iconic landmark in Hoenn's history. "))}
 
 		else {
@@ -204,7 +204,7 @@ script OldalePokeCenterInnPrograms {
 		of Mossdeep's Devon Space Center - former gym leaders Tate and Liza - during the announcement of
 		the new MDSS program.\pLast year, the space agency sent several Lunatellites into orbit, which
 		made the popular Devon Net possible.\p This year, with the help of business partner Silph Co.,
-		the 'Gemini Mission' has started, with goals to build the Devon Space Station - the firt man-made,
+		the 'Gemini Mission' has started, with goals to build the Devon Space Station - the first man-made,
 		long-term habitat to exist outside the planet.\p Everyone in Hoenn looks forward to the exciting
 		discoveries that this new era of space flight might bring. Stay tuned!"))
 		release

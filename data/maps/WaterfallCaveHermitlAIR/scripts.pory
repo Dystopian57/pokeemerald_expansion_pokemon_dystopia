@@ -41,7 +41,7 @@ script WaterfallHermit {
 
         msgbox(format("You intrigue me. Let us do battle, so I may learn more about you."))
 
-        trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, WaterfallHermit_Outro)
+        trainerbattle_no_intro(TRAINER_HERMIT_WATERFALL, WaterfallHermit_Outro)
 		 
         
         if (!flag (hermitmovesexplained)){

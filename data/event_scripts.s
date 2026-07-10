@@ -943,7 +943,7 @@ gText_MonsHealedShouldBuyPotions::
 	.string "We at Devon Centers provide\n"
 	.string "emergency care for free, but for\l"
 	.string "non-emergency care, you will still\l"
-	.string "need to pay the fee\p"
+	.string "need to pay the fee.\p"
 	.string "Do your Pokémon a favour, and get\n"
 	.string "some medicine at our mart.\p"
 	.string "Now please clear the way.$"

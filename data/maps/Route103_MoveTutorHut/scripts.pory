@@ -1,8 +1,17 @@
 raw `
-Route103_MoveTutorHut_MapScripts::
-	.byte 0
+
+
 
 `
+
+
+mapscripts Route103_MoveTutorHut_MapScripts {
+	
+	MAP_SCRIPT_ON_LOAD: DayNightNPC
+	MAP_SCRIPT_ON_TRANSITION: DayNightNPC
+}
+
+
 
 
 //NEED "IF NOT LEARNT" CHECKS
@@ -46,7 +55,7 @@ script MoveTutor103 {
 			if (var(VAR_RESULT) == TRUE) {
 
 				msgbox(format("I could teach your Pokémon these moves."))
-				dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Move 2", "Move 3")
+				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Double Edge", "Explosion", "Metronome")
 					if(var(VAR_RESULT) == 0){
 					msgbox(format("Which of your Pokémon should I teach?"))
 					special (ChooseMonForMoveTutor)
@@ -68,15 +77,59 @@ script MoveTutor103 {
 					if(var(VAR_RESULT) == 1){
 					msgbox(format("Which of your Pokémon should I teach?"))
 					special (ChooseMonForMoveTutor)
-					setvar (VAR_0x8005, MOVE_SWAGGER)
+					waitstate
+					setvar (VAR_0x8005, MOVE_DOUBLE_EDGE)
+					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
+
+					
+					showmoneybox (0, 0)
+					msgbox(format("Very well. I'll collect your 100¥ now..."))
+					playse (SE_SHOP)
+					removemoney (100)
+					updatemoneybox
 					goto (endtutorscript)
+					//special (IsSelectedMonEgg)
+					//goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
 					}
+					
 
 					if(var(VAR_RESULT) == 2){
 					msgbox(format("Which of your Pokémon should I teach?"))
 					special (ChooseMonForMoveTutor)
-					setvar (VAR_0x8005, MOVE_SWAGGER)
-					goto (exittutorscript)
+					waitstate
+					setvar (VAR_0x8005, MOVE_EXPLOSION)
+					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
+
+					
+					showmoneybox (0, 0)
+					msgbox(format("Very well. I'll collect your 100¥ now..."))
+					playse (SE_SHOP)
+					removemoney (100)
+					updatemoneybox
+					goto (endtutorscript)
+					//special (IsSelectedMonEgg)
+					//goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
+					}
+
+					if(var(VAR_RESULT) == 3){
+					msgbox(format("Which of your Pokémon should I teach?"))
+					special (ChooseMonForMoveTutor)
+					waitstate
+					setvar (VAR_0x8005, MOVE_METRONOME)
+					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
+
+					
+					showmoneybox (0, 0)
+					msgbox(format("Very well. I'll collect your 100¥ now..."))
+					playse (SE_SHOP)
+					removemoney (100)
+					updatemoneybox
+					goto (endtutorscript)
+					//special (IsSelectedMonEgg)
+					//goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
 					}
 			}
 		
@@ -89,25 +142,25 @@ script MoveTutor103 {
 
 		if(var(VAR_RESULT) == 1)
 		{
-		checkmoney (100)
+			checkmoney (100)
 			if (var(VAR_RESULT) == TRUE) {
 
-		msgbox(format("Which of your Pokémon should I have remember a move?"))
-		special (ChooseMonForMoveRelearner)
-		waitstate
-		goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
-		special (IsSelectedMonEgg)
-		goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
-		goto_if_eq (VAR_0x8005, 0, NoMoveToTeachMon)
-		special (TeachMoveRelearnerMove)
-		showmoneybox (0, 0)
-		msgbox(format("Very well. I'll collect your 100¥ now..."))
-		playse (SE_SHOP)
-		removemoney (100)
-		updatemoneybox
-		
-		goto (endtutorscript)
-		}
+			msgbox(format("Which of your Pokémon should I have remember a move?"))
+			special (ChooseMonForMoveRelearner)
+			waitstate
+			goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
+			special (IsSelectedMonEgg)
+			goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
+			goto_if_eq (VAR_0x8005, 0, NoMoveToTeachMon)
+			special (TeachMoveRelearnerMove)
+			showmoneybox (0, 0)
+			msgbox(format("Very well. I'll collect your 100¥ now..."))
+			playse (SE_SHOP)
+			removemoney (100)
+			updatemoneybox
+			
+			goto (endtutorscript)
+			}
 			
 			if (var(VAR_RESULT) == FALSE) {
 				showmoneybox (0, 0)

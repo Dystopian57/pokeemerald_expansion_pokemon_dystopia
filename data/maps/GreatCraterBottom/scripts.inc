@@ -48,7 +48,7 @@ CraterHermit_8:
 # 24 "data/maps/GreatCraterBottom/scripts.pory"
 	msgbox CraterHermit_Text_4
 # 25 "data/maps/GreatCraterBottom/scripts.pory"
-	trainerbattle_no_intro TRAINER_REBEL_OLDALE_GUARD, CraterHermit_Outro
+	trainerbattle_no_intro TRAINER_HERMIT_CRATER, CraterHermit_Outro
 # 28 "data/maps/GreatCraterBottom/scripts.pory"
 	goto_if_unset hermitmovesexplained, CraterHermit_11
 CraterHermit_10:
@@ -129,7 +129,7 @@ CraterHermit_Text_6:
 
 CraterHermit_Text_7:
 # 40 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "Obtained the Light Token$"
+	.string "Obtained the Light Token!$"
 
 CraterHermit_Text_8:
 # 45 "data/maps/GreatCraterBottom/scripts.pory"

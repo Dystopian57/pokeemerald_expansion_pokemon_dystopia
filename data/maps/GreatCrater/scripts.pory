@@ -378,8 +378,8 @@ script TouristGreatCraterRegister {
 
 script TouristGreatCraterRematch {
 	trainerbattle_rematch (TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro)
-	msgbox(format("You're even stronger than last time... or have I just gotten weaker...?
-	\p Old age is a cruel thing. But I plan to use the time I have left."))
+	msgbox(format("Pictures are great and all, but there's nothing like an exciting moment
+	to imprint a memory."))
 	end
 	}
 

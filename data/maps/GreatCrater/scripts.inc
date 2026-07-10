@@ -539,7 +539,7 @@ TouristGreatCraterRematch::
 # 380 "data/maps/GreatCrater/scripts.pory"
 	trainerbattle_rematch TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro
 # 381 "data/maps/GreatCrater/scripts.pory"
-	msgbox TouristGreatCraterRematch_Text_0
+	msgbox TouristGreatCraterBattle_Text_0
 	end
 
 
@@ -1257,13 +1257,6 @@ TouristGreatCraterRegister_Text_0:
 # 373 "data/maps/GreatCrater/scripts.pory"
 	.string "That was exciting! Say, we don't we\n"
 	.string "exchange Devonav profiles?$"
-
-TouristGreatCraterRematch_Text_0:
-# 381 "data/maps/GreatCrater/scripts.pory"
-	.string "You're even stronger than last time... or\n"
-	.string "have I just gotten weaker...?\p"
-	.string "Old age is a cruel thing. But I plan to\n"
-	.string "use the time I have left.$"
 
 ConspiracyGreatCraterBattle_Text_0:
 # 400 "data/maps/GreatCrater/scripts.pory"

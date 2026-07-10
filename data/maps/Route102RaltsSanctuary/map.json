@@ -3,7 +3,7 @@
   "name": "Route102RaltsSanctuary",
   "layout": "LAYOUT_ROUTE102RALTS_SANCTUARY",
   "music": "MUS_B_PYRAMID_TOP",
-  "region_map_section": "MAPSEC_ROUTE_105",
+  "region_map_section": "MAPSEC_GREEN_PATH",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

@@ -47,7 +47,7 @@ WaterfallHermit_14:
 # 42 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermit_Text_10
 # 44 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	trainerbattle_no_intro TRAINER_REBEL_OLDALE_GUARD, WaterfallHermit_Outro
+	trainerbattle_no_intro TRAINER_HERMIT_WATERFALL, WaterfallHermit_Outro
 # 47 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	goto_if_unset hermitmovesexplained, WaterfallHermit_18
 WaterfallHermit_17:

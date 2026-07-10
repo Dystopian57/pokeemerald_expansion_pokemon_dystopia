@@ -3739,6 +3739,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_THEPLACE)            \
     X(MUS_UNWAVERINGEMOTIONS)            \
     X(MUS_WINDYPRAIRIEBATTLE)            \
+    X(MUS_NFINALBATTLE)            \
 
 
 #define SOUND_LIST_SE               \

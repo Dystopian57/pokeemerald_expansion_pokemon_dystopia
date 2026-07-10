@@ -3,7 +3,7 @@
   "name": "PetLandfillMilitaryShop",
   "layout": "LAYOUT_PET_LANDFILL_MILITARY_SHOP",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_KANTO_SAFARI_ZONE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

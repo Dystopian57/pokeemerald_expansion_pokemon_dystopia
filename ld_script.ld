@@ -1069,6 +1069,8 @@ SECTIONS {
         sound/songs/midi/mus_theplace.o(.rodata);
         sound/songs/midi/mus_unwaveringemotions.o(.rodata);
         sound/songs/midi/mus_windyprairiebattle.o(.rodata);
+        sound/songs/midi/mus_nfinalbattle.o(.rodata);
+
 
         
         
