@@ -279,7 +279,7 @@
 #define sentdemomysterygift      0xF7
 #define receiveddemomysterygift           0xF8
 #define hermitmovesexplained           0xF9
-#define FLAG_RECEIVED_WATMEL_BERRY           0xFA
+#define newgameitems           0xFA
 #define FLAG_RECEIVED_DURIN_BERRY            0xFB
 #define FLAG_RECEIVED_BELUE_BERRY            0xFC
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD

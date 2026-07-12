@@ -193,7 +193,7 @@ script ConcordCustomsPoster{
 script ConcordCustomsPhone{
     lock
 	showmoneybox (18, 0)
-    msgbox(format("It's a paid phone. The cost is 50¥."))
+    msgbox(format("It's a public Devon Phone. The cost is 50¥."))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Insert coin", "Leave")
 
             if(var(VAR_RESULT) == 0){
@@ -205,7 +205,7 @@ script ConcordCustomsPhone{
 					waitse
 					playse (SE_CLICK)
 					msgbox(format("Which number to dial?"))
-					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Littleroot Lab", "Petalburg Gym" , "Dial Manually", "No one") //Petalburg Gym. Voice mail.
+					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Littleroot Lab", "Petalburg Gym" , "Citizen Services", "Dial Manually", "None")
 						if(var(VAR_RESULT) == 0){
 						hidemoneybox
 						playse (SE_POKENAV_CALL)
@@ -229,13 +229,46 @@ script ConcordCustomsPhone{
 						goto (endofpayphone)
 						}
 
-						if(var(VAR_RESULT) == 3){
-						hidemoneybox						
+						if(var(VAR_RESULT) == 2){
+						hidemoneybox
+						playse (SE_POKENAV_CALL)
+						waitse
+						msgbox(format("You have reached Devon Co.'s Citizen Services. What can we do for you?"))
+						citizenservicesoptions:
+						dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Devon Visa Application", "Pokémon Retrieval" , "Nothing")
+							if(var(VAR_RESULT) == 0){msgbox(format("We are very sorry. We are not processing visa applications at
+							this time. \p Is there anything else we can do for you?"))
+							goto (citizenservicesoptions)}
+
+							if(var(VAR_RESULT) == 1){
+							msgbox(format("Of course. For this request, I must ask you for your Devon Card's ID number. Is that okay?"))
+							dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Tell number", "Nevermind")}
+								if(var(VAR_RESULT) == 0){msgbox(format("Thank you. Let's see... {PLAYER}, is it? \p Devon Co. is
+								currently in possession of one of your Pokémon.\p Species... Primeape.
+								\p This Pokémon was taken from you upon termination of your military service.
+								\p This was done because your Primeape met the criteria established by Devon Co's Wildlife 
+								Protocol 57: 'Pokémon for Urgent Safening'.
+								\p In short, your Pokémon grew too strong - a likely consequence of Pokémon trained to fight in
+								the Kantonian war - and Devon Co. cannot return it to you until it has been turned into a Safemon.
+								\p You will be notified as soon as this is the case, and a retrieval meeting will be scheduled.
+								\p Thank you for your patience!"))
+
+								msgbox(format("Is there anything else we can do for you?"))
+								goto (citizenservicesoptions)}
+								if(var(VAR_RESULT) == 1){
+								msgbox(format("I see. We respect your right to privacy, but I'm afraid we cannot process this request
+								without your ID number.\p Is there anything else we can do for you?"))
+								goto (citizenservicesoptions)
+								}
+							if(var(VAR_RESULT) == 2){
+							msgbox(format("Very well. Stay safe!"))
+							}
+
 						playse (SE_POKENAV_HANG_UP)
 						goto (endofpayphone)
 						}
 
-						if(var(VAR_RESULT) == 2){
+						if(var(VAR_RESULT) == 3){
 						hidemoneybox
 						msgbox(format("Let's dial a number..."))
 						special (EnterCode)
@@ -270,14 +303,21 @@ script ConcordCustomsPhone{
 
 						
 						waitse
-
-
-
-
 						playse (SE_POKENAV_HANG_UP)
+						
 						goto (endofpayphone)
 						}
 						
+						if(var(VAR_RESULT) == 4){
+						returnmoney:
+						addmoney (50)
+						updatemoneybox
+						playse (SE_CLICK)
+						waitse
+						msgbox(format("The phone returns the coin."))
+						hidemoneybox
+						goto (endofpayphone)
+						}
 						
 						}}
 			if(var(VAR_RESULT) == 1){

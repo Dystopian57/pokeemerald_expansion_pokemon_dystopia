@@ -3,6 +3,14 @@ LittlerootMausoleum_MapScripts::
 	.byte 0
 `
 
+
+script MausoleumMourningLady {
+        lock
+        msgbox (format("Some days, I feel like I can't get out of bed at all... \p Like there's no
+        meaning in it anymore. \p But then, I go through the motions, and I find myself here again."))
+        release
+}
+
 script LittlerootMausoleum_Shuppet {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)

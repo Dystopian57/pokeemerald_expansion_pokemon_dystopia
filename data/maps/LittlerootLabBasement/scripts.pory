@@ -3,6 +3,169 @@ LittlerootLabBasement_MapScripts::
 	.byte 0
 `
 
+
+script LabBasementTrashBin {
+	finditem (ITEM_RED_SHARD)
+}
+
+script LabBasementTunnelSign {
+    lock
+    msgbox (format("To Exclusion Tunnel"))
+	release}
+
+script LabBasementBalsamRoomSign {
+    lock
+    msgbox (format("Balsam's Office"))
+	release}
+
+
+script AideLaptop {
+    lock
+    msgbox (format("An online forum is open, where a heated debate on Safemon biology is taking place.
+	\p Can't understand any of it..."))
+	release}
+
+script AideMedicineDispenserScript {
+	lock
+	msgbox (format("It's a Medicine Dispenser."))
+	pokemart (AideMedicineDispenser)
+	release
+
+}
+
+script LabBasementUnsafener {
+	lock
+	if(!flag (Unsafeningtutodone))
+
+	{GetGameStat(GAME_STAT_RODE_CABLE_CAR)
+	copyvar(VAR_0x8000, VAR_RESULT)
+	bufferstring (STR_VAR_1, VAR_0x8000)
+	msgbox (format("It's the Unsafener. A digital counter says:\l Unsafened Species: {STR_VAR_1}"))}
+
+
+	else
+	{msgbox (format("The machine looks incredibly complex. Better not to touch it."))}
+	release
+}
+
+script LabBasementBlueprints {
+	lock
+	if(!flag (Unsafeningtutodone))
+
+	{
+	msgbox (format("It's a very complicated blueprint"))}
+
+	else
+	{msgbox (format("A complicated blueprint for what seems like a portable version of the Unsafener."))}
+	release
+}
+
+script LabBasementFaceWallCabinet {
+	lock
+	msgbox (format("The cabinet is facing the wall. There's no way to open it."))
+	release
+}
+
+script LabBasementCavity {
+	lock
+	if(!flag (Unsafeningtutodone))
+
+	{
+	msgbox (format("There's a cavity under the machine, with hundreds of wires going in all directions."))}
+
+	else
+	{msgbox (format("There's a cavity under the Unsafener, with hundreds of wires going in all directions."))}
+	release
+}
+
+script LabBasementCoolingTerminal {
+	lock
+	if(!flag (Unsafeningtutodone))
+
+	{
+	msgbox (format("It seems like a terminal for the machine's cooling system."))}
+
+	else
+	{msgbox (format("It seems like a terminal for the Unsafener's cooling system."))}
+	release
+}
+
+	mart AideMedicineDispenser {
+		ITEM_PROTEIN
+		ITEM_IRON
+		ITEM_CALCIUM
+		ITEM_ZINC
+		ITEM_CARBOS
+		ITEM_PP_UP
+		ITEM_ADAMANT_MINT
+		ITEM_BOLD_MINT
+		ITEM_BRAVE_MINT
+		ITEM_CALM_MINT
+		ITEM_CAREFUL_MINT
+		ITEM_GENTLE_MINT
+		ITEM_HASTY_MINT
+		ITEM_IMPISH_MINT
+		ITEM_JOLLY_MINT
+		ITEM_LAX_MINT
+		ITEM_LONELY_MINT
+		ITEM_MILD_MINT
+		ITEM_MODEST_MINT
+		ITEM_NAIVE_MINT
+		ITEM_NAUGHTY_MINT
+		ITEM_QUIET_MINT
+		ITEM_RASH_MINT
+		ITEM_SASSY_MINT
+		ITEM_TIMID_MINT			
+	}
+
+script AideCasettePlayer {
+    lock
+    msgbox (format("It's a radio with a casette inside."))
+
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Adopt", "Don't adopt")
+	if(var(VAR_RESULT) == 0){
+	playbgm (MUS_RENBOUPARTY, TRUE)
+		if (flag(Aideearrivestobasement))
+		{applymovement (1, moves (face_right, emote_exclamation_mark))
+		playse (SE_PIN)
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("{PLAYER} - I didn't take you for a music fan! I LOVE that so-"))
+		applymovement (1, moves (jump_down))
+		
+		call(BalsamYellShake)
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox (format("Jim, are you playing that stupid song AGAIN!?"))
+
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+		setspeaker ([SP_NAME_AIDEE])
+		msgbox (format("Ahaha - I'm sorry Professor! It's just for a little while!"))
+
+		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+		setspeaker ([SP_NAME_AIDEE])
+		applymovement (1, moves (face_right))
+		msgbox (format("Haah... some people don't have taste for music, am I right?"))
+		applymovement (1, moves (face_down))
+		removefieldmugshot
+		}
+	release
+	}
+
+	if(var(VAR_RESULT) == 1){release}
+    releaseall
+
+}
+
+script BalsamYellShake {
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+ 
+}
+
 script AideeBasementUnfollow1 {
 	lockall
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
@@ -280,8 +443,9 @@ script AideeBasementIdleTalk {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Hey there, {PLAYER}! What brings you here?"))
+		aidechoices:
 		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Unsafen Safemon", 
-		"Unsafening Materials", "Chit-chat", "Nothing")
+		"Unsafening Materials", "Small talk", "Secondary effects", "Nothing")
 
 
 			//UNSAFENING MATERIALS
@@ -323,31 +487,69 @@ script AideeBasementIdleTalk {
 			goto (finishsafemontradescript)
 			}}
 
-			//CHIT-CHAT
-			if (var(VAR_RESULT) == 2) {
+			//SMALL TALK
+			if (var(VAR_RESULT) == 3) {
+
+
 				createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 				setspeaker ([SP_NAME_AIDEE])
 				msgbox (format("So, {PLAYER}... what's your stance on Devon Corp. and
 				Safemon?"))
-				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them")
+				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them",
+				"I'm different")
 				
 				if (var(VAR_RESULT) == 0) {
 					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 					setspeaker ([SP_NAME_AIDEE])
-					msgbox (format("Hah, that's fair enough. Me, I'm indifferent - 
-					I just like the science behind it all!"))
+					msgbox (format("Really? Well, you don't need to force yourself to help us
+					with the Unsafenings then!\p Don't feel like you owe us for helping you
+					out. It's our own way of thanking Professor Birch, who helped us set up
+					here.\p He worries a lot about you. Even Balsam seems to like you, even
+					if she doesn't show it!\p Me? Well, I'll like you better the more Safemon
+					you bring - ahaha!"))
 				}		
 
 				if (var(VAR_RESULT) == 1) {
 					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 					setspeaker ([SP_NAME_AIDEE])
-					msgbox (format("Hah, that's fair enough. Me, I'm indifferent - 
-					I just like the science behind it all!"))
+					msgbox (format("I guess that makes sense, considering you're helping
+					us with the Unsafenings!\p It's also a common sentiment, here in the
+					so-called 'Rebel Zone'.\p But if you even venture further north, closer
+					to Neo Rustboro, now that's a different picture!"))
 					
-				}}
+				}
+
+				if (var(VAR_RESULT) == 2) {
+					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("Really!? You're just like me then! At last, someone after
+					my own heart.\p Everyone feels so strongly about them. Me, I just like the
+					science behind it all.\p I think all Pokémon are interesting and fun to
+					study, regardless of the form they take.\p They're just like people, don't
+					you think?"))
+				}
+				
+					msgbox (format("Anything else?"))
+					goto (aidechoices)}
 
 			//NOTHING
-			if (var(VAR_RESULT) == 3) {
+			if (var(VAR_RESULT) == 2) {
+					msgbox (format("A-ah, I suppose you've noticed some already...? You're
+					observant!\p You see, right now Unsafening is a very novel procedure...\p Of course,
+					it changes the appearance, typing and ability of a specimen back to what they used to be -
+					that works as intended!\p However, it may also alter their level, moves, effort values...
+					even their gender!\p I know having your companions change so much at once may be distressing...\p
+					To help alleviate that, I've set up a Medicine Dispenser over there.\p For token prices, you may
+					get pills with which to help get your Pokémon back to how it used to be - or to change them
+					even more!\p And don't worry - there's no risk of overdose with any of the pills!
+					{COLOR LIGHT_GRAY}{SHADOW WHITE}I think...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+
+					msgbox (format("Anything else?"))
+					goto (aidechoices)
+			}
+
+			//NOTHING
+			if (var(VAR_RESULT) == 4) {
 				goto (finishsafemontradescript)
 			}
 
@@ -2267,7 +2469,7 @@ script AideeBasementIdleTalk {
 				
 	}
 
-	mart AideMaterials1 {
+	mart AideMaterials1 { //add those of 5 first Safemon
 		ITEM_COMET_SHARD
 		ITEM_MAGNET
 				

@@ -19,8 +19,17 @@ mapscripts OldaleTown_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightNPC
     MAP_SCRIPT_ON_LOAD: OldaleWeather
     MAP_SCRIPT_ON_LOAD: GenderedSpriteOldale}
-	
 
+script ChangeTrainerCardTest {
+    setflag (FLAG_SYS_TOWER_GOLD)
+    setflag (FLAG_SYS_DOME_GOLD)
+    setflag (FLAG_SYS_PALACE_GOLD)
+    setflag (FLAG_SYS_ARENA_GOLD)
+    setflag (FLAG_SYS_FACTORY_GOLD)
+    setflag (FLAG_SYS_PIKE_GOLD)
+    setflag (FLAG_SYS_PYRAMID_GOLD)
+    msgbox(format("All symbols given"))
+}
 
 script GenderedSpriteOldale {
 call(Common_EventScript_SetupRivalGfxId)
@@ -1149,6 +1158,7 @@ script OldaleGrassRebel {
         playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
         msgbox(format("Wait right here, you hear me!? I'll go to the Devon Center real quick!"))
         playse (SE_FLEE)
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
         applymovement (24, moves(walk_fast_left * 8))
         waitmovement (24)
         fadeoutbgm (1)

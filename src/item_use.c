@@ -47,6 +47,8 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "wallclock.h"
+//#include "wallclock.c"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -60,6 +62,7 @@ static void PlayerFaceHiddenItem(u8);
 static void CheckForHiddenItemsInMapConnection(u8);
 static void Task_OpenRegisteredPokeblockCase(u8);
 static void Task_AccessPokemonBoxLink(u8);
+//static void ItemUseOutOfBattle_Wristwatch(void); //NEW
 static void ItemUseOnFieldCB_Bike(u8);
 static void ItemUseOnFieldCB_Rod(u8);
 static void ItemUseOnFieldCB_Itemfinder(u8);
@@ -752,6 +755,14 @@ static void Task_AccessPokemonBoxLink(u8 taskId)
     ScriptContext_SetupScript(EventScript_AccessPokemonBoxLink);
     DestroyTask(taskId);
 }
+
+void ItemUseOutOfBattle_Wristwatch(u8 taskId)
+{
+    gMain.savedCallback = CB2_ReturnToBagMenuPocket;
+    gBagMenu->newScreenCallback = CB2_ViewWallClock;
+    Task_FadeAndCloseBagMenu(taskId);
+}
+
 
 void ItemUseOutOfBattle_CoinCase(u8 taskId)
 {

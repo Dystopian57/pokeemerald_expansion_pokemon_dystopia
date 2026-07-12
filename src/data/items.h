@@ -189,18 +189,18 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
         .secondaryId = BALL_POKE,
-        .iconPic = gItemIcon_GreatBall,
-        .iconPalette = gItemIconPalette_GreatBall,
+        .iconPic = gItemIcon_PokeBall,
+        .iconPalette = gItemIconPalette_PokeBall,
     },
 
     [ITEM_GREAT_BALL] =
     {
-        .name = ITEM_NAME("Great Ball"),
+        .name = ITEM_NAME("Makeshift Ball"),
         .price = 600,
         .description = COMPOUND_STRING(
-            "A tool used for\n"
-            "catching wild\n"
-            "Pokémon."),
+            "A ball put\n"
+            "together from\n"
+            "recycled parts."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_GREAT_BALL,
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
@@ -2478,7 +2478,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_X_DEFENSE] =
     {
-        .name = ITEM_NAME("Melatonin"),
+        .name = ITEM_NAME("Oxytocin"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 550,
         .holdEffectParam = X_ITEM_STAGES,
         .description = COMPOUND_STRING(
@@ -2744,7 +2744,7 @@ const struct Item gItemsInfo[] =
         .price = (I_PRICE >= GEN_9) ? 6000 : 6000,
         .description = COMPOUND_STRING(
             "Given only to the\n"
-            "heroes of the war\n"
+            "heroes of the war.\n"
             "Very valuable."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
@@ -9971,8 +9971,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_METRONOME] =
     {
-        .name = ITEM_NAME("Sturdy Watch"),
-        .pluralName = ITEM_PLURAL_NAME("Sturdy Watches"),
+        .name = ITEM_NAME("Alarm Clock"),
+        .pluralName = ITEM_PLURAL_NAME("Alarm Clocks"),
     #if I_PRICE >= GEN_9
         .price = 1000,
     #elif I_PRICE >= GEN_7
@@ -9993,6 +9993,9 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Metronome,
         .iconPalette = gItemIconPalette_Metronome,
+
+
+
     },
 
     [ITEM_IRON_BALL] =
@@ -14130,17 +14133,22 @@ const struct Item gItemsInfo[] =
 
     [ITEM_KEY_TO_ROOM_1] =
     {
-        .name = ITEM_NAME("Key to Room 1"),
-        .pluralName = ITEM_PLURAL_NAME("Keys to Room 1"),
+        .name = ITEM_NAME("Sturdy Watch"),
+        .pluralName = ITEM_PLURAL_NAME("Sturdy Watches"),
         .price = 0,
-        .description = sKeyToRoomDesc,
+        .description = COMPOUND_STRING(
+            "A worn wristwatch\n"
+            "that can be used to\n"
+            "check the time."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_KeyToRoom1,
-        .iconPalette = gItemIconPalette_Key,
+        .fieldUseFunc = ItemUseOutOfBattle_Wristwatch,
+        .iconPic = gItemIcon_MewniumZ,
+        .iconPalette = gItemIconPalette_MewniumZ,
     },
+
+
 
     [ITEM_KEY_TO_ROOM_2] =
     {

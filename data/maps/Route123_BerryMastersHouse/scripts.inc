@@ -87,11 +87,9 @@ Route123_BerryMastersHouse_EventScript_GivePamtreBerry::
 	end
 
 Route123_BerryMastersHouse_EventScript_GiveWatmelBerry::
-	goto_if_set FLAG_RECEIVED_WATMEL_BERRY, Route123_BerryMastersHouse_EventScript_GiveNormalBerry
 	msgbox Route123_BerryMastersHouse_Text_InspirationalTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_WATMEL_BERRY
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_WATMEL_BERRY
 	goto Route123_BerryMastersHouse_EventScript_GaveBerry
 	end
 

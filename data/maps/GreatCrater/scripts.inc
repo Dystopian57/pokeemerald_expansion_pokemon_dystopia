@@ -1430,7 +1430,7 @@ GreatCraterDevonGruntFemale_Text_2:
 GreatCraterDevonGruntMale_Text_0:
 # 638 "data/maps/GreatCrater/scripts.pory"
 	.string "By regulation of Devon Co.'s Wildlife\n"
-	.string "Protocol, section 75, titled 'Area\l"
+	.string "Protocol, section 75, titled 'Route\l"
 	.string "Enclosures for the purpose of Safemon\l"
 	.string "Research...'\p"
 	.string "This area is closed off to civilians\n"

@@ -635,7 +635,7 @@ script GreatCraterDevonGruntMale {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (8, moves(face_player))
-	msgbox(format("By regulation of Devon Co.'s Wildlife Protocol, section 75, titled 'Area Enclosures
+	msgbox(format("By regulation of Devon Co.'s Wildlife Protocol, section 75, titled 'Route Enclosures
 	for the purpose of Safemon Research...' \p This area is closed off to civilians until further notice."))
     applymovement (8, moves(face_down))
 	waitmovement

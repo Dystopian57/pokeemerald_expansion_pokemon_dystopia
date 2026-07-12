@@ -8,6 +8,8 @@ void ItemUseOutOfBattle_Itemfinder(u8 taskId);
 void ItemUseOutOfBattle_PokeblockCase(u8 taskId);
 void ItemUseOutOfBattle_CoinCase(u8 taskId);
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId);
+//void ReturnFromWristWatch(u8 taskId); //NEW
+void ItemUseOutOfBattle_Wristwatch(u8 taskId); //NEW
 void ItemUseOutOfBattle_PowderJar(u8 taskId);
 void ItemUseOutOfBattle_SSTicket(u8 taskId);
 void ItemUseOutOfBattle_WailmerPail(u8 taskId);

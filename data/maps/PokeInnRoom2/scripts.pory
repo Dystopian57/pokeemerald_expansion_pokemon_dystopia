@@ -21,6 +21,22 @@ script DevonInnSignAboutFreezer {
 	release
 }
 
+script WallClock {
+	incrementgamestat (GAME_STAT_CHECKED_CLOCK)
+	gettime
+	buffernumberstring (STR_VAR_1, VAR_0x8000)
+	buffernumberstring (STR_VAR_2, VAR_0x8001)
+	buffernumberstring (STR_VAR_3, VAR_0x8002)
+	msgbox(format("The time is {STR_VAR_1}, {STR_VAR_3}, {STR_VAR_3}."))
+
+	//fadescreen FADE_TO_BLACK
+	//special Special_ViewWallClock
+	//waitstate
+	//releaseall
+	end
+}
+	//@ Sets the values of variables VAR_0x8000, VAR_0x8001, and VAR_0x8002 to the current hour, minute, and second.
+	//.macro gettime
 
 
 script OldalePokeCenterInnPrograms {

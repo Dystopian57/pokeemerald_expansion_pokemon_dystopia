@@ -896,7 +896,10 @@ static void Task_ViewClock_FadeOut(u8 taskId)
 static void Task_ViewClock_Exit(u8 taskId)
 {
     if (!gPaletteFade.active)
+    {
+        FreeAllWindowBuffers();
         SetMainCallback2(gMain.savedCallback);
+    }
 }
 
 static u8 CalcMinHandDelta(u16 speed)
