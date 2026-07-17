@@ -238,14 +238,14 @@ script Route103Shade {
 script Route103Rain1 {
 	setweather (WEATHER_RAIN)
 	setvar(VAR_ROUTE103_WEATHER, 2)
-	fadeoutbgm (1)
+	fadeoutbgm (0)
 	playbgm (MUS_STORM, TRUE)
 }
 
 script Route103Rain2 {
 	setweather (WEATHER_RAIN)
 	setvar(VAR_ROUTE103_WEATHER, 3)
-	fadeoutbgm (1)
+	fadeoutbgm (0)
 	playbgm (MUS_STORM, TRUE)
 }
 
@@ -253,7 +253,7 @@ script Route103Rain2 {
 script Route103EndRain {
 	setweather (WEATHER_RAIN)
 	setvar(VAR_ROUTE103_WEATHER, 0)
-	fadeoutbgm (1)
+	fadeoutbgm (0)
 	playbgm (MUS_STORM, TRUE)
 }
 

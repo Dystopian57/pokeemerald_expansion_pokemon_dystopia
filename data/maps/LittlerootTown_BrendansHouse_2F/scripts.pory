@@ -267,7 +267,7 @@ PlayersHouse_2F_EventScript_GameCube::
 	end
 
 PlayersHouse_2F_Text_ClockIsStopped:
-	.string "Let's see...$"
+	.string "Let's set the wristwatch on time...$"
 
 
 
@@ -313,7 +313,9 @@ PlayersHouse_2F_Text_ItsAGameCube:
 //}
 
 
-
+script ScriptedShinyFailsafe {
+	clearflag (forceshiny)
+}
 
 script Setclocktoleave {
 	lockall

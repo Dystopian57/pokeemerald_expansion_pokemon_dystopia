@@ -1135,6 +1135,7 @@ else {
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("I'll make it worth your time, trust me!"))
 	applymovement (5, moves(face_left))
+	waitmovement (5)
 		setvar(VAR_LITTLEROOT_PHASE, 3)
 		setflag (AideeQuestAccepted)
 		}

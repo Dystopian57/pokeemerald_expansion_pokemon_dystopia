@@ -58,13 +58,12 @@ script MoveTutor103 {
 				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Double Edge", "Explosion", "Metronome")
 					if(var(VAR_RESULT) == 0){
 					msgbox(format("Which of your Pokémon should I teach?"))
+					setvar (VAR_0x8005, MOVE_SWAGGER)
 					special (ChooseMonForMoveTutor)
 					waitstate
-					setvar (VAR_0x8005, MOVE_SWAGGER)
+					lock
 					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
-					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
-
-					
+					goto_if_eq (VAR_RESULT, PARTY_NOTHING_CHOSEN, canceltutor)
 					showmoneybox (0, 0)
 					msgbox(format("Very well. I'll collect your 100¥ now..."))
 					playse (SE_SHOP)
@@ -76,13 +75,11 @@ script MoveTutor103 {
 					}
 					if(var(VAR_RESULT) == 1){
 					msgbox(format("Which of your Pokémon should I teach?"))
+					setvar (VAR_0x8005, MOVE_DOUBLE_EDGE)
 					special (ChooseMonForMoveTutor)
 					waitstate
-					setvar (VAR_0x8005, MOVE_DOUBLE_EDGE)
 					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
 					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
-
-					
 					showmoneybox (0, 0)
 					msgbox(format("Very well. I'll collect your 100¥ now..."))
 					playse (SE_SHOP)
@@ -96,13 +93,11 @@ script MoveTutor103 {
 
 					if(var(VAR_RESULT) == 2){
 					msgbox(format("Which of your Pokémon should I teach?"))
+					setvar (VAR_0x8005, MOVE_EXPLOSION)
 					special (ChooseMonForMoveTutor)
 					waitstate
-					setvar (VAR_0x8005, MOVE_EXPLOSION)
 					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
 					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
-
-					
 					showmoneybox (0, 0)
 					msgbox(format("Very well. I'll collect your 100¥ now..."))
 					playse (SE_SHOP)
@@ -115,13 +110,11 @@ script MoveTutor103 {
 
 					if(var(VAR_RESULT) == 3){
 					msgbox(format("Which of your Pokémon should I teach?"))
+					setvar (VAR_0x8005, MOVE_METRONOME)
 					special (ChooseMonForMoveTutor)
 					waitstate
-					setvar (VAR_0x8005, MOVE_METRONOME)
 					goto_if_eq (VAR_RESULT, FALSE, canceltutor)
 					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
-
-					
 					showmoneybox (0, 0)
 					msgbox(format("Very well. I'll collect your 100¥ now..."))
 					playse (SE_SHOP)

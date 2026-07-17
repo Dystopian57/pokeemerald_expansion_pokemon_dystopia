@@ -589,8 +589,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_MOTOR_DRIVE] =
     {
-        .name = _("Motor Drive"),
-        .description = COMPOUND_STRING("Electricity raises Speed."),
+        .name = _("Volt Hungry"),
+        .description = COMPOUND_STRING("Electricity raises Attack."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -990,7 +990,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_FRIEND_GUARD] =
     {
-        .name = _("Friend Guard"),
+        .name = _("Soothing Tune"),
         .description = COMPOUND_STRING("Lowers damage to partner."),
         .aiRating = 0,
         .breakable = TRUE,
@@ -1469,7 +1469,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_MERCILESS] =
     {
-        .name = _("Merciless"),
+        .name = _("Lethal Gas"),
         .description = COMPOUND_STRING("Criticals poisoned foes."),
         .aiRating = 4,
     },
@@ -1538,7 +1538,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_TRIAGE] =
     {
-        .name = _("Triage"),
+        .name = _("Nanocure"),
         .description = COMPOUND_STRING("Healing moves go first."),
         .aiRating = 7,
     },
@@ -1609,7 +1609,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_CORROSION] =
     {
-        .name = _("Corrosion"),
+        .name = _("Scorching Fumes"),
         .description = COMPOUND_STRING("Poisons any type."),
         .aiRating = 5,
     },
@@ -1773,7 +1773,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_NEUROFORCE] =
     {
-        .name = _("Neuroforce"),
+        .name = _("Optimization"),
         .description = COMPOUND_STRING("Ups “supereffective”."),
         .aiRating = 6,
     },
@@ -1847,8 +1847,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_STEAM_ENGINE] =
     {
-        .name = _("Steam Engine"),
-        .description = COMPOUND_STRING("Fire or Water hits up Speed."),
+        .name = _("Steam Cannon"),
+        .description = COMPOUND_STRING("Fire or Water hits up Sp. Atk."),
         .aiRating = 3,
     },
 
@@ -1898,7 +1898,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_POWER_SPOT] =
     {
-        .name = _("Power Spot"),
+        .name = _("Lively Ring"),
         .description = COMPOUND_STRING("Powers up ally moves."),
         .aiRating = 2,
     },
@@ -1940,7 +1940,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_GORILLA_TACTICS] =
     {
-        .name = _("Gorilla Tactics"),
+        .name = _("Auto Pilot"),
         .description = COMPOUND_STRING("Ups Attack and locks move."),
         .aiRating = 4,
     },
@@ -1991,7 +1991,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_CURIOUS_MEDICINE] =
     {
-        .name = _("Curious Medicine"),
+        .name = _("Biosupressant"),
         .description = COMPOUND_STRING("Remove ally's stat changes."),
         .aiRating = 3,
     },
@@ -2103,7 +2103,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_GUARD_DOG] =
     {
-        .name = _("Guard Dog"),
+        .name = _("Relentless"),
         .description = COMPOUND_STRING("Cannot be intimidated."),
         .aiRating = 5,
         .breakable = TRUE,
@@ -2298,7 +2298,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_HOSPITALITY] =
     {
-        .name = _("Hospitality"),
+        .name = _("Welcome Chime"),
         .description = COMPOUND_STRING("Restores ally's HP."),
         .aiRating = 5,
     },

@@ -181,7 +181,6 @@ RustboroCity_DevonCorp_3F_EventScript_MrStoneAfterFavor::
 RustboroCity_DevonCorp_3F_EventScript_Employee::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_REPEAT_BALL, RustboroCity_DevonCorp_3F_EventScript_EmployeeBalls
 	msgbox RustboroCity_DevonCorp_3F_Text_VisitCaptSternShipyard, MSGBOX_DEFAULT
 	release
 	end

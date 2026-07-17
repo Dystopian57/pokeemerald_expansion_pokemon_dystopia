@@ -225,6 +225,33 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "ScriptedShinyFailsafe"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "ScriptedShinyFailsafe"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_GIFT_UNUSED_7",
+      "var_value": "0",
+      "script": "ScriptedShinyFailsafe"
     }
   ],
   "bg_events": [

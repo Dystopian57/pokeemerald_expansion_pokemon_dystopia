@@ -183,7 +183,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 50,
         .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 50 : 40,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
@@ -193,19 +193,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
+        .abilities = { ABILITY_THICK_FAT, ABILITY_GLUTTONY, ABILITY_MOTOR_DRIVE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Purachu"),
         .cryId = CRY_PIKACHU,
         .natDexNum = NATIONAL_DEX_PIKACHU_SAFE,
-        .categoryName = _("Mouse"),
+        .categoryName = _("Unplugged"),
         .height = 4,
         .weight = 60,
         .description = COMPOUND_STRING(
-            "It sleeps virtually all day and night long.\n"
-            "It doesn't change its nest its entire life,\n"
-            "but it sometimes travels great distances\n"
-            "by swimming in rivers."),
+            "It can't generate electricity on its own,\n"
+            "so it charges up by connecting its tail to\n"
+            "a power source. It'll discharge it if its\n"
+            "cheeks are pressed."),
         .pokemonScale = 479,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -270,7 +270,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 45,
         .baseSpAttack  = 65,
         .baseSpDefense = 65,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
+        .types = MON_TYPES(TYPE_GRASS, TYPE_STEEL),
         .catchRate = 45,
         .expYield = 64,
         .evYield_SpAttack = 1,
@@ -279,19 +279,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL },
+        .abilities = { ABILITY_NATURAL_CURE, ABILITY_CURIOUS_MEDICINE, ABILITY_TRIAGE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Bulbasynth"),
         .cryId = CRY_BULBASAUR,
         .natDexNum = NATIONAL_DEX_BULBASYNTH,
-        .categoryName = _("Seed"),
+        .categoryName = _("Synthesis"),
         .height = 7,
         .weight = 69,
         .description = COMPOUND_STRING(
-            "Bulbasaur can be seen napping in bright\n"
-            "sunlight. There is a seed on its back.\n"
-            "By soaking up the sun's rays, the seed\n"
-            "grows progressively larger."),
+
+            "Its artificial bulb only synthesises\n"
+            "safe, medicinal substances. It feeds\n"
+            "off the light that is absorbed from\n"
+            "the bulb's photovoltaic coating."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -339,7 +340,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 65,
         .baseSpAttack  = 60,
         .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_FIRE),
+        .types = MON_TYPES(TYPE_FIRE, TYPE_POISON),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
         .evYield_Speed = 1,
@@ -348,19 +349,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_FLASH_FIRE },
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_CORROSION, ABILITY_MERCILESS },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Smothquil"),
         .cryId = CRY_CYNDAQUIL,
         .natDexNum = NATIONAL_DEX_SMOTHQUIL,
-        .categoryName = _("Fire Mouse"),
+        .categoryName = _("Smothered"),
         .height = 5,
         .weight = 79,
         .description = COMPOUND_STRING(
-            "It flares flames from its back to protect\n"
-            "itself. The fire burns vigorously if the\n"
-            "Pokémon is angry. When it is tired,\n"
-            "it sputters with incomplete combustion."),
+            "It lacks Cyndaquil's pyroglands, so\n"
+            "it's unable to produce fire. However,\n"
+            "its back still releases flammable gas,\n"
+            "which can scorch as well as poison."),
         .pokemonScale = 539,
         .pokemonOffset = 21,
         .trainerScale = 256,
@@ -556,7 +557,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 100,
         .baseSpAttack  = 55,
         .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FAIRY),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 66 : 103,
         .evYield_Speed = 1,
@@ -565,19 +566,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH },
+        .abilities = { ABILITY_HOSPITALITY, ABILITY_FRIEND_GUARD, ABILITY_POWER_SPOT },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Cheerorb"),
         .cryId = CRY_VOLTORB,
         .natDexNum = NATIONAL_DEX_CHEERORB,
-        .categoryName = _("Ball"),
+        .categoryName = _("Companion"),
         .height = 5,
         .weight = 104,
         .description = COMPOUND_STRING(
-            "It bears an uncanny and unexplained\n"
-            "resemblance to a Poké Ball. Because it\n"
-            "explodes at the slightest shock, even\n"
-            "veteran Trainers treat it with caution."),
+            "Its eyelids were welded to decrease its\n"
+            "aggressiveness, making it look like its\n"
+            "smiling. It emits various frequencies to\n"
+            "to either soothe or cheer those nearby."),
         .pokemonScale = 364,
         .pokemonOffset = -8,
         .trainerScale = 256,
@@ -616,7 +617,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         )
         .levelUpLearnset = sVoltorbLevelUpLearnset,
         .teachableLearnset = sVoltorbTeachableLearnset,
-        .formSpeciesIdTable = sVoltorbFormSpeciesIdTable,
+        .formSpeciesIdTable = sCheerorbFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ELECTRODE}),
     },
 
@@ -644,7 +645,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_QUICK_FEET, ABILITY_RATTLED },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_GUARD_DOG, ABILITY_DEFIANT },
     #else
         .abilities = { ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_RATTLED },
     #endif
@@ -652,14 +653,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Poochain"),
         .cryId = CRY_POOCHYENA,
         .natDexNum = NATIONAL_DEX_POOCHAIN,
-        .categoryName = _("Bite"),
+        .categoryName = _("Chained"),
         .height = 5,
         .weight = 136,
         .description = COMPOUND_STRING(
-            "It savagely threatens foes with bared\n"
-            "fangs. It chases after fleeing targets\n"
-            "tenaciously. It turns tail and runs,\n"
-            "however, if the foe strikes back."),
+            "It'restrained to be less dangerous,\n"
+            "but this makes it more violent. The\n"
+            "Pokémon can still eat through a tiny\n"
+            "compartment in its muzzle."),
         .pokemonScale = 481,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -861,7 +862,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 35,
         .baseSpAttack  = 35,
         .baseSpDefense = 35,
-        .types = MON_TYPES(TYPE_FIGHTING),
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_STEEL),
         .catchRate = 180,
     #if P_UPDATED_EXP_YIELDS >= GEN_5
         .expYield = 61,
@@ -878,7 +879,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST },
+        .abilities = { ABILITY_FULL_METAL_BODY, ABILITY_NEUROFORCE, ABILITY_GORILLA_TACTICS },
     #else
         .abilities = { ABILITY_GUTS, ABILITY_NONE, ABILITY_STEADFAST },
     #endif
@@ -886,14 +887,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Manchine"),
         .cryId = CRY_MACHOP,
         .natDexNum = NATIONAL_DEX_MANCHINE,
-        .categoryName = _("Superpower"),
+        .categoryName = _("Android"),
         .height = 8,
         .weight = 195,
         .description = COMPOUND_STRING(
-            "It continually undertakes strenuous\n"
-            "training to master all forms of martial\n"
-            "arts. Its strength lets it easily hoist\n"
-            "a sumo wrestler onto its shoulders."),
+            "Its body and brain have been enhanced with\n"
+            "the latest advancements in robotics. It is\n"
+            "programmed to never hurt people, unless\n"
+            "three specific conditions are fulfilled."),
         .pokemonScale = 342,
         .pokemonOffset = 14,
         .trainerScale = 256,
@@ -1075,7 +1076,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sGrimerLevelUpLearnset,
         .teachableLearnset = sGrimerTeachableLearnset,
         .eggMoveLearnset = sGrimerEggMoveLearnset,
-        .formSpeciesIdTable = sGrimerFormSpeciesIdTable,
+        .formSpeciesIdTable = sMudderFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_MUK}),
     },
 
@@ -1087,7 +1088,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 35,
         .baseSpAttack  = 60,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 45 : 60,
-        .types = MON_TYPES(TYPE_POISON),
+        .types = MON_TYPES(TYPE_WATER, TYPE_FLYING),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 68 : 114,
         .evYield_Defense = 1,
@@ -1098,7 +1099,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_8
-        .abilities = { ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH },
+        .abilities = { ABILITY_WHITE_SMOKE, ABILITY_STEAM_ENGINE, ABILITY_SPEED_BOOST },
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
     #endif
@@ -1106,14 +1107,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Fooming"),
         .cryId = CRY_KOFFING,
         .natDexNum = NATIONAL_DEX_FOOMING,
-        .categoryName = _("Poison Gas"),
+        .categoryName = _("Steam Stream"),
         .height = 6,
         .weight = 10,
         .description = COMPOUND_STRING(
-            "Getting up close to a Koffing will give\n"
-            "you a chance to observe, through its thin\n"
-            "skin, the toxic gases swirling inside. It\n"
-            "blows up at the slightest stimulation."),
+            "Its body boils water and other liquids into\n"
+            "clean steam. By releasing it in short bursts,\n"
+            "it can propel itself and reach great speeds.\n"
+            "Bumping into things seems to amuse it."),
         .pokemonScale = 369,
         .pokemonOffset = -1,
         .trainerScale = 256,
@@ -1868,7 +1869,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sMawileLevelUpLearnset,
         .teachableLearnset = sMawileTeachableLearnset,
         .eggMoveLearnset = sMawileEggMoveLearnset,
-        .formSpeciesIdTable = sMawileFormSpeciesIdTable,
+        .formSpeciesIdTable = sGrimaneFormSpeciesIdTable,
         .formChangeTable = sMawileFormChangeTable,
     },
 
@@ -1939,7 +1940,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sKangaskhanLevelUpLearnset,
         .teachableLearnset = sKangaskhanTeachableLearnset,
         .eggMoveLearnset = sKangaskhanEggMoveLearnset,
-        .formSpeciesIdTable = sKangaskhanFormSpeciesIdTable,
+        .formSpeciesIdTable = sKangaskidFormSpeciesIdTable,
         .formChangeTable = sKangaskhanFormChangeTable,
     },
 
@@ -2156,7 +2157,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sFarfetchdLevelUpLearnset,
         .teachableLearnset = sFarfetchdTeachableLearnset,
         .eggMoveLearnset = sFarfetchdEggMoveLearnset,
-        .formSpeciesIdTable = sFarfetchdFormSpeciesIdTable,
+        .formSpeciesIdTable = sKamokenFormSpeciesIdTable,
     },
 
      [SPECIES_WARTZ] =

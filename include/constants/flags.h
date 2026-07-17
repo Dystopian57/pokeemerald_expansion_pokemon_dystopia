@@ -280,17 +280,17 @@
 #define receiveddemomysterygift           0xF8
 #define hermitmovesexplained           0xF9
 #define newgameitems           0xFA
-#define FLAG_RECEIVED_DURIN_BERRY            0xFB
-#define FLAG_RECEIVED_BELUE_BERRY            0xFC
+#define mausoleummourningladyitem            0xFB
+#define caughtSableyelairboss            0xFC
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD
-#define FLAG_RECEIVED_CHARCOAL               0xFE
+#define sableyelairplayerbag               0xFE
 #define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF
-#define FLAG_RECEIVED_REPEAT_BALL            0x100
-#define FLAG_RECEIVED_OLD_ROD                0x101
-#define FLAG_RECEIVED_COIN_CASE              0x102
-#define FLAG_RETURNED_RED_OR_BLUE_ORB        0x103
-#define FLAG_RECEIVED_TM_SNATCH              0x104
-#define FLAG_RECEIVED_TM_DIG                 0x105
+#define caughtsableyelairboss            0x100
+#define spawnsableyelairboss                0x101
+#define forceshiny              0x102
+#define itsnotused        0x103
+#define norun              0x104
+#define nowhiteout                0x105
 #define FLAG_RECEIVED_TM_BULLET_SEED         0x106
 #define FLAG_ENTERED_ELITE_FOUR              0x107
 #define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
@@ -1592,14 +1592,14 @@
 #define dailymushroom101_1                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
 #define dailymushroom101_2                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define dailymushroom101_3                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
-#define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
-#define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
-#define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
-#define FLAG_UNUSED_0x929                           (DAILY_FLAGS_START + 0x9)  // Unused Flag
-#define FLAG_DAILY_PICKED_LOTO_TICKET               (DAILY_FLAGS_START + 0xA)
-#define FLAG_DAILY_ROUTE_114_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xB)
-#define FLAG_DAILY_ROUTE_111_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xC)
-#define FLAG_DAILY_BERRY_MASTER_RECEIVED_BERRY      (DAILY_FLAGS_START + 0xD)
+#define sableyegem1                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
+#define sableyegem2                          (DAILY_FLAGS_START + 0x7)  // Unused Flag
+#define sableyegem3                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
+#define sableyegem4                           (DAILY_FLAGS_START + 0x9)  // Unused Flag
+#define sableye1gone               (DAILY_FLAGS_START + 0xA)
+#define sableye2gone         (DAILY_FLAGS_START + 0xB)
+#define sableye3gone         (DAILY_FLAGS_START + 0xC)
+#define sableye4gone      (DAILY_FLAGS_START + 0xD)
 #define FLAG_DAILY_ROUTE_120_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xE)
 #define FLAG_DAILY_LILYCOVE_RECEIVED_BERRY          (DAILY_FLAGS_START + 0xF)
 #define FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY       (DAILY_FLAGS_START + 0x10)
@@ -1607,11 +1607,10 @@
 #define FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY        (DAILY_FLAGS_START + 0x12)
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
-
-#define FLAG_UNUSED_0x935                           (DAILY_FLAGS_START + 0x15) // Unused Flag
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
+#define dailyunusedmaynotwork                           (DAILY_FLAGS_START + 0x15) // Unused Flag
+#define unuseddaily4                           (DAILY_FLAGS_START + 0x16) // Unused Flag
+#define unuseddaily3                           (DAILY_FLAGS_START + 0x17) // Unused Flag
+#define unuseddaily2                        (DAILY_FLAGS_START + 0x18) // Unused Flag
 #define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
 #define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag

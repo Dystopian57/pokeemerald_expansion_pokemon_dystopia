@@ -91,6 +91,8 @@ script LabBasementCoolingTerminal {
 }
 
 	mart AideMedicineDispenser {
+		ITEM_ABILITY_CAPSULE
+		ITEM_ABILITY_PATCH
 		ITEM_PROTEIN
 		ITEM_IRON
 		ITEM_CALCIUM
@@ -1940,11 +1942,15 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Kamoken, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
-										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
-											{msgbox (format("Which you have - excellent! Now, let's see that
-											Kamoken!"))
+										a {COLOR RED}Leek{COLOR DARK_GRAY}..."))
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("And you know what? It's something so mundane, I have
+										one right here!"))
+										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+										setspeaker ([SP_NAME_AIDEE])
+										msgbox (format("So this time, the Unsafening Material is on me. Now,
+										let's see that Kamoken!"))
 											setvar (VAR_0x8008, INGAME_TRADE_FARFETCHD)
 														copyvar (VAR_0x8004, VAR_0x8008)
 														specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
@@ -1964,16 +1970,8 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Farfetch'd!!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
 											goto (finishsafemontradescript)
-											}
-										else {
-											setspeaker ([SP_NAME_AIDEE])
-											msgbox (format("Of which you don't have any!
-											\p Well, check my stock of Unsafening Materials - I
-											might just have it!"))
-											goto (finishsafemontradescript)
-											}
+									
 
 									}
 

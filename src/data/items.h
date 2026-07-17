@@ -166,7 +166,7 @@ const struct Item gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Safe Balls"),
         .price = 500,
         .description = COMPOUND_STRING(
-            "An Ball that\n"
+            "A Ball that\n"
             "works well to\n"
             "catch Safemon."),
         .pocket = POCKET_POKE_BALLS,
@@ -183,7 +183,8 @@ const struct Item gItemsInfo[] =
         .price = 200,
         .description = COMPOUND_STRING(
             "A modern ball\n"
-            "designed by Devon."),
+            "designed by Devon.\n"
+            "Normal catch rate."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_POKE_BALL,
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
@@ -215,9 +216,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Ultra Ball"),
         .price = (I_PRICE >= GEN_7) ? 800 : 1200,
         .description = COMPOUND_STRING(
-            "A better Ball with\n"
-            "a higher catch rate\n"
-            "than a Great Ball."),
+            "A superior Ball\n"
+            "made by Silph, in\n"
+            "the Kanto region."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_ULTRA_BALL,
         .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
@@ -1089,8 +1090,8 @@ const struct Item gItemsInfo[] =
         .holdEffect = HOLD_EFFECT_CONFUSE_SPICY,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = COMPOUND_STRING(
-            "A tasty burguer with\n"
-            "meat of dubious origin.\n"
+            "It has meat of\n"
+            "dubious origin.\n"
             "Heals half of max HP."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
@@ -8815,11 +8816,14 @@ const struct Item gItemsInfo[] =
     [ITEM_TWISTED_SPOON] =
     {
         .name = ITEM_NAME("The Ring"),
-        .pluralName = ITEM_PLURAL_NAME("The Ring"),
+        .pluralName = ITEM_PLURAL_NAME("The Rings"),
         .price = TYPE_BOOSTING_PRICE,
         .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = sOddIncenseDesc,
+        .description = COMPOUND_STRING(
+            "A curious ring that\n"
+            "raises the power of\n"
+            "Psychic-type moves."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_TYPE_BOOST_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
@@ -13725,9 +13729,9 @@ const struct Item gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Drill Whistles"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A rechargeable unit\n"
-            "that flags battle-\n"
-            "ready Trainers."),
+            "A whistle that\n"
+            "signals interest\n"
+            "in drill battles."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,

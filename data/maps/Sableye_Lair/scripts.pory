@@ -1,0 +1,380 @@
+raw `
+
+`
+
+
+mapscripts Sableye_Lair_MapScripts {
+	//MAP_SCRIPT_ON_LOAD: Route103WeatherSong
+	//MAP_SCRIPT_ON_TRANSITION: Route103WeatherSong
+    MAP_SCRIPT_ON_TRANSITION: SableyeLairBossCheck}
+
+ 
+script SableyeLairBossCheck {
+
+            if (var(VAR_SABLEYELAIRANGER))
+            {
+            setvar (VAR_SABLEYELAIRANGER, 4)
+            removeobject (1)
+            removeobject (2)
+            removeobject (3)
+            removeobject (4)    
+            setflag (sableye1gone)
+            setflag (sableye2gone)
+            setflag (sableye3gone)
+            setflag (sableye4gone)
+
+            playbgm (MUS_NONE, TRUE)
+
+            
+            }
+
+
+
+        
+
+            else {release}
+
+
+	release
+} 
+
+script SableyeLairBossSequence {
+	lock
+    hidefollower
+	//setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    //applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+
+    if (!flag(spawnsableyelairboss))
+    
+    {goto (fightsableyelairboss)}
+
+    else
+    
+    {playmoncry(SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH)
+    msgbox (format("Saaa-saaaaa-saaaaaa!"))
+    playbgm (MUS_MONSTERHOUSE, TRUE)
+
+    clearflag (sableye1gone)
+    addobject (1)
+    setobjectxy (1, 4, 6)
+    applymovement (1, moves (face_down))
+    call (SableyeShake)
+
+    clearflag (sableye2gone)
+    addobject (2)
+    setobjectxy (2, 5, 6)
+    applymovement (2, moves (face_down))
+    call (SableyeShake)
+
+    clearflag (sableye3gone)
+    addobject (3)
+    setobjectxy (3, 6, 6)
+    applymovement (3, moves (face_down))
+    call (SableyeShake)
+
+    clearflag (sableye4gone)
+    addobject (4)
+    setobjectxy (4, 5, 8)
+    applymovement (4, moves (face_up))
+    call (SableyeShake)
+
+
+    playmoncry(SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH)
+    msgbox (format("Saaaaaa!"))
+    applymovement (2, moves (jump_down * 1))
+    waitmovement (2)
+    playse (SE_LEDGE)
+    applymovement (2, moves (jump_up * 1))
+    playse (SE_LEDGE)
+    waitse
+    clearflag (sableyelairplayerbag)
+    addobject (6)
+    waitmovement (2)
+    applymovement (2, moves(face_down))
+
+    msgbox (format("The Sableye has stolen {PLAYER}'s bag!"))
+    	checkplayergender
+		if(var(VAR_RESULT) == MALE){msgbox (format("{PLAYER} is surrounded - he can't run away!"))}
+        if(var(VAR_RESULT) == FEMALE){msgbox (format("{PLAYER} is surrounded - he can't run away!"))}
+    setvar (nobag, 2) //disablebag
+    setflag (norun) //no run away
+    playmoncry(SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH)
+    applymovement (1, moves(walk_down * 1, face_player))
+    applymovement (3, moves (walk_down * 1, face_player))
+    msgbox (format("Saaa-saaaaa!"))
+    //setflag (nowhiteout)
+
+        specialvar (VAR_RESULT, CountPartyAliveNonEggMons)
+        if (var(VAR_RESULT) > 1)
+        {setwilddoubleflag
+        setwildbattle (SPECIES_SABLEYE, 5, ITEM_NONE, SPECIES_SABLEYE, 5, ITEM_NONE)
+        }
+        else {
+        setwildbattle (SPECIES_SABLEYE, 5, ITEM_NONE, SPECIES_NONE, 0, ITEM_NONE)
+        }
+        removeobject (6)
+        setflag (sableyelairplayerbag)
+        dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+
+            if(var(VAR_RESULT) == B_OUTCOME_LOST){
+                removeobject (6)
+                setflag (sableyelairplayerbag)
+                goto (sableyesbeatplayer)
+
+            }
+            if(var(VAR_RESULT) == B_OUTCOME_WON){
+                clearflag (sableyelairplayerbag)
+                addobject (6)
+                applymovement (1, moves(emote_exclamation_mark))
+                playse (SE_PIN)
+                waitse
+                applymovement (3, moves(emote_exclamation_mark))
+                playse (SE_PIN)
+                waitse
+                playmoncry(SPECIES_SABLEYE, CRY_MODE_WEAK)
+                msgbox (format("Saaa-saaaa..."))
+
+                    setflag (sableye1gone)
+                    removeobject (1)
+                    call (SableyeShake)
+
+                    setflag (sableye3gone)
+                    removeobject (3)
+                    call (SableyeShake)
+
+                        playmoncry(SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH)
+                        msgbox (format("Sa-saaa!?"))
+                        applymovement (2, moves(walk_fast_left * 1, walk_fast_up * 2, walk_fast_right * 1, face_down))
+                        waitmovement
+                        playse (SE_LEDGE)
+                        applymovement (6, moves(jump_down * 2))
+                        waitmovement
+                        removeobject (6)
+                        setflag (sableyelairplayerbag)
+                        playfanfare (MUS_OBTAIN_ITEM)
+                        msgbox (format("The remaining Sableye returns {PLAYER}'s bag out of fear!"))
+                        setflag (sableye2gone)
+                        removeobject (2)
+                        call (SableyeShake)
+
+                        setflag (sableye4gone)
+                        removeobject (4)
+                        call (SableyeShake)
+                        setvar (nobag, 0)
+
+                        clearflag (norun)
+
+                        fadeoutbgm (1)
+                        fadenewbgm (MUS_NONE)
+
+                        call (SableyeShake)
+
+                        call (SableyeShake)
+                
+                    clearflag (spawnsableyelairboss)
+                    addobject (5)
+                    call (SableyeShake)
+                    fightsableyelairboss:
+                    playmoncry(SPECIES_SABLEYE, CRY_MODE_WEAK)
+                    msgbox (format("SaAaAaAaA..."))
+                    setflag (norun)
+
+                    settotemboost (B_POSITION_OPPONENT_LEFT, 2, 2, 2)
+                    setflag (forceshiny)
+
+                    setwildbattle(SPECIES_SABLEYE, 5)
+                    clearflag (forceshiny)
+                    dowildbattle
+
+                    specialvar(VAR_RESULT, GetBattleOutcome)
+                    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+                        setflag (caughtsableyelairboss)
+                        setflag (spawnsableyelairboss)
+                        removeobject (5)
+                        goto (playerwinssableyeskirmish)
+                        
+                    }
+                    if(var(VAR_RESULT) == B_OUTCOME_WON){
+                        playmoncry(SPECIES_SABLEYE, CRY_MODE_WEAK)
+                        msgbox (format("S-saaa..."))
+                        setflag (spawnsableyelairboss)
+                        removeobject (5)
+                        call (SableyeShake)
+                        goto (playerwinssableyeskirmish)
+                        }
+
+                    if(var(VAR_RESULT) == B_OUTCOME_LOST){
+                        //sableye scratch cutscene
+                        sableyesbeatplayer:
+                        playmoncry(SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH)
+                        msgbox (format("SAAAA!"))
+                        fadescreenswapbuffers (FADE_TO_BLACK)
+                        playse (SE_M_SCRATCH)
+                        waitse
+                        playse (SE_M_SCRATCH)
+                        waitse
+                        playse (SE_M_SCRATCH)
+                        waitse
+                        playse (SE_FLEE)
+                        waitse
+                        checkplayergender
+                        if(var(VAR_RESULT) == MALE)
+                        {msgbox (format("{PLAYER} manages to recover his bag, but is forced to retreat
+                        home to nurse his wounds and his Pokémon..."))}
+                        if(var(VAR_RESULT) == FEMALE)
+                        {msgbox (format("{PLAYER} manages to recover her bag, but is forced to retreat
+                        home to nurse her wounds and her Pokémon..."))}
+                        removeobject (6)
+                        setflag (sableyelairplayerbag)
+                        setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+                        warpsilent (MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 2, 6,) 
+                        fadescreenswapbuffers (FADE_FROM_BLACK)
+                        }
+
+                        playerwinssableyeskirmish:
+
+
+
+                        //release
+                        fadeoutbgm (1)
+
+                        fadenewbgm (MUS_RG_MT_MOON)
+                        playbgm (MUS_RG_MT_MOON, TRUE)
+
+                        setvar (VAR_SABLEYELAIRANGER, 0)
+ 
+                        clearflag (forceshiny)
+                    
+
+                goto (endsableyelairbossscript)
+                
+            }}
+
+    endsableyelairbossscript:
+    release
+
+}
+
+script SableyeShake{
+	playse (SE_M_DIG) 
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+    waitse
+	}
+
+
+script SableyeLairGem4 {
+   	lock
+    if (flag(sableyegem4))
+    {msgbox(format("For some unexplicable reason, the gem's remains begin to grow back...
+    \p There may be another gem here tomorrow."))}
+
+    else {	giveitem (ITEM_SAPPHIRE)
+	setmetatile (9, 5, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+	special (DrawWholeMapView)
+	setflag (sableyegem4)
+    msgbox(format("For some unexplicable reason, the gem's remains begin to grow back...
+    \p There may be another gem here tomorrow."))
+	releaseall
+	end }
+
+
+}
+
+//set up flag of first time and scared sableye, set up totem sableye, search for remove bag
+
+script SableyeGem4 {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    //if(!(flag(sableye1caught) || flag(sableye1beaten)))
+    //{
+
+
+
+    msgbox (format("The Sableye is zealously admiring its gems. Battle it for them?"))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+    applymovement (1, moves(face_player))
+
+        if (flag(caughtsableyelairboss))
+
+        {
+        random (2)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: goto (sableyegivesgem)
+		case 1: goto (sableyewantstofight)
+		}
+        sableyegivesgem:
+        playmoncry(SPECIES_SABLEYE, CRY_MODE_WEAK)
+        msgbox (format("S-saaa..."))
+        applymovement (1, moves(face_down))
+        waitmovement (1)
+        applymovement (1, moves(face_player))
+        waitmovement (1)
+        msgbox (format("The Sableye seems scared of you, and hands you the gem willingly."))
+        giveitem (ITEM_SAPPHIRE)
+        setmetatile (9, 5, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        special (DrawWholeMapView)
+        setflag (sableyegem4)
+        goto (sableye4leaves)
+
+        }
+    sableyewantstofight:
+    playmoncry(SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH)
+    msgbox (format("SAAAAA!"))
+	waitmessage
+    
+	setwildbattle(SPECIES_SABLEYE, 5)
+	dowildbattle
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		setflag (sableye4gone)
+        removeobject (1)
+        goto (endsableye1script)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_WON){
+        playmoncry(SPECIES_SABLEYE, CRY_MODE_WEAK)
+        msgbox (format("S-saaa..."))
+
+        sableye4leaves:
+        applymovement (1, moves(walk_fast_left *1, walk_fast_up *1))
+        waitmovement
+		setflag (sableye4gone)
+        removeobject (1)
+
+        if (!flag(caughtsableyelairboss))
+        {addvar (VAR_SABLEYELAIRANGER, + 1)}
+
+        goto (endsableye1script)
+		
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+        applymovement (1, moves(face_down))
+		goto (endsableye1script)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+        applymovement (1, moves(face_down))
+		goto (endsableye1script)
+	}
+
+	}
+    //}
+
+	if (var(VAR_RESULT) == 1) {
+		goto (endsableye1script)
+	}
+
+	endsableye1script:
+	waitmessage
+	release
+
+
+
+}
+

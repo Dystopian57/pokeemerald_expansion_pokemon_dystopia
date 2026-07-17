@@ -455,7 +455,7 @@ Route103Rain1::
 # 240 "data/maps/Route103/scripts.pory"
 	setvar VAR_ROUTE103_WEATHER, 2
 # 241 "data/maps/Route103/scripts.pory"
-	fadeoutbgm 1
+	fadeoutbgm 0
 # 242 "data/maps/Route103/scripts.pory"
 	playbgm MUS_STORM, TRUE
 	return
@@ -467,7 +467,7 @@ Route103Rain2::
 # 247 "data/maps/Route103/scripts.pory"
 	setvar VAR_ROUTE103_WEATHER, 3
 # 248 "data/maps/Route103/scripts.pory"
-	fadeoutbgm 1
+	fadeoutbgm 0
 # 249 "data/maps/Route103/scripts.pory"
 	playbgm MUS_STORM, TRUE
 	return
@@ -479,7 +479,7 @@ Route103EndRain::
 # 255 "data/maps/Route103/scripts.pory"
 	setvar VAR_ROUTE103_WEATHER, 0
 # 256 "data/maps/Route103/scripts.pory"
-	fadeoutbgm 1
+	fadeoutbgm 0
 # 257 "data/maps/Route103/scripts.pory"
 	playbgm MUS_STORM, TRUE
 	return

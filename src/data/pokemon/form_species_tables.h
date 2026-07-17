@@ -2471,7 +2471,7 @@ static const u16 sNinkaburiFormSpeciesIdTable[] = {
 #if P_FAMILY_CHEERORB
 static const u16 sCheerorbFormSpeciesIdTable[] = {
     SPECIES_CHEERORB,
-    SPECIES_VOLTORB,
+    SPECIES_VOLTORB
 };
 #endif //P_FAMILY_CHEERORB
 

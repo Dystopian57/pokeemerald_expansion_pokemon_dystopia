@@ -6,8 +6,27 @@ LittlerootMausoleum_MapScripts::
 
 script MausoleumMourningLady {
         lock
+        if (!flag (mausoleummourningladyitem))
+        {
         msgbox (format("Some days, I feel like I can't get out of bed at all... \p Like there's no
-        meaning in it anymore. \p But then, I go through the motions, and I find myself here again."))
+        meaning in it anymore. \p But then, I go through the motions, and I find myself here again.
+        \p And it gets a bit better, one day at a time."))
+        applymovement (6, moves(face_player))
+        msgbox (format("You too, should hang in there. For them. For you.
+        Here."))
+        giveitem (ITEM_FOCUS_SASH)
+        setflag (mausoleummourningladyitem)
+        msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
+        applymovement (6, moves(face_up))
+        }
+        
+
+        else{
+        applymovement (6, moves(face_player))
+        msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
+        applymovement (6, moves(face_up))
+        }
+        
         release
 }
 
