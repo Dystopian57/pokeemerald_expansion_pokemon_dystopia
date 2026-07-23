@@ -39,9 +39,181 @@ script WallClock {
 	//.macro gettime
 
 
+
+script DevonShowFreetrial {
+	msgbox(format("This is a Devon Show's Free Trial! You may watch these episodes from Devon Shows for free!
+	\p Which one would you like to watch?"))
+
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Love is Danger, Episode 8", "The Adventures of Super Substitute, Episode 34", "Gabby's Talk Show, Episode 18", "None")
+
+			if (var(VAR_RESULT) == 3) {release}
+
+			if (var(VAR_RESULT) == 0) {
+
+			msgbox (format("Love is Danger, Episode 8: Till Pokémon do us part"))
+			setspeaker ([SP_NAME_DRAMAACTRESS])
+			msgbox (format("{COLOR RED}Dear, I've reached my limit!\p
+			Our marriage is falling apart, and I'm tired of pretending otherwise!\p
+			We don't talk like we used to since… since…{COLOR DARK_GRAY}"))
+			playmoncry (SPECIES_GARDEVOIR, CRY_MODE_NORMAL)
+			showmonpic(SPECIES_GARDEVOIR, 10,3)
+
+			msgbox(format("{COLOR RED}Since your Kirlia evolved into Gardevoir!{COLOR DARK_GRAY}"))
+			hidemonpic
+			setspeaker ([SP_NAME_DRAMAACTOR])
+			msgbox (format("{COLOR BLUE}Huh!? Don't blame this on her! This all started when you- you...!{COLOR DARK_GRAY}"))
+
+			playmoncry (SPECIES_MACHAMP, CRY_MODE_NORMAL)
+			showmonpic(SPECIES_MACHAMP, 10,3)
+			msgbox (format("{COLOR BLUE}When you received that Machamp from a trade!{COLOR DARK_GRAY}"))
+			hidemonpic
+			setspeaker ([SP_NAME_DRAMAACTRESS])
+			msgbox(format("{COLOR RED}That's rich - you are such a…! Huh? W-wait… what's happening…? {COLOR DARK_GRAY}"))
+			playse (SE_M_ATTRACT)
+			showmonpic(SPECIES_GARDEVOIR_MEGA, 10,3)
+			setspeaker (NULL)
+			msgbox (format("...!"))
+
+			setspeaker ([SP_NAME_DRAMAACTOR])
+			msgbox (format("{COLOR BLUE}G-Gardette, why are you looking at him like that!?{COLOR DARK_GRAY}"))
+
+			setspeaker ([SP_NAME_DRAMAACTRESS])
+			msgbox(format("{COLOR RED}Machote, you too - you've never held me like that before…!  {COLOR DARK_GRAY}"))
+
+			msgbox(format("{COLOR RED}O-oh, oh no... what are they doing!? I-I can't watch this anymore!{COLOR DARK_GRAY}"))
+			playse (SE_FLEE)
+			msgbox(format("{COLOR RED}UWAAAAH!!{COLOR DARK_GRAY}"))
+
+			setspeaker ([SP_NAME_DRAMAACTOR])
+			msgbox (format("{COLOR BLUE}Devon was right… Pokémon… they can't be trusted! Darling, wait!!” {COLOR DARK_GRAY}"))
+
+			hidemonpic
+			playse (SE_FLEE)
+			setspeaker (NULL)
+			msgbox (format("Will this steamy incident increase the gap between our protanist couple…?\p
+			Or will it serve as the patch needed to repair their relationship!?\p
+			Find out more in the next episode of 'Love is Danger!' Only under Devon Shows subscription!"))
+			}
+
+		if (var(VAR_RESULT) == 1) {
+
+			showmonpic(SPECIES_SCRAFTY, 10,3)
+			setspeaker ([SP_NAME_SWAGGY])
+			msgbox(format("{COLOR RED}It's the end of the line, Super Substitute! We have the Super Stones
+			\p With them, we will be able to Super Evolve, and become the most powerful and DANGEROUS Pokémon
+			in all the world!{COLOR DARK_GRAY}"))
+
+			playmoncry (SPECIES_SCRAFTY, CRY_MODE_NORMAL)
+			msgbox(format("{COLOR RED}BWAA-HA-HA-HA!{COLOR DARK_GRAY}"))
+
+			showmonpic(SPECIES_MELOETTA, 10,3)
+			setspeaker ([SP_NAME_SUPERSUBSTITUTE])
+			msgbox(format("{COLOR BLUE}Not if I can help it, Swaggy the Scrafty! Special Technique...{COLOR DARK_GRAY}"))
+
+			setvar(VAR_0x8004, 2)  //@ vertical pan
+			setvar(VAR_0x8005, 6)  //@ horizontal pan
+			setvar(VAR_0x8006, 4)  //@ num shakes
+			setvar(VAR_0x8007, 4)  //@ shake delay
+			special(ShakeCamera)
+			waitse
+			playse (SE_M_COMET_PUNCH)
+			showmonpic(SPECIES_ALCREMIE_CLOVER, 10,3)
+			msgbox(format("{COLOR BLUE}SELF-DEFENSE STRIKE!{COLOR DARK_GRAY}"))
+
+			showmonpic(SPECIES_SCRAFTY, 10,3)
+			setspeaker ([SP_NAME_SWAGGY])
+			playmoncry (SPECIES_SCRAFTY, CRY_MODE_WEAK)
+			msgbox(format("{COLOR RED}W-WAAH! Wait, how is that self-defense!? We didn't even attack you yet!{COLOR DARK_GRAY}"))
+		
+			showmonpic(SPECIES_MELOETTA, 10,3)
+			setspeaker ([SP_NAME_SUPERSUBSTITUTE])
+			msgbox(format("{COLOR BLUE}You silly Swaggy! Striking evil foes is always in self-defense!{COLOR DARK_GRAY}"))
+		
+			showmonpic(SPECIES_SCRAFTY, 10,3)
+			setspeaker ([SP_NAME_SWAGGY])
+			msgbox(format("{COLOR RED}Grr… if only I had taken a course on a Devon Learning Center... {COLOR LIGHT_GRAY}{SHADOW WHITE}applications open now...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+			\p {COLOR RED}I would be smart enough to know that!\p But it doesn't matter - gang, let's SUPER EVOLVE! ORYAAAH…!{COLOR DARK_GRAY}"))
+		
+			showmonpic(SPECIES_MELOETTA, 10,3)
+			setspeaker ([SP_NAME_SUPERSUBSTITUTE])
+			msgbox(format("{COLOR BLUE}Oh no! People at home, we must stop Swaggy and his gang from Super Evolving!
+			\p You know what to do - cheer me up! {COLOR DARK_GRAY}"))
+
+				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Go, Super Substitute!", "...")
+
+					if (var(VAR_RESULT) == 0) {
+						setspeaker (NULL)
+						msgbox(format("{PLAYER} yells at the TV…!"))
+						checkplayergender
+						if(var(VAR_RESULT) == MALE){
+						msgbox(format("He feels so embarrased, he switches it off instantly."))
+						}
+
+						if(var(VAR_RESULT) == FEMALE){
+						msgbox(format("She feels so embarrased, she switches it off instantly."))
+						}
+						hidemonpic
+						release
+						}
+					
+					if (var(VAR_RESULT) == 1) {
+						msgbox(format("... that's enough cartoons for today."))
+						release
+					}
+		
+		}
+
+		if (var(VAR_RESULT) == 2) {
+
+			setspeaker ([SP_NAME_GABBY])
+			msgbox(format("{COLOR RED}Welcome to Gabby's Talk Show! We are here tonight with miss Glacia,
+			former Hoenn Elite Four, and now one of the most accomplished Admins of Devon Co.
+			\pIt's a pleasure to have you, miss Glacia.{COLOR DARK_GRAY}"))
+		
+			setspeaker ([SP_NAME_GLACIA])
+			msgbox(format("{COLOR BLUE}The pleasure is mine, Gabby. Glacia will do.{COLOR DARK_GRAY}"))
+
+			setspeaker ([SP_NAME_GABBY])
+			msgbox(format("{COLOR RED}Thank you, Glacia! Now, I believe everyone at home must be wondering…
+			\p What's your secret for looking JUST like you looked 30 years ago!?{COLOR DARK_GRAY}"))
+
+			setspeaker ([SP_NAME_GLACIA])
+			msgbox(format("{COLOR BLUE}Hm, I never thought about that… perhaps it's being around ice Pokémon.\p
+			They say cold conserves, doesn't it?{COLOR DARK_GRAY}"))
+
+			setspeaker ([SP_NAME_GABBY])
+			msgbox(format("{COLOR RED}Hehe - that's so true!\pAnd that remark is the perfect segway for our
+			first commercial break!{COLOR DARK_GRAY}"))
+
+			setspeaker ([SP_NAME_GLACIA])
+			msgbox(format("{COLOR BLUE}... already?{COLOR DARK_GRAY}"))
+
+
+			showmonpic(SPECIES_GLALIE_MEGA, 10,3)
+			setspeaker ([SP_NAME_GABBY])
+			msgbox(format("{COLOR RED}Glalie's. The only skincare product you'll ever need.\p
+			This soothing cream will leave your face smooth like a Spheal's - or pokeyen returned!
+			Glalie's. Let time slide you by like fresh ice.{COLOR DARK_GRAY}"))
+
+			hidemonpic
+			setspeaker (NULL)
+			msgbox(format("Looks like this is the firt of many ads to come... better get going."))
+		}
+}
+
+
+
 script OldalePokeCenterInnPrograms {
     lock
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Devon News", "Weather Channel", "Don't watch TV")
+	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Devon News", "Weather Channel", "Devon Shows", "Don't watch TV")
+
+
+	if (var(VAR_RESULT) == 2) {
+		if (!flag (seenshowatinnvisit))
+			{goto (DevonShowFreetrial)}
+		else {msgbox(format("The Devon Shows' Free Trial has been claimed on this inn visit."))}
+	}
+
 
 	if (var(VAR_RESULT) == 0) {
 		random (8)
@@ -77,10 +249,12 @@ script OldalePokeCenterInnPrograms {
 }
 		else {msgbox(format("The weather broadcast has ended..."))}
 	}
+
+	if (var(VAR_RESULT) == 3) {
+		release
+	}
 	
 	
-
-
     releaseall
     }
 

@@ -1808,7 +1808,7 @@ TV_Text_0:
 	.string "SUPER SUBSTITUTE!\p"
 	.string "The hero that protects you from danger\n"
 	.string "with a wall of fluffy justice!\p"
-	.string "New season of Devon TV's most loved\n"
+	.string "New season of Devon Shows' most loved\n"
 	.string "cartoon is airing soon, so...\p"
 	.string "Stay tuned, and stay safe!$"
 

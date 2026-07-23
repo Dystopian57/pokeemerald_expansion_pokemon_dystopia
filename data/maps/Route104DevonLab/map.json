@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE104DEVON_LAB",
   "name": "Route104DevonLab",
   "layout": "LAYOUT_ROUTE104DEVON_LAB",
-  "music": "MUS_RG_SILPH",
+  "music": "MUS_ALTRUBUILDING",
   "region_map_section": "MAPSEC_SILPH_CO",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

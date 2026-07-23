@@ -446,7 +446,7 @@ MatchCall_PositiveBattleText12::
 	.string "Beneath Petalburg City...\n"
 	.string "there may or may not be a\l"
 	.string "a place where we reunite.\p"
-	.string "By 'we' I mean smart people.\n"
+	.string "By 'we' I mean smart people\n"
 	.string "like us, of course.\p"
 	.string "The kind that don't take\n"
 	.string "things at face value. The\l"

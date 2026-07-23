@@ -53,7 +53,7 @@ script GreatCraterHotSpringsBathingladyloosehair {
     }
 
 script GreatCraterHotSpringsYoungerWoman {
-    lockall
+    lock
     applymovement (6, moves(face_player))
     msgbox(format("I'm a bit worried about Flannery... she got so upset when Devon built
     that thermal plant in our town of Lavaridge. \p I fear she may do something
@@ -61,3 +61,15 @@ script GreatCraterHotSpringsYoungerWoman {
     applymovement (6, moves(face_up))
     releaseall
     }
+
+script GreatCraterScaldOldman {
+    lock
+    applymovement (7, moves(face_player))
+    msgbox(format("“While we travelled from Lavaridge to this place, I had to spend some time
+    without taking hot baths - for the first time on my life too!\p
+    It made me stop taking them for granted, and I began to feel bad for people who can't have them regularly.
+    \p So I asked my son to make this, and I've been handing them out. This one is for you."))
+    giveitem (ITEM_TM_SCALD)
+    applymovement (7, moves(face_up))
+    releaseall
+}

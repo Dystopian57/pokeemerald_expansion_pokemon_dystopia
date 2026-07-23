@@ -873,7 +873,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     #endif
         .evYield_Attack = 1,
         .itemRare = ITEM_FOCUS_BAND,
-        .genderRatio = PERCENT_FEMALE(25),
+        .genderRatio = MON_GENDERLESS,
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,

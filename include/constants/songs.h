@@ -589,11 +589,12 @@
 #define MUS_UNWAVERINGEMOTIONS      654
 #define MUS_WINDYPRAIRIEBATTLE      655
 #define MUS_NFINALBATTLE      656
+#define MUS_FARTHESTLAND      657
 
 
 
 
-#define END_MUS                     MUS_NFINALBATTLE
+#define END_MUS                     MUS_FARTHESTLAND
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

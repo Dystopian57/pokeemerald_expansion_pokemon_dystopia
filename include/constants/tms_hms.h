@@ -22,7 +22,7 @@
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
     F(SAFEGUARD) \
-    F(FRUSTRATION) \
+    F(SCALD) \
     F(SOLAR_BEAM) \
     F(IRON_TAIL) \
     F(THUNDERBOLT) \
@@ -51,7 +51,7 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) 
 
 #define FOREACH_HM(F) \
     F(CUT) \

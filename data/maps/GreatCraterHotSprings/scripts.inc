@@ -77,7 +77,7 @@ GreatCraterHotSpringsBathingladyloosehair::
 
 GreatCraterHotSpringsYoungerWoman::
 # 56 "data/maps/GreatCraterHotSprings/scripts.pory"
-	lockall
+	lock
 # 57 "data/maps/GreatCraterHotSprings/scripts.pory"
 	applymovement 6, GreatCraterHotSpringsBaldGuy_Movement_0
 # 58 "data/maps/GreatCraterHotSprings/scripts.pory"
@@ -85,6 +85,22 @@ GreatCraterHotSpringsYoungerWoman::
 # 61 "data/maps/GreatCraterHotSprings/scripts.pory"
 	applymovement 6, GreatCraterHotSpringsYoungerWoman_Movement_0
 # 62 "data/maps/GreatCraterHotSprings/scripts.pory"
+	releaseall
+	return
+
+
+GreatCraterScaldOldman::
+# 66 "data/maps/GreatCraterHotSprings/scripts.pory"
+	lock
+# 67 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 7, GreatCraterHotSpringsBaldGuy_Movement_0
+# 68 "data/maps/GreatCraterHotSprings/scripts.pory"
+	msgbox GreatCraterScaldOldman_Text_0
+# 72 "data/maps/GreatCraterHotSprings/scripts.pory"
+	giveitem ITEM_TM_SCALD
+# 73 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 7, GreatCraterHotSpringsYoungerWoman_Movement_0
+# 74 "data/maps/GreatCraterHotSprings/scripts.pory"
 	releaseall
 	return
 
@@ -149,3 +165,16 @@ GreatCraterHotSpringsYoungerWoman_Text_0:
 	.string "got so upset when Devon built that\l"
 	.string "thermal plant in our town of Lavaridge.\p"
 	.string "I fear she may do something reckless...$"
+
+GreatCraterScaldOldman_Text_0:
+# 68 "data/maps/GreatCraterHotSprings/scripts.pory"
+	.string "“While we travelled from Lavaridge to\n"
+	.string "this place, I had to spend some time\l"
+	.string "without taking hot baths - for the\l"
+	.string "first time on my life too!\p"
+	.string "It made me stop taking them for\n"
+	.string "granted, and I began to feel bad for\l"
+	.string "people who can't have them regularly.\p"
+	.string "So I asked my son to make this, and I've\n"
+	.string "been handing them out. This one is for\l"
+	.string "you.$"

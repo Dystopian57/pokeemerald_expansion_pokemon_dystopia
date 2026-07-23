@@ -780,7 +780,8 @@ script OldalePokeCenterTVKid {
     lockall
     applymovement (8, moves(face_player))
     msgbox(format("I've been watching this TV for half an hour, and there's been nothing but ads...\p
-	They say you can watch actual programs from the TVs in the inn rooms, but I'm a bit too broke for those."))
+	They say you can watch actual programs from the TVs in the inn rooms, but my allowance is not enough
+	to rent a room..."))
 	applymovement (8, moves(face_up))
     releaseall
     }

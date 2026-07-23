@@ -1864,6 +1864,7 @@ script BalsamHowdidyoufindbackentrance {
 	waitmovement (4)
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
 	setspeaker ([SP_NAME_BALSAM])
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
 	msgbox (format("W-what the...? How did you come out from there?"))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 	setspeaker ([SP_NAME_BALSAM])
@@ -1875,9 +1876,7 @@ script BalsamHowdidyoufindbackentrance {
 	removefieldmugshot
 	waitmessage
 	applymovement (4, moves(face_up))
-	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
-	waitmovement (0)
+	waitmovement (4)
 	clearflag (enteredsecretlabbeforetime)}
 	
 	else {release}
@@ -2287,17 +2286,19 @@ script BalsamgivesPokenav {
 if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
  		{
 		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BALSAM])
 		applymovement (4, moves(face_player))
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 		msgbox (format("Oh, {PLAYER}, one last thing. Here."))
-		fadeoutbgm (0)
+		//fadeoutbgm (0)
 		playse (MUS_RG_OBTAIN_KEY_ITEM)
-		fadeinbgm (0)
+		//fadeinbgm (0)
 		setspeaker (NULL)
 		removefieldmugshot
 		msgbox (format("Obtained the DEVONAV!"))
+		waitse
 		setflag(FLAG_SYS_POKENAV_GET)
 		setspeaker ([SP_NAME_BALSAM])
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
@@ -2307,11 +2308,12 @@ if (flag (AideeQuestAccepted) && !flag (FLAG_SYS_POKENAV_GET))
 		each other. \p You need to add their profiles first, though. Let me add mine real quick."))
 		setflag (FLAG_ENABLE_MOM_MATCH_CALL)
 		setflag (FLAG_ADDED_MATCH_CALL_TO_POKENAV)
-		removefieldmugshot
 		setspeaker ([NULL])
+		fadeoutbgm (0)
 		playbgm (MUS_REGISTER_MATCH_CALL, TRUE)
-		msgbox (format("Prof. Balsam's number is registered in the Devon Nav!"))
-		playbgm (MUS_AQUA_MAGMA_HIDEOUT, TRUE)
+		removefieldmugshot
+		msgbox (format("Prof. Balsam's profile is registered in the Devon Nav!"))
+		fadeinbgm (0)
 		setspeaker ([SP_NAME_BALSAM])
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 		msgbox (format("There you go. But don't call me unless there's an emergency. I'm busy.

@@ -291,8 +291,8 @@
 #define itsnotused        0x103
 #define norun              0x104
 #define nowhiteout                0x105
-#define FLAG_RECEIVED_TM_BULLET_SEED         0x106
-#define FLAG_ENTERED_ELITE_FOUR              0x107
+#define canspawnsableyelairboss         0x106
+#define seenshowatinnvisit              0x107
 #define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
 #define FLAG_RECEIVED_TM_TORMENT             0x109
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A

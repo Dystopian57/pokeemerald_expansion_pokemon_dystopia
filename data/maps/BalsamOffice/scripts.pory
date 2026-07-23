@@ -157,13 +157,13 @@ script BalsamBed {
                     setspeaker ([SP_NAME_BALSAM])
                     createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
                     msgbox (format("… right. I should have signed you up for more therapy sessions.
-                    You have a few screws lose don't you?"))
+                    You have a few screws lose, don't you?"))
 
                     setspeaker ([SP_NAME_BALSAM])
                     createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
                     msgbox (format("... \p Sorry. That was a bit too much. I know you've had it rough.\p
-                    I understand if you don't want to sleep at home. It brings you painful memories, right?
-                    \p You can sleep here if that's the case. I mostly just doze on my chair these days anyway."))
+                    I understand if you don't want to sleep at home. It brings you painful memories, doesn't it?
+                    \p You can sleep here if that's the case.\p I mostly just doze on my chair these days anyway."))
                     
 
                     }
@@ -277,17 +277,112 @@ script CaughtRotom {
 
 script RanRotom {
     removeobject (2)
+    addobject (3)
+    clearflag (balsamofficeemptytv)
     msgbox (format("The TV is left alone for now..."))
 }
 
 
 script BalsamWalkman {
     lockall
-    msgbox("It's a Devon Music Player. Press the\n'Play' button?", MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-    
-    }
+    msgbox (format("It's a portable music player."))
+        dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Listen to it", "Don't listen")
+            if(var(VAR_RESULT) == 0){
+                fadenewbgm (MUS_FARTHESTLAND)
+                msgbox (format("Now playing - the Farthest Land."))
+                //playbgm (MUS_FARTHESTLAND, TRUE)
+            }
+
+            if(var(VAR_RESULT) == 1){release}
+
     releaseall
+}
+
+script DemoGoodbye {
+
+    setspeaker ([SP_NAME_DYSTOPIAN])
+	createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)
+    msgbox (format("This is the end of the update! Congratulations on making it this far.
+    \p This is the third update I post, and I'm always happy to see the warm reaction to the clips.
+    \p This hack's development, like its player characters, moves slowly... \p But it does so with intention in each step.
+    \p I hope that you, wherever you're reading this, can also..."))
+    playbgm (MUS_NONE, TRUE)
+    clearflag (balsaminherbedroom)
+
+	setobjectxy (1, 3, 7)
+    addobject (1)
+	setobjectxy (1, 3, 7)
+    playse (SE_DOOR)
+	applymovement (1, moves(walk_up * 1, face_left))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+    setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+    msgbox (format("Stop the sentimental crap. Nobody cares. This clip is already too long."))
+    setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	applymovement (1, moves(face_down))
+    msgbox (format("And you, whoever loser is reading this. Don't hold your breath for this hack's release."))
+    setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+	applymovement (1, moves(face_left))
+    msgbox (format("This nutjob is putting sign scripts in half of damn tiles and setting phone calls for random
+    NPCs, as if people are going to read them."))
+    setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	applymovement (1, moves(face_down))
+    msgbox (format("You'll live in an actual corporate dystopia by the time this is done. Later."))
+	applymovement (1, moves(walk_down * 1))
+    waitmovement (1)
+    removeobject (1)
+    setflag (balsaminherbedroom)
+
+	playse (SE_BREAKABLE_DOOR)
+
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+
+    setspeaker ([SP_NAME_DYSTOPIAN])
+	createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)
+    msgbox (format("..."))
+    removefieldmugshot
+    setspeaker ([NULL])
+    applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_left))
+	playfirstmoncry
+    msgbox (format("Pura...?"))
+    playbgm (MUS_RENBOUPARTY, TRUE)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+    setspeaker ([SP_NAME_DYSTOPIAN])
+	createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)
+    msgbox (format("HAHAHA - SHE'S RIGHT! SEE YOU IN MANY MONTHS!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left, face_up, face_right, face_down))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left, face_up, face_right, face_down))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left, face_up, face_right, face_down))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left, face_up, face_right, face_down))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+    
+}
+
+
+script DemoJumpDown {
+    playse (SE_LEDGE)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(jump_down))
+}
+
+script DemoJumpUp {
+    playse (SE_LEDGE)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(jump_up))
+}
+
+script DemoJumpLeft {
+    playse (SE_LEDGE)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(jump_left))
 }
 
 script BalsamBookshelf {

@@ -611,9 +611,9 @@ script AideeBasementIdleTalk {
 					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("Bulbasynth, huh? Well, to unsafen this one we need 
-					a {COLOR RED}INSERT MATERIAL{COLOR DARK_GRAY}..."))
+					a {COLOR RED}Green Leaf{COLOR DARK_GRAY}..."))
 					
-					if (checkitem (ITEM_MAGNET)  == TRUE)
+					if (checkitem (ITEM_MIRACLE_SEED)  == TRUE)
 						{msgbox (format("Which you have - excellent! Now, let's see that
 						Bulbasynth!"))
 						setvar (VAR_0x8008, INGAME_TRADE_BULBASAUR)
@@ -635,7 +635,7 @@ script AideeBasementIdleTalk {
 						
 						msgbox (format("It's done! Another Unsafening success - take good care
 						of that Bulbasaur!"))
-						removeitem (ITEM_MAGNET, 1)
+						removeitem (ITEM_MIRACLE_SEED, 1)
 						goto (finishsafemontradescript)
 						}
 					else {
@@ -652,9 +652,9 @@ script AideeBasementIdleTalk {
 					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("Smothquil, huh? Well, to unsafen this one we'd need 
-					some {COLOR RED}Fuel{COLOR DARK_GRAY}..."))
+					a {COLOR RED}Leaky Ligther{COLOR DARK_GRAY}..."))
 					
-					if (checkitem (ITEM_MAGNET)  == TRUE)
+					if (checkitem (ITEM_FLAME_ORB)  == TRUE)
 						{msgbox (format("Which you have - excellent! Now, let's see that
 						Smothquil!"))
 						setvar (VAR_0x8008, INGAME_TRADE_CYNDAQUIL)
@@ -676,7 +676,7 @@ script AideeBasementIdleTalk {
 						
 						msgbox (format("It's done! Another Unsafening success - take good care
 						of that Cyndaquil!"))
-						removeitem (ITEM_MAGNET, 1)
+						removeitem (ITEM_FLAME_ORB, 1)
 						goto (finishsafemontradescript)
 						}
 					else {
@@ -768,9 +768,9 @@ script AideeBasementIdleTalk {
 							createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 							setspeaker ([SP_NAME_AIDEE])
 							msgbox (format("Ninkaburi, huh? Well, to unsafen this one we need 
-							a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+							some {COLOR RED}Pokéfeed{COLOR DARK_GRAY}..."))
 							
-							if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+							if (checkitem (ITEM_HONEY)  == TRUE)
 								{msgbox (format("Which you have - excellent! Now, let's see that
 								Ninkaburi!"))
 								setvar (VAR_0x8008, INGAME_TRADE_NINCADA)
@@ -792,7 +792,7 @@ script AideeBasementIdleTalk {
 								
 								msgbox (format("It's done! Another Unsafening success - take good care
 								of that Nincada!"))
-								removeitem (ITEM_BLACK_SLUDGE, 1)
+								removeitem (ITEM_HONEY, 1)
 								goto (finishsafemontradescript)
 								}
 							else {
@@ -821,7 +821,7 @@ script AideeBasementIdleTalk {
 							createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 							setspeaker ([SP_NAME_AIDEE])
 							msgbox (format("Shiitako, huh? Well, to unsafen this one we need 
-							a {COLOR RED}Strange Grime{COLOR DARK_GRAY}..."))
+							some {COLOR RED}Strange Grime{COLOR DARK_GRAY}..."))
 							
 							if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 								{msgbox (format("Which you have - excellent! Now, let's see that
@@ -876,9 +876,10 @@ script AideeBasementIdleTalk {
 							createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 							setspeaker ([SP_NAME_AIDEE])
 							msgbox (format("Poochain, huh? Well, to unsafen this one we need 
-							a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+							a {COLOR RED}Choice Knife{COLOR DARK_GRAY}, to cut all those
+							chains and shackles..."))
 							
-							if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+							if (checkitem (ITEM_CHOICE_BAND)  == TRUE)
 								{msgbox (format("Which you have - excellent! Now, let's see that
 								Poochain!"))
 								setvar (VAR_0x8008, INGAME_TRADE_POOCHYENA)
@@ -900,7 +901,7 @@ script AideeBasementIdleTalk {
 								
 								msgbox (format("It's done! Another Unsafening success - take good care
 								of that Poochyena!"))
-								removeitem (ITEM_BLACK_SLUDGE, 1)
+								removeitem (ITEM_CHOICE_BAND, 1)
 								goto (finishsafemontradescript)
 								}
 							else {
@@ -963,7 +964,7 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Fooming, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										some {COLOR RED}Strange Grime{COLOR DARK_GRAY}..."))
 										
 										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
@@ -1018,9 +1019,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Geoslug, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										some {COLOR RED}Fuel{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_CHARCOAL)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Geoslug!"))
 											setvar (VAR_0x8008, INGAME_TRADE_SLUGMA)
@@ -1042,7 +1043,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Slugma!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_CHARCOAL, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1074,9 +1075,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Nidoran Intersex, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										some {COLOR RED}Pheromone Gas{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_OVAL_CHARM)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Nidoran!"))
 
@@ -1104,7 +1105,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Nidoran!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_OVAL_CHARM, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1168,7 +1169,7 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Mudder, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										some {COLOR RED}Strange Grime{COLOR DARK_GRAY}..."))
 										
 										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
@@ -1224,9 +1225,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Loadtad, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Green Leaf{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_MIRACLE_SEED)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Loadtad!"))
 											setvar (VAR_0x8008, INGAME_TRADE_LOTAD)
@@ -1248,7 +1249,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Lotad!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_MIRACLE_SEED, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1280,9 +1281,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Helipip, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Green Leaf{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_MIRACLE_SEED)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Loadtad!"))
 											setvar (VAR_0x8008, INGAME_TRADE_HOPPIP)
@@ -1304,7 +1305,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Hoppip!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_MIRACLE_SEED, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1361,9 +1362,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Manchine, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Good Wrench{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_METAL_COAT)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Mudder!"))
 											setvar (VAR_0x8008, INGAME_TRADE_MACHOP)
@@ -1385,7 +1386,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Machop!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_METAL_COAT, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1417,9 +1418,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Verdoom, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Good Wrench{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_METAL_COAT)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Verdoom!"))
 											setvar (VAR_0x8008, INGAME_TRADE_BELDUM)
@@ -1441,7 +1442,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Beldum!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_METAL_COAT, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1456,7 +1457,7 @@ script AideeBasementIdleTalk {
 								{playse (SE_RG_HELP_ERROR)
 									setspeaker ([SP_NAME_AIDEE])
 									msgbox (format("{PLAYER}, you haven't registered the data for this
-									Safemon on your Devon Dex! \pI need that data to figure out how to
+									Safemon on your Devon Dex!\pI need that data to figure out how to
 									Unsafen it - sorry!"))
 									goto (fifthsafemonlistreturn)
 									}
@@ -1473,9 +1474,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Tumbela, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										an {COLOR RED}Old Canteen{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_MYSTIC_WATER)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Tumbela!"))
 											setvar (VAR_0x8008, INGAME_TRADE_TANGELA)
@@ -1497,7 +1498,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Tangela!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_MYSTIC_WATER, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1554,9 +1555,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Arystal, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										an {COLOR RED}Asphalt Chunk{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_HARD_STONE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Mudder!"))
 											setvar (VAR_0x8008, INGAME_TRADE_ARON)
@@ -1578,7 +1579,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Aron!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_HARD_STONE, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1610,9 +1611,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Wartz, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}special ring...{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_TWISTED_SPOON)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Wartz!"))
 											setvar (VAR_0x8008, INGAME_TRADE_RALTS)
@@ -1634,7 +1635,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Ralts!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_TWISTED_SPOON, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1666,9 +1667,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Veriwoodo, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										an {COLOR RED}Asphalt Chunk{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_HARD_STONE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Veriwoodo!"))
 											setvar (VAR_0x8008, INGAME_TRADE_SUDOWOODO)
@@ -1690,7 +1691,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Sudowoodo!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_HARD_STONE, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1747,7 +1748,7 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Gummin, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										some {COLOR RED}Strange Grime{COLOR DARK_GRAY}..."))
 										
 										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
@@ -1803,9 +1804,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Rolloon, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Drifting Parachute{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_AIR_BALLOON)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Rolloon!"))
 											setvar (VAR_0x8008, INGAME_TRADE_DRIFLOON)
@@ -1827,7 +1828,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Drifloon!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_AIR_BALLOON, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1859,9 +1860,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Trashealed, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Choice Knife{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_CHOICE_BAND)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Trashealed!"))
 											setvar (VAR_0x8008, INGAME_TRADE_TRUBBISH)
@@ -1883,7 +1884,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Trubbish!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_CHOICE_BAND, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -1994,9 +1995,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Delibin, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										an {COLOR RED}Ice Bag{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_NEVER_MELT_ICE)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Delibin!"))
 											setvar (VAR_0x8008, INGAME_TRADE_DELIBIRD)
@@ -2018,7 +2019,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Delibird!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_NEVER_MELT_ICE, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -2050,9 +2051,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Douno, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Growth Injection{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_RARE_CANDY)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Douno!"))
 											setvar (VAR_0x8008, INGAME_TRADE_DODUO)
@@ -2074,7 +2075,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Doduo!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_RARE_CANDY, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -2131,9 +2132,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Kangaskid, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Growth Injection{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_RARE_CANDY)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Kangaskid!"))
 											setvar (VAR_0x8008, INGAME_TRADE_KANGASKHAN)
@@ -2155,7 +2156,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Kangaskhan!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_RARE_CANDY, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -2187,9 +2188,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Gachapod, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Pry Bar{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_RAZOR_FANG)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Gachapod!"))
 											setvar (VAR_0x8008, INGAME_TRADE_DITTO)
@@ -2211,7 +2212,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Ditto!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_RAZOR_FANG, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -2243,9 +2244,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Tamarakku, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Growth Injection{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_RARE_CANDY)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Tamarakku!"))
 											setvar (VAR_0x8008, INGAME_TRADE_TOGEPI)
@@ -2267,7 +2268,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Togepi!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_RARE_CANDY, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -2324,9 +2325,9 @@ script AideeBasementIdleTalk {
 										createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 										setspeaker ([SP_NAME_AIDEE])
 										msgbox (format("Rotom Monitor, huh? Well, to unsafen this one we need 
-										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
+										a {COLOR RED}Good Wrench{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										if (checkitem (ITEM_METAL_COAT)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Rotom Monitor!"))
 											setvar (VAR_0x8008, INGAME_TRADE_ROTOM)
@@ -2348,7 +2349,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Rotom!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removeitem (ITEM_METAL_COAT, 1)
 											goto (finishsafemontradescript)
 											}
 										else {
@@ -2382,7 +2383,8 @@ script AideeBasementIdleTalk {
 										msgbox (format("Mimiyurui, huh? Well, to unsafen this one we need 
 										a {COLOR RED}INSERT ITEM{COLOR DARK_GRAY}..."))
 										
-										if (checkitem (ITEM_BLACK_SLUDGE)  == TRUE)
+										
+										if (checkdecor (DECOR_PURACHU_DOLL)  == TRUE)
 											{msgbox (format("Which you have - excellent! Now, let's see that
 											Mimiyurui!"))
 											setvar (VAR_0x8008, INGAME_TRADE_MIMIKYU)
@@ -2404,7 +2406,7 @@ script AideeBasementIdleTalk {
 											
 											msgbox (format("It's done! Another Unsafening success - take good care
 											of that Mimikyu!"))
-											removeitem (ITEM_BLACK_SLUDGE, 1)
+											removedecoration (DECOR_PURACHU_DOLL)
 											goto (finishsafemontradescript)
 											}
 										else {
