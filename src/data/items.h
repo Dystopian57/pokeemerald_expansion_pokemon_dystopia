@@ -10192,7 +10192,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_RAZOR_CLAW] =
     {
-        .name = ITEM_NAME("Razor Claw"),
+        .name = ITEM_NAME("Broken Bottle"),
     #if I_PRICE >= GEN_9
         .price = 15000,
     #elif I_PRICE >= GEN_7
@@ -10202,7 +10202,7 @@ const struct Item gItemsInfo[] =
     #endif
         .holdEffect = HOLD_EFFECT_SCOPE_LENS,
         .description = COMPOUND_STRING(
-            "A hooked claw that\n"
+            "Its shattered end\n"
             "ups the holder's\n"
             "critical-hit ratio."),
         .pocket = POCKET_ITEMS,

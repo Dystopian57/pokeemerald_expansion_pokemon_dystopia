@@ -28,7 +28,7 @@ script CraterHermit {
         if (!flag (hermitmovesexplained)){
         msgbox(format("I am one of the Eight Hermits. My brothers and I keep the lore of the
         Hermit Moves. \p We do not grant this lore just to anyone - in these times of strife,
-        much damage can be done with them. But you..."))}
+        much damage can be done with them, for they have the power to shape the land. But you..."))}
 
         msgbox(format("You demonstrated kindness in saving
         that woman. \p And just now, you showed resolve when battling me

@@ -9492,12 +9492,13 @@ Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Nosepass
-Level: 3
+
+Graveler
+Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Seedot
-Level: 3
+Nuzleaf
+Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9511,7 +9512,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Shuppet
-Level: 3
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9539,8 +9540,12 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Loadtad
-Level: 3
+Kecleon
+Level: 6
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Gachapod
+Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9554,7 +9559,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Shellder
-Level: 3
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Wooper
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_HAZARDIVER_WATERFALL_2 ===
@@ -9581,7 +9590,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Marill
-Level: 3
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Shiitako
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Numel
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9609,7 +9626,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Mawile
-Level: 3
+Level: 10
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Wobbuffet
+Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 

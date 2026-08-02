@@ -242,8 +242,8 @@ script FatManDLCAfterClass {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (15, moves(face_player))
-    msgbox(format("Devon Browser automatically hides all distressing content on the web. \p But
-    it also replaces it with Devon ads. It's kind of annoying."))
+    msgbox(format("Devon Browser has a function to automatically hide all distressing content on the web. \p But
+    to cover the cost for it, it also replaces said content with ads for Devon products. \p It's kind of annoying..."))
 	applymovement (15, moves (face_right))
     waitmovement (15)
     releaseall

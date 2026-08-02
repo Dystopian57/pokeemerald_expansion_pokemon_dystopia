@@ -4938,7 +4938,7 @@ s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
     }
     else if (ability == ABILITY_GALE_WINGS
           && (GetConfig(B_GALE_WINGS) < GEN_7 || IsBattlerAtMaxHp(battler))
-          && GetMoveType(move) == TYPE_FLYING)
+          && GetMoveType(move) == TYPE_WATER)
     {
         priority++;
     }

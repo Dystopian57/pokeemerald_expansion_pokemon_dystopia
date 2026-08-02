@@ -206,7 +206,7 @@ AideCasettePlayer::
 # 125 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox AideCasettePlayer_Text_0
 # 127 "data/maps/LittlerootLabBasement/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, AideCasettePlayer_Text_1, AideCasettePlayer_Text_2
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, AideCasettePlayer_Text_1, AideCasettePlayer_Text_2
 # 128 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq AideCasettePlayer_2
@@ -960,13 +960,13 @@ AideeBasementIdleTalk_72:
 	compare VAR_RESULT, 4
 	goto_if_eq AideeBasementIdleTalk_79
 AideeBasementIdleTalk_78:
-# 2461 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2476 "data/maps/LittlerootLabBasement/scripts.pory"
 finishunsafentutorial:
-# 2462 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2477 "data/maps/LittlerootLabBasement/scripts.pory"
 finishsafemontradescript:
-# 2463 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2478 "data/maps/LittlerootLabBasement/scripts.pory"
 	removefieldmugshot
-# 2464 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2479 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
@@ -3879,11 +3879,11 @@ AideeBasementIdleTalk_549:
 	getseenmon SPECIES_WARABBIT
 # 2311 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq AideeBasementIdleTalk_555
-AideeBasementIdleTalk_554:
+	goto_if_eq AideeBasementIdleTalk_558
+AideeBasementIdleTalk_557:
 # 2313 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq AideeBasementIdleTalk_557
+	goto_if_eq AideeBasementIdleTalk_563
 	goto AideeBasementIdleTalk_489
 
 AideeBasementIdleTalk_493:
@@ -4088,7 +4088,7 @@ AideeBasementIdleTalk_528:
 	compare VAR_RESULT, TRUE
 	goto_if_eq AideeBasementIdleTalk_542
 AideeBasementIdleTalk_541:
-# 2444 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2459 "data/maps/LittlerootLabBasement/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AideeBasementIdleTalk_552
 	goto AideeBasementIdleTalk_78
@@ -4174,7 +4174,17 @@ AideeBasementIdleTalk_539:
 AideeBasementIdleTalk_542:
 # 2437 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox AideeBasementIdleTalk_Text_154
-# 2441 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2440 "data/maps/LittlerootLabBasement/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, AideeBasementIdleTalk_Text_155, AideeBasementIdleTalk_Text_156
+# 2442 "data/maps/LittlerootLabBasement/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq AideeBasementIdleTalk_555
+AideeBasementIdleTalk_554:
+# 2453 "data/maps/LittlerootLabBasement/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq AideeBasementIdleTalk_561
+AideeBasementIdleTalk_560:
+# 2456 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto finishsafemontradescript
 	goto AideeBasementIdleTalk_541
 
@@ -4238,40 +4248,50 @@ AideeBasementIdleTalk_550:
 	goto AideeBasementIdleTalk_549
 
 AideeBasementIdleTalk_552:
-# 2445 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2460 "data/maps/LittlerootLabBasement/scripts.pory"
 	playse SE_RG_HELP_ERROR
-# 2446 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2461 "data/maps/LittlerootLabBasement/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
-# 2447 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2462 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox AideeBasementIdleTalk_Text_79
-# 2450 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2465 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto tenthsafemonlistreturn
 	goto AideeBasementIdleTalk_78
 
 AideeBasementIdleTalk_555:
-# 2312 "data/maps/LittlerootLabBasement/scripts.pory"
-	bufferspeciesname STR_VAR_3, SPECIES_WARABBIT
+# 2442 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox AideeBasementIdleTalk_Text_157
 	goto AideeBasementIdleTalk_554
 
-AideeBasementIdleTalk_557:
+AideeBasementIdleTalk_558:
+# 2312 "data/maps/LittlerootLabBasement/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_WARABBIT
+	goto AideeBasementIdleTalk_557
+
+AideeBasementIdleTalk_561:
+# 2454 "data/maps/LittlerootLabBasement/scripts.pory"
+	msgbox AideeBasementIdleTalk_Text_158
+	goto AideeBasementIdleTalk_560
+
+AideeBasementIdleTalk_563:
 # 2314 "data/maps/LittlerootLabBasement/scripts.pory"
 	bufferspeciesname STR_VAR_3, SPECIES_NONE
 	goto AideeBasementIdleTalk_489
 
 
 	.align 2
-# 2467 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2482 "data/maps/LittlerootLabBasement/scripts.pory"
 AideMaterials0:
-# 2468 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2483 "data/maps/LittlerootLabBasement/scripts.pory"
 	.2byte ITEM_COMET_SHARD
 	.2byte ITEM_NONE
 
 	.align 2
-# 2472 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2487 "data/maps/LittlerootLabBasement/scripts.pory"
 AideMaterials1:
-# 2473 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2488 "data/maps/LittlerootLabBasement/scripts.pory"
 	.2byte ITEM_COMET_SHARD
-# 2474 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2489 "data/maps/LittlerootLabBasement/scripts.pory"
 	.2byte ITEM_MAGNET
 	.2byte ITEM_NONE
 
@@ -4280,41 +4300,41 @@ TradeSafemonCode::
 
 
 CancelTradeSafemonSelection::
-# 2487 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2502 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
-# 2488 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2503 "data/maps/LittlerootLabBasement/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
-# 2489 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2504 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox CancelTradeSafemonSelection_Text_0
-# 2491 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2506 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
 
 SelectedIncorrectTradeSafemon::
-# 2495 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2510 "data/maps/LittlerootLabBasement/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_0x8009
-# 2496 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2511 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
-# 2497 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2512 "data/maps/LittlerootLabBasement/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
-# 2498 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2513 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox SelectedIncorrectTradeSafemon_Text_0
-# 2500 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2515 "data/maps/LittlerootLabBasement/scripts.pory"
 	removefieldmugshot
-# 2501 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2516 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
 
 CheerorbBasementIdleTalk::
-# 2505 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2520 "data/maps/LittlerootLabBasement/scripts.pory"
 	lockall
-# 2506 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2521 "data/maps/LittlerootLabBasement/scripts.pory"
 	playmoncry SPECIES_CHEERORB, CRY_MODE_NORMAL
-# 2507 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2522 "data/maps/LittlerootLabBasement/scripts.pory"
 	msgbox AideeBasementIdleTalk_Text_6
-# 2508 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2523 "data/maps/LittlerootLabBasement/scripts.pory"
 	releaseall
 	return
 
@@ -5320,20 +5340,56 @@ AideeBasementIdleTalk_Text_153:
 
 AideeBasementIdleTalk_Text_154:
 # 2437 "data/maps/LittlerootLabBasement/scripts.pory"
-	.string "Uuhm, {PLAYER}...? The Unsafener is\n"
-	.string "not detecting this one as a Safemon...\p"
-	.string "But I've also never seen or heard of a\n"
-	.string "Pokémon like this before...\p"
-	.string "I think you might just have discovered\n"
-	.string "a new species!$"
+	.string "Wait a moment... {PLAYER}, this is not\n"
+	.string "a Safemon!\p"
+	.string "This is a Pokémon with a very\n"
+	.string "interesting story... would you like to\l"
+	.string "hear it?$"
+
+AideeBasementIdleTalk_Text_155:
+# 2440 "data/maps/LittlerootLabBasement/scripts.pory"
+	.string "Sure$"
+
+AideeBasementIdleTalk_Text_156:
+# 2440 "data/maps/LittlerootLabBasement/scripts.pory"
+	.string "Not now$"
+
+AideeBasementIdleTalk_Text_157:
+# 2442 "data/maps/LittlerootLabBasement/scripts.pory"
+	.string "Great! Well, this is a Warabbit - it used\n"
+	.string "to be a popular 'Safemon', and Devon's\l"
+	.string "mascot during the first months after\l"
+	.string "the war.\p"
+	.string "However, it was soon found out it wasn't\n"
+	.string "a Safemon at all!\p"
+	.string "A Devon geneticist had simply found a\n"
+	.string "new species, bred it, and tried to pass\l"
+	.string "it as a Safemon in order to get a raise.\p"
+	.string "The façade was discovered when\n"
+	.string "Warabbit began to evolve, which\l"
+	.string "Safemon aren't supposed to do.\p"
+	.string "So what did Devon do? It tried to\n"
+	.string "remove every Warabbit from the wild, in\l"
+	.string "an effort to make people forget about\l"
+	.string "the whole fiasco.\p"
+	.string "Fortunately, it seems at least one\n"
+	.string "escape the company's grasp - perhaps\l"
+	.string "more!\p"
+	.string "Please, take good care of it!$"
+
+AideeBasementIdleTalk_Text_158:
+# 2454 "data/maps/LittlerootLabBasement/scripts.pory"
+	.string "Ah, shame... well, just now you've got a\n"
+	.string "very rare Pokémon, and that you should\l"
+	.string "take care of it!$"
 
 CancelTradeSafemonSelection_Text_0:
-# 2489 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2504 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Oh, changed your mind? I guess some\n"
 	.string "Safemon have their charm after all.$"
 
 SelectedIncorrectTradeSafemon_Text_0:
-# 2498 "data/maps/LittlerootLabBasement/scripts.pory"
+# 2513 "data/maps/LittlerootLabBasement/scripts.pory"
 	.string "Oh, that's not a {STR_VAR_1},\n"
 	.string "{PLAYER}! You should do some\l"
 	.string "reviewing with that Devondex I gave\l"

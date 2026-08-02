@@ -2139,10 +2139,13 @@ LittleKidDLC_Text_5:
 
 FatManDLCAfterClass_Text_0:
 # 245 "data/maps/DLC/scripts.pory"
-	.string "Devon Browser automatically hides all\n"
-	.string "distressing content on the web.\p"
-	.string "But it also replaces it with Devon ads.\n"
-	.string "It's kind of annoying.$"
+	.string "Devon Browser has a function to\n"
+	.string "automatically hide all distressing\l"
+	.string "content on the web.\p"
+	.string "But to cover the cost for it, it also\n"
+	.string "replaces said content with ads for\l"
+	.string "Devon products.\p"
+	.string "It's kind of annoying...$"
 
 FatManDLC_Text_0:
 # 256 "data/maps/DLC/scripts.pory"

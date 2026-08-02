@@ -4923,7 +4923,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             if (IsBattlerTurnDamaged(battler)
              && IsBattlerAlive(battler)
              && HadMoreThanHalfHpNowDoesnt(battler)
-             && CompareStat(battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+             && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
             {
                 gEffectBattler = gBattlerAbility = battler;
                 SET_STATCHANGER(STAT_ATK, 1, FALSE);
@@ -7553,7 +7553,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_STEELY_SPIRIT:
-        if (moveType == TYPE_STEEL)
+        if (moveType == TYPE_NORMAL)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_SHARPNESS:
@@ -7590,7 +7590,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
             break;
         case ABILITY_STEELY_SPIRIT:
-            if (moveType == TYPE_STEEL)
+            if (moveType == TYPE_NORMAL)
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
             break;
         default:
@@ -8437,7 +8437,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         }
         break;
     case ABILITY_ICE_SCALES:
-        if (IsBattleMoveSpecial(ctx->move))
+        if (IsBattleMovePhysical(ctx->move))
         {
             modifier =  UQ_4_12(0.5);
             recordAbility = TRUE;

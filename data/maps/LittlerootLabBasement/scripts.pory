@@ -124,7 +124,7 @@ script AideCasettePlayer {
     lock
     msgbox (format("It's a radio with a casette inside."))
 
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Adopt", "Don't adopt")
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Adopt", "Don't adopt")
 	if(var(VAR_RESULT) == 0){
 	playbgm (MUS_RENBOUPARTY, TRUE)
 		if (flag(Aideearrivestobasement))
@@ -2434,10 +2434,25 @@ script AideeBasementIdleTalk {
 								getseenmon (SPECIES_WARABBIT)
 									if (var(VAR_RESULT) == TRUE)
 								
-										{msgbox (format("Uuhm, {PLAYER}...? The Unsafener is not detecting
-										this one as a Safemon... \p But I've also never seen or heard of a
-										Pokémon like this before...\p I think you might just have discovered
-										a new species!"))
+										{msgbox (format("Wait a moment... {PLAYER}, this is not a Safemon!
+										\p This is a Pokémon with a very interesting story... would you
+										like to hear it?"))
+										dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "Not now")
+
+										if(var(VAR_RESULT) == 0){msgbox (format("Great! Well, this is a Warabbit - it
+										used to be a popular 'Safemon', and Devon's mascot during the first months
+										after the war.\p However, it was soon found out it wasn't a Safemon at all!
+										\p A Devon geneticist had simply found a new species, bred it, and tried to
+										pass it as a Safemon in order to get a raise.\p The façade was discovered
+										when Warabbit began to evolve, which Safemon aren't supposed to do.\p So
+										what did Devon do? It tried to remove every Warabbit from the wild, in an
+										effort to make people forget about the whole fiasco.\p Fortunately, it
+										seems at least one escape the company's grasp - perhaps more!\p Please,
+										take good care of it!"))}
+
+										if(var(VAR_RESULT) == 1){
+										msgbox (format("Ah, shame... well, just now you've got a very rare
+										Pokémon, and that you should take care of it!"))}
 										goto (finishsafemontradescript)}
 
 									

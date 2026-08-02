@@ -116,7 +116,9 @@ CraterHermit_Text_5:
 	.string "Hermit Moves.\p"
 	.string "We do not grant this lore just to\n"
 	.string "anyone - in these times of strife, much\l"
-	.string "damage can be done with them. But you...$"
+	.string "damage can be done with them, for they\l"
+	.string "have the power to shape the land. But\l"
+	.string "you...$"
 
 CraterHermit_Text_6:
 # 33 "data/maps/GreatCraterBottom/scripts.pory"
