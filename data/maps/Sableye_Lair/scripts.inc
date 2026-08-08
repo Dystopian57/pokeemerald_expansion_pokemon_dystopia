@@ -1300,7 +1300,7 @@ SableyeLairGem1_Text_0:
 SableyeGem1_Text_0:
 # 342 "data/maps/Sableye_Lair/scripts.pory"
 	.string "The Sableye is zealously admiring its\n"
-	.string "gems. Battle it for them?$"
+	.string "gems. Try to get them?$"
 
 SableyeGem1_Text_1:
 # 343 "data/maps/Sableye_Lair/scripts.pory"

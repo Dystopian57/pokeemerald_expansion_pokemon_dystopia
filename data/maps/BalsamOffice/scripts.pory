@@ -285,15 +285,27 @@ script RanRotom {
 
 script BalsamWalkman {
     lockall
-    msgbox (format("It's a portable music player."))
-        dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Listen to it", "Don't listen")
+    msgbox (format("It's a casette player. The casette contains several songs."))
+        dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Gymnopédie No. 1", "Air on the G String", "The Farthest Land", "Leave")
             if(var(VAR_RESULT) == 0){
+                fadenewbgm (MUS_GYMNOPEDIE)
+                msgbox (format("Now playing - Gymnopédie No. 1."))
+                //playbgm (MUS_FARTHESTLAND, TRUE)
+            }
+
+            if(var(VAR_RESULT) == 1){
+                fadenewbgm (MUS_AIRONG)
+                msgbox (format("Now playing - Air on the G String."))
+                //playbgm (MUS_FARTHESTLAND, TRUE)
+            }
+
+            if(var(VAR_RESULT) == 2){
                 fadenewbgm (MUS_FARTHESTLAND)
                 msgbox (format("Now playing - the Farthest Land."))
                 //playbgm (MUS_FARTHESTLAND, TRUE)
             }
 
-            if(var(VAR_RESULT) == 1){release}
+            if(var(VAR_RESULT) == 3){release}
 
     releaseall
 }

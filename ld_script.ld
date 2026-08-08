@@ -1072,6 +1072,7 @@ SECTIONS {
         sound/songs/midi/mus_nfinalbattle.o(.rodata);
         sound/songs/midi/mus_farthestland.o(.rodata);
         sound/songs/midi/mus_pyritetown.o(.rodata);
+        sound/songs/midi/mus_airong.o(.rodata);
 
 
         

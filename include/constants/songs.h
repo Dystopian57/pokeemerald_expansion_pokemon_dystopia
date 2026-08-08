@@ -591,11 +591,12 @@
 #define MUS_NFINALBATTLE      656
 #define MUS_FARTHESTLAND      657
 #define MUS_PYRITETOWN      658
+#define MUS_AIRONG      659
 
 
 
 
-#define END_MUS                     MUS_PYRITETOWN
+#define END_MUS                     MUS_AIRONG
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

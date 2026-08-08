@@ -177,12 +177,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_PIKACHU_SAFE] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 90, //35
+        .baseAttack    = 70, //55
+        .baseDefense   = 60, //40
+        .baseSpeed     = 20, //90
+        .baseSpAttack  = 30, //50
+        .baseSpDefense = 50, //50
         .types = MON_TYPES(TYPE_NORMAL, TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -258,19 +258,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
             sAnimTable_Following
         )
         FOOTPRINT(Pikachu)
-        .levelUpLearnset = sPikachuLevelUpLearnset,
-        .teachableLearnset = sPikachuTeachableLearnset,
-        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .levelUpLearnset = sPikachuSafeLevelUpLearnset,
+        .teachableLearnset = sPikachuSafeTeachableLearnset,
+        .eggMoveLearnset = sPikachuSafeEggMoveLearnset,
     },
 
     [SPECIES_BULBASYNTH] =
     {
-        .baseHP        = 45,
-        .baseAttack    = 49,
-        .baseDefense   = 49,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 65,
+        .baseHP        = 55, //45
+        .baseAttack    = 49, //49
+        .baseDefense   = 59, //49
+        .baseSpeed     = 25, //45
+        .baseSpAttack  = 65, //65
+        .baseSpDefense = 65, //65
         .types = MON_TYPES(TYPE_GRASS, TYPE_STEEL),
         .catchRate = 45,
         .expYield = 64,
@@ -328,20 +328,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Bulbasynth,
             gShinyOverworldPalette_Bulbasynth
         )
-        .levelUpLearnset = sBulbasaurLevelUpLearnset,
-        .teachableLearnset = sBulbasaurTeachableLearnset,
-        .eggMoveLearnset = sBulbasaurEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_IVYSAUR}),
+        .levelUpLearnset = sBulbasynthLevelUpLearnset,
+        .teachableLearnset = sBulbasynthTeachableLearnset,
+        .eggMoveLearnset = sBulbasynthEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_IVYSAUR}),
     },
 
     [SPECIES_SMOTHQUIL] =
     {
-        .baseHP        = 39,
-        .baseAttack    = 52,
-        .baseDefense   = 43,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 50,
+        .baseHP        = 39, //39
+        .baseAttack    = 62, //52
+        .baseDefense   = 33, //43
+        .baseSpeed     = 65, //65
+        .baseSpAttack  = 70, //60
+        .baseSpDefense = 40, //50
         .types = MON_TYPES(TYPE_FIRE, TYPE_POISON),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
@@ -400,19 +400,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gShinyOverworldPalette_Smothquil
         )
         .levelUpLearnset = sSmothquilLevelUpLearnset,
-        .teachableLearnset = sCyndaquilTeachableLearnset,
-        .eggMoveLearnset = sCyndaquilEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_QUILAVA}),
+        .teachableLearnset = sSmothquilTeachableLearnset,
+        .eggMoveLearnset = sSmothquilEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_QUILAVA}),
     },
 
     [SPECIES_WARABBIT] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 70,
-        .baseDefense   = 50,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 40, //50
+        .baseAttack    = 70, //70
+        .baseDefense   = 40, //50
+        .baseSpeed     = 70, //40
+        .baseSpAttack  = 50, //50
+        .baseSpDefense = 40, //50
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
@@ -461,7 +461,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 3,
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(1, 1, SHADOW_SIZE_S)
-        FOOTPRINT(Mudkip)
+        FOOTPRINT(Scorbunny)
         OVERWORLD(
             sPicTable_Warabbit,
             SIZE_32x32,
@@ -471,19 +471,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Warabbit,
             gShinyOverworldPalette_Warabbit
         )
-        .levelUpLearnset = sMudkipLevelUpLearnset,
-        .teachableLearnset = sMudkipTeachableLearnset,
-        .eggMoveLearnset = sMudkipEggMoveLearnset,
+        .levelUpLearnset = sWarabbitLevelUpLearnset,
+        .teachableLearnset = sWarabbitTeachableLearnset,
+        .eggMoveLearnset = sWarabbitEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_MARSHTOMP}),
     },
 
     [SPECIES_NINKABURI] =
     {
-        .baseHP        = 31,
-        .baseAttack    = 45,
-        .baseDefense   = 90,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 30,
+        .baseHP        = 31, //31
+        .baseAttack    = 55, //45
+        .baseDefense   = 40, //90
+        .baseSpeed     = 50, //40
+        .baseSpAttack  = 20, //30
+        .baseSpDefense = 70, //30
         .types = MON_TYPES(TYPE_BUG, TYPE_DARK),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 53 : 65,
@@ -542,25 +543,25 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Ninkaburi,
             gShinyOverworldPalette_Ninkaburi
         )
-        .levelUpLearnset = sNincadaLevelUpLearnset,
-        .teachableLearnset = sNincadaTeachableLearnset,
-        .eggMoveLearnset = sNincadaEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_NINJASK},
-                            #if P_SHEDINJA_BALL >= GEN_4
-                                {EVO_SPLIT_FROM_EVO, SPECIES_NINJASK, SPECIES_SHEDINJA, CONDITIONS({IF_BAG_ITEM_COUNT, ITEM_POKE_BALL, 1})}),
-                            #else
-                                {EVO_SPLIT_FROM_EVO, SPECIES_NINJASK, SPECIES_SHEDINJA}),
-                            #endif
+        .levelUpLearnset = sNinkaburiLevelUpLearnset,
+        .teachableLearnset = sNinkaburiTeachableLearnset,
+        .eggMoveLearnset = sNinkaburiEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_NINJASK},
+                            //#if P_SHEDINJA_BALL >= GEN_4
+                                //{EVO_SPLIT_FROM_EVO, SPECIES_NINJASK, SPECIES_SHEDINJA, CONDITIONS({IF_BAG_ITEM_COUNT, ITEM_POKE_BALL, 1})}),
+                            //#else
+                                //{//EVO_SPLIT_FROM_EVO, SPECIES_NINJASK, SPECIES_SHEDINJA}),
+                            //#endif
     },
 
      [SPECIES_CHEERORB] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 30,
-        .baseDefense   = 50,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 55,
-        .baseSpDefense = 55,
+        .baseHP        = 50, //40
+        .baseAttack    = 30, //30
+        .baseDefense   = 65, //50
+        .baseSpeed     = 80, //100
+        .baseSpAttack  = 30, //55
+        .baseSpDefense = 64, //44
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FAIRY),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 66 : 103,
@@ -621,20 +622,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Cheerorb,
             gShinyOverworldPalette_Cheerorb
         )
-        .levelUpLearnset = sVoltorbLevelUpLearnset,
-        .teachableLearnset = sVoltorbTeachableLearnset,
+        .levelUpLearnset = sCheerorbLevelUpLearnset,
+        .teachableLearnset = sCheerorbTeachableLearnset,
         .formSpeciesIdTable = sCheerorbFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ELECTRODE}),
+        //.evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ELECTRODE}),
     },
 
      [SPECIES_POOCHAIN] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 35,
-        .baseSpeed     = 35,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 30,
+        .baseHP        = 35, //35      210
+        .baseAttack    = 70, //55
+        .baseDefense   = 40, //35
+        .baseSpeed     = 25, //35
+        .baseSpAttack  = 20, //30
+        .baseSpDefense = 30, //30
         .types = MON_TYPES(TYPE_DARK),
         .catchRate = 255,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
@@ -701,21 +702,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Poochain,
             gShinyOverworldPalette_Poochain
         )
-        .levelUpLearnset = sPoochyenaLevelUpLearnset,
-        .teachableLearnset = sPoochyenaTeachableLearnset,
-        .eggMoveLearnset = sPoochyenaEggMoveLearnset,
+        .levelUpLearnset = sPoochainLevelUpLearnset,
+        .teachableLearnset = sPoochainTeachableLearnset,
+        .eggMoveLearnset = sPoochainEggMoveLearnset,
         //.evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_MIGHTYENA}),
     },
 
      [SPECIES_SHIITAKO] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 40,
-        .baseDefense   = 60,
-        .baseSpeed     = 35,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_GRASS),
+        .baseHP        = 70, //60
+        .baseAttack    = 30, //40
+        .baseDefense   = 40, //60
+        .baseSpeed     = 55, //35
+        .baseSpAttack  = 40, //40
+        .baseSpDefense = 60, //60
+        .types = MON_TYPES(TYPE_WATER, TYPE_GRASS),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 59 : 65,
         .evYield_HP = 1,
@@ -784,20 +785,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Shiitako,
             gShinyOverworldPalette_Shiitako
         )
-        .levelUpLearnset = sShroomishLevelUpLearnset,
-        .teachableLearnset = sShroomishTeachableLearnset,
-        .eggMoveLearnset = sShroomishEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_BRELOOM}),
+        .levelUpLearnset = sShiitakoLevelUpLearnset,
+        .teachableLearnset = sShiitakoTeachableLearnset,
+        .eggMoveLearnset = sShiitakoEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_BRELOOM}),
     },
 
      [SPECIES_LOADTAD] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 30,
-        .baseDefense   = 30,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 50,
+        .baseHP        = 40, //40
+        .baseAttack    = 50, //30
+        .baseDefense   = 50, //30
+        .baseSpeed     = 10, //30
+        .baseSpAttack  = 20, //40
+        .baseSpDefense = 50, //50
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 44 : 74,
@@ -854,21 +855,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Loadtad,
             gShinyOverworldPalette_Loadtad
         )
-        .levelUpLearnset = sLotadLevelUpLearnset,
-        .teachableLearnset = sLotadTeachableLearnset,
-        .eggMoveLearnset = sLotadEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_LOMBRE}),
+        .levelUpLearnset = sLoadtadLevelUpLearnset,
+        .teachableLearnset = sLoadtadTeachableLearnset,
+        .eggMoveLearnset = sLoadtadEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_LOMBRE}),
     },
 
 
   [SPECIES_MANCHINE] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 80,
-        .baseDefense   = 50,
-        .baseSpeed     = 35,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 35,
+        .baseHP        = 50, //70
+        .baseAttack    = 80, //80
+        .baseDefense   = 50, //50
+        .baseSpeed     = 65, //35
+        .baseSpAttack  = 25, //35
+        .baseSpDefense = 35, //35
         .types = MON_TYPES(TYPE_FIGHTING, TYPE_STEEL),
         .catchRate = 180,
     #if P_UPDATED_EXP_YIELDS >= GEN_5
@@ -936,20 +937,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Manchine,
             gShinyOverworldPalette_Manchine
         )
-        .levelUpLearnset = sMachopLevelUpLearnset,
-        .teachableLearnset = sMachopTeachableLearnset,
-        .eggMoveLearnset = sMachopEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MACHOKE}),
+        .levelUpLearnset = sManchineLevelUpLearnset,
+        .teachableLearnset = sManchineTeachableLearnset,
+        .eggMoveLearnset = sManchineEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MACHOKE}),
     },
 
     [SPECIES_HELIPIP] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 35,
-        .baseDefense   = 40,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 55,
+        .baseHP        = 25, //35
+        .baseAttack    = 80, //35
+        .baseDefense   = 30, //40
+        .baseSpeed     = 70, //50
+        .baseSpAttack  = 15, //35
+        .baseSpDefense = 30, //55
         .types = MON_TYPES(TYPE_STEEL, TYPE_FLYING),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 50 : 74,
@@ -1013,20 +1014,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Helipip,
             gShinyOverworldPalette_Helipip
         )
-        .levelUpLearnset = sHoppipLevelUpLearnset,
-        .teachableLearnset = sHoppipTeachableLearnset,
-        .eggMoveLearnset = sHoppipEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_SKIPLOOM}),
+        .levelUpLearnset = sHelipipLevelUpLearnset,
+        .teachableLearnset = sHelipipTeachableLearnset,
+        .eggMoveLearnset = sHelipipEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_SKIPLOOM}),
     },
 
      [SPECIES_MUDDER] =
     {
-        .baseHP        = 80,
-        .baseAttack    = 80,
-        .baseDefense   = 50,
-        .baseSpeed     = 25,
-        .baseSpAttack  = 40,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 50 : 40,
+        .baseHP        = 80, //80
+        .baseAttack    = 50, //80
+        .baseDefense   = 40, //50
+        .baseSpeed     = 25, //25
+        .baseSpAttack  = 70, //40
+        .baseSpDefense = 60, //40
         .types = MON_TYPES(TYPE_GROUND, TYPE_WATER),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 65 : 90,
@@ -1083,21 +1084,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Mudder,
             gShinyOverworldPalette_Mudder
         )
-        .levelUpLearnset = sGrimerLevelUpLearnset,
-        .teachableLearnset = sGrimerTeachableLearnset,
-        .eggMoveLearnset = sGrimerEggMoveLearnset,
+        .levelUpLearnset = sMudderLevelUpLearnset,
+        .teachableLearnset = sMudderTeachableLearnset,
+        .eggMoveLearnset = sMudderEggMoveLearnset,
         .formSpeciesIdTable = sMudderFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_MUK}),
+        //.evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_MUK}),
     },
 
      [SPECIES_FOOMING] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 65,
-        .baseDefense   = 95,
-        .baseSpeed     = 35,
-        .baseSpAttack  = 60,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 45 : 60,
+        .baseHP        = 35, //40
+        .baseAttack    = 55, //65
+        .baseDefense   = 60, //95
+        .baseSpeed     = 90, //35
+        .baseSpAttack  = 70, //60
+        .baseSpDefense = 60, //60
         .types = MON_TYPES(TYPE_WATER, TYPE_FLYING),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 68 : 114,
@@ -1161,21 +1162,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Fooming,
             gShinyOverworldPalette_Fooming
         )
-        .levelUpLearnset = sKoffingLevelUpLearnset,
-        .teachableLearnset = sKoffingTeachableLearnset,
-        .eggMoveLearnset = sKoffingEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_WEEZING},
-                                {EVO_NONE, 0, SPECIES_WEEZING_GALAR}),
+        .levelUpLearnset = sFoomingLevelUpLearnset,
+        .teachableLearnset = sFoomingTeachableLearnset,
+        .eggMoveLearnset = sFoomingEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_WEEZING},
+                                //{EVO_NONE, 0, SPECIES_WEEZING_GALAR}),
     },
 
      [SPECIES_GEOSLUG] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 40,
-        .baseDefense   = 40,
-        .baseSpeed     = 20,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 40,
+        .baseHP        = 40, //40
+        .baseAttack    = 70, //40
+        .baseDefense   = 70, //40
+        .baseSpeed     = 10, //20
+        .baseSpAttack  = 20, //70
+        .baseSpDefense = 40, //40
         .types = MON_TYPES(TYPE_ROCK),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 50 : 78,
@@ -1234,21 +1235,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Geoslug,
             gShinyOverworldPalette_Geoslug
         )
-        .levelUpLearnset = sSlugmaLevelUpLearnset,
-        .teachableLearnset = sSlugmaTeachableLearnset,
-        .eggMoveLearnset = sSlugmaEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_MAGCARGO}),
+        .levelUpLearnset = sGeoslugLevelUpLearnset,
+        .teachableLearnset = sGeoslugTeachableLearnset,
+        .eggMoveLearnset = sGeoslugEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_MAGCARGO}),
     },
 
 
     [SPECIES_TUMBELA] =
     {
-        .baseHP        = 65,
-        .baseAttack    = 55,
-        .baseDefense   = 115,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 100,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 40 : 100,
+        .baseHP        = 85, //65
+        .baseAttack    = 85, //55
+        .baseDefense   = 80, //115
+        .baseSpeed     = 75, //60
+        .baseSpAttack  = 60, //100
+        .baseSpDefense = 50, //100
         .types = MON_TYPES(TYPE_GRASS, TYPE_FLYING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 87 : 166,
@@ -1309,22 +1310,22 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Tumbela,
             gShinyOverworldPalette_Tumbela
         )
-        .levelUpLearnset = sTangelaLevelUpLearnset,
-        .teachableLearnset = sTangelaTeachableLearnset,
-        .eggMoveLearnset = sTangelaEggMoveLearnset,
-    #if P_GEN_4_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_TANGROWTH, CONDITIONS({IF_KNOWS_MOVE, MOVE_ANCIENT_POWER})}),
-    #endif
+        .levelUpLearnset = sTumbelaLevelUpLearnset,
+        .teachableLearnset = sTumbelaTeachableLearnset,
+        .eggMoveLearnset = sTumbelaEggMoveLearnset,
+    //#if P_GEN_4_CROSS_EVOS
+        //.evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_TANGROWTH, CONDITIONS({IF_KNOWS_MOVE, MOVE_ANCIENT_POWER})}),
+    //#endif
     },
 
  [SPECIES_DOUNO] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 85,
-        .baseDefense   = 45,
-        .baseSpeed     = 75,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 35,
+        .baseHP        = 35, //35
+        .baseAttack    = 95, //85
+        .baseDefense   = 35, //45
+        .baseSpeed     = 85, //75
+        .baseSpAttack  = 25, //35
+        .baseSpDefense = 35, //35
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 96,
@@ -1397,10 +1398,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_FOOT,
             sAnimTable_Following
         )
-        .levelUpLearnset = sDoduoLevelUpLearnset,
-        .teachableLearnset = sDoduoTeachableLearnset,
-        .eggMoveLearnset = sDoduoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_DODRIO}),
+        .levelUpLearnset = sDounoLevelUpLearnset,
+        .teachableLearnset = sDounoTeachableLearnset,
+        .eggMoveLearnset = sDounoEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_DODRIO}),
     },
 
     [SPECIES_PANSELIA] =
@@ -1484,19 +1485,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sRoseliaLevelUpLearnset,
         .teachableLearnset = sRoseliaTeachableLearnset,
         .eggMoveLearnset = sRoseliaEggMoveLearnset,
-    #if P_GEN_4_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_ROSERADE}),
-    #endif
+    //#if P_GEN_4_CROSS_EVOS
+        //.evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_ROSERADE}),
+    //#endif
     },
 
     [SPECIES_VERIWOODO] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 100,
-        .baseDefense   = 115,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 65,
+        .baseHP        = 70, //70
+        .baseAttack    = 100, //100
+        .baseDefense   = 65, //115
+        .baseSpeed     = 30, //30
+        .baseSpAttack  = 80, //30
+        .baseSpDefense = 65, //65
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 65,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 144 : 135,
@@ -1569,19 +1570,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_FOOT,
             sAnimTable_Following
         )
-        .levelUpLearnset = sSudowoodoLevelUpLearnset,
-        .teachableLearnset = sSudowoodoTeachableLearnset,
-        .eggMoveLearnset = sSudowoodoEggMoveLearnset,
+        //.levelUpLearnset = sVeriwoodoLevelUpLearnset,
+        //.teachableLearnset = sVeriwoodoTeachableLearnset,
+        //.eggMoveLearnset = sVeriwoodoEggMoveLearnset,
     },
 
      [SPECIES_NIDORAN_I] =
     {
-        .baseHP        = 55,
-        .baseAttack    = 47,
-        .baseDefense   = 52,
-        .baseSpeed     = 41,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 40,
+        .baseHP        = 55, //55
+        .baseAttack    = 40, //47
+        .baseDefense   = 39, //52
+        .baseSpeed     = 61, //41
+        .baseSpAttack  = 40, //40
+        .baseSpDefense = 40, //40
         .types = MON_TYPES(TYPE_POISON),
         .catchRate = 235,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 55 : 59,
@@ -1648,20 +1649,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Nidoran_I,
             gShinyOverworldPalette_Nidoran_I
         )
-        .levelUpLearnset = sNidoranFLevelUpLearnset,
-        .teachableLearnset = sNidoranFTeachableLearnset,
-        .eggMoveLearnset = sNidoranFEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_NIDORINA}),
+        .levelUpLearnset = sNidoranILevelUpLearnset,
+        .teachableLearnset = sNidoranITeachableLearnset,
+        .eggMoveLearnset = sNidoranIEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_NIDORINA}),
     },
 
      [SPECIES_GUMMIN] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 43,
-        .baseDefense   = 53,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 43,
-        .baseSpDefense = 53,
+        .baseHP        = 70, //70
+        .baseAttack    = 43, //43
+        .baseDefense   = 53, //53
+        .baseSpeed     = 20, //40
+        .baseSpAttack  = 43, //43
+        .baseSpDefense = 73, //53
         .types = MON_TYPES(TYPE_FAIRY),
         .catchRate = 225,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 75,
@@ -1734,20 +1735,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
-        .levelUpLearnset = sGulpinLevelUpLearnset,
-        .teachableLearnset = sGulpinTeachableLearnset,
-        .eggMoveLearnset = sGulpinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_SWALOT}),
+        .levelUpLearnset = sGumminLevelUpLearnset,
+        .teachableLearnset = sGumminTeachableLearnset,
+        .eggMoveLearnset = sGumminEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_SWALOT}),
     },
 
  [SPECIES_TRASHEAL] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 50,
-        .baseDefense   = 62,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 62,
+        .baseHP        = 50, //50
+        .baseAttack    = 60, //50
+        .baseDefense   = 72, //62
+        .baseSpeed     = 75, //65
+        .baseSpAttack  = 30, //40
+        .baseSpDefense = 42, //62
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 190,
         .expYield = 66,
@@ -1804,10 +1805,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Trasheal,
             gShinyOverworldPalette_Trasheal
         )
-        .levelUpLearnset = sTrubbishLevelUpLearnset,
-        .teachableLearnset = sTrubbishTeachableLearnset,
-        .eggMoveLearnset = sTrubbishEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_GARBODOR}),
+        .levelUpLearnset = sTrashealLevelUpLearnset,
+        .teachableLearnset = sTrashealTeachableLearnset,
+        .eggMoveLearnset = sTrashealEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_GARBODOR}),
     },
 
      [SPECIES_GRIMANE] =
@@ -1888,12 +1889,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
      [SPECIES_KANGASKID] =
     {
-        .baseHP        = 105,
-        .baseAttack    = 95,
-        .baseDefense   = 80,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 40,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 80 : 40,
+        .baseHP        = 95, //105
+        .baseAttack    = 115, //95
+        .baseDefense   = 50, //80
+        .baseSpeed     = 110, //90
+        .baseSpAttack  = 70, //40
+        .baseSpDefense = 50, //40
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 175,
@@ -1951,21 +1952,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Kangaskid,
             gShinyOverworldPalette_Kangaskid
         )
-        .levelUpLearnset = sKangaskhanLevelUpLearnset,
-        .teachableLearnset = sKangaskhanTeachableLearnset,
-        .eggMoveLearnset = sKangaskhanEggMoveLearnset,
+        .levelUpLearnset = sKangaskidLevelUpLearnset,
+        .teachableLearnset = sKangaskidTeachableLearnset,
+        .eggMoveLearnset = sKangaskidEggMoveLearnset,
         .formSpeciesIdTable = sKangaskidFormSpeciesIdTable,
         .formChangeTable = sKangaskhanFormChangeTable,
     },
 
      [SPECIES_TAMARAKKU] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 20,
-        .baseDefense   = 65,
-        .baseSpeed     = 20,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 65,
+        .baseHP        = 35, //35
+        .baseAttack    = 80, //20
+        .baseDefense   = 45, //65
+        .baseSpeed     = 20, //20
+        .baseSpAttack  = 20, //40
+        .baseSpDefense = 45, //65
         .types = MON_TYPES(TYPE_DARK),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 49 : 74,
@@ -2022,20 +2023,20 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Tamarakku,
             gShinyOverworldPalette_Tamarakku
         )
-        .levelUpLearnset = sTogepiLevelUpLearnset,
-        .teachableLearnset = sTogepiTeachableLearnset,
-        .eggMoveLearnset = sTogepiEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_TOGETIC, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
+        .levelUpLearnset = sTamarakkuLevelUpLearnset,
+        .teachableLearnset = sTamarakkuTeachableLearnset,
+        .eggMoveLearnset = sTamarakkuEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_TOGETIC, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
     },
 
      [SPECIES_GACHAPOD] =
     {
-        .baseHP        = 48,
-        .baseAttack    = 48,
-        .baseDefense   = 48,
-        .baseSpeed     = 48,
-        .baseSpAttack  = 48,
-        .baseSpDefense = 48,
+        .baseHP        = 38, //48
+        .baseAttack    = 58, //48
+        .baseDefense   = 68, //48
+        .baseSpeed     = 68, //48
+        .baseSpAttack  = 28, //48
+        .baseSpDefense = 28, //40
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 35,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 101 : 61,
@@ -2095,18 +2096,18 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gShinyOverworldPalette_Gachapod
         )
         .tmIlliterate = TRUE,
-        .levelUpLearnset = sDittoLevelUpLearnset,
-        .teachableLearnset = sDittoTeachableLearnset,
+        .levelUpLearnset = sGachapodLevelUpLearnset,
+        .teachableLearnset = sGachapodTeachableLearnset,
     },
 
       [SPECIES_KAMOKEN] =
     {
-        .baseHP        = 52,
-        .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 90 : 65,
-        .baseDefense   = 55,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 58,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 62 : 58,
+        .baseHP        = 52, //52
+        .baseAttack    = 107, //90
+        .baseDefense   = 60, //55
+        .baseSpeed     = 70, //60
+        .baseSpAttack  = 38, //58
+        .baseSpDefense = 50, //62
         .types = MON_TYPES(TYPE_FIGHTING, TYPE_FLYING),
         .catchRate = 45,
         .expYield = 132,
@@ -2169,21 +2170,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Kamoken,
             gShinyOverworldPalette_Kamoken
         )
-        .levelUpLearnset = sFarfetchdLevelUpLearnset,
-        .teachableLearnset = sFarfetchdTeachableLearnset,
-        .eggMoveLearnset = sFarfetchdEggMoveLearnset,
+        .levelUpLearnset = sKamokenLevelUpLearnset,
+        .teachableLearnset = sKamokenTeachableLearnset,
+        .eggMoveLearnset = sKamokenEggMoveLearnset,
         .formSpeciesIdTable = sKamokenFormSpeciesIdTable,
     },
 
      [SPECIES_WARTZ] =
     {
-        .baseHP        = 28,
-        .baseAttack    = 25,
-        .baseDefense   = 25,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 35,
-        .types = MON_TYPES(TYPE_PSYCHIC, RALTS_FAMILY_TYPE2),
+        .baseHP        = 25, //28
+        .baseAttack    = 15, //25
+        .baseDefense   = 25, //25
+        .baseSpeed     = 53, //40
+        .baseSpAttack  = 65, //45
+        .baseSpDefense = 25, //35
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FIGHTING),
         .catchRate = 235,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 40 : 70,
         .evYield_SpAttack = 1,
@@ -2239,21 +2240,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Wartz,
             gShinyOverworldPalette_Wartz
         )
-        .levelUpLearnset = sRaltsLevelUpLearnset,
-        .teachableLearnset = sRaltsTeachableLearnset,
-        .eggMoveLearnset = sRaltsEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_KIRLIA}),
+        .levelUpLearnset = sWartzLevelUpLearnset,
+        .teachableLearnset = sWartzTeachableLearnset,
+        .eggMoveLearnset = sWartzEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_KIRLIA}),
     },
 
  [SPECIES_DELIBIN] =
     {
-        .baseHP        = 45,
-        .baseAttack    = 55,
-        .baseDefense   = 45,
-        .baseSpeed     = 75,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 45,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
+        .baseHP        = 45, //45
+        .baseAttack    = 65, //55
+        .baseDefense   = 45, //45
+        .baseSpeed     = 65, //75
+        .baseSpAttack  = 65, //65
+        .baseSpDefense = 45, //45
+        .types = MON_TYPES(TYPE_POISON, TYPE_FLYING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 116 : 183,
         .evYield_Speed = 1,
@@ -2308,19 +2309,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Delibin,
             gShinyOverworldPalette_Delibin
         )
-        .levelUpLearnset = sDelibirdLevelUpLearnset,
-        .teachableLearnset = sDelibirdTeachableLearnset,
-        .eggMoveLearnset = sDelibirdEggMoveLearnset,
+        .levelUpLearnset = sDelibinLevelUpLearnset,
+        .teachableLearnset = sDelibinTeachableLearnset,
+        .eggMoveLearnset = sDelibinEggMoveLearnset,
     },
 
  [SPECIES_ROLLOON] =
     {
-        .baseHP        = 90,
-        .baseAttack    = 50,
-        .baseDefense   = 34,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 44,
+        .baseHP        = 90, //90
+        .baseAttack    = 70, //50
+        .baseDefense   = 34, //34
+        .baseSpeed     = 80, //70
+        .baseSpAttack  = 40, //60
+        .baseSpDefense = 34, //44
         .types = MON_TYPES(TYPE_GHOST),
         .catchRate = 125,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 70 : 127,
@@ -2379,21 +2380,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Rolloon,
             gShinyOverworldPalette_Rolloon
         )
-        .levelUpLearnset = sDrifloonLevelUpLearnset,
-        .teachableLearnset = sDrifloonTeachableLearnset,
-        .eggMoveLearnset = sDrifloonEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_DRIFBLIM}),
+        .levelUpLearnset = sRolloonLevelUpLearnset,
+        .teachableLearnset = sRolloonTeachableLearnset,
+        .eggMoveLearnset = sRolloonEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_DRIFBLIM}),
     },
 
 
      [SPECIES_ROTOM_MONITOR] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 65,
-        .baseDefense   = 107,
-        .baseSpeed     = 86,
-        .baseSpAttack  = 105,
-        .baseSpDefense = 107,
+        .baseHP        = 90, //50
+        .baseAttack    = 85, //65
+        .baseDefense   = 127, //107
+        .baseSpeed     = 26, //86
+        .baseSpAttack  = 105, //105
+        .baseSpDefense = 87, //107
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_PSYCHIC),
         .catchRate = 45,
         .expYield = ROTOM_APPLIANCE_EXP_YIELD,
@@ -2455,18 +2456,18 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Rotom_M,
             gShinyOverworldPalette_Rotom_M
         )
-        .levelUpLearnset = sRotomLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
+        .levelUpLearnset = sRotom_MonitorLevelUpLearnset,
+        .teachableLearnset = sRotom_MonitorTeachableLearnset,
     },
 
  [SPECIES_MIMIYURUI] =
     {
-        .baseHP        = 44,
-        .baseAttack    = 75,
-        .baseDefense   = 35,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 63,
-        .baseSpDefense = 33,
+        .baseHP        = 34, //44
+        .baseAttack    = 85, //75
+        .baseDefense   = 45, //35
+        .baseSpeed     = 45, //45
+        .baseSpAttack  = 43, //63
+        .baseSpDefense = 43, //33
         .types = MON_TYPES(TYPE_GHOST, TYPE_FAIRY),
         .catchRate = 225,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 59 : 97,
@@ -2532,21 +2533,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Mimiyurui,
             gShinyOverworldPalette_Mimiyurui
         )
-        .levelUpLearnset = sShuppetLevelUpLearnset,
-        .teachableLearnset = sShuppetTeachableLearnset,
-        .eggMoveLearnset = sShuppetEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_BANETTE}),
+        .levelUpLearnset = sMimiyuruiLevelUpLearnset,
+        .teachableLearnset = sMimiyuruiTeachableLearnset,
+        .eggMoveLearnset = sMimiyuruiEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_BANETTE}),
     },
 
 
     [SPECIES_ARYSTAL] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 70,
-        .baseDefense   = 100,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 40,
+        .baseHP        = 50, //50
+        .baseAttack    = 90, //70
+        .baseDefense   = 40, //100
+        .baseSpeed     = 70, //30
+        .baseSpAttack  = 40, //40
+        .baseSpDefense = 40, //40
         .types = MON_TYPES(TYPE_ROCK, TYPE_ICE),
         .catchRate = 180,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 66 : 96,
@@ -2605,21 +2606,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Arystal,
             gShinyOverworldPalette_Arystal
         )
-        .levelUpLearnset = sAronLevelUpLearnset,
-        .teachableLearnset = sAronTeachableLearnset,
-        .eggMoveLearnset = sAronEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_LAIRON}),
+        .levelUpLearnset = sArystalLevelUpLearnset,
+        .teachableLearnset = sArystalTeachableLearnset,
+        .eggMoveLearnset = sArystalEggMoveLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_LAIRON}),
     },
 
     [SPECIES_VERDOOM] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 55,
-        .baseDefense   = 80,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_STEEL, TYPE_PSYCHIC),
+        .baseHP        = 30, //40
+        .baseAttack    = 45, //55
+        .baseDefense   = 50, //80
+        .baseSpeed     = 40, //30
+        .baseSpAttack  = 85, //35
+        .baseSpDefense = 50, //60
+        .types = MON_TYPES(TYPE_STEEL, TYPE_ELECTRIC),
         .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 103,
         .evYield_Defense = 1,
@@ -2680,19 +2681,19 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gShinyOverworldPalette_Verdoom
         )
         .tmIlliterate = TRUE,
-        .levelUpLearnset = sBeldumLevelUpLearnset,
-        .teachableLearnset = sBeldumTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_METANG}),
+        .levelUpLearnset = sVerdoomLevelUpLearnset,
+        .teachableLearnset = sVerdoomTeachableLearnset,
+        //.evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_METANG}),
     },
 
     [SPECIES_HOMBROX] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 50,
-        .baseDefense   = 50,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 70,
+        .baseHP        = 60, //60
+        .baseAttack    = 80, //50
+        .baseDefense   = 80, //50
+        .baseSpeed     = 30, //50
+        .baseSpAttack  = 40, //60
+        .baseSpDefense = 50, //70
         .types = MON_TYPES(TYPE_WATER, TYPE_GRASS),
         .catchRate = 120,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 119 : 141,
@@ -2709,7 +2710,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Hombrox"),
         .cryId = CRY_LOMBRE,
         .natDexNum = NATIONAL_DEX_HOMBROX,
-        .categoryName = _("Jolly"),
+        .categoryName = _("Carrier"),
         .height = 12,
         .weight = 325,
         .description = COMPOUND_STRING(
@@ -2752,9 +2753,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Hombrox,
             gShinyOverworldPalette_Hombrox
         )
-        .levelUpLearnset = sLombreLevelUpLearnset,
-        .teachableLearnset = sLombreTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_LUDICOLO}),
+        .levelUpLearnset = sHombroxLevelUpLearnset,
+        .teachableLearnset = sHombroxTeachableLearnset,
+        //.evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_LUDICOLO}),
     },
 
     [SPECIES_GYVEYENA] =
@@ -2826,8 +2827,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gOverworldPalette_Gyveyena,
             gShinyOverworldPalette_Gyveyena
         )
-        .levelUpLearnset = sMightyenaLevelUpLearnset,
-        .teachableLearnset = sMightyenaTeachableLearnset,
+        .levelUpLearnset = sGyveyenaLevelUpLearnset,
+        .teachableLearnset = sGyveyenaTeachableLearnset,
     },
 
 };

@@ -339,7 +339,7 @@ script SableyeGem1 {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     //if(!(flag(sableye1caught) || flag(sableye1beaten)))
     //{
-    msgbox (format("The Sableye is zealously admiring its gems. Battle it for them?"))
+    msgbox (format("The Sableye is zealously admiring its gems. Try to get them?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {
@@ -426,7 +426,7 @@ script SableyeGem2 {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     //if(!(flag(sableye1caught) || flag(sableye1beaten)))
     //{
-    msgbox (format("The Sableye is zealously admiring its gems. Battle it for them?"))
+    msgbox (format("The Sableye is zealously admiring its gems. Try to get them?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {
@@ -514,7 +514,7 @@ script SableyeGem3 {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     //if(!(flag(sableye1caught) || flag(sableye1beaten)))
     //{
-    msgbox (format("The Sableye is zealously admiring its gems. Battle it for them?"))
+    msgbox (format("The Sableye is zealously admiring its gems. Try to get them?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {
@@ -602,7 +602,7 @@ script SableyeGem4 {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     //if(!(flag(sableye1caught) || flag(sableye1beaten)))
     //{
-    msgbox (format("The Sableye is zealously admiring its gems. Battle it for them?"))
+    msgbox (format("The Sableye is zealously admiring its gems. Try to get them?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {

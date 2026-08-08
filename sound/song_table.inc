@@ -667,6 +667,7 @@ gSongTable::
 	song mus_nfinalbattle, 0, 0
 	song mus_farthestland, 0, 0
 	song mus_pyritetown, 0, 0
+	song mus_airong, 0, 0
 
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
