@@ -248,155 +248,161 @@ Route102Sandstorm1::
 	setweather WEATHER_SANDSTORM
 # 134 "data/maps/Route102/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 2
+# 135 "data/maps/Route102/scripts.pory"
+	playbgm MUS_RUINSMUSIC, TRUE
 	return
 
 
 Route102Sandstorm2::
-# 138 "data/maps/Route102/scripts.pory"
-	setweather WEATHER_SANDSTORM
 # 139 "data/maps/Route102/scripts.pory"
+	setweather WEATHER_SANDSTORM
+# 140 "data/maps/Route102/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 3
+# 141 "data/maps/Route102/scripts.pory"
+	playbgm MUS_RUINSMUSIC, TRUE
 	return
 
 
 Route102EndSandtorm::
-# 143 "data/maps/Route102/scripts.pory"
+# 145 "data/maps/Route102/scripts.pory"
 	setweather WEATHER_SANDSTORM
-# 144 "data/maps/Route102/scripts.pory"
+# 146 "data/maps/Route102/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 0
+# 147 "data/maps/Route102/scripts.pory"
+	playbgm MUS_RUINSMUSIC, TRUE
 	return
 
 
 PopWeatherMon102::
-# 157 "data/maps/Route102/scripts.pory"
+# 160 "data/maps/Route102/scripts.pory"
 	compare VAR_ROUTE102_WEATHER, 3
 	goto_if_eq PopWeatherMon102_1
 	return
 
 PopWeatherMon102_1:
-# 158 "data/maps/Route102/scripts.pory"
+# 161 "data/maps/Route102/scripts.pory"
 	clearflag route102weathermon
 	return
 
 
 BridgeItem::
-# 167 "data/maps/Route102/scripts.pory"
+# 170 "data/maps/Route102/scripts.pory"
 	lockall
-# 168 "data/maps/Route102/scripts.pory"
+# 171 "data/maps/Route102/scripts.pory"
 	goto_if_unset FLAG_ITEM_PLAYER1F_RATION, BridgeItem_1
-# 173 "data/maps/Route102/scripts.pory"
+# 176 "data/maps/Route102/scripts.pory"
 	msgbox BridgeItem_Text_0
-# 174 "data/maps/Route102/scripts.pory"
+# 177 "data/maps/Route102/scripts.pory"
 	releaseall
 	return
 
 BridgeItem_1:
-# 169 "data/maps/Route102/scripts.pory"
+# 172 "data/maps/Route102/scripts.pory"
 	giveitem ITEM_ENERGY_ROOT, 3
-# 170 "data/maps/Route102/scripts.pory"
+# 173 "data/maps/Route102/scripts.pory"
 	setflag FLAG_ITEM_PLAYER1F_RATION
-# 171 "data/maps/Route102/scripts.pory"
+# 174 "data/maps/Route102/scripts.pory"
 	removeobject 8
 	return
 
 
 Route102Weathermon::
-# 180 "data/maps/Route102/scripts.pory"
-	lock
-# 181 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 182 "data/maps/Route102/scripts.pory"
-	applymovement 8, Route102Weathermon_Movement_0
 # 183 "data/maps/Route102/scripts.pory"
-	msgbox Route102Weathermon_Text_0
+	lock
 # 184 "data/maps/Route102/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Weathermon_Text_1, Route102Weathermon_Text_2
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 185 "data/maps/Route102/scripts.pory"
+	applymovement 8, Route102Weathermon_Movement_0
 # 186 "data/maps/Route102/scripts.pory"
+	msgbox Route102Weathermon_Text_0
+# 187 "data/maps/Route102/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Weathermon_Text_1, Route102Weathermon_Text_2
+# 189 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Weathermon_2
 Route102Weathermon_1:
-# 207 "data/maps/Route102/scripts.pory"
+# 210 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Weathermon_5
 Route102Weathermon_4:
-# 211 "data/maps/Route102/scripts.pory"
+# 214 "data/maps/Route102/scripts.pory"
 endsandshrewinsandstormscript:
-# 212 "data/maps/Route102/scripts.pory"
+# 215 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 213 "data/maps/Route102/scripts.pory"
+# 216 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Weathermon_2:
-# 187 "data/maps/Route102/scripts.pory"
-	waitmessage
-# 188 "data/maps/Route102/scripts.pory"
-	setwildbattle SPECIES_SANDSHREW, 3
-# 189 "data/maps/Route102/scripts.pory"
-	dowildbattle
 # 190 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	waitmessage
 # 191 "data/maps/Route102/scripts.pory"
+	setwildbattle SPECIES_SANDSHREW, 3
+# 192 "data/maps/Route102/scripts.pory"
+	dowildbattle
+# 193 "data/maps/Route102/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 194 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq Route102Weathermon_7
-# 194 "data/maps/Route102/scripts.pory"
+# 197 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Route102Weathermon_8
-# 198 "data/maps/Route102/scripts.pory"
+# 201 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq Route102Weathermon_9
-# 201 "data/maps/Route102/scripts.pory"
+# 204 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Route102Weathermon_10
 	goto Route102Weathermon_1
 
 Route102Weathermon_5:
-# 208 "data/maps/Route102/scripts.pory"
+# 211 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_4
 
 Route102Weathermon_7:
-# 192 "data/maps/Route102/scripts.pory"
+# 195 "data/maps/Route102/scripts.pory"
 	setflag route102weathermon
 	goto Route102Weathermon_1
 
 Route102Weathermon_8:
-# 195 "data/maps/Route102/scripts.pory"
+# 198 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
-# 196 "data/maps/Route102/scripts.pory"
+# 199 "data/maps/Route102/scripts.pory"
 	setflag route102weathermon
 	goto Route102Weathermon_1
 
 Route102Weathermon_9:
-# 199 "data/maps/Route102/scripts.pory"
-	goto endsandshrewinsandstormscript
-	goto Route102Weathermon_1
-
-Route102Weathermon_10:
 # 202 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_1
 
+Route102Weathermon_10:
+# 205 "data/maps/Route102/scripts.pory"
+	goto endsandshrewinsandstormscript
+	goto Route102Weathermon_1
 
-# 182 "data/maps/Route102/scripts.pory"
+
+# 185 "data/maps/Route102/scripts.pory"
 Route102Weathermon_Movement_0:
-# 182 "data/maps/Route102/scripts.pory"
+# 185 "data/maps/Route102/scripts.pory"
 	face_player
 	step_end
 
 BridgeItem_Text_0:
-# 173 "data/maps/Route102/scripts.pory"
+# 176 "data/maps/Route102/scripts.pory"
 	.string "The box is empty.$"
 
 Route102Weathermon_Text_0:
-# 183 "data/maps/Route102/scripts.pory"
+# 186 "data/maps/Route102/scripts.pory"
 	.string "The Sandshrew is just enjoying the\n"
 	.string "sandstorm. Battle it?$"
 
 Route102Weathermon_Text_1:
-# 184 "data/maps/Route102/scripts.pory"
+# 187 "data/maps/Route102/scripts.pory"
 	.string "Yes$"
 
 Route102Weathermon_Text_2:
-# 184 "data/maps/Route102/scripts.pory"
+# 187 "data/maps/Route102/scripts.pory"
 	.string "No$"

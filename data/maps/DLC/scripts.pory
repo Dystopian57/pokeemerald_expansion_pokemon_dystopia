@@ -18,21 +18,20 @@ script OldaleDLC_GoToSeatForTherapyLeft {
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
     waitmovement(0)
 	special (RemoveCameraObject)
-    msgbox(format("Ah, there you are... {PLAYER}, is it? \p Please sit down - the session is
-    about to start."))
+    msgbox(format("Ah, there you are... {PLAYER}, is it? \p Please sit down - we were just starting."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1, walk_right * 2, face_up))
     goto (starttherapycutscene)
 }
 
 script OldaleDLC_GoToSeatForTherapyRight {
 	lockall
+    playbgm (MUS_SCHOOL, TRUE)
 	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
     waitmovement(0)
 	special (RemoveCameraObject)
-    msgbox(format("Ah, there you are... {PLAYER}, is it? \p Please sit down - the session is
-    about to start."))
+    msgbox(format("Ah, there you are... {PLAYER}, is it? \p Please sit down - we were just starting."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1, walk_right * 1, face_up))
     goto (starttherapycutscene)
 }
@@ -205,6 +204,7 @@ script OldaleTown_DLC_TherapyCutscene{
 	waitmovement
 
 	setvar(VAR_OLDALE_PHASE, 1)
+    playbgm (MUS_UNKNOWN5, TRUE)
 	releaseall	
 }
 

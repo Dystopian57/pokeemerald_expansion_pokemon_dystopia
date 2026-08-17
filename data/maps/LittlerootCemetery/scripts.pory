@@ -15,8 +15,7 @@ script DayNightMusicCemetery {
 		{goto (enddaynightmusiccemetery)}
 
 		if (var(VAR_0x8000) == TIME_EVENING)
-		{playbgm (MUS_SCHOOLATNIGHT, TRUE)
-		goto (enddaynightmusiccemetery)}
+		{goto (enddaynightmusiccemetery)}
 
 		if (var(VAR_0x8000) == TIME_NIGHT)
 		{playbgm (MUS_SCHOOLATNIGHT, TRUE)

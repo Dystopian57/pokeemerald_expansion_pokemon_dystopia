@@ -1,0 +1,26 @@
+raw `
+
+`
+
+mapscripts PetalburgBeach_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicPetalburgBeach
+    MAP_SCRIPT_ON_LOAD: DayNightMusicPetalburgBeach}
+	
+
+script DayNightMusicPetalburgBeach {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynightpetalburgbeach)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynightpetalburgbeach)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{goto (enddaynightpetalburgbeach)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_SADSTORY, TRUE)
+		goto (enddaynightpetalburgbeach)}
+
+enddaynightpetalburgbeach:
+}

@@ -37,6 +37,9 @@ const u32 gBattleEnvironmentAnimTilemap_Sand[] = INCBIN_U32("graphics/battle_env
 const u32 gBattleEnvironmentAnimTiles_whitesand[] = INCBIN_U32("graphics/battle_environment/whitesand/anim_tiles.4bpp.smol");
 const u32 gBattleEnvironmentAnimTilemap_whitesand[] = INCBIN_U32("graphics/battle_environment/whitesand/anim_map.bin.smolTM");
 
+const u32 gBattleEnvironmentAnimTiles_brownsand[] = INCBIN_U32("graphics/battle_environment/brownsand/anim_tiles.4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_brownsand[] = INCBIN_U32("graphics/battle_environment/brownsand/anim_map.bin.smolTM");
+
 const u32 gBattleEnvironmentAnimTiles_greensand[] = INCBIN_U32("graphics/battle_environment/greensand/anim_tiles.4bpp.smol");
 const u32 gBattleEnvironmentAnimTilemap_greensand[] = INCBIN_U32("graphics/battle_environment/greensand/anim_map.bin.smolTM");
 

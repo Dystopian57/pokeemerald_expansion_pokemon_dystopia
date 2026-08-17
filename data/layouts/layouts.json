@@ -4984,8 +4984,8 @@
     {
       "id": "LAYOUT_ARCADE_ELEVATOR",
       "name": "ArcadeElevator_Layout",
-      "width": 5,
-      "height": 6,
+      "width": 28,
+      "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BattleFrontier",
       "border_filepath": "data/layouts/ArcadeElevator/border.bin",

@@ -307,6 +307,12 @@ extern const u32 gBattleEnvironmentAnimTiles_whitesand[];
 extern const u32 gBattleEnvironmentAnimTilemap_whitesand[];
 extern const u16 gBattleEnvironmentPalette_whitesand[];
 
+extern const u32 gBattleEnvironmentTiles_brownsand[];
+extern const u32 gBattleEnvironmentTilemap_brownsand[];
+extern const u32 gBattleEnvironmentAnimTiles_brownsand[];
+extern const u32 gBattleEnvironmentAnimTilemap_brownsand[];
+extern const u16 gBattleEnvironmentPalette_brownsand[];
+
 extern const u32 gBattleEnvironmentTiles_brownwater[];
 extern const u32 gBattleEnvironmentTilemap_brownwater[];
 extern const u32 gBattleEnvironmentAnimTiles_brownwater[];

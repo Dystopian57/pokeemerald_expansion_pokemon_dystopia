@@ -30334,6 +30334,7 @@ gBattleAnimMove_SecretPower::
 
 	jumpargeq 0, BATTLE_ENVIRONMENT_LONGGREENGRASS,gBattleAnimMove_MagicalLeaf
 	jumpargeq 0, BATTLE_ENVIRONMENT_WHITESAND,     gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_BROWNSAND,     gBattleAnimMove_MudShot
 	jumpargeq 0, BATTLE_ENVIRONMENT_BROWNWATER,    gBattleAnimMove_MudShot
 	jumpargeq 0, BATTLE_ENVIRONMENT_GREENWATER,    gBattleAnimMove_Psywave
 	jumpargeq 0, BATTLE_ENVIRONMENT_SNOWY,         gBattleAnimMove_Avalanche

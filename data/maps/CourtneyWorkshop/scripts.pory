@@ -1,0 +1,27 @@
+raw `
+
+`
+
+mapscripts CourtneyWorkshop_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicCourtneyWorkshop
+    MAP_SCRIPT_ON_LOAD: DayNightMusicCourtneyWorkshop
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicCourtneyWorkshop}
+	
+
+script DayNightMusicCourtneyWorkshop {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynightcourtneyworkshop)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynightcourtneyworkshop)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{goto (enddaynightcourtneyworkshop)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_TAKARASUSHI, TRUE)
+		goto (enddaynightcourtneyworkshop)}
+
+enddaynightcourtneyworkshop:
+}

@@ -2,7 +2,7 @@
   "id": "MAP_HERMIT_TREE",
   "name": "Hermit_Tree",
   "layout": "LAYOUT_HERMIT_TREE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_GARDENSTAGE",
   "region_map_section": "MAPSEC_GREEN_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

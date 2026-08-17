@@ -85,6 +85,48 @@ static const u8 sIcefallCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_previe
 static const u8 sAlteringCaveMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.gbapal");
 static const u8 sAlteringCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.4bpp.lz");
 static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/altering_cave/tilemap.bin.lz");
+static const u8 sSewersMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/sewers/tiles.gbapal");
+static const u8 sSewersMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/sewers/tiles.4bpp.lz");
+static const u8 sSewersMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/sewers/tilemap.bin.lz");
+static const u8 sWiproadMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/wiproad/tiles.gbapal");
+static const u8 sWiproadMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/wiproad/tiles.4bpp.lz");
+static const u8 sWiproadMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/wiproad/tilemap.bin.lz");
+
+static const u8 sScrapyardMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/scrapyard/tiles.gbapal");
+static const u8 sScrapyardMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/scrapyard/tiles.4bpp.lz");
+static const u8 sScrapyardMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/scrapyard/tilemap.bin.lz");
+
+static const u8 sCraterBottomMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/craterbottom/tiles.gbapal");
+static const u8 sCraterBottomMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/craterbottom/tiles.4bpp.lz");
+static const u8 sCraterBottomMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/craterbottom/tilemap.bin.lz");
+
+static const u8 sRoofMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/roof/tiles.gbapal");
+static const u8 sRoofMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/roof/tiles.4bpp.lz");
+static const u8 sRoofMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/roof/tilemap.bin.lz");
+
+static const u8 sDojoMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/dojo/tiles.gbapal");
+static const u8 sDojoMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/dojo/tiles.4bpp.lz");
+static const u8 sDojoMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/dojo/tilemap.bin.lz");
+
+static const u8 sRHHMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/rhh/tiles.gbapal");
+static const u8 sRHHMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/rhh/tiles.4bpp.lz");
+static const u8 sRHHMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/rhh/tilemap.bin.lz");
+
+static const u8 sCantineMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/cantine/tiles.gbapal");
+static const u8 sCantineMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/cantine/tiles.4bpp.lz");
+static const u8 sCantineMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/cantine/tilemap.bin.lz");
+
+static const u8 sHarborMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/harbor/tiles.gbapal");
+static const u8 sHarborMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/harbor/tiles.4bpp.lz");
+static const u8 sHarborMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/harbor/tilemap.bin.lz");
+
+static const u8 sOfficeMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/office/tiles.gbapal");
+static const u8 sOfficeMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/office/tiles.4bpp.lz");
+static const u8 sOfficeMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/office/tilemap.bin.lz");
+
+static const u8 sArcadeMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/arcade/tiles.gbapal");
+static const u8 sArcadeMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/arcade/tiles.4bpp.lz");
+static const u8 sArcadeMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/arcade/tilemap.bin.lz");
 
 // If you set flagId to MPS_FLAG_NULL, it will not set a flag when visiting the map for the first time
 // and the duration will default to MPS_DURATION_NO_FLAG.
@@ -111,7 +153,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .mapsec = MAPSEC_ROCK_TUNNEL,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_ROCK_TUNNEL
+        .image = IMG_DIGLETTS_CAVE
     },
     [MPS_POKEMON_TOWER] = {
         .mapsec = MAPSEC_POKEMON_TOWER,
@@ -119,24 +161,24 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_POKEMON_MANSION
     },
-
+//CRATER BOTTOM
      [MPS_CAVE_OF_ORIGIN] = {
         .mapsec = MAPSEC_CAVE_OF_ORIGIN,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_POKEMON_MANSION
+        .image = IMG_CRATERBOTTOM
     },
     [MPS_SAFARI_ZONE] = {
         .mapsec = MAPSEC_KANTO_SAFARI_ZONE,
-        .type = MPS_TYPE_FADE_IN,
+        .type = MPS_TYPE_BASIC,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_SAFARI_ZONE
+        .image = IMG_SCRAPYARD
     },
     [MPS_SEAFOAM_ISLANDS] = {
         .mapsec = MAPSEC_SEAFOAM_ISLANDS,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_SEAFOAM_ISLANDS
+        .image = IMG_ICEFALL_CAVE
     },
     [MPS_POKEMON_MANSION] = {
         .mapsec = MAPSEC_POKEMON_MANSION,
@@ -151,15 +193,15 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .image = IMG_ROCKET_HIDEOUT
     },
     [MPS_SILPH_CO] = {
-        .mapsec = MAPSEC_SILPH_CO,
-        .type = MPS_TYPE_FADE_IN,
+        .mapsec = MAPSEC_EVER_GRANDE_CITY,
+        .type = MPS_TYPE_BASIC,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_ROCKET_HIDEOUT
+        .image = IMG_OFFICE
     },
 
     [MPS_NEW_MAUVILLE] = {
         .mapsec = MAPSEC_NEW_MAUVILLE,
-        .type = MPS_TYPE_CAVE,
+        .type = MPS_TYPE_BASIC,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_ROCKET_HIDEOUT
     },
@@ -278,7 +320,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .mapsec = MAPSEC_WEEPTH_CHAMBER,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
+        .image = IMG_SEWERS
     },
     //[MPS_TDILFORD_CHAMBER] = {
         //.mapsec = MAPSEC_DILFORD_CHAMBER,
@@ -304,6 +346,55 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .flagId = MPS_FLAG_NULL,
         .image = IMG_MONEAN_CHAMBER
     },
+
+    [MPS_ROUTE_102] = {
+        .mapsec = MAPSEC_ROUTE_102,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_WIPROAD
+    },
+
+    [MPS_TWO_ISLAND] = {
+        .mapsec = MAPSEC_TWO_ISLAND,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROOF
+    },
+
+    [MPS_SAFFRON_CITY] = {
+        .mapsec = MAPSEC_SAFFRON_CITY,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_DOJO
+    },
+
+    [MPS_BATTLE_FRONTIER] = {
+        .mapsec = MAPSEC_BATTLE_FRONTIER,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_RHH
+    },
+
+    [MPS_MARINE_CAVE] = {
+        .mapsec = MAPSEC_MARINE_CAVE,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_HARBOR
+    },
+
+    [MPS_ROUTE10_POKECENTER] = {
+        .mapsec = MAPSEC_ROUTE_10,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_CANTINE
+    },
+
+    [MPS_MIRAGE_TOWER] = {
+        .mapsec = MAPSEC_MIRAGE_TOWER,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ARCADE
+    }
 
 };
 
@@ -412,6 +503,72 @@ static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
         .tilesptr = sAlteringCaveMapPreviewTiles,
         .tilemapptr = sAlteringCaveMapPreviewTilemap,
         .palptr = sAlteringCaveMapPreviewPalette
+    },
+
+    [IMG_SEWERS] = {
+        .tilesptr = sSewersMapPreviewTiles,
+        .tilemapptr = sSewersMapPreviewTilemap,
+        .palptr = sSewersMapPreviewPalette
+    },
+
+    [IMG_WIPROAD] = {
+        .tilesptr = sWiproadMapPreviewTiles,
+        .tilemapptr = sWiproadMapPreviewTilemap,
+        .palptr = sWiproadMapPreviewPalette
+    },
+
+    [IMG_SCRAPYARD] = {
+        .tilesptr = sScrapyardMapPreviewTiles,
+        .tilemapptr = sScrapyardMapPreviewTilemap,
+        .palptr = sScrapyardMapPreviewPalette
+    },
+
+    [IMG_CRATERBOTTOM] = {
+        .tilesptr = sCraterBottomMapPreviewTiles,
+        .tilemapptr = sCraterBottomMapPreviewTilemap,
+        .palptr = sCraterBottomMapPreviewPalette
+    },
+
+    [IMG_ROOF] = {
+        .tilesptr = sRoofMapPreviewTiles,
+        .tilemapptr = sRoofMapPreviewTilemap,
+        .palptr = sRoofMapPreviewPalette
+    },
+
+    [IMG_DOJO] = {
+        .tilesptr = sDojoMapPreviewTiles,
+        .tilemapptr = sDojoMapPreviewTilemap,
+        .palptr = sDojoMapPreviewPalette
+    },
+
+    [IMG_RHH] = {
+        .tilesptr = sRHHMapPreviewTiles,
+        .tilemapptr = sRHHMapPreviewTilemap,
+        .palptr = sRHHMapPreviewPalette
+    },
+
+    [IMG_CANTINE] = {
+        .tilesptr = sCantineMapPreviewTiles,
+        .tilemapptr = sCantineMapPreviewTilemap,
+        .palptr = sCantineMapPreviewPalette
+    },
+
+    [IMG_HARBOR] = {
+        .tilesptr = sHarborMapPreviewTiles,
+        .tilemapptr = sHarborMapPreviewTilemap,
+        .palptr = sHarborMapPreviewPalette
+    },
+
+    [IMG_OFFICE] = {
+        .tilesptr = sOfficeMapPreviewTiles,
+        .tilemapptr = sOfficeMapPreviewTilemap,
+        .palptr = sOfficeMapPreviewPalette
+    },
+
+    [IMG_ARCADE] = {
+        .tilesptr = sArcadeMapPreviewTiles,
+        .tilemapptr = sArcadeMapPreviewTilemap,
+        .palptr = sArcadeMapPreviewPalette
     }
 };
 

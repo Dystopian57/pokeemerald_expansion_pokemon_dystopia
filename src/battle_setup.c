@@ -660,10 +660,10 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_POND;
         return BATTLE_ENVIRONMENT_PLAIN;
     case MAP_TYPE_CITY:
-        return BATTLE_ENVIRONMENT_PLAIN;
+        return BATTLE_ENVIRONMENT_PLAIN; //FOR RUSTBORO PLATES
     case MAP_TYPE_ROUTE:
-        //if (MetatileBehavior_IsShortGrass(tileBehavior))
-            //return BATTLE_ENVIRONMENT_GREENGRASS;
+        if (MetatileBehavior_IsShortGrass(tileBehavior))
+            return BATTLE_ENVIRONMENT_GREENGRASS;
         if (MetatileBehavior_IsTallGrass(tileBehavior))
             return BATTLE_ENVIRONMENT_GRASS;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
@@ -675,7 +675,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         break;
     case MAP_TYPE_UNDERGROUND:
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
-            return BATTLE_ENVIRONMENT_BUILDING;
+            //return BATTLE_ENVIRONMENT_BUILDING;  ?????????
         //if (MetatileBehavior_IsFootprints(tileBehavior))
             //return BATTLE_ENVIRONMENT_GREYCAVE;
             return BATTLE_ENVIRONMENT_CAVE;
@@ -695,6 +695,8 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_GREENWATER;
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
             return BATTLE_ENVIRONMENT_GREYCAVE;
+        if (MetatileBehavior_IsMountain(tileBehavior))
+            return BATTLE_ENVIRONMENT_BROWNSAND;
         return BATTLE_ENVIRONMENT_PLAIN;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))

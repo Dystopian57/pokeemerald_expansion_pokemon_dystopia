@@ -2,7 +2,7 @@
   "id": "MAP_OLDALE_WAREHOUSE",
   "name": "OldaleWarehouse",
   "layout": "LAYOUT_OLDALE_WAREHOUSE",
-  "music": "MUS_RG_SEVII_DUNGEON",
+  "music": "MUS_UNDERPIZZA",
   "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

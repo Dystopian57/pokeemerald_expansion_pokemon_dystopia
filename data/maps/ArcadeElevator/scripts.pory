@@ -1,0 +1,57 @@
+raw `
+ArcadeElevator_MapScripts::
+	.byte 0
+
+`
+
+script ArcadeElevatorArcade {
+    lock
+    msgbox(format("Which level?"))
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "-1 - RHH", "-2 - Barracks", "Remain here")
+
+		if(var(VAR_RESULT) == 0){
+        playse (SE_TRUCK_STOP)
+        call (Elevatorstart)
+        waitse
+        fadescreenswapbuffers (FADE_TO_BLACK)
+		warp (MAP_ARCADE_ELEVATOR, 0)
+        playse (SE_ELEVATOR)
+        waitse
+        playse (SE_TRUCK_UNLOAD)
+		special (SpawnCameraObject)
+        call (Elevatorshake)
+        setobjectxy (OBJ_EVENT_ID_PLAYER, 12, 6)
+		setobjectxy (OBJ_EVENT_ID_CAMERA, 12, 6)
+        applymovement (OBJ_EVENT_ID_PLAYER, moves (face_up))
+        special (RemoveCameraObject)
+        waitse
+        fadescreenswapbuffers (FADE_FROM_BLACK)
+        msgbox(format("-1 F - RHH reached."))
+         }
+
+		if(var(VAR_RESULT) == 2){
+        release
+        }
+    release
+
+}
+
+
+
+script Elevatorshake {
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+ 
+}
+
+script Elevatorstart {
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 4)  //@ horizontal pan
+	setvar(VAR_0x8006, 2)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+ 
+}

@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_DOJO",
   "name": "Petalburg_Dojo",
   "layout": "LAYOUT_PETALBURG_DOJO",
-  "music": "MUS_B_ARENA",
+  "music": "MUS_IZUMOINDESPAIR",
   "region_map_section": "MAPSEC_SAFFRON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

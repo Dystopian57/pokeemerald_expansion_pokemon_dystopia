@@ -34,9 +34,9 @@ endofdaynightnpc:
 
 DayNightNPC_2:
 # 17 "data/maps/OldaleTown_House1/scripts.pory"
-	clearflag daynpc
+	clearflag nightnpc
 # 18 "data/maps/OldaleTown_House1/scripts.pory"
-	setflag nightnpc
+	setflag daynpc
 # 19 "data/maps/OldaleTown_House1/scripts.pory"
 	goto endofdaynightnpc
 	goto DayNightNPC_1

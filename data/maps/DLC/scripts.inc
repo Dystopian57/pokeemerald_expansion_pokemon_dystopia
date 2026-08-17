@@ -28,16 +28,18 @@ OldaleDLC_GoToSeatForTherapyLeft::
 	special RemoveCameraObject
 # 21 "data/maps/DLC/scripts.pory"
 	msgbox OldaleDLC_GoToSeatForTherapyLeft_Text_0
-# 23 "data/maps/DLC/scripts.pory"
+# 22 "data/maps/DLC/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleDLC_GoToSeatForTherapyLeft_Movement_1
-# 24 "data/maps/DLC/scripts.pory"
+# 23 "data/maps/DLC/scripts.pory"
 	goto starttherapycutscene
 	return
 
 
 OldaleDLC_GoToSeatForTherapyRight::
-# 28 "data/maps/DLC/scripts.pory"
+# 27 "data/maps/DLC/scripts.pory"
 	lockall
+# 28 "data/maps/DLC/scripts.pory"
+	playbgm MUS_SCHOOL, TRUE
 # 29 "data/maps/DLC/scripts.pory"
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 30 "data/maps/DLC/scripts.pory"
@@ -50,308 +52,310 @@ OldaleDLC_GoToSeatForTherapyRight::
 	special RemoveCameraObject
 # 34 "data/maps/DLC/scripts.pory"
 	msgbox OldaleDLC_GoToSeatForTherapyLeft_Text_0
-# 36 "data/maps/DLC/scripts.pory"
+# 35 "data/maps/DLC/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleDLC_GoToSeatForTherapyRight_Movement_0
-# 37 "data/maps/DLC/scripts.pory"
+# 36 "data/maps/DLC/scripts.pory"
 	goto starttherapycutscene
 	return
 
 
 OldaleTown_DLC_TherapyCutscene::
-# 41 "data/maps/DLC/scripts.pory"
+# 40 "data/maps/DLC/scripts.pory"
 starttherapycutscene:
-# 42 "data/maps/DLC/scripts.pory"
+# 41 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_0
-# 44 "data/maps/DLC/scripts.pory"
+# 43 "data/maps/DLC/scripts.pory"
 	showmonpic SPECIES_VENUSAUR, 10, 3
-# 45 "data/maps/DLC/scripts.pory"
+# 44 "data/maps/DLC/scripts.pory"
 	playmoncry SPECIES_VENUSAUR, CRY_MODE_NORMAL
-# 46 "data/maps/DLC/scripts.pory"
+# 45 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_1
+# 46 "data/maps/DLC/scripts.pory"
+	hidemonpic
 # 47 "data/maps/DLC/scripts.pory"
-	hidemonpic
-# 48 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_2
-# 49 "data/maps/DLC/scripts.pory"
+# 48 "data/maps/DLC/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, OldaleTown_DLC_TherapyCutscene_Text_3, OldaleTown_DLC_TherapyCutscene_Text_4, OldaleTown_DLC_TherapyCutscene_Text_5
-# 50 "data/maps/DLC/scripts.pory"
+# 49 "data/maps/DLC/scripts.pory"
 	hidemonpic
-# 51 "data/maps/DLC/scripts.pory"
+# 50 "data/maps/DLC/scripts.pory"
 	playse SE_PIN
-# 52 "data/maps/DLC/scripts.pory"
+# 51 "data/maps/DLC/scripts.pory"
 	applymovement 8, OldaleTown_DLC_TherapyCutscene_Movement_0
-# 53 "data/maps/DLC/scripts.pory"
+# 52 "data/maps/DLC/scripts.pory"
 	waitmovement
-# 55 "data/maps/DLC/scripts.pory"
+# 54 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleTown_DLC_TherapyCutscene_2
 OldaleTown_DLC_TherapyCutscene_1:
-# 59 "data/maps/DLC/scripts.pory"
+# 58 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleTown_DLC_TherapyCutscene_5
 OldaleTown_DLC_TherapyCutscene_4:
-# 63 "data/maps/DLC/scripts.pory"
+# 62 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq OldaleTown_DLC_TherapyCutscene_8
 OldaleTown_DLC_TherapyCutscene_7:
+# 66 "data/maps/DLC/scripts.pory"
+	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_1
 # 67 "data/maps/DLC/scripts.pory"
-	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_1
+	waitmovement
 # 68 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 69 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_9
-# 71 "data/maps/DLC/scripts.pory"
+# 70 "data/maps/DLC/scripts.pory"
 	applymovement 8, OldaleTown_DLC_TherapyCutscene_Movement_2
+# 71 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 72 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 73 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_10
+# 74 "data/maps/DLC/scripts.pory"
+	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_3
 # 75 "data/maps/DLC/scripts.pory"
-	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_3
+	waitmovement
 # 76 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 77 "data/maps/DLC/scripts.pory"
 	showmonpic SPECIES_CHARIZARD, 10, 3
-# 78 "data/maps/DLC/scripts.pory"
+# 77 "data/maps/DLC/scripts.pory"
 	playmoncry SPECIES_CHARIZARD, CRY_MODE_NORMAL
-# 79 "data/maps/DLC/scripts.pory"
+# 78 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_11
+# 79 "data/maps/DLC/scripts.pory"
+	hidemonpic
 # 80 "data/maps/DLC/scripts.pory"
-	hidemonpic
+	playse SE_PIN
 # 81 "data/maps/DLC/scripts.pory"
-	playse SE_PIN
-# 82 "data/maps/DLC/scripts.pory"
 	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_0
+# 82 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 83 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 84 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_12
-# 86 "data/maps/DLC/scripts.pory"
+# 85 "data/maps/DLC/scripts.pory"
 	playse SE_M_DIZZY_PUNCH
-# 87 "data/maps/DLC/scripts.pory"
+# 86 "data/maps/DLC/scripts.pory"
 	applymovement 3, OldaleTown_DLC_TherapyCutscene_Movement_4
+# 87 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 88 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 89 "data/maps/DLC/scripts.pory"
 	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
+# 89 "data/maps/DLC/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
 # 90 "data/maps/DLC/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 91 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_13
+# 92 "data/maps/DLC/scripts.pory"
+	playse SE_PIN
 # 93 "data/maps/DLC/scripts.pory"
-	playse SE_PIN
-# 94 "data/maps/DLC/scripts.pory"
 	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_5
+# 94 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 95 "data/maps/DLC/scripts.pory"
-	waitmovement
+	removefieldmugshot
 # 96 "data/maps/DLC/scripts.pory"
-	removefieldmugshot
-# 97 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_14
+# 98 "data/maps/DLC/scripts.pory"
+	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_3
 # 99 "data/maps/DLC/scripts.pory"
-	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_3
+	waitmovement
 # 100 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 101 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_15
-# 102 "data/maps/DLC/scripts.pory"
+# 101 "data/maps/DLC/scripts.pory"
 	showmonpic SPECIES_BLASTOISE, 10, 3
-# 103 "data/maps/DLC/scripts.pory"
+# 102 "data/maps/DLC/scripts.pory"
 	playmoncry SPECIES_BLASTOISE, CRY_MODE_NORMAL
+# 103 "data/maps/DLC/scripts.pory"
+	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_6
 # 104 "data/maps/DLC/scripts.pory"
-	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 105 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_16
-# 106 "data/maps/DLC/scripts.pory"
+# 105 "data/maps/DLC/scripts.pory"
 	hidemonpic
+# 107 "data/maps/DLC/scripts.pory"
+	playse SE_PIN
 # 108 "data/maps/DLC/scripts.pory"
-	playse SE_PIN
-# 109 "data/maps/DLC/scripts.pory"
 	applymovement 1, OldaleTown_DLC_TherapyCutscene_Movement_7
+# 109 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 110 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 111 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_17
-# 113 "data/maps/DLC/scripts.pory"
+# 112 "data/maps/DLC/scripts.pory"
 	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_1
+# 113 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 114 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 115 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_18
+# 118 "data/maps/DLC/scripts.pory"
+	playse SE_PIN
 # 119 "data/maps/DLC/scripts.pory"
-	playse SE_PIN
-# 120 "data/maps/DLC/scripts.pory"
 	applymovement 2, OldaleTown_DLC_TherapyCutscene_Movement_0
+# 120 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 121 "data/maps/DLC/scripts.pory"
-	waitmovement
+	removefieldmugshot
 # 122 "data/maps/DLC/scripts.pory"
-	removefieldmugshot
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
 # 123 "data/maps/DLC/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+	setspeaker [ SP_NAME_SHARPY ]
 # 124 "data/maps/DLC/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 125 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_19
-# 127 "data/maps/DLC/scripts.pory"
+# 126 "data/maps/DLC/scripts.pory"
 	playse SE_PIN
+# 128 "data/maps/DLC/scripts.pory"
+	removefieldmugshot
 # 129 "data/maps/DLC/scripts.pory"
-	removefieldmugshot
-# 130 "data/maps/DLC/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 130 "data/maps/DLC/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
 # 131 "data/maps/DLC/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 132 "data/maps/DLC/scripts.pory"
 	applymovement 1, OldaleTown_DLC_TherapyCutscene_Movement_8
-# 133 "data/maps/DLC/scripts.pory"
+# 132 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_20
+# 134 "data/maps/DLC/scripts.pory"
+	setspeaker NULL
 # 135 "data/maps/DLC/scripts.pory"
-	setspeaker NULL
-# 136 "data/maps/DLC/scripts.pory"
 	applymovement 1, OldaleTown_DLC_TherapyCutscene_Movement_9
+# 136 "data/maps/DLC/scripts.pory"
+	removefieldmugshot
 # 137 "data/maps/DLC/scripts.pory"
-	removefieldmugshot
-# 138 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_21
+# 139 "data/maps/DLC/scripts.pory"
+	removefieldmugshot
 # 140 "data/maps/DLC/scripts.pory"
-	removefieldmugshot
-# 141 "data/maps/DLC/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPY, EMOTE_CONFUSED
+# 141 "data/maps/DLC/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
 # 142 "data/maps/DLC/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 143 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_22
-# 144 "data/maps/DLC/scripts.pory"
+# 143 "data/maps/DLC/scripts.pory"
 	playse SE_M_HYDRO_PUMP
+# 145 "data/maps/DLC/scripts.pory"
+	removefieldmugshot
 # 146 "data/maps/DLC/scripts.pory"
-	removefieldmugshot
-# 147 "data/maps/DLC/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
-# 148 "data/maps/DLC/scripts.pory"
+# 147 "data/maps/DLC/scripts.pory"
 	setspeaker [ SP_NAME_SHARPY ]
-# 149 "data/maps/DLC/scripts.pory"
+# 148 "data/maps/DLC/scripts.pory"
 	applymovement 2, OldaleTown_DLC_TherapyCutscene_Movement_10
-# 150 "data/maps/DLC/scripts.pory"
+# 149 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_23
+# 150 "data/maps/DLC/scripts.pory"
+	removefieldmugshot
 # 151 "data/maps/DLC/scripts.pory"
-	removefieldmugshot
-# 152 "data/maps/DLC/scripts.pory"
 	setspeaker NULL
-# 153 "data/maps/DLC/scripts.pory"
+# 152 "data/maps/DLC/scripts.pory"
 	applymovement 1, OldaleTown_DLC_TherapyCutscene_Movement_11
-# 154 "data/maps/DLC/scripts.pory"
+# 153 "data/maps/DLC/scripts.pory"
 	playse SE_FLEE
-# 155 "data/maps/DLC/scripts.pory"
+# 154 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_24
+# 155 "data/maps/DLC/scripts.pory"
+	waitse
 # 156 "data/maps/DLC/scripts.pory"
-	waitse
-# 157 "data/maps/DLC/scripts.pory"
 	applymovement 4, OldaleTown_DLC_TherapyCutscene_Movement_12
-# 158 "data/maps/DLC/scripts.pory"
+# 157 "data/maps/DLC/scripts.pory"
 	applymovement 5, OldaleTown_DLC_TherapyCutscene_Movement_13
-# 159 "data/maps/DLC/scripts.pory"
+# 158 "data/maps/DLC/scripts.pory"
 	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_12
-# 160 "data/maps/DLC/scripts.pory"
+# 159 "data/maps/DLC/scripts.pory"
 	applymovement 8, OldaleTown_DLC_TherapyCutscene_Movement_13
+# 160 "data/maps/DLC/scripts.pory"
+	playse SE_DOOR
 # 161 "data/maps/DLC/scripts.pory"
-	playse SE_DOOR
+	waitse
 # 162 "data/maps/DLC/scripts.pory"
-	waitse
-# 163 "data/maps/DLC/scripts.pory"
 	playse SE_M_METRONOME
-# 164 "data/maps/DLC/scripts.pory"
+# 163 "data/maps/DLC/scripts.pory"
 	applymovement 2, OldaleTown_DLC_TherapyCutscene_Movement_14
+# 164 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 165 "data/maps/DLC/scripts.pory"
-	waitmovement
+	waitse
 # 166 "data/maps/DLC/scripts.pory"
-	waitse
-# 167 "data/maps/DLC/scripts.pory"
 	removeobject 1
+# 167 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 168 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 169 "data/maps/DLC/scripts.pory"
 	applymovement 6, OldaleTown_DLC_TherapyCutscene_Movement_3
+# 169 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 170 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 171 "data/maps/DLC/scripts.pory"
 	applymovement 4, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 172 "data/maps/DLC/scripts.pory"
+# 171 "data/maps/DLC/scripts.pory"
 	applymovement 5, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 173 "data/maps/DLC/scripts.pory"
+# 172 "data/maps/DLC/scripts.pory"
 	applymovement 7, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 174 "data/maps/DLC/scripts.pory"
+# 173 "data/maps/DLC/scripts.pory"
 	applymovement 8, OldaleTown_DLC_TherapyCutscene_Movement_6
-# 175 "data/maps/DLC/scripts.pory"
+# 174 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_25
-# 179 "data/maps/DLC/scripts.pory"
+# 178 "data/maps/DLC/scripts.pory"
 	applymovement 3, OldaleTown_DLC_TherapyCutscene_Movement_15
+# 179 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 180 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 181 "data/maps/DLC/scripts.pory"
 	applymovement 2, OldaleTown_DLC_TherapyCutscene_Movement_16
+# 181 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 182 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 183 "data/maps/DLC/scripts.pory"
 	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_SAD
-# 184 "data/maps/DLC/scripts.pory"
+# 183 "data/maps/DLC/scripts.pory"
 	setspeaker [ SP_NAME_CAMELIA ]
-# 185 "data/maps/DLC/scripts.pory"
+# 184 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_26
-# 186 "data/maps/DLC/scripts.pory"
+# 185 "data/maps/DLC/scripts.pory"
 	removefieldmugshot
-# 187 "data/maps/DLC/scripts.pory"
+# 186 "data/maps/DLC/scripts.pory"
 	applymovement 2, OldaleTown_DLC_TherapyCutscene_Movement_17
-# 188 "data/maps/DLC/scripts.pory"
+# 187 "data/maps/DLC/scripts.pory"
 	applymovement 3, OldaleTown_DLC_TherapyCutscene_Movement_18
+# 188 "data/maps/DLC/scripts.pory"
+	waitmovement
 # 189 "data/maps/DLC/scripts.pory"
-	waitmovement
-# 190 "data/maps/DLC/scripts.pory"
 	playse SE_DOOR
-# 191 "data/maps/DLC/scripts.pory"
+# 190 "data/maps/DLC/scripts.pory"
 	waitse
-# 192 "data/maps/DLC/scripts.pory"
+# 191 "data/maps/DLC/scripts.pory"
 	removeobject 2
-# 193 "data/maps/DLC/scripts.pory"
+# 192 "data/maps/DLC/scripts.pory"
 	removeobject 3
-# 195 "data/maps/DLC/scripts.pory"
+# 194 "data/maps/DLC/scripts.pory"
 	special SpawnCameraObject
-# 196 "data/maps/DLC/scripts.pory"
+# 195 "data/maps/DLC/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, OldaleTown_DLC_TherapyCutscene_Movement_19
-# 197 "data/maps/DLC/scripts.pory"
+# 196 "data/maps/DLC/scripts.pory"
 	waitmovement 0
-# 198 "data/maps/DLC/scripts.pory"
+# 197 "data/maps/DLC/scripts.pory"
 	clearflag sharpynotoutsideDLC
-# 199 "data/maps/DLC/scripts.pory"
+# 198 "data/maps/DLC/scripts.pory"
 	clearflag camelianotoutsideDLC
-# 200 "data/maps/DLC/scripts.pory"
+# 199 "data/maps/DLC/scripts.pory"
 	setflag sharpynotinsideDLC
-# 201 "data/maps/DLC/scripts.pory"
+# 200 "data/maps/DLC/scripts.pory"
 	setflag camelianotinsideDLC
-# 202 "data/maps/DLC/scripts.pory"
+# 201 "data/maps/DLC/scripts.pory"
 	setflag finishedtherapy
-# 203 "data/maps/DLC/scripts.pory"
+# 202 "data/maps/DLC/scripts.pory"
 	setflag sharpycameliaDLCcs
-# 204 "data/maps/DLC/scripts.pory"
+# 203 "data/maps/DLC/scripts.pory"
 	special RemoveCameraObject
-# 205 "data/maps/DLC/scripts.pory"
+# 204 "data/maps/DLC/scripts.pory"
 	waitmovement
-# 207 "data/maps/DLC/scripts.pory"
+# 206 "data/maps/DLC/scripts.pory"
 	setvar VAR_OLDALE_PHASE, 1
+# 207 "data/maps/DLC/scripts.pory"
+	playbgm MUS_UNKNOWN5, TRUE
 # 208 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 OldaleTown_DLC_TherapyCutscene_2:
-# 56 "data/maps/DLC/scripts.pory"
+# 55 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_6
 	goto OldaleTown_DLC_TherapyCutscene_1
 
 OldaleTown_DLC_TherapyCutscene_5:
-# 60 "data/maps/DLC/scripts.pory"
+# 59 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_7
 	goto OldaleTown_DLC_TherapyCutscene_4
 
 OldaleTown_DLC_TherapyCutscene_8:
-# 64 "data/maps/DLC/scripts.pory"
+# 63 "data/maps/DLC/scripts.pory"
 	msgbox OldaleTown_DLC_TherapyCutscene_Text_8
 	goto OldaleTown_DLC_TherapyCutscene_7
 
@@ -1733,209 +1737,209 @@ OldaleDLC_GoToSeatForTherapyLeft_Movement_0:
 	walk_up
 	step_end
 
-# 23 "data/maps/DLC/scripts.pory"
+# 22 "data/maps/DLC/scripts.pory"
 OldaleDLC_GoToSeatForTherapyLeft_Movement_1:
-# 23 "data/maps/DLC/scripts.pory"
+# 22 "data/maps/DLC/scripts.pory"
 	walk_up
-# 23 "data/maps/DLC/scripts.pory"
+# 22 "data/maps/DLC/scripts.pory"
 	walk_right
-# 23 "data/maps/DLC/scripts.pory"
+# 22 "data/maps/DLC/scripts.pory"
 	walk_right
-# 23 "data/maps/DLC/scripts.pory"
+# 22 "data/maps/DLC/scripts.pory"
 	face_up
 	step_end
 
-# 36 "data/maps/DLC/scripts.pory"
+# 35 "data/maps/DLC/scripts.pory"
 OldaleDLC_GoToSeatForTherapyRight_Movement_0:
-# 36 "data/maps/DLC/scripts.pory"
+# 35 "data/maps/DLC/scripts.pory"
 	walk_up
-# 36 "data/maps/DLC/scripts.pory"
+# 35 "data/maps/DLC/scripts.pory"
 	walk_right
-# 36 "data/maps/DLC/scripts.pory"
+# 35 "data/maps/DLC/scripts.pory"
 	face_up
 	step_end
 
-# 52 "data/maps/DLC/scripts.pory"
+# 51 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_0:
-# 52 "data/maps/DLC/scripts.pory"
+# 51 "data/maps/DLC/scripts.pory"
 	emote_exclamation_mark
-# 52 "data/maps/DLC/scripts.pory"
+# 51 "data/maps/DLC/scripts.pory"
 	walk_in_place_up
-# 52 "data/maps/DLC/scripts.pory"
+# 51 "data/maps/DLC/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 67 "data/maps/DLC/scripts.pory"
+# 66 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_1:
-# 67 "data/maps/DLC/scripts.pory"
+# 66 "data/maps/DLC/scripts.pory"
 	walk_in_place_down
-# 67 "data/maps/DLC/scripts.pory"
+# 66 "data/maps/DLC/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 71 "data/maps/DLC/scripts.pory"
+# 70 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_2:
-# 71 "data/maps/DLC/scripts.pory"
+# 70 "data/maps/DLC/scripts.pory"
 	walk_in_place_up
-# 71 "data/maps/DLC/scripts.pory"
+# 70 "data/maps/DLC/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 75 "data/maps/DLC/scripts.pory"
+# 74 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_3:
-# 75 "data/maps/DLC/scripts.pory"
+# 74 "data/maps/DLC/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 87 "data/maps/DLC/scripts.pory"
+# 86 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_4:
-# 87 "data/maps/DLC/scripts.pory"
+# 86 "data/maps/DLC/scripts.pory"
 	emote_question_mark
-# 87 "data/maps/DLC/scripts.pory"
+# 86 "data/maps/DLC/scripts.pory"
 	walk_in_place_up
-# 87 "data/maps/DLC/scripts.pory"
+# 86 "data/maps/DLC/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 94 "data/maps/DLC/scripts.pory"
+# 93 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_5:
-# 94 "data/maps/DLC/scripts.pory"
+# 93 "data/maps/DLC/scripts.pory"
 	emote_exclamation_mark
-# 94 "data/maps/DLC/scripts.pory"
+# 93 "data/maps/DLC/scripts.pory"
 	face_left
 	step_end
 
-# 104 "data/maps/DLC/scripts.pory"
+# 103 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_6:
-# 104 "data/maps/DLC/scripts.pory"
+# 103 "data/maps/DLC/scripts.pory"
 	face_up
 	step_end
 
-# 109 "data/maps/DLC/scripts.pory"
+# 108 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_7:
-# 109 "data/maps/DLC/scripts.pory"
+# 108 "data/maps/DLC/scripts.pory"
 	emote_exclamation_mark
-# 109 "data/maps/DLC/scripts.pory"
+# 108 "data/maps/DLC/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 132 "data/maps/DLC/scripts.pory"
+# 131 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_8:
-# 132 "data/maps/DLC/scripts.pory"
+# 131 "data/maps/DLC/scripts.pory"
 	face_left
-# 132 "data/maps/DLC/scripts.pory"
+# 131 "data/maps/DLC/scripts.pory"
 	emote_double_exclamation_mark
 	step_end
 
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_9:
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
-# 136 "data/maps/DLC/scripts.pory"
+# 135 "data/maps/DLC/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 149 "data/maps/DLC/scripts.pory"
+# 148 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_10:
-# 149 "data/maps/DLC/scripts.pory"
+# 148 "data/maps/DLC/scripts.pory"
 	jump_in_place_up
-# 149 "data/maps/DLC/scripts.pory"
+# 148 "data/maps/DLC/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 153 "data/maps/DLC/scripts.pory"
+# 152 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_11:
-# 153 "data/maps/DLC/scripts.pory"
+# 152 "data/maps/DLC/scripts.pory"
 	walk_fast_left
-# 153 "data/maps/DLC/scripts.pory"
+# 152 "data/maps/DLC/scripts.pory"
 	walk_fast_down
-# 153 "data/maps/DLC/scripts.pory"
+# 152 "data/maps/DLC/scripts.pory"
 	walk_fast_down
-# 153 "data/maps/DLC/scripts.pory"
+# 152 "data/maps/DLC/scripts.pory"
 	walk_fast_down
-# 153 "data/maps/DLC/scripts.pory"
+# 152 "data/maps/DLC/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 157 "data/maps/DLC/scripts.pory"
+# 156 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_12:
-# 157 "data/maps/DLC/scripts.pory"
+# 156 "data/maps/DLC/scripts.pory"
 	face_left
-# 157 "data/maps/DLC/scripts.pory"
+# 156 "data/maps/DLC/scripts.pory"
 	face_down
 	step_end
 
-# 158 "data/maps/DLC/scripts.pory"
+# 157 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_13:
-# 158 "data/maps/DLC/scripts.pory"
+# 157 "data/maps/DLC/scripts.pory"
 	face_right
-# 158 "data/maps/DLC/scripts.pory"
+# 157 "data/maps/DLC/scripts.pory"
 	face_down
 	step_end
 
-# 164 "data/maps/DLC/scripts.pory"
+# 163 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_14:
-# 164 "data/maps/DLC/scripts.pory"
+# 163 "data/maps/DLC/scripts.pory"
 	emote_question_mark
-# 164 "data/maps/DLC/scripts.pory"
+# 163 "data/maps/DLC/scripts.pory"
 	face_down
 	step_end
 
-# 179 "data/maps/DLC/scripts.pory"
+# 178 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_15:
-# 179 "data/maps/DLC/scripts.pory"
+# 178 "data/maps/DLC/scripts.pory"
 	face_right
 	step_end
 
-# 181 "data/maps/DLC/scripts.pory"
+# 180 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_16:
-# 181 "data/maps/DLC/scripts.pory"
+# 180 "data/maps/DLC/scripts.pory"
 	face_left
 	step_end
 
-# 187 "data/maps/DLC/scripts.pory"
+# 186 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_17:
-# 187 "data/maps/DLC/scripts.pory"
+# 186 "data/maps/DLC/scripts.pory"
 	walk_right
-# 187 "data/maps/DLC/scripts.pory"
+# 186 "data/maps/DLC/scripts.pory"
 	walk_down
-# 187 "data/maps/DLC/scripts.pory"
+# 186 "data/maps/DLC/scripts.pory"
 	walk_down
 	step_end
 
-# 188 "data/maps/DLC/scripts.pory"
+# 187 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_18:
-# 188 "data/maps/DLC/scripts.pory"
+# 187 "data/maps/DLC/scripts.pory"
 	walk_right
-# 188 "data/maps/DLC/scripts.pory"
+# 187 "data/maps/DLC/scripts.pory"
 	walk_right
-# 188 "data/maps/DLC/scripts.pory"
+# 187 "data/maps/DLC/scripts.pory"
 	walk_down
-# 188 "data/maps/DLC/scripts.pory"
+# 187 "data/maps/DLC/scripts.pory"
 	walk_down
 	step_end
 
-# 196 "data/maps/DLC/scripts.pory"
+# 195 "data/maps/DLC/scripts.pory"
 OldaleTown_DLC_TherapyCutscene_Movement_19:
-# 196 "data/maps/DLC/scripts.pory"
+# 195 "data/maps/DLC/scripts.pory"
 	walk_down
-# 196 "data/maps/DLC/scripts.pory"
+# 195 "data/maps/DLC/scripts.pory"
 	walk_down
 	step_end
 
@@ -1962,56 +1966,55 @@ LibraryGuyDLC_Movement_0:
 OldaleDLC_GoToSeatForTherapyLeft_Text_0:
 # 21 "data/maps/DLC/scripts.pory"
 	.string "Ah, there you are... {PLAYER}, is it?\p"
-	.string "Please sit down - the session is about\n"
-	.string "to start.$"
+	.string "Please sit down - we were just starting.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_0:
-# 42 "data/maps/DLC/scripts.pory"
+# 41 "data/maps/DLC/scripts.pory"
 	.string "As I was saying, we are going to start\n"
 	.string "by watching some pictures of Kantonian\l"
 	.string "Pokémon, and sharing what feelings\l"
 	.string "they evoke in us.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_1:
-# 46 "data/maps/DLC/scripts.pory"
+# 45 "data/maps/DLC/scripts.pory"
 	.string "Let's begin with you, {PLAYER}. Take a\n"
 	.string "look at this picture.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_2:
-# 48 "data/maps/DLC/scripts.pory"
+# 47 "data/maps/DLC/scripts.pory"
 	.string "What do you think about the Pokémon in\n"
 	.string "it?$"
 
 OldaleTown_DLC_TherapyCutscene_Text_3:
-# 49 "data/maps/DLC/scripts.pory"
+# 48 "data/maps/DLC/scripts.pory"
 	.string "It's cool$"
 
 OldaleTown_DLC_TherapyCutscene_Text_4:
-# 49 "data/maps/DLC/scripts.pory"
+# 48 "data/maps/DLC/scripts.pory"
 	.string "Looks dangerous$"
 
 OldaleTown_DLC_TherapyCutscene_Text_5:
-# 49 "data/maps/DLC/scripts.pory"
+# 48 "data/maps/DLC/scripts.pory"
 	.string "I don't know$"
 
 OldaleTown_DLC_TherapyCutscene_Text_6:
-# 56 "data/maps/DLC/scripts.pory"
+# 55 "data/maps/DLC/scripts.pory"
 	.string "Cool!? That Pokémon poisoned my\n"
 	.string "daugther during the war! It's horrible!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_7:
-# 60 "data/maps/DLC/scripts.pory"
+# 59 "data/maps/DLC/scripts.pory"
 	.string "I agree! That Pokémon poisoned my\n"
 	.string "daugther during the war! It's horrible!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_8:
-# 64 "data/maps/DLC/scripts.pory"
+# 63 "data/maps/DLC/scripts.pory"
 	.string "Well, I do know! That Pokémon poisoned\n"
 	.string "my daugther during the war! It's\l"
 	.string "horrible!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_9:
-# 69 "data/maps/DLC/scripts.pory"
+# 68 "data/maps/DLC/scripts.pory"
 	.string "You are correct, sir... Venusaurs are\n"
 	.string "very dangerous.\p"
 	.string "Thankfully, Devon Co. has safened all\n"
@@ -2019,45 +2022,45 @@ OldaleTown_DLC_TherapyCutscene_Text_9:
 	.string "that they hurt no more people.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_10:
-# 73 "data/maps/DLC/scripts.pory"
+# 72 "data/maps/DLC/scripts.pory"
 	.string "Ah, thank goodness...$"
 
 OldaleTown_DLC_TherapyCutscene_Text_11:
-# 79 "data/maps/DLC/scripts.pory"
+# 78 "data/maps/DLC/scripts.pory"
 	.string "Let's continue... who wants to share\n"
 	.string "their thoughts about this one?$"
 
 OldaleTown_DLC_TherapyCutscene_Text_12:
-# 84 "data/maps/DLC/scripts.pory"
+# 83 "data/maps/DLC/scripts.pory"
 	.string "O-oh, that one... t-that one burned my\n"
 	.string "house...! Aaah, it's scary...$"
 
 OldaleTown_DLC_TherapyCutscene_Text_13:
-# 91 "data/maps/DLC/scripts.pory"
+# 90 "data/maps/DLC/scripts.pory"
 	.string "Huh? Nonsense, that's a splendid Fire\n"
 	.string "type.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_14:
-# 97 "data/maps/DLC/scripts.pory"
+# 96 "data/maps/DLC/scripts.pory"
 	.string "W-what?$"
 
 OldaleTown_DLC_TherapyCutscene_Text_15:
-# 101 "data/maps/DLC/scripts.pory"
+# 100 "data/maps/DLC/scripts.pory"
 	.string "Now now, let us be tolerant with...\n"
 	.string "differences of opinion.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_16:
-# 105 "data/maps/DLC/scripts.pory"
+# 104 "data/maps/DLC/scripts.pory"
 	.string "Let's see about the last one - the\n"
 	.string "water CANNON Pokémon, Blastoise.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_17:
-# 111 "data/maps/DLC/scripts.pory"
+# 110 "data/maps/DLC/scripts.pory"
 	.string "U-uwaah, nooo... t-those are the bad\n"
 	.string "turtles...!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_18:
-# 115 "data/maps/DLC/scripts.pory"
+# 114 "data/maps/DLC/scripts.pory"
 	.string "Precisely. The Kantonians used many\n"
 	.string "Blastoise on the Assault on Route 103,\l"
 	.string "and they almost flooded Oldale Town.\p"
@@ -2066,41 +2069,41 @@ OldaleTown_DLC_TherapyCutscene_Text_18:
 	.string "built and...$"
 
 OldaleTown_DLC_TherapyCutscene_Text_19:
-# 125 "data/maps/DLC/scripts.pory"
+# 124 "data/maps/DLC/scripts.pory"
 	.string "Hey, I know that one! That's a cool as\n"
 	.string "heck Blastoise!\p"
 	.string "I love how their Hydropumps sound...$"
 
 OldaleTown_DLC_TherapyCutscene_Text_20:
-# 133 "data/maps/DLC/scripts.pory"
+# 132 "data/maps/DLC/scripts.pory"
 	.string "BANG BANG!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_21:
-# 138 "data/maps/DLC/scripts.pory"
+# 137 "data/maps/DLC/scripts.pory"
 	.string "N-nooo...!!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_22:
-# 143 "data/maps/DLC/scripts.pory"
+# 142 "data/maps/DLC/scripts.pory"
 	.string "No? Hmm, you're right... it's not a 'bang'\n"
 	.string "it's more like a...$"
 
 OldaleTown_DLC_TherapyCutscene_Text_23:
-# 150 "data/maps/DLC/scripts.pory"
+# 149 "data/maps/DLC/scripts.pory"
 	.string "BWAHM BWAHM!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_24:
-# 155 "data/maps/DLC/scripts.pory"
+# 154 "data/maps/DLC/scripts.pory"
 	.string "AAAAAHH...!!$"
 
 OldaleTown_DLC_TherapyCutscene_Text_25:
-# 175 "data/maps/DLC/scripts.pory"
+# 174 "data/maps/DLC/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} I think we will finish this\n"
 	.string "session early.\p"
 	.string "Next time, everyone please be mindful\n"
 	.string "of others' feelings.$"
 
 OldaleTown_DLC_TherapyCutscene_Text_26:
-# 185 "data/maps/DLC/scripts.pory"
+# 184 "data/maps/DLC/scripts.pory"
 	.string "Let's go, Sharpy... this was a waste of\n"
 	.string "time.$"
 

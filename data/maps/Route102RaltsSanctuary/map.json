@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE102RALTS_SANCTUARY",
   "name": "Route102RaltsSanctuary",
   "layout": "LAYOUT_ROUTE102RALTS_SANCTUARY",
-  "music": "MUS_B_PYRAMID_TOP",
+  "music": "MUS_ETERNAFOREST",
   "region_map_section": "MAPSEC_GREEN_PATH",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

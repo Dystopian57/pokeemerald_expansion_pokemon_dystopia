@@ -2,7 +2,7 @@
   "id": "MAP_ROUT104SHIP_UNDERROOM2",
   "name": "Rout104ShipUnderroom2",
   "layout": "LAYOUT_ROUT104SHIP_UNDERROOM2",
-  "music": "MUS_DUMMY",
+  "music": "MUS_SINJOHRUINS",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

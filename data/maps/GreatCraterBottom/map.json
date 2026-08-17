@@ -2,7 +2,7 @@
   "id": "MAP_GREAT_CRATER_BOTTOM",
   "name": "GreatCraterBottom",
   "layout": "LAYOUT_GREAT_CRATER_BOTTOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_THEPLACE",
   "region_map_section": "MAPSEC_CAVE_OF_ORIGIN",
   "requires_flash": true,
   "weather": "WEATHER_SHADE",

@@ -30,6 +30,7 @@ static const TaskFunc sBattleIntroSlideFuncs[] =
     [BATTLE_ENVIRONMENT_LONGGREENGRASS] = BattleIntroSlide1,
     [BATTLE_ENVIRONMENT_SAND]       = BattleIntroSlide2,
     [BATTLE_ENVIRONMENT_WHITESAND]       = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_BROWNSAND]       = BattleIntroSlide2,
     [BATTLE_ENVIRONMENT_GREENSAND]       = BattleIntroSlide2,
     [BATTLE_ENVIRONMENT_SNOWY]       = BattleIntroSlide2,
     [BATTLE_ENVIRONMENT_UNDERWATER] = BattleIntroSlide2,
@@ -308,6 +309,7 @@ static void BattleIntroSlide2(u8 taskId)
     case BATTLE_ENVIRONMENT_SAND:
     case BATTLE_ENVIRONMENT_WHITESAND:
     case BATTLE_ENVIRONMENT_GREENSAND:
+    case BATTLE_ENVIRONMENT_BROWNSAND:
     case BATTLE_ENVIRONMENT_SNOWY:
     case BATTLE_ENVIRONMENT_WATER:
     case BATTLE_ENVIRONMENT_BROWNWATER:

@@ -122,7 +122,7 @@
     },
     {
       "id": "MAPSEC_EVER_GRANDE_CITY",
-      "name": "EVER GRANDE CITY",
+      "name": "DEVON LAB 104",
       "x": 27,
       "y": 8,
       "width": 1,
@@ -546,7 +546,7 @@
     },
     {
       "id": "MAPSEC_SEAFLOOR_CAVERN",
-      "name": "HERMIT'S CAVE",
+      "name": "BEACH CAVE",
       "x": 1,
       "y": 10,
       "width": 1,
@@ -709,7 +709,7 @@
     },
     {
       "id": "MAPSEC_CERULEAN_CITY",
-      "name": "BIKE SHOP",
+      "name": "HARDWARE STORE",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -765,7 +765,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_10_POKECENTER",
-      "name": "ROUTE 10"
+      "name": "HARBOR LOUNGE"
     },
     {
       "id": "MAPSEC_ROUTE_1",
@@ -805,7 +805,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_10",
-      "name": "ROUTE 10"
+      "name": "HARBOR LOUNGE"
     },
     {
       "id": "MAPSEC_ROUTE_11",
@@ -941,7 +941,7 @@
     },
     {
       "id": "MAPSEC_SEAFOAM_ISLANDS",
-      "name": "SEAFOAM ISLANDS"
+      "name": "WATERFALL CAVE"
     },
     {
       "id": "MAPSEC_POKEMON_TOWER",
@@ -969,7 +969,7 @@
     },
     {
       "id": "MAPSEC_TWO_ISLAND",
-      "name": "TWO ISLAND"
+      "name": "PET. CUSTOMS ROOF"
     },
     {
       "id": "MAPSEC_THREE_ISLAND",
@@ -1197,7 +1197,7 @@
     },
     {
       "id": "MAPSEC_RIXY_CHAMBER",
-      "name": "RIXY CHAMBER"
+      "name": "PAWN SHOP"
     },
     {
       "id": "MAPSEC_VIAPOIS_CHAMBER",

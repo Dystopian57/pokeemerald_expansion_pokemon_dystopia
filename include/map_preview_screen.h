@@ -37,6 +37,13 @@ enum MapPreviewScreenId
     MPS_ABANDONED_SHIP,
     MPS_SEAFLOOR_CAVERN,
     MPS_CAVE_OF_ORIGIN,
+    MPS_ROUTE_102,
+    MPS_TWO_ISLAND,
+    MPS_SAFFRON_CITY,
+    MPS_BATTLE_FRONTIER,
+    MPS_MARINE_CAVE,
+    MPS_ROUTE10_POKECENTER,
+    MPS_MIRAGE_TOWER,
     MPS_COUNT
 };
 
@@ -63,6 +70,17 @@ enum PreviewImageId
     IMG_ICEFALL_CAVE,
     IMG_LOST_CAVE,
     IMG_ALTERING_CAVE,
+    IMG_SEWERS,
+    IMG_WIPROAD,
+    IMG_SCRAPYARD,
+    IMG_CRATERBOTTOM,
+    IMG_ROOF,
+    IMG_DOJO,
+    IMG_RHH,
+    IMG_CANTINE,
+    IMG_HARBOR,
+    IMG_OFFICE,
+    IMG_ARCADE,
     IMG_COUNT
 };
 
@@ -73,7 +91,7 @@ enum PreviewImageId
 
 #define MPS_DURATION_NO_FLAG    40  // This is the number of frames the map preview will last if the map's flagId is MPS_FLAG_NULL.
 
-#define MPS_DURATION_ALWAYS     0   // If this number is not 0, MPS_DURATION_ALWAYS will override all other duration values.
+#define MPS_DURATION_ALWAYS     120   // If this number is not 0, MPS_DURATION_ALWAYS will override all other duration values.
                                     // For example, if you set MPS_DURATION_ALWAYS to 100, the map preview will always
                                     // have a duration of 100 frames every time, regardless of the flag state.
 

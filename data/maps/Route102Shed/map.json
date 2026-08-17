@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE102SHED",
   "name": "Route102Shed",
   "layout": "LAYOUT_ROUTE102SHED",
-  "music": "MUS_DESERT",
+  "music": "MUS_GREATCANYON",
   "region_map_section": "MAPSEC_ROUTE_102",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

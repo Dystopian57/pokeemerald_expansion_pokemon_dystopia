@@ -1,0 +1,27 @@
+raw `
+
+
+`
+
+mapscripts Route102RaltsSanctuary_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicRaltsSanctuary
+    MAP_SCRIPT_ON_LOAD: DayNightMusicRaltsSanctuary}
+	
+
+script DayNightMusicRaltsSanctuary {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynightraltssanctuary)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynightraltssanctuary)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{goto (enddaynightraltssanctuary)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_PETALBURG_WOODS, TRUE)
+		goto (enddaynightraltssanctuary)}
+
+enddaynightraltssanctuary:
+}

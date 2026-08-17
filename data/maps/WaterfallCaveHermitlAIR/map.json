@@ -2,7 +2,7 @@
   "id": "MAP_WATERFALL_CAVE_HERMITL_AIR",
   "name": "WaterfallCaveHermitlAIR",
   "layout": "LAYOUT_WATERFALL_CAVE_HERMITL_AIR",
-  "music": "MUS_DUMMY",
+  "music": "MUS_LEMURIA",
   "region_map_section": "MAPSEC_METEOR_FALLS2",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

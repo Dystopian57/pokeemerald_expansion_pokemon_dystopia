@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_SEWERS",
   "name": "PetalburgSewers",
   "layout": "LAYOUT_PETALBURG_SEWERS",
-  "music": "MUS_DUMMY",
+  "music": "MUS_SUSPENSE",
   "region_map_section": "MAPSEC_WEEPTH_CHAMBER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

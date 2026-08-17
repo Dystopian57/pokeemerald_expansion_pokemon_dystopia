@@ -132,16 +132,19 @@ script Route102Shade {
 script Route102Sandstorm1 {
 	setweather (WEATHER_SANDSTORM)
 	setvar(VAR_ROUTE102_WEATHER, 2)
+	playbgm (MUS_RUINSMUSIC, TRUE)
 }
 
 script Route102Sandstorm2 {
 	setweather (WEATHER_SANDSTORM)
 	setvar(VAR_ROUTE102_WEATHER, 3)
+	playbgm (MUS_RUINSMUSIC, TRUE)
 }
 
 script Route102EndSandtorm {
 	setweather (WEATHER_SANDSTORM)
 	setvar(VAR_ROUTE102_WEATHER, 0)
+	playbgm (MUS_RUINSMUSIC, TRUE)
 }
 
 script PopWeatherMon102 {

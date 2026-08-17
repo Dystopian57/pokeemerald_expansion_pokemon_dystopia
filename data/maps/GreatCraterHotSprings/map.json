@@ -2,7 +2,7 @@
   "id": "MAP_GREAT_CRATER_HOT_SPRINGS",
   "name": "GreatCraterHotSprings",
   "layout": "LAYOUT_GREAT_CRATER_HOT_SPRINGS",
-  "music": "MUS_ABNORMAL_WEATHER",
+  "music": "MUS_UNWAVERINGEMOTIONS",
   "region_map_section": "MAPSEC_FIERY_PATH2",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

@@ -25,17 +25,20 @@ script GreatCraterShade {
 script GreatCraterAsh1 {
 	setweather (WEATHER_VOLCANIC_ASH)
 	setvar(VAR_GREATCRATER_WEATHER, 2)
+	playbgm (MUS_WEATHER_GROUDON, TRUE)
 }
 
 script GreatCraterAsh2 {
 	setweather (WEATHER_VOLCANIC_ASH)
 	setvar(VAR_GREATCRATER_WEATHER, 3)
+	playbgm (MUS_WEATHER_GROUDON, TRUE)
 }
 
 
 script GreatCraterEndAsh {
 	setweather (WEATHER_VOLCANIC_ASH)
 	setvar(VAR_GREATCRATER_WEATHER, 0)
+	playbgm (MUS_WEATHER_GROUDON, TRUE)
 }
 
 

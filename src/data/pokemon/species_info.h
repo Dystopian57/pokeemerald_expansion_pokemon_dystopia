@@ -292,9 +292,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .weight = 69,
         .description = COMPOUND_STRING(
             "Its artificial bulb only synthesises\n"
-            "safe, medicinal substances. It feeds\n"
-            "off the light that is absorbed from\n"
-            "the bulb's photovoltaic coating."),
+            "medicinal substances, which it injects\n"
+            "with its needle-tipped vines. Its bulb\n"
+            "is photovoltaic and gives it energy."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -558,10 +558,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .baseHP        = 50, //40
         .baseAttack    = 30, //30
-        .baseDefense   = 65, //50
-        .baseSpeed     = 80, //100
+        .baseDefense   = 60, //50
+        .baseSpeed     = 95, //100
         .baseSpAttack  = 30, //55
-        .baseSpDefense = 64, //44
+        .baseSpDefense = 54, //44
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FAIRY),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 66 : 103,
@@ -1177,7 +1177,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 10, //20
         .baseSpAttack  = 20, //70
         .baseSpDefense = 40, //40
-        .types = MON_TYPES(TYPE_ROCK),
+        .types = MON_TYPES(TYPE_GROUND, TYPE_ROCK),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 50 : 78,
         .itemRare = ITEM_HARD_STONE,
@@ -1583,7 +1583,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 61, //41
         .baseSpAttack  = 40, //40
         .baseSpDefense = 40, //40
-        .types = MON_TYPES(TYPE_POISON),
+        .types = MON_TYPES(TYPE_POISON, TYPE_FAIRY),
         .catchRate = 235,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 55 : 59,
         .evYield_HP = 1,
@@ -2317,10 +2317,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
  [SPECIES_ROLLOON] =
     {
         .baseHP        = 90, //90
-        .baseAttack    = 70, //50
+        .baseAttack    = 60, //50
         .baseDefense   = 34, //34
         .baseSpeed     = 80, //70
-        .baseSpAttack  = 40, //60
+        .baseSpAttack  = 50, //60
         .baseSpDefense = 34, //44
         .types = MON_TYPES(TYPE_GHOST),
         .catchRate = 125,

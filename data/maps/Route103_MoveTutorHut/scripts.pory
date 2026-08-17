@@ -8,11 +8,29 @@ raw `
 mapscripts Route103_MoveTutorHut_MapScripts {
 	
 	MAP_SCRIPT_ON_LOAD: DayNightNPC
+    MAP_SCRIPT_ON_LOAD: DayNightMusicTutorHut
 	MAP_SCRIPT_ON_TRANSITION: DayNightNPC
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicTutorHut
 }
+	
 
+script DayNightMusicTutorHut {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynightmusicmovetutorhut)}
 
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynightmusicmovetutorhut)}
 
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{goto (enddaynightmusicmovetutorhut)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_TAKARASUSHI, TRUE)
+		goto (enddaynightmusicmovetutorhut)}
+
+enddaynightmusicmovetutorhut:
+}
 
 //NEED "IF NOT LEARNT" CHECKS
 

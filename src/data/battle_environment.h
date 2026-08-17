@@ -14,7 +14,6 @@ const u32 gBattleEnvironmentTiles_longgreengrass[] = INCBIN_U32("graphics/battle
 const u16 gBattleEnvironmentPalette_longgreengrass[] = INCBIN_U16("graphics/battle_environment/longgreengrass/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_longgreengrass[] = INCBIN_U32("graphics/battle_environment/longgreengrass/map.bin.smolTM");
 
-
 const u32 gBattleEnvironmentTiles_Sand[] = INCBIN_U32("graphics/battle_environment/sand/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Sand[] = INCBIN_U16("graphics/battle_environment/sand/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Sand[] = INCBIN_U32("graphics/battle_environment/sand/map.bin.smolTM");
@@ -31,10 +30,13 @@ const u32 gBattleEnvironmentTiles_greensand[] = INCBIN_U32("graphics/battle_envi
 const u16 gBattleEnvironmentPalette_greensand[] = INCBIN_U16("graphics/battle_environment/greensand/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_greensand[] = INCBIN_U32("graphics/battle_environment/greensand/map.bin.smolTM");
 
+const u32 gBattleEnvironmentTiles_brownsand[] = INCBIN_U32("graphics/battle_environment/brownsand/tiles.4bpp.smol");
+const u16 gBattleEnvironmentPalette_brownsand[] = INCBIN_U16("graphics/battle_environment/brownsand/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_brownsand[] = INCBIN_U32("graphics/battle_environment/brownsand/map.bin.smolTM");
+
 const u32 gBattleEnvironmentTiles_greycave[] = INCBIN_U32("graphics/battle_environment/greycave/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_greycave[] = INCBIN_U16("graphics/battle_environment/greycave/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_greycave[] = INCBIN_U32("graphics/battle_environment/greycave/map.bin.smolTM");
-
 
 const u32 gBattleEnvironmentTiles_Underwater[] = INCBIN_U32("graphics/battle_environment/underwater/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Underwater[] = INCBIN_U16("graphics/battle_environment/underwater/palette.gbapal");
@@ -51,7 +53,6 @@ const u32 gBattleEnvironmentTilemap_brownwater[] = INCBIN_U32("graphics/battle_e
 const u32 gBattleEnvironmentTiles_greenwater[] = INCBIN_U32("graphics/battle_environment/greenwater/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_greenwater[] = INCBIN_U16("graphics/battle_environment/greenwater/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_greenwater[] = INCBIN_U32("graphics/battle_environment/greenwater/map.bin.smolTM");
-
 
 const u32 gBattleEnvironmentTiles_PondWater[] = INCBIN_U32("graphics/battle_environment/pond_water/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_PondWater[] = INCBIN_U16("graphics/battle_environment/pond_water/palette.gbapal");
@@ -162,6 +163,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .background = ENVIRONMENT_BACKGROUND(greensand),
     },
 
+    [BATTLE_ENVIRONMENT_BROWNSAND] =
+    {
+        .naturePower = B_NATURE_POWER_MOVES >= GEN_6 ? MOVE_EARTH_POWER : MOVE_EARTHQUAKE,
+        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+        .camouflageType = TYPE_GROUND,
+        .background = ENVIRONMENT_BACKGROUND(brownsand),
+    },
 
     [BATTLE_ENVIRONMENT_UNDERWATER] =
     {

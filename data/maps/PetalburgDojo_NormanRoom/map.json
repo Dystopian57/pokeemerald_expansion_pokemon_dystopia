@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_DOJO_NORMAN_ROOM",
   "name": "PetalburgDojo_NormanRoom",
   "layout": "LAYOUT_PETALBURG_DOJO_NORMAN_ROOM",
-  "music": "MUS_B_ARENA",
+  "music": "MUS_HAZUKIBASEMENT",
   "region_map_section": "MAPSEC_SAFFRON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

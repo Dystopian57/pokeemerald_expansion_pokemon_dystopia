@@ -24,11 +24,11 @@ DayNightMusicCemetery_4:
 	compare VAR_0x8000, TIME_EVENING
 	goto_if_eq DayNightMusicCemetery_8
 DayNightMusicCemetery_7:
-# 21 "data/maps/LittlerootCemetery/scripts.pory"
+# 20 "data/maps/LittlerootCemetery/scripts.pory"
 	compare VAR_0x8000, TIME_NIGHT
 	goto_if_eq DayNightMusicCemetery_11
 DayNightMusicCemetery_10:
-# 25 "data/maps/LittlerootCemetery/scripts.pory"
+# 24 "data/maps/LittlerootCemetery/scripts.pory"
 enddaynightmusiccemetery:
 	return
 
@@ -44,29 +44,27 @@ DayNightMusicCemetery_5:
 
 DayNightMusicCemetery_8:
 # 18 "data/maps/LittlerootCemetery/scripts.pory"
-	playbgm MUS_SCHOOLATNIGHT, TRUE
-# 19 "data/maps/LittlerootCemetery/scripts.pory"
 	goto enddaynightmusiccemetery
 	goto DayNightMusicCemetery_7
 
 DayNightMusicCemetery_11:
-# 22 "data/maps/LittlerootCemetery/scripts.pory"
+# 21 "data/maps/LittlerootCemetery/scripts.pory"
 	playbgm MUS_SCHOOLATNIGHT, TRUE
-# 23 "data/maps/LittlerootCemetery/scripts.pory"
+# 22 "data/maps/LittlerootCemetery/scripts.pory"
 	goto enddaynightmusiccemetery
 	goto DayNightMusicCemetery_10
 
 
 LittlerootCemetery_CemeterySign::
-# 30 "data/maps/LittlerootCemetery/scripts.pory"
+# 29 "data/maps/LittlerootCemetery/scripts.pory"
 	lockall
-# 31 "data/maps/LittlerootCemetery/scripts.pory"
+# 30 "data/maps/LittlerootCemetery/scripts.pory"
 	msgbox LittlerootCemetery_CemeterySign_Text_0
-# 32 "data/maps/LittlerootCemetery/scripts.pory"
+# 31 "data/maps/LittlerootCemetery/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootCemetery_CemeterySign_Text_0:
-# 31 "data/maps/LittlerootCemetery/scripts.pory"
+# 30 "data/maps/LittlerootCemetery/scripts.pory"
 	.string "Littleroot Cemetery.$"
