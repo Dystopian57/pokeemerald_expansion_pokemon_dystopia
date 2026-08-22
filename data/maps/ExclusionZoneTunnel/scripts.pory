@@ -14,8 +14,41 @@ script EnterSecretLabPreUnsafeningCheck {
 
 script MinefieldLever {
     lock
-    msgbox(format("A warning sign by the terminal reads: \p'Minefield Detonation Device. Property of
-    Littleroot's Pokémon Lab.' \p 'DO NOT TOUCH'. \p Better to leave this alone..."))
+    msgbox(format("A warning sign by the terminal reads: 'DO NOT TOUCH'. \p Better to leave this alone..."))
     release
     
+}
+
+script TunnelCamera {
+    lock
+    msgbox(format("It's a camera feed. It shows all of the entrances of the tunnel."))
+    release 
+}
+
+script TunnelSeismeter {
+    lock
+    msgbox(format("It looks like a machine to register seismic data."))
+    release 
+}
+
+script TunnelWeirdMachine {
+    lock
+    msgbox(format("No idea what this does. Better not to touch it"))
+    release 
+}
+
+script TunnelDrill {
+    lock
+    msgbox(format("The drill shows signs of recent use."))
+    release 
+}
+
+script TunnelLoner {
+    lock
+    applymovement (19, moves(face_player))
+    msgbox(format("The water from this pool comes from the sea, so it's not warm like the one in the
+    hot springs. It's way chiller. \p Why am I here, then? To be in peace, alone with my thoughts."))
+    applymovement (19, moves(face_left))
+    waitmovement
+    release 
 }

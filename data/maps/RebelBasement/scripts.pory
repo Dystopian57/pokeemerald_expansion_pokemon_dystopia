@@ -1,0 +1,13 @@
+raw `
+
+`
+
+
+mapscripts RebelBasement_MapScripts {
+    MAP_SCRIPT_ON_LOAD: EnableFollowersRHH}
+
+script EnableFollowersRHH {
+	clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+	//setrespawn (HEAL_LOCATION_OLDALE_TOWN)
+	//special (TurnOnTVScreen)
+	}

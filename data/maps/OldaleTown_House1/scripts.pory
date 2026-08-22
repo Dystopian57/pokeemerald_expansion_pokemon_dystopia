@@ -14,8 +14,8 @@ script DayNightNPC {
 
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
-		{	clearflag (nightnpc)
-			setflag (daynpc)
+		{	setflag (nightnpc)
+			clearflag (daynpc)
         goto (endofdaynightnpc)}
 
 		if (var(VAR_0x8000) == TIME_DAY)
@@ -24,8 +24,8 @@ script DayNightNPC {
         goto (endofdaynightnpc)}
 
 		if (var(VAR_0x8000) == TIME_EVENING)
-		{	clearflag (nightnpc)
-			setflag (daynpc)
+		{	setflag (nightnpc)
+			clearflag (daynpc)
         goto (endofdaynightnpc)}
 
 		if (var(VAR_0x8000) == TIME_NIGHT)

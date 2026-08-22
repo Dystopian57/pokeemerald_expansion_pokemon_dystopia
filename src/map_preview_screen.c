@@ -128,6 +128,10 @@ static const u8 sArcadeMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/arc
 static const u8 sArcadeMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/arcade/tiles.4bpp.lz");
 static const u8 sArcadeMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/arcade/tilemap.bin.lz");
 
+static const u8 sWarehouseMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/warehouse/tiles.gbapal");
+static const u8 sWarehouseMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/warehouse/tiles.4bpp.lz");
+static const u8 sWarehouseMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/warehouse/tilemap.bin.lz");
+
 // If you set flagId to MPS_FLAG_NULL, it will not set a flag when visiting the map for the first time
 // and the duration will default to MPS_DURATION_NO_FLAG.
 static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
@@ -193,7 +197,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .image = IMG_ROCKET_HIDEOUT
     },
     [MPS_SILPH_CO] = {
-        .mapsec = MAPSEC_EVER_GRANDE_CITY,
+        .mapsec = MAPSEC_SILPH_CO,
         .type = MPS_TYPE_BASIC,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_OFFICE
@@ -394,7 +398,30 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .type = MPS_TYPE_BASIC,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_ARCADE
+    },
+
+    [MPS_MAGMA_HIDEOUT] = {
+        .mapsec = MAPSEC_MAGMA_HIDEOUT,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_WAREHOUSE
+    },
+
+    [MPS_NAVEL_ROCK] = {
+        .mapsec = MAPSEC_NAVEL_ROCK,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROCKET_HIDEOUT
+    },
+
+    [MPS_AQUA_HIDEOUT_OLD] = {
+        .mapsec = MAPSEC_AQUA_HIDEOUT_OLD,
+        .type = MPS_TYPE_BASIC,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROCKET_WAREHOUSE
     }
+
+        
 
 };
 
@@ -569,6 +596,12 @@ static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
         .tilesptr = sArcadeMapPreviewTiles,
         .tilemapptr = sArcadeMapPreviewTilemap,
         .palptr = sArcadeMapPreviewPalette
+    },
+
+    [IMG_WAREHOUSE] = {
+        .tilesptr = sWarehouseMapPreviewTiles,
+        .tilemapptr = sWarehouseMapPreviewTilemap,
+        .palptr = sWarehouseMapPreviewPalette
     }
 };
 

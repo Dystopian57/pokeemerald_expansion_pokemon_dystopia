@@ -113,7 +113,30 @@ Route102_Text_RouteSignPetalburg:
 mapscripts Route102_MapScripts {
     //MAP_SCRIPT_ON_TRANSITION: Route102Weather
     MAP_SCRIPT_ON_LOAD: Route102Weather
-	MAP_SCRIPT_ON_LOAD: PopWeatherMon102}
+	MAP_SCRIPT_ON_LOAD: PopWeatherMon102
+	MAP_SCRIPT_ON_LOAD: DynamicWeather102}
+
+
+
+script DynamicWeather102 {
+		if (var(VAR_PETALBURGLANDFILL_WEATHER) == 0)
+		{random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0: goto (Route102EndSandtorm)
+		case 1: goto (Route102EndSandtorm)
+		case 2: goto (Route102Shade)
+		case 3: goto (Route102Shade)
+		case 4: goto (Route102Shade)
+		case 5: goto (Route102Shade)
+		case 6: goto (Route102Shade)
+		case 7: goto (Route102Shade)
+		case 8: goto (Route102Shade)
+		case 9: goto (Route102Shade)
+		case 10: goto (Route102Shade)
+		}}
+}
 
 script Route102Weather {
 

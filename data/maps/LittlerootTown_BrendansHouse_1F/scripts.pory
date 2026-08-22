@@ -790,14 +790,14 @@ releaseall
 script Player1FPlant {
 	
 lockall
-msgbox (format("Despite the lack of care, the plant has somehow clinged to life.\pIt is sort of inspiring."))
+msgbox (format("Despite the lack of care, the plant has somehow clinged to life.\pIt's sort of inspiring."))
 releaseall
 }
 
 script PlayerVitaminCabinet {
 	lockall
 	if (!flag (FLAG_ITEM_PLAYER1F_VITAMIN))
-	{msgbox (format("The cabinet contains Pokémon medicine. There's a leftover bioenhancer..."))
+	{msgbox (format("The cabinet contains Pokémon medicine. There's a leftover capsule..."))
 	giveitem (ITEM_X_DEFENSE)
 	setflag (FLAG_ITEM_PLAYER1F_VITAMIN)}
 	else

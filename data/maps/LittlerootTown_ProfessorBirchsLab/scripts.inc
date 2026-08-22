@@ -5164,7 +5164,8 @@ Littleroot_Idletalk_Pikachu1_Text_3:
 # 1592 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Look, I know I asked you to choose a\n"
 	.string "Safemon...\p"
-	.string "But that one happens to be mine.$"
+	.string "But that one happens to be mine. Do not\n"
+	.string "{COLOR GREEN}insist{COLOR DARK_GRAY}.$"
 
 Littleroot_Idletalk_Pikachu1_Text_4:
 # 1605 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"

@@ -4,724 +4,730 @@
 PokeInnRoom2_MapScripts::
 # 9 "data/maps/PokeInnRoom2/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, DisableInnFollowers
+# 10 "data/maps/PokeInnRoom2/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, DayNightAmbientLight
+# 11 "data/maps/PokeInnRoom2/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, DayNightAmbientLight
+# 12 "data/maps/PokeInnRoom2/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightAmbientLight
 	.byte 0
 
 
 DisableInnFollowers::
-# 12 "data/maps/PokeInnRoom2/scripts.pory"
+# 15 "data/maps/PokeInnRoom2/scripts.pory"
 	setflag FLAG_TEMP_HIDE_FOLLOWER
 	return
 
 
 DevonInnSignAboutFreezer::
-# 19 "data/maps/PokeInnRoom2/scripts.pory"
+# 22 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 20 "data/maps/PokeInnRoom2/scripts.pory"
+# 23 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonInnSignAboutFreezer_Text_0
-# 21 "data/maps/PokeInnRoom2/scripts.pory"
+# 24 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 WallClock::
-# 25 "data/maps/PokeInnRoom2/scripts.pory"
-	incrementgamestat GAME_STAT_CHECKED_CLOCK
-# 26 "data/maps/PokeInnRoom2/scripts.pory"
-	gettime
-# 27 "data/maps/PokeInnRoom2/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_0x8000
 # 28 "data/maps/PokeInnRoom2/scripts.pory"
-	buffernumberstring STR_VAR_2, VAR_0x8001
+	incrementgamestat GAME_STAT_CHECKED_CLOCK
 # 29 "data/maps/PokeInnRoom2/scripts.pory"
-	buffernumberstring STR_VAR_3, VAR_0x8002
+	gettime
 # 30 "data/maps/PokeInnRoom2/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_0x8000
+# 31 "data/maps/PokeInnRoom2/scripts.pory"
+	buffernumberstring STR_VAR_2, VAR_0x8001
+# 32 "data/maps/PokeInnRoom2/scripts.pory"
+	buffernumberstring STR_VAR_3, VAR_0x8002
+# 33 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox WallClock_Text_0
 	end
 
 
 DevonShowFreetrial::
-# 44 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_0
 # 47 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_0
+# 50 "data/maps/PokeInnRoom2/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, DevonShowFreetrial_Text_1, DevonShowFreetrial_Text_2, DevonShowFreetrial_Text_3, DevonShowFreetrial_Text_4
-# 49 "data/maps/PokeInnRoom2/scripts.pory"
+# 52 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq DevonShowFreetrial_2
 DevonShowFreetrial_1:
-# 51 "data/maps/PokeInnRoom2/scripts.pory"
+# 54 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq DevonShowFreetrial_5
 DevonShowFreetrial_4:
-# 98 "data/maps/PokeInnRoom2/scripts.pory"
+# 101 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq DevonShowFreetrial_8
 DevonShowFreetrial_7:
-# 166 "data/maps/PokeInnRoom2/scripts.pory"
+# 169 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq DevonShowFreetrial_10
 	return
 
 DevonShowFreetrial_2:
-# 49 "data/maps/PokeInnRoom2/scripts.pory"
+# 52 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	goto DevonShowFreetrial_1
 
 DevonShowFreetrial_5:
-# 53 "data/maps/PokeInnRoom2/scripts.pory"
+# 56 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_5
-# 54 "data/maps/PokeInnRoom2/scripts.pory"
+# 57 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_DRAMAACTRESS ]
-# 55 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_6
 # 58 "data/maps/PokeInnRoom2/scripts.pory"
-	playmoncry SPECIES_GARDEVOIR, CRY_MODE_NORMAL
-# 59 "data/maps/PokeInnRoom2/scripts.pory"
-	showmonpic SPECIES_GARDEVOIR, 10, 3
+	msgbox DevonShowFreetrial_Text_6
 # 61 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_7
+	playmoncry SPECIES_GARDEVOIR, CRY_MODE_NORMAL
 # 62 "data/maps/PokeInnRoom2/scripts.pory"
-	hidemonpic
-# 63 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_DRAMAACTOR ]
+	showmonpic SPECIES_GARDEVOIR, 10, 3
 # 64 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_8
+	msgbox DevonShowFreetrial_Text_7
+# 65 "data/maps/PokeInnRoom2/scripts.pory"
+	hidemonpic
 # 66 "data/maps/PokeInnRoom2/scripts.pory"
-	playmoncry SPECIES_MACHAMP, CRY_MODE_NORMAL
+	setspeaker [ SP_NAME_DRAMAACTOR ]
 # 67 "data/maps/PokeInnRoom2/scripts.pory"
-	showmonpic SPECIES_MACHAMP, 10, 3
-# 68 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_9
+	msgbox DevonShowFreetrial_Text_8
 # 69 "data/maps/PokeInnRoom2/scripts.pory"
-	hidemonpic
+	playmoncry SPECIES_MACHAMP, CRY_MODE_NORMAL
 # 70 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_DRAMAACTRESS ]
+	showmonpic SPECIES_MACHAMP, 10, 3
 # 71 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_10
+	msgbox DevonShowFreetrial_Text_9
 # 72 "data/maps/PokeInnRoom2/scripts.pory"
-	playse SE_M_ATTRACT
-# 73 "data/maps/PokeInnRoom2/scripts.pory"
-	showmonpic SPECIES_GARDEVOIR_MEGA, 10, 3
-# 74 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker NULL
-# 75 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_11
-# 77 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_DRAMAACTOR ]
-# 78 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_12
-# 80 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_DRAMAACTRESS ]
-# 81 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_13
-# 83 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_14
-# 84 "data/maps/PokeInnRoom2/scripts.pory"
-	playse SE_FLEE
-# 85 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_15
-# 87 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_DRAMAACTOR ]
-# 88 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_16
-# 90 "data/maps/PokeInnRoom2/scripts.pory"
 	hidemonpic
-# 91 "data/maps/PokeInnRoom2/scripts.pory"
-	playse SE_FLEE
-# 92 "data/maps/PokeInnRoom2/scripts.pory"
+# 73 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker [ SP_NAME_DRAMAACTRESS ]
+# 74 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_10
+# 75 "data/maps/PokeInnRoom2/scripts.pory"
+	playse SE_M_ATTRACT
+# 76 "data/maps/PokeInnRoom2/scripts.pory"
+	showmonpic SPECIES_GARDEVOIR_MEGA, 10, 3
+# 77 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker NULL
+# 78 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_11
+# 80 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker [ SP_NAME_DRAMAACTOR ]
+# 81 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_12
+# 83 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker [ SP_NAME_DRAMAACTRESS ]
+# 84 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_13
+# 86 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_14
+# 87 "data/maps/PokeInnRoom2/scripts.pory"
+	playse SE_FLEE
+# 88 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_15
+# 90 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker [ SP_NAME_DRAMAACTOR ]
+# 91 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_16
 # 93 "data/maps/PokeInnRoom2/scripts.pory"
+	hidemonpic
+# 94 "data/maps/PokeInnRoom2/scripts.pory"
+	playse SE_FLEE
+# 95 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker NULL
+# 96 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_17
 	goto DevonShowFreetrial_4
 
 DevonShowFreetrial_8:
-# 100 "data/maps/PokeInnRoom2/scripts.pory"
+# 103 "data/maps/PokeInnRoom2/scripts.pory"
 	showmonpic SPECIES_SCRAFTY, 10, 3
-# 101 "data/maps/PokeInnRoom2/scripts.pory"
+# 104 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_SWAGGY ]
-# 102 "data/maps/PokeInnRoom2/scripts.pory"
+# 105 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_18
-# 106 "data/maps/PokeInnRoom2/scripts.pory"
-	playmoncry SPECIES_SCRAFTY, CRY_MODE_NORMAL
-# 107 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_19
 # 109 "data/maps/PokeInnRoom2/scripts.pory"
-	showmonpic SPECIES_MELOETTA, 10, 3
+	playmoncry SPECIES_SCRAFTY, CRY_MODE_NORMAL
 # 110 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_SUPERSUBSTITUTE ]
-# 111 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_20
+	msgbox DevonShowFreetrial_Text_19
+# 112 "data/maps/PokeInnRoom2/scripts.pory"
+	showmonpic SPECIES_MELOETTA, 10, 3
 # 113 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_0x8004, 2
+	setspeaker [ SP_NAME_SUPERSUBSTITUTE ]
 # 114 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_0x8005, 6
-# 115 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_0x8006, 4
+	msgbox DevonShowFreetrial_Text_20
 # 116 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8004, 2
 # 117 "data/maps/PokeInnRoom2/scripts.pory"
-	special ShakeCamera
+	setvar VAR_0x8005, 6
 # 118 "data/maps/PokeInnRoom2/scripts.pory"
-	waitse
+	setvar VAR_0x8006, 4
 # 119 "data/maps/PokeInnRoom2/scripts.pory"
-	playse SE_M_COMET_PUNCH
+	setvar VAR_0x8007, 4
 # 120 "data/maps/PokeInnRoom2/scripts.pory"
-	showmonpic SPECIES_ALCREMIE_CLOVER, 10, 3
+	special ShakeCamera
 # 121 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_21
+	waitse
+# 122 "data/maps/PokeInnRoom2/scripts.pory"
+	playse SE_M_COMET_PUNCH
 # 123 "data/maps/PokeInnRoom2/scripts.pory"
-	showmonpic SPECIES_SCRAFTY, 10, 3
+	showmonpic SPECIES_ALCREMIE_CLOVER, 10, 3
 # 124 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_SWAGGY ]
-# 125 "data/maps/PokeInnRoom2/scripts.pory"
-	playmoncry SPECIES_SCRAFTY, CRY_MODE_WEAK
+	msgbox DevonShowFreetrial_Text_21
 # 126 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_22
-# 128 "data/maps/PokeInnRoom2/scripts.pory"
-	showmonpic SPECIES_MELOETTA, 10, 3
-# 129 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_SUPERSUBSTITUTE ]
-# 130 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_23
-# 132 "data/maps/PokeInnRoom2/scripts.pory"
 	showmonpic SPECIES_SCRAFTY, 10, 3
-# 133 "data/maps/PokeInnRoom2/scripts.pory"
+# 127 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_SWAGGY ]
-# 134 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_24
-# 137 "data/maps/PokeInnRoom2/scripts.pory"
+# 128 "data/maps/PokeInnRoom2/scripts.pory"
+	playmoncry SPECIES_SCRAFTY, CRY_MODE_WEAK
+# 129 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_22
+# 131 "data/maps/PokeInnRoom2/scripts.pory"
 	showmonpic SPECIES_MELOETTA, 10, 3
-# 138 "data/maps/PokeInnRoom2/scripts.pory"
+# 132 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_SUPERSUBSTITUTE ]
-# 139 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_25
+# 133 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_23
+# 135 "data/maps/PokeInnRoom2/scripts.pory"
+	showmonpic SPECIES_SCRAFTY, 10, 3
+# 136 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker [ SP_NAME_SWAGGY ]
+# 137 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_24
+# 140 "data/maps/PokeInnRoom2/scripts.pory"
+	showmonpic SPECIES_MELOETTA, 10, 3
+# 141 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker [ SP_NAME_SUPERSUBSTITUTE ]
 # 142 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_25
+# 145 "data/maps/PokeInnRoom2/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, DevonShowFreetrial_Text_26, DevonShowFreetrial_Text_27
-# 144 "data/maps/PokeInnRoom2/scripts.pory"
+# 147 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq DevonShowFreetrial_13
 DevonShowFreetrial_12:
-# 159 "data/maps/PokeInnRoom2/scripts.pory"
+# 162 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq DevonShowFreetrial_15
 	goto DevonShowFreetrial_7
 
 DevonShowFreetrial_10:
-# 168 "data/maps/PokeInnRoom2/scripts.pory"
+# 171 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_GABBY ]
-# 169 "data/maps/PokeInnRoom2/scripts.pory"
+# 172 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_32
-# 173 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_GLACIA ]
-# 174 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_33
 # 176 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker [ SP_NAME_GABBY ]
+	setspeaker [ SP_NAME_GLACIA ]
 # 177 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_34
+	msgbox DevonShowFreetrial_Text_33
+# 179 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker [ SP_NAME_GABBY ]
 # 180 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_34
+# 183 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_GLACIA ]
-# 181 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_35
 # 184 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_35
+# 187 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_GABBY ]
-# 185 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_36
 # 188 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_36
+# 191 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_GLACIA ]
-# 189 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_37
 # 192 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_37
+# 195 "data/maps/PokeInnRoom2/scripts.pory"
 	showmonpic SPECIES_GLALIE_MEGA, 10, 3
-# 193 "data/maps/PokeInnRoom2/scripts.pory"
+# 196 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker [ SP_NAME_GABBY ]
-# 194 "data/maps/PokeInnRoom2/scripts.pory"
+# 197 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_38
-# 198 "data/maps/PokeInnRoom2/scripts.pory"
+# 201 "data/maps/PokeInnRoom2/scripts.pory"
 	hidemonpic
-# 199 "data/maps/PokeInnRoom2/scripts.pory"
+# 202 "data/maps/PokeInnRoom2/scripts.pory"
 	setspeaker NULL
-# 200 "data/maps/PokeInnRoom2/scripts.pory"
+# 203 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_39
 	return
 
 DevonShowFreetrial_13:
-# 145 "data/maps/PokeInnRoom2/scripts.pory"
-	setspeaker NULL
-# 146 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox DevonShowFreetrial_Text_28
-# 147 "data/maps/PokeInnRoom2/scripts.pory"
-	checkplayergender
 # 148 "data/maps/PokeInnRoom2/scripts.pory"
+	setspeaker NULL
+# 149 "data/maps/PokeInnRoom2/scripts.pory"
+	msgbox DevonShowFreetrial_Text_28
+# 150 "data/maps/PokeInnRoom2/scripts.pory"
+	checkplayergender
+# 151 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq DevonShowFreetrial_18
 DevonShowFreetrial_17:
-# 152 "data/maps/PokeInnRoom2/scripts.pory"
+# 155 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq DevonShowFreetrial_21
 DevonShowFreetrial_20:
-# 155 "data/maps/PokeInnRoom2/scripts.pory"
+# 158 "data/maps/PokeInnRoom2/scripts.pory"
 	hidemonpic
-# 156 "data/maps/PokeInnRoom2/scripts.pory"
+# 159 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	goto DevonShowFreetrial_12
 
 DevonShowFreetrial_15:
-# 160 "data/maps/PokeInnRoom2/scripts.pory"
+# 163 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_31
-# 161 "data/maps/PokeInnRoom2/scripts.pory"
+# 164 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	goto DevonShowFreetrial_7
 
 DevonShowFreetrial_18:
-# 149 "data/maps/PokeInnRoom2/scripts.pory"
+# 152 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_29
 	goto DevonShowFreetrial_17
 
 DevonShowFreetrial_21:
-# 153 "data/maps/PokeInnRoom2/scripts.pory"
+# 156 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonShowFreetrial_Text_30
 	goto DevonShowFreetrial_20
 
 
 OldalePokeCenterInnPrograms::
-# 207 "data/maps/PokeInnRoom2/scripts.pory"
+# 210 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 208 "data/maps/PokeInnRoom2/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, OldalePokeCenterInnPrograms_Text_0, OldalePokeCenterInnPrograms_Text_1, OldalePokeCenterInnPrograms_Text_2, OldalePokeCenterInnPrograms_Text_3
 # 211 "data/maps/PokeInnRoom2/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, OldalePokeCenterInnPrograms_Text_0, OldalePokeCenterInnPrograms_Text_1, OldalePokeCenterInnPrograms_Text_2, OldalePokeCenterInnPrograms_Text_3
+# 214 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq OldalePokeCenterInnPrograms_2
 OldalePokeCenterInnPrograms_1:
-# 218 "data/maps/PokeInnRoom2/scripts.pory"
+# 221 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldalePokeCenterInnPrograms_5
 OldalePokeCenterInnPrograms_4:
-# 235 "data/maps/PokeInnRoom2/scripts.pory"
+# 238 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq OldalePokeCenterInnPrograms_11
 OldalePokeCenterInnPrograms_10:
-# 253 "data/maps/PokeInnRoom2/scripts.pory"
+# 256 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq OldalePokeCenterInnPrograms_24
 OldalePokeCenterInnPrograms_23:
-# 258 "data/maps/PokeInnRoom2/scripts.pory"
+# 261 "data/maps/PokeInnRoom2/scripts.pory"
 	releaseall
 	return
 
 OldalePokeCenterInnPrograms_2:
-# 212 "data/maps/PokeInnRoom2/scripts.pory"
+# 215 "data/maps/PokeInnRoom2/scripts.pory"
 	goto_if_unset seenshowatinnvisit, OldalePokeCenterInnPrograms_7
-# 214 "data/maps/PokeInnRoom2/scripts.pory"
+# 217 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox OldalePokeCenterInnPrograms_Text_4
 	goto OldalePokeCenterInnPrograms_1
 
 OldalePokeCenterInnPrograms_5:
-# 219 "data/maps/PokeInnRoom2/scripts.pory"
-	random 8
-# 220 "data/maps/PokeInnRoom2/scripts.pory"
-	copyvar VAR_TEMP_1, VAR_RESULT
 # 222 "data/maps/PokeInnRoom2/scripts.pory"
-	switch VAR_RESULT
+	random 8
 # 223 "data/maps/PokeInnRoom2/scripts.pory"
-	case 0, OldalePokeCenterInnPrograms_14
-# 224 "data/maps/PokeInnRoom2/scripts.pory"
-	case 1, OldalePokeCenterInnPrograms_15
+	copyvar VAR_TEMP_1, VAR_RESULT
 # 225 "data/maps/PokeInnRoom2/scripts.pory"
-	case 2, OldalePokeCenterInnPrograms_16
+	switch VAR_RESULT
 # 226 "data/maps/PokeInnRoom2/scripts.pory"
-	case 3, OldalePokeCenterInnPrograms_17
+	case 0, OldalePokeCenterInnPrograms_14
 # 227 "data/maps/PokeInnRoom2/scripts.pory"
-	case 4, OldalePokeCenterInnPrograms_18
+	case 1, OldalePokeCenterInnPrograms_15
 # 228 "data/maps/PokeInnRoom2/scripts.pory"
-	case 5, OldalePokeCenterInnPrograms_19
+	case 2, OldalePokeCenterInnPrograms_16
 # 229 "data/maps/PokeInnRoom2/scripts.pory"
-	case 6, OldalePokeCenterInnPrograms_20
+	case 3, OldalePokeCenterInnPrograms_17
 # 230 "data/maps/PokeInnRoom2/scripts.pory"
-	case 7, OldalePokeCenterInnPrograms_21
+	case 4, OldalePokeCenterInnPrograms_18
 # 231 "data/maps/PokeInnRoom2/scripts.pory"
+	case 5, OldalePokeCenterInnPrograms_19
+# 232 "data/maps/PokeInnRoom2/scripts.pory"
+	case 6, OldalePokeCenterInnPrograms_20
+# 233 "data/maps/PokeInnRoom2/scripts.pory"
+	case 7, OldalePokeCenterInnPrograms_21
+# 234 "data/maps/PokeInnRoom2/scripts.pory"
 	case 8, OldalePokeCenterInnPrograms_22
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_7:
-# 213 "data/maps/PokeInnRoom2/scripts.pory"
+# 216 "data/maps/PokeInnRoom2/scripts.pory"
 	goto DevonShowFreetrial
 	goto OldalePokeCenterInnPrograms_1
 
 OldalePokeCenterInnPrograms_11:
-# 236 "data/maps/PokeInnRoom2/scripts.pory"
+# 239 "data/maps/PokeInnRoom2/scripts.pory"
 	goto_if_unset seenweatheratinnvisit, OldalePokeCenterInnPrograms_26
-# 250 "data/maps/PokeInnRoom2/scripts.pory"
+# 253 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox OldalePokeCenterInnPrograms_Text_5
 	goto OldalePokeCenterInnPrograms_10
 
 OldalePokeCenterInnPrograms_14:
-# 223 "data/maps/PokeInnRoom2/scripts.pory"
+# 226 "data/maps/PokeInnRoom2/scripts.pory"
 	goto OldaleWarehouseNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_15:
-# 224 "data/maps/PokeInnRoom2/scripts.pory"
+# 227 "data/maps/PokeInnRoom2/scripts.pory"
 	goto JimmyNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_16:
-# 225 "data/maps/PokeInnRoom2/scripts.pory"
+# 228 "data/maps/PokeInnRoom2/scripts.pory"
 	goto LittlerootLabNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_17:
-# 226 "data/maps/PokeInnRoom2/scripts.pory"
+# 229 "data/maps/PokeInnRoom2/scripts.pory"
 	goto PetalburgRiotNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_18:
-# 227 "data/maps/PokeInnRoom2/scripts.pory"
+# 230 "data/maps/PokeInnRoom2/scripts.pory"
 	goto LittlerootLabNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_19:
-# 228 "data/maps/PokeInnRoom2/scripts.pory"
+# 231 "data/maps/PokeInnRoom2/scripts.pory"
 	goto DevonSpaceNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_20:
-# 229 "data/maps/PokeInnRoom2/scripts.pory"
+# 232 "data/maps/PokeInnRoom2/scripts.pory"
 	goto MauvillePlantNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_21:
-# 230 "data/maps/PokeInnRoom2/scripts.pory"
+# 233 "data/maps/PokeInnRoom2/scripts.pory"
 	goto RebelHarbourNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_22:
-# 231 "data/maps/PokeInnRoom2/scripts.pory"
+# 234 "data/maps/PokeInnRoom2/scripts.pory"
 	goto Route104LabNews
 	goto OldalePokeCenterInnPrograms_4
 
 OldalePokeCenterInnPrograms_24:
-# 254 "data/maps/PokeInnRoom2/scripts.pory"
+# 257 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	goto OldalePokeCenterInnPrograms_23
 
 OldalePokeCenterInnPrograms_26:
-# 237 "data/maps/PokeInnRoom2/scripts.pory"
-	random 3
-# 238 "data/maps/PokeInnRoom2/scripts.pory"
-	copyvar VAR_TEMP_1, VAR_RESULT
-# 239 "data/maps/PokeInnRoom2/scripts.pory"
-	switch VAR_RESULT
 # 240 "data/maps/PokeInnRoom2/scripts.pory"
-	case 0, OldalePokeCenterInnPrograms_30
+	random 3
 # 241 "data/maps/PokeInnRoom2/scripts.pory"
-	case 1, OldalePokeCenterInnPrograms_31
+	copyvar VAR_TEMP_1, VAR_RESULT
 # 242 "data/maps/PokeInnRoom2/scripts.pory"
-	case 2, OldalePokeCenterInnPrograms_32
+	switch VAR_RESULT
 # 243 "data/maps/PokeInnRoom2/scripts.pory"
+	case 0, OldalePokeCenterInnPrograms_30
+# 244 "data/maps/PokeInnRoom2/scripts.pory"
+	case 1, OldalePokeCenterInnPrograms_31
+# 245 "data/maps/PokeInnRoom2/scripts.pory"
+	case 2, OldalePokeCenterInnPrograms_32
+# 246 "data/maps/PokeInnRoom2/scripts.pory"
 	case 3, OldalePokeCenterInnPrograms_33
 	goto OldalePokeCenterInnPrograms_10
 
 OldalePokeCenterInnPrograms_30:
-# 240 "data/maps/PokeInnRoom2/scripts.pory"
+# 243 "data/maps/PokeInnRoom2/scripts.pory"
 	goto Route103WeatherNews
 	goto OldalePokeCenterInnPrograms_10
 
 OldalePokeCenterInnPrograms_31:
-# 241 "data/maps/PokeInnRoom2/scripts.pory"
+# 244 "data/maps/PokeInnRoom2/scripts.pory"
 	goto Route102WeatherNews
 	goto OldalePokeCenterInnPrograms_10
 
 OldalePokeCenterInnPrograms_32:
-# 242 "data/maps/PokeInnRoom2/scripts.pory"
+# 245 "data/maps/PokeInnRoom2/scripts.pory"
 	goto GreatCraterWeatherNews
 	goto OldalePokeCenterInnPrograms_10
 
 OldalePokeCenterInnPrograms_33:
-# 243 "data/maps/PokeInnRoom2/scripts.pory"
+# 246 "data/maps/PokeInnRoom2/scripts.pory"
 	goto LandfillWeatherNews
 	goto OldalePokeCenterInnPrograms_10
 
 
 JimmyNews::
-# 265 "data/maps/PokeInnRoom2/scripts.pory"
+# 268 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 267 "data/maps/PokeInnRoom2/scripts.pory"
+# 270 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_JIMMYQUESTPROGRESS, 0
 	goto_if_eq JimmyNews_2
 JimmyNews_1:
-# 277 "data/maps/PokeInnRoom2/scripts.pory"
+# 280 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_JIMMYQUESTPROGRESS, 1
 	goto_if_eq JimmyNews_5
 JimmyNews_4:
-# 299 "data/maps/PokeInnRoom2/scripts.pory"
+# 302 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 JimmyNews_2:
-# 269 "data/maps/PokeInnRoom2/scripts.pory"
+# 272 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox JimmyNews_Text_0
 	goto JimmyNews_1
 
 JimmyNews_5:
-# 279 "data/maps/PokeInnRoom2/scripts.pory"
+# 282 "data/maps/PokeInnRoom2/scripts.pory"
 	goto_if_unset helpedconcordconartist, JimmyNews_7
-# 289 "data/maps/PokeInnRoom2/scripts.pory"
+# 292 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox JimmyNews_Text_2
 	goto JimmyNews_4
 
 JimmyNews_7:
-# 280 "data/maps/PokeInnRoom2/scripts.pory"
+# 283 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox JimmyNews_Text_1
 	goto JimmyNews_4
 
 
 OldaleWarehouseNews::
-# 303 "data/maps/PokeInnRoom2/scripts.pory"
+# 306 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 305 "data/maps/PokeInnRoom2/scripts.pory"
+# 308 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_OLDALE_PHASE, 0
 	goto_if_eq OldaleWarehouseNews_2
 OldaleWarehouseNews_1:
-# 313 "data/maps/PokeInnRoom2/scripts.pory"
+# 316 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_OLDALE_PHASE, 2
 	goto_if_gt OldaleWarehouseNews_5
 OldaleWarehouseNews_4:
-# 339 "data/maps/PokeInnRoom2/scripts.pory"
+# 342 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 OldaleWarehouseNews_2:
-# 307 "data/maps/PokeInnRoom2/scripts.pory"
+# 310 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox OldaleWarehouseNews_Text_0
 	goto OldaleWarehouseNews_1
 
 OldaleWarehouseNews_5:
-# 316 "data/maps/PokeInnRoom2/scripts.pory"
+# 319 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox OldaleWarehouseNews_Text_1
-# 320 "data/maps/PokeInnRoom2/scripts.pory"
+# 323 "data/maps/PokeInnRoom2/scripts.pory"
 	checkplayergender
-# 322 "data/maps/PokeInnRoom2/scripts.pory"
+# 325 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldaleWarehouseNews_8
 OldaleWarehouseNews_7:
-# 330 "data/maps/PokeInnRoom2/scripts.pory"
+# 333 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleWarehouseNews_10
 	goto OldaleWarehouseNews_4
 
 OldaleWarehouseNews_8:
-# 324 "data/maps/PokeInnRoom2/scripts.pory"
+# 327 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox OldaleWarehouseNews_Text_2
 	goto OldaleWarehouseNews_7
 
 OldaleWarehouseNews_10:
-# 332 "data/maps/PokeInnRoom2/scripts.pory"
+# 335 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox OldaleWarehouseNews_Text_3
 	goto OldaleWarehouseNews_4
 
 
 PetalburgRiotNews::
-# 346 "data/maps/PokeInnRoom2/scripts.pory"
+# 349 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 347 "data/maps/PokeInnRoom2/scripts.pory"
+# 350 "data/maps/PokeInnRoom2/scripts.pory"
 	goto_if_unset helpedconcordconartist, PetalburgRiotNews_2
-# 357 "data/maps/PokeInnRoom2/scripts.pory"
+# 360 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox PetalburgRiotNews_Text_1
 PetalburgRiotNews_1:
-# 365 "data/maps/PokeInnRoom2/scripts.pory"
+# 368 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 PetalburgRiotNews_2:
-# 350 "data/maps/PokeInnRoom2/scripts.pory"
+# 353 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox PetalburgRiotNews_Text_0
 	goto PetalburgRiotNews_1
 
 
 LittlerootLabNews::
-# 371 "data/maps/PokeInnRoom2/scripts.pory"
+# 374 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 372 "data/maps/PokeInnRoom2/scripts.pory"
+# 375 "data/maps/PokeInnRoom2/scripts.pory"
 	goto_if_unset helpedconcordconartist, LittlerootLabNews_2
-# 386 "data/maps/PokeInnRoom2/scripts.pory"
+# 389 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox LittlerootLabNews_Text_1
 LittlerootLabNews_1:
-# 387 "data/maps/PokeInnRoom2/scripts.pory"
+# 390 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 LittlerootLabNews_2:
-# 375 "data/maps/PokeInnRoom2/scripts.pory"
+# 378 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox LittlerootLabNews_Text_0
 	goto LittlerootLabNews_1
 
 
 DevonSpaceNews::
-# 392 "data/maps/PokeInnRoom2/scripts.pory"
+# 395 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 393 "data/maps/PokeInnRoom2/scripts.pory"
+# 396 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DevonSpaceNews_Text_0
-# 400 "data/maps/PokeInnRoom2/scripts.pory"
+# 403 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 MauvillePlantNews::
-# 406 "data/maps/PokeInnRoom2/scripts.pory"
+# 409 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 407 "data/maps/PokeInnRoom2/scripts.pory"
+# 410 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox MauvillePlantNews_Text_0
-# 415 "data/maps/PokeInnRoom2/scripts.pory"
+# 418 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 RebelHarbourNews::
-# 421 "data/maps/PokeInnRoom2/scripts.pory"
+# 424 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 422 "data/maps/PokeInnRoom2/scripts.pory"
+# 425 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_JIMMYQUESTPROGRESS, 0
 	goto_if_eq RebelHarbourNews_2
 RebelHarbourNews_1:
-# 434 "data/maps/PokeInnRoom2/scripts.pory"
+# 437 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_JIMMYQUESTPROGRESS, 1
 	goto_if_eq RebelHarbourNews_5
 RebelHarbourNews_4:
-# 439 "data/maps/PokeInnRoom2/scripts.pory"
+# 442 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 RebelHarbourNews_2:
-# 425 "data/maps/PokeInnRoom2/scripts.pory"
+# 428 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox RebelHarbourNews_Text_0
 	goto RebelHarbourNews_1
 
 RebelHarbourNews_5:
-# 437 "data/maps/PokeInnRoom2/scripts.pory"
+# 440 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox RebelHarbourNews_Text_1
 	goto RebelHarbourNews_4
 
 
 Route104LabNews::
-# 446 "data/maps/PokeInnRoom2/scripts.pory"
+# 449 "data/maps/PokeInnRoom2/scripts.pory"
 	lock
-# 447 "data/maps/PokeInnRoom2/scripts.pory"
+# 450 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_JIMMYQUESTPROGRESS, 0
 	goto_if_eq Route104LabNews_2
 Route104LabNews_1:
-# 459 "data/maps/PokeInnRoom2/scripts.pory"
+# 462 "data/maps/PokeInnRoom2/scripts.pory"
 	compare VAR_JIMMYQUESTPROGRESS, 1
 	goto_if_eq Route104LabNews_5
 Route104LabNews_4:
-# 472 "data/maps/PokeInnRoom2/scripts.pory"
+# 475 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 Route104LabNews_2:
-# 450 "data/maps/PokeInnRoom2/scripts.pory"
+# 453 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox Route104LabNews_Text_0
 	goto Route104LabNews_1
 
 Route104LabNews_5:
-# 462 "data/maps/PokeInnRoom2/scripts.pory"
+# 465 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox Route104LabNews_Text_1
 	goto Route104LabNews_4
 
 
 Route103WeatherNews::
-# 479 "data/maps/PokeInnRoom2/scripts.pory"
+# 482 "data/maps/PokeInnRoom2/scripts.pory"
 	playse SE_M_RAIN_DANCE
-# 480 "data/maps/PokeInnRoom2/scripts.pory"
-	msgbox Route103WeatherNews_Text_0
 # 483 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_ROUTE103_WEATHER, 1
-# 485 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
+	msgbox Route103WeatherNews_Text_0
 # 486 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_ROUTE103_WEATHER, 1
+# 488 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 489 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 Route102WeatherNews::
-# 490 "data/maps/PokeInnRoom2/scripts.pory"
+# 493 "data/maps/PokeInnRoom2/scripts.pory"
 	playse SE_M_SANDSTORM
-# 491 "data/maps/PokeInnRoom2/scripts.pory"
+# 494 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox Route102WeatherNews_Text_0
-# 495 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_ROUTE102_WEATHER, 1
-# 496 "data/maps/PokeInnRoom2/scripts.pory"
-	clearflag route102weathermon
-# 497 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
 # 498 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_ROUTE102_WEATHER, 1
+# 499 "data/maps/PokeInnRoom2/scripts.pory"
+	clearflag route102weathermon
+# 500 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 501 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 GreatCraterWeatherNews::
-# 503 "data/maps/PokeInnRoom2/scripts.pory"
+# 506 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox GreatCraterWeatherNews_Text_0
-# 508 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_GREATCRATER_WEATHER, 1
-# 510 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
 # 511 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_GREATCRATER_WEATHER, 1
+# 513 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 514 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 LandfillWeatherNews::
-# 516 "data/maps/PokeInnRoom2/scripts.pory"
+# 519 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox LandfillWeatherNews_Text_0
-# 520 "data/maps/PokeInnRoom2/scripts.pory"
-	setvar VAR_PETALBURGLANDFILL_WEATHER, 1
-# 522 "data/maps/PokeInnRoom2/scripts.pory"
-	setflag seenweatheratinnvisit
 # 523 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_PETALBURGLANDFILL_WEATHER, 1
+# 525 "data/maps/PokeInnRoom2/scripts.pory"
+	setflag seenweatheratinnvisit
+# 526 "data/maps/PokeInnRoom2/scripts.pory"
 	release
 	return
 
 
 DevonInnSignAboutFreezer_Text_0:
-# 20 "data/maps/PokeInnRoom2/scripts.pory"
+# 23 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "With each visit, remember to check the\n"
 	.string "freezer for a free drink!$"
 
 WallClock_Text_0:
-# 30 "data/maps/PokeInnRoom2/scripts.pory"
+# 33 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "The time is {STR_VAR_1},\n"
 	.string "{STR_VAR_3}, {STR_VAR_3}.$"
 
 DevonShowFreetrial_Text_0:
-# 44 "data/maps/PokeInnRoom2/scripts.pory"
+# 47 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "This is a Devon Show's Free Trial! You\n"
 	.string "may watch these episodes from Devon\l"
 	.string "Shows for free!\p"
 	.string "Which one would you like to watch?$"
 
 DevonShowFreetrial_Text_1:
-# 47 "data/maps/PokeInnRoom2/scripts.pory"
+# 50 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Love is Danger, Episode 8$"
 
 DevonShowFreetrial_Text_2:
-# 47 "data/maps/PokeInnRoom2/scripts.pory"
+# 50 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "The Adventures of Super Substitute, Episode 34$"
 
 DevonShowFreetrial_Text_3:
-# 47 "data/maps/PokeInnRoom2/scripts.pory"
+# 50 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Gabby's Talk Show, Episode 18$"
 
 DevonShowFreetrial_Text_4:
-# 47 "data/maps/PokeInnRoom2/scripts.pory"
+# 50 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "None$"
 
 DevonShowFreetrial_Text_5:
-# 53 "data/maps/PokeInnRoom2/scripts.pory"
+# 56 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Love is Danger, Episode 8: Till Pokémon\n"
 	.string "do us part$"
 
 DevonShowFreetrial_Text_6:
-# 55 "data/maps/PokeInnRoom2/scripts.pory"
+# 58 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Dear, I've reached my limit!\p"
 	.string "Our marriage is falling apart, and I'm\n"
 	.string "tired of pretending otherwise!\p"
@@ -729,55 +735,55 @@ DevonShowFreetrial_Text_6:
 	.string "since…{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_7:
-# 61 "data/maps/PokeInnRoom2/scripts.pory"
+# 64 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Since your Kirlia evolved into\n"
 	.string "Gardevoir!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_8:
-# 64 "data/maps/PokeInnRoom2/scripts.pory"
+# 67 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}Huh!? Don't blame this on her! This all\n"
 	.string "started when you- you...!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_9:
-# 68 "data/maps/PokeInnRoom2/scripts.pory"
+# 71 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}When you received that Machamp from a\n"
 	.string "trade!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_10:
-# 71 "data/maps/PokeInnRoom2/scripts.pory"
+# 74 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}That's rich - you are such a…! Huh?\n"
 	.string "W-wait… what's happening…? {COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_11:
-# 75 "data/maps/PokeInnRoom2/scripts.pory"
+# 78 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "...!$"
 
 DevonShowFreetrial_Text_12:
-# 78 "data/maps/PokeInnRoom2/scripts.pory"
+# 81 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}G-Gardette, why are you looking at him\n"
 	.string "like that!?{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_13:
-# 81 "data/maps/PokeInnRoom2/scripts.pory"
+# 84 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Machote, you too - you've never held me\n"
 	.string "like that before…! {COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_14:
-# 83 "data/maps/PokeInnRoom2/scripts.pory"
+# 86 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}O-oh, oh no... what are they doing!? I-I\n"
 	.string "can't watch this anymore!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_15:
-# 85 "data/maps/PokeInnRoom2/scripts.pory"
+# 88 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}UWAAAAH!!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_16:
-# 88 "data/maps/PokeInnRoom2/scripts.pory"
+# 91 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}Devon was right… Pokémon… they can't\n"
 	.string "be trusted! Darling, wait!!” {COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_17:
-# 93 "data/maps/PokeInnRoom2/scripts.pory"
+# 96 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Will this steamy incident increase the\n"
 	.string "gap between our protanist couple…?\p"
 	.string "Or will it serve as the patch needed to\n"
@@ -787,7 +793,7 @@ DevonShowFreetrial_Text_17:
 	.string "subscription!$"
 
 DevonShowFreetrial_Text_18:
-# 102 "data/maps/PokeInnRoom2/scripts.pory"
+# 105 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}It's the end of the line, Super\n"
 	.string "Substitute! We have the Super Stones\p"
 	.string "With them, we will be able to Super\n"
@@ -795,31 +801,31 @@ DevonShowFreetrial_Text_18:
 	.string "and DANGEROUS Pokémon in all the world!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_19:
-# 107 "data/maps/PokeInnRoom2/scripts.pory"
+# 110 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}BWAA-HA-HA-HA!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_20:
-# 111 "data/maps/PokeInnRoom2/scripts.pory"
+# 114 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}Not if I can help it, Swaggy the\n"
 	.string "Scrafty! Special Technique...{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_21:
-# 121 "data/maps/PokeInnRoom2/scripts.pory"
+# 124 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}SELF-DEFENSE STRIKE!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_22:
-# 126 "data/maps/PokeInnRoom2/scripts.pory"
+# 129 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}W-WAAH! Wait, how is that\n"
 	.string "self-defense!? We didn't even attack\l"
 	.string "you yet!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_23:
-# 130 "data/maps/PokeInnRoom2/scripts.pory"
+# 133 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}You silly Swaggy! Striking evil foes is\n"
 	.string "always in self-defense!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_24:
-# 134 "data/maps/PokeInnRoom2/scripts.pory"
+# 137 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Grr… if only I had taken a course on a\n"
 	.string "Devon Learning Center... {COLOR LIGHT_GRAY}{SHADOW WHITE}applications\l"
 	.string "open now...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\p"
@@ -828,40 +834,40 @@ DevonShowFreetrial_Text_24:
 	.string "SUPER EVOLVE! ORYAAAH…!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_25:
-# 139 "data/maps/PokeInnRoom2/scripts.pory"
+# 142 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}Oh no! People at home, we must stop\n"
 	.string "Swaggy and his gang from Super\l"
 	.string "Evolving!\p"
 	.string "You know what to do - cheer me up! {COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_26:
-# 142 "data/maps/PokeInnRoom2/scripts.pory"
+# 145 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Go, Super Substitute!$"
 
 DevonShowFreetrial_Text_27:
-# 142 "data/maps/PokeInnRoom2/scripts.pory"
+# 145 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "...$"
 
 DevonShowFreetrial_Text_28:
-# 146 "data/maps/PokeInnRoom2/scripts.pory"
+# 149 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{PLAYER} yells at the TV…!$"
 
 DevonShowFreetrial_Text_29:
-# 149 "data/maps/PokeInnRoom2/scripts.pory"
+# 152 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "He feels so embarrased, he switches it\n"
 	.string "off instantly.$"
 
 DevonShowFreetrial_Text_30:
-# 153 "data/maps/PokeInnRoom2/scripts.pory"
+# 156 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "She feels so embarrased, she switches\n"
 	.string "it off instantly.$"
 
 DevonShowFreetrial_Text_31:
-# 160 "data/maps/PokeInnRoom2/scripts.pory"
+# 163 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "... that's enough cartoons for today.$"
 
 DevonShowFreetrial_Text_32:
-# 169 "data/maps/PokeInnRoom2/scripts.pory"
+# 172 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Welcome to Gabby's Talk Show! We are\n"
 	.string "here tonight with miss Glacia, former\l"
 	.string "Hoenn Elite Four, and now one of the\l"
@@ -869,35 +875,35 @@ DevonShowFreetrial_Text_32:
 	.string "It's a pleasure to have you, miss Glacia.{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_33:
-# 174 "data/maps/PokeInnRoom2/scripts.pory"
+# 177 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}The pleasure is mine, Gabby. Glacia will\n"
 	.string "do.{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_34:
-# 177 "data/maps/PokeInnRoom2/scripts.pory"
+# 180 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Thank you, Glacia! Now, I believe\n"
 	.string "everyone at home must be wondering…\p"
 	.string "What's your secret for looking JUST like\n"
 	.string "you looked 30 years ago!?{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_35:
-# 181 "data/maps/PokeInnRoom2/scripts.pory"
+# 184 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}Hm, I never thought about that…\n"
 	.string "perhaps it's being around ice Pokémon.\p"
 	.string "They say cold conserves, doesn't it?{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_36:
-# 185 "data/maps/PokeInnRoom2/scripts.pory"
+# 188 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Hehe - that's so true!\p"
 	.string "And that remark is the perfect segway\n"
 	.string "for our first commercial break!{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_37:
-# 189 "data/maps/PokeInnRoom2/scripts.pory"
+# 192 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR BLUE}... already?{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_38:
-# 194 "data/maps/PokeInnRoom2/scripts.pory"
+# 197 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{COLOR RED}Glalie's. The only skincare product\n"
 	.string "you'll ever need.\p"
 	.string "This soothing cream will leave your face\n"
@@ -906,37 +912,37 @@ DevonShowFreetrial_Text_38:
 	.string "like fresh ice.{COLOR DARK_GRAY}$"
 
 DevonShowFreetrial_Text_39:
-# 200 "data/maps/PokeInnRoom2/scripts.pory"
+# 203 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Looks like this is the firt of many ads\n"
 	.string "to come... better get going.$"
 
 OldalePokeCenterInnPrograms_Text_0:
-# 208 "data/maps/PokeInnRoom2/scripts.pory"
+# 211 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Devon News$"
 
 OldalePokeCenterInnPrograms_Text_1:
-# 208 "data/maps/PokeInnRoom2/scripts.pory"
+# 211 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Weather Channel$"
 
 OldalePokeCenterInnPrograms_Text_2:
-# 208 "data/maps/PokeInnRoom2/scripts.pory"
+# 211 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Devon Shows$"
 
 OldalePokeCenterInnPrograms_Text_3:
-# 208 "data/maps/PokeInnRoom2/scripts.pory"
+# 211 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Don't watch TV$"
 
 OldalePokeCenterInnPrograms_Text_4:
-# 214 "data/maps/PokeInnRoom2/scripts.pory"
+# 217 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "The Devon Shows' Free Trial has been\n"
 	.string "claimed on this inn visit.$"
 
 OldalePokeCenterInnPrograms_Text_5:
-# 250 "data/maps/PokeInnRoom2/scripts.pory"
+# 253 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "The weather broadcast has ended...$"
 
 JimmyNews_Text_0:
-# 269 "data/maps/PokeInnRoom2/scripts.pory"
+# 272 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Breaking news on the chase for Jimmy\n"
 	.string "McGligar, the infamous Pokémon egg\l"
 	.string "smuggler - he has been seen in Route\l"
@@ -954,7 +960,7 @@ JimmyNews_Text_0:
 	.string "breeding'.$"
 
 JimmyNews_Text_1:
-# 280 "data/maps/PokeInnRoom2/scripts.pory"
+# 283 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "We have news on egg smuggler Jimmy\n"
 	.string "McGligar's whereabouts.\p"
 	.string "Civilians have reported sighting him in\n"
@@ -974,7 +980,7 @@ JimmyNews_Text_1:
 	.string "travelling.$"
 
 JimmyNews_Text_2:
-# 289 "data/maps/PokeInnRoom2/scripts.pory"
+# 292 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "We have news on egg smuggler Jimmy\n"
 	.string "McGligar's whereabouts.\p"
 	.string "After a close encounter with Devon\n"
@@ -993,7 +999,7 @@ JimmyNews_Text_2:
 	.string "travelling.$"
 
 OldaleWarehouseNews_Text_0:
-# 307 "data/maps/PokeInnRoom2/scripts.pory"
+# 310 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "In other unfortunate piece of news,\n"
 	.string "the Devon Warehouse of Oldale town is\l"
 	.string "still under rebel control.\p"
@@ -1007,7 +1013,7 @@ OldaleWarehouseNews_Text_0:
 	.string "situation.$"
 
 OldaleWarehouseNews_Text_1:
-# 316 "data/maps/PokeInnRoom2/scripts.pory"
+# 319 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Breaking News: our Verdooms have\n"
 	.string "recently caught this footage of the\l"
 	.string "Devon Warehouse of Oldale Town, where\l"
@@ -1015,7 +1021,7 @@ OldaleWarehouseNews_Text_1:
 	.string "in droves.$"
 
 OldaleWarehouseNews_Text_2:
-# 324 "data/maps/PokeInnRoom2/scripts.pory"
+# 327 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Not soon after, a young man in\n"
 	.string "soldier-like clothes was seen leaving\l"
 	.string "the warehouse. Some early hypothesis\l"
@@ -1028,7 +1034,7 @@ OldaleWarehouseNews_Text_2:
 	.string "as we have it.$"
 
 OldaleWarehouseNews_Text_3:
-# 332 "data/maps/PokeInnRoom2/scripts.pory"
+# 335 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Not soon after, a young woman in\n"
 	.string "soldier-like clothes was seen leaving\l"
 	.string "the warehouse. Some early hypothesis\l"
@@ -1041,7 +1047,7 @@ OldaleWarehouseNews_Text_3:
 	.string "as we have it.$"
 
 PetalburgRiotNews_Text_0:
-# 350 "data/maps/PokeInnRoom2/scripts.pory"
+# 353 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Breaking news: a violent, rebel-led riot\n"
 	.string "has broken out in the vicinity of\l"
 	.string "Petalburg City's Devon Center.\p"
@@ -1053,7 +1059,7 @@ PetalburgRiotNews_Text_0:
 	.string "control.$"
 
 PetalburgRiotNews_Text_1:
-# 357 "data/maps/PokeInnRoom2/scripts.pory"
+# 360 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Breaking news: rebels have been\n"
 	.string "vacated from a violent riot mounted\l"
 	.string "around Petalburg City's Devon Center.\l"
@@ -1073,7 +1079,7 @@ PetalburgRiotNews_Text_1:
 	.string "developments.$"
 
 LittlerootLabNews_Text_0:
-# 375 "data/maps/PokeInnRoom2/scripts.pory"
+# 378 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Now, for some more analysis on the\n"
 	.string "latest issue of Devon Co's 'Safemon\l"
 	.string "Progress Report'.\p"
@@ -1097,11 +1103,11 @@ LittlerootLabNews_Text_0:
 	.string "iconic landmark in Hoenn's history.$"
 
 LittlerootLabNews_Text_1:
-# 386 "data/maps/PokeInnRoom2/scripts.pory"
+# 389 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "after raid to the lab, another news!$"
 
 DevonSpaceNews_Text_0:
-# 393 "data/maps/PokeInnRoom2/scripts.pory"
+# 396 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "“Space is no longer the limit” was\n"
 	.string "claimed in unison by the new\l"
 	.string "administrators of Mossdeep's Devon\l"
@@ -1122,7 +1128,7 @@ DevonSpaceNews_Text_0:
 	.string "of space flight might bring. Stay tuned!$"
 
 MauvillePlantNews_Text_0:
-# 407 "data/maps/PokeInnRoom2/scripts.pory"
+# 410 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Next up, we bring you some unfortunate\n"
 	.string "news.\p"
 	.string "An accident in Mauville's Nuclear Plant\n"
@@ -1147,7 +1153,7 @@ MauvillePlantNews_Text_0:
 	.string "region.$"
 
 RebelHarbourNews_Text_0:
-# 425 "data/maps/PokeInnRoom2/scripts.pory"
+# 428 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "We have received news about Rebels\n"
 	.string "building an illegal harbour on the coast\l"
 	.string "south of Petalburg City.\p"
@@ -1169,12 +1175,12 @@ RebelHarbourNews_Text_0:
 	.string "and safe manner'$"
 
 RebelHarbourNews_Text_1:
-# 437 "data/maps/PokeInnRoom2/scripts.pory"
+# 440 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "after foreign missions, INFORM ABOUT\n"
 	.string "THEM!$"
 
 Route104LabNews_Text_0:
-# 450 "data/maps/PokeInnRoom2/scripts.pory"
+# 453 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "We continue with more insight into the\n"
 	.string "latest issue of the Safemon Progress\l"
 	.string "Report that Devon Co. recently\l"
@@ -1197,7 +1203,7 @@ Route104LabNews_Text_0:
 	.string "place.$"
 
 Route104LabNews_Text_1:
-# 462 "data/maps/PokeInnRoom2/scripts.pory"
+# 465 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Breaking news. We have just received\n"
 	.string "reports of an assault on the Devon Lab\l"
 	.string "of Route 104, presumably perpetrated\l"
@@ -1224,7 +1230,7 @@ Route104LabNews_Text_1:
 	.string "for the moment.$"
 
 Route103WeatherNews_Text_0:
-# 480 "data/maps/PokeInnRoom2/scripts.pory"
+# 483 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Weather Alert: We would like to inform\n"
 	.string "of a heavy rainstorm now pouring over\l"
 	.string "Route 103.\p"
@@ -1234,7 +1240,7 @@ Route103WeatherNews_Text_0:
 	.string "absolutely necessary.$"
 
 Route102WeatherNews_Text_0:
-# 491 "data/maps/PokeInnRoom2/scripts.pory"
+# 494 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Weather Alert: We would like to inform\n"
 	.string "of a sandstorm taking place in Road\l"
 	.string "002.\p"
@@ -1246,7 +1252,7 @@ Route102WeatherNews_Text_0:
 	.string "until winds have subdued.$"
 
 GreatCraterWeatherNews_Text_0:
-# 503 "data/maps/PokeInnRoom2/scripts.pory"
+# 506 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Weather Alert: We would like to inform\n"
 	.string "of mysterious dust falling upon the\l"
 	.string "area around the Great Crater, south of\l"
@@ -1262,7 +1268,7 @@ GreatCraterWeatherNews_Text_0:
 	.string "are perfectly within safe margins.$"
 
 LandfillWeatherNews_Text_0:
-# 516 "data/maps/PokeInnRoom2/scripts.pory"
+# 519 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "Weather Alert: We would like to inform\n"
 	.string "of toxic fumes rising from Petalburg\l"
 	.string "Scrapyard.\p"

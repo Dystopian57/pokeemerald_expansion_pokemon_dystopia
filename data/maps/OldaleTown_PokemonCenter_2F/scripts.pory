@@ -5,6 +5,10 @@ OldaleTown_PokemonCenter_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, CableClub_OnLoad
 	map_script MAP_SCRIPT_ON_LOAD, EnableFollowers
 	map_script MAP_SCRIPT_ON_TRANSITION, CableClub_OnTransition
+
+	map_script MAP_SCRIPT_ON_LOAD, DayNightAmbientLight
+	map_script MAP_SCRIPT_ON_TRANSITION, DayNightAmbientLight
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightAmbientLight
 	.byte 0
 
 @ The below 3 are unused and leftover from RS
@@ -25,6 +29,7 @@ EnableFollowers::
 
 
 `
+
 
 script InnNPCStopsPlayerfromInn {
 	checkitem (ITEM_CARD_KEY)

@@ -1,0 +1,23 @@
+mapscripts PetalburgBikeShop_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicHardwareWorkshop
+    MAP_SCRIPT_ON_LOAD: DayNightMusicHardwareWorkshop
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicHardwareWorkshop}
+	
+
+script DayNightMusicHardwareWorkshop {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynighthardwareworkshop)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynighthardwareworkshop)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{goto (enddaynighthardwareworkshop)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_TAKARASUSHI, TRUE)
+		goto (enddaynighthardwareworkshop)}
+
+enddaynighthardwareworkshop:
+}

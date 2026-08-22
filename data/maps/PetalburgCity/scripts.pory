@@ -755,7 +755,8 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 
 mapscripts PetalburgCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: DayNightMusicPetalburgCity
-    MAP_SCRIPT_ON_LOAD: DayNightMusicPetalburgCity}
+    MAP_SCRIPT_ON_LOAD: DayNightMusicPetalburgCity
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicPetalburgCity}
 	
 
 script DayNightMusicPetalburgCity {

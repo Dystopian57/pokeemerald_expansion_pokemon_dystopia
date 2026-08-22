@@ -11,8 +11,13 @@ mapscripts Route103_MoveTutorHut_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightMusicTutorHut
 	MAP_SCRIPT_ON_TRANSITION: DayNightNPC
     MAP_SCRIPT_ON_TRANSITION: DayNightMusicTutorHut
+	MAP_SCRIPT_ON_FRAME_TABLE: DayNightNPC
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicTutorHut
+    MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
+    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
 }
-	
+
 
 script DayNightMusicTutorHut {
 	gettimeofday

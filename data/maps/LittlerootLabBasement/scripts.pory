@@ -33,18 +33,21 @@ script AideMedicineDispenserScript {
 
 }
 
+
 script LabBasementUnsafener {
 	lock
-	if(!flag (Unsafeningtutodone))
+	//if (flag (Unsafeningtutodone))
 
-	{GetGameStat(GAME_STAT_RODE_CABLE_CAR)
-	copyvar(VAR_0x8000, VAR_RESULT)
-	bufferstring (STR_VAR_1, VAR_0x8000)
-	msgbox (format("It's the Unsafener. A digital counter says:\l Unsafened Species: {STR_VAR_1}"))}
+	//{GetGameStat(GAME_STAT_RODE_CABLE_CAR)
+	//copyvar(VAR_0x8000, VAR_RESULT)
+	//bufferstring (STR_VAR_1, VAR_0x8000)
+	//msgbox (format("It's the Unsafener. A digital counter says:\l Unsafened Species: {STR_VAR_1}"))}
 
 
-	else
-	{msgbox (format("The machine looks incredibly complex. Better not to touch it."))}
+	//else
+	//{
+	msgbox (format("It's the Unsafener. For some reason, its control palen is a Game Boy Advance..."))
+	//}
 	release
 }
 
@@ -53,10 +56,16 @@ script LabBasementBlueprints {
 	if(!flag (Unsafeningtutodone))
 
 	{
-	msgbox (format("It's a very complicated blueprint"))}
+	msgbox (format("It's a very complicated blueprint."))}
 
 	else
 	{msgbox (format("A complicated blueprint for what seems like a portable version of the Unsafener."))}
+
+	msgbox (format("There's also some notes scribbled on the paper... \p
+	EVACUATION PROTOCOL\n
+	1) Code White: Devon in Lab = Car Ladder.\p
+	2) Code Brown: Lab surrounded = Tunnel exit.\n
+	3) {COLOR RED}Code Red:{COLOR DARK_GRAY} All exits blocked = Destroy evidence."))
 	release
 }
 
@@ -286,7 +295,7 @@ script AideeBasementIdleTalk {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Aah... it WORKED! IT FINALLY WORKED!"))
-		incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
+		//incrementgamestat (GAME_STAT_RODE_CABLE_CAR)
 		fadescreen (FADE_FROM_WHITE)
 		fadeinbgm (2)
 		removefieldmugshot
@@ -476,11 +485,23 @@ script AideeBasementIdleTalk {
 			//check for variable, incrementgamestat GAME_STAT_RODE_CABLE_CAR
 				GetGameStat(GAME_STAT_RODE_CABLE_CAR)
 				copyvar(VAR_0x8000, VAR_RESULT)
-				if (var(VAR_RESULT) > 0)
+				if (var(VAR_RESULT) == 0)
 				{pokemart (AideMaterials0)}
 
-				if (var(VAR_RESULT) > 1)
+				if (var(VAR_RESULT) <= 5)
 				{pokemart (AideMaterials1)}
+
+				if (var(VAR_RESULT) <= 10)
+				{pokemart (AideMaterials2)}
+
+				if (var(VAR_RESULT) <= 15)
+				{pokemart (AideMaterials3)}
+
+				if (var(VAR_RESULT) <= 20)
+				{pokemart (AideMaterials4)}
+
+				if (var(VAR_RESULT) <= 25)
+				{pokemart (AideMaterials5)}
 
 
 			setspeaker ([SP_NAME_AIDEE])
@@ -490,7 +511,7 @@ script AideeBasementIdleTalk {
 			}}
 
 			//SMALL TALK
-			if (var(VAR_RESULT) == 3) {
+			if (var(VAR_RESULT) == 2) {
 
 
 				createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
@@ -535,7 +556,7 @@ script AideeBasementIdleTalk {
 					goto (aidechoices)}
 
 			//NOTHING
-			if (var(VAR_RESULT) == 2) {
+			if (var(VAR_RESULT) == 3) {
 					msgbox (format("A-ah, I suppose you've noticed some already...? You're
 					observant!\p You see, right now Unsafening is a very novel procedure...\p Of course,
 					it changes the appearance, typing and ability of a specimen back to what they used to be -
@@ -2481,21 +2502,80 @@ script AideeBasementIdleTalk {
 
 	mart AideMaterials0 {
 		ITEM_COMET_SHARD
-				
-	}
-
-	mart AideMaterials1 { //add those of 5 first Safemon
-		ITEM_COMET_SHARD
 		ITEM_MAGNET
 				
 	}
 
+	mart AideMaterials1 { //add those of 5 first Safemon in sequence
+		ITEM_COMET_SHARD
+		ITEM_MAGNET
+		ITEM_HONEY
+		ITEM_BLACK_SLUDGE
+		ITEM_CHOICE_BAND		
+	}
 
-script TradeSafemonCode {
+	mart AideMaterials2 { //add those of 5 first Safemon in sequence
+		ITEM_COMET_SHARD
+		ITEM_MAGNET
+		ITEM_HONEY
+		ITEM_BLACK_SLUDGE
+		ITEM_CHOICE_BAND
+		ITEM_CHARCOAL
+		ITEM_OVAL_CHARM
+		ITEM_MIRACLE_SEED		
+	}
 
+	mart AideMaterials3 { //add those of 5 first Safemon in sequence
+		ITEM_COMET_SHARD
+		ITEM_MAGNET
+		ITEM_HONEY
+		ITEM_BLACK_SLUDGE
+		ITEM_CHOICE_BAND
+		ITEM_CHARCOAL
+		ITEM_OVAL_CHARM
+		ITEM_MIRACLE_SEED
+		ITEM_METAL_COAT
+		ITEM_MYSTIC_WATER
+		ITEM_HARD_STONE		
+	}
 
-	
-}
+	mart AideMaterials4 { //add those of 5 first Safemon in sequence
+		ITEM_COMET_SHARD
+		ITEM_MAGNET
+		ITEM_HONEY
+		ITEM_BLACK_SLUDGE
+		ITEM_CHOICE_BAND
+		ITEM_CHARCOAL
+		ITEM_OVAL_CHARM
+		ITEM_MIRACLE_SEED
+		ITEM_METAL_COAT
+		ITEM_MYSTIC_WATER
+		ITEM_HARD_STONE
+		ITEM_TWISTED_SPOON
+		ITEM_AIR_BALLOON
+		ITEM_NEVER_MELT_ICE	
+	}
+
+	mart AideMaterials5 { //add those of 5 first Safemon in sequence
+		ITEM_COMET_SHARD
+		ITEM_MAGNET
+		ITEM_HONEY
+		ITEM_BLACK_SLUDGE
+		ITEM_CHOICE_BAND
+		ITEM_CHARCOAL
+		ITEM_OVAL_CHARM
+		ITEM_MIRACLE_SEED
+		ITEM_METAL_COAT
+		ITEM_MYSTIC_WATER
+		ITEM_HARD_STONE
+		ITEM_TWISTED_SPOON
+		ITEM_AIR_BALLOON
+		ITEM_NEVER_MELT_ICE
+		ITEM_RAZOR_FANG
+		ITEM_FLAME_ORB
+		ITEM_RARE_CANDY	
+	}
+
 
 
 script CancelTradeSafemonSelection {

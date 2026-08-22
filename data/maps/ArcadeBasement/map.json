@@ -2,7 +2,7 @@
   "id": "MAP_ARCADE_BASEMENT",
   "name": "ArcadeBasement",
   "layout": "LAYOUT_ARCADE_BASEMENT",
-  "music": "MUS_ASIATRAVELSHOP",
+  "music": "MUS_SKULLKERHIDEOUT",
   "region_map_section": "MAPSEC_CELADON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -15,7 +15,7 @@ gText_Birch_Pokemon::
 
 gText_Birch_MainSpeech::
 	.string "After the war with Kanto, Devon Co.\n"
-	.string "and Silph.Co signed a peace treaty....\p"
+	.string "and Silph Co. signed a peace treaty....\p"
 	.string "Which stated that all Pokémon in Hoenn\n"
 	.string "should be turned into weaker versions\l"
 	.string "of themselves - Safemon.\p"

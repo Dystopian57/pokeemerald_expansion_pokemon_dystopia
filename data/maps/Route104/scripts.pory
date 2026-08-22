@@ -1167,7 +1167,8 @@ mapscripts Route104_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE: Route104_OnFrame
     MAP_SCRIPT_ON_TRANSITION: Route104_OnTransition
     MAP_SCRIPT_ON_TRANSITION: DayNightMusicRoute104
-    MAP_SCRIPT_ON_LOAD: DayNightMusicRoute104}
+    MAP_SCRIPT_ON_LOAD: DayNightMusicRoute104
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicRoute104}
 	
 
 script DayNightMusicRoute104 {

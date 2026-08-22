@@ -1,8 +1,18 @@
 raw `
-ArcadeElevator_MapScripts::
-	.byte 0
 
 `
+
+
+mapscripts ArcadeElevator_MapScripts {
+    MAP_SCRIPT_ON_LOAD: DisableElevatorFollowers}
+
+script DisableElevatorFollowers {
+	setflag (FLAG_TEMP_HIDE_FOLLOWER)
+	//setrespawn (HEAL_LOCATION_OLDALE_TOWN)
+	//special (TurnOnTVScreen)
+	}
+
+
 
 script ArcadeElevatorArcade {
     lock
@@ -14,18 +24,27 @@ script ArcadeElevatorArcade {
         call (Elevatorstart)
         waitse
         fadescreenswapbuffers (FADE_TO_BLACK)
-		warp (MAP_ARCADE_ELEVATOR, 0)
+
+
         playse (SE_ELEVATOR)
+        //msgbox(format("..."))
+		//special (SpawnCameraObject)
+        //setobjectxy (OBJ_EVENT_ID_PLAYER, 12, 6)
+		//setobjectxy (OBJ_EVENT_ID_CAMERA, 12, 6)
+
+        //special (RemoveCameraObject)
+        waitse
+        warpsilent (MAP_ARCADE_ELEVATOR, 6)
+        applymovement (OBJ_EVENT_ID_PLAYER, moves (face_up))
+        waitmovement (OBJ_EVENT_ID_PLAYER)
+        fadescreenswapbuffers (FADE_FROM_BLACK)
+        call (Elevatorshake)
+        playse (SE_M_STRENGTH)
         waitse
         playse (SE_TRUCK_UNLOAD)
-		special (SpawnCameraObject)
-        call (Elevatorshake)
-        setobjectxy (OBJ_EVENT_ID_PLAYER, 12, 6)
-		setobjectxy (OBJ_EVENT_ID_CAMERA, 12, 6)
-        applymovement (OBJ_EVENT_ID_PLAYER, moves (face_up))
-        special (RemoveCameraObject)
         waitse
-        fadescreenswapbuffers (FADE_FROM_BLACK)
+
+
         msgbox(format("-1 F - RHH reached."))
          }
 

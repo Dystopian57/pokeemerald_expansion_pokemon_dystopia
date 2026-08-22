@@ -44,6 +44,9 @@ enum MapPreviewScreenId
     MPS_MARINE_CAVE,
     MPS_ROUTE10_POKECENTER,
     MPS_MIRAGE_TOWER,
+    MPS_MAGMA_HIDEOUT,
+    MPS_NAVEL_ROCK,
+    MPS_AQUA_HIDEOUT_OLD,
     MPS_COUNT
 };
 
@@ -81,6 +84,7 @@ enum PreviewImageId
     IMG_HARBOR,
     IMG_OFFICE,
     IMG_ARCADE,
+    IMG_WAREHOUSE,
     IMG_COUNT
 };
 

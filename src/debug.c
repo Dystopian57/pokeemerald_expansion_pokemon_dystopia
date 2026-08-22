@@ -3743,6 +3743,14 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_FARTHESTLAND)            \
     X(MUS_PYRITETOWN)            \
     X(MUS_AIRONG)            \
+    X(MUS_BOSSDRILLDOZER)            \
+    X(MUS_MIDBOSSBATTLE2)            \
+    X(MUS_CARRIESPLEA)            \
+    X(MUS_RANKPICKPOCKET)            \
+    X(MUS_GAMEOVERDRILLDOZER)            \
+    X(MUS_SKULLKERHIDEOUT)            \
+    X(MUS_HIDEOUTINTRO)            \
+    X(MUS_DOZEREMERGENCY)            \
 
 
 #define SOUND_LIST_SE               \

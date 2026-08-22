@@ -3,9 +3,32 @@ raw `
 `
 
 
-mapscripts GreatCrater_MapScripts {
-    MAP_SCRIPT_ON_LOAD: GreatCraterWeather}
 
+mapscripts GreatCrater_MapScripts {
+    MAP_SCRIPT_ON_LOAD: GreatCraterWeather
+    MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater}
+
+
+
+script DynamicWeatherCrater {
+		if (var(VAR_GREATCRATER_WEATHER) == 0)
+		{random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0: goto (GreatCraterEndAsh)
+		case 1: goto (GreatCraterEndAsh)
+		case 2: goto (GreatCraterEndAsh)
+		case 3: goto (GreatCraterEndAsh)
+		case 4: goto (GreatCraterShade)
+		case 5: goto (GreatCraterShade)
+		case 6: goto (GreatCraterShade)
+		case 7: goto (GreatCraterShade)
+		case 8: goto (GreatCraterShade)
+		case 9: goto (GreatCraterShade)
+		case 10: goto (GreatCraterShade)
+		}}
+}
 
 
 script GreatCraterWeather {

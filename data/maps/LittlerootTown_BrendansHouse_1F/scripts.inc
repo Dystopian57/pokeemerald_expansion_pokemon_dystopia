@@ -1756,12 +1756,12 @@ Player1FPlant_Text_0:
 # 793 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Despite the lack of care, the plant has\n"
 	.string "somehow clinged to life.\p"
-	.string "It is sort of inspiring.$"
+	.string "It's sort of inspiring.$"
 
 PlayerVitaminCabinet_Text_0:
 # 800 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "The cabinet contains Pokémon medicine.\n"
-	.string "There's a leftover bioenhancer...$"
+	.string "There's a leftover capsule...$"
 
 PlayerVitaminCabinet_Text_1:
 # 804 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

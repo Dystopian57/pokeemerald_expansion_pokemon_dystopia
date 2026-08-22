@@ -59,7 +59,8 @@ script BalsamBed {
 	lockall
     msgbox("Rest for a bit?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-	fadescreen (FADE_TO_BLACK)
+    fadeoutbgm (1)
+	fadescreenswapbuffers (FADE_TO_BLACK)
 	special(HealPlayerParty)
 	playse (MUS_HEAL)
 	msgbox (format("You rest for a while."))
@@ -75,10 +76,11 @@ script BalsamBed {
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
     clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	waitbuttonpress
-	fadescreen (FADE_FROM_BLACK)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
 
 	setspeaker ([SP_NAME_BALSAM])
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+    fadedefaultbgm
     msgbox (format("{PLAYER}... what do you think you're doing? This is not a guest room."))
 
 	setspeaker ([SP_NAME_BALSAM])
@@ -95,6 +97,7 @@ script BalsamBed {
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
 
     msgbox (format("Don't do this ever again… or ELSE."))
+    closemessage
     removefieldmugshot
 
     applymovement (1, moves(walk_down *2))

@@ -3,8 +3,28 @@ raw `
 `
 
 mapscripts PetalburgLandfill_MapScripts {
-    MAP_SCRIPT_ON_LOAD: PetalburgLandfillWeather}
+    MAP_SCRIPT_ON_LOAD: PetalburgLandfillWeather
+	MAP_SCRIPT_ON_LOAD: DynamicWeatherLandfill}
 
+script DynamicWeatherLandfill {
+		if (var(VAR_PETALBURGLANDFILL_WEATHER) == 0)
+		{random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0: goto (PetalburgLandfillEndFog)
+		case 1: goto (PetalburgLandfillEndFog)
+		case 2: goto (PetalburgLandfillEndFog)
+		case 3: goto (PetalburgLandfillEndFog)
+		case 4: goto (PetalburgLandfillShade)
+		case 5: goto (PetalburgLandfillShade)
+		case 6: goto (PetalburgLandfillShade)
+		case 7: goto (PetalburgLandfillShade)
+		case 8: goto (PetalburgLandfillShade)
+		case 9: goto (PetalburgLandfillShade)
+		case 10: goto (PetalburgLandfillShade)
+		}}
+}
 
 
 script PetalburgLandfillWeather {
@@ -12,7 +32,7 @@ script PetalburgLandfillWeather {
 			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 0, PetalburgLandfillShade)
 			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 1, PetalburgLandfillFog1)
 			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 2, PetalburgLandfillFog2)
-			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 3, PetalburgLandfillEndAsh)
+			goto_if_eq (VAR_PETALBURGLANDFILL_WEATHER, 3, PetalburgLandfillEndFog)
 
 	release
 }
@@ -32,7 +52,7 @@ script PetalburgLandfillFog2 {
 }
 
 
-script PetalburgLandfillEndAsh {
+script PetalburgLandfillEndFog {
 	setweather (WEATHER_FOG_HORIZONTAL)
 	setvar(VAR_PETALBURGLANDFILL_WEATHER, 0)
 }

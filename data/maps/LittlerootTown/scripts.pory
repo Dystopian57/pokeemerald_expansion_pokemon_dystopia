@@ -1844,6 +1844,12 @@ script FatGuyExclMark {
 	release
 }
 
+script RivalHouseSign {
+	lock
+	msgbox (format("{RIVAL}'s house."))
+	release
+}
+
 script Littleroot_Techguy_Talk {
 lockall
 applymovement (3, moves(face_player))
@@ -1957,12 +1963,13 @@ script Littleroot_Player_Mailbox {
 lock
 	if (!flag (FLAG_ITEM_LITTLEROOT_MAILBOX))
 	{msgbox (format("There's a package inside the mailbox. A letter is attached to it.
-	\p For your invaluable service to the region,
-	please accept this token of recognition, courtesy of Devon Co."))
+	\p 'For your invaluable service to the region,
+	please accept this token of recognition, courtesy of Devon Co.'"))
 	playse (MUS_OBTAIN_ITEM)
 	giveitem (ITEM_BOTTLE_CAP)
 	setflag(FLAG_ITEM_LITTLEROOT_MAILBOX)}
 
+	goto (endmailboxscript)
 
 
 	if (flag(sentdemomysterygift) && !flag (receiveddemomysterygift)){
@@ -1975,6 +1982,7 @@ lock
 	}
 
 	else{msgbox (format("The mailbox is empty."))}
+	endmailboxscript:
 	releaseall
 }
 
@@ -2026,7 +2034,7 @@ script LittlerootTown_Trigger_Blocknopokes{
 
 script LittlerootTown_Trigger_Blockgorival{
 	lock
-	msgbox ("I should check on {RIVAL}...")
+	msgbox ("Grandpa Birch asked to check on {RIVAL}...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
 	releaseall	
@@ -2034,7 +2042,7 @@ script LittlerootTown_Trigger_Blockgorival{
 
 script LittlerootTown_Trigger_Blocknopokesnocemetery{
 	lock
-	msgbox ("I better go to the lab first...")
+	msgbox ("Professor Balsam is waiting at the lab...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 	waitmovement
 	releaseall	
@@ -2042,7 +2050,7 @@ script LittlerootTown_Trigger_Blocknopokesnocemetery{
 
 script LittlerootTown_Trigger_Blockgorivalnocemetery{
 	lock
-	msgbox ("I should check on {RIVAL}...")
+	msgbox ("Grandpa Birch asked to check on {RIVAL}...")
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 	waitmovement
 	releaseall	
@@ -2165,6 +2173,8 @@ else {
 
 	endofbirchscript:
 	removefieldmugshot
+	applymovement (1, moves(face_down))
+	waitmovement (1)
 	releaseall
 }
 }

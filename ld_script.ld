@@ -1074,7 +1074,14 @@ SECTIONS {
         sound/songs/midi/mus_pyritetown.o(.rodata);
         sound/songs/midi/mus_airong.o(.rodata);
 
-
+        sound/songs/midi/mus_bossdrilldozer.o(.rodata);
+        sound/songs/midi/mus_midbossbattle2.o(.rodata);
+        sound/songs/midi/mus_carriesplea.o(.rodata);
+        sound/songs/midi/mus_rankpickpocket.o(.rodata);
+        sound/songs/midi/mus_gameoverdrilldozer.o(.rodata);
+        sound/songs/midi/mus_skullkerhideout.o(.rodata);
+        sound/songs/midi/mus_hideoutintro.o(.rodata);
+        sound/songs/midi/mus_dozeremergency.o(.rodata);
         
         
         sound/songs/midi/mus_gsc_route38.o(.rodata);

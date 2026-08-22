@@ -3498,3 +3498,9 @@ MauvilleCity_GameCorner_Text_Juice:
 	.string "BERRY JUICE!\n"
 # 1750 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Just 10 COINS.$"
+
+EnableFollowersArcade::
+# 1757 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
+	return
+

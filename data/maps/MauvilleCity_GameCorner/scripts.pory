@@ -1751,3 +1751,10 @@ MauvilleCity_GameCorner_Text_Juice:
 
 `
 
+
+
+script EnableFollowersArcade {
+	clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+	//setrespawn (HEAL_LOCATION_OLDALE_TOWN)
+	//special (TurnOnTVScreen)
+	}

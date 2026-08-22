@@ -2,16 +2,16 @@
   "id": "MAP_ROUTE104LIGHTHOUSE",
   "name": "Route104Lighthouse",
   "layout": "LAYOUT_ROUTE104LIGHTHOUSE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_SEKRARANGE",
   "region_map_section": "MAPSEC_ROUTE_104",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
-  "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_GYM",
   "connections": null,
   "object_events": [],
   "warp_events": [
@@ -28,6 +28,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE104LIGHTHOUSE_2",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104",
+      "dest_warp_id": "7"
     }
   ],
   "coord_events": [],

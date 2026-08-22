@@ -1504,51 +1504,53 @@ PetalburgCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DayNightMusicPetalburgCity
 # 758 "data/maps/PetalburgCity/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, DayNightMusicPetalburgCity
+# 759 "data/maps/PetalburgCity/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightMusicPetalburgCity
 	.byte 0
 
 
 DayNightMusicPetalburgCity::
-# 762 "data/maps/PetalburgCity/scripts.pory"
-	gettimeofday
 # 763 "data/maps/PetalburgCity/scripts.pory"
+	gettimeofday
+# 764 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_MORNING
 	goto_if_eq DayNightMusicPetalburgCity_2
 DayNightMusicPetalburgCity_1:
-# 766 "data/maps/PetalburgCity/scripts.pory"
+# 767 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_DAY
 	goto_if_eq DayNightMusicPetalburgCity_5
 DayNightMusicPetalburgCity_4:
-# 769 "data/maps/PetalburgCity/scripts.pory"
+# 770 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_EVENING
 	goto_if_eq DayNightMusicPetalburgCity_8
 DayNightMusicPetalburgCity_7:
-# 772 "data/maps/PetalburgCity/scripts.pory"
+# 773 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_NIGHT
 	goto_if_eq DayNightMusicPetalburgCity_11
 DayNightMusicPetalburgCity_10:
-# 776 "data/maps/PetalburgCity/scripts.pory"
+# 777 "data/maps/PetalburgCity/scripts.pory"
 enddaynightpetalburgcity:
 	return
 
 DayNightMusicPetalburgCity_2:
-# 764 "data/maps/PetalburgCity/scripts.pory"
+# 765 "data/maps/PetalburgCity/scripts.pory"
 	goto enddaynightpetalburgcity
 	goto DayNightMusicPetalburgCity_1
 
 DayNightMusicPetalburgCity_5:
-# 767 "data/maps/PetalburgCity/scripts.pory"
+# 768 "data/maps/PetalburgCity/scripts.pory"
 	goto enddaynightpetalburgcity
 	goto DayNightMusicPetalburgCity_4
 
 DayNightMusicPetalburgCity_8:
-# 770 "data/maps/PetalburgCity/scripts.pory"
+# 771 "data/maps/PetalburgCity/scripts.pory"
 	goto enddaynightpetalburgcity
 	goto DayNightMusicPetalburgCity_7
 
 DayNightMusicPetalburgCity_11:
-# 773 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_PANULACAVE, TRUE
 # 774 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_PANULACAVE, TRUE
+# 775 "data/maps/PetalburgCity/scripts.pory"
 	goto enddaynightpetalburgcity
 	goto DayNightMusicPetalburgCity_10
 

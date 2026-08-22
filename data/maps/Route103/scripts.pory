@@ -210,8 +210,30 @@ Route103_Text_RouteSign:
 mapscripts Route103_MapScripts {
 	//MAP_SCRIPT_ON_LOAD: Route103WeatherSong
 	//MAP_SCRIPT_ON_TRANSITION: Route103WeatherSong
+    MAP_SCRIPT_ON_TRANSITION: DynamicWeather103
     MAP_SCRIPT_ON_TRANSITION: Route103Weather
 	MAP_SCRIPT_ON_TRANSITION: FerryManReturnsSouth}
+
+
+script DynamicWeather103 {
+		if (var(VAR_ROUTE103_WEATHER) == 0)
+		{random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0: goto (Route103EndRain)
+		case 1: goto (Route103EndRain)
+		case 2: goto (Route103Shade)
+		case 3: goto (Route103Shade)
+		case 4: goto (Route103Shade)
+		case 5: goto (Route103Shade)
+		case 6: goto (Route103Shade)
+		case 7: goto (Route103Shade)
+		case 8: goto (Route103Shade)
+		case 9: goto (Route103Shade)
+		case 10: goto (Route103Shade)
+		}}
+}
 
  
 script Route103Weather {
@@ -223,13 +245,6 @@ script Route103Weather {
 
 	release
 } 
-
-script Route103WeatherSong {
-	if (var(VAR_ROUTE103_WEATHER) > 0)
-	{playbgm (MUS_STORM, TRUE)}
-
-	else {release}
-}
 
 script Route103Shade {
 	setweather (WEATHER_SHADE)

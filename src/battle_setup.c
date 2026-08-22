@@ -658,6 +658,8 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_GRASS;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_ENVIRONMENT_POND;
+        if (MetatileBehavior_IsLongGrass(tileBehavior))
+            return BATTLE_ENVIRONMENT_LONGGREENGRASS;
         return BATTLE_ENVIRONMENT_PLAIN;
     case MAP_TYPE_CITY:
         return BATTLE_ENVIRONMENT_PLAIN; //FOR RUSTBORO PLATES
@@ -1555,6 +1557,55 @@ void PlayTrainerEncounterMusic(void)
             break;
         case TRAINER_ENCOUNTER_MUSIC_RICH:
             music = MUS_ENCOUNTER_RICH;
+            break;
+
+        case TRAINER_ENCOUNTER_MUSIC_REBEL:
+            music = MUS_SKULLKERHIDEOUT;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_REBELADMIN:
+            music = MUS_BOSSDRILLDOZER;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_DEVON:
+            music = MUS_ENCOUNTERPINCHERS;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_DEVONADMIN:
+            music = MUS_GOROCKQUADS;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_WAGESLAVE:
+            music = MUS_CHAOS;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_TOURIST:
+            music = MUS_DOLCEISLAND;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_COSPLAYER:
+            music = MUS_RANKPICKPOCKET;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_ORPHANBOY:
+            music = MUS_DUSKFACTORY;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_ORPHANGIRL:
+            music = MUS_HAPPYMUSIC;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_MERCENARY:
+            music = MUS_EXCITEMENT;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_RESEARCHER:
+            music = MUS_RG_SILPH;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_PUNK:
+            music = MUS_GOROCKGRUNT;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_VETERAN:
+            music = MUS_ENCOUNTER_HIKER;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_DIVER:
+            music = MUS_DROWZEE;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_SCAVENGER:
+            music = MUS_ENCOUNTER_INTENSE;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_CONARTIST:
+            music = MUS_MIDBOSSBATTLE2;
             break;
         default:
             music = MUS_ENCOUNTER_SUSPICIOUS;

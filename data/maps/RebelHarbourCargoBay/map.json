@@ -23,25 +23,25 @@
       "dest_warp_id": "3"
     },
     {
-      "x": 10,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_PETALBURG_BEACH",
-      "dest_warp_id": "8"
-    },
-    {
-      "x": 10,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_PETALBURG_BEACH",
-      "dest_warp_id": "11"
-    },
-    {
       "x": 0,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_HARBOR",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_BEACH",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_BEACH",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [],

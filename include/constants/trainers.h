@@ -494,7 +494,7 @@ enum TrainerClassID
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
 #define TRAINER_ENCOUNTER_MUSIC_GIRL         2 // used for male Tubers and Young Couples too
-#define TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS   3
+#define TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS   3 
 #define TRAINER_ENCOUNTER_MUSIC_INTENSE      4
 #define TRAINER_ENCOUNTER_MUSIC_COOL         5
 #define TRAINER_ENCOUNTER_MUSIC_AQUA         6
@@ -505,6 +505,25 @@ enum TrainerClassID
 #define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // used for other trainer classes too
 #define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12
 #define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
+
+#define TRAINER_ENCOUNTER_MUSIC_REBEL       14
+#define TRAINER_ENCOUNTER_MUSIC_REBELADMIN  15
+#define TRAINER_ENCOUNTER_MUSIC_DEVON       16
+#define TRAINER_ENCOUNTER_MUSIC_DEVONADMIN  17
+#define TRAINER_ENCOUNTER_MUSIC_WAGESLAVE   18 //also used for clerk F
+#define TRAINER_ENCOUNTER_MUSIC_TOURIST     19 //also for cosplayer
+#define TRAINER_ENCOUNTER_MUSIC_ORPHANBOY   20 //also for patient f
+#define TRAINER_ENCOUNTER_MUSIC_ORPHANGIRL  21
+#define TRAINER_ENCOUNTER_MUSIC_RESEARCHER  22
+#define TRAINER_ENCOUNTER_MUSIC_PUNK        23 //also for gang bikers
+#define TRAINER_ENCOUNTER_MUSIC_MERCENARY   24 //also for patient M and technicians
+#define TRAINER_ENCOUNTER_MUSIC_VETERAN     25 //also for prisoner
+#define TRAINER_ENCOUNTER_MUSIC_DIVER       26 //also for medic
+#define TRAINER_ENCOUNTER_MUSIC_SCAVENGER   27
+#define TRAINER_ENCOUNTER_MUSIC_COSPLAYER   28
+#define TRAINER_ENCOUNTER_MUSIC_CONARTIST   29
+
+
 
 #define F_TRAINER_FEMALE (1 << 7)
 

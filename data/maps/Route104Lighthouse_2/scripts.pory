@@ -1,0 +1,8 @@
+raw `
+
+`
+
+mapscripts Route104Lighthouse_2_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicRoute104
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicRoute104
+    MAP_SCRIPT_ON_LOAD: DayNightMusicRoute104}

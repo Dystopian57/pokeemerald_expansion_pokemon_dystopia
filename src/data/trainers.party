@@ -9290,15 +9290,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Pikachu_Safe
-Level: 2
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Meditite
-Level: 2
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pyukumuku
-Level: 3
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
@@ -9312,11 +9312,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Meditite
-Level: 2
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pyukumuku
-Level: 3
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ORPHAN_MALE_101 ===
@@ -9333,11 +9333,11 @@ Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REBEL_GRUNT_101 ===
-Name: Rick
+Name: RICK
 Class: Rebelgruntm
 Pic: rebelgruntmbattle
 Gender: Male
-Music: Suspicious
+Music: Rebel
 Double Battle: No
 AI: Basic Trainer
 
@@ -9351,11 +9351,15 @@ Name: IRIS
 Class: Touristf
 Pic: touristfbattle
 Gender: Female
-Music: Suspicious
+Music: Tourist
 Double Battle: No
 AI: Basic Trainer
 
-Bellsprout
+Clefairy
+Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cubone
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9368,8 +9372,12 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Bellsprout
-Level: 4
+Clefable
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cubone
+Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CONSPIRACY_GREATCRATER ===
@@ -9385,6 +9393,10 @@ Sableye
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Geoslug
+Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_CONSPIRACY_GREATCRATER_2 ===
 Name: WYATT
 Class: Theoristm
@@ -9395,7 +9407,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Sableye
-Level: 4
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Geoslug
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Haunter
+Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REPORTERS_GREATCRATER ===
@@ -9407,11 +9427,11 @@ Music: Interviewer
 Double Battle: Yes
 AI: Basic Trainer
 
-Verdoom
+Mawile
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Mawile
+Verdoom
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9421,16 +9441,17 @@ Name: SHARPY
 Class: Sharpy
 Pic: sharpybattle
 Gender: Male
-Music: Suspicious
+Music: Male
+Items: Full Heal
 Double Battle: No
 AI: Basic Trainer
 
 Corphish
-Level: 3
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Carvanha
-Level: 4
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9443,12 +9464,12 @@ Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
-Psyduck
-Level: 3
+Poliwag
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Poliwag
-Level: 3
+Magnemite
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9458,11 +9479,11 @@ Name: HALEY
 Class: Rebelgruntf
 Pic: rebelgruntfbattle
 Gender: Female
-Music: Suspicious
+Music: Rebel
 Double Battle: No
 AI: Basic Trainer
 
-Manchine
+Zubat
 Level: 4
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9494,11 +9515,11 @@ AI: Basic Trainer
 
 
 Graveler
-Level: 16
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Nuzleaf
-Level: 17
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9537,6 +9558,7 @@ Class: Shadydealerm
 Pic: shadydealermbattle
 Gender: Male
 Music: Suspicious
+Items: Revival Herb / Aerodactylite / Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
@@ -9559,11 +9581,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Shellder
-Level: 5
+Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Wooper
-Level: 5
+Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_HAZARDIVER_WATERFALL_2 ===
@@ -9575,8 +9597,12 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Shellder
-Level: 5
+Cloyster
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Quagsire
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9590,15 +9616,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Marill
-Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Shiitako
-Level: 5
+Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Numel
-Level: 5
+Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9611,8 +9633,12 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Marill
-Level: 6
+Azumarill
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Numel
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9625,7 +9651,7 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Mawile
+Venonat
 Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9643,8 +9669,16 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Sableye
-Level: 3
+Venonat
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Wobbuffet
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Duskull
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9657,8 +9691,12 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Whiscash
-Level: 3
+Zubat
+Level: 10
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Barboach
+Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9672,7 +9710,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Whiscash
-Level: 3
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Golbat
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Pupitar
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 

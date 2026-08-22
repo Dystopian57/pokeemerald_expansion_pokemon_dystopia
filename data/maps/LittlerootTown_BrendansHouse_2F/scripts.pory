@@ -343,9 +343,15 @@ script PlayerRoomHeadphones {
 	releaseall		
 }
 
+script PlayerRoomBedsideTable {
+	lockall
+	msgbox (format("A bedside table. The drawers are full of empty blisters packs."))
+	releaseall		
+}
+
 script PlayerRoomSodas {
 	lockall
-	msgbox (format("{COLOR DARK_GRAY}It's two empty cans of Soda."))
+	msgbox (format("{COLOR DARK_GRAY}It's two empty cans of soda."))
 	releaseall		
 }
 
@@ -430,7 +436,6 @@ script PlayerBedTime {
 		case 1: setvar(VAR_ROUTE102_WEATHER, 3)
 		case 2: setvar(VAR_GREATCRATER_WEATHER, 3)
 		case 3: setvar(VAR_PETALBURGLANDFILL_WEATHER, 3)
-		case 4: goto (LittlerootLabNews)
 		}
 	playse (SE_SUCCESS)
 	waitse
@@ -439,7 +444,7 @@ script PlayerBedTime {
 	playse (SE_SUCCESS)
 	waitse
 	msgbox (format("{PLAYER} wakes up."))
-	//fadescreenswapbuffers (FADE_FROM_BLACK)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
 	
 }
 	releaseall		
@@ -522,13 +527,13 @@ script PlayerRoomDiary {
 	lockall
 	opendiary:
 	msgbox (format("A diary is open on top of the desk."))
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Oldest entry", "Old entry", "Newest entry", "Don't read")
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Oldest entry", "Old entry", "Newest entry", "Don't read")
 		if (var(VAR_RESULT) == 0) {
 			showmonpic(SPECIES_ALCREMIE, 10,3)
 			msgbox (format("Today dad and mom gave me the best birthday gift ever - my first
 			Pokémon!\pMommy said it's a Mankey, a Fighting type.\pIn school I learnt
 			Fighting types are strong against Normal types, like the ones grandpa uses. \pSpeaking of 
-			grandpa, Daddy said I am going to stay with him for a while...\pBecause him and mommy are going
+			grandpa, daddy said I am going to stay with him for a while...\pBecause him and dommy are going
 			to be very very busy with work.\pI was a bit sad. It was my birthday, but I think everyone
 			was sad today."))
 			hidemonpic

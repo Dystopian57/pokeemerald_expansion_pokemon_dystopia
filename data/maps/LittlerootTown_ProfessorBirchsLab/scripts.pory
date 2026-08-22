@@ -1590,7 +1590,7 @@ else{
 					waitmovement (4)
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					msgbox (format("Look, I know I asked you to choose a Safemon... \p But that one
-					happens to be mine."))
+					happens to be mine. Do not {COLOR GREEN}insist{COLOR DARK_GRAY}."))
 					setflag (InsistonPika1)
 					applymovement (4, moves(face_up))
 					removefieldmugshot

@@ -2,733 +2,828 @@
 
 
 GreatCrater_MapScripts::
-# 7 "data/maps/GreatCrater/scripts.pory"
+# 8 "data/maps/GreatCrater/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, GreatCraterWeather
+# 9 "data/maps/GreatCrater/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, DynamicWeatherCrater
 	.byte 0
 
 
-GreatCraterWeather::
-# 13 "data/maps/GreatCrater/scripts.pory"
-	goto_if_eq VAR_GREATCRATER_WEATHER, 0, GreatCraterShade
+DynamicWeatherCrater::
 # 14 "data/maps/GreatCrater/scripts.pory"
-	goto_if_eq VAR_GREATCRATER_WEATHER, 1, GreatCraterAsh1
+	compare VAR_GREATCRATER_WEATHER, 0
+	goto_if_eq DynamicWeatherCrater_1
+	return
+
+DynamicWeatherCrater_1:
 # 15 "data/maps/GreatCrater/scripts.pory"
-	goto_if_eq VAR_GREATCRATER_WEATHER, 2, GreatCraterAsh2
+	random 10
 # 16 "data/maps/GreatCrater/scripts.pory"
-	goto_if_eq VAR_GREATCRATER_WEATHER, 3, GreatCraterEndAsh
+	copyvar VAR_TEMP_1, VAR_RESULT
 # 18 "data/maps/GreatCrater/scripts.pory"
+	switch VAR_RESULT
+# 19 "data/maps/GreatCrater/scripts.pory"
+	case 0, DynamicWeatherCrater_4
+# 20 "data/maps/GreatCrater/scripts.pory"
+	case 1, DynamicWeatherCrater_5
+# 21 "data/maps/GreatCrater/scripts.pory"
+	case 2, DynamicWeatherCrater_6
+# 22 "data/maps/GreatCrater/scripts.pory"
+	case 3, DynamicWeatherCrater_7
+# 23 "data/maps/GreatCrater/scripts.pory"
+	case 4, DynamicWeatherCrater_8
+# 24 "data/maps/GreatCrater/scripts.pory"
+	case 5, DynamicWeatherCrater_9
+# 25 "data/maps/GreatCrater/scripts.pory"
+	case 6, DynamicWeatherCrater_10
+# 26 "data/maps/GreatCrater/scripts.pory"
+	case 7, DynamicWeatherCrater_11
+# 27 "data/maps/GreatCrater/scripts.pory"
+	case 8, DynamicWeatherCrater_12
+# 28 "data/maps/GreatCrater/scripts.pory"
+	case 9, DynamicWeatherCrater_13
+# 29 "data/maps/GreatCrater/scripts.pory"
+	case 10, DynamicWeatherCrater_14
+	return
+
+DynamicWeatherCrater_4:
+# 19 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterEndAsh
+	return
+
+DynamicWeatherCrater_5:
+# 20 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterEndAsh
+	return
+
+DynamicWeatherCrater_6:
+# 21 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterEndAsh
+	return
+
+DynamicWeatherCrater_7:
+# 22 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterEndAsh
+	return
+
+DynamicWeatherCrater_8:
+# 23 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterShade
+	return
+
+DynamicWeatherCrater_9:
+# 24 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterShade
+	return
+
+DynamicWeatherCrater_10:
+# 25 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterShade
+	return
+
+DynamicWeatherCrater_11:
+# 26 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterShade
+	return
+
+DynamicWeatherCrater_12:
+# 27 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterShade
+	return
+
+DynamicWeatherCrater_13:
+# 28 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterShade
+	return
+
+DynamicWeatherCrater_14:
+# 29 "data/maps/GreatCrater/scripts.pory"
+	goto GreatCraterShade
+	return
+
+
+GreatCraterWeather::
+# 36 "data/maps/GreatCrater/scripts.pory"
+	goto_if_eq VAR_GREATCRATER_WEATHER, 0, GreatCraterShade
+# 37 "data/maps/GreatCrater/scripts.pory"
+	goto_if_eq VAR_GREATCRATER_WEATHER, 1, GreatCraterAsh1
+# 38 "data/maps/GreatCrater/scripts.pory"
+	goto_if_eq VAR_GREATCRATER_WEATHER, 2, GreatCraterAsh2
+# 39 "data/maps/GreatCrater/scripts.pory"
+	goto_if_eq VAR_GREATCRATER_WEATHER, 3, GreatCraterEndAsh
+# 41 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 
 GreatCraterShade::
-# 22 "data/maps/GreatCrater/scripts.pory"
+# 45 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_SHADE
 	return
 
 
 GreatCraterAsh1::
-# 26 "data/maps/GreatCrater/scripts.pory"
+# 49 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
-# 27 "data/maps/GreatCrater/scripts.pory"
+# 50 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 2
-# 28 "data/maps/GreatCrater/scripts.pory"
+# 51 "data/maps/GreatCrater/scripts.pory"
 	playbgm MUS_WEATHER_GROUDON, TRUE
 	return
 
 
 GreatCraterAsh2::
-# 32 "data/maps/GreatCrater/scripts.pory"
+# 55 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
-# 33 "data/maps/GreatCrater/scripts.pory"
+# 56 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 3
-# 34 "data/maps/GreatCrater/scripts.pory"
+# 57 "data/maps/GreatCrater/scripts.pory"
 	playbgm MUS_WEATHER_GROUDON, TRUE
 	return
 
 
 GreatCraterEndAsh::
-# 39 "data/maps/GreatCrater/scripts.pory"
+# 62 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
-# 40 "data/maps/GreatCrater/scripts.pory"
+# 63 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 0
-# 41 "data/maps/GreatCrater/scripts.pory"
+# 64 "data/maps/GreatCrater/scripts.pory"
 	playbgm MUS_WEATHER_GROUDON, TRUE
 	return
 
 
 GreatCrater_EventScript_TrendyPhraseBoy::
-# 47 "data/maps/GreatCrater/scripts.pory"
+# 70 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 48 "data/maps/GreatCrater/scripts.pory"
+# 71 "data/maps/GreatCrater/scripts.pory"
 	faceplayer
-# 49 "data/maps/GreatCrater/scripts.pory"
+# 72 "data/maps/GreatCrater/scripts.pory"
 	call Common_EventScript_BufferTrendyPhrase
-# 50 "data/maps/GreatCrater/scripts.pory"
+# 73 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_Text_XIsTheBiggestHappeningThingRight, MSGBOX_YESNO
-# 51 "data/maps/GreatCrater/scripts.pory"
+# 74 "data/maps/GreatCrater/scripts.pory"
 	goto_if_eq VAR_RESULT, YES, GreatCrater_EventScript_ConfirmTrendyPhrase
-# 52 "data/maps/GreatCrater/scripts.pory"
+# 75 "data/maps/GreatCrater/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, GreatCrater_EventScript_RejectTrendyPhrase
 	end
 
 
 GreatCrater_EventScript_ConfirmTrendyPhrase::
-# 59 "data/maps/GreatCrater/scripts.pory"
+# 82 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_Text_YeahDefinitionOfInRightNow, MSGBOX_DEFAULT
-# 60 "data/maps/GreatCrater/scripts.pory"
+# 83 "data/maps/GreatCrater/scripts.pory"
 	release
 	end
 
 
 GreatCrater_EventScript_RejectTrendyPhrase::
-# 64 "data/maps/GreatCrater/scripts.pory"
+# 87 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_Text_TellMeWhatsNewAndIn, MSGBOX_DEFAULT
-# 65 "data/maps/GreatCrater/scripts.pory"
+# 88 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_0x8004, EASY_CHAT_TYPE_TRENDY_PHRASE
-# 66 "data/maps/GreatCrater/scripts.pory"
+# 89 "data/maps/GreatCrater/scripts.pory"
 	call Common_ShowEasyChatScreen
-# 67 "data/maps/GreatCrater/scripts.pory"
+# 90 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 68 "data/maps/GreatCrater/scripts.pory"
+# 91 "data/maps/GreatCrater/scripts.pory"
 	faceplayer
-# 69 "data/maps/GreatCrater/scripts.pory"
+# 92 "data/maps/GreatCrater/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, GreatCrater_EventScript_GiveNewTrendyPhrase
-# 70 "data/maps/GreatCrater/scripts.pory"
+# 93 "data/maps/GreatCrater/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, GreatCrater_EventScript_CancelNewTrendyPhrase
 	end
 
 
 ReportersGreatCrater::
-# 78 "data/maps/GreatCrater/scripts.pory"
+# 101 "data/maps/GreatCrater/scripts.pory"
 	lockall
-# 79 "data/maps/GreatCrater/scripts.pory"
+# 102 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 80 "data/maps/GreatCrater/scripts.pory"
+# 103 "data/maps/GreatCrater/scripts.pory"
 	playbgm MUS_ENCOUNTER_INTERVIEWER, TRUE
-# 81 "data/maps/GreatCrater/scripts.pory"
+# 104 "data/maps/GreatCrater/scripts.pory"
 	goto_if_unset declinedcraterreporterhelp, ReportersGreatCrater_2
 ReportersGreatCrater_1:
-# 232 "data/maps/GreatCrater/scripts.pory"
+# 255 "data/maps/GreatCrater/scripts.pory"
 	goto_if_set declinedcraterreporterhelp, ReportersGreatCrater_5
 ReportersGreatCrater_4:
-# 246 "data/maps/GreatCrater/scripts.pory"
+# 269 "data/maps/GreatCrater/scripts.pory"
 finishreporterscript:
-# 247 "data/maps/GreatCrater/scripts.pory"
+# 270 "data/maps/GreatCrater/scripts.pory"
 	playbgm MUS_ABNORMAL_WEATHER, TRUE
-# 248 "data/maps/GreatCrater/scripts.pory"
+# 271 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 ReportersGreatCrater_2:
-# 85 "data/maps/GreatCrater/scripts.pory"
+# 108 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_0
-# 87 "data/maps/GreatCrater/scripts.pory"
+# 110 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_0
-# 90 "data/maps/GreatCrater/scripts.pory"
+# 113 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_1
-# 91 "data/maps/GreatCrater/scripts.pory"
+# 114 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_DAN ]
-# 92 "data/maps/GreatCrater/scripts.pory"
+# 115 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_1
-# 93 "data/maps/GreatCrater/scripts.pory"
+# 116 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_2
-# 94 "data/maps/GreatCrater/scripts.pory"
+# 117 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 95 "data/maps/GreatCrater/scripts.pory"
+# 118 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_2
-# 96 "data/maps/GreatCrater/scripts.pory"
+# 119 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_3
-# 97 "data/maps/GreatCrater/scripts.pory"
+# 120 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 98 "data/maps/GreatCrater/scripts.pory"
+# 121 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_3
-# 100 "data/maps/GreatCrater/scripts.pory"
+# 123 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_1
-# 101 "data/maps/GreatCrater/scripts.pory"
+# 124 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_DAN ]
-# 102 "data/maps/GreatCrater/scripts.pory"
+# 125 "data/maps/GreatCrater/scripts.pory"
 	checkplayergender
-# 103 "data/maps/GreatCrater/scripts.pory"
+# 126 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq ReportersGreatCrater_8
 ReportersGreatCrater_7:
-# 104 "data/maps/GreatCrater/scripts.pory"
+# 127 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq ReportersGreatCrater_14
 ReportersGreatCrater_13:
-# 106 "data/maps/GreatCrater/scripts.pory"
+# 129 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_2
-# 107 "data/maps/GreatCrater/scripts.pory"
+# 130 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 108 "data/maps/GreatCrater/scripts.pory"
+# 131 "data/maps/GreatCrater/scripts.pory"
 	checkplayergender
-# 109 "data/maps/GreatCrater/scripts.pory"
+# 132 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq ReportersGreatCrater_19
 ReportersGreatCrater_18:
-# 110 "data/maps/GreatCrater/scripts.pory"
+# 133 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq ReportersGreatCrater_22
 ReportersGreatCrater_21:
-# 112 "data/maps/GreatCrater/scripts.pory"
+# 135 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_3
-# 113 "data/maps/GreatCrater/scripts.pory"
+# 136 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 114 "data/maps/GreatCrater/scripts.pory"
+# 137 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_8
-# 117 "data/maps/GreatCrater/scripts.pory"
+# 140 "data/maps/GreatCrater/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_9, ReportersGreatCrater_Text_10, ReportersGreatCrater_Text_11
-# 119 "data/maps/GreatCrater/scripts.pory"
+# 142 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ReportersGreatCrater_25
 ReportersGreatCrater_24:
-# 197 "data/maps/GreatCrater/scripts.pory"
+# 220 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ReportersGreatCrater_28
 ReportersGreatCrater_27:
-# 210 "data/maps/GreatCrater/scripts.pory"
+# 233 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq ReportersGreatCrater_33
 	goto ReportersGreatCrater_1
 
 ReportersGreatCrater_5:
-# 233 "data/maps/GreatCrater/scripts.pory"
+# 256 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 234 "data/maps/GreatCrater/scripts.pory"
+# 257 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_29
-# 235 "data/maps/GreatCrater/scripts.pory"
+# 258 "data/maps/GreatCrater/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_30, ReportersGreatCrater_Text_31
-# 236 "data/maps/GreatCrater/scripts.pory"
+# 259 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ReportersGreatCrater_11
 ReportersGreatCrater_10:
-# 239 "data/maps/GreatCrater/scripts.pory"
+# 262 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ReportersGreatCrater_16
 	goto ReportersGreatCrater_4
 
 ReportersGreatCrater_8:
-# 103 "data/maps/GreatCrater/scripts.pory"
+# 126 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_4
 	goto ReportersGreatCrater_7
 
 ReportersGreatCrater_11:
-# 237 "data/maps/GreatCrater/scripts.pory"
+# 260 "data/maps/GreatCrater/scripts.pory"
 	goto acceptedtoplayrebel
 	goto ReportersGreatCrater_10
 
 ReportersGreatCrater_14:
-# 104 "data/maps/GreatCrater/scripts.pory"
+# 127 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_5
 	goto ReportersGreatCrater_13
 
 ReportersGreatCrater_16:
-# 240 "data/maps/GreatCrater/scripts.pory"
+# 263 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 241 "data/maps/GreatCrater/scripts.pory"
+# 264 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_32
-# 242 "data/maps/GreatCrater/scripts.pory"
+# 265 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_5
-# 243 "data/maps/GreatCrater/scripts.pory"
+# 266 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_5
 	goto ReportersGreatCrater_4
 
 ReportersGreatCrater_19:
-# 109 "data/maps/GreatCrater/scripts.pory"
+# 132 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_6
 	goto ReportersGreatCrater_18
 
 ReportersGreatCrater_22:
-# 110 "data/maps/GreatCrater/scripts.pory"
+# 133 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_7
 	goto ReportersGreatCrater_21
 
 ReportersGreatCrater_25:
-# 120 "data/maps/GreatCrater/scripts.pory"
+# 143 "data/maps/GreatCrater/scripts.pory"
 acceptedtoplayrebel:
-# 121 "data/maps/GreatCrater/scripts.pory"
+# 144 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 122 "data/maps/GreatCrater/scripts.pory"
+# 145 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_12
-# 128 "data/maps/GreatCrater/scripts.pory"
+# 151 "data/maps/GreatCrater/scripts.pory"
 retrytrendyphrase:
-# 129 "data/maps/GreatCrater/scripts.pory"
+# 152 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_0x8004, EASY_CHAT_TYPE_TRENDY_PHRASE
-# 130 "data/maps/GreatCrater/scripts.pory"
+# 153 "data/maps/GreatCrater/scripts.pory"
 	call Common_ShowEasyChatScreen
-# 132 "data/maps/GreatCrater/scripts.pory"
+# 155 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ReportersGreatCrater_31
 ReportersGreatCrater_30:
-# 182 "data/maps/GreatCrater/scripts.pory"
+# 205 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq ReportersGreatCrater_35
 	goto ReportersGreatCrater_24
 
 ReportersGreatCrater_28:
-# 198 "data/maps/GreatCrater/scripts.pory"
+# 221 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 199 "data/maps/GreatCrater/scripts.pory"
+# 222 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_23
-# 201 "data/maps/GreatCrater/scripts.pory"
+# 224 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_4
-# 202 "data/maps/GreatCrater/scripts.pory"
+# 225 "data/maps/GreatCrater/scripts.pory"
 	waitmovement 2
-# 203 "data/maps/GreatCrater/scripts.pory"
+# 226 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_4
-# 204 "data/maps/GreatCrater/scripts.pory"
+# 227 "data/maps/GreatCrater/scripts.pory"
 	waitmovement 3
-# 206 "data/maps/GreatCrater/scripts.pory"
+# 229 "data/maps/GreatCrater/scripts.pory"
 	setflag declinedcraterreporterhelp
-# 207 "data/maps/GreatCrater/scripts.pory"
+# 230 "data/maps/GreatCrater/scripts.pory"
 	goto finishreporterscript
 	goto ReportersGreatCrater_27
 
 ReportersGreatCrater_31:
-# 133 "data/maps/GreatCrater/scripts.pory"
+# 156 "data/maps/GreatCrater/scripts.pory"
 	incrementgamestat GAME_STAT_STARTED_TRENDS
-# 135 "data/maps/GreatCrater/scripts.pory"
+# 158 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_0x8004, FALSE
 	goto_if_eq ReportersGreatCrater_38
 ReportersGreatCrater_37:
-# 149 "data/maps/GreatCrater/scripts.pory"
-	setspeaker [ SP_NAME_KIRA ]
-# 150 "data/maps/GreatCrater/scripts.pory"
-	msgbox ReportersGreatCrater_Text_16
-# 151 "data/maps/GreatCrater/scripts.pory"
-	applymovement 2, ReportersGreatCrater_Movement_1
-# 152 "data/maps/GreatCrater/scripts.pory"
-	setspeaker [ SP_NAME_KIRA ]
-# 153 "data/maps/GreatCrater/scripts.pory"
-	msgbox ReportersGreatCrater_Text_17
-# 154 "data/maps/GreatCrater/scripts.pory"
-	trainerbattle_no_intro TRAINER_REPORTERS_GREATCRATER, ReportersGreatCrater_Outro
-# 155 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_ENCOUNTER_INTERVIEWER, TRUE
-# 156 "data/maps/GreatCrater/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 157 "data/maps/GreatCrater/scripts.pory"
-	setspeaker [ SP_NAME_KIRA ]
-# 158 "data/maps/GreatCrater/scripts.pory"
-	msgbox ReportersGreatCrater_Text_18
-# 161 "data/maps/GreatCrater/scripts.pory"
-	call Common_EventScript_BufferTrendyPhrase
-# 162 "data/maps/GreatCrater/scripts.pory"
-	applymovement 2, ReportersGreatCrater_Movement_3
-# 163 "data/maps/GreatCrater/scripts.pory"
-	setspeaker [ SP_NAME_DAN ]
-# 164 "data/maps/GreatCrater/scripts.pory"
-	msgbox ReportersGreatCrater_Text_19
-# 165 "data/maps/GreatCrater/scripts.pory"
-	applymovement 3, ReportersGreatCrater_Movement_2
-# 166 "data/maps/GreatCrater/scripts.pory"
-	setspeaker [ SP_NAME_KIRA ]
-# 167 "data/maps/GreatCrater/scripts.pory"
-	msgbox ReportersGreatCrater_Text_20
-# 168 "data/maps/GreatCrater/scripts.pory"
-	applymovement 3, ReportersGreatCrater_Movement_0
-# 169 "data/maps/GreatCrater/scripts.pory"
-	setspeaker [ SP_NAME_KIRA ]
-# 170 "data/maps/GreatCrater/scripts.pory"
-	msgbox ReportersGreatCrater_Text_21
 # 172 "data/maps/GreatCrater/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	setspeaker [ SP_NAME_KIRA ]
 # 173 "data/maps/GreatCrater/scripts.pory"
-	removeobject 2
+	msgbox ReportersGreatCrater_Text_16
 # 174 "data/maps/GreatCrater/scripts.pory"
-	removeobject 3
+	applymovement 2, ReportersGreatCrater_Movement_1
 # 175 "data/maps/GreatCrater/scripts.pory"
-	setflag reportersleavecrater
+	setspeaker [ SP_NAME_KIRA ]
 # 176 "data/maps/GreatCrater/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox ReportersGreatCrater_Text_17
+# 177 "data/maps/GreatCrater/scripts.pory"
+	trainerbattle_no_intro TRAINER_REPORTERS_GREATCRATER, ReportersGreatCrater_Outro
 # 178 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_ABNORMAL_WEATHER, TRUE
+	playbgm MUS_ENCOUNTER_INTERVIEWER, TRUE
 # 179 "data/maps/GreatCrater/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 180 "data/maps/GreatCrater/scripts.pory"
+	setspeaker [ SP_NAME_KIRA ]
+# 181 "data/maps/GreatCrater/scripts.pory"
+	msgbox ReportersGreatCrater_Text_18
+# 184 "data/maps/GreatCrater/scripts.pory"
+	call Common_EventScript_BufferTrendyPhrase
+# 185 "data/maps/GreatCrater/scripts.pory"
+	applymovement 2, ReportersGreatCrater_Movement_3
+# 186 "data/maps/GreatCrater/scripts.pory"
+	setspeaker [ SP_NAME_DAN ]
+# 187 "data/maps/GreatCrater/scripts.pory"
+	msgbox ReportersGreatCrater_Text_19
+# 188 "data/maps/GreatCrater/scripts.pory"
+	applymovement 3, ReportersGreatCrater_Movement_2
+# 189 "data/maps/GreatCrater/scripts.pory"
+	setspeaker [ SP_NAME_KIRA ]
+# 190 "data/maps/GreatCrater/scripts.pory"
+	msgbox ReportersGreatCrater_Text_20
+# 191 "data/maps/GreatCrater/scripts.pory"
+	applymovement 3, ReportersGreatCrater_Movement_0
+# 192 "data/maps/GreatCrater/scripts.pory"
+	setspeaker [ SP_NAME_KIRA ]
+# 193 "data/maps/GreatCrater/scripts.pory"
+	msgbox ReportersGreatCrater_Text_21
+# 195 "data/maps/GreatCrater/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 196 "data/maps/GreatCrater/scripts.pory"
+	removeobject 2
+# 197 "data/maps/GreatCrater/scripts.pory"
+	removeobject 3
+# 198 "data/maps/GreatCrater/scripts.pory"
+	setflag reportersleavecrater
+# 199 "data/maps/GreatCrater/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 201 "data/maps/GreatCrater/scripts.pory"
+	playbgm MUS_ABNORMAL_WEATHER, TRUE
+# 202 "data/maps/GreatCrater/scripts.pory"
 	goto finishreporterscript
 	goto ReportersGreatCrater_30
 
 ReportersGreatCrater_33:
-# 211 "data/maps/GreatCrater/scripts.pory"
+# 234 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 212 "data/maps/GreatCrater/scripts.pory"
+# 235 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_24
-# 213 "data/maps/GreatCrater/scripts.pory"
+# 236 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_3
-# 214 "data/maps/GreatCrater/scripts.pory"
+# 237 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_DAN ]
-# 215 "data/maps/GreatCrater/scripts.pory"
+# 238 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_25
-# 216 "data/maps/GreatCrater/scripts.pory"
+# 239 "data/maps/GreatCrater/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_26, ReportersGreatCrater_Text_27
-# 217 "data/maps/GreatCrater/scripts.pory"
+# 240 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ReportersGreatCrater_41
 ReportersGreatCrater_40:
-# 220 "data/maps/GreatCrater/scripts.pory"
+# 243 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ReportersGreatCrater_43
 	goto ReportersGreatCrater_1
 
 ReportersGreatCrater_35:
-# 183 "data/maps/GreatCrater/scripts.pory"
+# 206 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 184 "data/maps/GreatCrater/scripts.pory"
+# 207 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_22
-# 186 "data/maps/GreatCrater/scripts.pory"
+# 209 "data/maps/GreatCrater/scripts.pory"
 	goto finishreporterscript
 	goto ReportersGreatCrater_24
 
 ReportersGreatCrater_38:
-# 136 "data/maps/GreatCrater/scripts.pory"
+# 159 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 137 "data/maps/GreatCrater/scripts.pory"
+# 160 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_13
-# 140 "data/maps/GreatCrater/scripts.pory"
+# 163 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_4
-# 141 "data/maps/GreatCrater/scripts.pory"
+# 164 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_DAN ]
-# 142 "data/maps/GreatCrater/scripts.pory"
+# 165 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_14
-# 143 "data/maps/GreatCrater/scripts.pory"
+# 166 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_2
-# 144 "data/maps/GreatCrater/scripts.pory"
+# 167 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 145 "data/maps/GreatCrater/scripts.pory"
+# 168 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_15
-# 146 "data/maps/GreatCrater/scripts.pory"
+# 169 "data/maps/GreatCrater/scripts.pory"
 	goto retrytrendyphrase
 	goto ReportersGreatCrater_37
 
 ReportersGreatCrater_41:
-# 218 "data/maps/GreatCrater/scripts.pory"
+# 241 "data/maps/GreatCrater/scripts.pory"
 	goto acceptedtoplayrebel
 	goto ReportersGreatCrater_40
 
 ReportersGreatCrater_43:
-# 221 "data/maps/GreatCrater/scripts.pory"
+# 244 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_3
-# 222 "data/maps/GreatCrater/scripts.pory"
+# 245 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_KIRA ]
-# 223 "data/maps/GreatCrater/scripts.pory"
+# 246 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_28
-# 224 "data/maps/GreatCrater/scripts.pory"
+# 247 "data/maps/GreatCrater/scripts.pory"
 	setflag declinedcraterreporterhelp
-# 225 "data/maps/GreatCrater/scripts.pory"
+# 248 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_5
-# 226 "data/maps/GreatCrater/scripts.pory"
+# 249 "data/maps/GreatCrater/scripts.pory"
 	applymovement 3, ReportersGreatCrater_Movement_5
-# 227 "data/maps/GreatCrater/scripts.pory"
+# 250 "data/maps/GreatCrater/scripts.pory"
 	goto finishreporterscript
 	goto ReportersGreatCrater_1
 
 
 TrendyPhaseTest::
-# 263 "data/maps/GreatCrater/scripts.pory"
+# 286 "data/maps/GreatCrater/scripts.pory"
 	lockall
-# 264 "data/maps/GreatCrater/scripts.pory"
+# 287 "data/maps/GreatCrater/scripts.pory"
 	call Common_EventScript_BufferTrendyPhrase
-# 265 "data/maps/GreatCrater/scripts.pory"
+# 288 "data/maps/GreatCrater/scripts.pory"
 	msgbox TrendyPhaseTest_Text_0
-# 266 "data/maps/GreatCrater/scripts.pory"
+# 289 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
 GreatCrater_EventScript_GiveNewTrendyPhrase::
-# 271 "data/maps/GreatCrater/scripts.pory"
+# 294 "data/maps/GreatCrater/scripts.pory"
 	incrementgamestat GAME_STAT_STARTED_TRENDS
-# 272 "data/maps/GreatCrater/scripts.pory"
+# 295 "data/maps/GreatCrater/scripts.pory"
 	goto_if_eq VAR_0x8004, FALSE, GreatCrater_EventScript_PhraseNotTrendyEnough
-# 274 "data/maps/GreatCrater/scripts.pory"
+# 297 "data/maps/GreatCrater/scripts.pory"
 	trainerbattle_no_intro TRAINER_REPORTERS_GREATCRATER, ReportersGreatCrater_Outro
-# 278 "data/maps/GreatCrater/scripts.pory"
+# 301 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_EventScript_GiveNewTrendyPhrase_Text_0
-# 281 "data/maps/GreatCrater/scripts.pory"
+# 304 "data/maps/GreatCrater/scripts.pory"
 	call Common_EventScript_BufferTrendyPhrase
-# 282 "data/maps/GreatCrater/scripts.pory"
+# 305 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_EventScript_GiveNewTrendyPhrase_Text_1
-# 284 "data/maps/GreatCrater/scripts.pory"
+# 307 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_EventScript_GiveNewTrendyPhrase_Text_2
-# 286 "data/maps/GreatCrater/scripts.pory"
+# 309 "data/maps/GreatCrater/scripts.pory"
 	msgbox ReportersGreatCrater_Text_21
-# 288 "data/maps/GreatCrater/scripts.pory"
+# 311 "data/maps/GreatCrater/scripts.pory"
 	playbgm MUS_ABNORMAL_WEATHER, TRUE
-# 289 "data/maps/GreatCrater/scripts.pory"
+# 312 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	end
 
 
 GreatCrater_EventScript_CancelNewTrendyPhrase::
-# 294 "data/maps/GreatCrater/scripts.pory"
+# 317 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_EventScript_CancelNewTrendyPhrase_Text_0
-# 296 "data/maps/GreatCrater/scripts.pory"
+# 319 "data/maps/GreatCrater/scripts.pory"
 	goto finishreporterscript
-# 297 "data/maps/GreatCrater/scripts.pory"
+# 320 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	end
 
 
 GreatCrater_EventScript_PhraseNotTrendyEnough::
-# 301 "data/maps/GreatCrater/scripts.pory"
+# 324 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCrater_EventScript_PhraseNotTrendyEnough_Text_0
-# 305 "data/maps/GreatCrater/scripts.pory"
+# 328 "data/maps/GreatCrater/scripts.pory"
 	goto finishreporterscript
-# 306 "data/maps/GreatCrater/scripts.pory"
+# 329 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	end
 
 
 CameramanGreatCrater::
-# 345 "data/maps/GreatCrater/scripts.pory"
+# 368 "data/maps/GreatCrater/scripts.pory"
 	lockall
-# 346 "data/maps/GreatCrater/scripts.pory"
+# 369 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 347 "data/maps/GreatCrater/scripts.pory"
+# 370 "data/maps/GreatCrater/scripts.pory"
 	goto_if_unset declinedcraterreporterhelp, CameramanGreatCrater_2
 CameramanGreatCrater_1:
-# 351 "data/maps/GreatCrater/scripts.pory"
+# 374 "data/maps/GreatCrater/scripts.pory"
 	goto_if_set declinedcraterreporterhelp, CameramanGreatCrater_5
 CameramanGreatCrater_4:
-# 358 "data/maps/GreatCrater/scripts.pory"
+# 381 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 CameramanGreatCrater_2:
-# 349 "data/maps/GreatCrater/scripts.pory"
+# 372 "data/maps/GreatCrater/scripts.pory"
 	msgbox CameramanGreatCrater_Text_0
 	goto CameramanGreatCrater_1
 
 CameramanGreatCrater_5:
-# 352 "data/maps/GreatCrater/scripts.pory"
+# 375 "data/maps/GreatCrater/scripts.pory"
 	setspeaker [ SP_NAME_DAN ]
-# 353 "data/maps/GreatCrater/scripts.pory"
+# 376 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_0
-# 354 "data/maps/GreatCrater/scripts.pory"
+# 377 "data/maps/GreatCrater/scripts.pory"
 	msgbox CameramanGreatCrater_Text_1
-# 355 "data/maps/GreatCrater/scripts.pory"
+# 378 "data/maps/GreatCrater/scripts.pory"
 	applymovement 2, ReportersGreatCrater_Movement_5
-# 356 "data/maps/GreatCrater/scripts.pory"
+# 379 "data/maps/GreatCrater/scripts.pory"
 	msgbox CameramanGreatCrater_Text_2
 	goto CameramanGreatCrater_4
 
 
 TouristGreatCraterBattle::
-# 364 "data/maps/GreatCrater/scripts.pory"
+# 387 "data/maps/GreatCrater/scripts.pory"
 	trainerbattle_single TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro, TouristGreatCraterRegister
-# 365 "data/maps/GreatCrater/scripts.pory"
+# 388 "data/maps/GreatCrater/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 366 "data/maps/GreatCrater/scripts.pory"
+# 389 "data/maps/GreatCrater/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, TouristGreatCraterRematch
-# 367 "data/maps/GreatCrater/scripts.pory"
+# 390 "data/maps/GreatCrater/scripts.pory"
 	msgbox TouristGreatCraterBattle_Text_0
-# 369 "data/maps/GreatCrater/scripts.pory"
+# 392 "data/maps/GreatCrater/scripts.pory"
 	release
 	end
 
 
 TouristGreatCraterRegister::
-# 374 "data/maps/GreatCrater/scripts.pory"
+# 397 "data/maps/GreatCrater/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 375 "data/maps/GreatCrater/scripts.pory"
+# 398 "data/maps/GreatCrater/scripts.pory"
 	waitmovement 0
-# 376 "data/maps/GreatCrater/scripts.pory"
+# 399 "data/maps/GreatCrater/scripts.pory"
 	msgbox TouristGreatCraterRegister_Text_0
-# 377 "data/maps/GreatCrater/scripts.pory"
+# 400 "data/maps/GreatCrater/scripts.pory"
 	register_matchcall TRAINER_TOURIST_GREATCRATER
-# 378 "data/maps/GreatCrater/scripts.pory"
+# 401 "data/maps/GreatCrater/scripts.pory"
 	release
 	end
 
 
 TouristGreatCraterRematch::
-# 383 "data/maps/GreatCrater/scripts.pory"
+# 406 "data/maps/GreatCrater/scripts.pory"
 	trainerbattle_rematch TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro
-# 384 "data/maps/GreatCrater/scripts.pory"
+# 407 "data/maps/GreatCrater/scripts.pory"
 	msgbox TouristGreatCraterBattle_Text_0
 	end
 
 
 ConspiracyGreatCraterBattle::
-# 400 "data/maps/GreatCrater/scripts.pory"
+# 423 "data/maps/GreatCrater/scripts.pory"
 	trainerbattle_single TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro, ConspiracyGreatCrater_Outro, ConspiracyGreatCraterRegister
-# 401 "data/maps/GreatCrater/scripts.pory"
+# 424 "data/maps/GreatCrater/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 402 "data/maps/GreatCrater/scripts.pory"
+# 425 "data/maps/GreatCrater/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, ConspiracyGreatCraterRematch
-# 403 "data/maps/GreatCrater/scripts.pory"
+# 426 "data/maps/GreatCrater/scripts.pory"
 	msgbox ConspiracyGreatCraterBattle_Text_0
-# 405 "data/maps/GreatCrater/scripts.pory"
+# 428 "data/maps/GreatCrater/scripts.pory"
 	release
 	end
 
 
 ConspiracyGreatCraterRegister::
-# 410 "data/maps/GreatCrater/scripts.pory"
+# 433 "data/maps/GreatCrater/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 411 "data/maps/GreatCrater/scripts.pory"
+# 434 "data/maps/GreatCrater/scripts.pory"
 	waitmovement 0
-# 412 "data/maps/GreatCrater/scripts.pory"
+# 435 "data/maps/GreatCrater/scripts.pory"
 	msgbox ConspiracyGreatCraterRegister_Text_0
-# 414 "data/maps/GreatCrater/scripts.pory"
+# 437 "data/maps/GreatCrater/scripts.pory"
 	register_matchcall TRAINER_CONSPIRACY_GREATCRATER
-# 415 "data/maps/GreatCrater/scripts.pory"
+# 438 "data/maps/GreatCrater/scripts.pory"
 	msgbox ConspiracyGreatCraterRegister_Text_1
-# 417 "data/maps/GreatCrater/scripts.pory"
+# 440 "data/maps/GreatCrater/scripts.pory"
 	release
 	end
 
 
 ConspiracyGreatCraterRematch::
-# 422 "data/maps/GreatCrater/scripts.pory"
+# 445 "data/maps/GreatCrater/scripts.pory"
 	trainerbattle_rematch TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro2, ConspiracyGreatCrater_Outro2
-# 423 "data/maps/GreatCrater/scripts.pory"
+# 446 "data/maps/GreatCrater/scripts.pory"
 	msgbox ConspiracyGreatCraterRematch_Text_0
 	end
 
 
 GreatCraterSouvenirShop::
-# 446 "data/maps/GreatCrater/scripts.pory"
-	lockall
-# 447 "data/maps/GreatCrater/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 448 "data/maps/GreatCrater/scripts.pory"
-	applymovement 1, ReportersGreatCrater_Movement_0
-# 449 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSouvenirShop_Text_0
-# 450 "data/maps/GreatCrater/scripts.pory"
-	fadeoutbgm 0
-# 451 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_BUYSOMETHINGWILLYA, FALSE
-# 452 "data/maps/GreatCrater/scripts.pory"
-	pokemart ShopSouvenirs
-# 453 "data/maps/GreatCrater/scripts.pory"
-	fadeinbgm 0
-# 454 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_ABNORMAL_WEATHER, TRUE
-# 455 "data/maps/GreatCrater/scripts.pory"
-	releaseall
-	return
-
-
-	.align 2
-# 459 "data/maps/GreatCrater/scripts.pory"
-ShopSouvenirs:
-# 460 "data/maps/GreatCrater/scripts.pory"
-	.2byte ITEM_SHALOUR_SABLE
-# 461 "data/maps/GreatCrater/scripts.pory"
-	.2byte ITEM_BEAD_MAIL
-# 462 "data/maps/GreatCrater/scripts.pory"
-	.2byte ITEM_COMET_SHARD
-# 463 "data/maps/GreatCrater/scripts.pory"
-	.2byte ITEM_ZOOM_LENS
-	.2byte ITEM_NONE
-
-GreatCraterSouvenirShopkeeper::
-# 468 "data/maps/GreatCrater/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 469 "data/maps/GreatCrater/scripts.pory"
-	applymovement 1, ReportersGreatCrater_Movement_0
+	lockall
 # 470 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSouvenirShopkeeper_Text_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 471 "data/maps/GreatCrater/scripts.pory"
+	applymovement 1, ReportersGreatCrater_Movement_0
 # 472 "data/maps/GreatCrater/scripts.pory"
-	applymovement 1, ReportersGreatCrater_Movement_5
+	msgbox GreatCraterSouvenirShop_Text_0
 # 473 "data/maps/GreatCrater/scripts.pory"
-	waitmovement 1
+	fadeoutbgm 0
 # 474 "data/maps/GreatCrater/scripts.pory"
-	releaseall
-	return
-
-
-GreatCraterSouvenirBox::
+	playbgm MUS_BUYSOMETHINGWILLYA, FALSE
+# 475 "data/maps/GreatCrater/scripts.pory"
+	pokemart ShopSouvenirs
+# 476 "data/maps/GreatCrater/scripts.pory"
+	fadeinbgm 0
 # 477 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSouvenirBox_Text_0
+	playbgm MUS_ABNORMAL_WEATHER, TRUE
 # 478 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
-GreatCraterSign::
-# 481 "data/maps/GreatCrater/scripts.pory"
-	msgbox GreatCraterSign_Text_0
+	.align 2
 # 482 "data/maps/GreatCrater/scripts.pory"
+ShopSouvenirs:
+# 483 "data/maps/GreatCrater/scripts.pory"
+	.2byte ITEM_SHALOUR_SABLE
+# 484 "data/maps/GreatCrater/scripts.pory"
+	.2byte ITEM_BEAD_MAIL
+# 485 "data/maps/GreatCrater/scripts.pory"
+	.2byte ITEM_COMET_SHARD
+# 486 "data/maps/GreatCrater/scripts.pory"
+	.2byte ITEM_ZOOM_LENS
+	.2byte ITEM_NONE
+
+GreatCraterSouvenirShopkeeper::
+# 491 "data/maps/GreatCrater/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 492 "data/maps/GreatCrater/scripts.pory"
+	applymovement 1, ReportersGreatCrater_Movement_0
+# 493 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterSouvenirShopkeeper_Text_0
+# 495 "data/maps/GreatCrater/scripts.pory"
+	applymovement 1, ReportersGreatCrater_Movement_5
+# 496 "data/maps/GreatCrater/scripts.pory"
+	waitmovement 1
+# 497 "data/maps/GreatCrater/scripts.pory"
+	releaseall
+	return
+
+
+GreatCraterSouvenirBox::
+# 500 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterSouvenirBox_Text_0
+# 501 "data/maps/GreatCrater/scripts.pory"
+	releaseall
+	return
+
+
+GreatCraterSign::
+# 504 "data/maps/GreatCrater/scripts.pory"
+	msgbox GreatCraterSign_Text_0
+# 505 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
 GreatCraterSouvenirSupplies::
-# 485 "data/maps/GreatCrater/scripts.pory"
+# 508 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterSouvenirSupplies_Text_0
-# 486 "data/maps/GreatCrater/scripts.pory"
+# 509 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
 GreatCraterVoid::
-# 489 "data/maps/GreatCrater/scripts.pory"
+# 512 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterVoid_Text_0
-# 491 "data/maps/GreatCrater/scripts.pory"
+# 514 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
 
 
 Cratertouristasksforhelp::
-# 497 "data/maps/GreatCrater/scripts.pory"
+# 520 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 498 "data/maps/GreatCrater/scripts.pory"
+# 521 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 499 "data/maps/GreatCrater/scripts.pory"
+# 522 "data/maps/GreatCrater/scripts.pory"
 	applymovement 10, Cratertouristasksforhelp_Movement_0
-# 500 "data/maps/GreatCrater/scripts.pory"
+# 523 "data/maps/GreatCrater/scripts.pory"
 	playse SE_PIN
-# 501 "data/maps/GreatCrater/scripts.pory"
+# 524 "data/maps/GreatCrater/scripts.pory"
 	waitmovement
-# 502 "data/maps/GreatCrater/scripts.pory"
+# 525 "data/maps/GreatCrater/scripts.pory"
 	msgbox Cratertouristasksforhelp_Text_0
-# 503 "data/maps/GreatCrater/scripts.pory"
+# 526 "data/maps/GreatCrater/scripts.pory"
 	closemessage
-# 507 "data/maps/GreatCrater/scripts.pory"
+# 530 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATERTOURIST, 1
-# 508 "data/maps/GreatCrater/scripts.pory"
+# 531 "data/maps/GreatCrater/scripts.pory"
 	dofieldeffectsparkle 11, 15, 9
-# 509 "data/maps/GreatCrater/scripts.pory"
+# 532 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 
 CraterTrappedTouristandRope::
-# 513 "data/maps/GreatCrater/scripts.pory"
+# 536 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 514 "data/maps/GreatCrater/scripts.pory"
+# 537 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 515 "data/maps/GreatCrater/scripts.pory"
+# 538 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_GREATCRATERTOURIST, 1
 	goto_if_eq CraterTrappedTouristandRope_2
 CraterTrappedTouristandRope_1:
-# 593 "data/maps/GreatCrater/scripts.pory"
+# 616 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_GREATCRATERTOURIST, 2
 	goto_if_eq CraterTrappedTouristandRope_5
 CraterTrappedTouristandRope_4:
-# 606 "data/maps/GreatCrater/scripts.pory"
+# 629 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_GREATCRATERTOURIST, 3
 	goto_if_eq CraterTrappedTouristandRope_11
 CraterTrappedTouristandRope_10:
-# 612 "data/maps/GreatCrater/scripts.pory"
+# 635 "data/maps/GreatCrater/scripts.pory"
 endcraterbottomtouristscript:
-# 613 "data/maps/GreatCrater/scripts.pory"
+# 636 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 CraterTrappedTouristandRope_2:
-# 516 "data/maps/GreatCrater/scripts.pory"
+# 539 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_0
-# 522 "data/maps/GreatCrater/scripts.pory"
+# 545 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATERTOURIST, 2
 	checkitem ITEM_BINDING_BAND
 # 0 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq CraterTrappedTouristandRope_7
-# 588 "data/maps/GreatCrater/scripts.pory"
+# 611 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_1
 
@@ -745,285 +840,285 @@ CraterTrappedTouristandRope_13:
 	goto CraterTrappedTouristandRope_4
 
 CraterTrappedTouristandRope_7:
-# 526 "data/maps/GreatCrater/scripts.pory"
+# 549 "data/maps/GreatCrater/scripts.pory"
 helpcratertourist:
-# 527 "data/maps/GreatCrater/scripts.pory"
+# 550 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_1
-# 528 "data/maps/GreatCrater/scripts.pory"
+# 551 "data/maps/GreatCrater/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_30, ReportersGreatCrater_Text_31
-# 530 "data/maps/GreatCrater/scripts.pory"
+# 553 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq CraterTrappedTouristandRope_17
 CraterTrappedTouristandRope_16:
-# 577 "data/maps/GreatCrater/scripts.pory"
+# 600 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq CraterTrappedTouristandRope_21
 	goto CraterTrappedTouristandRope_1
 
 CraterTrappedTouristandRope_11:
-# 608 "data/maps/GreatCrater/scripts.pory"
+# 631 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_11
-# 609 "data/maps/GreatCrater/scripts.pory"
+# 632 "data/maps/GreatCrater/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ReportersGreatCrater_Text_30, ReportersGreatCrater_Text_31
-# 610 "data/maps/GreatCrater/scripts.pory"
+# 633 "data/maps/GreatCrater/scripts.pory"
 	warp MAP_GREAT_CRATER_BOTTOM, 0
 	goto CraterTrappedTouristandRope_10
 
 CraterTrappedTouristandRope_14:
-# 595 "data/maps/GreatCrater/scripts.pory"
+# 618 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_9
-# 598 "data/maps/GreatCrater/scripts.pory"
+# 621 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_13
 
 CraterTrappedTouristandRope_17:
-# 531 "data/maps/GreatCrater/scripts.pory"
+# 554 "data/maps/GreatCrater/scripts.pory"
 	clearflag greatcraterrope
-# 532 "data/maps/GreatCrater/scripts.pory"
-	addobject 11
-# 533 "data/maps/GreatCrater/scripts.pory"
-	setobjectxyperm 10, 11, 15
-# 534 "data/maps/GreatCrater/scripts.pory"
-	setobjectxyperm 11, 11, 15
-# 535 "data/maps/GreatCrater/scripts.pory"
-	showobjectat 11, MAP_GREAT_CRATER
-# 537 "data/maps/GreatCrater/scripts.pory"
-	playse SE_BALL_THROW
-# 538 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_2
-# 539 "data/maps/GreatCrater/scripts.pory"
-	playse SE_PIN
-# 540 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, Cratertouristasksforhelp_Movement_0
-# 541 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_3
-# 542 "data/maps/GreatCrater/scripts.pory"
-	hidefollower
-# 543 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_0
-# 544 "data/maps/GreatCrater/scripts.pory"
-	showobjectat 10, MAP_GREAT_CRATER
-# 546 "data/maps/GreatCrater/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CraterTrappedTouristandRope_Movement_1
-# 547 "data/maps/GreatCrater/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 548 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_2
-# 549 "data/maps/GreatCrater/scripts.pory"
-	playse SE_LEDGE
-# 550 "data/maps/GreatCrater/scripts.pory"
-	waitmovement 10
-# 553 "data/maps/GreatCrater/scripts.pory"
-	waitse
 # 555 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_3
+	addobject 11
 # 556 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_4
+	setobjectxyperm 10, 11, 15
+# 557 "data/maps/GreatCrater/scripts.pory"
+	setobjectxyperm 11, 11, 15
 # 558 "data/maps/GreatCrater/scripts.pory"
-	giveitem ITEM_EVIOLITE
-# 559 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_5
+	showobjectat 11, MAP_GREAT_CRATER
+# 560 "data/maps/GreatCrater/scripts.pory"
+	playse SE_BALL_THROW
 # 561 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, ReportersGreatCrater_Movement_5
+	msgbox CraterTrappedTouristandRope_Text_2
 # 562 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_6
+	playse SE_PIN
 # 563 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_3
+	applymovement 10, Cratertouristasksforhelp_Movement_0
 # 564 "data/maps/GreatCrater/scripts.pory"
-	msgbox CraterTrappedTouristandRope_Text_7
-# 567 "data/maps/GreatCrater/scripts.pory"
-	applymovement 10, CraterTrappedTouristandRope_Movement_4
-# 568 "data/maps/GreatCrater/scripts.pory"
-	waitmovement 10
-# 569 "data/maps/GreatCrater/scripts.pory"
-	removeobject 10
-# 570 "data/maps/GreatCrater/scripts.pory"
-	setobjectxyperm 10, 0, 0
-# 571 "data/maps/GreatCrater/scripts.pory"
-	hideobjectat 10, MAP_GREAT_CRATER
-# 572 "data/maps/GreatCrater/scripts.pory"
-	setvar VAR_GREATCRATERTOURIST, 3
-# 573 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_3
+# 565 "data/maps/GreatCrater/scripts.pory"
 	hidefollower
-# 574 "data/maps/GreatCrater/scripts.pory"
+# 566 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_0
+# 567 "data/maps/GreatCrater/scripts.pory"
+	showobjectat 10, MAP_GREAT_CRATER
+# 569 "data/maps/GreatCrater/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, CraterTrappedTouristandRope_Movement_1
+# 570 "data/maps/GreatCrater/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 571 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_2
+# 572 "data/maps/GreatCrater/scripts.pory"
+	playse SE_LEDGE
+# 573 "data/maps/GreatCrater/scripts.pory"
+	waitmovement 10
+# 576 "data/maps/GreatCrater/scripts.pory"
+	waitse
+# 578 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_3
+# 579 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_4
+# 581 "data/maps/GreatCrater/scripts.pory"
+	giveitem ITEM_EVIOLITE
+# 582 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_5
+# 584 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, ReportersGreatCrater_Movement_5
+# 585 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_6
+# 586 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_3
+# 587 "data/maps/GreatCrater/scripts.pory"
+	msgbox CraterTrappedTouristandRope_Text_7
+# 590 "data/maps/GreatCrater/scripts.pory"
+	applymovement 10, CraterTrappedTouristandRope_Movement_4
+# 591 "data/maps/GreatCrater/scripts.pory"
+	waitmovement 10
+# 592 "data/maps/GreatCrater/scripts.pory"
+	removeobject 10
+# 593 "data/maps/GreatCrater/scripts.pory"
+	setobjectxyperm 10, 0, 0
+# 594 "data/maps/GreatCrater/scripts.pory"
+	hideobjectat 10, MAP_GREAT_CRATER
+# 595 "data/maps/GreatCrater/scripts.pory"
+	setvar VAR_GREATCRATERTOURIST, 3
+# 596 "data/maps/GreatCrater/scripts.pory"
+	hidefollower
+# 597 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_16
 
 CraterTrappedTouristandRope_19:
-# 601 "data/maps/GreatCrater/scripts.pory"
+# 624 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_10
-# 603 "data/maps/GreatCrater/scripts.pory"
+# 626 "data/maps/GreatCrater/scripts.pory"
 	goto helpcratertourist
 	goto CraterTrappedTouristandRope_4
 
 CraterTrappedTouristandRope_21:
-# 578 "data/maps/GreatCrater/scripts.pory"
+# 601 "data/maps/GreatCrater/scripts.pory"
 	msgbox CraterTrappedTouristandRope_Text_8
-# 584 "data/maps/GreatCrater/scripts.pory"
+# 607 "data/maps/GreatCrater/scripts.pory"
 	goto endcraterbottomtouristscript
 	goto CraterTrappedTouristandRope_1
 
 
 GreatCraterDevonGruntFemale::
-# 620 "data/maps/GreatCrater/scripts.pory"
+# 643 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 621 "data/maps/GreatCrater/scripts.pory"
+# 644 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 622 "data/maps/GreatCrater/scripts.pory"
+# 645 "data/maps/GreatCrater/scripts.pory"
 	applymovement 9, ReportersGreatCrater_Movement_0
-# 623 "data/maps/GreatCrater/scripts.pory"
+# 646 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterDevonGruntFemale_Text_0
-# 625 "data/maps/GreatCrater/scripts.pory"
+# 648 "data/maps/GreatCrater/scripts.pory"
 	applymovement 9, ReportersGreatCrater_Movement_3
-# 626 "data/maps/GreatCrater/scripts.pory"
+# 649 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterDevonGruntFemale_Text_1
-# 628 "data/maps/GreatCrater/scripts.pory"
+# 651 "data/maps/GreatCrater/scripts.pory"
 	applymovement 9, ReportersGreatCrater_Movement_4
-# 629 "data/maps/GreatCrater/scripts.pory"
+# 652 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterDevonGruntFemale_Text_2
-# 630 "data/maps/GreatCrater/scripts.pory"
+# 653 "data/maps/GreatCrater/scripts.pory"
 	applymovement 9, ReportersGreatCrater_Movement_5
-# 631 "data/maps/GreatCrater/scripts.pory"
+# 654 "data/maps/GreatCrater/scripts.pory"
 	waitmovement
-# 632 "data/maps/GreatCrater/scripts.pory"
+# 655 "data/maps/GreatCrater/scripts.pory"
 	applymovement 9, ReportersGreatCrater_Movement_5
-# 633 "data/maps/GreatCrater/scripts.pory"
+# 656 "data/maps/GreatCrater/scripts.pory"
 	waitmovement
-# 634 "data/maps/GreatCrater/scripts.pory"
+# 657 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 
 GreatCraterDevonGruntMale::
-# 638 "data/maps/GreatCrater/scripts.pory"
+# 661 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 639 "data/maps/GreatCrater/scripts.pory"
+# 662 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 640 "data/maps/GreatCrater/scripts.pory"
+# 663 "data/maps/GreatCrater/scripts.pory"
 	applymovement 8, ReportersGreatCrater_Movement_0
-# 641 "data/maps/GreatCrater/scripts.pory"
+# 664 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterDevonGruntMale_Text_0
-# 643 "data/maps/GreatCrater/scripts.pory"
+# 666 "data/maps/GreatCrater/scripts.pory"
 	applymovement 8, ReportersGreatCrater_Movement_5
-# 644 "data/maps/GreatCrater/scripts.pory"
+# 667 "data/maps/GreatCrater/scripts.pory"
 	waitmovement
-# 645 "data/maps/GreatCrater/scripts.pory"
+# 668 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 
 GreatCraterTouristMaleIdle::
-# 649 "data/maps/GreatCrater/scripts.pory"
+# 672 "data/maps/GreatCrater/scripts.pory"
 	lock
-# 650 "data/maps/GreatCrater/scripts.pory"
+# 673 "data/maps/GreatCrater/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 651 "data/maps/GreatCrater/scripts.pory"
+# 674 "data/maps/GreatCrater/scripts.pory"
 	applymovement 12, ReportersGreatCrater_Movement_0
-# 652 "data/maps/GreatCrater/scripts.pory"
+# 675 "data/maps/GreatCrater/scripts.pory"
 	msgbox GreatCraterTouristMaleIdle_Text_0
-# 654 "data/maps/GreatCrater/scripts.pory"
+# 677 "data/maps/GreatCrater/scripts.pory"
 	applymovement 12, GreatCraterTouristMaleIdle_Movement_0
-# 655 "data/maps/GreatCrater/scripts.pory"
+# 678 "data/maps/GreatCrater/scripts.pory"
 	waitmovement
-# 656 "data/maps/GreatCrater/scripts.pory"
+# 679 "data/maps/GreatCrater/scripts.pory"
 	release
 	return
 
 
-# 85 "data/maps/GreatCrater/scripts.pory"
+# 108 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_0:
-# 85 "data/maps/GreatCrater/scripts.pory"
+# 108 "data/maps/GreatCrater/scripts.pory"
 	face_player
 	step_end
 
-# 90 "data/maps/GreatCrater/scripts.pory"
+# 113 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_1:
-# 90 "data/maps/GreatCrater/scripts.pory"
+# 113 "data/maps/GreatCrater/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 93 "data/maps/GreatCrater/scripts.pory"
+# 116 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_2:
-# 93 "data/maps/GreatCrater/scripts.pory"
+# 116 "data/maps/GreatCrater/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 96 "data/maps/GreatCrater/scripts.pory"
+# 119 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_3:
-# 96 "data/maps/GreatCrater/scripts.pory"
+# 119 "data/maps/GreatCrater/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 140 "data/maps/GreatCrater/scripts.pory"
+# 163 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_4:
-# 140 "data/maps/GreatCrater/scripts.pory"
+# 163 "data/maps/GreatCrater/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 225 "data/maps/GreatCrater/scripts.pory"
+# 248 "data/maps/GreatCrater/scripts.pory"
 ReportersGreatCrater_Movement_5:
-# 225 "data/maps/GreatCrater/scripts.pory"
+# 248 "data/maps/GreatCrater/scripts.pory"
 	face_down
 	step_end
 
-# 499 "data/maps/GreatCrater/scripts.pory"
+# 522 "data/maps/GreatCrater/scripts.pory"
 Cratertouristasksforhelp_Movement_0:
-# 499 "data/maps/GreatCrater/scripts.pory"
+# 522 "data/maps/GreatCrater/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 543 "data/maps/GreatCrater/scripts.pory"
+# 566 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_0:
-# 543 "data/maps/GreatCrater/scripts.pory"
+# 566 "data/maps/GreatCrater/scripts.pory"
 	face_up
 	step_end
 
-# 546 "data/maps/GreatCrater/scripts.pory"
+# 569 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_1:
-# 546 "data/maps/GreatCrater/scripts.pory"
+# 569 "data/maps/GreatCrater/scripts.pory"
 	walk_right
-# 546 "data/maps/GreatCrater/scripts.pory"
+# 569 "data/maps/GreatCrater/scripts.pory"
 	face_left
 	step_end
 
-# 548 "data/maps/GreatCrater/scripts.pory"
+# 571 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_2:
-# 548 "data/maps/GreatCrater/scripts.pory"
+# 571 "data/maps/GreatCrater/scripts.pory"
 	jump_up
 	step_end
 
-# 555 "data/maps/GreatCrater/scripts.pory"
+# 578 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_3:
-# 555 "data/maps/GreatCrater/scripts.pory"
+# 578 "data/maps/GreatCrater/scripts.pory"
 	face_right
 	step_end
 
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 CraterTrappedTouristandRope_Movement_4:
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 	walk_up
-# 567 "data/maps/GreatCrater/scripts.pory"
+# 590 "data/maps/GreatCrater/scripts.pory"
 	walk_up
 	step_end
 
-# 654 "data/maps/GreatCrater/scripts.pory"
+# 677 "data/maps/GreatCrater/scripts.pory"
 GreatCraterTouristMaleIdle_Movement_0:
-# 654 "data/maps/GreatCrater/scripts.pory"
+# 677 "data/maps/GreatCrater/scripts.pory"
 	face_left
 	step_end
 
 ReportersGreatCrater_Text_0:
-# 87 "data/maps/GreatCrater/scripts.pory"
+# 110 "data/maps/GreatCrater/scripts.pory"
 	.string "Ah, look, Dan - an interesting-looking\n"
 	.string "local just approached us!\p"
 	.string "We're from Devon TV, and we're filming a\n"
@@ -1032,42 +1127,42 @@ ReportersGreatCrater_Text_0:
 	.string "lacking a bit of... flair.$"
 
 ReportersGreatCrater_Text_1:
-# 92 "data/maps/GreatCrater/scripts.pory"
+# 115 "data/maps/GreatCrater/scripts.pory"
 	.string "Don't sugarcoat it, Kira. It's boring.$"
 
 ReportersGreatCrater_Text_2:
-# 95 "data/maps/GreatCrater/scripts.pory"
+# 118 "data/maps/GreatCrater/scripts.pory"
 	.string "... a bit, maybe. which is why we were\n"
 	.string "thinking about staging a battle!$"
 
 ReportersGreatCrater_Text_3:
-# 98 "data/maps/GreatCrater/scripts.pory"
+# 121 "data/maps/GreatCrater/scripts.pory"
 	.string "We will pretend one of those dangerous\n"
 	.string "rebels have assailed us, and that we\l"
 	.string "escaped by the skin of our teeth.$"
 
 ReportersGreatCrater_Text_4:
-# 103 "data/maps/GreatCrater/scripts.pory"
+# 126 "data/maps/GreatCrater/scripts.pory"
 	.string "He looks a bit like one of them. To a\n"
 	.string "Rustboro snob, at least.$"
 
 ReportersGreatCrater_Text_5:
-# 104 "data/maps/GreatCrater/scripts.pory"
+# 127 "data/maps/GreatCrater/scripts.pory"
 	.string "She looks a bit like one of them. To a\n"
 	.string "Rustboro snob, at least.$"
 
 ReportersGreatCrater_Text_6:
-# 109 "data/maps/GreatCrater/scripts.pory"
+# 132 "data/maps/GreatCrater/scripts.pory"
 	.string "Indeed - which makes him perfect to\n"
 	.string "play the role of 'rebel'!$"
 
 ReportersGreatCrater_Text_7:
-# 110 "data/maps/GreatCrater/scripts.pory"
+# 133 "data/maps/GreatCrater/scripts.pory"
 	.string "Indeed - which makes her perfect to\n"
 	.string "play the role of 'rebel'!$"
 
 ReportersGreatCrater_Text_8:
-# 114 "data/maps/GreatCrater/scripts.pory"
+# 137 "data/maps/GreatCrater/scripts.pory"
 	.string "We need you to win, of course - it would\n"
 	.string "not be very exciting if we just beat a\l"
 	.string "dangerous rebel like nothing!\p"
@@ -1075,19 +1170,19 @@ ReportersGreatCrater_Text_8:
 	.string "handsomely for your time!$"
 
 ReportersGreatCrater_Text_9:
-# 117 "data/maps/GreatCrater/scripts.pory"
+# 140 "data/maps/GreatCrater/scripts.pory"
 	.string "Sure$"
 
 ReportersGreatCrater_Text_10:
-# 117 "data/maps/GreatCrater/scripts.pory"
+# 140 "data/maps/GreatCrater/scripts.pory"
 	.string "No chance$"
 
 ReportersGreatCrater_Text_11:
-# 117 "data/maps/GreatCrater/scripts.pory"
+# 140 "data/maps/GreatCrater/scripts.pory"
 	.string "That's lying$"
 
 ReportersGreatCrater_Text_12:
-# 122 "data/maps/GreatCrater/scripts.pory"
+# 145 "data/maps/GreatCrater/scripts.pory"
 	.string "Excellent - let's begin right away!\p"
 	.string "At the count of three, please yell your\n"
 	.string "most heinous insult, warcry, or similar\l"
@@ -1097,7 +1192,7 @@ ReportersGreatCrater_Text_12:
 	.string "Ready? Three, two, one... action!$"
 
 ReportersGreatCrater_Text_13:
-# 137 "data/maps/GreatCrater/scripts.pory"
+# 160 "data/maps/GreatCrater/scripts.pory"
 	.string "Oh, uhm... I'm sorry. I don't think we can\n"
 	.string "have you saying “{STR_VAR_2},” in\l"
 	.string "the documentary.\p"
@@ -1106,129 +1201,129 @@ ReportersGreatCrater_Text_13:
 	.string "get offended!$"
 
 ReportersGreatCrater_Text_14:
-# 142 "data/maps/GreatCrater/scripts.pory"
+# 165 "data/maps/GreatCrater/scripts.pory"
 	.string "She means it's censored. So come up with\n"
 	.string "something else, will you?$"
 
 ReportersGreatCrater_Text_15:
-# 145 "data/maps/GreatCrater/scripts.pory"
+# 168 "data/maps/GreatCrater/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}As eloquent as ever, Dan...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 ReportersGreatCrater_Text_16:
-# 150 "data/maps/GreatCrater/scripts.pory"
+# 173 "data/maps/GreatCrater/scripts.pory"
 	.string "KYAAA! Someone help!! I am being\n"
 	.string "ASSAILED!$"
 
 ReportersGreatCrater_Text_17:
-# 153 "data/maps/GreatCrater/scripts.pory"
+# 176 "data/maps/GreatCrater/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}'Kyaa'? Really...?{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 ReportersGreatCrater_Text_18:
-# 158 "data/maps/GreatCrater/scripts.pory"
+# 181 "data/maps/GreatCrater/scripts.pory"
 	.string "Thank you so much! With your help, we've\n"
 	.string "captured some incredible footage.$"
 
 ReportersGreatCrater_Text_19:
-# 164 "data/maps/GreatCrater/scripts.pory"
+# 187 "data/maps/GreatCrater/scripts.pory"
 	.string "{STR_VAR_1} is a great warcry.\p"
 	.string "With the right editing, it may even get\n"
 	.string "viral.$"
 
 ReportersGreatCrater_Text_20:
-# 167 "data/maps/GreatCrater/scripts.pory"
+# 190 "data/maps/GreatCrater/scripts.pory"
 	.string "It just may! But before we cut the\n"
 	.string "footage, we need to record some more in\l"
 	.string "other locations.$"
 
 ReportersGreatCrater_Text_21:
-# 170 "data/maps/GreatCrater/scripts.pory"
+# 193 "data/maps/GreatCrater/scripts.pory"
 	.string "Thanks for your help again - stay safe!$"
 
 ReportersGreatCrater_Text_22:
-# 184 "data/maps/GreatCrater/scripts.pory"
+# 207 "data/maps/GreatCrater/scripts.pory"
 	.string "Oh no... you got a bit of scenic fright,\n"
 	.string "didn't you?\p"
 	.string "It happens the first time. We'll do\n"
 	.string "another take when you're ready!$"
 
 ReportersGreatCrater_Text_23:
-# 199 "data/maps/GreatCrater/scripts.pory"
+# 222 "data/maps/GreatCrater/scripts.pory"
 	.string "Oh, that's so unfortunate! Are you\n"
 	.string "certain?\p"
 	.string "We'll be here a while if you reconsider -\n"
 	.string "which we beg you to do!$"
 
 ReportersGreatCrater_Text_24:
-# 212 "data/maps/GreatCrater/scripts.pory"
+# 235 "data/maps/GreatCrater/scripts.pory"
 	.string "Lying? I wouldn't call it that. It's just\n"
 	.string "a bit of showmanship!$"
 
 ReportersGreatCrater_Text_25:
-# 215 "data/maps/GreatCrater/scripts.pory"
+# 238 "data/maps/GreatCrater/scripts.pory"
 	.string "If you won't help us, someone will. Why\n"
 	.string "not take the pokeyen for yourself?$"
 
 ReportersGreatCrater_Text_26:
-# 216 "data/maps/GreatCrater/scripts.pory"
+# 239 "data/maps/GreatCrater/scripts.pory"
 	.string "Okay, I'm in$"
 
 ReportersGreatCrater_Text_27:
-# 216 "data/maps/GreatCrater/scripts.pory"
+# 239 "data/maps/GreatCrater/scripts.pory"
 	.string "Leave me out of this$"
 
 ReportersGreatCrater_Text_28:
-# 223 "data/maps/GreatCrater/scripts.pory"
+# 246 "data/maps/GreatCrater/scripts.pory"
 	.string "Well, suit yourself. We'll be here a while\n"
 	.string "if you change your mind.$"
 
 ReportersGreatCrater_Text_29:
-# 234 "data/maps/GreatCrater/scripts.pory"
+# 257 "data/maps/GreatCrater/scripts.pory"
 	.string "Have you changed your mind? Will you\n"
 	.string "help us stage a battle?$"
 
 ReportersGreatCrater_Text_30:
-# 235 "data/maps/GreatCrater/scripts.pory"
+# 258 "data/maps/GreatCrater/scripts.pory"
 	.string "Yes$"
 
 ReportersGreatCrater_Text_31:
-# 235 "data/maps/GreatCrater/scripts.pory"
+# 258 "data/maps/GreatCrater/scripts.pory"
 	.string "No$"
 
 ReportersGreatCrater_Text_32:
-# 241 "data/maps/GreatCrater/scripts.pory"
+# 264 "data/maps/GreatCrater/scripts.pory"
 	.string "That's too bad... I think you'd be such a\n"
 	.string "star!$"
 
 TrendyPhaseTest_Text_0:
-# 265 "data/maps/GreatCrater/scripts.pory"
+# 288 "data/maps/GreatCrater/scripts.pory"
 	.string "{STR_VAR_1} is awesome.$"
 
 GreatCrater_EventScript_GiveNewTrendyPhrase_Text_0:
-# 278 "data/maps/GreatCrater/scripts.pory"
+# 301 "data/maps/GreatCrater/scripts.pory"
 	.string "Thank you so much! With your help, we've\n"
 	.string "captured some incredible footage.\p"
 	.string "... that's an amazing warcry$"
 
 GreatCrater_EventScript_GiveNewTrendyPhrase_Text_1:
-# 282 "data/maps/GreatCrater/scripts.pory"
+# 305 "data/maps/GreatCrater/scripts.pory"
 	.string "{STR_VAR_2} is a great warcry. With\n"
 	.string "the right editing, it may even get viral.$"
 
 GreatCrater_EventScript_GiveNewTrendyPhrase_Text_2:
-# 284 "data/maps/GreatCrater/scripts.pory"
+# 307 "data/maps/GreatCrater/scripts.pory"
 	.string "It just may! But before we cut the\n"
 	.string "footage, we need to record in other\l"
 	.string "places.$"
 
 GreatCrater_EventScript_CancelNewTrendyPhrase_Text_0:
-# 294 "data/maps/GreatCrater/scripts.pory"
+# 317 "data/maps/GreatCrater/scripts.pory"
 	.string "Oh no... you got a bit of scenic fear,\n"
 	.string "didn't you?\p"
 	.string "It happens the first time. We'll do\n"
 	.string "another take when you're ready!$"
 
 GreatCrater_EventScript_PhraseNotTrendyEnough_Text_0:
-# 301 "data/maps/GreatCrater/scripts.pory"
+# 324 "data/maps/GreatCrater/scripts.pory"
 	.string "Oh, uhm... I'm sorry. I don't think we can\n"
 	.string "have you saying “{STR_VAR_2},” in\l"
 	.string "the documentary.\p"
@@ -1240,96 +1335,96 @@ GreatCrater_EventScript_PhraseNotTrendyEnough_Text_0:
 	.string "you do!$"
 
 CameramanGreatCrater_Text_0:
-# 349 "data/maps/GreatCrater/scripts.pory"
+# 372 "data/maps/GreatCrater/scripts.pory"
 	.string "The cameraman seems to disregard\n"
 	.string "{PLAYER} entirely.$"
 
 CameramanGreatCrater_Text_1:
-# 354 "data/maps/GreatCrater/scripts.pory"
+# 377 "data/maps/GreatCrater/scripts.pory"
 	.string "It's easy money. You won't get far in\n"
 	.string "the Rebel Zone by being moral.$"
 
 CameramanGreatCrater_Text_2:
-# 356 "data/maps/GreatCrater/scripts.pory"
+# 379 "data/maps/GreatCrater/scripts.pory"
 	.string "I know from experience...$"
 
 TouristGreatCraterBattle_Text_0:
-# 367 "data/maps/GreatCrater/scripts.pory"
+# 390 "data/maps/GreatCrater/scripts.pory"
 	.string "Pictures are great and all, but there's\n"
 	.string "nothing like an exciting moment to\l"
 	.string "imprint a memory.$"
 
 TouristGreatCraterRegister_Text_0:
-# 376 "data/maps/GreatCrater/scripts.pory"
+# 399 "data/maps/GreatCrater/scripts.pory"
 	.string "That was exciting! Say, we don't we\n"
 	.string "exchange Devonav profiles?$"
 
 ConspiracyGreatCraterBattle_Text_0:
-# 403 "data/maps/GreatCrater/scripts.pory"
+# 426 "data/maps/GreatCrater/scripts.pory"
 	.string "Sorry, but my device has been\n"
 	.string "compromised. You'll have to learn the\l"
 	.string "truth elsewhere!$"
 
 ConspiracyGreatCraterRegister_Text_0:
-# 412 "data/maps/GreatCrater/scripts.pory"
+# 435 "data/maps/GreatCrater/scripts.pory"
 	.string "Before I tell you, let's put our Devon\n"
 	.string "Navs in airplane mode. Where was the\l"
 	.string "option now...?$"
 
 ConspiracyGreatCraterRegister_Text_1:
-# 415 "data/maps/GreatCrater/scripts.pory"
+# 438 "data/maps/GreatCrater/scripts.pory"
 	.string "Oops, wrong button. Wait, no... I could\n"
 	.string "have swore I pressed the right one.\p"
 	.string "That's it, I've been HACKED BY DEVON!$"
 
 ConspiracyGreatCraterRematch_Text_0:
-# 423 "data/maps/GreatCrater/scripts.pory"
+# 446 "data/maps/GreatCrater/scripts.pory"
 	.string "The truth is... I don't know any of\n"
 	.string "Devon's secrets.\p"
 	.string "I just like to make things up to look\n"
 	.string "interesting. It's a problem I have.$"
 
 GreatCraterSouvenirShop_Text_0:
-# 449 "data/maps/GreatCrater/scripts.pory"
+# 472 "data/maps/GreatCrater/scripts.pory"
 	.string "Welcome to the Great Crater's Souvenir\n"
 	.string "Shop!$"
 
 GreatCraterSouvenirShopkeeper_Text_0:
-# 470 "data/maps/GreatCrater/scripts.pory"
+# 493 "data/maps/GreatCrater/scripts.pory"
 	.string "I know this is not New Rustboro Mall,\n"
 	.string "but let's be civil hey?\p"
 	.string "If you want to buy, go around the\n"
 	.string "counter.$"
 
 GreatCraterSouvenirBox_Text_0:
-# 477 "data/maps/GreatCrater/scripts.pory"
+# 500 "data/maps/GreatCrater/scripts.pory"
 	.string "The box is full of questionably\n"
 	.string "preserved donuts.$"
 
 GreatCraterSign_Text_0:
-# 481 "data/maps/GreatCrater/scripts.pory"
+# 504 "data/maps/GreatCrater/scripts.pory"
 	.string "North - Road 002\p"
 	.string "East - Route 101$"
 
 GreatCraterSouvenirSupplies_Text_0:
-# 485 "data/maps/GreatCrater/scripts.pory"
+# 508 "data/maps/GreatCrater/scripts.pory"
 	.string "The articles are covered by the same\n"
 	.string "dust that floats in the air.$"
 
 GreatCraterVoid_Text_0:
-# 489 "data/maps/GreatCrater/scripts.pory"
+# 512 "data/maps/GreatCrater/scripts.pory"
 	.string "The pitch-black bottom of the crater is\n"
 	.string "too deep beneath to see.\p"
 	.string "With the right equipment, one could\n"
 	.string "climb down and explore it...$"
 
 Cratertouristasksforhelp_Text_0:
-# 502 "data/maps/GreatCrater/scripts.pory"
+# 525 "data/maps/GreatCrater/scripts.pory"
 	.string "O-oh, hey! HEEEY! Is there anyone up\n"
 	.string "there? Somebody HELP ME!$"
 
 CraterTrappedTouristandRope_Text_0:
-# 516 "data/maps/GreatCrater/scripts.pory"
+# 539 "data/maps/GreatCrater/scripts.pory"
 	.string "Aah, thank the heavens! You may not be\n"
 	.string "able to see me, but I'm down here!\p"
 	.string "I wanted to take a good picture of the\n"
@@ -1344,46 +1439,46 @@ CraterTrappedTouristandRope_Text_0:
 	.string "do with him!$"
 
 CraterTrappedTouristandRope_Text_1:
-# 527 "data/maps/GreatCrater/scripts.pory"
+# 550 "data/maps/GreatCrater/scripts.pory"
 	.string "Use the {COLOR RED}Sailor Knot{COLOR DARK_GRAY} to help the person?$"
 
 CraterTrappedTouristandRope_Text_2:
-# 538 "data/maps/GreatCrater/scripts.pory"
+# 561 "data/maps/GreatCrater/scripts.pory"
 	.string "{PLAYER} ties the knot firmly to a\n"
 	.string "rock and lets the rest fall down.$"
 
 CraterTrappedTouristandRope_Text_3:
-# 541 "data/maps/GreatCrater/scripts.pory"
+# 564 "data/maps/GreatCrater/scripts.pory"
 	.string "Ah, you're a life-saver!$"
 
 CraterTrappedTouristandRope_Text_4:
-# 556 "data/maps/GreatCrater/scripts.pory"
+# 579 "data/maps/GreatCrater/scripts.pory"
 	.string "My hero! I don't know what I would have\n"
 	.string "done without you!\p"
 	.string "But I know what I'll do now. Reward you\n"
 	.string "for your generosity!$"
 
 CraterTrappedTouristandRope_Text_5:
-# 559 "data/maps/GreatCrater/scripts.pory"
+# 582 "data/maps/GreatCrater/scripts.pory"
 	.string "A friend gifted me this before my trip,\n"
 	.string "saying it'll keep me safe...\p"
 	.string "Well, it clearly doesn't work, so you can\n"
 	.string "have it!$"
 
 CraterTrappedTouristandRope_Text_6:
-# 562 "data/maps/GreatCrater/scripts.pory"
+# 585 "data/maps/GreatCrater/scripts.pory"
 	.string "Wait... maybe it's thanks to it that you\n"
 	.string "found me?$"
 
 CraterTrappedTouristandRope_Text_7:
-# 564 "data/maps/GreatCrater/scripts.pory"
+# 587 "data/maps/GreatCrater/scripts.pory"
 	.string "Well, nevermind. I don't plan to leave\n"
 	.string "New Rustboro ever again, so I won't\l"
 	.string "need it.\p"
 	.string "Goodbye now, and watch your footing!$"
 
 CraterTrappedTouristandRope_Text_8:
-# 578 "data/maps/GreatCrater/scripts.pory"
+# 601 "data/maps/GreatCrater/scripts.pory"
 	.string "Hey... HEY! What are you waiting for!?\n"
 	.string "Why are you HESITATING!?\p"
 	.string "Do you think it'd be FUNNY to leave me\n"
@@ -1396,7 +1491,7 @@ CraterTrappedTouristandRope_Text_8:
 	.string "begging you!$"
 
 CraterTrappedTouristandRope_Text_9:
-# 595 "data/maps/GreatCrater/scripts.pory"
+# 618 "data/maps/GreatCrater/scripts.pory"
 	.string "You're back! But... I don't see that\n"
 	.string "{COLOR RED}Sailor Knot{COLOR DARK_GRAY} on you!\p"
 	.string "I appreciate you checking on me, but I'd\n"
@@ -1405,36 +1500,36 @@ CraterTrappedTouristandRope_Text_9:
 	.string "I'm begging you here!$"
 
 CraterTrappedTouristandRope_Text_10:
-# 601 "data/maps/GreatCrater/scripts.pory"
+# 624 "data/maps/GreatCrater/scripts.pory"
 	.string "There you are! And I see you've brought\n"
 	.string "the {COLOR RED}Sailor Knot{COLOR DARK_GRAY}!\p"
 	.string "Quick, tie it to something and let it\n"
 	.string "fall!$"
 
 CraterTrappedTouristandRope_Text_11:
-# 608 "data/maps/GreatCrater/scripts.pory"
+# 631 "data/maps/GreatCrater/scripts.pory"
 	.string "Use the {COLOR RED}Sailor Knot{COLOR DARK_GRAY} to climb down?$"
 
 GreatCraterDevonGruntFemale_Text_0:
-# 623 "data/maps/GreatCrater/scripts.pory"
+# 646 "data/maps/GreatCrater/scripts.pory"
 	.string "I'm sorry, but one of our scientists is\n"
 	.string "currently searching for a dangerous\l"
 	.string "Pokémon in Road 002.$"
 
 GreatCraterDevonGruntFemale_Text_1:
-# 626 "data/maps/GreatCrater/scripts.pory"
+# 649 "data/maps/GreatCrater/scripts.pory"
 	.string "The creature in question is next on the\n"
 	.string "list of Pokémon to be safened, and we\l"
 	.string "can't risk civilians interfering with his\l"
 	.string "work.$"
 
 GreatCraterDevonGruntFemale_Text_2:
-# 629 "data/maps/GreatCrater/scripts.pory"
+# 652 "data/maps/GreatCrater/scripts.pory"
 	.string "You have been hurt by a Pokémon, do\n"
 	.string "you? Surely you understand.$"
 
 GreatCraterDevonGruntMale_Text_0:
-# 641 "data/maps/GreatCrater/scripts.pory"
+# 664 "data/maps/GreatCrater/scripts.pory"
 	.string "By regulation of Devon Co.'s Wildlife\n"
 	.string "Protocol, section 75, titled 'Route\l"
 	.string "Enclosures for the purpose of Safemon\l"
@@ -1443,60 +1538,60 @@ GreatCraterDevonGruntMale_Text_0:
 	.string "until further notice.$"
 
 GreatCraterTouristMaleIdle_Text_0:
-# 652 "data/maps/GreatCrater/scripts.pory"
+# 675 "data/maps/GreatCrater/scripts.pory"
 	.string "I once ordered a donut in Pewter City,\n"
 	.string "and they gave me a riceball!\p"
 	.string "At least you know what donuts are here\n"
 	.string "in Hoenn.$"
 
 ReportersGreatCrater_Outro::
-# 256 "data/maps/GreatCrater/scripts.pory"
+# 279 "data/maps/GreatCrater/scripts.pory"
 	.string "That was perfect. Here - this is for\nyour trouble!$"
 
 GreatCrater_Text_XIsTheBiggestHappeningThingRight::
-# 311 "data/maps/GreatCrater/scripts.pory"
+# 334 "data/maps/GreatCrater/scripts.pory"
 	.string "In New Rustboro, {STR_VAR_1} is trendy.$"
 
 GreatCrater_Text_TellMeWhatsNewAndIn::
-# 315 "data/maps/GreatCrater/scripts.pory"
+# 338 "data/maps/GreatCrater/scripts.pory"
 	.string "{STR_VAR_1} Not trendy? Tell me what's trendy then.$"
 
 GreatCrater_Text_OfCourseIKnowAboutThat::
-# 320 "data/maps/GreatCrater/scripts.pory"
+# 343 "data/maps/GreatCrater/scripts.pory"
 	.string "You're right. “{STR_VAR_1}” is old news, {STR_VAR_2} is the shit now.$"
 
 GreatCrater_Text_XHuhIThinkYIsCool::
-# 326 "data/maps/GreatCrater/scripts.pory"
+# 349 "data/maps/GreatCrater/scripts.pory"
 	.string "Nah, {STR_VAR_2} is lame, {STR_VAR_1} is the cool thing.$"
 
 GreatCrater_Text_HearOfAnyTrendsComeShareWithMe::
-# 332 "data/maps/GreatCrater/scripts.pory"
+# 355 "data/maps/GreatCrater/scripts.pory"
 	.string "Well, share with me later.$"
 
 GreatCrater_Text_YeahDefinitionOfInRightNow::
-# 337 "data/maps/GreatCrater/scripts.pory"
+# 360 "data/maps/GreatCrater/scripts.pory"
 	.string "Yeah, {STR_VAR_1} is what's in.$"
 
 TouristGreatCrater_Intro::
-# 390 "data/maps/GreatCrater/scripts.pory"
+# 413 "data/maps/GreatCrater/scripts.pory"
 	.string "This crater is a breathtaking sight...\pBut it would be even more memorable\nafter a battle!$"
 
 TouristGreatCrater_Outro::
-# 393 "data/maps/GreatCrater/scripts.pory"
+# 416 "data/maps/GreatCrater/scripts.pory"
 	.string "Oh, yes... I'll never forget this!$"
 
 ConspiracyGreatCrater_Intro::
-# 429 "data/maps/GreatCrater/scripts.pory"
+# 452 "data/maps/GreatCrater/scripts.pory"
 	.string "Hehe... do you know the real reason why\nDevon invented Safemon?\pI'll tell you if you beat me!$"
 
 ConspiracyGreatCrater_Outro::
-# 432 "data/maps/GreatCrater/scripts.pory"
+# 455 "data/maps/GreatCrater/scripts.pory"
 	.string "Very well... listen closely...$"
 
 ConspiracyGreatCrater_Intro2::
-# 435 "data/maps/GreatCrater/scripts.pory"
+# 458 "data/maps/GreatCrater/scripts.pory"
 	.string "You're back! This time, I'll really tell\n you the truth behind Safemon...\p But only if you beat me!$"
 
 ConspiracyGreatCrater_Outro2::
-# 439 "data/maps/GreatCrater/scripts.pory"
+# 462 "data/maps/GreatCrater/scripts.pory"
 	.string "You've earned the right to the truth. Listen...$"

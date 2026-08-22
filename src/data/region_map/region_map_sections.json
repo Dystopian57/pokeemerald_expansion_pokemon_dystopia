@@ -122,7 +122,7 @@
     },
     {
       "id": "MAPSEC_EVER_GRANDE_CITY",
-      "name": "DEVON LAB 104",
+      "name": "EVER GRANDE CITY",
       "x": 27,
       "y": 8,
       "width": 1,
@@ -466,7 +466,7 @@
     },
     {
       "id": "MAPSEC_BATTLE_FRONTIER",
-      "name": "REBEL HIDEOUT",
+      "name": "R.H.H.",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -933,7 +933,7 @@
     },
     {
       "id": "MAPSEC_ROCK_TUNNEL",
-      "name": "EXCLUSION TUNNEL",
+      "name": "SECRET TUNNEL",
       "x": 2,
       "y": 7,
       "width": 1,
@@ -1109,7 +1109,7 @@
     },
     {
       "id": "MAPSEC_NAVEL_ROCK_FRLG",
-      "name": "NAVEL ROCK"
+      "name": "SECRET DEVON LAB"
     },
     {
       "id": "MAPSEC_MT_EMBER",

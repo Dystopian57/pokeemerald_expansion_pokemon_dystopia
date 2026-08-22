@@ -247,6 +247,19 @@
       "trainer_sight_or_berry_tree_id": "LIGHT_TYPE_BALL",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WAGESLAVEM",
+      "x": 25,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "TunnelLoner",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -315,7 +328,119 @@
       "y": 28,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "MinefieldLever"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelCamera"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelCamera"
+    },
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelSeismeter"
+    },
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 30,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelSeismeter"
+    },
+    {
+      "type": "sign",
+      "x": 63,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelSeismeter"
+    },
+    {
+      "type": "sign",
+      "x": 64,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelSeismeter"
+    },
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelSeismeter"
+    },
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelWeirdMachine"
+    },
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelWeirdMachine"
+    },
+    {
+      "type": "sign",
+      "x": 61,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelWeirdMachine"
+    },
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelWeirdMachine"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelWeirdMachine"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelWeirdMachine"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TunnelWeirdMachine"
     }
   ]
 }

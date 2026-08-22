@@ -669,6 +669,15 @@ gSongTable::
 	song mus_pyritetown, 0, 0
 	song mus_airong, 0, 0
 
+	song mus_bossdrilldozer, 0, 0
+	song mus_midbossbattle2, 0, 0
+	song mus_carriesplea, 0, 0
+	song mus_rankpickpocket, 0, 0
+	song mus_gameoverdrilldozer, 0, 0
+	song mus_skullkerhideout, 0, 0
+	song mus_hideoutintro, 0, 0
+	song mus_dozeremergency, 0, 0
+
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
 	song ph_trap_held, MUSIC_PLAYER_SE2, 2

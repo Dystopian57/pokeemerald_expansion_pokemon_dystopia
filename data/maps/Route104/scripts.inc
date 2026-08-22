@@ -2330,51 +2330,53 @@ Route104_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DayNightMusicRoute104
 # 1170 "data/maps/Route104/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, DayNightMusicRoute104
+# 1171 "data/maps/Route104/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightMusicRoute104
 	.byte 0
 
 
 DayNightMusicRoute104::
-# 1174 "data/maps/Route104/scripts.pory"
-	gettimeofday
 # 1175 "data/maps/Route104/scripts.pory"
+	gettimeofday
+# 1176 "data/maps/Route104/scripts.pory"
 	compare VAR_0x8000, TIME_MORNING
 	goto_if_eq DayNightMusicRoute104_2
 DayNightMusicRoute104_1:
-# 1178 "data/maps/Route104/scripts.pory"
+# 1179 "data/maps/Route104/scripts.pory"
 	compare VAR_0x8000, TIME_DAY
 	goto_if_eq DayNightMusicRoute104_5
 DayNightMusicRoute104_4:
-# 1181 "data/maps/Route104/scripts.pory"
+# 1182 "data/maps/Route104/scripts.pory"
 	compare VAR_0x8000, TIME_EVENING
 	goto_if_eq DayNightMusicRoute104_8
 DayNightMusicRoute104_7:
-# 1184 "data/maps/Route104/scripts.pory"
+# 1185 "data/maps/Route104/scripts.pory"
 	compare VAR_0x8000, TIME_NIGHT
 	goto_if_eq DayNightMusicRoute104_11
 DayNightMusicRoute104_10:
-# 1188 "data/maps/Route104/scripts.pory"
+# 1189 "data/maps/Route104/scripts.pory"
 enddaynightroute104:
 	return
 
 DayNightMusicRoute104_2:
-# 1176 "data/maps/Route104/scripts.pory"
+# 1177 "data/maps/Route104/scripts.pory"
 	goto enddaynightroute104
 	goto DayNightMusicRoute104_1
 
 DayNightMusicRoute104_5:
-# 1179 "data/maps/Route104/scripts.pory"
+# 1180 "data/maps/Route104/scripts.pory"
 	goto enddaynightroute104
 	goto DayNightMusicRoute104_4
 
 DayNightMusicRoute104_8:
-# 1182 "data/maps/Route104/scripts.pory"
+# 1183 "data/maps/Route104/scripts.pory"
 	goto enddaynightroute104
 	goto DayNightMusicRoute104_7
 
 DayNightMusicRoute104_11:
-# 1185 "data/maps/Route104/scripts.pory"
-	playbgm MUS_ANISTARCITY, TRUE
 # 1186 "data/maps/Route104/scripts.pory"
+	playbgm MUS_ANISTARCITY, TRUE
+# 1187 "data/maps/Route104/scripts.pory"
 	goto enddaynightroute104
 	goto DayNightMusicRoute104_10
 
