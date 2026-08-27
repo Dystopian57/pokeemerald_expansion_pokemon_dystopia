@@ -55,6 +55,7 @@ script WaterfallHazardDiverRegister {
 	waitmovement (0)
 	msgbox(format("That was a great workout. We should do this again sometime! \p Let me fetch my Devon Nav
     so I can add you on the Devon Net..."))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (1, moves(face_right))
 	waitmovement (1)
     playse (SE_BALL_OPEN)
@@ -76,6 +77,10 @@ script WaterfallHazardDiverRegister {
     applymovement (1, moves(face_right))
 	waitmovement (1)
 	playse (SE_BALL_OPEN)
+	waitse
+    applymovement (1, moves(face_down))
+	waitmovement (1)
+    msgbox(format("Don't be a stranger now!"))
 	release
 	end
 }
@@ -99,7 +104,7 @@ script WaterfallHazardDiverRematch {
 
 
 	text WaterfallHazardDiver_Intro{
-		"Arf, arf... what's better training than\n swimming? Swimming AND battling!"}
+		"Arf, arf... what's better training than\nswimming? Swimming AND battling!"}
 
 	text WaterfallHazardDiver_Outro{
 		"Glub-glub-glub...!"}

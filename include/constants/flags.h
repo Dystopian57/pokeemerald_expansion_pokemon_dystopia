@@ -292,14 +292,14 @@
 #define norun              0x104
 #define nowhiteout                0x105
 #define canspawnsableyelairboss         0x106
-#define seenshowatinnvisit              0x107
-#define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
+#define seenshowatinnvisit              0x107 
+#define hotspringguygavescald        0x108
 #define FLAG_RECEIVED_TM_TORMENT             0x109
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
 #define FLAG_RECEIVED_TM_THIEF               0x10D
-#define FLAG_CONTEST_SKETCH_CREATED          0x10E  // Set but never read
+#define oldalecenterwarehousecomplaint       0x10E
 #define FLAG_EVIL_TEAM_ESCAPED_STERN_SPOKE   0x10F
 #define FLAG_RECEIVED_EXP_SHARE              0x110
 #define FLAG_POKERUS_EXPLAINED               0x111
@@ -562,7 +562,7 @@
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN                     (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_OLDALE_FOUNTAIN                     (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
+#define FLAG_HIDDEN_ITEM_LABYARDTOOLBOX                    (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               (FLAG_HIDDEN_ITEMS_START + 0x07)
@@ -1257,10 +1257,10 @@
 #define FLAG_ITEM_OLDALE_HOUSE2DRAWER                                          0x4A4 // Unused Flag
 #define FLAG_ITEM_OLDALE_HOUSE2BALLITEM                                           0x4A5 // Unused Flag
 #define FLAG_ITEM_OLDALE_POSTFENCEITEM                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
+#define FLAG_ITEM_LAB_BASEMENT_TRASH                                           0x4A7 // Unused Flag
+#define FLAG_ITEM_BALSAM_OFFICE_TRASH                                           0x4A8 // Unused Flag
+#define FLAG_ITEM_OLDALE_HOUSE2BIN                                           0x4A9 // Unused Flag
+#define FLAG_ITEM_DLC_TRASHBIN                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
 #define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag

@@ -674,6 +674,8 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_LONG_GRASS;
         if (MetatileBehavior_IsFootprints(tileBehavior))
             return BATTLE_ENVIRONMENT_GREENSAND;
+        if (MetatileBehavior_IsMountain(tileBehavior))
+            return BATTLE_ENVIRONMENT_CAVE;
         break;
     case MAP_TYPE_UNDERGROUND:
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))

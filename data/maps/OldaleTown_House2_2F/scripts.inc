@@ -69,9 +69,11 @@ AnnesHouseDrawerItem::
 # 41 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	lock
 # 42 "data/maps/OldaleTown_House2_2F/scripts.pory"
-	goto_if_set FLAG_ITEM_OLDALE_HOUSE2DRAWER, AnnesHouseDrawerItem_1
+	goto_if_unset FLAG_ITEM_OLDALE_HOUSE2DRAWER, AnnesHouseDrawerItem_1
 # 49 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	msgbox AnnesHouseDrawerItem_Text_1
+# 50 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	release
 	return
 
 AnnesHouseDrawerItem_1:
@@ -84,6 +86,28 @@ AnnesHouseDrawerItem_1:
 # 46 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	releaseall
 	return
+
+
+AnneHouseTrashBin2F::
+# 55 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	lock
+# 56 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	goto_if_unset FLAG_ITEM_OLDALE_HOUSE2BIN, AnneHouseTrashBin2F_2
+# 61 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	msgbox AnneHouseTrashBin2F_Text_1
+AnneHouseTrashBin2F_1:
+# 62 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	releaseall
+	return
+
+AnneHouseTrashBin2F_2:
+# 57 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	msgbox AnneHouseTrashBin2F_Text_0
+# 58 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	giveitem ITEM_LINKING_CORD
+# 59 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	setflag FLAG_ITEM_OLDALE_HOUSE2BIN
+	goto AnneHouseTrashBin2F_1
 
 
 # 9 "data/maps/OldaleTown_House2_2F/scripts.pory"
@@ -132,3 +156,12 @@ AnnesHouseDrawerItem_Text_0:
 AnnesHouseDrawerItem_Text_1:
 # 49 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	.string "There's nothing in the drawer.$"
+
+AnneHouseTrashBin2F_Text_0:
+# 57 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	.string "There's a discarded cable in the trash\n"
+	.string "can...$"
+
+AnneHouseTrashBin2F_Text_1:
+# 61 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	.string "The trash can is empty.$"

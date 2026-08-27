@@ -227,7 +227,7 @@ Route102_MapScripts::
 
 DynamicWeather102::
 # 122 "data/maps/Route102/scripts.pory"
-	compare VAR_PETALBURGLANDFILL_WEATHER, 0
+	compare VAR_ROUTE102_WEATHER, 0
 	goto_if_eq DynamicWeather102_1
 	return
 

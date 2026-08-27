@@ -1977,8 +1977,8 @@ Won_or_Caught_Text_0:
 # 764 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "{PLAYER}... you did it! You beat the\n"
 	.string "fiend!\p"
-	.string "This will go down in the history books.\n"
-	.string "Let me restrain it - perhaps we can put\l"
+	.string "This will go down in the history books!\p"
+	.string "Let me restrain it - perhaps we can put\n"
 	.string "it to some use.$"
 
 Won_or_Caught_Text_1:

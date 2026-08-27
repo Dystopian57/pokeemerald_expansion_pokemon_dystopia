@@ -8,14 +8,15 @@ raw `
 mapscripts Route103_MoveTutorHut_MapScripts {
 	
 	MAP_SCRIPT_ON_LOAD: DayNightNPC
-    MAP_SCRIPT_ON_LOAD: DayNightMusicTutorHut
 	MAP_SCRIPT_ON_TRANSITION: DayNightNPC
-    MAP_SCRIPT_ON_TRANSITION: DayNightMusicTutorHut
 	MAP_SCRIPT_ON_FRAME_TABLE: DayNightNPC
+    //MAP_SCRIPT_ON_LOAD: DayNightAmbientLightTutorHut
+    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLightTutorHut
+    //MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLightTutorHut
+
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicTutorHut
+    MAP_SCRIPT_ON_LOAD: DayNightMusicTutorHut
     MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicTutorHut
-    MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
-    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
 }
 
 
@@ -35,6 +36,23 @@ script DayNightMusicTutorHut {
 		goto (enddaynightmusicmovetutorhut)}
 
 enddaynightmusicmovetutorhut:
+}
+
+script DayNightAmbientLightTutorHut {
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
+	release
 }
 
 //NEED "IF NOT LEARNT" CHECKS
@@ -77,8 +95,8 @@ script MoveTutor103 {
 			checkmoney (100)
 			if (var(VAR_RESULT) == TRUE) {
 
-				msgbox(format("I could teach your Pokémon these moves."))
-				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Double Edge", "Explosion", "Metronome")
+				msgbox(format("I could teach your Pokémon one of these moves."))
+				dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Swagger", "Double Edge", "Explosion", "Metronome", "Nevermind")
 					if(var(VAR_RESULT) == 0){
 					msgbox(format("Which of your Pokémon should I teach?"))
 					setvar (VAR_0x8005, MOVE_SWAGGER)
@@ -146,6 +164,10 @@ script MoveTutor103 {
 					goto (endtutorscript)
 					//special (IsSelectedMonEgg)
 					//goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
+					}
+
+					if(var(VAR_RESULT) == 4){
+					goto (canceltutor)
 					}
 			}
 		
@@ -258,3 +280,26 @@ script MoveTutor103ToolBox {
 	lockall
 	msgbox(format("A toolbox full of tools worn with use."))
     releaseall}
+
+
+script KantonianWarHistoryVol3TutorHut {
+    lock
+    msgbox(format("The book's cover reads 'History of the
+    Kantonian War, Volume 3. \p Read it?"))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+    showmonpic(SPECIES_PIKACHU_HOENN, 10,3) //Rocket
+    msgbox(format("May, 2006: Team Rocket has spent the last decade using Silph Co. as a proxy for their criminal activities,
+	primarily that of Pokémon trafficking.
+	
+	\p The Kantonian citizens are outraged, but authorities are kept at bay through bribery.
+	\p In a curious move, the company acquires Cinnabar's Laboratory to invest in the research of Pokémon Fossils."))
+
+    goto (endkantonianwar3)}
+    if (var(VAR_RESULT) == 1) {
+    goto (endkantonianwar3)
+    }
+    endkantonianwar3:
+    releaseall
+}

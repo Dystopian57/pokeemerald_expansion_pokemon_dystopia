@@ -58,9 +58,10 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 
 mapscripts OldaleTown_PokemonCenter_1F_MapScripts {
     MAP_SCRIPT_ON_LOAD: OldaleDevonCenter_TVOn
-    MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
+    //MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+    //MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
+	}
 
 script OldaleDevonCenter_TVOn {
 	setrespawn (HEAL_LOCATION_OLDALE_TOWN)
@@ -717,7 +718,36 @@ script OldaleTown_Mart_Clerk {
 	waitmessage
 	goto_if_set (FLAG_ADVENTURE_STARTED, OldaleTown_Mart_PostWarehouse)
 	pokemart (OldaleTown_Mart_Pokemart_PreWarehouse)
-	msgbox(format("Wait, I know what you are thinking... that I have no BALLS!"))
+
+	if (flag (oldalecenterwarehousecomplaint))
+	{goto (endofoldalemartclerk)}
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{msgbox(format("Wait, I know what you are thinking... that I have no BALLS! \p W-why are you
+		looking at me like that!? I mean Devon Balls, of course!"))}
+
+		else {
+		checkplayergender
+		if(var(VAR_RESULT) == MALE){
+		msgbox(format("I'm so very sorry, sir... you must have realized our stock is quite lacking
+		at present."))}
+		if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("I'm so very sorry, sir... you must have realized our stock is quite lacking
+		at present."))
+		}}
+		applymovement (5, moves (face_right))
+		applymovement (10, moves (face_right))
+		msgbox(format("But it's not our fault... since those Rebels invaded the Warehouse, the
+		supply trucks have stopped coming."))
+
+		applymovement (5, moves (face_player))
+		applymovement (10, moves (face_player))
+
+		msgbox(format("I hate to admit it, but we could be waiting ages
+		for Devon to send enough guards to take care of them.\p If only a strong, selfless trainer
+		came around... but those are so scarce lately!"))
+		setflag (oldalecenterwarehousecomplaint)
+	endofoldalemartclerk:
 	release
 	end
 }

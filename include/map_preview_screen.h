@@ -95,7 +95,7 @@ enum PreviewImageId
 
 #define MPS_DURATION_NO_FLAG    40  // This is the number of frames the map preview will last if the map's flagId is MPS_FLAG_NULL.
 
-#define MPS_DURATION_ALWAYS     120   // If this number is not 0, MPS_DURATION_ALWAYS will override all other duration values.
+#define MPS_DURATION_ALWAYS     60   // If this number is not 0, MPS_DURATION_ALWAYS will override all other duration values.
                                     // For example, if you set MPS_DURATION_ALWAYS to 100, the map preview will always
                                     // have a duration of 100 frames every time, regardless of the flag state.
 

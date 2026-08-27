@@ -39,7 +39,7 @@ script AnnesHouseBrotherItem {
 
 script AnnesHouseDrawerItem {
 	lock
-	if (flag (FLAG_ITEM_OLDALE_HOUSE2DRAWER))
+	if (!flag (FLAG_ITEM_OLDALE_HOUSE2DRAWER))
 	{msgbox(format("There's something left behind in the drawer..."))
     finditem (ITEM_METRONOME)
 	setflag (FLAG_ITEM_OLDALE_HOUSE2DRAWER)
@@ -47,5 +47,17 @@ script AnnesHouseDrawerItem {
 
 	else {
 	msgbox(format("There's nothing in the drawer."))
+	release
 	}
+}
+
+script AnneHouseTrashBin2F {
+	lock
+	if (!flag (FLAG_ITEM_OLDALE_HOUSE2BIN))
+	{msgbox (format("There's a discarded cable in the trash can..."))
+	giveitem (ITEM_LINKING_CORD)
+	setflag (FLAG_ITEM_OLDALE_HOUSE2BIN)}
+	else
+	{msgbox (format("The trash can is empty."))}
+	releaseall	
 }

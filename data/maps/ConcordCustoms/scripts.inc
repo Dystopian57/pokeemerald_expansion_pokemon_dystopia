@@ -698,11 +698,11 @@ ConcordVendingMachine_14:
 # 398 "data/maps/ConcordCustoms/scripts.pory"
 	random 4
 # 399 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_ne VAR_RESULT, 0, csodagotstuck
+	goto_if_ne VAR_RESULT, 0, cenergybargotstuck
 # 400 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, cgotsoda
+	goto_if_eq VAR_RESULT, FALSE, cgotenergybar
 # 402 "data/maps/ConcordCustoms/scripts.pory"
-cgotsoda:
+cgotenergybar:
 # 403 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_VEND
 # 404 "data/maps/ConcordCustoms/scripts.pory"
@@ -714,25 +714,25 @@ cgotsoda:
 # 407 "data/maps/ConcordCustoms/scripts.pory"
 	hidemoneybox
 # 408 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_SODA_POP
+	giveitem ITEM_ENERGY_POWDER
 # 410 "data/maps/ConcordCustoms/scripts.pory"
 	random 20
 # 411 "data/maps/ConcordCustoms/scripts.pory"
 	goto_if_ne VAR_RESULT, 0, cendvendingmachine
 # 412 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, cgotextrasoda
+	goto_if_eq VAR_RESULT, FALSE, cgotextraenergybar
 # 414 "data/maps/ConcordCustoms/scripts.pory"
-cgotextrasoda:
+cgotextraenergybar:
 # 415 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordVendingMachine_Text_11
 # 416 "data/maps/ConcordCustoms/scripts.pory"
 	hidemoneybox
 # 417 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_SODA_POP
+	giveitem ITEM_ENERGY_POWDER
 # 418 "data/maps/ConcordCustoms/scripts.pory"
 	goto cendvendingmachine
 # 420 "data/maps/ConcordCustoms/scripts.pory"
-csodagotstuck:
+cenergybargotstuck:
 # 421 "data/maps/ConcordCustoms/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ConcordWageSlaveAtPhone_Movement_0
 # 422 "data/maps/ConcordCustoms/scripts.pory"
@@ -842,7 +842,7 @@ ConcordVendingMachine_30:
 # 428 "data/maps/ConcordCustoms/scripts.pory"
 	call MachineShake
 # 429 "data/maps/ConcordCustoms/scripts.pory"
-	goto cgotsoda
+	goto cgotenergybar
 	goto ConcordVendingMachine_29
 
 ConcordVendingMachine_32:
@@ -1282,7 +1282,7 @@ ConcordVendingMachine_Text_1:
 
 ConcordVendingMachine_Text_2:
 # 335 "data/maps/ConcordCustoms/scripts.pory"
-	.string "Soda Pop - 70¥$"
+	.string "Energy Bar - 70¥$"
 
 ConcordVendingMachine_Text_3:
 # 335 "data/maps/ConcordCustoms/scripts.pory"
@@ -1318,22 +1318,23 @@ ConcordVendingMachine_Text_9:
 
 ConcordVendingMachine_Text_10:
 # 406 "data/maps/ConcordCustoms/scripts.pory"
-	.string "A Soda dropped on the machine's tray.$"
+	.string "An Energy Bar dropped on the machine's\n"
+	.string "tray.$"
 
 ConcordVendingMachine_Text_11:
 # 415 "data/maps/ConcordCustoms/scripts.pory"
-	.string "An extra Soda can dropped on the\n"
+	.string "An extra Energy Bar can dropped on the\n"
 	.string "machine's tray!$"
 
 ConcordVendingMachine_Text_12:
 # 424 "data/maps/ConcordCustoms/scripts.pory"
-	.string "The machine does not push the Soda can\n"
-	.string "enough for it to fall...$"
+	.string "The machine does not push the Energy\n"
+	.string "Bar can enough for it to fall...$"
 
 ConcordVendingMachine_Text_13:
 # 433 "data/maps/ConcordCustoms/scripts.pory"
-	.string "The Soda can just stays on the verge of\n"
-	.string "falling, mockingly.$"
+	.string "The Energy Bar can just stays on the\n"
+	.string "verge of falling, mockingly.$"
 
 ConcordVendingMachine_Text_14:
 # 459 "data/maps/ConcordCustoms/scripts.pory"

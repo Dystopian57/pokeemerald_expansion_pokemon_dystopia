@@ -5,11 +5,20 @@ raw `
 
 
 mapscripts DLC_MapScripts {
-    MAP_SCRIPT_ON_LOAD: DLC_TVOn}
+    MAP_SCRIPT_ON_LOAD: DLC_TVOn
+    MAP_SCRIPT_ON_LOAD: LessonMusic
+    MAP_SCRIPT_ON_TRANSITION: LessonMusic}
 
 script DLC_TVOn {
 	special (TurnOnTVScreen)
 	}
+
+script LessonMusic {
+  	if (var(VAR_OLDALE_PHASE) == 0)
+    {playbgm (MUS_SCHOOL, TRUE)}
+     else {release}  
+}
+
 
 script OldaleDLC_GoToSeatForTherapyLeft {
 	lockall
@@ -152,11 +161,11 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (1, moves (walk_fast_left * 1, walk_fast_down * 4))
     playse (SE_FLEE)
     msgbox(format("AAAAAHH...!!"))
-    waitse
     applymovement (4, moves (face_left, face_down))
     applymovement (5, moves (face_right, face_down))
     applymovement (7, moves (face_left, face_down))
     applymovement (8, moves (face_right, face_down))
+    waitse
     playse (SE_DOOR)
     waitse
     playse (SE_M_METRONOME)
@@ -182,14 +191,18 @@ script OldaleTown_DLC_TherapyCutscene{
 	createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
 	setspeaker ([SP_NAME_CAMELIA])
     msgbox(format("Let's go, Sharpy... this was a waste of time."))
+    closemessage
     removefieldmugshot
     applymovement (2, moves (walk_right * 1, walk_down *2))
-    applymovement (3, moves (walk_right * 2, walk_down *2))
     waitmovement
+    removeobject (2)
+    applymovement (3, moves (walk_right * 2, walk_down *2))
+    waitmovement (3)
+    removeobject (3)
     playse (SE_DOOR)
     waitse
-    removeobject (2)
-    removeobject (3)
+
+
 
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 2))
@@ -235,6 +248,7 @@ script LittleKidDLC {
         msgbox(format("Hehe - okay! Your loss!"))
         }
 	applymovement (5, moves (face_up))
+    waitmovement (5)
     releaseall
 }
 
@@ -317,6 +331,7 @@ script OldManDLC {
     Poison Powder. \p She's been surfing the web as a way to deal with it... I wish she went out
     a bit more."))
 	applymovement (8, moves (face_up))
+    waitmovement (8)
     releaseall
 }
 
@@ -377,7 +392,7 @@ script LibraryGuyDLC {
 
                 if(var(VAR_RESULT) == 2){
                 msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
-                to refund the loss - which is 5000¥"))
+                to refund the loss - that would be 5000¥."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
@@ -424,7 +439,7 @@ script LibraryGuyDLC {
 
                 if(var(VAR_RESULT) == 2){
                 msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
-                to refund the loss - which is 5000¥"))
+                to refund the loss - that would be 5000¥."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
@@ -472,7 +487,7 @@ script LibraryGuyDLC {
 
                 if(var(VAR_RESULT) == 2){
                 msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
-                to refund the loss - which is 5000¥"))
+                to refund the loss - that would be 5000¥."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
@@ -531,7 +546,7 @@ script LibraryGuyDLC {
                 msgbox(format("One should learn from the past to avoid repeating it... here!"))
                 applymovement (9, moves (face_left, face_up))
                 giveitem (ITEM_ZAP_PLATE)
-                setflag (loanedgrassbook)
+                setflag (loanedelectricbook)
                 msgbox(format("Hope you enjoy it! Please return it when you're finished with it."))
                 goto (finishloanscript)
                 }
@@ -568,7 +583,7 @@ script LibraryGuyDLC {
 
                 if(var(VAR_RESULT) == 2){
                 msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
-                to refund the loss - which is 5000¥"))
+                to refund the loss - that would be 5000¥."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
@@ -614,7 +629,7 @@ script LibraryGuyDLC {
 
                 if(var(VAR_RESULT) == 2){
                 msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
-                to refund the loss - which is 5000¥"))
+                to refund the loss - that would be 5000¥."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
@@ -661,7 +676,7 @@ script LibraryGuyDLC {
 
                 if(var(VAR_RESULT) == 2){
                 msgbox(format("Oh, that's unfortunate... \p If you want to continue loaning, you'll need
-                to refund the loss - which is 5000¥"))
+                to refund the loss - that would be 5000¥."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
@@ -729,7 +744,7 @@ script LibraryGuyDLC {
     if(var(VAR_RESULT) == 2){
         msgbox(format("It's easy! You can loan one book and one TM at any given time, at no cost. \p If you have
         loaned a book, you'll need to return it before loaning a new one. Same goes for TMs. \p Should you lose the loaned item, you
-        will need to pay a fine before loaning anything else. So we encourage you to take good care
+        will need to pay a fine before loaning anything else.\pSo we encourage you to take good care
         of loans. \p We are constantly updating our loan collection, so you should come check it out
         often. \p So, now that you know how it works..."))
         goto (loantypechoicewithtext)
@@ -768,13 +783,14 @@ script BlackBoardDLC {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (flag (DLCmathresolved)){
     msgbox(format("The math problem is solved."))
+    goto (endofDLCteacherscript)
     release
     }
 	if (!flag (DLCmathresolved)){
     msgbox(format("The board contains an unanswered math problem from a previous lesson..."))
 
     msgbox(format("I have ¥2404, and I buy two Devon Balls for ¥210 each. How much do I have left?"))
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "¥2194", "¥1984", "¥2025", "I don't know")
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "¥2194", "¥1984", "¥2025", "I don't know")
 	waitmessage
 
 	if(var(VAR_RESULT) == 0){
@@ -788,6 +804,7 @@ script BlackBoardDLC {
     waitmovement (6)
 	applymovement (14, moves(face_up))
     waitmovement (14)
+    goto (endofDLCteacherscript)
     }
 
 	if(var(VAR_RESULT) == 1){
@@ -823,6 +840,7 @@ script BlackBoardDLC {
 	if(var(VAR_RESULT) == 2){
     msgbox(format("Better not to write anything..."))
     }
+    endofDLCteacherscript:
     releaseall}
 }
 
@@ -858,7 +876,7 @@ script BoardDLC {
 
 script PCDLC {
     lock
-    msgbox(format("The computer asks for a DLC username and password. I don't have any."))
+    msgbox(format("The computer asks for a DLC username and password. Don't have any."))
     releaseall
 }
 
@@ -890,29 +908,6 @@ msgbox (format("It's a sealed box. Better not to open it."))
 releaseall
 }
 
-script KantonianWarHistoryVol1DLC {
-    lock
-    msgbox(format("A book stands out in the shelf. It's called 'History of the
-    Kantonian War, Volume 1. \p Read it?"))
-    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
-
-	if (var(VAR_RESULT) == 0) {
-    showmonpic(SPECIES_PIKACHU_HOENN, 10,3) //Rocket
-    msgbox(format("February, 1996. Team Rocket, a criminal organization with a 
-    strong presence in the Kanto region, invades the headquarters of Silph Co.,
-    a technological company in Saffron City."))
-    hidemonpic
-    showmonpic(SPECIES_PIKACHU_KALOS, 10,3) //Giovanni
-    msgbox(format("They defeat all opposition, and the leader of Team Rocket, Giovanni,
-    assumes control of the company."))
-    hidemonpic
-    goto (endkantonianwar)}
-    if (var(VAR_RESULT) == 1) {
-    goto (endkantonianwar)
-    }
-    endkantonianwar:
-    releaseall
-}
 
  script MoneyTipBook {
     lock
@@ -953,8 +948,8 @@ script KantonianWarHistoryVol1DLC {
     msgbox(format("Now this is where the real money flows in! \p It's only been a year since
     the war, and Hoenn is still full of stuff people dropped during the chaos. \p Now, you can
     comb the ground of Hoenn till your hair turns grey, or you can get your hands on an {COLOR BLUE}Object Spotter{COLOR DARK_GRAY}.
-    Basically, it's an ugly pair of goggles that does the spotting for you.\p They are expensive, and due to some
-    anti-theft nonsense, they don't work indoors... \p But if you want not only to survive, but THRIVE...
+    \p It's an ugly pair of goggles that does the spotting for you!\p They are expensive, and due to some
+    nonsense anti-theft feature, they don't work indoors... \p But if you want not only to survive, but THRIVE...
      it's a pretty worthy investment!"))
     goto (moneychapterselection)
     }
@@ -987,6 +982,17 @@ script KantonianWarHistoryVol1DLC {
     releaseall
 
  }
+
+ script DLCTrashBin {
+	lock
+	if (!flag (FLAG_ITEM_DLC_TRASHBIN))
+	{msgbox (format("Seems like a picky eater has hidden something in the trash..."))
+	giveitem (ITEM_SITRUS_BERRY)
+	setflag (FLAG_ITEM_DLC_TRASHBIN)}
+	else
+	{msgbox (format("The trash can is empty."))}
+	releaseall	
+}
 
     //imagine you've somehow picked all the trash in Hoenn or that you are getting greedy.
     //well, Pokémon sometimes have valuable stuff. catch them, or use Thief. hells, you can

@@ -404,6 +404,30 @@ script PlayerRoomWardrobe {
 	releaseall		
 }
 
+script KantonianWarHistoryVol1PlayerHouse {
+    lock
+    msgbox(format("The book's cover reads 'History of the
+    Kantonian War, Volume 1'. \p Read it?"))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+    showmonpic(SPECIES_PIKACHU_HOENN, 10,3) //Rocket
+    msgbox(format("February, 1996. Team Rocket, a criminal organization with a 
+    strong presence in the Kanto region, invades the headquarters of Silph Co.,
+    a technological company in Saffron City."))
+    hidemonpic
+    showmonpic(SPECIES_PIKACHU_KALOS, 10,3) //Giovanni
+    msgbox(format("They defeat all opposition, and the leader of Team Rocket, Giovanni,
+    assumes control of the company."))
+    hidemonpic
+    goto (endkantonianwar1)}
+    if (var(VAR_RESULT) == 1) {
+    goto (endkantonianwar1)
+    }
+    endkantonianwar1:
+    releaseall
+}
+
 script PlayerBedSimple {
 	lockall
     msgbox("Rest for a bit?", MSGBOX_YESNO)

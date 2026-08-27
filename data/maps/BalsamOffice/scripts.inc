@@ -103,577 +103,697 @@ BalsamBed::
 	compare VAR_RESULT, YES
 	goto_if_eq BalsamBed_2
 BalsamBed_1:
-# 213 "data/maps/BalsamOffice/scripts.pory"
+# 227 "data/maps/BalsamOffice/scripts.pory"
 finishcript:
-# 214 "data/maps/BalsamOffice/scripts.pory"
+# 228 "data/maps/BalsamOffice/scripts.pory"
 	removefieldmugshot
-# 215 "data/maps/BalsamOffice/scripts.pory"
+# 229 "data/maps/BalsamOffice/scripts.pory"
 	releaseall
 	return
 
 BalsamBed_2:
 # 62 "data/maps/BalsamOffice/scripts.pory"
-	fadeoutbgm 1
+	closemessage
 # 63 "data/maps/BalsamOffice/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	fadeoutbgm 1
 # 64 "data/maps/BalsamOffice/scripts.pory"
-	special HealPlayerParty
+	fadescreenswapbuffers FADE_TO_BLACK
 # 65 "data/maps/BalsamOffice/scripts.pory"
-	playse MUS_HEAL
+	special HealPlayerParty
 # 66 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBedUp_Text_1
-# 69 "data/maps/BalsamOffice/scripts.pory"
+	playse MUS_HEAL
+# 67 "data/maps/BalsamOffice/scripts.pory"
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+# 68 "data/maps/BalsamOffice/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 71 "data/maps/BalsamOffice/scripts.pory"
 startBalsamBedScript:
-# 70 "data/maps/BalsamOffice/scripts.pory"
+# 72 "data/maps/BalsamOffice/scripts.pory"
 	goto_if_unset balsamgavebedwarning, BalsamBed_6
 BalsamBed_4:
-# 112 "data/maps/BalsamOffice/scripts.pory"
+# 117 "data/maps/BalsamOffice/scripts.pory"
 	goto_if_set balsamgavebedwarning, BalsamBed_12
 BalsamBed_11:
-# 205 "data/maps/BalsamOffice/scripts.pory"
-	waitbuttonpress
-# 206 "data/maps/BalsamOffice/scripts.pory"
+# 219 "data/maps/BalsamOffice/scripts.pory"
 	goto givenpermissiontosleep
 BalsamBed_9:
-# 209 "data/maps/BalsamOffice/scripts.pory"
+# 222 "data/maps/BalsamOffice/scripts.pory"
 givenpermissiontosleep:
-# 210 "data/maps/BalsamOffice/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+# 223 "data/maps/BalsamOffice/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 224 "data/maps/BalsamOffice/scripts.pory"
+	waitse
 	goto BalsamBed_1
 
 BalsamBed_5:
-# 71 "data/maps/BalsamOffice/scripts.pory"
-	clearflag balsaminherbedroom
-# 72 "data/maps/BalsamOffice/scripts.pory"
-	addobject 1
 # 73 "data/maps/BalsamOffice/scripts.pory"
-	setobjectxy 1, 4, 3
+	clearflag balsaminherbedroom
 # 74 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, BalsamBed_Movement_0
+	addobject 1
 # 75 "data/maps/BalsamOffice/scripts.pory"
-	setobjectxy OBJ_EVENT_ID_PLAYER, 5, 3
+	setobjectxy 1, 4, 3
 # 76 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_1
+	applymovement 1, BalsamBed_Movement_0
 # 77 "data/maps/BalsamOffice/scripts.pory"
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	setobjectxy OBJ_EVENT_ID_PLAYER, 5, 3
 # 78 "data/maps/BalsamOffice/scripts.pory"
-	waitbuttonpress
+	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_1
 # 79 "data/maps/BalsamOffice/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	waitse
+# 80 "data/maps/BalsamOffice/scripts.pory"
+	fadeinbgm 1
 # 81 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 82 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	setspeaker [ SP_NAME_BALSAM ]
 # 83 "data/maps/BalsamOffice/scripts.pory"
-	fadedefaultbgm
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 84 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamBed_Text_0
-# 86 "data/maps/BalsamOffice/scripts.pory"
+# 85 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 86 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 87 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	fadedefaultbgm
 # 88 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamBed_Text_1
 # 90 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 91 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 92 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_M_SWAGGER2
+# 93 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamBed_Text_2
-# 94 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, BalsamBed_Movement_2
 # 95 "data/maps/BalsamOffice/scripts.pory"
-	waitmovement
-# 96 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 96 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 97 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_MENACING
-# 99 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamBed_Text_3
+# 99 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBed_Movement_2
 # 100 "data/maps/BalsamOffice/scripts.pory"
-	closemessage
-# 101 "data/maps/BalsamOffice/scripts.pory"
-	removefieldmugshot
-# 103 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, BalsamBed_Movement_3
-# 104 "data/maps/BalsamOffice/scripts.pory"
 	waitmovement
+# 101 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 102 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_MENACING
+# 103 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_3
+# 104 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_4
 # 105 "data/maps/BalsamOffice/scripts.pory"
-	playse SE_DOOR
+	closemessage
 # 106 "data/maps/BalsamOffice/scripts.pory"
-	removeobject 1
-# 107 "data/maps/BalsamOffice/scripts.pory"
-	setflag balsaminherbedroom
+	removefieldmugshot
 # 108 "data/maps/BalsamOffice/scripts.pory"
-	setflag balsamgavebedwarning
+	applymovement 1, BalsamBed_Movement_4
 # 109 "data/maps/BalsamOffice/scripts.pory"
+	waitmovement
+# 110 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_DOOR
+# 111 "data/maps/BalsamOffice/scripts.pory"
+	removeobject 1
+# 112 "data/maps/BalsamOffice/scripts.pory"
+	setflag balsaminherbedroom
+# 113 "data/maps/BalsamOffice/scripts.pory"
+	setflag balsamgavebedwarning
+# 114 "data/maps/BalsamOffice/scripts.pory"
 	goto finishcript
 	goto BalsamBed_4
 
 BalsamBed_6:
-# 70 "data/maps/BalsamOffice/scripts.pory"
+# 72 "data/maps/BalsamOffice/scripts.pory"
 	goto_if_unset balsamgavebedpermission, BalsamBed_5
 	goto BalsamBed_4
 
 BalsamBed_10:
-# 115 "data/maps/BalsamOffice/scripts.pory"
-	clearflag balsaminherbedroom
-# 116 "data/maps/BalsamOffice/scripts.pory"
-	addobject 1
-# 117 "data/maps/BalsamOffice/scripts.pory"
-	setobjectxy OBJ_EVENT_ID_PLAYER, 5, 3
-# 118 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_1
-# 119 "data/maps/BalsamOffice/scripts.pory"
-	waitbuttonpress
 # 120 "data/maps/BalsamOffice/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	closemessage
+# 121 "data/maps/BalsamOffice/scripts.pory"
+	clearflag balsaminherbedroom
 # 122 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	addobject 1
 # 123 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	setobjectxy OBJ_EVENT_ID_PLAYER, 5, 3
 # 124 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_4
+	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_1
+# 125 "data/maps/BalsamOffice/scripts.pory"
+	waitse
 # 126 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_5
+	fadeinbgm 1
 # 127 "data/maps/BalsamOffice/scripts.pory"
-	setflag FLAG_NO_ESCAPE
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 128 "data/maps/BalsamOffice/scripts.pory"
-	removefieldmugshot
+	setspeaker [ SP_NAME_BALSAM ]
+# 129 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 130 "data/maps/BalsamOffice/scripts.pory"
-	goto_if_unset GOTSTARTER3, BalsamBed_16
+	msgbox BalsamBed_Text_5
+# 133 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 134 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 135 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_6
+# 136 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
 # 137 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 138 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_7
+# 139 "data/maps/BalsamOffice/scripts.pory"
+	setflag FLAG_NO_ESCAPE
+# 140 "data/maps/BalsamOffice/scripts.pory"
+	removefieldmugshot
+# 142 "data/maps/BalsamOffice/scripts.pory"
+	goto_if_unset GOTSTARTER3, BalsamBed_16
+# 149 "data/maps/BalsamOffice/scripts.pory"
 	trainerbattle_no_intro TRAINER_BALSAM_NOPURACHU, Balsam_Outro
 BalsamBed_15:
-# 141 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 142 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 143 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_6
-# 145 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 146 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 147 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_7
-# 149 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 150 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 151 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_8
 # 153 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 154 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_MENACING
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 155 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_9
-# 156 "data/maps/BalsamOffice/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, BalsamBed_Text_10, BalsamBed_Text_11
+	msgbox BalsamBed_Text_8
+# 157 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
 # 158 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+# 159 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_9
+# 161 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 162 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 163 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_10
+# 165 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 166 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_MENACING
+# 167 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_11
+# 168 "data/maps/BalsamOffice/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, BalsamBed_Text_12, BalsamBed_Text_13
+# 170 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BalsamBed_20
 BalsamBed_19:
-# 174 "data/maps/BalsamOffice/scripts.pory"
+# 187 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq BalsamBed_23
 BalsamBed_22:
-# 188 "data/maps/BalsamOffice/scripts.pory"
+# 201 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 189 "data/maps/BalsamOffice/scripts.pory"
+# 202 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 190 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_16
-# 193 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, BalsamBed_Movement_4
-# 194 "data/maps/BalsamOffice/scripts.pory"
+# 203 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_20
+# 204 "data/maps/BalsamOffice/scripts.pory"
+	closemessage
+# 207 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBed_Movement_7
+# 208 "data/maps/BalsamOffice/scripts.pory"
 	waitmovement
-# 195 "data/maps/BalsamOffice/scripts.pory"
+# 209 "data/maps/BalsamOffice/scripts.pory"
 	playse SE_DOOR
-# 196 "data/maps/BalsamOffice/scripts.pory"
+# 210 "data/maps/BalsamOffice/scripts.pory"
 	removeobject 1
-# 197 "data/maps/BalsamOffice/scripts.pory"
+# 211 "data/maps/BalsamOffice/scripts.pory"
 	setflag balsamgavebedpermission
-# 198 "data/maps/BalsamOffice/scripts.pory"
+# 212 "data/maps/BalsamOffice/scripts.pory"
 	setflag balsaminherbedroom
-# 199 "data/maps/BalsamOffice/scripts.pory"
+# 213 "data/maps/BalsamOffice/scripts.pory"
 	goto finishcript
 	goto BalsamBed_9
 
 BalsamBed_12:
-# 112 "data/maps/BalsamOffice/scripts.pory"
+# 117 "data/maps/BalsamOffice/scripts.pory"
 	goto_if_unset balsamgavebedpermission, BalsamBed_10
 	goto BalsamBed_11
 
 BalsamBed_16:
-# 132 "data/maps/BalsamOffice/scripts.pory"
+# 144 "data/maps/BalsamOffice/scripts.pory"
 	trainerbattle_no_intro TRAINER_BALSAM_PURACHU, Balsam_Outro
 	goto BalsamBed_15
 
 BalsamBed_20:
-# 160 "data/maps/BalsamOffice/scripts.pory"
+# 172 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 161 "data/maps/BalsamOffice/scripts.pory"
+# 173 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 162 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_12
-# 165 "data/maps/BalsamOffice/scripts.pory"
+# 174 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_14
+# 177 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 166 "data/maps/BalsamOffice/scripts.pory"
+# 178 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 167 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_13
+# 179 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_15
+# 180 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBed_Movement_5
+# 181 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_16
+# 182 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBed_Movement_6
+# 183 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_17
 	goto BalsamBed_19
 
 BalsamBed_23:
-# 176 "data/maps/BalsamOffice/scripts.pory"
+# 189 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 177 "data/maps/BalsamOffice/scripts.pory"
+# 190 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 178 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_14
-# 181 "data/maps/BalsamOffice/scripts.pory"
+# 191 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_18
+# 194 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 182 "data/maps/BalsamOffice/scripts.pory"
+# 195 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 183 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamBed_Text_15
+# 196 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamBed_Text_19
 	goto BalsamBed_22
 
 
 BalsamOfficeRotom::
-# 225 "data/maps/BalsamOffice/scripts.pory"
+# 239 "data/maps/BalsamOffice/scripts.pory"
 	lockall
-# 226 "data/maps/BalsamOffice/scripts.pory"
+# 240 "data/maps/BalsamOffice/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 228 "data/maps/BalsamOffice/scripts.pory"
+# 242 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamOfficeRotom_Text_0, MSGBOX_YESNO
-# 230 "data/maps/BalsamOffice/scripts.pory"
+# 244 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq BalsamOfficeRotom_2
 BalsamOfficeRotom_1:
-# 260 "data/maps/BalsamOffice/scripts.pory"
+# 274 "data/maps/BalsamOffice/scripts.pory"
 	releaseall
 	return
 
 BalsamOfficeRotom_2:
-# 231 "data/maps/BalsamOffice/scripts.pory"
+# 245 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamOfficeRotom_Text_1
-# 233 "data/maps/BalsamOffice/scripts.pory"
+# 247 "data/maps/BalsamOffice/scripts.pory"
 	playse SE_M_THUNDERBOLT
-# 234 "data/maps/BalsamOffice/scripts.pory"
+# 248 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8004, 2
-# 235 "data/maps/BalsamOffice/scripts.pory"
+# 249 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8005, 6
-# 236 "data/maps/BalsamOffice/scripts.pory"
+# 250 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8006, 4
-# 237 "data/maps/BalsamOffice/scripts.pory"
+# 251 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8007, 4
-# 238 "data/maps/BalsamOffice/scripts.pory"
+# 252 "data/maps/BalsamOffice/scripts.pory"
 	special ShakeCamera
-# 239 "data/maps/BalsamOffice/scripts.pory"
+# 253 "data/maps/BalsamOffice/scripts.pory"
 	waitse
-# 240 "data/maps/BalsamOffice/scripts.pory"
+# 254 "data/maps/BalsamOffice/scripts.pory"
 	playmoncry SPECIES_ROTOM_MONITOR, CRY_MODE_NORMAL
-# 241 "data/maps/BalsamOffice/scripts.pory"
+# 255 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamOfficeRotom_Text_2
-# 242 "data/maps/BalsamOffice/scripts.pory"
-	setwildbattle SPECIES_ROTOM_MONITOR, 2
-# 243 "data/maps/BalsamOffice/scripts.pory"
+# 256 "data/maps/BalsamOffice/scripts.pory"
+	setwildbattle SPECIES_ROTOM_MONITOR, 5
+# 257 "data/maps/BalsamOffice/scripts.pory"
 	dowildbattle
-# 244 "data/maps/BalsamOffice/scripts.pory"
+# 258 "data/maps/BalsamOffice/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 246 "data/maps/BalsamOffice/scripts.pory"
+# 260 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BalsamOfficeRotom_4
-# 249 "data/maps/BalsamOffice/scripts.pory"
+# 263 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq BalsamOfficeRotom_5
-# 252 "data/maps/BalsamOffice/scripts.pory"
+# 266 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq BalsamOfficeRotom_6
-# 255 "data/maps/BalsamOffice/scripts.pory"
+# 269 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq BalsamOfficeRotom_7
 	goto BalsamOfficeRotom_1
 
 BalsamOfficeRotom_4:
-# 247 "data/maps/BalsamOffice/scripts.pory"
+# 261 "data/maps/BalsamOffice/scripts.pory"
 	call WonRotom
 	goto BalsamOfficeRotom_1
 
 BalsamOfficeRotom_5:
-# 250 "data/maps/BalsamOffice/scripts.pory"
+# 264 "data/maps/BalsamOffice/scripts.pory"
 	call CaughtRotom
 	goto BalsamOfficeRotom_1
 
 BalsamOfficeRotom_6:
-# 253 "data/maps/BalsamOffice/scripts.pory"
+# 267 "data/maps/BalsamOffice/scripts.pory"
 	call RanRotom
 	goto BalsamOfficeRotom_1
 
 BalsamOfficeRotom_7:
-# 256 "data/maps/BalsamOffice/scripts.pory"
+# 270 "data/maps/BalsamOffice/scripts.pory"
 	call RanRotom
 	goto BalsamOfficeRotom_1
 
 
-EmptyRotomTV::
-# 264 "data/maps/BalsamOffice/scripts.pory"
-	lockall
-# 265 "data/maps/BalsamOffice/scripts.pory"
-	msgbox EmptyRotomTV_Text_0
-# 266 "data/maps/BalsamOffice/scripts.pory"
-	releaseall
-	return
-
-
 WonRotom::
-# 270 "data/maps/BalsamOffice/scripts.pory"
+# 278 "data/maps/BalsamOffice/scripts.pory"
 	removeobject 2
-# 271 "data/maps/BalsamOffice/scripts.pory"
+# 279 "data/maps/BalsamOffice/scripts.pory"
 	setflag balsamofficerotom
-# 272 "data/maps/BalsamOffice/scripts.pory"
+# 280 "data/maps/BalsamOffice/scripts.pory"
 	addobject 3
-# 273 "data/maps/BalsamOffice/scripts.pory"
+# 281 "data/maps/BalsamOffice/scripts.pory"
 	clearflag balsamofficeemptytv
 	return
 
 
 CaughtRotom::
-# 277 "data/maps/BalsamOffice/scripts.pory"
+# 285 "data/maps/BalsamOffice/scripts.pory"
 	removeobject 2
-# 278 "data/maps/BalsamOffice/scripts.pory"
+# 286 "data/maps/BalsamOffice/scripts.pory"
 	setflag balsamofficerotom
 	return
 
 
 RanRotom::
-# 282 "data/maps/BalsamOffice/scripts.pory"
+# 290 "data/maps/BalsamOffice/scripts.pory"
 	removeobject 2
-# 283 "data/maps/BalsamOffice/scripts.pory"
+# 291 "data/maps/BalsamOffice/scripts.pory"
 	addobject 3
-# 284 "data/maps/BalsamOffice/scripts.pory"
+# 292 "data/maps/BalsamOffice/scripts.pory"
 	clearflag balsamofficeemptytv
-# 285 "data/maps/BalsamOffice/scripts.pory"
+# 293 "data/maps/BalsamOffice/scripts.pory"
 	msgbox RanRotom_Text_0
 	return
 
 
-BalsamWalkman::
-# 290 "data/maps/BalsamOffice/scripts.pory"
+EmptyRotomTV::
+# 297 "data/maps/BalsamOffice/scripts.pory"
 	lockall
-# 291 "data/maps/BalsamOffice/scripts.pory"
+# 298 "data/maps/BalsamOffice/scripts.pory"
+	msgbox EmptyRotomTV_Text_0
+# 299 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+
+KantonianWarHistoryVol2BalsamOffice::
+# 303 "data/maps/BalsamOffice/scripts.pory"
+	lock
+# 304 "data/maps/BalsamOffice/scripts.pory"
+	msgbox KantonianWarHistoryVol2BalsamOffice_Text_0
+# 306 "data/maps/BalsamOffice/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, KantonianWarHistoryVol2BalsamOffice_Text_1, KantonianWarHistoryVol2BalsamOffice_Text_2
+# 308 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq KantonianWarHistoryVol2BalsamOffice_2
+KantonianWarHistoryVol2BalsamOffice_1:
+# 317 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq KantonianWarHistoryVol2BalsamOffice_5
+KantonianWarHistoryVol2BalsamOffice_4:
+# 320 "data/maps/BalsamOffice/scripts.pory"
+endkantonianwar2:
+# 321 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+KantonianWarHistoryVol2BalsamOffice_2:
+# 309 "data/maps/BalsamOffice/scripts.pory"
+	showmonpic SPECIES_AUDINO_MEGA, 10, 3
+# 310 "data/maps/BalsamOffice/scripts.pory"
+	msgbox KantonianWarHistoryVol2BalsamOffice_Text_3
+# 312 "data/maps/BalsamOffice/scripts.pory"
+	hidemonpic
+# 313 "data/maps/BalsamOffice/scripts.pory"
+	showmonpic SPECIES_AUDINO_MEGA, 10, 3
+# 314 "data/maps/BalsamOffice/scripts.pory"
+	msgbox KantonianWarHistoryVol2BalsamOffice_Text_4
+# 315 "data/maps/BalsamOffice/scripts.pory"
+	hidemonpic
+# 316 "data/maps/BalsamOffice/scripts.pory"
+	goto endkantonianwar2
+	goto KantonianWarHistoryVol2BalsamOffice_1
+
+KantonianWarHistoryVol2BalsamOffice_5:
+# 318 "data/maps/BalsamOffice/scripts.pory"
+	goto endkantonianwar2
+	goto KantonianWarHistoryVol2BalsamOffice_4
+
+
+BalsamOfficeBooks::
+# 325 "data/maps/BalsamOffice/scripts.pory"
+	lockall
+# 326 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamOfficeBooks_Text_0
+# 327 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+
+BalsamOfficeBox::
+# 331 "data/maps/BalsamOffice/scripts.pory"
+	lock
+# 332 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamOfficeBox_Text_0
+# 333 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+
+BalsamOfficeRadioStation::
+# 337 "data/maps/BalsamOffice/scripts.pory"
+	lock
+# 338 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamOfficeRadioStation_Text_0
+# 339 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+
+BalsamOfficeVideoPlayer::
+# 343 "data/maps/BalsamOffice/scripts.pory"
+	lock
+# 344 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamOfficeVideoPlayer_Text_0
+# 345 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+
+BalsamOfficeTrashCan::
+# 349 "data/maps/BalsamOffice/scripts.pory"
+	lock
+# 350 "data/maps/BalsamOffice/scripts.pory"
+	goto_if_unset FLAG_ITEM_BALSAM_OFFICE_TRASH, BalsamOfficeTrashCan_2
+# 355 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamOfficeTrashCan_Text_1
+BalsamOfficeTrashCan_1:
+# 356 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+BalsamOfficeTrashCan_2:
+# 351 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamOfficeTrashCan_Text_0
+# 352 "data/maps/BalsamOffice/scripts.pory"
+	giveitem ITEM_STRANGE_SOUVENIR
+# 353 "data/maps/BalsamOffice/scripts.pory"
+	setflag FLAG_ITEM_BALSAM_OFFICE_TRASH
+	goto BalsamOfficeTrashCan_1
+
+
+BalsamWalkman::
+# 363 "data/maps/BalsamOffice/scripts.pory"
+	lockall
+# 364 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamWalkman_Text_0
-# 292 "data/maps/BalsamOffice/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, BalsamWalkman_Text_1, BalsamWalkman_Text_2, BalsamWalkman_Text_3, BalsamWalkman_Text_4
-# 293 "data/maps/BalsamOffice/scripts.pory"
+# 365 "data/maps/BalsamOffice/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, BalsamWalkman_Text_1, BalsamWalkman_Text_2, BalsamWalkman_Text_3, BalsamWalkman_Text_4
+# 366 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BalsamWalkman_2
 BalsamWalkman_1:
-# 299 "data/maps/BalsamOffice/scripts.pory"
+# 372 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq BalsamWalkman_5
 BalsamWalkman_4:
-# 305 "data/maps/BalsamOffice/scripts.pory"
+# 378 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq BalsamWalkman_8
 BalsamWalkman_7:
-# 311 "data/maps/BalsamOffice/scripts.pory"
+# 384 "data/maps/BalsamOffice/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq BalsamWalkman_11
 BalsamWalkman_10:
-# 313 "data/maps/BalsamOffice/scripts.pory"
+# 386 "data/maps/BalsamOffice/scripts.pory"
 	releaseall
 	return
 
 BalsamWalkman_2:
-# 294 "data/maps/BalsamOffice/scripts.pory"
+# 367 "data/maps/BalsamOffice/scripts.pory"
 	fadenewbgm MUS_GYMNOPEDIE
-# 295 "data/maps/BalsamOffice/scripts.pory"
+# 368 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamWalkman_Text_5
 	goto BalsamWalkman_1
 
 BalsamWalkman_5:
-# 300 "data/maps/BalsamOffice/scripts.pory"
+# 373 "data/maps/BalsamOffice/scripts.pory"
 	fadenewbgm MUS_AIRONG
-# 301 "data/maps/BalsamOffice/scripts.pory"
+# 374 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamWalkman_Text_6
 	goto BalsamWalkman_4
 
 BalsamWalkman_8:
-# 306 "data/maps/BalsamOffice/scripts.pory"
+# 379 "data/maps/BalsamOffice/scripts.pory"
 	fadenewbgm MUS_FARTHESTLAND
-# 307 "data/maps/BalsamOffice/scripts.pory"
+# 380 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamWalkman_Text_7
 	goto BalsamWalkman_7
 
 BalsamWalkman_11:
-# 311 "data/maps/BalsamOffice/scripts.pory"
+# 384 "data/maps/BalsamOffice/scripts.pory"
 	release
 	goto BalsamWalkman_10
 
 
-DemoGoodbye::
-# 318 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_DYSTOPIAN ]
-# 319 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
-# 320 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_0
-# 324 "data/maps/BalsamOffice/scripts.pory"
-	playbgm MUS_NONE, TRUE
-# 325 "data/maps/BalsamOffice/scripts.pory"
-	clearflag balsaminherbedroom
-# 327 "data/maps/BalsamOffice/scripts.pory"
-	setobjectxy 1, 3, 7
-# 328 "data/maps/BalsamOffice/scripts.pory"
-	addobject 1
-# 329 "data/maps/BalsamOffice/scripts.pory"
-	setobjectxy 1, 3, 7
-# 330 "data/maps/BalsamOffice/scripts.pory"
-	playse SE_DOOR
-# 331 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, DemoGoodbye_Movement_0
-# 332 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_0
-# 333 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 334 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 335 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_1
-# 336 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 337 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 338 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, DemoGoodbye_Movement_1
-# 339 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_2
-# 340 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 341 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 342 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, BalsamBed_Movement_1
-# 343 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_3
-# 345 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 346 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 347 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, DemoGoodbye_Movement_1
-# 348 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_4
-# 349 "data/maps/BalsamOffice/scripts.pory"
-	applymovement 1, BalsamBedUp_Movement_0
-# 350 "data/maps/BalsamOffice/scripts.pory"
-	waitmovement 1
-# 351 "data/maps/BalsamOffice/scripts.pory"
-	removeobject 1
-# 352 "data/maps/BalsamOffice/scripts.pory"
-	setflag balsaminherbedroom
-# 354 "data/maps/BalsamOffice/scripts.pory"
-	playse SE_BREAKABLE_DOOR
-# 356 "data/maps/BalsamOffice/scripts.pory"
-	setvar VAR_0x8004, 2
-# 357 "data/maps/BalsamOffice/scripts.pory"
-	setvar VAR_0x8005, 6
-# 358 "data/maps/BalsamOffice/scripts.pory"
-	setvar VAR_0x8006, 4
-# 359 "data/maps/BalsamOffice/scripts.pory"
-	setvar VAR_0x8007, 4
-# 360 "data/maps/BalsamOffice/scripts.pory"
-	special ShakeCamera
-# 362 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_DYSTOPIAN ]
-# 363 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
-# 364 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_5
-# 365 "data/maps/BalsamOffice/scripts.pory"
-	removefieldmugshot
-# 366 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ NULL ]
-# 367 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, BalsamBed_Movement_1
-# 368 "data/maps/BalsamOffice/scripts.pory"
-	playfirstmoncry
-# 369 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_6
-# 370 "data/maps/BalsamOffice/scripts.pory"
-	playbgm MUS_RENBOUPARTY, TRUE
-# 371 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
-# 372 "data/maps/BalsamOffice/scripts.pory"
-	setspeaker [ SP_NAME_DYSTOPIAN ]
-# 373 "data/maps/BalsamOffice/scripts.pory"
-	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
-# 374 "data/maps/BalsamOffice/scripts.pory"
-	msgbox DemoGoodbye_Text_7
-# 375 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_2
-# 376 "data/maps/BalsamOffice/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 377 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_2
-# 378 "data/maps/BalsamOffice/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 379 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_2
-# 380 "data/maps/BalsamOffice/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 381 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_2
-# 382 "data/maps/BalsamOffice/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-	return
-
-
-DemoJumpDown::
-# 389 "data/maps/BalsamOffice/scripts.pory"
-	playse SE_LEDGE
-# 390 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoJumpDown_Movement_0
-	return
-
-
-DemoJumpUp::
-# 394 "data/maps/BalsamOffice/scripts.pory"
-	playse SE_LEDGE
-# 395 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoJumpUp_Movement_0
-	return
-
-
-DemoJumpLeft::
-# 399 "data/maps/BalsamOffice/scripts.pory"
-	playse SE_LEDGE
-# 400 "data/maps/BalsamOffice/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DemoJumpLeft_Movement_0
-	return
-
-
 BalsamBookshelf::
-# 404 "data/maps/BalsamOffice/scripts.pory"
+# 390 "data/maps/BalsamOffice/scripts.pory"
 	lockall
-# 405 "data/maps/BalsamOffice/scripts.pory"
+# 391 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamBookshelf_Text_0
-# 407 "data/maps/BalsamOffice/scripts.pory"
+# 393 "data/maps/BalsamOffice/scripts.pory"
 	releaseall
 	return
 
 
 BalsamDegree::
-# 412 "data/maps/BalsamOffice/scripts.pory"
+# 398 "data/maps/BalsamOffice/scripts.pory"
 	lockall
-# 413 "data/maps/BalsamOffice/scripts.pory"
+# 399 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamDegree_Text_0
-# 415 "data/maps/BalsamOffice/scripts.pory"
+# 401 "data/maps/BalsamOffice/scripts.pory"
 	releaseall
+	return
+
+
+DemoGoodbye::
+# 406 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_DYSTOPIAN ]
+# 407 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
+# 408 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_0
+# 412 "data/maps/BalsamOffice/scripts.pory"
+	playbgm MUS_NONE, TRUE
+# 413 "data/maps/BalsamOffice/scripts.pory"
+	clearflag balsaminherbedroom
+# 415 "data/maps/BalsamOffice/scripts.pory"
+	setobjectxy 1, 3, 7
+# 416 "data/maps/BalsamOffice/scripts.pory"
+	addobject 1
+# 417 "data/maps/BalsamOffice/scripts.pory"
+	setobjectxy 1, 3, 7
+# 418 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_DOOR
+# 419 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, DemoGoodbye_Movement_0
+# 420 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_0
+# 421 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 422 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 423 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_1
+# 424 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 425 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 426 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBed_Movement_3
+# 427 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_2
+# 428 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 429 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+# 430 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBed_Movement_1
+# 431 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_3
+# 433 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 434 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 435 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBed_Movement_3
+# 436 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_4
+# 437 "data/maps/BalsamOffice/scripts.pory"
+	applymovement 1, BalsamBedUp_Movement_0
+# 438 "data/maps/BalsamOffice/scripts.pory"
+	waitmovement 1
+# 439 "data/maps/BalsamOffice/scripts.pory"
+	removeobject 1
+# 440 "data/maps/BalsamOffice/scripts.pory"
+	setflag balsaminherbedroom
+# 442 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_BREAKABLE_DOOR
+# 444 "data/maps/BalsamOffice/scripts.pory"
+	setvar VAR_0x8004, 2
+# 445 "data/maps/BalsamOffice/scripts.pory"
+	setvar VAR_0x8005, 6
+# 446 "data/maps/BalsamOffice/scripts.pory"
+	setvar VAR_0x8006, 4
+# 447 "data/maps/BalsamOffice/scripts.pory"
+	setvar VAR_0x8007, 4
+# 448 "data/maps/BalsamOffice/scripts.pory"
+	special ShakeCamera
+# 450 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_DYSTOPIAN ]
+# 451 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
+# 452 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_5
+# 453 "data/maps/BalsamOffice/scripts.pory"
+	removefieldmugshot
+# 454 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ NULL ]
+# 455 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, BalsamBed_Movement_1
+# 456 "data/maps/BalsamOffice/scripts.pory"
+	playfirstmoncry
+# 457 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_6
+# 458 "data/maps/BalsamOffice/scripts.pory"
+	playbgm MUS_RENBOUPARTY, TRUE
+# 459 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_3
+# 460 "data/maps/BalsamOffice/scripts.pory"
+	setspeaker [ SP_NAME_DYSTOPIAN ]
+# 461 "data/maps/BalsamOffice/scripts.pory"
+	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
+# 462 "data/maps/BalsamOffice/scripts.pory"
+	msgbox DemoGoodbye_Text_7
+# 463 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
+# 464 "data/maps/BalsamOffice/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 465 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
+# 466 "data/maps/BalsamOffice/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 467 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
+# 468 "data/maps/BalsamOffice/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 469 "data/maps/BalsamOffice/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
+# 470 "data/maps/BalsamOffice/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
 	return
 
 
@@ -691,90 +811,84 @@ BalsamBedRight_Movement_0:
 	walk_left
 	step_end
 
-# 74 "data/maps/BalsamOffice/scripts.pory"
+# 76 "data/maps/BalsamOffice/scripts.pory"
 BalsamBed_Movement_0:
-# 74 "data/maps/BalsamOffice/scripts.pory"
+# 76 "data/maps/BalsamOffice/scripts.pory"
 	face_right
 	step_end
 
-# 76 "data/maps/BalsamOffice/scripts.pory"
+# 78 "data/maps/BalsamOffice/scripts.pory"
 BalsamBed_Movement_1:
-# 76 "data/maps/BalsamOffice/scripts.pory"
+# 78 "data/maps/BalsamOffice/scripts.pory"
 	face_left
 	step_end
 
-# 94 "data/maps/BalsamOffice/scripts.pory"
+# 99 "data/maps/BalsamOffice/scripts.pory"
 BalsamBed_Movement_2:
-# 94 "data/maps/BalsamOffice/scripts.pory"
+# 99 "data/maps/BalsamOffice/scripts.pory"
 	walk_down
-# 94 "data/maps/BalsamOffice/scripts.pory"
+# 99 "data/maps/BalsamOffice/scripts.pory"
 	walk_down
-# 94 "data/maps/BalsamOffice/scripts.pory"
+# 99 "data/maps/BalsamOffice/scripts.pory"
 	face_up
 	step_end
 
 # 103 "data/maps/BalsamOffice/scripts.pory"
 BalsamBed_Movement_3:
 # 103 "data/maps/BalsamOffice/scripts.pory"
-	walk_down
-# 103 "data/maps/BalsamOffice/scripts.pory"
-	walk_down
+	face_down
 	step_end
 
-# 193 "data/maps/BalsamOffice/scripts.pory"
+# 108 "data/maps/BalsamOffice/scripts.pory"
 BalsamBed_Movement_4:
-# 193 "data/maps/BalsamOffice/scripts.pory"
+# 108 "data/maps/BalsamOffice/scripts.pory"
 	walk_down
-# 193 "data/maps/BalsamOffice/scripts.pory"
-	walk_down
-# 193 "data/maps/BalsamOffice/scripts.pory"
-	walk_down
-# 193 "data/maps/BalsamOffice/scripts.pory"
+# 108 "data/maps/BalsamOffice/scripts.pory"
 	walk_down
 	step_end
 
-# 331 "data/maps/BalsamOffice/scripts.pory"
+# 180 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Movement_5:
+# 180 "data/maps/BalsamOffice/scripts.pory"
+	walk_in_place_up
+	step_end
+
+# 182 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Movement_6:
+# 182 "data/maps/BalsamOffice/scripts.pory"
+	walk_in_place_right
+	step_end
+
+# 207 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Movement_7:
+# 207 "data/maps/BalsamOffice/scripts.pory"
+	walk_down
+# 207 "data/maps/BalsamOffice/scripts.pory"
+	walk_down
+# 207 "data/maps/BalsamOffice/scripts.pory"
+	walk_down
+# 207 "data/maps/BalsamOffice/scripts.pory"
+	walk_down
+	step_end
+
+# 419 "data/maps/BalsamOffice/scripts.pory"
 DemoGoodbye_Movement_0:
-# 331 "data/maps/BalsamOffice/scripts.pory"
+# 419 "data/maps/BalsamOffice/scripts.pory"
 	walk_up
-# 331 "data/maps/BalsamOffice/scripts.pory"
+# 419 "data/maps/BalsamOffice/scripts.pory"
 	face_left
 	step_end
 
-# 338 "data/maps/BalsamOffice/scripts.pory"
+# 463 "data/maps/BalsamOffice/scripts.pory"
 DemoGoodbye_Movement_1:
-# 338 "data/maps/BalsamOffice/scripts.pory"
-	face_down
-	step_end
-
-# 375 "data/maps/BalsamOffice/scripts.pory"
-DemoGoodbye_Movement_2:
-# 375 "data/maps/BalsamOffice/scripts.pory"
+# 463 "data/maps/BalsamOffice/scripts.pory"
 	face_left
-# 375 "data/maps/BalsamOffice/scripts.pory"
+# 463 "data/maps/BalsamOffice/scripts.pory"
 	face_up
-# 375 "data/maps/BalsamOffice/scripts.pory"
+# 463 "data/maps/BalsamOffice/scripts.pory"
 	face_right
-# 375 "data/maps/BalsamOffice/scripts.pory"
+# 463 "data/maps/BalsamOffice/scripts.pory"
 	face_down
-	step_end
-
-# 390 "data/maps/BalsamOffice/scripts.pory"
-DemoJumpDown_Movement_0:
-# 390 "data/maps/BalsamOffice/scripts.pory"
-	jump_down
-	step_end
-
-# 395 "data/maps/BalsamOffice/scripts.pory"
-DemoJumpUp_Movement_0:
-# 395 "data/maps/BalsamOffice/scripts.pory"
-	jump_up
-	step_end
-
-# 400 "data/maps/BalsamOffice/scripts.pory"
-DemoJumpLeft_Movement_0:
-# 400 "data/maps/BalsamOffice/scripts.pory"
-	jump_left
 	step_end
 
 BalsamBedUp_Text_0:
@@ -787,87 +901,101 @@ BalsamBedUp_Text_1:
 
 BalsamBed_Text_0:
 # 84 "data/maps/BalsamOffice/scripts.pory"
-	.string "{PLAYER}... what do you think you're\n"
-	.string "doing? This is not a guest room.$"
+	.string "... ahem.$"
 
 BalsamBed_Text_1:
 # 88 "data/maps/BalsamOffice/scripts.pory"
-	.string "This is MY room.$"
+	.string "{PLAYER}... what do you think you're\n"
+	.string "doing? This is not a guest room.$"
 
 BalsamBed_Text_2:
-# 92 "data/maps/BalsamOffice/scripts.pory"
+# 93 "data/maps/BalsamOffice/scripts.pory"
+	.string "This is MY room.$"
+
+BalsamBed_Text_3:
+# 97 "data/maps/BalsamOffice/scripts.pory"
 	.string "If you're tired, your house is literally\n"
 	.string "behind the lab.\p"
 	.string "Now leave. This is my one place to relax,\n"
 	.string "and I don't want squatters around.$"
 
-BalsamBed_Text_3:
-# 99 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_4:
+# 104 "data/maps/BalsamOffice/scripts.pory"
 	.string "Don't do this ever again… or ELSE.$"
 
-BalsamBed_Text_4:
-# 124 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_5:
+# 130 "data/maps/BalsamOffice/scripts.pory"
+	.string "Well, well...$"
+
+BalsamBed_Text_6:
+# 135 "data/maps/BalsamOffice/scripts.pory"
 	.string "{PLAYER}... don't say I didn't warn\n"
 	.string "you.$"
 
-BalsamBed_Text_5:
-# 126 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_7:
+# 138 "data/maps/BalsamOffice/scripts.pory"
 	.string "If words don't work with you, perhaps a\n"
 	.string "good old beating will!$"
 
-BalsamBed_Text_6:
-# 143 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_8:
+# 155 "data/maps/BalsamOffice/scripts.pory"
 	.string "You're making me regret helping you out,\n"
 	.string "{PLAYER}.$"
 
-BalsamBed_Text_7:
-# 147 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_9:
+# 159 "data/maps/BalsamOffice/scripts.pory"
 	.string "I lent you a hand when you were at your\n"
 	.string "lowest, and this is how you thank me?$"
 
-BalsamBed_Text_8:
-# 151 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_10:
+# 163 "data/maps/BalsamOffice/scripts.pory"
 	.string "Why are you even sleeping here? Just to\n"
 	.string "see my reaction?\p"
 	.string "You think this is just one of your…$"
 
-BalsamBed_Text_9:
-# 155 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_11:
+# 167 "data/maps/BalsamOffice/scripts.pory"
 	.string "Videogames?$"
 
-BalsamBed_Text_10:
-# 156 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_12:
+# 168 "data/maps/BalsamOffice/scripts.pory"
 	.string "Yes!$"
 
-BalsamBed_Text_11:
-# 156 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_13:
+# 168 "data/maps/BalsamOffice/scripts.pory"
 	.string "No. I'm sorry.$"
 
-BalsamBed_Text_12:
-# 162 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_14:
+# 174 "data/maps/BalsamOffice/scripts.pory"
 	.string "… right. I should have signed you up for\n"
 	.string "more therapy sessions. You have a few\l"
 	.string "screws lose, don't you?$"
 
-BalsamBed_Text_13:
-# 167 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_15:
+# 179 "data/maps/BalsamOffice/scripts.pory"
 	.string "...\p"
 	.string "Sorry. That was a bit too much. I know\n"
-	.string "you've had it rough.\p"
+	.string "you've had it rough.$"
+
+BalsamBed_Text_16:
+# 181 "data/maps/BalsamOffice/scripts.pory"
 	.string "I understand if you don't want to sleep\n"
 	.string "at home. It brings you painful memories,\l"
-	.string "doesn't it?\p"
+	.string "doesn't it?$"
+
+BalsamBed_Text_17:
+# 183 "data/maps/BalsamOffice/scripts.pory"
 	.string "You can sleep here if that's the case.\p"
 	.string "I mostly just doze on my chair these\n"
 	.string "days anyway.$"
 
-BalsamBed_Text_14:
-# 178 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_18:
+# 191 "data/maps/BalsamOffice/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Apology accepted. Perhaps I have\n"
 	.string "overreacted a bit too.$"
 
-BalsamBed_Text_15:
-# 183 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_19:
+# 196 "data/maps/BalsamOffice/scripts.pory"
 	.string "I understand if you don't want to sleep\n"
 	.string "at home. It brings you painful memories,\l"
 	.string "right?\p"
@@ -875,68 +1003,141 @@ BalsamBed_Text_15:
 	.string "mostly just doze on my chair these days\l"
 	.string "anyway.$"
 
-BalsamBed_Text_16:
-# 190 "data/maps/BalsamOffice/scripts.pory"
+BalsamBed_Text_20:
+# 203 "data/maps/BalsamOffice/scripts.pory"
 	.string "Just don't make a mess of the place,\n"
 	.string "alright?$"
 
 BalsamOfficeRotom_Text_0:
-# 228 "data/maps/BalsamOffice/scripts.pory"
+# 242 "data/maps/BalsamOffice/scripts.pory"
 	.string "The TV is emitting a weird static.\nShould I turn it off?$"
 
 BalsamOfficeRotom_Text_1:
-# 231 "data/maps/BalsamOffice/scripts.pory"
+# 245 "data/maps/BalsamOffice/scripts.pory"
 	.string "The TV begins to shake, then it\n"
 	.string "attacks!$"
 
 BalsamOfficeRotom_Text_2:
-# 241 "data/maps/BalsamOffice/scripts.pory"
+# 255 "data/maps/BalsamOffice/scripts.pory"
 	.string "Roooom!$"
 
+RanRotom_Text_0:
+# 293 "data/maps/BalsamOffice/scripts.pory"
+	.string "The TV is left alone for now...$"
+
 EmptyRotomTV_Text_0:
-# 265 "data/maps/BalsamOffice/scripts.pory"
+# 298 "data/maps/BalsamOffice/scripts.pory"
 	.string "The TV is turned off. If there's\n"
 	.string "anything inside, it's quiet for now.$"
 
-RanRotom_Text_0:
-# 285 "data/maps/BalsamOffice/scripts.pory"
-	.string "The TV is left alone for now...$"
+KantonianWarHistoryVol2BalsamOffice_Text_0:
+# 304 "data/maps/BalsamOffice/scripts.pory"
+	.string "The book's cover reads 'History of the\n"
+	.string "Kantonian War, Volume 2.\p"
+	.string "Read it?$"
+
+KantonianWarHistoryVol2BalsamOffice_Text_1:
+# 306 "data/maps/BalsamOffice/scripts.pory"
+	.string "Yes$"
+
+KantonianWarHistoryVol2BalsamOffice_Text_2:
+# 306 "data/maps/BalsamOffice/scripts.pory"
+	.string "No$"
+
+KantonianWarHistoryVol2BalsamOffice_Text_3:
+# 310 "data/maps/BalsamOffice/scripts.pory"
+	.string "September, 2004: Team Aqua and Team\n"
+	.string "Magma, two radical enviromentalist\l"
+	.string "groups, attempt to control Hoenn's\l"
+	.string "climate by awakening two ancient\l"
+	.string "Pokémon - Kyogre and Groudon.$"
+
+KantonianWarHistoryVol2BalsamOffice_Text_4:
+# 314 "data/maps/BalsamOffice/scripts.pory"
+	.string "However, thanks to the brave actions\n"
+	.string "of two young trainers from Littleroot,\l"
+	.string "their plans are foiled.$"
+
+BalsamOfficeBooks_Text_0:
+# 326 "data/maps/BalsamOffice/scripts.pory"
+	.string "'Safemon Schedule - 2030' - Devon Co.,\n"
+	.string "Internal Use Only.$"
+
+BalsamOfficeBox_Text_0:
+# 332 "data/maps/BalsamOffice/scripts.pory"
+	.string "The box contains clothes suited for a\n"
+	.string "warm, almost tropical environment.$"
+
+BalsamOfficeRadioStation_Text_0:
+# 338 "data/maps/BalsamOffice/scripts.pory"
+	.string "It's an amateur radio station.$"
+
+BalsamOfficeVideoPlayer_Text_0:
+# 344 "data/maps/BalsamOffice/scripts.pory"
+	.string "It's a video player and some video\n"
+	.string "tapes. Most of them are documentaries.$"
+
+BalsamOfficeTrashCan_Text_0:
+# 351 "data/maps/BalsamOffice/scripts.pory"
+	.string "The trash can contains the remains of\n"
+	.string "ripped postcards - and something else...$"
+
+BalsamOfficeTrashCan_Text_1:
+# 355 "data/maps/BalsamOffice/scripts.pory"
+	.string "There's only the remains of postcards\n"
+	.string "in the trash.$"
 
 BalsamWalkman_Text_0:
-# 291 "data/maps/BalsamOffice/scripts.pory"
+# 364 "data/maps/BalsamOffice/scripts.pory"
 	.string "It's a casette player. The casette\n"
 	.string "contains several songs.$"
 
 BalsamWalkman_Text_1:
-# 292 "data/maps/BalsamOffice/scripts.pory"
+# 365 "data/maps/BalsamOffice/scripts.pory"
 	.string "Gymnopédie No. 1$"
 
 BalsamWalkman_Text_2:
-# 292 "data/maps/BalsamOffice/scripts.pory"
+# 365 "data/maps/BalsamOffice/scripts.pory"
 	.string "Air on the G String$"
 
 BalsamWalkman_Text_3:
-# 292 "data/maps/BalsamOffice/scripts.pory"
+# 365 "data/maps/BalsamOffice/scripts.pory"
 	.string "The Farthest Land$"
 
 BalsamWalkman_Text_4:
-# 292 "data/maps/BalsamOffice/scripts.pory"
+# 365 "data/maps/BalsamOffice/scripts.pory"
 	.string "Leave$"
 
 BalsamWalkman_Text_5:
-# 295 "data/maps/BalsamOffice/scripts.pory"
+# 368 "data/maps/BalsamOffice/scripts.pory"
 	.string "Now playing - Gymnopédie No. 1.$"
 
 BalsamWalkman_Text_6:
-# 301 "data/maps/BalsamOffice/scripts.pory"
+# 374 "data/maps/BalsamOffice/scripts.pory"
 	.string "Now playing - Air on the G String.$"
 
 BalsamWalkman_Text_7:
-# 307 "data/maps/BalsamOffice/scripts.pory"
+# 380 "data/maps/BalsamOffice/scripts.pory"
 	.string "Now playing - the Farthest Land.$"
 
+BalsamBookshelf_Text_0:
+# 391 "data/maps/BalsamOffice/scripts.pory"
+	.string "Among the many books on Pokémon\n"
+	.string "science, there's a photo album...\p"
+	.string "The cover features a photo of a couple\n"
+	.string "of kids, building a sand castle on a\l"
+	.string "clean beach.$"
+
+BalsamDegree_Text_0:
+# 399 "data/maps/BalsamOffice/scripts.pory"
+	.string "It's a framed degree of higher\n"
+	.string "education. It reads as follows:\p"
+	.string "'University of Alola, Degree in Pokémon\n"
+	.string "Genetics: Miss Balsam ¥?¿¥i.\p"
+	.string "The surname has been crossed out.$"
+
 DemoGoodbye_Text_0:
-# 320 "data/maps/BalsamOffice/scripts.pory"
+# 408 "data/maps/BalsamOffice/scripts.pory"
 	.string "This is the end of the update!\n"
 	.string "Congratulations on making it this far.\p"
 	.string "This is the third update I post, and I'm\n"
@@ -950,58 +1151,42 @@ DemoGoodbye_Text_0:
 	.string "reading this, can also...$"
 
 DemoGoodbye_Text_1:
-# 335 "data/maps/BalsamOffice/scripts.pory"
+# 423 "data/maps/BalsamOffice/scripts.pory"
 	.string "Stop the sentimental crap. Nobody\n"
 	.string "cares. This clip is already too long.$"
 
 DemoGoodbye_Text_2:
-# 339 "data/maps/BalsamOffice/scripts.pory"
+# 427 "data/maps/BalsamOffice/scripts.pory"
 	.string "And you, whoever loser is reading this.\n"
 	.string "Don't hold your breath for this hack's\l"
 	.string "release.$"
 
 DemoGoodbye_Text_3:
-# 343 "data/maps/BalsamOffice/scripts.pory"
+# 431 "data/maps/BalsamOffice/scripts.pory"
 	.string "This nutjob is putting sign scripts in\n"
 	.string "half of damn tiles and setting phone\l"
 	.string "calls for random NPCs, as if people are\l"
 	.string "going to read them.$"
 
 DemoGoodbye_Text_4:
-# 348 "data/maps/BalsamOffice/scripts.pory"
+# 436 "data/maps/BalsamOffice/scripts.pory"
 	.string "You'll live in an actual corporate\n"
 	.string "dystopia by the time this is done.\l"
 	.string "Later.$"
 
 DemoGoodbye_Text_5:
-# 364 "data/maps/BalsamOffice/scripts.pory"
+# 452 "data/maps/BalsamOffice/scripts.pory"
 	.string "...$"
 
 DemoGoodbye_Text_6:
-# 369 "data/maps/BalsamOffice/scripts.pory"
+# 457 "data/maps/BalsamOffice/scripts.pory"
 	.string "Pura...?$"
 
 DemoGoodbye_Text_7:
-# 374 "data/maps/BalsamOffice/scripts.pory"
+# 462 "data/maps/BalsamOffice/scripts.pory"
 	.string "HAHAHA - SHE'S RIGHT! SEE YOU IN MANY\n"
 	.string "MONTHS!$"
 
-BalsamBookshelf_Text_0:
-# 405 "data/maps/BalsamOffice/scripts.pory"
-	.string "Among the many books on Pokémon\n"
-	.string "science, there's a photo album...\p"
-	.string "The cover features a photo of a couple\n"
-	.string "of kids, building a sand castle on a\l"
-	.string "clean beach.$"
-
-BalsamDegree_Text_0:
-# 413 "data/maps/BalsamOffice/scripts.pory"
-	.string "It's a framed degree of higher\n"
-	.string "education. It reads as follows:\p"
-	.string "'University of Alola, Degree in Pokémon\n"
-	.string "Genetics: Miss Balsam ¥?¿¥i.\p"
-	.string "The surname has been crossed out.$"
-
 Balsam_Outro::
-# 219 "data/maps/BalsamOffice/scripts.pory"
+# 233 "data/maps/BalsamOffice/scripts.pory"
 	.string "...$"

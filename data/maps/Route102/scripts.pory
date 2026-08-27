@@ -119,7 +119,7 @@ mapscripts Route102_MapScripts {
 
 
 script DynamicWeather102 {
-		if (var(VAR_PETALBURGLANDFILL_WEATHER) == 0)
+		if (var(VAR_ROUTE102_WEATHER) == 0)
 		{random (10)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 

@@ -9,7 +9,7 @@ enum SpeakerNames {
     SP_NAME_AIDEE,
     SP_NAME_BIRCH,
     SP_NAME_RIVAL,
-    SP_NAME_RICK,
+    SP_NAME_CALVIN,
     SP_NAME_SHARPY,
     SP_NAME_CAMELIA,
 

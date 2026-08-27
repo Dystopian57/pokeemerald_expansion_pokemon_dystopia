@@ -6,8 +6,23 @@ raw `
 
 mapscripts GreatCrater_MapScripts {
     MAP_SCRIPT_ON_LOAD: GreatCraterWeather
-    MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater}
+    //MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater
+    //MAP_SCRIPT_ON_LOAD: RedoTouristWarning
+    MAP_SCRIPT_ON_TRANSITION: RedoTouristWarning
+    //MAP_SCRIPT_ON_FRAME_TABLE: RedoTouristWarning
+    MAP_SCRIPT_ON_TRANSITION: GreatCraterWeather
+    MAP_SCRIPT_ON_TRANSITION: DynamicWeatherCrater
+	}
 
+
+
+script RedoTouristWarning {
+			
+	if (var(VAR_GREATCRATERTOURIST) == 1)
+	{setvar(VAR_GREATCRATERTOURIST, 0)}
+
+	else {release}
+	}
 
 
 script DynamicWeatherCrater {
@@ -20,11 +35,11 @@ script DynamicWeatherCrater {
 		case 1: goto (GreatCraterEndAsh)
 		case 2: goto (GreatCraterEndAsh)
 		case 3: goto (GreatCraterEndAsh)
-		case 4: goto (GreatCraterShade)
-		case 5: goto (GreatCraterShade)
-		case 6: goto (GreatCraterShade)
-		case 7: goto (GreatCraterShade)
-		case 8: goto (GreatCraterShade)
+		case 4: goto (GreatCraterEndAsh)
+		case 5: goto (GreatCraterEndAsh)
+		case 6: goto (GreatCraterEndAsh)
+		case 7: goto (GreatCraterEndAsh)
+		case 8: goto (GreatCraterEndAsh)
 		case 9: goto (GreatCraterShade)
 		case 10: goto (GreatCraterShade)
 		}}
@@ -115,12 +130,13 @@ script ReportersGreatCrater {
 	msgbox(format("Don't sugarcoat it, Kira. It's boring."))
 	applymovement (3, moves(walk_in_place_right * 1))
 	setspeaker ([SP_NAME_KIRA])
-	msgbox(format("... a bit, maybe. which is why we were thinking about staging a battle!"))
+	msgbox(format("... a bit, maybe. Which is why we were thinking about staging a battle!"))
 	applymovement (3, moves(walk_in_place_up * 1))
 	setspeaker ([SP_NAME_KIRA])
 	msgbox(format("We will pretend one of those dangerous rebels have assailed us, and that we escaped by
 	the skin of our teeth."))
 	applymovement (2, moves(walk_in_place_left))
+	waitmovement (2)
 	setspeaker ([SP_NAME_DAN])
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){msgbox(format("He looks a bit like one of them. To a Rustboro snob, at least."))}
@@ -188,9 +204,10 @@ script ReportersGreatCrater {
 		applymovement (3, moves(walk_in_place_right))
 		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("It just may! But before we cut the footage, we need to record some more in other locations."))
-		applymovement (3, moves(face_player))
+		applymovement (3, moves(walk_in_place_up))
 		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("Thanks for your help again - stay safe!"))
+		closemessage
 
 		fadescreenswapbuffers (FADE_TO_BLACK)
 		removeobject (2)
@@ -245,8 +262,10 @@ script ReportersGreatCrater {
 		 setspeaker ([SP_NAME_KIRA])
    		 msgbox(format("Well, suit yourself. We'll be here a while if you change your mind."))
 	     setflag (declinedcraterreporterhelp)
-		 applymovement (2, moves(face_down))
-		 applymovement (3, moves(face_down))
+		 applymovement (2, moves(walk_in_place_down))
+		 waitmovement (2)
+		 applymovement (3, moves(walk_in_place_down))
+		 waitmovement (3)
 	     goto (finishreporterscript)
 		}}
 
@@ -433,7 +452,7 @@ script ConspiracyGreatCraterRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
 	msgbox(format("Before I tell you, let's put our Devon Navs in airplane mode.
-	Where was the option now...?"))
+	\p Where was the option now...?"))
 	register_matchcall (TRAINER_CONSPIRACY_GREATCRATER)
 	msgbox(format("Oops, wrong button. Wait, no... I could have swore I pressed the
 	right one. \p That's it, I've been HACKED BY DEVON!"))
@@ -473,8 +492,8 @@ script GreatCraterSouvenirShop {
 		fadeoutbgm (0)
 		playbgm (MUS_BUYSOMETHINGWILLYA, FALSE)
 		pokemart (ShopSouvenirs)
-		fadeinbgm (0)
-		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
+		fadeinbgm (1)
+		//playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 		releaseall
 
 }
@@ -505,7 +524,7 @@ script GreatCraterSign {
 		releaseall}
 
 script GreatCraterSouvenirSupplies {
-		msgbox(format("The articles are covered by the same dust that floats in the air."))
+		msgbox(format("The articles are covered by the same dust that's everywhere."))
 		releaseall}
 
 script GreatCraterVoid {

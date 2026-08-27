@@ -2319,7 +2319,7 @@ startSafemonlore:
 # 1164 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox SafemonLore_Text_0
 # 1166 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, SafemonLore_Text_1, SafemonLore_Text_2, SafemonLore_Text_3, SafemonLore_Text_4, SafemonLore_Text_5
+	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, SafemonLore_Text_1, SafemonLore_Text_2, SafemonLore_Text_3, SafemonLore_Text_4, SafemonLore_Text_5
 # 1168 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SafemonLore_2
@@ -2328,19 +2328,19 @@ SafemonLore_1:
 	compare VAR_RESULT, 1
 	goto_if_eq SafemonLore_5
 SafemonLore_4:
-# 1189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1192 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq SafemonLore_8
 SafemonLore_7:
-# 1199 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1202 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq SafemonLore_11
 SafemonLore_10:
-# 1215 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1218 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq SafemonLore_14
 SafemonLore_13:
-# 1217 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1220 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
@@ -2361,426 +2361,426 @@ SafemonLore_5:
 # 1180 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox SafemonLore_Text_8
 # 1182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	showmonpic SPECIES_PANSELIA, 10, 3
+	showmonpic SPECIES_PIKACHU_SAFE, 10, 3
 # 1183 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox SafemonLore_Text_9
-# 1185 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1188 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 1186 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto startSafemonlore
 	goto SafemonLore_4
 
 SafemonLore_8:
-# 1190 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox SafemonLore_Text_10
-# 1192 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	showmonpic SPECIES_POOCHAIN, 10, 3
 # 1193 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox SafemonLore_Text_11
+	msgbox SafemonLore_Text_10
+# 1195 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	showmonpic SPECIES_POOCHAIN, 10, 3
 # 1196 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox SafemonLore_Text_11
+# 1199 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 1197 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1200 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto startSafemonlore
 	goto SafemonLore_7
 
 SafemonLore_11:
-# 1200 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox SafemonLore_Text_12
-# 1202 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	showmonpic SPECIES_MANCHINE, 10, 3
 # 1203 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox SafemonLore_Text_12
+# 1205 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	showmonpic SPECIES_MANCHINE, 10, 3
+# 1206 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox SafemonLore_Text_13
-# 1207 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1210 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 1208 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1211 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	showmonpic SPECIES_LOADTAD, 10, 3
-# 1209 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox SafemonLore_Text_14
 # 1212 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox SafemonLore_Text_14
+# 1215 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
 	goto SafemonLore_10
 
 SafemonLore_14:
-# 1216 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1219 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	goto SafemonLore_13
 
 
 AidePC::
-# 1221 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1222 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox AidePC_Text_0
 # 1224 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 1225 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox AidePC_Text_0
+# 1227 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	release
 	return
 
 
 WithSamanthadontgothere::
-# 1228 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1229 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1230 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1231 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	lock
 # 1232 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 1233 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox WithSamanthadontgothere_Text_0
-# 1235 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker NULL
-# 1236 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1237 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_2
-# 1238 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox WithSamanthadontgothere_Text_1
-# 1239 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1240 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1241 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox WithSamanthadontgothere_Text_2
-# 1243 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker NULL
-# 1244 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1245 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, WithSamanthadontgothere_Movement_0
-# 1246 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_PIN
-# 1247 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox WithSamanthadontgothere_Text_3
-# 1249 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1250 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1234 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 1251 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox WithSamanthadontgothere_Text_4
-# 1253 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1235 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
+# 1236 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox WithSamanthadontgothere_Text_0
+# 1238 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker NULL
-# 1254 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1239 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
-# 1255 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, WithSamanthadontgothere_Movement_1
+# 1240 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_2
+# 1241 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox WithSamanthadontgothere_Text_1
+# 1242 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1243 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1244 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox WithSamanthadontgothere_Text_2
+# 1246 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker NULL
+# 1247 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1248 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, WithSamanthadontgothere_Movement_0
+# 1249 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_PIN
+# 1250 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox WithSamanthadontgothere_Text_3
+# 1252 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 1253 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1254 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox WithSamanthadontgothere_Text_4
 # 1256 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox WithSamanthadontgothere_Text_5
+	setspeaker NULL
+# 1257 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
 # 1258 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_0
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, WithSamanthadontgothere_Movement_1
 # 1259 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox WithSamanthadontgothere_Text_6
+	msgbox WithSamanthadontgothere_Text_5
+# 1261 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_0
 # 1262 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox WithSamanthadontgothere_Text_6
+# 1265 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
-# 1263 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1266 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement 0
-# 1264 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1267 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	release
 	return
 
 
 Littleroot_Idletalk_Prof::
-# 1268 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1269 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1270 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1271 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	lock
 # 1272 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1273 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1274 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1275 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
+# 1277 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_MAUSOLEUM_HEXGIRL, 3
 	goto_if_eq Littleroot_Idletalk_Prof_1
-# 1312 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1315 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Prof_8
 Littleroot_Idletalk_Prof_7:
-# 1314 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1317 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 2
 	goto_if_eq Littleroot_Idletalk_Prof_13
 Littleroot_Idletalk_Prof_12:
-# 1316 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1319 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 3
 	goto_if_eq Littleroot_Idletalk_Prof_16
 Littleroot_Idletalk_Prof_15:
-# 1331 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1334 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 4
 	goto_if_gt Littleroot_Idletalk_Prof_19
 Littleroot_Idletalk_Prof_18:
-# 1540 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-finishbalsamidletalk:
-# 1541 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1542 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1543 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement
 # 1544 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+finishbalsamidletalk:
+# 1545 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1546 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1547 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement
+# 1548 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 Littleroot_Idletalk_Prof_1:
-# 1276 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1279 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset SamanthaBalsamInteraction, Littleroot_Idletalk_Prof_5
 Littleroot_Idletalk_Prof_4:
-# 1301 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1304 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set SamanthaBalsamInteraction, Littleroot_Idletalk_Prof_10
 	return
 
 Littleroot_Idletalk_Prof_5:
-# 1278 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_0
-# 1279 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1280 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_SAMANTHA ]
 # 1281 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_0
+	msgbox Littleroot_Idletalk_Prof_Text_0
 # 1282 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_1
+	removefieldmugshot
 # 1283 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	setspeaker [ SP_NAME_SAMANTHA ]
 # 1284 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_0
 # 1285 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_2
+	msgbox Littleroot_Idletalk_Prof_Text_1
 # 1286 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1287 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1288 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_3
+	msgbox Littleroot_Idletalk_Prof_Text_2
 # 1289 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
 # 1290 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1291 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_4
+	msgbox Littleroot_Idletalk_Prof_Text_3
 # 1292 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1293 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1294 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_5
+	msgbox Littleroot_Idletalk_Prof_Text_4
 # 1295 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
 # 1296 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1297 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_6
+	msgbox Littleroot_Idletalk_Prof_Text_5
 # 1298 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag SamanthaBalsamInteraction
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1299 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1300 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_6
+# 1301 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag SamanthaBalsamInteraction
+# 1302 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishbalsamidletalk
 	goto Littleroot_Idletalk_Prof_4
 
 Littleroot_Idletalk_Prof_8:
-# 1313 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1316 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_8
 	goto Littleroot_Idletalk_Prof_7
 
 Littleroot_Idletalk_Prof_10:
-# 1303 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1304 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1305 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_7
 # 1306 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1307 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1308 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_7
+# 1309 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishbalsamidletalk
 	return
 
 Littleroot_Idletalk_Prof_13:
-# 1315 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1318 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_9
 	goto Littleroot_Idletalk_Prof_12
 
 Littleroot_Idletalk_Prof_16:
-# 1317 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_10
-# 1319 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
 # 1320 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 1321 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_11
+	msgbox Littleroot_Idletalk_Prof_Text_10
 # 1322 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1323 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 1324 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_11
+# 1325 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishbalsamidletalk
 	goto Littleroot_Idletalk_Prof_15
 
 Littleroot_Idletalk_Prof_19:
-# 1335 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1338 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_12
-# 1336 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1339 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 0
 	goto_if_eq Littleroot_Idletalk_Prof_22
 Littleroot_Idletalk_Prof_21:
-# 1340 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1343 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Prof_26
 Littleroot_Idletalk_Prof_24:
-# 1345 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1348 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Prof_31
 Littleroot_Idletalk_Prof_29:
-# 1350 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1353 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 2
 	goto_if_eq Littleroot_Idletalk_Prof_35
 Littleroot_Idletalk_Prof_34:
-# 1355 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1358 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 5
 	goto_if_eq Littleroot_Idletalk_Prof_38
 Littleroot_Idletalk_Prof_37:
-# 1360 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1363 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 6
 	goto_if_eq Littleroot_Idletalk_Prof_41
 Littleroot_Idletalk_Prof_40:
-# 1365 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1368 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 7
 	goto_if_eq Littleroot_Idletalk_Prof_44
 Littleroot_Idletalk_Prof_43:
-# 1369 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1372 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Littleroot_Idletalk_Prof_Text_20, Littleroot_Idletalk_Prof_Text_21, Littleroot_Idletalk_Prof_Text_22
-# 1370 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1373 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Littleroot_Idletalk_Prof_47
 Littleroot_Idletalk_Prof_46:
-# 1474 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1478 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Littleroot_Idletalk_Prof_50
 Littleroot_Idletalk_Prof_49:
-# 1530 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1534 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Littleroot_Idletalk_Prof_55
 	goto Littleroot_Idletalk_Prof_18
 
 Littleroot_Idletalk_Prof_22:
-# 1337 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1340 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferstring STR_VAR_1, Littleroot_Idletalk_Prof_Text_13
 	goto Littleroot_Idletalk_Prof_21
 
 Littleroot_Idletalk_Prof_25:
-# 1341 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1344 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferstring STR_VAR_1, Littleroot_Idletalk_Prof_Text_14
 	goto Littleroot_Idletalk_Prof_24
 
 Littleroot_Idletalk_Prof_26:
-# 1340 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1343 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset BalsamtoldtogoseeNorman, Littleroot_Idletalk_Prof_25
 	goto Littleroot_Idletalk_Prof_24
 
 Littleroot_Idletalk_Prof_30:
-# 1346 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1349 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferstring STR_VAR_1, Littleroot_Idletalk_Prof_Text_15
 	goto Littleroot_Idletalk_Prof_29
 
 Littleroot_Idletalk_Prof_31:
-# 1345 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1348 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set BalsamtoldtogoseeNorman, Littleroot_Idletalk_Prof_30
 	goto Littleroot_Idletalk_Prof_29
 
 Littleroot_Idletalk_Prof_35:
-# 1351 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1354 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferstring STR_VAR_1, Littleroot_Idletalk_Prof_Text_16
 	goto Littleroot_Idletalk_Prof_34
 
 Littleroot_Idletalk_Prof_38:
-# 1356 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1359 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferstring STR_VAR_2, Littleroot_Idletalk_Prof_Text_17
 	goto Littleroot_Idletalk_Prof_37
 
 Littleroot_Idletalk_Prof_41:
-# 1361 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1364 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferstring STR_VAR_2, Littleroot_Idletalk_Prof_Text_18
 	goto Littleroot_Idletalk_Prof_40
 
 Littleroot_Idletalk_Prof_44:
-# 1366 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1369 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferstring STR_VAR_2, Littleroot_Idletalk_Prof_Text_19
 	goto Littleroot_Idletalk_Prof_43
 
 Littleroot_Idletalk_Prof_47:
-# 1371 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1374 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 0
 	goto_if_eq Littleroot_Idletalk_Prof_53
 Littleroot_Idletalk_Prof_52:
-# 1400 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1404 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Prof_64
 Littleroot_Idletalk_Prof_62:
-# 1444 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1448 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Prof_77
 Littleroot_Idletalk_Prof_75:
-# 1468 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1472 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 2
 	goto_if_eq Littleroot_Idletalk_Prof_90
 	goto Littleroot_Idletalk_Prof_46
 
 Littleroot_Idletalk_Prof_50:
-# 1475 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1479 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 5
 	goto_if_eq Littleroot_Idletalk_Prof_59
 Littleroot_Idletalk_Prof_57:
-# 1484 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1488 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 5
 	goto_if_eq Littleroot_Idletalk_Prof_72
 Littleroot_Idletalk_Prof_70:
-# 1494 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1498 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 6
 	goto_if_eq Littleroot_Idletalk_Prof_87
 Littleroot_Idletalk_Prof_85:
-# 1504 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1508 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 6
 	goto_if_eq Littleroot_Idletalk_Prof_97
 Littleroot_Idletalk_Prof_95:
-# 1511 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1515 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 7
 	goto_if_eq Littleroot_Idletalk_Prof_100
 	goto Littleroot_Idletalk_Prof_49
 
 Littleroot_Idletalk_Prof_53:
-# 1372 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_23
-# 1374 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	checkplayergender
 # 1375 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_23
+# 1377 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	checkplayergender
+# 1378 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Littleroot_Idletalk_Prof_68
 Littleroot_Idletalk_Prof_67:
-# 1387 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1390 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Littleroot_Idletalk_Prof_83
 	goto Littleroot_Idletalk_Prof_52
 
 Littleroot_Idletalk_Prof_55:
-# 1531 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1535 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1532 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1536 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 1533 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1537 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_56
-# 1534 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1538 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishbalsamidletalk
 	goto Littleroot_Idletalk_Prof_18
 
 Littleroot_Idletalk_Prof_58:
-# 1476 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1477 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1478 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_45
-# 1479 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
 # 1480 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1481 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1482 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_45
+# 1483 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
+# 1484 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1485 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1486 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_46
 	goto Littleroot_Idletalk_Prof_57
 
@@ -2792,84 +2792,84 @@ Littleroot_Idletalk_Prof_59:
 	goto Littleroot_Idletalk_Prof_57
 
 Littleroot_Idletalk_Prof_63:
-# 1402 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1406 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1403 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1404 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_28
-# 1405 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Littleroot_Idletalk_Prof_Text_29, Littleroot_Idletalk_Prof_Text_30
 # 1407 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1408 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_28
+# 1409 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Littleroot_Idletalk_Prof_Text_29, Littleroot_Idletalk_Prof_Text_30
+# 1411 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Littleroot_Idletalk_Prof_81
 Littleroot_Idletalk_Prof_80:
-# 1415 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1419 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Littleroot_Idletalk_Prof_93
 Littleroot_Idletalk_Prof_92:
-# 1428 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1432 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1429 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1431 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_35
 # 1433 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 1434 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1435 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_36
-# 1436 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	msgbox Littleroot_Idletalk_Prof_Text_35
 # 1437 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 1438 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1439 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_37
+	msgbox Littleroot_Idletalk_Prof_Text_36
+# 1440 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1441 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1443 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_37
+# 1445 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag BalsamtoldtogoseeNorman
-# 1442 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1446 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishbalsamidletalk
 	goto Littleroot_Idletalk_Prof_62
 
 Littleroot_Idletalk_Prof_64:
-# 1400 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1404 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset BalsamtoldtogoseeNorman, Littleroot_Idletalk_Prof_63
 	goto Littleroot_Idletalk_Prof_62
 
 Littleroot_Idletalk_Prof_68:
-# 1376 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1379 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1377 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1378 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_24
 # 1380 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1381 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_LICK
-# 1382 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 1383 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1381 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_24
+# 1383 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
 # 1384 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_M_LICK
+# 1385 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+# 1386 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1387 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_25
 	goto Littleroot_Idletalk_Prof_67
 
 Littleroot_Idletalk_Prof_71:
-# 1485 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1486 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1487 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_47
-# 1488 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
 # 1489 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1490 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1491 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_47
+# 1492 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
+# 1493 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1494 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1495 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_48
 	goto Littleroot_Idletalk_Prof_70
 
@@ -2881,1622 +2881,1644 @@ Littleroot_Idletalk_Prof_72:
 	goto Littleroot_Idletalk_Prof_70
 
 Littleroot_Idletalk_Prof_76:
-# 1445 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1449 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1446 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1447 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_38
 # 1450 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	setspeaker [ SP_NAME_BALSAM ]
 # 1451 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1452 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_39
-# 1453 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+	msgbox Littleroot_Idletalk_Prof_Text_38
 # 1454 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1455 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_40
+	setspeaker [ SP_NAME_BALSAM ]
+# 1456 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_39
 # 1457 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
 # 1458 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1459 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_41
-# 1460 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+	msgbox Littleroot_Idletalk_Prof_Text_40
 # 1461 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1462 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_42
-# 1463 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1464 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1463 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_41
+# 1464 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
 # 1465 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_43
+	setspeaker [ SP_NAME_BALSAM ]
 # 1466 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_42
+# 1467 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 1468 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1469 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_43
+# 1470 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishbalsamidletalk
 	goto Littleroot_Idletalk_Prof_75
 
 Littleroot_Idletalk_Prof_77:
-# 1444 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1448 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set BalsamtoldtogoseeNorman, Littleroot_Idletalk_Prof_76
 	goto Littleroot_Idletalk_Prof_75
 
 Littleroot_Idletalk_Prof_81:
-# 1408 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1412 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 1409 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1413 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 1410 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1414 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_31
 	goto Littleroot_Idletalk_Prof_80
 
 Littleroot_Idletalk_Prof_83:
-# 1388 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1391 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1389 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1390 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_26
 # 1392 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1393 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_LICK
-# 1394 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 1395 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1393 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_26
+# 1395 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
 # 1396 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_M_LICK
+# 1397 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+# 1398 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1399 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_27
+# 1400 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	goto finishbalsamidletalk
 	goto Littleroot_Idletalk_Prof_52
 
 Littleroot_Idletalk_Prof_86:
-# 1495 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1496 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1497 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_49
 # 1499 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1500 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1501 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_49
+# 1503 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 1504 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1505 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_50
 	goto Littleroot_Idletalk_Prof_85
 
 Littleroot_Idletalk_Prof_87:
-# 1494 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1498 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 0
 	goto_if_eq Littleroot_Idletalk_Prof_86
 	goto Littleroot_Idletalk_Prof_85
 
 Littleroot_Idletalk_Prof_90:
-# 1469 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1473 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_44
 	goto Littleroot_Idletalk_Prof_46
 
 Littleroot_Idletalk_Prof_93:
-# 1416 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1417 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1418 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_32
-# 1419 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
 # 1420 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1421 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_33
-# 1422 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 1423 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1422 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_32
+# 1423 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
 # 1424 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1425 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_33
+# 1426 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 1427 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1428 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_34
 	goto Littleroot_Idletalk_Prof_92
 
 Littleroot_Idletalk_Prof_96:
-# 1505 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1509 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1506 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1510 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 1507 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1511 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_51
 	goto Littleroot_Idletalk_Prof_95
 
 Littleroot_Idletalk_Prof_97:
-# 1504 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1508 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 0
 	goto_if_gt Littleroot_Idletalk_Prof_96
 	goto Littleroot_Idletalk_Prof_95
 
 Littleroot_Idletalk_Prof_100:
-# 1512 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1513 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1514 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_52
 # 1516 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	fadeoutbgm 0
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1517 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_53
+	setspeaker [ SP_NAME_BALSAM ]
 # 1518 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_MENACING
-# 1519 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	msgbox Littleroot_Idletalk_Prof_Text_52
 # 1520 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidefollower
+	fadeoutbgm 0
 # 1521 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_LEER
+	msgbox Littleroot_Idletalk_Prof_Text_53
 # 1522 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Prof_Text_54
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_MENACING
 # 1523 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 1524 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1524 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	hidefollower
 # 1525 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	fadeinbgm 0
+	playse SE_M_LEER
 # 1526 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Prof_Text_54
+# 1527 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 1528 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1529 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	fadeinbgm 0
+# 1530 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Prof_Text_55
 	goto Littleroot_Idletalk_Prof_49
 
 
 Littleroot_Idletalk_Pikachu1::
-# 1561 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
-# 1562 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1563 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 7, Littleroot_Idletalk_Aidee_Movement_0
 # 1565 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lockall
+# 1566 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1567 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 7, Littleroot_Idletalk_Aidee_Movement_0
+# 1569 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_MAUSOLEUM_HEXGIRL, 3
 	goto_if_eq Littleroot_Idletalk_Pikachu1_1
-# 1580 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	showmonpic SPECIES_PIKACHU_SAFE, 10, 3
-# 1581 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playmoncry SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL
-# 1582 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_0
-# 1583 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
 # 1584 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidemonpic
+	showmonpic SPECIES_PIKACHU_SAFE, 10, 3
+# 1585 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playmoncry SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL
+# 1586 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_0
 # 1587 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 1588 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	hidemonpic
+# 1591 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Pikachu1_7
 Littleroot_Idletalk_Pikachu1_4:
-# 1599 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1603 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Pikachu1_13
 Littleroot_Idletalk_Pikachu1_11:
-# 1612 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1616 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 1
 	goto_if_eq Littleroot_Idletalk_Pikachu1_20
 Littleroot_Idletalk_Pikachu1_18:
-# 1671 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1674 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Pikachu1_Text_13
 Littleroot_Idletalk_Pikachu1_16:
-# 1672 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-finishPikascript:
-# 1674 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
 # 1675 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1676 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+finishPikascript:
 # 1677 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 1678 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1679 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1680 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 Littleroot_Idletalk_Pikachu1_1:
-# 1566 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playmoncry SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL
-# 1567 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_0
-# 1568 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_MIST
-# 1569 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitse
 # 1570 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_MIST
+	playmoncry SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL
 # 1571 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_1
+	msgbox Littleroot_Idletalk_Pikachu1_Text_0
+# 1572 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_M_MIST
 # 1573 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_SAMANTHA ]
+	waitse
 # 1574 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_2
+	playse SE_M_MIST
 # 1575 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_1
+# 1577 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_SAMANTHA ]
+# 1578 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_2
+# 1579 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishPikascript
 	return
 
 Littleroot_Idletalk_Pikachu1_5:
-# 1588 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1589 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
-# 1590 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
-# 1591 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1592 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_3
+	setspeaker [ SP_NAME_BALSAM ]
+# 1593 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1594 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag InsistonPika1
+	waitmovement 4
 # 1595 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1596 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_3
+# 1598 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag InsistonPika1
+# 1599 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1600 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
-# 1597 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1601 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishPikascript
 	goto Littleroot_Idletalk_Pikachu1_4
 
 Littleroot_Idletalk_Pikachu1_6:
-# 1587 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1591 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset InsistonPika2, Littleroot_Idletalk_Pikachu1_5
 	goto Littleroot_Idletalk_Pikachu1_4
 
 Littleroot_Idletalk_Pikachu1_7:
-# 1587 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1591 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset InsistonPika1, Littleroot_Idletalk_Pikachu1_6
 	goto Littleroot_Idletalk_Pikachu1_4
 
 Littleroot_Idletalk_Pikachu1_12:
-# 1600 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1601 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
-# 1602 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
-# 1603 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1604 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_SWAGGER2
+	setspeaker [ SP_NAME_BALSAM ]
 # 1605 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_4
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1606 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	clearflag InsistonPika1
+	waitmovement 4
 # 1607 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag InsistonPika2
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1608 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	playse SE_M_SWAGGER2
 # 1609 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	msgbox Littleroot_Idletalk_Pikachu1_Text_4
 # 1610 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	clearflag InsistonPika1
+# 1611 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag InsistonPika2
+# 1612 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1613 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1614 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishPikascript
 	goto Littleroot_Idletalk_Pikachu1_11
 
 Littleroot_Idletalk_Pikachu1_13:
-# 1599 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1603 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set InsistonPika1, Littleroot_Idletalk_Pikachu1_12
 	goto Littleroot_Idletalk_Pikachu1_11
 
 Littleroot_Idletalk_Pikachu1_17:
-# 1613 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1614 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
-# 1615 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
-# 1616 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
 # 1617 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 1618 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_LICK
-# 1619 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_5
-# 1620 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1621 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1622 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_6
-# 1624 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 1625 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_7, MSGBOX_YESNO
-# 1626 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 1627 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1618 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
+# 1619 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1620 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1621 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+# 1622 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_M_LICK
+# 1623 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_5
+# 1624 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
+# 1625 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1626 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_6
 # 1628 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1629 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_7, MSGBOX_YESNO
+# 1630 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 1631 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1632 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Littleroot_Idletalk_Pikachu1_25
-# 1661 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1664 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1662 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1665 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 1663 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1666 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Littleroot_Idletalk_Pikachu1_Text_12
 Littleroot_Idletalk_Pikachu1_24:
-# 1664 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 1665 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1666 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
 # 1667 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 1668 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1669 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1670 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishPikascript
 	goto Littleroot_Idletalk_Pikachu1_16
 
 Littleroot_Idletalk_Pikachu1_19:
-# 1612 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1616 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER3, Littleroot_Idletalk_Pikachu1_17
 	goto Littleroot_Idletalk_Pikachu1_18
 
 Littleroot_Idletalk_Pikachu1_20:
-# 1612 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1616 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set InsistonPika2, Littleroot_Idletalk_Pikachu1_19
 	goto Littleroot_Idletalk_Pikachu1_18
 
 Littleroot_Idletalk_Pikachu1_25:
-# 1629 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1630 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_8
-# 1631 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 1632 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_YAWN
 # 1633 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_9
+	playfanfare MUS_OBTAIN_ITEM
 # 1634 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag GOTSTARTER3
+	msgbox Littleroot_Idletalk_Pikachu1_Text_8
 # 1635 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	clearflag purachudollatoldaleinn
+	waitmessage
 # 1636 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removeobject 7
+	playse SE_M_YAWN
 # 1637 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	givemon SPECIES_PIKACHU_SAFE, 5
+	msgbox Littleroot_Idletalk_Pikachu1_Text_9
+# 1638 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag GOTSTARTER3
 # 1639 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	clearflag purachudollatoldaleinn
+# 1640 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removeobject 7
+# 1641 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	givemon SPECIES_PIKACHU_SAFE, 5, ITEM_HONEY, ITEM_POKE_BALL, 1, 0, 0, 0, 0, 0, 0, 25, 25, 25, 25, 25, 25
+# 1642 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq Littleroot_Idletalk_Pikachu1_28
-# 1654 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1657 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq Littleroot_Idletalk_Pikachu1_29
 	goto Littleroot_Idletalk_Pikachu1_24
 
 Littleroot_Idletalk_Pikachu1_28:
-# 1640 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call NicknamePartyMon3
-# 1641 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 1642 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_LITTLEROOT_PHASE, 2
 # 1643 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	call NicknamePartyMon3
 # 1644 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	setflag FLAG_SYS_POKEMON_GET
 # 1645 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_2
+	setvar VAR_LITTLEROOT_PHASE, 2
 # 1646 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_10
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1647 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
+	setspeaker [ SP_NAME_BALSAM ]
 # 1648 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_2
 # 1649 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_11
+	msgbox Littleroot_Idletalk_Pikachu1_Text_10
+# 1650 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
 # 1651 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
+# 1652 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_11
+# 1654 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
 	goto Littleroot_Idletalk_Pikachu1_24
 
 Littleroot_Idletalk_Pikachu1_29:
-# 1655 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1658 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call NicknameBoxMon3
-# 1656 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1659 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 1657 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1660 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setvar VAR_LITTLEROOT_PHASE, 2
 	goto Littleroot_Idletalk_Pikachu1_24
 
 
 NicknamePartyMon3::
-# 1681 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1684 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknamePartyMon3_Text_0, MSGBOX_YESNO
-# 1682 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1685 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 1683 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1686 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon3_1
 	return
 
 NicknamePartyMon3_1:
-# 1684 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1687 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 1685 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1688 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon3::
-# 1689 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1692 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknameBoxMon3_Text_0, MSGBOX_YESNO
-# 1690 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1693 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 1691 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1694 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon3_2
 NicknameBoxMon3_1:
-# 1693 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1696 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknameBoxMon3_Text_1
 	return
 
 NicknameBoxMon3_2:
-# 1692 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1695 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon3_1
 
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue::
-# 1699 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1700 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special SpawnCameraObject
-# 1701 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_0
 # 1702 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 0
+	lock
 # 1703 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special RemoveCameraObject
+	special SpawnCameraObject
 # 1704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
+	applymovement OBJ_EVENT_ID_CAMERA, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_0
 # 1705 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	waitmovement 0
 # 1706 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	special RemoveCameraObject
 # 1707 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_0
+	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
+# 1708 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1709 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
 # 1710 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_0
+# 1713 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_1, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_2
-# 1711 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1714 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_2
-# 1735 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1738 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_3
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_1:
-# 1760 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special SpawnCameraObject
-# 1761 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_2
-# 1762 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 0
 # 1763 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special RemoveCameraObject
+	special SpawnCameraObject
 # 1764 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	applymovement OBJ_EVENT_ID_CAMERA, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_2
 # 1765 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	waitmovement 0
 # 1766 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_LITTLEROOT_PHASE, 1
-# 1767 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1768 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	special RemoveCameraObject
+# 1767 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1768 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
 # 1769 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setvar VAR_LITTLEROOT_PHASE, 1
+# 1770 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1771 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	special RemoveCameraObject
+# 1772 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_2:
-# 1712 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_3
-# 1713 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1714 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
 # 1715 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_3
 # 1716 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_4
+	removefieldmugshot
+# 1717 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
 # 1718 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	setspeaker [ SP_NAME_BALSAM ]
 # 1719 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1720 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_4
 # 1721 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_5
+	removefieldmugshot
 # 1722 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1723 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1724 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1725 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1726 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_6
-# 1728 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1729 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1730 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1723 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1724 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_5
+# 1725 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1726 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1727 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 1728 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1729 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_6
 # 1731 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1732 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1733 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1734 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_7
 	goto LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_1
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_3:
-# 1736 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_8
 # 1739 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1740 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1741 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_8
 # 1742 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	removefieldmugshot
 # 1743 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_6
+	playse SE_M_SWAGGER2
+# 1744 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1745 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	setspeaker [ SP_NAME_BALSAM ]
 # 1746 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1747 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_6
 # 1748 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_9
-# 1750 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
-# 1751 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 1752 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1753 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_10
-# 1754 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1755 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1749 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1756 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1750 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1751 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_9
+# 1753 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1754 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 1755 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1756 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_10
 # 1757 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1758 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1759 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1760 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_11
 	goto LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_1
 
 
 LittlerootTown_Eventscript_ProffessorDontgo1::
-# 1772 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1773 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
-# 1774 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_SWAGGER2
 # 1775 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	lock
 # 1776 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
 # 1777 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorDontgo1_Text_0
+	playse SE_M_SWAGGER2
 # 1778 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Eventscript_ProffessorDontgo1_Movement_0
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1779 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	setspeaker [ SP_NAME_BALSAM ]
 # 1780 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	msgbox LittlerootTown_Eventscript_ProffessorDontgo1_Text_0
 # 1781 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Eventscript_ProffessorDontgo1_Movement_0
 # 1782 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	waitmovement OBJ_EVENT_ID_PLAYER
 # 1783 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1784 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1785 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1786 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_Eventscript_ProffessorDontgo2::
-# 1786 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1787 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
-# 1788 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_SWAGGER2
 # 1789 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	lock
 # 1790 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
 # 1791 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorDontgo2_Text_0
+	playse SE_M_SWAGGER2
+# 1792 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1793 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Eventscript_ProffessorDontgo1_Movement_0
+	setspeaker [ SP_NAME_BALSAM ]
 # 1794 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 1795 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	msgbox LittlerootTown_Eventscript_ProffessorDontgo2_Text_0
 # 1796 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Eventscript_ProffessorDontgo1_Movement_0
 # 1797 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	waitmovement OBJ_EVENT_ID_PLAYER
 # 1798 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1799 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1800 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1801 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_Eventscript_ProffessorNoPokesUpstairs::
-# 1801 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1802 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
-# 1803 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
 # 1804 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, WithSamanthadontgothere_Movement_0
+	lock
 # 1805 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1806 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_PIN
-# 1807 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1808 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1809 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorNoPokesUpstairs_Text_0
-# 1810 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1811 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 1812 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1813 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement 4
+# 1807 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, WithSamanthadontgothere_Movement_0
+# 1808 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1809 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_PIN
+# 1810 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 1811 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1812 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_ProffessorNoPokesUpstairs_Text_0
+# 1813 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
 # 1814 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+	waitmessage
 # 1815 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
 # 1816 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1817 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+# 1818 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 1819 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_Eventscript_ProffessorNoDoor::
-# 1819 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1820 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
-# 1821 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
 # 1822 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, WithSamanthadontgothere_Movement_0
+	lock
 # 1823 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1824 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_PIN
-# 1825 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1826 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1827 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorNoDoor_Text_0
-# 1829 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1830 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 1831 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1832 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement 4
+# 1825 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, WithSamanthadontgothere_Movement_0
+# 1826 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1827 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_PIN
+# 1828 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 1829 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1830 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_ProffessorNoDoor_Text_0
+# 1832 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
 # 1833 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+	waitmessage
 # 1834 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
 # 1835 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1836 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+# 1837 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 1838 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_Eventscript_Aideenotthere::
-# 1839 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1840 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
-# 1841 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
 # 1842 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, WithSamanthadontgothere_Movement_0
+	lock
 # 1843 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_1
 # 1844 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_PIN
-# 1845 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1846 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 1847 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_Aideenotthere_Text_0
-# 1848 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1849 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 1850 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1851 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement 4
+# 1845 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, WithSamanthadontgothere_Movement_0
+# 1846 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1847 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse SE_PIN
+# 1848 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+# 1849 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1850 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_Eventscript_Aideenotthere_Text_0
+# 1851 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
 # 1852 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+	waitmessage
 # 1853 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
 # 1854 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1855 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+# 1856 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 1857 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 BalsamHowdidyoufindbackentrance::
-# 1859 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1862 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 1860 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1863 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set enteredsecretlabbeforetime, BalsamHowdidyoufindbackentrance_2
-# 1882 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1885 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	release
 BalsamHowdidyoufindbackentrance_1:
-# 1884 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1887 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 BalsamHowdidyoufindbackentrance_2:
-# 1861 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1862 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, BalsamHowdidyoufindbackentrance_Movement_0
-# 1863 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_PIN
 # 1864 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 1865 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
+	applymovement 4, BalsamHowdidyoufindbackentrance_Movement_0
 # 1866 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	playse SE_PIN
 # 1867 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_2
+	waitmovement 4
 # 1868 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamHowdidyoufindbackentrance_Text_0
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
 # 1869 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 1870 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1870 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_2
 # 1871 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamHowdidyoufindbackentrance_Text_1
+	msgbox BalsamHowdidyoufindbackentrance_Text_0
 # 1872 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1873 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1874 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamHowdidyoufindbackentrance_Text_2
+	msgbox BalsamHowdidyoufindbackentrance_Text_1
+# 1875 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1876 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	setspeaker [ SP_NAME_BALSAM ]
 # 1877 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 1878 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	msgbox BalsamHowdidyoufindbackentrance_Text_2
 # 1879 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	removefieldmugshot
 # 1880 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 1881 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1882 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 4
+# 1883 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	clearflag enteredsecretlabbeforetime
 	goto BalsamHowdidyoufindbackentrance_1
 
 
 LittlerootTown_Eventscript_ProffessorGotoOldale::
-# 1889 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1890 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1891 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, BalsamHowdidyoufindbackentrance_Movement_0
 # 1892 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_PIN
+	lock
 # 1893 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 4
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 1894 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
+	applymovement 4, BalsamHowdidyoufindbackentrance_Movement_0
 # 1895 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	playse SE_PIN
 # 1896 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_ProffessorGotoOldale_Text_0
+	waitmovement 4
 # 1897 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1898 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
+	setspeaker [ SP_NAME_BALSAM ]
 # 1899 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	msgbox LittlerootTown_Eventscript_ProffessorGotoOldale_Text_0
 # 1900 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 0
+	removefieldmugshot
 # 1901 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+	waitmessage
 # 1902 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement 0
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
 # 1903 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 0
+# 1904 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, WithSamanthadontgothere_Movement_2
+# 1905 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement 0
+# 1906 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_Eventscript_AideeGotoback::
-# 1906 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1907 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_POKEBALL
-# 1908 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 1909 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
+	lock
 # 1910 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_0
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_POKEBALL
 # 1911 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_Eventscript_AideeGotoback_Text_0
+	setspeaker [ SP_NAME_AIDEE ]
+# 1912 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
+# 1913 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, Littleroot_Idletalk_Aidee_Movement_0
 # 1914 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Eventscript_ProffessorDontgo1_Movement_0
-# 1915 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 1916 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	msgbox LittlerootTown_Eventscript_AideeGotoback_Text_0
 # 1917 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Eventscript_ProffessorDontgo1_Movement_0
+# 1918 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 1919 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1920 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 Lab_EventScript_Starter1::
-# 1924 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 1925 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1926 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
 # 1927 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 1928 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 1929 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1930 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER1, Lab_EventScript_Starter1_4
 Lab_EventScript_Starter1_3:
-# 1992 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
-# 1993 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1994 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1995 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
 # 1996 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_8
+	playse SE_M_SWAGGER2
+# 1997 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 1998 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1999 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 2000 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_9
-# 2002 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 2003 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 2004 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
+# 1999 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter1_Text_8
+# 2001 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2002 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2003 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter1_Text_9
 # 2005 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2006 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 2007 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 2008 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Lab_EventScript_Starter1_Text_10
 Lab_EventScript_Starter1_1:
-# 2006 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 2007 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 2008 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement
 # 2009 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 2010 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 2011 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement
+# 2012 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2013 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	end
 
 Lab_EventScript_Starter1_2:
-# 1929 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1932 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
-# 1930 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	showmonpic SPECIES_BULBASYNTH, 10, 3
-# 1931 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_0
 # 1933 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	showmonpic SPECIES_BULBASYNTH, 10, 3
 # 1934 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 1935 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_1
-# 1937 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter1_Text_0
+# 1936 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
+# 1937 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
 # 1938 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 1939 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	msgbox Lab_EventScript_Starter1_Text_1
 # 1940 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_2
+	removefieldmugshot
 # 1941 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1942 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
 # 1943 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_3, MSGBOX_YESNO
+	msgbox Lab_EventScript_Starter1_Text_2
 # 1944 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 1945 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 1946 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter1_Text_3, MSGBOX_YESNO
+# 1947 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Lab_EventScript_Starter1_10
 Lab_EventScript_Starter1_9:
-# 1984 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1987 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Lab_EventScript_Starter1_12
 	goto Lab_EventScript_Starter1_1
 
 Lab_EventScript_Starter1_4:
-# 1927 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1930 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER2, Lab_EventScript_Starter1_6
 	goto Lab_EventScript_Starter1_3
 
 Lab_EventScript_Starter1_6:
-# 1927 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1930 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER3, Lab_EventScript_Starter1_2
 	goto Lab_EventScript_Starter1_3
 
 Lab_EventScript_Starter1_10:
-# 1945 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	givemon SPECIES_BULBASYNTH, 5, ITEM_MIRACLE_SEED
-# 1946 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1948 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	givemon SPECIES_BULBASYNTH, 5, ITEM_NONE, ITEM_POKE_BALL, 1, MALE, 0, 0, 0, 0, 0, 0, 25, 25, 25, 25, 25, 25
+# 1949 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq Lab_EventScript_Starter1_14
-# 1969 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1972 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq Lab_EventScript_Starter1_15
-# 1979 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1982 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1980 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1983 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 1981 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1984 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Lab_EventScript_Starter1_Text_7
 	goto Lab_EventScript_Starter1_9
 
 Lab_EventScript_Starter1_12:
-# 1985 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidemonpic
-# 1986 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 1987 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
 # 1988 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	hidemonpic
+# 1989 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1990 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 1991 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	goto Lab_EventScript_Starter1_1
 
 Lab_EventScript_Starter1_14:
-# 1947 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1948 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 1949 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_4
 # 1950 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removeobject 1
+	playfanfare MUS_OBTAIN_ITEM
 # 1951 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag GOTSTARTER1
+	removefieldmugshot
 # 1952 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	clearflag bulbasynthdollatoldaleinn
+	msgbox Lab_EventScript_Starter1_Text_4
 # 1953 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call NicknamePartyMon1
+	removeobject 1
 # 1954 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	setflag GOTSTARTER1
 # 1955 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_LITTLEROOT_PHASE, 2
+	clearflag bulbasynthdollatoldaleinn
 # 1956 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	call NicknamePartyMon1
 # 1957 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	setflag FLAG_SYS_POKEMON_GET
 # 1958 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_5
+	setvar VAR_LITTLEROOT_PHASE, 2
 # 1959 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 1960 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
+	setspeaker [ SP_NAME_BALSAM ]
 # 1961 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
+	msgbox Lab_EventScript_Starter1_Text_5
 # 1962 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Littleroot_Idletalk_Pikachu1_Text_11
+	waitmessage
+# 1963 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
 # 1964 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
 # 1965 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_11
+# 1967 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 1968 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement
-# 1966 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1969 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmessage
 	goto Lab_EventScript_Starter1_9
 
 Lab_EventScript_Starter1_15:
-# 1970 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1971 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_6
-# 1972 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removeobject 1
 # 1973 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag GOTSTARTER1
+	playfanfare MUS_OBTAIN_ITEM
 # 1974 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call NicknameBoxMon1
+	msgbox Lab_EventScript_Starter1_Text_6
 # 1975 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	removeobject 1
 # 1976 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag GOTSTARTER1
+# 1977 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	call NicknameBoxMon1
+# 1978 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 1979 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setvar VAR_LITTLEROOT_PHASE, 2
 	goto Lab_EventScript_Starter1_9
 
 
 NicknamePartyMon1::
-# 2016 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2019 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknamePartyMon1_Text_0, MSGBOX_YESNO
-# 2017 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2020 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 2018 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2021 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon1_1
 	return
 
 NicknamePartyMon1_1:
-# 2019 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2022 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 2020 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2023 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon1::
-# 2028 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2031 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknameBoxMon3_Text_0, MSGBOX_YESNO
-# 2029 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2032 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 2030 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2033 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon1_2
 NicknameBoxMon1_1:
-# 2033 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2036 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknameBoxMon3_Text_1
 	return
 
 NicknameBoxMon1_2:
-# 2031 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2034 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon1_1
 
 
-# 2037 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2040 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 Profturning1:
-# 2038 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2041 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	face_down
 	step_end
 
-# 2041 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2044 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 Proftoaidee1:
-# 2042 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2045 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	face_left
 	step_end
 
-# 2045 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2048 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 Profturningback1:
-# 2046 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2049 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	face_up
 	step_end
 
 Lab_EventScript_Starter2::
-# 2051 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 2052 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 2053 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
 # 2054 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
+	lock
 # 2055 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2056 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 2057 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
+# 2058 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER1, Lab_EventScript_Starter2_4
 Lab_EventScript_Starter2_3:
-# 2108 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2113 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
-# 2109 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse SE_M_SWAGGER2
-# 2110 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 2111 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 2112 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_8
 # 2114 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	playse SE_M_SWAGGER2
 # 2115 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
 # 2116 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_9
-# 2118 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 2119 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 2120 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 2121 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter1_Text_10
-# 2122 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 2123 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 2124 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement
-# 2125 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2117 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter1_Text_8
+# 2119 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
+# 2120 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2121 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter1_Text_9
+# 2123 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2124 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 2125 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
 # 2126 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter1_Text_10
+# 2127 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 2128 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 2129 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement
+# 2130 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2131 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	end
 
 Lab_EventScript_Starter2_1:
-# 2130 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2135 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 2131 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2136 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement
-# 2132 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2137 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
-# 2133 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2138 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 Lab_EventScript_Starter2_2:
-# 2056 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2059 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	showmonpic SPECIES_SMOTHQUIL, 10, 3
-# 2057 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter2_Text_0
 # 2060 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter2_Text_0
+# 2063 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmessage
-# 2061 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2064 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Lab_EventScript_Starter1_Text_3, MSGBOX_YESNO
-# 2062 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2065 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Lab_EventScript_Starter2_10
 Lab_EventScript_Starter2_9:
-# 2101 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2106 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Lab_EventScript_Starter2_12
 	goto Lab_EventScript_Starter2_1
 
 Lab_EventScript_Starter2_4:
-# 2055 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2058 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER2, Lab_EventScript_Starter2_6
 	goto Lab_EventScript_Starter2_3
 
 Lab_EventScript_Starter2_6:
-# 2055 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2058 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER3, Lab_EventScript_Starter2_2
 	goto Lab_EventScript_Starter2_3
 
 Lab_EventScript_Starter2_10:
-# 2063 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2066 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
-# 2064 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	givemon SPECIES_SMOTHQUIL, 5, ITEM_CHARCOAL
-# 2065 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2067 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	givemon SPECIES_SMOTHQUIL, 5, ITEM_NONE, ITEM_POKE_BALL, 1, MALE, 0, 0, 0, 0, 0, 0, 25, 25, 25, 25, 25, 25
+# 2070 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq Lab_EventScript_Starter2_14
-# 2087 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2092 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq Lab_EventScript_Starter2_15
-# 2097 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2102 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 2098 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2103 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Lab_EventScript_Starter1_Text_7
 	goto Lab_EventScript_Starter2_9
 
 Lab_EventScript_Starter2_12:
-# 2102 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2107 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 2103 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2108 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
-# 2104 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2109 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
 	goto Lab_EventScript_Starter2_1
 
 Lab_EventScript_Starter2_14:
-# 2066 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 2067 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter2_Text_1
-# 2068 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removeobject 2
-# 2069 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag GOTSTARTER2
-# 2070 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	clearflag smothquildollatoldaleinn
 # 2071 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call NicknamePartyMon2
+	playfanfare MUS_OBTAIN_ITEM
 # 2072 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	msgbox Lab_EventScript_Starter2_Text_1
 # 2073 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_LITTLEROOT_PHASE, 2
+	removeobject 2
 # 2074 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	setflag GOTSTARTER2
 # 2075 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	clearflag smothquildollatoldaleinn
 # 2076 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter2_Text_2
+	call NicknamePartyMon2
 # 2077 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
+	setflag FLAG_SYS_POKEMON_GET
 # 2078 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
+	setvar VAR_LITTLEROOT_PHASE, 2
 # 2079 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 2080 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter2_Text_3
+	setspeaker [ SP_NAME_BALSAM ]
+# 2081 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter2_Text_2
 # 2082 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 2083 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement
-# 2084 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmessage
+# 2083 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_2
+# 2084 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
 # 2085 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Littleroot_Idletalk_Pikachu1_Text_11
+# 2087 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 2088 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement
+# 2089 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 2090 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
 	goto Lab_EventScript_Starter2_9
 
 Lab_EventScript_Starter2_15:
-# 2088 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 2089 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter2_Text_4
-# 2090 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removeobject 2
-# 2091 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag GOTSTARTER2
-# 2092 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call NicknameBoxMon2
 # 2093 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	playfanfare MUS_OBTAIN_ITEM
 # 2094 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter2_Text_3
+# 2095 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removeobject 2
+# 2096 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag GOTSTARTER2
+# 2097 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	call NicknameBoxMon2
+# 2098 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 2099 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setvar VAR_LITTLEROOT_PHASE, 2
 	goto Lab_EventScript_Starter2_9
 
 
 NicknamePartyMon2::
-# 2137 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2142 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknamePartyMon2_Text_0, MSGBOX_YESNO
-# 2138 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2143 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 2139 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2144 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon2_1
 	return
 
 NicknamePartyMon2_1:
-# 2140 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2145 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 2141 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2146 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon2::
-# 2149 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2154 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknameBoxMon2_Text_0, MSGBOX_YESNO
-# 2150 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2155 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 2151 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2156 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon2_2
 NicknameBoxMon2_1:
-# 2154 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2159 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox NicknameBoxMon2_Text_1
 	return
 
 NicknameBoxMon2_2:
-# 2152 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2157 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon2_1
 
 
 Lab_EventScript_Starter3::
-# 2161 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2166 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 2162 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2167 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER1, Lab_EventScript_Starter3_4
 Lab_EventScript_Starter3_3:
-# 2189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2194 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox Lab_EventScript_Starter3_Text_4
 Lab_EventScript_Starter3_1:
-# 2190 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2195 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmessage
-# 2191 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2196 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	end
 
 Lab_EventScript_Starter3_2:
-# 2163 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter3_Text_0
-# 2164 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 2165 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
-# 2166 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 2167 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
 # 2168 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter3_Text_1
+	msgbox Lab_EventScript_Starter3_Text_0
+# 2169 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
 # 2170 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	applymovement 4, LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1
 # 2171 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 2172 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter3_Text_2
+	setspeaker [ SP_NAME_BALSAM ]
 # 2173 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 2174 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
+	msgbox Lab_EventScript_Starter3_Text_1
 # 2175 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	removefieldmugshot
 # 2176 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special SpawnCameraObject
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
 # 2177 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Lab_EventScript_Starter3_Movement_0
+	msgbox Lab_EventScript_Starter3_Text_2
 # 2178 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement
-# 2179 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special RemoveCameraObject
-# 2180 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_1
-# 2181 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox Lab_EventScript_Starter3_Text_3
-# 2182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmessage
-# 2183 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2179 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2180 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 2181 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	special SpawnCameraObject
-# 2184 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Lab_EventScript_Starter3_Movement_1
-# 2185 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Lab_EventScript_Starter3_Movement_0
+# 2183 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement
+# 2184 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	special RemoveCameraObject
+# 2185 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_1
 # 2186 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox Lab_EventScript_Starter3_Text_3
+# 2187 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
+# 2188 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	special SpawnCameraObject
+# 2189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Lab_EventScript_Starter3_Movement_1
+# 2190 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmovement
+# 2191 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	special RemoveCameraObject
 	goto Lab_EventScript_Starter3_1
 
 Lab_EventScript_Starter3_4:
-# 2162 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2167 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER2, Lab_EventScript_Starter3_6
 	goto Lab_EventScript_Starter3_3
 
 Lab_EventScript_Starter3_6:
-# 2162 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2167 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset GOTSTARTER3, Lab_EventScript_Starter3_2
 	goto Lab_EventScript_Starter3_3
 
 
 LabBrokenGlasses::
-# 2197 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2202 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 2198 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	goto_if_unset FLAG_ITEM_LAB_GLASSES, LabBrokenGlasses_2
 # 2203 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	goto_if_unset FLAG_ITEM_LAB_GLASSES, LabBrokenGlasses_2
+# 2208 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabBrokenGlasses_Text_1
 LabBrokenGlasses_1:
-# 2204 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2209 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 LabBrokenGlasses_2:
-# 2199 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2204 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabBrokenGlasses_Text_0
-# 2200 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2205 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitem ITEM_WISE_GLASSES
-# 2201 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2206 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_ITEM_LAB_GLASSES
 	goto LabBrokenGlasses_1
 
 
 LabShelves::
-# 2208 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2213 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 2209 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2214 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabShelves_Text_0
-# 2211 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2216 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LabMonitor::
-# 2215 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2220 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 2216 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2221 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabMonitor_Text_0
-# 2217 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2222 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	releaseall
+	return
+
+
+LabOfficeChair::
+# 2226 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 2227 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LabOfficeChair_Text_0
+# 2228 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 BalsamDontCheckMyPC::
-# 2221 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2232 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 2222 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 2223 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 2224 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
-# 2225 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamDontCheckMyPC_Text_0
-# 2226 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 2227 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
-# 2228 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 2229 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmovement
-# 2230 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	releaseall
-	return
-
-
-LabBox::
 # 2233 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 2234 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LabBox_Text_0
+	setspeaker [ SP_NAME_BALSAM ]
 # 2235 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	releaseall
-	return
-
-
-LabSealedBox::
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
+# 2236 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox BalsamDontCheckMyPC_Text_0
+# 2237 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2238 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitmessage
 # 2239 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
 # 2240 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LabSealedBox_Text_0
+	waitmovement
 # 2241 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
-LabBirchBag::
-# 2245 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LabBox::
+# 2244 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
+# 2245 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LabBox_Text_0
 # 2246 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	releaseall
+	return
+
+
+LabServer::
+# 2250 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 2251 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LabServer_Text_0
+# 2252 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	releaseall
+	return
+
+
+LabSealedBox::
+# 2256 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 2257 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LabSealedBox_Text_0
+# 2258 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	releaseall
+	return
+
+
+LabBirchBag::
+# 2262 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 2263 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabBirchBag_Text_0
-# 2247 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2264 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LabDiglettBook::
-# 2251 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2268 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 2252 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2269 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	showmonpic SPECIES_BURMY_SANDY, 10, 3
-# 2253 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2270 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabDiglettBook_Text_0
-# 2254 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2271 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidemonpic
-# 2255 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2272 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 
 LabCoffee::
-# 2259 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2276 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lock
-# 2260 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2277 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset FLAG_ITEM_LAB_COFFEE, LabCoffee_2
-# 2280 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2297 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabCoffee_Text_3
 LabCoffee_1:
-# 2281 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2298 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 LabCoffee_2:
-# 2261 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2278 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabCoffee_Text_0
-# 2262 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2279 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitem ITEM_HEAL_POWDER
-# 2263 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2280 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_ITEM_LAB_COFFEE
-# 2264 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2281 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 5, LabCoffee_Movement_0
-# 2265 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2282 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, LabCoffee_Movement_0
-# 2266 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2283 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	playse SE_PIN
-# 2267 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2284 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_2
-# 2268 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2285 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
-# 2269 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2286 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
-# 2270 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2287 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabCoffee_Text_1
-# 2271 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2288 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
-# 2272 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2289 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
-# 2273 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2290 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LabCoffee_Text_2
-# 2275 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2292 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 5, Littleroot_Idletalk_Aidee_Movement_2
-# 2276 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2293 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement
-# 2277 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2294 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
 	goto LabCoffee_1
 
 
 BalsamgivesPokenav::
-# 2286 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2303 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_set AideeQuestAccepted, BalsamgivesPokenav_4
 BalsamgivesPokenav_3:
-# 2326 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2343 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto finishpokenavscript
 BalsamgivesPokenav_1:
-# 2328 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2345 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 finishpokenavscript:
-# 2329 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2346 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
-# 2330 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2347 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	releaseall
 	return
 
 BalsamgivesPokenav_2:
-# 2288 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
-# 2289 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 2290 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 2291 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 2292 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
-# 2293 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
-# 2294 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_0
-# 2296 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playse MUS_RG_OBTAIN_KEY_ITEM
-# 2298 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker NULL
-# 2299 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 2300 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_1
-# 2301 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitse
-# 2302 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKENAV_GET
-# 2303 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 2304 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 2305 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_2
-# 2309 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_ENABLE_MOM_MATCH_CALL
-# 2310 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
-# 2311 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ NULL ]
-# 2312 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	fadeoutbgm 0
-# 2313 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playbgm MUS_REGISTER_MATCH_CALL, TRUE
-# 2314 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	removefieldmugshot
-# 2315 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_3
-# 2316 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	fadeinbgm 0
-# 2317 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 2318 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 2306 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 2307 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2308 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 2309 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_0
+# 2310 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Littleroot_Idletalk_Aidee_Movement_3
+# 2311 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox BalsamgivesPokenav_Text_0
+# 2313 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playse MUS_RG_OBTAIN_KEY_ITEM
+# 2315 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker NULL
+# 2316 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2317 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox BalsamgivesPokenav_Text_1
+# 2318 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitse
 # 2319 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox BalsamgivesPokenav_Text_4
+	setflag FLAG_SYS_POKENAV_GET
+# 2320 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
 # 2321 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
 # 2322 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox BalsamgivesPokenav_Text_2
+# 2326 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag FLAG_ENABLE_MOM_MATCH_CALL
+# 2327 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
+# 2328 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ NULL ]
+# 2329 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	fadeoutbgm 0
+# 2330 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playbgm MUS_REGISTER_MATCH_CALL, TRUE
+# 2331 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	removefieldmugshot
+# 2332 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox BalsamgivesPokenav_Text_3
+# 2333 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	fadeinbgm 0
+# 2334 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 2335 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2336 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox BalsamgivesPokenav_Text_4
+# 2338 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	applymovement 4, Littleroot_Idletalk_Aidee_Movement_3
+# 2339 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement
-# 2323 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2340 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removefieldmugshot
 	goto BalsamgivesPokenav_1
 
 BalsamgivesPokenav_4:
-# 2286 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2303 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_unset FLAG_SYS_POKENAV_GET, BalsamgivesPokenav_2
 	goto BalsamgivesPokenav_3
 
@@ -4525,89 +4547,89 @@ Littleroot_Idletalk_Aidee_Movement_3:
 	face_up
 	step_end
 
-# 1245 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1248 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 WithSamanthadontgothere_Movement_0:
-# 1245 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1248 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 1255 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1258 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 WithSamanthadontgothere_Movement_1:
-# 1255 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1258 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_in_place_fast_left
 	step_end
 
-# 1262 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1265 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 WithSamanthadontgothere_Movement_2:
-# 1262 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1265 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_down
 	step_end
 
-# 1701 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_0:
-# 1701 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_up
-# 1701 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_up
-# 1701 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_up
 	step_end
 
-# 1704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1707 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_1:
-# 1704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1707 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	face_down
 	step_end
 
-# 1761 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1764 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Movement_2:
-# 1761 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1764 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_down
-# 1761 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1764 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_down
-# 1761 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1764 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_down
 	step_end
 
-# 1778 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1781 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 LittlerootTown_Eventscript_ProffessorDontgo1_Movement_0:
-# 1778 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1781 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_up
 	step_end
 
-# 1862 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1865 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 BalsamHowdidyoufindbackentrance_Movement_0:
-# 1862 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1865 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	emote_exclamation_mark
-# 1862 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1865 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	face_right
 	step_end
 
-# 2177 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 Lab_EventScript_Starter3_Movement_0:
-# 2177 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_right
-# 2177 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_right
-# 2177 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_right
 	step_end
 
-# 2184 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 Lab_EventScript_Starter3_Movement_1:
-# 2184 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_left
-# 2184 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_left
-# 2184 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_left
 	step_end
 
-# 2264 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2281 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 LabCoffee_Movement_0:
-# 2264 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2281 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	face_player
-# 2264 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2281 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
@@ -4686,8 +4708,8 @@ Littleroot_Idletalk_Aidee_Text_14:
 	.string "Hm? Sorry, I'm a bit busy here. Can't\n"
 	.string "help you choose!\p"
 	.string "There's a book about Safemon in the\n"
-	.string "shelf next to the Storage PC. It may\l"
-	.string "help you decide.$"
+	.string "shelf next to the Storage PC.\p"
+	.string "It may help you decide!$"
 
 Littleroot_Idletalk_Aidee_Text_15:
 # 1122 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -4713,7 +4735,8 @@ Littleroot_Idletalk_Aidee_Text_18:
 
 Littleroot_Idletalk_Aidee_Text_19:
 # 1136 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'll make it worth your time, trust me!$"
+	.string "Bring one back to me and I'll make it\n"
+	.string "worth your time, trust me!$"
 
 AideeFollowingChat_Text_0:
 # 1154 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -4761,10 +4784,10 @@ SafemonLore_Text_7:
 # 1172 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "An example is Gummin, the Safemon\n"
 	.string "version of Gulpin.\p"
-	.string "Unlike Gulpin's poisonous body,\n"
-	.string "Gumming's has been made inocuous -\l"
-	.string "albeit also rather adhesive as an\l"
-	.string "unintended side-effect..$"
+	.string "Unlike Gulpin's poisonous body, Gummin's\n"
+	.string "has been made inocuous - albeit also\l"
+	.string "rather adhesive as an unintended\l"
+	.string "side-effect.$"
 
 SafemonLore_Text_8:
 # 1180 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -4775,42 +4798,43 @@ SafemonLore_Text_8:
 
 SafemonLore_Text_9:
 # 1183 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Panselia, the Safemon equivalent of\n"
-	.string "Roselia, fall under this category, due\l"
-	.string "to their thorny limbs being replaced by\l"
-	.string "soft, fragant ones.$"
+	.string "Purachu, the Safemon equivalent of\n"
+	.string "Pikachu, fall under this category, due\l"
+	.string "to their current-generating cheeks\l"
+	.string "being replaced by soft switches that\l"
+	.string "discharge the Pokémon of electricity.$"
 
 SafemonLore_Text_10:
-# 1190 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1193 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "When a Pokémon is made safer for human\n"
 	.string "interaction simply by the action of an\l"
 	.string "artificial restrain or device, they are\l"
 	.string "called Contraption Safemon.$"
 
 SafemonLore_Text_11:
-# 1193 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1196 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Due to their large number in Hoenn, it\n"
 	.string "was determined faster and more cost-\l"
 	.string "effective to make Poochyenas safer\l"
 	.string "with this method - more specifically, by\l"
 	.string "adjusting special muzzles around their\l"
-	.string "jaws.\p"
+	.string "jaws, and restraining their limbs.\p"
 	.string "The resulting Safemon was aptly named\n"
 	.string "'Poochain'.$"
 
 SafemonLore_Text_12:
-# 1200 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1203 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Safemon Research is a novel but rapidly\n"
 	.string "advancing field, and new practices and\l"
 	.string "terminology are being created all the\l"
 	.string "time as a result.$"
 
 SafemonLore_Text_13:
-# 1203 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1206 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "For example, when the synthetic parts\n"
 	.string "on a Contraption Safemon surpass a\l"
 	.string "certain threshold, we speak of the\l"
-	.string "subcategory of 'Droid Safemon'\p"
+	.string "subcategory of 'Droid Safemon'.\p"
 	.string "The minds of these Safemon have been\n"
 	.string "replaced with chips to achieve great\l"
 	.string "obedience, and their bodies with\l"
@@ -4818,7 +4842,7 @@ SafemonLore_Text_13:
 	.string "performance.$"
 
 SafemonLore_Text_14:
-# 1209 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1212 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Then there's the fringe case of\n"
 	.string "'Behavioural Safemon', which are those\l"
 	.string "that have had its violent tendencies\l"
@@ -4829,149 +4853,149 @@ SafemonLore_Text_14:
 	.string "conditioned Pokémon.$"
 
 AidePC_Text_0:
-# 1222 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1225 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "A complex research paper is displayed\n"
 	.string "on the screen. Can't make sense of it.$"
 
 WithSamanthadontgothere_Text_0:
-# 1233 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1236 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{PLAYER}... I don't think you should\n"
 	.string "show your friend the basement.$"
 
 WithSamanthadontgothere_Text_1:
-# 1238 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1241 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "W-what's in the... basement...?$"
 
 WithSamanthadontgothere_Text_2:
-# 1241 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1244 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Uhm... a bunch of Ghost type Pokémon.\n"
 	.string "It's very scary.$"
 
 WithSamanthadontgothere_Text_3:
-# 1247 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1250 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Oh, really? Can I come see them?$"
 
 WithSamanthadontgothere_Text_4:
-# 1251 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1254 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "No. Now stop distracting me from my\n"
 	.string "work.$"
 
 WithSamanthadontgothere_Text_5:
-# 1256 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1259 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "O-oh... I'm sorry...$"
 
 WithSamanthadontgothere_Text_6:
-# 1259 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1262 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "L-let's go, {PLAYER}... we should let\n"
 	.string "the Professor work!$"
 
 Littleroot_Idletalk_Prof_Text_0:
-# 1278 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1281 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Hmm, {PLAYER}. So you ended up making\n"
 	.string "a friend in the therapy session?$"
 
 Littleroot_Idletalk_Prof_Text_1:
-# 1282 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1285 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "N-no... we met in the mausoleum...$"
 
 Littleroot_Idletalk_Prof_Text_2:
-# 1285 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1288 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The mausoleum... is that where people\n"
 	.string "socialize these days?$"
 
 Littleroot_Idletalk_Prof_Text_3:
-# 1288 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1291 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I really am out of touch.$"
 
 Littleroot_Idletalk_Prof_Text_4:
-# 1291 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1294 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Well, not sure why you'd bring your\n"
 	.string "friend here of all places, but...$"
 
 Littleroot_Idletalk_Prof_Text_5:
-# 1294 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1297 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Make yourselves at home.$"
 
 Littleroot_Idletalk_Prof_Text_6:
-# 1297 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1300 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Just don't make too much noise, I'm\n"
 	.string "working here.$"
 
 Littleroot_Idletalk_Prof_Text_7:
-# 1305 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1308 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "... why don't you read a book together or\n"
 	.string "something? We have plenty.$"
 
 Littleroot_Idletalk_Prof_Text_8:
-# 1313 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1316 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I'm sorry - would love to help you\n"
 	.string "decide, but I'm in the middle of\l"
 	.string "something here.$"
 
 Littleroot_Idletalk_Prof_Text_9:
-# 1315 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1318 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "If you could give my Aide a hand, it\n"
 	.string "would be a huge help. We're very busy\l"
 	.string "lately.$"
 
 Littleroot_Idletalk_Prof_Text_10:
-# 1317 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1320 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "You should get going now - don't be late\n"
 	.string "for the therapy session.\p"
-	.string "It's in {COLOR GREEN} Oldale{COLOR DARK_GRAY}, in the first building to\n"
+	.string "It's in {COLOR GREEN}Oldale{COLOR DARK_GRAY}, in the first building to\n"
 	.string "the right - you can't miss it.$"
 
 Littleroot_Idletalk_Prof_Text_11:
-# 1321 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1324 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's a group session, by the way - try\n"
 	.string "to make some friends!$"
 
 Littleroot_Idletalk_Prof_Text_12:
-# 1335 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1338 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Ah, {PLAYER}. What is it?$"
 
 Littleroot_Idletalk_Prof_Text_13:
-# 1337 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1340 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Where is the therapy?$"
 
 Littleroot_Idletalk_Prof_Text_14:
-# 1341 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1344 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I'm back from therapy.$"
 
 Littleroot_Idletalk_Prof_Text_15:
-# 1346 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1349 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "About going to Petalburg...$"
 
 Littleroot_Idletalk_Prof_Text_16:
-# 1351 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1354 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "What should I do?$"
 
 Littleroot_Idletalk_Prof_Text_17:
-# 1356 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1359 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "About the Voltorb Shard...$"
 
 Littleroot_Idletalk_Prof_Text_18:
-# 1361 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1364 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Where is the basement?$"
 
 Littleroot_Idletalk_Prof_Text_19:
-# 1366 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1369 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "About the Unsafening Project...$"
 
 Littleroot_Idletalk_Prof_Text_20:
-# 1369 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1372 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{STR_VAR_1}$"
 
 Littleroot_Idletalk_Prof_Text_21:
-# 1369 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1372 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{STR_VAR_2}$"
 
 Littleroot_Idletalk_Prof_Text_22:
-# 1369 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1372 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's nothing$"
 
 Littleroot_Idletalk_Prof_Text_23:
-# 1372 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1375 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's in Oldale Town, the first building\n"
 	.string "to the right as you enter from Route\l"
 	.string "101.\p"
@@ -4979,42 +5003,42 @@ Littleroot_Idletalk_Prof_Text_23:
 	.string "Devon Nav I gave you. It's handy.$"
 
 Littleroot_Idletalk_Prof_Text_24:
-# 1378 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1381 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "By the way, I saw {RIVAL} yelling and\n"
 	.string "running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY} like a\l"
 	.string "madwoman...$"
 
 Littleroot_Idletalk_Prof_Text_25:
-# 1384 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1387 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Is she okay? Perhaps I should have\n"
 	.string "signed her up for therapy too...$"
 
 Littleroot_Idletalk_Prof_Text_26:
-# 1390 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1393 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "By the way, I just saw {RIVAL}\n"
 	.string "yelling and running towards {COLOR GREEN}Route 101{COLOR DARK_GRAY}\l"
 	.string "like a madman...$"
 
 Littleroot_Idletalk_Prof_Text_27:
-# 1396 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1399 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Is he okay? Perhaps I should have\n"
 	.string "signed him up for therapy too...$"
 
 Littleroot_Idletalk_Prof_Text_28:
-# 1404 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1408 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Good. Did it help you sort out your\n"
 	.string "feelings?$"
 
 Littleroot_Idletalk_Prof_Text_29:
-# 1405 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1409 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It did$"
 
 Littleroot_Idletalk_Prof_Text_30:
-# 1405 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1409 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Not really$"
 
 Littleroot_Idletalk_Prof_Text_31:
-# 1410 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1414 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "That's great. I heard some rumours the\n"
 	.string "DLC is just a propaganda machine, but I\l"
 	.string "guess it's not that bad.\p"
@@ -5022,188 +5046,188 @@ Littleroot_Idletalk_Prof_Text_31:
 	.string "recovery. Hmm...$"
 
 Littleroot_Idletalk_Prof_Text_32:
-# 1418 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1422 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Really? You were being receptive,\n"
 	.string "weren't you?$"
 
 Littleroot_Idletalk_Prof_Text_33:
-# 1421 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1425 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I guess the rumours might be true,\n"
 	.string "about the DLC being an outlet for Devon\l"
 	.string "propaganda.$"
 
 Littleroot_Idletalk_Prof_Text_34:
-# 1424 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1428 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I'm sorry, but it was worth a try. Let's\n"
 	.string "try something else...$"
 
 Littleroot_Idletalk_Prof_Text_35:
-# 1431 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1435 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Say, why don't you go visit your\n"
 	.string "grandfather Norman, at Petalburg City?$"
 
 Littleroot_Idletalk_Prof_Text_36:
-# 1435 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1439 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I'm sure he misses you, and a chance of\n"
 	.string "scenery will do you good.$"
 
 Littleroot_Idletalk_Prof_Text_37:
-# 1439 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1443 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "You may need to wait a bit, though - I\n"
 	.string "hear Road 002 is closed off, until the\l"
 	.string "{COLOR RED}Rebel invasion{COLOR DARK_GRAY} of {COLOR BLUE}Oldale Warehouse{COLOR DARK_GRAY} is\l"
 	.string "dealt with.$"
 
 Littleroot_Idletalk_Prof_Text_38:
-# 1447 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1451 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Like I told you, those Devon Guards\n"
 	.string "won't open Road 002 to Petalburg until\l"
 	.string "the Rebel situation in Oldale is under\l"
 	.string "control.$"
 
 Littleroot_Idletalk_Prof_Text_39:
-# 1452 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1456 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "They are told to keep trouble as far as\n"
 	.string "possible from fancy Rustboro...$"
 
 Littleroot_Idletalk_Prof_Text_40:
-# 1455 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1459 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Nothing to do about it but sit and wait.\n"
 	.string "Unless you go and beat those rebels\l"
 	.string "yourself.$"
 
 Littleroot_Idletalk_Prof_Text_41:
-# 1459 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1463 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "...$"
 
 Littleroot_Idletalk_Prof_Text_42:
-# 1462 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1466 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "That was a joke. You can laugh at it!$"
 
 Littleroot_Idletalk_Prof_Text_43:
-# 1465 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1469 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Seriously, don't do anything stupid.$"
 
 Littleroot_Idletalk_Prof_Text_44:
-# 1469 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1473 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Path is free for you now.$"
 
 Littleroot_Idletalk_Prof_Text_45:
-# 1478 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1482 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Oh, you found a Voltorb Shard. Well done.$"
 
 Littleroot_Idletalk_Prof_Text_46:
-# 1482 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1486 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Give it to my Aide, please. He'll make\n"
 	.string "good use of it.$"
 
 Littleroot_Idletalk_Prof_Text_47:
-# 1487 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1491 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "A Voltorb Shard? Ah, you mean my Aide's\n"
 	.string "errand$"
 
 Littleroot_Idletalk_Prof_Text_48:
-# 1491 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1495 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "If you have trouble finding one, ask my\n"
 	.string "Aide about it. He's in charge of the\l"
 	.string "field research.$"
 
 Littleroot_Idletalk_Prof_Text_49:
-# 1497 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1501 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's through the hole to the right side\n"
 	.string "of the lab... it's hard to miss.\p"
 	.string "Just watch your step on the ladder.$"
 
 Littleroot_Idletalk_Prof_Text_50:
-# 1501 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1505 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I appreciate you're helping us so quick,\n"
 	.string "but don't forget to head for therapy\l"
 	.string "right after, or you'll miss it.$"
 
 Littleroot_Idletalk_Prof_Text_51:
-# 1507 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1511 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's through the hole to the right side\n"
 	.string "of the lab... it's hard to miss.$"
 
 Littleroot_Idletalk_Prof_Text_52:
-# 1514 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1518 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "So you will help us with our research?\n"
 	.string "We appreciate it.\p"
 	.string "Just don't go telling a word of this to\n"
 	.string "anyone, understood?$"
 
 Littleroot_Idletalk_Prof_Text_53:
-# 1517 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1521 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Remember...$"
 
 Littleroot_Idletalk_Prof_Text_54:
-# 1522 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1526 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "We know where you live.$"
 
 Littleroot_Idletalk_Prof_Text_55:
-# 1526 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1530 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Haha - I'm just kidding, of course!$"
 
 Littleroot_Idletalk_Prof_Text_56:
-# 1533 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1537 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "... very funny.$"
 
 Littleroot_Idletalk_Pikachu1_Text_0:
-# 1567 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1571 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Pura-pura?$"
 
 Littleroot_Idletalk_Pikachu1_Text_1:
-# 1571 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1575 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Purachu sniffs at the newcomer.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 Littleroot_Idletalk_Pikachu1_Text_2:
-# 1574 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1578 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "H-hehe... that tickles!$"
 
 Littleroot_Idletalk_Pikachu1_Text_3:
-# 1592 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1596 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Look, I know I asked you to choose a\n"
 	.string "Safemon...\p"
 	.string "But that one happens to be mine. Do not\n"
 	.string "{COLOR GREEN}insist{COLOR DARK_GRAY}.$"
 
 Littleroot_Idletalk_Pikachu1_Text_4:
-# 1605 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1609 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{PLAYER}... Leave that Purachu alone.\n"
 	.string "You're going to spoil it.$"
 
 Littleroot_Idletalk_Pikachu1_Text_5:
-# 1619 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1623 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "... for a former soldier, you're not great\n"
 	.string "at listening to orders, are you?$"
 
 Littleroot_Idletalk_Pikachu1_Text_6:
-# 1622 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1626 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Well, if you like Purachu so much, you\n"
 	.string "can take it as your partner.\p"
 	.string "I warn you though - it may be cute, but\n"
 	.string "it's a piece of work.$"
 
 Littleroot_Idletalk_Pikachu1_Text_7:
-# 1625 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1629 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Will you choose it?$"
 
 Littleroot_Idletalk_Pikachu1_Text_8:
-# 1630 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1634 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The Professor has been pressed into\n"
 	.string "giving her Purachu!$"
 
 Littleroot_Idletalk_Pikachu1_Text_9:
-# 1633 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1637 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The Purachu yawns...$"
 
 Littleroot_Idletalk_Pikachu1_Text_10:
-# 1646 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1649 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Well, it's yours now. Don't say I didn't\n"
 	.string "warn you.$"
 
 Littleroot_Idletalk_Pikachu1_Text_11:
-# 1649 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1652 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Ah, before you go - mind speaking with\n"
 	.string "my Aide over there?\p"
 	.string "We could use your help with some field\n"
@@ -5211,64 +5235,64 @@ Littleroot_Idletalk_Pikachu1_Text_11:
 	.string "It will not take you long.$"
 
 Littleroot_Idletalk_Pikachu1_Text_12:
-# 1663 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1666 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Good, then pick from the ones in the\n"
 	.string "Devon Balls.$"
 
 Littleroot_Idletalk_Pikachu1_Text_13:
-# 1671 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1674 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It looks like Purachu wants to go on a\n"
 	.string "walk.$"
 
 NicknamePartyMon3_Text_0:
-# 1681 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1684 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Give Purachu a nickname...?$"
 
 NicknameBoxMon3_Text_0:
-# 1689 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1692 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Give it a nickname?$"
 
 NicknameBoxMon3_Text_1:
-# 1693 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1696 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Transferred to PC$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_0:
-# 1707 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Ah, {PLAYER}, you're here. I have good\n"
+# 1710 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Was about time, {PLAYER}. I have good\n"
 	.string "and bad news for you...\p"
 	.string "Which would you like to hear first?$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_1:
-# 1710 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1713 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Good news$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_2:
-# 1710 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1713 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Bad news$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_3:
-# 1712 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1715 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Well, the goods news is...$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_4:
-# 1716 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1719 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I'm sending you on an adventure to\n"
 	.string "{COLOR GREEN}Oldale Town{COLOR DARK_GRAY}, with your very own\l"
 	.string "Safemon!$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_5:
-# 1721 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1724 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "And the 'bad' news is... I have signed\n"
 	.string "you up for a therapy session there.$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_6:
-# 1726 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1729 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Don't look at me like that. Birch told me\n"
 	.string "what you went through, and that you've\l"
 	.string "shut yourself home for a year.$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_7:
-# 1731 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1734 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "But now that you're out, you need some\n"
 	.string "help to reconnect with the world.\p"
 	.string "Now, pick a Safemon to accompany you.\p"
@@ -5277,66 +5301,66 @@ LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_7:
 	.string "through {COLOR GREEN}Route 101{COLOR DARK_GRAY} safely enough.$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_8:
-# 1736 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1739 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Well, the 'bad' news is...\p"
 	.string "I'm sending you to {COLOR GREEN}Oldale Town{COLOR DARK_GRAY} to\n"
 	.string "attend a therapy session.$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_9:
-# 1748 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1751 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "But now that you're out, you need some\n"
 	.string "help to reconnect with the world.$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_10:
-# 1753 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1756 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The good news is, I'm giving you your\n"
 	.string "very own Safemon!$"
 
 LittlerootTown_Eventscript_ProffessorChoosePokeDialogue_Text_11:
-# 1757 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1760 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I know they are not like your old\n"
 	.string "Primeape, but they should get you safe\l"
 	.string "through {COLOR GREEN}Route 101{COLOR DARK_GRAY}.$"
 
 LittlerootTown_Eventscript_ProffessorDontgo1_Text_0:
-# 1777 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1780 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{PLAYER}, can't you at least give this\n"
 	.string "a chance?$"
 
 LittlerootTown_Eventscript_ProffessorDontgo2_Text_0:
-# 1791 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1794 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{PLAYER}, we're helping you out here -\n"
 	.string "least you could do is return the favour,\l"
 	.string "don't you think?$"
 
 LittlerootTown_Eventscript_ProffessorNoPokesUpstairs_Text_0:
-# 1809 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1812 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "You're not going to find any Safemon up\n"
 	.string "there, {PLAYER}.$"
 
 LittlerootTown_Eventscript_ProffessorNoDoor_Text_0:
-# 1827 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1830 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Hey, just because there's no door,\n"
 	.string "doesn't mean you can go in there,\l"
 	.string "{PLAYER}.$"
 
 LittlerootTown_Eventscript_Aideenotthere_Text_0:
-# 1847 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1850 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{PLAYER}, my Aide is on the left side\n"
 	.string "of the room. Can't miss him.$"
 
 BalsamHowdidyoufindbackentrance_Text_0:
-# 1868 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1871 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "W-what the...? How did you come out from\n"
 	.string "there?$"
 
 BalsamHowdidyoufindbackentrance_Text_1:
-# 1871 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1874 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "You sure are an explorer, aren't you\n"
 	.string "{PLAYER}?$"
 
 BalsamHowdidyoufindbackentrance_Text_2:
-# 1874 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1877 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "If you're so curious about that part of\n"
 	.string "the lab, why don't you help us with that\l"
 	.string "field work?\p"
@@ -5344,12 +5368,12 @@ BalsamHowdidyoufindbackentrance_Text_2:
 	.string "Until then, it's off limits.$"
 
 LittlerootTown_Eventscript_ProffessorGotoOldale_Text_0:
-# 1896 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1899 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Mind leaving the same way you entered?\n"
 	.string "That is, through the DOOR.$"
 
 LittlerootTown_Eventscript_AideeGotoback_Text_0:
-# 1911 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1914 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "You leave now, you don't get your\n"
 	.string "reward, {PLAYER}!\p"
 	.string "Come on, it's only going to take a minute\n"
@@ -5358,66 +5382,66 @@ LittlerootTown_Eventscript_AideeGotoback_Text_0:
 	.string "Professor's desk.$"
 
 Lab_EventScript_Starter1_Text_0:
-# 1931 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1934 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Ah, Bulbasynth...? Not the worst choice.\p"
 	.string "Bulbasaur have had their natural bulbs\n"
 	.string "replaced with artificial ones, which\l"
 	.string "synthesise only safe substances.$"
 
 Lab_EventScript_Starter1_Text_1:
-# 1935 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1938 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "No more kids accidentally breathing\n"
 	.string "Poison Powder! Hooraay...!$"
 
 Lab_EventScript_Starter1_Text_2:
-# 1940 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1943 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "That aside, Bulbasynth is a sturdy,\n"
 	.string "reliable Grass type.$"
 
 Lab_EventScript_Starter1_Text_3:
-# 1943 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1946 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "So? Do you choose it?$"
 
 Lab_EventScript_Starter1_Text_4:
-# 1949 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I received a Bulbasynth!$"
+# 1952 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Received Bulbasynth!$"
 
 Lab_EventScript_Starter1_Text_5:
-# 1958 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1961 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I hope that Bulbasynth and you become\n"
 	.string "good friends.$"
 
 Lab_EventScript_Starter1_Text_6:
-# 1971 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1974 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Received Safe Bulbasaur!$"
 
 Lab_EventScript_Starter1_Text_7:
-# 1981 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1984 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "No More Room$"
 
 Lab_EventScript_Starter1_Text_8:
-# 1996 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 1999 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{PLAYER}, you're not going to the\n"
 	.string "front lines again. One Pokémon should\l"
 	.string "be enough for a trip to the next town.$"
 
 Lab_EventScript_Starter1_Text_9:
-# 2000 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2003 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "If you want more, buy some Pokéballs in\n"
 	.string "{COLOR GREEN}Oldale Town's{COLOR DARK_GRAY} {COLOR BLUE}PokéMart{COLOR DARK_GRAY}.\p"
 	.string "You'll be surprised by how many new\n"
 	.string "species inhabit Hoenn now.$"
 
 Lab_EventScript_Starter1_Text_10:
-# 2005 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2008 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Go catch some!$"
 
 NicknamePartyMon1_Text_0:
-# 2016 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2019 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Should I give Bulbasynth a nickname...?$"
 
 Lab_EventScript_Starter2_Text_0:
-# 2057 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2060 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "That ball contains a Smothquil.\p"
 	.string "Cyndaquil's back was a bit of a fire\n"
 	.string "hazard, so Devon removed the\l"
@@ -5427,131 +5451,132 @@ Lab_EventScript_Starter2_Text_0:
 	.string "and trusty ones at that.$"
 
 Lab_EventScript_Starter2_Text_1:
-# 2067 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I received a Smothquil!$"
+# 2072 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Received Smothquil!$"
 
 Lab_EventScript_Starter2_Text_2:
-# 2076 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2081 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I hope that Smothquil and you become\n"
 	.string "good friends.$"
 
 Lab_EventScript_Starter2_Text_3:
-# 2080 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Ah, before you go - mind speaking with\n"
-	.string "my Aide over there?\p"
-	.string "We could use your help with some field\n"
-	.string "work we need done in {COLOR GREEN}Route 101{COLOR DARK_GRAY}. It will\l"
-	.string "not take you long.$"
-
-Lab_EventScript_Starter2_Text_4:
-# 2089 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2094 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Received Smothquil$"
 
 NicknamePartyMon2_Text_0:
-# 2137 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2142 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Should I give Smothquil a nickname...?$"
 
 NicknameBoxMon2_Text_0:
-# 2149 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2154 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Give Cyndaquil a nickname?$"
 
 NicknameBoxMon2_Text_1:
-# 2154 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2159 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Transferred Cyndaquil to the PC$"
 
 Lab_EventScript_Starter3_Text_0:
-# 2163 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2168 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The Pokéball is empty...$"
 
 Lab_EventScript_Starter3_Text_1:
-# 2168 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2173 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Oh, sorry about that... Devon retrieved\n"
 	.string "all specimens of that Safemon.\p"
 	.string "They didn't tell us why - apparently it's\n"
 	.string "classified information.$"
 
 Lab_EventScript_Starter3_Text_2:
-# 2172 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2177 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "I guess two is still a choice, right?$"
 
 Lab_EventScript_Starter3_Text_3:
-# 2181 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2186 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The lack of a third choice is\n"
 	.string "disappointing... unless...$"
 
 Lab_EventScript_Starter3_Text_4:
-# 2189 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2194 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The Pokéball is still empty...$"
 
 LabBrokenGlasses_Text_0:
-# 2199 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2204 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Amid some rugged and shredded papers,\n"
 	.string "you find something...$"
 
 LabBrokenGlasses_Text_1:
-# 2203 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2208 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The trash can is empty.$"
 
 LabShelves_Text_0:
-# 2209 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2214 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The shelf is full of complicated books.\p"
 	.string "The main subjects seem to be Pokémon\n"
 	.string "genetics and biology.$"
 
 LabMonitor_Text_0:
-# 2216 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2221 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's a monitor, apparently discarded.$"
 
+LabOfficeChair_Text_0:
+# 2227 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "An office chair. Nothing unusual about\n"
+	.string "it.$"
+
 BalsamDontCheckMyPC_Text_0:
-# 2225 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2236 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "That's kind of private, if you don't\n"
 	.string "mind.$"
 
 LabBox_Text_0:
-# 2234 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2245 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The box is empty.$"
 
+LabServer_Text_0:
+# 2251 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Looks like some sort of server rack.$"
+
 LabSealedBox_Text_0:
-# 2240 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2257 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's a sealed box. Better not to open it.$"
 
 LabBirchBag_Text_0:
-# 2246 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2263 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's an old leather bag. It seems\n"
 	.string "weathered from years of use.$"
 
 LabDiglettBook_Text_0:
-# 2253 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2270 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "The book on top of the pile reads\n"
 	.string "'Diglett Tunneling for Dummies.'$"
 
 LabCoffee_Text_0:
-# 2261 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2278 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "There's a can of coffee by the mug...$"
 
 LabCoffee_Text_1:
-# 2270 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2287 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Hey, that's my coffee!$"
 
 LabCoffee_Text_2:
-# 2273 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2290 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Eh... you know what... you can have it.\n"
 	.string "You look like you need it more than me!$"
 
 LabCoffee_Text_3:
-# 2280 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2297 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's a solitary coffee mug.$"
 
 BalsamgivesPokenav_Text_0:
-# 2294 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2311 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Oh, {PLAYER}, one last thing. Here.$"
 
 BalsamgivesPokenav_Text_1:
-# 2300 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2317 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Obtained the DEVONAV!$"
 
 BalsamgivesPokenav_Text_2:
-# 2305 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2322 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "This is a Devon Navigator, or Devonav\n"
 	.string "for short. It's got a Hoenn Map app\l"
 	.string "installed.\p"
@@ -5564,13 +5589,13 @@ BalsamgivesPokenav_Text_2:
 	.string "though. Let me add mine real quick.$"
 
 BalsamgivesPokenav_Text_3:
-# 2315 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2332 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "Prof. Balsam's profile is registered in\n"
 	.string "the Devon Nav!$"
 
 BalsamgivesPokenav_Text_4:
-# 2319 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 2336 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "There you go. But don't call me unless\n"
-	.string "there's an emergency. I'm busy.\p"
+	.string "it's an emergency. I'm busy.\p"
 	.string "Come back right after therapy. We'll do\n"
 	.string "some more things to readjust you.$"

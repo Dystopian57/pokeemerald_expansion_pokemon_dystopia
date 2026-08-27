@@ -154,6 +154,7 @@ script OldaleHouse1WomanNight {
 	a bIt lAte tO... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} vIssIt
 	random houses? \p I nEed tO ssAve Up... frr a lOck... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	applymovement (7, moves(face_up))
+    waitmovement (7)
     releaseall
 }
 

@@ -332,7 +332,7 @@ script ConcordVendingMachine {
     lock
     msgbox(format("It's a vending machine."))
     showmoneybox (18, 0)
-    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥", "Leave")
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Energy Bar - 70¥", "Strong Coffee - 80¥", "Leave")
     
             //Fresh Water
             if(var(VAR_RESULT) == 0){
@@ -387,7 +387,7 @@ script ConcordVendingMachine {
                 }
             }
 
-            //Soda
+            //Energy bar
             if(var(VAR_RESULT) == 1){
             		checkmoney (70)
 				if (var(VAR_RESULT) == TRUE) {
@@ -396,41 +396,41 @@ script ConcordVendingMachine {
 					updatemoneybox
 
                     random (4)
-                    goto_if_ne (VAR_RESULT, 0, csodagotstuck)
-                    goto_if_eq (VAR_RESULT, FALSE, cgotsoda)
+                    goto_if_ne (VAR_RESULT, 0, cenergybargotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotenergybar)
 
-                    cgotsoda:
+                    cgotenergybar:
                     playse (SE_VEND)
 					waitse
 					removemoney (70)
-					msgbox(format("A Soda dropped on the machine's tray."))
+					msgbox(format("An Energy Bar dropped on the machine's tray."))
                     hidemoneybox
-                    giveitem (ITEM_SODA_POP)
+                    giveitem (ITEM_ENERGY_POWDER)
 					
                     random (20)
                     goto_if_ne (VAR_RESULT, 0, cendvendingmachine)
-                    goto_if_eq (VAR_RESULT, FALSE, cgotextrasoda)
+                    goto_if_eq (VAR_RESULT, FALSE, cgotextraenergybar)
 
-                    cgotextrasoda:
-                    msgbox(format("An extra Soda can dropped on the machine's tray!"))
+                    cgotextraenergybar:
+                    msgbox(format("An extra Energy Bar can dropped on the machine's tray!"))
                     hidemoneybox
-					giveitem (ITEM_SODA_POP)
+					giveitem (ITEM_ENERGY_POWDER)
                     goto (cendvendingmachine)
 
-                    csodagotstuck:
+                    cenergybargotstuck:
                     applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
                     playse (SE_PIN)
                     waitse
-                    msgbox(format("The machine does not push the Soda can enough for it to fall..."))
+                    msgbox(format("The machine does not push the Energy Bar can enough for it to fall..."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
                         if(var(VAR_RESULT) == 0){
                         call(MachineShake)
-                        goto (cgotsoda)
+                        goto (cgotenergybar)
                         }
 
                         if(var(VAR_RESULT) == 0){
-                        msgbox(format("The Soda can just stays on the verge of falling, mockingly.")
+                        msgbox(format("The Energy Bar can just stays on the verge of falling, mockingly.")
                         goto (cendvendingmachine))
                         }
 				}

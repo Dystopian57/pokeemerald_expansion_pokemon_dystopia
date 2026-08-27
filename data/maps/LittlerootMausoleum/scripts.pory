@@ -18,6 +18,7 @@ script MausoleumMourningLady {
         setflag (mausoleummourningladyitem)
         msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
         applymovement (6, moves(face_up))
+        waitmovement (6)
         }
         
 
@@ -25,6 +26,7 @@ script MausoleumMourningLady {
         applymovement (6, moves(face_player))
         msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
         applymovement (6, moves(face_up))
+        waitmovement (6)
         }
         
         release
@@ -37,7 +39,7 @@ script LittlerootMausoleum_Shuppet {
     {
     playmoncry(SPECIES_SHUPPET, CRY_MODE_WEAK)  
     msgbox (format("The girl seems to be having a bad dream, while the Shuppet floats next to her..."))
-    msgbox (format("What will you do?"))
+    msgbox (format("What to do?"))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Battle", "Shoo away", "Leave")
 		waitmessage
 
@@ -54,7 +56,9 @@ script LittlerootMausoleum_Shuppet {
     applymovement (1, moves(face_down))
     msgbox (format("I'm just, very cold... Shuppet is trying to keep me warm... \p But Ghost
     Pokémon can't do that... their bodies just go right through... \p Ah... if only I had...
-    a {COLOR RED}blanket{COLOR DARK_GRAY} or something to cover myself..."))
+    a {COLOR RED}blanket{COLOR DARK_GRAY} or something to cover myself...
+    \p {COLOR LIGHT_GRAY}{SHADOW WHITE}... may have some {COLOR GREEN}extra bedding{COLOR DARK_GRAY} back home.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+
     setflag (hexgirlshuppetmeet)
     goto (afterhexgirl1stmeet)
     }
@@ -131,6 +135,8 @@ script LittlerootMausoleum_HexGirl {
             applymovement (1, moves(face_player))
             setspeaker ([SP_NAME_SAMANTHA])
             msgbox (format("I... I will figure something out. Don't worry..."))
+            applymovement (1, moves(face_down))
+            waitmovement (1)
             setflag (refusedtohelphexgirl1st)
             goto (endhexgirlscript)
             
@@ -140,7 +146,7 @@ script LittlerootMausoleum_HexGirl {
             setspeaker ([SP_NAME_SAMANTHA])
             msgbox (format("Y-you will... thank you! I-I will gladly accept your help... \p I mean,
             you've done more than enough for now... \p B-but if I need something else... could I...
-            could I call you? \p Here, this is my Pokenav number..."))
+            could I call you? \p Here, this is my Devonav number..."))
             register_matchcall (TRAINER_HEXGIRL_MAUSOLEUM)
             setspeaker ([SP_NAME_SAMANTHA])
             msgbox (format("Oh, and this - this is for your trouble...!"))
@@ -278,7 +284,7 @@ script Samanthafollowchat {
         { if (!flag (Samanthagotsnacks))
           {setspeaker ([SP_NAME_SAMANTHA])
             msgbox(format("I-I'm good... just a big hungry..."))}
-           playse (SE_M_SNORE)
+           playse (SE_M_BITE)
 
            if (flag (Samanthagotsnacks))//if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
            {
@@ -306,6 +312,7 @@ script Samanthafollowchat {
         {setspeaker ([SP_NAME_SAMANTHA])
         msgbox(format("O-oh, did something came up? T-that's okay... \p I-I'll go back to the Mausoleum...
         we can do this some other time! \p B-bye... {PLAYER}..."))
+        closemessage
         fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
         fadescreenswapbuffers (FADE_FROM_BLACK)

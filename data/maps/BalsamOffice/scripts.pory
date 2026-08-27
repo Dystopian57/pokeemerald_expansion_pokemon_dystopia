@@ -59,11 +59,13 @@ script BalsamBed {
 	lockall
     msgbox("Rest for a bit?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
+    closemessage
     fadeoutbgm (1)
 	fadescreenswapbuffers (FADE_TO_BLACK)
 	special(HealPlayerParty)
 	playse (MUS_HEAL)
-	msgbox (format("You rest for a while."))
+	setflag (FLAG_TEMP_HIDE_FOLLOWER)
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
 
     startBalsamBedScript:
@@ -74,10 +76,12 @@ script BalsamBed {
 	applymovement (1, moves(face_right))
 	setobjectxy (OBJ_EVENT_ID_PLAYER, 5, 3)
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
-    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	waitbuttonpress
+	waitse
+    fadeinbgm (1)
 	fadescreenswapbuffers (FADE_FROM_BLACK)
-
+	setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+	msgbox (format("... ahem."))
 	setspeaker ([SP_NAME_BALSAM])
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
     fadedefaultbgm
@@ -85,6 +89,7 @@ script BalsamBed {
 
 	setspeaker ([SP_NAME_BALSAM])
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+    playse (SE_M_SWAGGER2)
     msgbox (format("This is MY room."))
 
 	setspeaker ([SP_NAME_BALSAM])
@@ -95,7 +100,7 @@ script BalsamBed {
     waitmovement
     setspeaker ([SP_NAME_BALSAM])
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
-
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
     msgbox (format("Don't do this ever again… or ELSE."))
     closemessage
     removefieldmugshot
@@ -112,17 +117,24 @@ script BalsamBed {
 	if (flag (balsamgavebedwarning) && !flag (balsamgavebedpermission))
     
     {
+    closemessage
     clearflag (balsaminherbedroom)
 	addobject (1)
 	setobjectxy (OBJ_EVENT_ID_PLAYER, 5, 3)
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
-	waitbuttonpress
-	fadescreen (FADE_FROM_BLACK)
+	waitse
+    fadeinbgm (1)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
+	setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+    msgbox (format("Well, well..."))
+
 
 	setspeaker ([SP_NAME_BALSAM])
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
     msgbox (format("{PLAYER}... don't say I didn't warn you."))
-
+	setspeaker ([SP_NAME_BALSAM])
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
     msgbox (format("If words don't work with you, perhaps a good old beating will!"))
     setflag (FLAG_NO_ESCAPE)
     removefieldmugshot
@@ -164,11 +176,12 @@ script BalsamBed {
 
                     setspeaker ([SP_NAME_BALSAM])
                     createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
-                    msgbox (format("... \p Sorry. That was a bit too much. I know you've had it rough.\p
-                    I understand if you don't want to sleep at home. It brings you painful memories, doesn't it?
-                    \p You can sleep here if that's the case.\p I mostly just doze on my chair these days anyway."))
-                    
-
+                    msgbox (format("... \p Sorry. That was a bit too much. I know you've had it rough."))
+                    applymovement (1, moves(walk_in_place_up))
+                    msgbox (format("I understand if you don't want to sleep at home. It brings you painful memories, doesn't it?"))
+                    applymovement (1, moves(walk_in_place_right))
+                    msgbox (format("You can sleep here if that's the case.\p I mostly just doze on my chair these
+                    days anyway."))
                     }
 
                     if(var(VAR_RESULT) == 1){
@@ -188,6 +201,7 @@ script BalsamBed {
                     setspeaker ([SP_NAME_BALSAM])
                     createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
                     msgbox (format("Just don't make a mess of the place, alright?"))
+                    closemessage
 
 
     applymovement (1, moves(walk_down *4))
@@ -202,12 +216,12 @@ script BalsamBed {
 
 
     else{
-    waitbuttonpress
     goto (givenpermissiontosleep)
     }
 
     givenpermissiontosleep:
-	fadescreen (FADE_FROM_BLACK)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
+    waitse
     
 }
     finishcript:
@@ -239,7 +253,7 @@ setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     waitse
     playmoncry (SPECIES_ROTOM_MONITOR, CRY_MODE_NORMAL)
     msgbox (format("Roooom!"))
-    setwildbattle(SPECIES_ROTOM_MONITOR, 2)
+    setwildbattle(SPECIES_ROTOM_MONITOR, 5)
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
 
@@ -258,12 +272,6 @@ setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
 	
 releaseall
-}
-
-script EmptyRotomTV {
-    lockall
-    msgbox (format("The TV is turned off. If there's anything inside, it's quiet for now."))
-    releaseall
 }
 
 script WonRotom {
@@ -285,11 +293,76 @@ script RanRotom {
     msgbox (format("The TV is left alone for now..."))
 }
 
+script EmptyRotomTV {
+    lockall
+    msgbox (format("The TV is turned off. If there's anything inside, it's quiet for now."))
+    releaseall
+}
+
+script KantonianWarHistoryVol2BalsamOffice {
+    lock
+    msgbox(format("The book's cover reads 'History of the
+    Kantonian War, Volume 2. \p Read it?"))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+    showmonpic(SPECIES_AUDINO_MEGA, 10,3) //3 legends
+    msgbox(format("September, 2004: Team Aqua and Team Magma, two radical enviromentalist groups, attempt to control Hoenn's
+    climate by awakening two ancient Pokémon - Kyogre and Groudon."))
+    hidemonpic
+    showmonpic(SPECIES_AUDINO_MEGA, 10,3) //3 legends
+    msgbox(format("However, thanks to the brave actions of two young trainers from Littleroot, their plans are foiled."))
+    hidemonpic
+    goto (endkantonianwar2)}
+    if (var(VAR_RESULT) == 1) {
+    goto (endkantonianwar2)
+    }
+    endkantonianwar2:
+    releaseall
+}
+
+script BalsamOfficeBooks {
+    lockall
+    msgbox (format("'Safemon Schedule - 2030' - Devon Co., Internal Use Only."))
+    releaseall
+}
+
+script BalsamOfficeBox {
+	lock
+	msgbox (format("The box contains clothes suited for a warm, almost tropical environment."))
+	releaseall	
+}
+
+script BalsamOfficeRadioStation {
+	lock
+	msgbox (format("It's an amateur radio station."))
+	releaseall	
+}
+
+script BalsamOfficeVideoPlayer {
+	lock
+	msgbox (format("It's a video player and some video tapes. Most of them are documentaries."))
+	releaseall	
+}
+
+script BalsamOfficeTrashCan {
+	lock
+	if (!flag (FLAG_ITEM_BALSAM_OFFICE_TRASH))
+	{msgbox (format("The trash can contains the remains of ripped postcards - and something else..."))
+	giveitem (ITEM_STRANGE_SOUVENIR)
+	setflag (FLAG_ITEM_BALSAM_OFFICE_TRASH)}
+	else
+	{msgbox (format("There's only the remains of postcards in the trash."))}
+	releaseall	
+}
+
+
+
 
 script BalsamWalkman {
     lockall
     msgbox (format("It's a casette player. The casette contains several songs."))
-        dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Gymnopédie No. 1", "Air on the G String", "The Farthest Land", "Leave")
+        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Gymnopédie No. 1", "Air on the G String", "The Farthest Land", "Leave")
             if(var(VAR_RESULT) == 0){
                 fadenewbgm (MUS_GYMNOPEDIE)
                 msgbox (format("Now playing - Gymnopédie No. 1."))
@@ -310,6 +383,21 @@ script BalsamWalkman {
 
             if(var(VAR_RESULT) == 3){release}
 
+    releaseall
+}
+
+script BalsamBookshelf {
+    lockall
+    msgbox (format("Among the many books on Pokémon science, there's a photo album... \p The cover
+    features a photo of a couple of kids, building a sand castle on a clean beach."))
+    releaseall
+
+}
+
+script BalsamDegree {
+    lockall
+    msgbox (format("It's a framed degree of higher education. It reads as follows: \p 'University of Alola, Degree in Pokémon
+    Genetics: Miss Balsam ¥?¿¥i. \p The surname has been crossed out."))
     releaseall
 }
 
@@ -385,32 +473,3 @@ script DemoGoodbye {
 }
 
 
-script DemoJumpDown {
-    playse (SE_LEDGE)
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(jump_down))
-}
-
-script DemoJumpUp {
-    playse (SE_LEDGE)
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(jump_up))
-}
-
-script DemoJumpLeft {
-    playse (SE_LEDGE)
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(jump_left))
-}
-
-script BalsamBookshelf {
-    lockall
-    msgbox (format("Among the many books on Pokémon science, there's a photo album... \p The cover
-    features a photo of a couple of kids, building a sand castle on a clean beach."))
-    releaseall
-
-}
-
-script BalsamDegree {
-    lockall
-    msgbox (format("It's a framed degree of higher education. It reads as follows: \p 'University of Alola, Degree in Pokémon
-    Genetics: Miss Balsam ¥?¿¥i. \p The surname has been crossed out."))
-    releaseall
-}

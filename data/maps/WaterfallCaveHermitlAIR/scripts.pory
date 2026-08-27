@@ -15,7 +15,7 @@ script WaterfallHermit {
 		hidden for centuries.\pIt used to be that things like nature and time
 		 were the shole shapers of our world.\pBut now, the acts of humans - born from
 		 conflict, or in the name of progress - are threatening to become just as strong
-		 a changing force. Some say they will replace all others."))
+		 a changing force.\p Some say they will replace all others."))
 
 		msgbox(format("Tell me - do you think this should be so?"))
     	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE,
@@ -54,9 +54,11 @@ script WaterfallHermit {
 		can bring.\pTherefore, as one of the Eight Hermits, I deem you worthy to have these."))
 
 
-
+	    fadeoutbgm (1)
         playse (MUS_OBTAIN_BADGE)
-        msgbox(format("Obtained the Cascade Token"))
+        fadenewbgm (1)
+        playbgm (MUS_LEMURIA, TRUE)
+        msgbox(format("Obtained the Cascade Token!"))
         setflag (FLAG_BADGE07_GET)
         setflag (FLAG_RECEIVED_HM_WATERFALL)
         giveitem (ITEM_HM07)

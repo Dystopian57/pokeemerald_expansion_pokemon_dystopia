@@ -255,16 +255,18 @@ OldaleHouse1WomanNight::
 # 156 "data/maps/OldaleTown_House1/scripts.pory"
 	applymovement 7, OldaleHouse1BoyNight_Movement_1
 # 157 "data/maps/OldaleTown_House1/scripts.pory"
+	waitmovement 7
+# 158 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouseOldWomanNight::
-# 161 "data/maps/OldaleTown_House1/scripts.pory"
-	lock
 # 162 "data/maps/OldaleTown_House1/scripts.pory"
-	msgbox OldaleHouseOldWomanNight_Text_0
+	lock
 # 163 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouseOldWomanNight_Text_0
+# 164 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
@@ -373,6 +375,6 @@ OldaleHouse1WomanNight_Text_0:
 	.string "I nEed tO ssAve Up... frr a lOck... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleHouseOldWomanNight_Text_0:
-# 162 "data/maps/OldaleTown_House1/scripts.pory"
+# 163 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Dear, I think you've drank enough...\n"
 	.string "let's get you to bed.$"

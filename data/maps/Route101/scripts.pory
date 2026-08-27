@@ -256,7 +256,7 @@ script Route101Weather {
  script Route101OrphanJoelApproach0 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	playbgm (MUS_DUSKFACTORY, TRUE)
 	applymovement (1, moves(emote_exclamation_mark))
 	msgbox(format("Hey, stop!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
@@ -266,7 +266,7 @@ script Route101Weather {
   script Route101OrphanJoelApproach1 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	playbgm (MUS_DUSKFACTORY, TRUE)
 	applymovement (1, moves(emote_exclamation_mark))
 	waitmovement
 	msgbox(format("Hey, stop!"))
@@ -280,7 +280,7 @@ script Route101Weather {
    script Route101OrphanJoelApproach2 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	playbgm (MUS_DUSKFACTORY, TRUE)
 	applymovement (1, moves(emote_exclamation_mark))
 	waitmovement
 	msgbox(format("Hey, stop!"))
@@ -294,7 +294,7 @@ script Route101Weather {
    script Route101OrphanJoelApproach3 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_SUSPICIOUS, TRUE)
+	playbgm (MUS_DUSKFACTORY, TRUE)
 	applymovement (1, moves(emote_exclamation_mark))
 	waitmovement
 	msgbox(format("Hey, stop!"))
@@ -306,16 +306,21 @@ script Route101Weather {
  }
 
  script SamanthaDontgotoCrater {
-lock
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
-playse (SE_PIN)
-msgbox (format("O-oh, {PLAYER}... that way is the... Great Crater, isn't it?"))
+    lock
+	if (!flag (Samanthagotsnacks))
+    {
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+	playse (SE_PIN)
+	msgbox (format("O-oh, {PLAYER}... that way is the... Great Crater, isn't it?"))
 
-msgbox (format("I know they sell donuts there, but... I don't like them much. \p Can we go
-to Oldale's vending machine instead?"))
+	msgbox (format("I know they sell donuts there, but... I don't like them much. \p Can we go
+	to Oldale's vending machine instead?"))}
+
+	else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+		of your time...!"))}
 
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
-
+waitmovement (OBJ_EVENT_ID_PLAYER)
 releaseall
 }
 
@@ -528,7 +533,7 @@ else {
 	applymovement(1, moves(walk_in_place_right * 1))
 	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("Because... I'll go visit you instead! \p I was thinking of making new Secret
-	Shelters anyway.\p I'm sure there's tons of cool places for them in Rustboro."))
+	Shelters anyway.\p I'm sure there's tons of cool places for them in New Rustboro."))
 	applymovement(4, moves(walk_in_place_left * 1))
 	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Really!? You promise to come visit?"))
@@ -572,10 +577,10 @@ else {
  script Route101RebelApproach0 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Hey there, kid!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	goto (rebelafterapproach)
@@ -584,10 +589,10 @@ else {
   script Route101RebelApproach1 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 1))
 	waitmovement
@@ -598,10 +603,10 @@ else {
    script Route101RebelApproach2 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 2))
 	waitmovement
@@ -612,10 +617,10 @@ else {
    script Route101RebelApproach3 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 	applymovement (3, moves(emote_exclamation_mark))
 	waitmovement
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 3))
 	waitmovement
@@ -624,55 +629,36 @@ else {
  }
  
 
-script Pokemonlickswound {
-	lock
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	if (flag (rickhitsplayer))
-		{
-		playfirstmoncry
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
-		applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left * 2))
-		bufferleadmonspeciesname(STR_VAR_1)
-		msgbox (format("{STR_VAR_1} approaches you slowly..."))
-		playse (SE_M_LICK)
-		waitse
-		msgbox (format("{STR_VAR_1} licks {PLAYER}'s wound from the hit just now.\p ...{PLAYER}'s pain is somewhat soothed."))
-		clearflag (rickhitsplayer)
-		}
-
-	else {release}
-	release
-}
-
 script Route101RebelGruntBattle{
 	rebelafterapproach:
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Wowie, that's a cute Safemon you got there. Bet it's worth a ton!"))
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox ("Hand it over.")
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Obey", "Refuse")
 	waitmessage
 
 	if(var(VAR_RESULT) == 0){
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Hehe, you're smarter than you loo-..."))
 	playfirstmoncry
 	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(jump_in_place_up))
 	waitmovement
 	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_fast_right, face_up))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_down * 1, face_up))
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("What the-? Looks like your Pokémon has more guts than you! Hahaha!
 	\p Guess we'll have to do this the hard way!"))
 	}
 
 	if(var(VAR_RESULT) == 1){
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Playing brave huh? You really don't look the type.
 	\p Guess we'll have to do this the hard way!"))
 	}
 	trainerbattle_no_intro(TRAINER_REBEL_GRUNT_101, Rebel101_Outro)
-	setspeaker ([SP_NAME_RICK])
+	playbgm (MUS_MONSTERHOUSE, TRUE)
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Grr... alright, that thing of yours is strong, for a lab rat.
 	\p But you still look weak yourself! UOOOGYAA!"))
 	setflag (FLAG_TEMP_HIDE_FOLLOWER)
@@ -694,7 +680,7 @@ script Route101RebelGruntBattle{
 	call(Route101GruntBatHitShake)
 	msgbox(format("{PLAYER} fails to block the bat with her arms. That must have hurted..."))
 	setflag (rickhitsplayer)
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("You're a sturdy girl, I'll give you that!"))
 	goto (repeathit)}}
 
@@ -704,7 +690,7 @@ script Route101RebelGruntBattle{
 	call(Route101GruntBatHitShake)
 	msgbox(format("{PLAYER} is too slow to dodge the hit. That must have hurted..."))
 	setflag (rickhitsplayer)
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("You're a sturdy guy, I'll give you that!"))
 	goto (repeathit)}
 	if(var(VAR_RESULT) == FEMALE){
@@ -712,11 +698,11 @@ script Route101RebelGruntBattle{
 	msgbox(format("{PLAYER} manages to dodge the hit, and the rebel's lost momentum makes him
 	fall on his back."))
 	}}
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("D-damn it! They told me Littleroot hicks were easy prey!"))
 	playse (SE_FLEE)
 	applymovement (3, moves(walk_fast_right *2 , walk_fast_up * 6))
-	setspeaker ([SP_NAME_RICK])
+	setspeaker ([SP_NAME_CALVIN])
 	waitse
 	playse (SE_BALL_BOUNCE_1)
 	msgbox(format("Screw this!"))
@@ -725,9 +711,8 @@ script Route101RebelGruntBattle{
 	clearflag (FLAG_ITEM_ROUTE101REBELITEM)
 	addobject (6)
 	waitmovement (3)
-	
-
-
+	fadeoutbgm (1)
+	fadenewbgm (1)
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 	setvar(VAR_ROUTE101REBELFLEES, 1)
 	clearflag (FLAG_TEMP_HIDE_FOLLOWER)
@@ -759,7 +744,25 @@ script Route101GruntBatHitShake{
 	special(ShakeCamera)
 	}
 
+script Pokemonlickswound {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	if (flag (rickhitsplayer))
+		{
+		playfirstmoncry
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+		applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left * 2))
+		bufferleadmonspeciesname(STR_VAR_1)
+		msgbox (format("{STR_VAR_1} approaches you slowly..."))
+		playse (SE_M_LICK)
+		waitse
+		msgbox (format("{STR_VAR_1} licks {PLAYER}'s wound from the hit just now.\p ... {PLAYER}'s pain is somewhat soothed."))
+		clearflag (rickhitsplayer)
+		}
 
+	else {release}
+	release
+}
 
 
  

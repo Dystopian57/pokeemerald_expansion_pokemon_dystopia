@@ -713,7 +713,7 @@ JoelTentJoel_Text_16:
 	.string "that doll. She'll miss it so much in her\l"
 	.string "new home...\p"
 	.string "I know it's a big ask... but if you go to\n"
-	.string "Rustboro, could you give it to her?$"
+	.string "New Rustboro, could you give it to her?$"
 
 JoelTentJoel_Text_17:
 # 128 "data/maps/JoelTent/scripts.pory"
@@ -722,7 +722,7 @@ JoelTentJoel_Text_17:
 
 JoelTentJoel_Text_18:
 # 131 "data/maps/JoelTent/scripts.pory"
-	.string "To go to Rustboro, you need a {COLOR BLUE}Devon\n"
+	.string "To go to New Rustboro, you need a {COLOR BLUE}Devon\n"
 	.string "Visa{COLOR DARK_GRAY}, or the Devon guards will stop you\l"
 	.string "at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}.$"
 

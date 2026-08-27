@@ -5,12 +5,19 @@ LittlerootLabBasement_MapScripts::
 
 
 script LabBasementTrashBin {
-	finditem (ITEM_RED_SHARD)
+	lock
+	if (!flag (FLAG_ITEM_LAB_BASEMENT_TRASH))
+	{msgbox (format("Amid some discarded motherboards and electronics, you find something..."))
+	giveitem (ITEM_PARK_BALL)
+	setflag (FLAG_ITEM_LAB_BASEMENT_TRASH)}
+	else
+	{msgbox (format("The trash can is empty."))}
+	releaseall	
 }
 
 script LabBasementTunnelSign {
     lock
-    msgbox (format("To Exclusion Tunnel"))
+    msgbox (format("To Secret Tunnel"))
 	release}
 
 script LabBasementBalsamRoomSign {
@@ -46,7 +53,7 @@ script LabBasementUnsafener {
 
 	//else
 	//{
-	msgbox (format("It's the Unsafener. For some reason, its control palen is a Game Boy Advance..."))
+	msgbox (format("It's the Unsafener. For some reason, its control panel is a Game Boy Advance..."))
 	//}
 	release
 }
@@ -54,7 +61,6 @@ script LabBasementUnsafener {
 script LabBasementBlueprints {
 	lock
 	if(!flag (Unsafeningtutodone))
-
 	{
 	msgbox (format("It's a very complicated blueprint."))}
 
@@ -64,7 +70,7 @@ script LabBasementBlueprints {
 	msgbox (format("There's also some notes scribbled on the paper... \p
 	EVACUATION PROTOCOL\n
 	1) Code White: Devon in Lab = Car Ladder.\p
-	2) Code Brown: Lab surrounded = Tunnel exit.\n
+	2) Code Brown: Lab surrounded = Tunnel exit.\p
 	3) {COLOR RED}Code Red:{COLOR DARK_GRAY} All exits blocked = Destroy evidence."))
 	release
 }
@@ -133,16 +139,16 @@ script AideCasettePlayer {
     lock
     msgbox (format("It's a radio with a casette inside."))
 
-	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Adopt", "Don't adopt")
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Play", "Don't play")
 	if(var(VAR_RESULT) == 0){
 	playbgm (MUS_RENBOUPARTY, TRUE)
-		if (flag(Aideearrivestobasement))
+		if (!flag(Aideearrivestobasement))
 		{applymovement (1, moves (face_right, emote_exclamation_mark))
 		playse (SE_PIN)
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("{PLAYER} - I didn't take you for a music fan! I LOVE that so-"))
-		applymovement (1, moves (jump_down))
+		applymovement (1, moves (jump_in_place_down))
 		
 		call(BalsamYellShake)
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
@@ -437,11 +443,13 @@ script AideeBasementIdleTalk {
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
+		fadeoutbgm (1)
+		fadenewbgm (1)
 		playbgm (MUS_AQUA_MAGMA_HIDEOUT, TRUE)
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Feel free to call if you want to discuss your Devon Dex progress. I'll even
-		throw a tip or two while we're at it!"))
+		throw a catching tip or two while we're at it!"))
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("But that's enough talk from me. Get out there, and start catching!"))
@@ -455,7 +463,7 @@ script AideeBasementIdleTalk {
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Hey there, {PLAYER}! What brings you here?"))
 		aidechoices:
-		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Unsafen Safemon", 
+		dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Unsafen Safemon", 
 		"Unsafening Materials", "Small talk", "Secondary effects", "Nothing")
 
 
@@ -488,19 +496,19 @@ script AideeBasementIdleTalk {
 				if (var(VAR_RESULT) == 0)
 				{pokemart (AideMaterials0)}
 
-				if (var(VAR_RESULT) <= 5)
+				if (var(VAR_RESULT) >= 5)
 				{pokemart (AideMaterials1)}
 
-				if (var(VAR_RESULT) <= 10)
+				if (var(VAR_RESULT) >= 10)
 				{pokemart (AideMaterials2)}
 
-				if (var(VAR_RESULT) <= 15)
+				if (var(VAR_RESULT) >= 15)
 				{pokemart (AideMaterials3)}
 
-				if (var(VAR_RESULT) <= 20)
+				if (var(VAR_RESULT) >= 20)
 				{pokemart (AideMaterials4)}
 
-				if (var(VAR_RESULT) <= 25)
+				if (var(VAR_RESULT) >= 25)
 				{pokemart (AideMaterials5)}
 
 
@@ -519,7 +527,7 @@ script AideeBasementIdleTalk {
 				msgbox (format("So, {PLAYER}... what's your stance on Devon Corp. and
 				Safemon?"))
 				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them",
-				"I'm different")
+				"I'm indifferent")
 				
 				if (var(VAR_RESULT) == 0) {
 					createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
@@ -528,8 +536,8 @@ script AideeBasementIdleTalk {
 					with the Unsafenings then!\p Don't feel like you owe us for helping you
 					out. It's our own way of thanking Professor Birch, who helped us set up
 					here.\p He worries a lot about you. Even Balsam seems to like you, even
-					if she doesn't show it!\p Me? Well, I'll like you better the more Safemon
-					you bring - ahaha!"))
+					if she doesn't show it!\p Me? Well, I'll like you better if you keep
+					bringing Safemon - ahaha!"))
 				}		
 
 				if (var(VAR_RESULT) == 1) {
@@ -551,7 +559,7 @@ script AideeBasementIdleTalk {
 					study, regardless of the form they take.\p They're just like people, don't
 					you think?"))
 				}
-				
+					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("Anything else?"))
 					goto (aidechoices)}
 
@@ -560,9 +568,14 @@ script AideeBasementIdleTalk {
 					msgbox (format("A-ah, I suppose you've noticed some already...? You're
 					observant!\p You see, right now Unsafening is a very novel procedure...\p Of course,
 					it changes the appearance, typing and ability of a specimen back to what they used to be -
-					that works as intended!\p However, it may also alter their level, moves, effort values...
-					even their gender!\p I know having your companions change so much at once may be distressing...\p
-					To help alleviate that, I've set up a Medicine Dispenser over there.\p For token prices, you may
+					that works as intended!\p However, it may also alter their level, moves, individual and
+					effort values...
+					even their gender!\p I know having your companions change so much at once may be distressing..."))
+					applymovement (1, moves(face_left))
+					msgbox (format("
+					To help alleviate that, I've set up a Medicine Dispenser over there."))
+					applymovement (1, moves(face_player))
+					msgbox (format("For token prices, you may
 					get pills with which to help get your Pokémon back to how it used to be - or to change them
 					even more!\p And don't worry - there's no risk of overdose with any of the pills!
 					{COLOR LIGHT_GRAY}{SHADOW WHITE}I think...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
@@ -2597,9 +2610,12 @@ script SelectedIncorrectTradeSafemon {
 		}
 
 script CheerorbBasementIdleTalk {
-	lockall
+	lock
+	applymovement (4, moves(face_player))
 	playmoncry(SPECIES_CHEERORB, CRY_MODE_NORMAL) 
 	msgbox (format("Chee-cheeeer!"))
+	applymovement (4, moves(face_down))
+	waitmovement (4)
 	releaseall
 }
 

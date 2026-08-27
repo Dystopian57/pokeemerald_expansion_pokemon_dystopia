@@ -15,10 +15,23 @@ mapscripts OldaleTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: DayNightNPC
     MAP_SCRIPT_ON_TRANSITION: OldaleWeather
     MAP_SCRIPT_ON_TRANSITION: GenderedSpriteOldale
+
+    MAP_SCRIPT_ON_TRANSITION: ResetFountainHIHint
     
     MAP_SCRIPT_ON_LOAD: DayNightNPC
     MAP_SCRIPT_ON_LOAD: OldaleWeather
-    MAP_SCRIPT_ON_LOAD: GenderedSpriteOldale}
+    MAP_SCRIPT_ON_LOAD: GenderedSpriteOldale
+    
+    MAP_SCRIPT_ON_LOAD: ResetFountainHIHint}
+
+
+script ResetFountainHIHint {
+    if (!flag(FLAG_HIDDEN_ITEM_OLDALE_FOUNTAIN))
+    {clearflag (oldalefountainsparkle)}
+
+    else
+    {release}
+}
 
 script ChangeTrainerCardTest {
     setflag (FLAG_SYS_TOWER_GOLD)
@@ -111,14 +124,14 @@ script ConArtist103Rewards {
 	giveegg (SPECIES_TAMARAKKU)
 	playse (MUS_OBTAIN_ITEM)
 	msgbox(format("Obtained the Mysterious Egg!"))
-    setspeaker ([SP_NAME_JOEL])
+    setspeaker ([SP_NAME_JIMMY])
 	msgbox(format("Look, I know I said I'd give you some cash but... \p All I have is my
 	wares! The cash I get when I sell them, duh! \p Speaking of wares - would you like to
 	take a look at them?"))
 
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 	if(var(VAR_RESULT) == 0){
-        setspeaker ([SP_NAME_JOEL])
+        setspeaker ([SP_NAME_JIMMY])
 		msgbox(format("Hehe, of course you do... here's what I got! Only 500 each!"))
 		eggoffer:
 		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Egg Option 1", "Egg Option 2", "Rosy Egg", "Not really")
@@ -148,14 +161,14 @@ script ConArtist103Rewards {
 
 	if(var(VAR_RESULT) == 1){
         refusedeggs:
-        setspeaker ([SP_NAME_JOEL])
+        setspeaker ([SP_NAME_JIMMY])
 		msgbox(format("Welp, that's your loss. \p I'm off to Petalburg soon, so you'll have to
 		walk if you change your mind!"))
         goto (finisheggdeal)
 	}}
 
 	else {
-        setspeaker ([SP_NAME_JOEL])
+        setspeaker ([SP_NAME_JIMMY])
 		msgbox(format("So? Interested in some eggs?"))
 		goto (eggoffer)
 	}
@@ -168,7 +181,7 @@ script OldaleVendingMachine {
     lock
     msgbox(format("It's a vending machine."))
     showmoneybox (18, 0)
-    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Soda Pop - 70¥", "Strong Coffee - 80¥", "Leave")
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Tea - 70¥", "Lava Cookie - 40¥", "Leave")
     
             //Fresh Water
             if(var(VAR_RESULT) == 0){
@@ -223,7 +236,7 @@ script OldaleVendingMachine {
                 }
             }
 
-            //Soda
+            //Tea
             if(var(VAR_RESULT) == 1){
             		checkmoney (70)
 				if (var(VAR_RESULT) == TRUE) {
@@ -232,41 +245,41 @@ script OldaleVendingMachine {
 					updatemoneybox
 
                     random (4)
-                    goto_if_ne (VAR_RESULT, 0, sodagotstuck)
-                    goto_if_eq (VAR_RESULT, FALSE, gotsoda)
+                    goto_if_ne (VAR_RESULT, 0, teagotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, gottea)
 
-                    gotsoda:
+                    gottea:
                     playse (SE_VEND)
 					waitse
 					removemoney (70)
-					msgbox(format("A Soda dropped on the machine's tray."))
+					msgbox(format("A Tea dropped on the machine's tray."))
                     hidemoneybox
-                    giveitem (ITEM_SODA_POP)
+                    giveitem (ITEM_TEA)
 					
                     random (20)
                     goto_if_ne (VAR_RESULT, 0, endvendingmachine)
-                    goto_if_eq (VAR_RESULT, FALSE, gotextrasoda)
+                    goto_if_eq (VAR_RESULT, FALSE, gotextratea)
 
-                    gotextrasoda:
-                    msgbox(format("An extra Soda can dropped on the machine's tray!"))
+                    gotextratea:
+                    msgbox(format("An extra Tea can dropped on the machine's tray!"))
                     hidemoneybox
-					giveitem (ITEM_SODA_POP)
+					giveitem (ITEM_TEA)
                     goto (endvendingmachine)
 
-                    sodagotstuck:
+                    teagotstuck:
                     applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
                     playse (SE_PIN)
                     waitse
-                    msgbox(format("The machine does not push the Soda can enough for it to fall..."))
+                    msgbox(format("The machine does not push the Tea can enough for it to fall..."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
                         if(var(VAR_RESULT) == 0){
                         call(MachineShake)
-                        goto (gotsoda)
+                        goto (gottea)
                         }
 
                         if(var(VAR_RESULT) == 0){
-                        msgbox(format("The Soda can just stays on the verge of falling, mockingly.")
+                        msgbox(format("The Tea can just stays on the verge of falling, mockingly.")
                         goto (endvendingmachine))
                         }
 				}
@@ -276,50 +289,50 @@ script OldaleVendingMachine {
                 }
             }
 
-            //Coffee
+            //Lavacookie
             if(var(VAR_RESULT) == 2){
-            		checkmoney (80)
+            		checkmoney (40)
 				if (var(VAR_RESULT) == TRUE) {
                     playse (SE_SHOP)
                     waitse
 					updatemoneybox
 
                     random (4)
-                    goto_if_ne (VAR_RESULT, 0, coffeegotstuck)
-                    goto_if_eq (VAR_RESULT, FALSE, gotcoffee)
+                    goto_if_ne (VAR_RESULT, 0, lavacookiegotstuck)
+                    goto_if_eq (VAR_RESULT, FALSE, gotlavacookie)
 
-                    gotcoffee:
+                    gotlavacookie:
                     playse (SE_VEND)
 					waitse
-					removemoney (50)
-					msgbox(format("A Strong Coffee can dropped on the machine's tray."))
+					removemoney (40)
+					msgbox(format("A Lava Cookie dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_HEAL_POWDER)
 					
                     random (20)
                     goto_if_ne (VAR_RESULT, 0, endvendingmachine)
-                    goto_if_eq (VAR_RESULT, FALSE, gotextracoffee)
+                    goto_if_eq (VAR_RESULT, FALSE, gotextralavacookie)
 
-                    gotextracoffee:
-                    msgbox(format("An extra Strong Coffee can dropped on the machine's tray!"))
+                    gotextralavacookie:
+                    msgbox(format("An extra Lava Cookie can dropped on the machine's tray!"))
                     hidemoneybox
 					giveitem (ITEM_HEAL_POWDER)
                     goto (endvendingmachine)
 
-                    coffeegotstuck:
+                    lavacookiegotstuck:
                     applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
                     playse (SE_PIN)
                     waitse
-                    msgbox(format("The machine does not push the Strong Coffee enough for it to fall..."))
+                    msgbox(format("The machine does not push the Lava Cookie enough for it to fall..."))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Shake the machine", "Leave")
                         if(var(VAR_RESULT) == 0){
                         call(MachineShake)
-                        goto (gotcoffee)
+                        goto (gotlavacookie)
                         }
 
                         if(var(VAR_RESULT) == 0){
-                        msgbox(format("The Strong Coffee just stays on the verge of falling, mockingly.")
+                        msgbox(format("The Strong Lava Cookie just stays on the verge of falling, mockingly.")
                         goto (endvendingmachine))
                         }
 				}
@@ -557,7 +570,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     removefieldmugshot
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-    msgbox(format("Camelia and I want to stop them - well, us and our caretaker! \p Oh, name is Sharpy,
+    msgbox(format("Camelia and I want to stop them - well, us and our tutor! \p Oh, name is Sharpy,
     by the way! What's yours? {PLAYER}? Cool name!"))
 
     removefieldmugshot
@@ -737,7 +750,7 @@ script OldaleCamelia {
     removefieldmugshot
 	setspeaker ([SP_NAME_CAMELIA])
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
-    msgbox(format("He won't leave until you battle him, and Norman will be mad if we're not
+    msgbox(format("He won't leave until you battle him, and our tutor will be mad if we're not
     back at the dojo soon..."))
 
     }
@@ -932,7 +945,7 @@ script OldaleBike {
 script OldalePlant {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
-    msgbox(format("The plants are on the same state than the trees around... \p On their way
+    msgbox(format("The plants are on the same state that the trees around... \p On their way
     to wither."))
     release 
 }
@@ -1162,6 +1175,9 @@ script OldaleGrassRebel {
         applymovement (24, moves(walk_fast_left * 8))
         waitmovement (24)
         fadeoutbgm (1)
+        waitse
+        playse (SE_SLIDING_DOOR)
+        waitse
         playbgm (MUS_RG_LAVENDER, TRUE)
         setvar(VAR_OLDALECARREBEL, 1)
         removeobject (24)
@@ -1207,9 +1223,9 @@ script SamanthaCall1 {
     if (var(VAR_MAUSOLEUM_HEXGIRL) > 0){
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     pokenavcall(format("U-uhm... hi, {PLAYER}! It's me, Samantha.\p I hope I haven't caught you at a bad time...
-    B-but, since you said you'd help me out here in the Mausoleum, I... \p I-I was wondering
+    \p B-but, since you said you'd help me out here in the Mausoleum, I... \p I-I was wondering
     if you could, like... come do me a favour?\p I-it's okay if you're too busy, and there's no
-    hurry, but... I-I'll be here if you decide to come!\p Sorry for bothering. S-see you!"))
+    hurry, but...\p I-I'll be here if you decide to come!\p Sorry for bothering. S-see you!"))
     setvar(VAR_MAUSOLEUM_HEXGIRL, 2)
     release}
 
@@ -1217,34 +1233,67 @@ script SamanthaCall1 {
 }
 
 //actually the script below is never going to be triggered, oops
- script SamanthaDontgotoDLC {
-    
-    if (var(VAR_OLDALE_PHASE) == 0)
-    {
+
+
+ script SamanthaDontgotoDevonCenter {
     lock
+    if (!flag (Samanthagotsnacks))
+    {
+
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
     playse (SE_PIN)
-    setspeaker ([SP_NAME_JOEL])
+    setspeaker ([SP_NAME_SAMANTHA])
+    msgbox (format("O-oh, {PLAYER}... I-I know they sell boxed lunches in here, but..."))
+    msgbox (format("I-I don't have enough money for those...\p Can... can we go to the
+    vending machine instead?"))
+
+    }
+    
+    else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+    of your time...!"))}
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+       releaseall 
+    }
+
+ script SamanthaDontgotoDLC {
+    lock
+    if (!flag (Samanthagotsnacks))
+    {
+
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+    playse (SE_PIN)
+    setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("O-oh, {PLAYER}... is this the Devon Learning Center?"))
     msgbox (format("It seems like they are holding a lesson now... \p I have not signed up for it, so
     I would not like to interrupt."))
+
+    }
+    
+   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+    of your time...!"))}
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall}
 
-    else {release}
-}
-
  script SamanthaDontgoto102 {
     lock
+    if (!flag (Samanthagotsnacks))
+    {
+
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
     playse (SE_PIN)
-    setspeaker ([SP_NAME_JOEL])
-    msgbox (format("O-oh, {PLAYER}... that way leads to Route 103, right?"))
+    setspeaker ([SP_NAME_SAMANTHA])
+    msgbox (format("O-oh, {PLAYER}... that way leads to Road 002, right?"))
 
-    msgbox (format("W-we don't need to go that far... I'm sure there's another vending machine in Petalburg,
+    msgbox (format("W-we don't need to go that far... \pI'm sure there's another vending machine in Petalburg,
     b-but... the one here in Oldale will do!"))
 
+
+    }
+    
+   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+    of your time...!"))}
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall
@@ -1252,13 +1301,20 @@ script SamanthaCall1 {
 
  script SamanthaDontgoto103 {
     lock
+    if (!flag (Samanthagotsnacks))
+    {
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
     playse (SE_PIN)
-    setspeaker ([SP_NAME_JOEL])
-    msgbox (format("O-oh, {PLAYER}... that way leads to Road 002, right?"))
+    setspeaker ([SP_NAME_SAMANTHA])
+    msgbox (format("O-oh, {PLAYER}... that way leads to Route 103, right?"))
 
     msgbox (format("B-but Slateport is very far... t-the food here in Oldale will do!"))
 
+
+    }
+
+   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+    of your time...!"))}
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall
@@ -1266,9 +1322,11 @@ script SamanthaCall1 {
 
 script SamanthaDontgotoWarehouse {
     lock
+    if (!flag (Samanthagotsnacks))
+    {
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
     playse (SE_PIN)
-    setspeaker ([SP_NAME_JOEL])
+    setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("O-oh, {PLAYER}... Oldale's Warehouse is over there, right?"))
 
     if (var(VAR_OLDALE_PHASE)  < 2)
@@ -1280,10 +1338,15 @@ script SamanthaDontgotoWarehouse {
         msgbox (format("I-I see some scary Rebels over there... m-maybe we shouldn't get near..."))
     } 
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+    setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("I-I'll just get some snacks from the vending machine there, o-okay?"))
+
+    }
+
+   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+    of your time...!"))}
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
-
     releaseall
 }
 
@@ -1323,6 +1386,7 @@ script SamanthaGetSnacksCutscene {
 
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, face_down))
     waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+    setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("Hehehe... I've got tons. We can go back. \p T-thank you..."))
 
     setflag (Samanthagotsnacks)

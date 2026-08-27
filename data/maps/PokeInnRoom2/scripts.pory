@@ -453,7 +453,7 @@ script OldalePokeCenterInnPrograms {
 		msgbox(format("We continue with more insight into the latest issue of the Safemon Progress
 		Report that Devon Co. recently published. \p The metrics place the Devon Lab in Route 104 as one
 		of the lead contributors to Safemon Research this past month, with 4 species successfully
-		safened only this past week. \p In a recent interview, Lab Director X shared that 'Although the
+		safened only this past week. \p In a recent interview, Lab Director Winston shared that 'Although the
 		Rebel Zone can be a hazardous work environment, the abundance of regular Pokémon here has
 		provided us with a satisfactory number of samples, which has contributed to our pace of
 		research'.\p We wish our valiant and hard-working scientists the best of lucks in their noble 

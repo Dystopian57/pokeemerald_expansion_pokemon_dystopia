@@ -81,59 +81,6 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-
-=== TRAINER_OLDALEDEVONGRUNT_M ===
-Name: Jerry
-Class: Devongruntm
-Pic: devongruntmbattle
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Check Bad Move
-
-Manchine
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_OLDALEDEVONGRUNT_F ===
-Name: Karen
-Class: Devongruntf
-Pic: devongruntfbattle
-Gender: Female
-Music: Intense
-Double Battle: No
-AI: Check Bad Move
-
-Verdoom
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_CONCORDWAGESLAVE ===
-Name: Allen
-Class: Wageslavem
-Pic: wageslavembattle
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Check Bad Move
-
-Helipip
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_FISHER_103 ===
-Name: IVAN
-Class: Fisherman
-Pic: Fisherman
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Corphish
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_DAISY ===
 Name: DAISY
 Class: Aroma Lady
@@ -158,10 +105,14 @@ Pic: mercenaryfbattle
 Gender: Female
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Marill
-Level: 3
+Marill @ Remedy
+Level: 6
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Numel
+Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_FELIX ===
@@ -5715,6 +5666,7 @@ Class: Youngster
 Pic: Youngster
 Gender: Male
 Music: Male
+Items: Remedy
 Double Battle: No
 AI: Check Bad Move
 
@@ -9279,6 +9231,18 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
+=== TRAINER_HEXGIRL_MAUSOLEUM ===
+Name: SAMANTHA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Basic Trainer
+
+Shuppet
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_BALSAM_PURACHU ===
 Name: BALSAM
@@ -9287,7 +9251,7 @@ Pic: balsambattle
 Gender: Female
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Pikachu_Safe
 Level: 5
@@ -9309,7 +9273,7 @@ Pic: balsambattle
 Gender: Female
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Meditite
 Level: 5
@@ -9324,7 +9288,7 @@ Name: JOEL
 Class: Orphan
 Pic: orphan_male
 Gender: Male
-Music: Suspicious
+Music: orphanboy
 Double Battle: No
 AI: Basic Trainer
 
@@ -9333,7 +9297,7 @@ Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REBEL_GRUNT_101 ===
-Name: RICK
+Name: CALVIN
 Class: Rebelgruntm
 Pic: rebelgruntmbattle
 Gender: Male
@@ -9352,6 +9316,7 @@ Class: Touristf
 Pic: touristfbattle
 Gender: Female
 Music: Tourist
+Items: Shalour Sable
 Double Battle: No
 AI: Basic Trainer
 
@@ -9424,68 +9389,57 @@ Class: Reporters
 Pic: reportersbattle
 Gender: Male
 Music: Interviewer
+Items: Fine Remedy / Heal Powder
 Double Battle: Yes
 AI: Basic Trainer
-
-Mawile
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Verdoom
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-
-=== TRAINER_SHARPY_103 ===
-Name: SHARPY
-Class: Sharpy
-Pic: sharpybattle
-Gender: Male
-Music: Male
-Items: Full Heal
-Double Battle: No
-AI: Basic Trainer
-
-Corphish
-Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Carvanha
-Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-
-=== TRAINER_TOURIST_103 ===
-Name: DAN
-Class: Touristm
-Pic: touristmbattle
-Gender: Male
-Music: Rich
-Double Battle: No
-AI: Basic Trainer
-
-Poliwag
-Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Magnemite
-Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-
-
-=== TRAINER_REBEL_OLDALE_GUARD ===
-Name: HALEY
-Class: Rebelgruntf
-Pic: rebelgruntfbattle
-Gender: Female
-Music: Rebel
-Double Battle: No
-AI: Basic Trainer
-
-Zubat
+Mawile
 Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_HERMIT_CRATER ===
+Name: AURON
+Class: HermitM
+Pic: hermitmbattle
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Smart Trainer
+
+Venonat
+Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Wynaut
+Level: 10
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+
+=== TRAINER_HERMIT_CRATER_2 ===
+Name: AURON
+Class: HermitM
+Pic: hermitmbattle
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Smart Trainer
+
+Venonat
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Wobbuffet
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Duskull
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
 
 === TRAINER_VETERAN_103 ===
 Name: BRYAN
@@ -9493,6 +9447,7 @@ Class: Veteranm
 Pic: veteranmbattle
 Gender: Male
 Music: Hiker
+Items: Energy Root
 Double Battle: No
 AI: Basic Trainer
 
@@ -9523,20 +9478,40 @@ Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
-=== TRAINER_HEXGIRL_MAUSOLEUM ===
-Name: SAMANTHA
-Class: Hex Maniac
-Pic: Hex Maniac
-Gender: Female
-Music: Suspicious
+=== TRAINER_SHARPY_103 ===
+Name: SHARPY
+Class: Sharpy
+Pic: sharpybattle
+Gender: Male
+Music: Male
+Items: Soda Pop
 Double Battle: No
 AI: Basic Trainer
 
-Shuppet
+Corphish
 Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
+Carvanha
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
+=== TRAINER_TOURIST_103 ===
+Name: DAN
+Class: Touristm
+Pic: touristmbattle
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Poliwag
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Magnemite
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DEVONGUARD_103 ===
 Name: TIMMY
@@ -9547,8 +9522,12 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Manchine
-Level: 3
+Helipip
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Poochain
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
@@ -9558,9 +9537,9 @@ Class: Shadydealerm
 Pic: shadydealermbattle
 Gender: Male
 Music: Suspicious
-Items: Revival Herb / Aerodactylite / Full Restore / Full Restore
+Items: Revival Herb / Aerodactylite
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Kecleon
 Level: 6
@@ -9569,6 +9548,41 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Gachapod
 Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+
+=== TRAINER_FISHER_103 ===
+Name: IVAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Barboach
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CONCORDWAGESLAVE ===
+Name: ALLEN
+Class: Wageslavem
+Pic: wageslavembattle
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Loadtad
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Zigzagoon
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_HAZARDIVER_WATERFALL ===
@@ -9584,7 +9598,7 @@ Shellder
 Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Wooper
+Wooper @ Berry Juice
 Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9613,9 +9627,9 @@ Pic: mercenaryfbattle
 Gender: Female
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Marill
+Marill @ Remedy
 Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9631,53 +9645,13 @@ Pic: mercenaryfbattle
 Gender: Female
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Azumarill
 Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Numel
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-
-=== TRAINER_HERMIT_CRATER ===
-Name: AURON
-Class: HermitM
-Pic: hermitmbattle
-Gender: Male
-Music: Suspicious
-Double Battle: No
-AI: Basic Trainer
-
-Venonat
-Level: 10
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Wobbuffet
-Level: 10
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-
-=== TRAINER_HERMIT_CRATER_2 ===
-Name: AURON
-Class: HermitM
-Pic: hermitmbattle
-Gender: Male
-Music: Suspicious
-Double Battle: No
-AI: Basic Trainer
-
-Venonat
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Wobbuffet
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Duskull
 Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9689,13 +9663,17 @@ Pic: hermitmbattle
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Zubat
 Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Barboach
+Level: 10
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Chinchou
 Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9707,19 +9685,68 @@ Pic: hermitmbattle
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+
+Golbat
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Whiscash
 Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Golbat
+Chinchou
 Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Pupitar
 Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+
+=== TRAINER_REBEL_OLDALE_GUARD ===
+Name: HALEY
+Class: Rebelgruntf
+Pic: rebelgruntfbattle
+Gender: Female
+Music: Rebel
+Double Battle: No
+AI: Basic Trainer
+
+Zubat
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Murkrow
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+
+=== TRAINER_OLDALEDEVONGRUNT_M ===
+Name: JERRY
+Class: Devongruntm
+Pic: devongruntmbattle
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Manchine
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_OLDALEDEVONGRUNT_F ===
+Name: KAREN
+Class: Devongruntf
+Pic: devongruntfbattle
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Verdoom
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
@@ -13503,7 +13530,7 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ANDRES_1 ===
-Name: Dominik
+Name: DOMINIK
 Class: Hazarddiverm
 Pic: hazarddivermbattle
 Gender: Male
@@ -13512,7 +13539,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Shellder
-Level: 3
+Level: 6
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Wooper @ Berry Juice
+Level: 6
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JOSUE ===

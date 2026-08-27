@@ -482,7 +482,7 @@ script Sharpy103 {
  script Route103TouristApproach0 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_RICH, TRUE)
+	playbgm (MUS_DOLCEISLAND, TRUE)
 	applymovement (27, moves(emote_exclamation_mark))
 	msgbox(format("Hey, you!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
@@ -492,7 +492,7 @@ script Sharpy103 {
   script Route103TouristApproach1 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_RICH, TRUE)
+	playbgm (MUS_DOLCEISLAND, TRUE)
 	applymovement (27, moves(emote_exclamation_mark))
 	msgbox(format("Hey, you!"))
 	applymovement (27, moves(walk_up * 1))
@@ -504,7 +504,7 @@ script Sharpy103 {
   script Route103TouristApproach2 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_RICH, TRUE)
+	playbgm (MUS_DOLCEISLAND, TRUE)
 	applymovement (27, moves(emote_exclamation_mark))
 	msgbox(format("Hey, you!"))
 	applymovement (27, moves(walk_up * 2))
@@ -516,7 +516,7 @@ script Sharpy103 {
    script Route103TouristApproach3 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_RICH, TRUE)
+	playbgm (MUS_DOLCEISLAND, TRUE)
 	applymovement (27, moves(emote_exclamation_mark))
 	waitmovement
 	msgbox(format("Hey, you!"))
@@ -1120,6 +1120,7 @@ script FisherGuruRoute103 {
 	clearflag (mudcrabcrawdaunt)
 	addobject (39)
 	playse (SE_SHINY)
+	dofieldeffectsparkle (27, 13, 9)
 	waitse
 
 	playmoncry (SPECIES_CRAWDAUNT, CRY_MODE_ENCOUNTER)
@@ -1143,10 +1144,11 @@ script FisherGuruRoute103 {
 
 	giveitem (ITEM_OLD_ROD)
 
-	msgbox(format("I want you to take that rod and fish at least FIVE SPECIES OF POKÉMON! \p WHY?
+	msgbox(format("I want you to take that rod and fish at least THREE SPECIES OF POKÉMON! \p WHY?
 	Because only then will the LEGENDARY MUDCRAB judge you as worthy, and show itself again!
 	\p Do not question the intuition of Ivan, the Legendary Releer - just embrace it, and fulfil your destiny!!"))
 	applymovement (38, moves(face_right))
+	waitmovement (38)
 	setvar(VAR_FISHERPROGRESS103 , 1)
 	goto (finishfisherscript)
 
@@ -1161,10 +1163,42 @@ script FisherGuruRoute103 {
 
 		if(var(VAR_RESULT) == 0){
 			if (var(VAR_FISHERPROGRESS103) == 2){
-				getcaughtmon (SPECIES_SMOTHQUIL)
-				if(var(VAR_RESULT) == TRUE){
+
+				getcaughtmon (SPECIES_MAGIKARP)
+				if(var(VAR_RESULT) == TRUE)
+				{addvar (VAR_FISHEDMONS, + 1)}
+
+				getcaughtmon (SPECIES_FEEBAS)
+				if(var(VAR_RESULT) == TRUE)
+				{addvar (VAR_FISHEDMONS, + 1)}
+
+				getcaughtmon (SPECIES_TENTACOOL)
+				if(var(VAR_RESULT) == TRUE)
+				{addvar (VAR_FISHEDMONS, + 1)}
+
+				getcaughtmon (SPECIES_SURSKIT)
+				if(var(VAR_RESULT) == TRUE)
+				{addvar (VAR_FISHEDMONS, + 1)}
+
+				getcaughtmon (SPECIES_POLIWAG)
+				if(var(VAR_RESULT) == TRUE)
+				{addvar (VAR_FISHEDMONS, + 1)}
+
+				if(var(VAR_FISHEDMONS) == 0){
+				msgbox(format("0 fished!"))
+				}
+
+				if(var(VAR_FISHEDMONS) == 1){
+				msgbox(format("1 fished!"))
+				}
+
+				if(var(VAR_FISHEDMONS) == 2){
+				msgbox(format("2 fished!"))
+				}
+
+				if(var(VAR_FISHEDMONS) >= 3){
 				setspeaker ([SP_NAME_IVAN])
-				msgbox(format("Ah, you've fished at least 5 Pokémon? Good, GOOD! \p I'm confident the
+				msgbox(format("Ah, you've fished at least 3 Pokémon? Good, GOOD! \p I'm confident the
 				Legendary Mud Crab will acknowledge you and show up. \p Let's wait a bit!"))
 				applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 				applymovement (38, moves(face_right))
@@ -1172,7 +1206,8 @@ script FisherGuruRoute103 {
 				fadeoutbgm (1)
 				fadescreenswapbuffers (FADE_TO_BLACK)
 				setspeaker (NULL)
-				msgbox (format("{PLAYER} and the fisher wait in a long, uncomfortable silence..."))
+				playse (SE_M_ICY_WIND)
+				waitse
 				fadescreenswapbuffers (FADE_FROM_BLACK)
 				fadeinbgm (1)
 				setspeaker ([SP_NAME_IVAN])
@@ -1192,7 +1227,7 @@ script FisherGuruRoute103 {
 
 				if(var(VAR_RESULT) == FALSE){
 				setspeaker ([SP_NAME_IVAN])
-				msgbox(format("Like I said, I need you to fish 5 species of Pokémon! \p If you are the fisher
+				msgbox(format("Like I said, I need you to fish 3 species of Pokémon! \p If you are the fisher
 				the Mud Crab believes you to be, you shouldn't need any guidance!"))
 				applymovement (38, moves(face_right))
 				setspeaker ([SP_NAME_IVAN])
@@ -1249,6 +1284,8 @@ script FisherGuruRoute103 {
 			applymovement (38, moves(face_down))
 			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("But me, I like the challenge!"))
+			applymovement (38, moves(face_right))
+			waitmovement (38)
 			goto (finishfisherscript)
 		}
 
@@ -1266,6 +1303,7 @@ script FisherGuruRoute103 {
 	
 	finishfisherscript:
 	applymovement (38, moves(face_right))
+	waitmovement (38)
 	setspeaker (NULL)
 	releaseall}
 
@@ -1283,6 +1321,8 @@ script Fishercallsfornumber {
 	msgbox(format("Wait - add me on Devon Net! We must keep in touch about this!"))
 	register_matchcall (TRAINER_FISHER_103)
 	setvar(VAR_FISHERPROGRESS103 , 2)
+	applymovement (38, moves(face_right))
+	waitmovement (38)
 	release
 	
 

@@ -14,10 +14,10 @@ WaterfallHermit::
 	applymovement 1, WaterfallHermit_Movement_0
 # 12 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_HM_WATERFALL, WaterfallHermit_2
-# 69 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 71 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermit_Text_14
 WaterfallHermit_1:
-# 72 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 74 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
@@ -53,17 +53,23 @@ WaterfallHermit_14:
 WaterfallHermit_17:
 # 52 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermit_Text_12
+# 57 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+	fadeoutbgm 1
 # 58 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	playse MUS_OBTAIN_BADGE
 # 59 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	msgbox WaterfallHermit_Text_13
+	fadenewbgm 1
 # 60 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	setflag FLAG_BADGE07_GET
+	playbgm MUS_LEMURIA, TRUE
 # 61 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	setflag FLAG_RECEIVED_HM_WATERFALL
+	msgbox WaterfallHermit_Text_13
 # 62 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	giveitem ITEM_HM07
+	setflag FLAG_BADGE07_GET
 # 63 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+	setflag FLAG_RECEIVED_HM_WATERFALL
+# 64 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+	giveitem ITEM_HM07
+# 65 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	setflag hermitmovesexplained
 	goto WaterfallHermit_1
 
@@ -110,8 +116,8 @@ WaterfallHermit_Text_0:
 	.string "But now, the acts of humans - born from\n"
 	.string "conflict, or in the name of progress -\l"
 	.string "are threatening to become just as\l"
-	.string "strong a changing force. Some say they\l"
-	.string "will replace all others.$"
+	.string "strong a changing force.\p"
+	.string "Some say they will replace all others.$"
 
 WaterfallHermit_Text_1:
 # 20 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
@@ -181,14 +187,14 @@ WaterfallHermit_Text_12:
 	.string "I deem you worthy to have these.$"
 
 WaterfallHermit_Text_13:
-# 59 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	.string "Obtained the Cascade Token$"
+# 61 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+	.string "Obtained the Cascade Token!$"
 
 WaterfallHermit_Text_14:
-# 69 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 71 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "I have nothing else to teach you. I wish\n"
 	.string "you luck on your travels.$"
 
 WaterfallHermit_Outro::
-# 75 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 77 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "I see... a few parting words, if I may.$"

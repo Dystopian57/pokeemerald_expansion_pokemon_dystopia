@@ -122,13 +122,13 @@ script JoelTentJoel {
     setspeaker ([SP_NAME_JOEL])
         msgbox(format("What? Anne was already gone!? Oh no... \p She told me she can't
         sleep without that doll. She'll miss it so much in her new home... \p I know
-        it's a big ask... but if you go to Rustboro, could you give it to her?"))
+        it's a big ask... but if you go to New Rustboro, could you give it to her?"))
         applymovement(4, moves(face_right))
         setspeaker ([SP_NAME_JOEL])
         msgbox(format("I said I'd go visit her... but it was only so she wouldn't be sad."))
         applymovement(4, moves(face_player))
         setspeaker ([SP_NAME_JOEL])
-        msgbox(format("To go to Rustboro, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
+        msgbox(format("To go to New Rustboro, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
         guards will stop you at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}."))
         setspeaker ([SP_NAME_JOEL])
         msgbox(format("There's no way they'll let me through... but you look like a soldier. Perhaps

@@ -1373,10 +1373,10 @@ const struct Item gItemsInfo[] =
             "poor taste, but of\n"
             "great taste."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_STATUS_RECOVERY,
+        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_Lemonade,
         .flingPower = 30,
         .iconPic = gItemIcon_ShalourSable,
@@ -1404,10 +1404,11 @@ const struct Item gItemsInfo[] =
     [ITEM_HP_UP] =
     {
         .name = ITEM_NAME("HP Up"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 500,
         .description = COMPOUND_STRING(
-            "Raises the base HP\n"
-            "of one Pokémon."),
+            "Raises base HP\n"
+            "of one Pokémon\n"
+            "by 25 EVs."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
@@ -1421,11 +1422,11 @@ const struct Item gItemsInfo[] =
     [ITEM_PROTEIN] =
     {
         .name = ITEM_NAME("Protein"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 500,
         .description = COMPOUND_STRING(
-            "Raises the base\n"
-            "Attack stat of one\n"
-            "Pokémon."),
+            "Raises base\n"
+            "Attack by 25\n"
+            "EVs."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
@@ -1439,11 +1440,11 @@ const struct Item gItemsInfo[] =
     [ITEM_IRON] =
     {
         .name = ITEM_NAME("Iron"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 500,
         .description = COMPOUND_STRING(
-            "Raises the base\n"
-            "Defense stat of\n"
-            "one Pokémon."),
+            "Raises base\n"
+            "Defense by 25\n"
+            "EVs."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
@@ -1457,11 +1458,11 @@ const struct Item gItemsInfo[] =
     [ITEM_CALCIUM] =
     {
         .name = ITEM_NAME("Calcium"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 500,
         .description = COMPOUND_STRING(
-            "Raises the base\n"
-            "Sp. Atk stat of one\n"
-            "Pokémon."),
+            "Raises base\n"
+            "Sp. Attack by\n"
+            "25 EVs."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
@@ -1475,11 +1476,11 @@ const struct Item gItemsInfo[] =
     [ITEM_ZINC] =
     {
         .name = ITEM_NAME("Zinc"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 500,
         .description = COMPOUND_STRING(
-            "Raises the base\n"
-            "Sp. Def stat of one\n"
-            "Pokémon."),
+            "Raises base\n"
+            "Sp. Defense by\n"
+            "25 EVs."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
@@ -1494,11 +1495,11 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Carbos"),
         .pluralName = ITEM_PLURAL_NAME("Carbos"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 500,
         .description = COMPOUND_STRING(
-            "Raises the base\n"
-            "Speed stat of one\n"
-            "Pokémon."),
+            "Raises base\n"
+            "Speed by 25\n"
+            "EVs."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
@@ -1512,13 +1513,7 @@ const struct Item gItemsInfo[] =
     [ITEM_PP_UP] =
     {
         .name = ITEM_NAME("PP Up"),
-    #if I_PRICE >= GEN_7
-        .price = 10000,
-    #elif I_PRICE >= GEN_2
-        .price = 9800,
-    #else
-        .price = 1,
-    #endif
+        .price = 500,
         .description = COMPOUND_STRING(
             "Raises the maximum\n"
             "PP of a selected\n"
@@ -1649,13 +1644,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ABILITY_CAPSULE] =
     {
         .name = ITEM_NAME("Ability Capsule"),
-    #if I_PRICE >= GEN_9
-        .price = 100000,
-    #elif I_PRICE >= GEN_7
-        .price = 10000,
-    #else
-        .price = 1000,
-    #endif
+        .price = 2500,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
             "Switches a Poké-\n"
@@ -1672,7 +1661,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Ability Patch"),
         .pluralName = ITEM_PLURAL_NAME("Ability Patches"),
-        .price = (I_PRICE >= GEN_9) ? 250000 : 20,
+        .price = 5000,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
             "Turns the ability\n"
@@ -1835,7 +1824,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MODEST_MINT] =
     {
         .name = ITEM_NAME("Modest Pill"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 500,
         .description = COMPOUND_STRING(
             "Oral intake. It\n"
             "ups Sp. Atk, but\n"
@@ -1907,7 +1896,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CALM_MINT] =
     {
         .name = ITEM_NAME("Calm Pill"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 500,
         .description = COMPOUND_STRING(
             "Oral intake. It\n"
             "ups Sp. Def, but\n"
@@ -14404,20 +14393,25 @@ const struct Item gItemsInfo[] =
 
     [ITEM_TEA] =
     {
-        .name = ITEM_NAME("Tea"),
-        .pluralName = ITEM_PLURAL_NAME("Tea"),
-        .price = 0,
+        .name = ITEM_NAME("Green Tea"),
+        .pluralName = ITEM_PLURAL_NAME("Green Tea"),
+        .price = 70,
+        .holdEffect = HOLD_EFFECT_CURE_CONFUSION,
         .description = COMPOUND_STRING(
-            "A thirst-quenching\n"
-            "tea prepared by an\n"
-            "old lady."),
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+            "A drink that\n"
+            "soothes the mind.\n"
+            "Heals confusion."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_PersimBerry,
+        .flingPower = 10,
         .iconPic = gItemIcon_Tea,
         .iconPalette = gItemIconPalette_Tea,
     },
+
 
     [ITEM_RUBY] =
     {
@@ -14674,12 +14668,12 @@ const struct Item gItemsInfo[] =
     [ITEM_SCROLL_OF_DARKNESS] =
     {
         .name = ITEM_NAME("Warm Bedding"),
-        .pluralName = ITEM_PLURAL_NAME("Warm Bedding"),
+        .pluralName = ITEM_PLURAL_NAME("Warm Beddings"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A warm set of\n"
-            "bedding. Someone may\n"
-            "need this."),
+            "bedding. Someone\n"
+            "may need this."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

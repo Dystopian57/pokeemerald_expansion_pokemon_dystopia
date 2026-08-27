@@ -1832,10 +1832,14 @@ script NoRain {
 }
 
 script FatGuyExclMark {
-
+	//lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (Donutquestaccepted) && !flag (fatguyseesplayerleavelittl))
 	{
-	applymovement (3, moves(face_player, emote_exclamation_mark))
+	applymovement (3, moves(face_up, emote_exclamation_mark))
+	playse (SE_PIN)
+	waitse
+	waitmovement (3)
 	setflag (fatguyseesplayerleavelittl)
 	goto (endfatguyexlmarkscript)}
 
@@ -1861,14 +1865,14 @@ one, she gave me a Digglett instead..."))
 goto (endlitlfatguy)
 }
 
-if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (Donutquestaccepted))
+if (var(VAR_LITTLEROOT_PHASE) >= 5 && !flag (Donutquestaccepted))
 	{msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
 	you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
 	arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there. \pDo me the favour, and I'll give
 	you some {COLOR RED}Pokéballs{COLOR DARK_GRAY}. Fair deal, right?"))
 	setflag(Donutquestaccepted)
 	goto (endlitlfatguy)}
-if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (Donutquestaccepted))
+if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
 	{if (!flag (donutquestcomplete))
 	{
 
@@ -1896,7 +1900,8 @@ if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (Donutquestaccepted))
 			msgbox (format("Hmm - delicious... \p O-oh, I'm sorry... a deal is a deal. Here are your
 			Pokéballs!"))
 			giveitem (ITEM_PARK_BALL, 5)
-			msgbox (format("I know they're a bit busted, but they still work. Go try them out!"))
+			msgbox (format("I know they're a bit busted, but they still work. Go try them out!\pIf you
+			bring me another donut tomorrow, I'll have some more Pokéballs ready."))
 			setflag (donutquestcomplete)
 			goto (endlitlfatguy)}
 			
@@ -1921,7 +1926,9 @@ releaseall
 
 
 script SamanthaDontgotoRivals {
-lock
+    lock
+    if (!flag (Samanthagotsnacks))
+    {
 applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
 playse (SE_PIN)
 setspeaker ([SP_NAME_SAMANTHA])
@@ -1937,14 +1944,21 @@ msgbox (format("O-oh, {PLAYER}... this is... {RIVAL}'s house, right?"))
 	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("He comes to the graveyard sometimes... \p I think we shouldn't intrude, he is a bit scary..."))
 	}
+
+}
+
+   else {msgbox (format("I-I can eat these in the mausoleum... I-I don't want to take more
+    of your time...!"))}
+
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 waitmovement (OBJ_EVENT_ID_PLAYER)
-
 releaseall
 }
 
 script SamanthaDontgotoPlayers {
-lock
+    lock
+    if (!flag (Samanthagotsnacks))
+    {
 applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
 playse (SE_PIN)
 msgbox (format("O-oh, {PLAYER}... this is... your house, right? Your name is on the sign..."))
@@ -1952,9 +1966,12 @@ msgbox (format("O-oh, {PLAYER}... this is... your house, right? Your name is on 
 msgbox (format("I-I appreciate it, but... I can't take your food! \p I have saved money for mine. So let's
 go to Oldale to get it."))
 
+}
+
+   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+    of your time...!"))}
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 waitmovement (OBJ_EVENT_ID_PLAYER)
-
 releaseall
 }
 
@@ -2015,6 +2032,42 @@ script Littleroot_CemeterySign {
 lock
 msgbox (format("East - Littleroot Cemetery."))
 releaseall
+}
+
+script Littleroot_Boxpillar {
+lock
+msgbox (format("The boxes are piled up in a precarious balance."))
+releaseall
+}
+
+script Littleroot_Bycicle {
+lock
+msgbox (format("It's a rusty Mach bike. It has seen better days."))
+releaseall
+}
+
+script Littleroot_Car {
+lock
+msgbox (format("It seems like the car has not been used in a long time."))
+releaseall
+}
+
+script Littleroot_Fence {
+lock
+msgbox (format("An old car can be seen beyond the fence. There seems to be a hole under it..."))
+releaseall
+}
+
+script LabBasementVentShaft {
+	lock
+	if(!flag (Unsafeningtutodone))
+	{
+	msgbox (format("It's a ventilation shaft. Does the lab have a basement...?"))}
+
+	else
+	{msgbox (format("The shaft connects with the lab's basement. You can hear the whirr of
+	the Unsafener..."))}
+	release
 }
 
 script Littleroot_TownSign {
@@ -2148,8 +2201,17 @@ else {
 	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things she wants to tell you about."))}
 	if (var(VAR_LITTLEROOT_PHASE) == 3 && flag (checkonrival))
 	{msgbox (format("Have you paid {RIVAL} a visit yet?\p Please... it would lift a weight off my old
-	shoulders. \p I tried checking on them myself, but they wouldn't open the door.\p Perhaps they will
+	shoulders."))
+	
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){	
+	msgbox (format("I tried checking on her myself, but she wouldn't open the door.\p Perhaps she will
 	'open up' to you - no pun intended! Ho-ho-ho!"))}
+
+	checkplayergender
+	if(var(VAR_RESULT) == FEMALE){	
+	msgbox (format("I tried checking on him myself, but he wouldn't open the door.\p Perhaps he will
+	'open up' to you - no pun intended! Ho-ho-ho!"))}}
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
 	{
 	checkplayergender
@@ -2197,7 +2259,7 @@ script LittlerootTown_Eventscript_Oldmanasking {
 			if (!flag (GOTSTARTER3))
 
 			{bufferleadmonspeciesname(STR_VAR_1)
-			msgbox (format("Such a cute {STR_VAR_1}! you have there! \p You see, I was wondering..."))}
+			msgbox (format("Such a cute {STR_VAR_1} you have there! \p You see, I was wondering..."))}
 
 			else 
 			
@@ -2208,12 +2270,12 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		checkplayergender
 		if(var(VAR_RESULT) == MALE){
 		msgbox (format("Would you mind paying {RIVAL} a visit? You remember {RIVAL}, right? You went to the
-		front together. Her house was destroyed during the war, so I let her stay in mine. \p She has been making quite a ruckus lately...\p
+		front together.\pHer house was destroyed during the war, so I let her stay in mine. \p She has been making quite a ruckus lately...\p
 		It's as if she is reliving things that happened during the war.\p You must know what she's going through...
 		Perhaps you can calm her down."))}
 		else {
 		msgbox (format("Would you mind paying {RIVAL} a visit? You remember {RIVAL}, right? You went to the
-		front together. His house was destroyed during the war, so I let him stay in mine. \p He has been making quite a ruckus lately...\p
+		front together.\pHis house was destroyed during the war, so I let him stay in mine. \p He has been making quite a ruckus lately...\p
 		It's as if he is reliving things that happened during the war.\p You must know what he's going through...
 		Perhaps you can calm him down."))}
 		removefieldmugshot
@@ -2241,7 +2303,7 @@ script OldManThanks {
 	\p Well, at least you got her to leave the house. That may do her some good.
 	\p Thank you for checking on her. Here, take this as a form of thanks."))}
 	if(var(VAR_RESULT) == FEMALE){
-	msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! What got into her?\p
+	msgbox (format("I saw {RIVAL} storming out like a frenzied Linoone! What got into him?\p
 	Well, at least you got him to leave the house. That may do him some good.\p
 	Thank you for checking on him. Here, take this as a form of thanks."))}
 	removefieldmugshot
@@ -2270,8 +2332,8 @@ script OldManThanks {
 		msgbox (format("Your parents would be proud. You came out tough, just like them."))
 		setspeaker ([SP_NAME_BIRCH])
 		applymovement (1, moves(face_up))
-		msgbox (format("Well, off you go now! Please, take care out there. \p Despite Devon's claims, Hoenn is
-		far from a 'safe' place these days... \p But have faith in your Pokémon, and you will be fine. Good bye!"))
+		msgbox (format("Well, off you go now! Please, take care out there. \p These parts are not as safe as
+		they used to... \p But have faith in your Pokémon, and you will be fine. Good bye!"))
 		removefieldmugshot
 		closemessage
 		applymovement (1, moves(walk_down * 7))
