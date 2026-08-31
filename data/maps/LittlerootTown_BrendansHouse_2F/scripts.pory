@@ -441,17 +441,17 @@ script PlayerBedSimple {
 	releaseall		
 }
 
-script PlayerBedTime {
+script PlayerHouseBedTime {
 	lockall
     msgbox("Rest for a bit?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
+	fadescreen (FADE_TO_BLACK)
 	msgbox (format("Set the wristwatch's alarm to which time?"))
 	special (StartWallClock)
-	fadescreenswapbuffers (FADE_TO_BLACK)
+	waitstate
+	fadescreen (FADE_TO_BLACK)
 	playse (MUS_HEAL)
 	waitse
-	special(HealPlayerParty)
-
 	random (4)
 	copyvar (VAR_TEMP_1, VAR_RESULT)
 
@@ -467,8 +467,8 @@ script PlayerBedTime {
 	waitse
 	playse (SE_SUCCESS)
 	waitse
+	fadescreen (FADE_FROM_BLACK)
 	msgbox (format("{PLAYER} wakes up."))
-	fadescreenswapbuffers (FADE_FROM_BLACK)
 	
 }
 	releaseall		

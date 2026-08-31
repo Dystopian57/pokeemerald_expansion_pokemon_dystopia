@@ -4,5 +4,433 @@ raw `
 
 mapscripts OldaleWarehouseUpper_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
+    MAP_SCRIPT_ON_LOAD: WarehouseUpperEventMusic
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
     MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+
+
+
+script WarehouseUpperEventMusic {
+playbgm (MUS_PYRITETOWN, TRUE)
+}
+
+script OldaleWarehouseUpperRebelEventEntrance {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    playbgm (MUS_ENCOUNTER_INTENSE, TRUE)
+    playse (SE_PIN)
+	applymovement (4, moves(emote_exclamation_mark, walk_in_place_up))
+	msgbox(format("Hm? Who the hells are you?"))
+    playse (SE_PIN)
+	applymovement (2, moves(emote_exclamation_mark, walk_in_place_left))
+
+	applymovement (3, moves(walk_in_place_right))
+	applymovement (5, moves(walk_in_place_right))
+
+	setspeaker ([SP_NAME_CALVIN])
+    checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("Hey! It's him! That's the Littleroot chump! GET HIM!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Hey! It's her! That's the Littleroot chump! GET HER!"))}
+	setspeaker (NULL)
+
+                         
+	applymovement (3, moves(walk_up * 2, walk_in_place_left))
+    playse (SE_M_METRONOME)
+	applymovement (5, moves(walk_in_place_left))
+	applymovement (6, moves(emote_question_mark, walk_in_place_up))
+	applymovement (1, moves(walk_in_place_left))
+    checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("That's the guy...? Pfft! You're such a loser, Calvin!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("That the girl...? Pfft! You're such a loser, Calvin!"))}
+
+	applymovement (4, moves(walk_up * 1))
+    msgbox(format("Wait... you beat Rick and Lola downstairs?\pHeh... perhaps this'll be fun."))
+	applymovement (4, moves(walk_in_place_right))
+    msgbox(format("Jani, back me up! Let's do our COMBO!"))
+	applymovement (4, moves(walk_in_place_up))
+	applymovement (3, moves(walk_left * 2))
+    msgbox(format("I told you, if you pull that crap one more time...!"))
+
+    trainerbattle_two_trainers (TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3, RebelGruntMWareHouseUpperOutro, TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4, RebelGruntFWareHouseUpperOutro)
+	applymovement (1, moves(walk_in_place_left))
+	msgbox(format("Stand aside, you punks!"))
+	closemessage
+	
+
+	applymovement (3, moves(walk_diag_northwest * 1, walk_in_place_down))
+	//applymovement (3, moves(walk_up * 1, walk_left * 1, walk_in_place_down))
+
+	applymovement (4, moves(walk_left * 2, walk_in_place_right))
+	applymovement (1, moves(walk_left * 1, walk_up * 1, walk_in_place_left))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+	msgbox(format("You ain't gonna beat this one like that. The way you battle...\pYou're an ex-soldier, aren't you?
+    What, you're a merc sent by Devon?\p Eh, all the same. We'll use you to send a message to this town..."))
+	call(WarehouseRebelAdminShake)
+	applymovement (1, moves(walk_slow_left * 1))
+	msgbox(format("NO ONE..."))
+	applymovement (1, moves(walk_slow_left * 1))
+	call(WarehouseRebelAdminShake)
+	msgbox(format("MESSES..."))
+	call(WarehouseRebelAdminBigShake)
+
+	applymovement (1, moves(walk_slow_left * 1))
+
+	applymovement (2, moves(jump_in_place_left))
+	applymovement (3, moves(jump_in_place_down))
+	applymovement (5, moves(jump_in_place_up))
+	applymovement (6, moves(jump_in_place_up))
+	msgbox(format("WITH REBELS!"))
+
+	trainerbattle_no_intro(TRAINER_REBELADMIN_OLDALEWAREHOUSE , RebelAdminWareHouseUpperOutro)
+
+	playbgm (MUS_MONSTERHOUSE, TRUE)
+	msgbox(format("Alright, you chump... if this were the old days, you'd have won already."))
+	applymovement (3, moves(face_right))
+	applymovement (2, moves(face_up))
+
+	playse (SE_FLEE)
+	applymovement (1, moves(walk_fast_right * 4, walk_in_place_left))
+	msgbox(format("Unlucky you, they ain't!!"))
+	closemessage
+	playse (SE_M_TAKE_DOWN)
+	applymovement (1, moves(walk_in_place_slow_left))
+	waitmovement (1)
+	playse (SE_M_TAKE_DOWN)
+	applymovement (1, moves(walk_in_place_slow_left))
+	waitmovement (1)
+
+	playse (SE_PIN)
+	applymovement (2, moves(emote_exclamation_mark))
+	waitmovement (2)
+
+	playse (SE_PIN)
+	applymovement (3, moves(emote_exclamation_mark))
+	waitmovement (3)
+
+	playse (SE_PIN)
+	applymovement (4, moves(emote_exclamation_mark))
+	waitmovement (4)
+
+	playse (SE_PIN)
+	applymovement (5, moves(emote_exclamation_mark))
+	waitmovement (5)
+
+	playse (SE_PIN)
+	applymovement (6, moves(emote_exclamation_mark))
+	waitmovement (6)
+
+	setspeaker ([SP_NAME_CALVIN])
+	msgbox(format("T-that's the boss special! The TAUROS TAKE-DOWN!"))
+
+    checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("This guy is done for!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("This girl is done for!"))}
+	setspeaker (NULL)
+
+
+	repeatwarehousetaurostackle:
+	msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
+	prepares to tackle with all of his strength... what to do?"))
+
+    //checkplayergender
+
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Block", "Dodge")
+	//if(var(VAR_RESULT) == MALE){dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Block", "Trip him up")}
+	//if(var(VAR_RESULT) == FEMALE){dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Block", "Dodge")}
+
+	if (var(VAR_RESULT) == 0) {
+	applymovement (1, moves(jump_in_place_left))
+	playse (SE_LEDGE)
+	msgbox(format("Going to splat you flat! ORYAAAAH!"))
+	playse (SE_FLEE)
+	applymovement (1, moves(walk_fast_left * 4))
+	waitse
+	playse (SE_M_MEGA_KICK2)
+	call(WarehouseRebelAdminBigShake)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(jump_2_left, jump_2_right))
+	msgbox(format("{COLOR GREEN}The blow was impossible to block... and it
+	was supereffective!"))
+	msgbox(format("Calvin was right - you're quite sturdy! But one more ought to do it!"))
+	playse (SE_FLEE)
+	applymovement (1, moves(walk_fast_right * 4))
+	goto (repeatwarehousetaurostackle)
+
+	}
+
+	if (var(VAR_RESULT) == 1) {
+	applymovement (1, moves(jump_in_place_left))
+	waitmovement (1)
+	playse (SE_LEDGE)
+	msgbox(format("Going to splat you flat! ORYAAAAH!"))
+	playse (SE_FLEE)
+	applymovement (1, moves(walk_fast_left * 4))
+	waitse
+	playse (SE_M_JUMP_KICK)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_down * 1, walk_in_place_up))
+	applymovement (1, moves(walk_fast_left * 3))
+	waitmovement (1)
+	applymovement (4, moves(jump_in_place_up))
+	playse (SE_M_MEGA_KICK2)
+	call(WarehouseRebelAdminBigShake)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1, walk_in_place_left))
+	msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
+	can't stop his momentum, and slams himself against the wall!"))
+
+	playse (SE_PIN)
+	applymovement (4, moves(emote_exclamation_mark))
+	msgbox(format("B-boss! Are you alright!?"))
+
+	applymovement (1, moves(walk_in_place_down))
+	playse (SE_M_SWAGGER2)
+	msgbox(format("Shut up, idiot! This is nothing, I just slipped! Ugh..."))
+
+	applymovement (1, moves(walk_in_place_right))
+	msgbox(format("You... you're going to have it now! See if you can dodge this!"))
+
+	applymovement (1, moves(walk_in_place_slow_right))
+	waitmovement (1)
+	playse (SE_M_TAKE_DOWN)
+
+	msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
+	extends his arms for a wide, short-distance ram!"))
+
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Strike", "Dodge")
+
+		if (var(VAR_RESULT) == 0) {
+		playse (SE_FLEE)
+		applymovement (1, moves(walk_fast_right * 1))
+		waitse
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
+	    call(WarehouseRebelAdminShake)
+
+		playse (SE_M_MEGA_KICK2)
+		waitse
+
+		checkplayergender
+		if(var(VAR_RESULT) == MALE){
+		msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
+		receives a crutch strike in his wide-open chest!"))}
+
+		if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
+		receives a kick in his wide-open chest!"))}
+
+		fadeoutbgm (2)
+		applymovement (1, moves(walk_in_place_slow_right))
+		msgbox(format("G-gah...!"))
+
+		playse (SE_PIN)
+		applymovement (2, moves(emote_exclamation_mark))
+		waitmovement (2)
+
+		playse (SE_PIN)
+		applymovement (3, moves(emote_exclamation_mark))
+
+
+		playse (SE_PIN)
+		applymovement (4, moves(emote_exclamation_mark))
+		waitmovement (4)
+
+		playse (SE_PIN)
+		applymovement (5, moves(emote_exclamation_mark))
+
+
+		playse (SE_PIN)
+		applymovement (6, moves(emote_exclamation_mark))
+		waitmovement (6)
+
+		applymovement (1, moves(walk_in_place_right))
+		msgbox(format("Heh... you're a tough merch. Tsk..."))
+		applymovement (1, moves(walk_in_place_down))
+		msgbox(format("You want this place so badly? Whatever. We're done with it anyway."))
+		applymovement (1, moves(walk_in_place_up))
+		msgbox(format("PACK IT UP, REBELS! We're going back to {COLOR GREEN}PETALBURG!"))
+
+		applymovement (1, moves(walk_diag_northeast * 1, walk_up * 1))
+		removeobject (1)
+		playse (SE_EXIT)
+		applymovement (3, moves(walk_right * 1, face_left))
+
+		fadenewbgm (1)
+		playbgm (MUS_UNDERPIZZA, TRUE)
+
+			applymovement (1, moves(walk_up * 2, walk_left * 1))
+			setspeaker ([SP_NAME_CALVIN])
+			msgbox(format("Y-you heard the boss! Back to base!"))
+			applymovement (1, moves(jump_in_place_left))
+			waitmovement (1)
+
+		goto (rebelsleaveupperwarehouse)
+		}
+
+		if (var(VAR_RESULT) == 1) {
+		playse (SE_FLEE)
+		applymovement (1, moves(walk_fast_right * 1))
+		waitmovement
+		playse (SE_M_MEGA_KICK2)
+	    call(WarehouseRebelAdminShake)
+		waitse
+		applymovement (1, moves(walk_in_place_slow_right))
+		playse (SE_M_BIND)
+		waitse
+		msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
+		has {PLAYER} in a wrestling grapple!"))
+
+		dynmultichoice(0, 0, TRUE, 1, 0, DYN_MULTICHOICE_CB_NONE, "Headbutt!")
+
+			if (var(VAR_RESULT) == 0) {
+			playse (SE_M_HEADBUTT)
+			call(WarehouseRebelAdminShake)
+			applymovement (1, moves(walk_in_place_slow_right))
+			waitse
+			playse (SE_M_DIZZY_PUNCH)
+			playse (SE_M_DIZZY_PUNCH)
+			playse (SE_M_DIZZY_PUNCH)
+			playse (SE_M_DIZZY_PUNCH)
+			waitse
+			msgbox(format("G-gah...!"))
+			applymovement (1, moves(face_down, face_left, face_up, face_right))
+			waitmovement (1)
+			applymovement (1, moves(face_down, face_left, face_up))
+
+			checkplayergender
+			if(var(VAR_RESULT) == MALE){msgbox(format("L-let me at him... where's the... t-werp...!?"))}
+			if(var(VAR_RESULT) == FEMALE){msgbox(format("L-let me at her... where's the... t-werp...!?"))}
+
+			applymovement (1, moves(walk_slow_up * 1, face_left, face_up))
+			waitmovement (1)
+			applymovement (1, moves(walk_slow_right * 1))
+			applymovement (3, moves(walk_right * 1, face_left))
+			playse (SE_M_METRONOME)
+			applymovement (3, moves(emote_question_mark))
+
+			msgbox(format("Uhm... boss? You're going to Tauros Tackle from downstairs?"))
+			applymovement (1, moves(walk_slow_up * 1))
+			waitmovement (1)
+			removeobject (1)
+
+			call(WarehouseRebelAdminShake)
+			playse (SE_M_BELLY_DRUM)
+			waitse
+			call(WarehouseRebelAdminShake)
+			playse (SE_M_VITAL_THROW2)
+			waitse
+			call(WarehouseRebelAdminBigShake)
+			playse (SE_M_EXPLOSION)
+			waitse
+
+			fadeoutbgm (1)
+
+			applymovement (3, moves(walk_left * 1, face_up))
+			waitmovement (3)
+			msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Oouuch...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+			playse (SE_M_TWISTER)
+			msgbox(format("..."))
+
+
+			applymovement (2, moves(walk_up * 2, walk_left * 1))
+			setspeaker ([SP_NAME_CALVIN])
+			msgbox(format("A-as the second in command, I say..."))
+			applymovement (1, moves(jump_in_place_left))
+			waitmovement (1)
+			playbgm (MUS_STOPTHIEF, TRUE)
+
+			checkplayergender
+			if(var(VAR_RESULT) == MALE){msgbox(format("I told you this guy was too strong! RUUUUN!"))}
+			if(var(VAR_RESULT) == FEMALE){msgbox(format("I told you this girl was too strong! RUUUUN!"))}
+
+			rebelsleaveupperwarehouse:
+			playse (SE_FLEE)
+			applymovement (3, moves(walk_fast_up * 1))
+			waitmovement (3)
+			removeobject (3)
+			playse (SE_EXIT)
+
+
+			applymovement (2, moves(walk_fast_up * 1, walk_fast_left * 4, walk_fast_up * 1))
+		    playse (SE_FLEE)
+			waitmovement (2)
+			removeobject (2)
+			playse (SE_EXIT)
+
+
+			applymovement (4, moves(walk_fast_up * 2))
+			waitmovement (4)
+			playse (SE_LEDGE)
+			applymovement (4, moves(jump_2_right))
+			applymovement (4, moves(walk_fast_up * 1))
+		    playse (SE_FLEE)
+			waitmovement (4)
+			removeobject (4)
+			playse (SE_EXIT)
+
+			applymovement (6, moves(walk_fast_left * 1, walk_fast_up * 4, walk_fast_right * 1, walk_fast_up * 1))
+		    playse (SE_FLEE)
+			waitmovement (6)
+			removeobject (6)
+			playse (SE_EXIT)
+
+
+			applymovement (5, moves(walk_fast_up * 4, walk_fast_left * 3, walk_fast_up * 1))
+		    playse (SE_FLEE)
+			waitmovement (5)
+			removeobject (5)
+			playse (SE_EXIT)
+
+
+			addobject (2)
+			setobjectxy (2, 2, 1)
+			applymovement (2, moves(walk_fast_down * 1))
+			waitmovement (2)
+			setspeaker ([SP_NAME_CALVIN])
+			msgbox(format("T-this is not over yet! You'll regret getting on our bad side, twerp!"))
+			setspeaker (NULL)
+			applymovement (2, moves(walk_fast_up * 1))
+			waitmovement (2)
+			removeobject (2)
+		    playse (SE_EXIT)
+
+
+			fadeoutbgm (1)
+			playbgm (MUS_UNDERPIZZA, TRUE)
+
+			setflag (oldalewarehouserebelscleared)
+			setvar (VAR_OLDALE_PHASE, 2)
+
+			}
+
+		}
+
+	}
+
+
+	release
+	end
+}
+
+text RebelGruntMWareHouseUpperOutro{
+    "If Cheerorb could use Self-Destruct... \nwe would have won!"}
+
+text RebelGruntFWareHouseUpperOutro{
+    "... you're paying for my Devon Center\nfee."}
+
+text RebelAdminWareHouseUpperOutro{
+    "Heh... this isn't over."}
+
+script WarehouseRebelAdminShake {
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+    playse (SE_M_STRENGTH)
+	special(ShakeCamera)
+}
+
+script WarehouseRebelAdminBigShake {
+	setvar(VAR_0x8004, 4)  //@ vertical pan
+	setvar(VAR_0x8005, 8)  //@ horizontal pan
+	setvar(VAR_0x8006, 8)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+    playse (SE_M_BRICK_BREAK)
+	special(ShakeCamera)
+}

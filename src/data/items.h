@@ -2920,19 +2920,19 @@ const struct Item gItemsInfo[] =
 
     [ITEM_STAR_PIECE] =
     {
-        .name = ITEM_NAME("Star Piece"),
-        .price = (I_PRICE >= GEN_7) ? 12000 * TREASURE_FACTOR: 9800,
+        .name = ITEM_NAME("Arystal Shard"),
+        .price = 3000,
         .description = COMPOUND_STRING(
-            "A red gem shard.\n"
-            "It would sell for a\n"
-            "very high price."),
+            "Chipped from an\n"
+            "Arystal. Highly\n"
+            "sought by jewelers."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
-        .iconPic = gItemIcon_StarPiece,
-        .iconPalette = gItemIconPalette_Star,
+        .iconPic = gItemIcon_TeraShard,
+        .iconPalette = gItemIconPalette_IceTeraShard,
     },
 
     [ITEM_COMET_SHARD] =
@@ -4647,7 +4647,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Slowpoke Tail"),
         .pluralName = ITEM_PLURAL_NAME("Slowpoke Tails"),
-        .price = 50000 * TREASURE_FACTOR,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "A highly demanded\n"
             "delicacy in the\n"
@@ -14311,12 +14311,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CARD_KEY] =
     {
-        .name = ITEM_NAME("Card Key"),
+        .name = ITEM_NAME("Devon Guest Key"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A card-type door\n"
-            "key used in Silph\n"
-            "Co's office."),
+            "key used to enter\n"
+            "Devon Inns."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

@@ -205,7 +205,7 @@ script ConcordCustomsPhone{
 					waitse
 					playse (SE_CLICK)
 					msgbox(format("Which number to dial?"))
-					dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Littleroot Lab", "Petalburg Gym" , "Citizen Services", "Dial Manually", "None")
+					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Littleroot Lab", "Petalburg Gym" , "Citizen Services", "Dial Manually", "None")
 						if(var(VAR_RESULT) == 0){
 						hidemoneybox
 						playse (SE_POKENAV_CALL)
@@ -223,7 +223,7 @@ script ConcordCustomsPhone{
 						playse (SE_POKENAV_CALL)
 						waitse
 						msgbox(format("Norman: Hello. You have reached the voice mail of Petalburg Dojo.\p If you're calling to
-						schedule a gym fight, I'm afraid this center is no longer part of the Hoenn Pokémon League.\p If it's you,
+						schedule a gym fight, I'm afraid this center is no longer part of the Hoenn Pokémon League Challenge.\p If it's you,
 						{PLAYER}... I'll call you as soon as I can.\p And if it's you, Sidney... stop calling me!"))
 						playse (SE_POKENAV_HANG_UP)
 						goto (endofpayphone)
@@ -249,8 +249,8 @@ script ConcordCustomsPhone{
 								\p This was done because your Primeape met the criteria established by Devon Co's Wildlife 
 								Protocol 57: 'Pokémon for Urgent Safening'.
 								\p In short, your Pokémon grew too strong - a likely consequence of Pokémon trained to fight in
-								the Kantonian war - and Devon Co. cannot return it to you until it has been turned into a Safemon.
-								\p You will be notified as soon as this is the case, and a retrieval meeting will be scheduled.
+								the Kantonian war.\p Consequently, Devon Co. cannot return it to you until it has been turned into a Safemon.
+								\p You will be notified as soon as this has been done, and a retrieval meeting will be scheduled.
 								\p Thank you for your patience!"))
 
 								msgbox(format("Is there anything else we can do for you?"))
@@ -310,10 +310,11 @@ script ConcordCustomsPhone{
 						
 						if(var(VAR_RESULT) == 4){
 						returnmoney:
-						addmoney (50)
+						addmoney (10)
 						updatemoneybox
 						playse (SE_CLICK)
 						waitse
+						playse (SE_M_PAY_DAY)
 						msgbox(format("The phone returns the coin."))
 						hidemoneybox
 						goto (endofpayphone)

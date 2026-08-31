@@ -105,21 +105,45 @@ script PokeInnRoom1Girl {
     msgbox(format("Oh, you're the one who arrived late at therapy. \p I'm sorry for yelling in class.
     I hope the teacher did't get mad. \p I saw my brother get hurt by a Blastoise during the
     war, and I'm a bit scared of them."))
-    if (flag (GOTSTARTER3))
-        {applymovement (3, moves(face_up))
-        msgbox(format("I prefer dolls over Pokémon now. Like this Purachu doll!
+    applymovement (3, moves(face_up))
+
+        if (flag (GOTSTARTER1))
+        {msgbox(format("I prefer dolls over Pokémon now. Like this Bulbasynth doll!
+        Isn't it cute? \p I want to see a real Bulbasynth one day. But only from afar..."))
+        checkspecies (SPECIES_BULBASYNTH, NO_PARTY_SCREEN)}
+
+        if (flag (GOTSTARTER2))
+        {msgbox(format("I prefer dolls over Pokémon now. Like this Smothquil doll!
+        Isn't it cute? \p I want to see a real Smothquil one day. But only from afar..."))
+        checkspecies (SPECIES_SMOTHQUIL, NO_PARTY_SCREEN)}
+
+        if (flag (GOTSTARTER3))
+        {msgbox(format("I prefer dolls over Pokémon now. Like this Purachu doll!
         Isn't it cute? \p I want to see a real Purachu one day. But only from afar..."))
-        checkspecies (SPECIES_PIKACHU_SAFE, NO_PARTY_SCREEN)
+        checkspecies (SPECIES_PIKACHU_SAFE, NO_PARTY_SCREEN)}
+
+
         if (var(VAR_RESULT) == TRUE)
         { 
             applymovement(3, moves(emote_exclamation_mark, face_player))
             playse (SE_PIN)
-            msgbox(format("Wait... is that a Purachu you have there? Ca-... can I see it?"))
+
+            if (flag (GOTSTARTER1))
+            {msgbox(format("Wait... is that a Bulbasynth you have there? Ca-... can I see it?"))}
+
+            if (flag (GOTSTARTER2))
+            {msgbox(format("Wait... is that a Smothquil you have there? Ca-... can I see it?"))}
+
+            if (flag (GOTSTARTER3))
+            {msgbox(format("Wait... is that a Purachu you have there? Ca-... can I see it?"))}
+
+
             dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
             if(var(VAR_RESULT) == 0){
             fadescreenswapbuffers (FADE_TO_BLACK)
             playse (SE_BALL_OPEN)
 	        setflag (FLAG_TEMP_HIDE_FOLLOWER)
+            hidefollower
 
             applymovement(3, moves(face_down))
 
@@ -129,30 +153,55 @@ script PokeInnRoom1Girl {
 		    //special (SpawnCameraObject)
 		    //applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 5, walk_left * 1))
 
+            if (flag (GOTSTARTER1))
+            {addobject (6)
+            setobjectxy (6, 1, 10)
+            applymovement (6, moves(walk_in_place_up))}
+
+            if (flag (GOTSTARTER2))
+            {addobject (7)
+            setobjectxy (7, 1, 10)
+            applymovement (7, moves(walk_in_place_up))}
+            
+            if (flag (GOTSTARTER3))
+            {addobject (5)
             setobjectxy (5, 1, 10)
+            applymovement (5, moves(walk_in_place_up))}
+
+
             fadescreenswapbuffers (FADE_FROM_BLACK)
 
             msgbox(format("Wow... it's so plumpy! I'll try petting it!"))
-            playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL) 
-            msgbox(format("Puuu..."))
 
-            msgbox(format("Hehe... it liked it. I guess Pokémon aren't so scary after all."))
+            if (flag (GOTSTARTER1))
+            {playmoncry(SPECIES_BULBASYNTH, CRY_MODE_NORMAL) 
+            msgbox(format("Buuuu..."))}
+
+            if (flag (GOTSTARTER2))
+            {playmoncry(SPECIES_SMOTHQUIL, CRY_MODE_NORMAL) 
+            msgbox(format("Quiiiil..."))}
+
+            if (flag (GOTSTARTER3))
+            {playmoncry(SPECIES_PIKACHU_SAFE, CRY_MODE_NORMAL) 
+            msgbox(format("Puuu..."))}
+
+            msgbox(format("Oh... I think it liked it. I guess Pokémon aren't so scary after all."))
             playse (SE_BALL_OPEN)
             fadescreenswapbuffers (FADE_TO_BLACK)
 
             clearflag (FLAG_TEMP_HIDE_FOLLOWER)
             
-
             setobjectxy (5, 0, 0)
+            setobjectxy (6, 0, 0)
+            setobjectxy (7, 0, 0)
+
             applymovement(3, moves(face_right))
             fadescreenswapbuffers (FADE_FROM_BLACK)
-
-
 
             msgbox(format("Thank you for showing me. Here, I want you to have this as thanks."))
             giveitem (ITEM_SOOTHE_BELL)
             msgbox(format("I use my doll as pillow, so I don't need this. But someday, perhaps I'll
-            get a real Pokémon!"))
+            get a real Pokémon to cuddle with!"))
             applymovement(3, moves(face_up))
             setflag (showedoldaleinngirldoll)
             goto (endoldalepokeinnroom1girl)
@@ -162,12 +211,13 @@ script PokeInnRoom1Girl {
             msgbox(format("O-oh, okay... I guess it must be dangerous to take it out. Sorry for asking."))
             goto (endoldalepokeinnroom1girl)
             }
+
+            }
+            
             }
 
-            else {goto (endoldalepokeinnroom1girl)}
-            }
             //if (flag (GOTSTARTER1))
-            }
+            
 
 
     if (flag (showedoldaleinngirldoll) && !flag(anneandfamilygone))
@@ -177,9 +227,12 @@ script PokeInnRoom1Girl {
         { msgbox(format("I went to tell Anne about me petting a real Pokémon, but she and her
         family are gone. \p She was the only girl my age in town... \p I'm sad, but Joel must be
         sadder. They were so close!."))}
-        
+
+    else {goto (endoldalepokeinnroom1girl)}
 
     endoldalepokeinnroom1girl:
+    applymovement(3, moves(face_up))
+    waitmovement (3)
     releaseall
 }
 
@@ -256,7 +309,7 @@ if (flag (wheelchairboyaskedpokemon))
 
 
     msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
-    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Pokémon", "None")
+    dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Pokémon", "None")
 
     if(var(VAR_RESULT) == 0){
     getseenmon (SPECIES_MANCHINE)
@@ -268,7 +321,10 @@ if (flag (wheelchairboyaskedpokemon))
         }
 
         if (var(VAR_RESULT) == FALSE)
-        {playse (SE_RG_HELP_ERROR)}
+        {playse (SE_RG_HELP_ERROR)
+        msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+        even be a Fighting type!"))
+        goto (endofwheelchairkidscript)}
     }
 
      if(var(VAR_RESULT) == 1){
@@ -280,17 +336,24 @@ if (flag (wheelchairboyaskedpokemon))
         goto (fightingtypetradescript)}
 
         if (var(VAR_RESULT) == FALSE)
-        {playse (SE_RG_HELP_ERROR)}
+        {playse (SE_RG_HELP_ERROR)
+        msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+        even be a Fighting type!"))
+        goto (endofwheelchairkidscript)}
     }
 
      if(var(VAR_RESULT) == 2){
     getseenmon (SPECIES_SCRAGGY)
         if (var(VAR_RESULT) == TRUE)
 
-        {msgbox(format("A Scraggy!? Wow, they're so cool! I didn't know there were Scraggy in Hoenn now."))}
-
+        {msgbox(format("A Scraggy!? Wow, they're so cool! I didn't know there were Scraggy in Hoenn now."))
+        setvar (VAR_FIGHTINGTRADECHOICE, 3)
+        goto (fightingtypetradescript)}
         if (var(VAR_RESULT) == FALSE)
-        {playse (SE_RG_HELP_ERROR)}
+        {playse (SE_RG_HELP_ERROR)
+        msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+        even be a Fighting type!"))
+        goto (endofwheelchairkidscript)}
     }
 
          if(var(VAR_RESULT) == 4){goto (donthaveanyfightingtotrade)}
@@ -323,37 +386,49 @@ if (flag (wheelchairboyaskedpokemon))
 
 
         msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
-        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Pokémon", "None") 
+        dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different Pokémon", "None") 
             
             
         if(var(VAR_RESULT) == 0){
         getseenmon (SPECIES_CROAGUNK)
             if (var(VAR_RESULT) == TRUE)
 
-            {msgbox(format("A Croagunk? Hmm… its arm is not poisonous, is it?"))}
-
+            {msgbox(format("A Croagunk? Hmm… its arm is not poisonous, is it?"))
+            setvar (VAR_FIGHTINGTRADECHOICE, 4)
+            goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)}
+            {playse (SE_RG_HELP_ERROR)
+            msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+            even be a Fighting type!"))
+            goto (endofwheelchairkidscript)}
         }
 
         if(var(VAR_RESULT) == 1){
         getseenmon (SPECIES_MEDITITE)
             if (var(VAR_RESULT) == TRUE)
 
-            {msgbox(format("A Meditite? Oh, those are both strong and smart…"))}
-
+            {msgbox(format("A Meditite? Oh, those are both strong and smart…"))
+            setvar (VAR_FIGHTINGTRADECHOICE, 5)
+            goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)}
+            {playse (SE_RG_HELP_ERROR)
+            msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+            even be a Fighting type!"))
+            goto (endofwheelchairkidscript)}
         }
 
         if(var(VAR_RESULT) == 2){
         getseenmon (SPECIES_KAMOKEN)
             if (var(VAR_RESULT) == TRUE)
 
-            {msgbox(format("A Kamoken? They look just like Far'fetch... but they are Fightying type, right?"))}
-
+            {msgbox(format("A Kamoken? They look just like Far'fetch... but they are Fighting type, right?"))
+            setvar (VAR_FIGHTINGTRADECHOICE, 6)
+            goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)}
+            {playse (SE_RG_HELP_ERROR)
+            msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+            even be a Fighting type!"))
+            goto (endofwheelchairkidscript)}
         }   
 
         if(var(VAR_RESULT) == 4){goto (donthaveanyfightingtotrade)}
@@ -386,37 +461,49 @@ if (flag (wheelchairboyaskedpokemon))
 
 
             msgbox(format("Did you bring any Fighting type Pokémon? Which one?"))
-            dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different one", "None") 
+            dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "{STR_VAR_3}", "A different one", "None") 
                 
                 
             if(var(VAR_RESULT) == 0){
             getseenmon (SPECIES_TYROGUE)
                 if (var(VAR_RESULT) == TRUE)
 
-                {msgbox(format("A Tyrogue!? Wow, that's a rare Pokémon! It must have been hard to find it."))}
-
+                {msgbox(format("A Tyrogue!? Wow, that's a rare Pokémon! It must have been hard to find it."))
+                setvar (VAR_FIGHTINGTRADECHOICE, 7)
+                goto (fightingtypetradescript)}
                 if (var(VAR_RESULT) == FALSE)
-                {playse (SE_RG_HELP_ERROR)}
+                {playse (SE_RG_HELP_ERROR)
+                msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+                even be a Fighting type!"))
+                goto (endofwheelchairkidscript)}
             }
 
             if(var(VAR_RESULT) == 1){
             getseenmon (SPECIES_RIOLU)
                 if (var(VAR_RESULT) == TRUE)
 
-                {msgbox(format("A Riolu? Ah, it's both strong and cute - I think my sister will spoil it, hehe."))}
-
+                {msgbox(format("A Riolu? Ah, it's both strong and cute - I think my sister will spoil it, hehe."))
+                setvar (VAR_FIGHTINGTRADECHOICE, 8)
+                goto (fightingtypetradescript)}
                 if (var(VAR_RESULT) == FALSE)
-                {playse (SE_RG_HELP_ERROR)}
+                {playse (SE_RG_HELP_ERROR)
+                msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+                even be a Fighting type!"))
+                goto (endofwheelchairkidscript)}
             }
 
             if(var(VAR_RESULT) == 2){
             getseenmon (SPECIES_PANCHAM)
                 if (var(VAR_RESULT) == TRUE)
 
-                {msgbox(format("A Pancham? Wow, its gaze is so determined. I like that."))}
-
+                {msgbox(format("A Pancham? Wow, its gaze is so determined. I like that."))
+                setvar (VAR_FIGHTINGTRADECHOICE, 9)
+                goto (fightingtypetradescript)}
                 if (var(VAR_RESULT) == FALSE)
-                {playse (SE_RG_HELP_ERROR)}
+                {playse (SE_RG_HELP_ERROR)
+                msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+                even be a Fighting type!"))
+                goto (endofwheelchairkidscript)}
             }   
 
             if(var(VAR_RESULT) == 4){goto (donthaveanyfightingtotrade)}
@@ -442,10 +529,14 @@ if (flag (wheelchairboyaskedpokemon))
         getseenmon (SPECIES_MACHOP)
             if (var(VAR_RESULT) == TRUE)
 
-            {msgbox(format("A Machop!? I thought Devon Co. had turned them all into Manchines..."))}
-
+            {msgbox(format("A Machop!? I thought Devon Co. had turned them all into Manchines..."))
+            setvar (VAR_FIGHTINGTRADECHOICE, 10)
+            goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)}
+            {playse (SE_RG_HELP_ERROR)
+            msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
+            even be a Fighting type!"))
+            goto (endofwheelchairkidscript)}
         }
 
         if(var(VAR_RESULT) == 1){goto (donthaveanyfightingtotrade)}
@@ -464,7 +555,7 @@ if (flag (wheelchairboyaskedpokemon))
         playse (SE_M_SWAGGER2)
         msgbox(format("GRRRR..."))
         playse (SE_M_YAWN)
-        msgbox(format("Gah... I lost! But I did better than I thought"))
+        msgbox(format("Gah... I lost! But I did better than I thought I would!"))
         applymovement (2, moves(face_player))
         msgbox(format("Hm? You look surprised. Why did you think I wanted a Fighting Type?
         \p Well, it wasn't to push my chair - it's to get strong enough so I can push it
@@ -474,6 +565,7 @@ if (flag (wheelchairboyaskedpokemon))
 
         applymovement (1, moves(walk_in_place_down))
         applymovement (10, moves(walk_in_place_down))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves (face_up))
         msgbox(format("Thank you for helping my grandson. Please, take good care of Taillow."))
         applymovement (1, moves(walk_up * 1, face_down))
         applymovement (10, moves(walk_up * 1, face_down))
@@ -549,9 +641,8 @@ script fightingtypetradescript {
 					waitstate
         playse (SE_BALL_OPEN)
         applymovement (OBJ_EVENT_ID_PLAYER, moves (face_right))
-
+        applymovement (2, moves(face_right))
             if (var(VAR_FIGHTINGTRADECHOICE) == 1){
-            applymovement (2, moves(face_right))
             //clearflag (wheelchairtradedpokemon)
             addobject (11)
             setobjectxy (11, 5, 11)
@@ -563,18 +654,88 @@ script fightingtypetradescript {
             }
 
             if (var(VAR_FIGHTINGTRADECHOICE) == 2){
-            applymovement (2, moves(face_right))
             addobject (12)
             setobjectxy (12, 5, 11)
             //setobjectxyperm (12, 5, 11)
             waitse
-            playmoncry(SPECIES_MANCHINE, CRY_MODE_NORMAL) 
+            playmoncry(SPECIES_MAKUHITA, CRY_MODE_NORMAL) 
             msgbox(format("Ma-kkuuuu!"))
             }
 
+            if (var(VAR_FIGHTINGTRADECHOICE) == 3){
+            addobject (13)
+            setobjectxy (13, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_SCRAGGY, CRY_MODE_NORMAL) 
+            msgbox(format("Gy-gyyyy!"))
+            }
 
 
+            if (var(VAR_FIGHTINGTRADECHOICE) == 4){
+            addobject (14)
+            setobjectxy (14, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_CROAGUNK, CRY_MODE_NORMAL) 
+            msgbox(format("Crrroak!"))
+            }
 
+            if (var(VAR_FIGHTINGTRADECHOICE) == 5){
+            addobject (15)
+            setobjectxy (15, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_CROAGUNK, CRY_MODE_NORMAL) 
+            msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Meee...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+            }
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 6){
+            addobject (16)
+            setobjectxy (16, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_KAMOKEN, CRY_MODE_NORMAL) 
+            msgbox(format("Ka-kaaaaa!"))
+            }
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 7){
+            addobject (17)
+            setobjectxy (17, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_TYROGUE, CRY_MODE_NORMAL) 
+            msgbox(format("Tyyyaaaa!"))
+            }
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 8){
+            addobject (18)
+            setobjectxy (18, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_RIOLU, CRY_MODE_NORMAL) 
+            msgbox(format("Rio-rio!"))
+            }
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 9){
+            addobject (19)
+            setobjectxy (19, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_PANCHAM, CRY_MODE_NORMAL) 
+            msgbox(format("Cha-chaaaam!"))
+            }
+
+            if (var(VAR_FIGHTINGTRADECHOICE) == 10){
+            addobject (20)
+            setobjectxy (20, 5, 11)
+            //setobjectxyperm (12, 5, 11)
+            waitse
+            playmoncry(SPECIES_MACHOP, CRY_MODE_NORMAL) 
+            msgbox(format("Choooop-chop!"))
+            }
+
+            goto (backtowheelchairkidaftertrade)
 }
 
 
@@ -593,8 +754,13 @@ script CancelTaillowTrade {
         applymovement (1, moves(walk_up * 1, face_down))
         applymovement (10, moves(walk_up * 1, face_down))
         applymovement (2, moves(face_player))
-        applymovement (OBJ_EVENT_ID_PLAYER, moves(face_player))
-        msgbox (format("Aw, I guess grandpa is right... but if you want to trade, come back please!"))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+        waitmovement (OBJ_EVENT_ID_PLAYER)
+	    gettimeofday
+		if (var(VAR_0x8000) == TIME_NIGHT)
+        {msgbox (format("Aw, I guess grandpa is right... but if you want to trade, come back please!"))}
+        else
+        {msgbox (format("Aw, I guess grandpa is right... but if you want to trade, come back please!"))}
 		releaseall
 		}
 

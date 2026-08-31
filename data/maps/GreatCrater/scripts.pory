@@ -582,6 +582,9 @@ script CraterTrappedTouristandRope {
 			applymovement (10, moves(emote_exclamation_mark))
 			msgbox(format("Ah, you're a life-saver!"))
 			hidefollower
+			playse (SE_M_BIND)
+			waitse
+			playse (SE_M_BIND)
 			applymovement (10, moves(face_up))
 			showobjectat (10, MAP_GREAT_CRATER)
 

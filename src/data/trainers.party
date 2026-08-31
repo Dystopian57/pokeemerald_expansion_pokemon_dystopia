@@ -81,23 +81,6 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_DAISY ===
-Name: DAISY
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_ROSE_1 ===
 Name: VIVI
 Class: Mercenaryf
@@ -109,11 +92,9 @@ AI: Smart Trainer
 
 Marill @ Remedy
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Numel
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_FELIX ===
 Name: FELIX
@@ -9231,6 +9212,8 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
+/*IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe*/
+
 === TRAINER_HEXGIRL_MAUSOLEUM ===
 Name: SAMANTHA
 Class: Hex Maniac
@@ -9255,15 +9238,15 @@ AI: Smart Trainer
 
 Pikachu_Safe
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Meditite
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Pyukumuku
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_BALSAM_NOPURACHU ===
@@ -9277,11 +9260,11 @@ AI: Smart Trainer
 
 Meditite
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Pyukumuku
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_ORPHAN_MALE_101 ===
 Name: JOEL
@@ -9294,7 +9277,6 @@ AI: Basic Trainer
 
 Zigzagoon_Galar
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REBEL_GRUNT_101 ===
 Name: CALVIN
@@ -9307,7 +9289,6 @@ AI: Basic Trainer
 
 Poochain
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_TOURIST_GREATCRATER ===
@@ -9322,11 +9303,9 @@ AI: Basic Trainer
 
 Clefairy
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Cubone
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TOURIST_GREATCRATER_2 ===
 Name: IRIS
@@ -9339,11 +9318,9 @@ AI: Basic Trainer
 
 Clefable
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Cubone
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CONSPIRACY_GREATCRATER ===
 Name: WYATT
@@ -9356,11 +9333,9 @@ AI: Basic Trainer
 
 Sableye
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Geoslug
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CONSPIRACY_GREATCRATER_2 ===
 Name: WYATT
@@ -9373,15 +9348,12 @@ AI: Basic Trainer
 
 Sableye
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Geoslug
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Haunter
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REPORTERS_GREATCRATER ===
 Name: KIRA & DAN
@@ -9395,11 +9367,9 @@ AI: Basic Trainer
 
 Verdoom
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Mawile
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HERMIT_CRATER ===
 Name: AURON
@@ -9412,11 +9382,11 @@ AI: Smart Trainer
 
 Venonat
 Level: 10
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Wynaut
 Level: 10
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_HERMIT_CRATER_2 ===
@@ -9430,15 +9400,15 @@ AI: Smart Trainer
 
 Venonat
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Wobbuffet
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Duskull
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_VETERAN_103 ===
@@ -9449,15 +9419,15 @@ Gender: Male
 Music: Hiker
 Items: Energy Root
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Geodude
 Level: 3
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Seedot
 Level: 3
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_VETERAN_103_2 ===
 Name: BRYAN
@@ -9466,16 +9436,16 @@ Pic: veteranmbattle
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 
 Graveler
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Nuzleaf
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_SHARPY_103 ===
@@ -9487,14 +9457,17 @@ Music: Male
 Items: Soda Pop
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Corphish
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Carvanha
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+/* ITEM_LOVE_SWEET for Slowpoke Tail*/
 
 === TRAINER_TOURIST_103 ===
 Name: DAN
@@ -9507,11 +9480,9 @@ AI: Basic Trainer
 
 Poliwag
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Magnemite
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DEVONGUARD_103 ===
 Name: TIMMY
@@ -9524,11 +9495,9 @@ AI: Basic Trainer
 
 Helipip
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Poochain
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
 === TRAINER_SHADYDEALER_103 ===
@@ -9543,11 +9512,11 @@ AI: Smart Trainer
 
 Kecleon
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Gachapod
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_FISHER_103 ===
@@ -9565,7 +9534,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Barboach
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CONCORDWAGESLAVE ===
 Name: ALLEN
@@ -9578,11 +9546,9 @@ AI: Check Bad Move
 
 Loadtad
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Zigzagoon
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_HAZARDIVER_WATERFALL ===
@@ -9596,11 +9562,9 @@ AI: Basic Trainer
 
 Shellder
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Wooper @ Berry Juice
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_HAZARDIVER_WATERFALL_2 ===
 Name: DOMINIK
@@ -9613,11 +9577,9 @@ AI: Basic Trainer
 
 Cloyster
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Quagsire
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 
 === TRAINER_MERCENARYF_WATERFALL ===
@@ -9631,11 +9593,11 @@ AI: Smart Trainer
 
 Marill @ Remedy
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Numel
 Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_MERCENARYF_WATERFALL_2 ===
@@ -9647,13 +9609,13 @@ Music: Suspicious
 Double Battle: No
 AI: Smart Trainer
 
-Azumarill
+Azumarill @ ITEM_FINE_REMEDY
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Numel
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_HERMIT_WATERFALL ===
@@ -9667,15 +9629,15 @@ AI: Smart Trainer
 
 Zubat
 Level: 10
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Barboach
 Level: 10
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Chinchou
 Level: 10
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_HERMIT_WATERFALL_2 ===
@@ -9689,19 +9651,19 @@ AI: Smart Trainer
 
 Golbat
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Whiscash
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Chinchou
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Pupitar
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 === TRAINER_REBEL_OLDALE_GUARD ===
@@ -9715,12 +9677,127 @@ AI: Basic Trainer
 
 Zubat
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Murkrow
 Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
+
+=== TRAINER_REBELGRUNT_OLDALEWAREHOUSE_1 ===
+Name: RICK
+Class: Rebelgruntm
+Pic: rebelgruntmbattle
+Gender: Male
+Music: Rebel
+Double Battle: No
+AI: Basic Trainer
+
+Ninkaburi
+Level: 7
+
+Yanma
+Level: 7
+
+
+=== TRAINER_REBELGRUNT_OLDALEWAREHOUSE_2 ===
+Name: LOLA
+Class: Rebelgruntf
+Pic: rebelgruntfbattle
+Gender: Female
+Music: Rebel
+Double Battle: No
+AI: Basic Trainer
+
+Mudder
+Level: 7
+
+Wooper
+Level: 8
+
+
+=== TRAINER_SCAVENGER_OLDALEWAREHOUSE_1 ===
+Name: JACKSON
+Class: Scavengerm
+Pic: Scavengermbattle
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+
+Shiitako
+Level: 7
+
+Sandshrew
+Level: 7
+
+=== TRAINER_SCAVENGER_OLDALEWAREHOUSE_2 ===
+Name: CATHERINE
+Class: Scavengerf
+Pic: Scavengerfbattle
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+
+Loadtad @ ITEM_ENERGY_POWDER
+Level: 7
+
+Fooming
+Level: 8
+
+
+=== TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3 ===
+Name: BILLY
+Class: Rebelgruntm
+Pic: rebelgruntmbattle
+Gender: Male
+Music: Rebel
+Double Battle: No
+AI: Basic Trainer
+
+Rolloon
+Level: 8
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ball: ITEM_PARK_BALL
+Nature: Timid
+- Self-destruct
+
+Cheerorb
+Level: 8
+
+
+=== TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4 ===
+Name: JANI
+Class: Rebelgruntf
+Pic: rebelgruntfbattle
+Gender: Female
+Music: Rebel
+Double Battle: No
+AI: Basic Trainer
+
+Seedot
+Level: 8
+
+Gastly
+Level: 8
+
+
+=== TRAINER_REBELADMIN_OLDALEWAREHOUSE ===
+Name: HUEY
+Class: Rebeladminm
+Pic: rebeladminmbattle
+Gender: Male
+Music: Rebel
+Double Battle: No
+AI: Basic Trainer
+
+Manchine
+Level: 9
+
+Larvitar
+Level: 9
+
+Swinub
+Level: 9
 
 === TRAINER_OLDALEDEVONGRUNT_M ===
 Name: JERRY
@@ -9732,8 +9809,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Manchine
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 9
 
 === TRAINER_OLDALEDEVONGRUNT_F ===
 Name: KAREN
@@ -9745,7 +9821,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Verdoom
-Level: 5
+Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 

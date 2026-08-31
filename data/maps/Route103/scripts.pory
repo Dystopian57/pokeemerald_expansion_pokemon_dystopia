@@ -52,7 +52,6 @@ Route103_EventScript_RouteSign::
 	end
 
 Route103_EventScript_Daisy::
-	trainerbattle_single TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
 	msgbox Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -720,7 +719,8 @@ script Route103ConcordBridgeGuard {
 			}
 
 			if(var(VAR_RESULT) == 3){
-			msgbox(format("You don't say...? And he's right behind that truck? \p Very well... here's what we'll do.
+			msgbox(format("You don't say...? And he's right behind that truck?\p Hmm... I believe that's the
+			egg smuggler we've been looking for. \p Here's what we'll do.
 			I want you to distract him for a bit. \p I'll tell my partner to approach from the customs building, and we'll
 			do a pince maneuver. \p We're counting on you!"))
 			setflag (betrayedconcordconartist)
@@ -780,6 +780,8 @@ script Route103ConcordConartist {
 				applymovement (28, moves(face_left))
 				waitmovement (28)
 				setflag (conartistaskeddistract)
+				applymovement (28, moves(face_left))
+				waitmovement (28)
 				goto (finishconartistscript)
 				}
 
@@ -791,9 +793,9 @@ script Route103ConcordConartist {
 
 		if (flag (conartistaskeddistract) && !flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
 		{
-		msgbox(format("Come on, go distract him! Tell him there's a flying Grumpig being him or something!
+		msgbox(format("Come on, go distract him! Tell him there's a flying Grumpig behind him or something!
 		\p I don't care how, that's what I'm paying you for!
-		\p And no, I'm not into upfront payments, thank you. Cash after!"))}
+		\p And no, I don't do upfront payments, thank you. Cash after!"))}
 
 		if (flag (conartistaskeddistract) && flag (betrayedconcordconartist) && !flag (helpedconcordconartist))
 		{
@@ -801,7 +803,7 @@ script Route103ConcordConartist {
 		msgbox(format("What the hell are you doing? You barely distracted him - you got to be more of a
 		nuisance!"))
 		
-		playbgm (MUS_ENCOUNTER_AQUA, TRUE)
+		playbgm (MUS_STOPTHIEF, TRUE)
 		msgbox(format("Hold it right there! You're surrounded!"))
 
 		//setflag (devonbridgeguardgoestoconartist)
@@ -891,8 +893,11 @@ script Route103ConcordConartist {
 		setflag (devonsvsconartist)
 		setflag(conartistescaped)
 		clearflag (devonbridgeguardgoestoconartist)
+		fadeoutbgm (1)
+		fadenewbgm (1)
 		if (var(VAR_ROUTE103_WEATHER) > 0)
-		{playbgm (MUS_STORM, TRUE)}
+		{
+			playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_ROUTE113, TRUE)}
 		setvar (VAR_JIMMYQUESTPROGRESS, 1)
 		//addvar (VAR_DEVON_REPUTATION, + 1)

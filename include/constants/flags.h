@@ -144,7 +144,7 @@
 #define FLAG_LANDMARK_MIRAGE_TOWER           0x78
 #define saidnotosharpyinoldale         0x79
 #define devoncenterdebt                0x7A
-#define oldalewarehousecleared               0x7B
+#define oldalewarehouserebelscleared               0x7B
 #define FLAG_REGISTER_RIVAL_POKENAV          0x7C
 #define FLAG_DEFEATED_RIVAL_ROUTE_104        0x7D
 #define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0x7E
@@ -300,13 +300,13 @@
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
 #define FLAG_RECEIVED_TM_THIEF               0x10D
 #define oldalecenterwarehousecomplaint       0x10E
-#define FLAG_EVIL_TEAM_ESCAPED_STERN_SPOKE   0x10F
+#define claimedinnfreedrink                  0x10F
 #define FLAG_RECEIVED_EXP_SHARE              0x110
 #define FLAG_POKERUS_EXPLAINED               0x111
 #define FLAG_RECEIVED_RUNNING_SHOES          0x112
-#define FLAG_RECEIVED_QUICK_CLAW             0x113
-#define FLAG_RECEIVED_KINGS_ROCK             0x114
-#define FLAG_RECEIVED_MACHO_BRACE            0x115
+#define warehousemanchine             0x113
+#define scavengergivesobjectspotter             0x114
+#define oldalescavengerandtrucksgone            0x115
 #define FLAG_RECEIVED_SOOTHE_BELL            0x116
 #define FLAG_RECEIVED_WHITE_HERB             0x117
 #define FLAG_RECEIVED_SOFT_SAND              0x118
@@ -1261,9 +1261,9 @@
 #define FLAG_ITEM_BALSAM_OFFICE_TRASH                                           0x4A8 // Unused Flag
 #define FLAG_ITEM_OLDALE_HOUSE2BIN                                           0x4A9 // Unused Flag
 #define FLAG_ITEM_DLC_TRASHBIN                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
+#define FLAG_ITEM_OLDALEWAREHOUSECOLD                                           0x4AB // Unused Flag
+#define FLAG_ITEM_OLDALEWAREHOUSEAPPLIANCE                                           0x4AC // Unused Flag
+#define FLAG_ITEM_WAREHOUSEWIRING                                           0x4AD // Unused Flag
 #define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag

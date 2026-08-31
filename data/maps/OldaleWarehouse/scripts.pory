@@ -6,3 +6,158 @@ mapscripts OldaleWarehouse_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
     MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+
+
+
+script OldaleWarehouseRebel1 {
+	trainerbattle_single(TRAINER_REBELGRUNT_OLDALEWAREHOUSE_1, WarehouseRebel1_Intro, WarehouseRebel1_Outro)
+	msgbox(format("When society goes to shit, it's easier to complain than to do something about it.
+    \p We {COLOR RED}Rebels{COLOR DARK_GRAY} ARE doing something. So why are you getting in the way!?"))
+	release
+	end
+}
+
+	text WarehouseRebel1_Intro{
+		"'The system was not designed for\nyou to win...'\pBah, that's what losers say!"}
+
+	text WarehouseRebel1_Outro{
+		"... design or not, I still lost. Tsk."}
+
+
+script OldaleWarehouseRebel2 {
+	trainerbattle_single(TRAINER_REBELGRUNT_OLDALEWAREHOUSE_2, WarehouseRebel2_Intro, WarehouseRebel2_Outro)
+	msgbox(format("You should just quit while you still can. Our {COLOR RED}Admin{COLOR DARK_GRAY} is going to wreck you."))
+	release
+	end
+}
+
+	text WarehouseRebel2_Intro{
+		"An intruder suits me fine - was starting\nto get boring around here!"}
+
+	text WarehouseRebel2_Outro{
+		"Maybe the boredom was not so bad."}
+
+
+script OldaleWarehouseManchine {
+		lock
+	if (!flag (warehousemanchine))
+	{
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    playse (SE_PIN)
+	applymovement (5, moves(emote_exclamation_mark, face_player))
+    msgbox (format("The haywire Manchine spots you and attacks!"))
+    waitmessage
+	setwildbattle(SPECIES_MANCHINE, 5)
+	dowildbattle
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+        removeobject (5)
+		setflag (warehousemanchine)
+        goto (finishwarehousemanchine)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_WON){
+        removeobject (5)
+		setflag (warehousemanchine)
+        goto (finishwarehousemanchine)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+		//call(EscapedManchine)
+        goto (finishwarehousemanchine)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+        goto (finishwarehousemanchine)
+	}
+}
+
+	else {release}
+	releaseall
+}
+
+script OldaleWarehouseManchineTrigger {
+	lock
+	if (!flag (warehousemanchine))
+	{
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    playse (SE_PIN)
+	applymovement (5, moves(emote_exclamation_mark, face_player))
+    msgbox (format("The haywire Manchine spots you and attacks!"))
+    waitmessage
+	setwildbattle(SPECIES_MANCHINE, 5)
+	dowildbattle
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+        removeobject (5)
+		setflag (warehousemanchine)
+        goto (finishwarehousemanchine)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_WON){
+        removeobject (5)
+		setflag (warehousemanchine)
+        goto (finishwarehousemanchine)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+		//call(EscapedManchine)
+        goto (EscapedManchine)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+        goto (EscapedManchine)
+	}
+
+    EscapedManchine:
+	special (SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 1))
+    waitmovement(0)
+	special (RemoveCameraObject)
+	setobjectxy (5, 2, 8)
+	setobjectxy (OBJ_EVENT_ID_PLAYER, 3, 8)
+	applymovement (5, moves(face_right))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+    finishwarehousemanchine:}
+
+	else {release}
+	releaseall
+}
+
+
+
+
+
+
+script OldaleWarehouseHelipip {
+    lock
+	playmoncry(SPECIES_HELIPIP, CRY_MODE_WEAK)
+    msgbox(format("Piiiip... \p The Helipip is just blank staring ahead."))
+    releaseall
+    }
+
+script OldaleWarehouseLoadtad {
+    lock
+	playmoncry(SPECIES_LOADTAD, CRY_MODE_WEAK)
+    msgbox(format("Tad-tad...! \p With no guidance, the Loadtad is aimlessly carrying a crate around."))
+    releaseall
+    }
+
+script OldaleWarehouseForklift {
+    lock
+    msgbox(format("The forklift shows signs of recent misuse."))
+    releaseall
+    }
+
+script OldaleWarehouseSealedbox {
+    lock
+    msgbox(format("A sealed box. Better not to open it."))
+    releaseall
+    }
+
+script OldaleWarehouseToColdStorageSign {
+    lock
+    msgbox(format("To Cold Storage."))
+    releaseall
+    }
+
+script OldaleWarehouseToApplianceStorageSign {
+    lock
+    msgbox(format("To Appliance Storage."))
+    releaseall
+    }
+

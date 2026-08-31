@@ -6,3 +6,166 @@ mapscripts OldaleWarehouseApplianceStorage_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
     MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+
+
+script OldaleWarehouseApplianceStorageItem {
+	lock
+    finditem (ITEM_ROTOM_CATALOG)
+    removeobject (4)
+	releaseall}
+
+script OldaleWarehouseApplianceStorageScavenger1 {
+	trainerbattle_single(TRAINER_SCAVENGER_OLDALEWAREHOUSE_1, ApplianceStorageScavenger1_Intro, ApplianceStorageScavenger1_Outro)
+
+	if (!flag (scavengergivesobjectspotter))
+	{msgbox(format("I was supposed to stand watch... she's going to be pissed."))
+	goto (endofwarehousescavenger1)}
+
+	else
+	{msgbox(format("Just heard you talking with Cat. She must have seen something in you to share our
+    haul.\pIf you're ever in need of some more tech or supplies, you should come to our Hardware Store
+    in Petalburg City."))}
+	endofwarehousescavenger1:
+	release
+	end
+}
+
+	text ApplianceStorageScavenger1_Intro{
+		"Not so fast, kid. If you've come to\npillage, we're first!"}
+
+	text ApplianceStorageScavenger1_Outro{
+		"No honour among thieves, huh...?"}
+
+
+script OldaleWarehouseApplianceStorageScavenger2Trigger {
+    lock
+	if (!flag (scavengergivesobjectspotter))
+	{
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    playbgm (MUS_ENCOUNTER_INTENSE, TRUE)
+    playse (SE_PIN)
+	applymovement (2, moves(emote_exclamation_mark, face_player))
+	msgbox(format("W-what the!? What's with you, sneaking around like a Keckleon!?\pWell, this is our loot - and I'll
+    fight you over for it!"))
+	trainerbattle_no_intro(TRAINER_SCAVENGER_OLDALEWAREHOUSE_2 , ApplianceStorageScavenger2_Outro)
+    playbgm (MUS_UNDERPIZZA, TRUE)
+	msgbox(format("You know what? You beat us fair and square... so you can have this."))
+    giveitem (ITEM_ITEMFINDER)
+	msgbox(format("That's an Object Spotter - a pair of smart goggles that help you detect valuable
+    items laying around. \p Just be warned - after Devon found out bad agents use these to steal,
+    they implemented an 'anti-theft' feature.\pMeaning, these won't do anything in indoor spaces.\p... Aside from
+    making you look like a dork, that is."))
+    setflag (scavengergivesobjectspotter)}
+
+	else {release}
+	release
+	end
+}
+
+script OldaleWarehouseApplianceStorageScavenger2NoTrigger {
+	lock
+	if (!flag (scavengergivesobjectspotter))
+	{call (OldaleWarehouseApplianceStorageScavenger2Trigger)}
+
+	else {
+	msgbox(format("Small bit of trivia: the Object Spooter is actually an an enhanced version of the 'Dowsing Machine'.
+	\pThough I guess you're a bit too young to know about those, eh?"))
+	}
+
+	release
+	
+}
+
+	text ApplianceStorageScavenger2_Outro{
+		"Don't you know about “finders\nkeepers”?"}
+
+
+script OldaleWarehouseApplianceStorageGenerator {
+	lock
+	msgbox(format("A complex machine. The label on the side reads...\p
+    “Pokémon Electricity Extractor. Made in Mahogany Town: Silph & Co.”."))
+	release
+}
+
+script OldaleWarehouseApplianceStorageGrayBox {
+	lock
+	msgbox(format("The box is empty."))
+	release
+}
+script WarehouseExposedWiring {
+	if (!flag (FLAG_ITEM_WAREHOUSEWIRING))
+	{	msgbox(format("There's something below the exposed wiring..."))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Grab it", "Leave it alone")
+
+	if (var(VAR_RESULT) == 0) {
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 2)  //@ horizontal pan
+	setvar(VAR_0x8006, 2)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
+	playse (SE_M_THUNDERBOLT2)
+	msgbox(format("Got a nasty shock...! But something else too!"))
+	giveitem (ITEM_MAGNET)
+	}
+
+	else{
+	msgbox(format("Better not to touch this..."))}
+	}
+
+release
+}
+
+script OldaleWarehouseApplianceStorageWeirdMachine {
+	lock
+	msgbox(format("An industrial-looking machine of unknown use."))
+	release
+}
+
+script OldaleWarehouseApplianceStorageGasTerminal {
+	lock
+	msgbox(format("It's a terminal like the ones used in gas stations."))
+	release
+}
+
+script OldaleWarehouseApplianceStorageOpenBox {
+	lock
+	msgbox(format("The box is full of electronics."))
+	release
+}
+
+script OldaleWarehouseApplianceStorageComputer {
+	lock
+	msgbox(format("A desktop computer. Seems like it's been scrapped for parts."))
+	release
+}
+
+script OldaleWarehouseApplianceStorageTV {
+	lock
+	msgbox(format("An old TV."))
+	release
+}
+
+script OldaleWarehouseApplianceStorageBarrel {
+	lock
+	msgbox(format("The barrel smells of fuel."))
+	release
+}
+
+script OldaleWarehouseApplianceStoragePokeHealing {
+	lock
+	msgbox(format("A busted Pokéhealing machine."))
+	release
+}
+
+script OldaleWarehouseApplianceStoragePress {
+	lock
+	msgbox(format("It's just a mechanical press."))
+	release
+}
+
+script OldaleWarehouseApplianceStoragePokeAssembler {
+	lock
+	msgbox(format("It's an old Pokéball assembler."))
+	release
+}

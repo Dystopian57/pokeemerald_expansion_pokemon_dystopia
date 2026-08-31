@@ -322,6 +322,15 @@
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",
       "script": "SamanthaDontgotoPlayers"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "BalsamCallAfterWarehouse"
     }
   ],
   "bg_events": [

@@ -575,7 +575,8 @@ $(OBJEVENTGFXDIR)/misc/cigarette.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/rope.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-
+$(OBJEVENTGFXDIR)/misc/ventfan.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 
 

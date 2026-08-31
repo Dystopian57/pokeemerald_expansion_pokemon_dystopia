@@ -82,17 +82,17 @@ innroomchoice2:
 	compare VAR_RESULT, 0
 	goto_if_eq InnNPCStopsPlayerfromInn_2
 InnNPCStopsPlayerfromInn_1:
-# 75 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 76 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq InnNPCStopsPlayerfromInn_5
 InnNPCStopsPlayerfromInn_4:
-# 84 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 85 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq InnNPCStopsPlayerfromInn_11
 InnNPCStopsPlayerfromInn_10:
-# 90 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-enddevoninnscript2:
 # 91 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+enddevoninnscript2:
+# 92 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	releaseall
 	return
 
@@ -107,17 +107,17 @@ InnNPCStopsPlayerfromInn_2:
 	compare VAR_RESULT, TRUE
 	goto_if_eq InnNPCStopsPlayerfromInn_8
 InnNPCStopsPlayerfromInn_7:
-# 64 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 65 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq InnNPCStopsPlayerfromInn_13
 	goto InnNPCStopsPlayerfromInn_1
 
 InnNPCStopsPlayerfromInn_5:
-# 76 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 77 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox InnNPCStopsPlayerfromInn_Text_8
-# 80 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_9
 # 81 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	msgbox InnNPCStopsPlayerfromInn_Text_9
+# 82 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto innroomchoice2
 	goto InnNPCStopsPlayerfromInn_4
 
@@ -138,269 +138,271 @@ InnNPCStopsPlayerfromInn_8:
 	giveitem ITEM_CARD_KEY
 # 59 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	clearflag seenweatheratinnvisit
-# 62 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 60 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	clearflag claimedinnfreedrink
+# 63 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto enddevoninnscript2
 	goto InnNPCStopsPlayerfromInn_7
 
 InnNPCStopsPlayerfromInn_11:
-# 85 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_10
 # 86 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, InnNPCStopsPlayerfromInn_Movement_2
+	msgbox InnNPCStopsPlayerfromInn_Text_10
 # 87 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, InnNPCStopsPlayerfromInn_Movement_2
+# 88 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 	goto InnNPCStopsPlayerfromInn_10
 
 InnNPCStopsPlayerfromInn_13:
-# 65 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_6
 # 66 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	hidemoneybox
+	msgbox InnNPCStopsPlayerfromInn_Text_6
 # 67 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_7
+	hidemoneybox
 # 68 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, InnNPCStopsPlayerfromInn_Movement_2
+	msgbox InnNPCStopsPlayerfromInn_Text_7
 # 69 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, InnNPCStopsPlayerfromInn_Movement_2
 # 70 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement 1, InnNPCStopsPlayerfromInn_Movement_3
+	waitmovement OBJ_EVENT_ID_PLAYER
 # 71 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	waitmovement 1
+	applymovement 1, InnNPCStopsPlayerfromInn_Movement_3
 # 72 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	waitmovement 1
+# 73 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto enddevoninnscript2
 	goto InnNPCStopsPlayerfromInn_1
 
 
 DevonInnNPC::
-# 95 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	checkitem ITEM_CARD_KEY
 # 96 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, pleaseenjoystay
+	checkitem ITEM_CARD_KEY
 # 97 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, startinnnpcdialogue
+	goto_if_eq VAR_RESULT, TRUE, pleaseenjoystay
 # 98 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-startinnnpcdialogue:
+	goto_if_eq VAR_RESULT, FALSE, startinnnpcdialogue
 # 99 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	lock
+startinnnpcdialogue:
 # 100 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 101 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement 1, InnNPCStopsPlayerfromInn_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 102 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_0
+	applymovement 1, InnNPCStopsPlayerfromInn_Movement_0
 # 103 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-innroomchoice:
+	msgbox InnNPCStopsPlayerfromInn_Text_0
 # 104 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, InnNPCStopsPlayerfromInn_Text_1, InnNPCStopsPlayerfromInn_Text_2, InnNPCStopsPlayerfromInn_Text_3
+innroomchoice:
 # 105 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, InnNPCStopsPlayerfromInn_Text_1, InnNPCStopsPlayerfromInn_Text_2, InnNPCStopsPlayerfromInn_Text_3
+# 106 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq DevonInnNPC_2
 DevonInnNPC_1:
-# 129 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 130 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq DevonInnNPC_5
 DevonInnNPC_4:
-# 138 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 139 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq DevonInnNPC_11
 DevonInnNPC_10:
-# 142 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-pleaseenjoystay:
 # 143 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement 1, InnNPCStopsPlayerfromInn_Movement_0
+pleaseenjoystay:
 # 144 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	applymovement 1, InnNPCStopsPlayerfromInn_Movement_0
+# 145 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox DevonInnNPC_Text_0
-# 146 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-enddevoninnscript:
 # 147 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+enddevoninnscript:
+# 148 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	releaseall
 	return
 
 DevonInnNPC_2:
-# 106 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	showmoneybox 18, 0
 # 107 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_4
+	showmoneybox 18, 0
 # 108 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	checkmoney 200
+	msgbox InnNPCStopsPlayerfromInn_Text_4
 # 109 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	checkmoney 200
+# 110 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DevonInnNPC_8
 DevonInnNPC_7:
-# 122 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 123 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq DevonInnNPC_13
 	goto DevonInnNPC_1
 
 DevonInnNPC_5:
-# 130 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 131 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox InnNPCStopsPlayerfromInn_Text_8
-# 134 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_9
 # 135 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	msgbox InnNPCStopsPlayerfromInn_Text_9
+# 136 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto innroomchoice
 	goto DevonInnNPC_4
 
 DevonInnNPC_8:
-# 110 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	playse SE_SHOP
 # 111 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	waitse
+	playse SE_SHOP
 # 112 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	removemoney 200
+	waitse
 # 113 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	updatemoneybox
+	removemoney 200
 # 114 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	updatemoneybox
+# 115 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox InnNPCStopsPlayerfromInn_Text_5
-# 116 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	hidemoneybox
 # 117 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	hidemoneybox
+# 118 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	giveitem ITEM_CARD_KEY
-# 120 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 121 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto enddevoninnscript
 	goto DevonInnNPC_7
 
 DevonInnNPC_11:
-# 139 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_10
 # 140 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	msgbox InnNPCStopsPlayerfromInn_Text_10
+# 141 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto enddevoninnscript
 	goto DevonInnNPC_10
 
 DevonInnNPC_13:
-# 123 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_6
 # 124 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	hidemoneybox
+	msgbox InnNPCStopsPlayerfromInn_Text_6
 # 125 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox InnNPCStopsPlayerfromInn_Text_7
+	hidemoneybox
 # 126 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	msgbox InnNPCStopsPlayerfromInn_Text_7
+# 127 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto enddevoninnscript
 	goto DevonInnNPC_1
 
 
 DevonInnTakeKey::
-# 151 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	checkitem ITEM_CARD_KEY
 # 152 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, takeguestcard
+	checkitem ITEM_CARD_KEY
 # 153 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, takeguestcard
+# 154 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, letthroughdownstairs
-# 155 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-takeguestcard:
 # 156 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	lock
+takeguestcard:
 # 157 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 158 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DevonInnTakeKey_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 159 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, DevonInnTakeKey_Movement_0
 # 160 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement 1, InnNPCStopsPlayerfromInn_Movement_3
+	waitmovement OBJ_EVENT_ID_PLAYER
 # 161 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	waitmovement 1
+	applymovement 1, InnNPCStopsPlayerfromInn_Movement_3
 # 162 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	waitmovement 1
+# 163 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox DevonInnTakeKey_Text_0
-# 164 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 165 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	removeitem ITEM_CARD_KEY
-# 168 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-letthroughdownstairs:
 # 169 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+letthroughdownstairs:
+# 170 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	release
 	return
 
 
 DevonInnRoom1Sign::
-# 173 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	lock
 # 174 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox DevonInnRoom1Sign_Text_0
+	lock
 # 175 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	msgbox DevonInnRoom1Sign_Text_0
+# 176 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	release
 	return
 
 
 DevonInnRoom2Sign::
-# 179 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	lock
 # 180 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox DevonInnRoom2Sign_Text_0
+	lock
 # 181 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	msgbox DevonInnRoom2Sign_Text_0
+# 182 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	release
 	return
 
 
 DevonInnBreakLady::
-# 185 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	lock
 # 186 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox DevonInnBreakLady_Text_0
+	lock
 # 187 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	msgbox DevonInnBreakLady_Text_0
+# 188 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	release
 	return
 
 
 DevonInnForbiddenFollower::
-# 194 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	hidefollower
 # 195 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	hidefollower
 # 196 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 197 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	setflag B_FLAG_FOLLOWERS_DISABLED
 	return
 
 
 DevonInnAllowedFollower::
-# 200 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 201 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 202 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	clearflag B_FLAG_FOLLOWERS_DISABLED
 	return
 
 
 DevonInnBlockDoor::
-# 205 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 206 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	setmetatile 3, 1, METATILE_General_Door_PokeCenter, FALSE
 	return
 
 
 DevonInnClosedDoor::
-# 210 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	lock
 # 211 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	checkitem ITEM_CARD_KEY
+	lock
 # 212 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, inndoorisopen
+	checkitem ITEM_CARD_KEY
 # 213 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, inndoorisopen
+# 214 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, inndoorisclosed
-# 215 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-inndoorisopen:
 # 216 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	msgbox DevonInnClosedDoor_Text_0
+inndoorisopen:
 # 217 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	setflag B_FLAG_FOLLOWERS_DISABLED
+	msgbox DevonInnClosedDoor_Text_0
 # 218 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	opendoor 3, 1
+	setflag B_FLAG_FOLLOWERS_DISABLED
 # 219 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	playse SE_SLIDING_DOOR
+	opendoor 3, 1
 # 220 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	waitdooranim
+	playse SE_SLIDING_DOOR
 # 221 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DevonInnClosedDoor_Movement_0
+	waitdooranim
 # 222 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	hideplayer
+	applymovement OBJ_EVENT_ID_PLAYER, DevonInnClosedDoor_Movement_0
 # 223 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	closedoor 3, 1
+	hideplayer
 # 224 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	closedoor 3, 1
+# 225 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	goto endinndoorscript
-# 226 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-inndoorisclosed:
 # 227 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+inndoorisclosed:
+# 228 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox DevonInnClosedDoor_Text_1
-# 229 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-endinndoorscript:
 # 230 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+endinndoorscript:
+# 231 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	release
 	return
 
@@ -417,27 +419,27 @@ InnNPCStopsPlayerfromInn_Movement_1:
 	face_left
 	step_end
 
-# 68 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 69 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 InnNPCStopsPlayerfromInn_Movement_2:
-# 68 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 69 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	walk_down
 	step_end
 
-# 70 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 71 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 InnNPCStopsPlayerfromInn_Movement_3:
-# 70 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 71 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	face_down
 	step_end
 
-# 158 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 159 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 DevonInnTakeKey_Movement_0:
-# 158 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 159 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	face_up
 	step_end
 
-# 221 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 222 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 DevonInnClosedDoor_Movement_0:
-# 221 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 222 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	walk_up
 	step_end
 
@@ -469,17 +471,17 @@ InnNPCStopsPlayerfromInn_Text_5:
 	.string "- use it on the door to enter.$"
 
 InnNPCStopsPlayerfromInn_Text_6:
-# 65 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 66 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "Ah, it would seem you are somewhat\n"
 	.string "short of the 200¥...$"
 
 InnNPCStopsPlayerfromInn_Text_7:
-# 67 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 68 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "We hope we can welcome you in another\n"
 	.string "ocassion!$"
 
 InnNPCStopsPlayerfromInn_Text_8:
-# 76 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 77 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "Yes, there are three main rules...\p"
 	.string "Rule Number 1: While in the room,\n"
 	.string "Pokémon must be kept inside their\l"
@@ -490,44 +492,44 @@ InnNPCStopsPlayerfromInn_Text_8:
 	.string "upon leaving this floor.$"
 
 InnNPCStopsPlayerfromInn_Text_9:
-# 80 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 81 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "So... would you like a room?$"
 
 InnNPCStopsPlayerfromInn_Text_10:
-# 85 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 86 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "Very well. We hope we can welcome you in\n"
 	.string "another ocassion!$"
 
 DevonInnNPC_Text_0:
-# 144 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 145 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "Please enjoy your stay! And keep your\n"
 	.string "Pokémon in their Pokéballs.$"
 
 DevonInnTakeKey_Text_0:
-# 162 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 163 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "We hope you enjoyed your stay. I will\n"
 	.string "take your Guest Card now.\p"
 	.string "Please visit us again!$"
 
 DevonInnRoom1Sign_Text_0:
-# 174 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 175 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "Room 1$"
 
 DevonInnRoom2Sign_Text_0:
-# 180 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 181 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "Room 2$"
 
 DevonInnBreakLady_Text_0:
-# 186 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 187 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "I'm sorry, I'm on my break here. Please\n"
 	.string "do not disturb me.$"
 
 DevonInnClosedDoor_Text_0:
-# 216 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 217 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "You approach the Guest Card to the\n"
 	.string "card reader. The door slides open.$"
 
 DevonInnClosedDoor_Text_1:
-# 227 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 228 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "The door does not slide open. It seems\n"
 	.string "it needs a Guest Card to do so.$"

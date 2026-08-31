@@ -63,17 +63,30 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
             //[TRAINER_SLIDE_MEGA_EVOLUTION] = gText_ThatsTheWay, // You can use globals or COMPOUND_STRING to define text here.
         },
 
-        [TRAINER_DEVONGUARD_103] = // use the Trainer's Id from include/constants/opponents.h
+        [TRAINER_DEVONGUARD_103] = 
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Did anyone cross the bridge just now? \nAh, my bad - I'll focus! {PAUSE_UNTIL_PRESS}"), // find the id for the slide to be used.
-            //[TRAINER_SLIDE_MEGA_EVOLUTION] = gText_ThatsTheWay, // You can use globals or COMPOUND_STRING to define text here.
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Did anyone cross the bridge just now? \nAh, my bad - I'll focus! {PAUSE_UNTIL_PRESS}"),
         },
 
         [TRAINER_REPORTERS_GREATCRATER] = // use the Trainer's Id from include/constants/opponents.h
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Kira: Our poor Safemon! Such violence...\nI can't see this anymore, DAN!\pDan: You're overacting, Kira... I'll have\nto edit this out.\pKira: Don't you dare! This is the start\nof my acting career!{PAUSE_UNTIL_PRESS}"), // find the id for the slide to be used.
-            //[TRAINER_SLIDE_MEGA_EVOLUTION] = gText_ThatsTheWay, // You can use globals or COMPOUND_STRING to define text here.
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("KIRA: Our poor Safemon! Such violence...\nI can't see this anymore, DAN!\pDAN: You're overacting, KIRA... I'll have\nto edit this out.\pKIRA: Don't you dare! This is the start\nof my acting career!{PAUSE_UNTIL_PRESS}"),
+        },
+
+        [TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3] = 
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Alright, here it goes! Get ready, JANI! {PAUSE_UNTIL_PRESS}"),
+
+        },
+
+        [TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4] = 
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("JANI: Wait, you idiot! I need to SWITCH! {PAUSE_UNTIL_PRESS}"),
+
         }
+
+
+    
     },
 };
 static const u8* const sFrontierTrainerSlides[DIFFICULTY_COUNT][FRONTIER_TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =

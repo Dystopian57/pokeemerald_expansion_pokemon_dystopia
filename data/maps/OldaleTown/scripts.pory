@@ -181,7 +181,7 @@ script OldaleVendingMachine {
     lock
     msgbox(format("It's a vending machine."))
     showmoneybox (18, 0)
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Tea - 70¥", "Lava Cookie - 40¥", "Leave")
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Tea - 70¥", "Lava Cookie - 40¥", "Leave")
     
             //Fresh Water
             if(var(VAR_RESULT) == 0){
@@ -316,7 +316,7 @@ script OldaleVendingMachine {
                     gotextralavacookie:
                     msgbox(format("An extra Lava Cookie can dropped on the machine's tray!"))
                     hidemoneybox
-					giveitem (ITEM_HEAL_POWDER)
+					giveitem (ITEM_LAVA_COOKIE)
                     goto (endvendingmachine)
 
                     lavacookiegotstuck:
@@ -958,8 +958,17 @@ script OldaleDLCWindow {
     release 
 }
 
+script OldaleDevonTruck {
+    lock 
+    msgbox(format("Dirt has accumulated on the Devon truck. Seems to have been parked for some time."))
+    release 
+}
 
-
+script OldaleDevonTruckDamaged {
+    lock 
+    msgbox(format("There's many hit marks on the truck. Someone tried to open it, to no avail."))
+    release 
+}
 
 script OldalePostFenceItem {
 	lock
@@ -1056,13 +1065,13 @@ script OldaleRivalnoleavetoWhouse {
     msgbox(format("You lost, kid? Well scram, there's nothing here for you t-"))
     applymovement (18, moves(emote_exclamation_mark))
     playse (SE_PIN)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 
 	checkplayergender
 		if(var(VAR_RESULT) == MALE)
-		{msgbox(format("Wait a second... green hood, crutches... \p You're the guy that beat Rick!"))}
+		{msgbox(format("Wait a second... green hood, crutches... \p You're the guy that beat Calvin!"))}
         if(var(VAR_RESULT) == FEMALE)
-		{msgbox(format("Wait a second... green cap, arm on a sling,... \p You're the lass that beat Rick!"))}
+		{msgbox(format("Wait a second... green cap, arm on a sling,... \p You're the lass that beat Calvin!"))}
 
     msgbox(format("Hahaha, you beat him with THAT thing behind you? He's so pathetic!
     \pI'll teach you that not every Rebel is like him!"))
@@ -1082,13 +1091,15 @@ script OldaleRivalnoleavetoWhouse {
     removeobject (18)
     setflag (oldalerebelguardleaves)
     closedoor (36,7)
+	fadeoutbgm (1)
+	fadenewbgm (1)
 	playbgm (MUS_RG_LAVENDER, TRUE)
 
     releaseall
      }
 
     text RebelOldale_Outro{
-    "Huh... I guess Rick was right after all..."}
+    "Huh... I guess Calvin was right after all..."}
     
 
 
@@ -1112,7 +1123,7 @@ script OldaleGrassRebel {
  script OldaleCarRebelApproach0 {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 	applymovement (24, moves(emote_exclamation_mark))
 	msgbox(format("Stop it, kid!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
@@ -1126,7 +1137,7 @@ script OldaleGrassRebel {
   script OldaleCarRebelApproach1 {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 	applymovement (24, moves(emote_exclamation_mark))
 	msgbox(format("Stop it, kid!"))
     playse (SE_LEDGE)
@@ -1139,7 +1150,7 @@ script OldaleGrassRebel {
   script OldaleCarRebelApproach2 {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm (MUS_SKULLKERHIDEOUT, TRUE)
 	applymovement (24, moves(emote_exclamation_mark))
 	msgbox(format("Stop it, kid!"))
     playse (SE_LEDGE)
@@ -1168,8 +1179,9 @@ script OldaleGrassRebel {
         playse (SE_BALL_BOUNCE_4)
         waitse
         msgbox(format("... oh. Right. He's fainted from before... \p ... {COLOR LIGHT_GRAY}{SHADOW WHITE}Shit...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
-        playbgm (MUS_ENCOUNTER_MAGMA, TRUE)
+	    playbgm (MUS_SKULLKERHIDEOUT, TRUE)
         msgbox(format("Wait right here, you hear me!? I'll go to the Devon Center real quick!"))
+        closemessage
         playse (SE_FLEE)
         applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
         applymovement (24, moves(walk_fast_left * 8))
@@ -1406,3 +1418,16 @@ script SamanthaShake{
 	setvar(VAR_0x8007, 4)  //@ shake delay
 	special(ShakeCamera)
 	}
+
+
+script GiveSafemonParty1 {
+    callnative (ZeroPlayerPartyMons)
+    givemon (SPECIES_BULBASYNTH, 5, ITEM_REMEDY)
+    givemon (SPECIES_SMOTHQUIL, 5, ITEM_HEAL_POWDER)
+    givemon (SPECIES_WARABBIT, 5, ITEM_FULL_HEAL)
+    givemon (SPECIES_PIKACHU_SAFE, 5, ITEM_AERODACTYLITE)
+    givemon (SPECIES_MIMIYURUI, 5, ITEM_SUPERB_REMEDY)
+    givemon (SPECIES_NINKABURI, 5, ITEM_SHALOUR_SABLE)
+
+}
+

@@ -184,6 +184,7 @@ script MoveTutor103 {
 			if (var(VAR_RESULT) == TRUE) {
 
 			msgbox(format("Which of your Pokémon should I have remember a move?"))
+			selectdifferentmonforrelearn:
 			special (ChooseMonForMoveRelearner)
 			waitstate
 			goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor)
@@ -191,6 +192,8 @@ script MoveTutor103 {
 			goto_if_eq (VAR_RESULT, TRUE, CantTeachEgg)
 			goto_if_eq (VAR_0x8005, 0, NoMoveToTeachMon)
 			special (TeachMoveRelearnerMove)
+			waitstate
+			goto_if_eq (VAR_0x8004, 0, cancelledmoverelearnforamon)
 			showmoneybox (0, 0)
 			msgbox(format("Very well. I'll collect your 100¥ now..."))
 			playse (SE_SHOP)
@@ -198,6 +201,12 @@ script MoveTutor103 {
 			updatemoneybox
 			
 			goto (endtutorscript)
+
+			cancelledmoverelearnforamon:
+			msgbox(format("Hm? Would you rather have a different Pokémon relearn a move?"))
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "Actually, nevermind",)
+					if(var(VAR_RESULT) == 0){goto (selectdifferentmonforrelearn)}
+					if(var(VAR_RESULT) == 1){goto (canceltutor)}
 			}
 			
 			if (var(VAR_RESULT) == FALSE) {

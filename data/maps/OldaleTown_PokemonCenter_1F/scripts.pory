@@ -94,7 +94,7 @@ script DayNightAmbientLight {
 script CarRebel {
 	lock
 	applymovement (9, moves (face_player))
-	msgbox(format("Dammit, I'm broke a hell... I don't have enough pokeyen to heal my Electrike...
+	msgbox(format("Dammit, I'm broke as hell... I don't have enough pokeyen to heal my Electrike...
 	\p {COLOR LIGHT_GRAY}{SHADOW WHITE}Guess I'll have to pickpocket the next geezer I see, hehe...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 	applymovement (9, moves (face_down))
 	release
@@ -623,7 +623,7 @@ script OldaleATM {
 		removemoney (1000)
 		waitse
 		updatemoneybox
-		msgbox(format("Transaction Completed. Your card is coming out!"))
+		msgbox(format("Transaction complete. Your card is coming out!"))
 		playse (SE_CLICK)
 		hidemoneybox
 		waitse
@@ -760,14 +760,20 @@ script OldaleTown_Mart_PostWarehouse {
 	end}
 
 	mart OldaleTown_Mart_Pokemart_PreWarehouse {
+	ITEM_PARK_BALL
 	ITEM_POTION
 	}
 
 	mart OldaleTown_Mart_Pokemart_PostWarehouse {
 			ITEM_POKE_BALL
-			ITEM_POTION }
+			ITEM_POTION
+			ITEM_SUPER_POTION
+			ITEM_REMEDY
+			ITEM_REVIVE
+			ITEM_HONEY
+			ITEM_POKE_TOY }
 
-
+//LATER IN PETALBURG: ITEM_HYPER_POTION, ITEM_CLEAR_AMULET
 
 
 
@@ -776,7 +782,7 @@ script OldalePokeCenterOldLady {
     applymovement (3, moves(face_player))
     msgbox(format("It's so sad... it's mostly kids and old people like me round these parts.
     \p Most people your age were sent to the war, and never returned. \p Like my... ah, I'm sorry.
-	vent to strangers like this..."))
+	I shouldn't vent to strangers like this..."))
     releaseall
     }
 
@@ -826,13 +832,20 @@ script OldalePokeCenterBookshelf {
     releaseall
     }
 
+script OldalePokeCenterPlant {
+    lockall
+    msgbox(format("It's a beautiful plant.\p ... upon second inspection, it's a beautiful plastic plant."))
+    releaseall
+    }
+
 script OldalePokeCenterTVKid {
     lockall
     applymovement (8, moves(face_player))
     msgbox(format("I've been watching this TV for half an hour, and there's been nothing but ads...\p
-	They say you can watch actual programs from the TVs in the inn rooms, but my allowance is not enough
+	They say you can watch actual programs on the TVs in the inn rooms, but my allowance is not enough
 	to rent a room..."))
 	applymovement (8, moves(face_up))
+	waitmovement (8)
     releaseall
     }
 

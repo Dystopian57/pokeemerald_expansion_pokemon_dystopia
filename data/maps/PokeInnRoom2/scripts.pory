@@ -24,14 +24,129 @@ script DevonInnSignAboutFreezer {
 	release
 }
 
+script DevonInnLamp {
+	lock
+	msgbox(format("The drawers are empty."))
+	release
+}
+
+script DevonInnTrashCan {
+	lock
+	msgbox(format("The trash can is empty."))
+	release
+}
+
+script DevonInnSink {
+	lock
+	msgbox(format("A simple and clean sink, equipped with some toiletries."))
+
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Drink water", "Wash face", "Brush teeth", "Shave", "Nothing")}
+	if(var(VAR_RESULT) == FEMALE){dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Drink water", "Wash face", "Brush teeth", "Brush hair", "Nothing")}
+
+	if (var(VAR_RESULT) == 0) {
+	playse (SE_M_BUBBLE)
+	waitse
+	playse (SE_M_TOXIC)
+	waitse
+	playse (SE_M_TOXIC)
+	playse (SE_M_ABSORB_2)
+	msgbox(format("Haaa..."))
+	}
+
+	
+	if (var(VAR_RESULT) == 1) {
+	playse (SE_M_BUBBLE)
+	waitse
+	playse (SE_M_BUBBLE)
+	waitse
+	playse (SE_M_DIVE)
+	waitse
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){playse (SE_M_DOUBLE_SLAP)}
+	if(var(VAR_RESULT) == FEMALE){playse (SE_M_ENCORE)}
+	waitse
+	playse (SE_M_STAT_INCREASE)
+	msgbox(format("Feeling refreshed now."))
+	}
+
+
+	if (var(VAR_RESULT) == 2) {
+	playse (SE_SUDOWOODO_SHAKE)
+	waitse
+	playse (SE_SUDOWOODO_SHAKE)
+	waitse
+	playse (SE_M_BUBBLE3)
+	waitse
+	playse (SE_A)
+	waitse
+	playse (SE_BALLOON_BLUE)
+	waitse
+	msgbox(format("They're clean like a Clamperl."))
+	}
+
+
+	if (var(VAR_RESULT) == 3) {
+		checkplayergender
+		if(var(VAR_RESULT) == MALE)
+		
+		{playse (SE_REPEL)
+		waitse
+		playse (SE_M_SCRATCH)
+		waitse
+		playse (SE_M_SCRATCH)
+		waitse
+		playse (SE_M_SCRATCH)
+		waitse
+		playse (SE_M_DOUBLE_SLAP)
+		msgbox(format("Smooth like a Mudkip's belly."))
+		}
+
+		else
+		{
+		playse (SE_REPEL)
+		waitse
+		playse (SE_M_MIST)
+		waitse
+		playse (SE_M_MIST)
+		waitse
+		msgbox(format("... slightly more presentable."))
+		}
+	}
+
+	if (var(VAR_RESULT) == 4) {release}
+	release
+}
+//SE_M_BUBBLE2
+
+script DevonInnFreezer {
+	lock
+	if (!flag (claimedinnfreedrink))
+	{msgbox(format("There's a single drink in the freezer, behind a huge 'free' note..."))
+		random (3)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0:giveitem (ITEM_FRESH_WATER)
+		case 1: giveitem (ITEM_SODA_POP)
+		case 2: giveitem (ITEM_TEA)
+		case 3: giveitem (ITEM_HEAL_POWDER)
+		}
+		setflag (claimedinnfreedrink)
+	}
+
+	else {msgbox(format("There's no more drinks in the freezer."))}
+	release
+}
+
 script WallClock {
 	incrementgamestat (GAME_STAT_CHECKED_CLOCK)
 	gettime
 	buffernumberstring (STR_VAR_1, VAR_0x8000)
 	buffernumberstring (STR_VAR_2, VAR_0x8001)
 	buffernumberstring (STR_VAR_3, VAR_0x8002)
-	msgbox(format("The time is {STR_VAR_1}, {STR_VAR_3}, {STR_VAR_3}."))
-
+	msgbox(format("The time is {STR_VAR_1}:{STR_VAR_2}."))
+	release
 	//fadescreen FADE_TO_BLACK
 	//special Special_ViewWallClock
 	//waitstate
@@ -525,3 +640,39 @@ script OldalePokeCenterInnPrograms {
 		setflag (seenweatheratinnvisit)
 		release
 	}
+
+script DLCInnBedTime {
+	lockall
+    msgbox("Rest for a bit?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+	fadescreen (FADE_TO_BLACK)
+	msgbox (format("Set the wristwatch's alarm to which time?"))
+	special (StartWallClock)
+	waitstate
+	fadeoutbgm (1)
+	fadescreen (FADE_TO_BLACK)
+	playse (MUS_HEAL)
+	waitse
+	random (4)
+	copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0: setvar(VAR_ROUTE103_WEATHER, 3)
+		case 1: setvar(VAR_ROUTE102_WEATHER, 3)
+		case 2: setvar(VAR_GREATCRATER_WEATHER, 3)
+		case 3: setvar(VAR_PETALBURGLANDFILL_WEATHER, 3)
+		}
+	playse (SE_SUCCESS)
+	waitse
+	playse (SE_SUCCESS)
+	waitse
+	playse (SE_SUCCESS)
+	waitse
+	fadescreen (FADE_FROM_BLACK)
+	msgbox (format("{PLAYER} wakes up."))
+	fadeinbgm (1)
+	playbgm (MUS_GAMEOVER, TRUE)
+	
+}
+	releaseall		
+}

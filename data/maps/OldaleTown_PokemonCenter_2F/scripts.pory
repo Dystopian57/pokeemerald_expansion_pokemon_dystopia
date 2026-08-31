@@ -57,6 +57,7 @@ script InnNPCStopsPlayerfromInn {
 					hidemoneybox
 					giveitem (ITEM_CARD_KEY)
 					clearflag (seenweatheratinnvisit)
+					clearflag (claimedinnfreedrink)
 					//setobjectxyperm (3, 0, 0)
 					//setmetatile (3, 1, METATILE_General_Door_PokeCenter, FALSE)
 					goto (enddevoninnscript2)}

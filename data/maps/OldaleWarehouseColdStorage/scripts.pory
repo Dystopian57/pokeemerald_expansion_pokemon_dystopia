@@ -6,3 +6,86 @@ mapscripts OldaleWarehouseColdStorage_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
     MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+
+
+
+script OldaleWarehouseColdStorageMedic {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (1, moves (face_player))
+	msgbox(format("First the riot on Petalburg's Devon Center, now the shortage of Oldale's...
+    \p It can be hard getting medicine in these parts."))
+	applymovement (1, moves (face_up))
+    waitmovement (1)
+    release}
+
+
+script OldaleWarehouseColdStorageRebelClerk {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (3, moves (face_player))
+	msgbox(format("Hm? Wasn't told about anyone else coming to buy today.\p Eh, whatever. Want something?"))
+	pokemart (OldaleWarehouseColdStorage_TempShop)
+	release}
+
+
+script OldaleWarehouseColdStorageItem {
+	lock
+    finditem (ITEM_STAR_PIECE)
+    removeobject (2)
+	releaseall}
+
+	mart OldaleWarehouseColdStorage_TempShop {
+			ITEM_POKE_BALL
+			ITEM_POTION
+			ITEM_SUPER_POTION
+			ITEM_REMEDY
+			ITEM_REVIVAL_HERB
+			ITEM_HONEY
+			ITEM_POKE_TOY
+            ITEM_FULL_HEAL
+            ITEM_AERODACTYLITE }
+
+script OldaleWarehouseColdStorageSchedule {
+	lock
+	msgbox(format("The sign contains what seems like a shipping schedule...\p
+    “{COLOR BLUE}Weekly Dewford - Mainland shipment:{COLOR DARK_GRAY}\pSwinub fur, Snorunt coats”.\p
+    “{COLOR BLUE}Monthly Dewford - Rustboro shipment:{COLOR DARK_GRAY}\pArystal Shards. Handle with care.”"))
+	release
+}
+
+script OldaleWarehouseColdStorageMedStock {
+	lock
+	msgbox(format("The shelves are full of healthcare-related supplies."))
+	release
+}
+
+script OldaleWarehouseColdStorageFurStock {
+	lock
+	msgbox(format("Piles of furs, primarily of brown and orange color."))
+	release
+}
+
+script OldaleWarehouseColdStorageFoodStock {
+	lock
+	msgbox(format("It's full of luxury-tier, package foodstuffs."))
+	release
+}
+
+script OldaleWarehouseColdStorageJewels {
+	lock
+	msgbox(format("The expository shows beautiful jewels made with light-blue gems."))
+	release
+}
+
+script OldaleWarehouseColdStorageSkinStock {
+	lock
+	msgbox(format("It contains skincare products, mostly of the Glalie's brand."))
+	release
+}
+
+script OldaleWarehouseColdStorageShardStock {
+	lock
+	msgbox(format("There's various gems inside. Many look like beautiful ice shards."))
+	release
+}

@@ -28,7 +28,7 @@
 #define TRAINER_REPORTERS_GREATCRATER      22
 #define TRAINER_OLDALEDEVONGRUNT_M             23
 #define TRAINER_OLDALEDEVONGRUNT_F             24
-//these are not rematches, just different grunts, 4 is the admin?
+//these are not rematches, just different grunts
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_1             25
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_2        26
 #define TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3       27
@@ -36,11 +36,11 @@
 #define TRAINER_HEXGIRL_MAUSOLEUM                    29
 #define TRAINER_DEVONGUARD_103                         30
 #define TRAINER_SHADYDEALER_103                       31
-#define TRAINER_EMPTY_1     32
-#define TRAINER_EMPTY_2       33
+#define TRAINER_SCAVENGER_OLDALEWAREHOUSE_1     32
+#define TRAINER_SCAVENGER_OLDALEWAREHOUSE_2       33
 #define TRAINER_CONCORDWAGESLAVE                       34
 #define TRAINER_FISHER_103                         35
-#define TRAINER_DAISY                        36
+#define TRAINER_REBELADMIN_OLDALEWAREHOUSE                        36
 #define TRAINER_ROSE_1                       37
 #define TRAINER_FELIX                        38
 #define TRAINER_VIOLET                       39

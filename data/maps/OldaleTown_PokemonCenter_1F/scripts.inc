@@ -1486,14 +1486,14 @@ OldaleATM_13:
 
 OldaleATM_17:
 # 700 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldaleATM_Text_10
+	msgbox OldaleATM_Text_11
 	goto OldaleATM_16
 
 OldaleATM_19:
 # 671 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playse SE_FAILURE
 # 672 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldaleATM_Text_9
+	msgbox OldaleATM_Text_10
 	goto OldaleATM_10
 
 OldaleATM_22:
@@ -1508,7 +1508,7 @@ OldaleATM_22:
 # 654 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	updatemoneybox
 # 655 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldaleATM_Text_6
+	msgbox OldaleATM_Text_9
 # 656 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playse SE_CLICK
 # 657 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
@@ -1533,7 +1533,7 @@ OldaleATM_25:
 # 682 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	updatemoneybox
 # 683 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldaleATM_Text_6
+	msgbox OldaleATM_Text_9
 # 684 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playse SE_CLICK
 # 685 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
@@ -1639,225 +1639,233 @@ OldaleTown_Mart_PostWarehouse::
 # 762 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 OldaleTown_Mart_Pokemart_PreWarehouse:
 # 763 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_PARK_BALL
+# 764 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.2byte ITEM_POTION
 	.2byte ITEM_NONE
 
 	.align 2
-# 766 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-OldaleTown_Mart_Pokemart_PostWarehouse:
 # 767 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_POKE_BALL
+OldaleTown_Mart_Pokemart_PostWarehouse:
 # 768 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_POKE_BALL
+# 769 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.2byte ITEM_POTION
+# 770 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_SUPER_POTION
+# 771 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_REMEDY
+# 772 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_REVIVE
+# 773 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_HONEY
+# 774 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_POKE_TOY
 	.2byte ITEM_NONE
 
 OldalePokeCenterOldLady::
-# 775 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 781 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	lockall
-# 776 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 782 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	applymovement 3, CarRebel_Movement_0
-# 777 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 783 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldalePokeCenterOldLady_Text_0
-# 780 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 786 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 OldalePokeCenterInjuredGuyDay::
-# 784 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 790 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	lockall
-# 785 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 791 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	applymovement 4, CarRebel_Movement_0
-# 786 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 792 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldalePokeCenterInjuredGuyDay_Text_0
-# 788 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 794 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 OldalePokeCenterInjuredGuyNight::
-# 792 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 798 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	lockall
-# 793 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 799 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	applymovement 4, CarRebel_Movement_0
-# 794 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 800 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldalePokeCenterInjuredGuyNight_Text_0
-# 795 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 801 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playse SE_M_SNORE
-# 796 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 802 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldalePokeCenterInjuredGuyNight_Text_1
-# 797 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 803 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 OldalePokeCenterMapBoyDay::
-# 802 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	lockall
-# 803 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	applymovement 6, CarRebel_Movement_0
-# 804 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldalePokeCenterMapBoyDay_Text_0
-# 807 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	applymovement 6, OldalePokeCenterMapBoyDay_Movement_0
 # 808 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	releaseall
-	return
-
-
-OldalePokeCenterMapBoyNight::
-# 812 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	lockall
+# 809 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	applymovement 6, CarRebel_Movement_0
+# 810 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldalePokeCenterMapBoyDay_Text_0
 # 813 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldalePokeCenterMapBoyNight_Text_0
+	applymovement 6, OldalePokeCenterMapBoyDay_Movement_0
 # 814 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
-OldalePokeCenterInnSign::
+OldalePokeCenterMapBoyNight::
 # 818 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	lockall
 # 819 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldalePokeCenterInnSign_Text_0
+	msgbox OldalePokeCenterMapBoyNight_Text_0
 # 820 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
-OldalePokeCenterBookshelf::
+OldalePokeCenterInnSign::
 # 824 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	lockall
 # 825 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldalePokeCenterBookshelf_Text_0
+	msgbox OldalePokeCenterInnSign_Text_0
 # 826 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
-OldalePokeCenterTVKid::
+OldalePokeCenterBookshelf::
 # 830 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	lockall
 # 831 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	applymovement 8, CarRebel_Movement_0
+	msgbox OldalePokeCenterBookshelf_Text_0
 # 832 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldalePokeCenterTVKid_Text_0
-# 835 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	applymovement 8, OldalePokeCenterMapBoyDay_Movement_0
+	releaseall
+	return
+
+
+OldalePokeCenterPlant::
 # 836 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	lockall
+# 837 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldalePokeCenterPlant_Text_0
+# 838 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	releaseall
+	return
+
+
+OldalePokeCenterTVKid::
+# 842 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	lockall
+# 843 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	applymovement 8, CarRebel_Movement_0
+# 844 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldalePokeCenterTVKid_Text_0
+# 847 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	applymovement 8, OldalePokeCenterMapBoyDay_Movement_0
+# 848 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitmovement 8
+# 849 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 OldalePokeCenterTVAds::
-# 841 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	lock
-# 842 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	random 8
-# 843 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	copyvar VAR_TEMP_1, VAR_RESULT
-# 845 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	switch VAR_RESULT
-# 846 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 0, OldalePokeCenterTVAds_3
-# 847 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 1, OldalePokeCenterTVAds_4
-# 848 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 2, OldalePokeCenterTVAds_5
-# 849 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 3, OldalePokeCenterTVAds_6
-# 850 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 4, OldalePokeCenterTVAds_7
-# 851 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 5, OldalePokeCenterTVAds_8
-# 852 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 6, OldalePokeCenterTVAds_9
-# 853 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	case 7, OldalePokeCenterTVAds_10
 # 854 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	lock
+# 855 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	random 8
+# 856 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 858 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	switch VAR_RESULT
+# 859 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 0, OldalePokeCenterTVAds_3
+# 860 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 1, OldalePokeCenterTVAds_4
+# 861 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 2, OldalePokeCenterTVAds_5
+# 862 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 3, OldalePokeCenterTVAds_6
+# 863 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 4, OldalePokeCenterTVAds_7
+# 864 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 5, OldalePokeCenterTVAds_8
+# 865 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 6, OldalePokeCenterTVAds_9
+# 866 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case 7, OldalePokeCenterTVAds_10
+# 867 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	case 8, OldalePokeCenterTVAds_11
 OldalePokeCenterTVAds_1:
-# 859 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 872 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 OldalePokeCenterTVAds_3:
-# 846 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 859 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Devonballad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_4:
-# 847 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 860 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Devotionad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_5:
-# 848 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 861 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Safemonad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_6:
-# 849 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 862 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Lifeindustriesad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_7:
-# 850 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 863 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Devoncenterad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_8:
-# 851 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 864 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Rebelhackersad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_9:
-# 852 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 865 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Devonnetad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_10:
-# 853 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 866 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Devongruntad
 	goto OldalePokeCenterTVAds_1
 
 OldalePokeCenterTVAds_11:
-# 854 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 867 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto Azuresortad
 	goto OldalePokeCenterTVAds_1
 
 
 Devonballad::
-# 864 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 877 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	showmonpic SPECIES_VIVILLON_ARCHIPELAGO, 10, 3
-# 865 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_ESCALATOR
-# 866 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devonballad_Text_0
-# 869 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 870 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_CONTINENTAL, 10, 3
-# 871 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_BALL_THROW
-# 872 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devonballad_Text_1
-# 873 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 874 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	releaseall
-	return
-
-
-Devotionad::
 # 878 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devotionad_Text_0
-# 881 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_USE_ITEM
+	playse SE_ESCALATOR
+# 879 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devonballad_Text_0
 # 882 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_ELEGANT, 10, 3
+	hidemonpic
 # 883 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devotionad_Text_1
+	showmonpic SPECIES_VIVILLON_CONTINENTAL, 10, 3
+# 884 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_BALL_THROW
+# 885 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devonballad_Text_1
 # 886 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
 # 887 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
@@ -1865,192 +1873,208 @@ Devotionad::
 	return
 
 
-Safemonad::
-# 893 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_FANCY, 10, 3
+Devotionad::
+# 891 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devotionad_Text_0
 # 894 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_M_FLAMETHROWER
+	playse SE_USE_ITEM
 # 895 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Safemonad_Text_0
+	showmonpic SPECIES_VIVILLON_ELEGANT, 10, 3
 # 896 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 897 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_GARDEN, 10, 3
-# 898 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_M_ABSORB_2
+	msgbox Devotionad_Text_1
 # 899 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Safemonad_Text_1
-# 900 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 901 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 900 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	releaseall
+	return
+
+
+Safemonad::
+# 906 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_FANCY, 10, 3
+# 907 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_M_FLAMETHROWER
+# 908 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Safemonad_Text_0
+# 909 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 910 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_GARDEN, 10, 3
+# 911 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_M_ABSORB_2
+# 912 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Safemonad_Text_1
+# 913 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 914 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Safemonad_Text_2
-# 902 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 915 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Lifeindustriesad::
-# 906 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_HIGH_PLAINS, 10, 3
-# 907 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Lifeindustriesad_Text_0
-# 909 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 910 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_JUNGLE, 10, 3
-# 911 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_M_FLY
-# 912 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Lifeindustriesad_Text_1
-# 914 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 915 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_MARINE, 10, 3
-# 916 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_M_ABSORB_2
-# 917 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Lifeindustriesad_Text_2
-# 918 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
 # 919 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_HIGH_PLAINS, 10, 3
+# 920 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Lifeindustriesad_Text_0
+# 922 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 923 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_JUNGLE, 10, 3
+# 924 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_M_FLY
+# 925 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Lifeindustriesad_Text_1
+# 927 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 928 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_MARINE, 10, 3
+# 929 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_M_ABSORB_2
+# 930 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Lifeindustriesad_Text_2
+# 931 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 932 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Devoncenterad::
-# 923 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 936 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	showmonpic SPECIES_VIVILLON_MEADOW, 10, 3
-# 924 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 937 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playmoncry SPECIES_CHANSEY, CRY_MODE_NORMAL
-# 925 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 938 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Devoncenterad_Text_0
-# 927 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 940 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 928 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 941 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playfanfare MUS_HEAL
-# 929 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 942 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	showmonpic SPECIES_VIVILLON_MODERN, 10, 3
-# 930 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 943 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Devoncenterad_Text_1
-# 932 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 945 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 933 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 946 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Rebelhackersad::
-# 937 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_MONSOON, 10, 3
-# 938 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_FAILURE
-# 939 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Rebelhackersad_Text_0
-# 941 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 942 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_OCEAN, 10, 3
-# 943 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_MUGSHOT
-# 944 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Rebelhackersad_Text_1
-# 945 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 946 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_POKEBALL, 10, 3
-# 947 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playmoncry SPECIES_JIGGLYPUFF, CRY_MODE_WEAK
-# 948 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Rebelhackersad_Text_2
 # 950 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
+	showmonpic SPECIES_VIVILLON_MONSOON, 10, 3
 # 951 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_POLAR, 10, 3
+	playse SE_FAILURE
 # 952 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_DEX_SEARCH
-# 953 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Rebelhackersad_Text_3
+	msgbox Rebelhackersad_Text_0
 # 954 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
 # 955 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_RIVER, 10, 3
+	showmonpic SPECIES_VIVILLON_OCEAN, 10, 3
 # 956 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Rebelhackersad_Text_4
+	playse SE_MUGSHOT
 # 957 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
+	msgbox Rebelhackersad_Text_1
 # 958 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 959 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_POKEBALL, 10, 3
+# 960 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playmoncry SPECIES_JIGGLYPUFF, CRY_MODE_WEAK
+# 961 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Rebelhackersad_Text_2
+# 963 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 964 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_POLAR, 10, 3
+# 965 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_DEX_SEARCH
+# 966 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Rebelhackersad_Text_3
+# 967 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 968 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_RIVER, 10, 3
+# 969 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Rebelhackersad_Text_4
+# 970 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 971 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Devonnetad::
-# 962 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_SANDSTORM, 10, 3
-# 963 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_M_SWIFT
-# 964 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devonnetad_Text_0
-# 967 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 968 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_SAVANNA, 10, 3
-# 969 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_PC_LOGIN
-# 970 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devonnetad_Text_1
-# 972 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	hidemonpic
-# 973 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	showmonpic SPECIES_VIVILLON_SUN, 10, 3
 # 975 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playse SE_M_PETAL_DANCE
+	showmonpic SPECIES_VIVILLON_SANDSTORM, 10, 3
 # 976 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox Devonnetad_Text_2
+	playse SE_M_SWIFT
 # 977 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devonnetad_Text_0
+# 980 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 978 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 981 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_SAVANNA, 10, 3
+# 982 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_PC_LOGIN
+# 983 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devonnetad_Text_1
+# 985 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 986 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	showmonpic SPECIES_VIVILLON_SUN, 10, 3
+# 988 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playse SE_M_PETAL_DANCE
+# 989 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox Devonnetad_Text_2
+# 990 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	hidemonpic
+# 991 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Devongruntad::
-# 982 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 995 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Devongruntad_Text_0
-# 984 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 997 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 985 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 998 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	showmonpic SPECIES_PIKACHU_COSPLAY, 10, 3
-# 986 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 999 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playse SE_M_ENCORE2
-# 987 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1000 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Devongruntad_Text_1
-# 988 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1001 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Devongruntad_Text_2
-# 989 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1002 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 990 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1003 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 Azuresortad::
-# 994 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1007 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	showmonpic SPECIES_BASCULIN, 10, 3
-# 995 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1008 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playse SE_M_HAZE
-# 996 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1009 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Azuresortad_Text_0
-# 998 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1011 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 999 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1012 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	showmonpic SPECIES_BASCULIN_WHITE_STRIPED, 10, 3
-# 1000 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1013 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	playse SE_M_SURF
-# 1001 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1014 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox Azuresortad_Text_1
-# 1003 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1016 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	hidemonpic
-# 1004 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1017 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
@@ -2091,15 +2115,15 @@ OldaleTown_Mart_Clerk_Movement_0:
 	face_right
 	step_end
 
-# 807 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 813 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 OldalePokeCenterMapBoyDay_Movement_0:
-# 807 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 813 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	face_up
 	step_end
 
 CarRebel_Text_0:
 # 97 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Dammit, I'm broke a hell... I don't have\n"
+	.string "Dammit, I'm broke as hell... I don't have\n"
 	.string "enough pokeyen to heal my Electrike...\p"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Guess I'll have to pickpocket the next\n"
 	.string "geezer I see, hehe...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
@@ -2428,7 +2452,7 @@ OldaleATM_Text_5:
 
 OldaleATM_Text_6:
 # 626 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Transaction Completed. Your card is\n"
+	.string "Transaction complete. Your card is\n"
 	.string "coming out!$"
 
 OldaleATM_Text_7:
@@ -2441,11 +2465,16 @@ OldaleATM_Text_8:
 	.string "Bronze Clients.$"
 
 OldaleATM_Text_9:
+# 655 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Transaction Completed. Your card is\n"
+	.string "coming out!$"
+
+OldaleATM_Text_10:
 # 672 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Error. This card is only available to\n"
 	.string "Silver Clients.$"
 
-OldaleATM_Text_10:
+OldaleATM_Text_11:
 # 700 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Carrying cash is not only old-fashioned\n"
 	.string "- but risky too.\p"
@@ -2502,16 +2531,16 @@ OldaleTown_Mart_PostWarehouse_Text_0:
 	.string "your help liberating our warehouse!$"
 
 OldalePokeCenterOldLady_Text_0:
-# 777 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 783 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "It's so sad... it's mostly kids and old\n"
 	.string "people like me round these parts.\p"
 	.string "Most people your age were sent to the\n"
 	.string "war, and never returned.\p"
-	.string "Like my... ah, I'm sorry. vent to\n"
-	.string "strangers like this...$"
+	.string "Like my... ah, I'm sorry. I shouldn't vent\n"
+	.string "to strangers like this...$"
 
 OldalePokeCenterInjuredGuyDay_Text_0:
-# 786 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 792 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "I miss the days when Pokémon\n"
 	.string "healthcare was free…\p"
 	.string "Then again, Safemon are so weak, they\n"
@@ -2519,15 +2548,15 @@ OldalePokeCenterInjuredGuyDay_Text_0:
 	.string "other.$"
 
 OldalePokeCenterInjuredGuyNight_Text_0:
-# 794 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 800 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "You can have it all. I'm not hungry.$"
 
 OldalePokeCenterInjuredGuyNight_Text_1:
-# 796 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 802 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Grrr...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.$"
 
 OldalePokeCenterMapBoyDay_Text_0:
-# 804 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 810 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "In school we learnt that the area from\n"
 	.string "Route 103 to Route 104 is called the\l"
 	.string "{COLOR GREEN}'Rebel Zone'{COLOR DARK_GRAY}.\p"
@@ -2536,30 +2565,36 @@ OldalePokeCenterMapBoyDay_Text_0:
 	.string "a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} to get out of it.$"
 
 OldalePokeCenterMapBoyNight_Text_0:
-# 813 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 819 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Are you sure you don't want any, dad?\n"
 	.string "It's pretty good!$"
 
 OldalePokeCenterInnSign_Text_0:
-# 819 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 825 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "To 2F - Inn Rooms.$"
 
 OldalePokeCenterBookshelf_Text_0:
-# 825 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 831 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "The shelf is full of magazines with ads\n"
 	.string "about Devon products.$"
 
+OldalePokeCenterPlant_Text_0:
+# 837 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "It's a beautiful plant.\p"
+	.string "... upon second inspection, it's a\n"
+	.string "beautiful plastic plant.$"
+
 OldalePokeCenterTVKid_Text_0:
-# 832 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 844 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "I've been watching this TV for half an\n"
 	.string "hour, and there's been nothing but\l"
 	.string "ads...\p"
 	.string "They say you can watch actual programs\n"
-	.string "from the TVs in the inn rooms, but my\l"
+	.string "on the TVs in the inn rooms, but my\l"
 	.string "allowance is not enough to rent a room...$"
 
 Devonballad_Text_0:
-# 866 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 879 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Enhanced catch rate. Better grip. Light\n"
 	.string "as a feather.\p"
 	.string "In short: engineered to perfection.\p"
@@ -2568,11 +2603,11 @@ Devonballad_Text_0:
 	.string "Devon Ball.$"
 
 Devonballad_Text_1:
-# 872 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 885 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Devon Ball. The only ball with no catch.$"
 
 Devotionad_Text_0:
-# 878 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 891 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Health points, Power Points, Status\n"
 	.string "Ailments... keeping your companions\l"
 	.string "healthy requires a full bag!\p"
@@ -2580,7 +2615,7 @@ Devotionad_Text_0:
 	.string "Devon Co.'s answer is... yes!$"
 
 Devotionad_Text_1:
-# 883 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 896 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Our newest potion, 'Devotion', is the\n"
 	.string "only medicine your Pokémon will ever\l"
 	.string "need.\p"
@@ -2591,87 +2626,87 @@ Devotionad_Text_1:
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Side effects not tested on all species.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 Safemonad_Text_0:
-# 895 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 908 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Power. Volatility. Danger.\n"
 	.string "Those are the defining traits of\l"
 	.string "Pokémon.$"
 
 Safemonad_Text_1:
-# 899 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 912 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Control. Trust. Safety.\n"
 	.string "Those are for Safemon.$"
 
 Safemonad_Text_2:
-# 901 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 914 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "We at Devon choose the latter. And you?$"
 
 Lifeindustriesad_Text_0:
-# 907 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 920 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "This is Davis. Every morning, in Route\n"
 	.string "116, Davis wakes up before dawn to care\l"
 	.string "for his crops, tend to his farm, and\l"
 	.string "create the best produce in Hoenn.$"
 
 Lifeindustriesad_Text_1:
-# 912 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 925 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "The same produce that us, in Devon Life\n"
 	.string "Industries, take fresh from his land,\l"
 	.string "directly to your plate.$"
 
 Lifeindustriesad_Text_2:
-# 917 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 930 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Devon Life Industries. Quality food,\n"
 	.string "for quality people.$"
 
 Devoncenterad_Text_0:
-# 925 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 938 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "When you are tired. When you are ill.\n"
 	.string "When you are scared.\p"
 	.string "Whenever you are in need, Devon Centers\n"
 	.string "are your one safe haven.$"
 
 Devoncenterad_Text_1:
-# 930 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 943 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Devon Centers. Keeping you safe, 24/7.\p"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Fees may apply. Loitering not allowed.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 Rebelhackersad_Text_0:
-# 939 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 952 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "We interrupt this commercial broadcast\n"
 	.string "to announce our signal is be-1ng\l"
 	.string "c0mPromi!iis¥Ed b-bY R3b-… BZZT...$"
 
 Rebelhackersad_Text_1:
-# 944 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 957 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Hey. You. Are you sick of Safemon? Me\n"
 	.string "too. Because they suck.$"
 
 Rebelhackersad_Text_2:
-# 948 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 961 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Everyday, Devon converts more than 100\n"
 	.string "Pokémon into Safemon.\p"
 	.string "But if you help us, we can get them down\n"
 	.string "to 0.$"
 
 Rebelhackersad_Text_3:
-# 953 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 966 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "If you are a coder - join us. If you\n"
 	.string "aren't, we'll make you one.$"
 
 Rebelhackersad_Text_4:
-# 956 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 969 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Join the Rebel Hackers today. For a\n"
 	.string "world where we decide.$"
 
 Devonnetad_Text_0:
-# 964 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 977 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "In this day and age, people move fast.\p"
 	.string "So fast, you can feel you can't keep up\n"
 	.string "with their lives. Like you're being left\l"
 	.string "behind.$"
 
 Devonnetad_Text_1:
-# 970 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 983 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "If you're feeling like that - then Devon\n"
 	.string "Net is for you!\p"
 	.string "Devon Net is the place to check what\n"
@@ -2679,30 +2714,30 @@ Devonnetad_Text_1:
 	.string "new ones too!$"
 
 Devonnetad_Text_2:
-# 976 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 989 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Devon Net - keeping you closer to\n"
 	.string "yours.$"
 
 Devongruntad_Text_0:
-# 982 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 995 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Do you seek a stable job in these times\n"
 	.string "of uncertainty?\p"
 	.string "One when you can make a difference in\n"
 	.string "getting Hoenn in a better shape?$"
 
 Devongruntad_Text_1:
-# 987 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1000 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Then enlist in the Devon Guards today.\n"
 	.string "First 100 recruits get their own\l"
 	.string "Manchine!$"
 
 Devongruntad_Text_2:
-# 988 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1001 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}All Manchines will be collected by Devon\n"
 	.string "Co. upon contract expiration.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 Azuresortad_Text_0:
-# 996 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1009 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Don't you hate it when you go to the\n"
 	.string "beach, and the sea is deadly poisoned?\p"
 	.string "\p"
@@ -2710,7 +2745,7 @@ Azuresortad_Text_0:
 	.string "to present...$"
 
 Azuresortad_Text_1:
-# 1001 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 1014 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "The Azuresort!\p"
 	.string "Exciting water sports, relaxing bathing\n"
 	.string "spots - all in the cleanest bathing\l"

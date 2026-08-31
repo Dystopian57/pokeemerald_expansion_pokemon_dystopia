@@ -800,32 +800,34 @@ PlayerBedSimple_2:
 	goto PlayerBedSimple_1
 
 
-PlayerBedTime::
+PlayerHouseBedTime::
 # 445 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
 # 446 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerBedSimple_Text_0, MSGBOX_YESNO
 # 447 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq PlayerBedTime_2
-PlayerBedTime_1:
+	goto_if_eq PlayerHouseBedTime_2
+PlayerHouseBedTime_1:
 # 474 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
-PlayerBedTime_2:
+PlayerHouseBedTime_2:
 # 448 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox PlayerBedTime_Text_0
+	fadescreen FADE_TO_BLACK
 # 449 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	special StartWallClock
+	msgbox PlayerHouseBedTime_Text_0
 # 450 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	special StartWallClock
 # 451 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	playse MUS_HEAL
+	waitstate
 # 452 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitse
+	fadescreen FADE_TO_BLACK
 # 453 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	special HealPlayerParty
+	playse MUS_HEAL
+# 454 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitse
 # 455 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	random 4
 # 456 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -833,14 +835,14 @@ PlayerBedTime_2:
 # 458 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	switch VAR_RESULT
 # 459 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	case 0, PlayerBedTime_6
+	case 0, PlayerHouseBedTime_6
 # 460 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	case 1, PlayerBedTime_7
+	case 1, PlayerHouseBedTime_7
 # 461 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	case 2, PlayerBedTime_8
+	case 2, PlayerHouseBedTime_8
 # 462 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	case 3, PlayerBedTime_9
-PlayerBedTime_4:
+	case 3, PlayerHouseBedTime_9
+PlayerHouseBedTime_4:
 # 464 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse SE_SUCCESS
 # 465 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -854,30 +856,30 @@ PlayerBedTime_4:
 # 469 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitse
 # 470 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox PlayerBedTime_Text_1
+	fadescreen FADE_FROM_BLACK
 # 471 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-	goto PlayerBedTime_1
+	msgbox PlayerHouseBedTime_Text_1
+	goto PlayerHouseBedTime_1
 
-PlayerBedTime_6:
+PlayerHouseBedTime_6:
 # 459 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_ROUTE103_WEATHER, 3
-	goto PlayerBedTime_4
+	goto PlayerHouseBedTime_4
 
-PlayerBedTime_7:
+PlayerHouseBedTime_7:
 # 460 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 3
-	goto PlayerBedTime_4
+	goto PlayerHouseBedTime_4
 
-PlayerBedTime_8:
+PlayerHouseBedTime_8:
 # 461 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 3
-	goto PlayerBedTime_4
+	goto PlayerHouseBedTime_4
 
-PlayerBedTime_9:
+PlayerHouseBedTime_9:
 # 462 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_PETALBURGLANDFILL_WEATHER, 3
-	goto PlayerBedTime_4
+	goto PlayerHouseBedTime_4
 
 
 PlayerRoomDadPrize::
@@ -1247,13 +1249,13 @@ PlayerBedSimple_Text_1:
 # 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "You rest for a while.$"
 
-PlayerBedTime_Text_0:
-# 448 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayerHouseBedTime_Text_0:
+# 449 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Set the wristwatch's alarm to which\n"
 	.string "time?$"
 
-PlayerBedTime_Text_1:
-# 470 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayerHouseBedTime_Text_1:
+# 471 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{PLAYER} wakes up.$"
 
 PlayerRoomDadPrize_Text_0:

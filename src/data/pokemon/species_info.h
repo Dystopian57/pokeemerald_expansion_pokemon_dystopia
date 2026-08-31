@@ -2552,7 +2552,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .catchRate = 180,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 66 : 96,
         .evYield_Defense = 1,
-        .itemRare = ITEM_NEVERMELTICE,
+        .itemRare = ITEM_STAR_PIECE,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 35,
         .friendship = 35,
