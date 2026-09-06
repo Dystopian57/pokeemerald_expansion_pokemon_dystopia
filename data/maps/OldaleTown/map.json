@@ -3,7 +3,7 @@
   "name": "OldaleTown",
   "layout": "LAYOUT_OLDALE_TOWN",
   "music": "MUS_RG_LAVENDER",
-  "region_map_section": "MAPSEC_OLDALE_TOWN",
+  "region_map_section": "MAPSEC_LOST_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_TOWN",
@@ -293,10 +293,10 @@
     {
       "local_id": "LOCALID_OLDALE_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 8,
-      "y": 9,
+      "x": 9,
+      "y": 11,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -354,7 +354,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldaleTruckRebel",
-      "flag": "0"
+      "flag": "oldalewarehouserebelscleared"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
@@ -367,7 +367,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldaleGrassRebel",
-      "flag": "0"
+      "flag": "oldalewarehouserebelscleared"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REBELFLAG",
@@ -457,8 +457,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "cigarrettepop"
+      "script": "DLCTeacherOutside",
+      "flag": "cigarettepop"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVONADMINF",
@@ -485,6 +485,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldalebyTruckItem",
       "flag": "FLAG_ITEM_OLDALE_BYTRUCK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIYURUI)",
+      "x": 0,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "DOLL_BATTLE"
     }
   ],
   "warp_events": [
@@ -898,6 +911,15 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "2",
       "script": "BalsamCallAfterWarehouse"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "3",
+      "script": "OldaleRivalDontLeaveOldaleto103"
     }
   ],
   "bg_events": [
@@ -1023,7 +1045,7 @@
     {
       "type": "sign",
       "x": 17,
-      "y": 17,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "OldaleDLCWindow"

@@ -25,6 +25,8 @@ script JoelTentZigzagoon {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL)
     msgbox(format("Giiiz!"))
+	if (flag(FLAG_SYS_POKEDEX_GET))
+	{setseenmon (SPECIES_ZIGZAGOON)}
 	releaseall
 }
 

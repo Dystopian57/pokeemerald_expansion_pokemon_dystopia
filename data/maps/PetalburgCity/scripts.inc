@@ -1554,3 +1554,158 @@ DayNightMusicPetalburgCity_11:
 	goto enddaynightpetalburgcity
 	goto DayNightMusicPetalburgCity_10
 
+
+OldaleWarehouseDevonReturn::
+# 781 "data/maps/PetalburgCity/scripts.pory"
+	setvar VAR_OLDALE_PHASE, 4
+	return
+
+
+PetalburgProgressChecks::
+# 787 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_JIMMYQUESTPROGRESS, 0
+	goto_if_eq PetalburgProgressChecks_3
+PetalburgProgressChecks_1:
+# 791 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_JIMMYQUESTPROGRESS, 0
+	goto_if_eq PetalburgProgressChecks_8
+PetalburgProgressChecks_6:
+# 795 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_JIMMYQUESTPROGRESS, 1
+	goto_if_eq PetalburgProgressChecks_14
+PetalburgProgressChecks_11:
+# 799 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_JIMMYQUESTPROGRESS, 2
+	goto_if_eq PetalburgProgressChecks_21
+PetalburgProgressChecks_18:
+# 803 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_JIMMYQUESTPROGRESS, 2
+	goto_if_eq PetalburgProgressChecks_28
+PetalburgProgressChecks_25:
+# 806 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_JIMMYQUESTPROGRESS, 3
+	goto_if_eq PetalburgProgressChecks_33
+PetalburgProgressChecks_32:
+# 812 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_SHARPYANDCAMELIAOLDALE, 0
+	goto_if_eq PetalburgProgressChecks_37
+PetalburgProgressChecks_35:
+# 815 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_SHARPYANDCAMELIAOLDALE, 0
+	goto_if_eq PetalburgProgressChecks_42
+PetalburgProgressChecks_40:
+# 818 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_SHARPYANDCAMELIAOLDALE, 1
+	goto_if_eq PetalburgProgressChecks_46
+PetalburgProgressChecks_45:
+# 825 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset foughtwarehousescavenger2, PetalburgProgressChecks_50
+PetalburgProgressChecks_48:
+# 828 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set foughtwarehousescavenger2, PetalburgProgressChecks_55
+PetalburgProgressChecks_53:
+# 830 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set foughtwarehousescavenger2, PetalburgProgressChecks_59
+	return
+
+PetalburgProgressChecks_2:
+	goto PetalburgProgressChecks_1
+
+PetalburgProgressChecks_3:
+# 787 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset conartistaskeddistract, PetalburgProgressChecks_2
+	goto PetalburgProgressChecks_1
+
+PetalburgProgressChecks_7:
+	goto PetalburgProgressChecks_6
+
+PetalburgProgressChecks_8:
+# 791 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set conartistaskeddistract, PetalburgProgressChecks_7
+	goto PetalburgProgressChecks_6
+
+PetalburgProgressChecks_12:
+	goto PetalburgProgressChecks_11
+
+PetalburgProgressChecks_13:
+# 795 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set ! betrayedconcordconartist, PetalburgProgressChecks_12
+	goto PetalburgProgressChecks_11
+
+PetalburgProgressChecks_14:
+# 795 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set conartistescaped, PetalburgProgressChecks_13
+	goto PetalburgProgressChecks_11
+
+PetalburgProgressChecks_19:
+	goto PetalburgProgressChecks_18
+
+PetalburgProgressChecks_20:
+# 799 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set helpedconcordconartist, PetalburgProgressChecks_19
+	goto PetalburgProgressChecks_18
+
+PetalburgProgressChecks_21:
+# 799 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set conartistescaped, PetalburgProgressChecks_20
+	goto PetalburgProgressChecks_18
+
+PetalburgProgressChecks_26:
+	goto PetalburgProgressChecks_25
+
+PetalburgProgressChecks_27:
+# 803 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set betrayedconcordconartist, PetalburgProgressChecks_26
+	goto PetalburgProgressChecks_25
+
+PetalburgProgressChecks_28:
+# 803 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set conartistescaped, PetalburgProgressChecks_27
+	goto PetalburgProgressChecks_25
+
+PetalburgProgressChecks_33:
+	goto PetalburgProgressChecks_32
+
+PetalburgProgressChecks_36:
+	goto PetalburgProgressChecks_35
+
+PetalburgProgressChecks_37:
+# 812 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset Sharpy103Rematch, PetalburgProgressChecks_36
+	goto PetalburgProgressChecks_35
+
+PetalburgProgressChecks_41:
+	goto PetalburgProgressChecks_40
+
+PetalburgProgressChecks_42:
+# 815 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set Sharpy103Rematch, PetalburgProgressChecks_41
+	goto PetalburgProgressChecks_40
+
+PetalburgProgressChecks_46:
+	goto PetalburgProgressChecks_45
+
+PetalburgProgressChecks_49:
+	goto PetalburgProgressChecks_48
+
+PetalburgProgressChecks_50:
+# 825 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset scavengergivesobjectspotter, PetalburgProgressChecks_49
+	goto PetalburgProgressChecks_48
+
+PetalburgProgressChecks_54:
+	goto PetalburgProgressChecks_53
+
+PetalburgProgressChecks_55:
+# 828 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset scavengergivesobjectspotter, PetalburgProgressChecks_54
+	goto PetalburgProgressChecks_53
+
+PetalburgProgressChecks_58:
+	return
+
+PetalburgProgressChecks_59:
+# 830 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set scavengergivesobjectspotter, PetalburgProgressChecks_58
+	return
+

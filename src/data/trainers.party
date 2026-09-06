@@ -9757,6 +9757,7 @@ AI: Basic Trainer
 Rolloon
 Level: 8
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Ball: ITEM_PARK_BALL
 Nature: Timid
 - Self-destruct
@@ -9797,7 +9798,7 @@ Larvitar
 Level: 9
 
 Swinub
-Level: 9
+Level: 10
 
 === TRAINER_OLDALEDEVONGRUNT_M ===
 Name: JERRY
@@ -9809,7 +9810,10 @@ Double Battle: No
 AI: Check Bad Move
 
 Manchine
-Level: 9
+Level: 10
+
+Poochain
+Level: 10
 
 === TRAINER_OLDALEDEVONGRUNT_F ===
 Name: KAREN
@@ -9820,9 +9824,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
+Helipip
+Level: 10
+
 Verdoom
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 10
 
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===

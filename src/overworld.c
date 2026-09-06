@@ -1180,6 +1180,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
+    else if (warp->mapGroup == MAP_GROUP(MAP_OLDALE_TOWN) && warp->mapNum == MAP_NUM(MAP_OLDALE_TOWN) && VarGet(VAR_OLDALE_PHASE) >= 2)
+        return MUS_LAVENDERHGSS;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }

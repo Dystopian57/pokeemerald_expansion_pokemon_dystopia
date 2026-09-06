@@ -250,6 +250,8 @@ script Route101Weather {
 	applymovement (5, moves(face_player))
 	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL) 
 	msgbox(format("Zig-ziiig!"))
+	if (flag(FLAG_SYS_POKEDEX_GET))
+	{setseenmon (SPECIES_ZIGZAGOON)}
 	releaseall
  }
 

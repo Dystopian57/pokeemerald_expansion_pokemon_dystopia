@@ -307,12 +307,12 @@
 #define warehousemanchine             0x113
 #define scavengergivesobjectspotter             0x114
 #define oldalescavengerandtrucksgone            0x115
-#define FLAG_RECEIVED_SOOTHE_BELL            0x116
-#define FLAG_RECEIVED_WHITE_HERB             0x117
-#define FLAG_RECEIVED_SOFT_SAND              0x118
+#define carrebelwarehouse            0x116
+#define foughtwarehousescavenger2             0x117
+#define researcher102              0x118
 #define FLAG_ENABLE_PROF_BIRCH_MATCH_CALL    0x119
-#define FLAG_RECEIVED_CLEANSE_TAG            0x11A
-#define FLAG_RECEIVED_FOCUS_BAND             0x11B
+#define watcheddevoninnshow            0x11A
+#define cigarettepop             0x11B
 #define FLAG_DECLINED_WALLY_BATTLE_MAUVILLE  0x11C
 #define FLAG_RECEIVED_DEVON_SCOPE            0x11D
 #define FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE  0x11E
@@ -1264,9 +1264,9 @@
 #define FLAG_ITEM_OLDALEWAREHOUSECOLD                                           0x4AB // Unused Flag
 #define FLAG_ITEM_OLDALEWAREHOUSEAPPLIANCE                                           0x4AC // Unused Flag
 #define FLAG_ITEM_WAREHOUSEWIRING                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
+#define FLAG_ITEM_WAREHOUSEDEVONBALLS                                           0x4AE // Unused Flag
+#define FLAG_ITEM_WAREHOUSECOFFEE                                           0x4AF // Unused Flag
+#define FLAG_ITEM_WAREHOUSETRASHCAN                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag

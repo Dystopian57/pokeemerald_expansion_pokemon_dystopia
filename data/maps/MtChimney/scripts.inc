@@ -4,7 +4,6 @@ MtChimney_MapScripts::
 	.byte 0
 
 MtChimney_OnTransition:
-	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
 	end
 
 MtChimney_OnResume:

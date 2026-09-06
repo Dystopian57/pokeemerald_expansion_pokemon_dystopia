@@ -25,3 +25,18 @@ script DayNightMusicRaltsSanctuary {
 
 enddaynightraltssanctuary:
 }
+//
+//it's exploring that odd tree with a hole. Ralts looks back, scared. Researcher: NOW!
+
+//check if player has full party, if they do then "come back when there's room in your party. I'm afraid
+//I can't let that Pokémon be transferred to your PC."
+
+//capture it please, here's 10 devon balls. after fight, if defeated, run checkitem, if no devon balls, researcher gives
+//an extra one "that is sure to catch it now that it's fainted". //giveitem Poké Ball x 1.
+
+//then: Catch it!. Dynchoice. Catch it, Don't catch it. If Catch it. Good. Now as for your reward...
+//If got Devon Dex: when I took a look at your Devon Dex earlier, I noticed you picked X as your starter...
+//If Purachu: I could not help but notice your first registered Pokémon was... Purachu. Surely you regret
+//the choice, no?
+//What would you say if I gave you the option to pick between two Devon-sanctioned starters? Bulbasynth
+//and Smothquil. 

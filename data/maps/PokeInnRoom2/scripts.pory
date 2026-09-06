@@ -41,8 +41,9 @@ script DevonInnSink {
 	msgbox(format("A simple and clean sink, equipped with some toiletries."))
 
 	checkplayergender
-	if(var(VAR_RESULT) == MALE){dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Drink water", "Wash face", "Brush teeth", "Shave", "Nothing")}
-	if(var(VAR_RESULT) == FEMALE){dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Drink water", "Wash face", "Brush teeth", "Brush hair", "Nothing")}
+	if(var(VAR_RESULT) == MALE){
+	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Drink water", "Wash face", "Brush teeth", "Shave", "Nothing")
+
 
 	if (var(VAR_RESULT) == 0) {
 	playse (SE_M_BUBBLE)
@@ -63,8 +64,7 @@ script DevonInnSink {
 	playse (SE_M_DIVE)
 	waitse
 	checkplayergender
-	if(var(VAR_RESULT) == MALE){playse (SE_M_DOUBLE_SLAP)}
-	if(var(VAR_RESULT) == FEMALE){playse (SE_M_ENCORE)}
+	playse (SE_M_DOUBLE_SLAP)
 	waitse
 	playse (SE_M_STAT_INCREASE)
 	msgbox(format("Feeling refreshed now."))
@@ -87,10 +87,7 @@ script DevonInnSink {
 
 
 	if (var(VAR_RESULT) == 3) {
-		checkplayergender
-		if(var(VAR_RESULT) == MALE)
-		
-		{playse (SE_REPEL)
+		playse (SE_REPEL)
 		waitse
 		playse (SE_M_SCRATCH)
 		waitse
@@ -100,10 +97,56 @@ script DevonInnSink {
 		waitse
 		playse (SE_M_DOUBLE_SLAP)
 		msgbox(format("Smooth like a Mudkip's belly."))
-		}
 
-		else
-		{
+	}
+
+	if (var(VAR_RESULT) == 4) {release}
+
+}
+
+	if(var(VAR_RESULT) == FEMALE){dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Drink water", "Wash face", "Brush teeth", "Brush hair", "Nothing")
+
+
+	if (var(VAR_RESULT) == 0) {
+	playse (SE_M_BUBBLE)
+	waitse
+	playse (SE_M_TOXIC)
+	waitse
+	playse (SE_M_TOXIC)
+	playse (SE_M_ABSORB_2)
+	msgbox(format("Haaa..."))
+	}
+
+	
+	if (var(VAR_RESULT) == 1) {
+	playse (SE_M_BUBBLE)
+	waitse
+	playse (SE_M_BUBBLE)
+	waitse
+	playse (SE_M_DIVE)
+	waitse
+	playse (SE_M_ENCORE)
+	waitse
+	playse (SE_M_STAT_INCREASE)
+	msgbox(format("Feeling refreshed now."))
+	}
+
+
+	if (var(VAR_RESULT) == 2) {
+	playse (SE_SUDOWOODO_SHAKE)
+	waitse
+	playse (SE_SUDOWOODO_SHAKE)
+	waitse
+	playse (SE_M_BUBBLE3)
+	waitse
+	playse (SE_A)
+	waitse
+	playse (SE_BALLOON_BLUE)
+	waitse
+	msgbox(format("They're clean like a Clamperl."))
+	}
+
+	if (var(VAR_RESULT) == 3) {
 		playse (SE_REPEL)
 		waitse
 		playse (SE_M_MIST)
@@ -112,17 +155,18 @@ script DevonInnSink {
 		waitse
 		msgbox(format("... slightly more presentable."))
 		}
-	}
 
 	if (var(VAR_RESULT) == 4) {release}
+}
 	release
 }
+
 //SE_M_BUBBLE2
 
 script DevonInnFreezer {
 	lock
 	if (!flag (claimedinnfreedrink))
-	{msgbox(format("There's a single drink in the freezer, behind a huge 'free' note..."))
+	{msgbox(format("There's a single drink in the freezer, behind a huge 'FOR FREE' note..."))
 		random (3)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 
@@ -159,16 +203,21 @@ script WallClock {
 
 
 script DevonShowFreetrial {
-	msgbox(format("This is a Devon Show's Free Trial! You may watch these episodes from Devon Shows for free!
+
+	if (flag(watcheddevoninnshow))
+	{msgbox (format("Your Devon Show Free Trial has timed out. Please come back later."))}
+
+	else{
+	msgbox(format("This is a Devon Show's Free Trial! You may watch one of these episodes from Devon Shows for free!
 	\p Which one would you like to watch?"))
 
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Love is Danger, Episode 8", "The Adventures of Super Substitute, Episode 34", "Gabby's Talk Show, Episode 18", "None")
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Love is Danger, Episode 8", "Super Sub Adventures, Episode 34", "Gabby's Talk Show, Episode 18", "None")
 
 			if (var(VAR_RESULT) == 3) {release}
 
 			if (var(VAR_RESULT) == 0) {
-
-			msgbox (format("Love is Danger, Episode 8: Till Pokémon do us part"))
+			setflag (watcheddevoninnshow)
+			msgbox (format("Love is Danger, Episode 8: Till Pokémon do us part."))
 			setspeaker ([SP_NAME_DRAMAACTRESS])
 			msgbox (format("{COLOR RED}Dear, I've reached my limit!\p
 			Our marriage is falling apart, and I'm tired of pretending otherwise!\p
@@ -183,6 +232,7 @@ script DevonShowFreetrial {
 
 			playmoncry (SPECIES_MACHAMP, CRY_MODE_NORMAL)
 			showmonpic(SPECIES_MACHAMP, 10,3)
+			setspeaker ([SP_NAME_DRAMAACTOR])
 			msgbox (format("{COLOR BLUE}When you received that Machamp from a trade!{COLOR DARK_GRAY}"))
 			hidemonpic
 			setspeaker ([SP_NAME_DRAMAACTRESS])
@@ -197,33 +247,37 @@ script DevonShowFreetrial {
 
 			setspeaker ([SP_NAME_DRAMAACTRESS])
 			msgbox(format("{COLOR RED}Machote, you too - you've never held me like that before…!  {COLOR DARK_GRAY}"))
-
+			playse (SE_M_ATTRACT2)
+			setspeaker ([SP_NAME_DRAMAACTRESS])
 			msgbox(format("{COLOR RED}O-oh, oh no... what are they doing!? I-I can't watch this anymore!{COLOR DARK_GRAY}"))
 			playse (SE_FLEE)
+			setspeaker ([SP_NAME_DRAMAACTRESS])
 			msgbox(format("{COLOR RED}UWAAAAH!!{COLOR DARK_GRAY}"))
 
 			setspeaker ([SP_NAME_DRAMAACTOR])
-			msgbox (format("{COLOR BLUE}Devon was right… Pokémon… they can't be trusted! Darling, wait!!” {COLOR DARK_GRAY}"))
+			msgbox (format("{COLOR BLUE}Devon was right… Pokémon… they can't be trusted! Darling, wait!! {COLOR DARK_GRAY}"))
 
 			hidemonpic
 			playse (SE_FLEE)
 			setspeaker (NULL)
 			msgbox (format("Will this steamy incident increase the gap between our protanist couple…?\p
 			Or will it serve as the patch needed to repair their relationship!?\p
-			Find out more in the next episode of 'Love is Danger!' Only under Devon Shows subscription!"))
+			Find out more in the next episode of 'Love is Danger!' Only on Devon Shows!"))
+			release
 			}
 
 		if (var(VAR_RESULT) == 1) {
-
+			setflag (watcheddevoninnshow)
 			showmonpic(SPECIES_SCRAFTY, 10,3)
 			setspeaker ([SP_NAME_SWAGGY])
-			msgbox(format("{COLOR RED}It's the end of the line, Super Substitute! We have the Super Stones
+			//playmoncry (SPECIES_SCRAFTY, CRY_MODE_NORMAL)
+			msgbox(format("{COLOR RED}It's the end of the line, Super Substitute! We have the Super Stones!
 			\p With them, we will be able to Super Evolve, and become the most powerful and DANGEROUS Pokémon
 			in all the world!{COLOR DARK_GRAY}"))
 
 			playmoncry (SPECIES_SCRAFTY, CRY_MODE_NORMAL)
 			msgbox(format("{COLOR RED}BWAA-HA-HA-HA!{COLOR DARK_GRAY}"))
-
+			hidemonpic
 			showmonpic(SPECIES_MELOETTA, 10,3)
 			setspeaker ([SP_NAME_SUPERSUBSTITUTE])
 			msgbox(format("{COLOR BLUE}Not if I can help it, Swaggy the Scrafty! Special Technique...{COLOR DARK_GRAY}"))
@@ -237,26 +291,27 @@ script DevonShowFreetrial {
 			playse (SE_M_COMET_PUNCH)
 			showmonpic(SPECIES_ALCREMIE_CLOVER, 10,3)
 			msgbox(format("{COLOR BLUE}SELF-DEFENSE STRIKE!{COLOR DARK_GRAY}"))
-
+			hidemonpic
 			showmonpic(SPECIES_SCRAFTY, 10,3)
 			setspeaker ([SP_NAME_SWAGGY])
 			playmoncry (SPECIES_SCRAFTY, CRY_MODE_WEAK)
 			msgbox(format("{COLOR RED}W-WAAH! Wait, how is that self-defense!? We didn't even attack you yet!{COLOR DARK_GRAY}"))
-		
+			hidemonpic		
 			showmonpic(SPECIES_MELOETTA, 10,3)
 			setspeaker ([SP_NAME_SUPERSUBSTITUTE])
 			msgbox(format("{COLOR BLUE}You silly Swaggy! Striking evil foes is always in self-defense!{COLOR DARK_GRAY}"))
-		
+			hidemonpic	
 			showmonpic(SPECIES_SCRAFTY, 10,3)
 			setspeaker ([SP_NAME_SWAGGY])
 			msgbox(format("{COLOR RED}Grr… if only I had taken a course on a Devon Learning Center... {COLOR LIGHT_GRAY}{SHADOW WHITE}applications open now...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
 			\p {COLOR RED}I would be smart enough to know that!\p But it doesn't matter - gang, let's SUPER EVOLVE! ORYAAAH…!{COLOR DARK_GRAY}"))
-		
+			hidemonpic	
 			showmonpic(SPECIES_MELOETTA, 10,3)
 			setspeaker ([SP_NAME_SUPERSUBSTITUTE])
+			playse (SE_PIN)
 			msgbox(format("{COLOR BLUE}Oh no! People at home, we must stop Swaggy and his gang from Super Evolving!
 			\p You know what to do - cheer me up! {COLOR DARK_GRAY}"))
-
+			hidemonpic
 				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Go, Super Substitute!", "...")
 
 					if (var(VAR_RESULT) == 0) {
@@ -282,7 +337,7 @@ script DevonShowFreetrial {
 		}
 
 		if (var(VAR_RESULT) == 2) {
-
+			setflag (watcheddevoninnshow)
 			setspeaker ([SP_NAME_GABBY])
 			msgbox(format("{COLOR RED}Welcome to Gabby's Talk Show! We are here tonight with miss Glacia,
 			former Hoenn Elite Four, and now one of the most accomplished Admins of Devon Co.
@@ -317,7 +372,7 @@ script DevonShowFreetrial {
 			setspeaker (NULL)
 			msgbox(format("Looks like this is the firt of many ads to come... better get going."))
 		}
-}
+}}
 
 
 
@@ -523,7 +578,7 @@ script OldalePokeCenterInnPrograms {
 		
 		lock
 		msgbox(format("Next up, we bring you some unfortunate news.\pAn accident in Mauville's Nuclear
-		Plant has claimed the lifes of 7 dozen Devon workers and 5 Safemon. Many others have been
+		Plant has claimed the lifes of 7 dozen Devon workers and 5 Safemon.\pMany others have been
 		injured, and some are in critical condition. \pIn a recent press conference, Plant Manager
 		Wattson has sent his condolences to the affected families, and has assured an investigation
 		into the incident is underway.\p Meanwhile, voices are being raised advocating for the phasing

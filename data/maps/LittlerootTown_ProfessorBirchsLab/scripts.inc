@@ -2628,7 +2628,7 @@ Littleroot_Idletalk_Prof_24:
 Littleroot_Idletalk_Prof_29:
 # 1353 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 2
-	goto_if_eq Littleroot_Idletalk_Prof_35
+	goto_if_ge Littleroot_Idletalk_Prof_35
 Littleroot_Idletalk_Prof_34:
 # 1358 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 5
@@ -2717,7 +2717,7 @@ Littleroot_Idletalk_Prof_62:
 Littleroot_Idletalk_Prof_75:
 # 1472 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	compare VAR_OLDALE_PHASE, 2
-	goto_if_eq Littleroot_Idletalk_Prof_90
+	goto_if_ge Littleroot_Idletalk_Prof_90
 	goto Littleroot_Idletalk_Prof_46
 
 Littleroot_Idletalk_Prof_50:
@@ -5088,7 +5088,7 @@ Littleroot_Idletalk_Prof_Text_38:
 Littleroot_Idletalk_Prof_Text_39:
 # 1456 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "They are told to keep trouble as far as\n"
-	.string "possible from fancy Rustboro...$"
+	.string "possible from fancy Neo Rustboro...$"
 
 Littleroot_Idletalk_Prof_Text_40:
 # 1459 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"

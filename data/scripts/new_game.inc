@@ -304,5 +304,7 @@ EventScript_ResetAllMapFlags::
 	setflag greatcraterrope
 	setflag sableyelairplayerbag
 	setflag spawnsableyelairboss
+	setflag carrebelwarehouse
+	setflag cigarettepop
 	call EventScript_ResetAllBerries
 	end

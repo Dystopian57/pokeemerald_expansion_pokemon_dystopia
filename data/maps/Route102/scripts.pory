@@ -116,8 +116,6 @@ mapscripts Route102_MapScripts {
 	MAP_SCRIPT_ON_LOAD: PopWeatherMon102
 	MAP_SCRIPT_ON_LOAD: DynamicWeather102}
 
-
-
 script DynamicWeather102 {
 		if (var(VAR_ROUTE102_WEATHER) == 0)
 		{random (10)
@@ -239,3 +237,157 @@ script Route102Weathermon {
 	release
 }
 
+script Route103ScientistFoundTracks {
+	    lock
+	    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+        playse (SE_PIN)
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+
+        msgbox(format("Halt a moment, my dear fellow! Those marks on the ground..."))
+
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 3, face_right))
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3, face_right))
+		waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+
+        msgbox(format("As I thought... they are the
+		unmistakable footprints of a Keckleon!\p Certainly not the Pokémon we are looking for - in fact,
+		I was not even aware they lived in these parts...\p And that, in itself, is a promising lead.\p
+		Pray follow the tracks, for they may lead us to a yet uncharted spot."))
+        setvar(VAR_102_SCIENTIST, 2)
+		release
+		}
+
+script Route102Scientist {
+	    lock
+	    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+        if(var(VAR_102_SCIENTIST) == 1){
+        msgbox(format("You are returned, which fills my heart with renewed hope!\pWill you assist me
+		with the search of the to-be-Safened Pokémon?"))
+		goto (scientistasksforhelp102)
+		}
+
+        if(var(VAR_102_SCIENTIST) == 0){
+        setvar(VAR_102_SCIENTIST, 1)
+        msgbox(format("Where is it, where is it...?"))
+        playse (SE_PIN)
+        applymovement (7, moves(face_player, emote_exclamation_mark))
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){
+		msgbox(format("Oh, hello there lad. I thought they had enclosed the road for me..."))}
+
+        if(var(VAR_RESULT) == FEMALE){
+		msgbox(format("Oh, hello there lad. I thought they had enclosed the road for me..."))}
+
+        msgbox(format("But this is most fortunate. You see, I work for Devon Co.'s Safemon
+		Department.\p I am here to acquire a dangerous Pokémon specimen, so that we at Devon Co.
+		may study it and convert it into a Safemon.\p Only thing is, this specimen possesses
+		telepathic powers."))
+
+        applymovement (7, moves(face_away_player))
+
+        msgbox(format("I theorize it's reading in my mind the desire to capture and study it, and thus
+		giving me a wide berth."))
+
+        applymovement (7, moves(face_player))
+
+        msgbox(format("Luckily, according to my theory, if I were to follow someone who
+		harbors no such desire...\pThen my thoughts may be cloaked behind theirs, and the
+		Pokémon may reveal itself.
+		\p You, who seem of rather... absent mind, should prove the perfect candidate to test my
+		theory.\p I am therefore compelled to ask for your assistance.\pI would duly compensate
+		you for your time, of course."))
+
+		scientistasksforhelp102:
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Help", "Don't help")
+        if(var(VAR_RESULT) == 0){msgbox(format("That's splendid! Together we shall take the next
+		step to make Hoenn a safer place.\p Lead the way then, kind youth. I shall follow.\p Ah, and
+		pray do not waste time combing through the tall grass or the deep sand.\p I have found no footprints
+		of the specimen in these places, and thus I conclude its lair must be in a secret enclave I am yet
+		to discover."))
+		
+		setfollowernpc (LOCALID_102_RESEARCHER, FNPC_ALL, Route102Scientistfollowchat, 0)
+        removeobject (7)
+        setflag (researcher102)
+		}
+
+        if(var(VAR_RESULT) == 1){
+        msgbox(format("Ah, most unfortunate... but I understand.\p You must be in a hurry, or have
+		moral concerns.\pStill, if you were to reconsider, I would be most grateful, for this road
+		is barely transited.\pIf you change your mind, let us rendezvous here anew. Take care."))
+		}}
+
+
+release
+
+}
+
+script Route102Scientistfollowchat {
+        lock
+		applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
+
+        msgbox(format("Yes? What is it, my young helper?"))
+
+		dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Where to?", "Which Pokémon is it?","All good?", "I'm leaving", "Nevermind")
+        if(var(VAR_RESULT) == 0){
+        msgbox(format("I wish I could offer such guidance. All I can say is I have examined all
+		the spots where Pokémon live in the vicinity.\p ... barring, that is, the half-built,
+		man-made structures.\pCould it have been a flagrant oversight...?"))
+		}
+
+        if(var(VAR_RESULT) == 1){
+        msgbox(format("Of course, how oblivious of me... the Pokémon I am looking for is a Ralts.\pI
+		have been told certain speciments of this species underwent a dangerous mutation after the war,
+		so its Safening is of the utmost priority."))
+
+			if (flag (FLAG_SYS_POKEDEX_GET))
+			{msgbox(format("I see you possess a Devon Dex. Let me register the Pokémon's visual
+			data in it."))
+			closemessage
+			
+			playse (SE_DEX_SCROLL)
+			waitse
+			playse (SE_DEX_SCROLL)
+			waitse
+			playse (SE_DEX_SEARCH)
+			waitse
+			playse (SE_DEX_PAGE)
+			waitse
+
+			setseenmon (SPECIES_WARTZ)
+
+			msgbox(format("You should be able to see it now. It may prove paramount in the search."))
+			
+			}
+
+		}
+
+        if(var(VAR_RESULT) == 2){
+        msgbox(format("Ah, it's kind of you to worry about me. Possibly on account of my age?\p
+		They warned me of the... 'contrarian' disposition of the inhabitans of these parts. \pBut
+		it seems said concerns were based on foundless prejudice.\p To answer your question - I am
+		hale. Let us continue our search."))
+		}
+
+        if(var(VAR_RESULT) == 3){
+        msgbox(format("Truly? That's most regrettable... I felt we were quite close to our goal.
+		\p I appreciate your time nonetheless. If you can spare some more, I shall be where
+		we first met."))
+
+		fadescreenswapbuffers (FADE_TO_BLACK)
+        destroyfollowernpc
+        addobject (7)
+        clearflag (researcher102)
+		fadescreenswapbuffers (FADE_FROM_BLACK)
+        setvar(VAR_102_SCIENTIST, 0)
+
+
+		}
+
+        if(var(VAR_RESULT) == 3){
+        msgbox(format("Pray do not dispair. We shall find the specimen in time."))
+		}
+
+		release
+		}

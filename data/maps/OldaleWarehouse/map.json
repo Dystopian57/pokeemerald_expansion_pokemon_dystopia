@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "OldaleWarehouseRebel1",
-      "flag": "0"
+      "flag": "oldalewarehouserebelscleared"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTF",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "OldaleWarehouseRebel2",
-      "flag": "0"
+      "flag": "oldalewarehouserebelscleared"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HELIPIPFLYING",
@@ -78,6 +78,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldaleWarehouseManchine",
       "flag": "warehousemanchine"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
+      "x": 6,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleWarehouseCarRebel",
+      "flag": "carrebelwarehouse"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRIKE)",
+      "x": 6,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "carrebelwarehouse"
     }
   ],
   "warp_events": [
@@ -174,6 +200,24 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "1",
       "script": "OldaleWarehouseManchine"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleWarehouseCarRebel"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleWarehouseCarRebel2"
     }
   ],
   "bg_events": [

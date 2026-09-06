@@ -127,6 +127,8 @@ script OldaleWarehouseHelipip {
     lock
 	playmoncry(SPECIES_HELIPIP, CRY_MODE_WEAK)
     msgbox(format("Piiiip... \p The Helipip is just blank staring ahead."))
+	if (flag(FLAG_SYS_POKEDEX_GET))
+	{setseenmon (SPECIES_HELIPIP)}
     releaseall
     }
 
@@ -161,3 +163,95 @@ script OldaleWarehouseToApplianceStorageSign {
     releaseall
     }
 
+
+script OldaleWarehouseCarRebel2 {
+
+	if (!flag (carrebelwarehouse))
+	{lock
+	playbgm (MUS_MONSTERHOUSE, TRUE)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Hey, YOU!"))
+    playse (SE_FLEE)
+	addobject (6)
+	applymovement (6, moves(walk_fast_right * 1, walk_fast_up * 5))
+	waitmovement (6)
+    msgbox (format("You're in deep trouble now! My Electrike is in TOP SHAPE!"))
+	playse (SE_BALL_OPEN)
+	addobject (7)
+	setobjectxy (7, 7, 7)
+	goto (continuewarehousecarrrebel)}
+}
+
+script OldaleWarehouseCarRebel {
+
+	if (!flag (carrebelwarehouse))
+	{lock
+	playbgm (MUS_MONSTERHOUSE, TRUE)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Hey, YOU!"))
+	closemessage
+    playse (SE_FLEE)
+	addobject (6)
+	applymovement (6, moves(walk_fast_up * 5))
+	waitmovement (6)
+    msgbox (format("You're in deep trouble now! My Electrike is in TOP SHAPE!"))
+	closemessage
+	playse (SE_BALL_OPEN)
+	addobject (7)
+	setobjectxy (7, 6, 7)
+	continuewarehousecarrrebel:
+	waitse
+	applymovement (7, moves(walk_in_place_fast_up * 5))
+	playmoncry (SPECIES_ELECTRIKE, CRY_MODE_HIGH_PITCH)
+	waitmovement (7)
+    msgbox (format("IIIIIKE!"))
+	if (flag(FLAG_SYS_POKEDEX_GET))
+	{setseenmon (SPECIES_ELECTRIKE)}
+	closemessage
+	fadeoutbgm (3)
+	playse (SE_M_TWISTER)
+	waitse
+	playse (SE_M_METRONOME)
+	applymovement (6, moves(emote_question_mark, walk_in_place_right, walk_in_place_left, walk_in_place_right, walk_in_place_left, walk_in_place_down))
+	waitse
+    msgbox (format("Wait... where's everyone?"))
+	applymovement (6, moves(walk_in_place_up))
+    msgbox (format("Oh... you beat them? And they just... left? Without telling me?"))
+
+	playmoncry (SPECIES_ELECTRIKE, CRY_MODE_WEAK)
+	applymovement (7, moves(walk_in_place_down))
+    msgbox (format("Iiike..."))
+
+	applymovement (6, moves(walk_in_place_up))
+    msgbox (format("... wow, what a bunch of losers - right, Ike?"))
+	applymovement (6, moves(walk_in_place_down))
+    msgbox (format("Let's go back to Petalburg, buddy. We'll make better pals."))
+
+	playse (SE_LEDGE)
+	applymovement (7, moves(jump_in_place_up_down * 1))
+	waitse
+	//playse (SE_LEDGE)
+	//applymovement (7, moves(jump_in_place_up_down * 1))
+	//waitse
+	playmoncry (SPECIES_ELECTRIKE, CRY_MODE_NORMAL)
+    msgbox (format("Iiike!"))
+	closemessage
+	applymovement (6, moves(walk_down * 7))
+
+	applymovement (7, moves(walk_down * 8))
+	waitmovement (6)
+	playse (SE_EXIT)
+
+	removeobject (6)
+	removeobject (7)
+
+	setflag (carrebelwarehouse)
+	setflag (carrebelatDC)
+	fadeinbgm (1)
+	playbgm (MUS_UNDERPIZZA, TRUE)
+	release}
+
+	else {release}
+	
+	release
+}

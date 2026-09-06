@@ -28,6 +28,8 @@ OldaleTownHouse2Annebrother_7:
 	compare VAR_JOELQUESTS, 3
 	goto_if_eq OldaleTownHouse2Annebrother_11
 OldaleTownHouse2Annebrother_10:
+# 30 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	applymovement 2, OldaleTownHouse2Annebrother_Movement_1
 # 31 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	releaseall
 	return
@@ -114,6 +116,12 @@ AnneHouseTrashBin2F_2:
 OldaleTownHouse2Annebrother_Movement_0:
 # 9 "data/maps/OldaleTown_House2_2F/scripts.pory"
 	face_player
+	step_end
+
+# 30 "data/maps/OldaleTown_House2_2F/scripts.pory"
+OldaleTownHouse2Annebrother_Movement_1:
+# 30 "data/maps/OldaleTown_House2_2F/scripts.pory"
+	face_down
 	step_end
 
 OldaleTownHouse2Annebrother_Text_0:

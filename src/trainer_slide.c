@@ -75,16 +75,28 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 
         [TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3] = 
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Alright, here it goes! Get ready, JANI! {PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("BILLY: Alright, here it goes! Get ready, JANI!\pJANI: Wait, you idiot - I need to SWITCH! {PAUSE_UNTIL_PRESS}"),
 
         },
 
-        [TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4] = 
+        [TRAINER_REBELADMIN_OLDALEWAREHOUSE] = 
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("JANI: Wait, you idiot! I need to SWITCH! {PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Get the win, Furmeister! {PAUSE_UNTIL_PRESS}"),
+
+        },
+
+
+        [TRAINER_OLDALEDEVONGRUNT_M] = 
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("You're violating Devon Co.'s Wildlife\nProtocol, section 75!\pPrepare to be arrested!{PAUSE_UNTIL_PRESS}"),
+
+        },
+
+        [TRAINER_OLDALEDEVONGRUNT_F] = 
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Last reinforcements - arriving! {PAUSE_UNTIL_PRESS}"),
 
         }
-
 
     
     },

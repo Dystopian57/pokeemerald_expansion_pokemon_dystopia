@@ -4,14 +4,22 @@ raw `
 
 mapscripts OldaleWarehouseUpper_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
-    MAP_SCRIPT_ON_LOAD: WarehouseUpperEventMusic
+    //MAP_SCRIPT_ON_LOAD: WarehouseUpperEventMusic
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
+    MAP_SCRIPT_ON_LOAD: TVOn
+    MAP_SCRIPT_ON_TRANSITION: TVOn
+    MAP_SCRIPT_ON_FRAME_TABLE: TVOn
+}
 
 
 
 script WarehouseUpperEventMusic {
 playbgm (MUS_PYRITETOWN, TRUE)
+}
+
+script TVOn {
+special (TurnOnTVScreen)
 }
 
 script OldaleWarehouseUpperRebelEventEntrance {
@@ -46,9 +54,11 @@ script OldaleWarehouseUpperRebelEventEntrance {
 	applymovement (4, moves(walk_up * 1))
     msgbox(format("Wait... you beat Rick and Lola downstairs?\pHeh... perhaps this'll be fun."))
 	applymovement (4, moves(walk_in_place_right))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
     msgbox(format("Jani, back me up! Let's do our COMBO!"))
 	applymovement (4, moves(walk_in_place_up))
 	applymovement (3, moves(walk_left * 2))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
     msgbox(format("I told you, if you pull that crap one more time...!"))
 
     trainerbattle_two_trainers (TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3, RebelGruntMWareHouseUpperOutro, TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4, RebelGruntFWareHouseUpperOutro)
@@ -79,14 +89,15 @@ script OldaleWarehouseUpperRebelEventEntrance {
 	applymovement (3, moves(jump_in_place_down))
 	applymovement (5, moves(jump_in_place_up))
 	applymovement (6, moves(jump_in_place_up))
+	applymovement (4, moves(jump_in_place_right))
 	msgbox(format("WITH REBELS!"))
 
 	trainerbattle_no_intro(TRAINER_REBELADMIN_OLDALEWAREHOUSE , RebelAdminWareHouseUpperOutro)
 
 	playbgm (MUS_MONSTERHOUSE, TRUE)
 	msgbox(format("Alright, you chump... if this were the old days, you'd have won already."))
-	applymovement (3, moves(face_right))
-	applymovement (2, moves(face_up))
+	applymovement (3, moves(walk_in_place_right))
+	applymovement (2, moves(walk_in_place_up))
 
 	playse (SE_FLEE)
 	applymovement (1, moves(walk_fast_right * 4, walk_in_place_left))
@@ -152,7 +163,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 	was supereffective!"))
 	msgbox(format("Calvin was right - you're quite sturdy! But one more ought to do it!"))
 	playse (SE_FLEE)
-	applymovement (1, moves(walk_fast_right * 4))
+	applymovement (1, moves(walk_fast_right * 4, walk_in_place_left))
 	goto (repeatwarehousetaurostackle)
 
 	}
@@ -166,16 +177,17 @@ script OldaleWarehouseUpperRebelEventEntrance {
 	applymovement (1, moves(walk_fast_left * 4))
 	waitse
 	playse (SE_M_JUMP_KICK)
+	applymovement (3, moves(walk_in_place_down))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_down * 1, walk_in_place_up))
 	applymovement (1, moves(walk_fast_left * 3))
 	waitmovement (1)
+	applymovement (3, moves(walk_in_place_left))
 	applymovement (4, moves(jump_in_place_up))
 	playse (SE_M_MEGA_KICK2)
 	call(WarehouseRebelAdminBigShake)
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1, walk_in_place_left))
 	msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
 	can't stop his momentum, and slams himself against the wall!"))
-
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1, walk_in_place_left))
 	playse (SE_PIN)
 	applymovement (4, moves(emote_exclamation_mark))
 	msgbox(format("B-boss! Are you alright!?"))
@@ -186,10 +198,10 @@ script OldaleWarehouseUpperRebelEventEntrance {
 
 	applymovement (1, moves(walk_in_place_right))
 	msgbox(format("You... you're going to have it now! See if you can dodge this!"))
-
+	playse (SE_M_TAKE_DOWN)
 	applymovement (1, moves(walk_in_place_slow_right))
 	waitmovement (1)
-	playse (SE_M_TAKE_DOWN)
+
 
 	msgbox(format("{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN}
 	extends his arms for a wide, short-distance ram!"))
@@ -198,6 +210,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 
 		if (var(VAR_RESULT) == 0) {
 		playse (SE_FLEE)
+		applymovement (3, moves(walk_in_place_down))
 		applymovement (1, moves(walk_fast_right * 1))
 		waitse
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
@@ -245,21 +258,24 @@ script OldaleWarehouseUpperRebelEventEntrance {
 		msgbox(format("You want this place so badly? Whatever. We're done with it anyway."))
 		applymovement (1, moves(walk_in_place_up))
 		msgbox(format("PACK IT UP, REBELS! We're going back to {COLOR GREEN}PETALBURG!"))
-
+		applymovement (3, moves(walk_right * 1, face_left))
 		applymovement (1, moves(walk_diag_northeast * 1, walk_up * 1))
+		waitmovement (1)
 		removeobject (1)
 		playse (SE_EXIT)
-		applymovement (3, moves(walk_right * 1, face_left))
 
-		fadenewbgm (1)
-		playbgm (MUS_UNDERPIZZA, TRUE)
 
-			applymovement (1, moves(walk_up * 2, walk_left * 1))
+
+
+			applymovement (3, moves(walk_left * 1, walk_in_place_up))
+			applymovement (2, moves(walk_up * 2, walk_left * 1, jump_in_place_left))
+			playse (SE_LEDGE)
+			waitmovement (2)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
 			setspeaker ([SP_NAME_CALVIN])
 			msgbox(format("Y-you heard the boss! Back to base!"))
-			applymovement (1, moves(jump_in_place_left))
-			waitmovement (1)
-
+		fadenewbgm (1)
+		playbgm (MUS_STOPTHIEF, TRUE)
 		goto (rebelsleaveupperwarehouse)
 		}
 
@@ -267,6 +283,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 		playse (SE_FLEE)
 		applymovement (1, moves(walk_fast_right * 1))
 		waitmovement
+		applymovement (3, moves(walk_in_place_down))
 		playse (SE_M_MEGA_KICK2)
 	    call(WarehouseRebelAdminShake)
 		waitse
@@ -284,8 +301,11 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			applymovement (1, moves(walk_in_place_slow_right))
 			waitse
 			playse (SE_M_DIZZY_PUNCH)
+			waitse
 			playse (SE_M_DIZZY_PUNCH)
+			waitse
 			playse (SE_M_DIZZY_PUNCH)
+			waitse
 			playse (SE_M_DIZZY_PUNCH)
 			waitse
 			msgbox(format("G-gah...!"))
@@ -300,11 +320,12 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			applymovement (1, moves(walk_slow_up * 1, face_left, face_up))
 			waitmovement (1)
 			applymovement (1, moves(walk_slow_right * 1))
-			applymovement (3, moves(walk_right * 1, face_left))
 			playse (SE_M_METRONOME)
-			applymovement (3, moves(emote_question_mark))
+			applymovement (3, moves(walk_right * 1, face_left, emote_question_mark))
+
 
 			msgbox(format("Uhm... boss? You're going to Tauros Tackle from downstairs?"))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
 			applymovement (1, moves(walk_slow_up * 1))
 			waitmovement (1)
 			removeobject (1)
@@ -331,8 +352,9 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			applymovement (2, moves(walk_up * 2, walk_left * 1))
 			setspeaker ([SP_NAME_CALVIN])
 			msgbox(format("A-as the second in command, I say..."))
-			applymovement (1, moves(jump_in_place_left))
-			waitmovement (1)
+			playse (SE_LEDGE)
+			applymovement (2, moves(jump_in_place_left))
+			waitmovement (2)
 			playbgm (MUS_STOPTHIEF, TRUE)
 
 			checkplayergender
@@ -341,6 +363,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 
 			rebelsleaveupperwarehouse:
 			playse (SE_FLEE)
+			//applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
 			applymovement (3, moves(walk_fast_up * 1))
 			waitmovement (3)
 			removeobject (3)
@@ -348,13 +371,16 @@ script OldaleWarehouseUpperRebelEventEntrance {
 
 
 			applymovement (2, moves(walk_fast_up * 1, walk_fast_left * 4, walk_fast_up * 1))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
 		    playse (SE_FLEE)
 			waitmovement (2)
 			removeobject (2)
 			playse (SE_EXIT)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
 
 
 			applymovement (4, moves(walk_fast_up * 2))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
 			waitmovement (4)
 			playse (SE_LEDGE)
 			applymovement (4, moves(jump_2_right))
@@ -365,17 +391,21 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			playse (SE_EXIT)
 
 			applymovement (6, moves(walk_fast_left * 1, walk_fast_up * 4, walk_fast_right * 1, walk_fast_up * 1))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
 		    playse (SE_FLEE)
 			waitmovement (6)
 			removeobject (6)
 			playse (SE_EXIT)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
 
 
 			applymovement (5, moves(walk_fast_up * 4, walk_fast_left * 3, walk_fast_up * 1))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
 		    playse (SE_FLEE)
 			waitmovement (5)
 			removeobject (5)
 			playse (SE_EXIT)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
 
 
 			addobject (2)
@@ -383,18 +413,31 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			applymovement (2, moves(walk_fast_down * 1))
 			waitmovement (2)
 			setspeaker ([SP_NAME_CALVIN])
+			waitse
+			playse (SE_EXIT)
+			waitse
 			msgbox(format("T-this is not over yet! You'll regret getting on our bad side, twerp!"))
+			closemessage
 			setspeaker (NULL)
 			applymovement (2, moves(walk_fast_up * 1))
 			waitmovement (2)
 			removeobject (2)
 		    playse (SE_EXIT)
-
+			//waitse
 
 			fadeoutbgm (1)
 			playbgm (MUS_UNDERPIZZA, TRUE)
 
 			setflag (oldalewarehouserebelscleared)
+			setflag (DLCclassends)
+			clearflag (DLCrecesstarts)
+			clearflag (cigarettepop)
+			clearflag (carrebelwarehouse)
+			setflag (camelianotoutsideDLC)
+			setflag (sharpynotinroute103)
+			setflag (conartistescaped)
+			setflag (devonbridgeguardgoestoconartist)
+			clearflag (FLAG_ITEM_OLDALE_BYTRUCK)
 			setvar (VAR_OLDALE_PHASE, 2)
 
 			}
@@ -433,4 +476,89 @@ script WarehouseRebelAdminBigShake {
 	setvar(VAR_0x8007, 4)  //@ shake delay
     playse (SE_M_BRICK_BREAK)
 	special(ShakeCamera)
+}
+
+
+script WarehouseDevonBallCrate {
+
+    if (var(VAR_MAUSOLEUM_HEXGIRL) <= 1)
+
+	{if (!flag (FLAG_ITEM_WAREHOUSEDEVONBALLS))
+	{	msgbox(format("There's a few unsealed balls in the crates. No one will miss them..."))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Take them", "Leave")
+
+	if (var(VAR_RESULT) == 0) {
+	giveitem (ITEM_POKE_BALL, 10)
+	setflag (FLAG_ITEM_WAREHOUSEDEVONBALLS)}
+
+	if (var(VAR_RESULT) == 1) {release}
+
+	}
+
+	else{
+	msgbox(format("Can't take all of the Devon Balls..."))}
+	}
+
+	else {
+	msgbox(format("A crate full of Devon Balls, still sealed."))
+	}
+
+release
+}
+
+
+script OldaleWarehouseUpperComputer {
+	lock
+	msgbox(format("The desktop's background features the warehouse's logo: a smiling Loadtad."))
+	release
+}
+
+script OldaleWarehouseUpperBookshelves {
+	lock
+	msgbox(format("It's full of accounting books and company guidelines."))
+	release
+}
+
+script OldaleWarehouseUpperExtinguisher {
+	lock
+	msgbox(format("A regular fire extinguisher."))
+	release
+}
+
+script OldaleWarehouseUpperPrinter {
+	lock
+	msgbox(format("There's many copies of a picture of Mister Stone.\pThe image has been edited
+	to make him look like a Mr. Mime."))
+	release
+}
+
+script OldaleWarehouseUpperCoffee {
+	lock
+	msgbox(format("For some reason, there's a can of coffee by the coffee machine..."))
+	if (!flag (FLAG_ITEM_WAREHOUSECOFFEE))
+		{giveitem (ITEM_HEAL_POWDER)	}
+	else {
+	msgbox(format("A coffee machine, Chesto brand."))
+	}
+	release
+}
+
+script OldaleWarehouseUpperTrashcan {
+	lock
+	msgbox(format("There's something here with footprints all over it..."))
+	if (!flag (FLAG_ITEM_WAREHOUSETRASHCAN))
+		{giveitem (ITEM_CLEAR_AMULET)	}
+	else {
+	msgbox(format("The trash can is empty."))
+	}
+	release
+}
+
+script OldaleWarehouseUpperSafemonNotice {
+	lock
+	showmonpic(SPECIES_LOADTAD, 10,3)
+	msgbox(format("{COLOR BLUE}Safemon Notice{COLOR DARK_GRAY}: To assist conditioning, do not feed Loadtads
+	until end of shift!"))
+	hidemonpic
+	release
 }

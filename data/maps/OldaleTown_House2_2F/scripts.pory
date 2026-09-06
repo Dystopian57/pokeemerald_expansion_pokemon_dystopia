@@ -27,7 +27,7 @@ script OldaleTownHouse2Annebrother {
     {
     msgbox(format("Let's go, Purachu. We're off to Rustboro!"))}
 	//foreshadowing... they don't argue again because money separates them
-
+	applymovement (2, moves(face_down))
 	releaseall
 }
 

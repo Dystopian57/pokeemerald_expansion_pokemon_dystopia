@@ -250,7 +250,7 @@ script Route103Shade {
 }
 
 script Route103Rain1 {
-	setweather (WEATHER_RAIN)
+	setweather (WEATHER_DOWNPOUR)
 	setvar(VAR_ROUTE103_WEATHER, 2)
 	fadeoutbgm (0)
 	playbgm (MUS_STORM, TRUE)
@@ -466,6 +466,7 @@ script Sharpy103 {
 		setflag (DLCclassends)
 		clearflag (DLCrecesstarts)
 		setflag (Sharpydefeatedat103)
+		setvar (VAR_SHARPYANDCAMELIAOLDALE, 1)
    		//setvar(VAR_OLDALE_PHASE, 3)
 		releaseall
 		if (var(VAR_ROUTE103_WEATHER) > 0)
@@ -940,7 +941,14 @@ script RiverFerryGuyUp {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (34, moves(face_player))
-	if (var(VAR_ROUTE103_WEATHER) > 0) {
+
+	if (var(VAR_ROUTE103_WEATHER) == 3) {
+		msgbox(format("I'm so sorry, kid! It's not safe to sail the river now - it's
+		raining too much!\p Come back when it rains less, or it doesn't at all, and I'd
+		be glad to take you!"))
+		}
+
+	if (var(VAR_ROUTE103_WEATHER) < 2) {
 		checkplayergender
 		if(var(VAR_RESULT) == MALE){
 		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lad?"))}
@@ -1134,6 +1142,8 @@ script FisherGuruRoute103 {
 	setflag (mudcrabcrawdaunt)
 	playse (SE_M_DIVE)
 	waitse
+	if (flag(FLAG_SYS_POKEDEX_GET))
+	{setseenmon (SPECIES_CRAWDAUNT)}
 
 	msgbox(format("AAH, CRAB BASKETS!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))

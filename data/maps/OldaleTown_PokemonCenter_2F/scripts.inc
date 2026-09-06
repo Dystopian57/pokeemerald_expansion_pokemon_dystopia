@@ -125,11 +125,11 @@ InnNPCStopsPlayerfromInn_8:
 # 51 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	playse SE_SHOP
 # 52 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
-	waitse
-# 53 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	removemoney 200
-# 54 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 53 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	updatemoneybox
+# 54 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	waitse
 # 55 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox InnNPCStopsPlayerfromInn_Text_5
 # 57 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"

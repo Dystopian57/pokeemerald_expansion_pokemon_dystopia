@@ -41,13 +41,21 @@ script OldaleWarehouseApplianceStorageScavenger2Trigger {
     lock
 	if (!flag (scavengergivesobjectspotter))
 	{
+
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     playbgm (MUS_ENCOUNTER_INTENSE, TRUE)
     playse (SE_PIN)
 	applymovement (2, moves(emote_exclamation_mark, face_player))
-	msgbox(format("W-what the!? What's with you, sneaking around like a Keckleon!?\pWell, this is our loot - and I'll
-    fight you over for it!"))
+		if (!flag (foughtwarehousescavenger2))
+		{
+		msgbox(format("W-what the!? What's with you, sneaking around like a Keckleon!?\pWell, this is our loot - and I'll
+		fight you over for it!"))
+		setflag (foughtwarehousescavenger2)}
+
+		else {msgbox(format("What? You're persistent... let me scavenge in peace!"))}
+
+
 	trainerbattle_no_intro(TRAINER_SCAVENGER_OLDALEWAREHOUSE_2 , ApplianceStorageScavenger2_Outro)
     playbgm (MUS_UNDERPIZZA, TRUE)
 	msgbox(format("You know what? You beat us fair and square... so you can have this."))
@@ -93,6 +101,18 @@ script OldaleWarehouseApplianceStorageGrayBox {
 	msgbox(format("The box is empty."))
 	release
 }
+
+script OldaleWarehouseApplianceStorageWallWire {
+	lock
+	msgbox(format("It's just a wire."))
+	release
+}
+
+script OldaleWarehouseApplianceStoragePC {
+	lock
+	msgbox(format("This dusty PC seems out of commission."))
+	release
+}
 script WarehouseExposedWiring {
 	if (!flag (FLAG_ITEM_WAREHOUSEWIRING))
 	{	msgbox(format("There's something below the exposed wiring..."))
@@ -116,6 +136,17 @@ script WarehouseExposedWiring {
 release
 }
 
+
+script WarehouseExposedWiringSide {
+	if (!flag (FLAG_ITEM_WAREHOUSEWIRING))
+	{	msgbox(format("There's something to the side of the exposed wiring... dangerously close
+	to the sparks."))}
+
+	else{
+	msgbox(format("Better not to touch this..."))}
+	
+	}
+
 script OldaleWarehouseApplianceStorageWeirdMachine {
 	lock
 	msgbox(format("An industrial-looking machine of unknown use."))
@@ -125,6 +156,12 @@ script OldaleWarehouseApplianceStorageWeirdMachine {
 script OldaleWarehouseApplianceStorageGasTerminal {
 	lock
 	msgbox(format("It's a terminal like the ones used in gas stations."))
+	release
+}
+
+script OldaleWarehouseApplianceLightPanel {
+	lock
+	msgbox(format("An encased light panel. It's under lock."))
 	release
 }
 

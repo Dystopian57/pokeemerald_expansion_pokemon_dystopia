@@ -18,7 +18,7 @@ AI: Basic Trainer
 
 Mimiyurui
 Quirky Nature
-Level: 5
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 SpA
 - Shadow Claw
@@ -36,14 +36,34 @@ Back Pic: MAY
 AI: Basic Trainer
 
 Mimiyurui
-Quirky Nature
-Level: 5
+Adamant Nature
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 SpA
 - Shadow Claw
 - Helping Hand
 - Substitute
 - Shadow Sneak
+
+Sandshrew
+Adamant Nature
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Rollout
+- Dig
+- Amnesia
+- Stealth Rock
+
+Snorunt
+Adamant Nature
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Bite
+- Fake Tears
+- Icy Wind
+- Facade
 
 === PARTNER_SHARPY ===
 Name: SHARPY

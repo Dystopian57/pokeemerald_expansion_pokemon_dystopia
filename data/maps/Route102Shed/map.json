@@ -37,6 +37,43 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route103ScientistShedTalk"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route103ScientistShedTalk"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route103ScientistShedTalk"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route103ScientistShedTalk"
+    }
+  ],
   "bg_events": []
 }

@@ -47,78 +47,86 @@ GreatCraterHotSpringsNumel::
 # 35 "data/maps/GreatCraterHotSprings/scripts.pory"
 	msgbox GreatCraterHotSpringsNumel_Text_0
 # 36 "data/maps/GreatCraterHotSprings/scripts.pory"
+	goto_if_set FLAG_SYS_POKEDEX_GET, GreatCraterHotSpringsNumel_2
+GreatCraterHotSpringsNumel_1:
+# 38 "data/maps/GreatCraterHotSprings/scripts.pory"
 	releaseall
 	return
 
+GreatCraterHotSpringsNumel_2:
+# 37 "data/maps/GreatCraterHotSprings/scripts.pory"
+	setseenmon SPECIES_NUMEL
+	goto GreatCraterHotSpringsNumel_1
+
 
 GreatCraterHotSpringsBathingladyknot::
-# 40 "data/maps/GreatCraterHotSprings/scripts.pory"
-	lockall
-# 41 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 3, GreatCraterHotSpringsBaldGuy_Movement_0
 # 42 "data/maps/GreatCraterHotSprings/scripts.pory"
-	msgbox GreatCraterHotSpringsBathingladyknot_Text_0
+	lockall
+# 43 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 3, GreatCraterHotSpringsBaldGuy_Movement_0
 # 44 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 3, GreatCraterHotSpringsBathingladyknot_Movement_0
-# 45 "data/maps/GreatCraterHotSprings/scripts.pory"
-	waitmovement 3
+	msgbox GreatCraterHotSpringsBathingladyknot_Text_0
 # 46 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 3, GreatCraterHotSpringsBathingladyknot_Movement_0
+# 47 "data/maps/GreatCraterHotSprings/scripts.pory"
+	waitmovement 3
+# 48 "data/maps/GreatCraterHotSprings/scripts.pory"
 	releaseall
 	return
 
 
 GreatCraterHotSpringsBathingladyloosehair::
-# 50 "data/maps/GreatCraterHotSprings/scripts.pory"
-	lockall
-# 51 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 2, GreatCraterHotSpringsBaldGuy_Movement_0
 # 52 "data/maps/GreatCraterHotSprings/scripts.pory"
-	msgbox GreatCraterHotSpringsBathingladyloosehair_Text_0
+	lockall
+# 53 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 2, GreatCraterHotSpringsBaldGuy_Movement_0
 # 54 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 2, GreatCraterHotSpringsBathingladyknot_Movement_0
-# 55 "data/maps/GreatCraterHotSprings/scripts.pory"
-	waitmovement 2
+	msgbox GreatCraterHotSpringsBathingladyloosehair_Text_0
 # 56 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 2, GreatCraterHotSpringsBathingladyknot_Movement_0
+# 57 "data/maps/GreatCraterHotSprings/scripts.pory"
+	waitmovement 2
+# 58 "data/maps/GreatCraterHotSprings/scripts.pory"
 	releaseall
 	return
 
 
 GreatCraterHotSpringsYoungerWoman::
-# 60 "data/maps/GreatCraterHotSprings/scripts.pory"
-	lock
-# 61 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 6, GreatCraterHotSpringsBaldGuy_Movement_0
 # 62 "data/maps/GreatCraterHotSprings/scripts.pory"
+	lock
+# 63 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 6, GreatCraterHotSpringsBaldGuy_Movement_0
+# 64 "data/maps/GreatCraterHotSprings/scripts.pory"
 	msgbox GreatCraterHotSpringsYoungerWoman_Text_0
-# 65 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 6, GreatCraterHotSpringsYoungerWoman_Movement_0
-# 66 "data/maps/GreatCraterHotSprings/scripts.pory"
-	waitmovement 6
 # 67 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 6, GreatCraterHotSpringsYoungerWoman_Movement_0
+# 68 "data/maps/GreatCraterHotSprings/scripts.pory"
+	waitmovement 6
+# 69 "data/maps/GreatCraterHotSprings/scripts.pory"
 	releaseall
 	return
 
 
 GreatCraterScaldOldman::
-# 71 "data/maps/GreatCraterHotSprings/scripts.pory"
-	lock
-# 72 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 7, GreatCraterHotSpringsBaldGuy_Movement_0
 # 73 "data/maps/GreatCraterHotSprings/scripts.pory"
+	lock
+# 74 "data/maps/GreatCraterHotSprings/scripts.pory"
+	applymovement 7, GreatCraterHotSpringsBaldGuy_Movement_0
+# 75 "data/maps/GreatCraterHotSprings/scripts.pory"
 	goto_if_unset hotspringguygavescald, GreatCraterScaldOldman_2
-# 81 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 83 "data/maps/GreatCraterHotSprings/scripts.pory"
 	msgbox GreatCraterScaldOldman_Text_1
 GreatCraterScaldOldman_1:
-# 82 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 84 "data/maps/GreatCraterHotSprings/scripts.pory"
 	applymovement 7, GreatCraterHotSpringsYoungerWoman_Movement_0
-# 83 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 85 "data/maps/GreatCraterHotSprings/scripts.pory"
 	releaseall
 	return
 
 GreatCraterScaldOldman_2:
-# 74 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 76 "data/maps/GreatCraterHotSprings/scripts.pory"
 	msgbox GreatCraterScaldOldman_Text_0
-# 78 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 80 "data/maps/GreatCraterHotSprings/scripts.pory"
 	giveitem ITEM_TM_SCALD
 	goto GreatCraterScaldOldman_1
 
@@ -129,15 +137,15 @@ GreatCraterHotSpringsBaldGuy_Movement_0:
 	face_player
 	step_end
 
-# 44 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 46 "data/maps/GreatCraterHotSprings/scripts.pory"
 GreatCraterHotSpringsBathingladyknot_Movement_0:
-# 44 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 46 "data/maps/GreatCraterHotSprings/scripts.pory"
 	face_down
 	step_end
 
-# 65 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 67 "data/maps/GreatCraterHotSprings/scripts.pory"
 GreatCraterHotSpringsYoungerWoman_Movement_0:
-# 65 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 67 "data/maps/GreatCraterHotSprings/scripts.pory"
 	face_up
 	step_end
 
@@ -170,7 +178,7 @@ GreatCraterHotSpringsNumel_Text_0:
 	.string "Num-num!$"
 
 GreatCraterHotSpringsBathingladyknot_Text_0:
-# 42 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 44 "data/maps/GreatCraterHotSprings/scripts.pory"
 	.string "When that huge Electrode fell in this\n"
 	.string "part of the forest, it revealed these\l"
 	.string "natural hot springs.\p"
@@ -178,20 +186,20 @@ GreatCraterHotSpringsBathingladyknot_Text_0:
 	.string "sometimes come out of bad ones.$"
 
 GreatCraterHotSpringsBathingladyloosehair_Text_0:
-# 52 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 54 "data/maps/GreatCraterHotSprings/scripts.pory"
 	.string "The water is warm... but not as warm as\n"
 	.string "back home.\p"
 	.string "And the sights are worse too!$"
 
 GreatCraterHotSpringsYoungerWoman_Text_0:
-# 62 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 64 "data/maps/GreatCraterHotSprings/scripts.pory"
 	.string "I'm a bit worried about Flannery... she\n"
 	.string "got so upset when Devon built that\l"
 	.string "thermal plant in our town.\p"
 	.string "I fear she may do something reckless...$"
 
 GreatCraterScaldOldman_Text_0:
-# 74 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 76 "data/maps/GreatCraterHotSprings/scripts.pory"
 	.string "While we travelled from Lavaridge to\n"
 	.string "this place, I had to spend some time\l"
 	.string "without taking hot baths - for the\l"
@@ -204,6 +212,6 @@ GreatCraterScaldOldman_Text_0:
 	.string "you.$"
 
 GreatCraterScaldOldman_Text_1:
-# 81 "data/maps/GreatCraterHotSprings/scripts.pory"
+# 83 "data/maps/GreatCraterHotSprings/scripts.pory"
 	.string "Now you can make your own little\n"
 	.string "Lavaridge, everywhere you go! Ho ho...$"

@@ -716,7 +716,7 @@ script OldaleTown_Mart_Clerk {
 	applymovement (10, moves (face_player))
 	msgbox(format("Welcome to Devon Mall! How may I help you?"))
 	waitmessage
-	goto_if_set (FLAG_ADVENTURE_STARTED, OldaleTown_Mart_PostWarehouse)
+	goto_if_set (oldalewarehouserebelscleared, OldaleTown_Mart_PostWarehouse)
 	pokemart (OldaleTown_Mart_Pokemart_PreWarehouse)
 
 	if (flag (oldalecenterwarehousecomplaint))
@@ -769,7 +769,7 @@ script OldaleTown_Mart_PostWarehouse {
 			ITEM_POTION
 			ITEM_SUPER_POTION
 			ITEM_REMEDY
-			ITEM_REVIVE
+			ITEM_REVIVAL_HERB
 			ITEM_HONEY
 			ITEM_POKE_TOY }
 
@@ -811,6 +811,7 @@ script OldalePokeCenterMapBoyDay {
 	the {COLOR GREEN}'Rebel Zone'{COLOR DARK_GRAY}. \p It's a dangerous place where people who hate Devon have gathered,
 	and you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} to get out of it."))
 	applymovement (6, moves(face_up))
+	waitmovement (6)
     releaseall
     }
 

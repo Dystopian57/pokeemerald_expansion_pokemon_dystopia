@@ -776,3 +776,59 @@ script DayNightMusicPetalburgCity {
 
 enddaynightpetalburgcity:
 }
+
+script OldaleWarehouseDevonReturn {
+	setvar(VAR_OLDALE_PHASE, 4)
+}
+script PetalburgProgressChecks {
+
+		//JIMMY
+
+		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && !flag(conartistaskeddistract)) //this means Player never interacted
+		//with Jimmy
+		{}
+
+		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && flag(conartistaskeddistract)) //this means Jimmy asked for help
+		//but player never helped him
+		{}
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 1 && flag(conartistescaped) && flag(!betrayedconcordconartist)) //this means Player helped Jimmy but cleared Warehouse
+		//before getting reward from Jimmy, so he gives Tamarakku egg: "I never thanked you!"
+		{}
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(helpedconcordconartist)) //this means Player helped Jimmy and obtained egg
+   		//Jimmy has Player's number so he can call them
+		{}
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(betrayedconcordconartist)) //this means Player betrayed Jimmy
+		{}	
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 3){}	//Player helped Jimmy and even bought Exeggcute egg
+
+		//regardless of result, setvar (VAR_JIMMYQUESTPROGRESS, 4)
+
+		//SHARPY AND CAMELIA
+
+		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 0 && !flag(Sharpy103Rematch)) //never event went to fight Sharpy
+				{}
+
+		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 0 && flag(Sharpy103Rematch)) //fought Sharpy but lost
+				{}
+
+		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 1) //fought Sharpy and won
+				{}
+
+		//regardless of result, setvar (VAR_SHARPYANDCAMELIAOLDALE, 2)
+
+		//HARDWARE STORE
+
+		if (!flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
+		//never met scavengers
+
+		if (flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
+		//lost against scavenger F
+		if (flag (foughtwarehousescavenger2) && flag(scavengergivesobjectspotter)) {}
+		//how's that object spotter treating you.
+}
+
+//clearflag (cigarettepop)

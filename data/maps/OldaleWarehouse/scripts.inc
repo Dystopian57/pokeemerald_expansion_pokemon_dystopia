@@ -204,60 +204,233 @@ OldaleWarehouseHelipip::
 # 129 "data/maps/OldaleWarehouse/scripts.pory"
 	msgbox OldaleWarehouseHelipip_Text_0
 # 130 "data/maps/OldaleWarehouse/scripts.pory"
+	goto_if_set FLAG_SYS_POKEDEX_GET, OldaleWarehouseHelipip_2
+OldaleWarehouseHelipip_1:
+# 132 "data/maps/OldaleWarehouse/scripts.pory"
 	releaseall
 	return
 
+OldaleWarehouseHelipip_2:
+# 131 "data/maps/OldaleWarehouse/scripts.pory"
+	setseenmon SPECIES_HELIPIP
+	goto OldaleWarehouseHelipip_1
+
 
 OldaleWarehouseLoadtad::
-# 134 "data/maps/OldaleWarehouse/scripts.pory"
-	lock
-# 135 "data/maps/OldaleWarehouse/scripts.pory"
-	playmoncry SPECIES_LOADTAD, CRY_MODE_WEAK
 # 136 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox OldaleWarehouseLoadtad_Text_0
+	lock
 # 137 "data/maps/OldaleWarehouse/scripts.pory"
+	playmoncry SPECIES_LOADTAD, CRY_MODE_WEAK
+# 138 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseLoadtad_Text_0
+# 139 "data/maps/OldaleWarehouse/scripts.pory"
 	releaseall
 	return
 
 
 OldaleWarehouseForklift::
-# 141 "data/maps/OldaleWarehouse/scripts.pory"
-	lock
-# 142 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox OldaleWarehouseForklift_Text_0
 # 143 "data/maps/OldaleWarehouse/scripts.pory"
+	lock
+# 144 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseForklift_Text_0
+# 145 "data/maps/OldaleWarehouse/scripts.pory"
 	releaseall
 	return
 
 
 OldaleWarehouseSealedbox::
-# 147 "data/maps/OldaleWarehouse/scripts.pory"
-	lock
-# 148 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox OldaleWarehouseSealedbox_Text_0
 # 149 "data/maps/OldaleWarehouse/scripts.pory"
+	lock
+# 150 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseSealedbox_Text_0
+# 151 "data/maps/OldaleWarehouse/scripts.pory"
 	releaseall
 	return
 
 
 OldaleWarehouseToColdStorageSign::
-# 153 "data/maps/OldaleWarehouse/scripts.pory"
-	lock
-# 154 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox OldaleWarehouseToColdStorageSign_Text_0
 # 155 "data/maps/OldaleWarehouse/scripts.pory"
+	lock
+# 156 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseToColdStorageSign_Text_0
+# 157 "data/maps/OldaleWarehouse/scripts.pory"
 	releaseall
 	return
 
 
 OldaleWarehouseToApplianceStorageSign::
-# 159 "data/maps/OldaleWarehouse/scripts.pory"
-	lock
-# 160 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox OldaleWarehouseToApplianceStorageSign_Text_0
 # 161 "data/maps/OldaleWarehouse/scripts.pory"
+	lock
+# 162 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseToApplianceStorageSign_Text_0
+# 163 "data/maps/OldaleWarehouse/scripts.pory"
 	releaseall
 	return
+
+
+OldaleWarehouseCarRebel2::
+# 169 "data/maps/OldaleWarehouse/scripts.pory"
+	goto_if_unset carrebelwarehouse, OldaleWarehouseCarRebel2_1
+	return
+
+OldaleWarehouseCarRebel2_1:
+# 170 "data/maps/OldaleWarehouse/scripts.pory"
+	lock
+# 171 "data/maps/OldaleWarehouse/scripts.pory"
+	playbgm MUS_MONSTERHOUSE, TRUE
+# 172 "data/maps/OldaleWarehouse/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 173 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel2_Text_0
+# 174 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_FLEE
+# 175 "data/maps/OldaleWarehouse/scripts.pory"
+	addobject 6
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 6, OldaleWarehouseCarRebel2_Movement_0
+# 177 "data/maps/OldaleWarehouse/scripts.pory"
+	waitmovement 6
+# 178 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel2_Text_1
+# 179 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_BALL_OPEN
+# 180 "data/maps/OldaleWarehouse/scripts.pory"
+	addobject 7
+# 181 "data/maps/OldaleWarehouse/scripts.pory"
+	setobjectxy 7, 7, 7
+# 182 "data/maps/OldaleWarehouse/scripts.pory"
+	goto continuewarehousecarrrebel
+	return
+
+
+OldaleWarehouseCarRebel::
+# 187 "data/maps/OldaleWarehouse/scripts.pory"
+	goto_if_unset carrebelwarehouse, OldaleWarehouseCarRebel_2
+# 254 "data/maps/OldaleWarehouse/scripts.pory"
+	release
+OldaleWarehouseCarRebel_1:
+# 256 "data/maps/OldaleWarehouse/scripts.pory"
+	release
+	return
+
+OldaleWarehouseCarRebel_2:
+# 188 "data/maps/OldaleWarehouse/scripts.pory"
+	lock
+# 189 "data/maps/OldaleWarehouse/scripts.pory"
+	playbgm MUS_MONSTERHOUSE, TRUE
+# 190 "data/maps/OldaleWarehouse/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 191 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel2_Text_0
+# 192 "data/maps/OldaleWarehouse/scripts.pory"
+	closemessage
+# 193 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_FLEE
+# 194 "data/maps/OldaleWarehouse/scripts.pory"
+	addobject 6
+# 195 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 6, OldaleWarehouseCarRebel_Movement_0
+# 196 "data/maps/OldaleWarehouse/scripts.pory"
+	waitmovement 6
+# 197 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel2_Text_1
+# 198 "data/maps/OldaleWarehouse/scripts.pory"
+	closemessage
+# 199 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_BALL_OPEN
+# 200 "data/maps/OldaleWarehouse/scripts.pory"
+	addobject 7
+# 201 "data/maps/OldaleWarehouse/scripts.pory"
+	setobjectxy 7, 6, 7
+# 202 "data/maps/OldaleWarehouse/scripts.pory"
+continuewarehousecarrrebel:
+# 203 "data/maps/OldaleWarehouse/scripts.pory"
+	waitse
+# 204 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 7, OldaleWarehouseCarRebel_Movement_1
+# 205 "data/maps/OldaleWarehouse/scripts.pory"
+	playmoncry SPECIES_ELECTRIKE, CRY_MODE_HIGH_PITCH
+# 206 "data/maps/OldaleWarehouse/scripts.pory"
+	waitmovement 7
+# 207 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel_Text_0
+# 208 "data/maps/OldaleWarehouse/scripts.pory"
+	goto_if_set FLAG_SYS_POKEDEX_GET, OldaleWarehouseCarRebel_6
+OldaleWarehouseCarRebel_5:
+# 210 "data/maps/OldaleWarehouse/scripts.pory"
+	closemessage
+# 211 "data/maps/OldaleWarehouse/scripts.pory"
+	fadeoutbgm 3
+# 212 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_M_TWISTER
+# 213 "data/maps/OldaleWarehouse/scripts.pory"
+	waitse
+# 214 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_M_METRONOME
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 6, OldaleWarehouseCarRebel_Movement_2
+# 216 "data/maps/OldaleWarehouse/scripts.pory"
+	waitse
+# 217 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel_Text_1
+# 218 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 6, OldaleWarehouseCarRebel_Movement_3
+# 219 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel_Text_2
+# 221 "data/maps/OldaleWarehouse/scripts.pory"
+	playmoncry SPECIES_ELECTRIKE, CRY_MODE_WEAK
+# 222 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 7, OldaleWarehouseCarRebel_Movement_4
+# 223 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel_Text_3
+# 225 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 6, OldaleWarehouseCarRebel_Movement_3
+# 226 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel_Text_4
+# 227 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 6, OldaleWarehouseCarRebel_Movement_4
+# 228 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel_Text_5
+# 230 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_LEDGE
+# 231 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 7, OldaleWarehouseCarRebel_Movement_5
+# 232 "data/maps/OldaleWarehouse/scripts.pory"
+	waitse
+# 236 "data/maps/OldaleWarehouse/scripts.pory"
+	playmoncry SPECIES_ELECTRIKE, CRY_MODE_NORMAL
+# 237 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox OldaleWarehouseCarRebel_Text_6
+# 238 "data/maps/OldaleWarehouse/scripts.pory"
+	closemessage
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 6, OldaleWarehouseCarRebel_Movement_6
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	applymovement 7, OldaleWarehouseCarRebel_Movement_7
+# 242 "data/maps/OldaleWarehouse/scripts.pory"
+	waitmovement 6
+# 243 "data/maps/OldaleWarehouse/scripts.pory"
+	playse SE_EXIT
+# 245 "data/maps/OldaleWarehouse/scripts.pory"
+	removeobject 6
+# 246 "data/maps/OldaleWarehouse/scripts.pory"
+	removeobject 7
+# 248 "data/maps/OldaleWarehouse/scripts.pory"
+	setflag carrebelwarehouse
+# 249 "data/maps/OldaleWarehouse/scripts.pory"
+	setflag carrebelatDC
+# 250 "data/maps/OldaleWarehouse/scripts.pory"
+	fadeinbgm 1
+# 251 "data/maps/OldaleWarehouse/scripts.pory"
+	playbgm MUS_UNDERPIZZA, TRUE
+# 252 "data/maps/OldaleWarehouse/scripts.pory"
+	release
+	goto OldaleWarehouseCarRebel_1
+
+OldaleWarehouseCarRebel_6:
+# 209 "data/maps/OldaleWarehouse/scripts.pory"
+	setseenmon SPECIES_ELECTRIKE
+	goto OldaleWarehouseCarRebel_5
 
 
 # 47 "data/maps/OldaleWarehouse/scripts.pory"
@@ -286,6 +459,122 @@ OldaleWarehouseManchineTrigger_Movement_2:
 	face_left
 	step_end
 
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel2_Movement_0:
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_right
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 176 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+	step_end
+
+# 195 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_0:
+# 195 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 195 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 195 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 195 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+# 195 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_fast_up
+	step_end
+
+# 204 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_1:
+# 204 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_fast_up
+# 204 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_fast_up
+# 204 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_fast_up
+# 204 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_fast_up
+# 204 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_fast_up
+	step_end
+
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_2:
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+	emote_question_mark
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_right
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_left
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_right
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_left
+# 215 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_down
+	step_end
+
+# 218 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_3:
+# 218 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_up
+	step_end
+
+# 222 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_4:
+# 222 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_in_place_down
+	step_end
+
+# 231 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_5:
+# 231 "data/maps/OldaleWarehouse/scripts.pory"
+	jump_in_place_up_down
+	step_end
+
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_6:
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 239 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+	step_end
+
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+OldaleWarehouseCarRebel_Movement_7:
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+# 241 "data/maps/OldaleWarehouse/scripts.pory"
+	walk_down
+	step_end
+
 OldaleWarehouseRebel1_Text_0:
 # 14 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "When society goes to shit, it's easier\n"
@@ -310,27 +599,67 @@ OldaleWarehouseHelipip_Text_0:
 	.string "The Helipip is just blank staring ahead.$"
 
 OldaleWarehouseLoadtad_Text_0:
-# 136 "data/maps/OldaleWarehouse/scripts.pory"
+# 138 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "Tad-tad...!\p"
 	.string "With no guidance, the Loadtad is\n"
 	.string "aimlessly carrying a crate around.$"
 
 OldaleWarehouseForklift_Text_0:
-# 142 "data/maps/OldaleWarehouse/scripts.pory"
+# 144 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "The forklift shows signs of recent\n"
 	.string "misuse.$"
 
 OldaleWarehouseSealedbox_Text_0:
-# 148 "data/maps/OldaleWarehouse/scripts.pory"
+# 150 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "A sealed box. Better not to open it.$"
 
 OldaleWarehouseToColdStorageSign_Text_0:
-# 154 "data/maps/OldaleWarehouse/scripts.pory"
+# 156 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "To Cold Storage.$"
 
 OldaleWarehouseToApplianceStorageSign_Text_0:
-# 160 "data/maps/OldaleWarehouse/scripts.pory"
+# 162 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "To Appliance Storage.$"
+
+OldaleWarehouseCarRebel2_Text_0:
+# 173 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "Hey, YOU!$"
+
+OldaleWarehouseCarRebel2_Text_1:
+# 178 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "You're in deep trouble now! My Electrike\n"
+	.string "is in TOP SHAPE!$"
+
+OldaleWarehouseCarRebel_Text_0:
+# 207 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "IIIIIKE!$"
+
+OldaleWarehouseCarRebel_Text_1:
+# 217 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "Wait... where's everyone?$"
+
+OldaleWarehouseCarRebel_Text_2:
+# 219 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "Oh... you beat them? And they just...\n"
+	.string "left? Without telling me?$"
+
+OldaleWarehouseCarRebel_Text_3:
+# 223 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "Iiike...$"
+
+OldaleWarehouseCarRebel_Text_4:
+# 226 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "... wow, what a bunch of losers - right,\n"
+	.string "Ike?$"
+
+OldaleWarehouseCarRebel_Text_5:
+# 228 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "Let's go back to Petalburg, buddy. We'll\n"
+	.string "make better pals.$"
+
+OldaleWarehouseCarRebel_Text_6:
+# 237 "data/maps/OldaleWarehouse/scripts.pory"
+	.string "Iiike!$"
 
 WarehouseRebel1_Intro::
 # 20 "data/maps/OldaleWarehouse/scripts.pory"

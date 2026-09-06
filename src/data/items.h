@@ -592,7 +592,7 @@ const struct Item gItemsInfo[] =
     [ITEM_PARK_BALL] =
     {
         .name = ITEM_NAME("Damaged Ball"),
-        .price = 0,
+        .price = 100,
         .description = COMPOUND_STRING(
             "A Pokéball that\n"
             "was damaged during\n"

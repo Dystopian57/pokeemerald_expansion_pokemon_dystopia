@@ -104,17 +104,18 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "local_id": "LOCALID_102_RESEARCHER",
+      "graphics_id": "OBJ_EVENT_GFX_DEVONRESEARCHERM",
       "x": 50,
       "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route102Scientist",
+      "flag": "researcher102"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDSHREW)",
@@ -181,16 +182,45 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": [
+  "coord_events": [
     {
-      "type": "sign",
-      "x": 48,
-      "y": 21,
+      "type": "trigger",
+      "x": 32,
+      "y": 12,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route102_EventScript_RouteSignOldale"
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route103ScientistFoundTracks"
     },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route103ScientistFoundTracks"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route103ScientistFoundTracks"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route103ScientistFoundTracks"
+    }
+  ],
+  "bg_events": [
     {
       "type": "secret_base",
       "x": 36,

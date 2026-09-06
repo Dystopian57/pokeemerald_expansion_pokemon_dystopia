@@ -49,9 +49,9 @@ script InnNPCStopsPlayerfromInn {
             	checkmoney (200)
 				if (var(VAR_RESULT) == TRUE) {
                     playse (SE_SHOP)
-                    waitse
 					removemoney (200)
 					updatemoneybox
+                    waitse
 					msgbox(format("You are in Room 1. Here's your Guest Key - use it on the door
 					to enter."))
 					hidemoneybox

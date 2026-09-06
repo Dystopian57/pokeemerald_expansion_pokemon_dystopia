@@ -1,0 +1,30 @@
+raw `
+Route102Shed_MapScripts::
+	.byte 0
+
+`
+
+script Route103ScientistShedTalk {
+	    lock
+	    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+        playse (SE_PIN)
+
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+        msgbox(format("Most intriguing..."))
+
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_right))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_left))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_down))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+
+        msgbox(format("This must be the supply shed the builders of Road 002 were using."))
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+        msgbox(format("I see a bizarre cavity on the northern wall of the shed. Let us explore further."))
+        setvar(VAR_102_SCIENTIST, 3)
+		release
+		}
