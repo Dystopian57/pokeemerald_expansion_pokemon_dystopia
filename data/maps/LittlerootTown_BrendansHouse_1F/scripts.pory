@@ -834,7 +834,7 @@ if(!(flag(FLAG_SYS_POKEMON_GET)))
 it could be defeated or caught..."))}
 if((flag(FLAG_SYS_POKEMON_GET)) && !(flag(SinkNinkaburiGone)))
 {msgbox (format("A NINKABURI appears boldly from below the sink!"))
-	setwildbattle(SPECIES_NINKABURI, 2)
+	setwildbattle(SPECIES_NINKABURI, 5)
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	waitmessage

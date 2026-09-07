@@ -63,7 +63,9 @@ script WaterfallHazardDiverRegister {
     waitse
     playmoncry (SPECIES_SHELLDER, CRY_MODE_WEAK)
 	msgbox(format("S-sheee..."))
-    applymovement (4, moves(face_left))
+	playse (SE_PUDDLE)
+    applymovement (4, moves(walk_in_place_left *5))
+
 	msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}The diver begins to search for something
     inside the Pokémon's shell...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
     playse (SE_PUDDLE)
@@ -77,6 +79,7 @@ script WaterfallHazardDiverRegister {
     applymovement (1, moves(face_right))
 	waitmovement (1)
 	playse (SE_BALL_OPEN)
+	hideobjectat (4, MAP_WATERFALL_CAVE)
 	waitse
     applymovement (1, moves(face_down))
 	waitmovement (1)
@@ -125,7 +128,7 @@ script WaterfallMercenaryFBattle {
 	trainerbattle_single(TRAINER_ROSE_1, WaterfallMercenaryF_Intro, WaterfallMercenaryF_Outro, WaterfallMercenaryFRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, WaterfallMercenaryFRematch)
-	msgbox(format("Next time, I'll get you. And that geezer.\p And then I'll get out of this shithole."))
+	msgbox(format("Next time, I'll get you. And that geezer.\p And then... I'll finally be back home."))
 	//msgbox(format("I'm not in the mood to talk. Just move along so I can go back to
 	//my training."))
 	release

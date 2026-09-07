@@ -6,7 +6,7 @@ raw `
 
 mapscripts GreatCrater_MapScripts {
     MAP_SCRIPT_ON_LOAD: GreatCraterWeather
-    //MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater
+    MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater
     //MAP_SCRIPT_ON_LOAD: RedoTouristWarning
     MAP_SCRIPT_ON_TRANSITION: RedoTouristWarning
     //MAP_SCRIPT_ON_FRAME_TABLE: RedoTouristWarning
@@ -21,7 +21,7 @@ script RedoTouristWarning {
 	if (var(VAR_GREATCRATERTOURIST) == 1)
 	{setvar(VAR_GREATCRATERTOURIST, 0)}
 
-	else {release}
+
 	}
 
 
@@ -442,8 +442,8 @@ script ConspiracyGreatCraterBattle {
 	trainerbattle_single(TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro, ConspiracyGreatCrater_Outro, ConspiracyGreatCraterRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, ConspiracyGreatCraterRematch)
-	msgbox(format("Sorry, but my device has been compromised. You'll have to learn the
-	truth elsewhere!"))
+	msgbox(format("Sorry, but my device has been compromised.\p You'll have to learn the
+	truth about Safemon elsewhere!"))
 	release
 	end
 }
@@ -493,7 +493,7 @@ script GreatCraterSouvenirShop {
 		playbgm (MUS_BUYSOMETHINGWILLYA, FALSE)
 		pokemart (ShopSouvenirs)
 		fadeinbgm (1)
-		//playbgm (MUS_ABNORMAL_WEATHER, TRUE)
+		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 		releaseall
 
 }

@@ -280,7 +280,6 @@ EventScript_ResetAllMapFlags::
 	setflag sharpynotoutsideDLC
 	setflag camelianotoutsideDLC
 	setflag sharpynotinroute103
-	setflag sharpycorphishoutsideDLC
 	setflag devonsvsconartist
 
 	setflag touristonbike

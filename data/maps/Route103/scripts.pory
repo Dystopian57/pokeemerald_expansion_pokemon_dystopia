@@ -560,7 +560,7 @@ script Route103Tourist{
 	{
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (27, moves(face_player))
-	msgbox(format("I'm not leaving without my bike. It costed me 1,000,000¥ at Cerulean City's
+	msgbox(format("I'm not leaving without my bike. Not a chance!\pIt costed me 1,000,000¥ at Cerulean City's
 	Bike Shop!"))}
 
 	finishtouristscript:
@@ -948,7 +948,8 @@ script RiverFerryGuyUp {
 		be glad to take you!"))
 		}
 
-	if (var(VAR_ROUTE103_WEATHER) < 2) {
+
+	if (var(VAR_ROUTE103_WEATHER) > 0) {
 		checkplayergender
 		if(var(VAR_RESULT) == MALE){
 		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lad?"))}
@@ -1200,15 +1201,15 @@ script FisherGuruRoute103 {
 				{addvar (VAR_FISHEDMONS, + 1)}
 
 				if(var(VAR_FISHEDMONS) == 0){
-				msgbox(format("0 fished!"))
+				msgbox(format("What? You haven't fished a single Pokémon? NADA? NICHT?"))
 				}
 
 				if(var(VAR_FISHEDMONS) == 1){
-				msgbox(format("1 fished!"))
+				msgbox(format("Hm? You have only fished ONE measly Pokémon?! It's a start, but..."))
 				}
 
 				if(var(VAR_FISHEDMONS) == 2){
-				msgbox(format("2 fished!"))
+				msgbox(format("Oh, you have fished a couple Pokémon already? Not bad, but..."))
 				}
 
 				if(var(VAR_FISHEDMONS) >= 3){
@@ -1285,7 +1286,7 @@ script FisherGuruRoute103 {
 			applymovement (38, moves(face_down))
 			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("In spite of its beastly appearance, the Mud Crab is
-			a loyal, tender creature. That's why I wish to catch him, and help him heal!"))
+			a loyal, tender creature.\pThat's why I wish to catch him, and help him heal!"))
 			goto (finishfisherscript)
 		}
 

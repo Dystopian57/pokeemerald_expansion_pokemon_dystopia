@@ -1280,26 +1280,28 @@ Route101RebelGruntBattle_10:
 # 710 "data/maps/Route101/scripts.pory"
 	msgbox Route101RebelGruntBattle_Text_18
 # 711 "data/maps/Route101/scripts.pory"
-	removeobject 3
+	closemessage
 # 712 "data/maps/Route101/scripts.pory"
-	setflag rebel101runsaway
+	removeobject 3
 # 713 "data/maps/Route101/scripts.pory"
-	clearflag FLAG_ITEM_ROUTE101REBELITEM
+	setflag rebel101runsaway
 # 714 "data/maps/Route101/scripts.pory"
-	addobject 6
+	clearflag FLAG_ITEM_ROUTE101REBELITEM
 # 715 "data/maps/Route101/scripts.pory"
-	waitmovement 3
+	addobject 6
 # 716 "data/maps/Route101/scripts.pory"
-	fadeoutbgm 1
+	waitmovement 3
 # 717 "data/maps/Route101/scripts.pory"
-	fadenewbgm 1
+	fadeoutbgm 1
 # 718 "data/maps/Route101/scripts.pory"
-	playbgm MUS_ABANDONED_SHIP, TRUE
+	fadenewbgm 1
 # 719 "data/maps/Route101/scripts.pory"
-	setvar VAR_ROUTE101REBELFLEES, 1
+	playbgm MUS_ABANDONED_SHIP, TRUE
 # 720 "data/maps/Route101/scripts.pory"
-	clearflag FLAG_TEMP_HIDE_FOLLOWER
+	setvar VAR_ROUTE101REBELFLEES, 1
 # 721 "data/maps/Route101/scripts.pory"
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
+# 722 "data/maps/Route101/scripts.pory"
 	releaseall
 	end
 
@@ -1403,69 +1405,69 @@ Route101RebelGruntBattle_21:
 
 
 Route101RebelItem::
-# 728 "data/maps/Route101/scripts.pory"
-	lock
 # 729 "data/maps/Route101/scripts.pory"
-	msgbox Route101RebelItem_Text_0
+	lock
 # 730 "data/maps/Route101/scripts.pory"
-	giveitem ITEM_TM46
+	msgbox Route101RebelItem_Text_0
 # 731 "data/maps/Route101/scripts.pory"
-	setflag FLAG_ITEM_ROUTE101REBELITEM
+	giveitem ITEM_TM46
 # 732 "data/maps/Route101/scripts.pory"
-	removeobject 6
+	setflag FLAG_ITEM_ROUTE101REBELITEM
 # 733 "data/maps/Route101/scripts.pory"
+	removeobject 6
+# 734 "data/maps/Route101/scripts.pory"
 	releaseall
 	return
 
 
 Route101GruntBatHitShake::
-# 741 "data/maps/Route101/scripts.pory"
-	playse SE_EFFECTIVE
 # 742 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8004, 2
+	playse SE_EFFECTIVE
 # 743 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8005, 6
+	setvar VAR_0x8004, 2
 # 744 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8006, 4
+	setvar VAR_0x8005, 6
 # 745 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 4
 # 746 "data/maps/Route101/scripts.pory"
+	setvar VAR_0x8007, 4
+# 747 "data/maps/Route101/scripts.pory"
 	special ShakeCamera
 	return
 
 
 Pokemonlickswound::
-# 750 "data/maps/Route101/scripts.pory"
-	lock
 # 751 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 752 "data/maps/Route101/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 753 "data/maps/Route101/scripts.pory"
 	goto_if_set rickhitsplayer, Pokemonlickswound_2
-# 765 "data/maps/Route101/scripts.pory"
+# 766 "data/maps/Route101/scripts.pory"
 	release
 Pokemonlickswound_1:
-# 766 "data/maps/Route101/scripts.pory"
+# 767 "data/maps/Route101/scripts.pory"
 	release
 	return
 
 Pokemonlickswound_2:
-# 754 "data/maps/Route101/scripts.pory"
-	playfirstmoncry
 # 755 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Pokemonlickswound_Movement_0
+	playfirstmoncry
 # 756 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Pokemonlickswound_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Pokemonlickswound_Movement_0
 # 757 "data/maps/Route101/scripts.pory"
-	bufferleadmonspeciesname STR_VAR_1
+	applymovement OBJ_EVENT_ID_FOLLOWER, Pokemonlickswound_Movement_1
 # 758 "data/maps/Route101/scripts.pory"
-	msgbox Pokemonlickswound_Text_0
+	bufferleadmonspeciesname STR_VAR_1
 # 759 "data/maps/Route101/scripts.pory"
-	playse SE_M_LICK
+	msgbox Pokemonlickswound_Text_0
 # 760 "data/maps/Route101/scripts.pory"
-	waitse
+	playse SE_M_LICK
 # 761 "data/maps/Route101/scripts.pory"
-	msgbox Pokemonlickswound_Text_1
+	waitse
 # 762 "data/maps/Route101/scripts.pory"
+	msgbox Pokemonlickswound_Text_1
+# 763 "data/maps/Route101/scripts.pory"
 	clearflag rickhitsplayer
 	goto Pokemonlickswound_1
 
@@ -1674,17 +1676,17 @@ Route101RebelGruntBattle_Movement_4:
 	walk_fast_up
 	step_end
 
-# 755 "data/maps/Route101/scripts.pory"
+# 756 "data/maps/Route101/scripts.pory"
 Pokemonlickswound_Movement_0:
-# 755 "data/maps/Route101/scripts.pory"
+# 756 "data/maps/Route101/scripts.pory"
 	face_right
 	step_end
 
-# 756 "data/maps/Route101/scripts.pory"
+# 757 "data/maps/Route101/scripts.pory"
 Pokemonlickswound_Movement_1:
-# 756 "data/maps/Route101/scripts.pory"
+# 757 "data/maps/Route101/scripts.pory"
 	walk_in_place_left
-# 756 "data/maps/Route101/scripts.pory"
+# 757 "data/maps/Route101/scripts.pory"
 	walk_in_place_left
 	step_end
 
@@ -2002,16 +2004,16 @@ Route101RebelGruntBattle_Text_18:
 	.string "Screw this!$"
 
 Route101RebelItem_Text_0:
-# 729 "data/maps/Route101/scripts.pory"
+# 730 "data/maps/Route101/scripts.pory"
 	.string "It seems the rebel dropped this while\n"
 	.string "fleeing...$"
 
 Pokemonlickswound_Text_0:
-# 758 "data/maps/Route101/scripts.pory"
+# 759 "data/maps/Route101/scripts.pory"
 	.string "{STR_VAR_1} approaches you slowly...$"
 
 Pokemonlickswound_Text_1:
-# 761 "data/maps/Route101/scripts.pory"
+# 762 "data/maps/Route101/scripts.pory"
 	.string "{STR_VAR_1} licks {PLAYER}'s\n"
 	.string "wound from the hit just now.\p"
 	.string "... {PLAYER}'s pain is somewhat\n"
@@ -2022,5 +2024,5 @@ Orphan101_Outro::
 	.string "... you still can't go into my Secret\n Shelter.$"
 
 Rebel101_Outro::
-# 737 "data/maps/Route101/scripts.pory"
+# 738 "data/maps/Route101/scripts.pory"
 	.string "Shit...$"

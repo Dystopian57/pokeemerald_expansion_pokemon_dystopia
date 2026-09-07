@@ -501,9 +501,9 @@ OldaleTown_Devon_Nurse_70:
 # 502 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	removemoney 100
 # 503 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	waitse
-# 504 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	updatemoneybox
+# 504 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitse
 # 505 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldaleTown_Devon_Nurse_Text_46
 # 506 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
@@ -809,9 +809,9 @@ OldaleTown_Devon_Nurse_179:
 # 265 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	removemoney 100
 # 266 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	waitse
-# 267 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	updatemoneybox
+# 267 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitse
 # 268 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_DEVONCENTERLOYALTY, 0
 	goto_if_eq OldaleTown_Devon_Nurse_189

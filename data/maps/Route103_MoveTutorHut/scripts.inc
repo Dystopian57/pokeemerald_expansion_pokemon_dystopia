@@ -2,20 +2,12 @@
 
 
 Route103_MoveTutorHut_MapScripts::
-# 10 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, DayNightNPC
 # 11 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, DayNightNPC
-# 12 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightNPC
 # 14 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, DayNightAmbientLightTutorHut
 # 17 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, DayNightMusicTutorHut
-# 18 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, DayNightMusicTutorHut
-# 19 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightMusicTutorHut
 	.byte 0
 
 

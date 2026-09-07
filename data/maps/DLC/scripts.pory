@@ -91,7 +91,7 @@ script OldaleTown_DLC_TherapyCutscene{
     waitmovement
     msgbox(format("O-oh, that one... t-that one burned my house...! Aaah, it's scary..."))
 
-    playse (SE_M_DIZZY_PUNCH)
+    playse (SE_M_METRONOME)
     applymovement (3, moves (emote_question_mark, walk_in_place_up * 2))
     waitmovement
 	createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
@@ -165,7 +165,6 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (5, moves (face_right, face_down))
     applymovement (7, moves (face_left, face_down))
     applymovement (8, moves (face_right, face_down))
-    waitse
     playse (SE_DOOR)
     waitse
     playse (SE_M_METRONOME)

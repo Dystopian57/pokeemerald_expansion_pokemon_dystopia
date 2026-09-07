@@ -1643,7 +1643,7 @@ PlayerDirtySink_5:
 # 836 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayerDirtySink_Text_1
 # 837 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setwildbattle SPECIES_NINKABURI, 2
+	setwildbattle SPECIES_NINKABURI, 5
 # 838 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	dowildbattle
 # 839 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

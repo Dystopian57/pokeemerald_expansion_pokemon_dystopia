@@ -841,7 +841,8 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_MUGSHOT;
 
     if (trainerClass == TRAINER_CLASS_SHARPY
-        || trainerClass == TRAINER_CLASS_BALSAM)
+        || trainerClass == TRAINER_CLASS_BALSAM
+        || trainerClass == TRAINER_CLASS_HERMITM)
         return B_TRANSITION_MUGSHOT;
 
     if (trainerClass == TRAINER_CLASS_TEAM_MAGMA

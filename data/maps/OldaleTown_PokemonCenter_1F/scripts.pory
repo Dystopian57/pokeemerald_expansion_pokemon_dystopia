@@ -263,8 +263,8 @@ script OldaleTown_Devon_Nurse {
 					showmoneybox (0, 0)
 					playse (SE_SHOP)
 					removemoney (100)
-					waitse
 					updatemoneybox
+					waitse
 					if (var(VAR_DEVONCENTERLOYALTY) == 0){
 					msgbox(format("It's done. \n
 					{COLOR LIGHT_GRAY}{SHADOW WHITE}Now get out...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
@@ -500,8 +500,8 @@ script OldaleTown_Devon_Nurse {
 			showmoneybox (0, 0)
 			playse (SE_SHOP)
 			removemoney (100)
-			waitse
 			updatemoneybox
+			waitse
 			msgbox(format("Great. Now let's proceed with your current heal..."))
 			clearflag (devoncenterdebt)
 			goto (healpokes)

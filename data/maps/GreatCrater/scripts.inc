@@ -4,6 +4,8 @@
 GreatCrater_MapScripts::
 # 8 "data/maps/GreatCrater/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, GreatCraterWeather
+# 9 "data/maps/GreatCrater/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, DynamicWeatherCrater
 # 11 "data/maps/GreatCrater/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, RedoTouristWarning
 # 13 "data/maps/GreatCrater/scripts.pory"
@@ -17,8 +19,6 @@ RedoTouristWarning::
 # 21 "data/maps/GreatCrater/scripts.pory"
 	compare VAR_GREATCRATERTOURIST, 1
 	goto_if_eq RedoTouristWarning_1
-# 24 "data/maps/GreatCrater/scripts.pory"
-	release
 	return
 
 RedoTouristWarning_1:
@@ -725,6 +725,8 @@ GreatCraterSouvenirShop::
 	pokemart ShopSouvenirs
 # 495 "data/maps/GreatCrater/scripts.pory"
 	fadeinbgm 1
+# 496 "data/maps/GreatCrater/scripts.pory"
+	playbgm MUS_ABNORMAL_WEATHER, TRUE
 # 497 "data/maps/GreatCrater/scripts.pory"
 	releaseall
 	return
@@ -1392,8 +1394,9 @@ TouristGreatCraterRegister_Text_0:
 ConspiracyGreatCraterBattle_Text_0:
 # 445 "data/maps/GreatCrater/scripts.pory"
 	.string "Sorry, but my device has been\n"
-	.string "compromised. You'll have to learn the\l"
-	.string "truth elsewhere!$"
+	.string "compromised.\p"
+	.string "You'll have to learn the truth about\n"
+	.string "Safemon elsewhere!$"
 
 ConspiracyGreatCraterRegister_Text_0:
 # 454 "data/maps/GreatCrater/scripts.pory"

@@ -297,8 +297,6 @@ PokeInnRoom1Girl_33:
 PokeInnRoom1Girl_36:
 # 143 "data/maps/PokeInnRoom1/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 144 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_BALL_OPEN
 # 145 "data/maps/PokeInnRoom1/scripts.pory"
 	setflag FLAG_TEMP_HIDE_FOLLOWER
 # 146 "data/maps/PokeInnRoom1/scripts.pory"

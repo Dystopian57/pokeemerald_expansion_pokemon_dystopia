@@ -137,7 +137,7 @@ script ConArtist103Rewards {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (34, moves(face_player))
 
-	if(var(VAR_JIMMYQUESTPROGRESS) <= 2){
+	if(var(VAR_JIMMYQUESTPROGRESS) <= 1){
 
 	if (!flag (conartistthanked))
 	{
@@ -193,7 +193,7 @@ script ConArtist103Rewards {
 		goto (eggoffer)
 	}}
 
-	if(var(VAR_JIMMYQUESTPROGRESS) == 3){
+	if(var(VAR_JIMMYQUESTPROGRESS) == 2){
 	msgbox(format("Thank you so much for your help and patronage. See you at Petalburg!"))
     }
 
@@ -554,6 +554,8 @@ script OldaleSharpyCameliaOutDLCCutscene {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+    playse (SE_M_SKETCH) //tri attack
+    applymovement (17, moves(emote_x))
     msgbox(format("Hmm... I don't think we'll find any volunteers here..."))
     
     removefieldmugshot
@@ -754,8 +756,8 @@ script OldaleSharpyCameliaOutDLCCutscene {
     clearflag (sharpycameliaDLCcs)
 	setflag (sharpynotoutsideDLC)
 	clearflag (sharpynotinroute103)
-	setflag (sharpycorphishoutsideDLC)
-	setflag (camelianotinroute103)
+	//setflag (sharpycorphishoutsideDLC)
+	//setflag (camelianotinroute103)
     setflag (finishedtherapy)
     releaseall
     }

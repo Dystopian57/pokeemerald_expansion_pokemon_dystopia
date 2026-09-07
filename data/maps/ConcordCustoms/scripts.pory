@@ -36,9 +36,6 @@ script ConcordWageSlaveAtPhone {
 	trainerbattle_no_intro(TRAINER_CONCORDWAGESLAVE , ConcordWageSlave_Outro)
 	setflag (concordwageslave)
 	
-	
-	
-
 
 	}
 

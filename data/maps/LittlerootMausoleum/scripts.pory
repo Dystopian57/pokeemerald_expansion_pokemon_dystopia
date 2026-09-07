@@ -17,7 +17,7 @@ script MausoleumMourningLady {
         giveitem (ITEM_FOCUS_SASH)
         setflag (mausoleummourningladyitem)
         msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
-        applymovement (6, moves(face_up))
+        applymovement (6, moves(walk_in_place_up))
         waitmovement (6)
         }
         
@@ -25,7 +25,7 @@ script MausoleumMourningLady {
         else{
         applymovement (6, moves(face_player))
         msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
-        applymovement (6, moves(face_up))
+        applymovement (6, moves(walk_in_place_up))
         waitmovement (6)
         }
         

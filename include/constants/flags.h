@@ -47,7 +47,7 @@
 #define GOTSTARTER2         0x21 // Obtained second starter
 #define GOTSTARTER3         0x22 // Obtained third starter
 #define DOLL_BATTLE         0x23 // For the Doll battle in May's house
-#define RIVAL_LEAVES_HOME   0x24 // Unused Flag
+#define RIVAL_LEAVES_HOME   0x24 // CAN SHOWXYOBJECTAT
 #define InsistonPika1       0x25 // Unused Flag
 #define InsistonPika2       0x26 // Unused Flag
 #define purachudollatoldaleinn             0x27 // Unused Flag
@@ -64,33 +64,33 @@
 #define fatguyseesplayerleavelittl         0x32 // Unused Flag
 #define FLAG_UNUSED_0x033     0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define SinkNinkaburiGone    0x35 // Unused Flag
+#define SinkNinkaburiGone    0x35 // CAN SHOWXYOBJECTAT
 #define Birchafter1stgreeting    0x36 // Unused Flag
 #define Donutquestaccepted    0x37 // Unused Flag
-#define joelin101   0x38 // Unused Flag
+#define joelin101   0x38 // CAN SHOWXYOBJECTAT
 #define rickhitsplayer    0x39 // Unused Flag
-#define rebel101runsaway   0x3A // Unused Flag
-#define sharpynotoutsideDLC    0x3B // Unused Flag
-#define camelianotoutsideDLC    0x3C // Unused Flag
-#define sharpynotinsideDLC    0x3D // Unused Flag
-#define camelianotinsideDLC    0x3E // Unused Flag
-#define sharpynotinroute103    0x3F // Unused Flag
-#define sharpycorphishoutsideDLC    0x40 // Unused Flag
+#define rebel101runsaway   0x3A // CAN SHOWXYOBJECTAT
+#define sharpynotoutsideDLC    0x3B // CAN SHOWXYOBJECTAT
+#define camelianotoutsideDLC    0x3C // CAN SHOWXYOBJECTAT
+#define sharpynotinsideDLC    0x3D // CAN SHOWXYOBJECTAT
+#define camelianotinsideDLC    0x3E // CAN SHOWXYOBJECTAT
+#define sharpynotinroute103    0x3F // CAN SHOWXYOBJECTAT
+#define VERYUNUSEDFLAG    0x40 // Unused Flag
 #define Sharpy103Rematch    0x41 // Unused Flag
 #define DLCmathresolved    0x42 // Unused Flag
-#define camelianotinroute103    0x43 // Unused Flag
-#define annegoestojoel    0x44 // Unused Flag
-#define anneinroute101    0x45 // Unused Flag
-#define joelinsidetent    0x46 // Unused Flag
+#define VERYUNUSEDFLAG2    0x43 // 
+#define annegoestojoel    0x44 // CAN SHOWXYOBJECTAT
+#define anneinroute101    0x45 // CAN SHOWXYOBJECTAT
+#define joelinsidetent    0x46 // CAN SHOWXYOBJECTAT
 #define anneandfamilygone    0x47 // Unused Flag
-#define hexgirlshuppetmeet    0x48 // Unused Flag
+#define hexgirlshuppetmeet    0x48 // CAN SHOWXYOBJECTAT AND SETXYOBJECTPERM
 #define hexgirlshuppetmoves    0x49 // Unused Flag
-#define beddinginmausoleum    0x4A // Unused Flag
+#define beddinginmausoleum    0x4A // CAN SHOWXYOBJECTAT
 #define refusedtohelphexgirl1st    0x4B // Unused Flag
 #define agreedtohelphexgirl1st    0x4C // Unused Flag
 #define hexgirlshuppetnormalspot   0x4D // Unused Flag
 #define touristonbike    0x4E // Unused Flag
-#define oldalerebelguardleaves    0x4F // Unused Flag
+#define oldalerebelguardleaves    0x4F // CAN SHOWXYOBJECTAT
 
 // Scripts (started to replace vanilla from here)
 #define oldaledevonguardsleave                   0x50
@@ -313,7 +313,7 @@
 #define FLAG_ENABLE_PROF_BIRCH_MATCH_CALL    0x119
 #define watcheddevoninnshow            0x11A
 #define cigarettepop             0x11B
-#define FLAG_DECLINED_WALLY_BATTLE_MAUVILLE  0x11C
+#define waterfallhermitlairitem  0x11C
 #define FLAG_RECEIVED_DEVON_SCOPE            0x11D
 #define FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE  0x11E
 #define FLAG_MET_DEVON_EMPLOYEE              0x11F

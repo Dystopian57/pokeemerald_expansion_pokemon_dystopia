@@ -6066,6 +6066,9 @@ u16 GetBattleBGM(void)
         //case TRAINER_CLASS_TOURISTM:
             //return MUS_RG_VS_TRAINER;
 
+        case TRAINER_CLASS_HERMITM:
+            return MUS_LIGHTTEMPLE;
+
         case TRAINER_CLASS_SHARPY:
         case TRAINER_CLASS_CAMELIA:
             return MUS_VS_RIVAL;

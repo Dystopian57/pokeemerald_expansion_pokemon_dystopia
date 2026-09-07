@@ -1182,6 +1182,9 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_MT_CHIMNEY;
     else if (warp->mapGroup == MAP_GROUP(MAP_OLDALE_TOWN) && warp->mapNum == MAP_NUM(MAP_OLDALE_TOWN) && VarGet(VAR_OLDALE_PHASE) >= 2)
         return MUS_LAVENDERHGSS;
+    else if (warp->mapGroup == MAP_GROUP(MAP_OLDALE_WAREHOUSE) && warp->mapNum == MAP_NUM(MAP_OLDALE_WAREHOUSE) && VarGet(VAR_OLDALE_PHASE) >= 5)
+        return MUS_RG_SEVII_DUNGEON;
+
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }

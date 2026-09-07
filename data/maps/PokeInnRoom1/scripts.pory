@@ -141,7 +141,7 @@ script PokeInnRoom1Girl {
             dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
             if(var(VAR_RESULT) == 0){
             fadescreenswapbuffers (FADE_TO_BLACK)
-            playse (SE_BALL_OPEN)
+            //playse (SE_BALL_OPEN)
 	        setflag (FLAG_TEMP_HIDE_FOLLOWER)
             hidefollower
 

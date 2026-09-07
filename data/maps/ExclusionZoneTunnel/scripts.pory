@@ -1,8 +1,22 @@
 raw `
-ExclusionZoneTunnel_MapScripts::
-	.byte 0
 
 `
+
+
+
+mapscripts ExclusionZoneTunnel_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicExTunnel
+    MAP_SCRIPT_ON_LOAD: DayNightMusicExTunnel}
+	
+
+script DayNightMusicExTunnel {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_RELAXING, TRUE)}
+
+}
+
+
 
 script EnterSecretLabPreUnsafeningCheck {
 

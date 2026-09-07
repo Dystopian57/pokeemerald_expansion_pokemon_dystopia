@@ -708,6 +708,7 @@ script Route101RebelGruntBattle{
 	waitse
 	playse (SE_BALL_BOUNCE_1)
 	msgbox(format("Screw this!"))
+	closemessage
 	removeobject(3)
 	setflag (rebel101runsaway)
 	clearflag (FLAG_ITEM_ROUTE101REBELITEM)

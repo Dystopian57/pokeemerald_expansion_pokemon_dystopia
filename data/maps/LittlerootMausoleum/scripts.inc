@@ -273,7 +273,7 @@ LittlerootMausoleum_HexGirl_16:
 # 107 "data/maps/LittlerootMausoleum/scripts.pory"
 	removeitem ITEM_SCROLL_OF_DARKNESS
 # 108 "data/maps/LittlerootMausoleum/scripts.pory"
-	applymovement 1, MausoleumMourningLady_Movement_1
+	applymovement 1, LittlerootMausoleum_HexGirl_Movement_0
 # 109 "data/maps/LittlerootMausoleum/scripts.pory"
 	waitmovement 1
 # 110 "data/maps/LittlerootMausoleum/scripts.pory"
@@ -727,7 +727,7 @@ MausoleumFinishedSnackQuest_1:
 # 400 "data/maps/LittlerootMausoleum/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 401 "data/maps/LittlerootMausoleum/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, MausoleumMourningLady_Movement_1
+	applymovement OBJ_EVENT_ID_FOLLOWER, LittlerootMausoleum_HexGirl_Movement_0
 # 402 "data/maps/LittlerootMausoleum/scripts.pory"
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 # 403 "data/maps/LittlerootMausoleum/scripts.pory"
@@ -820,7 +820,7 @@ MausoleumMourningLady_Movement_0:
 # 20 "data/maps/LittlerootMausoleum/scripts.pory"
 MausoleumMourningLady_Movement_1:
 # 20 "data/maps/LittlerootMausoleum/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 52 "data/maps/LittlerootMausoleum/scripts.pory"
@@ -835,6 +835,12 @@ LittlerootMausoleum_Shuppet_Movement_0:
 LittlerootMausoleum_Shuppet_Movement_1:
 # 56 "data/maps/LittlerootMausoleum/scripts.pory"
 	face_down
+	step_end
+
+# 108 "data/maps/LittlerootMausoleum/scripts.pory"
+LittlerootMausoleum_HexGirl_Movement_0:
+# 108 "data/maps/LittlerootMausoleum/scripts.pory"
+	face_up
 	step_end
 
 # 386 "data/maps/LittlerootMausoleum/scripts.pory"

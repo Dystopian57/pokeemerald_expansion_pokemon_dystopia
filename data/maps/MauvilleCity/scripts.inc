@@ -67,7 +67,6 @@ MauvilleCity_EventScript_TVExplained::
 MauvilleCity_EventScript_WallysUncle::
 	lock
 	faceplayer
-	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_UncleAskPlayerToBattleWally
 	msgbox MauvilleCity_Text_UncleHesTooPeppy, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
@@ -85,7 +84,6 @@ MauvilleCity_EventScript_UncleAskPlayerToBattleWally::
 
 MauvilleCity_EventScript_Wally::
 	lockall
-	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_WallyRequestBattleAgain
 	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox MauvilleCity_Text_WallyWantToChallengeGym, MSGBOX_DEFAULT
@@ -211,7 +209,6 @@ MauvilleCity_EventScript_BattleWally::
 	return
 
 MauvilleCity_EventScript_DeclineWallyBattle::
-	setflag FLAG_DECLINED_WALLY_BATTLE_MAUVILLE
 	msgbox MauvilleCity_Text_WallyMyUncleWontKnowImStrong, MSGBOX_DEFAULT
 	release
 	end

@@ -4,6 +4,15 @@ WaterfallCaveHermitlAIR_MapScripts::
 
 `
 
+
+script WaterfalHermitLairItem {
+	lock
+    finditem (ITEM_TM_RAIN_DANCE)
+    //giveitem (ITEM_SOFT_SAND)
+	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    removeobject (3)
+	releaseall}
+
 script WaterfallHermit {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -13,7 +22,7 @@ script WaterfallHermit {
     {
         msgbox(format("Welcome, young traveller, to Waterfall Cave - a place who has been
 		hidden for centuries.\pIt used to be that things like nature and time
-		 were the shole shapers of our world.\pBut now, the acts of humans - born from
+		 were the sole shapers of nature.\pBut now, the acts of humans - born from
 		 conflict, or in the name of progress - are threatening to become just as strong
 		 a changing force.\p Some say they will replace all others."))
 
