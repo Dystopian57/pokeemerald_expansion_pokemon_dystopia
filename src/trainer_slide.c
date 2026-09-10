@@ -79,9 +79,15 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 
         },
 
+        [TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4] = 
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("... you're such a moron, BILLY. {PAUSE_UNTIL_PRESS}"),
+
+        },
+
         [TRAINER_REBELADMIN_OLDALEWAREHOUSE] = 
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Get the win, Furmeister! {PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Take it home, FURMEISTER! {PAUSE_UNTIL_PRESS}"),
 
         },
 

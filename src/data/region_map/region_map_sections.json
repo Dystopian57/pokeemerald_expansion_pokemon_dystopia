@@ -474,7 +474,7 @@
     },
     {
       "id": "MAPSEC_PETALBURG_WOODS",
-      "name": "PETALBURG PARK",
+      "name": "PETAL PARK",
       "x": 0,
       "y": 8,
       "width": 1,
@@ -941,7 +941,11 @@
     },
     {
       "id": "MAPSEC_SEAFOAM_ISLANDS",
-      "name": "WATERFALL CAVE"
+      "name": "WATERFALL CAVE",
+      "x": 5,
+      "y": 7,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_POKEMON_TOWER",

@@ -1139,7 +1139,13 @@ script OldaleMotorBike {
 
 script OldaleCar {
     lock
-    msgbox(format("The car seems to have been parked for some time.")) 
+    msgbox(format("It's a Devon Roader. Seems to have been parked for some time.")) 
+    release 
+}
+
+script Oldale4x4 {
+    lock
+    msgbox(format("It's a Devon Hauler. Seems to have been parked for some time.")) 
     release 
 }
 

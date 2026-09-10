@@ -9777,6 +9777,9 @@ AI: Basic Trainer
 
 Seedot
 Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: ITEM_PARK_BALL
 
 Gastly
 Level: 8
@@ -9797,7 +9800,7 @@ Level: 9
 Larvitar
 Level: 9
 
-Swinub
+Furmeister (Swinub)
 Level: 10
 
 === TRAINER_OLDALEDEVONGRUNT_M ===

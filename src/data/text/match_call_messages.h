@@ -395,7 +395,7 @@ const u8 gText_MatchCallVeteran103_Intro2[] = _("the torch yet!");
 
 const u8 gText_MatchCallTouristGreatCrater_Strategy[] = _("I love travelling.");
 const u8 gText_MatchCallTouristGreatCrater_Pokemon[] = _("Exotic ones.");
-const u8 gText_MatchCallTouristGreatCrater_Intro1[] = _("Visiting Hoenn's Exclusion");
+const u8 gText_MatchCallTouristGreatCrater_Intro1[] = _("Visiting Hoenn's Rebel");
 const u8 gText_MatchCallTouristGreatCrater_Intro2[] = _("Zone. How exciting!");
 
 const u8 gText_MatchCallConspiracyGreatCrater_Strategy[] = _("I like dystopian novels.");
