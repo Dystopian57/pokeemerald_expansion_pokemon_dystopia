@@ -218,6 +218,24 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "2",
       "script": "OldaleWarehouseCarRebel2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "1",
+      "script": "OldaleWarehouseManchine"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "1",
+      "script": "OldaleWarehouseManchine"
     }
   ],
   "bg_events": [

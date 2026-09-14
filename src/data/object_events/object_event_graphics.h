@@ -227,7 +227,11 @@ const u32 gObjectEventPic_rope[] = INCBIN_U32("graphics/object_events/pics/misc/
 
 const u32 gObjectEventPic_newbard[] = INCBIN_U32("graphics/object_events/pics/people/newbard.4bpp");
 
+const u32 gObjectEventPic_musashi[] = INCBIN_U32("graphics/object_events/pics/people/musashi.4bpp");
+
 const u32 gObjectEventPic_ventfan[] = INCBIN_U32("graphics/object_events/pics/misc/ventfan.4bpp");
+
+const u32 gObjectEventPic_moneybags[] = INCBIN_U32("graphics/object_events/pics/misc/moneybags.4bpp");
 
 const u32 gObjectEventPic_ReporterM[] = INCBIN_U32("graphics/object_events/pics/people/reporter_m.4bpp");
 const u32 gObjectEventPic_ReporterF[] = INCBIN_U32("graphics/object_events/pics/people/reporter_f.4bpp");

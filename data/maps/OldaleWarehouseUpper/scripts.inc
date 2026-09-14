@@ -620,6 +620,8 @@ OldaleWarehouseUpperRebelEventEntrance_41:
 	waitmovement 2
 # 358 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	playbgm MUS_STOPTHIEF, TRUE
+# 359 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_2
 # 360 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	checkplayergender
 # 361 "data/maps/OldaleWarehouseUpper/scripts.pory"
@@ -703,7 +705,7 @@ rebelsleaveupperwarehouse:
 # 407 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	playse SE_EXIT
 # 408 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_2
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_7
 # 411 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	addobject 2
 # 412 "data/maps/OldaleWarehouseUpper/scripts.pory"
@@ -885,76 +887,138 @@ OldaleWarehouseUpperBookshelves::
 	return
 
 
-OldaleWarehouseUpperExtinguisher::
+OldaleWarehouseUpperMicrowave::
 # 523 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
 # 524 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperExtinguisher_Text_0
+	msgbox OldaleWarehouseUpperMicrowave_Text_0
 # 525 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	goto_if_unset FLAG_ITEM_WAREHOUSEMICROWAVE, OldaleWarehouseUpperMicrowave_2
+# 528 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperMicrowave_Text_1
+OldaleWarehouseUpperMicrowave_1:
+# 530 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	release
+	return
+
+OldaleWarehouseUpperMicrowave_2:
+# 526 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	giveitem ITEM_AERODACTYLITE
+	goto OldaleWarehouseUpperMicrowave_1
+
+
+OldaleWarehouseUpperLoadtadDoll::
+# 534 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	lock
+# 535 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	givedecoration DECOR_LOTAD_DOLL
+# 536 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 9
+# 537 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setflag FLAG_ITEM_WAREHOUSELOTADDOLL
+# 538 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	release
+	return
+
+
+OldaleWarehouseUpperMoneyBags::
+# 542 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	lock
+# 543 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperMoneyBags_Text_0
+# 544 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	showmoneybox 18, 0
+# 545 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	addmoney 1000
+# 546 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_SHOP
+# 547 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitse
+# 548 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	updatemoneybox
+# 549 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperMoneyBags_Text_1
+# 550 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 8
+# 551 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
+# 552 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	hidemoneybox
+# 553 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	release
+	return
+
+
+OldaleWarehouseUpperExtinguisher::
+# 558 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	lock
+# 559 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperExtinguisher_Text_0
+# 560 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperPrinter::
-# 529 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 564 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
-# 530 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 565 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperPrinter_Text_0
-# 532 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 567 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperCoffee::
-# 536 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 571 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
-# 537 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 572 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperCoffee_Text_0
-# 538 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 573 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSECOFFEE, OldaleWarehouseUpperCoffee_2
-# 541 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 576 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperCoffee_Text_1
 OldaleWarehouseUpperCoffee_1:
-# 543 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 578 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperCoffee_2:
-# 539 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 574 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	giveitem ITEM_HEAL_POWDER
 	goto OldaleWarehouseUpperCoffee_1
 
 
 OldaleWarehouseUpperTrashcan::
-# 547 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 582 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
-# 548 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 583 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperTrashcan_Text_0
-# 549 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 584 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSETRASHCAN, OldaleWarehouseUpperTrashcan_2
-# 552 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 587 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperTrashcan_Text_1
 OldaleWarehouseUpperTrashcan_1:
-# 554 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 589 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperTrashcan_2:
-# 550 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 585 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	giveitem ITEM_CLEAR_AMULET
 	goto OldaleWarehouseUpperTrashcan_1
 
 
 OldaleWarehouseUpperSafemonNotice::
-# 558 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 593 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
-# 559 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 594 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	showmonpic SPECIES_LOADTAD, 10, 3
-# 560 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 595 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperSafemonNotice_Text_0
-# 562 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 597 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	hidemonpic
-# 563 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 598 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
@@ -1616,37 +1680,55 @@ OldaleWarehouseUpperBookshelves_Text_0:
 	.string "It's full of accounting books and\n"
 	.string "company guidelines.$"
 
-OldaleWarehouseUpperExtinguisher_Text_0:
+OldaleWarehouseUpperMicrowave_Text_0:
 # 524 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "It's a microwave. There's some reheated\n"
+	.string "food inside...$"
+
+OldaleWarehouseUpperMicrowave_Text_1:
+# 528 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "The microwave is empty.$"
+
+OldaleWarehouseUpperMoneyBags_Text_0:
+# 543 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "Seems the Rebels forgot some of their\n"
+	.string "loot...$"
+
+OldaleWarehouseUpperMoneyBags_Text_1:
+# 549 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "Received 5000¥!$"
+
+OldaleWarehouseUpperExtinguisher_Text_0:
+# 559 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A regular fire extinguisher.$"
 
 OldaleWarehouseUpperPrinter_Text_0:
-# 530 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 565 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "There's many copies of a picture of\n"
 	.string "Mister Stone.\p"
 	.string "The image has been edited to make him\n"
 	.string "look like a Mr. Mime.$"
 
 OldaleWarehouseUpperCoffee_Text_0:
-# 537 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 572 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "For some reason, there's a can of\n"
 	.string "coffee by the coffee machine...$"
 
 OldaleWarehouseUpperCoffee_Text_1:
-# 541 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 576 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A coffee machine, Chesto brand.$"
 
 OldaleWarehouseUpperTrashcan_Text_0:
-# 548 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 583 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "There's something here with footprints\n"
 	.string "all over it...$"
 
 OldaleWarehouseUpperTrashcan_Text_1:
-# 552 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 587 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The trash can is empty.$"
 
 OldaleWarehouseUpperSafemonNotice_Text_0:
-# 560 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 595 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "{COLOR BLUE}Safemon Notice{COLOR DARK_GRAY}: To assist conditioning,\n"
 	.string "do not feed Loadtads until end of\l"
 	.string "shift!$"

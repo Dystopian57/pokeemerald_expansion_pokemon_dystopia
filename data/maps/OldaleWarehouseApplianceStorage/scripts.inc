@@ -157,7 +157,7 @@ WarehouseExposedWiring::
 # 117 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSEWIRING, WarehouseExposedWiring_2
 WarehouseExposedWiring_1:
-# 136 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 137 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
@@ -169,7 +169,7 @@ WarehouseExposedWiring_2:
 # 121 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq WarehouseExposedWiring_4
-# 133 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 134 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	msgbox WarehouseExposedWiring_Text_4
 	goto WarehouseExposedWiring_1
 
@@ -190,118 +190,123 @@ WarehouseExposedWiring_4:
 	msgbox WarehouseExposedWiring_Text_3
 # 129 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	giveitem ITEM_MAGNET
+# 130 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	setflag FLAG_ITEM_WAREHOUSEWIRING
 	goto WarehouseExposedWiring_1
 
 
 WarehouseExposedWiringSide::
-# 141 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	goto_if_unset FLAG_ITEM_WAREHOUSEWIRING, WarehouseExposedWiringSide_1
-# 146 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 142 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	goto_if_unset FLAG_ITEM_WAREHOUSEWIRING, WarehouseExposedWiringSide_2
+# 147 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	msgbox WarehouseExposedWiring_Text_4
+WarehouseExposedWiringSide_1:
+# 148 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	release
 	return
 
-WarehouseExposedWiringSide_1:
-# 142 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+WarehouseExposedWiringSide_2:
+# 143 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	msgbox WarehouseExposedWiringSide_Text_0
-	return
+	goto WarehouseExposedWiringSide_1
 
 
 OldaleWarehouseApplianceStorageWeirdMachine::
-# 151 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 152 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStorageWeirdMachine_Text_0
+	lock
 # 153 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStorageWeirdMachine_Text_0
+# 154 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStorageGasTerminal::
-# 157 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 158 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStorageGasTerminal_Text_0
+	lock
 # 159 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStorageGasTerminal_Text_0
+# 160 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceLightPanel::
-# 163 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 164 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceLightPanel_Text_0
+	lock
 # 165 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceLightPanel_Text_0
+# 166 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStorageOpenBox::
-# 169 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 170 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStorageOpenBox_Text_0
+	lock
 # 171 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStorageOpenBox_Text_0
+# 172 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStorageComputer::
-# 175 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 176 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStorageComputer_Text_0
+	lock
 # 177 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStorageComputer_Text_0
+# 178 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStorageTV::
-# 181 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 182 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStorageTV_Text_0
+	lock
 # 183 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStorageTV_Text_0
+# 184 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStorageBarrel::
-# 187 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 188 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStorageBarrel_Text_0
+	lock
 # 189 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStorageBarrel_Text_0
+# 190 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStoragePokeHealing::
-# 193 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 194 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStoragePokeHealing_Text_0
+	lock
 # 195 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStoragePokeHealing_Text_0
+# 196 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStoragePress::
-# 199 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 200 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStoragePress_Text_0
+	lock
 # 201 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStoragePress_Text_0
+# 202 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseApplianceStoragePokeAssembler::
-# 205 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	lock
 # 206 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	msgbox OldaleWarehouseApplianceStoragePokeAssembler_Text_0
+	lock
 # 207 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox OldaleWarehouseApplianceStoragePokeAssembler_Text_0
+# 208 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
 
@@ -410,56 +415,56 @@ WarehouseExposedWiring_Text_3:
 	.string "too!$"
 
 WarehouseExposedWiring_Text_4:
-# 133 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 134 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "Better not to touch this...$"
 
 WarehouseExposedWiringSide_Text_0:
-# 142 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 143 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "There's something to the side of the\n"
 	.string "exposed wiring... dangerously close to\l"
 	.string "the sparks.$"
 
 OldaleWarehouseApplianceStorageWeirdMachine_Text_0:
-# 152 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 153 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "An industrial-looking machine of\n"
 	.string "unknown use.$"
 
 OldaleWarehouseApplianceStorageGasTerminal_Text_0:
-# 158 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 159 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "It's a terminal like the ones used in gas\n"
 	.string "stations.$"
 
 OldaleWarehouseApplianceLightPanel_Text_0:
-# 164 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 165 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "An encased light panel. It's under lock.$"
 
 OldaleWarehouseApplianceStorageOpenBox_Text_0:
-# 170 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 171 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "The box is full of electronics.$"
 
 OldaleWarehouseApplianceStorageComputer_Text_0:
-# 176 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 177 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "A desktop computer. Seems like it's\n"
 	.string "been scrapped for parts.$"
 
 OldaleWarehouseApplianceStorageTV_Text_0:
-# 182 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 183 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "An old TV.$"
 
 OldaleWarehouseApplianceStorageBarrel_Text_0:
-# 188 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 189 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "The barrel smells of fuel.$"
 
 OldaleWarehouseApplianceStoragePokeHealing_Text_0:
-# 194 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 195 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "A busted Pokéhealing machine.$"
 
 OldaleWarehouseApplianceStoragePress_Text_0:
-# 200 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 201 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "It's just a mechanical press.$"
 
 OldaleWarehouseApplianceStoragePokeAssembler_Text_0:
-# 206 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+# 207 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "It's an old Pokéball assembler.$"
 
 ApplianceStorageScavenger1_Intro::

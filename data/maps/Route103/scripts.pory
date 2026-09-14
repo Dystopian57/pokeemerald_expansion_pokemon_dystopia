@@ -310,11 +310,23 @@ script Route103IteminMud {
 
 script Route103DevonGruntCheckingDriver {
     lock
+	if(var(VAR_OLDALE_PHASE) < 2)
+    {
     applymovement (22, moves(walk_in_place_down))
     msgbox(format("I'm telling you, sir - Oldale's Warehouse is occupied by Rebels.
 	\p Even if we let you through, your stock would just get stolen."))
     applymovement (23, moves(walk_in_place_up))
-    msgbox(format("Then go do something about it, instead of just blocking traffic!"))
+    msgbox(format("Then go do something about it, instead of just blocking traffic!"))}
+
+	if(var(VAR_OLDALE_PHASE) >= 2)
+    {
+    applymovement (22, moves(walk_in_place_down))
+    msgbox(format("Sir, I just got word the Rebels have left Oldale Warehouse!\pOnce we inspect
+	your stock, and if nothing is wrong with it, we will let you right through."))
+    applymovement (23, moves(walk_in_place_up))
+    msgbox(format("You could have done that sooner! Hurry it up!"))}
+
+
     releaseall
     }
 
@@ -878,9 +890,12 @@ script Route103ConcordConartist {
 		waitmovement
 		closedoor (42, 37)
 		msgbox(format("Thank you for your help, civilian! Now we can put this long shift to an end."))
-		
+
 		msgbox(format("Here, this is for your trouble."))
+    	showmoneybox (18, 0)
+		addmoney (1000)
 		playse (SE_SHOP)
+		updatemoneybox
 		msgbox(format("Received 1000¥!"))
 
 		applymovement (32, moves(walk_left * 8))

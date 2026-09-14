@@ -93,19 +93,19 @@
 #define oldalerebelguardleaves    0x4F // CAN SHOWXYOBJECTAT
 
 // Scripts (started to replace vanilla from here)
-#define oldaledevonguardsleave                   0x50
+#define VERYUNUSEDFLAG3                   0x50
 #define FLAG_SET_WALL_CLOCK                      0x51
 #define route102weathermon                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define VSSEEKER                             0x54  // Unused Flag
-#define rivalappearsinOldale                    0x55  // Unused Flag
+#define rivalappearsinOldale                    0x55  // CAN SHOWXYOBJECTAT
 
 
 #define balsaminherbedroom          0x56  // Always set after new game, object it hides is added directly
 #define balsamgavebedwarning                 0x57
 #define balsamgavebedpermission              0x58
-#define balsamofficerotom                    0x59
+#define balsamofficerotom                    0x59 
 #define FLAG_RECEIVED_BIKE                   0x5A
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
 #define loanedfirebook                        0x5C
@@ -115,13 +115,13 @@
 #define FLAG_RECEIVED_SECRET_POWER           0x60
 #define FLAG_MET_TEAM_AQUA_HARBOR            0x61
 #define FLAG_TV_EXPLAINED                    0x62
-#define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63
+#define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63 
 #define waterfallmonkgivestm           0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
 #define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define reportersleavecrater                    0x68  // Unused Flag
+#define reportersleavecrater                    0x68  // CAN SHOWXYOBJECTAT
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -132,12 +132,12 @@
 
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
-#define ninkaburihides                       0x71 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
+#define ninkaburihides                       0x71 // 
 #define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
 #define oldalerivalfollower              0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
 #define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define devonsdontblock102          0x76
+#define devonsdontblock102          0x76      // CAN SHOWXYOBJECTAT
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
 
@@ -165,23 +165,23 @@
 #define conartistaskeddistract         0x8D
 #define betrayedconcordconartist              0x8E
 #define helpedconcordconartist           0x8F
-#define conartistescaped            0x90
-#define conartistegg                    0x91
+#define conartistescaped            0x90     // CAN SHOWXYOBJECTAT
+#define conartistegg                    0x91 // CAN SHOWXYOBJECTAT
 
-#define bulbasynthdollatoldaleinn                    0x92
-#define ferryman103up        0x93
-#define ferryman103down       0x94
+#define bulbasynthdollatoldaleinn        0x92 // CAN SHOWXYOBJECTAT
+#define ferryman103up        0x93     // CAN SHOWXYOBJECTAT
+#define ferryman103down       0x94     // CAN SHOWXYOBJECTAT
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define ferryboat103up           0x96 // Unused, leftover from R/S
+#define ferryboat103up           0x96 // // CAN SHOWXYOBJECTAT
 #define FLAG_RECEIVED_CASTFORM               0x97
-#define ferryboat103down             0x98
+#define ferryboat103down             0x98  // CAN SHOWXYOBJECTAT
 #define conartistrewardsinoldale    0x99
 #define conartistthanked  0x9A
-#define rivercrawdauntspawns     0x9B
-#define carrebelleavescar      0x9C
+#define rivercrawdauntspawns     0x9B    // CAN SHOWXYOBJECTAT
+#define carrebelleavescar      0x9C     // CAN SHOWXYOBJECTAT
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
-#define carrebelatDC   0x9E
-#define mudcrabcrawdaunt 0x9F
+#define carrebelatDC   0x9E        // CAN SHOWXYOBJECTAT
+#define mudcrabcrawdaunt 0x9F        // CAN SHOWXYOBJECTAT
 #define FLAG_COOL_PAINTING_MADE              0xA0
 #define FLAG_BEAUTY_PAINTING_MADE            0xA1
 #define FLAG_CUTE_PAINTING_MADE              0xA2
@@ -189,7 +189,7 @@
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
 #define movetutorintro        0xA5
 
-#define concordwageslave           0xA6
+#define concordwageslave           0xA6   // CAN SHOWXYOBJECTAT
 
 #define seenweatheratinnvisit          0xA7
 #define daynpc            0xA8
@@ -229,7 +229,7 @@
 #define FLAG_RECEIVED_PINK_SCARF             0xCA
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC
-#define DLCrecesstarts    0xCD
+#define DLCrecesstarts    0xCD       // CAN SHOWXYOBJECTAT
 #define finishedtherapy    0xCE
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
 #define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
@@ -245,16 +245,16 @@
 #define FLAG_MET_WAILMER_TRAINER             0xDA
 #define FLAG_EVIL_LEADER_PLEASE_STOP         0xDB
 
-#define smothquildollatoldaleinn                 0xDC // This flag is read, but never written to
+#define smothquildollatoldaleinn                 0xDC // CAN SHOWXYOBJECTAT
 
 #define showedoldaleinngirldoll            0xDD
 
 #define oldalefountainsparkle         0xDE
-#define craterbottomtouristleaves            0xDF
+#define VERYUNUSED4            0xDF   
 #define greatcraterrope          0xE0
 
 #define FLAG_RECEIVED_20_COINS               0xE1
-#define cigarrettepop           0xE2
+#define cigarrettepop           0xE2           // CAN SHOWXYOBJECTAT
 #define wheelchairboyaskedpokemon               0xE3
 #define Sharpydefeatedat103               0xE4
 #define Samanthagotsnacks             0xE5
@@ -275,7 +275,7 @@
 #define visitedrebelsecretshelter                 0xF3
 #define visitedsanctumsecretshelter                 0xF4
 #define wheelchairtradequestdone           0xF5
-#define wheelchairboyandpokeoutside 0xF6
+#define VERYUNUSED5 0xF6 
 #define sentdemomysterygift      0xF7
 #define receiveddemomysterygift           0xF8
 #define hermitmovesexplained           0xF9
@@ -286,7 +286,7 @@
 #define sableyelairplayerbag               0xFE
 #define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF
 #define caughtsableyelairboss            0x100
-#define spawnsableyelairboss                0x101
+#define spawnsableyelairboss                0x101 // CAN SHOWXYOBJECTAT
 #define forceshiny              0x102
 #define itsnotused        0x103
 #define norun              0x104
@@ -304,9 +304,9 @@
 #define FLAG_RECEIVED_EXP_SHARE              0x110
 #define FLAG_POKERUS_EXPLAINED               0x111
 #define FLAG_RECEIVED_RUNNING_SHOES          0x112
-#define warehousemanchine             0x113
+#define warehousemanchine             0x113   // CAN SHOWXYOBJECTAT
 #define scavengergivesobjectspotter             0x114
-#define oldalescavengerandtrucksgone            0x115
+#define oldalescavengerandtrucksgone            0x115  // CAN SHOWXYOBJECTAT
 #define carrebelwarehouse            0x116
 #define foughtwarehousescavenger2             0x117
 #define researcher102              0x118
@@ -1267,11 +1267,11 @@
 #define FLAG_ITEM_WAREHOUSEDEVONBALLS                                           0x4AE // Unused Flag
 #define FLAG_ITEM_WAREHOUSECOFFEE                                           0x4AF // Unused Flag
 #define FLAG_ITEM_WAREHOUSETRASHCAN                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
+#define FLAG_ITEM_WAREHOUSEMICROWAVE                                           0x4B1 // Unused Flag
+#define FLAG_ITEM_102ASPHALTCHUNK                                           0x4B2 // Unused Flag
+#define FLAG_ITEM_WAREHOUSELOTADDOLL                                           0x4B3 // Unused Flag
+#define FLAG_ITEM_WAREHOUSEMONEYBAGS                                           0x4B4 // Unused Flag
+#define FLAG_ITEM_WAREHOUSEAPPLIANCEITEM                                           0x4B5 // Unused Flag
 #define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
 #define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag

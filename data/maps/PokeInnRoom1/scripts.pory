@@ -321,7 +321,7 @@ if (flag (wheelchairboyaskedpokemon))
         }
 
         if (var(VAR_RESULT) == FALSE)
-        {playse (SE_RG_HELP_ERROR)
+        {playse (SE_RG_POKE_JUMP_FAILURE)
         msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
         even be a Fighting type!"))
         goto (endofwheelchairkidscript)}
@@ -336,7 +336,7 @@ if (flag (wheelchairboyaskedpokemon))
         goto (fightingtypetradescript)}
 
         if (var(VAR_RESULT) == FALSE)
-        {playse (SE_RG_HELP_ERROR)
+        {playse (SE_RG_POKE_JUMP_FAILURE)
         msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
         even be a Fighting type!"))
         goto (endofwheelchairkidscript)}
@@ -350,7 +350,7 @@ if (flag (wheelchairboyaskedpokemon))
         setvar (VAR_FIGHTINGTRADECHOICE, 3)
         goto (fightingtypetradescript)}
         if (var(VAR_RESULT) == FALSE)
-        {playse (SE_RG_HELP_ERROR)
+        {playse (SE_RG_POKE_JUMP_FAILURE)
         msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
         even be a Fighting type!"))
         goto (endofwheelchairkidscript)}
@@ -397,7 +397,7 @@ if (flag (wheelchairboyaskedpokemon))
             setvar (VAR_FIGHTINGTRADECHOICE, 4)
             goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)
+            {playse (SE_RG_POKE_JUMP_FAILURE)
             msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
             even be a Fighting type!"))
             goto (endofwheelchairkidscript)}
@@ -411,7 +411,7 @@ if (flag (wheelchairboyaskedpokemon))
             setvar (VAR_FIGHTINGTRADECHOICE, 5)
             goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)
+            {playse (SE_RG_POKE_JUMP_FAILURE)
             msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
             even be a Fighting type!"))
             goto (endofwheelchairkidscript)}
@@ -425,7 +425,7 @@ if (flag (wheelchairboyaskedpokemon))
             setvar (VAR_FIGHTINGTRADECHOICE, 6)
             goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)
+            {playse (SE_RG_POKE_JUMP_FAILURE)
             msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
             even be a Fighting type!"))
             goto (endofwheelchairkidscript)}
@@ -472,7 +472,7 @@ if (flag (wheelchairboyaskedpokemon))
                 setvar (VAR_FIGHTINGTRADECHOICE, 7)
                 goto (fightingtypetradescript)}
                 if (var(VAR_RESULT) == FALSE)
-                {playse (SE_RG_HELP_ERROR)
+                {playse (SE_RG_POKE_JUMP_FAILURE)
                 msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
                 even be a Fighting type!"))
                 goto (endofwheelchairkidscript)}
@@ -486,7 +486,7 @@ if (flag (wheelchairboyaskedpokemon))
                 setvar (VAR_FIGHTINGTRADECHOICE, 8)
                 goto (fightingtypetradescript)}
                 if (var(VAR_RESULT) == FALSE)
-                {playse (SE_RG_HELP_ERROR)
+                {playse (SE_RG_POKE_JUMP_FAILURE)
                 msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
                 even be a Fighting type!"))
                 goto (endofwheelchairkidscript)}
@@ -500,7 +500,7 @@ if (flag (wheelchairboyaskedpokemon))
                 setvar (VAR_FIGHTINGTRADECHOICE, 9)
                 goto (fightingtypetradescript)}
                 if (var(VAR_RESULT) == FALSE)
-                {playse (SE_RG_HELP_ERROR)
+                {playse (SE_RG_POKE_JUMP_FAILURE)
                 msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
                 even be a Fighting type!"))
                 goto (endofwheelchairkidscript)}
@@ -533,7 +533,7 @@ if (flag (wheelchairboyaskedpokemon))
             setvar (VAR_FIGHTINGTRADECHOICE, 10)
             goto (fightingtypetradescript)}
             if (var(VAR_RESULT) == FALSE)
-            {playse (SE_RG_HELP_ERROR)
+            {playse (SE_RG_POKE_JUMP_FAILURE)
             msgbox(format("Hmm... if you don't have its data on your Devondex, I rather not risk it.\p It might not
             even be a Fighting type!"))
             goto (endofwheelchairkidscript)}

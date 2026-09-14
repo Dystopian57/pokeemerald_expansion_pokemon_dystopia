@@ -127,6 +127,7 @@ script WarehouseExposedWiring {
 	playse (SE_M_THUNDERBOLT2)
 	msgbox(format("Got a nasty shock...! But something else too!"))
 	giveitem (ITEM_MAGNET)
+	setflag (FLAG_ITEM_WAREHOUSEWIRING)
 	}
 
 	else{
@@ -144,7 +145,7 @@ script WarehouseExposedWiringSide {
 
 	else{
 	msgbox(format("Better not to touch this..."))}
-	
+	release
 	}
 
 script OldaleWarehouseApplianceStorageWeirdMachine {

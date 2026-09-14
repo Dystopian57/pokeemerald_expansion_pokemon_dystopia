@@ -507,7 +507,8 @@ script OldaleOutsideOldGuy {
 script OldaleOutsideOldWoman {
     lock
     applymovement (30, moves(face_player))
-    msgbox(format("Did you see the greenish rain just now...? \p The Weather Institute says
+    msgbox(format("Have you ever noticed that rain has a greenish tint recently...? It's caused by the
+    polluted sea. \p The Weather Institute says
     it's not harmful on the short-term. But I worry about the long term..."))
     releaseall
     }
@@ -519,7 +520,7 @@ script DLCTeacherOutside {
     {msgbox(format("I'm really dying for a smoke here... \p If only those loser Rebels left the Warehouse,
     Devon Co. would start sending supplies again."))}
 
-	if(var(VAR_OLDALE_PHASE) >= 3)
+	if(var(VAR_OLDALE_PHASE) >= 2)
     {removeobject (35)
     playse (SE_TRUCK_UNLOAD)
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
@@ -1101,13 +1102,16 @@ script OldaleRivalDontLeaveOldaleto101 {
     msgbox(format("Wait... do you need to get ready before the next battle?"))
 	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
         if(var(VAR_RESULT) == 0){
+        setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Very well... I'll be keeping an eye on them. Don't take long!"))
+        removefieldmugshot
 		fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
         addobject (21)
         clearflag (rivalappearsinOldale)
 		fadescreenswapbuffers (FADE_FROM_BLACK)
         setvar(VAR_OLDALE_PHASE, 2)
+
 
         }
         if(var(VAR_RESULT) == 1)
@@ -1139,7 +1143,7 @@ script OldaleMotorBike {
 
 script OldaleCar {
     lock
-    msgbox(format("It's a Devon Roader. Seems to have been parked for some time.")) 
+    msgbox(format("It's a Devon Roader. It's got footprints all over the ceiling.")) 
     release 
 }
 
@@ -1236,6 +1240,7 @@ script OldaleRivalDontLeaveOldaleto103 {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Very well... I'll be keeping an eye on them. Don't take long!"))
+        removefieldmugshot
 		fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
         addobject (22)
@@ -1323,7 +1328,7 @@ script OldaleRivalnoleavetoWhouse {
         if(var(VAR_RESULT) == FEMALE)
 		{msgbox(format("Wait a second... green cap, arm on a sling,... \p You're the lass that beat Calvin!"))}
 
-    msgbox(format("Hahaha, you beat him with THAT thing behind you? He's so pathetic!
+    msgbox(format("Hahaha, you beat him with THAT thing next to you? He's so pathetic!
     \pI'll teach you that not every Rebel is like him!"))
 
 	trainerbattle_no_intro(TRAINER_REBEL_OLDALE_GUARD, RebelOldale_Outro)
@@ -1332,7 +1337,7 @@ script OldaleRivalnoleavetoWhouse {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (18, moves(face_up))
     msgbox(format("We'll give you a warm welcome... hehe.")) 
-    
+    closemessage
     opendoor (36,7)
     playse (SE_SLIDING_DOOR)
     waitdooranim
@@ -1349,7 +1354,7 @@ script OldaleRivalnoleavetoWhouse {
      }
 
     text RebelOldale_Outro{
-    "Huh... I guess Calvin was right after all..."}
+    "Huh... I guess Calvin was right after\nall..."}
     
 
 

@@ -380,380 +380,367 @@ PopWeatherMon102_1:
 	return
 
 
-BridgeItem::
-# 191 "data/maps/Route102/scripts.pory"
-	lockall
-# 192 "data/maps/Route102/scripts.pory"
-	goto_if_unset FLAG_ITEM_PLAYER1F_RATION, BridgeItem_1
-# 197 "data/maps/Route102/scripts.pory"
-	msgbox BridgeItem_Text_0
-# 198 "data/maps/Route102/scripts.pory"
-	releaseall
-	return
-
-BridgeItem_1:
+Road102BridgeItem::
+# 189 "data/maps/Route102/scripts.pory"
+	lock
+# 190 "data/maps/Route102/scripts.pory"
+	finditem ITEM_HARD_STONE
 # 193 "data/maps/Route102/scripts.pory"
-	giveitem ITEM_ENERGY_ROOT, 3
+	removeobject 4
 # 194 "data/maps/Route102/scripts.pory"
-	setflag FLAG_ITEM_PLAYER1F_RATION
-# 195 "data/maps/Route102/scripts.pory"
-	removeobject 8
+	releaseall
 	return
 
 
 Route102Weathermon::
-# 204 "data/maps/Route102/scripts.pory"
+# 200 "data/maps/Route102/scripts.pory"
 	lock
-# 205 "data/maps/Route102/scripts.pory"
+# 201 "data/maps/Route102/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 206 "data/maps/Route102/scripts.pory"
+# 202 "data/maps/Route102/scripts.pory"
 	applymovement 8, Route102Weathermon_Movement_0
-# 207 "data/maps/Route102/scripts.pory"
+# 203 "data/maps/Route102/scripts.pory"
 	msgbox Route102Weathermon_Text_0
-# 208 "data/maps/Route102/scripts.pory"
+# 204 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Weathermon_Text_1, Route102Weathermon_Text_2
-# 210 "data/maps/Route102/scripts.pory"
+# 206 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Weathermon_2
 Route102Weathermon_1:
-# 231 "data/maps/Route102/scripts.pory"
+# 227 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Weathermon_5
 Route102Weathermon_4:
-# 235 "data/maps/Route102/scripts.pory"
+# 231 "data/maps/Route102/scripts.pory"
 endsandshrewinsandstormscript:
-# 236 "data/maps/Route102/scripts.pory"
+# 232 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 237 "data/maps/Route102/scripts.pory"
+# 233 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Weathermon_2:
-# 211 "data/maps/Route102/scripts.pory"
+# 207 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 212 "data/maps/Route102/scripts.pory"
+# 208 "data/maps/Route102/scripts.pory"
 	setwildbattle SPECIES_SANDSHREW, 3
-# 213 "data/maps/Route102/scripts.pory"
+# 209 "data/maps/Route102/scripts.pory"
 	dowildbattle
-# 214 "data/maps/Route102/scripts.pory"
+# 210 "data/maps/Route102/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 215 "data/maps/Route102/scripts.pory"
+# 211 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq Route102Weathermon_7
-# 218 "data/maps/Route102/scripts.pory"
+# 214 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Route102Weathermon_8
-# 222 "data/maps/Route102/scripts.pory"
+# 218 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq Route102Weathermon_9
-# 225 "data/maps/Route102/scripts.pory"
+# 221 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Route102Weathermon_10
 	goto Route102Weathermon_1
 
 Route102Weathermon_5:
-# 232 "data/maps/Route102/scripts.pory"
+# 228 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_4
 
 Route102Weathermon_7:
-# 216 "data/maps/Route102/scripts.pory"
+# 212 "data/maps/Route102/scripts.pory"
 	setflag route102weathermon
 	goto Route102Weathermon_1
 
 Route102Weathermon_8:
-# 219 "data/maps/Route102/scripts.pory"
+# 215 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
-# 220 "data/maps/Route102/scripts.pory"
+# 216 "data/maps/Route102/scripts.pory"
 	setflag route102weathermon
 	goto Route102Weathermon_1
 
 Route102Weathermon_9:
-# 223 "data/maps/Route102/scripts.pory"
+# 219 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_1
 
 Route102Weathermon_10:
-# 226 "data/maps/Route102/scripts.pory"
+# 222 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_1
 
 
 Route103ScientistFoundTracks::
-# 241 "data/maps/Route102/scripts.pory"
+# 237 "data/maps/Route102/scripts.pory"
 	lock
-# 242 "data/maps/Route102/scripts.pory"
+# 238 "data/maps/Route102/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 244 "data/maps/Route102/scripts.pory"
+# 240 "data/maps/Route102/scripts.pory"
 	playse SE_PIN
-# 245 "data/maps/Route102/scripts.pory"
+# 241 "data/maps/Route102/scripts.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route103ScientistFoundTracks_Movement_0
-# 247 "data/maps/Route102/scripts.pory"
+# 243 "data/maps/Route102/scripts.pory"
 	msgbox Route103ScientistFoundTracks_Text_0
-# 249 "data/maps/Route102/scripts.pory"
+# 245 "data/maps/Route102/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route103ScientistFoundTracks_Movement_1
-# 250 "data/maps/Route102/scripts.pory"
+# 246 "data/maps/Route102/scripts.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route103ScientistFoundTracks_Movement_1
-# 251 "data/maps/Route102/scripts.pory"
+# 247 "data/maps/Route102/scripts.pory"
 	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
-# 253 "data/maps/Route102/scripts.pory"
+# 249 "data/maps/Route102/scripts.pory"
 	msgbox Route103ScientistFoundTracks_Text_1
-# 257 "data/maps/Route102/scripts.pory"
+# 253 "data/maps/Route102/scripts.pory"
 	setvar VAR_102_SCIENTIST, 2
-# 258 "data/maps/Route102/scripts.pory"
+# 254 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Scientist::
-# 262 "data/maps/Route102/scripts.pory"
+# 258 "data/maps/Route102/scripts.pory"
 	lock
-# 263 "data/maps/Route102/scripts.pory"
+# 259 "data/maps/Route102/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 265 "data/maps/Route102/scripts.pory"
+# 261 "data/maps/Route102/scripts.pory"
 	compare VAR_102_SCIENTIST, 1
 	goto_if_eq Route102Scientist_2
 Route102Scientist_1:
-# 271 "data/maps/Route102/scripts.pory"
+# 267 "data/maps/Route102/scripts.pory"
 	compare VAR_102_SCIENTIST, 0
 	goto_if_eq Route102Scientist_5
 Route102Scientist_4:
-# 322 "data/maps/Route102/scripts.pory"
+# 318 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Scientist_2:
-# 266 "data/maps/Route102/scripts.pory"
+# 262 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_0
-# 268 "data/maps/Route102/scripts.pory"
+# 264 "data/maps/Route102/scripts.pory"
 	goto scientistasksforhelp102
 	goto Route102Scientist_1
 
 Route102Scientist_5:
-# 272 "data/maps/Route102/scripts.pory"
+# 268 "data/maps/Route102/scripts.pory"
 	setvar VAR_102_SCIENTIST, 1
-# 273 "data/maps/Route102/scripts.pory"
+# 269 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_1
-# 274 "data/maps/Route102/scripts.pory"
+# 270 "data/maps/Route102/scripts.pory"
 	playse SE_PIN
-# 275 "data/maps/Route102/scripts.pory"
+# 271 "data/maps/Route102/scripts.pory"
 	applymovement 7, Route103ScientistFoundTracks_Movement_0
-# 276 "data/maps/Route102/scripts.pory"
+# 272 "data/maps/Route102/scripts.pory"
 	checkplayergender
-# 277 "data/maps/Route102/scripts.pory"
+# 273 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route102Scientist_8
 Route102Scientist_7:
-# 280 "data/maps/Route102/scripts.pory"
+# 276 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Route102Scientist_11
 Route102Scientist_10:
-# 283 "data/maps/Route102/scripts.pory"
+# 279 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_3
-# 288 "data/maps/Route102/scripts.pory"
+# 284 "data/maps/Route102/scripts.pory"
 	applymovement 7, Route102Scientist_Movement_0
-# 290 "data/maps/Route102/scripts.pory"
+# 286 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_4
-# 293 "data/maps/Route102/scripts.pory"
+# 289 "data/maps/Route102/scripts.pory"
 	applymovement 7, Route102Weathermon_Movement_0
-# 295 "data/maps/Route102/scripts.pory"
+# 291 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_5
-# 302 "data/maps/Route102/scripts.pory"
+# 298 "data/maps/Route102/scripts.pory"
 scientistasksforhelp102:
-# 303 "data/maps/Route102/scripts.pory"
+# 299 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scientist_Text_6, Route102Scientist_Text_7
-# 304 "data/maps/Route102/scripts.pory"
+# 300 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Scientist_14
 Route102Scientist_13:
-# 315 "data/maps/Route102/scripts.pory"
+# 311 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Scientist_16
 	goto Route102Scientist_4
 
 Route102Scientist_8:
-# 278 "data/maps/Route102/scripts.pory"
+# 274 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_2
 	goto Route102Scientist_7
 
 Route102Scientist_11:
-# 281 "data/maps/Route102/scripts.pory"
+# 277 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_2
 	goto Route102Scientist_10
 
 Route102Scientist_14:
-# 304 "data/maps/Route102/scripts.pory"
+# 300 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_8
-# 310 "data/maps/Route102/scripts.pory"
+# 306 "data/maps/Route102/scripts.pory"
 	setfollowernpc LOCALID_102_RESEARCHER, FNPC_ALL, Route102Scientistfollowchat, 0
-# 311 "data/maps/Route102/scripts.pory"
+# 307 "data/maps/Route102/scripts.pory"
 	removeobject 7
-# 312 "data/maps/Route102/scripts.pory"
+# 308 "data/maps/Route102/scripts.pory"
 	setflag researcher102
 	goto Route102Scientist_13
 
 Route102Scientist_16:
-# 316 "data/maps/Route102/scripts.pory"
+# 312 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_9
 	goto Route102Scientist_4
 
 
 Route102Scientistfollowchat::
-# 327 "data/maps/Route102/scripts.pory"
+# 323 "data/maps/Route102/scripts.pory"
 	lock
-# 328 "data/maps/Route102/scripts.pory"
+# 324 "data/maps/Route102/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, Route102Weathermon_Movement_0
-# 330 "data/maps/Route102/scripts.pory"
+# 326 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_0
-# 332 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, Route102Scientistfollowchat_Text_1, Route102Scientistfollowchat_Text_2, Route102Scientistfollowchat_Text_3, Route102Scientistfollowchat_Text_4, Route102Scientistfollowchat_Text_5
-# 333 "data/maps/Route102/scripts.pory"
+# 329 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Scientistfollowchat_2
 Route102Scientistfollowchat_1:
-# 339 "data/maps/Route102/scripts.pory"
+# 335 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Scientistfollowchat_5
 Route102Scientistfollowchat_4:
-# 366 "data/maps/Route102/scripts.pory"
+# 362 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Route102Scientistfollowchat_8
 Route102Scientistfollowchat_7:
-# 373 "data/maps/Route102/scripts.pory"
+# 369 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Route102Scientistfollowchat_13
 Route102Scientistfollowchat_12:
-# 388 "data/maps/Route102/scripts.pory"
+# 384 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Route102Scientistfollowchat_16
 Route102Scientistfollowchat_15:
-# 392 "data/maps/Route102/scripts.pory"
+# 388 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Scientistfollowchat_2:
-# 334 "data/maps/Route102/scripts.pory"
+# 330 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_6
 	goto Route102Scientistfollowchat_1
 
 Route102Scientistfollowchat_5:
-# 340 "data/maps/Route102/scripts.pory"
+# 336 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_7
-# 344 "data/maps/Route102/scripts.pory"
+# 340 "data/maps/Route102/scripts.pory"
 	goto_if_set FLAG_SYS_POKEDEX_GET, Route102Scientistfollowchat_10
 	goto Route102Scientistfollowchat_4
 
 Route102Scientistfollowchat_8:
-# 367 "data/maps/Route102/scripts.pory"
+# 363 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_10
 	goto Route102Scientistfollowchat_7
 
 Route102Scientistfollowchat_10:
-# 345 "data/maps/Route102/scripts.pory"
+# 341 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_8
-# 347 "data/maps/Route102/scripts.pory"
+# 343 "data/maps/Route102/scripts.pory"
 	closemessage
-# 349 "data/maps/Route102/scripts.pory"
+# 345 "data/maps/Route102/scripts.pory"
 	playse SE_DEX_SCROLL
+# 346 "data/maps/Route102/scripts.pory"
+	waitse
+# 347 "data/maps/Route102/scripts.pory"
+	playse SE_DEX_SCROLL
+# 348 "data/maps/Route102/scripts.pory"
+	waitse
+# 349 "data/maps/Route102/scripts.pory"
+	playse SE_DEX_SEARCH
 # 350 "data/maps/Route102/scripts.pory"
 	waitse
 # 351 "data/maps/Route102/scripts.pory"
-	playse SE_DEX_SCROLL
+	playse SE_DEX_PAGE
 # 352 "data/maps/Route102/scripts.pory"
 	waitse
-# 353 "data/maps/Route102/scripts.pory"
-	playse SE_DEX_SEARCH
 # 354 "data/maps/Route102/scripts.pory"
-	waitse
-# 355 "data/maps/Route102/scripts.pory"
-	playse SE_DEX_PAGE
-# 356 "data/maps/Route102/scripts.pory"
-	waitse
-# 358 "data/maps/Route102/scripts.pory"
 	setseenmon SPECIES_WARTZ
-# 360 "data/maps/Route102/scripts.pory"
+# 356 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_9
 	goto Route102Scientistfollowchat_4
 
 Route102Scientistfollowchat_13:
-# 374 "data/maps/Route102/scripts.pory"
+# 370 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_11
-# 378 "data/maps/Route102/scripts.pory"
+# 374 "data/maps/Route102/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 379 "data/maps/Route102/scripts.pory"
+# 375 "data/maps/Route102/scripts.pory"
 	destroyfollowernpc
-# 380 "data/maps/Route102/scripts.pory"
+# 376 "data/maps/Route102/scripts.pory"
 	addobject 7
-# 381 "data/maps/Route102/scripts.pory"
+# 377 "data/maps/Route102/scripts.pory"
 	clearflag researcher102
-# 382 "data/maps/Route102/scripts.pory"
+# 378 "data/maps/Route102/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 383 "data/maps/Route102/scripts.pory"
+# 379 "data/maps/Route102/scripts.pory"
 	setvar VAR_102_SCIENTIST, 0
 	goto Route102Scientistfollowchat_12
 
 Route102Scientistfollowchat_16:
-# 389 "data/maps/Route102/scripts.pory"
+# 385 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_12
 	goto Route102Scientistfollowchat_15
 
 
-# 206 "data/maps/Route102/scripts.pory"
+# 202 "data/maps/Route102/scripts.pory"
 Route102Weathermon_Movement_0:
-# 206 "data/maps/Route102/scripts.pory"
+# 202 "data/maps/Route102/scripts.pory"
 	face_player
 	step_end
 
-# 245 "data/maps/Route102/scripts.pory"
+# 241 "data/maps/Route102/scripts.pory"
 Route103ScientistFoundTracks_Movement_0:
-# 245 "data/maps/Route102/scripts.pory"
+# 241 "data/maps/Route102/scripts.pory"
 	face_player
-# 245 "data/maps/Route102/scripts.pory"
+# 241 "data/maps/Route102/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 249 "data/maps/Route102/scripts.pory"
+# 245 "data/maps/Route102/scripts.pory"
 Route103ScientistFoundTracks_Movement_1:
-# 249 "data/maps/Route102/scripts.pory"
+# 245 "data/maps/Route102/scripts.pory"
 	walk_up
-# 249 "data/maps/Route102/scripts.pory"
+# 245 "data/maps/Route102/scripts.pory"
 	walk_up
-# 249 "data/maps/Route102/scripts.pory"
+# 245 "data/maps/Route102/scripts.pory"
 	walk_up
-# 249 "data/maps/Route102/scripts.pory"
+# 245 "data/maps/Route102/scripts.pory"
 	face_right
 	step_end
 
-# 288 "data/maps/Route102/scripts.pory"
+# 284 "data/maps/Route102/scripts.pory"
 Route102Scientist_Movement_0:
-# 288 "data/maps/Route102/scripts.pory"
+# 284 "data/maps/Route102/scripts.pory"
 	face_away_player
 	step_end
 
-BridgeItem_Text_0:
-# 197 "data/maps/Route102/scripts.pory"
-	.string "The box is empty.$"
-
 Route102Weathermon_Text_0:
-# 207 "data/maps/Route102/scripts.pory"
+# 203 "data/maps/Route102/scripts.pory"
 	.string "The Sandshrew is just enjoying the\n"
 	.string "sandstorm. Battle it?$"
 
 Route102Weathermon_Text_1:
-# 208 "data/maps/Route102/scripts.pory"
+# 204 "data/maps/Route102/scripts.pory"
 	.string "Yes$"
 
 Route102Weathermon_Text_2:
-# 208 "data/maps/Route102/scripts.pory"
+# 204 "data/maps/Route102/scripts.pory"
 	.string "No$"
 
 Route103ScientistFoundTracks_Text_0:
-# 247 "data/maps/Route102/scripts.pory"
+# 243 "data/maps/Route102/scripts.pory"
 	.string "Halt a moment, my dear fellow! Those\n"
 	.string "marks on the ground...$"
 
 Route103ScientistFoundTracks_Text_1:
-# 253 "data/maps/Route102/scripts.pory"
+# 249 "data/maps/Route102/scripts.pory"
 	.string "As I thought... they are the\n"
 	.string "unmistakable footprints of a Keckleon!\p"
 	.string "Certainly not the Pokémon we are\n"
@@ -764,23 +751,23 @@ Route103ScientistFoundTracks_Text_1:
 	.string "lead us to a yet uncharted spot.$"
 
 Route102Scientist_Text_0:
-# 266 "data/maps/Route102/scripts.pory"
+# 262 "data/maps/Route102/scripts.pory"
 	.string "You are returned, which fills my heart\n"
 	.string "with renewed hope!\p"
 	.string "Will you assist me with the search of\n"
 	.string "the to-be-Safened Pokémon?$"
 
 Route102Scientist_Text_1:
-# 273 "data/maps/Route102/scripts.pory"
+# 269 "data/maps/Route102/scripts.pory"
 	.string "Where is it, where is it...?$"
 
 Route102Scientist_Text_2:
-# 278 "data/maps/Route102/scripts.pory"
+# 274 "data/maps/Route102/scripts.pory"
 	.string "Oh, hello there lad. I thought they had\n"
 	.string "enclosed the road for me...$"
 
 Route102Scientist_Text_3:
-# 283 "data/maps/Route102/scripts.pory"
+# 279 "data/maps/Route102/scripts.pory"
 	.string "But this is most fortunate. You see, I\n"
 	.string "work for Devon Co.'s Safemon\l"
 	.string "Department.\p"
@@ -792,13 +779,13 @@ Route102Scientist_Text_3:
 	.string "telepathic powers.$"
 
 Route102Scientist_Text_4:
-# 290 "data/maps/Route102/scripts.pory"
+# 286 "data/maps/Route102/scripts.pory"
 	.string "I theorize it's reading in my mind the\n"
 	.string "desire to capture and study it, and\l"
 	.string "thus giving me a wide berth.$"
 
 Route102Scientist_Text_5:
-# 295 "data/maps/Route102/scripts.pory"
+# 291 "data/maps/Route102/scripts.pory"
 	.string "Luckily, according to my theory, if I\n"
 	.string "were to follow someone who harbors no\l"
 	.string "such desire...\p"
@@ -814,15 +801,15 @@ Route102Scientist_Text_5:
 	.string "time, of course.$"
 
 Route102Scientist_Text_6:
-# 303 "data/maps/Route102/scripts.pory"
+# 299 "data/maps/Route102/scripts.pory"
 	.string "Help$"
 
 Route102Scientist_Text_7:
-# 303 "data/maps/Route102/scripts.pory"
+# 299 "data/maps/Route102/scripts.pory"
 	.string "Don't help$"
 
 Route102Scientist_Text_8:
-# 304 "data/maps/Route102/scripts.pory"
+# 300 "data/maps/Route102/scripts.pory"
 	.string "That's splendid! Together we shall take\n"
 	.string "the next step to make Hoenn a safer\l"
 	.string "place.\p"
@@ -837,7 +824,7 @@ Route102Scientist_Text_8:
 	.string "enclave I am yet to discover.$"
 
 Route102Scientist_Text_9:
-# 316 "data/maps/Route102/scripts.pory"
+# 312 "data/maps/Route102/scripts.pory"
 	.string "Ah, most unfortunate... but I\n"
 	.string "understand.\p"
 	.string "You must be in a hurry, or have moral\n"
@@ -849,31 +836,31 @@ Route102Scientist_Text_9:
 	.string "rendezvous here anew. Take care.$"
 
 Route102Scientistfollowchat_Text_0:
-# 330 "data/maps/Route102/scripts.pory"
+# 326 "data/maps/Route102/scripts.pory"
 	.string "Yes? What is it, my young helper?$"
 
 Route102Scientistfollowchat_Text_1:
-# 332 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	.string "Where to?$"
 
 Route102Scientistfollowchat_Text_2:
-# 332 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	.string "Which Pokémon is it?$"
 
 Route102Scientistfollowchat_Text_3:
-# 332 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	.string "All good?$"
 
 Route102Scientistfollowchat_Text_4:
-# 332 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	.string "I'm leaving$"
 
 Route102Scientistfollowchat_Text_5:
-# 332 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	.string "Nevermind$"
 
 Route102Scientistfollowchat_Text_6:
-# 334 "data/maps/Route102/scripts.pory"
+# 330 "data/maps/Route102/scripts.pory"
 	.string "I wish I could offer such guidance. All I\n"
 	.string "can say is I have examined all the spots\l"
 	.string "where Pokémon live in the vicinity.\p"
@@ -883,7 +870,7 @@ Route102Scientistfollowchat_Text_6:
 	.string "oversight...?$"
 
 Route102Scientistfollowchat_Text_7:
-# 340 "data/maps/Route102/scripts.pory"
+# 336 "data/maps/Route102/scripts.pory"
 	.string "Of course, how oblivious of me... the\n"
 	.string "Pokémon I am looking for is a Ralts.\p"
 	.string "I have been told certain speciments of\n"
@@ -892,18 +879,18 @@ Route102Scientistfollowchat_Text_7:
 	.string "is of the utmost priority.$"
 
 Route102Scientistfollowchat_Text_8:
-# 345 "data/maps/Route102/scripts.pory"
+# 341 "data/maps/Route102/scripts.pory"
 	.string "I see you possess a Devon Dex. Let me\n"
 	.string "register the Pokémon's visual data in\l"
 	.string "it.$"
 
 Route102Scientistfollowchat_Text_9:
-# 360 "data/maps/Route102/scripts.pory"
+# 356 "data/maps/Route102/scripts.pory"
 	.string "You should be able to see it now. It may\n"
 	.string "prove paramount in the search.$"
 
 Route102Scientistfollowchat_Text_10:
-# 367 "data/maps/Route102/scripts.pory"
+# 363 "data/maps/Route102/scripts.pory"
 	.string "Ah, it's kind of you to worry about me.\n"
 	.string "Possibly on account of my age?\p"
 	.string "They warned me of the... 'contrarian'\n"
@@ -915,7 +902,7 @@ Route102Scientistfollowchat_Text_10:
 	.string "us continue our search.$"
 
 Route102Scientistfollowchat_Text_11:
-# 374 "data/maps/Route102/scripts.pory"
+# 370 "data/maps/Route102/scripts.pory"
 	.string "Truly? That's most regrettable... I felt\n"
 	.string "we were quite close to our goal.\p"
 	.string "I appreciate your time nonetheless. If\n"
@@ -923,6 +910,6 @@ Route102Scientistfollowchat_Text_11:
 	.string "where we first met.$"
 
 Route102Scientistfollowchat_Text_12:
-# 389 "data/maps/Route102/scripts.pory"
+# 385 "data/maps/Route102/scripts.pory"
 	.string "Pray do not dispair. We shall find the\n"
 	.string "specimen in time.$"

@@ -356,7 +356,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			applymovement (2, moves(jump_in_place_left))
 			waitmovement (2)
 			playbgm (MUS_STOPTHIEF, TRUE)
-
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
 			checkplayergender
 			if(var(VAR_RESULT) == MALE){msgbox(format("I told you this guy was too strong! RUUUUN!"))}
 			if(var(VAR_RESULT) == FEMALE){msgbox(format("I told you this girl was too strong! RUUUUN!"))}
@@ -405,7 +405,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			waitmovement (5)
 			removeobject (5)
 			playse (SE_EXIT)
-			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
 
 
 			addobject (2)
@@ -518,6 +518,41 @@ script OldaleWarehouseUpperBookshelves {
 	msgbox(format("It's full of accounting books and company guidelines."))
 	release
 }
+
+script OldaleWarehouseUpperMicrowave {
+	lock
+	msgbox(format("It's a microwave. There's some reheated food inside..."))
+	if (!flag (FLAG_ITEM_WAREHOUSEMICROWAVE))
+		{giveitem (ITEM_AERODACTYLITE)	}
+	else {
+	msgbox(format("The microwave is empty."))
+	}
+	release
+}
+
+script OldaleWarehouseUpperLoadtadDoll {
+	lock
+	givedecoration (DECOR_LOTAD_DOLL)
+	removeobject (9)
+	setflag (FLAG_ITEM_WAREHOUSELOTADDOLL)	
+	release
+}
+
+script OldaleWarehouseUpperMoneyBags {
+	lock
+	msgbox(format("Seems the Rebels forgot some of their loot..."))
+    showmoneybox (18, 0)
+	addmoney (1000)
+	playse (SE_SHOP)
+	waitse
+	updatemoneybox
+	msgbox(format("Received 5000¥!"))
+	removeobject (8)
+	setflag (FLAG_ITEM_WAREHOUSEMONEYBAGS)
+	hidemoneybox
+	release
+}
+
 
 script OldaleWarehouseUpperExtinguisher {
 	lock

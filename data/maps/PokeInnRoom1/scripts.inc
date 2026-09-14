@@ -679,7 +679,7 @@ PokeInnRoom1WheelchairBoy_49:
 
 PokeInnRoom1WheelchairBoy_51:
 # 324 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 325 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 327 "data/maps/PokeInnRoom1/scripts.pory"
@@ -702,7 +702,7 @@ PokeInnRoom1WheelchairBoy_57:
 
 PokeInnRoom1WheelchairBoy_59:
 # 339 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 340 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 342 "data/maps/PokeInnRoom1/scripts.pory"
@@ -767,7 +767,7 @@ PokeInnRoom1WheelchairBoy_101:
 
 PokeInnRoom1WheelchairBoy_64:
 # 353 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 354 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 356 "data/maps/PokeInnRoom1/scripts.pory"
@@ -860,7 +860,7 @@ PokeInnRoom1WheelchairBoy_97:
 
 PokeInnRoom1WheelchairBoy_99:
 # 400 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 401 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 403 "data/maps/PokeInnRoom1/scripts.pory"
@@ -883,7 +883,7 @@ PokeInnRoom1WheelchairBoy_105:
 
 PokeInnRoom1WheelchairBoy_107:
 # 414 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 415 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 417 "data/maps/PokeInnRoom1/scripts.pory"
@@ -948,7 +948,7 @@ PokeInnRoom1WheelchairBoy_148:
 
 PokeInnRoom1WheelchairBoy_111:
 # 428 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 429 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 431 "data/maps/PokeInnRoom1/scripts.pory"
@@ -1041,7 +1041,7 @@ PokeInnRoom1WheelchairBoy_144:
 
 PokeInnRoom1WheelchairBoy_146:
 # 475 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 476 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 478 "data/maps/PokeInnRoom1/scripts.pory"
@@ -1064,7 +1064,7 @@ PokeInnRoom1WheelchairBoy_152:
 
 PokeInnRoom1WheelchairBoy_154:
 # 489 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 490 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 492 "data/maps/PokeInnRoom1/scripts.pory"
@@ -1097,7 +1097,7 @@ PokeInnRoom1WheelchairBoy_166:
 
 PokeInnRoom1WheelchairBoy_158:
 # 503 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 504 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 506 "data/maps/PokeInnRoom1/scripts.pory"
@@ -1142,7 +1142,7 @@ PokeInnRoom1WheelchairBoy_172:
 
 PokeInnRoom1WheelchairBoy_174:
 # 536 "data/maps/PokeInnRoom1/scripts.pory"
-	playse SE_RG_HELP_ERROR
+	playse SE_RG_POKE_JUMP_FAILURE
 # 537 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox PokeInnRoom1WheelchairBoy_Text_12
 # 539 "data/maps/PokeInnRoom1/scripts.pory"
