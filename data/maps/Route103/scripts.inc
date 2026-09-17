@@ -664,7 +664,7 @@ Route103DevonDrivercheckedby::
 # 336 "data/maps/Route103/scripts.pory"
 	msgbox Route103DevonDrivercheckedby_Text_0
 # 338 "data/maps/Route103/scripts.pory"
-	applymovement 23, Route103DevonDrivercheckedby_Movement_1
+	applymovement 23, Route103DevonGruntCheckingDriver_Movement_1
 # 339 "data/maps/Route103/scripts.pory"
 	waitmovement
 # 340 "data/maps/Route103/scripts.pory"
@@ -926,7 +926,7 @@ Route103TouristApproach0::
 # 499 "data/maps/Route103/scripts.pory"
 	msgbox Route103TouristApproach0_Text_0
 # 500 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_0
 # 501 "data/maps/Route103/scripts.pory"
 	goto touristafterapproach
 	return
@@ -948,7 +948,7 @@ Route103TouristApproach1::
 # 511 "data/maps/Route103/scripts.pory"
 	waitmovement
 # 512 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_0
 # 513 "data/maps/Route103/scripts.pory"
 	goto touristafterapproach
 	return
@@ -970,7 +970,7 @@ Route103TouristApproach2::
 # 523 "data/maps/Route103/scripts.pory"
 	waitmovement
 # 524 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_0
 # 525 "data/maps/Route103/scripts.pory"
 	goto touristafterapproach
 	return
@@ -994,7 +994,7 @@ Route103TouristApproach3::
 # 536 "data/maps/Route103/scripts.pory"
 	waitmovement
 # 537 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_0
 # 538 "data/maps/Route103/scripts.pory"
 	goto touristafterapproach
 	return
@@ -1121,7 +1121,7 @@ Route103Touristbikepushed::
 # 611 "data/maps/Route103/scripts.pory"
 	giveitem ITEM_EXP_SHARE
 # 612 "data/maps/Route103/scripts.pory"
-	applymovement 29, Route103TouristApproach0_Movement_1
+	applymovement 29, Route103DevonGruntCheckingDriver_Movement_0
 # 613 "data/maps/Route103/scripts.pory"
 	msgbox Route103Touristbikepushed_Text_2
 # 615 "data/maps/Route103/scripts.pory"
@@ -1504,7 +1504,7 @@ Route103ConcordConartist_15:
 # 859 "data/maps/Route103/scripts.pory"
 	playse SE_M_MEGA_KICK2
 # 860 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_0
 # 861 "data/maps/Route103/scripts.pory"
 	applymovement 32, Route103ConcordConartist_Movement_5
 # 862 "data/maps/Route103/scripts.pory"
@@ -1779,7 +1779,7 @@ RiverFerryGuyUp_8:
 # 1013 "data/maps/Route103/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_4
 # 1014 "data/maps/Route103/scripts.pory"
-	applymovement 37, Route103DevonDrivercheckedby_Movement_1
+	applymovement 37, Route103DevonGruntCheckingDriver_Movement_1
 # 1015 "data/maps/Route103/scripts.pory"
 	waitmovement 0
 # 1017 "data/maps/Route103/scripts.pory"
@@ -1930,7 +1930,7 @@ RiverFerryGuyDown_5:
 # 1086 "data/maps/Route103/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, RiverFerryGuyUp_Movement_4
 # 1087 "data/maps/Route103/scripts.pory"
-	applymovement 34, Route103DevonDrivercheckedby_Movement_1
+	applymovement 34, Route103DevonGruntCheckingDriver_Movement_1
 # 1088 "data/maps/Route103/scripts.pory"
 	waitmovement 0
 # 1090 "data/maps/Route103/scripts.pory"
@@ -1998,7 +1998,7 @@ RiverFerryManNotThatEntry::
 # 1122 "data/maps/Route103/scripts.pory"
 	applymovement 34, Route103DevonDrivercheckedby_Movement_0
 # 1123 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103TouristApproach0_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_0
 # 1124 "data/maps/Route103/scripts.pory"
 	msgbox RiverFerryManNotThatEntry_Text_0
 # 1125 "data/maps/Route103/scripts.pory"
@@ -2084,9 +2084,9 @@ FisherGuruRoute103_7:
 # 1164 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_2
 # 1165 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonDrivercheckedby_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_1
 # 1166 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_1
+	applymovement 38, Route103DevonGruntCheckingDriver_Movement_0
 # 1167 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_3
 # 1169 "data/maps/Route103/scripts.pory"
@@ -2094,7 +2094,7 @@ FisherGuruRoute103_7:
 # 1170 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_4
 # 1173 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_1
+	applymovement 38, Route103DevonGruntCheckingDriver_Movement_0
 # 1174 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_5
 # 1176 "data/maps/Route103/scripts.pory"
@@ -2117,7 +2117,7 @@ FisherGuruRoute103_5:
 # 1191 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_7
 # 1192 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_1
+	applymovement 38, Route103DevonGruntCheckingDriver_Movement_0
 # 1193 "data/maps/Route103/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, FisherGuruRoute103_Text_8, FisherGuruRoute103_Text_9, FisherGuruRoute103_Text_10, FisherGuruRoute103_Text_11
 # 1195 "data/maps/Route103/scripts.pory"
@@ -2164,7 +2164,7 @@ FisherGuruRoute103_14:
 # 1298 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_24
 # 1301 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_1
+	applymovement 38, Route103DevonGruntCheckingDriver_Movement_0
 # 1302 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
 # 1303 "data/maps/Route103/scripts.pory"
@@ -2237,7 +2237,7 @@ FisherGuruRoute103_20:
 # 1313 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_27
 # 1315 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_1
+	applymovement 38, Route103DevonGruntCheckingDriver_Movement_0
 # 1316 "data/maps/Route103/scripts.pory"
 	setspeaker [ SP_NAME_IVAN ]
 # 1317 "data/maps/Route103/scripts.pory"
@@ -2357,11 +2357,11 @@ FisherGuruRoute103_54:
 # 1245 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_16
 # 1247 "data/maps/Route103/scripts.pory"
-	applymovement 38, Route103TouristApproach0_Movement_1
+	applymovement 38, Route103DevonGruntCheckingDriver_Movement_0
 # 1248 "data/maps/Route103/scripts.pory"
 	msgbox FisherGuruRoute103_Text_17
 # 1249 "data/maps/Route103/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonDrivercheckedby_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, Route103DevonGruntCheckingDriver_Movement_1
 # 1250 "data/maps/Route103/scripts.pory"
 	giveitem ITEM_GOOD_ROD
 # 1251 "data/maps/Route103/scripts.pory"
@@ -2440,16 +2440,10 @@ Route103DevonDrivercheckedby_Movement_0:
 	face_player
 	step_end
 
-# 338 "data/maps/Route103/scripts.pory"
-Route103DevonDrivercheckedby_Movement_1:
-# 338 "data/maps/Route103/scripts.pory"
-	face_up
-	step_end
-
 # 389 "data/maps/Route103/scripts.pory"
 Sharpy103_Movement_0:
 # 389 "data/maps/Route103/scripts.pory"
-	face_right
+	walk_in_place_right
 	step_end
 
 # 390 "data/maps/Route103/scripts.pory"
@@ -2461,7 +2455,7 @@ Sharpy103_Movement_1:
 # 452 "data/maps/Route103/scripts.pory"
 Sharpy103_Movement_2:
 # 452 "data/maps/Route103/scripts.pory"
-	face_left
+	walk_in_place_left
 	step_end
 
 # 468 "data/maps/Route103/scripts.pory"
@@ -2512,12 +2506,6 @@ Sharpy103_Movement_5:
 Route103TouristApproach0_Movement_0:
 # 498 "data/maps/Route103/scripts.pory"
 	emote_exclamation_mark
-	step_end
-
-# 500 "data/maps/Route103/scripts.pory"
-Route103TouristApproach0_Movement_1:
-# 500 "data/maps/Route103/scripts.pory"
-	face_down
 	step_end
 
 # 510 "data/maps/Route103/scripts.pory"
@@ -2617,23 +2605,23 @@ Route103ConcordConartist_Movement_1:
 # 838 "data/maps/Route103/scripts.pory"
 	walk_fast_right
 # 838 "data/maps/Route103/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 840 "data/maps/Route103/scripts.pory"
 Route103ConcordConartist_Movement_2:
 # 840 "data/maps/Route103/scripts.pory"
-	face_right
+	walk_in_place_right
 # 840 "data/maps/Route103/scripts.pory"
-	face_down
+	walk_in_place_down
 # 840 "data/maps/Route103/scripts.pory"
-	face_right
+	walk_in_place_right
 # 840 "data/maps/Route103/scripts.pory"
-	face_down
+	walk_in_place_down
 # 840 "data/maps/Route103/scripts.pory"
-	face_right
+	walk_in_place_right
 # 840 "data/maps/Route103/scripts.pory"
-	face_down
+	walk_in_place_down
 	step_end
 
 # 855 "data/maps/Route103/scripts.pory"
@@ -2641,7 +2629,7 @@ Route103ConcordConartist_Movement_3:
 # 855 "data/maps/Route103/scripts.pory"
 	walk_fast_right
 # 855 "data/maps/Route103/scripts.pory"
-	face_left
+	walk_in_place_left
 	step_end
 
 # 857 "data/maps/Route103/scripts.pory"
@@ -2655,9 +2643,9 @@ Route103ConcordConartist_Movement_5:
 # 861 "data/maps/Route103/scripts.pory"
 	walk_fast_left
 # 861 "data/maps/Route103/scripts.pory"
-	face_right
+	walk_in_place_right
 # 861 "data/maps/Route103/scripts.pory"
-	face_down
+	walk_in_place_down
 	step_end
 
 # 862 "data/maps/Route103/scripts.pory"
@@ -2683,7 +2671,7 @@ Route103ConcordConartist_Movement_8:
 # 882 "data/maps/Route103/scripts.pory"
 	walk_right
 # 882 "data/maps/Route103/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 901 "data/maps/Route103/scripts.pory"
@@ -2805,7 +2793,7 @@ RiverFerryGuyUp_Movement_4:
 # 1013 "data/maps/Route103/scripts.pory"
 	walk_left
 # 1013 "data/maps/Route103/scripts.pory"
-	face_down
+	walk_in_place_down
 	step_end
 
 # 1021 "data/maps/Route103/scripts.pory"

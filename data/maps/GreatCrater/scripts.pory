@@ -281,8 +281,8 @@ script ReportersGreatCrater {
    		 if (var(VAR_RESULT) == 1) {
 		 setspeaker ([SP_NAME_KIRA])
    		 msgbox(format("That's too bad... I think you'd be such a star!"))
-		 applymovement (2, moves(face_down))
-		 applymovement (3, moves(face_down))}
+		 applymovement (2, moves(walk_in_place_down * 1))
+		 applymovement (3, moves(walk_in_place_down * 1))}
 	}
 
 	finishreporterscript:
@@ -394,7 +394,7 @@ script CameramanGreatCrater {
 	setspeaker ([SP_NAME_DAN])
 	applymovement (2, moves(face_player))
 	msgbox(format("It's easy money. You won't get far in the Rebel Zone by being moral."))
-	applymovement (2, moves(face_down))
+	applymovement (2, moves(walk_in_place_down * 1))
 	msgbox(format("I know from experience..."))
 	}
 	releaseall
@@ -511,7 +511,7 @@ script GreatCraterSouvenirShopkeeper {
 		applymovement (1, moves(face_player))
 		msgbox(format("I know this is not New Rustboro Mall, but let's be civil hey? \p If you want
 		to buy, go around the counter."))
-		applymovement (1, moves(face_down))
+		applymovement (1, moves(walk_in_place_down * 1))
 		waitmovement (1)
 		releaseall}
 
@@ -585,10 +585,10 @@ script CraterTrappedTouristandRope {
 			playse (SE_M_BIND)
 			waitse
 			playse (SE_M_BIND)
-			applymovement (10, moves(face_up))
+			applymovement (10, moves(walk_in_place_up * 1))
 			showobjectat (10, MAP_GREAT_CRATER)
 
-            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right, face_left))
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 1, walk_in_place_left * 1))
 			waitmovement (OBJ_EVENT_ID_PLAYER)
 			applymovement (10, moves(jump_up))
 			playse (SE_LEDGE)
@@ -597,15 +597,15 @@ script CraterTrappedTouristandRope {
 			
 			waitse
 
-			applymovement (10, moves(face_right))
+			applymovement (10, moves(walk_in_place_right * 1))
 			msgbox(format("My hero! I don't know what I would have done without you! \p But I know what
 			I'll do now. Reward you for your generosity!"))
 			giveitem (ITEM_EVIOLITE)
 			msgbox(format("A friend gifted me this before my trip, saying it'll keep me safe... \p Well, it
 			clearly doesn't work, so you can have it!"))
-			applymovement (10, moves(face_down))
+			applymovement (10, moves(walk_in_place_down * 1))
 			msgbox(format("Wait... maybe it's thanks to it that you found me?"))
-			applymovement (10, moves(face_right))
+			applymovement (10, moves(walk_in_place_right * 1))
 			msgbox(format("Well, nevermind. I don't plan to leave New Rustboro ever again, so I won't
 			need it. \p Goodbye now, and watch your footing!"))
 
@@ -672,9 +672,9 @@ script GreatCraterDevonGruntFemale {
 	we can't risk civilians interfering with his work."))
     applymovement (9, moves(walk_in_place_down * 1))
 	msgbox(format("You have been hurt by a Pokémon, do you? Surely you understand."))
-    applymovement (9, moves(face_down))
+    applymovement (9, moves(walk_in_place_down * 1))
 	waitmovement
-    applymovement (9, moves(face_down))
+    applymovement (9, moves(walk_in_place_down * 1))
 	waitmovement
 	release
 	}
@@ -685,7 +685,7 @@ script GreatCraterDevonGruntMale {
     applymovement (8, moves(face_player))
 	msgbox(format("By regulation of Devon Co.'s Wildlife Protocol, section 75, titled 'Route Enclosures
 	for the purpose of Safemon Research...' \p This area is closed off to civilians until further notice."))
-    applymovement (8, moves(face_down))
+    applymovement (8, moves(walk_in_place_down * 1))
 	waitmovement
 	release
 	}
@@ -696,7 +696,7 @@ script GreatCraterTouristMaleIdle {
     applymovement (12, moves(face_player))
 	msgbox(format("I once ordered a donut in Pewter City, and they gave me a riceball!
 	\p At least you know what donuts are here in Hoenn."))
-    applymovement (12, moves(face_left))
+    applymovement (12, moves(walk_in_place_left * 1))
 	waitmovement
 	release
 	}

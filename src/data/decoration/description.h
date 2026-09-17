@@ -112,17 +112,19 @@ const u8 DecorDesc_GORGEOUS_PLANT[] = _(
         "plant in a big pot.");
 
 const u8 DecorDesc_RED_BRICK[] = _(
-    "A red futon you can.\n"
-        "lie down in to rest.");
+    "A red futon you\n"
+        "can lie down in\n"
+        "to rest.");
 
 const u8 DecorDesc_YELLOW_BRICK[] = _(
-    "A yellow futon you.\n"
+    "A yellow futon you\n"
         "can lie down in\n"
         "to rest.");
 
 const u8 DecorDesc_BLUE_BRICK[] = _(
-    "A blue futon you can.\n"
-        "lie down in to rest.");
+    "A blue futon you\n"
+        "can lie down in\n"
+        "to rest.");
 
 const u8 DecorDesc_RED_BALLOON[] = _(
     "A red balloon filled\n"
@@ -159,7 +161,7 @@ const u8 DecorDesc_SLIDE[] = _(
         "from the platform.");
 
 const u8 DecorDesc_FENCE_LENGTH[] = _(
-    "A small fence that\n"
+    "A wired fence that\n"
         "blocks passage.");
 
 const u8 DecorDesc_FENCE_WIDTH[] = _(
@@ -180,9 +182,9 @@ const u8 DecorDesc_STAND[] = _(
         "with steps.");
 
 const u8 DecorDesc_MUD_BALL[] = _(
-    "A large ball of mud.\n"
-        "Crumbles if stepped\n"
-        "on.");
+    "A Pokéball made of\n"
+        "mud. Crumbles if\n"
+        "stepped on.");
 
 const u8 DecorDesc_BREAKABLE_DOOR[] = _(
     "A door made of\n"
@@ -289,7 +291,7 @@ const u8 DecorDesc_THUNDER_MAT[] = _(
 
 const u8 DecorDesc_FIRE_BLAST_MAT[] = _(
     "A mat featuring\n"
-        "a SAFEBALL.\n"
+        "a Devon Ball.\n"
         "Made by DEVON.");
 
 const u8 DecorDesc_POWDER_SNOW_MAT[] = _(
@@ -331,8 +333,8 @@ const u8 DecorDesc_GREEN_POSTER[] = _(
         "a TREECKO print.");
 
 const u8 DecorDesc_RED_POSTER[] = _(
-    "A small poster with\n"
-        "a TORCHIC print.");
+    "A kit full of\n"
+        "medical supplies.");
 
 const u8 DecorDesc_FIRSTAIDKIT[] = _(
     "A box containing\n"
@@ -344,13 +346,11 @@ const u8 DecorDesc_BLUE_POSTER[] = _(
         "reflection.");
 
 const u8 DecorDesc_CUTE_POSTER[] = _(
-    "A small poster with\n"
-        "an AZURILL print.");
+    "A stopped wall clock.");
 
 const u8 DecorDesc_PIKA_POSTER[] = _(
-    "A large poster with\n"
-        "a PIKACHU and\n"
-        "PICHU print.");
+    "A printed copy of\n"
+        "a shared memory.");
 
 const u8 DecorDesc_LONG_POSTER[] = _(
     "A large poster with\n"
@@ -365,8 +365,8 @@ const u8 DecorDesc_SKY_POSTER[] = _(
         "a WINGULL print.");
 
 const u8 DecorDesc_KISS_POSTER[] = _(
-    "A large poster with\n"
-        "a SMOOCHUM print.");
+    "A printed copy of\n"
+        "a shared memory.");
 
 const u8 DecorDesc_PICHU_DOLL[] = _(
     "A PICHU doll.\n"
@@ -409,9 +409,9 @@ const u8 DecorDesc_TOTODILE_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_JIGGLYPUFF_DOLL[] = _(
-    "A JIGGLYPUFF doll.\n"
-        "Place it on a mat\n"
-        "or a desk.");
+    "A warm set of.\n"
+        "bedding for"
+        "the winter.");
 
 const u8 DecorDesc_MEOWTH_DOLL[] = _(
     "A MEOWTH doll.\n"
@@ -419,12 +419,11 @@ const u8 DecorDesc_MEOWTH_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_CLEFAIRY_DOLL[] = _(
-    "A CLEFAIRY doll.\n"
-        "Place it on a mat\n"
-        "or a desk.");
+    "A bike that may\n"
+        "fall apart if used.");
 
 const u8 DecorDesc_DITTO_DOLL[] = _(
-    "A DITTO doll.\n"
+    "A GACHAPOD doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -454,12 +453,12 @@ const u8 DecorDesc_DUSKULL_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_WYNAUT_DOLL[] = _(
-    "A stack of.\n"
+    "A stack of\n"
         "cool sci-fi\n"
         "novels.");
 
 const u8 DecorDesc_BALTOY_DOLL[] = _(
-    "A sandbag used.\n"
+    "A sandbag used\n"
         "in trenches for\n"
         "protection.");
 
@@ -469,22 +468,22 @@ const u8 DecorDesc_KECLEON_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_AZURILL_DOLL[] = _(
-    "An Super Substitute.\n"
+    "An Super Substitute\n"
         "doll you can place on\n"
         "a mat or a desk.");
 
 const u8 DecorDesc_SKITTY_DOLL[] = _(
-    "A box made.\n"
+    "A box made\n"
         "of cardboard\n"
         "to store stuff.");
 
 const u8 DecorDesc_SWABLU_DOLL[] = _(
-    "A recipient to.\n"
+    "A recipient to\n"
         "throw trash\n"
         "into.");
 
 const u8 DecorDesc_GULPIN_DOLL[] = _(
-    "A GULPIN doll.\n"
+    "A GUMMIN doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -504,7 +503,7 @@ const u8 DecorDesc_PIKA_CUSHION[] = _(
         "or a desk.");
 
 const u8 DecorDesc_ROUND_CUSHION[] = _(
-    "A set of three.\n"
+    "A set of three\n"
         "well-conserved\n"
         "war rations.");
 
@@ -524,14 +523,14 @@ const u8 DecorDesc_SPIN_CUSHION[] = _(
         "days.");
 
 const u8 DecorDesc_DIAMOND_CUSHION[] = _(
-    "An old but still.\n"
+    "An old but still\n"
         "popular game\n"
         "console.");
 
 const u8 DecorDesc_BALL_CUSHION[] = _(
     "A cushion that.\n"
-        "features a SAFEBALL.\n"
-        "Made by DEVON.");
+        "features a Devon Ball.\n"
+        "Made by Devon.");
 
 const u8 DecorDesc_GRASS_CUSHION[] = _(
     "A grass-mark\n"
@@ -569,12 +568,12 @@ const u8 DecorDesc_VENUSAUR_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_CHARIZARD_DOLL[] = _(
-    "A wall made of.\n"
+    "A wall made of\n"
         "cardboard with\n"
         "holes on it.");
 
 const u8 DecorDesc_BLASTOISE_DOLL[] = _(
-    "A set of boxes.\n"
+    "A set of boxes\n"
         "stacked on top\n"
         "of each other.");
 

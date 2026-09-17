@@ -412,7 +412,7 @@
       "y": 9,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Littleroot_Rival_Mailbox"
+      "script": "Littleroot_RivalHouseSign"
     },
     {
       "type": "hidden_item",

@@ -314,7 +314,7 @@ OldaleWarehouseApplianceStoragePokeAssembler::
 # 45 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 OldaleWarehouseApplianceStorageScavenger2Trigger_Movement_0:
 # 45 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 49 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"

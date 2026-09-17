@@ -9275,8 +9275,11 @@ Music: orphanboy
 Double Battle: No
 AI: Basic Trainer
 
-Zigzagoon_Galar
+Zigzagoon_Galar @ Oran Berry
 Level: 4
+Ability: Gluttony
+Nature: Lonely
+- Secret Power
 
 === TRAINER_REBEL_GRUNT_101 ===
 Name: CALVIN
@@ -9289,6 +9292,11 @@ AI: Basic Trainer
 
 Poochain
 Level: 4
+Ability: Defiant
+Nature: Lonely
+- Tackle
+- Hone Claws
+- Assurance
 
 
 === TRAINER_TOURIST_GREATCRATER ===
@@ -9297,15 +9305,25 @@ Class: Touristf
 Pic: touristfbattle
 Gender: Female
 Music: Tourist
-Items: Shalour Sable
+Items: Fresh Water
 Double Battle: No
 AI: Basic Trainer
 
-Clefairy
+Clefairy @ Shalour Sable
 Level: 4
+Ability: Cute Charm
+Nature: Lonely
+- Draining Kiss
+- Metronome
+- Charm
+- Sing
 
-Cubone
+Cubone @ Thick Club
 Level: 4
+Ability: Rock Head
+Nature: Lonely
+- Bonemerang
+- Headbutt
 
 === TRAINER_TOURIST_GREATCRATER_2 ===
 Name: IRIS
@@ -9328,14 +9346,27 @@ Class: Theoristm
 Pic: theoristmbattle
 Gender: Male
 Music: Suspicious
+Items: Tea
 Double Battle: No
 AI: Basic Trainer
 
-Sableye
+Sableye @ Sapphire
 Level: 4
+Ability: Prankster
+Nature: Lonely
+- Will-o-Wisp
+- Detect
+- Nasty Plot
+- Power Gem
 
-Geoslug
+Geoslug @ Metronome
 Level: 4
+Ability: Thermal Exchange
+Nature: Lonely
+- Tar Shot
+- Scorching Sands
+- Harden
+- Sand Attack
 
 === TRAINER_CONSPIRACY_GREATCRATER_2 ===
 Name: WYATT
@@ -9361,15 +9392,27 @@ Class: Reporters
 Pic: reportersbattle
 Gender: Male
 Music: Interviewer
-Items: Fine Remedy / Heal Powder
+Items: Remedy / Heal Powder
 Double Battle: Yes
 AI: Basic Trainer
 
-Verdoom
+Verdoom @ Zoom Lens
 Level: 4
+Ability: Magnet Pull
+Nature: Lonely
+- Reflect
+- Light Screen
+- Freezing Glare
+- Flash Cannon
 
-Mawile
+Mawile @ Clear Amulet
 Level: 4
+Ability: Intimidate
+Nature: Lonely
+- Thunder Fang
+- Swagger
+- Substitute
+- Bite
 
 === TRAINER_HERMIT_CRATER ===
 Name: AURON
@@ -9380,13 +9423,37 @@ Music: Suspicious
 Double Battle: No
 AI: Smart Trainer
 
-Venonat
+Wynaut @ Custap Berry
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 125 Def / 0 SpA / 125 SpD / 252 Spe
+Ability: Shadow Tag
+Nature: Lonely
+- Counter
+- Mirror Coat
+- Destiny Bond
+- Encore
 
-Wynaut
+Venonat @ Life Orb
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe
+Ball: ITEM_DUSK_BALL
+Ability: Tinted Lens
+Nature: Modest
+- Bug Buzz
+- Disable
+- Swift
+- Acid Spray
+
+Unown-D @ Choice Specs
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe
+Ball: ITEM_CHERISH_BALL
+Ability: Levitate
+Nature: Modest
+- Hidden Power
 
 
 === TRAINER_HERMIT_CRATER_2 ===
@@ -9490,14 +9557,21 @@ Class: Devongruntm
 Pic: devongruntmbattle
 Gender: Male
 Music: Suspicious
+Items: Fresh Water
 Double Battle: No
 AI: Basic Trainer
 
 Helipip
 Level: 5
 
-Poochain
+Poochain @ Binding Band
 Level: 5
+Ability: Intimidate
+Nature: Lonely
+- Wrap
+- Hone Claws
+- Assurance
+- Pursuit
 
 
 === TRAINER_SHADYDEALER_103 ===
@@ -9756,6 +9830,7 @@ AI: Basic Trainer
 
 Rolloon @ Choice Specs
 Level: 8
+Ability: Aftermath
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Ball: ITEM_CHERISH_BALL
@@ -9812,11 +9887,24 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Manchine
+Manchine @ Magnet
 Level: 10
+Ability: Neuroforce
+Nature: Lonely
+- Bullet Punch
+- Counter
+- Karate Chop
+- Thunder Punch
 
-Poochain
+Poochain @ Heal Powder
 Level: 10
+Ability: Intimidate
+Nature: Lonely
+- Endure
+- Flail
+- Sucker Punch
+- Pursuit
+
 
 === TRAINER_OLDALEDEVONGRUNT_F ===
 Name: KAREN
@@ -9824,14 +9912,29 @@ Class: Devongruntf
 Pic: devongruntfbattle
 Gender: Female
 Music: Intense
+Items: Super Potion / Revival Herb
 Double Battle: No
 AI: Check Bad Move
 
-Helipip
-Level: 10
 
-Verdoom
+
+Helipip @ Loaded Dice
 Level: 10
+Ability: Aerilate
+Nature: Lonely
+- Barrage
+- Tailwind
+- Nuzzle
+- Aerial Ace
+
+Verdoom @ Wide Lens
+Level: 10
+Ability: Aerilate
+Nature: Lonely
+- Volt Switch
+- Flash Cannon
+- Freezing Glare
+- Autotomize
 
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===

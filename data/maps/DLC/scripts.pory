@@ -50,7 +50,7 @@ script OldaleTown_DLC_TherapyCutscene{
     msgbox(format("As I was saying, we are going to start by watching some pictures of Kantonian
     Pokémon, and sharing what feelings they evoke in us."))
 	showmonpic(SPECIES_VENUSAUR, 10,3)
-	playmoncry(SPECIES_VENUSAUR, CRY_MODE_NORMAL) 
+	//playmoncry(SPECIES_VENUSAUR, CRY_MODE_NORMAL) 
     msgbox(format("Let's begin with you, {PLAYER}. Take a look at this picture."))
     hidemonpic
     msgbox(format("What do you think about the Pokémon in it?"))
@@ -83,7 +83,7 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (6, moves (walk_in_place_down * 1))
     waitmovement
 	showmonpic(SPECIES_CHARIZARD, 10,3)
-	playmoncry(SPECIES_CHARIZARD, CRY_MODE_NORMAL) 
+	//playmoncry(SPECIES_CHARIZARD, CRY_MODE_NORMAL) 
     msgbox(format("Let's continue... who wants to share their thoughts about this one?"))
     hidemonpic
     playse (SE_PIN)
@@ -108,7 +108,7 @@ script OldaleTown_DLC_TherapyCutscene{
     waitmovement
     msgbox(format("Now now, let us be tolerant with... differences of opinion."))
     showmonpic(SPECIES_BLASTOISE, 10,3)
-	playmoncry(SPECIES_BLASTOISE, CRY_MODE_NORMAL)
+	//playmoncry(SPECIES_BLASTOISE, CRY_MODE_NORMAL)
     applymovement (7, moves (face_up))
     msgbox(format("Let's see about the last one - the water CANNON Pokémon, Blastoise."))
     hidemonpic
@@ -193,8 +193,9 @@ script OldaleTown_DLC_TherapyCutscene{
     closemessage
     removefieldmugshot
     applymovement (2, moves (walk_right * 1, walk_down *2))
-    waitmovement
+    waitmovement (2)
     removeobject (2)
+    playse (SE_DOOR)
     applymovement (3, moves (walk_right * 2, walk_down *2))
     waitmovement (3)
     removeobject (3)
@@ -216,6 +217,8 @@ script OldaleTown_DLC_TherapyCutscene{
 	waitmovement
 
 	setvar(VAR_OLDALE_PHASE, 1)
+    fadeoutbgm (1)
+    fadeinbgm (1)
     playbgm (MUS_UNKNOWN5, TRUE)
 	releaseall	
 }
@@ -894,10 +897,10 @@ script MauvillePosterDLC {
 
 script TVDLC {
     lock
-    msgbox(format("The TV is playing a documentary on Safemon on a loop. \p 'Before leaving Devon
+    msgbox(format("The TV is playing a documentary on Safemon on a loop.\p 'Before leaving Devon
     laboratories, all Safemon are injected with the Everserum, which prevents them from evolving
-    through natural means'. \p 'This means no unplanned mutations will ever take place on a Safemon.
-    \pChange can be dangerous!'"))
+    through natural means'.\p'This means no unplanned mutations will ever take place on a Safemon.'
+    \p'Change can be dangerous!'"))
     releaseall
 }
 

@@ -3087,18 +3087,45 @@ SamanthaShake::
 GiveSafemonParty1::
 # 1679 "data/maps/OldaleTown/scripts.pory"
 	callnative ZeroPlayerPartyMons
-# 1680 "data/maps/OldaleTown/scripts.pory"
-	givemon SPECIES_BULBASYNTH, 10, ITEM_REMEDY
-# 1681 "data/maps/OldaleTown/scripts.pory"
-	givemon SPECIES_SMOTHQUIL, 10, ITEM_HEAL_POWDER
 # 1682 "data/maps/OldaleTown/scripts.pory"
-	givemon SPECIES_WARABBIT, 10, ITEM_FULL_HEAL
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, GiveSafemonParty1_Text_0, GiveSafemonParty1_Text_1
 # 1683 "data/maps/OldaleTown/scripts.pory"
-	givemon SPECIES_PIKACHU_SAFE, 10, ITEM_AERODACTYLITE
+	compare VAR_RESULT, 0
+	goto_if_eq GiveSafemonParty1_2
+GiveSafemonParty1_1:
+# 1691 "data/maps/OldaleTown/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq GiveSafemonParty1_4
+	return
+
+GiveSafemonParty1_2:
 # 1684 "data/maps/OldaleTown/scripts.pory"
-	givemon SPECIES_MIMIYURUI, 10, ITEM_SUPERB_REMEDY
+	givemon SPECIES_BULBASYNTH, 10, ITEM_REMEDY
 # 1685 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_SMOTHQUIL, 10, ITEM_HEAL_POWDER
+# 1686 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_WARABBIT, 10, ITEM_FULL_HEAL
+# 1687 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_PIKACHU_SAFE, 10, ITEM_AERODACTYLITE
+# 1688 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_MIMIYURUI, 10, ITEM_SUPERB_REMEDY
+# 1689 "data/maps/OldaleTown/scripts.pory"
 	givemon SPECIES_NINKABURI, 10, ITEM_SHALOUR_SABLE
+	goto GiveSafemonParty1_1
+
+GiveSafemonParty1_4:
+# 1692 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_SHIITAKO, 10, ITEM_REMEDY
+# 1693 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_POOCHAIN, 10, ITEM_HEAL_POWDER
+# 1694 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_GEOSLUG, 10, ITEM_FULL_HEAL
+# 1695 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_FOOMING, 10, ITEM_AERODACTYLITE
+# 1696 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_ROTOM_MONITOR, 10, ITEM_SUPERB_REMEDY
+# 1697 "data/maps/OldaleTown/scripts.pory"
+	givemon SPECIES_MANCHINE, 10, ITEM_SHALOUR_SABLE
 	return
 
 
@@ -4417,6 +4444,14 @@ SamanthaGetSnacksCutscene_Text_4:
 # 1657 "data/maps/OldaleTown/scripts.pory"
 	.string "Hehehe... I've got tons. We can go back.\p"
 	.string "T-thank you...$"
+
+GiveSafemonParty1_Text_0:
+# 1682 "data/maps/OldaleTown/scripts.pory"
+	.string "1st Party$"
+
+GiveSafemonParty1_Text_1:
+# 1682 "data/maps/OldaleTown/scripts.pory"
+	.string "2nd Party$"
 
 DevonGruntMOutro::
 # 1022 "data/maps/OldaleTown/scripts.pory"

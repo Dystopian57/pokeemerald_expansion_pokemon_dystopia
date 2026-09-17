@@ -313,8 +313,8 @@
 #define FLAG_ENABLE_PROF_BIRCH_MATCH_CALL    0x119
 #define watcheddevoninnshow            0x11A
 #define cigarettepop             0x11B
-#define waterfallhermitlairitem  0x11C
-#define FLAG_RECEIVED_DEVON_SCOPE            0x11D
+#define shuppetgivesincense  0x11C
+#define rebelin101mustapproachtoswing            0x11D
 #define FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE  0x11E
 #define FLAG_MET_DEVON_EMPLOYEE              0x11F
 #define FLAG_MET_RIVAL_RUSTBORO              0x120
@@ -1272,8 +1272,8 @@
 #define FLAG_ITEM_WAREHOUSELOTADDOLL                                           0x4B3 // Unused Flag
 #define FLAG_ITEM_WAREHOUSEMONEYBAGS                                           0x4B4 // Unused Flag
 #define FLAG_ITEM_WAREHOUSEAPPLIANCEITEM                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
+#define FLAG_ITEM_WATERFALLLAIRITEM                                           0x4B6 // Unused Flag
+#define FLAG_ITEM_CRATERBOTTOMITEM                                           0x4B7 // Unused Flag
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
 #define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
 #define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag

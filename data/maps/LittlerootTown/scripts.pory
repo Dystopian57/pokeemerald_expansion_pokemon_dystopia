@@ -529,7 +529,7 @@ LittlerootTown_EventScript_DangerousWithoutPokemon::
 # 305 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Movement_TwinApproachPlayerLeft:
 # 306 "data/maps/LittlerootTown/scripts.pory"
-	face_right
+	walk_in_place_right
 # 307 "data/maps/LittlerootTown/scripts.pory"
 	delay_8
 # 308 "data/maps/LittlerootTown/scripts.pory"
@@ -553,7 +553,7 @@ LittlerootTown_Movement_TwinApproachPlayerLeft:
 # 317 "data/maps/LittlerootTown/scripts.pory"
 	walk_fast_left
 # 318 "data/maps/LittlerootTown/scripts.pory"
-	face_down
+	walk_in_place_down
 # 319 "data/maps/LittlerootTown/scripts.pory"
 	step_end
 # 320 "data/maps/LittlerootTown/scripts.pory"
@@ -619,7 +619,7 @@ LittlerootTown_EventScript_NeedPokemonTriggerRight::
 # 353 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Movement_TwinApproachPlayerRight:
 # 354 "data/maps/LittlerootTown/scripts.pory"
-	face_right
+	walk_in_place_right
 # 355 "data/maps/LittlerootTown/scripts.pory"
 	delay_8
 # 356 "data/maps/LittlerootTown/scripts.pory"
@@ -641,7 +641,7 @@ LittlerootTown_Movement_TwinApproachPlayerRight:
 # 364 "data/maps/LittlerootTown/scripts.pory"
 	walk_fast_right
 # 365 "data/maps/LittlerootTown/scripts.pory"
-	face_down
+	walk_in_place_down
 # 366 "data/maps/LittlerootTown/scripts.pory"
 	step_end
 # 367 "data/maps/LittlerootTown/scripts.pory"
@@ -1836,7 +1836,7 @@ script FatGuyExclMark {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (Donutquestaccepted) && !flag (fatguyseesplayerleavelittl))
 	{
-	applymovement (3, moves(face_up, emote_exclamation_mark))
+	applymovement (3, moves(walk_in_place_up * 1, emote_exclamation_mark))
 	playse (SE_PIN)
 	waitse
 	waitmovement (3)
@@ -1878,7 +1878,7 @@ if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
 
 		if (checkitem (ITEM_SHALOUR_SABLE)  == FALSE)
 		{
-		msgbox (format("SO, {PLAYER}... it's okay if you don't have time, but... \p I'd really like a taste of those
+		msgbox (format("So, {PLAYER}... it's okay if you don't have time, but... \p I'd really like a taste of those
 		{COLOR RED}Crater Donuts{COLOR DARK_GRAY}.
 		\p I'd go myself, but my Digglet is weak, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
 		town.\pBut you're a former soldier, right? They won't mess with you!"))
@@ -2080,6 +2080,7 @@ releaseall
 script LittlerootTown_Trigger_Blocknopokes{
 	lock
 	msgbox ("Professor Balsam is waiting at the lab...")
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
 	releaseall	
@@ -2088,6 +2089,7 @@ script LittlerootTown_Trigger_Blocknopokes{
 script LittlerootTown_Trigger_Blockgorival{
 	lock
 	msgbox ("Grandpa Birch asked to check on {RIVAL}...")
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
 	releaseall	
@@ -2096,6 +2098,7 @@ script LittlerootTown_Trigger_Blockgorival{
 script LittlerootTown_Trigger_Blocknopokesnocemetery{
 	lock
 	msgbox ("Professor Balsam is waiting at the lab...")
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 	waitmovement
 	releaseall	
@@ -2104,6 +2107,7 @@ script LittlerootTown_Trigger_Blocknopokesnocemetery{
 script LittlerootTown_Trigger_Blockgorivalnocemetery{
 	lock
 	msgbox ("Grandpa Birch asked to check on {RIVAL}...")
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 	waitmovement
 	releaseall	
@@ -2128,7 +2132,8 @@ script LittlerootTown_Trigger_NoEnterRival1{
 	msgbox (format("ORYAAAAAAAAHH!"))
 	//removefieldmugshot
 	setspeaker ([NULL])
-	msgbox (format("Whatever is happening inside, it does not look like a good time to visit...")) 
+	msgbox (format("Whatever is happening inside, it does not look like a good time to visit..."))
+	closemessage
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
@@ -2199,6 +2204,11 @@ else {
 	goto (endfirstgreeting)}
 	if (var(VAR_LITTLEROOT_PHASE) == 0 && flag(Birchafter1stgreeting))
 	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things she wants to tell you about."))}
+
+	if (var(VAR_LITTLEROOT_PHASE) == 3 && !flag (checkonrival))
+	{msgbox (format("Oh, {PLAYER}!"))
+	goto (birchaskscheckonrival)}
+
 	if (var(VAR_LITTLEROOT_PHASE) == 3 && flag (checkonrival))
 	{msgbox (format("Have you paid {RIVAL} a visit yet?\p Please... it would lift a weight off my old
 	shoulders."))
@@ -2234,8 +2244,9 @@ else {
 	to support them."))}
 
 	endofbirchscript:
+	closemessage
 	removefieldmugshot
-	applymovement (1, moves(face_down))
+	applymovement (1, moves(walk_in_place_down * 1))
 	waitmovement (1)
 	releaseall
 }
@@ -2251,10 +2262,11 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("Ah, {PLAYER}!"))
 		removefieldmugshot
-		applymovement (1, moves(face_down, walk_down * 1, face_left))
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+		applymovement (1, moves(face_down, walk_down * 1, walk_in_place_left * 1))
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right * 1))
 		waitmovement
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
+		birchaskscheckonrival:
 		setspeaker ([SP_NAME_BIRCH])
 			if (!flag (GOTSTARTER3))
 
@@ -2279,7 +2291,7 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		It's as if he is reliving things that happened during the war.\p You must know what he's going through...
 		Perhaps you can calm him down."))}
 		removefieldmugshot
-		applymovement (1, moves(walk_up * 1, face_down))
+		applymovement (1, moves(walk_in_place_down * 1))
 		waitmovement
 		setflag (checkonrival)}
 	else {setflag (checkonrival)}
@@ -2328,10 +2340,10 @@ script OldManThanks {
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("Look at you. You have gone through so much, but you are still standing."))
 		setspeaker ([SP_NAME_BIRCH])
-		applymovement (1, moves(face_right))
+		applymovement (1, moves(walk_in_place_right * 1))
 		msgbox (format("Your parents would be proud. You came out tough, just like them."))
 		setspeaker ([SP_NAME_BIRCH])
-		applymovement (1, moves(face_up))
+		applymovement (1, moves(walk_in_place_up * 1))
 		msgbox (format("Well, off you go now! Please, take care out there. \p These parts are not as safe as
 		they used to... \p But have faith in your Pokémon, and you will be fine. Good bye!"))
 		removefieldmugshot

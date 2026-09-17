@@ -52,6 +52,7 @@ LittlerootTown_BrendansHouse_2F_OnWarp:
 LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, SecretBase_EventScript_InitDecorations
+	goto_if_eq VAR_RESULT, FEMALE, SecretBase_EventScript_InitDecorations
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall::
@@ -557,7 +558,7 @@ script PlayerRoomDiary {
 			msgbox (format("Today dad and mom gave me the best birthday gift ever - my first
 			Pokémon!\pMommy said it's a Mankey, a Fighting type.\pIn school I learnt
 			Fighting types are strong against Normal types, like the ones grandpa uses. \pSpeaking of 
-			grandpa, daddy said I am going to stay with him for a while...\pBecause him and dommy are going
+			grandpa, daddy said I am going to stay with him for a while...\pBecause him and mommy are going
 			to be very very busy with work.\pI was a bit sad. It was my birthday, but I think everyone
 			was sad today."))
 			hidemonpic

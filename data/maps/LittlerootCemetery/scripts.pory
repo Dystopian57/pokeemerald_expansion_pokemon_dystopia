@@ -27,6 +27,6 @@ enddaynightmusiccemetery:
 
 script LittlerootCemetery_CemeterySign {
 lockall
-msgbox (format("Littleroot Cemetery."))
+msgbox (format("Littleroot Cemetery.\nWhere souls come to rest."))
 releaseall
 }

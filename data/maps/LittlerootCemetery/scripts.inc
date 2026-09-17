@@ -67,4 +67,5 @@ LittlerootCemetery_CemeterySign::
 
 LittlerootCemetery_CemeterySign_Text_0:
 # 30 "data/maps/LittlerootCemetery/scripts.pory"
-	.string "Littleroot Cemetery.$"
+	.string "Littleroot Cemetery.\n"
+	.string "Where souls come to rest.$"

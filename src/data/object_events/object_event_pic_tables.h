@@ -599,6 +599,10 @@ static const struct SpriteFrameImage sPicTable_moneybags[] = {
     overworld_ascending_frames(gObjectEventPic_moneybags, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_backpack[] = {
+    overworld_ascending_frames(gObjectEventPic_backpack, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_newbard[] = {
     overworld_ascending_frames(gObjectEventPic_newbard, 2, 4),
 };

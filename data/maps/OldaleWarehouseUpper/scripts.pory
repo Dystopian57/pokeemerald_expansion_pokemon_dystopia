@@ -258,7 +258,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 		msgbox(format("You want this place so badly? Whatever. We're done with it anyway."))
 		applymovement (1, moves(walk_in_place_up))
 		msgbox(format("PACK IT UP, REBELS! We're going back to {COLOR GREEN}PETALBURG!"))
-		applymovement (3, moves(walk_right * 1, face_left))
+		applymovement (3, moves(walk_right * 1, walk_in_place_left * 1))
 		applymovement (1, moves(walk_diag_northeast * 1, walk_up * 1))
 		waitmovement (1)
 		removeobject (1)
@@ -309,19 +309,19 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			playse (SE_M_DIZZY_PUNCH)
 			waitse
 			msgbox(format("G-gah...!"))
-			applymovement (1, moves(face_down, face_left, face_up, face_right))
+			applymovement (1, moves(walk_in_place_down * 1, walk_in_place_left * 1, walk_in_place_up * 1, walk_in_place_right * 1))
 			waitmovement (1)
-			applymovement (1, moves(face_down, face_left, face_up))
+			applymovement (1, moves(walk_in_place_down * 1, walk_in_place_left * 1, walk_in_place_up * 1))
 
 			checkplayergender
 			if(var(VAR_RESULT) == MALE){msgbox(format("L-let me at him... where's the... t-werp...!?"))}
 			if(var(VAR_RESULT) == FEMALE){msgbox(format("L-let me at her... where's the... t-werp...!?"))}
 
-			applymovement (1, moves(walk_slow_up * 1, face_left, face_up))
+			applymovement (1, moves(walk_slow_up * 1, walk_in_place_left * 1, walk_in_place_up * 1))
 			waitmovement (1)
 			applymovement (1, moves(walk_slow_right * 1))
 			playse (SE_M_METRONOME)
-			applymovement (3, moves(walk_right * 1, face_left, emote_question_mark))
+			applymovement (3, moves(walk_right * 1, walk_in_place_left * 1, emote_question_mark))
 
 
 			msgbox(format("Uhm... boss? You're going to Tauros Tackle from downstairs?"))
@@ -342,7 +342,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 
 			fadeoutbgm (1)
 
-			applymovement (3, moves(walk_left * 1, face_up))
+			applymovement (3, moves(walk_left * 1, walk_in_place_up * 1))
 			waitmovement (3)
 			msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Oouuch...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 			playse (SE_M_TWISTER)

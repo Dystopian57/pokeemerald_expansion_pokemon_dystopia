@@ -808,7 +808,7 @@ script PlayerVitaminCabinet {
 script PlayerFirstAidKit {
 	lockall
 	if (!flag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION))
-	{msgbox (format("You open the first aid kit..."))
+	{msgbox (format("It's a first aid kit..."))
 	giveitem (ITEM_SUPER_POTION)
 	setflag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION)}
 	else

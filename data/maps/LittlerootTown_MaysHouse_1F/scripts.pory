@@ -735,6 +735,7 @@ script LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE {
 	setwildbattle(SPECIES_MIMIYURUI, 3)
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
 		call(Won_or_Caught)
 	}
@@ -770,6 +771,8 @@ script Won_or_Caught {
 	msgbox (format("Bang!"))
 	waitmessage
 	setobjectxy (3, 10, 6)
+	applymovement (3, moves(walk_in_place_down))
+	waitmovement (3)
 	playse (SE_BALL_OPEN)
 	waitse
 	removeobject(2)
@@ -784,8 +787,10 @@ script Won_or_Caught {
 	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_ANGRY)}
 	setspeaker ([SP_NAME_RIVAL])
 	msgbox (format("CHAAAAAARGE!!"))
-	waitmessage
+	removefieldmugshot
+	closemessage
 	playse (SE_FLEE)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
     applymovement (1, moves(walk_fast_left * 1, walk_fast_down * 1, walk_fast_left * 7, face_down))
     waitmovement (1)
     removeobject (1)
@@ -797,11 +802,12 @@ script Won_or_Caught {
 	setvar(VAR_0x8007, 4)  //@ shake delay
 	special(ShakeCamera)
 
-	removefieldmugshot
     setflag(RIVAL_LEAVES_HOME)
     setflag(DOLL_BATTLE)
     setvar(VAR_LITTLEROOT_PHASE, 4)
 	//clearflag (Oldmantyhide)
+	fadeoutbgm (1)
+	fadeinbgm (1)
 	playbgm (MUS_LITTLEROOT_TEST, TRUE)
 	return
 }

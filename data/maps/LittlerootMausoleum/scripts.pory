@@ -17,6 +17,7 @@ script MausoleumMourningLady {
         giveitem (ITEM_FOCUS_SASH)
         setflag (mausoleummourningladyitem)
         msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
+        closemessage
         applymovement (6, moves(walk_in_place_up))
         waitmovement (6)
         }
@@ -25,6 +26,7 @@ script MausoleumMourningLady {
         else{
         applymovement (6, moves(face_player))
         msgbox (format("You don't need to forget the past. But don't let it drag you down either."))
+        closemessage
         applymovement (6, moves(walk_in_place_up))
         waitmovement (6)
         }
@@ -49,15 +51,16 @@ script LittlerootMausoleum_Shuppet {
 
     if(var(VAR_RESULT) == 1){
     shuppetisjusthelping:
-    applymovement (1, moves(emote_exclamation_mark, face_right))
+    applymovement (1, moves(emote_exclamation_mark, walk_in_place_right * 1))
     playse (SE_PIN)
     msgbox (format("Wait... it's not... trying to hurt me...!
     {COLOR LIGHT_GRAY}{SHADOW WHITE}Cough cough...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
-    applymovement (1, moves(face_down))
-    msgbox (format("I'm just, very cold... Shuppet is trying to keep me warm... \p But Ghost
+    applymovement (1, moves(walk_in_place_down * 1))
+    msgbox (format("I'm just very cold... Shuppet is trying to keep me warm... \p But Ghost
     Pokémon can't do that... their bodies just go right through... \p Ah... if only I had...
-    a {COLOR RED}blanket{COLOR DARK_GRAY} or something to cover myself...
-    \p {COLOR LIGHT_GRAY}{SHADOW WHITE}... may have some {COLOR GREEN}extra bedding{COLOR DARK_GRAY} back home.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+    a {COLOR RED}blanket{COLOR DARK_GRAY} or something to cover myself..."))
+    setspeaker ([SP_NAME_PLAYER])
+    msgbox (format("Hmm... may have some {COLOR GREEN}extra bedding{COLOR DARK_GRAY} back home."))
 
     setflag (hexgirlshuppetmeet)
     goto (afterhexgirl1stmeet)
@@ -77,10 +80,14 @@ script LittlerootMausoleum_Shuppet {
     playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
     applymovement (2, moves(face_player))     
     msgbox (format("The Shuppet regards you knowingly and lets you pass..."))
+    closemessage
     removeobject (2)
     setflag (hexgirlshuppetmoves)
     clearflag (hexgirlshuppetnormalspot)
+    applymovement (4, moves(face_down))   
     playse (SE_M_CONFUSE_RAY)
+    waitse
+
     
     }
     afterhexgirl1stmeet:
@@ -105,11 +112,11 @@ script LittlerootMausoleum_HexGirl {
     	if(var(VAR_RESULT) == 0){
         msgbox (format("R-really...? Thank you...!"))
         removeitem (ITEM_SCROLL_OF_DARKNESS)
-	    applymovement (1, moves(face_up))
+	    applymovement (1, moves(walk_in_place_up * 1))
         waitmovement (1)
     	clearflag (beddinginmausoleum)
         addobject (3)
-	    applymovement (1, moves(face_down))
+	    applymovement (1, moves(walk_in_place_down * 1))
         msgbox (format("Aah, yes... this is much better."))
 	    applymovement (1, moves(face_player))
         msgbox (format("I-I'm Samantha, the caretaker of this mausoleum..."))
@@ -117,7 +124,7 @@ script LittlerootMausoleum_HexGirl {
         msgbox (format("Many of the Pokémon and
         people that lost their lives during the war rest here now. \p People used to visit all the time
         - but not so much anymore."))
-	    applymovement (1, moves(face_down))
+	    applymovement (1, moves(walk_in_place_down * 1))
         setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("I-I guess people move on, or mourn in different ways... that's okay..."))
 	    applymovement (1, moves(face_player))
@@ -135,7 +142,7 @@ script LittlerootMausoleum_HexGirl {
             applymovement (1, moves(face_player))
             setspeaker ([SP_NAME_SAMANTHA])
             msgbox (format("I... I will figure something out. Don't worry..."))
-            applymovement (1, moves(face_down))
+            applymovement (1, moves(walk_in_place_down * 1))
             waitmovement (1)
             setflag (refusedtohelphexgirl1st)
             goto (endhexgirlscript)
@@ -144,7 +151,7 @@ script LittlerootMausoleum_HexGirl {
             if(var(VAR_RESULT) == 1){
             changedmindwillhelphexgirl:
             setspeaker ([SP_NAME_SAMANTHA])
-            msgbox (format("Y-you will... thank you! I-I will gladly accept your help... \p I mean,
+            msgbox (format("Y-you will...? thank you! I-I will gladly accept your help... \p I mean,
             you've done more than enough for now... \p B-but if I need something else... could I...
             could I call you? \p Here, this is my Devonav number..."))
             register_matchcall (TRAINER_HEXGIRL_MAUSOLEUM)
@@ -157,7 +164,6 @@ script LittlerootMausoleum_HexGirl {
             goto (endhexgirlscript) }}
 
         if(var(VAR_RESULT) == 1){
-        setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("O-oh, of course not... I'm sorry for assuming..."))}}
 
 	if (flag (refusedtohelphexgirl1st))
@@ -269,7 +275,7 @@ script LittlerootMausoleum_HexGirl {
     }
 goto (endhexgirlscript)
 endhexgirlscript:
-applymovement (1, moves(face_down))
+applymovement (1, moves(walk_in_place_down * 1))
 releaseall
 }
 
@@ -338,9 +344,28 @@ script Samanthafollowchat {
   }
     
 script LittlerootMausoleum_ShuppetPost1stquest {
-    lockall
-	playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
-    msgbox (format("Shuuu..."))
+    lock
+    if (var(VAR_MAUSOLEUM_HEXGIRL) == 0){
+        playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
+        msgbox (format("Shuuu..."))
+        }
+        else {
+            if (!flag(shuppetgivesincense))
+            {playmoncry(SPECIES_SHUPPET, CRY_MODE_HIGH_PITCH) 
+            msgbox (format("Shuuu...!\p The Shuppet opens its mouth wide. There's something inside it seems
+            to be offering..."))
+            giveitem (ITEM_LUCK_INCENSE)
+            setflag (shuppetgivesincense)
+            msgbox (format("The Shuppet nods with a clever smile."))
+            }
+
+            else {playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
+            msgbox (format("Shuuu..."))}
+            goto (endofshuppetscript)
+
+            }
+
+    endofshuppetscript:
     releaseall
 }
 
@@ -358,6 +383,12 @@ script MausoleumHealingSigil {
 script MausoleumTombstone {
 	lockall
     msgbox (format("It's a tombstone. The name on it does not seem familiar."))
+	releaseall		
+}
+
+script MausoleumIncense {
+	lockall
+    msgbox (format("The incense fills the area with a sad, nostalgic smell."))
 	releaseall		
 }
 
@@ -383,6 +414,7 @@ script MausoleumNogoDownstairs {
 	lockall
     fadeoutbgm (2)
     msgbox (format("... \p There is... no need to go there right now..."))
+    closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_slow_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     fadeinbgm (2)
@@ -396,9 +428,9 @@ script MausoleumFinishedSnackQuest {
     if (flag (Samanthagotsnacks)){
 
 	lock
-    applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
-    applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_up))
+    applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_up * 1))
     waitmovement (OBJ_EVENT_ID_FOLLOWER)
     setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("T-thank you for your help... these snacks will last me a while..."))

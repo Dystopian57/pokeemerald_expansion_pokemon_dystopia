@@ -1769,7 +1769,7 @@ PlayerVitaminCabinet_Text_1:
 
 PlayerFirstAidKit_Text_0:
 # 811 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "You open the first aid kit...$"
+	.string "It's a first aid kit...$"
 
 PlayerFirstAidKit_Text_1:
 # 815 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

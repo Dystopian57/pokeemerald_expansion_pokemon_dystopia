@@ -4524,7 +4524,7 @@ CheerorbBasementIdleTalk::
 # 146 "data/maps/LittlerootLabBasement/scripts.pory"
 AideCasettePlayer_Movement_0:
 # 146 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_right
+	walk_in_place_right
 # 146 "data/maps/LittlerootLabBasement/scripts.pory"
 	emote_exclamation_mark
 	step_end
@@ -4538,13 +4538,13 @@ AideCasettePlayer_Movement_1:
 # 164 "data/maps/LittlerootLabBasement/scripts.pory"
 AideCasettePlayer_Movement_2:
 # 164 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_right
+	walk_in_place_right
 	step_end
 
 # 166 "data/maps/LittlerootLabBasement/scripts.pory"
 AideCasettePlayer_Movement_3:
 # 166 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_down
+	walk_in_place_down
 	step_end
 
 # 191 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -4556,7 +4556,7 @@ AideeBasementUnfollow1_Movement_0:
 # 191 "data/maps/LittlerootLabBasement/scripts.pory"
 	walk_up
 # 191 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_down
+	walk_in_place_down
 	step_end
 
 # 210 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -4564,13 +4564,13 @@ AideeBasementUnfollow2_Movement_0:
 # 210 "data/maps/LittlerootLabBasement/scripts.pory"
 	walk_left
 # 210 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_right
+	walk_in_place_right
 	step_end
 
 # 214 "data/maps/LittlerootLabBasement/scripts.pory"
 AideeBasementUnfollow2_Movement_1:
 # 214 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 224 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -4584,7 +4584,7 @@ AideeBasementUnfollow3_Movement_0:
 # 224 "data/maps/LittlerootLabBasement/scripts.pory"
 	walk_up
 # 224 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_down
+	walk_in_place_down
 	step_end
 
 # 240 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -4596,7 +4596,7 @@ AideeBasementIdleTalk_Movement_0:
 # 274 "data/maps/LittlerootLabBasement/scripts.pory"
 AideeBasementIdleTalk_Movement_1:
 # 274 "data/maps/LittlerootLabBasement/scripts.pory"
-	face_left
+	walk_in_place_left
 	step_end
 
 LabBasementTrashBin_Text_0:

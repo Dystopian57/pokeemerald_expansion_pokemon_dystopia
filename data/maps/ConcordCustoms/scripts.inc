@@ -960,7 +960,7 @@ ConcordCustomsClerkStops0_Movement_0:
 # 107 "data/maps/ConcordCustoms/scripts.pory"
 	walk_left
 # 107 "data/maps/ConcordCustoms/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 128 "data/maps/ConcordCustoms/scripts.pory"
@@ -970,7 +970,7 @@ ConcordCustomsClerkStops1_Movement_0:
 # 128 "data/maps/ConcordCustoms/scripts.pory"
 	walk_up
 # 128 "data/maps/ConcordCustoms/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 148 "data/maps/ConcordCustoms/scripts.pory"
@@ -982,7 +982,7 @@ ConcordCustomsClerkStops2_Movement_0:
 # 148 "data/maps/ConcordCustoms/scripts.pory"
 	walk_up
 # 148 "data/maps/ConcordCustoms/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 # 168 "data/maps/ConcordCustoms/scripts.pory"
@@ -996,7 +996,7 @@ ConcordCustomsClerkStops3_Movement_0:
 # 168 "data/maps/ConcordCustoms/scripts.pory"
 	walk_up
 # 168 "data/maps/ConcordCustoms/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 ConcordWageSlaveAtPhone_Text_0:

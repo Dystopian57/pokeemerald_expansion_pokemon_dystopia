@@ -237,34 +237,36 @@ OldaleHouse1WomanDay::
 # 143 "data/maps/OldaleTown_House1/scripts.pory"
 	applymovement 1, OldaleHouse1BoyNight_Movement_1
 # 144 "data/maps/OldaleTown_House1/scripts.pory"
+	waitmovement 1
+# 145 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouse1WomanNight::
-# 149 "data/maps/OldaleTown_House1/scripts.pory"
-	lock
 # 150 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 7, OldaleHouse1BoyNight_Movement_0
+	lock
 # 151 "data/maps/OldaleTown_House1/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	applymovement 7, OldaleHouse1BoyNight_Movement_0
 # 152 "data/maps/OldaleTown_House1/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 153 "data/maps/OldaleTown_House1/scripts.pory"
 	msgbox OldaleHouse1WomanNight_Text_0
-# 155 "data/maps/OldaleTown_House1/scripts.pory"
-	applymovement 7, OldaleHouse1BoyNight_Movement_1
 # 156 "data/maps/OldaleTown_House1/scripts.pory"
-	waitmovement 7
+	applymovement 7, OldaleHouse1BoyNight_Movement_1
 # 157 "data/maps/OldaleTown_House1/scripts.pory"
+	waitmovement 7
+# 158 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
 
 OldaleHouseOldWomanNight::
-# 161 "data/maps/OldaleTown_House1/scripts.pory"
-	lock
 # 162 "data/maps/OldaleTown_House1/scripts.pory"
-	msgbox OldaleHouseOldWomanNight_Text_0
+	lock
 # 163 "data/maps/OldaleTown_House1/scripts.pory"
+	msgbox OldaleHouseOldWomanNight_Text_0
+# 164 "data/maps/OldaleTown_House1/scripts.pory"
 	releaseall
 	return
 
@@ -367,12 +369,12 @@ OldaleHouse1WomanDay_Text_0:
 	.string "him not to.$"
 
 OldaleHouse1WomanNight_Text_0:
-# 152 "data/maps/OldaleTown_House1/scripts.pory"
+# 153 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Don't yOu thInk it's... {COLOR LIGHT_GRAY}{SHADOW WHITE}Hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} a bIt lAte\n"
 	.string "tO... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} vIssIt random houses?\p"
 	.string "I nEed tO ssAve Up... frr a lOck... {COLOR LIGHT_GRAY}{SHADOW WHITE}hic...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleHouseOldWomanNight_Text_0:
-# 162 "data/maps/OldaleTown_House1/scripts.pory"
+# 163 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Dear, I think you've drank enough...\n"
 	.string "let's get you to bed.$"

@@ -143,7 +143,7 @@ script AideCasettePlayer {
 	if(var(VAR_RESULT) == 0){
 	playbgm (MUS_RENBOUPARTY, TRUE)
 		if (!flag(Aideearrivestobasement))
-		{applymovement (1, moves (face_right, emote_exclamation_mark))
+		{applymovement (1, moves (walk_in_place_right* 1, emote_exclamation_mark))
 		playse (SE_PIN)
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
@@ -161,9 +161,9 @@ script AideCasettePlayer {
 
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
-		applymovement (1, moves (face_right))
+		applymovement (1, moves (walk_in_place_right* 1))
 		msgbox (format("Haah... some people don't have taste for music, am I right?"))
-		applymovement (1, moves (face_down))
+		applymovement (1, moves (walk_in_place_down * 1))
 		removefieldmugshot
 		}
 	release
@@ -188,7 +188,7 @@ script AideeBasementUnfollow1 {
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Ah, here we are!"))
-	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  face_down))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  walk_in_place_down * 1))
 	Aidebymachine:
 	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
@@ -207,11 +207,11 @@ script AideeBasementUnfollow2 {
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Ah, here we are!"))
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1,  face_right))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1,  walk_in_place_right* 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
-	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  face_down))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  walk_in_place_down * 1))
 	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (Aidebymachine)
 
 }
@@ -221,7 +221,7 @@ script AideeBasementUnfollow3 {
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Ah, here we are!"))
-	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_up * 3,  face_down))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_up * 3,  walk_in_place_down * 1))
 	goto (Aidebymachine)
 }
 
@@ -230,7 +230,7 @@ script AideeBasementUnfollow4 {
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Ah, here we are!"))
-	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left *1, walk_up * 3,  face_down))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_up * 3,  walk_in_place_down * 1))
 	goto (Aidebymachine)
 }
 
@@ -265,19 +265,19 @@ script AideeBasementIdleTalk {
 		msgbox (format("First, we take the appropriate {COLOR BLUE}Unsafening Material{COLOR DARK_GRAY}
 		 - in this case, the
 		{COLOR RED}Voltorb Shard{COLOR DARK_GRAY} you brought..."))
-		applymovement (1, moves(face_right))
+		applymovement (1, moves(walk_in_place_right* 1))
 
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Second, we take the appropriate Safemon - in this case, this Cheerorb..."))
 		removefieldmugshot
 		setspeaker (NULL)
-		applymovement (4, moves(face_left))
+		applymovement (4, moves(walk_in_place_left * 1))
 		playmoncry(SPECIES_CHEERORB, CRY_MODE_NORMAL) 
 		msgbox (format("Chee-cheeeer!"))
 		removeobject (4)
 		playse (SE_BALL_OPEN)
 		waitse
-		applymovement (1, moves(face_up))
+		applymovement (1, moves(walk_in_place_up * 1))
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Third, we get them both in the same Pokéball, and place it over the
@@ -308,7 +308,7 @@ script AideeBasementIdleTalk {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 		setspeaker ([SP_NAME_AIDEE])
 		removeobject (2)
-		applymovement (1, moves(face_right))
+		applymovement (1, moves(walk_in_place_right* 1))
 		msgbox (format("Look, {PLAYER}!"))
 		removefieldmugshot
 		setspeaker (NULL)
@@ -318,10 +318,10 @@ script AideeBasementIdleTalk {
 		playse (SE_BALL_OPEN)
 		waitse
 		playmoncry(SPECIES_VOLTORB, CRY_MODE_NORMAL)
-		applymovement (5, moves(face_left))
+		applymovement (5, moves(walk_in_place_left * 1))
 		msgbox (format("Vol-voooolt!"))
 
-		applymovement (1, moves(face_down))
+		applymovement (1, moves(walk_in_place_down * 1))
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("We have reverted a Safemon back into a regular Pokémon! Isn't it fascinating!?
@@ -345,7 +345,7 @@ script AideeBasementIdleTalk {
 			removefieldmugshot
 			setspeaker (NULL)
 			applymovement (5, moves(jump_in_place_down))
-			applymovement (1, moves(face_right))
+			applymovement (1, moves(walk_in_place_right* 1))
 			waitmovement
 			playmoncry(SPECIES_VOLTORB, CRY_MODE_HIGH_PITCH)
 			msgbox (format("Volt-Voooolt!"))
@@ -375,7 +375,7 @@ script AideeBasementIdleTalk {
 				if(var(VAR_RESULT) == 1){
 				removefieldmugshot
 				setspeaker (NULL)
-				applymovement (1, moves(face_right))
+				applymovement (1, moves(walk_in_place_right* 1))
 				waitmovement
 				playmoncry(SPECIES_VOLTORB, CRY_MODE_WEAK)
 				msgbox (format("Vooolt..."))
@@ -387,7 +387,7 @@ script AideeBasementIdleTalk {
 				removefieldmugshot
 				createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 				setspeaker ([SP_NAME_AIDEE])
-				applymovement (1, moves(face_right))
+				applymovement (1, moves(walk_in_place_right* 1))
 				msgbox (format("Don't worry - I'll take good care of it."))
 				playse (SE_BALL_OPEN)
 				removeobject (5)
@@ -571,7 +571,7 @@ script AideeBasementIdleTalk {
 					that works as intended!\p However, it may also alter their level, moves, individual and
 					effort values...
 					even their gender!\p I know having your companions change so much at once may be distressing..."))
-					applymovement (1, moves(face_left))
+					applymovement (1, moves(walk_in_place_left * 1))
 					msgbox (format("
 					To help alleviate that, I've set up a Medicine Dispenser over there."))
 					applymovement (1, moves(face_player))
@@ -2615,7 +2615,7 @@ script CheerorbBasementIdleTalk {
 	applymovement (4, moves(face_player))
 	playmoncry(SPECIES_CHEERORB, CRY_MODE_NORMAL) 
 	msgbox (format("Chee-cheeeer!"))
-	applymovement (4, moves(face_down))
+	applymovement (4, moves(walk_in_place_down * 1))
 	waitmovement (4)
 	releaseall
 }

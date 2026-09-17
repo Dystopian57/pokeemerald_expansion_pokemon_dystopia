@@ -80,7 +80,7 @@
       "flag": "spawnsableyelairboss"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
+      "graphics_id": "OBJ_EVENT_GFX_BACKPACK",
       "x": 5,
       "y": 5,
       "elevation": 0,

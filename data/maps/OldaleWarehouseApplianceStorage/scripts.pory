@@ -42,7 +42,7 @@ script OldaleWarehouseApplianceStorageScavenger2Trigger {
 	if (!flag (scavengergivesobjectspotter))
 	{
 
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     playbgm (MUS_ENCOUNTER_INTENSE, TRUE)
     playse (SE_PIN)

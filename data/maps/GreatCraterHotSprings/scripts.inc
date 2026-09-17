@@ -148,13 +148,13 @@ GreatCraterHotSpringsBaldGuy_Movement_0:
 # 38 "data/maps/GreatCraterHotSprings/scripts.pory"
 GreatCraterHotSpringsNumel_Movement_0:
 # 38 "data/maps/GreatCraterHotSprings/scripts.pory"
-	face_down
+	walk_in_place_down
 	step_end
 
 # 69 "data/maps/GreatCraterHotSprings/scripts.pory"
 GreatCraterHotSpringsYoungerWoman_Movement_0:
 # 69 "data/maps/GreatCraterHotSprings/scripts.pory"
-	face_up
+	walk_in_place_up
 	step_end
 
 GreatCraterHotSpringsPainting_Text_0:

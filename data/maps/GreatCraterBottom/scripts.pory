@@ -5,6 +5,19 @@ GreatCraterBottom_MapScripts::
 `
 
 
+script CraterBottomItem {
+	lock
+    finditem (ITEM_TM_DEFOG)
+    //giveitem (ITEM_SOFT_SAND)
+	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    removeobject (3)
+	releaseall}
+
+script CraterBottomHole {
+	lock
+    msgbox(format("A strange eye stares at you from the depths..."))
+	releaseall}
+
 script CraterHermit {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)

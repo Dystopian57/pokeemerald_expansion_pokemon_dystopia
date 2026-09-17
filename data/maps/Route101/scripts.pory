@@ -252,6 +252,8 @@ script Route101Weather {
 	msgbox(format("Zig-ziiig!"))
 	if (flag(FLAG_SYS_POKEDEX_GET))
 	{setseenmon (SPECIES_ZIGZAGOON)}
+	applymovement (5, moves(face_down))
+	waitmovement (5)
 	releaseall
  }
 
@@ -261,7 +263,7 @@ script Route101Weather {
 	playbgm (MUS_DUSKFACTORY, TRUE)
 	applymovement (1, moves(emote_exclamation_mark))
 	msgbox(format("Hey, stop!"))
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (orphanafterapproach)
  }
 
@@ -275,7 +277,7 @@ script Route101Weather {
 	applymovement (1, moves(walk_down * 1))
 	applymovement (5, moves(walk_down * 1))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (orphanafterapproach)
  }
 
@@ -289,7 +291,7 @@ script Route101Weather {
 	applymovement (1, moves(walk_down * 2))
 	applymovement (5, moves(walk_down * 2))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (orphanafterapproach)
  }
 
@@ -303,7 +305,7 @@ script Route101Weather {
 	applymovement (1, moves(walk_down * 3))
 	applymovement (5, moves(walk_down * 3))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (orphanafterapproach)
  }
 
@@ -348,12 +350,12 @@ script Route101OrphanJoel{
 				playse (SE_PIN)
 				setspeaker ([SP_NAME_SAMANTHA])
 				msgbox(format("S-... strange lady...?"))
-				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
 				msgbox(format("W-well, we went out to get food at Oldale..."))
 				setspeaker ([SP_NAME_JOEL])
 				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
 				msgbox(format("Food? I've got some Oran berries here if you'd like!"))
-				applymovement (4, moves(face_left))
+				applymovement (4, moves(walk_in_place_left * 1))
 
 				checkplayergender
 				if(var(VAR_RESULT) == MALE)
@@ -405,7 +407,7 @@ script Route101OrphanJoel{
 				msgbox(format("That's a lot of snacks you got! Can I have some?"))
 				setspeaker ([SP_NAME_SAMANTHA])
 				msgbox(format("O-of course... here!"))
-				applymovement (1, moves(face_down))
+				applymovement (1, moves(walk_in_place_down * 1))
 				playse (SE_M_BITE)
 				msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 				applymovement (1, moves(face_player))
@@ -422,7 +424,7 @@ script Route101OrphanJoel{
 				playse (SE_PIN)
 				setspeaker ([SP_NAME_SAMANTHA])
 				msgbox(format("S-... strange lady...?"))
-				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
+				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
 				msgbox(format("W-well, we went out to get food at Oldale..."))
 				setspeaker ([SP_NAME_JOEL])
 				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
@@ -457,7 +459,7 @@ script Route101OrphanJoel{
 	trainerbattle_no_intro(TRAINER_ORPHAN_MALE_101, Orphan101_Outro)
 	playbgm (MUS_ABANDONED_SHIP, TRUE)
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	applymovement (1, moves(face_left))
+	applymovement (1, moves(walk_in_place_left * 1))
 	msgbox(format("I'm Joel. See that tent over there? It's my Secret Shelter."))
 	applymovement (1, moves(face_player))
 	setspeaker ([SP_NAME_JOEL])
@@ -497,7 +499,7 @@ if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 	applymovement(4, moves(face_player))
 	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Hehe... you look good together!"))
-	applymovement(4, moves(face_left))
+	applymovement(4, moves(walk_in_place_left * 1))
 	waitmovement (4)
 	goto (endofjoelandannemeeting)}
 
@@ -505,7 +507,7 @@ if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 	applymovement(4, moves(face_player))
 	setspeaker ([SP_NAME_ANNE])
 	msgbox(format("Please invite me to the girls' day next time! Pleeeease!"))
-	applymovement(4, moves(face_left))
+	applymovement(4, moves(walk_in_place_left * 1))
 	waitmovement (4)
 	goto (endofjoelandannemeeting)}
 }
@@ -584,7 +586,7 @@ else {
 	waitmovement
 	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Hey there, kid!"))
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (rebelafterapproach)
  }
 
@@ -598,7 +600,7 @@ else {
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 1))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (rebelafterapproach)
  }
 
@@ -612,7 +614,7 @@ else {
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 2))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (rebelafterapproach)
  }
 
@@ -626,13 +628,14 @@ else {
 	msgbox(format("Hey there, kid!"))
 	applymovement (3, moves(walk_down * 3))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	goto (rebelafterapproach)
  }
  
 
 script Route101RebelGruntBattle{
 	rebelafterapproach:
+	clearflag (rebelin101mustapproachtoswing)
 	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Wowie, that's a cute Safemon you got there. Bet it's worth a ton!"))
 	setspeaker ([SP_NAME_CALVIN])
@@ -641,13 +644,14 @@ script Route101RebelGruntBattle{
 	waitmessage
 
 	if(var(VAR_RESULT) == 0){
+	setflag (rebelin101mustapproachtoswing)
 	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("Hehe, you're smarter than you loo-..."))
 	playfirstmoncry
 	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(jump_in_place_up))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_fast_right, face_up))
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_down * 1, face_up))
+	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_fast_right, walk_in_place_up * 1))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_down * 1, walk_in_place_up * 1))
 	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("What the-? Looks like your Pokémon has more guts than you! Hahaha!
 	\p Guess we'll have to do this the hard way!"))
@@ -664,7 +668,8 @@ script Route101RebelGruntBattle{
 	msgbox(format("Grr... alright, that thing of yours is strong, for a lab rat.
 	\p But you still look weak yourself! UOOOGYAA!"))
 	setflag (FLAG_TEMP_HIDE_FOLLOWER)
-	applymovement (3, moves(walk_fast_down))
+	if (flag(rebelin101mustapproachtoswing))
+	{applymovement (3, moves(walk_fast_down))}
 	repeathit:
 	setspeaker ([NULL])
 	msgbox(format("The rebel swings his bat to hit {PLAYER}!"))
@@ -700,14 +705,15 @@ script Route101RebelGruntBattle{
 	msgbox(format("{PLAYER} manages to dodge the hit, and the rebel's lost momentum makes him
 	fall on his back."))
 	}}
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	setspeaker ([SP_NAME_CALVIN])
 	msgbox(format("D-damn it! They told me Littleroot hicks were easy prey!"))
 	playse (SE_FLEE)
 	applymovement (3, moves(walk_fast_right *2 , walk_fast_up * 6))
 	setspeaker ([SP_NAME_CALVIN])
 	waitse
-	playse (SE_BALL_BOUNCE_1)
 	msgbox(format("Screw this!"))
+	playse (SE_BALL_BOUNCE_1)
 	closemessage
 	removeobject(3)
 	setflag (rebel101runsaway)
@@ -753,7 +759,7 @@ script Pokemonlickswound {
 	if (flag (rickhitsplayer))
 		{
 		playfirstmoncry
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right * 1))
 		applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left * 2))
 		bufferleadmonspeciesname(STR_VAR_1)
 		msgbox (format("{STR_VAR_1} approaches you slowly..."))

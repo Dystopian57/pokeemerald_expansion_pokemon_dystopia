@@ -534,12 +534,14 @@ script OldaleTown_GotoTherapy{
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 6))
     waitmovement(0)
 	msgbox (format("That's the Devon Learning Center... the therapy session should be about to start."))
+    closemessage
 	special (RemoveCameraObject)
 	special (SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 6))
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_left * 6))
     waitmovement(0)
 	special (RemoveCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
@@ -1677,12 +1679,25 @@ script SamanthaShake{
 
 script GiveSafemonParty1 {
     callnative (ZeroPlayerPartyMons)
+
+
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "1st Party", "2nd Party")
+        if(var(VAR_RESULT) == 0){
     givemon (SPECIES_BULBASYNTH, 10, ITEM_REMEDY)
     givemon (SPECIES_SMOTHQUIL, 10, ITEM_HEAL_POWDER)
     givemon (SPECIES_WARABBIT, 10, ITEM_FULL_HEAL)
     givemon (SPECIES_PIKACHU_SAFE, 10, ITEM_AERODACTYLITE)
     givemon (SPECIES_MIMIYURUI, 10, ITEM_SUPERB_REMEDY)
-    givemon (SPECIES_NINKABURI, 10, ITEM_SHALOUR_SABLE)
+    givemon (SPECIES_NINKABURI, 10, ITEM_SHALOUR_SABLE)}
+
+        if(var(VAR_RESULT) == 1){
+    givemon (SPECIES_SHIITAKO, 10, ITEM_REMEDY)
+    givemon (SPECIES_POOCHAIN, 10, ITEM_HEAL_POWDER)
+    givemon (SPECIES_GEOSLUG, 10, ITEM_FULL_HEAL)
+    givemon (SPECIES_FOOMING, 10, ITEM_AERODACTYLITE)
+    givemon (SPECIES_ROTOM_MONITOR, 10, ITEM_SUPERB_REMEDY)
+    givemon (SPECIES_MANCHINE, 10, ITEM_SHALOUR_SABLE)     
+        }
 
 }
 

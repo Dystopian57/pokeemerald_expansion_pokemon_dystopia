@@ -582,6 +582,9 @@ $(OBJEVENTGFXDIR)/misc/ventfan.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/moneybags.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/misc/backpack.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/people/psychic_m.4bpp: %.4bpp: %.png

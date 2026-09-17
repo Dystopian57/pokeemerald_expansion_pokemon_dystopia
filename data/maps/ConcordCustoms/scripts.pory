@@ -104,7 +104,7 @@ script ConcordCustomsClerkStops0 {
 		msgbox(format("Excuse me, miss. Would you be so kind as to approach the counter?"))
 	}
 
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_in_place_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
 	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
@@ -125,7 +125,7 @@ script ConcordCustomsClerkStops1 {
 		msgbox(format("Excuse me, miss. Would you be so kind as to approach the counter?"))
 	}
 
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 1, face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 1, walk_in_place_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
 	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
@@ -145,7 +145,7 @@ script ConcordCustomsClerkStops2 {
 		msgbox(format("Excuse me, miss. Would you be so kind as to approach the counter?"))
 	}
 
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 2, face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 2, walk_in_place_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
 	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
@@ -165,7 +165,7 @@ script ConcordCustomsClerkStops3 {
 		msgbox(format("Excuse me, miss. Would you be so kind as to approach the counter?"))
 	}
 
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 3, face_up))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 3, walk_in_place_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	msgbox(format("Hmm... you don't have a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, do you? \p If that's the
 	case, I'm afraid I can't let you through. \p Applications for visas are currently closed to the general
