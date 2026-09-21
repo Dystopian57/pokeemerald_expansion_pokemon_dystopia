@@ -7,7 +7,7 @@ LittlerootLabBasement_MapScripts::
 script LabBasementTrashBin {
 	lock
 	if (!flag (FLAG_ITEM_LAB_BASEMENT_TRASH))
-	{msgbox (format("Amid some discarded motherboards and electronics, you find something..."))
+	{msgbox (format("Under some discarded motherboards and electronics, you find something..."))
 	giveitem (ITEM_PARK_BALL)
 	setflag (FLAG_ITEM_LAB_BASEMENT_TRASH)}
 	else
@@ -162,8 +162,9 @@ script AideCasettePlayer {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
 		applymovement (1, moves (walk_in_place_right* 1))
-		msgbox (format("Haah... some people don't have taste for music, am I right?"))
+		msgbox (format("Aah... some people don't have taste for music, am I right?"))
 		applymovement (1, moves (walk_in_place_down * 1))
+		waitmovement (1)
 		removefieldmugshot
 		}
 	release
@@ -188,9 +189,11 @@ script AideeBasementUnfollow1 {
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Ah, here we are!"))
+	closemessage
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  walk_in_place_down * 1))
 	Aidebymachine:
 	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Come, {PLAYER}! I'll show you something really cool!"))
@@ -334,7 +337,7 @@ script AideeBasementIdleTalk {
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
-		msgbox (format("But if you want to adopt this one, I'd be happy to obligue. It's thanks to
+		msgbox (format("But if you want to adopt this one, I'd be happy to obligue.\pIt's thanks to
 		you it's a Voltorb again, after all."))
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("What do you say?"))
@@ -348,7 +351,7 @@ script AideeBasementIdleTalk {
 			applymovement (1, moves(walk_in_place_right* 1))
 			waitmovement
 			playmoncry(SPECIES_VOLTORB, CRY_MODE_HIGH_PITCH)
-			msgbox (format("Volt-Voooolt!"))
+			msgbox (format("Volt-voooolt!"))
 
 			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 			setspeaker ([SP_NAME_AIDEE])
@@ -418,7 +421,7 @@ script AideeBasementIdleTalk {
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("This is the Devondex. It will store information about
 		Pokémon and Safemon native to Hoenn. \p Mind you, it will not register any data on the unsafened
-		Pokémon you get here... since they're not supposed to be found in the wild anymore."))
+		Pokémon you get here...\pSince they're not supposed to be found in the wild anymore."))
 		setseenmon (SPECIES_BULBASYNTH)
 		setseenmon (SPECIES_SMOTHQUIL)
 		setseenmon (SPECIES_PIKACHU_SAFE)
@@ -432,11 +435,11 @@ script AideeBasementIdleTalk {
 
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
-		msgbox (format("Oh, one last thing - here's my Devon Nav number!"))
+		msgbox (format("Oh, one last thing - here's my Devonav number!"))
 
 		setflag (FLAG_ENABLE_PROF_BIRCH_MATCH_CALL)
 		playbgm (MUS_REGISTER_MATCH_CALL, TRUE)
-		msgbox (format("Balsam's Aide's number is registered in the Devon Nav!"))
+		msgbox (format("Balsam's Aide's number is registered in the Devonav!"))
 
 
 
@@ -534,7 +537,7 @@ script AideeBasementIdleTalk {
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("Really? Well, you don't need to force yourself to help us
 					with the Unsafenings then!\p Don't feel like you owe us for helping you
-					out. It's our own way of thanking Professor Birch, who helped us set up
+					out.\pIt's our own way of thanking Professor Birch, who helped us set up
 					here.\p He worries a lot about you. Even Balsam seems to like you, even
 					if she doesn't show it!\p Me? Well, I'll like you better if you keep
 					bringing Safemon - ahaha!"))
@@ -545,8 +548,9 @@ script AideeBasementIdleTalk {
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("I guess that makes sense, considering you're helping
 					us with the Unsafenings!\p It's also a common sentiment, here in the
-					so-called 'Rebel Zone'.\p But if you even venture further north, closer
-					to Neo Rustboro, now that's a different picture!"))
+					so-called “{COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}”.\p
+					But if you even travel further north, closer
+					to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}... you may hear different opinions!"))
 					
 				}
 
@@ -565,6 +569,7 @@ script AideeBasementIdleTalk {
 
 			//NOTHING
 			if (var(VAR_RESULT) == 3) {
+					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("A-ah, I suppose you've noticed some already...? You're
 					observant!\p You see, right now Unsafening is a very novel procedure...\p Of course,
 					it changes the appearance, typing and ability of a specimen back to what they used to be -
@@ -572,9 +577,10 @@ script AideeBasementIdleTalk {
 					effort values...
 					even their gender!\p I know having your companions change so much at once may be distressing..."))
 					applymovement (1, moves(walk_in_place_left * 1))
-					msgbox (format("
-					To help alleviate that, I've set up a Medicine Dispenser over there."))
+					setspeaker ([SP_NAME_AIDEE])
+					msgbox (format("To help alleviate that, I've set up a Medicine Dispenser over there."))
 					applymovement (1, moves(face_player))
+					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("For token prices, you may
 					get pills with which to help get your Pokémon back to how it used to be - or to change them
 					even more!\p And don't worry - there's no risk of overdose with any of the pills!

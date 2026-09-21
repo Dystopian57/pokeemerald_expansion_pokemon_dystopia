@@ -24,7 +24,7 @@ script OldaleWarehouseApplianceStorageScavenger1 {
 	else
 	{msgbox(format("Just heard you talking with Cat. She must have seen something in you to share our
     haul.\pIf you're ever in need of some more tech or supplies, you should come to our Hardware Store
-    in Petalburg City."))}
+    in {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}."))}
 	endofwarehousescavenger1:
 	release
 	end

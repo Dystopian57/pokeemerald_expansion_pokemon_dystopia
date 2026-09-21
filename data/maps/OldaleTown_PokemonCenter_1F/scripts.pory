@@ -737,7 +737,7 @@ script OldaleTown_Mart_Clerk {
 		}}
 		applymovement (5, moves (face_right))
 		applymovement (10, moves (face_right))
-		msgbox(format("But it's not our fault... since those Rebels invaded the Warehouse, the
+		msgbox(format("But it's not our fault... since those {COLOR RED}Rebels{COLOR DARK_GRAY} invaded the {COLOR RED}Warehouse{COLOR DARK_GRAY}, the
 		supply trucks have stopped coming."))
 
 		applymovement (5, moves (face_player))
@@ -789,8 +789,12 @@ script OldalePokeCenterOldLady {
 script OldalePokeCenterInjuredGuyDay {
     lockall
     applymovement (4, moves(face_player))
-    msgbox(format("I miss the days when Pokémon healthcare was free… \p Then again,
-     Safemon are so weak, they barely get hurt when fighting each other."))
+    msgbox(format("Soon after the war broke out, Devon Co. ran out of the ingredients
+	use to make things like Potions.\pThere was just too high of a demand spike.\pSo now we
+	are back to older things like bandages.\pBut now that the war is over, Devon Co. has promised Potion
+	production will resume soon!"))
+    applymovement (4, moves(face_down))
+	waitmovement (4)
     releaseall
     }
 
@@ -808,7 +812,7 @@ script OldalePokeCenterMapBoyDay {
     lockall
     applymovement (6, moves(face_player))
     msgbox(format("In school we learnt that the area from Route 103 to Route 104 is called
-	the {COLOR GREEN}'Rebel Zone'{COLOR DARK_GRAY}. \p It's a dangerous place where people who hate Devon have gathered,
+	the {COLOR GREEN}“Rebel Zone”{COLOR DARK_GRAY}. \p It's a dangerous place where people who hate Devon have gathered,
 	and you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} to get out of it."))
 	applymovement (6, moves(face_up))
 	waitmovement (6)
@@ -843,8 +847,8 @@ script OldalePokeCenterTVKid {
     lockall
     applymovement (8, moves(face_player))
     msgbox(format("I've been watching this TV for half an hour, and there's been nothing but ads...\p
-	They say you can watch actual programs on the TVs in the inn rooms, but my allowance is not enough
-	to rent a room..."))
+	They say you can watch actual programs on the TVs in the inn rooms.\pBut they don't give me
+	enough allowance to rent one..."))
 	applymovement (8, moves(face_up))
 	waitmovement (8)
     releaseall
@@ -853,7 +857,7 @@ script OldalePokeCenterTVKid {
 
 script OldalePokeCenterTVAds {
     lock
-	random (8)
+	random (9)
 	copyvar (VAR_TEMP_1, VAR_RESULT)
 
 	switch (var(VAR_RESULT))
@@ -976,7 +980,7 @@ script Devonnetad {
 	showmonpic(SPECIES_VIVILLON_SANDSTORM, 10,3)
 	playse (SE_M_SWIFT)
 	msgbox(format("In this day and age, people move fast.\p
-	So fast, you can feel you can't keep up with their lives.
+	So fast, you can feel you can't keep up with everyone.
 	Like you're being left behind."))
 	hidemonpic
 	showmonpic(SPECIES_VIVILLON_SAVANNA, 10,3)
@@ -1017,5 +1021,16 @@ script Azuresortad {
 	hidemonpic
 	releaseall
 }
+
+script OldalePokeCenterTipNurse {
+    lockall
+    msgbox(format("Did you know? Food such as boxed lunches are specially designed for Pokémon to 
+	{COLOR BLUE}hold and eat{COLOR DARK_GRAY}, even during battle!
+	\pBut one can't expect Pokémon to eat calmly in the middle of combat.\pThey will surely spill
+	some of it, and {COLOR RED}not gain the full nutritional effects{COLOR DARK_GRAY}.
+	\pTrainers concerned with that should feed their Pokémon
+	themselves.\pHowever you eat, please keep a safe and healthy diet!"))
+    releaseall
+    }
 
 //or when you go to the river, and it's all muddy?

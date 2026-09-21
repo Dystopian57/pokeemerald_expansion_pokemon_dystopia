@@ -16,7 +16,11 @@ script DayNightMusicExTunnel {
 
 }
 
-
+script ExclusionZoneTunnelItembyMachines {
+	lock
+    finditem (ITEM_TM_DIG)
+    removeobject (20)
+	releaseall}
 
 script EnterSecretLabPreUnsafeningCheck {
 

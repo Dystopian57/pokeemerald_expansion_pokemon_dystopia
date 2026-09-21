@@ -138,7 +138,7 @@ script BalsamBed {
     msgbox (format("If words don't work with you, perhaps a good old beating will!"))
     setflag (FLAG_NO_ESCAPE)
     removefieldmugshot
-
+    setflag (balsaminherbedroom)
         if (!flag (GOTSTARTER3))
         {
             trainerbattle_no_intro(TRAINER_BALSAM_PURACHU, Balsam_Outro)
@@ -149,7 +149,8 @@ script BalsamBed {
             trainerbattle_no_intro(TRAINER_BALSAM_NOPURACHU, Balsam_Outro)
 
         }
-
+            clearflag (balsaminherbedroom)
+	        addobject (1)
             setspeaker ([SP_NAME_BALSAM])
             createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
             msgbox (format("You're making me regret helping you out, {PLAYER}."))
@@ -178,8 +179,10 @@ script BalsamBed {
                     createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
                     msgbox (format("... \p Sorry. That was a bit too much. I know you've had it rough."))
                     applymovement (1, moves(walk_in_place_up))
+                    setspeaker ([SP_NAME_BALSAM])
                     msgbox (format("I understand if you don't want to sleep at home. It brings you painful memories, doesn't it?"))
                     applymovement (1, moves(walk_in_place_right))
+                    setspeaker ([SP_NAME_BALSAM])
                     msgbox (format("You can sleep here if that's the case.\p I mostly just doze on my chair these
                     days anyway."))
                     }
@@ -201,6 +204,7 @@ script BalsamBed {
                     setspeaker ([SP_NAME_BALSAM])
                     createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
                     msgbox (format("Just don't make a mess of the place, alright?"))
+                    removefieldmugshot
                     closemessage
 
 
@@ -220,8 +224,9 @@ script BalsamBed {
     }
 
     givenpermissiontosleep:
-	fadescreenswapbuffers (FADE_FROM_BLACK)
     waitse
+	fadescreenswapbuffers (FADE_FROM_BLACK)
+    fadeinbgm (1)
     
 }
     finishcript:
@@ -323,7 +328,7 @@ script KantonianWarHistoryVol2BalsamOffice {
 
 script BalsamOfficeBooks {
     lockall
-    msgbox (format("'Safemon Schedule - 2030' - Devon Co., Internal Use Only."))
+    msgbox (format("“Safemon Schedule - 2030” - Devon Co., Internal Use Only."))
     releaseall
 }
 

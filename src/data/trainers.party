@@ -81,21 +81,6 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_ROSE_1 ===
-Name: VIVI
-Class: Mercenaryf
-Pic: mercenaryfbattle
-Gender: Female
-Music: Suspicious
-Double Battle: No
-AI: Smart Trainer
-
-Marill @ Remedy
-Level: 6
-
-Numel
-Level: 6
-
 === TRAINER_FELIX ===
 Name: FELIX
 Class: Cooltrainer
@@ -9233,20 +9218,40 @@ Class: Balsam
 Pic: balsambattle
 Gender: Female
 Music: Suspicious
+Items: Hyper Potion
 Double Battle: No
 AI: Smart Trainer
 
-Pikachu_Safe
-Level: 5
+Pikachu_Safe @ Remedy
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Thick Fat
+Nature: Adamant
+- Tail Slap
+- Yawn
+- Spark
+- Belly Drum
 
-Meditite
-Level: 5
+Meditite @ Black Belt
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Pure Power
+Nature: Adamant
+- Counter
+- Drain Punch
+- Confusion
+- Upper Hand
 
-Pyukumuku
-Level: 5
+Pyukumuku @ Big Malasada
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Innards Out
+Nature: Calm
+- Rest
+- Toxic
+- Sleep Talk
+- Pain Split
+
 
 
 === TRAINER_BALSAM_NOPURACHU ===
@@ -9258,13 +9263,25 @@ Music: Suspicious
 Double Battle: No
 AI: Smart Trainer
 
-Meditite
-Level: 5
+Meditite @ Black Belt
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Pure Power
+Nature: Adamant
+- Counter
+- Drain Punch
+- Confusion
+- Upper Hand
 
-Pyukumuku
-Level: 5
+Pyukumuku @ Big Malasada
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Innards Out
+Nature: Calm
+- Rest
+- Toxic
+- Sleep Talk
+- Pain Split
 
 === TRAINER_ORPHAN_MALE_101 ===
 Name: JOEL
@@ -9278,7 +9295,7 @@ AI: Basic Trainer
 Zigzagoon_Galar @ Oran Berry
 Level: 4
 Ability: Gluttony
-Nature: Lonely
+Nature: Quirky
 - Secret Power
 
 === TRAINER_REBEL_GRUNT_101 ===
@@ -9290,10 +9307,10 @@ Music: Rebel
 Double Battle: No
 AI: Basic Trainer
 
-Poochain
+Poochain @ Berry Juice
 Level: 4
 Ability: Defiant
-Nature: Lonely
+Nature: Quirky
 - Tackle
 - Hone Claws
 - Assurance
@@ -9312,7 +9329,7 @@ AI: Basic Trainer
 Clefairy @ Shalour Sable
 Level: 4
 Ability: Cute Charm
-Nature: Lonely
+Nature: Quirky
 - Draining Kiss
 - Metronome
 - Charm
@@ -9321,7 +9338,7 @@ Nature: Lonely
 Cubone @ Thick Club
 Level: 4
 Ability: Rock Head
-Nature: Lonely
+Nature: Quirky
 - Bonemerang
 - Headbutt
 
@@ -9350,19 +9367,19 @@ Items: Tea
 Double Battle: No
 AI: Basic Trainer
 
-Sableye @ Sapphire
+Sableye @ Wise Glasses
 Level: 4
 Ability: Prankster
-Nature: Lonely
+Nature: Quirky
 - Will-o-Wisp
 - Detect
 - Nasty Plot
 - Power Gem
 
-Geoslug @ Metronome
+Geoslug
 Level: 4
 Ability: Thermal Exchange
-Nature: Lonely
+Nature: Quirky
 - Tar Shot
 - Scorching Sands
 - Harden
@@ -9399,7 +9416,7 @@ AI: Basic Trainer
 Verdoom @ Zoom Lens
 Level: 4
 Ability: Magnet Pull
-Nature: Lonely
+Nature: Quirky
 - Reflect
 - Light Screen
 - Freezing Glare
@@ -9408,7 +9425,7 @@ Nature: Lonely
 Mawile @ Clear Amulet
 Level: 4
 Ability: Intimidate
-Nature: Lonely
+Nature: Quirky
 - Thunder Fang
 - Swagger
 - Substitute
@@ -9428,7 +9445,7 @@ Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 125 Def / 0 SpA / 125 SpD / 252 Spe
 Ability: Shadow Tag
-Nature: Lonely
+Nature: Quirky
 - Counter
 - Mirror Coat
 - Destiny Bond
@@ -9488,13 +9505,25 @@ Items: Energy Root
 Double Battle: No
 AI: Smart Trainer
 
-Geodude
+Geodude @ Soft Sand
 Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sturdy
+Nature: Quirky
+- Brick Break
+- Flail
+- Smack Down
+- Mud Shot
 
-Seedot
+
+Seedot @ Loaded Dice
 Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Early Bird
+Nature: Quirky
+- Payback
+- Synthesis
+- Bullet Seed
+- Dig
+
 
 === TRAINER_VETERAN_103_2 ===
 Name: BRYAN
@@ -9526,13 +9555,23 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Blue
 
-Corphish
+Corphish @ Berry Juice
 Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Adaptability
+Nature: Quirky
+- Double Hit
+- Razor Shell
+- Guillotine
+- X-Scissor
 
 Carvanha
 Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Rough Skin
+Nature: Quirky
+- Aqua Jet
+- Bite
+- Swift
+- Focus Energy
 
 /* ITEM_LOVE_SWEET for Slowpoke Tail*/
 
@@ -9542,14 +9581,27 @@ Class: Touristm
 Pic: touristmbattle
 Gender: Male
 Music: Rich
+Items: Fresh Water
 Double Battle: No
 AI: Basic Trainer
 
 Poliwag
 Level: 5
+Ability: Swift Swim
+Nature: Quirky
+- Hypnosis
+- Mud Shot
+- Whirlpool
+- Low Kick
 
-Magnemite
+Magnemite @ Magnet
 Level: 5
+Ability: Analytic
+Nature: Quirky
+- Supersonic
+- Thunder Wave
+- Iron Head
+- Thundershock
 
 === TRAINER_DEVONGUARD_103 ===
 Name: TIMMY
@@ -9557,17 +9609,23 @@ Class: Devongruntm
 Pic: devongruntmbattle
 Gender: Male
 Music: Suspicious
-Items: Fresh Water
+Items: X Attack
 Double Battle: No
 AI: Basic Trainer
 
-Helipip
+Helipip @ Sharp Beak
 Level: 5
+Ability: Sharpness
+Nature: Quirky
+- Aerial Ace
+- Nuzzle
+- Roost
+- Shift Gear
 
 Poochain @ Binding Band
 Level: 5
 Ability: Intimidate
-Nature: Lonely
+Nature: Quirky
 - Wrap
 - Hone Claws
 - Assurance
@@ -9580,17 +9638,29 @@ Class: Shadydealerm
 Pic: shadydealermbattle
 Gender: Male
 Music: Suspicious
-Items: Revival Herb / Aerodactylite
+Items: Aerodactylite
 Double Battle: No
 AI: Smart Trainer
 
-Kecleon
+Kecleon @ Bright Powder
 Level: 6
+Ability: Color Change
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+- Fake Out
+- Thief
+- Shed Tail
+- Scale Shot
 
-Gachapod
+Gachapod @ Metronome
 Level: 6
+Ability: Ice Scales
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+- Quick Attack
+- Metronome
+- Mimic
+- Rollout
 
 
 === TRAINER_FISHER_103 ===
@@ -9615,14 +9685,27 @@ Class: Wageslavem
 Pic: wageslavembattle
 Gender: Male
 Music: Intense
+Items: Heal Powder
 Double Battle: No
 AI: Check Bad Move
 
-Loadtad
+Loadtad @ Remedy
 Level: 5
+Ability: Inner Focus
+Nature: Quirky
+- Present
+- Bulldoze
+- Stockpile
+- Spit Up
 
-Zigzagoon
+Zigzagoon @ Silk Scarf
 Level: 5
+Ability: Quick Feet
+Nature: Quirky
+- Pin Missile
+- Headbutt
+- Rest
+- Snore
 
 
 === TRAINER_HAZARDIVER_WATERFALL ===
@@ -9630,22 +9713,63 @@ Name: DOMINIK
 Class: Hazarddiverm
 Pic: hazarddivermbattle
 Gender: Male
-Music: Suspicious
+Music: Diver
+Items: Potion
 Double Battle: No
 AI: Basic Trainer
 
-Shellder
+Shellder 
 Level: 6
+Ability: Skill Link
+Nature: Quirky
+- Chilling Water
+- Icicle Spear
+- Razor Shell
+- Shell Smash
 
-Wooper @ Berry Juice
+Wooper @ Luminous Moss
 Level: 6
+Ability: Water Absorb
+Nature: Quirky
+- Aqua Tail
+- Acid Spray
+- Mud Shot
+- Yawn
+
+=== TRAINER_ANDRES_1 ===
+Name: DOMINIK
+Class: Hazarddiverm
+Pic: hazarddivermbattle
+Gender: Male
+Music: Diver
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Shellder 
+Level: 6
+Ability: Skill Link
+Nature: Quirky
+- Chilling Water
+- Icicle Spear
+- Razor Shell
+- Shell Smash
+
+Wooper @ Luminous Moss
+Level: 6
+Ability: Water Absorb
+Nature: Quirky
+- Aqua Tail
+- Acid Spray
+- Mud Shot
+- Yawn
 
 === TRAINER_HAZARDIVER_WATERFALL_2 ===
 Name: DOMINIK
 Class: Hazarddiverm
 Pic: hazarddivermbattle
 Gender: Male
-Music: Suspicious
+Music: Diver
 Double Battle: No
 AI: Basic Trainer
 
@@ -9656,22 +9780,62 @@ Quagsire
 Level: 20
 
 
+=== TRAINER_ROSE_1 ===
+Name: VIVI
+Class: Mercenaryf
+Pic: mercenaryfbattle
+Gender: Female
+Music: Mercenary
+Items: Energy Powder
+Double Battle: No
+AI: Smart Trainer
+
+Marill @ Mystic Water
+Level: 6
+Ability: Thick Fat
+Nature: Quirky
+- Bubble Beam
+- Play Rough
+- Charm
+- Sing
+
+Numel @ Assault Vest
+Level: 6
+Ability: Simple
+Nature: Quirky
+- Curse
+- Flamethrower
+- Scorching Sands
+- Take Down
+
+
 === TRAINER_MERCENARYF_WATERFALL ===
 Name: VIVI
 Class: Mercenaryf
 Pic: mercenaryfbattle
 Gender: Female
 Music: Suspicious
+Items: Energy Powder
 Double Battle: No
 AI: Smart Trainer
 
-Marill @ Remedy
+Marill @ Mystic Water
 Level: 6
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Thick Fat
+Nature: Quirky
+- Bubble Beam
+- Play Rough
+- Charm
+- Sing
 
-Numel
+Numel @ Assault Vest
 Level: 6
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Simple
+Nature: Quirky
+- Curse
+- Flamethrower
+- Scorching Sands
+- Take Down
 
 
 === TRAINER_MERCENARYF_WATERFALL_2 ===
@@ -9683,7 +9847,7 @@ Music: Suspicious
 Double Battle: No
 AI: Smart Trainer
 
-Azumarill @ ITEM_FINE_REMEDY
+Azumarill 
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -9704,14 +9868,33 @@ AI: Smart Trainer
 Zubat
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Infiltrator
+Nature: Adamant
+- Wing Attack
+- Quick Attack
+- Supersonic
+- Poison Fang
+
 
 Barboach
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Hydration
+Nature: Adamant
+- Waterfall
+- Future Sight
+- Mud-Slap
+- Flail
 
-Chinchou
+Chinchou @ Tea
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Volt Absorb
+Nature: Modest
+- Electroweb
+- Psybeam
+- Charge Beam
+- Water Gun
 
 
 === TRAINER_HERMIT_WATERFALL_2 ===
@@ -9887,10 +10070,10 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Manchine @ Magnet
+Manchine @ Lustrous Orb
 Level: 10
 Ability: Neuroforce
-Nature: Lonely
+Nature: Quirky
 - Bullet Punch
 - Counter
 - Karate Chop
@@ -9899,7 +10082,7 @@ Nature: Lonely
 Poochain @ Heal Powder
 Level: 10
 Ability: Intimidate
-Nature: Lonely
+Nature: Quirky
 - Endure
 - Flail
 - Sucker Punch
@@ -9916,12 +10099,10 @@ Items: Super Potion / Revival Herb
 Double Battle: No
 AI: Check Bad Move
 
-
-
 Helipip @ Loaded Dice
 Level: 10
 Ability: Aerilate
-Nature: Lonely
+Nature: Quirky
 - Barrage
 - Tailwind
 - Nuzzle
@@ -9930,7 +10111,7 @@ Nature: Lonely
 Verdoom @ Wide Lens
 Level: 10
 Ability: Aerilate
-Nature: Lonely
+Nature: Quirky
 - Volt Switch
 - Flash Cannon
 - Freezing Glare
@@ -13716,23 +13897,6 @@ AI: Check Bad Move
 Marill
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_ANDRES_1 ===
-Name: DOMINIK
-Class: Hazarddiverm
-Pic: hazarddivermbattle
-Gender: Male
-Music: Suspicious
-Double Battle: No
-AI: Basic Trainer
-
-Shellder
-Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Wooper @ Berry Juice
-Level: 6
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JOSUE ===
 Name: JOSUE

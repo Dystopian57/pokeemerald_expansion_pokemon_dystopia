@@ -580,9 +580,8 @@ script OldaleWarehouseUpperCoffee {
 
 script OldaleWarehouseUpperTrashcan {
 	lock
-	msgbox(format("There's something here with footprints all over it..."))
 	if (!flag (FLAG_ITEM_WAREHOUSETRASHCAN))
-		{giveitem (ITEM_CLEAR_AMULET)	}
+		{givedecoration (DECOR_SKITTY_DOLL)	}
 	else {
 	msgbox(format("The trash can is empty."))
 	}

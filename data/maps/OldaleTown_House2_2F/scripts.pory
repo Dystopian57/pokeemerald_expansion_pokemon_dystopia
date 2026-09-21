@@ -1,8 +1,13 @@
 raw `
-OldaleTown_House2_2F_MapScripts::
-	.byte 0
+
 
 `
+
+mapscripts OldaleTown_House2_2F_MapScripts {
+    MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
+    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+
 
 script OldaleTownHouse2Annebrother {
 	lockall
@@ -20,14 +25,15 @@ script OldaleTownHouse2Annebrother {
 
 	if(var(VAR_JOELQUESTS) == 2)
     {
-    msgbox(format("I just heard mom and sis arguing again... I hope we move to Rustboro soon.
+    msgbox(format("I just heard mom and sis arguing again... I hope we move to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY} soon.
 	\p Dad says he'll earn tons of money with his new job, and that we won't argue again then!"))}
 
 	if(var(VAR_JOELQUESTS) == 3)
     {
-    msgbox(format("Let's go, Purachu. We're off to Rustboro!"))}
+    msgbox(format("Hooray, sis is back! We're off to the city!"))}
 	//foreshadowing... they don't argue again because money separates them
 	applymovement (2, moves(face_down))
+	waitmovement (2)
 	releaseall
 }
 
@@ -60,4 +66,28 @@ script AnneHouseTrashBin2F {
 	else
 	{msgbox (format("The trash can is empty."))}
 	releaseall	
+}
+
+script OldaleTownHouse2Bed {
+	lockall
+    msgbox(format("Looks comfy to sleep in, but it's someone else's..."))
+	releaseall
+}
+
+script OldaleTownHouse2MineralCollection {
+	lockall
+    msgbox(format("A mineral collection. It's not too impressive."))
+	releaseall
+}
+
+script OldaleTownHouse2BigPainting {
+	lockall
+    msgbox(format("A beautiful city sunset. The painting title is “{COLOR BLUE}New Rustboro{COLOR DARK_GRAY} Bay”."))
+	releaseall
+}
+
+script OldaleTownHouse2SmallPainting {
+	lockall
+    msgbox(format("A river crossing a wide, green plan. Haven't seen one of these in a while."))
+	releaseall
 }

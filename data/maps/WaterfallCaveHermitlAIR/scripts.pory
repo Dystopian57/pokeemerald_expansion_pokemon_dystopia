@@ -55,29 +55,31 @@ script WaterfallHermit {
         
         if (!flag (hermitmovesexplained)){
         msgbox(format("I am one of the Eight Hermits. My brothers and I keep the lore of the
-        Hermit Moves. \p We do not grant this lore just to anyone - in these times of strife,
+        Hermit Moves. \p We do not grant this lore to just anyone - in these times of strife,
         much damage can be done with them. But you..."))}
 
-        msgbox(format("You demonstrated a great level of instrospection in your answer. And you
+        msgbox(format("You showed a great level of instrospection in your answer. And you
 		command your Pokémon with kindness... \pThe kindness of one who knows the pain that people
 		can bring.\pTherefore, as one of the Eight Hermits, I deem you worthy to have these."))
 
 
 	    fadeoutbgm (1)
         playse (MUS_OBTAIN_BADGE)
-        fadenewbgm (1)
-        playbgm (MUS_LEMURIA, TRUE)
+
         msgbox(format("Obtained the Cascade Token!"))
+	    fadenewbgm (1)
+        playbgm (MUS_LEMURIA, TRUE)
         setflag (FLAG_BADGE07_GET)
         setflag (FLAG_RECEIVED_HM_WATERFALL)
         giveitem (ITEM_HM07)
         setflag (hermitmovesexplained)
+        msgbox(format("I wish you luck on your travels."))
         //msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
         //back here. \p Only then I will grant you passage into the depths beyond."))
         }
 
     else {
-        msgbox(format("I have nothing else to teach you. I wish you luck on your travels."))
+        msgbox(format("I wish you luck on your travels."))
     }
 
     release
@@ -85,3 +87,46 @@ script WaterfallHermit {
 
     text WaterfallHermit_Outro{
     "I see... a few parting words, if I may."}
+
+
+script WaterfallHermitLairBooks {
+	lock
+	msgbox(format("It's mostly books about history and folklore."))
+	release
+}
+
+script WaterfallHermitLairFireplace {
+	lock
+	msgbox(format("A rudimentary but well-made fireplace."))
+	release
+}
+
+script WaterfallHermitLairDesk {
+	lock
+	msgbox(format("A sturdy stone desk. It seems to have been sculpted by a Pokémon."))
+	release
+}
+
+script WaterfallHermitLairVase {
+	lock
+	msgbox(format("The vase is empty."))
+	release
+}
+
+script WaterfallHermitLairRations {
+	lock
+	msgbox(format("It's some canned rations."))
+	release
+}
+
+script WaterfallHermitLairLogs {
+	lock
+	msgbox(format("A careful stack of logs."))
+	release
+}
+
+script WaterfallHermitLairBed {
+	lock
+	msgbox(format("A remarkably bare bed."))
+	release
+}

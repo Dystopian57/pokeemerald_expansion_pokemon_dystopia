@@ -574,6 +574,26 @@ JoelTentCushion::
 	return
 
 
+JoelTentRadishes::
+# 307 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 308 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentRadishes_Text_0
+# 309 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+
+JoelTentOranBasket::
+# 313 "data/maps/JoelTent/scripts.pory"
+	lockall
+# 314 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentOranBasket_Text_0
+# 315 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+
 # 14 "data/maps/JoelTent/scripts.pory"
 JoelTentDoll_Movement_0:
 # 14 "data/maps/JoelTent/scripts.pory"
@@ -698,9 +718,9 @@ JoelTentJoel_Text_12:
 
 JoelTentJoel_Text_13:
 # 100 "data/maps/JoelTent/scripts.pory"
-	.string "Hey, do you mind returning it to her? I'd\n"
-	.string "go myself, but her mom always gets mad\l"
-	.string "when I go visit.$"
+	.string "Hey, can you please return it to her?\n"
+	.string "I'd go myself, but her mom always gets\l"
+	.string "mad when I go visit.$"
 
 JoelTentJoel_Text_14:
 # 109 "data/maps/JoelTent/scripts.pory"
@@ -711,7 +731,7 @@ JoelTentJoel_Text_15:
 # 118 "data/maps/JoelTent/scripts.pory"
 	.string "You should hurry up! Go return Anne her\n"
 	.string "{COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!\p"
-	.string "She lives in Oldale, in the house with\n"
+	.string "She lives in {COLOR GREEN}Oldale{COLOR DARK_GRAY}, in the house with\n"
 	.string "the metallic roof.$"
 
 JoelTentJoel_Text_16:
@@ -721,7 +741,7 @@ JoelTentJoel_Text_16:
 	.string "that doll. She'll miss it so much in her\l"
 	.string "new home...\p"
 	.string "I know it's a big ask... but if you go to\n"
-	.string "New Rustboro, could you give it to her?$"
+	.string "{COLOR BLUE}New Rustboro{COLOR DARK_GRAY}, could you give it to her?$"
 
 JoelTentJoel_Text_17:
 # 130 "data/maps/JoelTent/scripts.pory"
@@ -730,20 +750,20 @@ JoelTentJoel_Text_17:
 
 JoelTentJoel_Text_18:
 # 133 "data/maps/JoelTent/scripts.pory"
-	.string "To go to New Rustboro, you need a {COLOR BLUE}Devon\n"
+	.string "To go to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}, you need a {COLOR BLUE}Devon\n"
 	.string "Visa{COLOR DARK_GRAY}, or the Devon guards will stop you\l"
 	.string "at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}.$"
 
 JoelTentJoel_Text_19:
 # 136 "data/maps/JoelTent/scripts.pory"
 	.string "There's no way they'll let me through...\n"
-	.string "but you look like a soldier. Perhaps\l"
-	.string "they'll let you.$"
+	.string "but you look like a soldier.\p"
+	.string "Perhaps they'll let you!$"
 
 JoelTentJoel_Text_20:
 # 139 "data/maps/JoelTent/scripts.pory"
-	.string "Here's my Devon Nav number - let's keep\n"
-	.string "in touch about this!$"
+	.string "Here's my Devonav number - let's keep in\n"
+	.string "touch about this!$"
 
 JoelTentJoel_Text_21:
 # 147 "data/maps/JoelTent/scripts.pory"
@@ -846,3 +866,11 @@ JoelTentCushion_Text_0:
 # 302 "data/maps/JoelTent/scripts.pory"
 	.string "A dirty cushion. It's got black and\n"
 	.string "white hair all over it.$"
+
+JoelTentRadishes_Text_0:
+# 308 "data/maps/JoelTent/scripts.pory"
+	.string "A bunch of radishes.$"
+
+JoelTentOranBasket_Text_0:
+# 314 "data/maps/JoelTent/scripts.pory"
+	.string "A basket full of Oran berries.$"

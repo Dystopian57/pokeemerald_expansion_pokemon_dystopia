@@ -335,16 +335,19 @@ OldaleHouse1TVDay_Text_0:
 
 OldaleHouse1TVNight_Text_0:
 # 105 "data/maps/OldaleTown_House1/scripts.pory"
-	.string "It's the movie 'War of the Worlds' by H.G.\n"
-	.string "Weedle. A giant, spider-like robot is\l"
-	.string "capturing panicked humans.\p"
+	.string "It's the movie “War of the Worlds” by\n"
+	.string "H.G. Weedle.\p"
+	.string "A giant, spider-like robot is capturing\n"
+	.string "panicked humans.\p"
 	.string "Some people think it's a critique on\n"
 	.string "Pokémon training.$"
 
 OldaleHouse1GirlDay_Text_0:
 # 113 "data/maps/OldaleTown_House1/scripts.pory"
 	.string "Don't worry Shiiko. I would never eat\n"
-	.string "you, no matter how tasty you look!$"
+	.string "you!\p"
+	.string "No matter how hungry I am, or how tasty\n"
+	.string "you look!$"
 
 OldaleHouse1GirlNight_Text_0:
 # 120 "data/maps/OldaleTown_House1/scripts.pory"
@@ -363,8 +366,8 @@ OldaleHouse1Shiiko_Text_0:
 
 OldaleHouse1WomanDay_Text_0:
 # 141 "data/maps/OldaleTown_House1/scripts.pory"
-	.string "It's been hard raising my daugther\n"
-	.string "alone without my husband.\p"
+	.string "It's been hard raising my kids without\n"
+	.string "my husband.\p"
 	.string "If only he had not enlisted... I begged\n"
 	.string "him not to.$"
 

@@ -97,7 +97,7 @@ script JoelTentJoel {
         played here."))
         applymovement(4, moves(face_player))
         setspeaker ([SP_NAME_JOEL])
-        msgbox(format("Hey, do you mind returning it to her? I'd go myself, but her mom always
+        msgbox(format("Hey, can you please return it to her? I'd go myself, but her mom always
         gets mad when I go visit."))
         applymovement(4, moves(face_up))
         removeobject (2)
@@ -116,7 +116,7 @@ script JoelTentJoel {
     {   applymovement(4, moves(face_player))
     	setspeaker ([SP_NAME_JOEL])
         msgbox(format("You should hurry up! Go return Anne her {COLOR BLUE}Super Substitute Doll{COLOR DARK_GRAY}!
-        \p She lives in Oldale, in the house with the metallic roof."))
+        \p She lives in {COLOR GREEN}Oldale{COLOR DARK_GRAY}, in the house with the metallic roof."))
 		release}
 
 	if(var(VAR_JOELQUESTS) == 5)
@@ -124,19 +124,19 @@ script JoelTentJoel {
     setspeaker ([SP_NAME_JOEL])
         msgbox(format("What? Anne was already gone!? Oh no... \p She told me she can't
         sleep without that doll. She'll miss it so much in her new home... \p I know
-        it's a big ask... but if you go to New Rustboro, could you give it to her?"))
+        it's a big ask... but if you go to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}, could you give it to her?"))
         applymovement(4, moves(face_right))
         setspeaker ([SP_NAME_JOEL])
         msgbox(format("I said I'd go visit her... but it was only so she wouldn't be sad."))
         applymovement(4, moves(face_player))
         setspeaker ([SP_NAME_JOEL])
-        msgbox(format("To go to New Rustboro, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
+        msgbox(format("To go to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}, you need a {COLOR BLUE}Devon Visa{COLOR DARK_GRAY}, or the Devon 
         guards will stop you at {COLOR GREEN}Petalburg Customs{COLOR DARK_GRAY}."))
         setspeaker ([SP_NAME_JOEL])
-        msgbox(format("There's no way they'll let me through... but you look like a soldier. Perhaps
-        they'll let you."))
+        msgbox(format("There's no way they'll let me through... but you look like a soldier.\p Perhaps
+        they'll let you!"))
         setspeaker ([SP_NAME_JOEL])
-        msgbox(format("Here's my Devon Nav number - let's keep in touch about this!"))
+        msgbox(format("Here's my Devonav number - let's keep in touch about this!"))
         register_matchcall (TRAINER_ORPHAN_MALE_101)
 	    setvar(VAR_JOELQUESTS, 6)
         goto (joelgivesdoll)
@@ -300,5 +300,17 @@ script JoelTentMudball {
 script JoelTentCushion {
 	lockall
     msgbox(format("A dirty cushion. It's got black and white hair all over it."))
+	releaseall
+}
+
+script JoelTentRadishes {
+	lockall
+    msgbox(format("A bunch of radishes."))
+	releaseall
+}
+
+script JoelTentOranBasket {
+	lockall
+    msgbox(format("A basket full of Oran berries."))
 	releaseall
 }

@@ -678,6 +678,7 @@ gSongTable::
 	song mus_hideoutintro, 0, 0
 	song mus_dozeremergency, 0, 0
 	song mus_mainstreetcolosseum, 0, 0
+	song mus_battlesim, 0, 0
 
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2

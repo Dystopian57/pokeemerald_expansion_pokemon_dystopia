@@ -993,32 +993,30 @@ OldaleWarehouseUpperTrashcan::
 # 582 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
 # 583 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperTrashcan_Text_0
-# 584 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSETRASHCAN, OldaleWarehouseUpperTrashcan_2
-# 587 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperTrashcan_Text_1
+# 586 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperTrashcan_Text_0
 OldaleWarehouseUpperTrashcan_1:
-# 589 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 588 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperTrashcan_2:
-# 585 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	giveitem ITEM_CLEAR_AMULET
+# 584 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	givedecoration DECOR_SKITTY_DOLL
 	goto OldaleWarehouseUpperTrashcan_1
 
 
 OldaleWarehouseUpperSafemonNotice::
-# 593 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 592 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
-# 594 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 593 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	showmonpic SPECIES_LOADTAD, 10, 3
-# 595 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 594 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperSafemonNotice_Text_0
-# 597 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 596 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	hidemonpic
-# 598 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 597 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
@@ -1711,16 +1709,11 @@ OldaleWarehouseUpperCoffee_Text_1:
 	.string "A coffee machine, Chesto brand.$"
 
 OldaleWarehouseUpperTrashcan_Text_0:
-# 583 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	.string "There's something here with footprints\n"
-	.string "all over it...$"
-
-OldaleWarehouseUpperTrashcan_Text_1:
-# 587 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 586 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The trash can is empty.$"
 
 OldaleWarehouseUpperSafemonNotice_Text_0:
-# 595 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 594 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "{COLOR BLUE}Safemon Notice{COLOR DARK_GRAY}: To assist conditioning,\n"
 	.string "do not feed Loadtads until end of\l"
 	.string "shift!$"

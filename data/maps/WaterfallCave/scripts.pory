@@ -10,7 +10,7 @@ script WaterfallMonk {
 	msgbox(format("They told me meditating under a waterfall would make me stronger..."))
 	msgbox(format("But this ROAR OF WATER is making me pumped up instead! HYAH HYAH!"))
 	msgbox(format("Here, TAKE THIS!"))
-	giveitem (ITEM_TM31)
+	giveitem (ITEM_TM_BRICK_BREAK)
 	setflag (waterfallmonkgivestm)
 	msgbox(format("Everyone improves on their own way. Find the way that works for you!
 	\p HYAH-HYAH!"))}
@@ -27,8 +27,8 @@ script WaterfallActivist {
 	waitmovement (5)
 	msgbox(format("Did you know? The river outside is being contaminated by construction
 	waste.\p Specifically, that of the construction of Road 003 - which is being built over
-	Route 117.\p The canals here have been spared so far, but it's only a matter of time.
-	\p I'm with Neo Rustboro Activist Group, recording evidence."))
+	Route 117.\p The underground canals here have been spared so far, but it's only a matter of time.
+	\p I'm with New Rustboro Activist Group, recording evidence."))
 	applymovement (5, moves(face_up))
 	waitmovement (5)
 	msgbox(format("It's an uphill battle, but we must stop Devon from trampling over the environment!"))
@@ -41,6 +41,7 @@ script WaterfallHazardDiverBattle {
 	trainerbattle_single(TRAINER_ANDRES_1, WaterfallHazardDiver_Intro, WaterfallHazardDiver_Outro, WaterfallHazardDiverRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, WaterfallHazardDiverRematch)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (1, moves(face_up))
 	msgbox(format("I want to swim past that waterfall. Now that's hardcore swimming, hey?"))
 	applymovement (1, moves(face_player))
@@ -53,7 +54,7 @@ script WaterfallHazardDiverBattle {
 script WaterfallHazardDiverRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("That was a great workout. We should do this again sometime! \p Let me fetch my Devon Nav
+	msgbox(format("That was a great workout. We should do this again sometime! \p Let me fetch my Devonav
     so I can add you on the Devon Net..."))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (1, moves(face_right))
@@ -73,7 +74,7 @@ script WaterfallHazardDiverRegister {
     playse (SE_PUDDLE)
     waitse
     playse (SE_CONTEST_CONDITION_LOSE)
-    msgbox(format("Ahaa, found it - here's my Devon Nav!"))
+    msgbox(format("Ahaa, found it - here's my Devonav!"))
     applymovement (1, moves(face_player))
 	register_matchcall (TRAINER_ANDRES_1)
     applymovement (1, moves(face_right))
@@ -139,11 +140,11 @@ script WaterfallMercenaryFRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	msgbox(format("You want to get past the waterfall to get out of the Rebel Zone, right?"))
+	msgbox(format("You want to get past the waterfall to get out of the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, right?"))
 	applymovement (3, moves(face_left))
 	msgbox(format("Well, there's a geezer in that cave who can teach Pokémon to do that."))
 	applymovement (3, moves(face_player))
-	msgbox(format("But only after we beat him. We should train together to do it. Here."))
+	msgbox(format("But only after one beats him. We should train together to do it. Here."))
 	register_matchcall (TRAINER_ROSE_1)
 	msgbox(format("Come back later. We'll fight some more."))
 	release

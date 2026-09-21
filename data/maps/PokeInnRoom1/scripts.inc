@@ -1716,8 +1716,8 @@ PokeInnRoom1Girl_Text_15:
 PokeInnRoom1Girl_Text_16:
 # 211 "data/maps/PokeInnRoom1/scripts.pory"
 	.string "O-oh, okay... I guess it must be\n"
-	.string "dangerous to take it out. Sorry for\l"
-	.string "asking.$"
+	.string "dangerous to take it out.\p"
+	.string "Sorry for asking.$"
 
 PokeInnRoom1Girl_Text_17:
 # 224 "data/maps/PokeInnRoom1/scripts.pory"

@@ -35,7 +35,7 @@
     F(BRICK_BREAK) \
     F(DOUBLE_TEAM) \
     F(REFLECT) \
-    F(SHOCK_WAVE) \
+    F(MUD_SHOT) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
     F(SANDSTORM) \
@@ -49,7 +49,7 @@
     F(ATTRACT) \
     F(THIEF) \
     F(STEEL_WING) \
-    F(DEFOG) \
+    F(POISON_GAS) \
     F(SNATCH) \
     F(OVERHEAT) 
 

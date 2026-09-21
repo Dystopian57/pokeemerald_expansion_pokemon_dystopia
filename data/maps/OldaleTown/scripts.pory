@@ -212,18 +212,19 @@ script OldaleVendingMachine {
             if(var(VAR_RESULT) == 0){
             		checkmoney (50)
 				if (var(VAR_RESULT) == TRUE) {
-                    playse (SE_SHOP)
-                    waitse
-					updatemoneybox
+					removemoney (50)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 
-                    random (4)
-                    goto_if_ne (VAR_RESULT, 0, freshwatergotstuck)
-                    goto_if_eq (VAR_RESULT, FALSE, gotfreshwater)
+                    //random (4)
+                    //goto_if_ne (VAR_RESULT, 0, freshwatergotstuck)
+                    //goto_if_eq (VAR_RESULT, FALSE, gotfreshwater)
 
                     gotfreshwater:
                     playse (SE_VEND)
 					waitse
-					removemoney (50)
+
 					msgbox(format("A Fresh Water bottle dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_FRESH_WATER)
@@ -250,7 +251,7 @@ script OldaleVendingMachine {
                         goto (gotfreshwater)
                         }
 
-                        if(var(VAR_RESULT) == 0){
+                        if(var(VAR_RESULT) == 1){
                         msgbox(format("The Fresh Water just stays on the verge of falling, mockingly.")
                         goto (endvendingmachine))
                         }
@@ -265,9 +266,10 @@ script OldaleVendingMachine {
             if(var(VAR_RESULT) == 1){
             		checkmoney (70)
 				if (var(VAR_RESULT) == TRUE) {
-                    playse (SE_SHOP)
-                    waitse
-					updatemoneybox
+					removemoney (70)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 
                     random (4)
                     goto_if_ne (VAR_RESULT, 0, teagotstuck)
@@ -276,7 +278,7 @@ script OldaleVendingMachine {
                     gottea:
                     playse (SE_VEND)
 					waitse
-					removemoney (70)
+
 					msgbox(format("A Tea dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_TEA)
@@ -303,7 +305,7 @@ script OldaleVendingMachine {
                         goto (gottea)
                         }
 
-                        if(var(VAR_RESULT) == 0){
+                        if(var(VAR_RESULT) == 1){
                         msgbox(format("The Tea can just stays on the verge of falling, mockingly.")
                         goto (endvendingmachine))
                         }
@@ -318,9 +320,10 @@ script OldaleVendingMachine {
             if(var(VAR_RESULT) == 2){
             		checkmoney (40)
 				if (var(VAR_RESULT) == TRUE) {
-                    playse (SE_SHOP)
-                    waitse
-					updatemoneybox
+					removemoney (40)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 
                     random (4)
                     goto_if_ne (VAR_RESULT, 0, lavacookiegotstuck)
@@ -329,7 +332,7 @@ script OldaleVendingMachine {
                     gotlavacookie:
                     playse (SE_VEND)
 					waitse
-					removemoney (40)
+
 					msgbox(format("A Lava Cookie dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_HEAL_POWDER)
@@ -356,7 +359,7 @@ script OldaleVendingMachine {
                         goto (gotlavacookie)
                         }
 
-                        if(var(VAR_RESULT) == 0){
+                        if(var(VAR_RESULT) == 1){
                         msgbox(format("The Strong Lava Cookie just stays on the verge of falling, mockingly.")
                         goto (endvendingmachine))
                         }
@@ -433,25 +436,26 @@ script OldaleOutsideHikerGuy {
     lock
     applymovement (13, moves(face_player))
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
 	if(var(VAR_JOELQUESTS) == 0)
     {
     msgbox(format("Did you know? My son is top of the class at the DLC! \p He's as sharp as
-    his father. He'll make it big in Rustboro one day, I'm sure."))}
+    his father. He'll make it big in {COLOR BLUE}New Rustboro{COLOR DARK_GRAY} one day, I'm sure."))}
 
 	if(var(VAR_JOELQUESTS) == 1)
     {
     msgbox(format("Did you know? My son is top of the class at the DLC! \p He's as sharp as
-    his father. He'll make it big in Rustboro one day, I'm sure."))}
+    his father. He'll make it big in {COLOR BLUE}New Rustboro{COLOR DARK_GRAY} one day, I'm sure."))}
 
 	if(var(VAR_JOELQUESTS) == 2)
     {
     msgbox(format("Arf, arf... I tried catching up to my daugther, but she's so fast...!
-    \p I hope she doesn't go too far. We are moving to {COLOR BLUE}Rustboro{COLOR DARK_GRAY} today."))}
+    \p I hope she doesn't go too far. We are moving to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY} today."))}
 
 	if(var(VAR_JOELQUESTS) == 3)
     {
     msgbox(format("My daugther is finally back... I can't wait to get out of
-    this place. \p I assure you, it's not what it used to be..."))}
+    this place. \p We will be much happier in the big city, I'm sure of it!"))}
 
     releaseall
     }
@@ -459,11 +463,12 @@ script OldaleOutsideHikerGuy {
 script OldaleOutsideParkNPC {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-    applymovement (11, moves(face_player))
+    applymovement (10, moves(face_player))
+    applymovement (31, moves(face_player))
 
     if ((!flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == FALSE)
         {
-        msgbox(format("I hear there's people in the Rebel Zone who get crazy rich by finding treasure with their {COLOR BLUE}Object Spotters{COLOR DARK_GRAY}.
+        msgbox(format("I hear there's people in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY} who get crazy rich by finding treasure with their {COLOR BLUE}Object Spotters{COLOR DARK_GRAY}.
         \p Haven't managed to get my hands on one, or I wouldn't be sitting here!"))
         }
     if ((flag (FLAG_HIDDEN_ITEM_OLDALE_TRASHCAN)) && checkitem (ITEM_ITEMFINDER)  == FALSE)
@@ -485,6 +490,8 @@ script OldaleOutsideParkNPC {
         you should use it as much as you can. You might find some valuables to sell.\p
         Hopefully something better than what you found in that trash can... ha-ha-ha!"))}
 
+    applymovement (10, moves(face_down))
+    applymovement (31, moves(face_down))
     release
     }
 
@@ -600,7 +607,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
     waitmovement
 	setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-    msgbox(format("Would you like to join us fight Devon? You know Devon Co., right?"))
+    msgbox(format("Would you like to join us fight Devon? You know {COLOR BLUE}Devon Co.{COLOR DARK_GRAY}, right?"))
 
     removefieldmugshot
 	setspeaker ([SP_NAME_SHARPY])
@@ -631,7 +638,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
 	        setspeaker ([SP_NAME_SHARPY])
             createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
             msgbox(format("Whaaat!? But you look like a soldier - which means you're strong,
-            and brave, right?"))
+            and brave and you do what's right... right?"))
             
             applymovement (17, moves(face_right))
             removefieldmugshot
@@ -678,9 +685,17 @@ script OldaleSharpyCameliaOutDLCCutscene {
 
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
-                    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+                    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
                     applymovement (18, moves(face_left))
-                    msgbox(format("You leave me with no other choice... I challenge you... to a BATTLE!"))
+                    msgbox(format("You leave me with no other choice... I challenge you..."))
+                    removefieldmugshot
+                    playse (SE_LEDGE)
+                    waitse
+                    setspeaker ([SP_NAME_SHARPY])
+                    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+                    applymovement (17, moves(jump_in_place_left))
+                    waitmovement (17)
+                    msgbox(format("To a BATTLE!"))
                 
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
@@ -692,17 +707,27 @@ script OldaleSharpyCameliaOutDLCCutscene {
                     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
                     msgbox(format("Sharpy, that's essentially harrasment..."))
 
-                    applymovement (18, moves(face_right))
+                    applymovement (17, moves(face_right))
+                    waitmovement (17)
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-                    msgbox(format("Maybe - but the end justifies the means! W-wait, that's {COLOR RED}Rebels{COLOR DARK_GRAY} talk..."))
+                    msgbox(format("Maybe - but the end justifies the means!"))
 
-                    applymovement (18, moves(face_left))
+                    applymovement (17, moves(face_down))
+                    waitmovement (17)
+                    removefieldmugshot
+                    setspeaker ([SP_NAME_SHARPY])
+                    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+                    msgbox(format("W-wait, that's {COLOR RED}Rebel{COLOR DARK_GRAY} talk..."))
+
+
+                    applymovement (17, moves(face_left))
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
                     msgbox(format("A-anyway, come to Route 103! I'll be waiting!"))
+                    closemessage
                     removefieldmugshot
 
                     playse (SE_FLEE)
@@ -776,7 +801,7 @@ script OldaleCamelia {
     {
 
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	applymovement (17, moves(face_player))
+	applymovement (16, moves(face_player))
     setspeaker ([SP_NAME_CAMELIA])
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
     msgbox(format("I'm sorry about him... I know this is a lot to ask, but can you go kick
@@ -790,7 +815,7 @@ script OldaleCamelia {
     removefieldmugshot
 	setspeaker ([SP_NAME_CAMELIA])
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_SAD)
-    msgbox(format("He won't leave until you battle him, and our tutor will be mad if we're not
+    msgbox(format("He'll be waiting there a while, and our tutor will be mad if we're not
     back at the dojo soon..."))
 
     }
@@ -809,6 +834,8 @@ script OldaleCamelia {
 
     }
     removefieldmugshot
+	applymovement (16, moves(face_left))
+    waitmovement (16)
     releaseall
     }
 
@@ -825,11 +852,11 @@ script OldaleDevonGrunts { //karen and jerry
         {
         applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("I'm sorry, but we can't let anyone through until the
-        {COLOR RED}Rebels{COLOR DARK_GRAY} occupying {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY},
+        {COLOR RED}Rebels{COLOR DARK_GRAY} occupying {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY}
         are dealt with."))
         applymovement (15, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("We can't allow these criminals to get closer to New Rustboro... but don't worry!\p
-        Reinforcements from Devon HQ are currently on the way."))
+        msgbox(format("We can't allow these criminals to get closer to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}... but don't worry!\p
+        Reinforcements from {COLOR BLUE}Devon HQ{COLOR DARK_GRAY} are currently on the way."))
         applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Yup! With the current pace of administrative protocols, they should be here in about 6 months."))
         }
@@ -841,7 +868,7 @@ script OldaleDevonGrunts { //karen and jerry
 
         applymovement (15, moves(walk_in_place_up * 1, face_up))
         msgbox(format("
-        {COLOR LIGHT_GRAY}{SHADOW WHITE}Dude... you were just checking your Devon Nav.
+        {COLOR LIGHT_GRAY}{SHADOW WHITE}Dude... you were just checking your Devonav.
         {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 
         applymovement (14, moves(walk_in_place_down * 1, face_down))
@@ -870,7 +897,7 @@ script OldaleDevonGrunts { //karen and jerry
 
         if(var(VAR_RESULT) == 0){
         applymovement (14, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("I see... well, I'm sorry to say... \p In the Rebel Zone, when it's not one thing,
+        msgbox(format("I see... well, I'm sorry to say... \p In the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, when it's not one thing,
         it's the other, you know?"))
         applymovement (15, moves(walk_in_place_right * 1))
         msgbox(format("We have one of our scientists searching Road 002 for a very dangerous Pokémon.
@@ -1174,7 +1201,7 @@ script OldaleDLCWindow {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)  
     msgbox(format("You can see the DLC's library through the window. \p The library's clerk
-    is browsing an... 'explicit' website."))
+    is browsing an... “explicit” website."))
     release 
 }
 
@@ -1373,9 +1400,12 @@ script OldaleTruckRebel {
 
 script OldaleGrassRebel {
     lock
-    msgbox(format("Damn it, there's only broken clankers in this grass! I hate clankers!"))
+	applymovement (26, moves(face_player))
+    msgbox(format("Damn it, there's only broken clankers in this patch! I hate clankers!"))
     release
     }
+
+
 
  script OldaleCarRebelApproach0 {
 	lock
@@ -1488,14 +1518,18 @@ script OldaleCarBehind{
 
 
 script SamanthaCall1 {
-    lock
+
     if (var(VAR_MAUSOLEUM_HEXGIRL) > 0){
+    lock
+    playse (SE_POKENAV_CALL)
+    msgbox(format("..."))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("U-uhm... hi, {PLAYER}! It's me, Samantha.\p I hope I haven't caught you at a bad time...
     \p B-but, since you said you'd help me out here in the Mausoleum, I... \p I-I was wondering
     if you could, like... come do me a favour?\p I-it's okay if you're too busy, and there's no
     hurry, but...\p I-I'll be here if you decide to come!\p Sorry for bothering. S-see you!"))
     setvar(VAR_MAUSOLEUM_HEXGIRL, 2)
+    playse (SE_POKENAV_HANG_UP)
     release}
 
     else {release}
@@ -1679,8 +1713,7 @@ script SamanthaShake{
 
 script GiveSafemonParty1 {
     callnative (ZeroPlayerPartyMons)
-
-
+    msgbox (format("Pick a team"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "1st Party", "2nd Party")
         if(var(VAR_RESULT) == 0){
     givemon (SPECIES_BULBASYNTH, 10, ITEM_REMEDY)
@@ -1699,5 +1732,6 @@ script GiveSafemonParty1 {
     givemon (SPECIES_MANCHINE, 10, ITEM_SHALOUR_SABLE)     
         }
 
+releaseall
 }
 

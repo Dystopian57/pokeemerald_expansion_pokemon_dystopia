@@ -452,108 +452,140 @@ MoveTutor103Bookshelf::
 	return
 
 
-MoveTutor103Drawer::
-# 258 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	lockall
+MoveTutor103Scroll::
 # 259 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103Drawer_Text_0
+	lockall
 # 260 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103Scroll_Text_0
+# 261 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	releaseall
+	return
+
+
+MoveTutor103Blanket::
+# 264 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	lockall
+# 265 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103Blanket_Text_0
+# 266 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	releaseall
+	return
+
+
+MoveTutor103Drawer::
+# 270 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	lockall
+# 271 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103Drawer_Text_0
+# 272 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Wardrobe::
-# 263 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 275 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 264 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 276 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Wardrobe_Text_0
-# 265 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 277 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103BookPile::
-# 268 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 280 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 269 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 281 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103BookPile_Text_0
-# 270 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 282 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Kotatsu::
-# 273 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 285 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 274 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 286 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Kotatsu_Text_0
-# 275 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 287 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103OpenBox::
-# 278 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 290 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 279 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103OpenBox_Text_0
-# 281 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 291 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	goto_if_unset movetutoropenboxitem, MoveTutor103OpenBox_2
+# 295 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103OpenBox_Text_1
+MoveTutor103OpenBox_1:
+# 296 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
+MoveTutor103OpenBox_2:
+# 292 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103OpenBox_Text_0
+# 293 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	giveitem ITEM_TM_HIDDEN_POWER
+	goto MoveTutor103OpenBox_1
+
 
 MoveTutor103SealedBox::
-# 284 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 299 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 285 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 300 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103SealedBox_Text_0
-# 286 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 301 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103ToolBox::
-# 289 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 304 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 290 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 305 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103ToolBox_Text_0
-# 291 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 306 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 KantonianWarHistoryVol3TutorHut::
-# 295 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 310 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lock
-# 296 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 311 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox KantonianWarHistoryVol3TutorHut_Text_0
-# 298 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 313 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor103_Text_15, KantonianWarHistoryVol3TutorHut_Text_1
-# 300 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 315 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq KantonianWarHistoryVol3TutorHut_2
 KantonianWarHistoryVol3TutorHut_1:
-# 309 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 324 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq KantonianWarHistoryVol3TutorHut_5
 KantonianWarHistoryVol3TutorHut_4:
-# 312 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 327 "data/maps/Route103_MoveTutorHut/scripts.pory"
 endkantonianwar3:
-# 313 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 328 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	hidemonpic
+# 329 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 KantonianWarHistoryVol3TutorHut_2:
-# 301 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 316 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmonpic SPECIES_PIKACHU_HOENN, 10, 3
-# 302 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 317 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox KantonianWarHistoryVol3TutorHut_Text_2
-# 308 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 323 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endkantonianwar3
 	goto KantonianWarHistoryVol3TutorHut_1
 
 KantonianWarHistoryVol3TutorHut_5:
-# 310 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 325 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endkantonianwar3
 	goto KantonianWarHistoryVol3TutorHut_4
 
@@ -581,7 +613,7 @@ MoveTutor103_Text_0:
 	.string "or used to be...\p"
 	.string "Devon began a campaign to discredit\n"
 	.string "Move Tutors, on account of us teaching\l"
-	.string "'dangerous moves' to Pokémon.\p"
+	.string "“dangerous moves” to Pokémon.\p"
 	.string "People bought into it, and began to\n"
 	.string "treat us like criminals. It's ridiculous.\p"
 	.string "I'm sorry... you didn't come here to\n"
@@ -692,51 +724,64 @@ MoveTutor103Bookshelf_Text_0:
 	.string "It's full of books about Pokémon\n"
 	.string "learning patterns.$"
 
+MoveTutor103Scroll_Text_0:
+# 260 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "The scroll's contents are written in\n"
+	.string "braille. Can't read it.$"
+
+MoveTutor103Blanket_Text_0:
+# 265 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "A large futon blanket.$"
+
 MoveTutor103Drawer_Text_0:
-# 259 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	.string "It looks like a regular drawer. I should\n"
+# 271 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "It looks like a regular drawer. Should\n"
 	.string "leave this alone.$"
 
 MoveTutor103Wardrobe_Text_0:
-# 264 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 276 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's a fitted wardrobe. There's no real\n"
 	.string "reason to open it.$"
 
 MoveTutor103BookPile_Text_0:
-# 269 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 281 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's a pile of books about Pokémon\n"
 	.string "moves.$"
 
 MoveTutor103Kotatsu_Text_0:
-# 274 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 286 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "A cozy kotatsu. It makes one want to\n"
 	.string "stay home.$"
 
 MoveTutor103OpenBox_Text_0:
-# 279 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	.string "The label on the box reads 'to throw\n"
-	.string "away'. It should be fine to peek...$"
+# 292 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "The box's label says “To throw out”. It\n"
+	.string "should be alright to peek...$"
+
+MoveTutor103OpenBox_Text_1:
+# 295 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "The box is empty.$"
 
 MoveTutor103SealedBox_Text_0:
-# 285 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 300 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's a sealed box. Better not to open it.$"
 
 MoveTutor103ToolBox_Text_0:
-# 290 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 305 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "A toolbox full of tools worn with use.$"
 
 KantonianWarHistoryVol3TutorHut_Text_0:
-# 296 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	.string "The book's cover reads 'History of the\n"
-	.string "Kantonian War, Volume 3.\p"
+# 311 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "The book's cover reads “History of the\n"
+	.string "Kantonian War, Volume 3.”\p"
 	.string "Read it?$"
 
 KantonianWarHistoryVol3TutorHut_Text_1:
-# 298 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 313 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "No$"
 
 KantonianWarHistoryVol3TutorHut_Text_2:
-# 302 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 317 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "May, 2006: Team Rocket has spent the\n"
 	.string "last decade using Silph Co. as a proxy\l"
 	.string "for their criminal activities, primarily\l"

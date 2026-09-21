@@ -844,14 +844,7 @@
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE4_3"
     },
-    {
-      "type": "hidden_item",
-      "x": 17,
-      "y": 82,
-      "elevation": 3,
-      "item": "ITEM_CALCIUM",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM"
-    },
+  
     {
       "type": "hidden_item",
       "x": 38,

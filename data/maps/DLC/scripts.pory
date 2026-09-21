@@ -34,7 +34,6 @@ script OldaleDLC_GoToSeatForTherapyLeft {
 
 script OldaleDLC_GoToSeatForTherapyRight {
 	lockall
-    playbgm (MUS_SCHOOL, TRUE)
 	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	special (SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
@@ -89,20 +88,20 @@ script OldaleTown_DLC_TherapyCutscene{
     playse (SE_PIN)
     applymovement (7, moves (emote_exclamation_mark, walk_in_place_up * 2))
     waitmovement
-    msgbox(format("O-oh, that one... t-that one burned my house...! Aaah, it's scary..."))
+    msgbox(format("O-oh, that one... one of those burned my house! It's awful..."))
 
     playse (SE_M_METRONOME)
     applymovement (3, moves (emote_question_mark, walk_in_place_up * 2))
     waitmovement
 	createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
 	setspeaker ([SP_NAME_CAMELIA])
-    msgbox(format("Huh? Nonsense, that's a splendid Fire type."))
+    msgbox(format("Awful? That's a Charizard, a splendid Fire type."))
 
     playse (SE_PIN)
     applymovement (7, moves (emote_exclamation_mark, face_left))
     waitmovement
     removefieldmugshot
-    msgbox(format("W-what?"))
+    msgbox(format("S-splendid?"))
 
     applymovement (6, moves (walk_in_place_down * 1))
     waitmovement
@@ -121,7 +120,7 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (6, moves (walk_in_place_down * 2)) 
     waitmovement
     msgbox(format("Precisely. The Kantonians used many Blastoise on the Assault on Route 103,
-    and they almost flooded Oldale Town. \p Once more, it was thanks to Devon Co.'s swift action,
+    and they almost flooded {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}. \p Once more, it was thanks to Devon Co.'s swift action,
     that a flood gate was built and..."))
 
     playse (SE_PIN)
@@ -130,8 +129,8 @@ script OldaleTown_DLC_TherapyCutscene{
     removefieldmugshot
 	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_SHARPY])
-    msgbox(format("Hey, I know that one! That's a cool as heck Blastoise! \p I love how their
-    Hydropumps sound..."))
+    msgbox(format("Did you say Blastoise!? Those are cool as heck! \p I love how their
+    Hydro Pumps sound..."))
     playse (SE_PIN)
 
     removefieldmugshot
@@ -148,7 +147,7 @@ script OldaleTown_DLC_TherapyCutscene{
     removefieldmugshot
 	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
 	setspeaker ([SP_NAME_SHARPY])
-    msgbox(format("No? Hmm, you're right... it's not a 'bang' it's more like a..."))
+    msgbox(format("No? Hmm, you're right... it's not a “bang” it's more like a..."))
     playse (SE_M_HYDRO_PUMP)
 
     removefieldmugshot
@@ -180,7 +179,7 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (7, moves (face_up))
     applymovement (8, moves (face_up))
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-    I think we will finish this session early. \p Next time, everyone please be mindful of
+    I think we will finish this session early. \p Next time, everyone, please be mindful of
     others' feelings."))
 
     applymovement (3, moves (face_right))
@@ -242,9 +241,10 @@ script LittleKidDLC {
         showmonpic(SPECIES_PIKACHU_BELLE, 10,3)
         msgbox(format("Look - I drew Munchies! It's my Snorlax! Well... it was my Snorlax.
         \p Munchie used to be small, but then it EVOLVED! And mom got scared of it.
-        \p So we said goodbye to Munchy - we released him. Munchy and I were very sad...
-        \pWhen I become a trainer, I'll go find him, and give him tons of yummy things to eat!”"))
+        \p So we said goodbye to Munchy - we released him. Munchy and I were very sad..."))
         hidemonpic
+        msgbox(format("When I become a trainer, I'll go find him, and give him tons of yummy things to eat!"))
+
         }
         if(var(VAR_RESULT) == 1){
         msgbox(format("Hehe - okay! Your loss!"))
@@ -272,6 +272,7 @@ script FatManDLC {
     msgbox(format("I lived in Rustboro, and some fire Pokémon burned the apartment
     building I lived in. \p I had to come back here with my parents. I miss the city."))
 	applymovement (7, moves (face_up))
+    waitmovement (7)
     releaseall
 }
 
@@ -281,8 +282,8 @@ script ObsessedGirlDLC {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (12, moves(face_player))
-    msgbox(format("I searched for the origin of the word 'Pokémon'... and would you know it?
-    \p It comes from the old term 'Pocket Monsters'. They are 'monsters'.
+    msgbox(format("I searched for the origin of the word “Pokémon”... and guess what?
+    \p It comes from the old term “Pocket Monsters”. They are “monsters”.
     \p Who thought it was a good idea to live with them?
     \p Please, get that one away from me. I don't want to get hurt."))
 	applymovement (12, moves (face_right))
@@ -330,7 +331,7 @@ script OldManDLC {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (8, moves(face_player))
     msgbox(format("My daugther's health has never been the same since she breathed that Venusaur's
-    Poison Powder. \p She's been surfing the web as a way to deal with it... I wish she went out
+    Poison Powder. \p She's been surfing the web as a way to distract herself...\pI wish she went out
     a bit more."))
 	applymovement (8, moves (face_up))
     waitmovement (8)
@@ -355,6 +356,7 @@ script TeacherDLC {
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
     I shouldn't have come to teach to this backwater town. \p But the bonus is so juicy..."))
 	applymovement (6, moves (face_down))
+    waitmovement (6)
     releaseall
 }
 
@@ -376,7 +378,7 @@ script LibraryGuyDLC {
 
             //FIRE BOOK CHECK
             if (flag (loanedfirebook)){
-            msgbox(format("Oh, my record shows you have already loaned 'The History of Mt. Chimney'. \p You
+            msgbox(format("Oh, my record shows you have already loaned “The History of Mt. Chimney”. \p You
             need to return it before loaning any more books. Is that okay?"))
             dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
             
@@ -398,7 +400,7 @@ script LibraryGuyDLC {
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
-                        checkmoney (100)
+                        checkmoney (5000)
                             if (var(VAR_RESULT) == TRUE) {
                             removemoney (5000)
                             msgbox(format("Thank you. Please take better care of loans from now on. You
@@ -423,7 +425,7 @@ script LibraryGuyDLC {
             //GRASS BOOK CHECK
 
             if (flag (loanedgrassbook)){
-            msgbox(format("Oh, my record shows you have already loaned On Fortree's Deforestation. \p You
+            msgbox(format("Oh, my record shows you have already loaned “On Fortree's Deforestation”. \p You
             need to return it before loaning any more books. Is that okay?"))
             dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
             
@@ -445,7 +447,7 @@ script LibraryGuyDLC {
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
-                        checkmoney (100)
+                        checkmoney (5000)
                             if (var(VAR_RESULT) == TRUE) {
                             removemoney (5000)
                             msgbox(format("Thank you. Please take better care of loans from now on. You
@@ -471,7 +473,7 @@ script LibraryGuyDLC {
             //ELECTRIC BOOK CHECK
 
             if (flag (loanedelectricbook)){
-            msgbox(format("Oh, my record shows you have already loaned 'New Mauville - What Went Wrong'. \p You
+            msgbox(format("Oh, my record shows you have already loaned “New Mauville - What Went Wrong”. \p You
             need to return it before loaning any more books. Is that okay?"))
             dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "I lost it...")
             
@@ -493,7 +495,7 @@ script LibraryGuyDLC {
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
-                        checkmoney (100)
+                        checkmoney (5000)
                             if (var(VAR_RESULT) == TRUE) {
                             removemoney (5000)
                             msgbox(format("Thank you. Please take better care of loans from now on. You
@@ -522,7 +524,7 @@ script LibraryGuyDLC {
             loanbookoffer:
             msgbox(format("These are the books we have currently available for loans."))
 
-            dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "'The History of Mt. Chimney'", "'On Fortree's Deforestation'", "'New Mauville - What Went Wrong?'", "I changed my mind")
+            dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "“The History of Mt. Chimney”", "“On Fortree's Deforestation”", "“New Mauville - What Went Wrong?”", "I changed my mind")
 
                 if(var(VAR_RESULT) == 0){
                 msgbox(format("Interested in geology? Then this is a great pick. Here you go!"))
@@ -589,7 +591,7 @@ script LibraryGuyDLC {
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
-                        checkmoney (100)
+                        checkmoney (5000)
                             if (var(VAR_RESULT) == TRUE) {
                             removemoney (5000)
                             msgbox(format("Thank you. Please take better care of loans from now on. You
@@ -635,7 +637,7 @@ script LibraryGuyDLC {
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
-                        checkmoney (100)
+                        checkmoney (5000)
                             if (var(VAR_RESULT) == TRUE) {
                             removemoney (5000)
                             msgbox(format("Thank you. Please take better care of loans from now on. You
@@ -682,7 +684,7 @@ script LibraryGuyDLC {
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will pay", "Not right now")
                         if(var(VAR_RESULT) == 0){
-                        checkmoney (100)
+                        checkmoney (5000)
                             if (var(VAR_RESULT) == TRUE) {
                             removemoney (5000)
                             msgbox(format("Thank you. Please take better care of loans from now on. You
@@ -796,7 +798,7 @@ script BlackBoardDLC {
 	waitmessage
 
 	if(var(VAR_RESULT) == 0){
-    msgbox(format("You write ¥2194 on the blackboard."))
+    msgbox(format("{PLAYER} writes ¥2194 on the blackboard."))
 	applymovement (6, moves(face_player))
 	applymovement (14, moves(face_player))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
@@ -810,10 +812,10 @@ script BlackBoardDLC {
     }
 
 	if(var(VAR_RESULT) == 1){
-    msgbox(format("You write ¥1984 on the blackboard."))
+    msgbox(format("{PLAYER} writes ¥1984 on the blackboard."))
 	applymovement (6, moves(face_player))
 	applymovement (14, moves(face_player))
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+	//applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
     msgbox(format("Oh, that's correct! You're good with numbers."))
 	applymovement (6, moves(face_up))
 	applymovement (14, moves(face_up))
@@ -828,7 +830,7 @@ script BlackBoardDLC {
     }
 
 	if(var(VAR_RESULT) == 2){
-    msgbox(format("You write ¥2025 on the blackboard."))
+    msgbox(format("{PLAYER} writes ¥2025 on the blackboard."))
 	applymovement (6, moves(face_player))
 	applymovement (14, moves(face_player))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
@@ -848,15 +850,16 @@ script BlackBoardDLC {
 
 script OpenBoxDLC {
     lock
-    msgbox(format("A label on the open box reads 'To be discarded'. \p Through the open gap,
+    msgbox(format("A label on the open box reads “To be discarded”. \p Through the open gap,
     you glimpse a paper whose title reads: \p
-    'The grim truth behind Safemon, by {COLOR BLUE}Professor Balsam{COLOR DARK_GRAY}.'"))
+    “The grim truth behind Safemon, by {COLOR BLUE}Professor Birch{COLOR DARK_GRAY}.”"))
     releaseall
 }
 
+
 script PosterDLC {
     lock
-    msgbox(format("Next month's planned excursion: Petalburg Park! \p Sign ups open on DLC's website.
+    msgbox(format("Next month's planned excursion:\nPetal Park! \p Sign ups open on DLC's website.
     \n Minors require parental consent."))
     releaseall
 }
@@ -888,10 +891,23 @@ script BookshelfDLC {
     releaseall
 }
 
+script HangerDLC {
+    lock
+    msgbox(format("It's just a bunch of hanged clothes."))
+    releaseall
+}
+
+
+script BookPileDLC {
+    lock
+    msgbox(format("A pile of textbooks about Safemon."))
+    releaseall
+}
+
 script MauvillePosterDLC {
     lock
     msgbox(format("Finished using the PC? Turn it off, and save electricity! \p Let's take
-    care of Hoenn together.\n{COLOR BLUE}Mauville Nuclear Plant.{COLOR DARK_GRAY}"))
+    care of Hoenn together.\n{COLOR BLUE}New Mauville Nuclear Plant.{COLOR DARK_GRAY}"))
     releaseall
 }
 
@@ -914,13 +930,13 @@ releaseall
  script MoneyTipBook {
     lock
 	showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
-        msgbox(format("'The book cover reads: 'Money in post-war Hoenn - how to THRIVE.'"))
+        msgbox(format("The book cover reads: “Money, post-war Hoenn and you.”"))
         moneychapterselection:
 	    showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
 
         msgbox(format("Which chapter to read?"))
         hidemonpic
-	dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "1) Devon Relief", "2) Foraging", "3) Object Spotter", "4) Thief and You", "5) Pawning and Gambling", "None")
+	dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "1) Devon Relief", "2) Foraging", "3) Object Spotter", "4) Borrowing?", "5) Pawning and Gambling", "None")
     
 
 	if (var(VAR_RESULT) == 0) {
@@ -937,18 +953,18 @@ releaseall
     hidemonpic
     msgbox(format("Mother nature does not provide as much as it used to, but with some luck, it won't
     be drained dry by the time you read this. \p Take Route 101 for example - Shiitako mushrooms
-    grow in that place. \p Even if you pick them up once, they regrow on the daily, so that's
+    grow in that area. \p Even if you pick them up once, they regrow on the daily, so that's
     steady income! \p Too lazy to forage yourself? Get a Pokémon with the Pickup ability,
     and have it do it for you. \p Now that's steady AND passive income! \p Lastly, if you're
-    lucky enough to find a berry field in this day and age, well... you better exploit it,
-    and sell those bad girls for a fortune."))
+    lucky enough to find a berry field in this day and age, well...\pYou better exploit it,
+    and sell those bad girls for a fortune!"))
     goto (moneychapterselection)
     }
 
 	if (var(VAR_RESULT) == 2) {
     hidemonpic
     msgbox(format("Now this is where the real money flows in! \p It's only been a year since
-    the war, and Hoenn is still full of stuff people dropped during the chaos. \p Now, you can
+    the war, and the region is still full of stuff people dropped during the chaos. \p Now, you can
     comb the ground of Hoenn till your hair turns grey, or you can get your hands on an {COLOR BLUE}Object Spotter{COLOR DARK_GRAY}.
     \p It's an ugly pair of goggles that does the spotting for you!\p They are expensive, and due to some
     nonsense anti-theft feature, they don't work indoors... \p But if you want not only to survive, but THRIVE...
@@ -959,7 +975,7 @@ releaseall
 	if (var(VAR_RESULT) == 3) {
     hidemonpic
     msgbox(format("If you're reading this far, you must be a greedy bastard. And I like that.
-    \p Sadly, you can only get so far playing by 'the book' so to speak... \p However, imagine you were
+    \p Sadly, you can only get so far playing by “the book” so to speak... \p However, imagine you were
     bold enough to use the move Thief against wild Pokémon... or even trainer Pokémon. \p Of course, the latter
     would fall under the realm of criminality, and this humble writer would never encourage such behaviour. \p
     So whatever you do, do NOT... {COLOR LIGHT_GRAY}{SHADOW WHITE}not{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} do it...! "))
@@ -969,10 +985,10 @@ releaseall
 	if (var(VAR_RESULT) == 4) {
     hidemonpic
     msgbox(format("Be warned - this last money-making method is only for the boldest of the bold. \p I can't
-    tell you exactly where, but there's this cool shop near Petalburg City where you can pawn your most valuable
-    items... \p I'm talking Devon Dexes, Devon Navs, motorcycles - that sort of stuff.\p Of course, it's very
+    tell you exactly where, but there's this cool shop near {COLOR GREEN}Petalburg City{COLOR DARK_GRAY} where you can pawn your most valuable
+    items. \p I'm talking Devon Dexes, Devonavs, motorcycles - that sort of stuff.\p Of course, it's very
     inconvenient to do without these things, but you will get a small fortune for pawning them, and you can get them back
-    by returning the amount you were given. \p So what's the point, you may be asking? Well... the point is gambling it
+    by returning the amount you were given. \p So what's the point, you may be asking? Well...\p The point is gambling it
     all in Petalburg Arcade, what else!? \p Rake in those tokens, buy expensive stuff with them, and sell it for huge
     profit! \p Risky? Perhaps. You may lose it all. But that's a loser's mentality."))
     goto (moneychapterselection)

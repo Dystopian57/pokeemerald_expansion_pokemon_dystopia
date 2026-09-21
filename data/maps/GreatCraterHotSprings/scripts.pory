@@ -35,7 +35,7 @@ script GreatCraterHotSpringsNumel {
     msgbox(format("Num-num!"))
 	if (flag(FLAG_SYS_POKEDEX_GET))
 	{setseenmon (SPECIES_NUMEL)}
-    applymovement (5, moves(walk_in_place_down * 1))
+    applymovement (3, moves(face_down * 1))
     waitmovement (5)
     releaseall
     }
@@ -45,7 +45,8 @@ script GreatCraterHotSpringsBathingladyknot {
     applymovement (3, moves(face_player))
     msgbox(format("When that huge Electrode fell in this part of the forest, it revealed these
     natural hot springs. \p It's a testament that good things sometimes come out of bad ones."))
-    applymovement (3, moves(walk_in_place_down * 1))
+    closemessage
+    applymovement (3, moves(face_down * 1))
     waitmovement (3)
     releaseall
     }
@@ -55,7 +56,7 @@ script GreatCraterHotSpringsBathingladyloosehair {
     applymovement (2, moves(face_player))
     msgbox(format("The water is warm... but not as warm as back home. \p And the sights
     are worse too!"))
-    applymovement (2, moves(walk_in_place_down * 1))
+    applymovement (3, moves(face_down * 1))
     waitmovement (2)
     releaseall
     }
@@ -66,7 +67,7 @@ script GreatCraterHotSpringsYoungerWoman {
     msgbox(format("I'm a bit worried about Flannery... she got so upset when Devon built
     that thermal plant in our town. \p I fear she may do something
     reckless..."))
-    applymovement (6, moves(walk_in_place_up * 1))
+    applymovement (6, moves(face_up * 1))
     waitmovement (6)
     releaseall
     }
@@ -84,7 +85,7 @@ script GreatCraterScaldOldman {
 
     else {
     msgbox(format("Now you can make your own little Lavaridge, everywhere you go! Ho ho..."))}
-    applymovement (7, moves(walk_in_place_up * 1))
+    applymovement (7, moves(face_down * 1))
     waitmovement (7)
     releaseall
 }

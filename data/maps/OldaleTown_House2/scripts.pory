@@ -107,7 +107,7 @@ script OldaleTownHouse2AnneArgument {
     beginargument:
 	applymovement(2, moves(walk_in_place_right * 1))
 	setspeaker ([SP_NAME_ANNE])
-    msgbox(format("I don't want to move to Rustboro! I want to stay here and play with Joel.
+    msgbox(format("I don't want to move to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}! I want to stay here and play with Joel.
     \p He's going to teach me how to make a Secret Shelter!"))
 	setspeaker (NULL)
 	applymovement(1, moves(walk_in_place_left * 1))
@@ -141,14 +141,44 @@ script OldaleTownHouse2AnneArgument {
 
 script OldaleTownHouse2SealedMovingBox {
 	lockall
-    msgbox(format("It's a well sealed box. The label says 'Paul's textbooks'."))
+    msgbox(format("It's a well sealed box. The label says “Paul's textbooks”."))
 	releaseall
 }
 
 script OldaleTownHouse2OpenMovingBox {
 	lockall
-    msgbox(format("It's an open cardboard box. It has'My things' written on the side
+    msgbox(format("It's an open cardboard box. It has “My things” written on the side
 	with crayon."))
+	releaseall
+}
+
+script OldaleTownHouse2TV {
+	lockall
+    msgbox(format("A wonderful widescreen TV, but it's not plugged."))
+	releaseall
+}
+
+script OldaleTownHouse2Heater {
+	lockall
+    msgbox(format("Just an oil heater."))
+	releaseall
+}
+
+script OldaleTownHouse2Fan {
+	lockall
+    msgbox(format("An electric fan. The blades' edges are rather dirty."))
+	releaseall
+}
+
+script OldaleTownHouse2Bookshelf {
+	lockall
+    msgbox(format("It's mostly books about accounting."))
+	releaseall
+}
+
+script OldaleTownHouse2Teapot {
+	lockall
+    msgbox(format("An iron teapot rests on the table."))
 	releaseall
 }
 

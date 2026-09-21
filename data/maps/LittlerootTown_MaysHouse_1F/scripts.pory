@@ -687,7 +687,7 @@ script RivalWatchout {
 	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)}
 	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_SAD)}
 	setspeaker ([SP_NAME_RIVAL])
-	msgbox (format("Uggh... it got me good. Leave me... I'm done for!"))
+	msgbox (format("Uggh... it got me good. L-leave me... I'm done for!"))
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 	applymovement (1, moves(face_right))
@@ -710,18 +710,18 @@ script Littleroot_Idletalk_Rival{
 	removefieldmugshot
 	applymovement (1, moves(face_player))
 	setspeaker ([NULL])
-	msgbox (format("{RIVAL} does not look injured... and the 'Pokémon' in question seems to be
-	just a doll."))
+	msgbox (format("{RIVAL} does not look injured... and the “Pokémon” in question seems to be
+	a doll."))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
 
 	checkplayergender
-	if(var(VAR_RESULT) == MALE){msgbox (format("{RIVAL} seems to be having another episode... perhaps she will calm down if the 'enemy'
+	if(var(VAR_RESULT) == MALE){msgbox (format("Perhaps she will calm down if the “enemy”
 	is dealt with."))}
-	if(var(VAR_RESULT) == FEMALE){msgbox (format("{RIVAL} seems to be having another episode... perhaps he will calm down if the 'enemy'
+	if(var(VAR_RESULT) == FEMALE){msgbox (format("Perhaps he will calm down if the “enemy”
 	is dealt with."))}
 
 	setflag (rivalhouse1stdialogue)}
-	else {msgbox(format("{PLAYER}... it's been an honour... to share battlefield... with you."))}
+	else {msgbox(format("{PLAYER}... it's been an honour... t-to share battlefield... with you."))}
 	applymovement (1, moves(face_right))
 	removefieldmugshot
 	releaseall
@@ -762,7 +762,7 @@ script Won_or_Caught {
 	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
 	if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	msgbox (format("{PLAYER}... you did it! You beat the fiend! \p This will go down in the history books!\p
+	msgbox (format("{PLAYER}... you did it! You defeated that monstruous Pokémon! \p This will go down in the history books!\p
 	Let me restrain it - perhaps we can put it to some use."))
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, face_up))
@@ -779,7 +779,7 @@ script Won_or_Caught {
 	removeobject(3)
 	applymovement (1, moves(face_down))
 	setspeaker ([SP_NAME_RIVAL])
-	msgbox (format("Easy! Now that this base is secure, let's push onto the north front!
+	msgbox (format("Success! Now that this base is secure, let's push onto the north front!
 	\pCover my rear, {PLAYER}. At the count of three, two, one..."))
 	removefieldmugshot
 	checkplayergender
@@ -814,6 +814,7 @@ script Won_or_Caught {
  
 script RanAway {
 	lockall
+	playbgm (MUS_HELP, TRUE)
 	setspeaker ([SP_NAME_RIVAL])
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
@@ -851,7 +852,7 @@ releaseall
 
 script RivalHouseMedicineCabinet {
 lockall
-msgbox (format("The cabinet contains human medicine.\p You spot several types of antidepressants
+msgbox (format("The cabinet contains human medicine.\p There's several types of antidepressants
 and antipsychotics."))
 releaseall
 }
@@ -878,7 +879,7 @@ releaseall
 script RivalHouseBinoculars {
 	lockall
 	if (!flag (FLAG_ITEM_RIVAL1F_LENS))
-	{msgbox (format("There's many gadgets and strange wires in the cabinets,
+	{msgbox (format("There's many gadgets and wires in the cabinet,
 	and only one thing of use..."))
 	giveitem (ITEM_ZOOM_LENS)
 	setflag (FLAG_ITEM_RIVAL1F_LENS)}

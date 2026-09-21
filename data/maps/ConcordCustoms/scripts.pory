@@ -65,7 +65,7 @@ script ConcordFemaleDevon {
 
 	else {
 	msgbox(format("We appreciate your help when we dealt with that con artist. \p He makes a profit
-	off smuggling Pokémon eggs, in and out the Rebel Zone. \p If he shows his mug around here again,
+	off smuggling Pokémon eggs, in and out the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}. \p If he shows his mug around here again,
 	we'll catch him for sure!"))
 	}
 	
@@ -202,14 +202,15 @@ script ConcordCustomsPhone{
 					playse (SE_SHOP)
 					waitse
 					playse (SE_CLICK)
+					waitse
+					hidemoneybox
 					msgbox(format("Which number to dial?"))
 					dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Littleroot Lab", "Petalburg Gym" , "Citizen Services", "Dial Manually", "None")
 						if(var(VAR_RESULT) == 0){
-						hidemoneybox
 						playse (SE_POKENAV_CALL)
 						waitse
 						msgbox(format("Prof. Balsam: Hm? Who's this? Oh, {PLAYER}? \p Why are you calling from a public phone?
-						Did you lose the Devon Nav I gave you?\p Well, if you want to talk to me... you'll have to
+						Did you lose the Devonav I gave you?\p Well, if you want to talk to me... you'll have to
 						get a new one, or come to the lab. \p I don't like speaking with public phones involved. You
 						never know who is listening... \p Well, that's all from me. Later."))
 						playse (SE_POKENAV_HANG_UP)
@@ -217,18 +218,16 @@ script ConcordCustomsPhone{
 						}
 
 						if(var(VAR_RESULT) == 1){
-						hidemoneybox
 						playse (SE_POKENAV_CALL)
 						waitse
 						msgbox(format("Norman: Hello. You have reached the voice mail of Petalburg Dojo.\p If you're calling to
-						schedule a gym fight, I'm afraid this center is no longer part of the Hoenn Pokémon League Challenge.\p If it's you,
+						schedule a gym fight, I'm afraid this gym is no longer part of the Hoenn Pokémon League Challenge.\p If it's you,
 						{PLAYER}... I'll call you as soon as I can.\p And if it's you, Sidney... stop calling me!"))
 						playse (SE_POKENAV_HANG_UP)
 						goto (endofpayphone)
 						}
 
 						if(var(VAR_RESULT) == 2){
-						hidemoneybox
 						playse (SE_POKENAV_CALL)
 						waitse
 						msgbox(format("You have reached Devon Co.'s Citizen Services. What can we do for you?"))
@@ -267,7 +266,6 @@ script ConcordCustomsPhone{
 						}
 
 						if(var(VAR_RESULT) == 3){
-						hidemoneybox
 						msgbox(format("Let's dial a number..."))
 						special (EnterCode)
 						waitstate
@@ -323,6 +321,7 @@ script ConcordCustomsPhone{
 			goto (endofpayphone)
 			}
 	endofpayphone:
+	hidemoneybox
     release
     }
 
@@ -337,23 +336,24 @@ script ConcordVendingMachine {
             if(var(VAR_RESULT) == 0){
             		checkmoney (50)
 				if (var(VAR_RESULT) == TRUE) {
-                    playse (SE_SHOP)
-                    waitse
-					updatemoneybox
+					removemoney (50)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 
-                    random (4)
-                    goto_if_ne (VAR_RESULT, 0, cfreshwatergotstuck)
-                    goto_if_eq (VAR_RESULT, FALSE, cgotfreshwater)
+                    //random (4)
+                    //goto_if_ne (VAR_RESULT, 0, cfreshwatergotstuck)
+                    //goto_if_eq (VAR_RESULT, FALSE, cgotfreshwater)
 
                     cgotfreshwater:
                     playse (SE_VEND)
 					waitse
-					removemoney (50)
+					//removemoney (50)
 					msgbox(format("A Fresh Water bottle dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_FRESH_WATER)
 					
-                    random (20)
+                    random (4)
                     goto_if_ne (VAR_RESULT, 0, cendvendingmachine)
                     goto_if_eq (VAR_RESULT, FALSE, cgotextrafreshwater)
 
@@ -375,7 +375,7 @@ script ConcordVendingMachine {
                         goto (cgotfreshwater)
                         }
 
-                        if(var(VAR_RESULT) == 0){
+                        if(var(VAR_RESULT) == 1){
                         msgbox(format("The Fresh Water just stays on the verge of falling, mockingly.")
                         goto (cendvendingmachine))
                         }
@@ -390,9 +390,10 @@ script ConcordVendingMachine {
             if(var(VAR_RESULT) == 1){
             		checkmoney (70)
 				if (var(VAR_RESULT) == TRUE) {
-                    playse (SE_SHOP)
-                    waitse
-					updatemoneybox
+					removemoney (70)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 
                     random (4)
                     goto_if_ne (VAR_RESULT, 0, cenergybargotstuck)
@@ -401,12 +402,11 @@ script ConcordVendingMachine {
                     cgotenergybar:
                     playse (SE_VEND)
 					waitse
-					removemoney (70)
 					msgbox(format("An Energy Bar dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_ENERGY_POWDER)
 					
-                    random (20)
+                    random (4)
                     goto_if_ne (VAR_RESULT, 0, cendvendingmachine)
                     goto_if_eq (VAR_RESULT, FALSE, cgotextraenergybar)
 
@@ -428,7 +428,7 @@ script ConcordVendingMachine {
                         goto (cgotenergybar)
                         }
 
-                        if(var(VAR_RESULT) == 0){
+                        if(var(VAR_RESULT) == 1){
                         msgbox(format("The Energy Bar can just stays on the verge of falling, mockingly.")
                         goto (cendvendingmachine))
                         }
@@ -443,9 +443,10 @@ script ConcordVendingMachine {
             if(var(VAR_RESULT) == 2){
             		checkmoney (80)
 				if (var(VAR_RESULT) == TRUE) {
-                    playse (SE_SHOP)
-                    waitse
-					updatemoneybox
+					removemoney (80)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 
                     random (4)
                     goto_if_ne (VAR_RESULT, 0, ccoffeegotstuck)
@@ -454,7 +455,6 @@ script ConcordVendingMachine {
                     cgotcoffee:
                     playse (SE_VEND)
 					waitse
-					removemoney (50)
 					msgbox(format("A Strong Coffee can dropped on the machine's tray."))
                     hidemoneybox
                     giveitem (ITEM_HEAL_POWDER)
@@ -481,7 +481,7 @@ script ConcordVendingMachine {
                         goto (cgotcoffee)
                         }
 
-                        if(var(VAR_RESULT) == 0){
+                        if(var(VAR_RESULT) == 1){
                         msgbox(format("The Strong Coffee just stays on the verge of falling, mockingly.")
                         goto (cendvendingmachine))
                         }

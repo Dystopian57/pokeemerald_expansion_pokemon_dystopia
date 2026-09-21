@@ -409,9 +409,9 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
 
     [MPS_NAVEL_ROCK] = {
         .mapsec = MAPSEC_NAVEL_ROCK,
-        .type = MPS_TYPE_BASIC,
+        .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
-        .image = IMG_ROCKET_HIDEOUT
+        .image = IMG_ICEFALL_CAVE
     },
 
     [MPS_AQUA_HIDEOUT_OLD] = {

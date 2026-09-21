@@ -1866,10 +1866,10 @@ goto (endlitlfatguy)
 }
 
 if (var(VAR_LITTLEROOT_PHASE) >= 5 && !flag (Donutquestaccepted))
-	{msgbox (format("Oh, {PLAYER}! I've heard you're going to Oldale Town.\pIf you have time, would
+	{msgbox (format("Oh, {PLAYER}! I've heard you're going to {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}.\pIf you have time, would
 	you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
-	arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there. \pDo me the favour, and I'll give
-	you some {COLOR RED}Pokéballs{COLOR DARK_GRAY}. Fair deal, right?"))
+	arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}.There's a guy that sells them there.\pI'll trade
+	you some {COLOR RED}Poké Balls{COLOR DARK_GRAY} I've found for the donut. Fair deal, right?"))
 	setflag(Donutquestaccepted)
 	goto (endlitlfatguy)}
 if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
@@ -1878,9 +1878,9 @@ if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
 
 		if (checkitem (ITEM_SHALOUR_SABLE)  == FALSE)
 		{
-		msgbox (format("So, {PLAYER}... it's okay if you don't have time, but... \p I'd really like a taste of those
+		msgbox (format("So, {PLAYER}... it's okay if you don't have time, but... \p I'd really like a taste of one of those
 		{COLOR RED}Crater Donuts{COLOR DARK_GRAY}.
-		\p I'd go myself, but my Digglet is weak, and I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
+		\p I'd go myself, but I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
 		town.\pBut you're a former soldier, right? They won't mess with you!"))
 		goto (endlitlfatguy)}
 		
@@ -1897,7 +1897,7 @@ if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
 			waitse
 			playse (SE_M_SCRATCH)
 			waitse
-			msgbox (format("Hmm - delicious... \p O-oh, I'm sorry... a deal is a deal. Here are your
+			msgbox (format("Hmm - delicious... \p O-oh, I'm sorry... Here are your
 			Pokéballs!"))
 			giveitem (ITEM_PARK_BALL, 5)
 			msgbox (format("I know they're a bit busted, but they still work. Go try them out!\pIf you
@@ -1915,9 +1915,9 @@ if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
 
 	if (flag (donutquestcomplete))
 	{msgbox (format("I find lots of those old balls laying around, from the time of the war.
-	\p Next time I get a craving for donuts, we could make the same deal!"))}
+	\p Next time I get a craving for donuts, we could trade again!"))}
 
-else {msgbox (format("To think that Pokémon can be altered and made 'safer' to be around humans...\p
+else {msgbox (format("To think that Pokémon can be altered and made “safer” to be around humans...\p
 	Technology is amazing, but it can be scary too."))}
 
 endlitlfatguy:
@@ -1979,26 +1979,26 @@ releaseall
 script Littleroot_Player_Mailbox {
 lock
 	if (!flag (FLAG_ITEM_LITTLEROOT_MAILBOX))
-	{msgbox (format("There's a package inside the mailbox. A letter is attached to it.
-	\p 'For your invaluable service to the region,
-	please accept this token of recognition, courtesy of Devon Co.'"))
-	playse (MUS_OBTAIN_ITEM)
-	giveitem (ITEM_BOTTLE_CAP)
-	setflag(FLAG_ITEM_LITTLEROOT_MAILBOX)}
-
-	goto (endmailboxscript)
+		{msgbox (format("There's a package inside the mailbox. A letter is attached to it.
+		\p “For your invaluable service to the region,
+		please accept this token of recognition, courtesy of Devon Co.”"))
+		playse (MUS_OBTAIN_ITEM)
+		giveitem (ITEM_BOTTLE_CAP)
+		setflag(FLAG_ITEM_LITTLEROOT_MAILBOX)
+		goto (endmailboxscript)}
 
 
 	if (flag(sentdemomysterygift) && !flag (receiveddemomysterygift)){
-	msgbox (format("There's a pretty gift box on the mailbox, with a note attached... 'May it brighten
-	your Christmas! - Dystopian'."))
-	playfanfare (MUS_OBTAIN_SYMBOL)
-	msgbox (format("Obtained a gift Pokémon - Snover!"))
-	givemon(SPECIES_SNOVER, 10, ITEM_MIRACLE_SEED, ITEM_CHERISH_BALL, NATURE_QUIRKY, 1, MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ICE_SHARD, MOVE_SPLASH, MOVE_MOONLIGHT, MOVE_SPARK)
-	setflag (receiveddemomysterygift)
-	}
+		msgbox (format("There's a pretty gift box inside the mailbox, with a note attached... 'May it brighten
+		your Christmas! - Dystopian'."))
+		playfanfare (MUS_OBTAIN_SYMBOL)
+		msgbox (format("Obtained a gift Pokémon - Snover!"))
+		givemon(SPECIES_SNOVER, 10, ITEM_MIRACLE_SEED, ITEM_CHERISH_BALL, NATURE_QUIRKY, 1, MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ICE_SHARD, MOVE_SPLASH, MOVE_MOONLIGHT, MOVE_SPARK)
+		setflag (receiveddemomysterygift)
+		}
 
 	else{msgbox (format("The mailbox is empty."))}
+
 	endmailboxscript:
 	releaseall
 }
@@ -2054,7 +2054,7 @@ releaseall
 
 script Littleroot_Fence {
 lock
-msgbox (format("An old car can be seen beyond the fence. There seems to be a hole under it..."))
+msgbox (format("An old car can be seen beyond the fence.\p There seems to be a hole under it..."))
 releaseall
 }
 
@@ -2116,13 +2116,13 @@ script LittlerootTown_Trigger_Blockgorivalnocemetery{
 script LittlerootTown_Trigger_NoEnterRival1{
 	lock
 	msgbox (format("Someone is yelling inside..."))
+	playbgm (MUS_HELP, TRUE)
 	//checkplayergender
 	//if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
 	//else {createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
 	setspeaker ([SP_NAME_RIVAL])
-	msgbox (format("DAMN YOU, KANTONIANS! You will NOT TAKE HOENN FROM US!
+	msgbox (format("DAMN YOU, Kantonians! You will NOT take HOENN from US!
 	\p Take this..."))
-	waitbuttonpress
 	call(RivalShake)
 	playse (SE_BANG)
 	//removefieldmugshot
@@ -2137,6 +2137,9 @@ script LittlerootTown_Trigger_NoEnterRival1{
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
+	fadeoutbgm (1)
+	fadeinbgm (1)
+	playbgm (MUS_LITTLEROOT_TEST, TRUE)
 	releaseall	
 }
 
@@ -2203,7 +2206,7 @@ else {
 	setflag (Birchafter1stgreeting)
 	goto (endfirstgreeting)}
 	if (var(VAR_LITTLEROOT_PHASE) == 0 && flag(Birchafter1stgreeting))
-	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things she wants to tell you about."))}
+	{msgbox (format("Take some shelter, {PLAYER}. Balsam has many things to tell you about."))}
 
 	if (var(VAR_LITTLEROOT_PHASE) == 3 && !flag (checkonrival))
 	{msgbox (format("Oh, {PLAYER}!"))
@@ -2216,12 +2219,12 @@ else {
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){	
 	msgbox (format("I tried checking on her myself, but she wouldn't open the door.\p Perhaps she will
-	'open up' to you - no pun intended! Ho-ho-ho!"))}
+	“open up” to you - no pun intended! Ho-ho-ho!"))}
 
 	checkplayergender
 	if(var(VAR_RESULT) == FEMALE){	
 	msgbox (format("I tried checking on him myself, but he wouldn't open the door.\p Perhaps he will
-	'open up' to you - no pun intended! Ho-ho-ho!"))}}
+	“open up” to you - no pun intended! Ho-ho-ho!"))}}
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
 	{
 	checkplayergender
@@ -2246,7 +2249,7 @@ else {
 	endofbirchscript:
 	closemessage
 	removefieldmugshot
-	applymovement (1, moves(walk_in_place_down * 1))
+	applymovement (1, moves(face_down))
 	waitmovement (1)
 	releaseall
 }
@@ -2260,9 +2263,11 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		applymovement (1, moves(emote_exclamation_mark))
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
-		msgbox (format("Ah, {PLAYER}!"))
+		msgbox (format("Oh, {PLAYER}!"))
+		//closemessage
 		removefieldmugshot
 		applymovement (1, moves(face_down, walk_down * 1, walk_in_place_left * 1))
+		waitmovement (1)
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right * 1))
 		waitmovement
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
@@ -2283,13 +2288,14 @@ script LittlerootTown_Eventscript_Oldmanasking {
 		if(var(VAR_RESULT) == MALE){
 		msgbox (format("Would you mind paying {RIVAL} a visit? You remember {RIVAL}, right? You went to the
 		front together.\pHer house was destroyed during the war, so I let her stay in mine. \p She has been making quite a ruckus lately...\p
-		It's as if she is reliving things that happened during the war.\p You must know what she's going through...
+		It's as if she is reliving things that happened during the war.\p You must know what she's going through.
 		Perhaps you can calm her down."))}
 		else {
 		msgbox (format("Would you mind paying {RIVAL} a visit? You remember {RIVAL}, right? You went to the
 		front together.\pHis house was destroyed during the war, so I let him stay in mine. \p He has been making quite a ruckus lately...\p
-		It's as if he is reliving things that happened during the war.\p You must know what he's going through...
+		It's as if he is reliving things that happened during the war.\p You must know what he's going through.
 		Perhaps you can calm him down."))}
+		closemessage
 		removefieldmugshot
 		applymovement (1, moves(walk_in_place_down * 1))
 		waitmovement
@@ -2303,6 +2309,7 @@ script OldManThanks {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	msgbox (format("Ah, {PLAYER}!"))
+	closemessage
 	removefieldmugshot
 	setobjectxy (1, 14, 16)
 	applymovement (1, moves(walk_up * 5))
@@ -2344,8 +2351,8 @@ script OldManThanks {
 		msgbox (format("Your parents would be proud. You came out tough, just like them."))
 		setspeaker ([SP_NAME_BIRCH])
 		applymovement (1, moves(walk_in_place_up * 1))
-		msgbox (format("Well, off you go now! Please, take care out there. \p These parts are not as safe as
-		they used to... \p But have faith in your Pokémon, and you will be fine. Good bye!"))
+		msgbox (format("Well, off you go now! Please, take care out there. \pYou can see Hoenn is hurt after
+		the war - its people and Pokémon too.\pBut we all must go on. For those who couldn't.\pNow, goodbye!"))
 		removefieldmugshot
 		closemessage
 		applymovement (1, moves(walk_down * 7))

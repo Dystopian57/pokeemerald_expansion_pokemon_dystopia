@@ -57,10 +57,10 @@ script LittlerootMausoleum_Shuppet {
     {COLOR LIGHT_GRAY}{SHADOW WHITE}Cough cough...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
     applymovement (1, moves(walk_in_place_down * 1))
     msgbox (format("I'm just very cold... Shuppet is trying to keep me warm... \p But Ghost
-    Pokémon can't do that... their bodies just go right through... \p Ah... if only I had...
+    Pokémon can't do that... their bodies just go right through yours... \p Ah... if only I had...
     a {COLOR RED}blanket{COLOR DARK_GRAY} or something to cover myself..."))
     setspeaker ([SP_NAME_PLAYER])
-    msgbox (format("Hmm... may have some {COLOR GREEN}extra bedding{COLOR DARK_GRAY} back home."))
+    msgbox (format("(Hmm... may have some {COLOR GREEN}extra bedding{COLOR DARK_GRAY} back home)."))
 
     setflag (hexgirlshuppetmeet)
     goto (afterhexgirl1stmeet)
@@ -142,6 +142,7 @@ script LittlerootMausoleum_HexGirl {
             applymovement (1, moves(face_player))
             setspeaker ([SP_NAME_SAMANTHA])
             msgbox (format("I... I will figure something out. Don't worry..."))
+            closemessage
             applymovement (1, moves(walk_in_place_down * 1))
             waitmovement (1)
             setflag (refusedtohelphexgirl1st)
@@ -151,7 +152,7 @@ script LittlerootMausoleum_HexGirl {
             if(var(VAR_RESULT) == 1){
             changedmindwillhelphexgirl:
             setspeaker ([SP_NAME_SAMANTHA])
-            msgbox (format("Y-you will...? thank you! I-I will gladly accept your help... \p I mean,
+            msgbox (format("Y-you will...? Thank you! I-I will gladly accept your help... \p I mean,
             you've done more than enough for now... \p B-but if I need something else... could I...
             could I call you? \p Here, this is my Devonav number..."))
             register_matchcall (TRAINER_HEXGIRL_MAUSOLEUM)
@@ -189,6 +190,7 @@ script LittlerootMausoleum_HexGirl {
      //ghost poke react and noises
      setspeaker ([SP_NAME_SAMANTHA])
      msgbox (format("I will give you a call if I need something again. Thank you..."))
+     closemessage
      goto (endhexgirlscript)}
 
     if (var(VAR_MAUSOLEUM_HEXGIRL) == 2)
@@ -275,7 +277,8 @@ script LittlerootMausoleum_HexGirl {
     }
 goto (endhexgirlscript)
 endhexgirlscript:
-applymovement (1, moves(walk_in_place_down * 1))
+applymovement (1, moves(face_down))
+waitmovement (1)
 releaseall
 }
 
@@ -304,7 +307,7 @@ script Samanthafollowchat {
         if(var(VAR_RESULT) == 1)
         {  if (!flag (Samanthagotsnacks))//if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
            {setspeaker ([SP_NAME_SAMANTHA])
-           msgbox(format("I-I want to go to the vending machine next to Oldale Town's Devon Center.
+           msgbox(format("I-I want to go to the vending machine next to {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}'s Devon Center.
             \p There's some... t-tasty snacks there..."))}
             
             if (flag (Samanthagotsnacks))//if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
@@ -372,11 +375,14 @@ script LittlerootMausoleum_ShuppetPost1stquest {
 
 script MausoleumHealingSigil {
 	lockall
-	fadescreen (FADE_TO_WHITE)
+    fadeoutbgm (1)
+	fadescreenswapbuffers (FADE_TO_WHITE)
 	special(HealPlayerParty)
 	playse (MUS_HEAL)
     waitse
-	fadescreen (FADE_FROM_WHITE)
+    fadeinbgm (1)
+    playbgm (MUS_RG_POKE_TOWER, TRUE)
+	fadescreenswapbuffers (FADE_FROM_WHITE)
 	releaseall		
 }
 
@@ -406,7 +412,7 @@ script MausoleumBlanket {
 
 script MausoleumSigns {
 	lockall
-    msgbox (format("'Littleroot Mausoleum.'"))
+    msgbox (format("“Littleroot Mausoleum.”"))
 	releaseall		
 }
 

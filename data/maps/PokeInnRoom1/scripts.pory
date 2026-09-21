@@ -208,7 +208,7 @@ script PokeInnRoom1Girl {
             }
 
             if(var(VAR_RESULT) == 1){
-            msgbox(format("O-oh, okay... I guess it must be dangerous to take it out. Sorry for asking."))
+            msgbox(format("O-oh, okay... I guess it must be dangerous to take it out.\pSorry for asking."))
             goto (endoldalepokeinnroom1girl)
             }
 

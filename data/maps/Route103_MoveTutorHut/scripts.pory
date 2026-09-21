@@ -79,7 +79,7 @@ script MoveTutor103 {
 
 	{msgbox(format("Oh, hello. I don't get many visitors - I'm sorry about the mess. \p My name is Colton,
     and I'm a Move Tutor - or used to be... \p Devon began a campaign to discredit Move Tutors, on account of
-    us teaching 'dangerous moves' to Pokémon.\p People bought into it, and began to treat us like
+    us teaching “dangerous moves” to Pokémon.\p People bought into it, and began to treat us like
     criminals. It's ridiculous.\p
     I'm sorry... you didn't come here to listen to my rant. \p You want to teach some moves to your
     Pokémon, right? Or have them remember old ones. \p I'll do it for only 100¥ per move. I used to
@@ -254,9 +254,21 @@ script MoveTutor103Bookshelf {
 	msgbox(format("It's full of books about Pokémon learning patterns."))
     releaseall}
 
+
+script MoveTutor103Scroll {
+	lockall
+	msgbox(format("The scroll's contents are written in braille. Can't read it."))
+    releaseall}
+
+script MoveTutor103Blanket {
+	lockall
+	msgbox(format("A large futon blanket."))
+    releaseall}
+
+
 script MoveTutor103Drawer {
 	lockall
-	msgbox(format("It looks like a regular drawer. I should leave this alone."))
+	msgbox(format("It looks like a regular drawer. Should leave this alone."))
     releaseall}
 
 script MoveTutor103Wardrobe {
@@ -276,8 +288,11 @@ script MoveTutor103Kotatsu {
 
 script MoveTutor103OpenBox {
 	lockall
-	msgbox(format("The label on the box reads 'to throw away'. It should be fine to peek..."))
-	//itemhere
+	if (!flag(movetutoropenboxitem))
+	{msgbox(format("The box's label says “To throw out”. It should be alright to peek..."))
+	giveitem (ITEM_TM_HIDDEN_POWER)}
+
+	else {msgbox(format("The box is empty."))}
     releaseall}
 
 script MoveTutor103SealedBox {
@@ -293,8 +308,8 @@ script MoveTutor103ToolBox {
 
 script KantonianWarHistoryVol3TutorHut {
     lock
-    msgbox(format("The book's cover reads 'History of the
-    Kantonian War, Volume 3. \p Read it?"))
+    msgbox(format("The book's cover reads “History of the
+    Kantonian War, Volume 3.” \p Read it?"))
     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {
@@ -310,5 +325,6 @@ script KantonianWarHistoryVol3TutorHut {
     goto (endkantonianwar3)
     }
     endkantonianwar3:
+	hidemonpic
     releaseall
 }

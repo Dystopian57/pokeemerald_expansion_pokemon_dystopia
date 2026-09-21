@@ -256,14 +256,64 @@ OldaleTownHouse2OpenMovingBox::
 	return
 
 
-OldaleTownHouse2Everyonegone::
+OldaleTownHouse2TV::
 # 156 "data/maps/OldaleTown_House2/scripts.pory"
 	lockall
 # 157 "data/maps/OldaleTown_House2/scripts.pory"
-	msgbox OldaleTownHouse2Everyonegone_Text_0
+	msgbox OldaleTownHouse2TV_Text_0
 # 158 "data/maps/OldaleTown_House2/scripts.pory"
+	releaseall
+	return
+
+
+OldaleTownHouse2Heater::
+# 162 "data/maps/OldaleTown_House2/scripts.pory"
+	lockall
+# 163 "data/maps/OldaleTown_House2/scripts.pory"
+	msgbox OldaleTownHouse2Heater_Text_0
+# 164 "data/maps/OldaleTown_House2/scripts.pory"
+	releaseall
+	return
+
+
+OldaleTownHouse2Fan::
+# 168 "data/maps/OldaleTown_House2/scripts.pory"
+	lockall
+# 169 "data/maps/OldaleTown_House2/scripts.pory"
+	msgbox OldaleTownHouse2Fan_Text_0
+# 170 "data/maps/OldaleTown_House2/scripts.pory"
+	releaseall
+	return
+
+
+OldaleTownHouse2Bookshelf::
+# 174 "data/maps/OldaleTown_House2/scripts.pory"
+	lockall
+# 175 "data/maps/OldaleTown_House2/scripts.pory"
+	msgbox OldaleTownHouse2Bookshelf_Text_0
+# 176 "data/maps/OldaleTown_House2/scripts.pory"
+	releaseall
+	return
+
+
+OldaleTownHouse2Teapot::
+# 180 "data/maps/OldaleTown_House2/scripts.pory"
+	lockall
+# 181 "data/maps/OldaleTown_House2/scripts.pory"
+	msgbox OldaleTownHouse2Teapot_Text_0
+# 182 "data/maps/OldaleTown_House2/scripts.pory"
+	releaseall
+	return
+
+
+OldaleTownHouse2Everyonegone::
+# 186 "data/maps/OldaleTown_House2/scripts.pory"
+	lockall
+# 187 "data/maps/OldaleTown_House2/scripts.pory"
+	msgbox OldaleTownHouse2Everyonegone_Text_0
+# 188 "data/maps/OldaleTown_House2/scripts.pory"
 	setvar VAR_JOELQUESTS, 5
-# 159 "data/maps/OldaleTown_House2/scripts.pory"
+# 189 "data/maps/OldaleTown_House2/scripts.pory"
 	releaseall
 	return
 
@@ -369,7 +419,7 @@ OldaleTownHouse2Tiana_Text_1:
 
 OldaleTownHouse2AnneArgument_Text_0:
 # 110 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "I don't want to move to Rustboro! I\n"
+	.string "I don't want to move to {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}! I\n"
 	.string "want to stay here and play with Joel.\p"
 	.string "He's going to teach me how to make a\n"
 	.string "Secret Shelter!$"
@@ -396,13 +446,36 @@ OldaleTownHouse2AnneArgument_Text_3:
 OldaleTownHouse2SealedMovingBox_Text_0:
 # 144 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "It's a well sealed box. The label says\n"
-	.string "'Paul's textbooks'.$"
+	.string "“Paul's textbooks”.$"
 
 OldaleTownHouse2OpenMovingBox_Text_0:
 # 150 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "It's an open cardboard box. It has'My\n"
-	.string "things' written on the side with crayon.$"
+	.string "It's an open cardboard box. It has “My\n"
+	.string "things” written on the side with\l"
+	.string "crayon.$"
+
+OldaleTownHouse2TV_Text_0:
+# 157 "data/maps/OldaleTown_House2/scripts.pory"
+	.string "A wonderful widescreen TV, but it's not\n"
+	.string "plugged.$"
+
+OldaleTownHouse2Heater_Text_0:
+# 163 "data/maps/OldaleTown_House2/scripts.pory"
+	.string "Just an oil heater.$"
+
+OldaleTownHouse2Fan_Text_0:
+# 169 "data/maps/OldaleTown_House2/scripts.pory"
+	.string "An electric fan. The blades' edges are\n"
+	.string "rather dirty.$"
+
+OldaleTownHouse2Bookshelf_Text_0:
+# 175 "data/maps/OldaleTown_House2/scripts.pory"
+	.string "It's mostly books about accounting.$"
+
+OldaleTownHouse2Teapot_Text_0:
+# 181 "data/maps/OldaleTown_House2/scripts.pory"
+	.string "An iron teapot rests on the table.$"
 
 OldaleTownHouse2Everyonegone_Text_0:
-# 157 "data/maps/OldaleTown_House2/scripts.pory"
+# 187 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "The house seems awfully quiet...$"

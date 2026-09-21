@@ -482,6 +482,8 @@ script Route101OrphanJoel{
 	if(var(VAR_JOELQUESTS) == 2) {
 	goto (JoelandAnne101talk)}
 	Joelfinish:
+	applymovement (1, moves(face_down))
+	waitmovement (1)
 	releaseall
     end
  }}
@@ -774,5 +776,9 @@ script Pokemonlickswound {
 }
 
 
- 
+script Route101JoelsTent {
+lockall
+msgbox (format("Despite the young age of its builder, the tent seems of sturdy make."))
+releaseall
+} 
 

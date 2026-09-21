@@ -401,22 +401,6 @@
     },
     {
       "type": "sign",
-      "x": 9,
-      "y": 9,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DLCSealedBox"
-    },
-    {
-      "type": "sign",
-      "x": 0,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DLCSealedBox"
-    },
-    {
-      "type": "sign",
       "x": 1,
       "y": 2,
       "elevation": 0,
@@ -534,6 +518,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DLCTrashBin"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BookPileDLC"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HangerDLC"
     }
   ]
 }

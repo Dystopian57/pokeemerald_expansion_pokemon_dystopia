@@ -76,7 +76,7 @@ static const u8 sNeutralMsg00[] = _("{STR_VAR_1} is scratching\nthe ground.");
 static const u8 sNeutralMsg01[] = _("{STR_VAR_1} is standing guard.");
 static const u8 sNeutralMsg02[] = _("{STR_VAR_1} is staring patiently at\nnothing at all.");
 static const u8 sNeutralMsg03[] = _("{STR_VAR_1} is wandering around.");
-static const u8 sNeutralMsg04[] = _("{PLAYER}'s POKéMON yawned loudly.");
+static const u8 sNeutralMsg04[] = _("{PLAYER}'s Pokémon yawned loudly.");
 static const u8 sNeutralMsg05[] = _("{PLAYER}'s Pokémon is looking\naround restlessly.");
 static const u8 sNeutralMsg06[] = _("{STR_VAR_1} is looking this way and\nnodding.");
 static const u8 sNeutralMsg07[] = _("{STR_VAR_1} is gazing around\nrestlessly.");
@@ -122,7 +122,7 @@ const struct FollowerMsgInfo gFollowerSadMessages[] = {
 // Unconditional upset messages
 static const u8 sUpsetMsg00[] = _("{STR_VAR_1} seems unhappy somehow…");
 static const u8 sUpsetMsg01[] = _("{STR_VAR_1} is making an unhappy\nface.");
-static const u8 sUpsetMsg02[] = _("…{PLAYER}'S POKéMON seems a little\ncold.");
+static const u8 sUpsetMsg02[] = _("…{PLAYER}'S Pokémon seems a little\ncold.");
 // Conditional messages, index 3
 static const u8 sUpsetMsg03[] = _("{STR_VAR_1} is taking shelter in the\ngrass from the rain.");
 
@@ -136,7 +136,7 @@ const struct FollowerMsgInfo gFollowerUpsetMessages[] = {
 static const u8 sAngryMsg00[] = _("{STR_VAR_1} let out a roar!");
 static const u8 sAngryMsg01[] = _("{STR_VAR_1} is making a face like\nit's angry!");
 static const u8 sAngryMsg02[] = _("{STR_VAR_1} seems to be angry for\nsome reason.");
-static const u8 sAngryMsg03[] = _("{PLAYER}'s POKéMON turned around,\nshowing a defiant face.");
+static const u8 sAngryMsg03[] = _("{PLAYER}'s Pokémon turned around,\nshowing a defiant face.");
 static const u8 sAngryMsg04[] = _("{STR_VAR_1} cried out.");
 
 const struct FollowerMsgInfo gFollowerAngryMessages[] = {
@@ -209,7 +209,7 @@ static const u8 sSurpriseMsg00[] = _("{STR_VAR_1} is in danger of falling\nover!
 static const u8 sSurpriseMsg01[] = _("{STR_VAR_1} bumped into {PLAYER}!");
 static const u8 sSurpriseMsg02[] = _("{STR_VAR_1} doesn't seem to be used\nto its own name yet.");
 static const u8 sSurpriseMsg03[] = _("{STR_VAR_1} is peering down.");
-static const u8 sSurpriseMsg04[] = _("{PLAYER}'s POKéMON stumbled and nearly\nfell.");
+static const u8 sSurpriseMsg04[] = _("{PLAYER}'s Pokémon stumbled and nearly\nfell.");
 static const u8 sSurpriseMsg05[] = _("{STR_VAR_1} howls as if in\nanswer to a distant howl.");
 static const u8 sSurpriseMsg06[] = _("{STR_VAR_1} seems refreshed.");
 static const u8 sSurpriseMsg07[] = _("{STR_VAR_1} suddenly turned around\nand started growling.");

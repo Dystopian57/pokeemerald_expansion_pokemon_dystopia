@@ -321,6 +321,7 @@ script ScriptedShinyFailsafe {
 script Setclocktoleave {
 	lockall
 	msgbox (format("The wristwach's time is off... better set it to match the wall's clock."))
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, cantleavebedroom)
 	waitmovement(0)
 	releaseall	
@@ -328,7 +329,7 @@ script Setclocktoleave {
 
 script PlayerRoomGamecube {
 	lockall
-	msgbox (format("{COLOR DARK_GRAY}It's an old Gamecube. The game 'Harvest Moon: A Wonderful Life' is loaded in."))
+	msgbox (format("{COLOR DARK_GRAY}It's an old Gamecube. The game “Harvest Moon: A Wonderful Life” is loaded in."))
 	releaseall		
 }
 
@@ -388,7 +389,7 @@ script PlayerRoomCushion {
 
 script PlayerRoomPizza {
 	lockall
-	msgbox (format("{COLOR DARK_GRAY}It's an empty 'Slateport Pizza' cardboard box."))
+	msgbox (format("An empty cardboard box for a Slateport Pizza."))
 	releaseall		
 }
 
@@ -407,8 +408,8 @@ script PlayerRoomWardrobe {
 
 script KantonianWarHistoryVol1PlayerHouse {
     lock
-    msgbox(format("The book's cover reads 'History of the
-    Kantonian War, Volume 1'. \p Read it?"))
+    msgbox(format("The book's cover reads “History of the
+    Kantonian War, Volume 1”. \p Read it?"))
     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {
@@ -489,7 +490,7 @@ script PlayerRoomDadPrize {
 script PlayerRoomBox {
 	lockall
 
-	if (!flag (FLAG_ITEM_BEDROOM_TRASHCAN))
+	if (!flag (FLAG_ITEM_BEDROOM_RIFLE))
 
 		{msgbox (format("A Pokéball Rifle is dissasembled inside the box."))
 		msgbox (format("Assemble it?"))
@@ -589,7 +590,7 @@ script PlayerRoomMail {
 	msgbox (format("A laptop is on the floor, with Devon Mail open."))
 	backtomail:
 	msgbox (format("There's three mails in the inbox, from three different senders."))
-		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Devon Co. - Rustboro HQ", "Petalburg Gym", "Oldale DLC", "Ignore laptop")
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Devon Co. - Rustboro HQ", "Petalburg Gym", "Oldale DLC", "Ignore laptop")
 		if (var(VAR_RESULT) == 0) {
 			msgbox (format("From: Devon Corporation. \nSubject: Mail has been delivered.
 			\p After failing to deliver your package personally, our mailing staff has deposited it in your allocated
@@ -604,7 +605,7 @@ script PlayerRoomMail {
 			Hey lad. How is your leg? Does it still give you trouble?\p I know I said I'd visit, 
 			but things have been very busy in the gym.\pMaybe you can make the trip instead, once you're 
 			feeling better. \pWe could have a Pokémon battle, just like your dad and I used to. 
-			\pHe beat me when he was half your age… he was a real prodigy. 
+			\pHe got my badge when he was half your age… he was a real prodigy. 
 			\pWell, got to go. Remember to eat well, and do plenty of exercise. 
 			\pTake care,
 			\nNorman."))}
@@ -619,12 +620,12 @@ script PlayerRoomMail {
 			\nNorman."))}
 			goto(backtomail)}
 		if (var(VAR_RESULT) == 2) {
-			msgbox (format("From: Oldale DLC. \nSubject: You are not alone.
+			msgbox (format("From: Oldale Devon Learning Center. \nSubject: You are not alone.
 			\p Did you live through traumatic experiences during the Kantonian war? 
-			If so, you are not alone. \pCome join us at the newly-established Oldale-based DLC 
-			(Devon Learning Center) and share your burden in an environment of kindness through a  
+			If so, you are not alone. \pCome join us at the newly-established Oldale-based DLC,
+			and share your burden in an environment of kindness with a  
 			group-based, PTSD Therapy. \p
-			Disclaimer: Only SAFEMON are allowed into the center during sessions."))
+			Disclaimer: Only Safemon are allowed into the center during sessions."))
 			goto(backtomail)}
 
 		if (var(VAR_RESULT) == 3) {

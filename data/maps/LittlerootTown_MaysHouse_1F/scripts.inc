@@ -1698,150 +1698,152 @@ RanAway::
 # 816 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	lockall
 # 817 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setspeaker [ SP_NAME_RIVAL ]
+	playbgm MUS_HELP, TRUE
 # 818 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	checkplayergender
+	setspeaker [ SP_NAME_RIVAL ]
 # 819 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	checkplayergender
+# 820 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq RanAway_2
 RanAway_1:
-# 820 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 821 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq RanAway_5
 RanAway_4:
-# 821 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement 1, RivalWatchout_Movement_1
 # 822 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	applymovement 1, RivalWatchout_Movement_1
+# 823 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RanAway_Text_0
-# 824 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	removefieldmugshot
 # 825 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	checkplayergender
+	removefieldmugshot
 # 826 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	checkplayergender
+# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq RanAway_8
 RanAway_7:
-# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq RanAway_11
 RanAway_10:
-# 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RanAway_Text_1
 # 829 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	removefieldmugshot
+	msgbox RanAway_Text_1
 # 830 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	removefieldmugshot
+# 831 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 RanAway_2:
-# 819 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 820 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	createfieldmugshot MUGSHOT_FPLAYER, EMOTE_NORMAL
 	goto RanAway_1
 
 RanAway_5:
-# 820 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 821 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
 	goto RanAway_4
 
 RanAway_8:
-# 826 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	createfieldmugshot MUGSHOT_FPLAYER, EMOTE_ANGRY
 	goto RanAway_7
 
 RanAway_11:
-# 827 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_ANGRY
 	goto RanAway_10
 
 
 RivalHouseSealedBox::
-# 835 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 836 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalHouseSealedBox_Text_0
+	lockall
 # 837 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseSealedBox_Text_0
+# 838 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 RivalHouseBrokenVase::
-# 841 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 842 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalHouseBrokenVase_Text_0
+	lockall
 # 843 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseBrokenVase_Text_0
+# 844 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 RivalHouseTV::
-# 847 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 848 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalHouseTV_Text_0
+	lockall
 # 849 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseTV_Text_0
+# 850 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 RivalHouseMedicineCabinet::
-# 853 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 854 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 855 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RivalHouseMedicineCabinet_Text_0
-# 856 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 857 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 RivalHouseFridge::
-# 860 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 861 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalHouseFridge_Text_0
+	lockall
 # 862 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseFridge_Text_0
+# 863 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 RivalHouseSink::
-# 866 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 867 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalHouseSink_Text_0
+	lockall
 # 868 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseSink_Text_0
+# 869 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 RivalHouseSandbag::
-# 872 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 873 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalHouseSandbag_Text_0
+	lockall
 # 874 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalHouseSandbag_Text_0
+# 875 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 
 RivalHouseBinoculars::
-# 879 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
 # 880 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 881 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	goto_if_unset FLAG_ITEM_RIVAL1F_LENS, RivalHouseBinoculars_2
-# 886 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 887 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RivalHouseBinoculars_Text_1
 RivalHouseBinoculars_1:
-# 887 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 888 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 	return
 
 RivalHouseBinoculars_2:
-# 881 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 882 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RivalHouseBinoculars_Text_0
-# 883 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	giveitem ITEM_ZOOM_LENS
 # 884 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	giveitem ITEM_ZOOM_LENS
+# 885 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	setflag FLAG_ITEM_RIVAL1F_LENS
 	goto RivalHouseBinoculars_1
 
@@ -1960,7 +1962,7 @@ RivalWatchout_Text_1:
 
 RivalWatchout_Text_2:
 # 690 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Uggh... it got me good. Leave me... I'm\n"
+	.string "Uggh... it got me good. L-leave me... I'm\n"
 	.string "done for!$"
 
 Littleroot_Idletalk_Rival_Text_0:
@@ -1971,24 +1973,22 @@ Littleroot_Idletalk_Rival_Text_0:
 Littleroot_Idletalk_Rival_Text_1:
 # 713 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "{RIVAL} does not look injured... and\n"
-	.string "the 'Pokémon' in question seems to be\l"
-	.string "just a doll.$"
+	.string "the “Pokémon” in question seems to be\l"
+	.string "a doll.$"
 
 Littleroot_Idletalk_Rival_Text_2:
 # 718 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "{RIVAL} seems to be having another\n"
-	.string "episode... perhaps she will calm down if\l"
-	.string "the 'enemy' is dealt with.$"
+	.string "Perhaps she will calm down if the\n"
+	.string "“enemy” is dealt with.$"
 
 Littleroot_Idletalk_Rival_Text_3:
 # 720 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "{RIVAL} seems to be having another\n"
-	.string "episode... perhaps he will calm down if\l"
-	.string "the 'enemy' is dealt with.$"
+	.string "Perhaps he will calm down if the “enemy”\n"
+	.string "is dealt with.$"
 
 Littleroot_Idletalk_Rival_Text_4:
 # 724 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "{PLAYER}... it's been an honour... to\n"
+	.string "{PLAYER}... it's been an honour... t-to\n"
 	.string "share battlefield... with you.$"
 
 LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_Text_0:
@@ -1999,8 +1999,8 @@ LittlerootTown_MaysHouse_1F_EventScript_DOLL_BATTLE_Text_0:
 
 Won_or_Caught_Text_0:
 # 765 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "{PLAYER}... you did it! You beat the\n"
-	.string "fiend!\p"
+	.string "{PLAYER}... you did it! You defeated\n"
+	.string "that monstruous Pokémon!\p"
 	.string "This will go down in the history books!\p"
 	.string "Let me restrain it - perhaps we can put\n"
 	.string "it to some use.$"
@@ -2011,7 +2011,7 @@ Won_or_Caught_Text_1:
 
 Won_or_Caught_Text_2:
 # 782 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Easy! Now that this base is secure,\n"
+	.string "Success! Now that this base is secure,\n"
 	.string "let's push onto the north front!\p"
 	.string "Cover my rear, {PLAYER}. At the count\n"
 	.string "of three, two, one...$"
@@ -2021,52 +2021,51 @@ Won_or_Caught_Text_3:
 	.string "CHAAAAAARGE!!$"
 
 RanAway_Text_0:
-# 822 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 823 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "{PLAYER}, don't falter now!! This...!\p"
 	.string "This is the battle that will decide the\n"
 	.string "fate of HOENN!$"
 
 RanAway_Text_1:
-# 828 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 829 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "EVERYONE IS COUNTING ON YOU! YOU CAN\n"
 	.string "DO IT!$"
 
 RivalHouseSealedBox_Text_0:
-# 836 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 837 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "It's a sealed box. Better not to open it.$"
 
 RivalHouseBrokenVase_Text_0:
-# 842 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 843 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "It's just a broken vase.$"
 
 RivalHouseTV_Text_0:
-# 848 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 849 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "The TV appears to be broken.$"
 
 RivalHouseMedicineCabinet_Text_0:
-# 854 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 855 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "The cabinet contains human medicine.\p"
-	.string "You spot several types of\n"
+	.string "There's several types of\n"
 	.string "antidepressants and antipsychotics.$"
 
 RivalHouseFridge_Text_0:
-# 861 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 862 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "The fridge is empty.$"
 
 RivalHouseSink_Text_0:
-# 867 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 868 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "The sink shows signs of recent use.$"
 
 RivalHouseSandbag_Text_0:
-# 873 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 874 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "It's a regular sandbag.$"
 
 RivalHouseBinoculars_Text_0:
-# 881 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "There's many gadgets and strange wires\n"
-	.string "in the cabinets, and only one thing of\l"
-	.string "use...$"
+# 882 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "There's many gadgets and wires in the\n"
+	.string "cabinet, and only one thing of use...$"
 
 RivalHouseBinoculars_Text_1:
-# 886 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 887 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	.string "There's nothing of use in the cabinet.$"

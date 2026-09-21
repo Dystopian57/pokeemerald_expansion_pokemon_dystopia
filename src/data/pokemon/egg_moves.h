@@ -6495,6 +6495,7 @@ static const u16 sLoadtadEggMoveLearnset[] = {
     MOVE_PAY_DAY,
     MOVE_RECYCLE,
     MOVE_SELFDESTRUCT,
+    MOVE_EXPLOSION,
     MOVE_SMOKESCREEN,
     MOVE_UNAVAILABLE,
 };

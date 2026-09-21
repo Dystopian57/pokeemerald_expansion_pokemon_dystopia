@@ -7,7 +7,7 @@ GreatCraterBottom_MapScripts::
 
 script CraterBottomItem {
 	lock
-    finditem (ITEM_TM_DEFOG)
+    finditem (ITEM_TM_POISON_GAS)
     //giveitem (ITEM_SOFT_SAND)
 	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
     removeobject (3)
@@ -62,7 +62,7 @@ script CraterHermit {
     else {
         msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
         back here. \p Only then I will grant you passage into the depths beyond. \p Four of my brothers
-        live here in the Rebel Zone, but the rest dwell further away."))
+        live here in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, but the rest dwell further away."))
     }
     endcraterhermitscript:
     release

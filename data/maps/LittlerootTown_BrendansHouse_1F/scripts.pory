@@ -790,48 +790,51 @@ releaseall
 script Player1FPlant {
 	
 lockall
-msgbox (format("Despite the lack of care, the plant has somehow clinged to life.\pIt's sort of inspiring."))
+msgbox (format("Despite the lack of care, the plant is somehow clinging to life.\pIt's sort of inspiring."))
 releaseall
 }
 
 script PlayerVitaminCabinet {
 	lockall
 	if (!flag (FLAG_ITEM_PLAYER1F_VITAMIN))
-	{msgbox (format("The cabinet contains Pokémon medicine. There's a leftover capsule..."))
-	giveitem (ITEM_X_DEFENSE)
+	{msgbox (format("The shelves contain Pokémon medicine. There's a leftover capsule..."))
+	giveitem (ITEM_X_SP_DEF)
 	setflag (FLAG_ITEM_PLAYER1F_VITAMIN)}
 	else
-	{msgbox (format("The cabinet contains nothing of use."))}
+	{msgbox (format("The shelves contain nothing of use."))}
 	releaseall	
 }
 
 script PlayerFirstAidKit {
 	lockall
 	if (!flag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION))
-	{msgbox (format("It's a first aid kit..."))
+	{msgbox (format("It's a first aid kit."))
 	giveitem (ITEM_SUPER_POTION)
 	setflag (FLAG_ITEM_PLAYER1F_AIDKIT_POTION)}
 	else
-	{msgbox (format("There's nothing of use in the first aid kit."))}
+	{msgbox (format("There's nothing else of use in the first aid kit."))}
 	releaseall	
 }
 
 script PlayerOpenRationBox {
 	lockall
-	if (!flag (FLAG_ITEM_PLAYER1F_RATION))
-	{msgbox (format("There's a few canned rations left in this box..."))
-	giveitem (ITEM_ENERGY_ROOT, 3)
-	setflag (FLAG_ITEM_PLAYER1F_RATION)}
-	else
-	{msgbox (format("The box is empty."))}
+	msgbox (format("The box is empty."))
+	releaseall
+}
+
+script PlayerRations {
+	lock
+
+	finditem (ITEM_ENERGY_ROOT, 3)
+	removeobject (9)
+
 	releaseall
 }
 
 script PlayerDirtySink {
 lockall
 if(!(flag(FLAG_SYS_POKEMON_GET)))
-{msgbox (format("A NINKABURI has just retreated below the dirty sink.\p With a Pokémon, perhaps
-it could be defeated or caught..."))}
+{msgbox (format("A NINKABURI has just retreated below the dirty sink.\p Could deal with it with a Pokémon..."))}
 if((flag(FLAG_SYS_POKEMON_GET)) && !(flag(SinkNinkaburiGone)))
 {msgbox (format("A NINKABURI appears boldly from below the sink!"))
 	setwildbattle(SPECIES_NINKABURI, 5)
@@ -858,6 +861,8 @@ danger with a wall of fluffy justice! \pNew season of Devon Shows' most loved ca
 hidemonpic
 special (TurnOffTVScreen)
 setvar(VAR_TV_TURNOFF , 1)
+fadeoutbgm (1)
+fadeinbgm (1)
 playbgm (MUS_NONE, TRUE)
 setflag (WatchedTVathome)}
 else {

@@ -9,7 +9,7 @@ CraterBottomItem::
 # 9 "data/maps/GreatCraterBottom/scripts.pory"
 	lock
 # 10 "data/maps/GreatCraterBottom/scripts.pory"
-	finditem ITEM_TM_DEFOG
+	finditem ITEM_TM_POISON_GAS
 # 13 "data/maps/GreatCraterBottom/scripts.pory"
 	removeobject 3
 # 14 "data/maps/GreatCraterBottom/scripts.pory"
@@ -176,7 +176,7 @@ CraterHermit_Text_9:
 	.string "Only then I will grant you passage into\n"
 	.string "the depths beyond.\p"
 	.string "Four of my brothers live here in the\n"
-	.string "Rebel Zone, but the rest dwell further\l"
+	.string "{COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, but the rest dwell further\l"
 	.string "away.$"
 
 CraterHermit_Outro::

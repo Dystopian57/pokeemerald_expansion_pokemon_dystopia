@@ -302,7 +302,7 @@ script Route103FisherBucket {
 
 script Route103IteminMud {
 	lock
-    finditem (ITEM_SILK_SCARF)
+    finditem (ITEM_TM_MUD_SHOT)
     //giveitem (ITEM_SOFT_SAND)
 	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
     removeobject (21)
@@ -313,8 +313,8 @@ script Route103DevonGruntCheckingDriver {
 	if(var(VAR_OLDALE_PHASE) < 2)
     {
     applymovement (22, moves(walk_in_place_down))
-    msgbox(format("I'm telling you, sir - Oldale's Warehouse is occupied by Rebels.
-	\p Even if we let you through, your stock would just get stolen."))
+    msgbox(format("I'm telling you, sir - {COLOR GREEN}Oldale's Warehouse{COLOR DARK_GRAY} is occupied by
+	{COLOR RED}Rebels{COLOR DARK_GRAY}. \p Even if we let you through, your stock would just get stolen."))
     applymovement (23, moves(walk_in_place_up))
     msgbox(format("Then go do something about it, instead of just blocking traffic!"))}
 
@@ -333,9 +333,9 @@ script Route103DevonGruntCheckingDriver {
 script Route103DevonDrivercheckedby {
     lock
     applymovement (23, moves(face_player))
-    msgbox(format("This is ridiculous. Is this what our taxes are being spent in?
+    msgbox(format("This is ridiculous. Is this what our taxes are being spent io?
 	\p If I don't deliver these goods soon, my boss will have my head!"))
-	applymovement (23, moves(walk_in_place_up * 1))
+	applymovement (23, moves(face_up * 1))
 	waitmovement
     releaseall
     }
@@ -404,12 +404,13 @@ script Sharpy103 {
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD)
 		setspeaker ([SP_NAME_SHARPY])
+		applymovement (25, moves(face_left))
 		msgbox(format("Well... I guess you won't be joining us after all... unless..."))
 
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
 		setspeaker ([SP_NAME_SHARPY])
-		msgbox(format("Unless you change your mind! In which case, we'll be waiting at Petalburg's
+		msgbox(format("Unless you change your mind! If you do, come visit at Petalburg's
 		Dojo!"))	
 
 		removefieldmugshot
@@ -422,6 +423,7 @@ script Sharpy103 {
   		createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_MENACING)
 		setspeaker ([SP_NAME_CAMELIA])
 		msgbox(format("You better come!"))
+		closemessage
 	}
 
 	else {
@@ -460,6 +462,7 @@ script Sharpy103 {
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
 		setspeaker ([SP_NAME_SHARPY])
 		msgbox(format("We'll see you there!"))
+		closemessage
 
 	}
 
@@ -483,7 +486,7 @@ script Sharpy103 {
 		releaseall
 		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
-		else{playbgm (MUS_ROUTE113, TRUE)}
+		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 		}
 
 	text Sharpy103_Outro{
@@ -497,7 +500,7 @@ script Sharpy103 {
 	playbgm (MUS_DOLCEISLAND, TRUE)
 	applymovement (27, moves(emote_exclamation_mark))
 	msgbox(format("Hey, you!"))
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 	goto (touristafterapproach)
  }
 
@@ -509,7 +512,7 @@ script Sharpy103 {
 	msgbox(format("Hey, you!"))
 	applymovement (27, moves(walk_up * 1))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 	goto (touristafterapproach)
  }
 
@@ -521,7 +524,7 @@ script Sharpy103 {
 	msgbox(format("Hey, you!"))
 	applymovement (27, moves(walk_up * 2))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 	goto (touristafterapproach)
  }
 
@@ -534,7 +537,7 @@ script Sharpy103 {
 	msgbox(format("Hey, you!"))
 	applymovement (27, moves(walk_up * 3))
 	waitmovement
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
 	goto (touristafterapproach)
  }
 
@@ -551,7 +554,7 @@ script Route103Tourist{
 
 		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
-		else{playbgm (MUS_ROUTE113, TRUE)}
+		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 
 	msgbox(format("Uhm... I'm sorry. I dropped my glasses, and I mistook you for that thief...!"))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -581,7 +584,7 @@ script Route103Tourist{
 
 
 	text Tourist103_Outro{
-		"Wait a minute... yeah, you're not that \nthief. Sorry!"}
+		"Wait a minute... oh, you're not that \nthief. Sorry!"}
 
 
 script Route103Touristbikepushed {
@@ -653,7 +656,10 @@ script Route103VeteranBattle {
 	trainerbattle_single(TRAINER_VETERAN_103, Veteran103_Intro, Veteran103_Outro, Route103VeteranRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, Route103VeteranRematch)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (20, moves(face_player))
 	msgbox(format("I guess not all of you youngsters are weak. Perhaps Hoenn is in good hands."))
+	applymovement (20, moves(face_down))
 	release
 	end
 }
@@ -662,8 +668,10 @@ script Route103VeteranRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
 	msgbox(format("Good job, but don't lower your guard.\p Let's exchange Devon profiles - I'll
-	make sure you dont' slack off!"))
+	make sure you don't slack off!"))
 	register_matchcall (TRAINER_VETERAN_103)
+	msgbox(format("And take this as well. It's perfect for cover fire."))
+    giveitem (ITEM_TM_BULLET_SEED)
 	release
 	end
 }
@@ -680,10 +688,10 @@ script Route103VeteranRematch {
 		"They told me I'm too old to enlist...  but \nI'm stronger than you young'uns!\pI'll show you!"}
 
 	text Veteran103_Outro{
-		"Grr... you won the battle, but\n not the war!"}
+		"Grr... you won the battle, but\nnot the war!"}
 
 	text Veteran103_Intro2{
-		"There you are - I've been preparing\n my counterattack! CHAAARGE!"}
+		"There you are - I've been preparing\nmy counterattack! CHAAARGE!"}
 
 	text Veteran103_Outro2{
 		"... I surrender. Again."}
@@ -694,7 +702,7 @@ script Route103ConcordBridgeGuard {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (30, moves(face_player))
 	if (!flag (conartistaskeddistract)){
-		msgbox(format("Due to an increase in rebel activity in this area, passage through Concord Customs is
+		msgbox(format("Due to an increase in {COLOR BLUE}Rebel{COLOR DARK_GRAY} activity in this area, passage through Concord Customs is
 		heavily restricted."))}
 
 	if (flag (conartistaskeddistract) && !flag (betrayedconcordconartist) && !flag (conartistescaped))
@@ -763,6 +771,7 @@ script Route103ConcordBridgeGuard {
 	}
 
 	finishguardscript:
+	applymovement (30, moves(face_down))
 	releaseall
 	end
 }
@@ -784,23 +793,22 @@ script Route103ConcordConartist {
 
 				if(var(VAR_RESULT) == 0){
 				msgbox(format("Right on! So, I have some urgent deliveries to do on Petalburg...
-				\p But I went and forgot my Devon Visa at home, and I have no time to go back!
+				\p But I went and forgot my {COLOR BLUE}Devon Visa{COLOR DARK_GRAY} at home, and
+				I have no time to go back!
 				\p Bureaucracy, the bane of the small entrepeneur - am I right?
 				
 				\p I'm sure that guard at the end of the bridge won't let me pass without it... \p
 				So I want you to distract him for me so I can pass unnoticed. \p Easy, right? Then get going,
 				I'm on the clock here!"))
-				applymovement (28, moves(walk_in_place_left * 1))
+				applymovement (28, moves(face_left * 1))
 				waitmovement (28)
 				setflag (conartistaskeddistract)
-				applymovement (28, moves(walk_in_place_left * 1))
-				waitmovement (28)
 				goto (finishconartistscript)
 				}
 
 				if(var(VAR_RESULT) == 1){
 				msgbox(format("Eh, scram then. Some of us have work to do."))
-				applymovement (28, moves(walk_in_place_left * 1))
+				applymovement (28, moves(face_left * 1))
 				waitmovement (28)
 				}}
 
@@ -860,13 +868,13 @@ script Route103ConcordConartist {
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
 		applymovement (32, moves(walk_fast_left * 1, walk_in_place_right * 1, walk_in_place_down * 1))
 		applymovement (28, moves(walk_fast_down * 2))
-		setspeaker ([SP_NAME_JOEL])
+		setspeaker ([SP_NAME_JIMMY])
 		msgbox(format("SEE YA, LOSERS...!"))
 		applymovement (28, moves(jump_down * 2))
 		playse (SE_M_JUMP_KICK)
 		waitse
 		playse (SE_M_DIVE)
-		setspeaker ([SP_NAME_JOEL])
+		setspeaker ([SP_NAME_JIMMY])
 		msgbox(format("GRLBGBRLB...!"))
 		
 		waitmovement
@@ -890,13 +898,14 @@ script Route103ConcordConartist {
 		waitmovement
 		closedoor (42, 37)
 		msgbox(format("Thank you for your help, civilian! Now we can put this long shift to an end."))
-
-		msgbox(format("Here, this is for your trouble."))
     	showmoneybox (18, 0)
+		msgbox(format("Here, this is for your trouble."))
 		addmoney (1000)
 		playse (SE_SHOP)
 		updatemoneybox
 		msgbox(format("Received 1000¥!"))
+		closemessage
+		hidemoneybox
 
 		applymovement (32, moves(walk_left * 8))
 		waitmovement
@@ -914,7 +923,7 @@ script Route103ConcordConartist {
 		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{
 			playbgm (MUS_STORM, TRUE)}
-		else{playbgm (MUS_ROUTE113, TRUE)}
+		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 		setvar (VAR_JIMMYQUESTPROGRESS, 1)
 		//addvar (VAR_DEVON_REPUTATION, + 1)
 		goto (finishconartistscript)	
@@ -942,8 +951,12 @@ script ConArtistEgg {
 	{
 	msgbox(format("The shady dealer left this egg behind..."))
 	giveegg (SPECIES_TAMARAKKU)
+	fadeoutbgm (1)
 	playse (MUS_OBTAIN_ITEM)
 	msgbox(format("Obtained the Mysterious Egg!"))
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{playbgm (MUS_STORM, TRUE)}
+		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 	removeobject (33)
 	setflag (conartistegg)
 	releaseall}
@@ -1016,7 +1029,8 @@ script RiverFerryGuyUp {
 
 		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
-		else{playbgm (MUS_ROUTE113, TRUE)}
+		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
+
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back downstream."))
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
@@ -1089,7 +1103,8 @@ script RiverFerryGuyDown {
 
 		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
-		else{playbgm (MUS_ROUTE113, TRUE)}
+		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
+
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back upstream."))
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
@@ -1129,7 +1144,7 @@ script RiverFerryManNotThatEntry {
 
 script FisherGuruRoute103 {
 	lock
-	applymovement (38, moves(face_player))
+	//applymovement (38, moves(face_player))
 	if (var(VAR_FISHERPROGRESS103) == 0)
 	{
 
@@ -1142,7 +1157,7 @@ script FisherGuruRoute103 {
 	msgbox(format("Sssh... did you hear that? It's... IT'S COMING!"))
 
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right * 1))
-	applymovement (38, moves(walk_in_place_right * 1))
+	applymovement (38, moves(face_right))
 
 	playse (SE_M_DIVE)
 	waitse
@@ -1163,14 +1178,14 @@ script FisherGuruRoute103 {
 
 	msgbox(format("AAH, CRAB BASKETS!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
-	applymovement (38, moves(walk_in_place_down * 1))
+	applymovement (38, moves(face_down))
 	msgbox(format("That was the LEGENDARY MUD CRAB of Route 103 - I've been looking for it for WEEKS! \p But I was
 	so awe-struck... that I could not do anything!!"))
-	applymovement (38, moves(walk_in_place_right * 1))
+	applymovement (38, moves(face_right))
 	msgbox(format("Still, this can't be a coincidence - you
 	both showed up at the same time!! \p HMM... my intuition tells me it saw something in you. But
 	then it left disappointed."))
-	applymovement (38, moves(walk_in_place_down * 1))
+	applymovement (38, moves(face_down))
 	msgbox(format("But we can fix that. Here, take THIS!"))
 
 	giveitem (ITEM_OLD_ROD)
@@ -1178,7 +1193,7 @@ script FisherGuruRoute103 {
 	msgbox(format("I want you to take that rod and fish at least THREE SPECIES OF POKÉMON! \p WHY?
 	Because only then will the LEGENDARY MUDCRAB judge you as worthy, and show itself again!
 	\p Do not question the intuition of Ivan, the Legendary Releer - just embrace it, and fulfil your destiny!!"))
-	applymovement (38, moves(walk_in_place_right * 1))
+	applymovement (38, moves(face_right))
 	waitmovement (38)
 	setvar(VAR_FISHERPROGRESS103 , 1)
 	goto (finishfisherscript)
@@ -1187,6 +1202,7 @@ script FisherGuruRoute103 {
 	
 	if ((var(VAR_FISHERPROGRESS103) > 0))
 	{
+	applymovement (38, moves(face_player))
 	setspeaker ([SP_NAME_IVAN])
 	msgbox(format("AHOY! How's the FISHING going!?"))
 	applymovement (38, moves(walk_in_place_down * 1))
@@ -1240,7 +1256,9 @@ script FisherGuruRoute103 {
 				playse (SE_M_ICY_WIND)
 				waitse
 				fadescreenswapbuffers (FADE_FROM_BLACK)
-				fadeinbgm (1)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{playbgm (MUS_STORM, TRUE)}
+		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 				setspeaker ([SP_NAME_IVAN])
 				msgbox (format("Hmm... I should have known. Such a measly fishing test... \p Is NOT ENOUGH
 				to make the Mud Crab acknowledge you!"))
@@ -1333,7 +1351,7 @@ script FisherGuruRoute103 {
 		}
 	
 	finishfisherscript:
-	applymovement (38, moves(walk_in_place_right * 1))
+	applymovement (38, moves(face_right))
 	waitmovement (38)
 	setspeaker (NULL)
 	releaseall}
@@ -1352,7 +1370,7 @@ script Fishercallsfornumber {
 	msgbox(format("Wait - add me on Devon Net! We must keep in touch about this!"))
 	register_matchcall (TRAINER_FISHER_103)
 	setvar(VAR_FISHERPROGRESS103 , 2)
-	applymovement (38, moves(walk_in_place_right * 1))
+	applymovement (38, moves(face_right * 1))
 	waitmovement (38)
 	release
 	

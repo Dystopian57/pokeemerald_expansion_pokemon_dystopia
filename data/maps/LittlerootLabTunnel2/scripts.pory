@@ -1,0 +1,12 @@
+raw `
+LittlerootLabTunnel2_MapScripts::
+	.byte 0
+
+`
+
+script DiggletHole {
+lock
+playmoncry(SPECIES_DIGLETT, CRY_MODE_NORMAL)
+msgbox (format("Digglets can be heard digging beneath the ground..."))
+releaseall
+}

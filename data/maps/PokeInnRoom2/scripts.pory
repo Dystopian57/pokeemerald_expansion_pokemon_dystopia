@@ -445,25 +445,25 @@ script OldalePokeCenterInnPrograms {
 		We take this chance to remind our viewers that only official Devon Breeders are
 		authorized to match Pokémon and handle their offspring. \pThis is part of the efforts
 		to prevent dangerous practices such as genetic enhancing, also referred to as
-		'IV breeding'."))}
+		“IV breeding”."))}
 
 		if(var(VAR_JIMMYQUESTPROGRESS) == 1){
 
 		if (!flag (helpedconcordconartist))
 		{msgbox(format("We have news on egg smuggler Jimmy McGligar's whereabouts.\p
-		Civilians have reported sighting him in Petalburg City, and there's speculation he recently
+		Civilians have reported sighting him in {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}, and there's speculation he recently
 		crossed the checkpoint at Concord Bridge unnoticed.\p Due to the high rebel activity in
 		Petalburg, an arrest will prove difficult, and efforts are focused on preventing him
-		from leaving the Rebel Zone once more.\pSecurity checks are thus being reinforced
+		from leaving the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY} once more.\pSecurity checks are thus being reinforced
 		in the checkpoints of Petalburg Park, Concord Bridge and Rustboro Road.\p
 		Please carry your Devon Visa when travelling."))
 		}
 
 		else {msgbox(format("We have news on egg smuggler Jimmy McGligar's whereabouts.\p
 		After a close encounter with Devon Guards and a brave civilian at Concord Bridge,
-		he's been reported to have moved to Petalburg City.\p
+		he's been reported to have moved to {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}.\p
 		Due to the high rebel activity in the area, an arrest will prove difficult,
-		and efforts are focused on preventing him from leaving the Rebel Zone once more.
+		and efforts are focused on preventing him from leaving the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY} once more.
 		\p Security checks are thus being reinforced in the checkpoints of Petalburg Park,
 		Concord Bridge and Rustboro Road.\pPlease carry your Devon Visa when travelling."))}
 
@@ -475,19 +475,19 @@ script OldalePokeCenterInnPrograms {
 	script OldaleWarehouseNews {
 		lock
 	
-		if(var(VAR_OLDALE_PHASE) == 0){
+		if(var(VAR_OLDALE_PHASE) <= 1){
 		
-		msgbox(format("In other unfortunate piece of news, the Devon Warehouse of Oldale town is
+		msgbox(format("In other unfortunate piece of news, the Devon Warehouse of {COLOR GREEN}Oldale Town{COLOR DARK_GRAY} is
 		still under rebel control.\p Devon Co. has promised to send a taskforce to the facility
 		as soon as Devon Guards can be freed from the evacuation efforts of Mauville City,
 		whose Nuclear Plant has suffered a great accident.\p
 		We will continue to apprise you of the situation."))}
 
-		if(var(VAR_OLDALE_PHASE) > 2){
+		if(var(VAR_OLDALE_PHASE) >= 3){
 
 
 		msgbox(format("Breaking News: our Verdooms have recently caught this footage of
-		the Devon Warehouse of Oldale Town, where rebels can be seen leaving the facility
+		the Devon Warehouse of {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}, where rebels can be seen leaving the facility
 		in droves."))
 
 		checkplayergender
@@ -508,7 +508,12 @@ script OldalePokeCenterInnPrograms {
 		defeat said rebels for yet unknown reasons.\p We will provide more information as
 		soon as we have it."))}
 
-	}
+		}
+
+		if(var(VAR_OLDALE_PHASE) >= 4){
+		msgbox(format("Workers return."))
+		}
+
 		release
 	}
 
@@ -521,18 +526,18 @@ script OldalePokeCenterInnPrograms {
 		//GET ACTUAL FLAG HERE
 		
 		{msgbox(format("Breaking news: a violent, rebel-led riot has broken out in the vicinity
-		of Petalburg City's Devon Center.\p Devon Guards have already been dispatched to put an end
-		to the violence, and we advise residents of the city to steer clear off the Devon facility
+		of {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}'s Devon Center.\p Devon Guards have already been dispatched to put an end
+		to the violence.\p We advise residents of the city to steer clear off the Devon facility
 		until the situation is under control."))}
 
 		else {
 
 		msgbox(format("Breaking news: rebels have been vacated from a violent riot mounted
-		around Petalburg City's Devon Center. The property damage is great, but no human or
+		around {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}'s Devon Center. The property damage is great, but no human or
 		Pokémon injury has ensued.\p The situation was apparently defused by a young person
 		garbed in camouflage clothes, who some believe to be the same that appears in the footage
 		of Rebels leaving Oldale's Devon Warehouse.\p Could this be the rise of a bold vigilante
-		in the Rebel Zone, or perhaps that of an enforcer acting for a nefarious faction?\p
+		in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, or perhaps that of an enforcer acting for a nefarious faction?\p
 		We will keep you informed of these developments."))}
 
 		release
@@ -545,12 +550,12 @@ script OldalePokeCenterInnPrograms {
 		if (!flag (helpedconcordconartist))
 		//GET ACTUAL FLAG HERE
 		
-		{msgbox(format("Now, for some more analysis on the latest issue of Devon Co's 'Safemon
-		Progress Report'. \pFor the third consecutive month, Littleroot's Lab has been at the bottom
+		{msgbox(format("Now, for some more analysis on the latest issue of Devon Co.'s “Safemon
+		Progress Report”. \pFor the third consecutive month, Littleroot's Lab has been at the bottom
 		of contributions to the Safemon project, with only 2 Pokémon species successfully turned into
 		Safemon.\pIn spite of its decades-long history of academic brilliance, the laboratory took a
 		turn for the worse when the illustrious Professor Birch retired, and the torch was passed to
-		the Alolan Professor Balsam.\pAfter continuous downsizing of the laboratory, she is now one of
+		the Professor Balsam.\pAfter continuous downsizing of the laboratory, she is now one of
 		the only two scientists working in Littleroot, and the closure of the institution seems all but imminent.
 		\pIt would be a sad farewell to a once iconic landmark in Hoenn's history. "))}
 
@@ -567,7 +572,7 @@ script OldalePokeCenterInnPrograms {
 		of Mossdeep's Devon Space Center - former gym leaders Tate and Liza - during the announcement of
 		the new MDSS program.\pLast year, the space agency sent several Lunatellites into orbit, which
 		made the popular Devon Net possible.\p This year, with the help of business partner Silph Co.,
-		the 'Gemini Mission' has started, with goals to build the Devon Space Station - the first man-made,
+		the “Gemini Mission” has started, with goals to build the Devon Space Station - the first man-made,
 		long-term habitat to exist outside the planet.\p Everyone in Hoenn looks forward to the exciting
 		discoveries that this new era of space flight might bring. Stay tuned!"))
 		release
@@ -578,12 +583,12 @@ script OldalePokeCenterInnPrograms {
 		
 		lock
 		msgbox(format("Next up, we bring you some unfortunate news.\pAn accident in Mauville's Nuclear
-		Plant has claimed the lifes of 7 dozen Devon workers and 5 Safemon.\pMany others have been
+		Plant has claimed the lifes of 7 Devon workers and 5 Safemon.\pMany others have been
 		injured, and some are in critical condition. \pIn a recent press conference, Plant Manager
 		Wattson has sent his condolences to the affected families, and has assured an investigation
 		into the incident is underway.\p Meanwhile, voices are being raised advocating for the phasing
-		out of nuclear technology, in favour of the safer, cleaner energy provided by the thermal plant
-		of Lavaridge City.\p Mister Stone has promised to look into the matter, and to assess whether
+		out of nuclear energy, in favour of the safer, cleaner energy provided by the thermal plant
+		of Lavaridge Town.\p Mister Stone has promised to look into the matter, and to assess whether
 		Lavaridge can keep up with the energy demands of our rapidly developing region."))
 		release
 
@@ -596,13 +601,13 @@ script OldalePokeCenterInnPrograms {
 			//REPLACE WITH HARBOUR PROGRESS VARIABLE
 		
 		msgbox(format("We have received news about Rebels building an illegal harbour on the coast
-		south of Petalburg City.\pAlthough available information rules out any war-equipped vessels
+		south of {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}.\pAlthough available information rules out any war-equipped vessels
 		being built or acquired by anti-Devon radicals, the place sees regular traffic of small foreign
 		boats.\pIf conjectures are to be believed, this could point to a collaboration between the
 		Rebels and foreign crime organizations, and the establishment of a supply chain.\p
 		Devon Co. continues to monitor the situation, and Mister Stone has promised to deal with any
-		threats to the region's safety that dare arise from southern Hoenn in a 'swift, stern, and safe
-		manner'"))}
+		threats to the region's safety that dare arise from southern Hoenn in a “swift, stern, and safe
+		manner.”"))}
 
 		if(var(VAR_JIMMYQUESTPROGRESS) == 1){
 
@@ -624,7 +629,7 @@ script OldalePokeCenterInnPrograms {
 		Report that Devon Co. recently published. \p The metrics place the Devon Lab in Route 104 as one
 		of the lead contributors to Safemon Research this past month, with 4 species successfully
 		safened only this past week. \p In a recent interview, Lab Director Winston shared that 'Although the
-		Rebel Zone can be a hazardous work environment, the abundance of regular Pokémon here has
+		{COLOR GREEN}Rebel Zone{COLOR DARK_GRAY} can be a hazardous work environment, the abundance of regular Pokémon here has
 		provided us with a satisfactory number of samples, which has contributed to our pace of
 		research'.\p We wish our valiant and hard-working scientists the best of lucks in their noble 
 		endeavor of making Hoenn a safer place."))}
@@ -634,12 +639,12 @@ script OldalePokeCenterInnPrograms {
 
 		msgbox(format("Breaking news. We have just received reports of an assault on the Devon Lab of
 		Route 104, presumably perpetrated by a band of rebels led by former gym leader of the
-		neighbouring Petalburg City - Norman.\p While there is no footage of the incident, witnesses
+		neighbouring {COLOR GREEN}Petalburg City{COLOR DARK_GRAY} - Norman.\p While there is no footage of the incident, witnesses
 		claim he was accompanied by 4 young trainers, with whom he seized control of the facility by
 		use of violent, unsafened Pokémon. \pFortunately, Devon Admin Roxanne was swiftly dispatched to
 		the location, and ensured the safe retreat of the laboratory's personnel. Norman and his acolytes'
 		goals are unknown, but speculated to be of lucrative nature, similar to those of the rebels that
-		recently stripped the Devon Warehouse of Oldale Town of all its valuable assets.\p
+		recently stripped the Devon Warehouse of {COLOR GREEN}Oldale Town{COLOR DARK_GRAY} of all its valuable assets.\p
 		The lab will remain unmanned until it can be safely reclaimed. That is all we have for the moment."))
 		}
 		release
@@ -677,7 +682,7 @@ script OldalePokeCenterInnPrograms {
 		the area around the Great Crater, south of Road 002.\p Climate activists claim that this is
 		nuclear fallout, created by the singular Electrode explosion that took place there during the
 		 war.\p The Weather Institute however has labelled these claims as alarmist, and reassures citizens
-		 and tourists that radiation levels within the Rebel Zone are perfectly within safe margins."))
+		 and tourists that radiation levels within the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY} are perfectly within safe margins."))
 		setvar(VAR_GREATCRATER_WEATHER, 1)
 		//clearflag (greatcraterweathermon)
 		setflag (seenweatheratinnvisit)
@@ -689,7 +694,7 @@ script OldalePokeCenterInnPrograms {
 		msgbox(format("Weather Alert: We would like to inform of toxic fumes rising from Petalburg
 		Scrapyard.\p The Weather Institute claims this is the result of certain waste materials being
 		heated by the sun. \p We advise steering clear of the area for the time being, and use the
-		safer Petalburg Park route for those travelling between Petalburg City and Neo Rustboro."))
+		safer Petalburg Park route for those travelling between {COLOR GREEN}Petalburg City{COLOR DARK_GRAY} and {COLOR BLUE}New Rustboro{COLOR DARK_GRAY}."))
 		setvar(VAR_PETALBURGLANDFILL_WEATHER, 1)
 		//clearflag (greatcraterweathermon)
 		setflag (seenweatheratinnvisit)

@@ -27,7 +27,7 @@ script RedoTouristWarning {
 
 script DynamicWeatherCrater {
 		if (var(VAR_GREATCRATER_WEATHER) == 0)
-		{random (10)
+		{random (5)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 
 		switch (var(VAR_RESULT))
@@ -35,13 +35,8 @@ script DynamicWeatherCrater {
 		case 1: goto (GreatCraterEndAsh)
 		case 2: goto (GreatCraterEndAsh)
 		case 3: goto (GreatCraterEndAsh)
-		case 4: goto (GreatCraterEndAsh)
-		case 5: goto (GreatCraterEndAsh)
-		case 6: goto (GreatCraterEndAsh)
-		case 7: goto (GreatCraterEndAsh)
-		case 8: goto (GreatCraterEndAsh)
-		case 9: goto (GreatCraterShade)
-		case 10: goto (GreatCraterShade)
+		case 4: goto (GreatCraterShade)
+		case 5: goto (GreatCraterShade)
 		}}
 }
 
@@ -123,14 +118,14 @@ script ReportersGreatCrater {
 	applymovement (3, moves(face_player))
 
 	msgbox(format("Ah, look, Dan - an interesting-looking local just approached us!
-	\p We're from Devon TV, and we're filming a documentary about the Rebel Zone!
+	\p We're from Devon TV, and we're filming a documentary about the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}!
 	\p However, our footage right now is lacking a bit of... flair."))
 	applymovement (2, moves(walk_in_place_left * 1))
 	setspeaker ([SP_NAME_DAN])
 	msgbox(format("Don't sugarcoat it, Kira. It's boring."))
 	applymovement (3, moves(walk_in_place_right * 1))
 	setspeaker ([SP_NAME_KIRA])
-	msgbox(format("... a bit, maybe. Which is why we were thinking about staging a battle!"))
+	msgbox(format("... a bit, perhaps. Which is why we were thinking about staging a battle!"))
 	applymovement (3, moves(walk_in_place_up * 1))
 	setspeaker ([SP_NAME_KIRA])
 	msgbox(format("We will pretend one of those dangerous rebels have assailed us, and that we escaped by
@@ -145,8 +140,8 @@ script ReportersGreatCrater {
 	applymovement (3, moves(walk_in_place_right))
 	setspeaker ([SP_NAME_KIRA])
 	checkplayergender
-	if(var(VAR_RESULT) == MALE){msgbox(format("Indeed - which makes him perfect to play the role of 'rebel'!"))}
-	if(var(VAR_RESULT) == FEMALE){msgbox(format("Indeed - which makes her perfect to play the role of 'rebel'!"))}
+	if(var(VAR_RESULT) == MALE){msgbox(format("Right? Which makes him perfect to play the role of 'rebel'!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Right? Which makes her perfect to play the role of 'rebel'!"))}
 
 	applymovement (3, moves(walk_in_place_up))
 	setspeaker ([SP_NAME_KIRA])
@@ -238,6 +233,7 @@ script ReportersGreatCrater {
 	setspeaker ([SP_NAME_KIRA])
     msgbox(format("Oh, that's so unfortunate! Are you certain?
 	\p We'll be here a while if you reconsider - which we beg you to do!"))
+	closemessage
 	applymovement (2, moves(walk_in_place_down))
 	waitmovement (2)
 	applymovement (3, moves(walk_in_place_down))
@@ -272,6 +268,8 @@ script ReportersGreatCrater {
 }
 
 	if (flag (declinedcraterreporterhelp)){
+	applymovement (3, moves(face_player))
+	applymovement (2, moves(face_player))
 	setspeaker ([SP_NAME_KIRA])
     msgbox(format("Have you changed your mind? Will you help us stage a battle?"))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
@@ -281,11 +279,16 @@ script ReportersGreatCrater {
    		 if (var(VAR_RESULT) == 1) {
 		 setspeaker ([SP_NAME_KIRA])
    		 msgbox(format("That's too bad... I think you'd be such a star!"))
+		 closemessage
 		 applymovement (2, moves(walk_in_place_down * 1))
-		 applymovement (3, moves(walk_in_place_down * 1))}
+		 applymovement (3, moves(walk_in_place_down * 1))
+		 waitmovement (2)
+		 waitmovement (3)}
 	}
 
 	finishreporterscript:
+	fadeoutbgm (1)
+	fadeinbgm (1)
 	playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 	releaseall
 
@@ -335,6 +338,11 @@ script GreatCrater_EventScript_CancelNewTrendyPhrase {
 
     msgbox(format("Oh no... you got a bit of scenic fear, didn't you? \p It happens the first time. We'll
 	do another take when you're ready!"))
+		 closemessage
+		 applymovement (2, moves(walk_in_place_down * 1))
+		 applymovement (3, moves(walk_in_place_down * 1))
+		 waitmovement (2)
+		 waitmovement (3)
 	goto (finishreporterscript)
 	releaseall
 	end }
@@ -393,7 +401,7 @@ script CameramanGreatCrater {
 	if (flag (declinedcraterreporterhelp)){
 	setspeaker ([SP_NAME_DAN])
 	applymovement (2, moves(face_player))
-	msgbox(format("It's easy money. You won't get far in the Rebel Zone by being moral."))
+	msgbox(format("It's easy money. You won't get far in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY} by being moral."))
 	applymovement (2, moves(walk_in_place_down * 1))
 	msgbox(format("I know from experience..."))
 	}
@@ -451,10 +459,10 @@ script ConspiracyGreatCraterBattle {
 script ConspiracyGreatCraterRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("Before I tell you, let's put our Devon Navs in airplane mode.
+	msgbox(format("Before I tell you, let's put our Devonnavs in airplane mode.
 	\p Where was the option now...?"))
 	register_matchcall (TRAINER_CONSPIRACY_GREATCRATER)
-	msgbox(format("Oops, wrong button. Wait, no... I could have swore I pressed the
+	msgbox(format("Oops, wrong button. Wait, no... I'm pretty sure I pressed the
 	right one. \p That's it, I've been HACKED BY DEVON!"))
 	release
 	end
@@ -469,10 +477,10 @@ script ConspiracyGreatCraterRematch {
 
 
 	text ConspiracyGreatCrater_Intro{
-		"Hehe... do you know the real reason why\nDevon invented Safemon?\pI'll tell you if you beat me!"}
+		"Hehe... do you know the real reason why\nDevon is making Safemon?\pI'll tell you if you beat me!"}
 
 	text ConspiracyGreatCrater_Outro{
-		"Very well... listen closely..."}
+		"Alright, listen closely..."}
 
 	text ConspiracyGreatCrater_Intro2{
 		"You're back! This time, I'll really tell\n you the truth behind Safemon...\p But only if
@@ -488,10 +496,11 @@ script GreatCraterSouvenirShop {
 		lockall
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (1, moves(face_player))
-		msgbox(format("Welcome to the Great Crater's Souvenir Shop!"))
 		fadeoutbgm (0)
 		playbgm (MUS_BUYSOMETHINGWILLYA, FALSE)
+		msgbox(format("Welcome to the Great Crater's Souvenir Shop!"))
 		pokemart (ShopSouvenirs)
+		fadeoutbgm (1)
 		fadeinbgm (1)
 		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 		releaseall
@@ -509,8 +518,9 @@ script GreatCraterSouvenirShop {
 script GreatCraterSouvenirShopkeeper {
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (1, moves(face_player))
-		msgbox(format("I know this is not New Rustboro Mall, but let's be civil hey? \p If you want
+		msgbox(format("I know this is not {COLOR BLUE}New Rustboro Mall{COLOR DARK_GRAY}, but let's be civil hey? \p If you want
 		to buy, go around the counter."))
+		closemessage
 		applymovement (1, moves(walk_in_place_down * 1))
 		waitmovement (1)
 		releaseall}
@@ -557,9 +567,9 @@ script CraterTrappedTouristandRope {
 		if (var(VAR_GREATCRATERTOURIST) == 1)
 		{msgbox(format("Aah, thank the heavens! You may not be able to see me, but I'm down
 		here! \p I wanted to take a good picture of the crater, so I leaned in and... \p I slipped
-		with the sand and fell! \p I'm alright really, the sand cushioned my fall... but I can't
+		with the sand and fell! \p I'm okay, the sand cushioned my fall... but I can't
 		get out! \p Can you go get some rope? Something like a strong {COLOR RED}Sailor Knot{COLOR DARK_GRAY} would do. \p
-		Please hurry up... there's a suspicious old man down here, and I want nothing to do with
+		Please, hurry up... there's a suspicious old man down here, and I want nothing to do with
 		him!"))
 		setvar(VAR_GREATCRATERTOURIST, 2)
 
@@ -606,7 +616,7 @@ script CraterTrappedTouristandRope {
 			applymovement (10, moves(walk_in_place_down * 1))
 			msgbox(format("Wait... maybe it's thanks to it that you found me?"))
 			applymovement (10, moves(walk_in_place_right * 1))
-			msgbox(format("Well, nevermind. I don't plan to leave New Rustboro ever again, so I won't
+			msgbox(format("Well, nevermind. I don't plan to leave {COLOR BLUE}New Rustboro{COLOR DARK_GRAY} ever again, so I won't
 			need it. \p Goodbye now, and watch your footing!"))
 
 			applymovement (10, moves(walk_up * 7))
@@ -639,7 +649,7 @@ script CraterTrappedTouristandRope {
 		if (checkitem (ITEM_BINDING_BAND)  == FALSE)
 		{msgbox(format("You're back! But... I don't see that {COLOR RED}Sailor Knot{COLOR DARK_GRAY}
 		on you! \p I appreciate you checking on me, but I'd appreciate it even more if you focused
-		on helping me to get out! \p I'm begging you here!"))
+		on helping me get out! \p I'm begging you here!"))
 		goto (endcraterbottomtouristscript)}
 
 		if (checkitem (ITEM_BINDING_BAND)  == TRUE)
@@ -672,9 +682,9 @@ script GreatCraterDevonGruntFemale {
 	we can't risk civilians interfering with his work."))
     applymovement (9, moves(walk_in_place_down * 1))
 	msgbox(format("You have been hurt by a Pokémon, do you? Surely you understand."))
-    applymovement (9, moves(walk_in_place_down * 1))
+    applymovement (9, moves(face_down * 1))
 	waitmovement
-    applymovement (9, moves(walk_in_place_down * 1))
+    applymovement (8, moves(face_down * 1))
 	waitmovement
 	release
 	}
@@ -683,9 +693,9 @@ script GreatCraterDevonGruntMale {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (8, moves(face_player))
-	msgbox(format("By regulation of Devon Co.'s Wildlife Protocol, section 75, titled 'Route Enclosures
-	for the purpose of Safemon Research...' \p This area is closed off to civilians until further notice."))
-    applymovement (8, moves(walk_in_place_down * 1))
+	msgbox(format("By regulation of Devon Co.'s Wildlife Protocol, section 75, titled “Route Enclosures
+	for the purpose of Safemon Research...” \p This area is closed off to civilians until further notice."))
+    applymovement (8, moves(face_down * 1))
 	waitmovement
 	release
 	}
@@ -694,9 +704,9 @@ script GreatCraterTouristMaleIdle {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (12, moves(face_player))
-	msgbox(format("I once ordered a donut in Pewter City, and they gave me a riceball!
+	msgbox(format("I once ordered a donut in Pewter City, and they gave me a riceball instead!
 	\p At least you know what donuts are here in Hoenn."))
-    applymovement (12, moves(walk_in_place_left * 1))
+    applymovement (12, moves(face_left * 1))
 	waitmovement
 	release
 	}

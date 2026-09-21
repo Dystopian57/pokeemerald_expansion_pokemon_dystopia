@@ -20,7 +20,7 @@ MatchCall_WildBattleText3::
 	.string "mail of Jimmy McGligar, Egg Seller!\l"
 	.string "Extraordinaire\p"
 	.string "If you're hearing this, it means\n"
-	.string "I can't pick up the Devon Nav\l"
+	.string "I can't pick up the Devonav\l"
 	.string "right now. I'm a busy fellow!\p"
 	.string "But remember - I'm open every\n"
 	.string "night at Petalburg Sewers.\p"
@@ -100,7 +100,7 @@ MatchCall_WildBattleText10::
 
 MatchCall_WildBattleText11::
 	.string "Hello! This is a default\n"
-	.string "Devon Nav voice mail message.\p"
+	.string "Devonav voice mail message.\p"
 	.string "The person you are calling\n"
 	.string "does not seem to be available.\p"
 	.string "Try again later, and stay safe!$"
@@ -259,7 +259,7 @@ MatchCall_NegativeBattleText11::
 
 MatchCall_NegativeBattleText12::
 	.string "{PLAYER}, listen to this!\n"
-	.string "Recently, I heard Devon Navs\l"
+	.string "Recently, I heard Devonavs\l"
 	.string "have tracking chips.\p"
 	.string "So I opened mine one day...\n"
 	.string "But I couldn't tell any piece\l"
@@ -268,10 +268,10 @@ MatchCall_NegativeBattleText12::
 	.string "but I didn't know how to do\l"
 	.string "that either.\p"
 	.string "And in the end, I ended up\n"
-	.string "buying a new Devon Nav.\p"
+	.string "buying a new Devonav.\p"
 	.string "Conclusion? The rumour was just\n"
 	.string "a Devon's ploy from the start,\l"
-	.string "to sell more Devon Navs!\p"
+	.string "to sell more Devonavs!\p"
 	.string "Don't fall for it, {PLAYER}!$"
 
 MatchCall_NegativeBattleText13::
@@ -356,7 +356,7 @@ MatchCall_PositiveBattleText3::
 	.string "mail of Jimmy McGligar, Egg Seller!\l"
 	.string "Extraoirdinaire!\p"
 	.string "If you're hearing this, it means\p"
-	.string "I can't pick up the Devon Nav\n"
+	.string "I can't pick up the Devonav\n"
 	.string "right now. I'm a busy fellow!\p"
 	.string "But remember - I'm open every\n"
 	.string "night at Petalburg Sewers.\p"
@@ -2202,7 +2202,7 @@ MatchCall_BattlePyramidText14::
 MatchCall_Text_Mom1::
 	.string "PROF. BALSAM: {PLAYER}... we talked\n"
 	.string "very, very recently.\p"
-	.string "Are you testing if the Devon Nav\n"
+	.string "Are you testing if the Devonav\n"
 	.string "works? Well, it does.\p"
 	.string "Oldale. Therapy. First building to\n"
 	.string "the right. Go!$"

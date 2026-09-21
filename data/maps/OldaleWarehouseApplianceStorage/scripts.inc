@@ -337,7 +337,7 @@ OldaleWarehouseApplianceStorageScavenger1_Text_1:
 	.string "share our haul.\p"
 	.string "If you're ever in need of some more tech\n"
 	.string "or supplies, you should come to our\l"
-	.string "Hardware Store in Petalburg City.$"
+	.string "Hardware Store in {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}.$"
 
 OldaleWarehouseApplianceStorageScavenger2Trigger_Text_0:
 # 52 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"

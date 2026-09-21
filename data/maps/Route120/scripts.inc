@@ -32,6 +32,9 @@ Route120_EventScript_RemoveKecleon::
 	return
 
 Route120_OnLoad:
+	call_if_set FLAG_HIDDEN_ITEM_OLDALE_HOUSE1YARD, Route120_EventScript_SetBridgeClearMetatiles
+	call_if_unset FLAG_HIDDEN_ITEM_OLDALE_HOUSE1YARD, Route120_EventScript_SetBridgeKecleonMovement
+	end
 	end
 
 Route120_EventScript_CloseAncientTomb::
