@@ -6,7 +6,7 @@ raw `
 
 mapscripts GreatCrater_MapScripts {
     MAP_SCRIPT_ON_LOAD: GreatCraterWeather
-    MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater
+    //MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater
     //MAP_SCRIPT_ON_LOAD: RedoTouristWarning
     MAP_SCRIPT_ON_TRANSITION: RedoTouristWarning
     //MAP_SCRIPT_ON_FRAME_TABLE: RedoTouristWarning
@@ -20,25 +20,35 @@ script RedoTouristWarning {
 			
 	if (var(VAR_GREATCRATERTOURIST) == 1)
 	{setvar(VAR_GREATCRATERTOURIST, 0)}
-
-
 	}
 
 
 script DynamicWeatherCrater {
-		if (var(VAR_GREATCRATER_WEATHER) == 0)
-		{random (5)
-		copyvar (VAR_TEMP_1, VAR_RESULT)
 
+		setvar (VAR_GREATCRATER_WEATHER, 4)
+		random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
 		switch (var(VAR_RESULT))
-		{case 0: goto (GreatCraterEndAsh)
-		case 1: goto (GreatCraterEndAsh)
-		case 2: goto (GreatCraterEndAsh)
-		case 3: goto (GreatCraterEndAsh)
-		case 4: goto (GreatCraterShade)
-		case 5: goto (GreatCraterShade)
+		{case 0:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
+		case 1:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
+		case 2:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
+		case 3:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
+		case 4: setweather (WEATHER_SHADE)
+		case 5: setweather (WEATHER_SHADE)
+		case 6: setweather (WEATHER_SHADE)
+		case 7: setweather (WEATHER_SHADE)
+		case 8: setweather (WEATHER_SHADE)
+		case 9: setweather (WEATHER_SHADE)
 		}}
-}
+
 
 
 script GreatCraterWeather {
@@ -128,7 +138,7 @@ script ReportersGreatCrater {
 	msgbox(format("... a bit, perhaps. Which is why we were thinking about staging a battle!"))
 	applymovement (3, moves(walk_in_place_up * 1))
 	setspeaker ([SP_NAME_KIRA])
-	msgbox(format("We will pretend one of those dangerous rebels have assailed us, and that we escaped by
+	msgbox(format("We will pretend one of those dangerous {COLOR RED}Rebels{COLOR DARK_GRAY} have assailed us, and that we escaped by
 	the skin of our teeth."))
 	applymovement (2, moves(walk_in_place_left))
 	waitmovement (2)
@@ -140,13 +150,13 @@ script ReportersGreatCrater {
 	applymovement (3, moves(walk_in_place_right))
 	setspeaker ([SP_NAME_KIRA])
 	checkplayergender
-	if(var(VAR_RESULT) == MALE){msgbox(format("Right? Which makes him perfect to play the role of 'rebel'!"))}
-	if(var(VAR_RESULT) == FEMALE){msgbox(format("Right? Which makes her perfect to play the role of 'rebel'!"))}
+	if(var(VAR_RESULT) == MALE){msgbox(format("Right? Which makes him perfect to play the role of {COLOR RED}Rebel{COLOR DARK_GRAY}!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Right? Which makes her perfect to play the role of {COLOR RED}Rebel{COLOR DARK_GRAY}!"))}
 
 	applymovement (3, moves(walk_in_place_up))
 	setspeaker ([SP_NAME_KIRA])
 	msgbox(format("We need you to win, of course - it would not be very exciting
-	if we just beat a dangerous rebel like nothing!\pSo, will you help us? We will pay you handsomely for your time!"))
+	if we just beat a dangerous {COLOR RED}Rebel{COLOR DARK_GRAY} like nothing!\pSo, will you help us? We will pay you handsomely for your time!"))
 	
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "No chance", "That's lying")
 
@@ -210,7 +220,6 @@ script ReportersGreatCrater {
 		setflag (reportersleavecrater)
 		fadescreenswapbuffers (FADE_FROM_BLACK)
 
-		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 		goto (finishreporterscript)
 		}
 
@@ -218,6 +227,9 @@ script ReportersGreatCrater {
 		setspeaker ([SP_NAME_KIRA])
 		msgbox(format("Oh no... you got a bit of scenic fright, didn't you? \p It happens the first time. We'll
 	    do another take when you're ready!"))
+		applymovement (2, moves(face_down))
+		applymovement (3, moves(face_down))
+		waitmovement (3)
 		goto (finishreporterscript)
 
 		} 
@@ -292,9 +304,6 @@ script ReportersGreatCrater {
 	playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 	releaseall
 
-
-
-
 }
 
 
@@ -330,6 +339,8 @@ script GreatCrater_EventScript_GiveNewTrendyPhrase {
 
     msgbox(format("Thanks for your help again - stay safe!"))
 
+	fadeoutbgm (1)
+	fadeinbgm (1)
 	playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 	releaseall
 	end}
@@ -423,7 +434,7 @@ script TouristGreatCraterBattle {
 script TouristGreatCraterRegister {
 	special (PlayerFaceTrainerAfterBattle)
 	waitmovement (0)
-	msgbox(format("That was exciting! Say, we don't we exchange Devonav profiles?"))
+	msgbox(format("That was exciting! Let's do this again - here's my Devonav profile!"))
 	register_matchcall (TRAINER_TOURIST_GREATCRATER)
 	release
 	end
@@ -530,7 +541,7 @@ script GreatCraterSouvenirBox {
 		releaseall}
 
 script GreatCraterSign {
-		msgbox(format("North - Road 002 \p East - Route 101"))
+		msgbox(format("North - Road 002 \n East - Route 101"))
 		releaseall}
 
 script GreatCraterSouvenirSupplies {
@@ -676,7 +687,7 @@ script GreatCraterDevonGruntFemale {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (9, moves(face_player))
 	msgbox(format("I'm sorry, but one of our scientists is currently searching for a dangerous
-	Pokémon in Road 002."))
+	Pokémon in {COLOR GREEN}Road 002{COLOR DARK_GRAY}."))
     applymovement (9, moves(walk_in_place_up * 1))
 	msgbox(format("The creature in question is next on the list of Pokémon to be safened, and
 	we can't risk civilians interfering with his work."))

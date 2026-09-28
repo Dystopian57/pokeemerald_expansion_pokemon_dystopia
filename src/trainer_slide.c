@@ -59,7 +59,7 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 
         [TRAINER_SHARPY_103] = // use the Trainer's Id from include/constants/opponents.h
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("I knew you were strong... but\nhere comes my ace! {PAUSE_UNTIL_PRESS}"), // find the id for the slide to be used.
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("I knew you were strong... but here\ncomes my ace! {PAUSE_UNTIL_PRESS}"), // find the id for the slide to be used.
             //[TRAINER_SLIDE_MEGA_EVOLUTION] = gText_ThatsTheWay, // You can use globals or COMPOUND_STRING to define text here.
         },
 
@@ -70,7 +70,7 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 
         [TRAINER_REPORTERS_GREATCRATER] = // use the Trainer's Id from include/constants/opponents.h
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("KIRA: Our poor Safemon! Such violence...\nI can't see this anymore, DAN!\pDAN: You're overacting, KIRA... I'll have\nto edit this out.\pKIRA: Don't you dare! This is the start\nof my acting career!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("KIRA: Our poor Pokémon! Such violence...\nI can't see this anymore, DAN!\pDAN: You're overacting, KIRA... I'll have\nto edit this out.\pKIRA: Don't you dare! This is the start\nof my acting career!{PAUSE_UNTIL_PRESS}"),
         },
 
         [TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3] = 

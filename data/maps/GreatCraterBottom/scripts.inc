@@ -9,7 +9,7 @@ CraterBottomItem::
 # 9 "data/maps/GreatCraterBottom/scripts.pory"
 	lock
 # 10 "data/maps/GreatCraterBottom/scripts.pory"
-	finditem ITEM_TM_POISON_GAS
+	finditem ITEM_TM_HAZE
 # 13 "data/maps/GreatCraterBottom/scripts.pory"
 	removeobject 3
 # 14 "data/maps/GreatCraterBottom/scripts.pory"

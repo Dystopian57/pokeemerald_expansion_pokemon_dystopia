@@ -256,15 +256,16 @@ script OldaleTown_Devon_Nurse {
 		special (HealPlayerParty)
 		applymovement (1, moves (face_down))
 		callnative (UpdateFollowingPokemon)
+		showmoneybox (0, 0)
 		msgbox(format("That will be 100¥..."))
 				//get IFs for different money amounts depending on loyalty variable here
 				checkmoney (100)
 				if (var(VAR_RESULT) == TRUE) {
-					showmoneybox (0, 0)
-					playse (SE_SHOP)
 					removemoney (100)
-					updatemoneybox
+                    updatemoneybox
+					playse (SE_SHOP)
 					waitse
+					hidemoneybox
 					if (var(VAR_DEVONCENTERLOYALTY) == 0){
 					msgbox(format("It's done. \n
 					{COLOR LIGHT_GRAY}{SHADOW WHITE}Now get out...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
@@ -493,20 +494,22 @@ script OldaleTown_Devon_Nurse {
 					goto (finishhealscript)
 				}}
 		else {
+			showmoneybox (0, 0)
 			msgbox(format("You have a 100¥ debt from last time you used our services,
 			so I'll be taking that..."))
 			checkmoney (100)
 			if (var(VAR_RESULT) == TRUE) {
-			showmoneybox (0, 0)
-			playse (SE_SHOP)
-			removemoney (100)
-			updatemoneybox
-			waitse
+					removemoney (100)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
 			msgbox(format("Great. Now let's proceed with your current heal..."))
 			clearflag (devoncenterdebt)
 			goto (healpokes)
 			}
 			if (var(VAR_RESULT) == FALSE) {
+				hidemoneybox
 				if (var(VAR_DEVONCENTERLOYALTY) == 0){
 				msgbox(format("Of course... you still don't have enough. \p Look, we're not running a
 				charity here. If you want your buddies healed, go get some money."))}
@@ -618,11 +621,11 @@ script OldaleATM {
 	if(var(VAR_RESULT) == 0){
 		checkmoney (1000)
 		if (var(VAR_RESULT) == TRUE) {
-		showmoneybox (0, 0)
-		playse (SE_SHOP)
-		removemoney (1000)
-		waitse
-		updatemoneybox
+					showmoneybox (0, 0)
+					removemoney (1000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 		msgbox(format("Transaction complete. Your card is coming out!"))
 		playse (SE_CLICK)
 		hidemoneybox
@@ -647,11 +650,11 @@ script OldaleATM {
 		else {
 		checkmoney (5000)
 		if (var(VAR_RESULT) == TRUE) {
-		showmoneybox (0, 0)
-		playse (SE_SHOP)
-		removemoney (1000)
-		waitse
-		updatemoneybox
+					showmoneybox (0, 0)
+					removemoney (5000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 		msgbox(format("Transaction Completed. Your card is coming out!"))
 		playse (SE_CLICK)
 		hidemoneybox
@@ -675,11 +678,11 @@ script OldaleATM {
 		else {
 		checkmoney (10000)
 		if (var(VAR_RESULT) == TRUE) {
-		showmoneybox (0, 0)
-		playse (SE_SHOP)
-		removemoney (1000)
-		waitse
-		updatemoneybox
+					showmoneybox (0, 0)
+					removemoney (10000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
 		msgbox(format("Transaction Completed. Your card is coming out!"))
 		playse (SE_CLICK)
 		hidemoneybox
@@ -1024,10 +1027,10 @@ script Azuresortad {
 
 script OldalePokeCenterTipNurse {
     lockall
-    msgbox(format("Did you know? Food such as boxed lunches are specially designed for Pokémon to 
-	{COLOR BLUE}hold and eat{COLOR DARK_GRAY}, even during battle!
+    msgbox(format("As I'm sure you know, modern food packaging is designed for Pokémon to 
+	{COLOR BLUE}hold and eat from{COLOR DARK_GRAY}, even during battle!
 	\pBut one can't expect Pokémon to eat calmly in the middle of combat.\pThey will surely spill
-	some of it, and {COLOR RED}not gain the full nutritional effects{COLOR DARK_GRAY}.
+	some of it, and {COLOR RED}gain only half of the nutritional effects{COLOR DARK_GRAY}.
 	\pTrainers concerned with that should feed their Pokémon
 	themselves.\pHowever you eat, please keep a safe and healthy diet!"))
     releaseall

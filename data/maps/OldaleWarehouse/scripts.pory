@@ -18,7 +18,7 @@ script OldaleWarehouseRebel1 {
 }
 
 	text WarehouseRebel1_Intro{
-		"'The system was not designed for\nyou to win...'\pBah, that's what losers say!"}
+		"“The system was not designed for\nyou to win...”\pThen we'll change the system!"}
 
 	text WarehouseRebel1_Outro{
 		"... design or not, I still lost. Tsk."}

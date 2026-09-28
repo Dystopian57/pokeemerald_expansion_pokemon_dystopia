@@ -20,7 +20,7 @@ script WaterfallHermit {
 
     if (!flag (FLAG_RECEIVED_HM_WATERFALL))
     {
-        msgbox(format("Welcome, young traveller, to Waterfall Cave - a place who has been
+        msgbox(format("Welcome, young traveller, to {COLOR GREEN}Waterfall Cave{COLOR DARK_GRAY} - a place who has been
 		hidden for centuries.\pIt used to be that things like nature and time
 		 were the sole shapers of nature.\pBut now, the acts of humans - born from
 		 conflict, or in the name of progress - are threatening to become just as strong
@@ -65,14 +65,13 @@ script WaterfallHermit {
 
 	    fadeoutbgm (1)
         playse (MUS_OBTAIN_BADGE)
-
         msgbox(format("Obtained the Cascade Token!"))
-	    fadenewbgm (1)
-        playbgm (MUS_LEMURIA, TRUE)
         setflag (FLAG_BADGE07_GET)
         setflag (FLAG_RECEIVED_HM_WATERFALL)
         giveitem (ITEM_HM07)
         setflag (hermitmovesexplained)
+	    fadenewbgm (1)
+        playbgm (MUS_LEMURIA, TRUE)	
         msgbox(format("I wish you luck on your travels."))
         //msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
         //back here. \p Only then I will grant you passage into the depths beyond."))

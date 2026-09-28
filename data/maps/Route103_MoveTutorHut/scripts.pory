@@ -55,6 +55,19 @@ script DayNightAmbientLightTutorHut {
 	release
 }
 
+
+script MoveTutor103Rope {
+	lock
+	if (!flag(movetutorbinitem))
+	{msgbox(format("For some reason, a knotted piece of rope has been discarded..."))
+	giveitem (ITEM_BINDING_BAND)}
+
+	else {msgbox(format("The trash can is empty."))}
+
+	release
+}
+
+
 //NEED "IF NOT LEARNT" CHECKS
 
 script MoveTutor103Night

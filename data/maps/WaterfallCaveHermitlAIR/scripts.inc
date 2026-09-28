@@ -26,10 +26,10 @@ WaterfallHermit::
 	applymovement 1, WaterfallHermit_Movement_0
 # 21 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_HM_WATERFALL, WaterfallHermit_2
-# 82 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 81 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermit_Text_14
 WaterfallHermit_1:
-# 85 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 84 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
@@ -69,21 +69,21 @@ WaterfallHermit_17:
 	fadeoutbgm 1
 # 67 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	playse MUS_OBTAIN_BADGE
-# 69 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 68 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermit_Text_13
-# 70 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	fadenewbgm 1
-# 71 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	playbgm MUS_LEMURIA, TRUE
-# 72 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 69 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	setflag FLAG_BADGE07_GET
-# 73 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 70 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	setflag FLAG_RECEIVED_HM_WATERFALL
-# 74 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 71 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	giveitem ITEM_HM07
-# 75 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 72 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	setflag hermitmovesexplained
-# 76 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 73 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+	fadenewbgm 1
+# 74 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+	playbgm MUS_LEMURIA, TRUE
+# 75 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermit_Text_14
 	goto WaterfallHermit_1
 
@@ -114,71 +114,71 @@ WaterfallHermit_18:
 
 
 WaterfallHermitLairBooks::
-# 93 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 92 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	lock
-# 94 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 93 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermitLairBooks_Text_0
-# 95 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 94 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
 
 WaterfallHermitLairFireplace::
-# 99 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 98 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	lock
-# 100 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 99 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermitLairFireplace_Text_0
-# 101 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 100 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
 
 WaterfallHermitLairDesk::
-# 105 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 104 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	lock
-# 106 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 105 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermitLairDesk_Text_0
-# 107 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 106 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
 
 WaterfallHermitLairVase::
-# 111 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 110 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	lock
-# 112 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 111 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermitLairVase_Text_0
-# 113 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 112 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
 
 WaterfallHermitLairRations::
-# 117 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 116 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	lock
-# 118 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 117 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermitLairRations_Text_0
-# 119 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 118 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
 
 WaterfallHermitLairLogs::
-# 123 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 122 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	lock
-# 124 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 123 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermitLairLogs_Text_0
-# 125 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 124 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
 
 WaterfallHermitLairBed::
-# 129 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 128 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	lock
-# 130 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 129 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	msgbox WaterfallHermitLairBed_Text_0
-# 131 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 130 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	release
 	return
 
@@ -191,8 +191,8 @@ WaterfallHermit_Movement_0:
 
 WaterfallHermit_Text_0:
 # 23 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
-	.string "Welcome, young traveller, to Waterfall\n"
-	.string "Cave - a place who has been hidden for\l"
+	.string "Welcome, young traveller, to {COLOR GREEN}Waterfall\n"
+	.string "Cave{COLOR DARK_GRAY} - a place who has been hidden for\l"
 	.string "centuries.\p"
 	.string "It used to be that things like nature\n"
 	.string "and time were the sole shapers of\l"
@@ -271,43 +271,43 @@ WaterfallHermit_Text_12:
 	.string "I deem you worthy to have these.$"
 
 WaterfallHermit_Text_13:
-# 69 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 68 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "Obtained the Cascade Token!$"
 
 WaterfallHermit_Text_14:
-# 76 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 75 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "I wish you luck on your travels.$"
 
 WaterfallHermitLairBooks_Text_0:
-# 94 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 93 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "It's mostly books about history and\n"
 	.string "folklore.$"
 
 WaterfallHermitLairFireplace_Text_0:
-# 100 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 99 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "A rudimentary but well-made fireplace.$"
 
 WaterfallHermitLairDesk_Text_0:
-# 106 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 105 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "A sturdy stone desk. It seems to have\n"
 	.string "been sculpted by a Pokémon.$"
 
 WaterfallHermitLairVase_Text_0:
-# 112 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 111 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "The vase is empty.$"
 
 WaterfallHermitLairRations_Text_0:
-# 118 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 117 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "It's some canned rations.$"
 
 WaterfallHermitLairLogs_Text_0:
-# 124 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 123 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "A careful stack of logs.$"
 
 WaterfallHermitLairBed_Text_0:
-# 130 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 129 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "A remarkably bare bed.$"
 
 WaterfallHermit_Outro::
-# 88 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
+# 87 "data/maps/WaterfallCaveHermitlAIR/scripts.pory"
 	.string "I see... a few parting words, if I may.$"

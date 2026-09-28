@@ -3,9 +3,17 @@ LittlerootMausoleum_MapScripts::
 	.byte 0
 `
 
+script MausoleumTM {
+    lock
+    finditem (ITEM_TM_NIGHT_SHADE)
+    removeobject (9)
+	release
+}
 
 script MausoleumMourningLady {
         lock
+
+
         if (!flag (mausoleummourningladyitem))
         {
         msgbox (format("Some days, I feel like I can't get out of bed at all... \p Like there's no
@@ -59,6 +67,14 @@ script LittlerootMausoleum_Shuppet {
     msgbox (format("I'm just very cold... Shuppet is trying to keep me warm... \p But Ghost
     Pokémon can't do that... their bodies just go right through yours... \p Ah... if only I had...
     a {COLOR RED}blanket{COLOR DARK_GRAY} or something to cover myself..."))
+
+
+	if (checkitem (ITEM_SCROLL_OF_DARKNESS)  == TRUE)
+    {playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
+    applymovement (2, moves(face_player))     
+    msgbox (format("The Shuppet detects {PLAYER} has something that can help..."))
+    goto (playerhasblanketfromstart)}
+
     setspeaker ([SP_NAME_PLAYER])
     msgbox (format("(Hmm... may have some {COLOR GREEN}extra bedding{COLOR DARK_GRAY} back home)."))
 
@@ -79,7 +95,8 @@ script LittlerootMausoleum_Shuppet {
     {
     playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
     applymovement (2, moves(face_player))     
-    msgbox (format("The Shuppet regards you knowingly and lets you pass..."))
+    msgbox (format("The Shuppet detects {PLAYER} has something that can help..."))
+    playerhasblanketfromstart:
     closemessage
     removeobject (2)
     setflag (hexgirlshuppetmoves)
@@ -285,8 +302,8 @@ releaseall
 script Samanthafollowchat {
     lock
     setspeaker ([SP_NAME_SAMANTHA])
-    applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
-    waitmovement (OBJ_EVENT_ID_FOLLOWER)
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+    waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
     msgbox(format("{PLAYER}... what's the matter?"))
     dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "What's up?", "Where to?", "I need to go", "It's nothing")
         if(var(VAR_RESULT) == 0)
@@ -312,14 +329,14 @@ script Samanthafollowchat {
             
             if (flag (Samanthagotsnacks))//if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GREAT_CRATER))
            {setspeaker ([SP_NAME_SAMANTHA])
-           msgbox(format("L-let's go back... to the Mausoleum... I have all the snacks... hehe..."))}
+           msgbox(format("L-let's go back... to the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY}... I have all the snacks... hehe..."))}
             
         }
 
         if(var(VAR_RESULT) == 2)
         { if (!flag (Samanthagotsnacks))
         {setspeaker ([SP_NAME_SAMANTHA])
-        msgbox(format("O-oh, did something came up? T-that's okay... \p I-I'll go back to the Mausoleum...
+        msgbox(format("O-oh, did something come up? T-that's okay... \p I-I'll go back to the Mausoleum...
         we can do this some other time! \p B-bye... {PLAYER}..."))
         closemessage
         fadescreenswapbuffers (FADE_TO_BLACK)
@@ -334,9 +351,12 @@ script Samanthafollowchat {
         go back to the Mausoleum by myself... \p B-bye... {PLAYER}...")) 
         fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
+        clearflag (Samanthaleavesmausoleum)
+        addobject (1)
+        applymovement (1, moves(face_down))
         fadescreenswapbuffers (FADE_FROM_BLACK)
         setvar (VAR_MAUSOLEUM_HEXGIRL, 4)
-        clearflag (Samanthaleavesmausoleum)
+
         }
         }
 
@@ -348,6 +368,14 @@ script Samanthafollowchat {
     
 script LittlerootMausoleum_ShuppetPost1stquest {
     lock
+
+
+    if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+        playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
+        msgbox (format("Shuppet seems to be saying goodbye to {PLAYER} and Samantha."))
+
+    }
+
     if (var(VAR_MAUSOLEUM_HEXGIRL) == 0){
         playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
         msgbox (format("Shuuu..."))
@@ -436,8 +464,8 @@ script MausoleumFinishedSnackQuest {
 	lock
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
-    applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_up * 1))
-    waitmovement (OBJ_EVENT_ID_FOLLOWER)
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+    waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
     setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("T-thank you for your help... these snacks will last me a while..."))
 

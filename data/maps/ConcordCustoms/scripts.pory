@@ -30,7 +30,7 @@ script ConcordWageSlaveAtPhone {
 	setvar(VAR_0x8007, 4)  //@ shake delay
 	special(ShakeCamera)
 	
-	msgbox(format("THAT FILTHY PIG! What am I supposed to do now!? MY FAMILY DEPENDS ON ME!"))
+	msgbox(format("THAT FILTHY GRUMPIG! What am I supposed to do now!? MY FAMILY DEPENDS ON ME!"))
 	applymovement (2, moves(face_player))
 	msgbox(format("And what do YOU want!? Screw you too!!"))
 	trainerbattle_no_intro(TRAINER_CONCORDWAGESLAVE , ConcordWageSlave_Outro)
@@ -244,7 +244,7 @@ script ConcordCustomsPhone{
 								currently in possession of one of your Pokémon.\p Species... Primeape.
 								\p This Pokémon was taken from you upon termination of your military service.
 								\p This was done because your Primeape met the criteria established by Devon Co's Wildlife 
-								Protocol 57: 'Pokémon for Urgent Safening'.
+								Protocol 57: “Pokémon for Urgent Safening”.
 								\p In short, your Pokémon grew too strong - a likely consequence of Pokémon trained to fight in
 								the Kantonian war.\p Consequently, Devon Co. cannot return it to you until it has been turned into a Safemon.
 								\p You will be notified as soon as this has been done, and a retrieval meeting will be scheduled.
@@ -306,7 +306,7 @@ script ConcordCustomsPhone{
 						
 						if(var(VAR_RESULT) == 4){
 						returnmoney:
-						addmoney (10)
+						addmoney (50)
 						updatemoneybox
 						playse (SE_CLICK)
 						waitse

@@ -294,7 +294,7 @@
 #define canspawnsableyelairboss         0x106
 #define seenshowatinnvisit              0x107 
 #define hotspringguygavescald        0x108
-#define FLAG_RECEIVED_TM_TORMENT             0x109
+#define appliancestoragebarrelitem             0x109
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
@@ -316,12 +316,12 @@
 #define shuppetgivesincense  0x11C
 #define rebelin101mustapproachtoswing            0x11D
 #define movetutoropenboxitem  0x11E
-#define FLAG_MET_DEVON_EMPLOYEE              0x11F
-#define FLAG_MET_RIVAL_RUSTBORO              0x120
-#define FLAG_RECEIVED_SILK_SCARF             0x121
-#define FLAG_NOT_READY_FOR_BATTLE_ROUTE_120  0x122
-#define FLAG_RECEIVED_SS_TICKET              0x123
-#define FLAG_MET_RIVAL_LILYCOVE              0x124
+#define chimechoboxjumped              0x11F
+#define chimechodealtwith              0x120
+#define lost1stfightoldalewarehouseupper             0x121
+#define lost2ndfightoldalewarehouseupper  0x122
+#define grabbedoranatJoels              0x123
+#define movetutorbinitem            0x124
 #define FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE 0x125
 #define FLAG_EXCHANGED_SCANNER               0x126
 #define FLAG_KECLEON_FLED_FORTREE            0x127
@@ -564,9 +564,9 @@
 #define FLAG_HIDDEN_ITEM_OLDALE_FOUNTAIN                     (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_LABYARDTOOLBOX                      (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_OLDALE_HOUSE1YARD                   (FLAG_HIDDEN_ITEMS_START + 0x05)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               (FLAG_HIDDEN_ITEMS_START + 0x07)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS               (FLAG_HIDDEN_ITEMS_START + 0x08)
+#define FLAG_HIDDEN_ITEM_103_BEHINDTUTORHOUSE                (FLAG_HIDDEN_ITEMS_START + 0x06)
+#define FLAG_HIDDEN_ITEM_CRATERRAREBONE1                     (FLAG_HIDDEN_ITEMS_START + 0x07)
+#define FLAG_HIDDEN_ITEM_CRATERRAREBONE2                     (FLAG_HIDDEN_ITEMS_START + 0x08)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD          (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x0A)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x0B)
@@ -1275,8 +1275,8 @@
 #define FLAG_ITEM_WATERFALLLAIRITEM                                           0x4B6 // Unused Flag
 #define FLAG_ITEM_CRATERBOTTOMITEM                                           0x4B7 // Unused Flag
 #define FLAG_ITEM_TUNNELBYMACHINES                                         0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
+#define FLAG_ITEM_MAUSOLEUM                                         0x4B9 // Unused Flag
+#define FLAG_JOELTENT_ITEM                                           0x4BA // Unused Flag
 #define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag

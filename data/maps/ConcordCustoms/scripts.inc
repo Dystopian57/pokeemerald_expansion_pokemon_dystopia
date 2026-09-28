@@ -461,7 +461,7 @@ ConcordCustomsPhone_24:
 # 308 "data/maps/ConcordCustoms/scripts.pory"
 returnmoney:
 # 309 "data/maps/ConcordCustoms/scripts.pory"
-	addmoney 10
+	addmoney 50
 # 310 "data/maps/ConcordCustoms/scripts.pory"
 	updatemoneybox
 # 311 "data/maps/ConcordCustoms/scripts.pory"
@@ -1019,8 +1019,9 @@ ConcordWageSlaveAtPhone_Text_3:
 
 ConcordWageSlaveAtPhone_Text_4:
 # 33 "data/maps/ConcordCustoms/scripts.pory"
-	.string "THAT FILTHY PIG! What am I supposed to\n"
-	.string "do now!? MY FAMILY DEPENDS ON ME!$"
+	.string "THAT FILTHY GRUMPIG! What am I\n"
+	.string "supposed to do now!? MY FAMILY DEPENDS\l"
+	.string "ON ME!$"
 
 ConcordWageSlaveAtPhone_Text_5:
 # 35 "data/maps/ConcordCustoms/scripts.pory"
@@ -1209,8 +1210,8 @@ ConcordCustomsPhone_Text_19:
 	.string "termination of your military service.\p"
 	.string "This was done because your Primeape\n"
 	.string "met the criteria established by Devon\l"
-	.string "Co's Wildlife Protocol 57: 'Pokémon for\l"
-	.string "Urgent Safening'.\p"
+	.string "Co's Wildlife Protocol 57: “Pokémon for\l"
+	.string "Urgent Safening”.\p"
 	.string "In short, your Pokémon grew too strong\n"
 	.string "- a likely consequence of Pokémon\l"
 	.string "trained to fight in the Kantonian war.\p"

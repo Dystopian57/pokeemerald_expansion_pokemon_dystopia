@@ -101,512 +101,541 @@ DayNightAmbientLightTutorHut_11:
 	goto DayNightAmbientLightTutorHut_10
 
 
-MoveTutor103Night::
-# 62 "data/maps/Route103_MoveTutorHut/scripts.pory"
+MoveTutor103Rope::
+# 60 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lock
-# 63 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 64 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	playse SE_M_SNORE
+# 61 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	goto_if_unset movetutorbinitem, MoveTutor103Rope_2
 # 65 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103Night_Text_0
+	msgbox MoveTutor103Rope_Text_1
+MoveTutor103Rope_1:
 # 67 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	release
+	return
+
+MoveTutor103Rope_2:
+# 62 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103Rope_Text_0
+# 63 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	giveitem ITEM_BINDING_BAND
+	goto MoveTutor103Rope_1
+
+
+MoveTutor103Night::
+# 75 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	lock
+# 76 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 77 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	playse SE_M_SNORE
+# 78 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103Night_Text_0
+# 80 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Night_Text_1
-# 68 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 81 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	release
 	return
 
 
 MoveTutor103::
-# 74 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 87 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lock
-# 75 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 88 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 76 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 89 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	applymovement 1, MoveTutor103_Movement_0
-# 78 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 91 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_unset movetutorintro, MoveTutor103_1
-# 233 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 246 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto movetutorchoice
 	return
 
 MoveTutor103_1:
-# 80 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103_Text_0
-# 87 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	setflag movetutorintro
-# 88 "data/maps/Route103_MoveTutorHut/scripts.pory"
-movetutorchoice:
-# 89 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103_Text_1
-# 91 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor103_Text_2, MoveTutor103_Text_3, MoveTutor103_Text_4
 # 93 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103_Text_0
+# 100 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	setflag movetutorintro
+# 101 "data/maps/Route103_MoveTutorHut/scripts.pory"
+movetutorchoice:
+# 102 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103_Text_1
+# 104 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor103_Text_2, MoveTutor103_Text_3, MoveTutor103_Text_4
+# 106 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor103_5
 MoveTutor103_4:
-# 181 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 194 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq MoveTutor103_8
 MoveTutor103_7:
-# 221 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 234 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq MoveTutor103_14
 MoveTutor103_13:
-# 227 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 240 "data/maps/Route103_MoveTutorHut/scripts.pory"
 endtutorscript:
-# 228 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 241 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_18
-# 229 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 242 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	hidemoneybox
-# 230 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 243 "data/maps/Route103_MoveTutorHut/scripts.pory"
 exittutorscript:
-# 231 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 244 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 MoveTutor103_5:
-# 95 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 108 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	checkmoney 100
-# 96 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 109 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MoveTutor103_11
 MoveTutor103_10:
-# 174 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 187 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq MoveTutor103_19
 	goto MoveTutor103_4
 
 MoveTutor103_8:
-# 183 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 196 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	checkmoney 100
-# 184 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 197 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MoveTutor103_17
 MoveTutor103_16:
-# 212 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 225 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq MoveTutor103_24
 	goto MoveTutor103_7
 
 MoveTutor103_11:
-# 98 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 111 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_5
-# 99 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 112 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor103_Text_6, MoveTutor103_Text_7, MoveTutor103_Text_8, MoveTutor103_Text_9, MoveTutor103_Text_4
-# 100 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 113 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor103_22
 MoveTutor103_21:
-# 117 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 130 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq MoveTutor103_30
 MoveTutor103_29:
-# 135 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 148 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq MoveTutor103_35
 MoveTutor103_34:
-# 152 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 165 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq MoveTutor103_38
 MoveTutor103_37:
-# 169 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 182 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq MoveTutor103_40
 	goto MoveTutor103_10
 
 MoveTutor103_14:
-# 223 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 236 "data/maps/Route103_MoveTutorHut/scripts.pory"
 canceltutor:
-# 224 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 237 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_17
-# 225 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 238 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto exittutorscript
 	goto MoveTutor103_13
 
 MoveTutor103_17:
-# 186 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103_Text_13
-# 187 "data/maps/Route103_MoveTutorHut/scripts.pory"
-selectdifferentmonforrelearn:
-# 188 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	special ChooseMonForMoveRelearner
-# 189 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	waitstate
-# 190 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor
-# 191 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	special IsSelectedMonEgg
-# 192 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, CantTeachEgg
-# 193 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	goto_if_eq VAR_0x8005, 0, NoMoveToTeachMon
-# 194 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	special TeachMoveRelearnerMove
-# 195 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	waitstate
-# 196 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	goto_if_eq VAR_0x8004, 0, cancelledmoverelearnforamon
-# 197 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	showmoneybox 0, 0
-# 198 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103_Text_11
 # 199 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	playse SE_SHOP
+	msgbox MoveTutor103_Text_13
 # 200 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	removemoney 100
+selectdifferentmonforrelearn:
 # 201 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	updatemoneybox
+	special ChooseMonForMoveRelearner
+# 202 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	waitstate
 # 203 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	goto endtutorscript
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor
+# 204 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	special IsSelectedMonEgg
 # 205 "data/maps/Route103_MoveTutorHut/scripts.pory"
-cancelledmoverelearnforamon:
+	goto_if_eq VAR_RESULT, TRUE, CantTeachEgg
 # 206 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	msgbox MoveTutor103_Text_14
+	goto_if_eq VAR_0x8005, 0, NoMoveToTeachMon
 # 207 "data/maps/Route103_MoveTutorHut/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor103_Text_15, MoveTutor103_Text_16
+	special TeachMoveRelearnerMove
 # 208 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	waitstate
+# 209 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	goto_if_eq VAR_0x8004, 0, cancelledmoverelearnforamon
+# 210 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	showmoneybox 0, 0
+# 211 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103_Text_11
+# 212 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	playse SE_SHOP
+# 213 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	removemoney 100
+# 214 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	updatemoneybox
+# 216 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	goto endtutorscript
+# 218 "data/maps/Route103_MoveTutorHut/scripts.pory"
+cancelledmoverelearnforamon:
+# 219 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	msgbox MoveTutor103_Text_14
+# 220 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor103_Text_15, MoveTutor103_Text_16
+# 221 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor103_27
 MoveTutor103_26:
-# 209 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 222 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq MoveTutor103_32
 	goto MoveTutor103_16
 
 MoveTutor103_19:
-# 175 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 188 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmoneybox 0, 0
-# 176 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 189 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_12
-# 178 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 191 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	hidemoneybox
 	goto MoveTutor103_4
 
 MoveTutor103_22:
-# 101 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 114 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_10
-# 102 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 115 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	setvar VAR_0x8005, MOVE_SWAGGER
-# 103 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 116 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	special ChooseMonForMoveTutor
-# 104 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 117 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	waitstate
-# 105 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 118 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lock
-# 106 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 119 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, canceltutor
-# 107 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 120 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_RESULT, PARTY_NOTHING_CHOSEN, canceltutor
-# 108 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 121 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmoneybox 0, 0
-# 109 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 122 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_11
-# 110 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 123 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	playse SE_SHOP
-# 111 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 124 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	removemoney 100
-# 112 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 125 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	updatemoneybox
-# 113 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 126 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endtutorscript
 	goto MoveTutor103_21
 
 MoveTutor103_24:
-# 213 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 226 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmoneybox 0, 0
-# 214 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 227 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_12
-# 216 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 229 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	hidemoneybox
 	goto MoveTutor103_7
 
 MoveTutor103_27:
-# 208 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 221 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto selectdifferentmonforrelearn
 	goto MoveTutor103_26
 
 MoveTutor103_30:
-# 118 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 131 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_10
-# 119 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 132 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	setvar VAR_0x8005, MOVE_DOUBLE_EDGE
-# 120 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 133 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	special ChooseMonForMoveTutor
-# 121 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 134 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	waitstate
-# 122 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 135 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, canceltutor
-# 123 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 136 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor
-# 124 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 137 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmoneybox 0, 0
-# 125 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 138 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_11
-# 126 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 139 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	playse SE_SHOP
-# 127 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 140 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	removemoney 100
-# 128 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 141 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	updatemoneybox
-# 129 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 142 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endtutorscript
 	goto MoveTutor103_29
 
 MoveTutor103_32:
-# 209 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 222 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto canceltutor
 	goto MoveTutor103_16
 
 MoveTutor103_35:
-# 136 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 149 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_10
-# 137 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 150 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	setvar VAR_0x8005, MOVE_EXPLOSION
-# 138 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 151 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	special ChooseMonForMoveTutor
-# 139 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 152 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	waitstate
-# 140 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 153 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, canceltutor
-# 141 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 154 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor
-# 142 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 155 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmoneybox 0, 0
-# 143 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 156 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_11
-# 144 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 157 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	playse SE_SHOP
-# 145 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 158 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	removemoney 100
-# 146 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 159 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	updatemoneybox
-# 147 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 160 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endtutorscript
 	goto MoveTutor103_34
 
 MoveTutor103_38:
-# 153 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 166 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_10
-# 154 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 167 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	setvar VAR_0x8005, MOVE_METRONOME
-# 155 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 168 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	special ChooseMonForMoveTutor
-# 156 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 169 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	waitstate
-# 157 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 170 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, canceltutor
-# 158 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 171 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, canceltutor
-# 159 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 172 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmoneybox 0, 0
-# 160 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 173 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103_Text_11
-# 161 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 174 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	playse SE_SHOP
-# 162 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 175 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	removemoney 100
-# 163 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 176 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	updatemoneybox
-# 164 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 177 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endtutorscript
 	goto MoveTutor103_37
 
 MoveTutor103_40:
-# 170 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 183 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto canceltutor
 	goto MoveTutor103_10
 
 
 NoMoveToTeachMon::
-# 238 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 251 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox NoMoveToTeachMon_Text_0
 	return
 
 
 CantTeachEgg::
-# 242 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 255 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox CantTeachEgg_Text_0
-# 244 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 257 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	release
 	return
 
 
 MoveTutor103Sink::
-# 248 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 261 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 249 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 262 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Sink_Text_0
-# 250 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 263 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Bookshelf::
-# 253 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 266 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 254 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 267 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Bookshelf_Text_0
-# 255 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 268 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Scroll::
-# 259 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 272 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 260 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 273 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Scroll_Text_0
-# 261 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 274 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Blanket::
-# 264 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 277 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 265 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 278 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Blanket_Text_0
-# 266 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 279 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Drawer::
-# 270 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 283 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 271 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 284 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Drawer_Text_0
-# 272 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 285 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Wardrobe::
-# 275 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 288 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 276 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 289 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Wardrobe_Text_0
-# 277 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 290 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103BookPile::
-# 280 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 293 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 281 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 294 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103BookPile_Text_0
-# 282 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 295 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103Kotatsu::
-# 285 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 298 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 286 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 299 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103Kotatsu_Text_0
-# 287 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 300 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103OpenBox::
-# 290 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 303 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 291 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 304 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto_if_unset movetutoropenboxitem, MoveTutor103OpenBox_2
-# 295 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 308 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103OpenBox_Text_1
 MoveTutor103OpenBox_1:
-# 296 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 309 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 MoveTutor103OpenBox_2:
-# 292 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 305 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103OpenBox_Text_0
-# 293 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 306 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	giveitem ITEM_TM_HIDDEN_POWER
 	goto MoveTutor103OpenBox_1
 
 
 MoveTutor103SealedBox::
-# 299 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 312 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 300 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 313 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103SealedBox_Text_0
-# 301 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 314 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 MoveTutor103ToolBox::
-# 304 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 317 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lockall
-# 305 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 318 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox MoveTutor103ToolBox_Text_0
-# 306 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 319 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 
 KantonianWarHistoryVol3TutorHut::
-# 310 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 323 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	lock
-# 311 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 324 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox KantonianWarHistoryVol3TutorHut_Text_0
-# 313 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 326 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor103_Text_15, KantonianWarHistoryVol3TutorHut_Text_1
-# 315 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 328 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq KantonianWarHistoryVol3TutorHut_2
 KantonianWarHistoryVol3TutorHut_1:
-# 324 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 337 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq KantonianWarHistoryVol3TutorHut_5
 KantonianWarHistoryVol3TutorHut_4:
-# 327 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 340 "data/maps/Route103_MoveTutorHut/scripts.pory"
 endkantonianwar3:
-# 328 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 341 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	hidemonpic
-# 329 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 342 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	releaseall
 	return
 
 KantonianWarHistoryVol3TutorHut_2:
-# 316 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 329 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	showmonpic SPECIES_PIKACHU_HOENN, 10, 3
-# 317 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 330 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	msgbox KantonianWarHistoryVol3TutorHut_Text_2
-# 323 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 336 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endkantonianwar3
 	goto KantonianWarHistoryVol3TutorHut_1
 
 KantonianWarHistoryVol3TutorHut_5:
-# 325 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 338 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	goto endkantonianwar3
 	goto KantonianWarHistoryVol3TutorHut_4
 
 
-# 76 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 89 "data/maps/Route103_MoveTutorHut/scripts.pory"
 MoveTutor103_Movement_0:
-# 76 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 89 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	face_player
 	step_end
 
-MoveTutor103Night_Text_0:
+MoveTutor103Rope_Text_0:
+# 62 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "For some reason, a knotted piece of\n"
+	.string "rope has been discarded...$"
+
+MoveTutor103Rope_Text_1:
 # 65 "data/maps/Route103_MoveTutorHut/scripts.pory"
+	.string "The trash can is empty.$"
+
+MoveTutor103Night_Text_0:
+# 78 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "ZZZZZZ...$"
 
 MoveTutor103Night_Text_1:
-# 67 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 80 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "He is fast asleep. It would be better to\n"
 	.string "return during daytime.$"
 
 MoveTutor103_Text_0:
-# 80 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 93 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Oh, hello. I don't get many visitors - I'm\n"
 	.string "sorry about the mess.\p"
 	.string "My name is Colton, and I'm a Move Tutor -\n"
@@ -626,162 +655,162 @@ MoveTutor103_Text_0:
 	.string "needs to eat. So...$"
 
 MoveTutor103_Text_1:
-# 89 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 102 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Do any of your Pokémon need teaching?$"
 
 MoveTutor103_Text_2:
-# 91 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 104 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Tutor a move$"
 
 MoveTutor103_Text_3:
-# 91 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 104 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Relearn a move$"
 
 MoveTutor103_Text_4:
-# 91 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 104 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Nevermind$"
 
 MoveTutor103_Text_5:
-# 98 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 111 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "I could teach your Pokémon one of\n"
 	.string "these moves.$"
 
 MoveTutor103_Text_6:
-# 99 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 112 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Swagger$"
 
 MoveTutor103_Text_7:
-# 99 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 112 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Double Edge$"
 
 MoveTutor103_Text_8:
-# 99 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 112 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Explosion$"
 
 MoveTutor103_Text_9:
-# 99 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 112 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Metronome$"
 
 MoveTutor103_Text_10:
-# 101 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 114 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Which of your Pokémon should I teach?$"
 
 MoveTutor103_Text_11:
-# 109 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 122 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Very well. I'll collect your 100¥ now...$"
 
 MoveTutor103_Text_12:
-# 176 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 189 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "I'm sorry... you seem a bit short on the\n"
 	.string "100¥. We'll have to do this later.$"
 
 MoveTutor103_Text_13:
-# 186 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 199 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Which of your Pokémon should I have\n"
 	.string "remember a move?$"
 
 MoveTutor103_Text_14:
-# 206 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 219 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Hm? Would you rather have a different\n"
 	.string "Pokémon relearn a move?$"
 
 MoveTutor103_Text_15:
-# 207 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 220 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Yes$"
 
 MoveTutor103_Text_16:
-# 207 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 220 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Actually, nevermind$"
 
 MoveTutor103_Text_17:
-# 224 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 237 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Changed your mind? Well, I'll be here if\n"
 	.string "you need me.$"
 
 MoveTutor103_Text_18:
-# 228 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 241 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "Come back if you need my skills some\n"
 	.string "other time.$"
 
 NoMoveToTeachMon_Text_0:
-# 238 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 251 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "This Pokémon... I don't think it has\n"
 	.string "forgotten any moves. Ah, to be young\l"
 	.string "again...$"
 
 CantTeachEgg_Text_0:
-# 242 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 255 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "That looks like a healthy egg... come\n"
 	.string "back when it's hatched, and I may have\l"
 	.string "some moves to teach it.$"
 
 MoveTutor103Sink_Text_0:
-# 249 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 262 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's just a regular sink.$"
 
 MoveTutor103Bookshelf_Text_0:
-# 254 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 267 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's full of books about Pokémon\n"
 	.string "learning patterns.$"
 
 MoveTutor103Scroll_Text_0:
-# 260 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 273 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "The scroll's contents are written in\n"
 	.string "braille. Can't read it.$"
 
 MoveTutor103Blanket_Text_0:
-# 265 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 278 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "A large futon blanket.$"
 
 MoveTutor103Drawer_Text_0:
-# 271 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 284 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It looks like a regular drawer. Should\n"
 	.string "leave this alone.$"
 
 MoveTutor103Wardrobe_Text_0:
-# 276 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 289 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's a fitted wardrobe. There's no real\n"
 	.string "reason to open it.$"
 
 MoveTutor103BookPile_Text_0:
-# 281 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 294 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's a pile of books about Pokémon\n"
 	.string "moves.$"
 
 MoveTutor103Kotatsu_Text_0:
-# 286 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 299 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "A cozy kotatsu. It makes one want to\n"
 	.string "stay home.$"
 
 MoveTutor103OpenBox_Text_0:
-# 292 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 305 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "The box's label says “To throw out”. It\n"
 	.string "should be alright to peek...$"
 
 MoveTutor103OpenBox_Text_1:
-# 295 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 308 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "The box is empty.$"
 
 MoveTutor103SealedBox_Text_0:
-# 300 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 313 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "It's a sealed box. Better not to open it.$"
 
 MoveTutor103ToolBox_Text_0:
-# 305 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 318 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "A toolbox full of tools worn with use.$"
 
 KantonianWarHistoryVol3TutorHut_Text_0:
-# 311 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 324 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "The book's cover reads “History of the\n"
 	.string "Kantonian War, Volume 3.”\p"
 	.string "Read it?$"
 
 KantonianWarHistoryVol3TutorHut_Text_1:
-# 313 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 326 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "No$"
 
 KantonianWarHistoryVol3TutorHut_Text_2:
-# 317 "data/maps/Route103_MoveTutorHut/scripts.pory"
+# 330 "data/maps/Route103_MoveTutorHut/scripts.pory"
 	.string "May, 2006: Team Rocket has spent the\n"
 	.string "last decade using Silph Co. as a proxy\l"
 	.string "for their criminal activities, primarily\l"

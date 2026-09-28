@@ -88,6 +88,6 @@ script OldaleTownHouse2BigPainting {
 
 script OldaleTownHouse2SmallPainting {
 	lockall
-    msgbox(format("A river crossing a wide, green plan. Haven't seen one of these in a while."))
+    msgbox(format("A river crossing a wide, green plain. Haven't seen one of these in a while."))
 	releaseall
 }

@@ -586,10 +586,34 @@ JoelTentRadishes::
 
 JoelTentOranBasket::
 # 313 "data/maps/JoelTent/scripts.pory"
-	lockall
+	lock
 # 314 "data/maps/JoelTent/scripts.pory"
-	msgbox JoelTentOranBasket_Text_0
+	goto_if_unset grabbedoranatJoels, JoelTentOranBasket_2
+# 319 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentOranBasket_Text_1
+JoelTentOranBasket_1:
+# 321 "data/maps/JoelTent/scripts.pory"
+	releaseall
+	return
+
+JoelTentOranBasket_2:
 # 315 "data/maps/JoelTent/scripts.pory"
+	msgbox JoelTentOranBasket_Text_0
+# 316 "data/maps/JoelTent/scripts.pory"
+	giveitem ITEM_ORAN_BERRY
+# 317 "data/maps/JoelTent/scripts.pory"
+	setflag grabbedoranatJoels
+	goto JoelTentOranBasket_1
+
+
+JoelTentItem::
+# 325 "data/maps/JoelTent/scripts.pory"
+	lock
+# 326 "data/maps/JoelTent/scripts.pory"
+	finditem ITEM_TM_POUNCE
+# 329 "data/maps/JoelTent/scripts.pory"
+	removeobject 5
+# 330 "data/maps/JoelTent/scripts.pory"
 	releaseall
 	return
 
@@ -872,5 +896,10 @@ JoelTentRadishes_Text_0:
 	.string "A bunch of radishes.$"
 
 JoelTentOranBasket_Text_0:
-# 314 "data/maps/JoelTent/scripts.pory"
+# 315 "data/maps/JoelTent/scripts.pory"
+	.string "A basket full of Oran berries. “Can pick\n"
+	.string "one!” is written on its side, so...$"
+
+JoelTentOranBasket_Text_1:
+# 319 "data/maps/JoelTent/scripts.pory"
 	.string "A basket full of Oran berries.$"

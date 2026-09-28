@@ -321,7 +321,7 @@ release
 
 script Route102Scientistfollowchat {
         lock
-		applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
 
         msgbox(format("Yes? What is it, my young helper?"))
 

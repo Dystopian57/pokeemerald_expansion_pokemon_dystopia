@@ -7,7 +7,7 @@ GreatCraterBottom_MapScripts::
 
 script CraterBottomItem {
 	lock
-    finditem (ITEM_TM_POISON_GAS)
+    finditem (ITEM_TM_HAZE)
     //giveitem (ITEM_SOFT_SAND)
 	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
     removeobject (3)

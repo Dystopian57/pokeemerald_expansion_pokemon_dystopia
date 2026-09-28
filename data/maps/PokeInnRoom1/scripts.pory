@@ -88,10 +88,22 @@ script OldaleInnRoomOldMan {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (1, moves(face_player))
-    msgbox(format("My grandson was injured during the war, but if it wasn't for one of the
-    Littleroot's Heroes, he wouldn't be here at all..."))
 
-    msgbox(format("Hmm... you have an odd resemblance to him."))
+    if (!flag (wheelchairtradequestdone))
+
+    {msgbox(format("My grandson was injured during the war, but if it wasn't for one of the
+    Littleroot Heroes, he wouldn't be here at all..."))
+
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("Hmm... you have an odd resemblance to him."))}
+
+	checkplayergender
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Hmm... you have an odd resemblance to her."))}
+    }
+
+    else {msgbox(format("Thank you for agreeing to the trade. I'm sure Taillow will do right by you."))}
+
+
     releaseall
 }
 
@@ -758,9 +770,9 @@ script CancelTaillowTrade {
         waitmovement (OBJ_EVENT_ID_PLAYER)
 	    gettimeofday
 		if (var(VAR_0x8000) == TIME_NIGHT)
-        {msgbox (format("Aw, I guess grandpa is right... but if you want to trade, come back please!"))}
+        {msgbox (format("Aw, I guess grandpa is right... but if you change your mind again, come back please!"))}
         else
-        {msgbox (format("Aw, I guess grandpa is right... but if you want to trade, come back please!"))}
+        {msgbox (format("Aw, I guess grandma is right... but if you change your mind again, come back please!"))}
 		releaseall
 		}
 
@@ -768,9 +780,15 @@ script IncorrectFightingType {
 		bufferspeciesname (STR_VAR_1, VAR_0x8009)
 		msgbox (format("Hmm... that's not the Pokémon you promised my grandson, is it?\p If you have
         changed your mind... that is well."))
-        applymovement (1, moves(walk_up * 1, face_down))
+         applymovement (1, moves(walk_up * 1, face_down))
         applymovement (10, moves(walk_up * 1, face_down))
         applymovement (2, moves(face_player))
-        msgbox (format("Aw, I guess grandpa is right... but if you change it again, come back please!"))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))
+        waitmovement (OBJ_EVENT_ID_PLAYER)
+	    gettimeofday
+		if (var(VAR_0x8000) == TIME_NIGHT)
+        {msgbox (format("Aw, I guess grandpa is right... but if you change your mind again, come back please!"))}
+        else
+        {msgbox (format("Aw, I guess grandma is right... but if you change your mind again, come back please!"))}
 		releaseall
 		}

@@ -26,8 +26,9 @@ script WaterfallActivist {
 	applymovement (5, moves(face_player))
 	waitmovement (5)
 	msgbox(format("Did you know? The river outside is being contaminated by construction
-	waste.\p Specifically, that of the construction of Road 003 - which is being built over
-	Route 117.\p The underground canals here have been spared so far, but it's only a matter of time.
+	waste.\p Specifically, that of the construction of {COLOR GREEN}Road 003{COLOR DARK_GRAY} - which is being built over
+	Route 117.\p The underground canals here have been spared so far, but it's only a matter of time till waste
+	filters down there too.
 	\p I'm with New Rustboro Activist Group, recording evidence."))
 	applymovement (5, moves(face_up))
 	waitmovement (5)

@@ -421,7 +421,7 @@
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TunnelWeirdMachine"
+      "script": "TunnelDrill"
     },
     {
       "type": "sign",
@@ -429,7 +429,7 @@
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TunnelWeirdMachine"
+      "script": "TunnelDrill"
     },
     {
       "type": "sign",
@@ -437,7 +437,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TunnelWeirdMachine"
+      "script": "TunnelDrill"
     },
     {
       "type": "sign",
@@ -445,7 +445,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TunnelWeirdMachine"
+      "script": "TunnelDrill"
     },
     {
       "type": "sign",
@@ -453,7 +453,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TunnelWeirdMachine"
+      "script": "TunnelDrill"
     }
   ]
 }

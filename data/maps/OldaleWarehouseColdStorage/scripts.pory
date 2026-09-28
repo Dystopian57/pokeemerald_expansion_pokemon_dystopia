@@ -5,7 +5,73 @@ raw `
 mapscripts OldaleWarehouseColdStorage_MapScripts {
     MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
+    MAP_SCRIPT_ON_TRANSITION: RedoChimechoBoxAlert
+    MAP_SCRIPT_ON_LOAD: RedoChimechoBoxAlert}
+
+
+script RedoChimechoBoxAlert {
+	
+	if (flag(chimechoboxjumped) && !flag(chimechodealtwith))
+	{clearflag (chimechoboxjumped)}
+
+}
+
+script OldaleWarehouseColdStorageChimechoBoxAlert {
+
+	if (!flag(chimechoboxjumped))
+	{lock
+	playse (SE_LEDGE)
+	applymovement (4, moves(jump_in_place_down))
+	waitmovement (4)
+	setflag (chimechoboxjumped)
+	release
+	playmoncry(SPECIES_CHIMECHO, CRY_MODE_WEAK)}
+
+
+}
+script OldaleWarehouseColdStorageChimechoBox {
+	lock
+	msgbox(format("The box is shaking slightly... open it?"))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+	playmoncry(SPECIES_CHIMECHO, CRY_MODE_HIGH_PITCH)
+	msgbox(format("A Pokémon came out of the box!"))
+
+
+    setwildbattle (SPECIES_CHIMECHO, 5, ITEM_NONE)
+	dowildbattle
+	specialvar(VAR_RESULT, GetBattleOutcome)
+
+	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+	setflag (chimechodealtwith)
+	goto (endchimechoscript)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_WON){
+	msgbox(format("The Chimecho has hidden in the box again..."))
+	goto (endchimechoscript)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+	msgbox(format("The Chimecho has hidden in the box again..."))
+	goto (endchimechoscript)
+
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+	msgbox(format("The Chimecho has hidden in the box again..."))
+	goto (endchimechoscript)
+	}
+
+	}
+
+	if (var(VAR_RESULT) == 1) {
+	goto (endchimechoscript)
+	}
+
+
+	endchimechoscript:
+	release
+}
 
 
 
@@ -89,3 +155,7 @@ script OldaleWarehouseColdStorageShardStock {
 	msgbox(format("There's various gems inside. Many look like beautiful ice shards."))
 	release
 }
+
+
+
+

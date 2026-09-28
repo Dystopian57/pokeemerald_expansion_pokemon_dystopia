@@ -1570,9 +1570,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_FOOT,
             sAnimTable_Following
         )
-        //.levelUpLearnset = sVeriwoodoLevelUpLearnset,
-        //.teachableLearnset = sVeriwoodoTeachableLearnset,
-        //.eggMoveLearnset = sVeriwoodoEggMoveLearnset,
+        .levelUpLearnset = sVeriwoodoLevelUpLearnset,
+        .teachableLearnset = sVeriwoodoTeachableLearnset,
+        .eggMoveLearnset = sVeriwoodoEggMoveLearnset,
     },
 
      [SPECIES_NIDORAN_I] =
@@ -1955,8 +1955,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sKangaskidLevelUpLearnset,
         .teachableLearnset = sKangaskidTeachableLearnset,
         .eggMoveLearnset = sKangaskidEggMoveLearnset,
-        .formSpeciesIdTable = sKangaskidFormSpeciesIdTable,
-        .formChangeTable = sKangaskhanFormChangeTable,
     },
 
      [SPECIES_TAMARAKKU] =

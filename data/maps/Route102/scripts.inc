@@ -593,7 +593,7 @@ Route102Scientistfollowchat::
 # 323 "data/maps/Route102/scripts.pory"
 	lock
 # 324 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Route102Weathermon_Movement_0
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102Weathermon_Movement_0
 # 326 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_0
 # 328 "data/maps/Route102/scripts.pory"

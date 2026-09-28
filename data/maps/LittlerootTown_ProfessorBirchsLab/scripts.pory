@@ -1248,6 +1248,7 @@ script WithSamanthadontgothere {
 	removefieldmugshot
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(emote_exclamation_mark))
 	playse (SE_PIN)
+	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("Oh, really? Can I come see them?"))
 
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
@@ -1256,6 +1257,7 @@ script WithSamanthadontgothere {
 
 	setspeaker (NULL)
 	removefieldmugshot
+	setspeaker ([SP_NAME_SAMANTHA])
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_fast_left))
 	msgbox (format("O-oh... I'm sorry..."))
 
@@ -1915,7 +1917,7 @@ script LittlerootTown_Eventscript_AideeGotoback {
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
-	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
 	msgbox (format("You leave now, you don't get your reward, {PLAYER}!
 	\p Come on, it's only going to take a minute or two!\pLet's go to the basement, through
 	the tunnel next to the Professor's desk."))
@@ -2039,9 +2041,9 @@ else{
 	
 	}}
     closemessage
+	removefieldmugshot
 	applymovement (4, moves(walk_in_place_up))
 	waitmovement
-	removefieldmugshot
     releaseall
     end
 }
@@ -2293,6 +2295,12 @@ script BalsamDontCheckMyPC {
 	applymovement (4, moves(walk_in_place_up))
 	waitmovement
 	releaseall	}
+
+script BalsamSecondMonitor {
+lock
+msgbox (format("It's impossible to see the computer's screen from here."))
+releaseall
+}
 
 script LabBox {
 lock

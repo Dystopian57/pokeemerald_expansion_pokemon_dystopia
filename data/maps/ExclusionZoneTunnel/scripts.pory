@@ -51,7 +51,7 @@ script TunnelSeismeter {
 
 script TunnelWeirdMachine {
     lock
-    msgbox(format("No idea what this does. Better not to touch it"))
+    msgbox(format("No idea what this does. Better not to touch it."))
     release 
 }
 
@@ -66,7 +66,7 @@ script TunnelLoner {
     applymovement (19, moves(face_player))
     msgbox(format("The water from this pool comes from the sea, so it's not warm like the one in the
     hot springs. It's way chiller. \p Why am I here, then? To be in peace, alone with my thoughts."))
-    applymovement (19, moves(face_left))
+    applymovement (19, moves(walk_in_place_left))
     waitmovement
     release 
 }

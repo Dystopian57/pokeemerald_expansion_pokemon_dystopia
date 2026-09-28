@@ -663,7 +663,7 @@ OldaleWarehouseCarRebel_Text_6:
 
 WarehouseRebel1_Intro::
 # 20 "data/maps/OldaleWarehouse/scripts.pory"
-	.string "'The system was not designed for\nyou to win...'\pBah, that's what losers say!$"
+	.string "“The system was not designed for\nyou to win...”\pThen we'll change the system!$"
 
 WarehouseRebel1_Outro::
 # 23 "data/maps/OldaleWarehouse/scripts.pory"

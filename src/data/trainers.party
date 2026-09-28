@@ -9327,7 +9327,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Clefairy @ Shalour Sable
-Level: 4
+Level: 5
 Ability: Cute Charm
 Nature: Quirky
 - Draining Kiss
@@ -9336,7 +9336,7 @@ Nature: Quirky
 - Sing
 
 Cubone @ Thick Club
-Level: 4
+Level: 5
 Ability: Rock Head
 Nature: Quirky
 - Bonemerang
@@ -9368,7 +9368,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Sableye @ Wise Glasses
-Level: 4
+Level: 5
 Ability: Prankster
 Nature: Quirky
 - Will-o-Wisp
@@ -9377,13 +9377,12 @@ Nature: Quirky
 - Power Gem
 
 Geoslug
-Level: 4
+Level: 5
 Ability: Thermal Exchange
 Nature: Quirky
-- Tar Shot
 - Scorching Sands
 - Harden
-- Sand Attack
+- Shore Up
 
 === TRAINER_CONSPIRACY_GREATCRATER_2 ===
 Name: WYATT
@@ -9409,16 +9408,16 @@ Class: Reporters
 Pic: reportersbattle
 Gender: Male
 Music: Interviewer
-Items: Remedy / Heal Powder
+Items: Heal Powder
 Double Battle: Yes
 AI: Basic Trainer
 
-Verdoom @ Zoom Lens
+Verdoom @ Magnet
 Level: 4
 Ability: Magnet Pull
 Nature: Quirky
 - Reflect
-- Light Screen
+- Tri-Attack
 - Freezing Glare
 - Flash Cannon
 
@@ -9428,7 +9427,7 @@ Ability: Intimidate
 Nature: Quirky
 - Thunder Fang
 - Swagger
-- Substitute
+- Fake Tears
 - Bite
 
 === TRAINER_HERMIT_CRATER ===
@@ -9437,6 +9436,7 @@ Class: HermitM
 Pic: hermitmbattle
 Gender: Male
 Music: Suspicious
+Items: Tea
 Double Battle: No
 AI: Smart Trainer
 
@@ -9506,7 +9506,7 @@ Double Battle: No
 AI: Smart Trainer
 
 Geodude @ Soft Sand
-Level: 5
+Level: 6
 Ability: Sturdy
 Nature: Quirky
 - Brick Break
@@ -9516,7 +9516,7 @@ Nature: Quirky
 
 
 Seedot @ Loaded Dice
-Level: 5
+Level: 6
 Ability: Early Bird
 Nature: Quirky
 - Payback
@@ -9556,7 +9556,7 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Corphish @ Berry Juice
-Level: 5
+Level: 6
 Ability: Adaptability
 Nature: Quirky
 - Double Hit
@@ -9565,12 +9565,12 @@ Nature: Quirky
 - X-Scissor
 
 Carvanha
-Level: 5
+Level: 6
 Ability: Rough Skin
 Nature: Quirky
 - Aqua Jet
 - Bite
-- Swift
+- Poison Fang
 - Focus Energy
 
 /* ITEM_LOVE_SWEET for Slowpoke Tail*/
@@ -9581,12 +9581,20 @@ Class: Touristm
 Pic: touristmbattle
 Gender: Male
 Music: Rich
-Items: Fresh Water
 Double Battle: No
 AI: Basic Trainer
 
-Poliwag
-Level: 5
+Magnemite @ Magnet
+Level: 6
+Ability: Analytic
+Nature: Quirky
+- Screech
+- Thunder Wave
+- Iron Head
+- Thundershock
+
+Poliwag @ Fresh Water
+Level: 6
 Ability: Swift Swim
 Nature: Quirky
 - Hypnosis
@@ -9594,14 +9602,6 @@ Nature: Quirky
 - Whirlpool
 - Low Kick
 
-Magnemite @ Magnet
-Level: 5
-Ability: Analytic
-Nature: Quirky
-- Supersonic
-- Thunder Wave
-- Iron Head
-- Thundershock
 
 === TRAINER_DEVONGUARD_103 ===
 Name: TIMMY
@@ -9614,7 +9614,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Helipip @ Sharp Beak
-Level: 5
+Level: 6
 Ability: Sharpness
 Nature: Quirky
 - Aerial Ace
@@ -9623,7 +9623,7 @@ Nature: Quirky
 - Shift Gear
 
 Poochain @ Binding Band
-Level: 5
+Level: 6
 Ability: Intimidate
 Nature: Quirky
 - Wrap
@@ -9685,21 +9685,21 @@ Class: Wageslavem
 Pic: wageslavembattle
 Gender: Male
 Music: Intense
-Items: Heal Powder
+Items: Pewter Crunchies
 Double Battle: No
 AI: Check Bad Move
 
 Loadtad @ Remedy
-Level: 5
-Ability: Inner Focus
+Level: 6
+Ability: Aftermath
 Nature: Quirky
 - Present
+- Stomp
+- Seismic Toss
 - Bulldoze
-- Stockpile
-- Spit Up
 
-Zigzagoon @ Silk Scarf
-Level: 5
+Zigzagoon @ Heal Powder
+Level: 6
 Ability: Quick Feet
 Nature: Quirky
 - Pin Missile
@@ -9714,12 +9714,12 @@ Class: Hazarddiverm
 Pic: hazarddivermbattle
 Gender: Male
 Music: Diver
-Items: Potion
+Items: Energy Powder
 Double Battle: No
 AI: Basic Trainer
 
-Shellder 
-Level: 6
+Shellder @ Nevermeltice
+Level: 7
 Ability: Skill Link
 Nature: Quirky
 - Chilling Water
@@ -9728,7 +9728,7 @@ Nature: Quirky
 - Shell Smash
 
 Wooper @ Luminous Moss
-Level: 6
+Level: 7
 Ability: Water Absorb
 Nature: Quirky
 - Aqua Tail
@@ -9742,12 +9742,12 @@ Class: Hazarddiverm
 Pic: hazarddivermbattle
 Gender: Male
 Music: Diver
-Items: Potion
+Items: Energy Powder
 Double Battle: No
 AI: Basic Trainer
 
-Shellder 
-Level: 6
+Shellder @ Nevermeltice
+Level: 7
 Ability: Skill Link
 Nature: Quirky
 - Chilling Water
@@ -9756,7 +9756,7 @@ Nature: Quirky
 - Shell Smash
 
 Wooper @ Luminous Moss
-Level: 6
+Level: 7
 Ability: Water Absorb
 Nature: Quirky
 - Aqua Tail
@@ -9786,7 +9786,7 @@ Class: Mercenaryf
 Pic: mercenaryfbattle
 Gender: Female
 Music: Mercenary
-Items: Energy Powder
+Items: Super Potion
 Double Battle: No
 AI: Smart Trainer
 
@@ -9799,7 +9799,7 @@ Nature: Quirky
 - Charm
 - Sing
 
-Numel @ Assault Vest
+Numel @ Energy Powder
 Level: 6
 Ability: Simple
 Nature: Quirky
@@ -9828,7 +9828,7 @@ Nature: Quirky
 - Charm
 - Sing
 
-Numel @ Assault Vest
+Numel @ Energy Powder
 Level: 6
 Ability: Simple
 Nature: Quirky
@@ -9862,21 +9862,22 @@ Class: HermitM
 Pic: hermitmbattle
 Gender: Male
 Music: Suspicious
+Items: Tea
 Double Battle: No
 AI: Smart Trainer
 
-Zubat
+Poliwag @ Sitrus Berry
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Infiltrator
-Nature: Adamant
-- Wing Attack
-- Quick Attack
-- Supersonic
-- Poison Fang
+Ability: Swift Swim
+Nature: Quirky
+- Rain Dance
+- Waterfall
+- Endeavor
+- Psychic
 
 
-Barboach
+Barboach @ Lava Cookie
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Hydration
@@ -9886,7 +9887,7 @@ Nature: Adamant
 - Mud-Slap
 - Flail
 
-Chinchou @ Tea
+Chinchou
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Volt Absorb
@@ -9933,10 +9934,22 @@ Double Battle: No
 AI: Basic Trainer
 
 Zubat
-Level: 5
+Level: 8
+Ability: Infiltrator
+Nature: Quirky
+- Wing Attack
+- Quick Attack
+- Supersonic
+- Poison Fang
 
-Murkrow
-Level: 5
+Murkrow @ Pewter Crunchies
+Level: 8
+Ability: Prankster
+Nature: Quirky
+- Wing Attack
+- Confuse Ray
+- Foul Play
+- Torment
 
 
 === TRAINER_REBELGRUNT_OLDALEWAREHOUSE_1 ===
@@ -9949,10 +9962,21 @@ Double Battle: No
 AI: Basic Trainer
 
 Ninkaburi
-Level: 7
+Level: 8
+Ability: Stakeout
+Nature: Quirky
+- First Impression
+- Bug Bite
+- Infestation
+- U-Turn
 
-Yanma
-Level: 7
+Yanma @ Soda Pop
+Level: 8
+Ability: Speed Boost
+Nature: Quirky
+- Screech
+- Lunge
+- Leech Life
 
 
 === TRAINER_REBELGRUNT_OLDALEWAREHOUSE_2 ===
@@ -9964,11 +9988,21 @@ Music: Rebel
 Double Battle: No
 AI: Basic Trainer
 
-Mudder
-Level: 7
-
-Wooper
+Wooper @ Berry Juice
 Level: 8
+Ability: Unaware
+Nature: Quirky
+- Chilling Water
+- Slam
+- Yawn
+
+Mudder
+Level: 8
+Ability: Earth Eater
+Nature: Quirky
+- Mud Shot
+- Pound
+- Shore Up
 
 
 === TRAINER_SCAVENGER_OLDALEWAREHOUSE_1 ===
@@ -9977,14 +10011,27 @@ Class: Scavengerm
 Pic: Scavengermbattle
 Gender: Male
 Music: Intense
+Items: Energy Powder
 Double Battle: No
 AI: Basic Trainer
 
 Shiitako
-Level: 7
+Level: 8
+Ability: Fluffy
+Nature: Quirky
+- Brine
+- Water Spout
+- Trailblaze
+- Tearful Look
 
-Sandshrew
-Level: 7
+Sandshrew @ Big Root
+Level: 8
+Ability: Sand Veil
+Nature: Quirky
+- Super Fang
+- Leech Life
+- Metal Claw
+- Dig
 
 === TRAINER_SCAVENGER_OLDALEWAREHOUSE_2 ===
 Name: CATHERINE
@@ -9992,14 +10039,27 @@ Class: Scavengerf
 Pic: Scavengerfbattle
 Gender: Female
 Music: Intense
+Items: Energy Powder
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Loadtad @ ITEM_ENERGY_POWDER
-Level: 7
-
-Fooming
+Loadtad @ Parcel
 Level: 8
+Ability: Aftermath
+Nature: Quirky
+- Fling
+- Swallow
+- Stockpile
+- Spit Up
+
+Fooming @ Shell Bell
+Level: 8
+Ability: Steam Engine
+Nature: Quirky
+- Jet Punch
+- Scald
+- Fire Spin
+- Bounce
 
 
 === TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3 ===
@@ -10011,8 +10071,8 @@ Music: Rebel
 Double Battle: No
 AI: Basic Trainer
 
-Rolloon @ Choice Specs
-Level: 8
+Rolloon @ Choice Band
+Level: 9
 Ability: Aftermath
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
@@ -10021,8 +10081,13 @@ Nature: Timid
 - Self-destruct
 
 Cheerorb
-Level: 8
-
+Level: 9
+Ability: Hospitality
+Nature: Quirky
+- Ally Switch
+- Sonic Boom
+- Play Rough
+- Thunder Wave
 
 === TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4 ===
 Name: JANI
@@ -10031,16 +10096,23 @@ Pic: rebelgruntfbattle
 Gender: Female
 Music: Rebel
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Seedot
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ball: ITEM_PARK_BALL
+Seedot @ Berry Juice
+Level: 9
+Ability: Early Bird
+Nature: Quirky
+- Headbutt
+- Seed Bomb
 
 Gastly
-Level: 8
+Level: 9
+Ability: Levitate
+Nature: Quirky
+- Night Shade
+- Curse
+- Destiny Bond
+- Will-O-Wisp
 
 
 === TRAINER_REBELADMIN_OLDALEWAREHOUSE ===
@@ -10052,14 +10124,33 @@ Music: Rebel
 Double Battle: No
 AI: Basic Trainer
 
-Manchine
-Level: 9
-
-Larvitar
-Level: 9
-
-Furmeister (Swinub)
+Larvitar @ Razor Fang
 Level: 10
+Ability: Guts
+Nature: Quirky
+- Bite
+- Rock Throw
+- Double Edge
+- Stealth Rock
+
+Manchine @ Punching Glove
+Level: 10
+Ability: Neuroforce
+Nature: Quirky
+- Thunder Punch
+- Bullet Punch
+- Karate Chop
+- Autotomize
+
+Furmeister (Swinub) @ Muscle Band
+Level: 10
+Ability: Thick Fat
+Nature: Quirky
+- Ice Fang
+- Fissure
+- Stomping Tantrum
+- Flail
+
 
 === TRAINER_OLDALEDEVONGRUNT_M ===
 Name: JERRY
@@ -10067,17 +10158,18 @@ Class: Devongruntm
 Pic: devongruntmbattle
 Gender: Male
 Music: Intense
+Items: Revival Herb
 Double Battle: No
 AI: Check Bad Move
 
 Manchine @ Lustrous Orb
 Level: 10
-Ability: Neuroforce
+Ability: Gorilla Tactics
 Nature: Quirky
-- Bullet Punch
+- Crush Grip
 - Counter
 - Karate Chop
-- Thunder Punch
+- Blaze Kick
 
 Poochain @ Heal Powder
 Level: 10
@@ -10095,11 +10187,11 @@ Class: Devongruntf
 Pic: devongruntfbattle
 Gender: Female
 Music: Intense
-Items: Super Potion / Revival Herb
+Items: X Attack
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 
-Helipip @ Loaded Dice
+Helipip
 Level: 10
 Ability: Aerilate
 Nature: Quirky
@@ -10114,7 +10206,7 @@ Ability: Aerilate
 Nature: Quirky
 - Volt Switch
 - Flash Cannon
-- Freezing Glare
+- Spotlight
 - Autotomize
 
 

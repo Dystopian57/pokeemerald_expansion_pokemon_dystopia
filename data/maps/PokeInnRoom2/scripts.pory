@@ -166,7 +166,7 @@ script DevonInnSink {
 script DevonInnFreezer {
 	lock
 	if (!flag (claimedinnfreedrink))
-	{msgbox(format("There's a single drink in the freezer, behind a huge 'FOR FREE' note..."))
+	{msgbox(format("There's a single drink in the freezer, behind a huge “FOR FREE” note..."))
 		random (3)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 

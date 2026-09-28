@@ -206,13 +206,13 @@ script OldaleVendingMachine {
     lock
     msgbox(format("It's a vending machine."))
     showmoneybox (18, 0)
-    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 50¥", "Tea - 70¥", "Lava Cookie - 40¥", "Leave")
+    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fresh Water - 175¥", "Tea - 100¥", "Lava Cookie - 200¥", "Leave")
     
             //Fresh Water
             if(var(VAR_RESULT) == 0){
-            		checkmoney (50)
+            		checkmoney (175)
 				if (var(VAR_RESULT) == TRUE) {
-					removemoney (50)
+					removemoney (175)
                     updatemoneybox
 					playse (SE_SHOP)
 					waitse
@@ -264,9 +264,9 @@ script OldaleVendingMachine {
 
             //Tea
             if(var(VAR_RESULT) == 1){
-            		checkmoney (70)
+            		checkmoney (100)
 				if (var(VAR_RESULT) == TRUE) {
-					removemoney (70)
+					removemoney (100)
                     updatemoneybox
 					playse (SE_SHOP)
 					waitse
@@ -318,9 +318,9 @@ script OldaleVendingMachine {
 
             //Lavacookie
             if(var(VAR_RESULT) == 2){
-            		checkmoney (40)
+            		checkmoney (200)
 				if (var(VAR_RESULT) == TRUE) {
-					removemoney (40)
+					removemoney (200)
                     updatemoneybox
 					playse (SE_SHOP)
 					waitse
@@ -524,15 +524,15 @@ script DLCTeacherOutside {
     lock
     applymovement (34, moves(face_player))
 	if(var(VAR_OLDALE_PHASE) < 2)
-    {msgbox(format("I'm really dying for a smoke here... \p If only those loser Rebels left the Warehouse,
-    Devon Co. would start sending supplies again."))}
+    {msgbox(format("I'm really dying for a smoke here... \p If only those loser {COLOR RED}Rebels{COLOR DARK_GRAY}
+    left the Warehouse, Devon Co. would start sending supplies again."))}
 
 	if(var(VAR_OLDALE_PHASE) >= 2)
     {removeobject (35)
     playse (SE_TRUCK_UNLOAD)
     msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
-    \p Ah, sorry for blowing the smoke on your face. Haven't smoked in days... \p With the Rebels
-    gone, the mart is getting stocked again.\p Was about time!
+    \p Ah, sorry for blowing the smoke on your face. Haven't smoked in days... \p With the
+    {COLOR RED}Rebels{COLOR DARK_GRAY} gone, the mart is getting stocked again.\p Was about time!
     {COLOR LIGHT_GRAY}{SHADOW WHITE}Fuu...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
     releaseall  
     }
@@ -726,7 +726,7 @@ script OldaleSharpyCameliaOutDLCCutscene {
                     removefieldmugshot
                     setspeaker ([SP_NAME_SHARPY])
                     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
-                    msgbox(format("A-anyway, come to Route 103! I'll be waiting!"))
+                    msgbox(format("A-anyway, come to {COLOR GREEN}Route 103{COLOR DARK_GRAY}! I'll be waiting!"))
                     closemessage
                     removefieldmugshot
 
@@ -764,7 +764,10 @@ script OldaleSharpyCameliaOutDLCCutscene {
             removefieldmugshot
 	        setspeaker ([SP_NAME_SHARPY])
             createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-            msgbox(format("Come join me in Route 103. I'll be waiting!"))
+            msgbox(format("Come join me in {COLOR GREEN}Route 103{COLOR DARK_GRAY}. I'll be waiting!"))
+            closemessage
+            removefieldmugshot
+            
             
 
     playse (SE_FLEE)
@@ -1489,7 +1492,11 @@ script OldaleGrassRebel {
 
 script OldaleCarBehind{
         lock
-        applymovement (25, moves(emote_exclamation_mark, face_down))
+        setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+        playbgm (MUS_MONSTERHOUSE, TRUE)
+        applymovement (24, moves(emote_exclamation_mark, face_down))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+        waitmovement (OBJ_EVENT_ID_PLAYER)
         msgbox(format("Hey, you think you're smart or something? Trying to sneak up on me!? \p Well, you asked
         for it - GO, ELECTRIKE!"))
         playse (SE_BALL_THROW)
@@ -1501,15 +1508,15 @@ script OldaleCarBehind{
         playbgm (MUS_MONSTERHOUSE, TRUE)
         msgbox(format("Wait right here, you hear me!? I'll go to the Devon Center real quick!"))
         playse (SE_LEDGE)
-        applymovement (25, moves(jump_2_up))
-        waitmovement (25)
+        applymovement (24, moves(jump_2_up))
+        waitmovement (24)
         playse (SE_FLEE)
-        applymovement (25, moves(walk_fast_left * 7))
-        waitmovement (25)
+        applymovement (24, moves(walk_fast_left * 9))
+        waitmovement (24)
         fadeoutbgm (1)
         playbgm (MUS_RG_LAVENDER, TRUE)
         setvar(VAR_OLDALECARREBEL, 1)
-        removeobject (25)
+        removeobject (24)
         setflag (carrebelleavescar)
         clearflag (carrebelatDC)
         release
@@ -1575,7 +1582,7 @@ script SamanthaCall1 {
     
    else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
     of your time...!"))}
-    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall}
 
@@ -1638,7 +1645,7 @@ script SamanthaDontgotoWarehouse {
         }
 
     else {
-        msgbox (format("I-I see some scary Rebels over there... m-maybe we shouldn't get near..."))
+        msgbox (format("I-I see some scary {COLOR RED}Rebels{COLOR DARK_GRAY} over there... m-maybe we shouldn't get near..."))
     } 
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
     setspeaker ([SP_NAME_SAMANTHA])
@@ -1714,22 +1721,49 @@ script SamanthaShake{
 script GiveSafemonParty1 {
     callnative (ZeroPlayerPartyMons)
     msgbox (format("Pick a team"))
-	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "1st Party", "2nd Party")
+	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "1st Party", "2nd Party", "3rd Party", "4th Party", "5th Party")
         if(var(VAR_RESULT) == 0){
-    givemon (SPECIES_BULBASYNTH, 10, ITEM_REMEDY)
-    givemon (SPECIES_SMOTHQUIL, 10, ITEM_HEAL_POWDER)
-    givemon (SPECIES_WARABBIT, 10, ITEM_FULL_HEAL)
-    givemon (SPECIES_PIKACHU_SAFE, 10, ITEM_AERODACTYLITE)
-    givemon (SPECIES_MIMIYURUI, 10, ITEM_SUPERB_REMEDY)
-    givemon (SPECIES_NINKABURI, 10, ITEM_SHALOUR_SABLE)}
+    givemon (SPECIES_BULBASYNTH, 7, ITEM_REMEDY)
+    givemon (SPECIES_SMOTHQUIL, 7, ITEM_HEAL_POWDER)
+    givemon (SPECIES_WARABBIT, 7, ITEM_FULL_HEAL)
+    givemon (SPECIES_PIKACHU_SAFE, 7, ITEM_AERODACTYLITE)
+    givemon (SPECIES_MIMIYURUI, 7, ITEM_SUPERB_REMEDY)
+    givemon (SPECIES_NINKABURI, 7, ITEM_SHALOUR_SABLE)}
 
         if(var(VAR_RESULT) == 1){
-    givemon (SPECIES_SHIITAKO, 10, ITEM_REMEDY)
-    givemon (SPECIES_POOCHAIN, 10, ITEM_HEAL_POWDER)
-    givemon (SPECIES_GEOSLUG, 10, ITEM_FULL_HEAL)
-    givemon (SPECIES_FOOMING, 10, ITEM_AERODACTYLITE)
-    givemon (SPECIES_ROTOM_MONITOR, 10, ITEM_SUPERB_REMEDY)
-    givemon (SPECIES_MANCHINE, 10, ITEM_SHALOUR_SABLE)     
+    givemon (SPECIES_SHIITAKO, 7, ITEM_REMEDY)
+    givemon (SPECIES_POOCHAIN, 7, ITEM_HEAL_POWDER)
+    givemon (SPECIES_GEOSLUG, 7, ITEM_FULL_HEAL)
+    givemon (SPECIES_FOOMING, 7, ITEM_AERODACTYLITE)
+    givemon (SPECIES_ROTOM_MONITOR, 7, ITEM_SUPERB_REMEDY)
+    givemon (SPECIES_MANCHINE, 7, ITEM_SHALOUR_SABLE)     
+        }
+
+        if(var(VAR_RESULT) == 2){
+    givemon (SPECIES_VERDOOM, 7, ITEM_REMEDY)
+    givemon (SPECIES_LOADTAD, 7, ITEM_HEAL_POWDER)
+    givemon (SPECIES_HELIPIP, 7, ITEM_FULL_HEAL)
+    givemon (SPECIES_CHEERORB, 7, ITEM_AERODACTYLITE)
+    givemon (SPECIES_MUDDER, 7, ITEM_SUPERB_REMEDY)
+    givemon (SPECIES_TUMBELA, 7, ITEM_SHALOUR_SABLE)     
+        }
+
+        if(var(VAR_RESULT) == 3){
+    givemon (SPECIES_VERIWOODO, 7, ITEM_REMEDY)
+    givemon (SPECIES_WARTZ, 7, ITEM_HEAL_POWDER)
+    givemon (SPECIES_GUMMIN, 7, ITEM_FULL_HEAL)
+    givemon (SPECIES_KAMOKEN, 7, ITEM_AERODACTYLITE)
+    givemon (SPECIES_GACHAPOD, 7, ITEM_SUPERB_REMEDY)
+    givemon (SPECIES_TAMARAKKU, 7, ITEM_SHALOUR_SABLE)     
+        }
+
+        if(var(VAR_RESULT) == 4){
+    givemon (SPECIES_TRASHEAL, 7, ITEM_REMEDY)
+    givemon (SPECIES_DELIBIN, 7, ITEM_SHALOUR_SABLE) 
+    givemon (SPECIES_ROLLOON, 7, ITEM_HEAL_POWDER)
+    givemon (SPECIES_NIDORAN_I, 7, ITEM_FULL_HEAL)
+    givemon (SPECIES_DOUNO, 7, ITEM_AERODACTYLITE)
+    givemon (SPECIES_KANGASKID, 7, ITEM_SUPERB_REMEDY)
         }
 
 releaseall

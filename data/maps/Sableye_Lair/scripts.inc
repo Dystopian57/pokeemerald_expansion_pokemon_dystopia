@@ -4,1317 +4,1661 @@
 Sableye_Lair_MapScripts::
 # 9 "data/maps/Sableye_Lair/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, SableyeLairBossCheck
+# 10 "data/maps/Sableye_Lair/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, DayNightMusicExTunnel
+# 11 "data/maps/Sableye_Lair/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, DayNightMusicExTunnel
 	.byte 0
 
 
 SableyeLairBossCheck::
-# 14 "data/maps/Sableye_Lair/scripts.pory"
+# 20 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_SABLEYELAIRANGER, 3
 	goto_if_gt SableyeLairBossCheck_2
-# 29 "data/maps/Sableye_Lair/scripts.pory"
+# 35 "data/maps/Sableye_Lair/scripts.pory"
 	release
 SableyeLairBossCheck_1:
-# 30 "data/maps/Sableye_Lair/scripts.pory"
+# 36 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
 SableyeLairBossCheck_2:
-# 15 "data/maps/Sableye_Lair/scripts.pory"
-	setflag canspawnsableyelairboss
-# 16 "data/maps/Sableye_Lair/scripts.pory"
-	setvar VAR_SABLEYELAIRANGER, 4
-# 17 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 1
-# 18 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 2
-# 19 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 3
-# 20 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 4
 # 21 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye1gone
+	setflag canspawnsableyelairboss
 # 22 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye2gone
+	setvar VAR_SABLEYELAIRANGER, 4
 # 23 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye3gone
+	removeobject 1
 # 24 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye4gone
+	removeobject 2
+# 25 "data/maps/Sableye_Lair/scripts.pory"
+	removeobject 3
 # 26 "data/maps/Sableye_Lair/scripts.pory"
+	removeobject 4
+# 27 "data/maps/Sableye_Lair/scripts.pory"
+	setflag sableye1gone
+# 28 "data/maps/Sableye_Lair/scripts.pory"
+	setflag sableye2gone
+# 29 "data/maps/Sableye_Lair/scripts.pory"
+	setflag sableye3gone
+# 30 "data/maps/Sableye_Lair/scripts.pory"
+	setflag sableye4gone
+# 32 "data/maps/Sableye_Lair/scripts.pory"
 	playbgm MUS_NONE, TRUE
 	goto SableyeLairBossCheck_1
 
 
 SableyeLairBossSequence::
-# 37 "data/maps/Sableye_Lair/scripts.pory"
-	goto_if_unset canspawnsableyelairboss, SableyeLairBossSequence_2
-# 41 "data/maps/Sableye_Lair/scripts.pory"
-	lock
-# 42 "data/maps/Sableye_Lair/scripts.pory"
-	hidefollower
 # 43 "data/maps/Sableye_Lair/scripts.pory"
-	goto_if_unset spawnsableyelairboss, SableyeLairBossSequence_5
+	goto_if_unset canspawnsableyelairboss, SableyeLairBossSequence_2
+# 47 "data/maps/Sableye_Lair/scripts.pory"
+	lock
+# 48 "data/maps/Sableye_Lair/scripts.pory"
+	hidefollower
 # 49 "data/maps/Sableye_Lair/scripts.pory"
-	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
-# 50 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_0
-# 51 "data/maps/Sableye_Lair/scripts.pory"
-	playbgm MUS_MONSTERHOUSE, TRUE
-# 53 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag sableye1gone
-# 54 "data/maps/Sableye_Lair/scripts.pory"
-	addobject 1
+	goto_if_unset spawnsableyelairboss, SableyeLairBossSequence_5
 # 55 "data/maps/Sableye_Lair/scripts.pory"
-	setobjectxy 1, 4, 6
+	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
 # 56 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 1, SableyeLairBossSequence_Movement_0
+	msgbox SableyeLairBossSequence_Text_0
 # 57 "data/maps/Sableye_Lair/scripts.pory"
-	call SableyeShake
+	playbgm MUS_MONSTERHOUSE, TRUE
 # 59 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag sableye2gone
+	clearflag sableye1gone
 # 60 "data/maps/Sableye_Lair/scripts.pory"
-	addobject 2
+	addobject 1
 # 61 "data/maps/Sableye_Lair/scripts.pory"
-	setobjectxy 2, 5, 6
+	setobjectxy 1, 4, 6
 # 62 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 2, SableyeLairBossSequence_Movement_0
+	applymovement 1, SableyeLairBossSequence_Movement_0
 # 63 "data/maps/Sableye_Lair/scripts.pory"
 	call SableyeShake
 # 65 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag sableye3gone
+	clearflag sableye2gone
 # 66 "data/maps/Sableye_Lair/scripts.pory"
-	addobject 3
+	addobject 2
 # 67 "data/maps/Sableye_Lair/scripts.pory"
-	setobjectxy 3, 6, 6
+	setobjectxy 2, 5, 6
 # 68 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 3, SableyeLairBossSequence_Movement_0
+	applymovement 2, SableyeLairBossSequence_Movement_0
 # 69 "data/maps/Sableye_Lair/scripts.pory"
 	call SableyeShake
 # 71 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag sableye4gone
+	clearflag sableye3gone
 # 72 "data/maps/Sableye_Lair/scripts.pory"
-	addobject 4
+	addobject 3
 # 73 "data/maps/Sableye_Lair/scripts.pory"
-	setobjectxy 4, 5, 8
+	setobjectxy 3, 6, 6
 # 74 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 4, SableyeLairBossSequence_Movement_1
+	applymovement 3, SableyeLairBossSequence_Movement_0
 # 75 "data/maps/Sableye_Lair/scripts.pory"
 	call SableyeShake
+# 77 "data/maps/Sableye_Lair/scripts.pory"
+	clearflag sableye4gone
 # 78 "data/maps/Sableye_Lair/scripts.pory"
-	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
+	addobject 4
 # 79 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_1
+	setobjectxy 4, 5, 8
 # 80 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 2, SableyeLairBossSequence_Movement_2
+	applymovement 4, SableyeLairBossSequence_Movement_1
 # 81 "data/maps/Sableye_Lair/scripts.pory"
-	waitmovement 2
-# 82 "data/maps/Sableye_Lair/scripts.pory"
-	playse SE_LEDGE
-# 83 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 2, SableyeLairBossSequence_Movement_3
+	call SableyeShake
 # 84 "data/maps/Sableye_Lair/scripts.pory"
-	playse SE_LEDGE
+	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
 # 85 "data/maps/Sableye_Lair/scripts.pory"
-	waitse
+	msgbox SableyeLairBossSequence_Text_1
 # 86 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag sableyelairplayerbag
+	applymovement 2, SableyeLairBossSequence_Movement_2
 # 87 "data/maps/Sableye_Lair/scripts.pory"
-	addobject 6
-# 88 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 2
+# 88 "data/maps/Sableye_Lair/scripts.pory"
+	playse SE_LEDGE
 # 89 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 2, SableyeLairBossSequence_Movement_0
+	applymovement 2, SableyeLairBossSequence_Movement_3
+# 90 "data/maps/Sableye_Lair/scripts.pory"
+	playse SE_LEDGE
 # 91 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_2
+	waitse
 # 92 "data/maps/Sableye_Lair/scripts.pory"
-	checkplayergender
+	clearflag sableyelairplayerbag
 # 93 "data/maps/Sableye_Lair/scripts.pory"
+	addobject 6
+# 94 "data/maps/Sableye_Lair/scripts.pory"
+	waitmovement 2
+# 95 "data/maps/Sableye_Lair/scripts.pory"
+	applymovement 2, SableyeLairBossSequence_Movement_0
+# 97 "data/maps/Sableye_Lair/scripts.pory"
+	msgbox SableyeLairBossSequence_Text_2
+# 98 "data/maps/Sableye_Lair/scripts.pory"
+	checkplayergender
+# 99 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq SableyeLairBossSequence_9
 SableyeLairBossSequence_8:
-# 94 "data/maps/Sableye_Lair/scripts.pory"
+# 100 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq SableyeLairBossSequence_12
 SableyeLairBossSequence_11:
-# 95 "data/maps/Sableye_Lair/scripts.pory"
+# 101 "data/maps/Sableye_Lair/scripts.pory"
 	setvar nobag, 2
-# 96 "data/maps/Sableye_Lair/scripts.pory"
+# 102 "data/maps/Sableye_Lair/scripts.pory"
 	setflag norun
-# 97 "data/maps/Sableye_Lair/scripts.pory"
-	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
-# 98 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 1, SableyeLairBossSequence_Movement_4
-# 99 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 3, SableyeLairBossSequence_Movement_4
-# 100 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_4
 # 103 "data/maps/Sableye_Lair/scripts.pory"
-	specialvar VAR_RESULT, CountPartyAliveNonEggMons
+	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
 # 104 "data/maps/Sableye_Lair/scripts.pory"
+	applymovement 1, SableyeLairBossSequence_Movement_4
+# 105 "data/maps/Sableye_Lair/scripts.pory"
+	applymovement 3, SableyeLairBossSequence_Movement_4
+# 106 "data/maps/Sableye_Lair/scripts.pory"
+	msgbox SableyeLairBossSequence_Text_4
+# 109 "data/maps/Sableye_Lair/scripts.pory"
+	specialvar VAR_RESULT, CountPartyAliveNonEggMons
+# 110 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_gt SableyeLairBossSequence_15
-# 109 "data/maps/Sableye_Lair/scripts.pory"
+# 115 "data/maps/Sableye_Lair/scripts.pory"
 	setwildbattle SPECIES_SABLEYE, 5, ITEM_NONE, SPECIES_NONE, 0, ITEM_NONE
 SableyeLairBossSequence_14:
-# 111 "data/maps/Sableye_Lair/scripts.pory"
+# 117 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 6
-# 112 "data/maps/Sableye_Lair/scripts.pory"
+# 118 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyelairplayerbag
-# 113 "data/maps/Sableye_Lair/scripts.pory"
+# 119 "data/maps/Sableye_Lair/scripts.pory"
 	dowildbattle
-# 114 "data/maps/Sableye_Lair/scripts.pory"
+# 120 "data/maps/Sableye_Lair/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 122 "data/maps/Sableye_Lair/scripts.pory"
+# 128 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SableyeLairBossSequence_18
 SableyeLairBossSequence_1:
-# 243 "data/maps/Sableye_Lair/scripts.pory"
+# 249 "data/maps/Sableye_Lair/scripts.pory"
 endsableyelairbossscript:
-# 244 "data/maps/Sableye_Lair/scripts.pory"
+# 250 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
 SableyeLairBossSequence_2:
-# 38 "data/maps/Sableye_Lair/scripts.pory"
+# 44 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableyelairbossscript
 	goto SableyeLairBossSequence_1
 
 SableyeLairBossSequence_5:
-# 45 "data/maps/Sableye_Lair/scripts.pory"
+# 51 "data/maps/Sableye_Lair/scripts.pory"
 	goto fightsableyelairboss
 	goto SableyeLairBossSequence_1
 
 SableyeLairBossSequence_9:
-# 93 "data/maps/Sableye_Lair/scripts.pory"
+# 99 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_3
 	goto SableyeLairBossSequence_8
 
 SableyeLairBossSequence_12:
-# 94 "data/maps/Sableye_Lair/scripts.pory"
+# 100 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_3
 	goto SableyeLairBossSequence_11
 
 SableyeLairBossSequence_15:
-# 105 "data/maps/Sableye_Lair/scripts.pory"
+# 111 "data/maps/Sableye_Lair/scripts.pory"
 	setwilddoubleflag
-# 106 "data/maps/Sableye_Lair/scripts.pory"
+# 112 "data/maps/Sableye_Lair/scripts.pory"
 	setwildbattle SPECIES_SABLEYE, 5, ITEM_NONE, SPECIES_SABLEYE, 5, ITEM_NONE
 	goto SableyeLairBossSequence_14
 
 SableyeLairBossSequence_18:
-# 123 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag sableyelairplayerbag
-# 124 "data/maps/Sableye_Lair/scripts.pory"
-	addobject 6
-# 125 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 1, SableyeLairBossSequence_Movement_5
-# 126 "data/maps/Sableye_Lair/scripts.pory"
-	playse SE_PIN
-# 127 "data/maps/Sableye_Lair/scripts.pory"
-	waitse
-# 128 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 3, SableyeLairBossSequence_Movement_5
 # 129 "data/maps/Sableye_Lair/scripts.pory"
-	playse SE_PIN
+	clearflag sableyelairplayerbag
 # 130 "data/maps/Sableye_Lair/scripts.pory"
-	waitse
+	addobject 6
 # 131 "data/maps/Sableye_Lair/scripts.pory"
-	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
+	applymovement 1, SableyeLairBossSequence_Movement_5
 # 132 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_5
+	playse SE_PIN
+# 133 "data/maps/Sableye_Lair/scripts.pory"
+	waitse
 # 134 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye1gone
+	applymovement 3, SableyeLairBossSequence_Movement_5
 # 135 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 1
+	playse SE_PIN
 # 136 "data/maps/Sableye_Lair/scripts.pory"
-	call SableyeShake
+	waitse
+# 137 "data/maps/Sableye_Lair/scripts.pory"
+	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
 # 138 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye3gone
-# 139 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 3
+	msgbox SableyeLairBossSequence_Text_5
 # 140 "data/maps/Sableye_Lair/scripts.pory"
-	call SableyeShake
+	setflag sableye1gone
+# 141 "data/maps/Sableye_Lair/scripts.pory"
+	removeobject 1
 # 142 "data/maps/Sableye_Lair/scripts.pory"
-	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
-# 143 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_6
+	call SableyeShake
 # 144 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 2, SableyeLairBossSequence_Movement_6
+	setflag sableye3gone
 # 145 "data/maps/Sableye_Lair/scripts.pory"
-	waitmovement
+	removeobject 3
 # 146 "data/maps/Sableye_Lair/scripts.pory"
-	playse SE_LEDGE
-# 147 "data/maps/Sableye_Lair/scripts.pory"
-	applymovement 6, SableyeLairBossSequence_Movement_7
+	call SableyeShake
 # 148 "data/maps/Sableye_Lair/scripts.pory"
-	waitmovement
+	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
 # 149 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 6
+	msgbox SableyeLairBossSequence_Text_6
 # 150 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableyelairplayerbag
+	applymovement 2, SableyeLairBossSequence_Movement_6
 # 151 "data/maps/Sableye_Lair/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	waitmovement
 # 152 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_7
+	playse SE_LEDGE
 # 153 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye2gone
+	applymovement 6, SableyeLairBossSequence_Movement_7
 # 154 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 2
+	waitmovement
 # 155 "data/maps/Sableye_Lair/scripts.pory"
-	call SableyeShake
+	removeobject 6
+# 156 "data/maps/Sableye_Lair/scripts.pory"
+	setflag sableyelairplayerbag
 # 157 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableye4gone
+	playfanfare MUS_OBTAIN_ITEM
 # 158 "data/maps/Sableye_Lair/scripts.pory"
-	removeobject 4
+	msgbox SableyeLairBossSequence_Text_7
 # 159 "data/maps/Sableye_Lair/scripts.pory"
-	call SableyeShake
+	setflag sableye2gone
 # 160 "data/maps/Sableye_Lair/scripts.pory"
-	setvar nobag, 0
+	removeobject 2
+# 161 "data/maps/Sableye_Lair/scripts.pory"
+	call SableyeShake
 # 163 "data/maps/Sableye_Lair/scripts.pory"
-	fadeoutbgm 1
+	setflag sableye4gone
 # 164 "data/maps/Sableye_Lair/scripts.pory"
-	fadenewbgm MUS_NONE
+	removeobject 4
+# 165 "data/maps/Sableye_Lair/scripts.pory"
+	call SableyeShake
 # 166 "data/maps/Sableye_Lair/scripts.pory"
-	call SableyeShake
-# 168 "data/maps/Sableye_Lair/scripts.pory"
-	call SableyeShake
+	setvar nobag, 0
+# 169 "data/maps/Sableye_Lair/scripts.pory"
+	fadeoutbgm 1
 # 170 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag spawnsableyelairboss
-# 171 "data/maps/Sableye_Lair/scripts.pory"
-	addobject 5
+	fadenewbgm MUS_NONE
 # 172 "data/maps/Sableye_Lair/scripts.pory"
 	call SableyeShake
-# 173 "data/maps/Sableye_Lair/scripts.pory"
-fightsableyelairboss:
 # 174 "data/maps/Sableye_Lair/scripts.pory"
-	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 175 "data/maps/Sableye_Lair/scripts.pory"
-	msgbox SableyeLairBossSequence_Text_8
+	call SableyeShake
+# 176 "data/maps/Sableye_Lair/scripts.pory"
+	clearflag spawnsableyelairboss
+# 177 "data/maps/Sableye_Lair/scripts.pory"
+	addobject 5
 # 178 "data/maps/Sableye_Lair/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 2, 2, 2
+	call SableyeShake
 # 179 "data/maps/Sableye_Lair/scripts.pory"
-	setflag forceshiny
+fightsableyelairboss:
+# 180 "data/maps/Sableye_Lair/scripts.pory"
+	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
 # 181 "data/maps/Sableye_Lair/scripts.pory"
-	setwildbattle SPECIES_SABLEYE, 5
-# 182 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag forceshiny
-# 183 "data/maps/Sableye_Lair/scripts.pory"
-	dowildbattle
+	msgbox SableyeLairBossSequence_Text_8
+# 184 "data/maps/Sableye_Lair/scripts.pory"
+	settotemboost B_POSITION_OPPONENT_LEFT, 2, 2, 2
 # 185 "data/maps/Sableye_Lair/scripts.pory"
+	setflag forceshiny
+# 187 "data/maps/Sableye_Lair/scripts.pory"
+	setwildbattle SPECIES_SABLEYE, 5
+# 188 "data/maps/Sableye_Lair/scripts.pory"
+	clearflag forceshiny
+# 189 "data/maps/Sableye_Lair/scripts.pory"
+	dowildbattle
+# 191 "data/maps/Sableye_Lair/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 186 "data/maps/Sableye_Lair/scripts.pory"
+# 192 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq SableyeLairBossSequence_21
 SableyeLairBossSequence_20:
-# 193 "data/maps/Sableye_Lair/scripts.pory"
+# 199 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SableyeLairBossSequence_24
 SableyeLairBossSequence_23:
-# 230 "data/maps/Sableye_Lair/scripts.pory"
-playerwinssableyeskirmish:
-# 231 "data/maps/Sableye_Lair/scripts.pory"
-	fadeoutbgm 1
-# 232 "data/maps/Sableye_Lair/scripts.pory"
-	fadenewbgm MUS_RG_MT_MOON
-# 233 "data/maps/Sableye_Lair/scripts.pory"
-	playbgm MUS_RG_MT_MOON, TRUE
-# 234 "data/maps/Sableye_Lair/scripts.pory"
-	setvar VAR_SABLEYELAIRANGER, 0
-# 235 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag forceshiny
 # 236 "data/maps/Sableye_Lair/scripts.pory"
-	clearflag norun
+playerwinssableyeskirmish:
+# 237 "data/maps/Sableye_Lair/scripts.pory"
+	fadeoutbgm 1
+# 238 "data/maps/Sableye_Lair/scripts.pory"
+	fadenewbgm MUS_RG_MT_MOON
 # 239 "data/maps/Sableye_Lair/scripts.pory"
+	playbgm MUS_RG_MT_MOON, TRUE
+# 240 "data/maps/Sableye_Lair/scripts.pory"
+	setvar VAR_SABLEYELAIRANGER, 0
+# 241 "data/maps/Sableye_Lair/scripts.pory"
+	clearflag forceshiny
+# 242 "data/maps/Sableye_Lair/scripts.pory"
+	clearflag norun
+# 245 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableyelairbossscript
 	goto SableyeLairBossSequence_1
 
 SableyeLairBossSequence_21:
-# 187 "data/maps/Sableye_Lair/scripts.pory"
+# 193 "data/maps/Sableye_Lair/scripts.pory"
 	setflag caughtsableyelairboss
-# 188 "data/maps/Sableye_Lair/scripts.pory"
+# 194 "data/maps/Sableye_Lair/scripts.pory"
 	setflag spawnsableyelairboss
-# 189 "data/maps/Sableye_Lair/scripts.pory"
+# 195 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 5
-# 190 "data/maps/Sableye_Lair/scripts.pory"
+# 196 "data/maps/Sableye_Lair/scripts.pory"
 	goto playerwinssableyeskirmish
 	goto SableyeLairBossSequence_20
 
 SableyeLairBossSequence_24:
-# 194 "data/maps/Sableye_Lair/scripts.pory"
+# 200 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 195 "data/maps/Sableye_Lair/scripts.pory"
+# 201 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 196 "data/maps/Sableye_Lair/scripts.pory"
+# 202 "data/maps/Sableye_Lair/scripts.pory"
 	setflag spawnsableyelairboss
-# 197 "data/maps/Sableye_Lair/scripts.pory"
+# 203 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 5
-# 198 "data/maps/Sableye_Lair/scripts.pory"
+# 204 "data/maps/Sableye_Lair/scripts.pory"
 	call SableyeShake
-# 199 "data/maps/Sableye_Lair/scripts.pory"
+# 205 "data/maps/Sableye_Lair/scripts.pory"
 	goto playerwinssableyeskirmish
 	goto SableyeLairBossSequence_23
 
 
 SableyeShake::
-# 249 "data/maps/Sableye_Lair/scripts.pory"
-	playse SE_M_DIG
-# 250 "data/maps/Sableye_Lair/scripts.pory"
-	setvar VAR_0x8004, 2
-# 251 "data/maps/Sableye_Lair/scripts.pory"
-	setvar VAR_0x8005, 6
-# 252 "data/maps/Sableye_Lair/scripts.pory"
-	setvar VAR_0x8006, 4
-# 253 "data/maps/Sableye_Lair/scripts.pory"
-	setvar VAR_0x8007, 4
-# 254 "data/maps/Sableye_Lair/scripts.pory"
-	special ShakeCamera
 # 255 "data/maps/Sableye_Lair/scripts.pory"
+	playse SE_M_DIG
+# 256 "data/maps/Sableye_Lair/scripts.pory"
+	setvar VAR_0x8004, 2
+# 257 "data/maps/Sableye_Lair/scripts.pory"
+	setvar VAR_0x8005, 6
+# 258 "data/maps/Sableye_Lair/scripts.pory"
+	setvar VAR_0x8006, 4
+# 259 "data/maps/Sableye_Lair/scripts.pory"
+	setvar VAR_0x8007, 4
+# 260 "data/maps/Sableye_Lair/scripts.pory"
+	special ShakeCamera
+# 261 "data/maps/Sableye_Lair/scripts.pory"
 	waitse
 	return
 
 
 SableyeLairGem1::
-# 261 "data/maps/Sableye_Lair/scripts.pory"
-	lock
-# 262 "data/maps/Sableye_Lair/scripts.pory"
-	goto_if_set sableyegem1, SableyeLairGem1_1
 # 267 "data/maps/Sableye_Lair/scripts.pory"
-	giveitem ITEM_SAPPHIRE
+	lock
 # 268 "data/maps/Sableye_Lair/scripts.pory"
+	goto_if_set sableyegem1, SableyeLairGem1_1
+# 275 "data/maps/Sableye_Lair/scripts.pory"
+	goto_if_set caughtsableyelairboss, SableyeLairGem1_5
+# 294 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+SableyeLairGem1_4:
+# 296 "data/maps/Sableye_Lair/scripts.pory"
 	setmetatile 8, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
-# 269 "data/maps/Sableye_Lair/scripts.pory"
+# 297 "data/maps/Sableye_Lair/scripts.pory"
 	special DrawWholeMapView
-# 270 "data/maps/Sableye_Lair/scripts.pory"
+# 298 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyegem1
-# 271 "data/maps/Sableye_Lair/scripts.pory"
+# 299 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 273 "data/maps/Sableye_Lair/scripts.pory"
+# 301 "data/maps/Sableye_Lair/scripts.pory"
 	releaseall
 	end
 
 SableyeLairGem1_1:
-# 263 "data/maps/Sableye_Lair/scripts.pory"
+# 269 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 265 "data/maps/Sableye_Lair/scripts.pory"
+# 271 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
-
-SableyeLairGem2::
+SableyeLairGem1_5:
+# 278 "data/maps/Sableye_Lair/scripts.pory"
+	random 10
+# 279 "data/maps/Sableye_Lair/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
 # 280 "data/maps/Sableye_Lair/scripts.pory"
-	lock
+	switch VAR_RESULT
 # 281 "data/maps/Sableye_Lair/scripts.pory"
-	goto_if_set sableyegem2, SableyeLairGem2_1
+	case 0, SableyeLairGem1_9
+# 282 "data/maps/Sableye_Lair/scripts.pory"
+	case 1, SableyeLairGem1_10
+# 283 "data/maps/Sableye_Lair/scripts.pory"
+	case 2, SableyeLairGem1_11
+# 284 "data/maps/Sableye_Lair/scripts.pory"
+	case 3, SableyeLairGem1_12
+# 285 "data/maps/Sableye_Lair/scripts.pory"
+	case 4, SableyeLairGem1_13
+# 286 "data/maps/Sableye_Lair/scripts.pory"
+	case 5, SableyeLairGem1_14
+# 287 "data/maps/Sableye_Lair/scripts.pory"
+	case 6, SableyeLairGem1_15
+# 288 "data/maps/Sableye_Lair/scripts.pory"
+	case 7, SableyeLairGem1_16
+# 289 "data/maps/Sableye_Lair/scripts.pory"
+	case 8, SableyeLairGem1_17
+# 290 "data/maps/Sableye_Lair/scripts.pory"
+	case 9, SableyeLairGem1_18
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_9:
+# 281 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_FIRE_GEM
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_10:
+# 282 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_WATER_GEM
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_11:
+# 283 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_ELECTRIC_GEM
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_12:
+# 284 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_GRASS_GEM
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_13:
+# 285 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_NORMAL_GEM
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_14:
 # 286 "data/maps/Sableye_Lair/scripts.pory"
 	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_15:
 # 287 "data/maps/Sableye_Lair/scripts.pory"
-	setmetatile 2, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_16:
 # 288 "data/maps/Sableye_Lair/scripts.pory"
-	special DrawWholeMapView
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_17:
 # 289 "data/maps/Sableye_Lair/scripts.pory"
-	setflag sableyegem2
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem1_4
+
+SableyeLairGem1_18:
 # 290 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem1_4
+
+
+SableyeLairGem2::
+# 308 "data/maps/Sableye_Lair/scripts.pory"
+	lock
+# 309 "data/maps/Sableye_Lair/scripts.pory"
+	goto_if_set sableyegem2, SableyeLairGem2_1
+# 316 "data/maps/Sableye_Lair/scripts.pory"
+	goto_if_set caughtsableyelairboss, SableyeLairGem2_5
+# 333 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+SableyeLairGem2_4:
+# 336 "data/maps/Sableye_Lair/scripts.pory"
+	setmetatile 2, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
+# 337 "data/maps/Sableye_Lair/scripts.pory"
+	special DrawWholeMapView
+# 338 "data/maps/Sableye_Lair/scripts.pory"
+	setflag sableyegem2
+# 339 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 292 "data/maps/Sableye_Lair/scripts.pory"
+# 341 "data/maps/Sableye_Lair/scripts.pory"
 	releaseall
 	end
 
 SableyeLairGem2_1:
-# 282 "data/maps/Sableye_Lair/scripts.pory"
+# 310 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 284 "data/maps/Sableye_Lair/scripts.pory"
+# 312 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
+SableyeLairGem2_5:
+# 319 "data/maps/Sableye_Lair/scripts.pory"
+	random 8
+# 320 "data/maps/Sableye_Lair/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 321 "data/maps/Sableye_Lair/scripts.pory"
+	switch VAR_RESULT
+# 322 "data/maps/Sableye_Lair/scripts.pory"
+	case 0, SableyeLairGem2_9
+# 323 "data/maps/Sableye_Lair/scripts.pory"
+	case 1, SableyeLairGem2_10
+# 324 "data/maps/Sableye_Lair/scripts.pory"
+	case 2, SableyeLairGem2_11
+# 325 "data/maps/Sableye_Lair/scripts.pory"
+	case 3, SableyeLairGem2_12
+# 326 "data/maps/Sableye_Lair/scripts.pory"
+	case 4, SableyeLairGem2_13
+# 327 "data/maps/Sableye_Lair/scripts.pory"
+	case 5, SableyeLairGem2_14
+# 328 "data/maps/Sableye_Lair/scripts.pory"
+	case 6, SableyeLairGem2_15
+# 329 "data/maps/Sableye_Lair/scripts.pory"
+	case 7, SableyeLairGem2_16
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_9:
+# 322 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_ICE_GEM
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_10:
+# 323 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_FIGHTING_GEM
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_11:
+# 324 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_POISON_GEM
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_12:
+# 325 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_GROUND_GEM
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_13:
+# 326 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_14:
+# 327 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_15:
+# 328 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem2_4
+
+SableyeLairGem2_16:
+# 329 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem2_4
+
 
 SableyeLairGem3::
-# 299 "data/maps/Sableye_Lair/scripts.pory"
+# 348 "data/maps/Sableye_Lair/scripts.pory"
 	lock
-# 300 "data/maps/Sableye_Lair/scripts.pory"
+# 349 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_set sableyegem3, SableyeLairGem3_1
-# 305 "data/maps/Sableye_Lair/scripts.pory"
+# 356 "data/maps/Sableye_Lair/scripts.pory"
+	goto_if_set caughtsableyelairboss, SableyeLairGem3_5
+# 373 "data/maps/Sableye_Lair/scripts.pory"
 	giveitem ITEM_SAPPHIRE
-# 306 "data/maps/Sableye_Lair/scripts.pory"
+SableyeLairGem3_4:
+# 376 "data/maps/Sableye_Lair/scripts.pory"
 	setmetatile 1, 6, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
-# 307 "data/maps/Sableye_Lair/scripts.pory"
+# 377 "data/maps/Sableye_Lair/scripts.pory"
 	special DrawWholeMapView
-# 308 "data/maps/Sableye_Lair/scripts.pory"
+# 378 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyegem3
-# 309 "data/maps/Sableye_Lair/scripts.pory"
+# 379 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 311 "data/maps/Sableye_Lair/scripts.pory"
+# 381 "data/maps/Sableye_Lair/scripts.pory"
 	releaseall
 	end
 
 SableyeLairGem3_1:
-# 301 "data/maps/Sableye_Lair/scripts.pory"
+# 350 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 303 "data/maps/Sableye_Lair/scripts.pory"
+# 352 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
+SableyeLairGem3_5:
+# 359 "data/maps/Sableye_Lair/scripts.pory"
+	random 8
+# 360 "data/maps/Sableye_Lair/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 361 "data/maps/Sableye_Lair/scripts.pory"
+	switch VAR_RESULT
+# 362 "data/maps/Sableye_Lair/scripts.pory"
+	case 0, SableyeLairGem3_9
+# 363 "data/maps/Sableye_Lair/scripts.pory"
+	case 1, SableyeLairGem3_10
+# 364 "data/maps/Sableye_Lair/scripts.pory"
+	case 2, SableyeLairGem3_11
+# 365 "data/maps/Sableye_Lair/scripts.pory"
+	case 3, SableyeLairGem3_12
+# 366 "data/maps/Sableye_Lair/scripts.pory"
+	case 4, SableyeLairGem3_13
+# 367 "data/maps/Sableye_Lair/scripts.pory"
+	case 5, SableyeLairGem3_14
+# 368 "data/maps/Sableye_Lair/scripts.pory"
+	case 6, SableyeLairGem3_15
+# 369 "data/maps/Sableye_Lair/scripts.pory"
+	case 7, SableyeLairGem3_16
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_9:
+# 362 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_FLYING_GEM
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_10:
+# 363 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_PSYCHIC_GEM
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_11:
+# 364 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_BUG_GEM
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_12:
+# 365 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_ROCK_GEM
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_13:
+# 366 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_14:
+# 367 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_15:
+# 368 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem3_4
+
+SableyeLairGem3_16:
+# 369 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem3_4
+
 
 SableyeLairGem4::
-# 319 "data/maps/Sableye_Lair/scripts.pory"
+# 389 "data/maps/Sableye_Lair/scripts.pory"
 	lock
-# 320 "data/maps/Sableye_Lair/scripts.pory"
+# 390 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_set sableyegem4, SableyeLairGem4_1
-# 325 "data/maps/Sableye_Lair/scripts.pory"
+# 398 "data/maps/Sableye_Lair/scripts.pory"
+	goto_if_set caughtsableyelairboss, SableyeLairGem4_5
+# 418 "data/maps/Sableye_Lair/scripts.pory"
 	giveitem ITEM_SAPPHIRE
-# 326 "data/maps/Sableye_Lair/scripts.pory"
+SableyeLairGem4_4:
+# 421 "data/maps/Sableye_Lair/scripts.pory"
 	setmetatile 9, 5, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
-# 327 "data/maps/Sableye_Lair/scripts.pory"
+# 422 "data/maps/Sableye_Lair/scripts.pory"
 	special DrawWholeMapView
-# 328 "data/maps/Sableye_Lair/scripts.pory"
+# 423 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyegem4
-# 329 "data/maps/Sableye_Lair/scripts.pory"
+# 424 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 331 "data/maps/Sableye_Lair/scripts.pory"
+# 426 "data/maps/Sableye_Lair/scripts.pory"
 	releaseall
 	end
 
 SableyeLairGem4_1:
-# 321 "data/maps/Sableye_Lair/scripts.pory"
+# 391 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairGem1_Text_0
-# 323 "data/maps/Sableye_Lair/scripts.pory"
+# 393 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
+SableyeLairGem4_5:
+# 401 "data/maps/Sableye_Lair/scripts.pory"
+	random 10
+# 402 "data/maps/Sableye_Lair/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 403 "data/maps/Sableye_Lair/scripts.pory"
+	switch VAR_RESULT
+# 404 "data/maps/Sableye_Lair/scripts.pory"
+	case 0, SableyeLairGem4_9
+# 405 "data/maps/Sableye_Lair/scripts.pory"
+	case 1, SableyeLairGem4_10
+# 406 "data/maps/Sableye_Lair/scripts.pory"
+	case 2, SableyeLairGem4_11
+# 407 "data/maps/Sableye_Lair/scripts.pory"
+	case 3, SableyeLairGem4_12
+# 408 "data/maps/Sableye_Lair/scripts.pory"
+	case 4, SableyeLairGem4_13
+# 409 "data/maps/Sableye_Lair/scripts.pory"
+	case 5, SableyeLairGem4_14
+# 410 "data/maps/Sableye_Lair/scripts.pory"
+	case 6, SableyeLairGem4_15
+# 411 "data/maps/Sableye_Lair/scripts.pory"
+	case 7, SableyeLairGem4_16
+# 412 "data/maps/Sableye_Lair/scripts.pory"
+	case 8, SableyeLairGem4_17
+# 413 "data/maps/Sableye_Lair/scripts.pory"
+	case 9, SableyeLairGem4_18
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_9:
+# 404 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_GHOST_GEM
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_10:
+# 405 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_DRAGON_GEM
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_11:
+# 406 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_DARK_GEM
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_12:
+# 407 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_STEEL_GEM
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_13:
+# 408 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_FAIRY_GEM
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_14:
+# 409 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_15:
+# 410 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_16:
+# 411 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_17:
+# 412 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem4_4
+
+SableyeLairGem4_18:
+# 413 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_SAPPHIRE
+	goto SableyeLairGem4_4
+
 
 SableyeGem1::
-# 338 "data/maps/Sableye_Lair/scripts.pory"
+# 433 "data/maps/Sableye_Lair/scripts.pory"
 	lock
-# 339 "data/maps/Sableye_Lair/scripts.pory"
+# 434 "data/maps/Sableye_Lair/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 342 "data/maps/Sableye_Lair/scripts.pory"
+# 437 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_0
-# 343 "data/maps/Sableye_Lair/scripts.pory"
+# 438 "data/maps/Sableye_Lair/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SableyeGem1_Text_1, SableyeGem1_Text_2
-# 345 "data/maps/Sableye_Lair/scripts.pory"
+# 440 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SableyeGem1_2
 SableyeGem1_1:
-# 414 "data/maps/Sableye_Lair/scripts.pory"
+# 509 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq SableyeGem1_5
 SableyeGem1_4:
-# 418 "data/maps/Sableye_Lair/scripts.pory"
+# 513 "data/maps/Sableye_Lair/scripts.pory"
 endsableye1script:
-# 419 "data/maps/Sableye_Lair/scripts.pory"
+# 514 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 420 "data/maps/Sableye_Lair/scripts.pory"
+# 515 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
 SableyeGem1_2:
-# 346 "data/maps/Sableye_Lair/scripts.pory"
+# 441 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 4, SableyeGem1_Movement_0
-# 348 "data/maps/Sableye_Lair/scripts.pory"
+# 443 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_set caughtsableyelairboss, SableyeGem1_8
 SableyeGem1_7:
-# 372 "data/maps/Sableye_Lair/scripts.pory"
+# 467 "data/maps/Sableye_Lair/scripts.pory"
 sableye1wantstofight:
-# 373 "data/maps/Sableye_Lair/scripts.pory"
+# 468 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
-# 374 "data/maps/Sableye_Lair/scripts.pory"
+# 469 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_4
-# 375 "data/maps/Sableye_Lair/scripts.pory"
+# 470 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 377 "data/maps/Sableye_Lair/scripts.pory"
+# 472 "data/maps/Sableye_Lair/scripts.pory"
 	setwildbattle SPECIES_SABLEYE, 5
-# 378 "data/maps/Sableye_Lair/scripts.pory"
+# 473 "data/maps/Sableye_Lair/scripts.pory"
 	dowildbattle
-# 379 "data/maps/Sableye_Lair/scripts.pory"
+# 474 "data/maps/Sableye_Lair/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 380 "data/maps/Sableye_Lair/scripts.pory"
+# 475 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq SableyeGem1_10
-# 385 "data/maps/Sableye_Lair/scripts.pory"
+# 480 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SableyeGem1_11
-# 402 "data/maps/Sableye_Lair/scripts.pory"
+# 497 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq SableyeGem1_12
-# 406 "data/maps/Sableye_Lair/scripts.pory"
+# 501 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SableyeGem1_13
 	goto SableyeGem1_1
 
 SableyeGem1_5:
-# 415 "data/maps/Sableye_Lair/scripts.pory"
+# 510 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye1script
 	goto SableyeGem1_4
 
 SableyeGem1_8:
-# 351 "data/maps/Sableye_Lair/scripts.pory"
+# 446 "data/maps/Sableye_Lair/scripts.pory"
 	random 2
-# 352 "data/maps/Sableye_Lair/scripts.pory"
+# 447 "data/maps/Sableye_Lair/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 353 "data/maps/Sableye_Lair/scripts.pory"
+# 448 "data/maps/Sableye_Lair/scripts.pory"
 	switch VAR_RESULT
-# 354 "data/maps/Sableye_Lair/scripts.pory"
+# 449 "data/maps/Sableye_Lair/scripts.pory"
 	case 0, SableyeGem1_20
-# 355 "data/maps/Sableye_Lair/scripts.pory"
+# 450 "data/maps/Sableye_Lair/scripts.pory"
 	case 1, SableyeGem1_21
 SableyeGem1_18:
-# 357 "data/maps/Sableye_Lair/scripts.pory"
+# 452 "data/maps/Sableye_Lair/scripts.pory"
 sableye1givesgem:
-# 358 "data/maps/Sableye_Lair/scripts.pory"
+# 453 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 359 "data/maps/Sableye_Lair/scripts.pory"
+# 454 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 360 "data/maps/Sableye_Lair/scripts.pory"
+# 455 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 4, SableyeGem1_Movement_1
-# 361 "data/maps/Sableye_Lair/scripts.pory"
+# 456 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 4
-# 362 "data/maps/Sableye_Lair/scripts.pory"
+# 457 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 4, SableyeGem1_Movement_0
-# 363 "data/maps/Sableye_Lair/scripts.pory"
+# 458 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 4
-# 364 "data/maps/Sableye_Lair/scripts.pory"
+# 459 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_3
-# 365 "data/maps/Sableye_Lair/scripts.pory"
+# 460 "data/maps/Sableye_Lair/scripts.pory"
 	giveitem ITEM_SAPPHIRE
-# 366 "data/maps/Sableye_Lair/scripts.pory"
+# 461 "data/maps/Sableye_Lair/scripts.pory"
 	setmetatile 8, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
-# 367 "data/maps/Sableye_Lair/scripts.pory"
+# 462 "data/maps/Sableye_Lair/scripts.pory"
 	special DrawWholeMapView
-# 368 "data/maps/Sableye_Lair/scripts.pory"
+# 463 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyegem1
-# 369 "data/maps/Sableye_Lair/scripts.pory"
+# 464 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye1leaves
 	goto SableyeGem1_7
 
 SableyeGem1_10:
-# 381 "data/maps/Sableye_Lair/scripts.pory"
+# 476 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye1gone
-# 382 "data/maps/Sableye_Lair/scripts.pory"
+# 477 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 4
-# 383 "data/maps/Sableye_Lair/scripts.pory"
+# 478 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye1script
 	goto SableyeGem1_1
 
 SableyeGem1_11:
-# 386 "data/maps/Sableye_Lair/scripts.pory"
+# 481 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 387 "data/maps/Sableye_Lair/scripts.pory"
+# 482 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 389 "data/maps/Sableye_Lair/scripts.pory"
+# 484 "data/maps/Sableye_Lair/scripts.pory"
 sableye1leaves:
-# 390 "data/maps/Sableye_Lair/scripts.pory"
+# 485 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 4, SableyeGem1_Movement_2
-# 391 "data/maps/Sableye_Lair/scripts.pory"
+# 486 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement
-# 392 "data/maps/Sableye_Lair/scripts.pory"
+# 487 "data/maps/Sableye_Lair/scripts.pory"
 	playse SE_M_DIG
-# 393 "data/maps/Sableye_Lair/scripts.pory"
+# 488 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye1gone
-# 394 "data/maps/Sableye_Lair/scripts.pory"
+# 489 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 4
-# 396 "data/maps/Sableye_Lair/scripts.pory"
+# 491 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_unset caughtsableyelairboss, SableyeGem1_23
 SableyeGem1_22:
-# 399 "data/maps/Sableye_Lair/scripts.pory"
+# 494 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye1script
 	goto SableyeGem1_1
 
 SableyeGem1_12:
-# 403 "data/maps/Sableye_Lair/scripts.pory"
+# 498 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 4, SableyeGem1_Movement_1
-# 404 "data/maps/Sableye_Lair/scripts.pory"
+# 499 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye1script
 	goto SableyeGem1_1
 
 SableyeGem1_13:
-# 407 "data/maps/Sableye_Lair/scripts.pory"
+# 502 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 4, SableyeGem1_Movement_1
-# 408 "data/maps/Sableye_Lair/scripts.pory"
+# 503 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye1script
 	goto SableyeGem1_1
 
 SableyeGem1_20:
-# 354 "data/maps/Sableye_Lair/scripts.pory"
+# 449 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye1givesgem
 	goto SableyeGem1_18
 
 SableyeGem1_21:
-# 355 "data/maps/Sableye_Lair/scripts.pory"
+# 450 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye1wantstofight
 	goto SableyeGem1_18
 
 SableyeGem1_23:
-# 397 "data/maps/Sableye_Lair/scripts.pory"
+# 492 "data/maps/Sableye_Lair/scripts.pory"
 	addvar VAR_SABLEYELAIRANGER, + 1
 	goto SableyeGem1_22
 
 
 SableyeGem2::
-# 425 "data/maps/Sableye_Lair/scripts.pory"
+# 520 "data/maps/Sableye_Lair/scripts.pory"
 	lock
-# 426 "data/maps/Sableye_Lair/scripts.pory"
+# 521 "data/maps/Sableye_Lair/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 429 "data/maps/Sableye_Lair/scripts.pory"
+# 524 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_0
-# 430 "data/maps/Sableye_Lair/scripts.pory"
+# 525 "data/maps/Sableye_Lair/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SableyeGem1_Text_1, SableyeGem1_Text_2
-# 432 "data/maps/Sableye_Lair/scripts.pory"
+# 527 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SableyeGem2_2
 SableyeGem2_1:
-# 502 "data/maps/Sableye_Lair/scripts.pory"
+# 597 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq SableyeGem2_5
 SableyeGem2_4:
-# 506 "data/maps/Sableye_Lair/scripts.pory"
+# 601 "data/maps/Sableye_Lair/scripts.pory"
 endsableye2script:
-# 507 "data/maps/Sableye_Lair/scripts.pory"
+# 602 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 508 "data/maps/Sableye_Lair/scripts.pory"
+# 603 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
 SableyeGem2_2:
-# 433 "data/maps/Sableye_Lair/scripts.pory"
+# 528 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 1, SableyeGem1_Movement_0
-# 435 "data/maps/Sableye_Lair/scripts.pory"
+# 530 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_set caughtsableyelairboss, SableyeGem2_8
 SableyeGem2_7:
-# 459 "data/maps/Sableye_Lair/scripts.pory"
+# 554 "data/maps/Sableye_Lair/scripts.pory"
 sableye2wantstofight:
-# 460 "data/maps/Sableye_Lair/scripts.pory"
+# 555 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
-# 461 "data/maps/Sableye_Lair/scripts.pory"
+# 556 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 2, SableyeGem1_Movement_0
-# 462 "data/maps/Sableye_Lair/scripts.pory"
+# 557 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_4
-# 463 "data/maps/Sableye_Lair/scripts.pory"
+# 558 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 465 "data/maps/Sableye_Lair/scripts.pory"
+# 560 "data/maps/Sableye_Lair/scripts.pory"
 	setwildbattle SPECIES_SABLEYE, 5
-# 466 "data/maps/Sableye_Lair/scripts.pory"
+# 561 "data/maps/Sableye_Lair/scripts.pory"
 	dowildbattle
-# 467 "data/maps/Sableye_Lair/scripts.pory"
+# 562 "data/maps/Sableye_Lair/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 468 "data/maps/Sableye_Lair/scripts.pory"
+# 563 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq SableyeGem2_10
-# 473 "data/maps/Sableye_Lair/scripts.pory"
+# 568 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SableyeGem2_11
-# 490 "data/maps/Sableye_Lair/scripts.pory"
+# 585 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq SableyeGem2_12
-# 494 "data/maps/Sableye_Lair/scripts.pory"
+# 589 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SableyeGem2_13
 	goto SableyeGem2_1
 
 SableyeGem2_5:
-# 503 "data/maps/Sableye_Lair/scripts.pory"
+# 598 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye2script
 	goto SableyeGem2_4
 
 SableyeGem2_8:
-# 438 "data/maps/Sableye_Lair/scripts.pory"
+# 533 "data/maps/Sableye_Lair/scripts.pory"
 	random 2
-# 439 "data/maps/Sableye_Lair/scripts.pory"
+# 534 "data/maps/Sableye_Lair/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 440 "data/maps/Sableye_Lair/scripts.pory"
+# 535 "data/maps/Sableye_Lair/scripts.pory"
 	switch VAR_RESULT
-# 441 "data/maps/Sableye_Lair/scripts.pory"
+# 536 "data/maps/Sableye_Lair/scripts.pory"
 	case 0, SableyeGem2_20
-# 442 "data/maps/Sableye_Lair/scripts.pory"
+# 537 "data/maps/Sableye_Lair/scripts.pory"
 	case 1, SableyeGem2_21
 SableyeGem2_18:
-# 444 "data/maps/Sableye_Lair/scripts.pory"
+# 539 "data/maps/Sableye_Lair/scripts.pory"
 sableye2givesgem:
-# 445 "data/maps/Sableye_Lair/scripts.pory"
+# 540 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 446 "data/maps/Sableye_Lair/scripts.pory"
+# 541 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 447 "data/maps/Sableye_Lair/scripts.pory"
+# 542 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 2, SableyeLairBossSequence_Movement_1
-# 448 "data/maps/Sableye_Lair/scripts.pory"
+# 543 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 2
-# 449 "data/maps/Sableye_Lair/scripts.pory"
+# 544 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 2, SableyeGem1_Movement_0
-# 450 "data/maps/Sableye_Lair/scripts.pory"
+# 545 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 2
-# 451 "data/maps/Sableye_Lair/scripts.pory"
+# 546 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_3
-# 452 "data/maps/Sableye_Lair/scripts.pory"
+# 547 "data/maps/Sableye_Lair/scripts.pory"
 	giveitem ITEM_SAPPHIRE
-# 453 "data/maps/Sableye_Lair/scripts.pory"
+# 548 "data/maps/Sableye_Lair/scripts.pory"
 	setmetatile 2, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
-# 454 "data/maps/Sableye_Lair/scripts.pory"
+# 549 "data/maps/Sableye_Lair/scripts.pory"
 	special DrawWholeMapView
-# 455 "data/maps/Sableye_Lair/scripts.pory"
+# 550 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyegem2
-# 456 "data/maps/Sableye_Lair/scripts.pory"
+# 551 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye2leaves
 	goto SableyeGem2_7
 
 SableyeGem2_10:
-# 469 "data/maps/Sableye_Lair/scripts.pory"
+# 564 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye2gone
-# 470 "data/maps/Sableye_Lair/scripts.pory"
+# 565 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 2
-# 471 "data/maps/Sableye_Lair/scripts.pory"
+# 566 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye2script
 	goto SableyeGem2_1
 
 SableyeGem2_11:
-# 474 "data/maps/Sableye_Lair/scripts.pory"
+# 569 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 475 "data/maps/Sableye_Lair/scripts.pory"
+# 570 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 477 "data/maps/Sableye_Lair/scripts.pory"
+# 572 "data/maps/Sableye_Lair/scripts.pory"
 sableye2leaves:
-# 478 "data/maps/Sableye_Lair/scripts.pory"
+# 573 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 2, SableyeGem2_Movement_0
-# 479 "data/maps/Sableye_Lair/scripts.pory"
+# 574 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement
-# 480 "data/maps/Sableye_Lair/scripts.pory"
+# 575 "data/maps/Sableye_Lair/scripts.pory"
 	playse SE_M_DIG
-# 481 "data/maps/Sableye_Lair/scripts.pory"
+# 576 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye2gone
-# 482 "data/maps/Sableye_Lair/scripts.pory"
+# 577 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 2
-# 484 "data/maps/Sableye_Lair/scripts.pory"
+# 579 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_unset caughtsableyelairboss, SableyeGem2_23
 SableyeGem2_22:
-# 487 "data/maps/Sableye_Lair/scripts.pory"
+# 582 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye2script
 	goto SableyeGem2_1
 
 SableyeGem2_12:
-# 491 "data/maps/Sableye_Lair/scripts.pory"
+# 586 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 2, SableyeLairBossSequence_Movement_1
-# 492 "data/maps/Sableye_Lair/scripts.pory"
+# 587 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye2script
 	goto SableyeGem2_1
 
 SableyeGem2_13:
-# 495 "data/maps/Sableye_Lair/scripts.pory"
+# 590 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 2, SableyeLairBossSequence_Movement_1
-# 496 "data/maps/Sableye_Lair/scripts.pory"
+# 591 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye2script
 	goto SableyeGem2_1
 
 SableyeGem2_20:
-# 441 "data/maps/Sableye_Lair/scripts.pory"
+# 536 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye2givesgem
 	goto SableyeGem2_18
 
 SableyeGem2_21:
-# 442 "data/maps/Sableye_Lair/scripts.pory"
+# 537 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye2wantstofight
 	goto SableyeGem2_18
 
 SableyeGem2_23:
-# 485 "data/maps/Sableye_Lair/scripts.pory"
+# 580 "data/maps/Sableye_Lair/scripts.pory"
 	addvar VAR_SABLEYELAIRANGER, + 1
 	goto SableyeGem2_22
 
 
 SableyeGem3::
-# 513 "data/maps/Sableye_Lair/scripts.pory"
+# 608 "data/maps/Sableye_Lair/scripts.pory"
 	lock
-# 514 "data/maps/Sableye_Lair/scripts.pory"
+# 609 "data/maps/Sableye_Lair/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 517 "data/maps/Sableye_Lair/scripts.pory"
+# 612 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_0
-# 518 "data/maps/Sableye_Lair/scripts.pory"
+# 613 "data/maps/Sableye_Lair/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SableyeGem1_Text_1, SableyeGem1_Text_2
-# 520 "data/maps/Sableye_Lair/scripts.pory"
+# 615 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SableyeGem3_2
 SableyeGem3_1:
-# 589 "data/maps/Sableye_Lair/scripts.pory"
+# 684 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq SableyeGem3_5
 SableyeGem3_4:
-# 593 "data/maps/Sableye_Lair/scripts.pory"
+# 688 "data/maps/Sableye_Lair/scripts.pory"
 endsableye3script:
-# 594 "data/maps/Sableye_Lair/scripts.pory"
+# 689 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 595 "data/maps/Sableye_Lair/scripts.pory"
+# 690 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
 SableyeGem3_2:
-# 521 "data/maps/Sableye_Lair/scripts.pory"
+# 616 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 3, SableyeGem1_Movement_0
-# 523 "data/maps/Sableye_Lair/scripts.pory"
+# 618 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_set caughtsableyelairboss, SableyeGem3_8
 SableyeGem3_7:
-# 547 "data/maps/Sableye_Lair/scripts.pory"
+# 642 "data/maps/Sableye_Lair/scripts.pory"
 sableye3wantstofight:
-# 548 "data/maps/Sableye_Lair/scripts.pory"
+# 643 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
-# 549 "data/maps/Sableye_Lair/scripts.pory"
+# 644 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_4
-# 550 "data/maps/Sableye_Lair/scripts.pory"
+# 645 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 552 "data/maps/Sableye_Lair/scripts.pory"
+# 647 "data/maps/Sableye_Lair/scripts.pory"
 	setwildbattle SPECIES_SABLEYE, 5
-# 553 "data/maps/Sableye_Lair/scripts.pory"
+# 648 "data/maps/Sableye_Lair/scripts.pory"
 	dowildbattle
-# 554 "data/maps/Sableye_Lair/scripts.pory"
+# 649 "data/maps/Sableye_Lair/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 555 "data/maps/Sableye_Lair/scripts.pory"
+# 650 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq SableyeGem3_10
-# 560 "data/maps/Sableye_Lair/scripts.pory"
+# 655 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SableyeGem3_11
-# 577 "data/maps/Sableye_Lair/scripts.pory"
+# 672 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq SableyeGem3_12
-# 581 "data/maps/Sableye_Lair/scripts.pory"
+# 676 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SableyeGem3_13
 	goto SableyeGem3_1
 
 SableyeGem3_5:
-# 590 "data/maps/Sableye_Lair/scripts.pory"
+# 685 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye3script
 	goto SableyeGem3_4
 
 SableyeGem3_8:
-# 526 "data/maps/Sableye_Lair/scripts.pory"
+# 621 "data/maps/Sableye_Lair/scripts.pory"
 	random 2
-# 527 "data/maps/Sableye_Lair/scripts.pory"
+# 622 "data/maps/Sableye_Lair/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 528 "data/maps/Sableye_Lair/scripts.pory"
+# 623 "data/maps/Sableye_Lair/scripts.pory"
 	switch VAR_RESULT
-# 529 "data/maps/Sableye_Lair/scripts.pory"
+# 624 "data/maps/Sableye_Lair/scripts.pory"
 	case 0, SableyeGem3_20
-# 530 "data/maps/Sableye_Lair/scripts.pory"
+# 625 "data/maps/Sableye_Lair/scripts.pory"
 	case 1, SableyeGem3_21
 SableyeGem3_18:
-# 532 "data/maps/Sableye_Lair/scripts.pory"
+# 627 "data/maps/Sableye_Lair/scripts.pory"
 sableye3givesgem:
-# 533 "data/maps/Sableye_Lair/scripts.pory"
+# 628 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 534 "data/maps/Sableye_Lair/scripts.pory"
+# 629 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 535 "data/maps/Sableye_Lair/scripts.pory"
+# 630 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 3, SableyeGem3_Movement_0
-# 536 "data/maps/Sableye_Lair/scripts.pory"
+# 631 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 3
-# 537 "data/maps/Sableye_Lair/scripts.pory"
+# 632 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 3, SableyeGem1_Movement_0
-# 538 "data/maps/Sableye_Lair/scripts.pory"
+# 633 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 3
-# 539 "data/maps/Sableye_Lair/scripts.pory"
+# 634 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_3
-# 540 "data/maps/Sableye_Lair/scripts.pory"
+# 635 "data/maps/Sableye_Lair/scripts.pory"
 	giveitem ITEM_SAPPHIRE
-# 541 "data/maps/Sableye_Lair/scripts.pory"
+# 636 "data/maps/Sableye_Lair/scripts.pory"
 	setmetatile 1, 6, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
-# 542 "data/maps/Sableye_Lair/scripts.pory"
+# 637 "data/maps/Sableye_Lair/scripts.pory"
 	special DrawWholeMapView
-# 543 "data/maps/Sableye_Lair/scripts.pory"
+# 638 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyegem3
-# 544 "data/maps/Sableye_Lair/scripts.pory"
+# 639 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye3leaves
 	goto SableyeGem3_7
 
 SableyeGem3_10:
-# 556 "data/maps/Sableye_Lair/scripts.pory"
+# 651 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye3gone
-# 557 "data/maps/Sableye_Lair/scripts.pory"
+# 652 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 3
-# 558 "data/maps/Sableye_Lair/scripts.pory"
+# 653 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye3script
 	goto SableyeGem3_1
 
 SableyeGem3_11:
-# 561 "data/maps/Sableye_Lair/scripts.pory"
+# 656 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 562 "data/maps/Sableye_Lair/scripts.pory"
+# 657 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 564 "data/maps/Sableye_Lair/scripts.pory"
+# 659 "data/maps/Sableye_Lair/scripts.pory"
 sableye3leaves:
-# 565 "data/maps/Sableye_Lair/scripts.pory"
+# 660 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 3, SableyeGem2_Movement_0
-# 566 "data/maps/Sableye_Lair/scripts.pory"
+# 661 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement
-# 567 "data/maps/Sableye_Lair/scripts.pory"
+# 662 "data/maps/Sableye_Lair/scripts.pory"
 	playse SE_M_DIG
-# 568 "data/maps/Sableye_Lair/scripts.pory"
+# 663 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye3gone
-# 569 "data/maps/Sableye_Lair/scripts.pory"
+# 664 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 3
-# 571 "data/maps/Sableye_Lair/scripts.pory"
+# 666 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_unset caughtsableyelairboss, SableyeGem3_23
 SableyeGem3_22:
-# 574 "data/maps/Sableye_Lair/scripts.pory"
+# 669 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye3script
 	goto SableyeGem3_1
 
 SableyeGem3_12:
-# 578 "data/maps/Sableye_Lair/scripts.pory"
+# 673 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 3, SableyeGem3_Movement_0
-# 579 "data/maps/Sableye_Lair/scripts.pory"
+# 674 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye3script
 	goto SableyeGem3_1
 
 SableyeGem3_13:
-# 582 "data/maps/Sableye_Lair/scripts.pory"
+# 677 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 3, SableyeGem3_Movement_0
-# 583 "data/maps/Sableye_Lair/scripts.pory"
+# 678 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye3script
 	goto SableyeGem3_1
 
 SableyeGem3_20:
-# 529 "data/maps/Sableye_Lair/scripts.pory"
+# 624 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye3givesgem
 	goto SableyeGem3_18
 
 SableyeGem3_21:
-# 530 "data/maps/Sableye_Lair/scripts.pory"
+# 625 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye3wantstofight
 	goto SableyeGem3_18
 
 SableyeGem3_23:
-# 572 "data/maps/Sableye_Lair/scripts.pory"
+# 667 "data/maps/Sableye_Lair/scripts.pory"
 	addvar VAR_SABLEYELAIRANGER, + 1
 	goto SableyeGem3_22
 
 
 SableyeGem4::
-# 601 "data/maps/Sableye_Lair/scripts.pory"
+# 696 "data/maps/Sableye_Lair/scripts.pory"
 	lock
-# 602 "data/maps/Sableye_Lair/scripts.pory"
+# 697 "data/maps/Sableye_Lair/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 605 "data/maps/Sableye_Lair/scripts.pory"
+# 700 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_0
-# 606 "data/maps/Sableye_Lair/scripts.pory"
+# 701 "data/maps/Sableye_Lair/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SableyeGem1_Text_1, SableyeGem1_Text_2
-# 608 "data/maps/Sableye_Lair/scripts.pory"
+# 703 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SableyeGem4_2
 SableyeGem4_1:
-# 677 "data/maps/Sableye_Lair/scripts.pory"
+# 788 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq SableyeGem4_5
 SableyeGem4_4:
-# 681 "data/maps/Sableye_Lair/scripts.pory"
+# 792 "data/maps/Sableye_Lair/scripts.pory"
 endsableye4script:
-# 682 "data/maps/Sableye_Lair/scripts.pory"
+# 793 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 683 "data/maps/Sableye_Lair/scripts.pory"
+# 794 "data/maps/Sableye_Lair/scripts.pory"
 	release
 	return
 
 SableyeGem4_2:
-# 609 "data/maps/Sableye_Lair/scripts.pory"
+# 704 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 1, SableyeGem1_Movement_0
-# 611 "data/maps/Sableye_Lair/scripts.pory"
+# 706 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_set caughtsableyelairboss, SableyeGem4_8
 SableyeGem4_7:
-# 635 "data/maps/Sableye_Lair/scripts.pory"
+# 746 "data/maps/Sableye_Lair/scripts.pory"
 sableyewantstofight:
-# 636 "data/maps/Sableye_Lair/scripts.pory"
+# 747 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH
-# 637 "data/maps/Sableye_Lair/scripts.pory"
+# 748 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_4
-# 638 "data/maps/Sableye_Lair/scripts.pory"
+# 749 "data/maps/Sableye_Lair/scripts.pory"
 	waitmessage
-# 640 "data/maps/Sableye_Lair/scripts.pory"
+# 751 "data/maps/Sableye_Lair/scripts.pory"
 	setwildbattle SPECIES_SABLEYE, 5
-# 641 "data/maps/Sableye_Lair/scripts.pory"
+# 752 "data/maps/Sableye_Lair/scripts.pory"
 	dowildbattle
-# 642 "data/maps/Sableye_Lair/scripts.pory"
+# 753 "data/maps/Sableye_Lair/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 643 "data/maps/Sableye_Lair/scripts.pory"
+# 754 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq SableyeGem4_10
-# 648 "data/maps/Sableye_Lair/scripts.pory"
+# 759 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SableyeGem4_11
-# 665 "data/maps/Sableye_Lair/scripts.pory"
+# 776 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq SableyeGem4_12
-# 669 "data/maps/Sableye_Lair/scripts.pory"
+# 780 "data/maps/Sableye_Lair/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SableyeGem4_13
 	goto SableyeGem4_1
 
 SableyeGem4_5:
-# 678 "data/maps/Sableye_Lair/scripts.pory"
+# 789 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye4script
 	goto SableyeGem4_4
 
 SableyeGem4_8:
-# 614 "data/maps/Sableye_Lair/scripts.pory"
+# 709 "data/maps/Sableye_Lair/scripts.pory"
 	random 2
-# 615 "data/maps/Sableye_Lair/scripts.pory"
+# 710 "data/maps/Sableye_Lair/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 616 "data/maps/Sableye_Lair/scripts.pory"
+# 711 "data/maps/Sableye_Lair/scripts.pory"
 	switch VAR_RESULT
-# 617 "data/maps/Sableye_Lair/scripts.pory"
+# 712 "data/maps/Sableye_Lair/scripts.pory"
 	case 0, SableyeGem4_20
-# 618 "data/maps/Sableye_Lair/scripts.pory"
+# 713 "data/maps/Sableye_Lair/scripts.pory"
 	case 1, SableyeGem4_21
 SableyeGem4_18:
-# 620 "data/maps/Sableye_Lair/scripts.pory"
+# 715 "data/maps/Sableye_Lair/scripts.pory"
 sableyegivesgem:
-# 621 "data/maps/Sableye_Lair/scripts.pory"
+# 716 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 622 "data/maps/Sableye_Lair/scripts.pory"
+# 717 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 623 "data/maps/Sableye_Lair/scripts.pory"
+# 718 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 1, SableyeLairBossSequence_Movement_0
-# 624 "data/maps/Sableye_Lair/scripts.pory"
+# 719 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 1
-# 625 "data/maps/Sableye_Lair/scripts.pory"
+# 720 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 1, SableyeGem1_Movement_0
-# 626 "data/maps/Sableye_Lair/scripts.pory"
+# 721 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement 1
-# 627 "data/maps/Sableye_Lair/scripts.pory"
+# 722 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeGem1_Text_3
-# 628 "data/maps/Sableye_Lair/scripts.pory"
+# 724 "data/maps/Sableye_Lair/scripts.pory"
+	goto_if_set caughtsableyelairboss, SableyeGem4_26
+# 737 "data/maps/Sableye_Lair/scripts.pory"
 	giveitem ITEM_SAPPHIRE
-# 629 "data/maps/Sableye_Lair/scripts.pory"
+SableyeGem4_25:
+# 740 "data/maps/Sableye_Lair/scripts.pory"
 	setmetatile 9, 5, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
-# 630 "data/maps/Sableye_Lair/scripts.pory"
+# 741 "data/maps/Sableye_Lair/scripts.pory"
 	special DrawWholeMapView
-# 631 "data/maps/Sableye_Lair/scripts.pory"
+# 742 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableyegem4
-# 632 "data/maps/Sableye_Lair/scripts.pory"
+# 743 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableye4leaves
 	goto SableyeGem4_7
 
 SableyeGem4_10:
-# 644 "data/maps/Sableye_Lair/scripts.pory"
+# 755 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye4gone
-# 645 "data/maps/Sableye_Lair/scripts.pory"
+# 756 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 1
-# 646 "data/maps/Sableye_Lair/scripts.pory"
+# 757 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye4script
 	goto SableyeGem4_1
 
 SableyeGem4_11:
-# 649 "data/maps/Sableye_Lair/scripts.pory"
+# 760 "data/maps/Sableye_Lair/scripts.pory"
 	playmoncry SPECIES_SABLEYE, CRY_MODE_WEAK
-# 650 "data/maps/Sableye_Lair/scripts.pory"
+# 761 "data/maps/Sableye_Lair/scripts.pory"
 	msgbox SableyeLairBossSequence_Text_9
-# 652 "data/maps/Sableye_Lair/scripts.pory"
+# 763 "data/maps/Sableye_Lair/scripts.pory"
 sableye4leaves:
-# 653 "data/maps/Sableye_Lair/scripts.pory"
+# 764 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 1, SableyeGem4_Movement_0
-# 654 "data/maps/Sableye_Lair/scripts.pory"
+# 765 "data/maps/Sableye_Lair/scripts.pory"
 	waitmovement
-# 655 "data/maps/Sableye_Lair/scripts.pory"
+# 766 "data/maps/Sableye_Lair/scripts.pory"
 	playse SE_M_DIG
-# 656 "data/maps/Sableye_Lair/scripts.pory"
+# 767 "data/maps/Sableye_Lair/scripts.pory"
 	setflag sableye4gone
-# 657 "data/maps/Sableye_Lair/scripts.pory"
+# 768 "data/maps/Sableye_Lair/scripts.pory"
 	removeobject 1
-# 659 "data/maps/Sableye_Lair/scripts.pory"
+# 770 "data/maps/Sableye_Lair/scripts.pory"
 	goto_if_unset caughtsableyelairboss, SableyeGem4_23
 SableyeGem4_22:
-# 662 "data/maps/Sableye_Lair/scripts.pory"
+# 773 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye4script
 	goto SableyeGem4_1
 
 SableyeGem4_12:
-# 666 "data/maps/Sableye_Lair/scripts.pory"
+# 777 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 1, SableyeLairBossSequence_Movement_0
-# 667 "data/maps/Sableye_Lair/scripts.pory"
+# 778 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye4script
 	goto SableyeGem4_1
 
 SableyeGem4_13:
-# 670 "data/maps/Sableye_Lair/scripts.pory"
+# 781 "data/maps/Sableye_Lair/scripts.pory"
 	applymovement 1, SableyeLairBossSequence_Movement_0
-# 671 "data/maps/Sableye_Lair/scripts.pory"
+# 782 "data/maps/Sableye_Lair/scripts.pory"
 	goto endsableye4script
 	goto SableyeGem4_1
 
 SableyeGem4_20:
-# 617 "data/maps/Sableye_Lair/scripts.pory"
+# 712 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableyegivesgem
 	goto SableyeGem4_18
 
 SableyeGem4_21:
-# 618 "data/maps/Sableye_Lair/scripts.pory"
+# 713 "data/maps/Sableye_Lair/scripts.pory"
 	goto sableyewantstofight
 	goto SableyeGem4_18
 
 SableyeGem4_23:
-# 660 "data/maps/Sableye_Lair/scripts.pory"
+# 771 "data/maps/Sableye_Lair/scripts.pory"
 	addvar VAR_SABLEYELAIRANGER, + 1
 	goto SableyeGem4_22
 
+SableyeGem4_26:
+# 727 "data/maps/Sableye_Lair/scripts.pory"
+	random 4
+# 728 "data/maps/Sableye_Lair/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 729 "data/maps/Sableye_Lair/scripts.pory"
+	switch VAR_RESULT
+# 730 "data/maps/Sableye_Lair/scripts.pory"
+	case 0, SableyeGem4_30
+# 731 "data/maps/Sableye_Lair/scripts.pory"
+	case 1, SableyeGem4_31
+# 732 "data/maps/Sableye_Lair/scripts.pory"
+	case 2, SableyeGem4_32
+# 733 "data/maps/Sableye_Lair/scripts.pory"
+	case 3, SableyeGem4_33
+	goto SableyeGem4_25
 
-# 56 "data/maps/Sableye_Lair/scripts.pory"
+SableyeGem4_30:
+# 730 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_NONE
+	goto SableyeGem4_25
+
+SableyeGem4_31:
+# 731 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_NONE
+	goto SableyeGem4_25
+
+SableyeGem4_32:
+# 732 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_NONE
+	goto SableyeGem4_25
+
+SableyeGem4_33:
+# 733 "data/maps/Sableye_Lair/scripts.pory"
+	giveitem ITEM_NONE
+	goto SableyeGem4_25
+
+
+# 62 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_0:
-# 56 "data/maps/Sableye_Lair/scripts.pory"
+# 62 "data/maps/Sableye_Lair/scripts.pory"
 	face_down
 	step_end
 
-# 74 "data/maps/Sableye_Lair/scripts.pory"
+# 80 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_1:
-# 74 "data/maps/Sableye_Lair/scripts.pory"
+# 80 "data/maps/Sableye_Lair/scripts.pory"
 	face_up
 	step_end
 
-# 80 "data/maps/Sableye_Lair/scripts.pory"
+# 86 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_2:
-# 80 "data/maps/Sableye_Lair/scripts.pory"
+# 86 "data/maps/Sableye_Lair/scripts.pory"
 	jump_down
 	step_end
 
-# 83 "data/maps/Sableye_Lair/scripts.pory"
+# 89 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_3:
-# 83 "data/maps/Sableye_Lair/scripts.pory"
+# 89 "data/maps/Sableye_Lair/scripts.pory"
 	jump_up
 	step_end
 
-# 98 "data/maps/Sableye_Lair/scripts.pory"
+# 104 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_4:
-# 98 "data/maps/Sableye_Lair/scripts.pory"
+# 104 "data/maps/Sableye_Lair/scripts.pory"
 	walk_down
-# 98 "data/maps/Sableye_Lair/scripts.pory"
+# 104 "data/maps/Sableye_Lair/scripts.pory"
 	face_player
 	step_end
 
-# 125 "data/maps/Sableye_Lair/scripts.pory"
+# 131 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_5:
-# 125 "data/maps/Sableye_Lair/scripts.pory"
+# 131 "data/maps/Sableye_Lair/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 144 "data/maps/Sableye_Lair/scripts.pory"
+# 150 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_6:
-# 144 "data/maps/Sableye_Lair/scripts.pory"
+# 150 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_left
-# 144 "data/maps/Sableye_Lair/scripts.pory"
+# 150 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_up
-# 144 "data/maps/Sableye_Lair/scripts.pory"
+# 150 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_up
-# 144 "data/maps/Sableye_Lair/scripts.pory"
+# 150 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_right
-# 144 "data/maps/Sableye_Lair/scripts.pory"
+# 150 "data/maps/Sableye_Lair/scripts.pory"
 	face_down
 	step_end
 
-# 147 "data/maps/Sableye_Lair/scripts.pory"
+# 153 "data/maps/Sableye_Lair/scripts.pory"
 SableyeLairBossSequence_Movement_7:
-# 147 "data/maps/Sableye_Lair/scripts.pory"
+# 153 "data/maps/Sableye_Lair/scripts.pory"
 	jump_down
-# 147 "data/maps/Sableye_Lair/scripts.pory"
+# 153 "data/maps/Sableye_Lair/scripts.pory"
 	jump_down
 	step_end
 
-# 346 "data/maps/Sableye_Lair/scripts.pory"
+# 441 "data/maps/Sableye_Lair/scripts.pory"
 SableyeGem1_Movement_0:
-# 346 "data/maps/Sableye_Lair/scripts.pory"
+# 441 "data/maps/Sableye_Lair/scripts.pory"
 	face_player
 	step_end
 
-# 360 "data/maps/Sableye_Lair/scripts.pory"
+# 455 "data/maps/Sableye_Lair/scripts.pory"
 SableyeGem1_Movement_1:
-# 360 "data/maps/Sableye_Lair/scripts.pory"
+# 455 "data/maps/Sableye_Lair/scripts.pory"
 	face_right
 	step_end
 
-# 390 "data/maps/Sableye_Lair/scripts.pory"
+# 485 "data/maps/Sableye_Lair/scripts.pory"
 SableyeGem1_Movement_2:
-# 390 "data/maps/Sableye_Lair/scripts.pory"
+# 485 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 478 "data/maps/Sableye_Lair/scripts.pory"
+# 573 "data/maps/Sableye_Lair/scripts.pory"
 SableyeGem2_Movement_0:
-# 478 "data/maps/Sableye_Lair/scripts.pory"
+# 573 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 535 "data/maps/Sableye_Lair/scripts.pory"
+# 630 "data/maps/Sableye_Lair/scripts.pory"
 SableyeGem3_Movement_0:
-# 535 "data/maps/Sableye_Lair/scripts.pory"
+# 630 "data/maps/Sableye_Lair/scripts.pory"
 	face_left
 	step_end
 
-# 653 "data/maps/Sableye_Lair/scripts.pory"
+# 764 "data/maps/Sableye_Lair/scripts.pory"
 SableyeGem4_Movement_0:
-# 653 "data/maps/Sableye_Lair/scripts.pory"
+# 764 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_left
-# 653 "data/maps/Sableye_Lair/scripts.pory"
+# 764 "data/maps/Sableye_Lair/scripts.pory"
 	walk_fast_up
 	step_end
 
 SableyeLairBossSequence_Text_0:
-# 50 "data/maps/Sableye_Lair/scripts.pory"
+# 56 "data/maps/Sableye_Lair/scripts.pory"
 	.string "Saaa-saaaaa-saaaaaa!$"
 
 SableyeLairBossSequence_Text_1:
-# 79 "data/maps/Sableye_Lair/scripts.pory"
+# 85 "data/maps/Sableye_Lair/scripts.pory"
 	.string "Saaaaaa!$"
 
 SableyeLairBossSequence_Text_2:
-# 91 "data/maps/Sableye_Lair/scripts.pory"
+# 97 "data/maps/Sableye_Lair/scripts.pory"
 	.string "The Sableye has stolen {PLAYER}'s\n"
 	.string "bag!$"
 
 SableyeLairBossSequence_Text_3:
-# 93 "data/maps/Sableye_Lair/scripts.pory"
+# 99 "data/maps/Sableye_Lair/scripts.pory"
 	.string "{PLAYER} is surrounded - he can't run\n"
 	.string "away!$"
 
 SableyeLairBossSequence_Text_4:
-# 100 "data/maps/Sableye_Lair/scripts.pory"
+# 106 "data/maps/Sableye_Lair/scripts.pory"
 	.string "Saaa-saaaaa!$"
 
 SableyeLairBossSequence_Text_5:
-# 132 "data/maps/Sableye_Lair/scripts.pory"
+# 138 "data/maps/Sableye_Lair/scripts.pory"
 	.string "Saaa-saaaa...$"
 
 SableyeLairBossSequence_Text_6:
-# 143 "data/maps/Sableye_Lair/scripts.pory"
+# 149 "data/maps/Sableye_Lair/scripts.pory"
 	.string "Sa-saaa!?$"
 
 SableyeLairBossSequence_Text_7:
-# 152 "data/maps/Sableye_Lair/scripts.pory"
+# 158 "data/maps/Sableye_Lair/scripts.pory"
 	.string "The remaining Sableye returns\n"
 	.string "{PLAYER}'s bag out of fear!$"
 
 SableyeLairBossSequence_Text_8:
-# 175 "data/maps/Sableye_Lair/scripts.pory"
+# 181 "data/maps/Sableye_Lair/scripts.pory"
 	.string "SaAaAaAaA...$"
 
 SableyeLairBossSequence_Text_9:
-# 195 "data/maps/Sableye_Lair/scripts.pory"
+# 201 "data/maps/Sableye_Lair/scripts.pory"
 	.string "S-saaa...$"
 
 SableyeLairGem1_Text_0:
-# 263 "data/maps/Sableye_Lair/scripts.pory"
+# 269 "data/maps/Sableye_Lair/scripts.pory"
 	.string "For some unexplicable reason, the gem's\n"
 	.string "remains begin to grow back...\p"
 	.string "There may be another gem here tomorrow.$"
 
 SableyeGem1_Text_0:
-# 342 "data/maps/Sableye_Lair/scripts.pory"
+# 437 "data/maps/Sableye_Lair/scripts.pory"
 	.string "The Sableye is zealously admiring its\n"
 	.string "gems. Try to get them?$"
 
 SableyeGem1_Text_1:
-# 343 "data/maps/Sableye_Lair/scripts.pory"
+# 438 "data/maps/Sableye_Lair/scripts.pory"
 	.string "Yes$"
 
 SableyeGem1_Text_2:
-# 343 "data/maps/Sableye_Lair/scripts.pory"
+# 438 "data/maps/Sableye_Lair/scripts.pory"
 	.string "No$"
 
 SableyeGem1_Text_3:
-# 364 "data/maps/Sableye_Lair/scripts.pory"
+# 459 "data/maps/Sableye_Lair/scripts.pory"
 	.string "The Sableye seems scared of you, and\n"
 	.string "hands you the gem willingly.$"
 
 SableyeGem1_Text_4:
-# 374 "data/maps/Sableye_Lair/scripts.pory"
+# 469 "data/maps/Sableye_Lair/scripts.pory"
 	.string "SAAAAA!$"

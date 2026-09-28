@@ -28,41 +28,81 @@ script OldaleWarehouseUpperRebelEventEntrance {
     playbgm (MUS_ENCOUNTER_INTENSE, TRUE)
     playse (SE_PIN)
 	applymovement (4, moves(emote_exclamation_mark, walk_in_place_up))
-	msgbox(format("Hm? Who the hells are you?"))
+
+	if (!flag(lost1stfightoldalewarehouseupper))
+	{msgbox(format("Hm? Who the hells are you?"))
     playse (SE_PIN)
 	applymovement (2, moves(emote_exclamation_mark, walk_in_place_left))
+}
+
+	else
+	{msgbox(format("Huh? You've come for more?"))
+	applymovement (2, moves(walk_in_place_left))}
 
 	applymovement (3, moves(walk_in_place_right))
 	applymovement (5, moves(walk_in_place_right))
 
 	setspeaker ([SP_NAME_CALVIN])
-    checkplayergender
-	if(var(VAR_RESULT) == MALE){msgbox(format("Hey! It's him! That's the Littleroot chump! GET HIM!"))}
-	if(var(VAR_RESULT) == FEMALE){msgbox(format("Hey! It's her! That's the Littleroot chump! GET HER!"))}
-	setspeaker (NULL)
 
-                         
+	if (!flag(lost1stfightoldalewarehouseupper))
+	{checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("Hey! It's him! That's the Littleroot chump! GET HIM!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Hey! It's her! That's the Littleroot chump! GET HER!"))}}
+
+	else
+	{msgbox(format("Told you, Littleroot hicks are stubborn!"))}
+	setspeaker (NULL)
+     
 	applymovement (3, moves(walk_up * 2, walk_in_place_left))
     playse (SE_M_METRONOME)
 	applymovement (5, moves(walk_in_place_left))
-	applymovement (6, moves(emote_question_mark, walk_in_place_up))
+
+	if (!flag(lost1stfightoldalewarehouseupper))
+	{applymovement (6, moves(emote_question_mark, walk_in_place_up))}
+	else {applymovement (6, moves(walk_in_place_up))}
+
+
 	applymovement (1, moves(walk_in_place_left))
+
+	if (!flag(lost1stfightoldalewarehouseupper))
+	{
     checkplayergender
 	if(var(VAR_RESULT) == MALE){msgbox(format("That's the guy...? Pfft! You're such a loser, Calvin!"))}
-	if(var(VAR_RESULT) == FEMALE){msgbox(format("That the girl...? Pfft! You're such a loser, Calvin!"))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("That the girl...? Pfft! You're such a loser, Calvin!"))}}
+
+	else{msgbox(format("Well... for once, you are right."))}
 
 	applymovement (4, moves(walk_up * 1))
-    msgbox(format("Wait... you beat Rick and Lola downstairs?\pHeh... perhaps this'll be fun."))
+
+	if (!flag(lost1stfightoldalewarehouseupper))
+	{msgbox(format("Wait... you beat Rick and Lola downstairs?\pHeh... perhaps this'll be fun."))}
+
+	else {msgbox(format("I mean, we can do this all day, so be my guest!!"))}
+
+
 	applymovement (4, moves(walk_in_place_right))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
-    msgbox(format("Jani, back me up! Let's do our COMBO!"))
+
+	if (!flag(lost1stfightoldalewarehouseupper))
+	{msgbox(format("Jani, back me up! Let's do our COMBO!"))}
+
+	else {msgbox(format("Jani, you know what time it is!"))}
+
 	applymovement (4, moves(walk_in_place_up))
 	applymovement (3, moves(walk_left * 2))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
-    msgbox(format("I told you, if you pull that crap one more time...!"))
 
+	if (!flag(lost1stfightoldalewarehouseupper))
+	{msgbox(format("I told you, if you pull that crap one more time...!"))}
+
+	else {msgbox(format("Idiot boom-boom time? Hate to admit that it worked last time...
+	{COLOR LIGHT_GRAY}{SHADOW WHITE}tsk...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))}
+
+	setflag (lost1stfightoldalewarehouseupper)
     trainerbattle_two_trainers (TRAINER_REBELGRUNT_OLDALEWAREHOUSE_3, RebelGruntMWareHouseUpperOutro, TRAINER_REBELGRUNT_OLDALEWAREHOUSE_4, RebelGruntFWareHouseUpperOutro)
 	applymovement (1, moves(walk_in_place_left))
+
+	
 	msgbox(format("Stand aside, you punks!"))
 	closemessage
 	
@@ -73,8 +113,13 @@ script OldaleWarehouseUpperRebelEventEntrance {
 	applymovement (4, moves(walk_left * 2, walk_in_place_right))
 	applymovement (1, moves(walk_left * 1, walk_up * 1, walk_in_place_left))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
-	msgbox(format("You ain't gonna beat this one like that. The way you battle...\pYou're an ex-soldier, aren't you?
-    What, you're a merc sent by Devon?\p Eh, all the same. We'll use you to send a message to this town..."))
+
+	if (!flag(lost2ndfightoldalewarehouseupper))
+	{msgbox(format("You ain't gonna beat this one like that. The way you battle...\pYou're an ex-soldier, aren't you?
+    What, you're a merc sent by Devon?\p Eh, all the same. We'll use you to send a message to this town..."))}
+
+	else {msgbox(format("Guess you didn't get it the first time, so I'll repeat it loud and clear..."))}
+
 	call(WarehouseRebelAdminShake)
 	applymovement (1, moves(walk_slow_left * 1))
 	msgbox(format("NO ONE..."))
@@ -90,6 +135,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 	applymovement (5, moves(jump_in_place_up))
 	applymovement (6, moves(jump_in_place_up))
 	applymovement (4, moves(jump_in_place_right))
+	applymovement (9, moves(jump_in_place_down))
 	msgbox(format("WITH REBELS!"))
 
 	trainerbattle_no_intro(TRAINER_REBELADMIN_OLDALEWAREHOUSE , RebelAdminWareHouseUpperOutro)

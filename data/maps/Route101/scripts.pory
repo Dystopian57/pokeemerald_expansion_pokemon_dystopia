@@ -315,14 +315,15 @@ script Route101Weather {
     {
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
 	playse (SE_PIN)
-	msgbox (format("O-oh, {PLAYER}... that way is the... Great Crater, isn't it?"))
+	msgbox (format("O-oh, {PLAYER}... that way is the... {COLOR GREEN}Great Crater{COLOR DARK_GRAY}, isn't it?"))
 
 	msgbox (format("I know they sell donuts there, but... I don't like them much. \p Can we go
-	to Oldale's vending machine instead?"))}
+	to {COLOR GREEN}Oldale{COLOR DARK_GRAY}'s vending machine instead?"))}
 
 	else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
 		of your time...!"))}
 
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_down * 1))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
 waitmovement (OBJ_EVENT_ID_PLAYER)
 releaseall
@@ -351,6 +352,7 @@ script Route101OrphanJoel{
 				setspeaker ([SP_NAME_SAMANTHA])
 				msgbox(format("S-... strange lady...?"))
 				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+				setspeaker ([SP_NAME_SAMANTHA])
 				msgbox(format("W-well, we went out to get food at Oldale..."))
 				setspeaker ([SP_NAME_JOEL])
 				applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
@@ -680,6 +682,11 @@ script Route101RebelGruntBattle{
 	if(var(VAR_RESULT) == 0){
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+	special(ShakeCamera)
 	playse (SE_ICE_STAIRS)
 	waitse
 	msgbox(format("{PLAYER} parries the bat with one of his crutches, and the rebel falls on his

@@ -50,7 +50,7 @@ script OldaleWarehouseApplianceStorageScavenger2Trigger {
 		if (!flag (foughtwarehousescavenger2))
 		{
 		msgbox(format("W-what the!? What's with you, sneaking around like a Keckleon!?\pWell, this is our loot - and I'll
-		fight you over for it!"))
+		fight you for it!"))
 		setflag (foughtwarehousescavenger2)}
 
 		else {msgbox(format("What? You're persistent... let me scavenge in peace!"))}
@@ -62,7 +62,7 @@ script OldaleWarehouseApplianceStorageScavenger2Trigger {
     giveitem (ITEM_ITEMFINDER)
 	msgbox(format("That's an Object Spotter - a pair of smart goggles that help you detect valuable
     items laying around. \p Just be warned - after Devon found out bad agents use these to steal,
-    they implemented an 'anti-theft' feature.\pMeaning, these won't do anything in indoor spaces.\p... Aside from
+    they implemented an “anti-theft” feature.\pMeaning, these won't do anything in indoor spaces.\p... aside from
     making you look like a dork, that is."))
     setflag (scavengergivesobjectspotter)}
 
@@ -77,7 +77,7 @@ script OldaleWarehouseApplianceStorageScavenger2NoTrigger {
 	{call (OldaleWarehouseApplianceStorageScavenger2Trigger)}
 
 	else {
-	msgbox(format("Small bit of trivia: the Object Spooter is actually an an enhanced version of the 'Dowsing Machine'.
+	msgbox(format("Small bit of trivia: the Object Spooter is actually an enhanced version of the old “Dowsing Machine”.
 	\pThough I guess you're a bit too young to know about those, eh?"))
 	}
 
@@ -92,7 +92,7 @@ script OldaleWarehouseApplianceStorageScavenger2NoTrigger {
 script OldaleWarehouseApplianceStorageGenerator {
 	lock
 	msgbox(format("A complex machine. The label on the side reads...\p
-    “Pokémon Electricity Extractor. Made in Mahogany Town: Silph & Co.”."))
+    “Pokémon Electricity Extractor.\nMade in Mahogany Town: Silph Co.”."))
 	release
 }
 
@@ -118,21 +118,23 @@ script WarehouseExposedWiring {
 	{	msgbox(format("There's something below the exposed wiring..."))
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Grab it", "Leave it alone")
 
-	if (var(VAR_RESULT) == 0) {
-	setvar(VAR_0x8004, 2)  //@ vertical pan
-	setvar(VAR_0x8005, 2)  //@ horizontal pan
-	setvar(VAR_0x8006, 2)  //@ num shakes
-	setvar(VAR_0x8007, 4)  //@ shake delay
-	special(ShakeCamera)
-	playse (SE_M_THUNDERBOLT2)
-	msgbox(format("Got a nasty shock...! But something else too!"))
-	giveitem (ITEM_MAGNET)
-	setflag (FLAG_ITEM_WAREHOUSEWIRING)
-	}
+		if (var(VAR_RESULT) == 0) {
+		setvar(VAR_0x8004, 2)  //@ vertical pan
+		setvar(VAR_0x8005, 2)  //@ horizontal pan
+		setvar(VAR_0x8006, 2)  //@ num shakes
+		setvar(VAR_0x8007, 4)  //@ shake delay
+		special(ShakeCamera)
+		playse (SE_M_THUNDERBOLT2)
+		msgbox(format("Got a nasty shock...! But something else too!"))
+		giveitem (ITEM_MAGNET)
+		setflag (FLAG_ITEM_WAREHOUSEWIRING)
+		}
 
-	else{
-	msgbox(format("Better not to touch this..."))}
-	}
+		else{
+		msgbox(format("Better not to touch this..."))}}
+
+	else
+	{msgbox(format("The loose wire fizzles."))}
 
 release
 }
@@ -186,7 +188,13 @@ script OldaleWarehouseApplianceStorageTV {
 
 script OldaleWarehouseApplianceStorageBarrel {
 	lock
-	msgbox(format("The barrel smells of fuel."))
+	if (!flag (appliancestoragebarrelitem))
+	{
+	msgbox(format("A fuel barrel. There's something behind it..."))
+	giveitem (ITEM_CHARCOAL)
+	setflag (appliancestoragebarrelitem)}
+
+	else {msgbox(format("A regular fuel barrel."))}
 	release
 }
 

@@ -116,7 +116,7 @@ TunnelLoner_Movement_0:
 # 69 "data/maps/ExclusionZoneTunnel/scripts.pory"
 TunnelLoner_Movement_1:
 # 69 "data/maps/ExclusionZoneTunnel/scripts.pory"
-	face_left
+	walk_in_place_left
 	step_end
 
 MinefieldLever_Text_0:
@@ -138,7 +138,7 @@ TunnelSeismeter_Text_0:
 TunnelWeirdMachine_Text_0:
 # 54 "data/maps/ExclusionZoneTunnel/scripts.pory"
 	.string "No idea what this does. Better not to\n"
-	.string "touch it$"
+	.string "touch it.$"
 
 TunnelDrill_Text_0:
 # 60 "data/maps/ExclusionZoneTunnel/scripts.pory"

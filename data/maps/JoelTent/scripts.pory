@@ -310,7 +310,21 @@ script JoelTentRadishes {
 }
 
 script JoelTentOranBasket {
-	lockall
-    msgbox(format("A basket full of Oran berries."))
+	lock
+	if (!flag(grabbedoranatJoels))
+    {msgbox(format("A basket full of Oran berries. “Can pick one!” is written on its side, so..."))
+	giveitem (ITEM_ORAN_BERRY)
+	setflag (grabbedoranatJoels)}
+
+	else{msgbox(format("A basket full of Oran berries."))}
+
 	releaseall
 }
+
+script JoelTentItem {
+	lock
+    finditem (ITEM_TM_POUNCE)
+    //giveitem (ITEM_SOFT_SAND)
+	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+    removeobject (5)
+	releaseall}

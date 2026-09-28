@@ -68,7 +68,7 @@ script LabBasementBlueprints {
 	{msgbox (format("A complicated blueprint for what seems like a portable version of the Unsafener."))}
 
 	msgbox (format("There's also some notes scribbled on the paper... \p
-	EVACUATION PROTOCOL\n
+	EVACUATION PROTOCOL\p
 	1) Code White: Devon in Lab = Car Ladder.\p
 	2) Code Brown: Lab surrounded = Tunnel exit.\p
 	3) {COLOR RED}Code Red:{COLOR DARK_GRAY} All exits blocked = Destroy evidence."))
@@ -163,6 +163,7 @@ script AideCasettePlayer {
 		setspeaker ([SP_NAME_AIDEE])
 		applymovement (1, moves (walk_in_place_right* 1))
 		msgbox (format("Aah... some people don't have taste for music, am I right?"))
+		closemessage
 		applymovement (1, moves (walk_in_place_down * 1))
 		waitmovement (1)
 		removefieldmugshot
@@ -238,7 +239,8 @@ script AideeBasementUnfollow4 {
 }
 
 script AideeBasementIdleTalk {
-	lockall
+	lock
+	applymovement (1, moves(face_player))
 	if (!flag (Unsafeningtutodone)){
 		applymovement (1, moves(face_player))
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
@@ -324,7 +326,7 @@ script AideeBasementIdleTalk {
 		applymovement (5, moves(walk_in_place_left * 1))
 		msgbox (format("Vol-voooolt!"))
 
-		applymovement (1, moves(walk_in_place_down * 1))
+		applymovement (1, moves(face_player))
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("We have reverted a Safemon back into a regular Pokémon! Isn't it fascinating!?
@@ -332,6 +334,7 @@ script AideeBasementIdleTalk {
 		removefieldmugshot
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_AIDEE])
+		//applymovement (5, moves(walk_in_place_down * 1))
 		msgbox (format("So... I don't know how fond are you of Voltorbs, after serving in the army..."))
 
 		removefieldmugshot
@@ -421,7 +424,7 @@ script AideeBasementIdleTalk {
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("This is the Devondex. It will store information about
 		Pokémon and Safemon native to Hoenn. \p Mind you, it will not register any data on the unsafened
-		Pokémon you get here...\pSince they're not supposed to be found in the wild anymore."))
+		Pokémon you get here...\pSince they're not supposed to be found anywhere anymore."))
 		setseenmon (SPECIES_BULBASYNTH)
 		setseenmon (SPECIES_SMOTHQUIL)
 		setseenmon (SPECIES_PIKACHU_SAFE)
@@ -436,6 +439,7 @@ script AideeBasementIdleTalk {
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
 		msgbox (format("Oh, one last thing - here's my Devonav number!"))
+		removefieldmugshot
 
 		setflag (FLAG_ENABLE_PROF_BIRCH_MATCH_CALL)
 		playbgm (MUS_REGISTER_MATCH_CALL, TRUE)
@@ -443,7 +447,7 @@ script AideeBasementIdleTalk {
 
 
 
-		removefieldmugshot
+
 		createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 		setspeaker ([SP_NAME_AIDEE])
 		fadeoutbgm (1)
@@ -527,7 +531,7 @@ script AideeBasementIdleTalk {
 
 				createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 				setspeaker ([SP_NAME_AIDEE])
-				msgbox (format("So, {PLAYER}... what's your stance on Devon Corp. and
+				msgbox (format("So, {PLAYER}... what's your stance on Devon Co. and
 				Safemon?"))
 				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them",
 				"I'm indifferent")
@@ -573,16 +577,16 @@ script AideeBasementIdleTalk {
 					msgbox (format("A-ah, I suppose you've noticed some already...? You're
 					observant!\p You see, right now Unsafening is a very novel procedure...\p Of course,
 					it changes the appearance, typing and ability of a specimen back to what they used to be -
-					that works as intended!\p However, it may also alter their level, moves, individual and
-					effort values...
-					even their gender!\p I know having your companions change so much at once may be distressing..."))
+					that works as intended!\p However, it may also alter their moves, individual values, nature... even
+					their gender!\pFor what is worth, it does keep their level and effort values, but...
+					\p I know having your companions change so much at once may be distressing."))
 					applymovement (1, moves(walk_in_place_left * 1))
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("To help alleviate that, I've set up a Medicine Dispenser over there."))
 					applymovement (1, moves(face_player))
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("For token prices, you may
-					get pills with which to help get your Pokémon back to how it used to be - or to change them
+					get pills with which to help get your Pokémon back to how they used to be - or to change them
 					even more!\p And don't worry - there's no risk of overdose with any of the pills!
 					{COLOR LIGHT_GRAY}{SHADOW WHITE}I think...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
 
@@ -635,7 +639,7 @@ script AideeBasementIdleTalk {
 						msgbox (format("It's done! Another Unsafening success - take good care
 						of that Voltorb!"))
 						removeitem (ITEM_COMET_SHARD, 1)
-						//goto (finishsafemontradescript)
+						goto (finishsafemontradescript)
 						}
 					else {
 						setspeaker ([SP_NAME_AIDEE])
@@ -2516,6 +2520,7 @@ script AideeBasementIdleTalk {
 
 	finishunsafentutorial:
 	finishsafemontradescript:
+	applymovement (1, moves(face_down))
 	removefieldmugshot
 	releaseall
 	}}}

@@ -239,5 +239,5 @@ OldaleTownHouse2BigPainting_Text_0:
 
 OldaleTownHouse2SmallPainting_Text_0:
 # 91 "data/maps/OldaleTown_House2_2F/scripts.pory"
-	.string "A river crossing a wide, green plan.\n"
+	.string "A river crossing a wide, green plain.\n"
 	.string "Haven't seen one of these in a while.$"

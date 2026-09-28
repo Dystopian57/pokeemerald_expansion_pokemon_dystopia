@@ -42,15 +42,15 @@
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
     F(AERIAL_ACE) \
-    F(TORMENT) \
+    F(POUNCE) \
     F(FACADE) \
     F(SECRET_POWER) \
     F(REST) \
     F(ATTRACT) \
     F(THIEF) \
     F(STEEL_WING) \
-    F(POISON_GAS) \
-    F(SNATCH) \
+    F(HAZE) \
+    F(NIGHT_SHADE) \
     F(OVERHEAT) 
 
 #define FOREACH_HM(F) \

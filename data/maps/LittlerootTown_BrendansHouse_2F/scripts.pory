@@ -22,7 +22,6 @@ GiveSturdyWatch_1:
 	return
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
-	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
 	goto_if_ge VAR_BIRCH_LAB_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_Ret
 	goto LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
 
@@ -435,10 +434,9 @@ script PlayerBedSimple {
     msgbox("Rest for a bit?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 	fadescreen (FADE_TO_BLACK)
-	special(HealPlayerParty)
 	playse (MUS_HEAL)
 	msgbox (format("You rest for a while."))
-	waitbuttonpress
+	special(HealPlayerParty)
 	fadescreen (FADE_FROM_BLACK)}
 	releaseall		
 }
@@ -470,6 +468,7 @@ script PlayerHouseBedTime {
 	playse (SE_SUCCESS)
 	waitse
 	fadescreen (FADE_FROM_BLACK)
+	special(HealPlayerParty)
 	msgbox (format("{PLAYER} wakes up."))
 	
 }
@@ -480,9 +479,9 @@ script PlayerRoomDadPrize {
 	lockall
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
-	msgbox (format("It's a Battle Frontier trophy. \pIt's quite dusty and has lost most of its
+	msgbox (format("It's dad's Battle Frontier trophy. \pIt's quite dusty and has lost most of its
 	sheen."))}
-	else {msgbox (format("It's a Battle Frontier trophy. \pIt's quite dusty and has lost most of its
+	else {msgbox (format("It's mom's Battle Frontier trophy. \pIt's quite dusty and has lost most of its
 	sheen."))}
 	releaseall		
 }
@@ -614,7 +613,7 @@ script PlayerRoomMail {
 			Hey lass. How is your arm? Does it still give you trouble?\p I know I said I'd visit, 
 			but things have been very busy in the gym.\pMaybe you can make the trip instead, once you're 
 			feeling better. \pWe could have a Pokémon battle, just like your mom and I used to. 
-			\pShe beat me when he was half your age… she was a real prodigy. 
+			\pShe beat me when she was half your age… she was a real prodigy. 
 			\pWell, got to go. Remember to eat well, and do plenty of exercise. 
 			\pTake care,
 			\nNorman."))}

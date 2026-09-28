@@ -56,7 +56,7 @@ script GreatCraterHotSpringsBathingladyloosehair {
     applymovement (2, moves(face_player))
     msgbox(format("The water is warm... but not as warm as back home. \p And the sights
     are worse too!"))
-    applymovement (3, moves(face_down * 1))
+    applymovement (2, moves(face_down * 1))
     waitmovement (2)
     releaseall
     }
@@ -88,4 +88,12 @@ script GreatCraterScaldOldman {
     applymovement (7, moves(face_down * 1))
     waitmovement (7)
     releaseall
+}
+
+
+script HotSpringHeal {
+    lock
+	special(HealPlayerParty)
+    release
+    
 }

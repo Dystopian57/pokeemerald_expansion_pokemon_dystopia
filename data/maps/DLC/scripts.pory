@@ -258,7 +258,7 @@ script FatManDLCAfterClass {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (15, moves(face_player))
-    msgbox(format("Devon Browser has a function to automatically hide all distressing content on the web. \p But
+    msgbox(format("Devon Browser has a function to automatically hide all “unsafe” content on the web. \p But
     to cover the cost for it, it also replaces said content with ads for Devon products. \p It's kind of annoying..."))
 	applymovement (15, moves (face_right))
     waitmovement (15)
@@ -329,12 +329,12 @@ script SleepingBoyNotebookDLC {
 script OldManDLC {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	applymovement (8, moves(face_player))
+	applymovement (13, moves(face_player))
     msgbox(format("My daugther's health has never been the same since she breathed that Venusaur's
     Poison Powder. \p She's been surfing the web as a way to distract herself...\pI wish she went out
     a bit more."))
-	applymovement (8, moves (face_up))
-    waitmovement (8)
+	applymovement (13, moves (face_up))
+    waitmovement (13)
     releaseall
 }
 
@@ -777,7 +777,7 @@ script TeacherdeskDLC {
     lockall
     showmonpic(SPECIES_BURMY_TRASH, 10,3)
     msgbox(format("The book on top features a Psyduck on its cover, and is titled
-    'Therapy for Beginners.'"))
+    “Therapy for Beginners.”"))
     hidemonpic
     releaseall
 }
@@ -913,10 +913,10 @@ script MauvillePosterDLC {
 
 script TVDLC {
     lock
-    msgbox(format("The TV is playing a documentary on Safemon on a loop.\p 'Before leaving Devon
+    msgbox(format("The TV is playing a documentary on Safemon on a loop.\p “Before leaving Devon
     laboratories, all Safemon are injected with the Everserum, which prevents them from evolving
-    through natural means'.\p'This means no unplanned mutations will ever take place on a Safemon.'
-    \p'Change can be dangerous!'"))
+    through natural means”.\p“This means no unplanned mutations will ever take place on a Safemon.”
+    \p“Change can be dangerous!”"))
     releaseall
 }
 
@@ -952,7 +952,8 @@ releaseall
     if (var(VAR_RESULT) == 1) {
     hidemonpic
     msgbox(format("Mother nature does not provide as much as it used to, but with some luck, it won't
-    be drained dry by the time you read this. \p Take Route 101 for example - Shiitako mushrooms
+    be drained dry by the time you read this. \p Take {COLOR GREEN}Route 101{COLOR DARK_GRAY}
+    for example - Shiitako mushrooms
     grow in that area. \p Even if you pick them up once, they regrow on the daily, so that's
     steady income! \p Too lazy to forage yourself? Get a Pokémon with the Pickup ability,
     and have it do it for you. \p Now that's steady AND passive income! \p Lastly, if you're

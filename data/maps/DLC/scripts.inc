@@ -560,13 +560,13 @@ OldManDLC::
 # 331 "data/maps/DLC/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 332 "data/maps/DLC/scripts.pory"
-	applymovement 8, LittleKidDLC_Movement_0
+	applymovement 13, LittleKidDLC_Movement_0
 # 333 "data/maps/DLC/scripts.pory"
 	msgbox OldManDLC_Text_0
 # 336 "data/maps/DLC/scripts.pory"
-	applymovement 8, OldaleTown_DLC_TherapyCutscene_Movement_6
+	applymovement 13, OldaleTown_DLC_TherapyCutscene_Movement_6
 # 337 "data/maps/DLC/scripts.pory"
-	waitmovement 8
+	waitmovement 13
 # 338 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
@@ -1666,25 +1666,25 @@ MoneyTipBook_1:
 	compare VAR_RESULT, 1
 	goto_if_eq MoneyTipBook_5
 MoneyTipBook_4:
-# 964 "data/maps/DLC/scripts.pory"
+# 965 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq MoneyTipBook_8
 MoneyTipBook_7:
-# 975 "data/maps/DLC/scripts.pory"
+# 976 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq MoneyTipBook_11
 MoneyTipBook_10:
-# 985 "data/maps/DLC/scripts.pory"
+# 986 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq MoneyTipBook_14
 MoneyTipBook_13:
-# 997 "data/maps/DLC/scripts.pory"
+# 998 "data/maps/DLC/scripts.pory"
 	compare VAR_RESULT, 5
 	goto_if_eq MoneyTipBook_17
 MoneyTipBook_16:
-# 999 "data/maps/DLC/scripts.pory"
-	hidemonpic
 # 1000 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 1001 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
@@ -1702,34 +1702,34 @@ MoneyTipBook_5:
 	hidemonpic
 # 954 "data/maps/DLC/scripts.pory"
 	msgbox MoneyTipBook_Text_9
-# 961 "data/maps/DLC/scripts.pory"
+# 962 "data/maps/DLC/scripts.pory"
 	goto moneychapterselection
 	goto MoneyTipBook_4
 
 MoneyTipBook_8:
-# 965 "data/maps/DLC/scripts.pory"
-	hidemonpic
 # 966 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 967 "data/maps/DLC/scripts.pory"
 	msgbox MoneyTipBook_Text_10
-# 972 "data/maps/DLC/scripts.pory"
+# 973 "data/maps/DLC/scripts.pory"
 	goto moneychapterselection
 	goto MoneyTipBook_7
 
 MoneyTipBook_11:
-# 976 "data/maps/DLC/scripts.pory"
-	hidemonpic
 # 977 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 978 "data/maps/DLC/scripts.pory"
 	msgbox MoneyTipBook_Text_11
-# 982 "data/maps/DLC/scripts.pory"
+# 983 "data/maps/DLC/scripts.pory"
 	goto moneychapterselection
 	goto MoneyTipBook_10
 
 MoneyTipBook_14:
-# 986 "data/maps/DLC/scripts.pory"
-	hidemonpic
 # 987 "data/maps/DLC/scripts.pory"
+	hidemonpic
+# 988 "data/maps/DLC/scripts.pory"
 	msgbox MoneyTipBook_Text_12
-# 994 "data/maps/DLC/scripts.pory"
+# 995 "data/maps/DLC/scripts.pory"
 	goto moneychapterselection
 	goto MoneyTipBook_13
 
@@ -1738,23 +1738,23 @@ MoneyTipBook_17:
 
 
 DLCTrashBin::
-# 1005 "data/maps/DLC/scripts.pory"
-	lock
 # 1006 "data/maps/DLC/scripts.pory"
+	lock
+# 1007 "data/maps/DLC/scripts.pory"
 	goto_if_unset FLAG_ITEM_DLC_TRASHBIN, DLCTrashBin_2
-# 1011 "data/maps/DLC/scripts.pory"
+# 1012 "data/maps/DLC/scripts.pory"
 	msgbox DLCTrashBin_Text_1
 DLCTrashBin_1:
-# 1012 "data/maps/DLC/scripts.pory"
+# 1013 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 DLCTrashBin_2:
-# 1007 "data/maps/DLC/scripts.pory"
-	msgbox DLCTrashBin_Text_0
 # 1008 "data/maps/DLC/scripts.pory"
-	giveitem ITEM_SITRUS_BERRY
+	msgbox DLCTrashBin_Text_0
 # 1009 "data/maps/DLC/scripts.pory"
+	giveitem ITEM_SITRUS_BERRY
+# 1010 "data/maps/DLC/scripts.pory"
 	setflag FLAG_ITEM_DLC_TRASHBIN
 	goto DLCTrashBin_1
 
@@ -2176,7 +2176,7 @@ LittleKidDLC_Text_6:
 FatManDLCAfterClass_Text_0:
 # 261 "data/maps/DLC/scripts.pory"
 	.string "Devon Browser has a function to\n"
-	.string "automatically hide all distressing\l"
+	.string "automatically hide all “unsafe”\l"
 	.string "content on the web.\p"
 	.string "But to cover the cost for it, it also\n"
 	.string "replaces said content with ads for\l"
@@ -2474,8 +2474,8 @@ OLDLibraryGuyDLC_Text_0:
 TeacherdeskDLC_Text_0:
 # 779 "data/maps/DLC/scripts.pory"
 	.string "The book on top features a Psyduck on\n"
-	.string "its cover, and is titled 'Therapy for\l"
-	.string "Beginners.'$"
+	.string "its cover, and is titled “Therapy for\l"
+	.string "Beginners.”$"
 
 BlackBoardDLC_Text_0:
 # 789 "data/maps/DLC/scripts.pory"
@@ -2600,13 +2600,13 @@ TVDLC_Text_0:
 # 916 "data/maps/DLC/scripts.pory"
 	.string "The TV is playing a documentary on\n"
 	.string "Safemon on a loop.\p"
-	.string "'Before leaving Devon laboratories, all\n"
+	.string "“Before leaving Devon laboratories, all\n"
 	.string "Safemon are injected with the\l"
 	.string "Everserum, which prevents them from\l"
-	.string "evolving through natural means'.\p"
-	.string "'This means no unplanned mutations will\n"
-	.string "ever take place on a Safemon.'\p"
-	.string "'Change can be dangerous!'$"
+	.string "evolving through natural means”.\p"
+	.string "“This means no unplanned mutations will\n"
+	.string "ever take place on a Safemon.”\p"
+	.string "“Change can be dangerous!”$"
 
 DLCSealedBox_Text_0:
 # 925 "data/maps/DLC/scripts.pory"
@@ -2664,7 +2664,7 @@ MoneyTipBook_Text_9:
 	.string "as it used to, but with some luck, it\l"
 	.string "won't be drained dry by the time you\l"
 	.string "read this.\p"
-	.string "Take Route 101 for example - Shiitako\n"
+	.string "Take {COLOR GREEN}Route 101{COLOR DARK_GRAY} for example - Shiitako\n"
 	.string "mushrooms grow in that area.\p"
 	.string "Even if you pick them up once, they\n"
 	.string "regrow on the daily, so that's steady\l"
@@ -2679,7 +2679,7 @@ MoneyTipBook_Text_9:
 	.string "bad girls for a fortune!$"
 
 MoneyTipBook_Text_10:
-# 966 "data/maps/DLC/scripts.pory"
+# 967 "data/maps/DLC/scripts.pory"
 	.string "Now this is where the real money flows\n"
 	.string "in!\p"
 	.string "It's only been a year since the war, and\n"
@@ -2698,7 +2698,7 @@ MoneyTipBook_Text_10:
 	.string "investment!$"
 
 MoneyTipBook_Text_11:
-# 977 "data/maps/DLC/scripts.pory"
+# 978 "data/maps/DLC/scripts.pory"
 	.string "If you're reading this far, you must be\n"
 	.string "a greedy bastard. And I like that.\p"
 	.string "Sadly, you can only get so far playing\n"
@@ -2713,7 +2713,7 @@ MoneyTipBook_Text_11:
 	.string "So whatever you do, do NOT... {COLOR LIGHT_GRAY}{SHADOW WHITE}not{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} do it...!$"
 
 MoneyTipBook_Text_12:
-# 987 "data/maps/DLC/scripts.pory"
+# 988 "data/maps/DLC/scripts.pory"
 	.string "Be warned - this last money-making\n"
 	.string "method is only for the boldest of the\l"
 	.string "bold.\p"
@@ -2739,10 +2739,10 @@ MoneyTipBook_Text_12:
 	.string "that's a loser's mentality.$"
 
 DLCTrashBin_Text_0:
-# 1007 "data/maps/DLC/scripts.pory"
+# 1008 "data/maps/DLC/scripts.pory"
 	.string "Seems like a picky eater has hidden\n"
 	.string "something in the trash...$"
 
 DLCTrashBin_Text_1:
-# 1011 "data/maps/DLC/scripts.pory"
+# 1012 "data/maps/DLC/scripts.pory"
 	.string "The trash can is empty.$"

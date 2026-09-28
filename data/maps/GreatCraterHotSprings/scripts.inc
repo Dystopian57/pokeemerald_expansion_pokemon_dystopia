@@ -89,7 +89,7 @@ GreatCraterHotSpringsBathingladyloosehair::
 # 57 "data/maps/GreatCraterHotSprings/scripts.pory"
 	msgbox GreatCraterHotSpringsBathingladyloosehair_Text_0
 # 59 "data/maps/GreatCraterHotSprings/scripts.pory"
-	applymovement 3, GreatCraterHotSpringsNumel_Movement_0
+	applymovement 2, GreatCraterHotSpringsNumel_Movement_0
 # 60 "data/maps/GreatCraterHotSprings/scripts.pory"
 	waitmovement 2
 # 61 "data/maps/GreatCraterHotSprings/scripts.pory"
@@ -139,6 +139,16 @@ GreatCraterScaldOldman_2:
 # 84 "data/maps/GreatCraterHotSprings/scripts.pory"
 	setflag hotspringguygavescald
 	goto GreatCraterScaldOldman_1
+
+
+HotSpringHeal::
+# 95 "data/maps/GreatCraterHotSprings/scripts.pory"
+	lock
+# 96 "data/maps/GreatCraterHotSprings/scripts.pory"
+	special HealPlayerParty
+# 97 "data/maps/GreatCraterHotSprings/scripts.pory"
+	release
+	return
 
 
 # 17 "data/maps/GreatCraterHotSprings/scripts.pory"

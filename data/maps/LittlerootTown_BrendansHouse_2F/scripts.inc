@@ -47,241 +47,241 @@ GiveSturdyWatch_1:
 # 24 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
 # 25 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
-# 26 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_ge VAR_BIRCH_LAB_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_Ret
-# 27 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 26 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
+# 27 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
 # 28 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 29 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos::
+# 29 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	checkplayergender
 # 30 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	checkplayergender
-# 31 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_Ret
-# 32 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 31 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	@ Odd that the MaysHouse equivalent was used below instead
-# 33 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 32 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
+# 33 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	return
 # 34 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	return
+
 # 35 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 36 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_Ret::
+# 36 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	return
 # 37 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	return
+
 # 38 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 39 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan::
+# 39 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	checkplayergender
 # 40 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	checkplayergender
-# 41 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan
+# 41 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	return
 # 42 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	return
+
 # 43 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 44 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan::
-# 45 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 44 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
-# 46 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 45 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	return
+# 46 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
 # 47 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 48 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_OnWarp:
-# 49 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 48 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	map_script_2 VAR_SECRET_BASE_INITIALIZED, 0, LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor
-# 50 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 49 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.2byte 0
+# 50 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
 # 51 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 52 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor::
-# 53 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 52 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	checkplayergender
-# 54 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 53 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MALE, SecretBase_EventScript_InitDecorations
-# 55 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 54 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, FEMALE, SecretBase_EventScript_InitDecorations
+# 55 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
 # 56 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+
 # 57 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 58 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall::
-# 59 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 58 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 60 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 59 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan
-# 61 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 60 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox RivalsHouse_2F_Text_ItsRivalsPokeBall, MSGBOX_DEFAULT
-# 62 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 61 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
-# 63 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 62 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	end
-# 64 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 63 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 65 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 64 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
-# 66 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 65 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay 10
-# 67 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 66 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitmovement 0
-# 68 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 67 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse SE_PIN
+# 68 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 69 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitmovement 0
 # 70 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
-# 71 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay 10
-# 72 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 71 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-# 73 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 72 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_NORTH, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth
-# 74 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 73 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_SOUTH, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth
-# 75 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 74 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_WEST, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest
-# 76 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 75 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_EAST, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast
-# 77 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 76 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
-# 78 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 77 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
-# 79 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 78 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-# 80 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 79 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_LITTLEROOT_TOWN_STATE, 1
-# 81 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 80 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	savebgm MUS_DUMMY
-# 82 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 81 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadedefaultbgm
-# 83 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 82 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
-# 84 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 83 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	end
+# 84 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
 # 85 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 86 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth::
+# 86 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 87 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 88 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
 # 89 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
 # 90 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	closemessage
 # 91 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	closemessage
-# 92 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth
+# 92 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 93 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	return
 # 94 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	return
+
 # 95 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 96 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth::
+# 96 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 97 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 98 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
 # 99 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
 # 100 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	closemessage
 # 101 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	closemessage
-# 102 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth
+# 102 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 103 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	return
 # 104 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	return
+
 # 105 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 106 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest::
+# 106 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 107 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
-# 108 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+# 108 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 109 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
 # 110 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	closemessage
 # 111 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	closemessage
-# 112 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest
+# 112 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 113 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
+	return
 # 114 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	return
+
 # 115 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 116 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast::
+# 116 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 117 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
-# 118 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+# 118 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmovement 0
 # 119 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitmovement 0
-# 120 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-# 121 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 120 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	closemessage
-# 122 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 121 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitmovement 0
-# 123 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 122 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	return
-# 124 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 123 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 125 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 124 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters:
+# 125 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_down
 # 126 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_down
 # 127 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_down
-# 128 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_left
-# 129 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 128 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 130 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 129 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 131 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 130 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerNorth:
+# 131 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_left
 # 132 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 133 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
+	walk_down
 # 134 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_down
 # 135 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_down
-# 136 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
-# 137 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 136 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 138 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 137 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 139 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 138 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth:
+# 139 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_up
 # 140 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_up
 # 141 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_up
 # 142 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_up
+	walk_left
 # 143 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 144 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -289,19 +289,19 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth:
 # 145 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 146 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
+	walk_in_place_faster_up
 # 147 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_in_place_faster_up
-# 148 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 149 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 148 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 150 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 149 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth:
-# 151 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 150 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
-# 152 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 151 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_up
+# 152 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay_16
 # 153 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
 # 154 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -309,29 +309,29 @@ LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth:
 # 155 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
 # 156 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	delay_16
-# 157 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_left
-# 158 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 157 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 159 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 158 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 160 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 159 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerSouth:
+# 160 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_left
 # 161 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 162 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 163 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
-# 164 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 165 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 164 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 166 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 165 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth:
-# 167 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 166 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_up
+# 167 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_left
 # 168 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 169 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -339,49 +339,49 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth:
 # 170 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 171 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
+	walk_in_place_faster_up
 # 172 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_in_place_faster_up
-# 173 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 174 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 173 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 175 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 174 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth:
-# 176 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 175 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
-# 177 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 176 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_up
+# 177 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay_16
 # 178 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
 # 179 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	delay_16
-# 180 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_left
-# 181 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 180 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 182 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 181 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 183 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 182 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerWest:
+# 183 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_left
 # 184 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 185 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
-# 186 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_down
-# 187 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 186 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_left
-# 188 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 187 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 189 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 188 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 190 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 189 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest:
+# 190 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_up
 # 191 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_up
 # 192 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_up
+	walk_left
 # 193 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 194 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -391,33 +391,33 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest:
 # 196 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 197 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
+	walk_in_place_faster_up
 # 198 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_in_place_faster_up
-# 199 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 200 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 199 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 201 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 200 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest:
-# 202 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 201 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_8
-# 203 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 202 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
-# 204 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 203 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_up
+# 204 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay_16
 # 205 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
 # 206 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	delay_16
-# 207 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_left
-# 208 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 207 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 209 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 208 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 210 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 209 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerEast:
+# 210 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_left
 # 211 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 212 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -427,426 +427,426 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerEast:
 # 214 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 215 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
-# 216 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_down
-# 217 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 216 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 218 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 217 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 219 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 218 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast:
-# 220 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 219 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_up
+# 220 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	walk_left
 # 221 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_left
 # 222 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	walk_left
-# 223 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_up
-# 224 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 223 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
-# 225 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 224 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 226 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 225 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 @ Unused, the player is already facing this direction so its unneeded
-# 227 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 226 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanEast:
+# 227 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay_16
 # 228 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	delay_16
 # 229 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	delay_16
-# 230 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_in_place_faster_left
-# 231 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 230 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	step_end
+# 231 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
 # 232 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 233 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_PC::
-# 234 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 233 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 235 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 234 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	checkplayergender
-# 236 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 235 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
-# 237 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 236 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
+# 237 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
 # 238 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+
 # 239 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 240 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
+# 240 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
 # 241 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
-# 242 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	special DoPCTurnOnEffect
-# 243 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 242 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse SE_PC_ON
-# 244 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 243 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
-# 245 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 244 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	special BedroomPC
-# 246 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 245 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitstate
+# 246 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
 # 247 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	releaseall
+	end
 # 248 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+
 # 249 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 250 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
-# 251 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 250 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
-# 252 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 251 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse SE_PC_OFF
-# 253 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 252 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	special DoPCTurnOffEffect
+# 253 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
 # 254 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	releaseall
+	end
 # 255 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+
 # 256 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 257 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
-# 258 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 257 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
-# 259 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 258 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
+# 259 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
 # 260 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+
 # 261 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 262 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 PlayersHouse_2F_EventScript_Notebook::
-# 263 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 262 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
+# 263 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
 # 264 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+
 # 265 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 266 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 PlayersHouse_2F_EventScript_GameCube::
-# 267 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 266 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
-# 268 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 267 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	end
-# 269 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 268 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 270 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 269 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 PlayersHouse_2F_Text_ClockIsStopped:
-# 271 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 270 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Let's set the wristwatch on time...$"
+# 271 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
 # 272 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
 # 273 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
 # 274 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 275 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 PlayersHouse_2F_Text_Notebook:
-# 276 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 275 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{PLAYER} flipped open the notebook.\p"
-# 277 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 276 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "ADVENTURE RULE NO. 1\n"
-# 278 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 277 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Open the MENU with START.\p"
-# 279 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 278 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "ADVENTURE RULE NO. 2\n"
-# 280 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 279 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Record your progress with SAVE.\p"
-# 281 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 280 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "The remaining pages are blank…$"
+# 281 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
 # 282 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
-# 283 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 Common_Text_LookCloserAtMap:
-# 284 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 283 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{PLAYER} took a closer look at the\n"
-# 285 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 284 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "HOENN region map.$"
-# 286 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 285 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 287 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 286 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 PlayersHouse_2F_Text_ItsAGameCube:
-# 288 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 287 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "It's a Nintendo GameCube.\p"
-# 289 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 288 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "A Game Boy Advance is connected to\n"
-# 290 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 289 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "serve as the Controller.$"
 
 ScriptedShinyFailsafe::
-# 318 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 317 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	clearflag forceshiny
 	return
 
 
 Setclocktoleave::
-# 322 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 321 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 323 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 322 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox Setclocktoleave_Text_0
-# 324 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 323 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	closemessage
-# 325 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 324 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, cantleavebedroom
-# 326 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 325 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitmovement 0
-# 327 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 326 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomGamecube::
-# 331 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 330 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 332 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 331 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomGamecube_Text_0
-# 333 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 332 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomTV::
-# 337 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 336 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 338 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 337 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomTV_Text_0
-# 339 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 338 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomHeadphones::
-# 343 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 342 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 343 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomHeadphones_Text_0
-# 345 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomBedsideTable::
-# 349 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 348 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 350 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 349 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomBedsideTable_Text_0
-# 351 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 350 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomSodas::
-# 355 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 354 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 356 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 355 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomSodas_Text_0
-# 357 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 356 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomSoda::
-# 361 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 360 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 362 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 361 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomSoda_Text_0
-# 363 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 362 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomChips::
-# 367 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 366 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 368 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 367 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomChips_Text_0
-# 369 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 368 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomPokeball::
-# 373 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 372 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 374 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 373 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomPokeball_Text_0
-# 375 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 374 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomShirt::
-# 379 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 378 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 380 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 379 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomShirt_Text_0
-# 381 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 380 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomCushion::
-# 385 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 384 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 386 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 385 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomCushion_Text_0
-# 387 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 386 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomPizza::
-# 391 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 390 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 392 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 391 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomPizza_Text_0
-# 393 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 392 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomBookshelf::
-# 398 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 397 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 399 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 398 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomBookshelf_Text_0
-# 400 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 399 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomWardrobe::
-# 404 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 403 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 405 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 404 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomWardrobe_Text_0
-# 406 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 405 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 KantonianWarHistoryVol1PlayerHouse::
-# 410 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 409 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lock
-# 411 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 410 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox KantonianWarHistoryVol1PlayerHouse_Text_0
-# 413 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 412 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, KantonianWarHistoryVol1PlayerHouse_Text_1, KantonianWarHistoryVol1PlayerHouse_Text_2
-# 415 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 414 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq KantonianWarHistoryVol1PlayerHouse_2
 KantonianWarHistoryVol1PlayerHouse_1:
-# 426 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 425 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq KantonianWarHistoryVol1PlayerHouse_5
 KantonianWarHistoryVol1PlayerHouse_4:
-# 429 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 428 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 endkantonianwar1:
-# 430 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 429 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 KantonianWarHistoryVol1PlayerHouse_2:
-# 416 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 415 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	showmonpic SPECIES_PIKACHU_HOENN, 10, 3
-# 417 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 416 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox KantonianWarHistoryVol1PlayerHouse_Text_3
+# 419 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	hidemonpic
 # 420 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	hidemonpic
-# 421 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	showmonpic SPECIES_PIKACHU_KALOS, 10, 3
-# 422 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 421 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox KantonianWarHistoryVol1PlayerHouse_Text_4
-# 424 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 423 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	hidemonpic
-# 425 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 424 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto endkantonianwar1
 	goto KantonianWarHistoryVol1PlayerHouse_1
 
 KantonianWarHistoryVol1PlayerHouse_5:
-# 427 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 426 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto endkantonianwar1
 	goto KantonianWarHistoryVol1PlayerHouse_4
 
 
 PlayerBedSimple::
-# 434 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 433 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 435 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 434 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerBedSimple_Text_0, MSGBOX_YESNO
-# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 435 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq PlayerBedSimple_2
 PlayerBedSimple_1:
-# 443 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 441 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerBedSimple_2:
-# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	special HealPlayerParty
-# 439 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse MUS_HEAL
-# 440 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerBedSimple_Text_1
-# 441 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitbuttonpress
-# 442 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 439 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	special HealPlayerParty
+# 440 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 	goto PlayerBedSimple_1
 
 
 PlayerHouseBedTime::
-# 447 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 445 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 448 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 446 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerBedSimple_Text_0, MSGBOX_YESNO
-# 449 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 447 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq PlayerHouseBedTime_2
 PlayerHouseBedTime_1:
-# 476 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 475 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerHouseBedTime_2:
-# 450 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 448 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 451 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 449 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerHouseBedTime_Text_0
-# 452 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 450 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	special StartWallClock
-# 453 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 451 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitstate
-# 454 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 452 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 455 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 453 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse MUS_HEAL
-# 456 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 454 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitse
-# 457 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 455 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	random 4
-# 458 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 456 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 460 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 458 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	switch VAR_RESULT
-# 461 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 459 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	case 0, PlayerHouseBedTime_6
-# 462 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 460 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	case 1, PlayerHouseBedTime_7
-# 463 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 461 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	case 2, PlayerHouseBedTime_8
-# 464 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 462 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	case 3, PlayerHouseBedTime_9
 PlayerHouseBedTime_4:
+# 464 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	playse SE_SUCCESS
+# 465 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitse
 # 466 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse SE_SUCCESS
 # 467 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
@@ -856,383 +856,381 @@ PlayerHouseBedTime_4:
 # 469 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitse
 # 470 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	playse SE_SUCCESS
-# 471 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitse
-# 472 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 473 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 471 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	special HealPlayerParty
+# 472 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerHouseBedTime_Text_1
 	goto PlayerHouseBedTime_1
 
 PlayerHouseBedTime_6:
-# 461 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 459 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_ROUTE103_WEATHER, 3
 	goto PlayerHouseBedTime_4
 
 PlayerHouseBedTime_7:
-# 462 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 460 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 3
 	goto PlayerHouseBedTime_4
 
 PlayerHouseBedTime_8:
-# 463 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 461 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 3
 	goto PlayerHouseBedTime_4
 
 PlayerHouseBedTime_9:
-# 464 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 462 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setvar VAR_PETALBURGLANDFILL_WEATHER, 3
 	goto PlayerHouseBedTime_4
 
 
 PlayerRoomDadPrize::
-# 480 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 479 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 481 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 480 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	checkplayergender
-# 482 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 481 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PlayerRoomDadPrize_2
-# 485 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox PlayerRoomDadPrize_Text_0
+# 484 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox PlayerRoomDadPrize_Text_1
 PlayerRoomDadPrize_1:
-# 487 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 486 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerRoomDadPrize_2:
-# 483 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 482 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomDadPrize_Text_0
 	goto PlayerRoomDadPrize_1
 
 
 PlayerRoomBox::
-# 491 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 490 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 493 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 492 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_unset FLAG_ITEM_BEDROOM_RIFLE, PlayerRoomBox_2
-# 512 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 511 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomBox_Text_2
 PlayerRoomBox_1:
-# 514 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 513 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 endplayerroomboxscript:
-# 515 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 514 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerRoomBox_2:
-# 495 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 494 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomBox_Text_0
-# 496 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 495 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomBox_Text_1
-# 497 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 496 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, KantonianWarHistoryVol1PlayerHouse_Text_1, KantonianWarHistoryVol1PlayerHouse_Text_2
-# 498 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 497 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PlayerRoomBox_6
 PlayerRoomBox_5:
-# 507 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 506 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PlayerRoomBox_8
 	goto PlayerRoomBox_1
 
 PlayerRoomBox_6:
-# 499 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 498 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse SE_SWITCH
+# 499 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitse
 # 500 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	waitse
-# 501 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	playse SE_CLICK
-# 502 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 501 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitse
-# 503 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 502 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	giveitem ITEM_CATCHING_CHARM
-# 504 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 503 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setflag FLAG_ITEM_BEDROOM_RIFLE
 	goto PlayerRoomBox_5
 
 PlayerRoomBox_8:
-# 508 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 507 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto endplayerroomboxscript
 	goto PlayerRoomBox_1
 
 
 PlayerRoomTrashCan::
-# 521 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 520 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 522 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 521 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_unset FLAG_ITEM_BEDROOM_TRASHCAN, PlayerRoomTrashCan_2
-# 527 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 526 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomTrashCan_Text_1
 PlayerRoomTrashCan_1:
-# 528 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 527 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerRoomTrashCan_2:
-# 523 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 522 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomTrashCan_Text_0
-# 524 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 523 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	giveitem ITEM_FOCUS_BAND
-# 525 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 524 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setflag FLAG_ITEM_BEDROOM_TRASHCAN
 	goto PlayerRoomTrashCan_1
 
 
 PlayerRoomWarmBedding::
-# 532 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 531 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 533 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 532 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_unset FLAG_ITEM_WARM_BEDDING, PlayerRoomWarmBedding_2
-# 539 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 538 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomWarmBedding_Text_1
 PlayerRoomWarmBedding_1:
-# 540 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 539 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerRoomWarmBedding_2:
-# 534 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 533 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomWarmBedding_Text_0
-# 535 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 534 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	removeobject 14
-# 536 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 535 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	giveitem ITEM_SCROLL_OF_DARKNESS
-# 537 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 536 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	setflag FLAG_ITEM_WARM_BEDDING
 	goto PlayerRoomWarmBedding_1
 
 
 PlayerRoomTextbooks::
-# 547 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 546 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 548 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 547 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomTextbooks_Text_0
-# 549 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 548 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayerRoomDiary::
-# 553 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 552 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 554 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 553 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 opendiary:
-# 555 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 554 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomDiary_Text_0
-# 556 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 555 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, PlayerRoomDiary_Text_1, PlayerRoomDiary_Text_2, PlayerRoomDiary_Text_3, PlayerRoomDiary_Text_4
-# 557 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 556 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PlayerRoomDiary_2
 PlayerRoomDiary_1:
-# 568 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 567 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PlayerRoomDiary_5
 PlayerRoomDiary_4:
-# 575 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 574 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq PlayerRoomDiary_8
 PlayerRoomDiary_7:
-# 583 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 582 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq PlayerRoomDiary_11
 PlayerRoomDiary_10:
-# 585 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 584 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerRoomDiary_2:
-# 558 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 557 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	showmonpic SPECIES_ALCREMIE, 10, 3
-# 559 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 558 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomDiary_Text_5
-# 565 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 564 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	hidemonpic
-# 566 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 565 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto opendiary
 	goto PlayerRoomDiary_1
 
 PlayerRoomDiary_5:
-# 569 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 568 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomDiary_Text_6
-# 574 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 573 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto opendiary
 	goto PlayerRoomDiary_4
 
 PlayerRoomDiary_8:
-# 576 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 575 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomDiary_Text_7
-# 581 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 580 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto opendiary
 	goto PlayerRoomDiary_7
 
 PlayerRoomDiary_11:
-# 584 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 583 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	goto PlayerRoomDiary_10
 
 
 PlayerRoomMail::
-# 589 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 588 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	lockall
-# 590 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 589 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_0
-# 591 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 590 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 backtomail:
-# 592 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 591 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_1
-# 593 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 592 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, PlayerRoomMail_Text_2, PlayerRoomMail_Text_3, PlayerRoomMail_Text_4, PlayerRoomMail_Text_5
-# 594 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 593 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PlayerRoomMail_2
 PlayerRoomMail_1:
-# 601 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 600 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PlayerRoomMail_5
 PlayerRoomMail_4:
-# 622 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 621 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq PlayerRoomMail_8
 PlayerRoomMail_7:
-# 631 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 630 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq PlayerRoomMail_15
 PlayerRoomMail_14:
-# 633 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 632 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	return
 
 PlayerRoomMail_2:
-# 595 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 594 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_6
-# 599 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 598 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto backtomail
 	goto PlayerRoomMail_1
 
 PlayerRoomMail_5:
-# 602 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 601 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	checkplayergender
-# 603 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 602 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PlayerRoomMail_11
-# 613 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 612 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_8
 PlayerRoomMail_10:
-# 621 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 620 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto backtomail
 	goto PlayerRoomMail_4
 
 PlayerRoomMail_8:
-# 623 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 622 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_9
-# 629 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 628 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto backtomail
 	goto PlayerRoomMail_7
 
 PlayerRoomMail_11:
-# 604 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 603 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	msgbox PlayerRoomMail_Text_7
 	goto PlayerRoomMail_10
 
 PlayerRoomMail_15:
-# 632 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 631 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	releaseall
 	goto PlayerRoomMail_14
 
 
-# 636 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 635 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 cantleavebedroom:
-# 637 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 636 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	walk_down
 	step_end
 
 Setclocktoleave_Text_0:
-# 323 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 322 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "The wristwach's time is off... better set\n"
 	.string "it to match the wall's clock.$"
 
 PlayerRoomGamecube_Text_0:
-# 332 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 331 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}It's an old Gamecube. The game “Harvest\n"
 	.string "Moon: A Wonderful Life” is loaded in.$"
 
 PlayerRoomTV_Text_0:
-# 338 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 337 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}It's a portable TV. The batteries are\n"
 	.string "spent.$"
 
 PlayerRoomHeadphones_Text_0:
-# 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 343 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}A pair of headphones. The left side is\n"
 	.string "mute.$"
 
 PlayerRoomBedsideTable_Text_0:
-# 350 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 349 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "A bedside table. The drawers are full of\n"
 	.string "empty blisters packs.$"
 
 PlayerRoomSodas_Text_0:
-# 356 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 355 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}It's two empty cans of soda.$"
 
 PlayerRoomSoda_Text_0:
-# 362 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 361 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}A toppled soda can. It has made a bit of\n"
 	.string "a mess in the carpet.$"
 
 PlayerRoomChips_Text_0:
-# 368 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 367 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}It's the remains of a chip bag. The\n"
 	.string "chips are a bit moldy.$"
 
 PlayerRoomPokeball_Text_0:
-# 374 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 373 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}It's Primeape's old Pokéball...$"
 
 PlayerRoomShirt_Text_0:
-# 380 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 379 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}It's a shirt with the Devon Co. logo\n"
 	.string "that came in the mail.$"
 
 PlayerRoomCushion_Text_0:
-# 386 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 385 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{COLOR DARK_GRAY}The cushion has sweat stains all over\n"
 	.string "it.$"
 
 PlayerRoomPizza_Text_0:
-# 392 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 391 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "An empty cardboard box for a Slateport\n"
 	.string "Pizza.$"
 
 PlayerRoomBookshelf_Text_0:
-# 399 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 398 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "The shelf is full of novels. Most of\n"
 	.string "them are science fiction ones.$"
 
 PlayerRoomWardrobe_Text_0:
-# 405 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 404 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "The wardrobe is full of dirty, smelly\n"
 	.string "clothes.$"
 
 KantonianWarHistoryVol1PlayerHouse_Text_0:
-# 411 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 410 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "The book's cover reads “History of the\n"
 	.string "Kantonian War, Volume 1”.\p"
 	.string "Read it?$"
 
 KantonianWarHistoryVol1PlayerHouse_Text_1:
-# 413 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 412 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Yes$"
 
 KantonianWarHistoryVol1PlayerHouse_Text_2:
-# 413 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 412 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "No$"
 
 KantonianWarHistoryVol1PlayerHouse_Text_3:
-# 417 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 416 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "February, 1996. Team Rocket, a criminal\n"
 	.string "organization with a strong presence in\l"
 	.string "the Kanto region, invades the\l"
@@ -1240,90 +1238,96 @@ KantonianWarHistoryVol1PlayerHouse_Text_3:
 	.string "technological company in Saffron City.$"
 
 KantonianWarHistoryVol1PlayerHouse_Text_4:
-# 422 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 421 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "They defeat all opposition, and the\n"
 	.string "leader of Team Rocket, Giovanni,\l"
 	.string "assumes control of the company.$"
 
 PlayerBedSimple_Text_0:
-# 435 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 434 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Rest for a bit?$"
 
 PlayerBedSimple_Text_1:
-# 440 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "You rest for a while.$"
 
 PlayerHouseBedTime_Text_0:
-# 451 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 449 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Set the wristwatch's alarm to which\n"
 	.string "time?$"
 
 PlayerHouseBedTime_Text_1:
-# 473 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 472 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "{PLAYER} wakes up.$"
 
 PlayerRoomDadPrize_Text_0:
-# 483 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "It's a Battle Frontier trophy.\p"
+# 482 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "It's dad's Battle Frontier trophy.\p"
+	.string "It's quite dusty and has lost most of\n"
+	.string "its sheen.$"
+
+PlayerRoomDadPrize_Text_1:
+# 484 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "It's mom's Battle Frontier trophy.\p"
 	.string "It's quite dusty and has lost most of\n"
 	.string "its sheen.$"
 
 PlayerRoomBox_Text_0:
-# 495 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 494 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "A Pokéball Rifle is dissasembled inside\n"
 	.string "the box.$"
 
 PlayerRoomBox_Text_1:
-# 496 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 495 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Assemble it?$"
 
 PlayerRoomBox_Text_2:
-# 512 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 511 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "The box is empty.$"
 
 PlayerRoomTrashCan_Text_0:
-# 523 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 522 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "There's something in the trash can...$"
 
 PlayerRoomTrashCan_Text_1:
-# 527 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 526 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "The trash can is empty.$"
 
 PlayerRoomWarmBedding_Text_0:
-# 534 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 533 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "It's an extra set of bedding for the\n"
 	.string "winter.$"
 
 PlayerRoomWarmBedding_Text_1:
-# 539 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 538 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "There's nothing here.$"
 
 PlayerRoomTextbooks_Text_0:
-# 548 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 547 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "A pile of textbooks lies beside the bed.$"
 
 PlayerRoomDiary_Text_0:
-# 555 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 554 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "A diary is open on top of the desk.$"
 
 PlayerRoomDiary_Text_1:
-# 556 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 555 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Oldest entry$"
 
 PlayerRoomDiary_Text_2:
-# 556 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 555 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Old entry$"
 
 PlayerRoomDiary_Text_3:
-# 556 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 555 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Newest entry$"
 
 PlayerRoomDiary_Text_4:
-# 556 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 555 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Don't read$"
 
 PlayerRoomDiary_Text_5:
-# 559 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 558 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Today dad and mom gave me the best\n"
 	.string "birthday gift ever - my first Pokémon!\p"
 	.string "Mommy said it's a Mankey, a Fighting\n"
@@ -1339,7 +1343,7 @@ PlayerRoomDiary_Text_5:
 	.string "I think everyone was sad today.$"
 
 PlayerRoomDiary_Text_6:
-# 569 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 568 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Today, Mankey and I are being drafted\n"
 	.string "into the Hoenn army.\p"
 	.string "After our training, we will be sent to\n"
@@ -1353,7 +1357,7 @@ PlayerRoomDiary_Text_6:
 	.string "even my feelings.$"
 
 PlayerRoomDiary_Text_7:
-# 576 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 575 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Grandfather was right all along. I am\n"
 	.string "spineless. Useless.\p"
 	.string "There is nothing of him or of my parents\n"
@@ -1370,33 +1374,33 @@ PlayerRoomDiary_Text_7:
 	.string "end.$"
 
 PlayerRoomMail_Text_0:
-# 590 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 589 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "A laptop is on the floor, with Devon Mail\n"
 	.string "open.$"
 
 PlayerRoomMail_Text_1:
-# 592 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 591 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "There's three mails in the inbox, from\n"
 	.string "three different senders.$"
 
 PlayerRoomMail_Text_2:
-# 593 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 592 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Devon Co. - Rustboro HQ$"
 
 PlayerRoomMail_Text_3:
-# 593 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 592 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Petalburg Gym$"
 
 PlayerRoomMail_Text_4:
-# 593 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 592 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Oldale DLC$"
 
 PlayerRoomMail_Text_5:
-# 593 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 592 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Ignore laptop$"
 
 PlayerRoomMail_Text_6:
-# 595 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 594 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Devon Corporation.\n"
 	.string "Subject: Mail has been delivered.\p"
 	.string "After failing to deliver your package\n"
@@ -1409,7 +1413,7 @@ PlayerRoomMail_Text_6:
 	.string "Devon Corporation$"
 
 PlayerRoomMail_Text_7:
-# 604 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 603 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Petalburg Gym.\n"
 	.string "Subject: How's it going, {PLAYER}?\p"
 	.string "Hey lad. How is your leg? Does it still\n"
@@ -1428,7 +1432,7 @@ PlayerRoomMail_Text_7:
 	.string "Norman.$"
 
 PlayerRoomMail_Text_8:
-# 613 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 612 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Petalburg Gym.\n"
 	.string "Subject: How's it going, {PLAYER}?\p"
 	.string "Hey lass. How is your arm? Does it still\n"
@@ -1439,7 +1443,7 @@ PlayerRoomMail_Text_8:
 	.string "once you're feeling better.\p"
 	.string "We could have a Pokémon battle, just\n"
 	.string "like your mom and I used to.\p"
-	.string "She beat me when he was half your age…\n"
+	.string "She beat me when she was half your age…\n"
 	.string "she was a real prodigy.\p"
 	.string "Well, got to go. Remember to eat well,\n"
 	.string "and do plenty of exercise.\p"
@@ -1447,7 +1451,7 @@ PlayerRoomMail_Text_8:
 	.string "Norman.$"
 
 PlayerRoomMail_Text_9:
-# 623 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+# 622 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "From: Oldale Devon Learning Center.\n"
 	.string "Subject: You are not alone.\p"
 	.string "Did you live through traumatic\n"

@@ -30,14 +30,6 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 42,
-      "y": 51,
-      "elevation": 0,
-      "item": "ITEM_CARBOS",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS"
-    },
-    {
-      "type": "hidden_item",
       "x": 14,
       "y": 40,
       "elevation": 0,

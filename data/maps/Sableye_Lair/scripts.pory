@@ -6,7 +6,13 @@ raw `
 mapscripts Sableye_Lair_MapScripts {
 	//MAP_SCRIPT_ON_LOAD: Route103WeatherSong
 	//MAP_SCRIPT_ON_TRANSITION: Route103WeatherSong
-    MAP_SCRIPT_ON_TRANSITION: SableyeLairBossCheck}
+    MAP_SCRIPT_ON_TRANSITION: SableyeLairBossCheck
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicExTunnel
+    MAP_SCRIPT_ON_LOAD: DayNightMusicExTunnel}
+
+
+
+
 
  
 script SableyeLairBossCheck {
@@ -264,7 +270,29 @@ script SableyeLairGem1 {
     \p There may be another gem here tomorrow."))
     release}
 
-    else {	giveitem (ITEM_SAPPHIRE)
+    else {	
+    
+        if (flag(caughtsableyelairboss))
+
+        {
+        random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: giveitem (ITEM_FIRE_GEM)
+        case 1: giveitem (ITEM_WATER_GEM)
+        case 2: giveitem (ITEM_ELECTRIC_GEM)
+        case 3: giveitem (ITEM_GRASS_GEM)
+        case 4: giveitem (ITEM_NORMAL_GEM)
+        case 5: giveitem (ITEM_SAPPHIRE)
+        case 6: giveitem (ITEM_SAPPHIRE)
+        case 7: giveitem (ITEM_SAPPHIRE)
+        case 8: giveitem (ITEM_SAPPHIRE)
+        case 9: giveitem (ITEM_SAPPHIRE)
+        }}
+
+        else
+        {giveitem (ITEM_SAPPHIRE)}
+    
 	setmetatile (8, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
 	special (DrawWholeMapView)
 	setflag (sableyegem1)
@@ -283,7 +311,28 @@ script SableyeLairGem2 {
     \p There may be another gem here tomorrow."))
     release}
 
-    else {	giveitem (ITEM_SAPPHIRE)
+    else {
+
+        if (flag(caughtsableyelairboss))
+
+        {
+        random (8)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: giveitem (ITEM_ICE_GEM)
+        case 1: giveitem (ITEM_FIGHTING_GEM)
+        case 2: giveitem (ITEM_POISON_GEM)
+        case 3: giveitem (ITEM_GROUND_GEM)
+        case 4: giveitem (ITEM_SAPPHIRE)
+        case 5: giveitem (ITEM_SAPPHIRE)
+        case 6: giveitem (ITEM_SAPPHIRE)
+        case 7: giveitem (ITEM_SAPPHIRE)
+        }}
+
+        else
+        {giveitem (ITEM_SAPPHIRE)}
+
+
 	setmetatile (2, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
 	special (DrawWholeMapView)
 	setflag (sableyegem2)
@@ -302,7 +351,28 @@ script SableyeLairGem3 {
     \p There may be another gem here tomorrow."))
     release}
 
-    else {	giveitem (ITEM_SAPPHIRE)
+    else {	
+
+        if (flag(caughtsableyelairboss))
+
+        {
+        random (8)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: giveitem (ITEM_FLYING_GEM)
+        case 1: giveitem (ITEM_PSYCHIC_GEM)
+        case 2: giveitem (ITEM_BUG_GEM)
+        case 3: giveitem (ITEM_ROCK_GEM)
+        case 4: giveitem (ITEM_SAPPHIRE)
+        case 5: giveitem (ITEM_SAPPHIRE)
+        case 6: giveitem (ITEM_SAPPHIRE)
+        case 7: giveitem (ITEM_SAPPHIRE)
+        }}
+
+        else
+        {giveitem (ITEM_SAPPHIRE)}
+
+
 	setmetatile (1, 6, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
 	special (DrawWholeMapView)
 	setflag (sableyegem3)
@@ -322,7 +392,32 @@ script SableyeLairGem4 {
     \p There may be another gem here tomorrow."))
     release}
 
-    else {	giveitem (ITEM_SAPPHIRE)
+    else {	
+
+
+        if (flag(caughtsableyelairboss))
+
+        {
+        random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: giveitem (ITEM_GHOST_GEM)
+        case 1: giveitem (ITEM_DRAGON_GEM)
+        case 2: giveitem (ITEM_DARK_GEM)
+        case 3: giveitem (ITEM_STEEL_GEM)
+        case 4: giveitem (ITEM_FAIRY_GEM)
+        case 5: giveitem (ITEM_SAPPHIRE)
+        case 6: giveitem (ITEM_SAPPHIRE)
+        case 7: giveitem (ITEM_SAPPHIRE)
+        case 8: giveitem (ITEM_SAPPHIRE)
+        case 9: giveitem (ITEM_SAPPHIRE)
+
+        }}
+
+        else
+        {giveitem (ITEM_SAPPHIRE)}
+
+
 	setmetatile (9, 5, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
 	special (DrawWholeMapView)
 	setflag (sableyegem4)
@@ -625,7 +720,23 @@ script SableyeGem4 {
         applymovement (1, moves(face_player))
         waitmovement (1)
         msgbox (format("The Sableye seems scared of you, and hands you the gem willingly."))
-        giveitem (ITEM_SAPPHIRE)
+
+        if (flag(caughtsableyelairboss))
+
+        {
+        random (4)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: giveitem (ITEM_NONE)
+        case 1: giveitem (ITEM_NONE)
+        case 2: giveitem (ITEM_NONE)
+        case 3: giveitem (ITEM_NONE)
+        }}
+
+        else
+        {giveitem (ITEM_SAPPHIRE)}
+
+
         setmetatile (9, 5, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
         special (DrawWholeMapView)
         setflag (sableyegem4)

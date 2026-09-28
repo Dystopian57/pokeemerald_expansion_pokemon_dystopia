@@ -731,22 +731,14 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 `
 
 mapscripts LittlerootTown_BrendansHouse_1F_MapScripts {
-    MAP_SCRIPT_ON_LOAD: TVOFF}
+    MAP_SCRIPT_ON_LOAD: TVOFF
+    MAP_SCRIPT_ON_TRANSITION: TVOFF}
 
 script TVOFF {
 	if (flag(WatchedTVathome))
 	{special (TurnOffTVScreen)}
 	else {special (TurnOnTVScreen)}
 	}
-
-script ShouldTurnOffTV {
-	
-lockall
-msgbox (format("Oh... I should turn off the TV before I go."))
-applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
-waitmovement(0)
-releaseall
-}
 
 script PlayerMedicineCabinet {
 	
@@ -840,9 +832,26 @@ if((flag(FLAG_SYS_POKEMON_GET)) && !(flag(SinkNinkaburiGone)))
 	setwildbattle(SPECIES_NINKABURI, 5)
 	dowildbattle
 	specialvar(VAR_RESULT, GetBattleOutcome)
-	waitmessage
+
+	if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
 	setflag (SinkNinkaburiGone)
-	goto (ninkaburigone)}
+	goto (ninkaburigone)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_WON){
+	msgbox(format("The Ninkaburi hides under the sink again..."))
+	goto (ninkaburigone)
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+	msgbox(format("The Ninkaburi hides under the sink again..."))
+	goto (ninkaburigone)
+
+	}
+	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+	msgbox(format("The Ninkaburi hides under the sink again..."))
+	goto (ninkaburigone)
+	}
+
+	waitmessage}
 if((flag(FLAG_SYS_POKEMON_GET)) && (flag(SinkNinkaburiGone)))
 {msgbox (format("There doesn't seem to be any NINKABURI around the sink."))}
 ninkaburigone:
@@ -860,7 +869,6 @@ danger with a wall of fluffy justice! \pNew season of Devon Shows' most loved ca
 \p Stay tuned, and stay safe!"))
 hidemonpic
 special (TurnOffTVScreen)
-setvar(VAR_TV_TURNOFF , 1)
 fadeoutbgm (1)
 fadeinbgm (1)
 playbgm (MUS_NONE, TRUE)

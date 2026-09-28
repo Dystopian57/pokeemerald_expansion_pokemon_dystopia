@@ -1214,7 +1214,7 @@ DevonInnSink_Text_11:
 DevonInnFreezer_Text_0:
 # 169 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "There's a single drink in the freezer,\n"
-	.string "behind a huge 'FOR FREE' note...$"
+	.string "behind a huge “FOR FREE” note...$"
 
 DevonInnFreezer_Text_1:
 # 182 "data/maps/PokeInnRoom2/scripts.pory"

@@ -645,7 +645,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Band-aid"),
         .pluralName = ITEM_PLURAL_NAME("Band-aids"),
-        .price = (I_PRICE >= GEN_7) ? 100 : 100,
+        .price = 70,
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(
             "It has an adhesive\n"
@@ -666,16 +666,12 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Bandage"),
         .pluralName = ITEM_PLURAL_NAME("Bandages"),
-        .price = 250,
+        .price = 210,
         .holdEffectParam = 60,
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
             "a Pokémon by\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
             "60 points."),
-        #else
-            "50 points."),
-        #endif
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -691,16 +687,12 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("First Aid Kit"),
         .pluralName = ITEM_PLURAL_NAME("First Aid Kits"),
-        .price = (I_PRICE >= GEN_2 && I_PRICE <= GEN_6) ? 500 : 500,
+        .price = 420,
         .holdEffectParam = 120,
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
             "a Pokémon by\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
             "120 points."),
-        #else
-            "200 points."),
-        #endif
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -715,17 +707,18 @@ const struct Item gItemsInfo[] =
     [ITEM_MAX_POTION] =
     {
         .name = ITEM_NAME("Devotion"),
-        .price = 2500,
+        .price = 100,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
-            "Fully restores the\n"
-            "HP of a Pokémon."),
+            "The best potion!\n"
+            "Fully restores HP\n"
+            "and heals status."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_MaxPotion,
+        .effect = gItemEffect_FullRestore,
         .flingPower = 30,
         .iconPic = gItemIcon_LargePotion,
         .iconPalette = gItemIconPalette_MaxPotion,
@@ -789,18 +782,14 @@ const struct Item gItemsInfo[] =
     [ITEM_FRESH_WATER] =
     {
         .name = ITEM_NAME("Fresh Water"),
-        .price = 200,
-        .holdEffectParam = 30,
+        .price = 175,
+        .holdEffect = HOLD_EFFECT_RESTORE_HP,
+        .holdEffectParam = 25,
         .description = COMPOUND_STRING(
             "A mineral water\n"
             "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
             "by 50 points."),
-        #else
-            "by 50 points."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
@@ -813,18 +802,14 @@ const struct Item gItemsInfo[] =
     [ITEM_SODA_POP] =
     {
         .name = ITEM_NAME("Soda Pop"),
-        .price = 300,
-        .holdEffectParam = 50,
+        .price = 245,
+        .holdEffect = HOLD_EFFECT_RESTORE_HP,
+        .holdEffectParam = 35,
         .description = COMPOUND_STRING(
             "A fizzy soda drink\n"
             "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
             "by 70 points."),
-        #else
-            "by 70 points."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
@@ -885,19 +870,14 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Energy Bar"),
         .pluralName = ITEM_PLURAL_NAME("Energy Bars"),
-        .price = 150,
+        .price = 120,
         .holdEffect = HOLD_EFFECT_RESTORE_HP,
-        .holdEffectParam = 30,
+        .holdEffectParam = 20,
         .description = COMPOUND_STRING(
             "A hard but highly\n"
             "nutritious snack.\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
             "Restores 40 HP."),
-        #else
-            "Restores 40 HP."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
@@ -911,17 +891,14 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("War Ration"),
         .pluralName = ITEM_PLURAL_NAME("War Rations"),
-        .price = (I_PRICE >= GEN_7) ? 250 : 250,
+        .price = 260,
+        .holdEffect = HOLD_EFFECT_RESTORE_HP,
+        .holdEffectParam = 40,
         .description = COMPOUND_STRING(
             "A bland but filling\n"
             "canned meal that\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
             "restores 80 HP."),
-        #else
-            "restores 80 HP."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
@@ -935,19 +912,18 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Strong Coffee"),
         .pluralName = ITEM_PLURAL_NAME("Strong Coffees"),
-        .price = (I_PRICE >= GEN_7) ? 400 : 400,
+        .price = 100,
         .holdEffect = HOLD_EFFECT_SPEED_UP,
-        .holdEffectParam = 4,
+        .holdEffectParam = 2,
         .description = COMPOUND_STRING(
             "A bitter coffee\n"
             "that drastically\n"
             "increases speed."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_INCREASE_STAT,
-        .effect = gItemEffect_HealPowder,
+        .effect = gItemEffect_XSpeed,
         .flingPower = 30,
         .iconPic = gItemIcon_Lemonade,
         .iconPalette = gItemIconPalette_Lemonade, //could replace energyroot icon with new lemonade icon
@@ -1086,15 +1062,14 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Petalburguer"),
         .pluralName = ITEM_PLURAL_NAME("Petalburguers"),
-        .price = (I_PRICE >= GEN_7) ? 300 : 300,
+        .price = 200,
         .holdEffect = HOLD_EFFECT_CONFUSE_SPICY,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = COMPOUND_STRING(
-            "It has meat of\n"
-            "dubious origin.\n"
-            "Heals half of max HP."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+            "A spicy burguer\n"
+            "of dubious meat.\n"
+            "Heals 1/2 of HP."),
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
@@ -1264,14 +1239,16 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Pewter Crunchies"),
         .pluralName = ITEM_PLURAL_NAME("Pewter Crunchies"),
-        .price = 250,
-        .description = sFullHealDesc,
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_STATUS_RECOVERY,
+        .price = 100,
+        .description = COMPOUND_STRING(
+            "Fried potato strips\n"
+            "that increase a\n"
+            "Pokémon's Attack."),
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
+        .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XAttack,
         .flingPower = 30,
         .iconPic = gItemIcon_PewterCrunchies,
         .iconPalette = gItemIconPalette_PewterCrunchies,
@@ -1296,13 +1273,12 @@ const struct Item gItemsInfo[] =
     [ITEM_LAVA_COOKIE] =
     {
         .name = ITEM_NAME("Lava Cookie"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
+        .price = 200,
         .description = COMPOUND_STRING(
             "A local specialty\n"
             "that heals all\n"
             "status problems."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_STATUS_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
@@ -1365,15 +1341,14 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Crater Donut"),
         .pluralName = ITEM_PLURAL_NAME("Crater Donuts"),
-        .price = (I_PRICE >= GEN_7) ? 300 : 300,
+        .price = 200,
         .holdEffect = HOLD_EFFECT_CONFUSE_SWEET,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = COMPOUND_STRING(
             "A sweet in poor\n"
             "poor taste, but of\n"
             "great taste."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
@@ -2829,9 +2804,9 @@ const struct Item gItemsInfo[] =
         .price = 500,
     #endif
         .description = COMPOUND_STRING(
-            "Born from the spores\n"
-            "of a Shiitako. Sells\n"
-            "for a modest amount."),
+            "Born from Shiitako\n"
+            "spores. Sells for\n"
+            "a modest amount."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,
@@ -3100,11 +3075,11 @@ const struct Item gItemsInfo[] =
     [ITEM_RARE_BONE] =
     {
         .name = ITEM_NAME("Rare Bone"),
-        .price = (I_PRICE >= GEN_7) ? 5000 * TREASURE_FACTOR: 10000,
+        .pluralName = ITEM_PLURAL_NAME("Rare Bones"),
+        .price = 1000,
         .description = COMPOUND_STRING(
-            "A very rare bone.\n"
-            "It can be sold at\n"
-            "a high price."),
+            "A rare bone.\n"
+            "Can be sold."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,
@@ -3133,12 +3108,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_PRETTY_FEATHER] =
     {
-        .name = ITEM_NAME("Pretty Feather"),
-        .price = (I_PRICE >= GEN_7) ? 1000 * TREASURE_FACTOR: 200,
+        .name = ITEM_NAME("Dirty Feather"),
+        .pluralName = ITEM_PLURAL_NAME("Dirty Feathers"),
+        .price = 1000,
         .description = COMPOUND_STRING(
-            "A beautiful yet\n"
-            "plain feather that\n"
-            "does nothing."),
+            "A muddy feather\n"
+            "of a bird Pokémon.\n"
+            "Can be sold."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,
@@ -5890,15 +5866,14 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Port Pizza"),
         .pluralName = ITEM_PLURAL_NAME("Port Pizzas"),
-        .price = (I_PRICE >= GEN_7) ? 400 : 400,
+        .price = 200,
         .holdEffect = HOLD_EFFECT_CONFUSE_SOUR,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = COMPOUND_STRING(
             "A seafood pizza,\n"
             "Slateport recipe.\n"
-            "Heals half of max HP."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+            "Heals 1/2 of HP."),
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
@@ -8749,13 +8724,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POISON_BARB] =
     {
-        .name = ITEM_NAME("Poison Barb"),
+        .name = ITEM_NAME("Nuclear Cell"),
         .price = TYPE_BOOSTING_PRICE,
         .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "raises the power of\n"
+            "A sealed radioactive\n"
+            "material. Boosts\n"
             "Poison-type moves."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_TYPE_BOOST_HELD_ITEM,
@@ -9358,13 +9333,7 @@ const struct Item gItemsInfo[] =
     [ITEM_SNOWBALL] =
     {
         .name = ITEM_NAME("Snowball"),
-    #if I_PRICE >= GEN_9
-        .price = 5000,
-    #elif I_PRICE >= GEN_7
-        .price = 4000,
-    #else
-        .price = 200,
-    #endif
+        .price = 100,
         .holdEffect = HOLD_EFFECT_SNOWBALL,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
@@ -9577,9 +9546,9 @@ const struct Item gItemsInfo[] =
     #endif
         .holdEffect = HOLD_EFFECT_DOUBLE_PRIZE,
         .description = COMPOUND_STRING(
-            "A foreign coin\n"
-            "that doubles money\n"
-            "if the holder battles."),
+            "A foreign coin.\n"
+            "Doubles money if\n"
+            "the holder battles."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
@@ -9873,14 +9842,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_LIFE_ORB] =
     {
-        .name = ITEM_NAME("Danger Gem"),
-    #if I_PRICE >= GEN_9
+        .name = ITEM_NAME("Nuclear Cell"),
         .price = 3000,
-    #elif I_PRICE >= GEN_7
-        .price = 3000,
-    #else
-        .price = 3000,
-    #endif
         .holdEffect = HOLD_EFFECT_LIFE_ORB,
         .description = COMPOUND_STRING(
             "Boosts move power\n"
@@ -9897,14 +9860,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POWER_HERB] =
     {
-        .name = ITEM_NAME("Power Herb"),
-    #if I_PRICE >= GEN_9
-        .price = 30000,
-    #elif I_PRICE >= GEN_7
-        .price = 4000,
-    #else
+        .name = ITEM_NAME("Instant Noodles"),
         .price = 100,
-    #endif
         .holdEffect = HOLD_EFFECT_POWER_HERB,
         .description = COMPOUND_STRING(
             "Allows immediate\n"
@@ -12512,14 +12469,14 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_TORMENT] =
+    [ITEM_TM_POUNCE] =
     {
         .name = ITEM_NAME("TM41"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Prevents the foe\n"
-            "from using the same\n"
-            "move in a row."),
+            "The user pounces\n"
+            "on the target,\n"
+            "lowering its speed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12610,28 +12567,28 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_POISON_GAS] =
+    [ITEM_TM_HAZE] =
     {
         .name = ITEM_NAME("TM48"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "A cloud of poison\n"
-            "is spread, poisoning\n"
-            "those it hits."),
+            "Creates a black\n"
+            "haze that removes\n"
+            "all stat changes."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SNATCH] =
+    [ITEM_TM_NIGHT_SHADE] =
     {
         .name = ITEM_NAME("TM49"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Steals the effects\n"
-            "of the move the foe\n"
-            "is trying to use."),
+            "A vision that deals\n"
+            "damage equal to the\n"
+            "user's level."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13423,17 +13380,20 @@ const struct Item gItemsInfo[] =
 
     [ITEM_REVEAL_GLASS] =
     {
-        .name = ITEM_NAME("Reveal Glass"),
-        .pluralName = ITEM_PLURAL_NAME("Reveal Glasses"),
-        .price = 0,
-        .importance = 1,
+        .name = ITEM_NAME("Lovely Dango"),
+        .price = 100,
+        .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
+        .holdEffectParam = 2,
         .description = COMPOUND_STRING(
-            "This glass returns\n"
-            "a Pokémon back to\n"
-            "its original form."),
-        .pocket = POCKET_KEY_ITEMS,
+            "A cute sweet\n"
+            "that drastically\n"
+            "increases defense."),
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XSpecialDefense,
+        .flingPower = 30,
         .iconPic = gItemIcon_RevealGlass,
         .iconPalette = gItemIconPalette_RevealGlass,
     },
@@ -14395,17 +14355,17 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Green Tea"),
         .pluralName = ITEM_PLURAL_NAME("Green Tea"),
         .price = 70,
-        .holdEffect = HOLD_EFFECT_CURE_CONFUSION,
+        .holdEffect = HOLD_EFFECT_SP_ATTACK_UP,
+        .holdEffectParam = 4,
         .description = COMPOUND_STRING(
             "A drink that\n"
             "soothes the mind.\n"
-            "Heals confusion."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+            "Boosts Sp. Atk."),
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_PersimBerry,
+        .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XSpecialAttack,
         .flingPower = 10,
         .iconPic = gItemIcon_Tea,
         .iconPalette = gItemIconPalette_Tea,
@@ -15401,23 +15361,23 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_JubilifeMuffin,
     },
 
+
     [ITEM_REMEDY] =
     {
         .name = ITEM_NAME("Plain Bento"),
         .pluralName = ITEM_PLURAL_NAME("Plain Bentos"),
         .price = 350,
-        .holdEffect = HOLD_EFFECT_RESTORE_HP,
-        .holdEffectParam = 40,
+        .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
+        .holdEffectParam = 25,
         .description = COMPOUND_STRING(
             "A plain boxed\n"
             "lunch that heals\n"
-            "60 HP."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+            "1/4 of total HP."),
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_SodaPop,
+        .effect = gItemEffect_Lemonade,
         .flingPower = 30,
         .iconPic = gItemIcon_Remedy,
         .iconPalette = gItemIconPalette_Remedy,
@@ -15427,19 +15387,18 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Deluxe Bento"),
         .pluralName = ITEM_PLURAL_NAME("Deluxe Bentos"),
-        .price = 600,
-        .holdEffect = HOLD_EFFECT_RESTORE_HP,
-        .holdEffectParam = 100,
+        .price = 700,
+        .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
+        .holdEffectParam = 50,
         .description = COMPOUND_STRING(
             "A tasty boxed\n"
             "lunch that heals\n"
-            "120 HP."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+            "1/2 of total HP."),
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_HyperPotion,
+        .effect = gItemEffect_MaxPotion,
         .flingPower = 30,
         .iconPic = gItemIcon_FineRemedy,
         .iconPalette = gItemIconPalette_FineRemedy,
@@ -15449,19 +15408,18 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Fishy Taiyaki"),
         .pluralName = ITEM_PLURAL_NAME("Fishy Taiyakis"),
-        .price = 300,
-        .holdEffect = HOLD_EFFECT_CONFUSE_SOUR,
+        .price = 200,
+        .holdEffect = HOLD_EFFECT_CONFUSE_DRY,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = COMPOUND_STRING(
             "It looks and smells\n"
             "like a deep-fried fish.\n"
             "Heals half of max HP."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_SuperbRemedy,
+        .effect = gItemEffect_Lemonade,
         .flingPower = 30,
         .iconPic = gItemIcon_FullHeal,
         .iconPalette = gItemIconPalette_FullHeal,

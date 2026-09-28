@@ -1836,8 +1836,8 @@ script FatGuyExclMark {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	if (!flag (Donutquestaccepted) && !flag (fatguyseesplayerleavelittl))
 	{
-	applymovement (3, moves(walk_in_place_up * 1, emote_exclamation_mark))
 	playse (SE_PIN)
+	applymovement (3, moves(walk_in_place_up * 1, emote_exclamation_mark))
 	waitse
 	waitmovement (3)
 	setflag (fatguyseesplayerleavelittl)
@@ -1857,6 +1857,13 @@ script RivalHouseSign {
 script Littleroot_Techguy_Talk {
 lockall
 applymovement (3, moves(face_player))
+
+
+if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+    msgbox (format("Hello to you two! Going for a snack? I know I could use one."))
+	goto (endlitlfatguy)
+    }
+
 if (var(VAR_LITTLEROOT_PHASE) == 3)
 {bufferleadmonspeciesname(STR_VAR_1)
 
@@ -1868,9 +1875,17 @@ goto (endlitlfatguy)
 if (var(VAR_LITTLEROOT_PHASE) >= 5 && !flag (Donutquestaccepted))
 	{msgbox (format("Oh, {PLAYER}! I've heard you're going to {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}.\pIf you have time, would
 	you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
-	arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}.There's a guy that sells them there.\pI'll trade
+	arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there.\pI'll trade
 	you some {COLOR RED}Poké Balls{COLOR DARK_GRAY} I've found for the donut. Fair deal, right?"))
 	setflag(Donutquestaccepted)
+
+		if (checkitem (ITEM_SHALOUR_SABLE)  == TRUE)
+		{playse (SE_PIN)
+		applymovement (3, moves(emote_exclamation_mark))
+		msgbox (format("W-wait a minute...!"))
+		goto (playerhasdonutfromstart)
+		}
+
 	goto (endlitlfatguy)}
 if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
 	{if (!flag (donutquestcomplete))
@@ -1883,8 +1898,11 @@ if (var(VAR_LITTLEROOT_PHASE) >= 5 && flag (Donutquestaccepted))
 		\p I'd go myself, but I got robbed by a {COLOR RED}Rebel{COLOR DARK_GRAY} last time I left
 		town.\pBut you're a former soldier, right? They won't mess with you!"))
 		goto (endlitlfatguy)}
-		
-		else {msgbox (format("I-I can smell it from your bag - that's a {COLOR RED}Crater Donut{COLOR DARK_GRAY}!
+
+		else
+		{
+		playerhasdonutfromstart:	
+		msgbox (format("I-I can smell it from your bag - that's a {COLOR RED}Crater Donut{COLOR DARK_GRAY}!
 		\p My mouth is already watering..."))
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Give Crater Donut", "Don't give Crater Donut")
 
@@ -1938,18 +1956,20 @@ msgbox (format("O-oh, {PLAYER}... this is... {RIVAL}'s house, right?"))
 	if(var(VAR_RESULT) == MALE){
 	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("She comes to the graveyard sometimes... \p I think we shouldn't intrude, she is a bit scary..."))
+	closemessage
 	}
 
 	if(var(VAR_RESULT) == FEMALE){
 	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("He comes to the graveyard sometimes... \p I think we shouldn't intrude, he is a bit scary..."))
+	closemessage
 	}
 
 }
 
    else {msgbox (format("I-I can eat these in the mausoleum... I-I don't want to take more
     of your time...!"))}
-
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1, faceplayer))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 waitmovement (OBJ_EVENT_ID_PLAYER)
 releaseall
@@ -1959,17 +1979,19 @@ script SamanthaDontgotoPlayers {
     lock
     if (!flag (Samanthagotsnacks))
     {
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
-playse (SE_PIN)
-msgbox (format("O-oh, {PLAYER}... this is... your house, right? Your name is on the sign..."))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+	playse (SE_PIN)
+	msgbox (format("O-oh, {PLAYER}... this is... your house, right? Your name is on the sign..."))
 
-msgbox (format("I-I appreciate it, but... I can't take your food! \p I have saved money for mine. So let's
-go to Oldale to get it."))
+	msgbox (format("I-I appreciate it, but... I can't take your food! \p I have saved money for mine. So let's
+	go to {COLOR GREEN}Oldale{COLOR DARK_GRAY} to get it."))
+	closemessage
 
 }
-
    else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
-    of your time...!"))}
+    of your time...!"))
+	closemessage}
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1, faceplayer))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 waitmovement (OBJ_EVENT_ID_PLAYER)
 releaseall
@@ -2058,6 +2080,72 @@ msgbox (format("An old car can be seen beyond the fence.\p There seems to be a h
 releaseall
 }
 
+script Sandbag {
+lock
+msgbox (format("It's a sandbag, probably dragged from some old trench."))
+releaseall
+}
+
+script RustyFence {
+lock
+msgbox (format("The fence has a moderate amount of rust on it."))
+releaseall
+}
+
+script GoodFence {
+lock
+msgbox (format("A metallic fence in a reasonably good condition."))
+releaseall
+}
+
+script DevonTruck {
+lock
+msgbox (format("A truck with the Devon logo on it."))
+releaseall
+}
+
+script Streetlight {
+lock
+msgbox (format("A regular streetlight. These are programmed to turn on at night."))
+releaseall
+}
+
+script CratePile {
+lock
+msgbox (format("A pile of crates, neatly stacked."))
+releaseall
+}
+
+script TreeStump {
+lock
+msgbox (format("A tree stump. The tree must have been cut down for wood."))
+releaseall
+}
+
+script TrafficCone {
+lock
+msgbox (format("It's just a traffic cone."))
+releaseall
+}
+
+script Bones {
+lock
+msgbox (format("The remains of a Pokémon. The death cause is not hard to guess..."))
+releaseall
+}
+
+script Foodtray {
+lock
+msgbox (format("A food tray. Let's just leave it here."))
+releaseall
+}
+
+script TrafficBarrier {
+lock
+msgbox (format("A traffick barrier. It retracts into the ground to allow passage."))
+releaseall
+}
+
 script LabBasementVentShaft {
 	lock
 	if(!flag (Unsafeningtutodone))
@@ -2137,10 +2225,11 @@ script LittlerootTown_Trigger_NoEnterRival1{
 	waitmessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
 	waitmovement
+	release
 	fadeoutbgm (1)
 	fadeinbgm (1)
 	playbgm (MUS_LITTLEROOT_TEST, TRUE)
-	releaseall	
+
 }
 
 script RivalShake {
@@ -2153,13 +2242,16 @@ script RivalShake {
 }
 
 script Littleroot_Idletalk_Oldman{
+	
 
 if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+	lock
+	applymovement (1, moves(face_player))
 	if (!flag (SamanthaBirchInteraction)) {
 	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BIRCH])
 	msgbox (format("Hello, {PLAYER} - and hello to you too! What's your name?"))
-	applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_player))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
 	removefieldmugshot
 	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("I-I'm Samantha... nice to meet you, sir."))
@@ -2336,14 +2428,14 @@ script OldManThanks {
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("These are some old crutches of mine.\p I noticed yours were not in the best shape - these
-		should help you move around better."))}
+		should help you move around faster."))}
 		else
 		{msgbox (format("Obtained the Better Arm Sling!"))
 		waitmessage
 		createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("This is an old arm sling of mine.\p I noticed yours is not in the best shape - this one
-		should secure your arm better, so you can move around more easily."))}
+		should secure your arm better, so you can move around faster."))}
 		setspeaker ([SP_NAME_BIRCH])
 		msgbox (format("Look at you. You have gone through so much, but you are still standing."))
 		setspeaker ([SP_NAME_BIRCH])
