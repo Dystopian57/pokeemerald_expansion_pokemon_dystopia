@@ -326,6 +326,31 @@ script Setclocktoleave {
 	releaseall	
 }
 
+script ResetSamanthainMausoleumifneeded {
+	
+	    if (!flag (Samanthagotsnacks))
+    {   setvar(VAR_MAUSOLEUM_HEXGIRL, 2)
+		setflag (Samanthalamentsplayerdefeat)}
+
+	    else
+    {   setvar(VAR_MAUSOLEUM_HEXGIRL, 4)}
+
+	    clearflag (Samanthaleavesmausoleum)
+
+}
+
+script ResetAideinLabifNeeded {
+	
+	    if (flag (Aideeleaveslab))
+    {   
+		setvar(VAR_LITTLEROOT_PHASE, 5)
+		setflag (AidelamentsPlayerdefeatintunnel)
+
+	    clearflag (Aideeleaveslab)}
+
+
+}
+
 script PlayerRoomGamecube {
 	lockall
 	msgbox (format("{COLOR DARK_GRAY}It's an old Gamecube. The game “Harvest Moon: A Wonderful Life” is loaded in."))
@@ -399,6 +424,12 @@ script PlayerRoomBookshelf {
 	releaseall		
 }
 
+script DoAndroidsDreamofMareep {
+	lockall
+	msgbox (format("A copy of “Do androids Dream of Mareep?”. It provided escapism for a time."))
+	releaseall		
+}
+
 script PlayerRoomWardrobe {
 	lockall
 	msgbox (format("The wardrobe is full of dirty, smelly clothes."))
@@ -407,7 +438,7 @@ script PlayerRoomWardrobe {
 
 script KantonianWarHistoryVol1PlayerHouse {
     lock
-    msgbox(format("The book's cover reads “History of the
+    msgbox(format("A book's cover reads “History of the
     Kantonian War, Volume 1”. \p Read it?"))
     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
@@ -589,9 +620,9 @@ script PlayerRoomMail {
 	msgbox (format("A laptop is on the floor, with Devon Mail open."))
 	backtomail:
 	msgbox (format("There's three mails in the inbox, from three different senders."))
-		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Devon Co. - Rustboro HQ", "Petalburg Gym", "Oldale DLC", "Ignore laptop")
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Devon Co. Deliveries", "Petalburg Gym", "Oldale DLC", "Ignore laptop")
 		if (var(VAR_RESULT) == 0) {
-			msgbox (format("From: Devon Corporation. \nSubject: Mail has been delivered.
+			msgbox (format("From: Devon Corporation Deliveries. \nSubject: Mail has been delivered.
 			\p After failing to deliver your package personally, our mailing staff has deposited it in your allocated
 			   mailbox right outside your domicile. \pPlease check it at your earliest convenience. \p Stay safe,
 			   \n Devon Corporation"))

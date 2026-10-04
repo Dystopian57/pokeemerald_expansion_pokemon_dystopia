@@ -75,13 +75,13 @@ script BalsamCallAfterWarehouse {
     msgbox(format("Prof Balsam: Hey there, {PLAYER}. It's me, Balsam.\p Are you alright?
     Therapy should have finished ages ago, but you haven't returned like we discussed.\p It's
     okay if you want to stretch your legs, but you should have told us.\pYour grandpa Birch
-    was worried sick.\p Since you're feeling adventurous,why don't you go visit your
-    other grandpa at Petalburg? \p A change of scenery will do you good. It's very close, but
+    was worried sick.\p Since you're feeling adventurous, why don't you go visit your
+    other grandpa at {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}? \p A change of scenery will do you good. It's very close, but
     give me a call if you get lost."))
 
 
 	if (var(VAR_LITTLEROOT_PHASE) <= 6)
-	{msgbox(format("Oh, and we still need help with finding that Voltorb Shard my Aide asked
+	{msgbox(format("Oh, and we still need help with finding that {COLOR RED}Voltorb Shard{COLOR DARK_GRAY} my Aide asked
     you about.\p It's not urgent, but we'd really appreciate it."))}
     
 
@@ -166,7 +166,7 @@ script ConArtist103Rewards {
                 //investment opportunity. It's a bit more expensive though... 1000. But you can't say no
                 //right?
             msgbox(format("I'm sure you won't be disappointed. Especially if you continue your patronage
-            at my store in Petalburg!\p I'll let you know when I set up there. And to that end..."))
+            at my store in {COLOR GREEN}Petalburg{COLOR DARK_GRAY}!\p I'll let you know when I set up there. And to that end..."))
             register_matchcall (TRAINER_SHADYDEALER_103)
             msgbox(format("All set. Pleasure doing business with you, and have an EGGcelent day!"))
             setvar (VAR_JIMMYQUESTPROGRESS, 2)
@@ -182,7 +182,7 @@ script ConArtist103Rewards {
         if(var(VAR_RESULT) == 1){
             refusedeggs:
             setspeaker ([SP_NAME_JIMMY])
-            msgbox(format("Welp, that's your loss. \p I'm off to Petalburg soon, so you'll have to
+            msgbox(format("Welp, that's your loss. \p I'm off to {COLOR GREEN}Petalburg{COLOR DARK_GRAY} soon, so you'll have to
             walk if you change your mind!"))
             goto (finisheggdeal)
         }}
@@ -194,7 +194,7 @@ script ConArtist103Rewards {
 	}}
 
 	if(var(VAR_JIMMYQUESTPROGRESS) == 2){
-	msgbox(format("Thank you so much for your help and patronage. See you at Petalburg!"))
+	msgbox(format("Thank you so much for your help and patronage. See you at {COLOR GREEN}Petalburg{COLOR DARK_GRAY}!"))
     }
 
 	finisheggdeal:
@@ -888,14 +888,14 @@ script OldaleDevonGrunts { //karen and jerry
 	if(var(VAR_OLDALE_PHASE) == 2)
        {applymovement (14, moves(face_player, walk_in_place_right * 1))
         msgbox(format("Hello there, civilian! We have great news! \pThose pesky {COLOR RED}Rebels{COLOR DARK_GRAY}
-        have finally left Oldale Warehouse. The town is safe again!"))
+        have finally left {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY}. The town is safe again!"))
 
         applymovement (15, moves(walk_in_place_up * 1, face_up))
         msgbox(format("They must have caught wind of reinforcements coming, and didn't feel like
         spending the rest of their lives on {COLOR RED}Dewford Prison{COLOR DARK_GRAY}."))
         applymovement (15, moves(face_right))
         applymovement (14, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("Most likely! So... I suppose you want to go through Road 002?"))
+        msgbox(format("Most likely! So... I suppose you want to go through {COLOR GREEN}Road 002{COLOR DARK_GRAY}?"))
 	    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
         if(var(VAR_RESULT) == 0){
@@ -903,7 +903,7 @@ script OldaleDevonGrunts { //karen and jerry
         msgbox(format("I see... well, I'm sorry to say... \p In the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, when it's not one thing,
         it's the other, you know?"))
         applymovement (15, moves(walk_in_place_right * 1))
-        msgbox(format("We have one of our scientists searching Road 002 for a very dangerous Pokémon.
+        msgbox(format("We have one of our scientists searching {COLOR GREEN}Road 002{COLOR DARK_GRAY} for a very dangerous Pokémon.
         \p It's the next species on the list of Pokémon to be {COLOR BLUE}safened{COLOR DARK_GRAY}, and we can't let his work be
         disturbed."))
 
@@ -1028,6 +1028,7 @@ script OldaleDevonGrunts { //karen and jerry
         setspeaker ([SP_NAME_RIVAL])
 
         msgbox(format("CHAAAARGE!"))
+        removefieldmugshot
         closemessage
         //fadescreenswapbuffers (FADE_TO_BLACK)
         playse (SE_FLEE)
@@ -1043,7 +1044,7 @@ script OldaleDevonGrunts { //karen and jerry
         removeobject (36)
         playse (SE_EXIT)
         waitse
-        removefieldmugshot
+
         setflag (devonsdontblock102)
         setvar (VAR_OLDALE_PHASE, 4)
         
@@ -1095,6 +1096,7 @@ script OldaleRival {
         { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_MALE)}
         removeobject (21)
         setflag (rivalappearsinOldale)
+        releaseall
 }
 
 script OldaleRivalfollowchat {
@@ -1136,6 +1138,7 @@ script OldaleRivalDontLeaveOldaleto101 {
         if(var(VAR_RESULT) == 0){
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Very well... I'll be keeping an eye on them. Don't take long!"))
+        closemessage
         removefieldmugshot
 		fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
@@ -1153,6 +1156,7 @@ script OldaleRivalDontLeaveOldaleto101 {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+	    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 1))
 	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
         waitmovement (OBJ_EVENT_ID_PLAYER)
         removefieldmugshot
@@ -1272,6 +1276,7 @@ script OldaleRivalDontLeaveOldaleto103 {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Very well... I'll be keeping an eye on them. Don't take long!"))
+        closemessage
         removefieldmugshot
 		fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
@@ -1288,6 +1293,7 @@ script OldaleRivalDontLeaveOldaleto103 {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+	    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_down * 1))
 	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
         waitmovement (OBJ_EVENT_ID_PLAYER)
         }
@@ -1333,6 +1339,7 @@ script OldaleRivalnoleavetoWhouse {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+	    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1))
 	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
         waitmovement (OBJ_EVENT_ID_PLAYER)
         }
@@ -1404,7 +1411,7 @@ script OldaleTruckRebel {
 script OldaleGrassRebel {
     lock
 	applymovement (26, moves(face_player))
-    msgbox(format("Damn it, there's only broken clankers in this patch! I hate clankers!"))
+    msgbox(format("Damn it, there's only clanker Safemon in this patch! I hate clankers!"))
     release
     }
 
@@ -1532,7 +1539,7 @@ script SamanthaCall1 {
     msgbox(format("..."))
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox(format("U-uhm... hi, {PLAYER}! It's me, Samantha.\p I hope I haven't caught you at a bad time...
-    \p B-but, since you said you'd help me out here in the Mausoleum, I... \p I-I was wondering
+    \p B-but, since you said you'd help me out here in the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY}, I... \p I-I was wondering
     if you could, like... come do me a favour?\p I-it's okay if you're too busy, and there's no
     hurry, but...\p I-I'll be here if you decide to come!\p Sorry for bothering. S-see you!"))
     setvar(VAR_MAUSOLEUM_HEXGIRL, 2)
@@ -1559,11 +1566,12 @@ script SamanthaCall1 {
 
     }
     
-    else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+    else {msgbox (format("W-we can go back to the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY} now... I-I don't want to take more
     of your time...!"))}
-        applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
-       releaseall 
+    releaseall 
     }
 
  script SamanthaDontgotoDLC {
@@ -1580,7 +1588,7 @@ script SamanthaCall1 {
 
     }
     
-   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+   else {msgbox (format("W-we can go back to the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY} now... I-I don't want to take more
     of your time...!"))}
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
@@ -1596,15 +1604,16 @@ script SamanthaCall1 {
     setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("O-oh, {PLAYER}... that way leads to Road 002, right?"))
 
-    msgbox (format("W-we don't need to go that far... \pI'm sure there's another vending machine in Petalburg,
-    b-but... the one here in Oldale will do!"))
+    msgbox (format("W-we don't need to go that far... \pI'm sure there's another vending machine in {COLOR GREEN}Petalburg{COLOR DARK_GRAY},
+    b-but... the one here in {COLOR GREEN}Oldale{COLOR DARK_GRAY} will do!"))
 
 
     }
     
-   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+   else {msgbox (format("W-we can go back to the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY} now... I-I don't want to take more
     of your time...!"))}
-    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall
 }
@@ -1618,14 +1627,16 @@ script SamanthaCall1 {
     setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("O-oh, {PLAYER}... that way leads to Route 103, right?"))
 
-    msgbox (format("B-but Slateport is very far... t-the food here in Oldale will do!"))
+    msgbox (format("B-but {COLOR GREEN}Slateport{COLOR DARK_GRAY} is very far... 
+    t-the snacks here in {COLOR GREEN}Oldale{COLOR DARK_GRAY} will do!"))
 
 
     }
 
-   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+   else {msgbox (format("W-we can go back to the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY} now... I-I don't want to take more
     of your time...!"))}
-    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_down * 1, face_right))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall
 }
@@ -1639,7 +1650,7 @@ script SamanthaDontgotoWarehouse {
     setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("O-oh, {PLAYER}... Oldale's Warehouse is over there, right?"))
 
-    if (var(VAR_OLDALE_PHASE)  < 2)
+    if (var(VAR_OLDALE_PHASE)  < 1)
         {
         msgbox (format("I-I dont' think they sell any food over there..."))
         }
@@ -1653,12 +1664,18 @@ script SamanthaDontgotoWarehouse {
 
     }
 
-   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+   else {msgbox (format("W-we can go back to the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY} now... I-I don't want to take more
     of your time...!"))}
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1))
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up))
     waitmovement (OBJ_EVENT_ID_PLAYER)
     releaseall
 }
+
+
+
+
 
 script SamanthaGetSnacksCutscene {
 
@@ -1721,7 +1738,7 @@ script SamanthaShake{
 script GiveSafemonParty1 {
     callnative (ZeroPlayerPartyMons)
     msgbox (format("Pick a team"))
-	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "1st Party", "2nd Party", "3rd Party", "4th Party", "5th Party")
+	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "1st Party", "2nd Party", "3rd Party", "4th Party", "5th Party", "Good Party")
         if(var(VAR_RESULT) == 0){
     givemon (SPECIES_BULBASYNTH, 7, ITEM_REMEDY)
     givemon (SPECIES_SMOTHQUIL, 7, ITEM_HEAL_POWDER)
@@ -1764,6 +1781,15 @@ script GiveSafemonParty1 {
     givemon (SPECIES_NIDORAN_I, 7, ITEM_FULL_HEAL)
     givemon (SPECIES_DOUNO, 7, ITEM_AERODACTYLITE)
     givemon (SPECIES_KANGASKID, 7, ITEM_SUPERB_REMEDY)
+        }
+
+        if(var(VAR_RESULT) == 5){
+    givemon (SPECIES_BULBASYNTH, 10, ITEM_REMEDY)
+    givemon (SPECIES_PIKACHU_SAFE, 10, ITEM_SHALOUR_SABLE) 
+    givemon (SPECIES_SMOTHQUIL, 10, ITEM_HEAL_POWDER)
+    givemon (SPECIES_WARABBIT, 10, ITEM_FULL_HEAL)
+    givemon (SPECIES_MANCHINE, 10, ITEM_AERODACTYLITE)
+    givemon (SPECIES_LOADTAD, 10, ITEM_SUPERB_REMEDY)
         }
 
 releaseall

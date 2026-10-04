@@ -91,6 +91,19 @@ script DayNightAmbientLight {
 	//else {setobjectxy (9, -4, -5)}
 //}
 
+script OldaleDevonCenterTrashCan1F {
+	lock
+
+    if (!flag(oldaledevoncentertrashcan1f))
+
+    {msgbox (format("Someone has thrown a casette tape to the trash can..."))
+    giveitem (ITEM_EON_TICKET)
+    setflag (oldaledevoncentertrashcan1f)}
+
+    else {msgbox (format("The trash can is empty."))}
+    release
+}
+
 script CarRebel {
 	lock
 	applymovement (9, moves (face_player))

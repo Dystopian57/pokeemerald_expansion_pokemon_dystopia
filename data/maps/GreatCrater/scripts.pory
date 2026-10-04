@@ -11,10 +11,26 @@ mapscripts GreatCrater_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: RedoTouristWarning
     //MAP_SCRIPT_ON_FRAME_TABLE: RedoTouristWarning
     MAP_SCRIPT_ON_TRANSITION: GreatCraterWeather
-    MAP_SCRIPT_ON_TRANSITION: DynamicWeatherCrater
+    MAP_SCRIPT_ON_TRANSITION: DayNightMusicGreatCrater
 	}
 
+script DayNightMusicGreatCrater {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynightmusiccemetery)}
 
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynightmusiccemetery)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{goto (enddaynightmusiccemetery)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_WEATHER_GROUDON, TRUE)
+		goto (enddaynightmusicgreatcrater)}
+
+enddaynightmusicgreatcrater:
+}
 
 script RedoTouristWarning {
 			
@@ -25,28 +41,46 @@ script RedoTouristWarning {
 
 script DynamicWeatherCrater {
 
-		setvar (VAR_GREATCRATER_WEATHER, 4)
 		random (10)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 		switch (var(VAR_RESULT))
 		{case 0:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_WEATHER_GROUDON, TRUE)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 1:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_WEATHER_GROUDON, TRUE)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 2:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_WEATHER_GROUDON, TRUE)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 3:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_WEATHER_GROUDON, TRUE)
-		case 4: setweather (WEATHER_SHADE)
-		case 5: setweather (WEATHER_SHADE)
-		case 6: setweather (WEATHER_SHADE)
-		case 7: setweather (WEATHER_SHADE)
-		case 8: setweather (WEATHER_SHADE)
-		case 9: setweather (WEATHER_SHADE)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
+		case 4:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 5:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 6:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 7:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 8:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 9:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 10:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
 		}}
 
 

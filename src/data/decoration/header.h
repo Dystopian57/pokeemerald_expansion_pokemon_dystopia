@@ -231,7 +231,7 @@ const struct Decoration gDecorations[] =
     [DECOR_HARD_CHAIR] =
     {
         .id = DECOR_HARD_CHAIR,
-        .name = _("OLD RADIO"),
+        .name = _("HEAVY DUMBBELLS"),
         .permission = DECORPERM_SOLID_FLOOR,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_ORNAMENT,
@@ -1143,7 +1143,7 @@ const struct Decoration gDecorations[] =
     [DECOR_WYNAUT_DOLL] =
     {
         .id = DECOR_WYNAUT_DOLL,
-        .name = _("BOOK PILE"),
+        .name = _("DISCARDED BOOKS"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_ORNAMENT,

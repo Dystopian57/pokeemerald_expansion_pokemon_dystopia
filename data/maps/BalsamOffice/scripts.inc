@@ -620,193 +620,554 @@ BalsamOfficeTrashCan_2:
 
 
 BalsamWalkman::
+# 366 "data/maps/BalsamOffice/scripts.pory"
+	lock
 # 368 "data/maps/BalsamOffice/scripts.pory"
-	lockall
-# 369 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamWalkman_Text_0
-# 370 "data/maps/BalsamOffice/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, BalsamWalkman_Text_1, BalsamWalkman_Text_2, BalsamWalkman_Text_3, BalsamWalkman_Text_4
-# 371 "data/maps/BalsamOffice/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq BalsamWalkman_2
+	goto_if_unset balsamwalkmancasette, BalsamWalkman_2
+# 374 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamWalkman_Text_1
 BalsamWalkman_1:
-# 377 "data/maps/BalsamOffice/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq BalsamWalkman_5
-BalsamWalkman_4:
-# 383 "data/maps/BalsamOffice/scripts.pory"
-	compare VAR_RESULT, 2
-	goto_if_eq BalsamWalkman_8
-BalsamWalkman_7:
-# 389 "data/maps/BalsamOffice/scripts.pory"
-	compare VAR_RESULT, 3
-	goto_if_eq BalsamWalkman_11
-BalsamWalkman_10:
-# 391 "data/maps/BalsamOffice/scripts.pory"
-	releaseall
+# 375 "data/maps/BalsamOffice/scripts.pory"
+	release
 	return
 
 BalsamWalkman_2:
+# 370 "data/maps/BalsamOffice/scripts.pory"
+	msgbox BalsamWalkman_Text_0
+# 371 "data/maps/BalsamOffice/scripts.pory"
+	giveitem ITEM_MYSTIC_TICKET
 # 372 "data/maps/BalsamOffice/scripts.pory"
-	fadenewbgm MUS_GYMNOPEDIE
-# 373 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamWalkman_Text_5
+	setflag balsamwalkmancasette
 	goto BalsamWalkman_1
 
-BalsamWalkman_5:
-# 378 "data/maps/BalsamOffice/scripts.pory"
-	fadenewbgm MUS_AIRONG
+
+GasLamp::
 # 379 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamWalkman_Text_6
-	goto BalsamWalkman_4
-
-BalsamWalkman_8:
-# 384 "data/maps/BalsamOffice/scripts.pory"
-	fadenewbgm MUS_FARTHESTLAND
+	msgbox GasLamp_Text_0
+# 380 "data/maps/BalsamOffice/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, GasLamp_Text_1, GasLamp_Text_2, GasLamp_Text_3
+# 382 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq GasLamp_2
+GasLamp_1:
 # 385 "data/maps/BalsamOffice/scripts.pory"
-	msgbox BalsamWalkman_Text_7
-	goto BalsamWalkman_7
-
-BalsamWalkman_11:
+	compare VAR_RESULT, 1
+	goto_if_eq GasLamp_5
+GasLamp_4:
+# 388 "data/maps/BalsamOffice/scripts.pory"
+	doweather
 # 389 "data/maps/BalsamOffice/scripts.pory"
 	release
-	goto BalsamWalkman_10
+	return
+
+GasLamp_2:
+# 383 "data/maps/BalsamOffice/scripts.pory"
+	setweather WEATHER_SHADE
+	goto GasLamp_1
+
+GasLamp_5:
+# 386 "data/maps/BalsamOffice/scripts.pory"
+	setweather WEATHER_NONE
+	goto GasLamp_4
+
+
+OldBalsamWalkman::
+# 393 "data/maps/BalsamOffice/scripts.pory"
+	lock
+# 394 "data/maps/BalsamOffice/scripts.pory"
+	msgbox OldBalsamWalkman_Text_0
+# 395 "data/maps/BalsamOffice/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, OldBalsamWalkman_Text_1, OldBalsamWalkman_Text_2, OldBalsamWalkman_Text_3, GasLamp_Text_3
+# 396 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq OldBalsamWalkman_2
+OldBalsamWalkman_1:
+# 402 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq OldBalsamWalkman_5
+OldBalsamWalkman_4:
+# 408 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq OldBalsamWalkman_8
+OldBalsamWalkman_7:
+# 414 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq OldBalsamWalkman_11
+OldBalsamWalkman_10:
+# 416 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+OldBalsamWalkman_2:
+# 397 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_GYMNOPEDIE
+# 398 "data/maps/BalsamOffice/scripts.pory"
+	msgbox OldBalsamWalkman_Text_4
+	goto OldBalsamWalkman_1
+
+OldBalsamWalkman_5:
+# 403 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_AIRONG
+# 404 "data/maps/BalsamOffice/scripts.pory"
+	msgbox OldBalsamWalkman_Text_5
+	goto OldBalsamWalkman_4
+
+OldBalsamWalkman_8:
+# 409 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_FARTHESTLAND
+# 410 "data/maps/BalsamOffice/scripts.pory"
+	msgbox OldBalsamWalkman_Text_6
+	goto OldBalsamWalkman_7
+
+OldBalsamWalkman_11:
+# 414 "data/maps/BalsamOffice/scripts.pory"
+	release
+	goto OldBalsamWalkman_10
+
+
+CasetteGiveTest::
+# 424 "data/maps/BalsamOffice/scripts.pory"
+	giveitem ITEM_EON_TICKET
+# 425 "data/maps/BalsamOffice/scripts.pory"
+	giveitem ITEM_MYSTIC_TICKET
+# 426 "data/maps/BalsamOffice/scripts.pory"
+	giveitem ITEM_AURORA_TICKET
+# 427 "data/maps/BalsamOffice/scripts.pory"
+	giveitem ITEM_DNA_SPLICERS
+# 428 "data/maps/BalsamOffice/scripts.pory"
+	release
+	return
+
+
+CasetteRadio::
+# 432 "data/maps/BalsamOffice/scripts.pory"
+	lockall
+# 434 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_EON_TICKET
+# 435 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_2
+CasetteRadio_1:
+# 437 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq CasetteRadio_5
+CasetteRadio_4:
+# 440 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_MYSTIC_TICKET
+# 441 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_8
+CasetteRadio_7:
+# 443 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq CasetteRadio_11
+CasetteRadio_10:
+# 446 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_AURORA_TICKET
+# 447 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_14
+CasetteRadio_13:
+# 449 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq CasetteRadio_17
+CasetteRadio_16:
+# 453 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_4
+# 454 "data/maps/BalsamOffice/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, CasetteRadio_Text_5, CasetteRadio_Text_6, CasetteRadio_Text_7, CasetteRadio_Text_8, GasLamp_Text_3
+# 461 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq CasetteRadio_20
+CasetteRadio_19:
+# 473 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq CasetteRadio_23
+CasetteRadio_22:
+# 485 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq CasetteRadio_30
+CasetteRadio_29:
+# 497 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq CasetteRadio_37
+CasetteRadio_36:
+# 563 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 4
+	goto_if_eq CasetteRadio_44
+CasetteRadio_43:
+# 565 "data/maps/BalsamOffice/scripts.pory"
+endofradioscript:
+# 566 "data/maps/BalsamOffice/scripts.pory"
+	releaseall
+	return
+
+CasetteRadio_2:
+# 436 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_1, CasetteRadio_Text_0
+	goto CasetteRadio_1
+
+CasetteRadio_5:
+# 438 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_1, CasetteRadio_Text_1
+	goto CasetteRadio_4
+
+CasetteRadio_8:
+# 442 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_2, CasetteRadio_Text_2
+	goto CasetteRadio_7
+
+CasetteRadio_11:
+# 444 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_2, CasetteRadio_Text_1
+	goto CasetteRadio_10
+
+CasetteRadio_14:
+# 448 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_3, CasetteRadio_Text_3
+	goto CasetteRadio_13
+
+CasetteRadio_17:
+# 450 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_3, CasetteRadio_Text_1
+	goto CasetteRadio_16
+
+CasetteRadio_20:
+# 462 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_EON_TICKET
+# 463 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_26
+# 469 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_FAILURE
+CasetteRadio_25:
+# 470 "data/maps/BalsamOffice/scripts.pory"
+	goto endofradioscript
+	goto CasetteRadio_19
+
+CasetteRadio_23:
+# 474 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_MYSTIC_TICKET
+# 475 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_33
+# 481 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_FAILURE
+CasetteRadio_32:
+# 482 "data/maps/BalsamOffice/scripts.pory"
+	goto endofradioscript
+	goto CasetteRadio_22
+
+CasetteRadio_26:
+# 465 "data/maps/BalsamOffice/scripts.pory"
+	fadeoutbgm 1
+# 466 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_GYMNOPEDIE
+# 467 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_9
+	goto CasetteRadio_25
+
+CasetteRadio_30:
+# 486 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_AURORA_TICKET
+# 487 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_40
+# 493 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_FAILURE
+CasetteRadio_39:
+# 494 "data/maps/BalsamOffice/scripts.pory"
+	goto endofradioscript
+	goto CasetteRadio_29
+
+CasetteRadio_33:
+# 477 "data/maps/BalsamOffice/scripts.pory"
+	fadeoutbgm 1
+# 478 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_FARTHESTLAND
+# 479 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_10
+	goto CasetteRadio_32
+
+CasetteRadio_37:
+# 499 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_DNA_SPLICERS
+# 500 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_47
+CasetteRadio_46:
+# 502 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq CasetteRadio_50
+CasetteRadio_49:
+# 505 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_13
+# 506 "data/maps/BalsamOffice/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, CasetteRadio_Text_5, CasetteRadio_Text_14, CasetteRadio_Text_15, CasetteRadio_Text_8, GasLamp_Text_3
+# 513 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq CasetteRadio_53
+CasetteRadio_52:
+# 525 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq CasetteRadio_56
+CasetteRadio_55:
+# 537 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq CasetteRadio_63
+CasetteRadio_62:
+# 549 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq CasetteRadio_69
+	goto CasetteRadio_36
+
+CasetteRadio_40:
+# 489 "data/maps/BalsamOffice/scripts.pory"
+	fadeoutbgm 1
+# 490 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_AIRONG
+# 491 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_11
+	goto CasetteRadio_39
+
+CasetteRadio_44:
+# 563 "data/maps/BalsamOffice/scripts.pory"
+	release
+	goto CasetteRadio_43
+
+CasetteRadio_47:
+# 501 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_1, CasetteRadio_Text_12
+	goto CasetteRadio_46
+
+CasetteRadio_50:
+# 503 "data/maps/BalsamOffice/scripts.pory"
+	bufferstring STR_VAR_1, CasetteRadio_Text_1
+	goto CasetteRadio_49
+
+CasetteRadio_53:
+# 514 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_DNA_SPLICERS
+# 515 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_59
+# 521 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_FAILURE
+CasetteRadio_58:
+# 522 "data/maps/BalsamOffice/scripts.pory"
+	goto endofradioscript
+	goto CasetteRadio_52
+
+CasetteRadio_56:
+# 526 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_DNA_SPLICERS
+# 527 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_66
+# 533 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_FAILURE
+CasetteRadio_65:
+# 534 "data/maps/BalsamOffice/scripts.pory"
+	goto endofradioscript
+	goto CasetteRadio_55
+
+CasetteRadio_59:
+# 517 "data/maps/BalsamOffice/scripts.pory"
+	fadeoutbgm 1
+# 518 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_RENBOUPARTY
+# 519 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_16
+	goto CasetteRadio_58
+
+CasetteRadio_63:
+# 538 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_DNA_SPLICERS
+# 539 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_72
+# 545 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_FAILURE
+CasetteRadio_71:
+# 546 "data/maps/BalsamOffice/scripts.pory"
+	goto endofradioscript
+	goto CasetteRadio_62
+
+CasetteRadio_66:
+# 529 "data/maps/BalsamOffice/scripts.pory"
+	fadeoutbgm 1
+# 530 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_RENBOUPARTY
+# 531 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_16
+	goto CasetteRadio_65
+
+CasetteRadio_69:
+# 550 "data/maps/BalsamOffice/scripts.pory"
+	checkitem ITEM_DNA_SPLICERS
+# 551 "data/maps/BalsamOffice/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasetteRadio_76
+# 557 "data/maps/BalsamOffice/scripts.pory"
+	playse SE_FAILURE
+CasetteRadio_75:
+# 558 "data/maps/BalsamOffice/scripts.pory"
+	goto endofradioscript
+	goto CasetteRadio_36
+
+CasetteRadio_72:
+# 541 "data/maps/BalsamOffice/scripts.pory"
+	fadeoutbgm 1
+# 542 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_RENBOUPARTY
+# 543 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_16
+	goto CasetteRadio_71
+
+CasetteRadio_76:
+# 553 "data/maps/BalsamOffice/scripts.pory"
+	fadeoutbgm 1
+# 554 "data/maps/BalsamOffice/scripts.pory"
+	fadenewbgm MUS_RENBOUPARTY
+# 555 "data/maps/BalsamOffice/scripts.pory"
+	msgbox CasetteRadio_Text_16
+	goto CasetteRadio_75
 
 
 BalsamBookshelf::
-# 395 "data/maps/BalsamOffice/scripts.pory"
+# 570 "data/maps/BalsamOffice/scripts.pory"
 	lockall
-# 396 "data/maps/BalsamOffice/scripts.pory"
+# 571 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamBookshelf_Text_0
-# 398 "data/maps/BalsamOffice/scripts.pory"
+# 573 "data/maps/BalsamOffice/scripts.pory"
 	releaseall
 	return
 
 
 BalsamDegree::
-# 403 "data/maps/BalsamOffice/scripts.pory"
+# 578 "data/maps/BalsamOffice/scripts.pory"
 	lockall
-# 404 "data/maps/BalsamOffice/scripts.pory"
+# 579 "data/maps/BalsamOffice/scripts.pory"
 	msgbox BalsamDegree_Text_0
-# 406 "data/maps/BalsamOffice/scripts.pory"
+# 581 "data/maps/BalsamOffice/scripts.pory"
 	releaseall
 	return
 
 
 DemoGoodbye::
-# 411 "data/maps/BalsamOffice/scripts.pory"
+# 586 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_DYSTOPIAN ]
-# 412 "data/maps/BalsamOffice/scripts.pory"
+# 587 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
-# 413 "data/maps/BalsamOffice/scripts.pory"
+# 588 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_0
-# 417 "data/maps/BalsamOffice/scripts.pory"
+# 592 "data/maps/BalsamOffice/scripts.pory"
 	playbgm MUS_NONE, TRUE
-# 418 "data/maps/BalsamOffice/scripts.pory"
+# 593 "data/maps/BalsamOffice/scripts.pory"
 	clearflag balsaminherbedroom
-# 420 "data/maps/BalsamOffice/scripts.pory"
+# 595 "data/maps/BalsamOffice/scripts.pory"
 	setobjectxy 1, 3, 7
-# 421 "data/maps/BalsamOffice/scripts.pory"
+# 596 "data/maps/BalsamOffice/scripts.pory"
 	addobject 1
-# 422 "data/maps/BalsamOffice/scripts.pory"
+# 597 "data/maps/BalsamOffice/scripts.pory"
 	setobjectxy 1, 3, 7
-# 423 "data/maps/BalsamOffice/scripts.pory"
+# 598 "data/maps/BalsamOffice/scripts.pory"
 	playse SE_DOOR
-# 424 "data/maps/BalsamOffice/scripts.pory"
+# 599 "data/maps/BalsamOffice/scripts.pory"
 	applymovement 1, DemoGoodbye_Movement_0
-# 425 "data/maps/BalsamOffice/scripts.pory"
+# 600 "data/maps/BalsamOffice/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_0
-# 426 "data/maps/BalsamOffice/scripts.pory"
+# 601 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 427 "data/maps/BalsamOffice/scripts.pory"
+# 602 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 428 "data/maps/BalsamOffice/scripts.pory"
+# 603 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_1
-# 429 "data/maps/BalsamOffice/scripts.pory"
+# 604 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 430 "data/maps/BalsamOffice/scripts.pory"
+# 605 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
-# 431 "data/maps/BalsamOffice/scripts.pory"
+# 606 "data/maps/BalsamOffice/scripts.pory"
 	applymovement 1, BalsamBed_Movement_3
-# 432 "data/maps/BalsamOffice/scripts.pory"
+# 607 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_2
-# 433 "data/maps/BalsamOffice/scripts.pory"
+# 608 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 434 "data/maps/BalsamOffice/scripts.pory"
+# 609 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_CONFUSED
-# 435 "data/maps/BalsamOffice/scripts.pory"
+# 610 "data/maps/BalsamOffice/scripts.pory"
 	applymovement 1, BalsamBed_Movement_1
-# 436 "data/maps/BalsamOffice/scripts.pory"
+# 611 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_3
-# 438 "data/maps/BalsamOffice/scripts.pory"
+# 613 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_BALSAM ]
-# 439 "data/maps/BalsamOffice/scripts.pory"
+# 614 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_ANGRY
-# 440 "data/maps/BalsamOffice/scripts.pory"
+# 615 "data/maps/BalsamOffice/scripts.pory"
 	applymovement 1, BalsamBed_Movement_3
-# 441 "data/maps/BalsamOffice/scripts.pory"
+# 616 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_4
-# 442 "data/maps/BalsamOffice/scripts.pory"
+# 617 "data/maps/BalsamOffice/scripts.pory"
 	applymovement 1, BalsamBedUp_Movement_0
-# 443 "data/maps/BalsamOffice/scripts.pory"
+# 618 "data/maps/BalsamOffice/scripts.pory"
 	waitmovement 1
-# 444 "data/maps/BalsamOffice/scripts.pory"
+# 619 "data/maps/BalsamOffice/scripts.pory"
 	removeobject 1
-# 445 "data/maps/BalsamOffice/scripts.pory"
+# 620 "data/maps/BalsamOffice/scripts.pory"
 	setflag balsaminherbedroom
-# 447 "data/maps/BalsamOffice/scripts.pory"
+# 622 "data/maps/BalsamOffice/scripts.pory"
 	playse SE_BREAKABLE_DOOR
-# 449 "data/maps/BalsamOffice/scripts.pory"
+# 624 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8004, 2
-# 450 "data/maps/BalsamOffice/scripts.pory"
+# 625 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8005, 6
-# 451 "data/maps/BalsamOffice/scripts.pory"
+# 626 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8006, 4
-# 452 "data/maps/BalsamOffice/scripts.pory"
+# 627 "data/maps/BalsamOffice/scripts.pory"
 	setvar VAR_0x8007, 4
-# 453 "data/maps/BalsamOffice/scripts.pory"
+# 628 "data/maps/BalsamOffice/scripts.pory"
 	special ShakeCamera
-# 455 "data/maps/BalsamOffice/scripts.pory"
+# 630 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_DYSTOPIAN ]
-# 456 "data/maps/BalsamOffice/scripts.pory"
+# 631 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
-# 457 "data/maps/BalsamOffice/scripts.pory"
+# 632 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_5
-# 458 "data/maps/BalsamOffice/scripts.pory"
+# 633 "data/maps/BalsamOffice/scripts.pory"
 	removefieldmugshot
-# 459 "data/maps/BalsamOffice/scripts.pory"
+# 634 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ NULL ]
-# 460 "data/maps/BalsamOffice/scripts.pory"
+# 635 "data/maps/BalsamOffice/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, BalsamBed_Movement_1
-# 461 "data/maps/BalsamOffice/scripts.pory"
+# 636 "data/maps/BalsamOffice/scripts.pory"
 	playfirstmoncry
-# 462 "data/maps/BalsamOffice/scripts.pory"
+# 637 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_6
-# 463 "data/maps/BalsamOffice/scripts.pory"
+# 638 "data/maps/BalsamOffice/scripts.pory"
 	playbgm MUS_RENBOUPARTY, TRUE
-# 464 "data/maps/BalsamOffice/scripts.pory"
+# 639 "data/maps/BalsamOffice/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, BalsamBed_Movement_3
-# 465 "data/maps/BalsamOffice/scripts.pory"
+# 640 "data/maps/BalsamOffice/scripts.pory"
 	setspeaker [ SP_NAME_DYSTOPIAN ]
-# 466 "data/maps/BalsamOffice/scripts.pory"
+# 641 "data/maps/BalsamOffice/scripts.pory"
 	createfieldmugshot MUGSHOT_MPLAYER, EMOTE_NORMAL
-# 467 "data/maps/BalsamOffice/scripts.pory"
+# 642 "data/maps/BalsamOffice/scripts.pory"
 	msgbox DemoGoodbye_Text_7
-# 468 "data/maps/BalsamOffice/scripts.pory"
+# 643 "data/maps/BalsamOffice/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
-# 469 "data/maps/BalsamOffice/scripts.pory"
+# 644 "data/maps/BalsamOffice/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 470 "data/maps/BalsamOffice/scripts.pory"
+# 645 "data/maps/BalsamOffice/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
-# 471 "data/maps/BalsamOffice/scripts.pory"
+# 646 "data/maps/BalsamOffice/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 472 "data/maps/BalsamOffice/scripts.pory"
+# 647 "data/maps/BalsamOffice/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
-# 473 "data/maps/BalsamOffice/scripts.pory"
+# 648 "data/maps/BalsamOffice/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 474 "data/maps/BalsamOffice/scripts.pory"
+# 649 "data/maps/BalsamOffice/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DemoGoodbye_Movement_1
-# 475 "data/maps/BalsamOffice/scripts.pory"
+# 650 "data/maps/BalsamOffice/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 	return
 
@@ -885,23 +1246,23 @@ BalsamBed_Movement_7:
 	walk_down
 	step_end
 
-# 424 "data/maps/BalsamOffice/scripts.pory"
+# 599 "data/maps/BalsamOffice/scripts.pory"
 DemoGoodbye_Movement_0:
-# 424 "data/maps/BalsamOffice/scripts.pory"
+# 599 "data/maps/BalsamOffice/scripts.pory"
 	walk_up
-# 424 "data/maps/BalsamOffice/scripts.pory"
+# 599 "data/maps/BalsamOffice/scripts.pory"
 	face_left
 	step_end
 
-# 468 "data/maps/BalsamOffice/scripts.pory"
+# 643 "data/maps/BalsamOffice/scripts.pory"
 DemoGoodbye_Movement_1:
-# 468 "data/maps/BalsamOffice/scripts.pory"
+# 643 "data/maps/BalsamOffice/scripts.pory"
 	face_left
-# 468 "data/maps/BalsamOffice/scripts.pory"
+# 643 "data/maps/BalsamOffice/scripts.pory"
 	face_up
-# 468 "data/maps/BalsamOffice/scripts.pory"
+# 643 "data/maps/BalsamOffice/scripts.pory"
 	face_right
-# 468 "data/maps/BalsamOffice/scripts.pory"
+# 643 "data/maps/BalsamOffice/scripts.pory"
 	face_down
 	step_end
 
@@ -1102,40 +1463,131 @@ BalsamOfficeTrashCan_Text_1:
 	.string "in the trash.$"
 
 BalsamWalkman_Text_0:
-# 369 "data/maps/BalsamOffice/scripts.pory"
+# 370 "data/maps/BalsamOffice/scripts.pory"
+	.string "There's two copies of the same casette.\n"
+	.string "Should be fine if I take one…$"
+
+BalsamWalkman_Text_1:
+# 374 "data/maps/BalsamOffice/scripts.pory"
+	.string "It's Balsam's portable music player.\n"
+	.string "Let's leave it here.$"
+
+GasLamp_Text_0:
+# 379 "data/maps/BalsamOffice/scripts.pory"
+	.string "It's a gas lamp.$"
+
+GasLamp_Text_1:
+# 380 "data/maps/BalsamOffice/scripts.pory"
+	.string "Turn On$"
+
+GasLamp_Text_2:
+# 380 "data/maps/BalsamOffice/scripts.pory"
+	.string "Turn Off$"
+
+GasLamp_Text_3:
+# 380 "data/maps/BalsamOffice/scripts.pory"
+	.string "Leave$"
+
+OldBalsamWalkman_Text_0:
+# 394 "data/maps/BalsamOffice/scripts.pory"
 	.string "It's a casette player. The casette\n"
 	.string "contains several songs.$"
 
-BalsamWalkman_Text_1:
-# 370 "data/maps/BalsamOffice/scripts.pory"
+OldBalsamWalkman_Text_1:
+# 395 "data/maps/BalsamOffice/scripts.pory"
 	.string "Gymnopédie No. 1$"
 
-BalsamWalkman_Text_2:
-# 370 "data/maps/BalsamOffice/scripts.pory"
+OldBalsamWalkman_Text_2:
+# 395 "data/maps/BalsamOffice/scripts.pory"
 	.string "Air on the G String$"
 
-BalsamWalkman_Text_3:
-# 370 "data/maps/BalsamOffice/scripts.pory"
+OldBalsamWalkman_Text_3:
+# 395 "data/maps/BalsamOffice/scripts.pory"
 	.string "The Farthest Land$"
 
-BalsamWalkman_Text_4:
-# 370 "data/maps/BalsamOffice/scripts.pory"
-	.string "Leave$"
-
-BalsamWalkman_Text_5:
-# 373 "data/maps/BalsamOffice/scripts.pory"
+OldBalsamWalkman_Text_4:
+# 398 "data/maps/BalsamOffice/scripts.pory"
 	.string "Now playing - Gymnopédie No. 1.$"
 
-BalsamWalkman_Text_6:
-# 379 "data/maps/BalsamOffice/scripts.pory"
+OldBalsamWalkman_Text_5:
+# 404 "data/maps/BalsamOffice/scripts.pory"
 	.string "Now playing - Air on the G String.$"
 
-BalsamWalkman_Text_7:
-# 385 "data/maps/BalsamOffice/scripts.pory"
+OldBalsamWalkman_Text_6:
+# 410 "data/maps/BalsamOffice/scripts.pory"
 	.string "Now playing - the Farthest Land.$"
 
+CasetteRadio_Text_0:
+# 436 "data/maps/BalsamOffice/scripts.pory"
+	.string "“Gymnopédie No. 1”$"
+
+CasetteRadio_Text_1:
+# 438 "data/maps/BalsamOffice/scripts.pory"
+	.string "???$"
+
+CasetteRadio_Text_2:
+# 442 "data/maps/BalsamOffice/scripts.pory"
+	.string "“The Farthest Land”$"
+
+CasetteRadio_Text_3:
+# 448 "data/maps/BalsamOffice/scripts.pory"
+	.string "“Air on the G String”$"
+
+CasetteRadio_Text_4:
+# 453 "data/maps/BalsamOffice/scripts.pory"
+	.string "It's a casette player. Which tape to\n"
+	.string "insert?$"
+
+CasetteRadio_Text_5:
+# 455 "data/maps/BalsamOffice/scripts.pory"
+	.string "{STR_VAR_1}$"
+
+CasetteRadio_Text_6:
+# 456 "data/maps/BalsamOffice/scripts.pory"
+	.string "{STR_VAR_2}$"
+
+CasetteRadio_Text_7:
+# 457 "data/maps/BalsamOffice/scripts.pory"
+	.string "{STR_VAR_3}$"
+
+CasetteRadio_Text_8:
+# 458 "data/maps/BalsamOffice/scripts.pory"
+	.string "Another song$"
+
+CasetteRadio_Text_9:
+# 467 "data/maps/BalsamOffice/scripts.pory"
+	.string "Now playing - “Gymnopédie No. 1”.$"
+
+CasetteRadio_Text_10:
+# 479 "data/maps/BalsamOffice/scripts.pory"
+	.string "Now playing - “The Farthest Land”.$"
+
+CasetteRadio_Text_11:
+# 491 "data/maps/BalsamOffice/scripts.pory"
+	.string "Now playing - “Air on the G String”.$"
+
+CasetteRadio_Text_12:
+# 501 "data/maps/BalsamOffice/scripts.pory"
+	.string "“Party!”$"
+
+CasetteRadio_Text_13:
+# 505 "data/maps/BalsamOffice/scripts.pory"
+	.string "Which tape to insert?$"
+
+CasetteRadio_Text_14:
+# 508 "data/maps/BalsamOffice/scripts.pory"
+	.string "Y$"
+
+CasetteRadio_Text_15:
+# 509 "data/maps/BalsamOffice/scripts.pory"
+	.string "Z$"
+
+CasetteRadio_Text_16:
+# 519 "data/maps/BalsamOffice/scripts.pory"
+	.string "Now playing - “Party!”.$"
+
 BalsamBookshelf_Text_0:
-# 396 "data/maps/BalsamOffice/scripts.pory"
+# 571 "data/maps/BalsamOffice/scripts.pory"
 	.string "Among the many books on Pokémon\n"
 	.string "science, there's a photo album...\p"
 	.string "The cover features a photo of a couple\n"
@@ -1143,7 +1595,7 @@ BalsamBookshelf_Text_0:
 	.string "clean beach.$"
 
 BalsamDegree_Text_0:
-# 404 "data/maps/BalsamOffice/scripts.pory"
+# 579 "data/maps/BalsamOffice/scripts.pory"
 	.string "It's a framed degree of higher\n"
 	.string "education. It reads as follows:\p"
 	.string "'University of Alola, Degree in Pokémon\n"
@@ -1151,7 +1603,7 @@ BalsamDegree_Text_0:
 	.string "The surname has been crossed out.$"
 
 DemoGoodbye_Text_0:
-# 413 "data/maps/BalsamOffice/scripts.pory"
+# 588 "data/maps/BalsamOffice/scripts.pory"
 	.string "This is the end of the update!\n"
 	.string "Congratulations on making it this far.\p"
 	.string "This is the third update I post, and I'm\n"
@@ -1165,39 +1617,39 @@ DemoGoodbye_Text_0:
 	.string "reading this, can also...$"
 
 DemoGoodbye_Text_1:
-# 428 "data/maps/BalsamOffice/scripts.pory"
+# 603 "data/maps/BalsamOffice/scripts.pory"
 	.string "Stop the sentimental crap. Nobody\n"
 	.string "cares. This clip is already too long.$"
 
 DemoGoodbye_Text_2:
-# 432 "data/maps/BalsamOffice/scripts.pory"
+# 607 "data/maps/BalsamOffice/scripts.pory"
 	.string "And you, whoever loser is reading this.\n"
 	.string "Don't hold your breath for this hack's\l"
 	.string "release.$"
 
 DemoGoodbye_Text_3:
-# 436 "data/maps/BalsamOffice/scripts.pory"
+# 611 "data/maps/BalsamOffice/scripts.pory"
 	.string "This nutjob is putting sign scripts in\n"
 	.string "half of damn tiles and setting phone\l"
 	.string "calls for random NPCs, as if people are\l"
 	.string "going to read them.$"
 
 DemoGoodbye_Text_4:
-# 441 "data/maps/BalsamOffice/scripts.pory"
+# 616 "data/maps/BalsamOffice/scripts.pory"
 	.string "You'll live in an actual corporate\n"
 	.string "dystopia by the time this is done.\l"
 	.string "Later.$"
 
 DemoGoodbye_Text_5:
-# 457 "data/maps/BalsamOffice/scripts.pory"
+# 632 "data/maps/BalsamOffice/scripts.pory"
 	.string "...$"
 
 DemoGoodbye_Text_6:
-# 462 "data/maps/BalsamOffice/scripts.pory"
+# 637 "data/maps/BalsamOffice/scripts.pory"
 	.string "Pura...?$"
 
 DemoGoodbye_Text_7:
-# 467 "data/maps/BalsamOffice/scripts.pory"
+# 642 "data/maps/BalsamOffice/scripts.pory"
 	.string "HAHAHA - SHE'S RIGHT! SEE YOU IN MANY\n"
 	.string "MONTHS!$"
 

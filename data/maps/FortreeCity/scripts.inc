@@ -18,7 +18,6 @@ FortreeCity_EventScript_Man::
 FortreeCity_EventScript_Woman::
 	lock
 	faceplayer
-	goto_if_set FLAG_KECLEON_FLED_FORTREE, FortreeCity_EventScript_WomanGymAccessible
 	msgbox FortreeCity_Text_SomethingBlockingGym, MSGBOX_DEFAULT
 	release
 	end
@@ -79,7 +78,6 @@ FortreeCity_EventScript_UseDevonScope::
 	applymovement VAR_LAST_TALKED, FortreeCity_Movement_KecleonFlee
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
-	setflag FLAG_KECLEON_FLED_FORTREE
 	release
 	end
 

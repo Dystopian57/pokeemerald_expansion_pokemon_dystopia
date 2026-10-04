@@ -72,7 +72,7 @@ script LittlerootMausoleum_Shuppet {
 	if (checkitem (ITEM_SCROLL_OF_DARKNESS)  == TRUE)
     {playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
     applymovement (2, moves(face_player))     
-    msgbox (format("The Shuppet detects {PLAYER} has something that can help..."))
+    msgbox (format("The Shuppet detects {PLAYER} has something that can help Samantha..."))
     goto (playerhasblanketfromstart)}
 
     setspeaker ([SP_NAME_PLAYER])
@@ -213,14 +213,22 @@ script LittlerootMausoleum_HexGirl {
     if (var(VAR_MAUSOLEUM_HEXGIRL) == 2)
 {
         setspeaker ([SP_NAME_SAMANTHA])
+
+	    if (flag (Samanthalamentsplayerdefeat))
+        {msgbox (format("{PLAYER} - are you alright? That Pokémon was so strong...\pIt began to chase me, so
+        I had to come back here. I'm sorry...\p So... do you still want to help me get some snacks in Oldale?"))
+        clearflag (Samanthalamentsplayerdefeat)
+        goto (samanthasnackquestchoice)}
+
+
         msgbox (format("O-oh, {PLAYER}, you've come to help!? I'm glad... \p Y-you see, my employers at
         Devon Co.... stopped sending me food. \p I-I'm not mad at them, I'm sure they're busy with
         the Safemon project, but..."))
 	    playse (SE_M_SNORE)
         setspeaker ([SP_NAME_SAMANTHA])
-        msgbox (format("...I'm very hungry. \p I want to get some snacks in Oldale, but I'm
-        scared of Rebels... \p C-can... can you come with me?"))
-
+        msgbox (format("... I'm very hungry. \p I want to get some snacks in {COLOR GREEN}Oldale{COLOR DARK_GRAY}, but I'm
+        scared of {COLOR RED}Rebels{COLOR DARK_GRAY}... \p C-can... can you come with me?"))
+        samanthasnackquestchoice:
         dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes, let's go", "Sorry, not right now")
 
         if(var(VAR_RESULT) == 0)
@@ -230,9 +238,18 @@ script LittlerootMausoleum_HexGirl {
         kind... \p D-don't get me wrong, I love talking with you - but you're a bit silent...
         \p S-sorry, that wasn't a complaint - I actually like that you...! \p A-aah, forget about it! Let's go
         to Oldane Town's vending machine!"))
-        setfollowernpc (LOCALID_SAMANTHA, FNPC_ALL, Samanthafollowchat, 0)
+
         setflag (Samanthaleavesmausoleum)
+        fadescreenswapbuffers (FADE_TO_BLACK)
+		warp (MAP_LITTLEROOT_CEMETERY, 4)
+        setobjectxy (1, 6, 9)
+
+
+
+        //setfollowernpc (LOCALID_SAMANTHA, FNPC_ALL, Samanthafollowchat, 0)
+        setfollowernpc (LOCALID_SAMANTHACEMETERY, FNPC_ALL, Samanthafollowchat, 0)
         setvar (VAR_MAUSOLEUM_HEXGIRL, 3)
+        fadescreenswapbuffers (FADE_FROM_BLACK)
         goto (endhexgirlscript)
         }
 
@@ -247,7 +264,7 @@ script LittlerootMausoleum_HexGirl {
 }
 
 
-    if (var(VAR_MAUSOLEUM_HEXGIRL) == 3)
+    if (var(VAR_MAUSOLEUM_HEXGIRL) == 4)
     {   setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("T-thank you for your help... these snacks will last me a while..."))
 
@@ -281,12 +298,12 @@ script LittlerootMausoleum_HexGirl {
         msgbox (format("I-I'm sorry I don't have... m-more to give you... for your help... \p T-thanks again...
         it was... v-very fun!"))
 
-        setvar (VAR_MAUSOLEUM_HEXGIRL, 4)
+        setvar (VAR_MAUSOLEUM_HEXGIRL, 5)
         goto (endhexgirlscript)
     }
 
 
-    if (var(VAR_MAUSOLEUM_HEXGIRL) == 4){
+    if (var(VAR_MAUSOLEUM_HEXGIRL) == 5){
         setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("Don't worry, {PLAYER}. The snacks will last me a while.\p A-and I sleep well, thanks
         to the blanket you gave me... \p I-I don't know what I would have done without you... thanks again!"))
@@ -348,7 +365,8 @@ script Samanthafollowchat {
         if (flag (Samanthagotsnacks)){
         setspeaker ([SP_NAME_SAMANTHA])
         msgbox(format("O-oh, okay... I-I guess you helped me get the snacks... \p Y-yes, I... I can
-        go back to the Mausoleum by myself... \p B-bye... {PLAYER}...")) 
+        go back to the Mausoleum by myself... \p B-bye... {PLAYER}..."))
+        closemessage
         fadescreenswapbuffers (FADE_TO_BLACK)
         destroyfollowernpc
         clearflag (Samanthaleavesmausoleum)
@@ -390,7 +408,8 @@ script LittlerootMausoleum_ShuppetPost1stquest {
             msgbox (format("The Shuppet nods with a clever smile."))
             }
 
-            else {playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
+            if (!flag(shuppetgivesincense))
+            {playmoncry(SPECIES_SHUPPET, CRY_MODE_NORMAL) 
             msgbox (format("Shuuu..."))}
             goto (endofshuppetscript)
 
@@ -463,7 +482,6 @@ script MausoleumFinishedSnackQuest {
 
 	lock
     applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
-    waitmovement (OBJ_EVENT_ID_PLAYER)
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
     waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
     setspeaker ([SP_NAME_SAMANTHA])

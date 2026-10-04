@@ -3091,7 +3091,7 @@ Route103DevonGruntCheckingDriver_Text_1:
 
 Route103DevonGruntCheckingDriver_Text_2:
 # 348 "data/maps/Route103/scripts.pory"
-	.string "Sir, I just got word the Rebels have\n"
+	.string "Sir, I just got word the {COLOR RED}Rebels{COLOR DARK_GRAY} have\n"
 	.string "left Oldale Warehouse!\p"
 	.string "Once we inspect your stock, and if\n"
 	.string "nothing is wrong with it, we will let you\l"

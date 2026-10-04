@@ -933,6 +933,15 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "3",
       "script": "OldaleRivalDontLeaveOldaleto103"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "SamanthaDontgotoDevonCenter"
     }
   ],
   "bg_events": [

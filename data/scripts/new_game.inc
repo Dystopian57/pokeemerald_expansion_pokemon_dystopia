@@ -305,5 +305,6 @@ EventScript_ResetAllMapFlags::
 	setflag spawnsableyelairboss
 	setflag carrebelwarehouse
 	setflag cigarettepop
+	setflag birchpoochyena
 	call EventScript_ResetAllBerries
 	end

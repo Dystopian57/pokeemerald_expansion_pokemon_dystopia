@@ -71,6 +71,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POOCHYENA)",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BirchPoochyenaIdle",
+      "flag": "birchpoochyena"
     }
   ],
   "warp_events": [
@@ -331,6 +344,33 @@
       "var": "VAR_OLDALE_PHASE",
       "var_value": "2",
       "script": "BalsamCallAfterWarehouse"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "7",
+      "script": "BirchPoochyenaPlacementSet"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "7",
+      "script": "BirchPoochyenaPlacementClear"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "7",
+      "script": "BirchPoochyenaPlacementClear"
     }
   ],
   "bg_events": [

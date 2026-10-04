@@ -81,8 +81,8 @@ const u8 DecorDesc_CAMP_CHAIR[] = _(
         "of logs.");
 
 const u8 DecorDesc_HARD_CHAIR[] = _(
-    "An old radio that\n"
-        "doesn't work anymore.");
+    "A pair of very\n"
+        "heavy lifts.");
 
 const u8 DecorDesc_RED_PLANT[] = _(
     "A hardy cactus\n"

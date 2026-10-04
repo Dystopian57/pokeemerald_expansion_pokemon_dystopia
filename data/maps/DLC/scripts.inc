@@ -1742,19 +1742,19 @@ DLCTrashBin::
 	lock
 # 1007 "data/maps/DLC/scripts.pory"
 	goto_if_unset FLAG_ITEM_DLC_TRASHBIN, DLCTrashBin_2
-# 1012 "data/maps/DLC/scripts.pory"
+# 1014 "data/maps/DLC/scripts.pory"
 	msgbox DLCTrashBin_Text_1
 DLCTrashBin_1:
-# 1013 "data/maps/DLC/scripts.pory"
+# 1015 "data/maps/DLC/scripts.pory"
 	releaseall
 	return
 
 DLCTrashBin_2:
-# 1008 "data/maps/DLC/scripts.pory"
-	msgbox DLCTrashBin_Text_0
-# 1009 "data/maps/DLC/scripts.pory"
-	giveitem ITEM_SITRUS_BERRY
 # 1010 "data/maps/DLC/scripts.pory"
+	msgbox DLCTrashBin_Text_0
+# 1011 "data/maps/DLC/scripts.pory"
+	givedecoration DECOR_WYNAUT_DOLL
+# 1012 "data/maps/DLC/scripts.pory"
 	setflag FLAG_ITEM_DLC_TRASHBIN
 	goto DLCTrashBin_1
 
@@ -2739,10 +2739,10 @@ MoneyTipBook_Text_12:
 	.string "that's a loser's mentality.$"
 
 DLCTrashBin_Text_0:
-# 1008 "data/maps/DLC/scripts.pory"
-	.string "Seems like a picky eater has hidden\n"
-	.string "something in the trash...$"
+# 1010 "data/maps/DLC/scripts.pory"
+	.string "Seems like someone has discarded some\n"
+	.string "books...$"
 
 DLCTrashBin_Text_1:
-# 1012 "data/maps/DLC/scripts.pory"
+# 1014 "data/maps/DLC/scripts.pory"
 	.string "The trash can is empty.$"

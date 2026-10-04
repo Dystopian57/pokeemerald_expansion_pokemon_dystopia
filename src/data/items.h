@@ -13384,7 +13384,7 @@ const struct Item gItemsInfo[] =
         .price = 100,
         .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
         .holdEffectParam = 2,
-        .description = COMPOUND_STRING(
+        .description = COMPOUND_STRING( 
             "A cute sweet\n"
             "that drastically\n"
             "increases defense."),
@@ -13400,19 +13400,18 @@ const struct Item gItemsInfo[] =
 
     [ITEM_DNA_SPLICERS] =
     {
-        .name = ITEM_NAME("DNA Splicers"),
-        .pluralName = ITEM_PLURAL_NAME("DNA Splicers"),
+        .name = ITEM_NAME("“Party”"),
         .price = 0,
-        .importance = 1,
         .description = COMPOUND_STRING(
-            "Splicer that fuses\n"
-            "Kyurem and a\n"
-            "certain Pokémon."),
+            "A casette tape\n"
+            "that plays a\n"
+            "catchy tune."),
+        .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Fusion,
-        .iconPic = gItemIcon_DNASplicers,
-        .iconPalette = gItemIconPalette_DNASplicers,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_BasementKey,
+        .iconPalette = gItemIconPalette_OldKey,
     },
 
     [ITEM_ZYGARDE_CUBE] =
@@ -13917,12 +13916,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_EON_TICKET] =
     {
-        .name = ITEM_NAME("Eon Ticket"),
+        .name = ITEM_NAME("“Gymnopédie No. 1”"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "The ticket for a\n"
-            "ferry to a distant\n"
-            "southern island."),
+            "A casette tape\n"
+            "with a melancholic\n"
+            "song."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -13934,12 +13933,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_MYSTIC_TICKET] =
     {
-        .name = ITEM_NAME("Mystic Ticket"),
+        .name = ITEM_NAME("“Farthest Land”"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A ticket required\n"
-            "to board the ship\n"
-            "to Navel Rock."),
+            "A casette tape\n"
+            "with a sad yet\n"
+            "hopeful song."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -13950,12 +13949,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_AURORA_TICKET] =
     {
-        .name = ITEM_NAME("Aurora Ticket"),
+        .name = ITEM_NAME("“Air on G”"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A ticket required\n"
-            "to board the ship\n"
-            "to Birth Island."),
+            "A casette tape.\n"
+            "A trascendent\n"
+            "song is inside."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

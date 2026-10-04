@@ -1057,6 +1057,26 @@ else {
 
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == FALSE)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+
+		if (flag(AidelamentsPlayerdefeatintunnel))
+		{
+			msgbox (format("{PLAYER}... it seems our incursion into the tunnel ended rather..."))
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Unexpectedly! Ahaha..."))
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("I had to make a run for it, and I dropped the {COLOR RED}Voltorb Shard{COLOR DARK_GRAY} on one of those
+			Digglet holes..."))
+			setspeaker ([SP_NAME_AIDEE])
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+			msgbox (format("Ah, just when we were so close! Can I bother you to get another one?"))
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("We'll just need to be more careful next time!"))
+		clearflag (AidelamentsPlayerdefeatintunnel)
+		goto (endofaide)}
+
 	msgbox (format("How's the search for {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} going?"))
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
 	msgbox (format("Remember - there should be {COLOR RED}Voltorb Shards{COLOR DARK_GRAY} in the big 
@@ -1068,6 +1088,11 @@ else {
 
 	if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == TRUE)
 	{createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+
+	if (flag(AidelamentsPlayerdefeatintunnel))
+	{	msgbox (format("{PLAYER}... it seems our incursion into the tunnel ended rather - unexpectedly!"))
+	clearflag (AidelamentsPlayerdefeatintunnel)}
+
 	msgbox (format("Aah, you did it - you found a {COLOR RED}Voltorb Shard{COLOR DARK_GRAY}!
 	And one in great condition!"))
 	removefieldmugshot
@@ -1100,6 +1125,7 @@ else {
 	removeitem (ITEM_COMET_SHARD)
 	setfollowernpc (LOCALID_BALSAM_AIDEE, FNPC_ALL, AideeFollowingChat, 0)
 	setflag (Aideeleaveslab)
+	setflag (AidelamentsPlayerdefeatintunnel)
 	setvar(VAR_LITTLEROOT_PHASE, 6)
 	goto(aideeisfollowing)
 	}
@@ -1135,6 +1161,7 @@ else {
 		setvar(VAR_LITTLEROOT_PHASE, 3)
 		setflag (AideeQuestAccepted)
 		}
+	endofaide:
 	closemessage
 	removefieldmugshot
 	applymovement (5, moves(walk_in_place_left))
@@ -1368,10 +1395,17 @@ else
 			//goto (startBalsammultichoice)
 			}
 
-			if(var(VAR_LITTLEROOT_PHASE) == 7)
+			if(var(VAR_LITTLEROOT_PHASE) == 7 && !flag(Unsafeningtutodone))
+			{bufferstring(STR_VAR_2, "About the lab basement...")
+			//goto (startBalsammultichoice)
+			}
+
+			if(var(VAR_LITTLEROOT_PHASE) == 7 && flag(Unsafeningtutodone))
 			{bufferstring(STR_VAR_2, "About the Unsafening Project...")
 			//goto (startBalsammultichoice)
 			}
+
+
 		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}", "It's nothing")
 			if (var(VAR_RESULT) == 0) {
 				if(var(VAR_OLDALE_PHASE) == 0)
@@ -1409,7 +1443,7 @@ else
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
 					msgbox (format("Good. Did it help you sort out your feelings?"))
-					dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "It did", "Not really")
+					dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "It did", "Not really")
 
 					if (var(VAR_RESULT) == 0) {
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
@@ -1439,20 +1473,21 @@ else
 
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 					setspeaker ([SP_NAME_BALSAM])
-					msgbox (format("I'm sure he misses you, and a chance of scenery will do you good."))
+					msgbox (format("I'm sure he misses you, and a change of scenery will do you good."))
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
 					
-					msgbox (format("You may need to wait a bit, though - I hear Road 002 is closed off, until
-					the {COLOR RED}Rebel invasion{COLOR DARK_GRAY} of {COLOR BLUE}Oldale Warehouse{COLOR DARK_GRAY} is dealt with."))
+					msgbox (format("You may need to wait a bit, though - I hear {COLOR GREEN}Road 002{COLOR DARK_GRAY} is closed off, until
+					the {COLOR RED}Rebel invasion{COLOR DARK_GRAY} of {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY} is dealt with."))
 					setflag (BalsamtoldtogoseeNorman)
 					goto (finishbalsamidletalk)}
 
 				if(var(VAR_OLDALE_PHASE) == 1 && flag(BalsamtoldtogoseeNorman))
 					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
-					msgbox (format("Like I told you, those Devon Guards won't open Road 002 to Petalburg until
-					the Rebel situation in Oldale is under control."))
+					msgbox (format("Like I told you, those Devon Guards won't open {COLOR GREEN}Road 002{COLOR DARK_GRAY}
+					to {COLOR GREEN}Petalburg{COLOR DARK_GRAY} until
+					the {COLOR RED}Rebel situation{COLOR DARK_GRAY} in {COLOR GREEN}Oldale{COLOR DARK_GRAY} is under control."))
 
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 					setspeaker ([SP_NAME_BALSAM])
@@ -1460,7 +1495,7 @@ else
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 					setspeaker ([SP_NAME_BALSAM])
 					msgbox (format("Nothing to do about it but sit and wait. Unless you go and beat
-					those rebels yourself."))
+					those {COLOR RED}Rebels{COLOR DARK_GRAY} yourself."))
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
 					msgbox (format("..."))
@@ -1473,9 +1508,16 @@ else
 					goto (finishbalsamidletalk)}
 
 				if(var(VAR_OLDALE_PHASE) >= 2) // (var(VAR_PETALBURG_PHASE) == 0)
-					{msgbox (format("Path is free for you now."))}}
+					{
 
-				//if(var(VAR_OLDALE_PHASE) == 2) // (var(VAR_PETALBURG_PHASE) == 1)
+					msgbox (format("Like we discussed, I think you should
+					head off to {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}
+					It's through {COLOR GREEN}Road 002{COLOR DARK_GRAY}.
+					\pNorman must be eager to
+					see you. And the change of air will do you good."))
+					}}
+
+				//if(var(VAR_OLDALE_PHASE) >= 2) // (var(VAR_PETALBURG_PHASE) == 1)
 					//{msgbox (format("You saw Norman."))}
 				
 			if (var(VAR_RESULT) == 1) {
@@ -1515,12 +1557,13 @@ else
 					hard to miss."))
 					}
 
-				if(var(VAR_LITTLEROOT_PHASE) == 7)
+				if(var(VAR_LITTLEROOT_PHASE) == 7 && flag(Unsafeningtutodone))
 					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 					setspeaker ([SP_NAME_BALSAM])
 					msgbox (format("So you will help us with our research? We appreciate it. \p
 					Just don't go telling a word of this to anyone, understood?"))
 					fadeoutbgm (0)
+					setspeaker ([SP_NAME_BALSAM])
 					msgbox (format("Remember..."))
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_MENACING)
 					setspeaker ([SP_NAME_BALSAM])
@@ -1530,8 +1573,16 @@ else
 					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 					setspeaker ([SP_NAME_BALSAM])
 					fadeinbgm (0)
-					msgbox (format("Haha - I'm just kidding, of course!"))
+					msgbox (format("Haha - I'm just kidding, of course! I know you're no snitch."))
 					}
+
+				if(var(VAR_LITTLEROOT_PHASE) == 7 && !flag(Unsafeningtutodone))
+					{createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Hm? Well, that was quick."))
+					createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+					setspeaker ([SP_NAME_BALSAM])
+					msgbox (format("Almost too quick... you did listen to my Aide's request, right?"))
 				}
 
 				if (var(VAR_RESULT) == 2) {
@@ -1555,7 +1606,7 @@ else
 
 }
 
-
+}
 
 
 
@@ -1921,6 +1972,7 @@ script LittlerootTown_Eventscript_AideeGotoback {
 	msgbox (format("You leave now, you don't get your reward, {PLAYER}!
 	\p Come on, it's only going to take a minute or two!\pLet's go to the basement, through
 	the tunnel next to the Professor's desk."))
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	removefieldmugshot
@@ -2023,7 +2075,8 @@ else{
 	removefieldmugshot
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
 	setspeaker ([SP_NAME_BALSAM])
-	msgbox(format("Go catch some!"))}
+	msgbox(format("Go catch some!"))
+	closemessage}
 	
 	else {
 

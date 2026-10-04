@@ -17,6 +17,13 @@ script RedoChimechoBoxAlert {
 
 }
 
+
+script OldaleWarehouseColdStorageBoxPile {
+	lock
+	msgbox(format("A stack of boxes. The label indicates they contain medical supplies."))
+	release
+}
+
 script OldaleWarehouseColdStorageChimechoBoxAlert {
 
 	if (!flag(chimechoboxjumped))

@@ -366,12 +366,13 @@ script DevonShowFreetrial {
 			setspeaker ([SP_NAME_GABBY])
 			msgbox(format("{COLOR RED}Glalie's. The only skincare product you'll ever need.\p
 			This soothing cream will leave your face smooth like a Spheal's - or pokeyen returned!
-			Glalie's. Let time slide you by like fresh ice.{COLOR DARK_GRAY}"))
+			\pGlalie's. Let time slide you by like fresh ice.{COLOR DARK_GRAY}"))
 
 			hidemonpic
 			setspeaker (NULL)
 			msgbox(format("Looks like this is the firt of many ads to come... better get going."))
 		}
+		release
 }}
 
 
@@ -532,11 +533,11 @@ script OldalePokeCenterInnPrograms {
 
 		else {
 
-		msgbox(format("Breaking news: rebels have been vacated from a violent riot mounted
+		msgbox(format("Breaking news: {COLOR RED}Rebels{COLOR DARK_GRAY} have been vacated from a violent riot mounted
 		around {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}'s Devon Center. The property damage is great, but no human or
 		Pokémon injury has ensued.\p The situation was apparently defused by a young person
 		garbed in camouflage clothes, who some believe to be the same that appears in the footage
-		of Rebels leaving Oldale's Devon Warehouse.\p Could this be the rise of a bold vigilante
+		of {COLOR RED}Rebels{COLOR DARK_GRAY} leaving Oldale's Devon Warehouse.\p Could this be the rise of a bold vigilante
 		in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, or perhaps that of an enforcer acting for a nefarious faction?\p
 		We will keep you informed of these developments."))}
 
@@ -600,11 +601,11 @@ script OldalePokeCenterInnPrograms {
 		if(var(VAR_JIMMYQUESTPROGRESS) == 0){
 			//REPLACE WITH HARBOUR PROGRESS VARIABLE
 		
-		msgbox(format("We have received news about Rebels building an illegal harbour on the coast
+		msgbox(format("We have received news about {COLOR RED}Rebels{COLOR DARK_GRAY} building an illegal harbour on the coast
 		south of {COLOR GREEN}Petalburg City{COLOR DARK_GRAY}.\pAlthough available information rules out any war-equipped vessels
 		being built or acquired by anti-Devon radicals, the place sees regular traffic of small foreign
 		boats.\pIf conjectures are to be believed, this could point to a collaboration between the
-		Rebels and foreign crime organizations, and the establishment of a supply chain.\p
+		{COLOR RED}Rebels{COLOR DARK_GRAY} and foreign crime organizations, and the establishment of a supply chain.\p
 		Devon Co. continues to monitor the situation, and Mister Stone has promised to deal with any
 		threats to the region's safety that dare arise from southern Hoenn in a “swift, stern, and safe
 		manner.”"))}

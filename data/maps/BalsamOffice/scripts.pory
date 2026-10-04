@@ -362,10 +362,35 @@ script BalsamOfficeTrashCan {
 }
 
 
-
-
 script BalsamWalkman {
-    lockall
+    lock
+
+    if (!flag(balsamwalkmancasette))
+
+    {msgbox (format("There's two copies of the same casette. Should be fine if I take one…"))
+    giveitem (ITEM_MYSTIC_TICKET)
+    setflag (balsamwalkmancasette)}
+
+    else {msgbox (format("It's Balsam's portable music player. Let's leave it here."))}
+    release
+}
+
+script GasLamp {
+        msgbox (format("It's a gas lamp."))
+        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Turn On", "Turn Off", "Leave")
+
+            if(var(VAR_RESULT) == 0){
+            setweather (WEATHER_SHADE)
+            }
+            if(var(VAR_RESULT) == 1){
+            setweather (WEATHER_NONE)
+            }
+            doweather
+        release
+}
+
+script OldBalsamWalkman {
+    lock
     msgbox (format("It's a casette player. The casette contains several songs."))
         dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Gymnopédie No. 1", "Air on the G String", "The Farthest Land", "Leave")
             if(var(VAR_RESULT) == 0){
@@ -389,6 +414,156 @@ script BalsamWalkman {
             if(var(VAR_RESULT) == 3){release}
 
     releaseall
+}
+
+
+
+script CasetteGiveTest {
+
+
+giveitem (ITEM_EON_TICKET)
+giveitem (ITEM_MYSTIC_TICKET)
+giveitem (ITEM_AURORA_TICKET)
+giveitem (ITEM_DNA_SPLICERS)
+release
+}
+
+script CasetteRadio {
+       lockall
+
+        checkitem (ITEM_EON_TICKET)
+        if (var(VAR_RESULT) == TRUE)
+         {bufferstring (STR_VAR_1, "“Gymnopédie No. 1”")}
+        if (var(VAR_RESULT) == FALSE)
+         {bufferstring (STR_VAR_1, "???")}
+
+        checkitem (ITEM_MYSTIC_TICKET)
+        if (var(VAR_RESULT) == TRUE)
+         {bufferstring (STR_VAR_2, "“The Farthest Land”")}
+        if (var(VAR_RESULT) == FALSE)
+         {bufferstring (STR_VAR_2, "???")}
+
+        checkitem (ITEM_AURORA_TICKET)
+        if (var(VAR_RESULT) == TRUE)
+         {bufferstring (STR_VAR_3, "“Air on the G String”")}
+        if (var(VAR_RESULT) == FALSE)
+         {bufferstring (STR_VAR_3, "???")}
+
+
+        msgbox (format("It's a casette player. Which tape to insert?"))
+        dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE,
+        "{STR_VAR_1}",
+        "{STR_VAR_2}",
+        "{STR_VAR_3}",
+        "Another song",
+        "Leave")
+                        
+            if(var(VAR_RESULT) == 0){
+                checkitem (ITEM_EON_TICKET)
+                if (var(VAR_RESULT) == TRUE)
+                {
+                fadeoutbgm (1)
+                fadenewbgm (MUS_GYMNOPEDIE)
+                msgbox (format("Now playing - “Gymnopédie No. 1”."))}
+
+                else {playse (SE_FAILURE)}
+                goto (endofradioscript)
+                }
+
+            if(var(VAR_RESULT) == 1){
+                checkitem (ITEM_MYSTIC_TICKET)
+                if (var(VAR_RESULT) == TRUE)
+                {
+                fadeoutbgm (1)
+                fadenewbgm (MUS_FARTHESTLAND)
+                msgbox (format("Now playing - “The Farthest Land”."))}
+
+                else {playse (SE_FAILURE)}
+                goto (endofradioscript)
+                }
+
+            if(var(VAR_RESULT) == 2){
+                checkitem (ITEM_AURORA_TICKET)
+                if (var(VAR_RESULT) == TRUE)
+                {
+                fadeoutbgm (1)
+                fadenewbgm (MUS_AIRONG)
+                msgbox (format("Now playing - “Air on the G String”."))}
+
+                else {playse (SE_FAILURE)}
+                goto (endofradioscript)
+                }
+
+            if(var(VAR_RESULT) == 3){
+
+                checkitem (ITEM_DNA_SPLICERS)
+                if (var(VAR_RESULT) == TRUE)
+                {bufferstring (STR_VAR_1, "“Party!”")}
+                if (var(VAR_RESULT) == FALSE)
+                {bufferstring (STR_VAR_1, "???")}
+
+                msgbox (format("Which tape to insert?"))
+                dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE,
+                "{STR_VAR_1}",
+                "Y",
+                "Z",
+                "Another song",
+                "Leave")
+                    
+                            if(var(VAR_RESULT) == 0){
+                            checkitem (ITEM_DNA_SPLICERS)
+                            if (var(VAR_RESULT) == TRUE)
+                            {
+                            fadeoutbgm (1)
+                            fadenewbgm (MUS_RENBOUPARTY)
+                            msgbox (format("Now playing - “Party!”."))}
+
+                            else {playse (SE_FAILURE)}
+                            goto (endofradioscript)
+                            }
+
+                            if(var(VAR_RESULT) == 1){
+                            checkitem (ITEM_DNA_SPLICERS)
+                            if (var(VAR_RESULT) == TRUE)
+                            {
+                            fadeoutbgm (1)
+                            fadenewbgm (MUS_RENBOUPARTY)
+                            msgbox (format("Now playing - “Party!”."))}
+
+                            else {playse (SE_FAILURE)}
+                            goto (endofradioscript)
+                            }
+
+                            if(var(VAR_RESULT) == 2){
+                            checkitem (ITEM_DNA_SPLICERS)
+                            if (var(VAR_RESULT) == TRUE)
+                            {
+                            fadeoutbgm (1)
+                            fadenewbgm (MUS_RENBOUPARTY)
+                            msgbox (format("Now playing - “Party!”."))}
+
+                            else {playse (SE_FAILURE)}
+                            goto (endofradioscript)
+                            }
+
+                            if(var(VAR_RESULT) == 3){
+                            checkitem (ITEM_DNA_SPLICERS)
+                            if (var(VAR_RESULT) == TRUE)
+                            {
+                            fadeoutbgm (1)
+                            fadenewbgm (MUS_RENBOUPARTY)
+                            msgbox (format("Now playing - “Party!”."))}
+
+                            else {playse (SE_FAILURE)}
+                            goto (endofradioscript)
+                            }
+
+                            }
+
+            if(var(VAR_RESULT) == 4){release}
+
+    endofradioscript:
+    releaseall 
 }
 
 script BalsamBookshelf {

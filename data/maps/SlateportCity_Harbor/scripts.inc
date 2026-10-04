@@ -346,7 +346,6 @@ SlateportCity_Harbor_EventScript_DeepSeaTooth::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	removeitem ITEM_SCANNER
 	msgbox SlateportCity_Harbor_Text_HandedScannerToStern, MSGBOX_DEFAULT
-	setflag FLAG_EXCHANGED_SCANNER
 	goto SlateportCity_Harbor_EventScript_TradedScanner
 	end
 
@@ -357,7 +356,6 @@ SlateportCity_Harbor_EventScript_DeepSeaScale::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	removeitem ITEM_SCANNER
 	msgbox SlateportCity_Harbor_Text_HandedScannerToStern, MSGBOX_DEFAULT
-	setflag FLAG_EXCHANGED_SCANNER
 	goto SlateportCity_Harbor_EventScript_TradedScanner
 	end
 

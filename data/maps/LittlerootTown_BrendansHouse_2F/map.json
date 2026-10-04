@@ -259,6 +259,24 @@
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
       "script": "ScriptedShinyFailsafe"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_MAUSOLEUM_HEXGIRL",
+      "var_value": "3",
+      "script": "ResetSamanthainMausoleumifneeded"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_PHASE",
+      "var_value": "6",
+      "script": "ResetAideinLabifNeeded"
     }
   ],
   "bg_events": [
@@ -292,7 +310,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PlayerRoomBookshelf"
+      "script": "KantonianWarHistoryVol1PlayerHouse"
     },
     {
       "type": "sign",
@@ -448,11 +466,27 @@
     },
     {
       "type": "sign",
-      "x": 4,
-      "y": 3,
+      "x": 3,
+      "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "KantonianWarHistoryVol1PlayerHouse"
+      "script": "DoAndroidsDreamofMareep"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CasetteRadio"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "GasLamp"
     }
   ]
 }

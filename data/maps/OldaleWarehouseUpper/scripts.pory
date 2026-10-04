@@ -366,8 +366,11 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			applymovement (1, moves(walk_slow_up * 1, walk_in_place_left * 1, walk_in_place_up * 1))
 			waitmovement (1)
 			applymovement (1, moves(walk_slow_right * 1))
+
+			applymovement (3, moves(walk_right * 1, walk_in_place_left * 1))
+			waitmovement (3)
 			playse (SE_M_METRONOME)
-			applymovement (3, moves(walk_right * 1, walk_in_place_left * 1, emote_question_mark))
+			applymovement (3, moves(emote_question_mark))
 
 
 			msgbox(format("Uhm... boss? You're going to Tauros Tackle from downstairs?"))
@@ -396,6 +399,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 
 
 			applymovement (2, moves(walk_up * 2, walk_left * 1))
+			waitmovement (2)
 			setspeaker ([SP_NAME_CALVIN])
 			msgbox(format("A-as the second in command, I say..."))
 			playse (SE_LEDGE)
@@ -406,7 +410,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			checkplayergender
 			if(var(VAR_RESULT) == MALE){msgbox(format("I told you this guy was too strong! RUUUUN!"))}
 			if(var(VAR_RESULT) == FEMALE){msgbox(format("I told you this girl was too strong! RUUUUN!"))}
-
+			closemessage
 			rebelsleaveupperwarehouse:
 			playse (SE_FLEE)
 			//applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
@@ -569,7 +573,8 @@ script OldaleWarehouseUpperMicrowave {
 	lock
 	msgbox(format("It's a microwave. There's some reheated food inside..."))
 	if (!flag (FLAG_ITEM_WAREHOUSEMICROWAVE))
-		{giveitem (ITEM_AERODACTYLITE)	}
+		{giveitem (ITEM_AERODACTYLITE)
+		setflag (FLAG_ITEM_WAREHOUSEMICROWAVE)	}
 	else {
 	msgbox(format("The microwave is empty."))
 	}
@@ -586,8 +591,8 @@ script OldaleWarehouseUpperLoadtadDoll {
 
 script OldaleWarehouseUpperMoneyBags {
 	lock
-	msgbox(format("Seems the Rebels forgot some of their loot..."))
     showmoneybox (18, 0)
+	msgbox(format("Seems the {COLOR RED}Rebels{COLOR DARK_GRAY} forgot some of their loot..."))
 	addmoney (1000)
 	playse (SE_SHOP)
 	waitse

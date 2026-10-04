@@ -160,7 +160,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .image = IMG_DIGLETTS_CAVE
     },
     [MPS_POKEMON_TOWER] = {
-        .mapsec = MAPSEC_POKEMON_TOWER,
+        .mapsec = MAPSEC_ANCIENT_TOMB,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_POKEMON_MANSION

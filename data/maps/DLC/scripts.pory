@@ -1005,8 +1005,10 @@ releaseall
  script DLCTrashBin {
 	lock
 	if (!flag (FLAG_ITEM_DLC_TRASHBIN))
-	{msgbox (format("Seems like a picky eater has hidden something in the trash..."))
-	giveitem (ITEM_SITRUS_BERRY)
+	{
+    //msgbox (format("Seems like a picky eater has hidden something in the trash..."))
+    msgbox (format("Seems like someone has discarded some books..."))
+	givedecoration (DECOR_WYNAUT_DOLL)
 	setflag (FLAG_ITEM_DLC_TRASHBIN)}
 	else
 	{msgbox (format("The trash can is empty."))}

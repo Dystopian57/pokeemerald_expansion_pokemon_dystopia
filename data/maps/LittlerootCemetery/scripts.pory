@@ -30,3 +30,41 @@ lockall
 msgbox (format("Littleroot Cemetery.\nWhere souls come to rest."))
 releaseall
 }
+
+
+ script SamanthaDontgotoMausoleum {
+    lock
+    if (!flag (Samanthagotsnacks))
+    {
+
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+    playse (SE_PIN)
+    setspeaker ([SP_NAME_SAMANTHA])
+    msgbox (format("O-oh, {PLAYER}... don't you want to go after all?"))
+
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes, let's go", "No, let's do this later")
+
+	if (var(VAR_RESULT) == 0) {
+
+    msgbox (format("G-good... then let's get going...! I'm so hungry..."))
+    closemessage
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_down * 1))
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+	}
+	if (var(VAR_RESULT) == 1) {
+    msgbox (format("T-that's okay... till later then - I'll be waiting...!"))
+
+        closemessage
+        fadescreenswapbuffers (FADE_TO_BLACK)
+        destroyfollowernpc
+        fadescreenswapbuffers (FADE_FROM_BLACK)
+        setvar (VAR_MAUSOLEUM_HEXGIRL, 2)
+        clearflag (Samanthaleavesmausoleum)
+
+	}
+	
+    }
+    
+
+    releaseall}

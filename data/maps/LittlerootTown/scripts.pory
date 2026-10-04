@@ -113,7 +113,6 @@ LittlerootTown_EventScript_HideMapNamePopup::
 # 61 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetRivalLeftForRoute103::
 # 62 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_RIVAL_LEFT_FOR_ROUTE103
 # 63 "data/maps/LittlerootTown/scripts.pory"
 	return
 # 64 "data/maps/LittlerootTown/scripts.pory"
@@ -1874,7 +1873,8 @@ goto (endlitlfatguy)
 
 if (var(VAR_LITTLEROOT_PHASE) >= 5 && !flag (Donutquestaccepted))
 	{msgbox (format("Oh, {PLAYER}! I've heard you're going to {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}.\pIf you have time, would
-	you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on Route 101, you'll
+	you mind getting me a {COLOR RED}Crater Donut{COLOR DARK_GRAY}? They're to die for... \pIf you take a left on
+	{COLOR GREEN}Route 101{COLOR DARK_GRAY}, you'll
 	arrive at the {COLOR GREEN}Great Crater{COLOR DARK_GRAY}. There's a guy that sells them there.\pI'll trade
 	you some {COLOR RED}Poké Balls{COLOR DARK_GRAY} I've found for the donut. Fair deal, right?"))
 	setflag(Donutquestaccepted)
@@ -1969,8 +1969,9 @@ msgbox (format("O-oh, {PLAYER}... this is... {RIVAL}'s house, right?"))
 
    else {msgbox (format("I-I can eat these in the mausoleum... I-I don't want to take more
     of your time...!"))}
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1, faceplayer))
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(faceplayer))
 waitmovement (OBJ_EVENT_ID_PLAYER)
 releaseall
 }
@@ -1991,8 +1992,9 @@ script SamanthaDontgotoPlayers {
    else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
     of your time...!"))
 	closemessage}
-applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1, faceplayer))
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(faceplayer))
 waitmovement (OBJ_EVENT_ID_PLAYER)
 releaseall
 }
@@ -2317,7 +2319,7 @@ else {
 	if(var(VAR_RESULT) == FEMALE){	
 	msgbox (format("I tried checking on him myself, but he wouldn't open the door.\p Perhaps he will
 	“open up” to you - no pun intended! Ho-ho-ho!"))}}
-	if (var(VAR_LITTLEROOT_PHASE) == 5 && !flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == FALSE)
 	{
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
@@ -2328,15 +2330,119 @@ else {
 	bad state, so watch your footing."))}}
 	endfirstgreeting:
 
-	if (var(VAR_LITTLEROOT_PHASE) == 5 && flag (FLAG_HIDDEN_ITEM_ROUTE_101_VOLTORB_SHARD))
+	if (var(VAR_LITTLEROOT_PHASE) == 5 && checkitem (ITEM_COMET_SHARD)  == TRUE)
 	{msgbox (format("Oh, is that a Voltorb Shard? You should take that to Balsam's Aide at
 	once."))
 
 	}
+	if(var(VAR_LITTLEROOT_PHASE) == 6)
+	{msgbox (format("{PLAYER}... I saw you storming off from the lab, covered in dust.
+	\pDon't tell me - those Diggletts did
+	a number on you, hey?
+	\pDon't be ashamed. Back in my day, I used to get beaten by Zigzagoons all the time!"))}
+
 	if(var(VAR_LITTLEROOT_PHASE) == 7)
-	{msgbox (format("I know Professor Balsam and her Aide may seem eccentric sometimes...
-	\p But they only have the best in mind for the future of Hoenn. \p I hope you can find it in you
-	to support them."))}
+	{
+	if(!flag(birchbackstoryspeech))	
+	{msgbox (format("{PLAYER}... Balsam has told me you're helping them with their research.
+	\p I can tell you a bit more about it, if you're interested.\pBut I warn you, it's a bit
+	of a long story..."))
+
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "Not right now",)
+
+	if (var(VAR_RESULT) == 0) {
+	msgbox (format("Ah, you've always been kind enough to listen to your old grandpa's ramblings! Thank
+	you, {PLAYER}. \pWell... as you may know, the Safemon project began right after the
+	war ended.\pDevon made a strong case for the need to weaken Pokémon, so that they could not be used
+	as weapons again.\pYou would think that I, a Pokémon Professor, would doubt the ethics of such
+	a research..."))
+	applymovement (1, moves(face_right))
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("But I'm afraid I did not. After the losses you and I suffered... \pI thought Safemon
+	were the path to a peaceful future."))
+	applymovement (1, moves(face_player))
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("So I helped Devon Co. to “safen” the first species in Hoenn.\pThen, one day,
+	I was doing some field work in {COLOR GREEN}Route 101{COLOR DARK_GRAY}, as countless times before..."))
+	closemessage
+	removefieldmugshot
+	playse (SE_LEDGE)
+
+	if (flag(moveplayerforbirchpoochyenaspawn))
+	{applymovement (1, moves(jump_in_place_right))}
+
+	else {applymovement (1, moves(jump_in_place_down))}
+
+	waitse
+	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("When I stepped on a Poochain's tail!"))
+	applymovement (1, moves(face_up, face_left, face_down, face_right, face_player))
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("Expecting to be chased, I panicked and began
+	to run in circles! As usual!\pI met your father in a similar occassion. But that's a tale for another
+	time.\pBut imagine my surprise, when I turned around and saw...\pThat the Poochain was not chasing me
+	in anger. It could not even move.\pThe poor thing did not have a hole in its muzzle,
+	so it could not eat.\pIt was very malnourished. I took it to the lab, and cut all its restrains."))
+
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("That Poochain? Well... here it is!"))
+	closemessage
+	removefieldmugshot
+	applymovement (1, moves(walk_in_place_right * 1))
+	waitmovement (1)
+
+
+
+		if (flag(moveplayerforbirchpoochyenaspawn))
+		{applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, walk_left * 1, face_right))
+		waitmovement (OBJ_EVENT_ID_PLAYER)}
+
+		else {applymovement (OBJ_EVENT_ID_PLAYER, moves(face_right))}
+		clearflag (birchpoochyena)
+		addobject (5)
+		playse (SE_BALL_OPEN)
+		applymovement (5, moves(face_left))
+		waitse
+	setspeaker (NULL)
+	playmoncry (SPECIES_POOCHYENA, CRY_MODE_NORMAL)
+	msgbox (format("Grr!"))
+	createfieldmugshot (MUGSHOT_BIRCH , EMOTE_NORMAL)
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("It's a Poochyena now. And it may be the first “Unsafened” Pokémon!\p
+	I never thought I'd be friends with a Poochyena. But that's the beauty of Pokémon. They are full
+	of surprises."))
+
+	applymovement (1, moves(face_down))
+	applymovement (5, moves(face_down))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+
+	setspeaker ([SP_NAME_BIRCH])
+	msgbox (format("After that incident, I realized Safemon were wrong, and I began to oppose Devon
+	vocally.\pTheir reaction? They discredited me into retirement, usurped my lab...\pAnd the silver lining
+	 - they sent Balsam to replace me.\pShe shares my worries about Safemon - but
+	unlike me, she's smart enough to maneuver around Devon.\pAll this to say... I hope you can continue
+	to support Balsam and her Aide.\pTo continue to trust Pokémon, in spite of all that happened.
+	\pI think that's enough rambling from me. Go out there, and make friends with tons of Pokémon!"))
+
+	removefieldmugshot
+	setspeaker (NULL)
+	playmoncry (SPECIES_POOCHYENA, CRY_MODE_NORMAL)
+	msgbox (format("Grr!"))
+	setflag (birchbackstoryspeech)
+	goto (endofbirchscript)
+	}
+	
+	if (var(VAR_RESULT) == 1) {}
+	msgbox (format("I understand. Perhaps another time!"))
+	goto (endofbirchscript)
+	}
+
+
+
+	else {msgbox (format("I know Professor Balsam and her Aide may seem eccentric sometimes...
+	\p But they only have the best in mind for the future of Hoenn. \p I hope you continue to support
+	them."))}}
 
 	endofbirchscript:
 	closemessage
@@ -2347,6 +2453,24 @@ else {
 }
 }
 
+script BirchPoochyenaPlacementSet {
+	setflag (moveplayerforbirchpoochyenaspawn)
+}
+
+script BirchPoochyenaPlacementClear {
+	clearflag (moveplayerforbirchpoochyenaspawn)
+}
+
+script BirchPoochyenaIdle {
+	lock
+	applymovement (5, moves(face_player))
+	waitmovement (5)
+	playmoncry (SPECIES_POOCHYENA, CRY_MODE_NORMAL)
+	msgbox (format("Grr!"))
+	applymovement (5, moves(face_down))
+	waitmovement (5)
+	release
+}
 script LittlerootTown_Eventscript_Oldmanasking {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)

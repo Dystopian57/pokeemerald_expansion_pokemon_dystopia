@@ -323,6 +323,7 @@ script Route101Weather {
 	else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
 		of your time...!"))}
 
+closemessage
 applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_down * 1))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
 waitmovement (OBJ_EVENT_ID_PLAYER)
@@ -510,7 +511,8 @@ if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 	if(var(VAR_RESULT) == FEMALE){
 	applymovement(4, moves(face_player))
 	setspeaker ([SP_NAME_ANNE])
-	msgbox(format("Please invite me to the girls' day next time! Pleeeease!"))
+	msgbox(format("Please invite me to the girls' day out next time! Pleeeease!"))
+	closemessage
 	applymovement(4, moves(walk_in_place_left * 1))
 	waitmovement (4)
 	goto (endofjoelandannemeeting)}
