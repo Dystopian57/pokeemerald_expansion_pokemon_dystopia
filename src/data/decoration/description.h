@@ -3,9 +3,8 @@ const u8 DecorDesc_SMALL_DESK[] = _(
         "for one.");
 
 const u8 DecorDesc_POKEMON_DESK[] = _(
-    "A small desk built in\n"
-        "the shape of a POKé\n"
-        "BALL.");
+    "A small desk designed\n"
+        "after a Devon Ball.");
 
 const u8 DecorDesc_HEAVY_DESK[] = _(
     "A large desk made\n"

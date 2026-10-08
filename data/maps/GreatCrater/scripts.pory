@@ -5,12 +5,11 @@ raw `
 
 
 mapscripts GreatCrater_MapScripts {
-    MAP_SCRIPT_ON_LOAD: GreatCraterWeather
+    MAP_SCRIPT_ON_LOAD: DayNightMusicGreatCrater
     //MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater
     //MAP_SCRIPT_ON_LOAD: RedoTouristWarning
     MAP_SCRIPT_ON_TRANSITION: RedoTouristWarning
     //MAP_SCRIPT_ON_FRAME_TABLE: RedoTouristWarning
-    MAP_SCRIPT_ON_TRANSITION: GreatCraterWeather
     MAP_SCRIPT_ON_TRANSITION: DayNightMusicGreatCrater
 	}
 
@@ -455,7 +454,45 @@ script CameramanGreatCrater {
 }
 ///////////////////////////////////////////////////////////////
 
+script TouristGreatCraterApproach0 {
+
+	specialvar (VAR_RESULT, GetTrainerFlag)
+	goto_if_ne (VAR_RESULT, FALSE, EventScript_NoNormalTrainerBattle)
+	if (!flag(TRAINER_TOURIST_GREATCRATER))
+	{	playbgm(MUS_DOLCEISLAND, FALSE)
+		applymovement (6, moves(emote_exclamation_mark))
+		waitmovement (6)
+		call (TouristGreatCraterBattle)}
+
+	else {release}
+}
+
+script TouristGreatCraterApproach1 {
+	if (!flag(TRAINER_TOURIST_GREATCRATER))
+	{	playbgm(MUS_DOLCEISLAND, FALSE)
+		applymovement (6, moves(emote_exclamation_mark))
+		waitmovement (6)
+		applymovement (6, moves(walk_down * 1))
+		applymovement (13, moves(walk_down * 1))
+		call (TouristGreatCraterBattle)}
+
+	else {release}
+}
+
+script TouristGreatCraterApproach2 {
+	if (!flag(TRAINER_TOURIST_GREATCRATER))
+	{	playbgm(MUS_DOLCEISLAND, FALSE)
+		applymovement (6, moves(emote_exclamation_mark))
+		waitmovement (6)
+		applymovement (6, moves(walk_down * 2))
+		applymovement (13, moves(walk_down * 2))
+		call (TouristGreatCraterBattle)}
+
+	else {release}
+}
+
 script TouristGreatCraterBattle {
+	//vsseeker_rematchid (TRAINER_TOURIST_GREATCRATER)
 	trainerbattle_single(TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro, TouristGreatCraterRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, TouristGreatCraterRematch)

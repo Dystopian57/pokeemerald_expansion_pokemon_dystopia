@@ -369,7 +369,7 @@ script Sharpy103 {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (24, moves(face_player))
-	playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
+	playbgm (MUS_ENCOUNTER_BRENDAN, FALSE)
 	setspeaker ([SP_NAME_SHARPY])
 
 	special (DoTVShow)
@@ -1056,9 +1056,11 @@ script RiverFerryGuyUp {
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back downstream."))
+		closemessage
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
 		applymovement (37, moves(walk_in_place_left * 1))
+		waitmovement
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		removeobject (34)
 		removeobject (35)
@@ -1130,9 +1132,11 @@ script RiverFerryGuyDown {
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 
 		msgbox(format("Here we are. I'll be waiting for when you want to sail back upstream."))
+		closemessage
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 		waitmovement (OBJ_EVENT_ID_PLAYER)
 		applymovement (37, moves(walk_in_place_left * 1))
+		waitmovement (34)
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		removeobject (36)
 		removeobject (37)
@@ -1161,6 +1165,7 @@ script RiverFerryManNotThatEntry {
 	applymovement (34, moves(face_player))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
 	msgbox(format("Not so fast, young one...! If you want to board, do it after me."))
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
 	waitmovement
 	releaseall

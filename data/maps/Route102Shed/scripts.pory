@@ -21,7 +21,7 @@ script Route103ScientistShedTalk {
         applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_down))
         waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
 
-        msgbox(format("This must be the supply shed the builders of Road 002 were using."))
+        msgbox(format("This must be the supply shed the builders of {COLOR GREEN}Road 002{COLOR DARK_GRAY} were using."))
         applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up))
         applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
         msgbox(format("I see a bizarre cavity on the northern wall of the shed. Let us explore further."))

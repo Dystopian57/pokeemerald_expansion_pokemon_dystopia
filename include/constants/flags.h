@@ -250,7 +250,7 @@
 #define showedoldaleinngirldoll            0xDD
 
 #define oldalefountainsparkle         0xDE
-#define VERYUNUSED4            0xDF   
+#define rivalmappearsinOldale            0xDF   
 #define greatcraterrope          0xE0
 
 #define FLAG_RECEIVED_20_COINS               0xE1
@@ -275,7 +275,7 @@
 #define visitedrebelsecretshelter                 0xF3
 #define visitedsanctumsecretshelter                 0xF4
 #define wheelchairtradequestdone           0xF5
-#define VERYUNUSED5 0xF6 
+#define OldaleDevonFightLost 0xF6 
 #define sentdemomysterygift      0xF7
 #define receiveddemomysterygift           0xF8
 #define hermitmovesexplained           0xF9
@@ -288,7 +288,7 @@
 #define caughtsableyelairboss            0x100
 #define spawnsableyelairboss                0x101 // CAN SHOWXYOBJECTAT
 #define forceshiny              0x102
-#define itsnotused        0x103
+#define rivalfappearsinOldale        0x103
 #define norun              0x104
 #define nowhiteout                0x105
 #define canspawnsableyelairboss         0x106
@@ -331,13 +331,13 @@
 #define FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK   0x12B
 #define balsamwalkmancasette     0x12C
 #define oldaledevoncentertrashcan1f         0x12D
-#define FLAG_OMIT_DIVE_FROM_STEVEN_LETTER    0x12E
+#define SanctumWartz    0x12E
 #define FLAG_HAS_MATCH_CALL                  0x12F
 #define FLAG_ADDED_MATCH_CALL_TO_POKENAV     0x130
 #define FLAG_REGISTERED_STEVEN_POKENAV       0x131
 #define FLAG_ENABLE_NORMAN_MATCH_CALL        0x132
-#define FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN 0x133 // Set after you follow Steven to the entrance of the Cave of Origin.
-#define FLAG_MET_ARCHIE_SOOTOPOLIS           0x134
+#define scientistarrivedinsanctum 0x133 // Set after you follow Steven to the entrance of the Cave of Origin.
+#define scientistinsanctum          0x134
 #define FLAG_MET_MAXIE_SOOTOPOLIS            0x135
 #define FLAG_MET_SCOTT_RUSTBORO              0x136
 #define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0x137 // Set after speaking to Wallace within the Cave of Origin.
@@ -1277,7 +1277,7 @@
 #define FLAG_ITEM_TUNNELBYMACHINES                                         0x4B8 // Unused Flag
 #define FLAG_ITEM_MAUSOLEUM                                         0x4B9 // Unused Flag
 #define FLAG_JOELTENT_ITEM                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
+#define FLAG_OLDALETRUCK_ITEM                                           0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag

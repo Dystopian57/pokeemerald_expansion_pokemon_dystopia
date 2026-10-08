@@ -473,10 +473,21 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			waitmovement (2)
 			removeobject (2)
 		    playse (SE_EXIT)
-			//waitse
-
+			waitse
 			fadeoutbgm (1)
+			setflag (FLAG_BADGE01_GET)
+			checkplayergender
+			if(var(VAR_RESULT) == MALE){msgbox(format("{COLOR GREEN}{PLAYER} begins to remember some of his soldier skills..."))}
+			if(var(VAR_RESULT) == FEMALE){msgbox(format("{COLOR GREEN}{PLAYER}begins to remember some of her soldier skills..."))}
+
+        	playse (MUS_OBTAIN_BADGE)
+			msgbox(format("{COLOR GREEN}{PLAYER} can now train Pokémon (and Safemon) past level 10!"))
+
+
 			playbgm (MUS_UNDERPIZZA, TRUE)
+
+
+
 
 			setflag (oldalewarehouserebelscleared)
 			setflag (DLCclassends)
@@ -594,9 +605,9 @@ script OldaleWarehouseUpperMoneyBags {
     showmoneybox (18, 0)
 	msgbox(format("Seems the {COLOR RED}Rebels{COLOR DARK_GRAY} forgot some of their loot..."))
 	addmoney (1000)
+	updatemoneybox
 	playse (SE_SHOP)
 	waitse
-	updatemoneybox
 	msgbox(format("Received 5000¥!"))
 	removeobject (8)
 	setflag (FLAG_ITEM_WAREHOUSEMONEYBAGS)

@@ -152,7 +152,9 @@ script JoelTentJoel {
 			eventually... but I still don't want her to be sad."))}
 
 			if(var(VAR_RESULT) == 1){
+			setspeaker ([SP_NAME_JOEL])
 			msgbox(format("How many spots have you made a Secret Shelter on, {PLAYER}?"))
+			setspeaker ([SP_NAME_JOEL])
 				if(var(VAR_SECRETSHELTERSVISITED) == 0){
 					msgbox(format("None? Wow, you should make at least one!\p Come back when you do,
 					and I'll give you something cool!"))
@@ -323,7 +325,8 @@ script JoelTentOranBasket {
 
 script JoelTentItem {
 	lock
-    finditem (ITEM_TM_POUNCE)
+	givedecoration (DECOR_SPIKES_MAT)
+    //finditem (ITEM_TM_POUNCE)
     //giveitem (ITEM_SOFT_SAND)
 	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
     removeobject (5)

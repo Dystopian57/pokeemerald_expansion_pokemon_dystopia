@@ -20,7 +20,7 @@ gBirchDexRatingText_Cancel::
 	.string "catching! Counting on you!$"
 
 gBirchDexRatingText_SoYouveSeenAndCaught::
-	.string "Pokémon Visual Data:{STR_VAR_1} species.\n"
+	.string "Pokémon Visual Data: {STR_VAR_1} species.\n"
 	.string "Pokémon Acquired Data: {STR_VAR_2} species.$"
 
 gBirchDexRatingText_LessThan10::
@@ -49,14 +49,14 @@ gBirchDexRatingText_LessThan20::
 	.string "You're welcome for the info!$"
 
 gBirchDexRatingText_LessThan30::
-	.string "Yould have registered more\n"
-	.string "data in all this time...\p"
-	.string "But hey, I know you've been\n"
-	.string "busy doing other stuff!\p"
+	.string "I thought you'd have registered\n"
+	.string "more data in all this time...\p"
+	.string "But hey, I know you've been busy\n"
+	.string "doing other things!\p"
 	.string "Do you have a fishing rod?\p"
-	.string "Hoenn is drier now than\n"
-	.string "before the war, but you can\l"
-	.string "still fish many species.\p"
+	.string "Hoenn is drier now than before\n"
+	.string "the war, but you can still fish\l"
+	.string "many species of Pokémon.\p"
 	.string "So get on reeling!$"
 
 gBirchDexRatingText_LessThan40::

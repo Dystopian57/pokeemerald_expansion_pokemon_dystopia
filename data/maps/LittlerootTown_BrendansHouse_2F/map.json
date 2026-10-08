@@ -277,6 +277,33 @@
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "6",
       "script": "ResetAideinLabifNeeded"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleRivalRespawn"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleRivalRespawn"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleRivalRespawn"
     }
   ],
   "bg_events": [

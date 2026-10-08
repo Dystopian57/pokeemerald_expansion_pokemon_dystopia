@@ -413,13 +413,13 @@ const u8 gText_MatchCallTrainerOrphanMale101_Pokemon[] = _("Ziggy is my bestie!"
 const u8 gText_MatchCallTrainerOrphanMale101_Intro1[] = _("I only show my Secret");
 const u8 gText_MatchCallTrainerOrphanMale101_Intro2[] = _("Shelter to my best friends!");
 
-const u8 gText_MatchCallTrainerFisher103_Strategy[] = _("Best fisher in Hoenn");
+const u8 gText_MatchCallTrainerFisher103_Strategy[] = _("Best fisher in Hoenn.");
 const u8 gText_MatchCallTrainerFisher103_Pokemon[] = _("Baron, my Barboach!");
-const u8 gText_MatchCallTrainerFisher103_Intro1[] = _("Only real pros fish");
-const u8 gText_MatchCallTrainerFisher103_Intro2[] = _("in the Rebel Zone!");
+const u8 gText_MatchCallTrainerFisher103_Intro1[] = _("Only real pros fish in");
+const u8 gText_MatchCallTrainerFisher103_Intro2[] = _("the Rebel Zone!");
 
 const u8 gText_MatchCallTrainerShadyDealer103_Strategy[] = _("Gotta Hatch them all!");
-const u8 gText_MatchCallTrainerShadyDealer103_Pokemon[] = _("The most... 'eggciting'!");
+const u8 gText_MatchCallTrainerShadyDealer103_Pokemon[] = _("The most... “eggciting”!");
 const u8 gText_MatchCallTrainerShadyDealer103_Intro1[] = _("Open every night at");
 const u8 gText_MatchCallTrainerShadyDealer103_Intro2[] = _("Petalburg Sewers!");
 

@@ -3,7 +3,7 @@
   "name": "ConcordCustoms",
   "layout": "LAYOUT_CONCORD_CUSTOMS",
   "music": "MUS_UNOVAROUTEGATE",
-  "region_map_section": "MAPSEC_BOND_BRIDGE",
+  "region_map_section": "MAPSEC_FARAWAY_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

@@ -85,6 +85,12 @@ script DayNightAmbientLight {
 	release
 }
 
+
+script OldaleRivalRespawn {
+	clearflag (rivalappearsinOldale)
+	setflag (OldaleDevonFightLost)
+}
+
 //script CarRebelSpawn {
 	//if (var(VAR_OLDALECARREBEL) == 1)
 	//{setobjectxy (9, 8, 4)}
@@ -380,13 +386,14 @@ script OldaleTown_Devon_Nurse {
 						if (var(VAR_RESULT) == 10)
 						{msgbox(format("Wait... this is your 10th visit...\p You are now a
 						Bronze Client, so I'm contractually obligated to give you this."))
-						givedecoration (DECOR_BALL_CUSHION)}
+						givedecoration (DECOR_BALL_CUSHION)
+						setvar (VAR_DEVONCENTERLOYALTY, 1)}
 
 						if (var(VAR_RESULT) == 25)
 						{msgbox(format("Ah, this marks your 25th visit. \pAs per the Devon Center
 						Loyalty Program, you are now a Silver Client.\p And that means, this is for you."))
 						givedecoration (DECOR_AZURILL_DOLL)
-						}
+						setvar (VAR_DEVONCENTERLOYALTY, 2)}
 
 						if (var(VAR_RESULT) == 50)
 						{msgbox(format("Oh, but please wait, dear customer! This is a special occassion
@@ -395,7 +402,7 @@ script OldaleTown_Devon_Nurse {
 						givedecoration (DECOR_FIRE_BLAST_MAT)
 						applymovement (1, moves (nurse_joy_bow))
 						waitmovement (1)
-						}
+						setvar (VAR_DEVONCENTERLOYALTY, 3)}
 
 						if (var(VAR_RESULT) == 75)
 						{msgbox(format("Before you go, dear {PLAYER} - we were wondering if you could spare

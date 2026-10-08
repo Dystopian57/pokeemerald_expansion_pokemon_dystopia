@@ -132,17 +132,25 @@ script OldaleWeather {
 }
 }
 
+script OldaleTruckBaseItem {
+	lock
+    finditem (ITEM_TM_POUNCE)
+    //giveitem (ITEM_SOFT_SAND)
+	//setflag (FLAG_ITEM_OLDALE_HOUSE2GARDEN)
+	releaseall
+}
+
 script ConArtist103Rewards {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (34, moves(face_player))
 
-	if(var(VAR_JIMMYQUESTPROGRESS) <= 1){
+	if(var(VAR_JIMMYQUESTPROGRESS) == 1){
 
 	if (!flag (conartistthanked))
 	{
     setflag (conartistthanked)
-    setvar (VAR_JIMMYQUESTPROGRESS, 2)
+    //setvar (VAR_JIMMYQUESTPROGRESS, 2)
 	msgbox(format("You did me a solid there, champ! You're a pro performer! \p Here's your reward - Jimmy McGligar never goes back on his word!"))
 	giveegg (SPECIES_TAMARAKKU)
 	playse (MUS_OBTAIN_ITEM)
@@ -152,48 +160,49 @@ script ConArtist103Rewards {
 	eggs! The cash I get when I sell them, duh! \p Speaking of eggs... I have one more in stock
     that's not reserved.\p It's a pretty special one - an egg that multiplies itself! Talk
     about a good investment, eh?\p For you, only 500¥. Deal?"))
+    showmoneybox (18, 0)
     eggoffer:
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
         if(var(VAR_RESULT) == 0){
-            
+            removemoney (500)
+            updatemoneybox
+            playse (SE_SHOP)
+            waitse
             setspeaker ([SP_NAME_JIMMY])
             msgbox(format("A smart choice! I knew you had an eye for good deals - here you go!"))
+            hidemoneybox
             playse (MUS_OBTAIN_ITEM)
             msgbox(format("Obtained the Multiplying Egg!"))
             giveegg (SPECIES_EXEGGCUTE)
-
-                // believe me, this egg can actually MULTIPLY itself upon hatching! It's a huge
-                //investment opportunity. It's a bit more expensive though... 1000. But you can't say no
-                //right?
+            setspeaker ([SP_NAME_JIMMY])
             msgbox(format("I'm sure you won't be disappointed. Especially if you continue your patronage
-            at my store in {COLOR GREEN}Petalburg{COLOR DARK_GRAY}!\p I'll let you know when I set up there. And to that end..."))
+            at my store in {COLOR GREEN}Petalburg{COLOR DARK_GRAY}!
+            \p I'll let you know when I set up there. And to that end..."))
             register_matchcall (TRAINER_SHADYDEALER_103)
+            setspeaker ([SP_NAME_JIMMY])
             msgbox(format("All set. Pleasure doing business with you, and have an EGGcelent day!"))
             setvar (VAR_JIMMYQUESTPROGRESS, 2)
                 goto (finisheggdeal)
                 }
 
-                if(var(VAR_RESULT) == 2){
-                goto (refusedeggs)}
-
-                
-        
-
         if(var(VAR_RESULT) == 1){
             refusedeggs:
             setspeaker ([SP_NAME_JIMMY])
+            hidemoneybox
             msgbox(format("Welp, that's your loss. \p I'm off to {COLOR GREEN}Petalburg{COLOR DARK_GRAY} soon, so you'll have to
             walk if you change your mind!"))
             goto (finisheggdeal)
         }}
 
-	else {
+	if (flag (conartistthanked))
+	{   showmoneybox (18, 0)
         setspeaker ([SP_NAME_JIMMY])
 		msgbox(format("So? Interested in that egg that multiplies itself?"))
 		goto (eggoffer)
 	}}
 
 	if(var(VAR_JIMMYQUESTPROGRESS) == 2){
+    setspeaker ([SP_NAME_JIMMY])
 	msgbox(format("Thank you so much for your help and patronage. See you at {COLOR GREEN}Petalburg{COLOR DARK_GRAY}!"))
     }
 
@@ -514,9 +523,9 @@ script OldaleOutsideOldGuy {
 script OldaleOutsideOldWoman {
     lock
     applymovement (30, moves(face_player))
-    msgbox(format("Have you ever noticed that rain has a greenish tint recently...? It's caused by the
+    msgbox(format("Have you ever noticed that rain has a greenish tint recently...?\pIt's caused by the
     polluted sea. \p The Weather Institute says
-    it's not harmful on the short-term. But I worry about the long term..."))
+    it's not harmful on the short-term.\pBut I worry about the long term..."))
     releaseall
     }
 
@@ -920,6 +929,11 @@ script OldaleDevonGrunts { //karen and jerry
         applymovement (15, moves(face_right))
 
         clearflag (rivalappearsinOldale)
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){clearflag (rivalfappearsinOldale)}
+        if(var(VAR_RESULT) == FEMALE){clearflag (rivalmappearsinOldale)}
+
+
 
 
         }
@@ -1035,6 +1049,11 @@ script OldaleDevonGrunts { //karen and jerry
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_fast_left * 2))
         waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
         setflag (rivalappearsinOldale)
+
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){setflag (rivalfappearsinOldale)}
+        if(var(VAR_RESULT) == FEMALE){setflag (rivalmappearsinOldale)}
+
         destroyfollowernpc
         playse (SE_EXIT)
         waitse
@@ -1064,8 +1083,33 @@ script OldaleRival {
         checkplayergender
         if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_NORMAL)}
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
+
+
+
         setspeaker ([SP_NAME_RIVAL])
         applymovement (21, moves(face_player))
+        applymovement (38, moves(face_player))
+        applymovement (39, moves(face_player))
+        if (flag(OldaleDevonFightLost))
+        {msgbox(format("{PLAYER}... as long as we stand. No, as long as we BREATHE."))
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)}
+        if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_ANGRY)}
+        setspeaker ([SP_NAME_RIVAL])
+        msgbox(format("The battle for Hoenn is not over!!"))
+
+        if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)}
+        if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_SAD)}
+        setspeaker ([SP_NAME_RIVAL])
+        msgbox(format("Think about what your parents would say if you gave up now..."))
+
+        if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_SAD)}
+        if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_SAD)}
+        setspeaker ([SP_NAME_RIVAL])
+        msgbox(format("Let's make them proud instead. Let's beat those Kantonians once and for all!"))
+        goto (afteroldalerivallost)
+        }
+
         msgbox(format("{PLAYER}... I saw you talking with those enemy soldiers just now."))
         checkplayergender
         if(var(VAR_RESULT) == MALE){createfieldmugshot (MUGSHOT_FPLAYER , EMOTE_ANGRY)}
@@ -1082,6 +1126,7 @@ script OldaleRival {
         msgbox(format("But I understand. It was two versus one. Don't worry, I am here now."))
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Let's show those Kantonians they can't take our region! LEAD THE WAY, {PLAYER}."))
+        afteroldalerivallost:
         closemessage
         setvar(VAR_OLDALE_PHASE, 3)
 
@@ -1090,12 +1135,17 @@ script OldaleRival {
 
 	checkplayergender
 		if(var(VAR_RESULT) == MALE)
-        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_FEMALE)}
+        { setfollowernpc (LOCALID_OLDALE_RIVALF, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_FEMALE)}
 
         if(var(VAR_RESULT) == FEMALE)
-        { setfollowernpc (LOCALID_OLDALE_RIVAL, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_MALE)}
+        { setfollowernpc (LOCALID_OLDALE_RIVALM, FNPC_ALL, OldaleRivalfollowchat, PARTNER_RIVAL_MALE)}
         removeobject (21)
+        removeobject (38)
+        removeobject (39)
         setflag (rivalappearsinOldale)
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){setflag (rivalfappearsinOldale)}
+        if(var(VAR_RESULT) == FEMALE){setflag (rivalmappearsinOldale)}
         releaseall
 }
 
@@ -1144,9 +1194,12 @@ script OldaleRivalDontLeaveOldaleto101 {
         destroyfollowernpc
         addobject (21)
         clearflag (rivalappearsinOldale)
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){clearflag (rivalfappearsinOldale)}
+        if(var(VAR_RESULT) == FEMALE){clearflag (rivalmappearsinOldale)}
 		fadescreenswapbuffers (FADE_FROM_BLACK)
         setvar(VAR_OLDALE_PHASE, 2)
-
+        goto (endoffollowrivaloldale)
 
         }
         if(var(VAR_RESULT) == 1)
@@ -1156,10 +1209,12 @@ script OldaleRivalDontLeaveOldaleto101 {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+        closemessage
+        removefieldmugshot
 	    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 1))
 	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
         waitmovement (OBJ_EVENT_ID_PLAYER)
-        removefieldmugshot
+
         }
     releaseall   
 }
@@ -1282,8 +1337,12 @@ script OldaleRivalDontLeaveOldaleto103 {
         destroyfollowernpc
         addobject (22)
         clearflag (rivalappearsinOldale)
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){clearflag (rivalfappearsinOldale)}
+        if(var(VAR_RESULT) == FEMALE){clearflag (rivalmappearsinOldale)}
 		fadescreenswapbuffers (FADE_FROM_BLACK)
         setvar(VAR_OLDALE_PHASE, 2)
+        goto (endoffollowrivaloldale)
 
         }
         if(var(VAR_RESULT) == 1)
@@ -1293,11 +1352,13 @@ script OldaleRivalDontLeaveOldaleto103 {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+        closemessage
+        removefieldmugshot
 	    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_down * 1))
 	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
         waitmovement (OBJ_EVENT_ID_PLAYER)
         }
-    removefieldmugshot
+
     releaseall   
 }
 
@@ -1328,8 +1389,12 @@ script OldaleRivalnoleavetoWhouse {
         destroyfollowernpc
         addobject (22)
         clearflag (rivalappearsinOldale)
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){clearflag (rivalfappearsinOldale)}
+        if(var(VAR_RESULT) == FEMALE){clearflag (rivalmappearsinOldale)}
 		fadescreenswapbuffers (FADE_FROM_BLACK)
         setvar(VAR_OLDALE_PHASE, 2)
+        goto (endoffollowrivaloldale)
 
         }
         if(var(VAR_RESULT) == 1)
@@ -1339,11 +1404,14 @@ script OldaleRivalnoleavetoWhouse {
         if(var(VAR_RESULT) == FEMALE){createfieldmugshot (MUGSHOT_MPLAYER , EMOTE_NORMAL)}
         setspeaker ([SP_NAME_RIVAL])
         msgbox(format("Let's not delay then. I'm as ready as I'll ever be!"))
+        closemessage
+        removefieldmugshot
 	    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1))
 	    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
         waitmovement (OBJ_EVENT_ID_PLAYER)
         }
-        removefieldmugshot
+
+    endoffollowrivaloldale:
     releaseall   
 }
 		//cutscene, change Devon guards dialogue. "those kids were so fast..." "dude, you were just"
@@ -1514,6 +1582,7 @@ script OldaleCarBehind{
         msgbox(format("... oh. Right. He's fainted from before... \p ... {COLOR LIGHT_GRAY}{SHADOW WHITE}Shit...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
         playbgm (MUS_MONSTERHOUSE, TRUE)
         msgbox(format("Wait right here, you hear me!? I'll go to the Devon Center real quick!"))
+        closemessage
         playse (SE_LEDGE)
         applymovement (24, moves(jump_2_up))
         waitmovement (24)

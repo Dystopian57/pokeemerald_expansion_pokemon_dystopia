@@ -129,7 +129,7 @@ OldaleUsedInnBin_2:
 # 69 "data/maps/PokeInnRoom1/scripts.pory"
 	msgbox OldaleUsedInnBin_Text_0
 # 70 "data/maps/PokeInnRoom1/scripts.pory"
-	giveitem ITEM_X_SP_DEF
+	giveitem ITEM_SUPER_POTION
 # 71 "data/maps/PokeInnRoom1/scripts.pory"
 	setflag FLAG_ITEM_OLDALEUSEDINNBIN
 	goto OldaleUsedInnBin_1
@@ -1782,8 +1782,8 @@ PokeInnRoom1Girl_Text_18:
 	.string "real Pokémon, but she and her family are\l"
 	.string "gone.\p"
 	.string "She was the only girl my age in town...\p"
-	.string "I'm sad, but Joel must be sadder. They\n"
-	.string "were so close!.$"
+	.string "I'm sad, but Joel must be sadder. Those\n"
+	.string "two were like Plusle and Minun!$"
 
 PokeInnRoom1WheelchairBoy_Text_0:
 # 259 "data/maps/PokeInnRoom1/scripts.pory"

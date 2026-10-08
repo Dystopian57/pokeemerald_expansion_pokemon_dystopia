@@ -50,8 +50,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "GreenSactumWartzFight",
+      "flag": "SanctumWartz"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVONRESEARCHERM",
+      "x": 4,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GreenSanctumScientistIdle",
+      "flag": "scientistinsanctum"
     }
   ],
   "warp_events": [
@@ -84,7 +97,62 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "GreenSanctumScientistWartzFind"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "GreenSanctumScientistWartzFind"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "GreenSanctumScientistWartzFind"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "GreenSanctumScientistDontgo"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "GreenSanctumScientistDontgo"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "GreenSanctumScientistDontgo"
+    }
+  ],
   "bg_events": [
     {
       "type": "secret_base",

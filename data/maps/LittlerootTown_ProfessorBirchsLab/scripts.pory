@@ -1934,6 +1934,7 @@ script BalsamHowdidyoufindbackentrance {
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("If you're so curious about that part of the lab, why don't you help us
 	with that field work?\p Then you could explore it all you like. Until then, it's off limits."))
+	closemessage
 	removefieldmugshot
 	waitmessage
 	applymovement (4, moves(walk_in_place_up))

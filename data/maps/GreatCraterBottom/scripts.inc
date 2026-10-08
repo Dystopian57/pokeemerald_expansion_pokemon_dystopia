@@ -115,7 +115,7 @@ CraterHermit_Text_0:
 	.string "surface, did you? Commendable.\p"
 	.string "The powerless should not venture into\n"
 	.string "places like these.\p"
-	.string "And with 'powerless'... I am speaking of\n"
+	.string "And with “powerless”... I am speaking of\n"
 	.string "you as well.$"
 
 CraterHermit_Text_1:
@@ -181,4 +181,4 @@ CraterHermit_Text_9:
 
 CraterHermit_Outro::
 # 71 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "Well done. Allow me to shed light onto\n a matter...$"
+	.string "Well done. Allow me to shed light onto\na matter...$"

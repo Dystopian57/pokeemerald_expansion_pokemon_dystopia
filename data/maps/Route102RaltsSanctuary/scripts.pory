@@ -25,18 +25,208 @@ script DayNightMusicRaltsSanctuary {
 
 enddaynightraltssanctuary:
 }
+
+script GreenSanctumScientistWartzFind {
+
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//setflag (scientist102arrivedatsanctum)
+    playse (SE_PIN)
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+	waitse
+
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_right))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_left))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_down))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+
+        msgbox(format("By the primordial two... this is remarkable! No, it is astounding!"))
+    	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+        msgbox(format("This part of
+		the forest... it seems to remain unscathed from the damage and pollution cause by recent armed
+		conflict!\pBut most importantly - look!"))
+
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+	playse (SE_LEDGE)
+    applymovement (3, moves(jump_in_place_down))
+	waitse
+	playmoncry (SPECIES_WARTZ, CRY_MODE_WEAK)
+    msgbox(format("Waaa..."))
+
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up * 1))
+
+    msgbox(format("That is the specimen we've been looking for!\p I beseech you - you must capture it
+	for me!"))
+	scientistbegstocatchwartz:
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "No", "Why?")
+	if (var(VAR_RESULT) == 0) {
+		playersaysyestoscientist:
+		msgbox(format("Wonderful! Here, take these Devon Balls."))
+		giveitem (ITEM_POKE_BALL, 10)
+		msgbox(format("Go forth now, and help make Hoenn a safer place!"))
+			if (flag(scientistarrivedinsanctum))
+			{goto (endofscientist)}
+			else {goto (endofscientistfollow)}
+		
+	}
+
+	if (var(VAR_RESULT) == 1) {
+		msgbox(format("My young fellow, you are most cruel...\pWe find ourselves on the verge of success, and
+		it is now you would forsake me?\pVery well... know that by doing so, you also lose right to your
+		reward.\pI will now contact a Devon Guard to assist me. Should you change your mind before they arrive,
+		I'd be inclined to resume our arrangement."))
+		closemessage
+		if (flag(scientistarrivedinsanctum))
+		{goto (endofscientist)}
+		else {goto (endofscientistfollow)}
+	}
+
+	if (var(VAR_RESULT) == 2) {
+	playersayswhytoscientist:
+	msgbox(format("Why, you say!? I must take it back to New Rustboro for Safening, what else?\pI would
+	do it myself, but I'm ashamed to say my trainer skills are subpar at best...\pYou seem much more
+	skilled. So catch it, I beg of you!"))
+	goto (scientistbegstocatchwartz)}
+	//I suppose I ought to call for a Devon Guard...
+
+	endofscientistfollow:
+	setflag (scientistarrivedinsanctum)
+	setvar (VAR_102_SCIENTIST, 3)
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_in_place_up * 1))
+	destroyfollowernpc
+	clearflag (scientistinsanctum)
+	addobject (4)
+	applymovement (4, moves(face_up))
+
+	endofscientist:
+	release
+
+}
+
+script GreenSanctumScientistDontgo {
+
+		specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+		if (var(VAR_RESULT) < 6) {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement (4, moves(face_down, emote_exclamation_mark))
+		waitmovement (4)
+		msgbox(format("My good youth, surely you must at least try before fleeing!"))
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)}
+		else {release}
+
+	lock
+}
+
+script GreenSactumWartzFight {
+
+		lock
+		playmoncry (SPECIES_WARTZ, CRY_MODE_NORMAL)
+		msgbox(format("Waaa..."))
+
+
+		specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+		if (var(VAR_RESULT) == 6) {
+			playse (SE_PIN)
+			applymovement (4, moves(jump_in_place_up * 1))
+			waitmovement (4)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+			msgbox(format("Wait, my young helper! I see from here you have six Pokémon
+			on your party, do you not?
+			\pBefore engaging the speciment, you must make room in your party for it.
+			\pI cannot allow this dangerous Pokémon to be stored in a civilian's Storage PC. I
+			hope you understand."))}
+
+		else {
+
+			setwildbattle(SPECIES_WARTZ, 10)
+			dowildbattle
+			specialvar(VAR_RESULT, GetBattleOutcome)
+			setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+			if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+				msgbox(format("Excellent work. You would make for an excellent Safemon field researcher!\p
+				Now, as for your reward..."))
+					getseenmon (SPECIES_WARTZ)
+					if (var(VAR_RESULT) == TRUE)
+					{msgbox(format("When I accessed your Devon Dex earlier, I could not help but notice..."))
+
+						if (flag (GOTSTARTER1))
+						{msgbox(format("You picked Bulbasynth as your starter Safemon, did you not?"))}
+
+						if (flag (GOTSTARTER2))
+						{msgbox(format("You picked Bulbasynth as your starter Safemon, did you not?"))}
+
+						if (flag (GOTSTARTER3))
+						{msgbox(format("You picked Bulbasynth as your starter Safemon, did you not?"))}
+					}
+					if (var(VAR_RESULT) == FALSE)
+					{msgbox(format("I have a deal for you. In exchange of your help, I will give you
+					extra starter. From X, X and X. I have such three on me. Which one would you pick?
+					dynchoice for three but option for none. None? I have no other suitable reward prepared.
+					I suppose having helped Hoenn is reward on its own, right? Now, please hand me
+					the Devon Ball containing that Wartz. yes/no"))}
+
+			}
+			elif(var(VAR_RESULT) == B_OUTCOME_WON){
+				msgbox(format("Excellent. (Throw ball + givemon)"))
+			}
+			elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+				release
+			}
+			elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+				release
+			}
+
+		}
+}
+
+script GreenSanctumScientistIdle {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playse (SE_POKENAV_CALL)
+	waitse
+	playse (SE_POKENAV_CALL)
+	waitse
+	msgbox(format("These Devon guards... they are far from reliable. I must submit a complaint upon my..."))
+	applymovement (4, moves(face_player))
+	msgbox(format("Ah, you are returned. Are you, then, ready to help me catch this specimen?"))
+
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "No", "Why?")
+	if (var(VAR_RESULT) == 0) {
+	goto (playersaysyestoscientist)
+	}
+
+	if (var(VAR_RESULT) == 1) {
+	msgbox(format("I beg of you. If you intend to assist at all, and not simply toy with this most
+	serious matter, make haste!"))
+	}
+
+	if (var(VAR_RESULT) == 2) {
+	goto (playersayswhytoscientist)
+	}
+}
+
+//if Wartz defeated, Scientist throws ball, givemon.
+
+
+
+
 //
 //it's exploring that odd tree with a hole. Ralts looks back, scared. Researcher: NOW!
 
-//check if player has full party, if they do then "come back when there's room in your party. I'm afraid
-//I can't let that Pokémon be transferred to your PC."
 
 //capture it please, here's 10 devon balls. after fight, if defeated, run checkitem, if no devon balls, researcher gives
 //an extra one "that is sure to catch it now that it's fainted". //giveitem Poké Ball x 1.
 
 //then: Catch it!. Dynchoice. Catch it, Don't catch it. If Catch it. Good. Now as for your reward...
 //If got Devon Dex: when I took a look at your Devon Dex earlier, I noticed you picked X as your starter...
-//If Purachu: I could not help but notice your first registered Pokémon was... Purachu. Surely you regret
+//If Purachu: I could not help but notice your first registered specimen was... Purachu. Surely you regret
 //the choice, no?
 //What would you say if I gave you the option to pick between two Devon-sanctioned starters? Bulbasynth
 //and Smothquil. 

@@ -84,7 +84,7 @@ Route103ScientistShedTalk_Text_0:
 Route103ScientistShedTalk_Text_1:
 # 24 "data/maps/Route102Shed/scripts.pory"
 	.string "This must be the supply shed the\n"
-	.string "builders of Road 002 were using.$"
+	.string "builders of {COLOR GREEN}Road 002{COLOR DARK_GRAY} were using.$"
 
 Route103ScientistShedTalk_Text_2:
 # 27 "data/maps/Route102Shed/scripts.pory"

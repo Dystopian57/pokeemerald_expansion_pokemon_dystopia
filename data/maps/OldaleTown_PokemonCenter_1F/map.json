@@ -38,7 +38,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DevonInnTrashCan",
+      "script": "OldaleDevonCenterTrashCan1F",
       "flag": "0"
     },
     {
@@ -248,6 +248,33 @@
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",
       "script": "ResetSamanthainMausoleumifneeded"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleRivalRespawn"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleRivalRespawn"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_OLDALE_PHASE",
+      "var_value": "2",
+      "script": "OldaleRivalRespawn"
     }
   ],
   "bg_events": [

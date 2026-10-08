@@ -17,7 +17,7 @@ Back Pic: Brendan
 AI: Basic Trainer
 
 Mimiyurui
-Quirky Nature
+Adamant Nature
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 SpA
@@ -25,6 +25,26 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Helping Hand
 - Substitute
 - Shadow Sneak
+
+Sandshrew
+Adamant Nature
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Rollout
+- Dig
+- Amnesia
+- Stealth Rock
+
+Snorunt
+Adamant Nature
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Bite
+- Fake Tears
+- Icy Wind
+- Facade
 
 === PARTNER_RIVAL_FEMALE ===
 Name: {RIVAL}

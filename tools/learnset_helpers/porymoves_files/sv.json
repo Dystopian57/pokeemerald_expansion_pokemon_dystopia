@@ -17192,7 +17192,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_DOUBLE_EDGE",
       "MOVE_SKITTER_SMACK",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_POUNCE"
     ],
     "EggMoves": [
       "MOVE_DOUBLE_EDGE",

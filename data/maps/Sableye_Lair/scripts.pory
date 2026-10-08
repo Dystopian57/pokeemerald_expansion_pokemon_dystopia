@@ -97,7 +97,7 @@ script SableyeLairBossSequence {
     msgbox (format("The Sableye has stolen {PLAYER}'s bag!"))
     	checkplayergender
 		if(var(VAR_RESULT) == MALE){msgbox (format("{PLAYER} is surrounded - he can't run away!"))}
-        if(var(VAR_RESULT) == FEMALE){msgbox (format("{PLAYER} is surrounded - he can't run away!"))}
+        if(var(VAR_RESULT) == FEMALE){msgbox (format("{PLAYER} is surrounded - she can't run away!"))}
     setvar (nobag, 2) //disablebag
     setflag (norun) //no run away
     playmoncry(SPECIES_SABLEYE, CRY_MODE_HIGH_PITCH)
@@ -199,6 +199,7 @@ script SableyeLairBossSequence {
                     if(var(VAR_RESULT) == B_OUTCOME_WON){
                         playmoncry(SPECIES_SABLEYE, CRY_MODE_WEAK)
                         msgbox (format("S-saaa..."))
+                        closemessage
                         setflag (spawnsableyelairboss)
                         removeobject (5)
                         call (SableyeShake)
@@ -525,7 +526,7 @@ script SableyeGem2 {
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if (var(VAR_RESULT) == 0) {
-    applymovement (1, moves(face_player))
+    applymovement (2, moves(face_player))
 
         if (flag(caughtsableyelairboss))
 

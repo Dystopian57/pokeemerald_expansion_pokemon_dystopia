@@ -25,7 +25,7 @@ script CraterHermit {
 
     if (!flag (FLAG_RECEIVED_HM_FLASH))
     {msgbox(format("You helped that woman return to the surface, did you? Commendable.
-    \p The powerless should not venture into places like these. \p And with 'powerless'...
+    \p The powerless should not venture into places like these. \p And with “powerless”...
     I am speaking of you as well."))
     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes. I better leave", "I am not powerless")
         if (var(VAR_RESULT) == 0) {
@@ -69,4 +69,4 @@ script CraterHermit {
 }
 
     text CraterHermit_Outro{
-    "Well done. Allow me to shed light onto\n a matter..."}
+    "Well done. Allow me to shed light onto\na matter..."}

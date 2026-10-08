@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #include "constants/battle_partner.h"
-
+//Flag Start: 0x500
 #define TRAINER_NONE                          0
 #define TRAINER_ORPHAN_MALE_101               1
 #define TRAINER_REBEL_GRUNT_101               2

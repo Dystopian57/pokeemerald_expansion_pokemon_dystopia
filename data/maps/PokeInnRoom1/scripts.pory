@@ -67,7 +67,7 @@ script OldaleUsedInnBin {
 	lock
 	if (!flag (FLAG_ITEM_OLDALEUSEDINNBIN))
 	{msgbox (format("There's something on the trash can..."))
-	giveitem (ITEM_X_SP_DEF)
+	giveitem (ITEM_SUPER_POTION)
 	setflag (FLAG_ITEM_OLDALEUSEDINNBIN)}
 	else
 	{msgbox (format("The trash can is empty."))}
@@ -238,7 +238,7 @@ script PokeInnRoom1Girl {
     if (flag (showedoldaleinngirldoll) && flag(anneandfamilygone))
         { msgbox(format("I went to tell Anne about me petting a real Pokémon, but she and her
         family are gone. \p She was the only girl my age in town... \p I'm sad, but Joel must be
-        sadder. They were so close!."))}
+        sadder. Those two were like Plusle and Minun!"))}
 
     else {goto (endoldalepokeinnroom1girl)}
 
