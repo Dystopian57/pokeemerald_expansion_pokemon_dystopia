@@ -1313,3 +1313,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/WaterfallCaveHermitlAIR/scripts.inc"
 
 	.include "data/maps/PetalburgSewersArena/scripts.inc"
+
+	.include "data/maps/PastLittlerootTown_BrendansHouse_1F/scripts.inc"
+
+	.include "data/maps/PastLittlerootTown_BrendansHouse_2F/scripts.inc"
+
+	.include "data/maps/PastLittlerootTown/scripts.inc"

@@ -454,14 +454,17 @@ script CameramanGreatCrater {
 }
 ///////////////////////////////////////////////////////////////
 
+
 script TouristGreatCraterApproach0 {
 
-	specialvar (VAR_RESULT, GetTrainerFlag)
-	goto_if_ne (VAR_RESULT, FALSE, EventScript_NoNormalTrainerBattle)
 	if (!flag(TRAINER_TOURIST_GREATCRATER))
-	{	playbgm(MUS_DOLCEISLAND, FALSE)
+	{	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playbgm(MUS_DOLCEISLAND, FALSE)
 		applymovement (6, moves(emote_exclamation_mark))
 		waitmovement (6)
+		playmoncry (SPECIES_CLEFAIRY, CRY_MODE_HIGH_PITCH)
+		applymovement (13, moves(jump_in_place_down * 1))
+		waitmovement (13)
 		call (TouristGreatCraterBattle)}
 
 	else {release}
@@ -469,9 +472,13 @@ script TouristGreatCraterApproach0 {
 
 script TouristGreatCraterApproach1 {
 	if (!flag(TRAINER_TOURIST_GREATCRATER))
-	{	playbgm(MUS_DOLCEISLAND, FALSE)
+	{	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playbgm(MUS_DOLCEISLAND, FALSE)
 		applymovement (6, moves(emote_exclamation_mark))
 		waitmovement (6)
+		playmoncry (SPECIES_CLEFAIRY, CRY_MODE_HIGH_PITCH)
+		applymovement (13, moves(jump_in_place_down * 1))
+		waitmovement (13)
 		applymovement (6, moves(walk_down * 1))
 		applymovement (13, moves(walk_down * 1))
 		call (TouristGreatCraterBattle)}
@@ -481,9 +488,13 @@ script TouristGreatCraterApproach1 {
 
 script TouristGreatCraterApproach2 {
 	if (!flag(TRAINER_TOURIST_GREATCRATER))
-	{	playbgm(MUS_DOLCEISLAND, FALSE)
+	{	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playbgm(MUS_DOLCEISLAND, FALSE)
 		applymovement (6, moves(emote_exclamation_mark))
 		waitmovement (6)
+		playmoncry (SPECIES_CLEFAIRY, CRY_MODE_HIGH_PITCH)
+		applymovement (13, moves(jump_in_place_down * 1))
+		waitmovement (13)
 		applymovement (6, moves(walk_down * 2))
 		applymovement (13, moves(walk_down * 2))
 		call (TouristGreatCraterBattle)}
@@ -492,7 +503,7 @@ script TouristGreatCraterApproach2 {
 }
 
 script TouristGreatCraterBattle {
-	//vsseeker_rematchid (TRAINER_TOURIST_GREATCRATER)
+	vsseeker_rematchid (TRAINER_TOURIST_GREATCRATER)
 	trainerbattle_single(TRAINER_TOURIST_GREATCRATER, TouristGreatCrater_Intro, TouristGreatCrater_Outro, TouristGreatCraterRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq (VAR_RESULT, TRUE, TouristGreatCraterRematch)
@@ -507,6 +518,7 @@ script TouristGreatCraterRegister {
 	waitmovement (0)
 	msgbox(format("That was exciting! Let's do this again - here's my Devonav profile!"))
 	register_matchcall (TRAINER_TOURIST_GREATCRATER)
+	setvar (VAR_CRATERTOURISTFAPPROACH, 1)
 	release
 	end
 }

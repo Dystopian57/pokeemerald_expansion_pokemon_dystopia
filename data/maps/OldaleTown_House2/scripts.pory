@@ -116,7 +116,7 @@ script OldaleTownHouse2AnneArgument {
 	setspeaker ([SP_NAME_ANNE])
 	applymovement(2, moves(walk_in_place_right * 1))
     msgbox(format("He's not an imp! He's fun and cool! And you're mean!"))
-
+	closemessage
 	applymovement(2, moves(walk_fast_left * 1, walk_fast_down * 2))
     waitmovement (0)
 	removeobject (2)

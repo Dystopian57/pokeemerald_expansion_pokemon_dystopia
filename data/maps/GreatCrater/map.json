@@ -54,6 +54,7 @@
       "flag": "reportersleavecrater"
     },
     {
+      "local_id": "LOCALID_GREATCRATER_CONSPIRACYTHEORIST",
       "graphics_id": "OBJ_EVENT_GFX_THEORISTM",
       "x": 7,
       "y": 12,
@@ -88,7 +89,7 @@
       "movement_range_x": 0,
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "TouristGreatCraterBattle",
       "flag": "0"
     },
@@ -184,17 +185,18 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VERDOOM)",
-      "x": 18,
-      "y": 8,
+      "local_id": "LOCALID_GREATCRATER_CONSPIRACYTHEORIST_LEAD",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SABLEYE)",
+      "x": 7,
+      "y": 13,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 6,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "reportersleavecrater"
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -288,27 +290,27 @@
     {
       "type": "trigger",
       "x": 7,
-      "y": 1,
+      "y": 6,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_CRATERTOURISTFAPPROACH",
       "var_value": "0",
       "script": "TouristGreatCraterApproach1"
     },
     {
       "type": "trigger",
       "x": 7,
-      "y": 2,
+      "y": 7,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_CRATERTOURISTFAPPROACH",
       "var_value": "0",
       "script": "TouristGreatCraterApproach2"
     },
     {
       "type": "trigger",
       "x": 7,
-      "y": 0,
+      "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_CRATERTOURISTFAPPROACH",
       "var_value": "0",
       "script": "TouristGreatCraterApproach0"
     }

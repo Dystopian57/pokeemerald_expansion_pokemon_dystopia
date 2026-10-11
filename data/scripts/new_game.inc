@@ -306,5 +306,7 @@ EventScript_ResetAllMapFlags::
 	setflag carrebelwarehouse
 	setflag cigarettepop
 	setflag birchpoochyena
+	setflag rivalmappearsinOldale
+	setflag rivalfappearsinOldale
 	call EventScript_ResetAllBerries
 	end

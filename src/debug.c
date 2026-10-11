@@ -3753,6 +3753,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_DOZEREMERGENCY)            \
     X(MUS_MAINSTREETCOLOSSEUM)            \
     X(MUS_BATTLESIM)            \
+    X(MUS_SEVENTHSYMPHONY)            \
 
 
 #define SOUND_LIST_SE               \

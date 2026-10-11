@@ -35,7 +35,71 @@ script AideLaptop {
 script AideMedicineDispenserScript {
 	lock
 	msgbox (format("It's a Medicine Dispenser."))
-	pokemart (AideMedicineDispenser)
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Buy medicine", "IV Enhancer",
+	"Leave")
+
+	if(var(VAR_RESULT) == 0){pokemart (AideMedicineDispenser)}
+	if(var(VAR_RESULT) == 1){
+	
+	playmoncry (SPECIES_ROTOM, CRY_MODE_NORMAL)
+	msgbox (format("BZZT... insert 500¥, and leave your lead Pokémon on the machine."))
+    showmoneybox (18, 0)
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Follow instructions", "Leave")
+
+		if(var(VAR_RESULT) == 0){
+			checkmoney (500)
+			if (var(VAR_RESULT) == TRUE) {
+			removemoney (500)
+            updatemoneybox
+			playse (SE_SHOP)
+			waitse
+			hidemoneybox
+			setobjectxy (2, 7, 4)
+			applymovement (2, moves (face_down))
+			playse (SE_RG_BAG_POCKET)
+			waitse
+			goto (proceedtohypertrain)}
+			
+			if (var(VAR_RESULT) == FALSE) {
+			playmoncry (SPECIES_ROTOM, CRY_MODE_NORMAL)
+			msgbox (format("BZZT... not enough pokeyen. Cancelling operation!"))
+			goto (endofmedicinedispenser)
+			}
+			}
+
+
+		if(var(VAR_RESULT) == 1){release
+		goto (endofmedicinedispenser)}
+
+	proceedtohypertrain:
+	msgbox (format("BZZT... Your party lead will now have an IV maxed. Select which."))
+	dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+	"HP",
+	"Attack",
+	"Defense",
+	"Special Attack",
+	"Special Defense",
+	"Speed")
+			if(var(VAR_RESULT) == 0){hypertrain (0, 0)}
+			if(var(VAR_RESULT) == 1){hypertrain (1, 0)}
+			if(var(VAR_RESULT) == 2){hypertrain (2, 0)}
+			if(var(VAR_RESULT) == 3){hypertrain (3, 0)}
+			if(var(VAR_RESULT) == 4){hypertrain (4, 0)}
+			if(var(VAR_RESULT) == 5){hypertrain (5, 0)}
+			if(var(VAR_RESULT) == 6){release}
+
+
+	closemessage
+	playse (SE_USE_ITEM)
+	waitse
+	removeobject (2)
+	playmoncry (SPECIES_ROTOM, CRY_MODE_NORMAL)
+	msgbox (format("BZZT... Success! The selected gene has been successfully optimized."))
+
+	}
+	if(var(VAR_RESULT) == 2){release}
+
+	endofmedicinedispenser:
 	release
 
 }
@@ -194,7 +258,7 @@ script AideeBasementUnfollow1 {
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3,  walk_in_place_down * 1))
 	Aidebymachine:
 	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
-	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_POKEBALL)
 	setspeaker ([SP_NAME_AIDEE])
 	msgbox (format("Come, {PLAYER}! I'll show you something really cool!"))
@@ -533,7 +597,7 @@ script AideeBasementIdleTalk {
 				setspeaker ([SP_NAME_AIDEE])
 				msgbox (format("So, {PLAYER}... what's your stance on Devon Co. and
 				Safemon?"))
-				dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them",
+				dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "I like them", "I don't like them",
 				"I'm indifferent")
 				
 				if (var(VAR_RESULT) == 0) {
@@ -571,7 +635,7 @@ script AideeBasementIdleTalk {
 					msgbox (format("Anything else?"))
 					goto (aidechoices)}
 
-			//NOTHING
+			//
 			if (var(VAR_RESULT) == 3) {
 					setspeaker ([SP_NAME_AIDEE])
 					msgbox (format("A-ah, I suppose you've noticed some already...? You're

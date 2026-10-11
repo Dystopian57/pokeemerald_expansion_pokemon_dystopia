@@ -5170,6 +5170,36 @@
       "secondary_tileset": "gTileset_BattlePalace",
       "border_filepath": "data/layouts/PetalburgSewersArena/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgSewersArena/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "name": "PastLittlerootTown_BrendansHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_BuildingPast",
+      "secondary_tileset": "gTileset_GreenPlayerHouse",
+      "border_filepath": "data/layouts/PastLittlerootTown_BrendansHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/PastLittlerootTown_BrendansHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+      "name": "PastLittlerootTown_BrendansHouse_2F_Layout",
+      "width": 26,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GreenPlayerHouse",
+      "border_filepath": "data/layouts/PastLittlerootTown_BrendansHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/PastLittlerootTown_BrendansHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_LITTLEROOT_TOWN",
+      "name": "PastLittlerootTown_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_GeneralPast",
+      "secondary_tileset": "gTileset_PetalburgGreen",
+      "border_filepath": "data/layouts/PastLittlerootTown/border.bin",
+      "blockdata_filepath": "data/layouts/PastLittlerootTown/map.bin"
     }
   ]
 }

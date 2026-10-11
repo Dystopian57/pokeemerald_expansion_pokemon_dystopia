@@ -173,7 +173,7 @@ script WaterfallMercenaryFRematch {
 		"You and me. Battle. NOW!"}
 
 	text WaterfallMercenaryF_Outro{
-		"I really hate you right now."}
+		"... I'm really pissed off right now."}
 
 	text WaterfallMercenaryF_Intro2{
 		"Took you long enough. Help me get stronger!"}

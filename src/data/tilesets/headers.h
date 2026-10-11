@@ -14,6 +14,29 @@ const struct Tileset gTileset_General =
     .callback = InitTilesetAnim_General,
 };
 
+const struct Tileset gTileset_PetalburgGreen =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PetalburgGreen,
+    .palettes = gTilesetPalettes_PetalburgGreen,
+    .metatiles = gMetatiles_PetalburgGreen,
+    .metatileAttributes = gMetatileAttributes_PetalburgGreen,
+    .callback = InitTilesetAnim_Petalburg,
+};
+
+const struct Tileset gTileset_GreenPlayerHouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_GreenPlayerHouse,
+    .palettes = gTilesetPalettes_GreenPlayerHouse,
+    .metatiles = gMetatiles_GreenPlayerHouse,
+    .metatileAttributes = gMetatileAttributes_GreenPlayerHouse,
+    .callback = NULL,
+};
+
+
 const struct Tileset gTileset_Petalburg =
 {
     .isCompressed = TRUE,
@@ -187,6 +210,17 @@ const struct Tileset gTileset_Building =
     .palettes = gTilesetPalettes_InsideBuilding,
     .metatiles = gMetatiles_InsideBuilding,
     .metatileAttributes = gMetatileAttributes_InsideBuilding,
+    .callback = InitTilesetAnim_Building,
+};
+
+const struct Tileset gTileset_BuildingPast =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_BuildingPast,
+    .palettes = gTilesetPalettes_BuildingPast,
+    .metatiles = gMetatiles_BuildingPast,
+    .metatileAttributes = gMetatileAttributes_BuildingPast,
     .callback = InitTilesetAnim_Building,
 };
 
@@ -839,6 +873,17 @@ const struct Tileset gTileset_GeneralGreen =
     .palettes = gTilesetPalettes_GeneralGreen,
     .metatiles = gMetatiles_GeneralGreen,
     .metatileAttributes = gMetatileAttributes_GeneralGreen,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_GeneralPast =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_GeneralPast,
+    .palettes = gTilesetPalettes_GeneralPast,
+    .metatiles = gMetatiles_GeneralPast,
+    .metatileAttributes = gMetatileAttributes_GeneralPast,
     .callback = NULL,
 };
 

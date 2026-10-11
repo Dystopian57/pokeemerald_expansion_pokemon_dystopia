@@ -357,7 +357,7 @@ script Route103DevonGruntCheckingDriver {
 script Route103DevonDrivercheckedby {
     lock
     applymovement (23, moves(face_player))
-    msgbox(format("This is ridiculous. Is this what our taxes are being spent io?
+    msgbox(format("This is ridiculous. Is this what our taxes are being spent on?
 	\p If I don't deliver these goods soon, my boss will have my head!"))
 	applymovement (23, moves(face_up * 1))
 	waitmovement
@@ -485,7 +485,7 @@ script Sharpy103 {
 		msgbox(format("Yup - so we'll go on ahead! {COLOR GREEN}Petalburg Dojo{COLOR DARK_GRAY} is the big, old-fashioned
 		wooden building - can't miss it."))
 
-		applymovement (24, moves(walk_in_place_right * 1))
+		//applymovement (24, moves(walk_in_place_right * 1))
 		removefieldmugshot
   		createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
 		setspeaker ([SP_NAME_SHARPY])
@@ -514,7 +514,7 @@ script Sharpy103 {
 		releaseall
 		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4)
 		{playbgm (MUS_STORM, TRUE)}
-		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
+		else{release}
 		}
 
 	text Sharpy103_Outro{
@@ -1087,7 +1087,7 @@ script RiverFerryGuyDown {
 		if(var(VAR_RESULT) == FEMALE){
 		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lass?"))}
 		}
-	msgbox(format("Hello! Would you like to sail downstream?"))
+	msgbox(format("Would you like to sail downstream?"))
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
 
 	if(var(VAR_RESULT) == 0){
@@ -1359,7 +1359,7 @@ script FisherGuruRoute103 {
 			applymovement (38, moves(face_down))
 			setspeaker ([SP_NAME_IVAN])
 			msgbox(format("In spite of its beastly appearance, the Mud Crab is
-			a loyal, tender creature.\pThat's why I wish to catch him, and help him heal!"))
+			a loyal, tender Pokémon.\pThat's why I wish to catch him, and help him heal!"))
 			goto (finishfisherscript)
 		}
 
@@ -1405,7 +1405,7 @@ script FisherGuruRoute103 {
 
 script Fishercallsfornumber {
 	lock
-	applymovement (38, moves(face_player, emote_exclamation_mark))
+	applymovement (38, moves(face_down, emote_exclamation_mark))
 	playse (SE_PIN)
 	msgbox(format("Wait - add me on Devon Net! We must keep in touch about this!"))
 	register_matchcall (TRAINER_FISHER_103)

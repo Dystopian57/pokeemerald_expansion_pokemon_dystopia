@@ -61,6 +61,7 @@
 #include "malloc.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "field_camera.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -85,6 +86,16 @@ static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count);
 
 // This is defined in here so the optimizer can't see its value when compiling
 // script.c.
+
+bool8 ScrCmd_teleportcamera(struct ScriptContext *ctx)
+{
+    s16 x = VarGet(ScriptReadHalfword(ctx)) - gSaveBlock1Ptr->pos.x;
+    s16 y = VarGet(ScriptReadHalfword(ctx)) - gSaveBlock1Ptr->pos.y;
+
+    MoveCameraAndRedrawMap(x, y);
+    return FALSE;
+}
+
 void *const gNullScriptPtr = NULL;
 
 static const u8 sScriptConditionTable[6][3] =

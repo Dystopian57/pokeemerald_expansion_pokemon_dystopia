@@ -1337,7 +1337,6 @@ SootopolisCity_EventScript_Maxie::
 
 SootopolisCity_EventScript_MaxieRayquaza::
 	msgbox SootopolisCity_Text_AfterAllOurScheming, MSGBOX_DEFAULT
-	setflag FLAG_MET_MAXIE_SOOTOPOLIS
 	releaseall
 	end
 
@@ -1351,7 +1350,6 @@ SootopolisCity_EventScript_Archie::
 
 SootopolisCity_EventScript_ArchieRayquaza::
 	msgbox SootopolisCity_Text_TryingMeaninglessToPokemon, MSGBOX_DEFAULT
-	goto_if_set FLAG_MET_MAXIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
 	end
 

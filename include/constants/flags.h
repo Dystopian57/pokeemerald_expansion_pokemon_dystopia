@@ -338,7 +338,7 @@
 #define FLAG_ENABLE_NORMAN_MATCH_CALL        0x132
 #define scientistarrivedinsanctum 0x133 // Set after you follow Steven to the entrance of the Cave of Origin.
 #define scientistinsanctum          0x134
-#define FLAG_MET_MAXIE_SOOTOPOLIS            0x135
+#define gotmoldybread           0x135
 #define FLAG_MET_SCOTT_RUSTBORO              0x136
 #define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0x137 // Set after speaking to Wallace within the Cave of Origin.
 #define FLAG_RECEIVED_HM_WATERFALL           0x138

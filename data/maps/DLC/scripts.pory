@@ -712,7 +712,7 @@ script LibraryGuyDLC {
         {
         loantmoffer:
         msgbox(format("These are the TMs we have currently available for loans."))
-        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "'TM 17 - Protect'", "'TM 20 - Safeguard'", "'TM 33 - Reflect'", "I changed my mind") 
+        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "“TM 17 - Protect”", "“TM 20 - Safeguard”", "“TM 33 - Reflect”", "I changed my mind") 
             if(var(VAR_RESULT) == 0){
             msgbox(format("Of course - I have a copy right here!"))
 	        applymovement (9, moves (face_left, face_up))

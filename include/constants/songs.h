@@ -603,11 +603,12 @@
 #define MUS_DOZEREMERGENCY          667
 #define MUS_MAINSTREETCOLOSSEUM     668
 #define MUS_BATTLESIM               669
+#define MUS_SEVENTHSYMPHONY         670
 
 
 
 
-#define END_MUS                     MUS_BATTLESIM
+#define END_MUS                     MUS_SEVENTHSYMPHONY
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

@@ -761,7 +761,13 @@ releaseall
 script PlayerFridge {
 	
 lockall
-msgbox (format("There is a moldy Petalburguer in the fridge. Let's just leave it there."))
+if (!flag(gotmoldybread))
+{msgbox (format("There's something left in the fridge..."))
+giveitem (ITEM_TOXIC_ORB)
+setflag (gotmoldybread)}
+
+else {msgbox (format("The fridge is completely empty."))}
+
 releaseall
 }
 

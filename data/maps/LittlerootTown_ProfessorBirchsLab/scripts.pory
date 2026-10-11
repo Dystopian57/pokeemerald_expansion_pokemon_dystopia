@@ -1973,10 +1973,11 @@ script LittlerootTown_Eventscript_AideeGotoback {
 	msgbox (format("You leave now, you don't get your reward, {PLAYER}!
 	\p Come on, it's only going to take a minute or two!\pLet's go to the basement, through
 	the tunnel next to the Professor's desk."))
+	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 1))
+	removefieldmugshot
 	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
-	removefieldmugshot
 	releaseall
 }
 

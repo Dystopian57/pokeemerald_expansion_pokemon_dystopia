@@ -214,3 +214,16 @@ const u16 gMetatileAttributes_GeneralGreen[] = INCBIN_U16("data/tilesets/primary
 
 const u16 gMetatiles_Landfill[] = INCBIN_U16("data/tilesets/secondary/landfill/metatiles.bin");
 const u16 gMetatileAttributes_Landfill[] = INCBIN_U16("data/tilesets/secondary/landfill/metatile_attributes.bin");
+
+
+const u16 gMetatiles_GeneralPast[] = INCBIN_U16("data/tilesets/primary/general_past/metatiles.bin");
+const u16 gMetatileAttributes_GeneralPast[] = INCBIN_U16("data/tilesets/primary/general_green/metatile_attributes.bin");
+
+const u16 gMetatiles_BuildingPast[] = INCBIN_U16("data/tilesets/primary/building_past/metatiles.bin");
+const u16 gMetatileAttributes_BuildingPast[] = INCBIN_U16("data/tilesets/primary/building_past/metatile_attributes.bin");
+
+const u16 gMetatiles_PetalburgGreen[] = INCBIN_U16("data/tilesets/secondary/petalburggreen/metatiles.bin");
+const u16 gMetatileAttributes_PetalburgGreen[] = INCBIN_U16("data/tilesets/secondary/petalburggreen/metatile_attributes.bin");
+
+const u16 gMetatiles_GreenPlayerHouse[] = INCBIN_U16("data/tilesets/secondary/greenplayerhouse/metatiles.bin");
+const u16 gMetatileAttributes_GreenPlayerHouse[] = INCBIN_U16("data/tilesets/secondary/greenplayerhouse/metatile_attributes.bin");

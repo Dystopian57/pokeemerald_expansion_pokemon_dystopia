@@ -26,6 +26,9 @@ Optional (but still recommended) fields for trainers:
     - Mugshot (enable Mugshots during battle transition
                set to one of Purple, Green, Pink, Blue or Yellow)
     - Starting Status (see include/constants/battle.h for values)
+    - Overworld Lead (set to North/East/South/West, whichever direction the overworld
+                      lead object event is. For "Cutscene" trainers, just set any
+                      direction and the battle intro slide-in should still happen.)
 
 Pokemon are then specified using the Showdown Export format.
 If a field is not specified, it will use it's default value.
@@ -9221,6 +9224,7 @@ Music: Suspicious
 Items: Hyper Potion
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 
 Pikachu_Safe @ Remedy
 Level: 10
@@ -9262,6 +9266,7 @@ Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 
 Meditite @ Black Belt
 Level: 10
@@ -9291,6 +9296,7 @@ Gender: Male
 Music: orphanboy
 Double Battle: No
 AI: Basic Trainer
+Overworld Lead: South
 
 Zigzagoon_Galar @ Oran Berry
 Level: 4
@@ -9325,6 +9331,7 @@ Music: Tourist
 Items: Fresh Water
 Double Battle: No
 AI: Basic Trainer
+Overworld Lead: East
 
 Clefairy @ Shalour Sable
 Level: 5
@@ -9366,6 +9373,7 @@ Music: Suspicious
 Items: Tea
 Double Battle: No
 AI: Basic Trainer
+Overworld Lead: South
 
 Sableye @ Wise Glasses
 Level: 5
@@ -9439,6 +9447,7 @@ Music: Suspicious
 Items: Tea
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Purple
 
 Wynaut @ Custap Berry
 Level: 10
@@ -9481,6 +9490,7 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Purple
 
 Venonat
 Level: 20
@@ -9612,6 +9622,17 @@ Music: Suspicious
 Items: X Attack
 Double Battle: No
 AI: Basic Trainer
+Overworld Lead: West
+
+
+Poochain @ Binding Band
+Level: 6
+Ability: Intimidate
+Nature: Quirky
+- Wrap
+- Hone Claws
+- Assurance
+- Pursuit
 
 Helipip @ Sharp Beak
 Level: 6
@@ -9622,14 +9643,7 @@ Nature: Quirky
 - Roost
 - Shift Gear
 
-Poochain @ Binding Band
-Level: 6
-Ability: Intimidate
-Nature: Quirky
-- Wrap
-- Hone Claws
-- Assurance
-- Pursuit
+
 
 
 === TRAINER_SHADYDEALER_103 ===
@@ -9789,6 +9803,7 @@ Music: Mercenary
 Items: Super Potion
 Double Battle: No
 AI: Smart Trainer
+Overworld Lead: West
 
 Marill @ Mystic Water
 Level: 6
@@ -9865,6 +9880,7 @@ Music: Suspicious
 Items: Tea
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Blue
 
 Poliwag @ Sitrus Berry
 Level: 10
@@ -9906,6 +9922,7 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Blue
 
 Golbat
 Level: 20
@@ -9960,6 +9977,7 @@ Gender: Male
 Music: Rebel
 Double Battle: No
 AI: Basic Trainer
+Overworld Lead: East
 
 Ninkaburi
 Level: 8
@@ -10014,6 +10032,16 @@ Music: Intense
 Items: Energy Powder
 Double Battle: No
 AI: Basic Trainer
+Overworld Lead: West
+
+Sandshrew @ Big Root
+Level: 8
+Ability: Sand Veil
+Nature: Quirky
+- Super Fang
+- Leech Life
+- Metal Claw
+- Dig
 
 Shiitako
 Level: 8
@@ -10024,14 +10052,7 @@ Nature: Quirky
 - Trailblaze
 - Tearful Look
 
-Sandshrew @ Big Root
-Level: 8
-Ability: Sand Veil
-Nature: Quirky
-- Super Fang
-- Leech Life
-- Metal Claw
-- Dig
+
 
 === TRAINER_SCAVENGER_OLDALEWAREHOUSE_2 ===
 Name: CATHERINE

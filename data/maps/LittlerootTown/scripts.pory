@@ -2379,9 +2379,15 @@ else {
 	msgbox (format("When I stepped on a Poochain's tail!"))
 	applymovement (1, moves(face_up, face_left, face_down, face_right, face_player))
 	setspeaker ([SP_NAME_BIRCH])
-	msgbox (format("Expecting to be chased, I panicked and began
-	to run in circles! As usual!\pI met your father in a similar occassion. But that's a tale for another
-	time.\pBut imagine my surprise, when I turned around and saw...\pThat the Poochain was not chasing me
+	msgbox (format("Expecting to be chased, I panicked and began to run in circles! As usual!"))
+		checkplayergender
+		if(var(VAR_RESULT) == MALE){msgbox (format("I met your father in a similar occassion. But that's a tale for another
+	time."))}
+
+		if(var(VAR_RESULT) == FEMALE){msgbox (format("I met your mother in a similar occassion. But that's a tale for another
+	time."))}
+	
+	msgbox (format("Now, imagine my surprise, when I turned around and saw...\pThat the Poochain was not chasing me
 	in anger. It could not even move.\pThe poor thing did not have a hole in its muzzle,
 	so it could not eat.\pIt was very malnourished. I took it to the lab, and cut all its restrains."))
 

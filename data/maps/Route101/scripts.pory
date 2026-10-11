@@ -526,6 +526,7 @@ else {
 	applymovement(1, moves(walk_in_place_down * 1))
 	setspeaker ([SP_NAME_JOEL])
 	msgbox(format("So... you are moving?"))
+	setspeaker (NULL)
 	applymovement(5, moves(walk_in_place_down * 1))
 	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL)
 	msgbox(format("Zig-zig?"))
@@ -559,6 +560,7 @@ else {
 	msgbox(format("... \p ... let's go inside, Ziggy."))
 	playmoncry(SPECIES_ZIGZAGOON_GALAR, CRY_MODE_WEAK)
 	msgbox(format("Ziiig..."))
+
 	closemessage
 	applymovement(1, moves(walk_down * 2, walk_left * 3, walk_up *1))
 	applymovement(5, moves(walk_down * 3, walk_left * 3, walk_up *1))

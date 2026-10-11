@@ -889,8 +889,8 @@ script OldaleDevonGrunts { //karen and jerry
         applymovement (14, moves(walk_in_place_right))
         applymovement (15, moves(face_right))
 
-        msgbox(format("Ahem. If you've come to inquire about access to Road 002... I'm afraid
-        we can't let anyone through until the {COLOR RED}Warehouse situation{COLOR DARK_GRAY} is under control."))
+        msgbox(format("Ahem. If you've come to inquire about access to {COLOR GREEN}Road 002{COLOR DARK_GRAY}... I'm afraid
+        we can't let anyone through until the {COLOR RED}Warehouse situation is under control."))
 
         }
 
