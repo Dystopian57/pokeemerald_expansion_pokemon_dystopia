@@ -163,81 +163,95 @@ WaterfallHazardDiverRematch::
 	end
 
 
-WaterfallMercenaryFBattle::
+ViviMarill::
+# 128 "data/maps/WaterfallCave/scripts.pory"
+	lock
+# 129 "data/maps/WaterfallCave/scripts.pory"
+	applymovement 6, WaterfallActivist_Movement_0
 # 130 "data/maps/WaterfallCave/scripts.pory"
-	trainerbattle_single TRAINER_ROSE_1, WaterfallMercenaryF_Intro, WaterfallMercenaryF_Outro, WaterfallMercenaryFRegister
+	playmoncry SPECIES_MARILL, CRY_MODE_NORMAL
 # 131 "data/maps/WaterfallCave/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	msgbox ViviMarill_Text_0
 # 132 "data/maps/WaterfallCave/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, WaterfallMercenaryFRematch
-# 133 "data/maps/WaterfallCave/scripts.pory"
-	msgbox WaterfallMercenaryFBattle_Text_0
+	release
+	return
+
+
+WaterfallMercenaryFBattle::
 # 136 "data/maps/WaterfallCave/scripts.pory"
+	trainerbattle_single TRAINER_ROSE_1, WaterfallMercenaryF_Intro, WaterfallMercenaryF_Outro, WaterfallMercenaryFRegister
+# 137 "data/maps/WaterfallCave/scripts.pory"
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+# 138 "data/maps/WaterfallCave/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, WaterfallMercenaryFRematch
+# 139 "data/maps/WaterfallCave/scripts.pory"
+	msgbox WaterfallMercenaryFBattle_Text_0
+# 142 "data/maps/WaterfallCave/scripts.pory"
 	release
 	end
 
 
 WaterfallMercenaryFRegister::
-# 141 "data/maps/WaterfallCave/scripts.pory"
-	special PlayerFaceTrainerAfterBattle
-# 142 "data/maps/WaterfallCave/scripts.pory"
-	waitmovement 0
-# 143 "data/maps/WaterfallCave/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 144 "data/maps/WaterfallCave/scripts.pory"
-	msgbox WaterfallMercenaryFRegister_Text_0
-# 145 "data/maps/WaterfallCave/scripts.pory"
-	applymovement 3, WaterfallMercenaryFRegister_Movement_0
-# 146 "data/maps/WaterfallCave/scripts.pory"
-	msgbox WaterfallMercenaryFRegister_Text_1
 # 147 "data/maps/WaterfallCave/scripts.pory"
-	applymovement 3, WaterfallActivist_Movement_0
+	special PlayerFaceTrainerAfterBattle
 # 148 "data/maps/WaterfallCave/scripts.pory"
-	msgbox WaterfallMercenaryFRegister_Text_2
+	waitmovement 0
 # 149 "data/maps/WaterfallCave/scripts.pory"
-	register_matchcall TRAINER_ROSE_1
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 150 "data/maps/WaterfallCave/scripts.pory"
-	msgbox WaterfallMercenaryFRegister_Text_3
+	msgbox WaterfallMercenaryFRegister_Text_0
 # 151 "data/maps/WaterfallCave/scripts.pory"
+	applymovement 3, WaterfallMercenaryFRegister_Movement_0
+# 152 "data/maps/WaterfallCave/scripts.pory"
+	msgbox WaterfallMercenaryFRegister_Text_1
+# 153 "data/maps/WaterfallCave/scripts.pory"
+	applymovement 3, WaterfallActivist_Movement_0
+# 154 "data/maps/WaterfallCave/scripts.pory"
+	msgbox WaterfallMercenaryFRegister_Text_2
+# 155 "data/maps/WaterfallCave/scripts.pory"
+	register_matchcall TRAINER_ROSE_1
+# 156 "data/maps/WaterfallCave/scripts.pory"
+	msgbox WaterfallMercenaryFRegister_Text_3
+# 157 "data/maps/WaterfallCave/scripts.pory"
 	release
 	end
 
 
 WaterfallMercenaryFRematch::
-# 156 "data/maps/WaterfallCave/scripts.pory"
+# 162 "data/maps/WaterfallCave/scripts.pory"
 	trainerbattle_rematch TRAINER_ROSE_1, Veteran103_Intro2, Veteran103_Outro2
-# 157 "data/maps/WaterfallCave/scripts.pory"
+# 163 "data/maps/WaterfallCave/scripts.pory"
 	lock
-# 158 "data/maps/WaterfallCave/scripts.pory"
+# 164 "data/maps/WaterfallCave/scripts.pory"
 	goto_if_set FLAG_RECEIVED_HM_WATERFALL, WaterfallMercenaryFRematch_2
-# 165 "data/maps/WaterfallCave/scripts.pory"
+# 171 "data/maps/WaterfallCave/scripts.pory"
 	msgbox WaterfallMercenaryFRematch_Text_1
 WaterfallMercenaryFRematch_1:
-# 167 "data/maps/WaterfallCave/scripts.pory"
+# 173 "data/maps/WaterfallCave/scripts.pory"
 	release
 	end
 
 WaterfallMercenaryFRematch_2:
-# 159 "data/maps/WaterfallCave/scripts.pory"
+# 165 "data/maps/WaterfallCave/scripts.pory"
 	applymovement 3, WaterfallActivist_Movement_0
-# 160 "data/maps/WaterfallCave/scripts.pory"
+# 166 "data/maps/WaterfallCave/scripts.pory"
 	msgbox WaterfallMercenaryFRematch_Text_0
 	goto WaterfallMercenaryFRematch_1
 
 
 WaterfallMercenaryApproachAfterWaterfall::
-# 186 "data/maps/WaterfallCave/scripts.pory"
+# 192 "data/maps/WaterfallCave/scripts.pory"
 	goto_if_set FLAG_RECEIVED_HM_WATERFALL, WaterfallMercenaryApproachAfterWaterfall_1
 	return
 
 WaterfallMercenaryApproachAfterWaterfall_1:
-# 188 "data/maps/WaterfallCave/scripts.pory"
+# 194 "data/maps/WaterfallCave/scripts.pory"
 	msgbox WaterfallMercenaryApproachAfterWaterfall_Text_0
-# 190 "data/maps/WaterfallCave/scripts.pory"
+# 196 "data/maps/WaterfallCave/scripts.pory"
 	applymovement 3, WaterfallActivist_Movement_1
-# 191 "data/maps/WaterfallCave/scripts.pory"
+# 197 "data/maps/WaterfallCave/scripts.pory"
 	msgbox WaterfallMercenaryApproachAfterWaterfall_Text_1
-# 192 "data/maps/WaterfallCave/scripts.pory"
+# 198 "data/maps/WaterfallCave/scripts.pory"
 	release
 	end
 
@@ -280,9 +294,9 @@ WaterfallHazardDiverRegister_Movement_2:
 	face_down
 	step_end
 
-# 145 "data/maps/WaterfallCave/scripts.pory"
+# 151 "data/maps/WaterfallCave/scripts.pory"
 WaterfallMercenaryFRegister_Movement_0:
-# 145 "data/maps/WaterfallCave/scripts.pory"
+# 151 "data/maps/WaterfallCave/scripts.pory"
 	face_left
 	step_end
 
@@ -373,32 +387,36 @@ WaterfallHazardDiverRematch_Text_0:
 	.string "After all this effort, it'll feel amazing\n"
 	.string "when I finally get there.$"
 
+ViviMarill_Text_0:
+# 131 "data/maps/WaterfallCave/scripts.pory"
+	.string "Riiil!$"
+
 WaterfallMercenaryFBattle_Text_0:
-# 133 "data/maps/WaterfallCave/scripts.pory"
+# 139 "data/maps/WaterfallCave/scripts.pory"
 	.string "Next time, I'll get you. And that geezer.\p"
 	.string "And then... I'll finally be back home.$"
 
 WaterfallMercenaryFRegister_Text_0:
-# 144 "data/maps/WaterfallCave/scripts.pory"
+# 150 "data/maps/WaterfallCave/scripts.pory"
 	.string "You want to get past the waterfall to\n"
 	.string "get out of the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, right?$"
 
 WaterfallMercenaryFRegister_Text_1:
-# 146 "data/maps/WaterfallCave/scripts.pory"
+# 152 "data/maps/WaterfallCave/scripts.pory"
 	.string "Well, there's a geezer in that cave who\n"
 	.string "can teach Pokémon to do that.$"
 
 WaterfallMercenaryFRegister_Text_2:
-# 148 "data/maps/WaterfallCave/scripts.pory"
+# 154 "data/maps/WaterfallCave/scripts.pory"
 	.string "But only after one beats him. We should\n"
 	.string "train together to do it. Here.$"
 
 WaterfallMercenaryFRegister_Text_3:
-# 150 "data/maps/WaterfallCave/scripts.pory"
+# 156 "data/maps/WaterfallCave/scripts.pory"
 	.string "Come back later. We'll fight some more.$"
 
 WaterfallMercenaryFRematch_Text_0:
-# 160 "data/maps/WaterfallCave/scripts.pory"
+# 166 "data/maps/WaterfallCave/scripts.pory"
 	.string "Not going to lie, it pisses me off you\n"
 	.string "beat me to getting Waterfall.\p"
 	.string "... but I'm also kind of happy for you.\n"
@@ -406,12 +424,12 @@ WaterfallMercenaryFRematch_Text_0:
 	.string "better place.$"
 
 WaterfallMercenaryFRematch_Text_1:
-# 165 "data/maps/WaterfallCave/scripts.pory"
+# 171 "data/maps/WaterfallCave/scripts.pory"
 	.string "Next time, I'll get you. And that geezer.\p"
 	.string "And then I'll get out of this shithole.$"
 
 WaterfallMercenaryApproachAfterWaterfall_Text_0:
-# 188 "data/maps/WaterfallCave/scripts.pory"
+# 194 "data/maps/WaterfallCave/scripts.pory"
 	.string "I heard you beating the geezer. I\n"
 	.string "wasn't eavesdropping, there's just\l"
 	.string "ECHO, okay!?\p"
@@ -420,7 +438,7 @@ WaterfallMercenaryApproachAfterWaterfall_Text_0:
 	.string "113.$"
 
 WaterfallMercenaryApproachAfterWaterfall_Text_1:
-# 191 "data/maps/WaterfallCave/scripts.pory"
+# 197 "data/maps/WaterfallCave/scripts.pory"
 	.string "Don't you worry about me. I'll get myself\n"
 	.string "out soon enough.$"
 
@@ -441,17 +459,17 @@ WaterfallHazardDiver_Outro2::
 	.string "Gah...! Hey, at least I am less tired\nthan last time!$"
 
 WaterfallMercenaryF_Intro::
-# 172 "data/maps/WaterfallCave/scripts.pory"
+# 178 "data/maps/WaterfallCave/scripts.pory"
 	.string "You and me. Battle. NOW!$"
 
 WaterfallMercenaryF_Outro::
-# 175 "data/maps/WaterfallCave/scripts.pory"
-	.string "I really hate you right now.$"
+# 181 "data/maps/WaterfallCave/scripts.pory"
+	.string "... I'm really pissed off right now.$"
 
 WaterfallMercenaryF_Intro2::
-# 178 "data/maps/WaterfallCave/scripts.pory"
+# 184 "data/maps/WaterfallCave/scripts.pory"
 	.string "Took you long enough. Help me get stronger!$"
 
 WaterfallMercenaryF_Outro2::
-# 181 "data/maps/WaterfallCave/scripts.pory"
+# 187 "data/maps/WaterfallCave/scripts.pory"
 	.string "DAMN IT!$"

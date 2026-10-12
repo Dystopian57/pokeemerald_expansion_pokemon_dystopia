@@ -201,6 +201,8 @@ beginargument:
 	applymovement 2, OldaleTownHouse2Anne_Movement_0
 # 118 "data/maps/OldaleTown_House2/scripts.pory"
 	msgbox OldaleTownHouse2AnneArgument_Text_2
+# 119 "data/maps/OldaleTown_House2/scripts.pory"
+	closemessage
 # 120 "data/maps/OldaleTown_House2/scripts.pory"
 	applymovement 2, OldaleTownHouse2AnneArgument_Movement_0
 # 121 "data/maps/OldaleTown_House2/scripts.pory"

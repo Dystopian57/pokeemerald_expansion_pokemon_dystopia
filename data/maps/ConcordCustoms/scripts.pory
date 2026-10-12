@@ -196,6 +196,12 @@ script ConcordCustomsPhone{
 
             if(var(VAR_RESULT) == 0){
             		checkmoney (50)
+
+				if (var(VAR_RESULT) == FALSE) {
+				msgbox(format("Not enough money..."))
+				goto (endofpayphone)
+				}
+			
 				if (var(VAR_RESULT) == TRUE) {
 					removemoney (50)
                     updatemoneybox
@@ -270,15 +276,30 @@ script ConcordCustomsPhone{
 						special (EnterCode)
 						waitstate
 						special (GetCodeFeedback)
-							if(var(VAR_RESULT) == 0){
-								if (!flag(sentdemomysterygift)){
+
+							//candelete
+							if(var(VAR_RESULT) == 2){
 							playse (SE_POKENAV_CALL)
 							waitse
+							msgbox(format("Hello - you have reached Dystopian's number!\pThank you for
+							watching this far. Now, there's ONE MORE THING.\pReady? Drum roll, please...\p
+							... you really tried that code from the reddit post huh?\pWell, for your trouble,
+							I guess I'l give you this."))
+							giveitem (ITEM_YELLOW_SHARD)
+							playse (SE_POKENAV_HANG_UP)
+							goto (endofpayphone)}
+							//candelete
+
+							if(var(VAR_RESULT) == 0){
+							if (!flag(sentdemomysterygift)){
+							playse (SE_POKENAV_CALL)
+							waitse
+
 							msgbox(format("You have reached the Devon Call Logistics Center.\p The number
 							you have just called is not assigned to any Hoenn citizen. \p Please try again."))
 							playse (SE_POKENAV_HANG_UP)
 							goto (endofpayphone)
-							}
+							}}
 							if(var(VAR_RESULT) == 1){
 							playse (SE_POKENAV_CALL)
 							waitse
@@ -292,9 +313,9 @@ script ConcordCustomsPhone{
 							else {
 							playse (SE_POKENAV_CALL)
 							waitse
-							msgbox(format("We have already made this delivery. Only one per customer."))}
+							msgbox(format("We have already made this delivery. Only one per customer."))
 							playse (SE_POKENAV_HANG_UP)
-							goto (endofpayphone)
+							goto (endofpayphone)}
 							}
 
 						
@@ -316,10 +337,8 @@ script ConcordCustomsPhone{
 						goto (endofpayphone)
 						}
 						
-						}}
-			if(var(VAR_RESULT) == 1){
-			goto (endofpayphone)
-			}
+						}
+
 	endofpayphone:
 	hidemoneybox
     release

@@ -273,8 +273,8 @@ static const u8 gText_MysteryEventsCantUse[] = _("MYSTERY EVENTS can't be used w
 
 static const u8 gText_ContinueMenuPlayer[] = _("PLAYER");
 static const u8 gText_ContinueMenuTime[] = _("TIME");
-static const u8 gText_ContinueMenuPokedex[] = _("POKéDEX");
-static const u8 gText_ContinueMenuBadges[] = _("BADGES");
+static const u8 gText_ContinueMenuPokedex[] = _("DEVONDEX");
+static const u8 gText_ContinueMenuBadges[] = _("TOKENS");
 
 #define MENU_LEFT 2
 #define MENU_TOP_WIN0 1

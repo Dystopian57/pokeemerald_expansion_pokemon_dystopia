@@ -301,608 +301,622 @@ ConcordCustomsPhone::
 	compare VAR_RESULT, 0
 	goto_if_eq ConcordCustomsPhone_2
 ConcordCustomsPhone_1:
-# 320 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq ConcordCustomsPhone_5
-ConcordCustomsPhone_4:
-# 323 "data/maps/ConcordCustoms/scripts.pory"
+# 337 "data/maps/ConcordCustoms/scripts.pory"
 endofpayphone:
-# 324 "data/maps/ConcordCustoms/scripts.pory"
+# 338 "data/maps/ConcordCustoms/scripts.pory"
 	hidemoneybox
-# 325 "data/maps/ConcordCustoms/scripts.pory"
+# 339 "data/maps/ConcordCustoms/scripts.pory"
 	release
 	return
 
 ConcordCustomsPhone_2:
 # 198 "data/maps/ConcordCustoms/scripts.pory"
 	checkmoney 50
-# 199 "data/maps/ConcordCustoms/scripts.pory"
+# 200 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq ConcordCustomsPhone_5
+ConcordCustomsPhone_4:
+# 205 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq ConcordCustomsPhone_7
+	goto_if_eq ConcordCustomsPhone_8
+ConcordCustomsPhone_7:
+# 323 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 4
+	goto_if_eq ConcordCustomsPhone_10
 	goto ConcordCustomsPhone_1
 
 ConcordCustomsPhone_5:
-# 321 "data/maps/ConcordCustoms/scripts.pory"
+# 201 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_3
+# 202 "data/maps/ConcordCustoms/scripts.pory"
 	goto endofpayphone
 	goto ConcordCustomsPhone_4
 
-ConcordCustomsPhone_7:
-# 200 "data/maps/ConcordCustoms/scripts.pory"
-	removemoney 50
-# 201 "data/maps/ConcordCustoms/scripts.pory"
-	updatemoneybox
-# 202 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_SHOP
-# 203 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 204 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_CLICK
-# 205 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
+ConcordCustomsPhone_8:
 # 206 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
+	removemoney 50
 # 207 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_3
+	updatemoneybox
 # 208 "data/maps/ConcordCustoms/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, ConcordCustomsPhone_Text_4, ConcordCustomsPhone_Text_5, ConcordCustomsPhone_Text_6, ConcordCustomsPhone_Text_7, ConcordCustomsPhone_Text_8
+	playse SE_SHOP
 # 209 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ConcordCustomsPhone_10
-ConcordCustomsPhone_9:
-# 220 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq ConcordCustomsPhone_13
-ConcordCustomsPhone_12:
-# 230 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 2
-	goto_if_eq ConcordCustomsPhone_16
-ConcordCustomsPhone_15:
-# 268 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 3
-	goto_if_eq ConcordCustomsPhone_19
-ConcordCustomsPhone_18:
-# 307 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 4
-	goto_if_eq ConcordCustomsPhone_24
-	goto ConcordCustomsPhone_1
-
-ConcordCustomsPhone_10:
+	waitse
 # 210 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_POKENAV_CALL
+	playse SE_CLICK
 # 211 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
 # 212 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_9
-# 216 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 213 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_4
+# 214 "data/maps/ConcordCustoms/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, ConcordCustomsPhone_Text_5, ConcordCustomsPhone_Text_6, ConcordCustomsPhone_Text_7, ConcordCustomsPhone_Text_8, ConcordCustomsPhone_Text_9
+# 215 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ConcordCustomsPhone_13
+ConcordCustomsPhone_12:
+# 226 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq ConcordCustomsPhone_16
+ConcordCustomsPhone_15:
+# 236 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq ConcordCustomsPhone_19
+ConcordCustomsPhone_18:
+# 274 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq ConcordCustomsPhone_22
+ConcordCustomsPhone_21:
+# 317 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 318 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_HANG_UP
-# 217 "data/maps/ConcordCustoms/scripts.pory"
+# 320 "data/maps/ConcordCustoms/scripts.pory"
 	goto endofpayphone
-	goto ConcordCustomsPhone_9
+	goto ConcordCustomsPhone_7
+
+ConcordCustomsPhone_10:
+# 324 "data/maps/ConcordCustoms/scripts.pory"
+returnmoney:
+# 325 "data/maps/ConcordCustoms/scripts.pory"
+	addmoney 50
+# 326 "data/maps/ConcordCustoms/scripts.pory"
+	updatemoneybox
+# 327 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_CLICK
+# 328 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 329 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_M_PAY_DAY
+# 330 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_30
+# 331 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 332 "data/maps/ConcordCustoms/scripts.pory"
+	goto endofpayphone
+	goto ConcordCustomsPhone_1
 
 ConcordCustomsPhone_13:
-# 221 "data/maps/ConcordCustoms/scripts.pory"
+# 216 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_CALL
-# 222 "data/maps/ConcordCustoms/scripts.pory"
+# 217 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
-# 223 "data/maps/ConcordCustoms/scripts.pory"
+# 218 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsPhone_Text_10
-# 226 "data/maps/ConcordCustoms/scripts.pory"
+# 222 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_HANG_UP
-# 227 "data/maps/ConcordCustoms/scripts.pory"
+# 223 "data/maps/ConcordCustoms/scripts.pory"
 	goto endofpayphone
 	goto ConcordCustomsPhone_12
 
 ConcordCustomsPhone_16:
-# 231 "data/maps/ConcordCustoms/scripts.pory"
+# 227 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_CALL
-# 232 "data/maps/ConcordCustoms/scripts.pory"
+# 228 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
-# 233 "data/maps/ConcordCustoms/scripts.pory"
+# 229 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsPhone_Text_11
-# 234 "data/maps/ConcordCustoms/scripts.pory"
-citizenservicesoptions:
-# 235 "data/maps/ConcordCustoms/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, ConcordCustomsPhone_Text_12, ConcordCustomsPhone_Text_13, ConcordCustomsPhone_Text_14
-# 236 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ConcordCustomsPhone_22
-ConcordCustomsPhone_21:
-# 240 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq ConcordCustomsPhone_30
-ConcordCustomsPhone_29:
-# 243 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ConcordCustomsPhone_36
-ConcordCustomsPhone_35:
-# 255 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq ConcordCustomsPhone_43
-ConcordCustomsPhone_42:
-# 260 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 2
-	goto_if_eq ConcordCustomsPhone_46
-ConcordCustomsPhone_45:
-# 264 "data/maps/ConcordCustoms/scripts.pory"
+# 232 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_HANG_UP
-# 265 "data/maps/ConcordCustoms/scripts.pory"
+# 233 "data/maps/ConcordCustoms/scripts.pory"
 	goto endofpayphone
 	goto ConcordCustomsPhone_15
 
 ConcordCustomsPhone_19:
-# 269 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_23
-# 270 "data/maps/ConcordCustoms/scripts.pory"
-	special EnterCode
-# 271 "data/maps/ConcordCustoms/scripts.pory"
-	waitstate
-# 272 "data/maps/ConcordCustoms/scripts.pory"
-	special GetCodeFeedback
-# 273 "data/maps/ConcordCustoms/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ConcordCustomsPhone_27
-ConcordCustomsPhone_26:
-# 301 "data/maps/ConcordCustoms/scripts.pory"
+# 237 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_POKENAV_CALL
+# 238 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
-# 302 "data/maps/ConcordCustoms/scripts.pory"
+# 239 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_12
+# 240 "data/maps/ConcordCustoms/scripts.pory"
+citizenservicesoptions:
+# 241 "data/maps/ConcordCustoms/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, ConcordCustomsPhone_Text_13, ConcordCustomsPhone_Text_14, ConcordCustomsPhone_Text_15
+# 242 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ConcordCustomsPhone_25
+ConcordCustomsPhone_24:
+# 246 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq ConcordCustomsPhone_31
+ConcordCustomsPhone_30:
+# 249 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ConcordCustomsPhone_37
+ConcordCustomsPhone_36:
+# 261 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq ConcordCustomsPhone_45
+ConcordCustomsPhone_44:
+# 266 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq ConcordCustomsPhone_48
+ConcordCustomsPhone_47:
+# 270 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_HANG_UP
-# 304 "data/maps/ConcordCustoms/scripts.pory"
+# 271 "data/maps/ConcordCustoms/scripts.pory"
 	goto endofpayphone
 	goto ConcordCustomsPhone_18
 
 ConcordCustomsPhone_22:
-# 236 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_15
-# 238 "data/maps/ConcordCustoms/scripts.pory"
-	goto citizenservicesoptions
-	goto ConcordCustomsPhone_21
-
-ConcordCustomsPhone_24:
-# 308 "data/maps/ConcordCustoms/scripts.pory"
-returnmoney:
-# 309 "data/maps/ConcordCustoms/scripts.pory"
-	addmoney 50
-# 310 "data/maps/ConcordCustoms/scripts.pory"
-	updatemoneybox
-# 311 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_CLICK
-# 312 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 313 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_M_PAY_DAY
-# 314 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_28
-# 315 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
-# 316 "data/maps/ConcordCustoms/scripts.pory"
-	goto endofpayphone
-	goto ConcordCustomsPhone_1
-
+# 275 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_24
+# 276 "data/maps/ConcordCustoms/scripts.pory"
+	special EnterCode
+# 277 "data/maps/ConcordCustoms/scripts.pory"
+	waitstate
+# 278 "data/maps/ConcordCustoms/scripts.pory"
+	special GetCodeFeedback
+# 281 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq ConcordCustomsPhone_28
 ConcordCustomsPhone_27:
-# 274 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_unset sentdemomysterygift, ConcordCustomsPhone_33
-ConcordCustomsPhone_32:
-# 282 "data/maps/ConcordCustoms/scripts.pory"
+# 288 "data/maps/ConcordCustoms/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ConcordCustomsPhone_34
+ConcordCustomsPhone_33:
+# 298 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ConcordCustomsPhone_39
-# 293 "data/maps/ConcordCustoms/scripts.pory"
+# 309 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_CALL
-# 294 "data/maps/ConcordCustoms/scripts.pory"
+# 310 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
-# 295 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_27
-ConcordCustomsPhone_38:
-# 296 "data/maps/ConcordCustoms/scripts.pory"
+# 311 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_29
+# 312 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_HANG_UP
-# 297 "data/maps/ConcordCustoms/scripts.pory"
+# 313 "data/maps/ConcordCustoms/scripts.pory"
 	goto endofpayphone
-	goto ConcordCustomsPhone_26
+	goto ConcordCustomsPhone_21
 
-ConcordCustomsPhone_30:
-# 241 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_16
+ConcordCustomsPhone_25:
 # 242 "data/maps/ConcordCustoms/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, ConcordCustomsPhone_Text_17, ConcordCustomsPhone_Text_18
-	goto ConcordCustomsPhone_29
-
-ConcordCustomsPhone_33:
-# 275 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_POKENAV_CALL
-# 276 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 277 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_24
-# 279 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_POKENAV_HANG_UP
-# 280 "data/maps/ConcordCustoms/scripts.pory"
-	goto endofpayphone
-	goto ConcordCustomsPhone_32
-
-ConcordCustomsPhone_36:
-# 243 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_19
-# 253 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_20
-# 254 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_16
+# 244 "data/maps/ConcordCustoms/scripts.pory"
 	goto citizenservicesoptions
-	goto ConcordCustomsPhone_35
+	goto ConcordCustomsPhone_24
+
+ConcordCustomsPhone_28:
+# 282 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_POKENAV_CALL
+# 283 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 284 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_25
+	goto ConcordCustomsPhone_27
+
+ConcordCustomsPhone_31:
+# 247 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_17
+# 248 "data/maps/ConcordCustoms/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, ConcordCustomsPhone_Text_18, ConcordCustomsPhone_Text_19
+	goto ConcordCustomsPhone_30
+
+ConcordCustomsPhone_34:
+# 289 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_unset sentdemomysterygift, ConcordCustomsPhone_42
+	goto ConcordCustomsPhone_33
+
+ConcordCustomsPhone_37:
+# 249 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_20
+# 259 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_21
+# 260 "data/maps/ConcordCustoms/scripts.pory"
+	goto citizenservicesoptions
+	goto ConcordCustomsPhone_36
 
 ConcordCustomsPhone_39:
-# 283 "data/maps/ConcordCustoms/scripts.pory"
+# 299 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_CALL
-# 284 "data/maps/ConcordCustoms/scripts.pory"
+# 300 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
-# 285 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_25
-# 286 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_26
-# 287 "data/maps/ConcordCustoms/scripts.pory"
+# 301 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_27
+# 302 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_28
+# 303 "data/maps/ConcordCustoms/scripts.pory"
 	setflag sentdemomysterygift
-# 288 "data/maps/ConcordCustoms/scripts.pory"
+# 304 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_POKENAV_HANG_UP
-# 289 "data/maps/ConcordCustoms/scripts.pory"
+# 305 "data/maps/ConcordCustoms/scripts.pory"
 	goto endofpayphone
-	goto ConcordCustomsPhone_38
+	goto ConcordCustomsPhone_21
 
-ConcordCustomsPhone_43:
-# 256 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordCustomsPhone_Text_21
-# 258 "data/maps/ConcordCustoms/scripts.pory"
-	goto citizenservicesoptions
-	goto ConcordCustomsPhone_42
+ConcordCustomsPhone_42:
+# 290 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_POKENAV_CALL
+# 291 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 293 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_26
+# 295 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_POKENAV_HANG_UP
+# 296 "data/maps/ConcordCustoms/scripts.pory"
+	goto endofpayphone
+	goto ConcordCustomsPhone_33
 
-ConcordCustomsPhone_46:
-# 261 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_45:
+# 262 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsPhone_Text_22
-	goto ConcordCustomsPhone_45
+# 264 "data/maps/ConcordCustoms/scripts.pory"
+	goto citizenservicesoptions
+	goto ConcordCustomsPhone_44
+
+ConcordCustomsPhone_48:
+# 267 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_23
+	goto ConcordCustomsPhone_47
 
 
 ConcordVendingMachine::
-# 330 "data/maps/ConcordCustoms/scripts.pory"
+# 344 "data/maps/ConcordCustoms/scripts.pory"
 	lock
-# 331 "data/maps/ConcordCustoms/scripts.pory"
+# 345 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordVendingMachine_Text_0
-# 332 "data/maps/ConcordCustoms/scripts.pory"
+# 346 "data/maps/ConcordCustoms/scripts.pory"
 	showmoneybox 18, 0
-# 333 "data/maps/ConcordCustoms/scripts.pory"
+# 347 "data/maps/ConcordCustoms/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, ConcordVendingMachine_Text_1, ConcordVendingMachine_Text_2, ConcordVendingMachine_Text_3, ConcordCustomsPhone_Text_2
-# 336 "data/maps/ConcordCustoms/scripts.pory"
+# 350 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ConcordVendingMachine_2
 ConcordVendingMachine_1:
-# 390 "data/maps/ConcordCustoms/scripts.pory"
+# 404 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ConcordVendingMachine_5
 ConcordVendingMachine_4:
-# 443 "data/maps/ConcordCustoms/scripts.pory"
+# 457 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq ConcordVendingMachine_11
 ConcordVendingMachine_10:
-# 495 "data/maps/ConcordCustoms/scripts.pory"
+# 509 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq ConcordVendingMachine_22
 ConcordVendingMachine_21:
-# 498 "data/maps/ConcordCustoms/scripts.pory"
+# 512 "data/maps/ConcordCustoms/scripts.pory"
 cendvendingmachine:
-# 499 "data/maps/ConcordCustoms/scripts.pory"
+# 513 "data/maps/ConcordCustoms/scripts.pory"
 	hidemoneybox
-# 500 "data/maps/ConcordCustoms/scripts.pory"
+# 514 "data/maps/ConcordCustoms/scripts.pory"
 	releaseall
 	return
 
 ConcordVendingMachine_2:
-# 337 "data/maps/ConcordCustoms/scripts.pory"
+# 351 "data/maps/ConcordCustoms/scripts.pory"
 	checkmoney 50
-# 338 "data/maps/ConcordCustoms/scripts.pory"
+# 352 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ConcordVendingMachine_8
 ConcordVendingMachine_7:
-# 384 "data/maps/ConcordCustoms/scripts.pory"
+# 398 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq ConcordVendingMachine_16
 	goto ConcordVendingMachine_1
 
 ConcordVendingMachine_5:
-# 391 "data/maps/ConcordCustoms/scripts.pory"
+# 405 "data/maps/ConcordCustoms/scripts.pory"
 	checkmoney 70
-# 392 "data/maps/ConcordCustoms/scripts.pory"
+# 406 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ConcordVendingMachine_14
 ConcordVendingMachine_13:
-# 437 "data/maps/ConcordCustoms/scripts.pory"
+# 451 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq ConcordVendingMachine_27
 	goto ConcordVendingMachine_4
 
 ConcordVendingMachine_8:
-# 339 "data/maps/ConcordCustoms/scripts.pory"
-	removemoney 50
-# 340 "data/maps/ConcordCustoms/scripts.pory"
-	updatemoneybox
-# 341 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_SHOP
-# 342 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 348 "data/maps/ConcordCustoms/scripts.pory"
-cgotfreshwater:
-# 349 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_VEND
-# 350 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 352 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_4
 # 353 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
+	removemoney 50
 # 354 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_FRESH_WATER
+	updatemoneybox
+# 355 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_SHOP
 # 356 "data/maps/ConcordCustoms/scripts.pory"
-	random 4
-# 357 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_ne VAR_RESULT, 0, cendvendingmachine
-# 358 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, cgotextrafreshwater
-# 360 "data/maps/ConcordCustoms/scripts.pory"
-cgotextrafreshwater:
-# 361 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_5
-# 362 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
-# 363 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_FRESH_WATER
-# 364 "data/maps/ConcordCustoms/scripts.pory"
-	goto cendvendingmachine
-# 366 "data/maps/ConcordCustoms/scripts.pory"
-cfreshwatergotstuck:
-# 367 "data/maps/ConcordCustoms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ConcordWageSlaveAtPhone_Movement_0
-# 368 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_PIN
-# 369 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
+# 362 "data/maps/ConcordCustoms/scripts.pory"
+cgotfreshwater:
+# 363 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_VEND
+# 364 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 366 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_4
+# 367 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 368 "data/maps/ConcordCustoms/scripts.pory"
+	giveitem ITEM_FRESH_WATER
 # 370 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_6
+	random 4
+# 371 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_ne VAR_RESULT, 0, cendvendingmachine
 # 372 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, cgotextrafreshwater
+# 374 "data/maps/ConcordCustoms/scripts.pory"
+cgotextrafreshwater:
+# 375 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_5
+# 376 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 377 "data/maps/ConcordCustoms/scripts.pory"
+	giveitem ITEM_FRESH_WATER
+# 378 "data/maps/ConcordCustoms/scripts.pory"
+	goto cendvendingmachine
+# 380 "data/maps/ConcordCustoms/scripts.pory"
+cfreshwatergotstuck:
+# 381 "data/maps/ConcordCustoms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, ConcordWageSlaveAtPhone_Movement_0
+# 382 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_PIN
+# 383 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 384 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_6
+# 386 "data/maps/ConcordCustoms/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConcordVendingMachine_Text_7, ConcordCustomsPhone_Text_2
-# 373 "data/maps/ConcordCustoms/scripts.pory"
+# 387 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ConcordVendingMachine_19
 ConcordVendingMachine_18:
-# 378 "data/maps/ConcordCustoms/scripts.pory"
+# 392 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ConcordVendingMachine_32
 	goto ConcordVendingMachine_7
 
 ConcordVendingMachine_11:
-# 444 "data/maps/ConcordCustoms/scripts.pory"
+# 458 "data/maps/ConcordCustoms/scripts.pory"
 	checkmoney 80
-# 445 "data/maps/ConcordCustoms/scripts.pory"
+# 459 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ConcordVendingMachine_25
 ConcordVendingMachine_24:
-# 490 "data/maps/ConcordCustoms/scripts.pory"
+# 504 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq ConcordVendingMachine_34
 	goto ConcordVendingMachine_10
 
 ConcordVendingMachine_14:
-# 393 "data/maps/ConcordCustoms/scripts.pory"
-	removemoney 70
-# 394 "data/maps/ConcordCustoms/scripts.pory"
-	updatemoneybox
-# 395 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_SHOP
-# 396 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 398 "data/maps/ConcordCustoms/scripts.pory"
-	random 4
-# 399 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_ne VAR_RESULT, 0, cenergybargotstuck
-# 400 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, cgotenergybar
-# 402 "data/maps/ConcordCustoms/scripts.pory"
-cgotenergybar:
-# 403 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_VEND
-# 404 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 405 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_10
-# 406 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
 # 407 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_ENERGY_POWDER
+	removemoney 70
+# 408 "data/maps/ConcordCustoms/scripts.pory"
+	updatemoneybox
 # 409 "data/maps/ConcordCustoms/scripts.pory"
-	random 4
+	playse SE_SHOP
 # 410 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_ne VAR_RESULT, 0, cendvendingmachine
-# 411 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, cgotextraenergybar
-# 413 "data/maps/ConcordCustoms/scripts.pory"
-cgotextraenergybar:
-# 414 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_11
-# 415 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
-# 416 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_ENERGY_POWDER
-# 417 "data/maps/ConcordCustoms/scripts.pory"
-	goto cendvendingmachine
-# 419 "data/maps/ConcordCustoms/scripts.pory"
-cenergybargotstuck:
-# 420 "data/maps/ConcordCustoms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ConcordWageSlaveAtPhone_Movement_0
-# 421 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_PIN
-# 422 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
+# 412 "data/maps/ConcordCustoms/scripts.pory"
+	random 4
+# 413 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_ne VAR_RESULT, 0, cenergybargotstuck
+# 414 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, cgotenergybar
+# 416 "data/maps/ConcordCustoms/scripts.pory"
+cgotenergybar:
+# 417 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_VEND
+# 418 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 419 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_9
+# 420 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 421 "data/maps/ConcordCustoms/scripts.pory"
+	giveitem ITEM_ENERGY_POWDER
 # 423 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_12
+	random 4
+# 424 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_ne VAR_RESULT, 0, cendvendingmachine
 # 425 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, cgotextraenergybar
+# 427 "data/maps/ConcordCustoms/scripts.pory"
+cgotextraenergybar:
+# 428 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_10
+# 429 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 430 "data/maps/ConcordCustoms/scripts.pory"
+	giveitem ITEM_ENERGY_POWDER
+# 431 "data/maps/ConcordCustoms/scripts.pory"
+	goto cendvendingmachine
+# 433 "data/maps/ConcordCustoms/scripts.pory"
+cenergybargotstuck:
+# 434 "data/maps/ConcordCustoms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, ConcordWageSlaveAtPhone_Movement_0
+# 435 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_PIN
+# 436 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 437 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_11
+# 439 "data/maps/ConcordCustoms/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConcordVendingMachine_Text_7, ConcordCustomsPhone_Text_2
-# 426 "data/maps/ConcordCustoms/scripts.pory"
+# 440 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ConcordVendingMachine_30
 ConcordVendingMachine_29:
-# 431 "data/maps/ConcordCustoms/scripts.pory"
+# 445 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ConcordVendingMachine_39
 	goto ConcordVendingMachine_13
 
 ConcordVendingMachine_16:
-# 385 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_9
+# 399 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_3
 	goto ConcordVendingMachine_1
 
 ConcordVendingMachine_19:
-# 374 "data/maps/ConcordCustoms/scripts.pory"
+# 388 "data/maps/ConcordCustoms/scripts.pory"
 	call cMachineShake
-# 375 "data/maps/ConcordCustoms/scripts.pory"
+# 389 "data/maps/ConcordCustoms/scripts.pory"
 	goto cgotfreshwater
 	goto ConcordVendingMachine_18
 
 ConcordVendingMachine_22:
-# 496 "data/maps/ConcordCustoms/scripts.pory"
+# 510 "data/maps/ConcordCustoms/scripts.pory"
 	goto cendvendingmachine
 	goto ConcordVendingMachine_21
 
 ConcordVendingMachine_25:
-# 446 "data/maps/ConcordCustoms/scripts.pory"
-	removemoney 80
-# 447 "data/maps/ConcordCustoms/scripts.pory"
-	updatemoneybox
-# 448 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_SHOP
-# 449 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 451 "data/maps/ConcordCustoms/scripts.pory"
-	random 4
-# 452 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_ne VAR_RESULT, 0, ccoffeegotstuck
-# 453 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, cgotcoffee
-# 455 "data/maps/ConcordCustoms/scripts.pory"
-cgotcoffee:
-# 456 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_VEND
-# 457 "data/maps/ConcordCustoms/scripts.pory"
-	waitse
-# 458 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_14
-# 459 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
 # 460 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_HEAL_POWDER
+	removemoney 80
+# 461 "data/maps/ConcordCustoms/scripts.pory"
+	updatemoneybox
 # 462 "data/maps/ConcordCustoms/scripts.pory"
-	random 20
+	playse SE_SHOP
 # 463 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_ne VAR_RESULT, 0, cendvendingmachine
-# 464 "data/maps/ConcordCustoms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, cgotextracoffee
-# 466 "data/maps/ConcordCustoms/scripts.pory"
-cgotextracoffee:
-# 467 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_15
-# 468 "data/maps/ConcordCustoms/scripts.pory"
-	hidemoneybox
-# 469 "data/maps/ConcordCustoms/scripts.pory"
-	giveitem ITEM_HEAL_POWDER
-# 470 "data/maps/ConcordCustoms/scripts.pory"
-	goto cendvendingmachine
-# 472 "data/maps/ConcordCustoms/scripts.pory"
-ccoffeegotstuck:
-# 473 "data/maps/ConcordCustoms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ConcordWageSlaveAtPhone_Movement_0
-# 474 "data/maps/ConcordCustoms/scripts.pory"
-	playse SE_PIN
-# 475 "data/maps/ConcordCustoms/scripts.pory"
 	waitse
+# 465 "data/maps/ConcordCustoms/scripts.pory"
+	random 4
+# 466 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_ne VAR_RESULT, 0, ccoffeegotstuck
+# 467 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, cgotcoffee
+# 469 "data/maps/ConcordCustoms/scripts.pory"
+cgotcoffee:
+# 470 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_VEND
+# 471 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 472 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_13
+# 473 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 474 "data/maps/ConcordCustoms/scripts.pory"
+	giveitem ITEM_HEAL_POWDER
 # 476 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_16
+	random 20
+# 477 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_ne VAR_RESULT, 0, cendvendingmachine
 # 478 "data/maps/ConcordCustoms/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, cgotextracoffee
+# 480 "data/maps/ConcordCustoms/scripts.pory"
+cgotextracoffee:
+# 481 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_14
+# 482 "data/maps/ConcordCustoms/scripts.pory"
+	hidemoneybox
+# 483 "data/maps/ConcordCustoms/scripts.pory"
+	giveitem ITEM_HEAL_POWDER
+# 484 "data/maps/ConcordCustoms/scripts.pory"
+	goto cendvendingmachine
+# 486 "data/maps/ConcordCustoms/scripts.pory"
+ccoffeegotstuck:
+# 487 "data/maps/ConcordCustoms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, ConcordWageSlaveAtPhone_Movement_0
+# 488 "data/maps/ConcordCustoms/scripts.pory"
+	playse SE_PIN
+# 489 "data/maps/ConcordCustoms/scripts.pory"
+	waitse
+# 490 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_15
+# 492 "data/maps/ConcordCustoms/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, ConcordVendingMachine_Text_7, ConcordCustomsPhone_Text_2
-# 479 "data/maps/ConcordCustoms/scripts.pory"
+# 493 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ConcordVendingMachine_37
 ConcordVendingMachine_36:
-# 484 "data/maps/ConcordCustoms/scripts.pory"
+# 498 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ConcordVendingMachine_41
 	goto ConcordVendingMachine_24
 
 ConcordVendingMachine_27:
-# 438 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_9
+# 452 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_3
 	goto ConcordVendingMachine_4
 
 ConcordVendingMachine_30:
-# 427 "data/maps/ConcordCustoms/scripts.pory"
+# 441 "data/maps/ConcordCustoms/scripts.pory"
 	call MachineShake
-# 428 "data/maps/ConcordCustoms/scripts.pory"
+# 442 "data/maps/ConcordCustoms/scripts.pory"
 	goto cgotenergybar
 	goto ConcordVendingMachine_29
 
 ConcordVendingMachine_32:
-# 379 "data/maps/ConcordCustoms/scripts.pory"
+# 393 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordVendingMachine_Text_8
 	goto ConcordVendingMachine_7
 
 ConcordVendingMachine_34:
-# 491 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_9
+# 505 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordCustomsPhone_Text_3
 	goto ConcordVendingMachine_10
 
 ConcordVendingMachine_37:
-# 480 "data/maps/ConcordCustoms/scripts.pory"
+# 494 "data/maps/ConcordCustoms/scripts.pory"
 	call MachineShake
-# 481 "data/maps/ConcordCustoms/scripts.pory"
+# 495 "data/maps/ConcordCustoms/scripts.pory"
 	goto cgotcoffee
 	goto ConcordVendingMachine_36
 
 ConcordVendingMachine_39:
-# 432 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_13
+# 446 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_12
 	goto ConcordVendingMachine_13
 
 ConcordVendingMachine_41:
-# 485 "data/maps/ConcordCustoms/scripts.pory"
-	msgbox ConcordVendingMachine_Text_17
+# 499 "data/maps/ConcordCustoms/scripts.pory"
+	msgbox ConcordVendingMachine_Text_16
 	goto ConcordVendingMachine_24
 
 
 cMachineShake::
-# 505 "data/maps/ConcordCustoms/scripts.pory"
+# 519 "data/maps/ConcordCustoms/scripts.pory"
 	playse SE_M_REVERSAL
-# 506 "data/maps/ConcordCustoms/scripts.pory"
+# 520 "data/maps/ConcordCustoms/scripts.pory"
 	setvar VAR_0x8004, 2
-# 507 "data/maps/ConcordCustoms/scripts.pory"
+# 521 "data/maps/ConcordCustoms/scripts.pory"
 	setvar VAR_0x8005, 6
-# 508 "data/maps/ConcordCustoms/scripts.pory"
+# 522 "data/maps/ConcordCustoms/scripts.pory"
 	setvar VAR_0x8006, 4
-# 509 "data/maps/ConcordCustoms/scripts.pory"
+# 523 "data/maps/ConcordCustoms/scripts.pory"
 	setvar VAR_0x8007, 4
-# 510 "data/maps/ConcordCustoms/scripts.pory"
+# 524 "data/maps/ConcordCustoms/scripts.pory"
 	special ShakeCamera
 	return
 
 
 ConcordCustomsClerkBAD::
-# 521 "data/maps/ConcordCustoms/scripts.pory"
+# 535 "data/maps/ConcordCustoms/scripts.pory"
 	lock
-# 522 "data/maps/ConcordCustoms/scripts.pory"
+# 536 "data/maps/ConcordCustoms/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 523 "data/maps/ConcordCustoms/scripts.pory"
+# 537 "data/maps/ConcordCustoms/scripts.pory"
 	goto_if_unset FLAG_SAFE_FOLLOWER_MOVEMENT, ConcordCustomsClerkBAD_2
-# 544 "data/maps/ConcordCustoms/scripts.pory"
+# 558 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsClerkBAD_Text_6
-# 547 "data/maps/ConcordCustoms/scripts.pory"
+# 561 "data/maps/ConcordCustoms/scripts.pory"
 	release
 ConcordCustomsClerkBAD_1:
-# 549 "data/maps/ConcordCustoms/scripts.pory"
+# 563 "data/maps/ConcordCustoms/scripts.pory"
 	release
 	return
 
 ConcordCustomsClerkBAD_2:
-# 525 "data/maps/ConcordCustoms/scripts.pory"
+# 539 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsClerkBAD_Text_0
 	checkitem ITEM_FRESH_WATER
 # 0 "data/maps/ConcordCustoms/scripts.pory"
@@ -911,26 +925,26 @@ ConcordCustomsClerkBAD_2:
 	goto ConcordCustomsClerkBAD_1
 
 ConcordCustomsClerkBAD_5:
-# 529 "data/maps/ConcordCustoms/scripts.pory"
+# 543 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsClerkBAD_Text_1
-# 531 "data/maps/ConcordCustoms/scripts.pory"
+# 545 "data/maps/ConcordCustoms/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, ConcordCustomsClerkBAD_Text_2, ConcordCustomsClerkBAD_Text_3
-# 532 "data/maps/ConcordCustoms/scripts.pory"
+# 546 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ConcordCustomsClerkBAD_8
 ConcordCustomsClerkBAD_7:
-# 537 "data/maps/ConcordCustoms/scripts.pory"
+# 551 "data/maps/ConcordCustoms/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ConcordCustomsClerkBAD_10
 	goto ConcordCustomsClerkBAD_1
 
 ConcordCustomsClerkBAD_8:
-# 533 "data/maps/ConcordCustoms/scripts.pory"
+# 547 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsClerkBAD_Text_4
 	goto ConcordCustomsClerkBAD_7
 
 ConcordCustomsClerkBAD_10:
-# 538 "data/maps/ConcordCustoms/scripts.pory"
+# 552 "data/maps/ConcordCustoms/scripts.pory"
 	msgbox ConcordCustomsClerkBAD_Text_5
 	goto ConcordCustomsClerkBAD_1
 
@@ -1113,31 +1127,35 @@ ConcordCustomsPhone_Text_2:
 	.string "Leave$"
 
 ConcordCustomsPhone_Text_3:
-# 207 "data/maps/ConcordCustoms/scripts.pory"
-	.string "Which number to dial?$"
+# 201 "data/maps/ConcordCustoms/scripts.pory"
+	.string "Not enough money...$"
 
 ConcordCustomsPhone_Text_4:
-# 208 "data/maps/ConcordCustoms/scripts.pory"
-	.string "Littleroot Lab$"
+# 213 "data/maps/ConcordCustoms/scripts.pory"
+	.string "Which number to dial?$"
 
 ConcordCustomsPhone_Text_5:
-# 208 "data/maps/ConcordCustoms/scripts.pory"
-	.string "Petalburg Gym$"
+# 214 "data/maps/ConcordCustoms/scripts.pory"
+	.string "Littleroot Lab$"
 
 ConcordCustomsPhone_Text_6:
-# 208 "data/maps/ConcordCustoms/scripts.pory"
-	.string "Citizen Services$"
+# 214 "data/maps/ConcordCustoms/scripts.pory"
+	.string "Petalburg Gym$"
 
 ConcordCustomsPhone_Text_7:
-# 208 "data/maps/ConcordCustoms/scripts.pory"
-	.string "Dial Manually$"
+# 214 "data/maps/ConcordCustoms/scripts.pory"
+	.string "Citizen Services$"
 
 ConcordCustomsPhone_Text_8:
-# 208 "data/maps/ConcordCustoms/scripts.pory"
-	.string "None$"
+# 214 "data/maps/ConcordCustoms/scripts.pory"
+	.string "Dial Manually$"
 
 ConcordCustomsPhone_Text_9:
-# 212 "data/maps/ConcordCustoms/scripts.pory"
+# 214 "data/maps/ConcordCustoms/scripts.pory"
+	.string "None$"
+
+ConcordCustomsPhone_Text_10:
+# 218 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Prof. Balsam: Hm? Who's this? Oh,\n"
 	.string "{PLAYER}?\p"
 	.string "Why are you calling from a public phone?\n"
@@ -1150,8 +1168,8 @@ ConcordCustomsPhone_Text_9:
 	.string "listening...\p"
 	.string "Well, that's all from me. Later.$"
 
-ConcordCustomsPhone_Text_10:
-# 223 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_11:
+# 229 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Norman: Hello. You have reached the\n"
 	.string "voice mail of Petalburg Dojo.\p"
 	.string "If you're calling to schedule a gym\n"
@@ -1162,46 +1180,46 @@ ConcordCustomsPhone_Text_10:
 	.string "soon as I can.\p"
 	.string "And if it's you, Sidney... stop calling me!$"
 
-ConcordCustomsPhone_Text_11:
-# 233 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_12:
+# 239 "data/maps/ConcordCustoms/scripts.pory"
 	.string "You have reached Devon Co.'s Citizen\n"
 	.string "Services. What can we do for you?$"
 
-ConcordCustomsPhone_Text_12:
-# 235 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_13:
+# 241 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Devon Visa Application$"
 
-ConcordCustomsPhone_Text_13:
-# 235 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_14:
+# 241 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Pokémon Retrieval$"
 
-ConcordCustomsPhone_Text_14:
-# 235 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_15:
+# 241 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Nothing$"
 
-ConcordCustomsPhone_Text_15:
-# 236 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_16:
+# 242 "data/maps/ConcordCustoms/scripts.pory"
 	.string "We are very sorry. We are not processing\n"
 	.string "visa applications at this time.\p"
 	.string "Is there anything else we can do for\n"
 	.string "you?$"
 
-ConcordCustomsPhone_Text_16:
-# 241 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_17:
+# 247 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Of course. For this request, I must ask\n"
 	.string "you for your Devon Card's ID number. Is\l"
 	.string "that okay?$"
 
-ConcordCustomsPhone_Text_17:
-# 242 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_18:
+# 248 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Tell number$"
 
-ConcordCustomsPhone_Text_18:
-# 242 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_19:
+# 248 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Nevermind$"
 
-ConcordCustomsPhone_Text_19:
-# 243 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_20:
+# 249 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Thank you. Let's see... {PLAYER}, is it?\p"
 	.string "Devon Co. is currently in possession of\n"
 	.string "one of your Pokémon.\p"
@@ -1223,159 +1241,163 @@ ConcordCustomsPhone_Text_19:
 	.string "be scheduled.\p"
 	.string "Thank you for your patience!$"
 
-ConcordCustomsPhone_Text_20:
-# 253 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_21:
+# 259 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Is there anything else we can do for\n"
 	.string "you?$"
 
-ConcordCustomsPhone_Text_21:
-# 256 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_22:
+# 262 "data/maps/ConcordCustoms/scripts.pory"
 	.string "I see. We respect your right to privacy,\n"
 	.string "but I'm afraid we cannot process this\l"
 	.string "request without your ID number.\p"
 	.string "Is there anything else we can do for\n"
 	.string "you?$"
 
-ConcordCustomsPhone_Text_22:
-# 261 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_23:
+# 267 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Very well. Stay safe!$"
 
-ConcordCustomsPhone_Text_23:
-# 269 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_24:
+# 275 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Let's dial a number...$"
 
-ConcordCustomsPhone_Text_24:
-# 277 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_25:
+# 284 "data/maps/ConcordCustoms/scripts.pory"
+	.string "Hello - you have reached Dystopian's\n"
+	.string "number!\p"
+	.string "Thank you for watching this far. Now,\n"
+	.string "there's ONE MORE THING.\p"
+	.string "Ready? Drum roll, please...$"
+
+ConcordCustomsPhone_Text_26:
+# 293 "data/maps/ConcordCustoms/scripts.pory"
 	.string "You have reached the Devon Call\n"
 	.string "Logistics Center.\p"
 	.string "The number you have just called is not\n"
 	.string "assigned to any Hoenn citizen.\p"
 	.string "Please try again.$"
 
-ConcordCustomsPhone_Text_25:
-# 285 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_27:
+# 301 "data/maps/ConcordCustoms/scripts.pory"
 	.string "...$"
 
-ConcordCustomsPhone_Text_26:
-# 286 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_28:
+# 302 "data/maps/ConcordCustoms/scripts.pory"
 	.string "We've sent a package to your mailbox.\n"
 	.string "Check it.$"
 
-ConcordCustomsPhone_Text_27:
-# 295 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_29:
+# 311 "data/maps/ConcordCustoms/scripts.pory"
 	.string "We have already made this delivery. Only\n"
 	.string "one per customer.$"
 
-ConcordCustomsPhone_Text_28:
-# 314 "data/maps/ConcordCustoms/scripts.pory"
+ConcordCustomsPhone_Text_30:
+# 330 "data/maps/ConcordCustoms/scripts.pory"
 	.string "The phone returns the coin.$"
 
 ConcordVendingMachine_Text_0:
-# 331 "data/maps/ConcordCustoms/scripts.pory"
+# 345 "data/maps/ConcordCustoms/scripts.pory"
 	.string "It's a vending machine.$"
 
 ConcordVendingMachine_Text_1:
-# 333 "data/maps/ConcordCustoms/scripts.pory"
+# 347 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Fresh Water - 50¥$"
 
 ConcordVendingMachine_Text_2:
-# 333 "data/maps/ConcordCustoms/scripts.pory"
+# 347 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Energy Bar - 70¥$"
 
 ConcordVendingMachine_Text_3:
-# 333 "data/maps/ConcordCustoms/scripts.pory"
+# 347 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Strong Coffee - 80¥$"
 
 ConcordVendingMachine_Text_4:
-# 352 "data/maps/ConcordCustoms/scripts.pory"
+# 366 "data/maps/ConcordCustoms/scripts.pory"
 	.string "A Fresh Water bottle dropped on the\n"
 	.string "machine's tray.$"
 
 ConcordVendingMachine_Text_5:
-# 361 "data/maps/ConcordCustoms/scripts.pory"
+# 375 "data/maps/ConcordCustoms/scripts.pory"
 	.string "An extra Fresh Water bottle dropped on\n"
 	.string "the machine's tray!$"
 
 ConcordVendingMachine_Text_6:
-# 370 "data/maps/ConcordCustoms/scripts.pory"
+# 384 "data/maps/ConcordCustoms/scripts.pory"
 	.string "The machine does not push the Fresh\n"
 	.string "Water enough for it to fall...$"
 
 ConcordVendingMachine_Text_7:
-# 372 "data/maps/ConcordCustoms/scripts.pory"
+# 386 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Shake the machine$"
 
 ConcordVendingMachine_Text_8:
-# 379 "data/maps/ConcordCustoms/scripts.pory"
+# 393 "data/maps/ConcordCustoms/scripts.pory"
 	.string "The Fresh Water just stays on the\n"
 	.string "verge of falling, mockingly.$"
 
 ConcordVendingMachine_Text_9:
-# 385 "data/maps/ConcordCustoms/scripts.pory"
-	.string "Not enough money...$"
-
-ConcordVendingMachine_Text_10:
-# 405 "data/maps/ConcordCustoms/scripts.pory"
+# 419 "data/maps/ConcordCustoms/scripts.pory"
 	.string "An Energy Bar dropped on the machine's\n"
 	.string "tray.$"
 
-ConcordVendingMachine_Text_11:
-# 414 "data/maps/ConcordCustoms/scripts.pory"
+ConcordVendingMachine_Text_10:
+# 428 "data/maps/ConcordCustoms/scripts.pory"
 	.string "An extra Energy Bar can dropped on the\n"
 	.string "machine's tray!$"
 
-ConcordVendingMachine_Text_12:
-# 423 "data/maps/ConcordCustoms/scripts.pory"
+ConcordVendingMachine_Text_11:
+# 437 "data/maps/ConcordCustoms/scripts.pory"
 	.string "The machine does not push the Energy\n"
 	.string "Bar can enough for it to fall...$"
 
-ConcordVendingMachine_Text_13:
-# 432 "data/maps/ConcordCustoms/scripts.pory"
+ConcordVendingMachine_Text_12:
+# 446 "data/maps/ConcordCustoms/scripts.pory"
 	.string "The Energy Bar can just stays on the\n"
 	.string "verge of falling, mockingly.$"
 
-ConcordVendingMachine_Text_14:
-# 458 "data/maps/ConcordCustoms/scripts.pory"
+ConcordVendingMachine_Text_13:
+# 472 "data/maps/ConcordCustoms/scripts.pory"
 	.string "A Strong Coffee can dropped on the\n"
 	.string "machine's tray.$"
 
-ConcordVendingMachine_Text_15:
-# 467 "data/maps/ConcordCustoms/scripts.pory"
+ConcordVendingMachine_Text_14:
+# 481 "data/maps/ConcordCustoms/scripts.pory"
 	.string "An extra Strong Coffee can dropped on\n"
 	.string "the machine's tray!$"
 
-ConcordVendingMachine_Text_16:
-# 476 "data/maps/ConcordCustoms/scripts.pory"
+ConcordVendingMachine_Text_15:
+# 490 "data/maps/ConcordCustoms/scripts.pory"
 	.string "The machine does not push the Strong\n"
 	.string "Coffee enough for it to fall...$"
 
-ConcordVendingMachine_Text_17:
-# 485 "data/maps/ConcordCustoms/scripts.pory"
+ConcordVendingMachine_Text_16:
+# 499 "data/maps/ConcordCustoms/scripts.pory"
 	.string "The Strong Coffee just stays on the\n"
 	.string "verge of falling, mockingly.$"
 
 ConcordCustomsClerkBAD_Text_0:
-# 525 "data/maps/ConcordCustoms/scripts.pory"
+# 539 "data/maps/ConcordCustoms/scripts.pory"
 	.string "I'm so thirsty... what I wouldn't do for\n"
 	.string "some {COLOR BLUE}Fresh Water!{COLOR DARK_GRAY}\p"
 	.string "But I don't have any coins for the\n"
 	.string "vending machine. {COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 ConcordCustomsClerkBAD_Text_1:
-# 529 "data/maps/ConcordCustoms/scripts.pory"
+# 543 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Wait... you've got a bottle! Please, I'm\n"
 	.string "dying of thirst here!$"
 
 ConcordCustomsClerkBAD_Text_2:
-# 531 "data/maps/ConcordCustoms/scripts.pory"
+# 545 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Give Fresh Water$"
 
 ConcordCustomsClerkBAD_Text_3:
-# 531 "data/maps/ConcordCustoms/scripts.pory"
+# 545 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Sorry, I need this$"
 
 ConcordCustomsClerkBAD_Text_4:
-# 533 "data/maps/ConcordCustoms/scripts.pory"
+# 547 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Thank you so much! {COLOR BLUE}Gulp gulp gulp...{COLOR DARK_GRAY}\p"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Aaah...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\p"
 	.string "That hit the spot. Thank you. Hm? Why\n"
@@ -1385,12 +1407,12 @@ ConcordCustomsClerkBAD_Text_4:
 	.string "through.$"
 
 ConcordCustomsClerkBAD_Text_5:
-# 538 "data/maps/ConcordCustoms/scripts.pory"
+# 552 "data/maps/ConcordCustoms/scripts.pory"
 	.string "Ah... you are a cold fellow, you know\n"
 	.string "that?$"
 
 ConcordCustomsClerkBAD_Text_6:
-# 544 "data/maps/ConcordCustoms/scripts.pory"
+# 558 "data/maps/ConcordCustoms/scripts.pory"
 	.string "We appreciate your help when we dealt\n"
 	.string "with that scammer.\p"
 	.string "He makes a profit off smuggling\n"

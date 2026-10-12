@@ -2013,8 +2013,8 @@ lock
 
 
 	if (flag(sentdemomysterygift) && !flag (receiveddemomysterygift)){
-		msgbox (format("There's a pretty gift box inside the mailbox, with a note attached... 'May it brighten
-		your Christmas! - Dystopian'."))
+		msgbox (format("There's a pretty gift box inside the mailbox, with a note attached...
+		“May it brighten your Christmas!” - Dystopian."))
 		playfanfare (MUS_OBTAIN_SYMBOL)
 		msgbox (format("Obtained a gift Pokémon - Snover!"))
 		givemon(SPECIES_SNOVER, 10, ITEM_MIRACLE_SEED, ITEM_CHERISH_BALL, NATURE_QUIRKY, 1, MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ICE_SHARD, MOVE_SPLASH, MOVE_MOONLIGHT, MOVE_SPARK)

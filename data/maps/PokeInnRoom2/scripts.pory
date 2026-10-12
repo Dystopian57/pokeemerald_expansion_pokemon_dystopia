@@ -205,7 +205,9 @@ script WallClock {
 script DevonShowFreetrial {
 
 	if (flag(watcheddevoninnshow))
-	{msgbox (format("Your Devon Show Free Trial has timed out. Please come back later."))}
+	{msgbox (format("Your Devon Show Free Trial has timed out. Please come back later."))
+	goto (endofdevonshowtrial)
+	}
 
 	else{
 	msgbox(format("This is a Devon Show's Free Trial! You may watch one of these episodes from Devon Shows for free!
@@ -217,6 +219,8 @@ script DevonShowFreetrial {
 
 			if (var(VAR_RESULT) == 0) {
 			setflag (watcheddevoninnshow)
+			fadeinbgm (1)
+			playbgm (MUS_UNWAVERINGEMOTIONS, FALSE) //NATIONAL PARK //Unwavering emotions
 			msgbox (format("Love is Danger, Episode 8: Till Pokémon do us part."))
 			setspeaker ([SP_NAME_DRAMAACTRESS])
 			msgbox (format("{COLOR RED}Dear, I've reached my limit!\p
@@ -262,7 +266,9 @@ script DevonShowFreetrial {
 			setspeaker (NULL)
 			msgbox (format("Will this steamy incident increase the gap between our protanist couple…?\p
 			Or will it serve as the patch needed to repair their relationship!?\p
-			Find out more in the next episode of 'Love is Danger!' Only on Devon Shows!"))
+			Find out more in the next episode of “Love is Danger!” Only on Devon Shows!"))
+			fadeoutbgm (1)
+			playbgm (MUS_GAMEOVER, FALSE)
 			release
 			}
 
@@ -372,6 +378,7 @@ script DevonShowFreetrial {
 			setspeaker (NULL)
 			msgbox(format("Looks like this is the firt of many ads to come... better get going."))
 		}
+		endofdevonshowtrial:
 		release
 }}
 

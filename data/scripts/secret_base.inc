@@ -700,7 +700,7 @@ SecretBase_Text_BootUpPC:
 	.string "{PLAYER} booted up the PC.$"
 
 SecretBase_Text_WhatWouldYouLikeToDo:
-	.string "What would you like to do?$"
+	.string "What to do?$"
 
 SecretBase_Text_RegistryInfo:
 	.string "Once registered, a SECRET BASE will not\n"

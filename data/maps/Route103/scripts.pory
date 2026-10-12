@@ -725,6 +725,15 @@ script Route103VeteranRematch {
 		"... I surrender. Again."}
 
 
+script DevonPoochain {
+	lock
+	applymovement (41, moves(face_player))
+	playmoncry (SPECIES_POOCHAIN, CRY_MODE_NORMAL)
+	msgbox(format("Grrr!"))
+	release
+}
+
+
 script Route103ConcordBridgeGuard {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -1075,6 +1084,8 @@ script RiverFerryGuyUp {
 	
 	releaseall
 	}
+
+
 
 script RiverFerryGuyDown {
 	lockall

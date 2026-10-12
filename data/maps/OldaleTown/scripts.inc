@@ -4467,9 +4467,9 @@ OldaleDevonGrunts_Text_5:
 OldaleDevonGrunts_Text_6:
 # 892 "data/maps/OldaleTown/scripts.pory"
 	.string "Ahem. If you've come to inquire about\n"
-	.string "access to Road 002... I'm afraid we can't\l"
+	.string "access to {COLOR GREEN}Road 002{COLOR DARK_GRAY}... I'm afraid we can't\l"
 	.string "let anyone through until the {COLOR RED}Warehouse\l"
-	.string "situation{COLOR DARK_GRAY} is under control.$"
+	.string "situation is under control.$"
 
 OldaleDevonGrunts_Text_7:
 # 899 "data/maps/OldaleTown/scripts.pory"

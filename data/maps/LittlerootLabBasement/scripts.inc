@@ -531,7 +531,7 @@ AideeBasementUnfollow2::
 # 281 "data/maps/LittlerootLabBasement/scripts.pory"
 	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
 # 282 "data/maps/LittlerootLabBasement/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, AideeBasementUnfollow1_Movement_1
+	applymovement OBJ_EVENT_ID_PLAYER, AideeBasementUnfollow2_Movement_1
 # 283 "data/maps/LittlerootLabBasement/scripts.pory"
 	goto Aidebymachine
 	return
@@ -645,7 +645,7 @@ AideeBasementIdleTalk_2:
 # 348 "data/maps/LittlerootLabBasement/scripts.pory"
 	waitse
 # 349 "data/maps/LittlerootLabBasement/scripts.pory"
-	applymovement 1, AideeBasementUnfollow1_Movement_1
+	applymovement 1, AideeBasementUnfollow2_Movement_1
 # 350 "data/maps/LittlerootLabBasement/scripts.pory"
 	createfieldmugshot MUGSHOT_AIDEE, EMOTE_POKEBALL
 # 351 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -4763,7 +4763,7 @@ AideeBasementUnfollow1_Movement_0:
 # 261 "data/maps/LittlerootLabBasement/scripts.pory"
 AideeBasementUnfollow1_Movement_1:
 # 261 "data/maps/LittlerootLabBasement/scripts.pory"
-	walk_in_place_up
+	face_up
 	step_end
 
 # 278 "data/maps/LittlerootLabBasement/scripts.pory"
@@ -4772,6 +4772,12 @@ AideeBasementUnfollow2_Movement_0:
 	walk_left
 # 278 "data/maps/LittlerootLabBasement/scripts.pory"
 	walk_in_place_right
+	step_end
+
+# 282 "data/maps/LittlerootLabBasement/scripts.pory"
+AideeBasementUnfollow2_Movement_1:
+# 282 "data/maps/LittlerootLabBasement/scripts.pory"
+	walk_in_place_up
 	step_end
 
 # 292 "data/maps/LittlerootLabBasement/scripts.pory"

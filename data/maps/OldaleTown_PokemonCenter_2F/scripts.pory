@@ -40,11 +40,12 @@ script InnNPCStopsPlayerfromInn {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (1, moves(face_player))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+		showmoneybox (18, 0)
 	    msgbox(format("Welcome to Oldale's Devon Inn. Would you like to lodge with us for 200¥?"))
 	innroomchoice2:
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Yes, please", "Any rules?", "No, thank you")
 		if (var(VAR_RESULT) == 0) {
-		showmoneybox (18, 0)
+
 		msgbox(format("Wonderful. I will take payment upfront..."))
             	checkmoney (200)
 				if (var(VAR_RESULT) == TRUE) {
@@ -58,6 +59,7 @@ script InnNPCStopsPlayerfromInn {
 					giveitem (ITEM_CARD_KEY)
 					clearflag (seenweatheratinnvisit)
 					clearflag (claimedinnfreedrink)
+					clearflag (watcheddevoninnshow)
 					//setobjectxyperm (3, 0, 0)
 					//setmetatile (3, 1, METATILE_General_Door_PokeCenter, FALSE)
 					goto (enddevoninnscript2)}

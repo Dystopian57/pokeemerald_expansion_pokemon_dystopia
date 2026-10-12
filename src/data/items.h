@@ -2879,9 +2879,9 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Army Tag"),
         .pluralName = ITEM_PLURAL_NAME("Army Tags"),
-        .price = (I_PRICE >= GEN_7) ? 2000 * TREASURE_FACTOR: 2000,
+        .price = 2000,
         .description = COMPOUND_STRING(
-            "A silver tag for\n"
+            "A silver tag that\n"
             "identifies soldiers.\n"
             "Can be sold."),
         .pocket = POCKET_ITEMS,

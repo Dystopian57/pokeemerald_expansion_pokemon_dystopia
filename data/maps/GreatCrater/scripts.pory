@@ -540,6 +540,14 @@ script TouristGreatCraterRematch {
 
 /////////////////////////////////////////////////
 
+script ConspiracySableye {
+	lock
+	applymovement (14, moves(face_player))
+	playmoncry (SPECIES_SABLEYE, CRY_MODE_NORMAL)
+	msgbox(format("Saaa..."))
+	release
+}
+
 script ConspiracyGreatCraterBattle {
 	trainerbattle_single(TRAINER_CONSPIRACY_GREATCRATER, ConspiracyGreatCrater_Intro, ConspiracyGreatCrater_Outro, ConspiracyGreatCraterRegister)
 	specialvar (VAR_RESULT, ShouldTryRematchBattle)

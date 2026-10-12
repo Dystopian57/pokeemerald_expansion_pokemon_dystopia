@@ -2428,15 +2428,15 @@ LibraryGuyDLC_Text_33:
 
 LibraryGuyDLC_Text_34:
 # 715 "data/maps/DLC/scripts.pory"
-	.string "'TM 17 - Protect'$"
+	.string "“TM 17 - Protect”$"
 
 LibraryGuyDLC_Text_35:
 # 715 "data/maps/DLC/scripts.pory"
-	.string "'TM 20 - Safeguard'$"
+	.string "“TM 20 - Safeguard”$"
 
 LibraryGuyDLC_Text_36:
 # 715 "data/maps/DLC/scripts.pory"
-	.string "'TM 33 - Reflect'$"
+	.string "“TM 33 - Reflect”$"
 
 LibraryGuyDLC_Text_37:
 # 717 "data/maps/DLC/scripts.pory"

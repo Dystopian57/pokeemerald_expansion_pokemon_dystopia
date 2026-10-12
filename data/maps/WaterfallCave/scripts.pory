@@ -124,7 +124,13 @@ script WaterfallHazardDiverRematch {
 
 /////////////////////////////////////
 
-
+script ViviMarill {
+	lock
+	applymovement (6, moves(face_player))
+	playmoncry (SPECIES_MARILL, CRY_MODE_NORMAL)
+	msgbox(format("Riiil!"))
+	release
+}
 
 script WaterfallMercenaryFBattle {
 	trainerbattle_single(TRAINER_ROSE_1, WaterfallMercenaryF_Intro, WaterfallMercenaryF_Outro, WaterfallMercenaryFRegister)

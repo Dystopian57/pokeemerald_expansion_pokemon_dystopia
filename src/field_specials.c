@@ -4397,6 +4397,18 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
+//4th Wall
+
+{
+    static const u8 sText_Code4thwall[] = _("4thwall");
+
+    if (!StringCompare(gStringVar2, sText_Code4thwall))
+        gSpecialVar_Result = 2;
+
+    else
+        gSpecialVar_Result = 0;
+}
+
 }
 
 
