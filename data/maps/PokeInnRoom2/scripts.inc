@@ -1085,7 +1085,9 @@ DLCInnBedTime::
 	compare VAR_RESULT, YES
 	goto_if_eq DLCInnBedTime_2
 DLCInnBedTime_1:
-# 745 "data/maps/PokeInnRoom2/scripts.pory"
+# 754 "data/maps/PokeInnRoom2/scripts.pory"
+endofsleep:
+# 755 "data/maps/PokeInnRoom2/scripts.pory"
 	releaseall
 	return
 
@@ -1133,13 +1135,17 @@ DLCInnBedTime_4:
 	playse SE_SUCCESS
 # 738 "data/maps/PokeInnRoom2/scripts.pory"
 	waitse
-# 739 "data/maps/PokeInnRoom2/scripts.pory"
-	fadescreen FADE_FROM_BLACK
 # 740 "data/maps/PokeInnRoom2/scripts.pory"
+	compare VAR_OLDALE_PHASE, 1
+	goto_if_ge DLCInnBedTime_12
+DLCInnBedTime_10:
+# 745 "data/maps/PokeInnRoom2/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 749 "data/maps/PokeInnRoom2/scripts.pory"
 	msgbox DLCInnBedTime_Text_2
-# 741 "data/maps/PokeInnRoom2/scripts.pory"
+# 750 "data/maps/PokeInnRoom2/scripts.pory"
 	fadeinbgm 1
-# 742 "data/maps/PokeInnRoom2/scripts.pory"
+# 751 "data/maps/PokeInnRoom2/scripts.pory"
 	playbgm MUS_GAMEOVER, TRUE
 	goto DLCInnBedTime_1
 
@@ -1162,6 +1168,21 @@ DLCInnBedTime_9:
 # 731 "data/maps/PokeInnRoom2/scripts.pory"
 	setvar VAR_PETALBURGLANDFILL_WEATHER, 3
 	goto DLCInnBedTime_4
+
+DLCInnBedTime_11:
+# 741 "data/maps/PokeInnRoom2/scripts.pory"
+	setvar VAR_FLASHBACK_WAKEUPLOCATION, 2
+# 742 "data/maps/PokeInnRoom2/scripts.pory"
+	fadeoutbgm 1
+# 743 "data/maps/PokeInnRoom2/scripts.pory"
+	warpsilent MAP_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0
+	goto DLCInnBedTime_10
+
+DLCInnBedTime_12:
+# 740 "data/maps/PokeInnRoom2/scripts.pory"
+	compare VAR_FLASHBACK_DREAM, 0
+	goto_if_eq DLCInnBedTime_11
+	goto DLCInnBedTime_10
 
 
 DevonInnSignAboutFreezer_Text_0:
@@ -1331,8 +1352,8 @@ DevonShowFreetrial_Text_17:
 
 DevonShowFreetrial_Text_18:
 # 267 "data/maps/PokeInnRoom2/scripts.pory"
-	.string "Will this steamy incident increase the\n"
-	.string "gap between our protanist couple…?\p"
+	.string "Will this steamy incident widen the gap\n"
+	.string "between our protagonist couple…?\p"
 	.string "Or will it serve as the patch needed to\n"
 	.string "repair their relationship!?\p"
 	.string "Find out more in the next episode of\n"
@@ -1843,5 +1864,5 @@ DLCInnBedTime_Text_1:
 	.string "time?$"
 
 DLCInnBedTime_Text_2:
-# 740 "data/maps/PokeInnRoom2/scripts.pory"
+# 749 "data/maps/PokeInnRoom2/scripts.pory"
 	.string "{PLAYER} wakes up.$"

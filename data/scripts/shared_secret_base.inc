@@ -203,11 +203,11 @@ SecretBase_EventScript_SkittyTV::
 
 SecretBase_Text_SmallIndentInWall::
 	.string "There seems to be a hollow cavity\n"
-	.string "behind...$"
+	.string "here...$"
 
 SecretBase_Text_IndentUseSecretPower::
 	.string "There seems to be a hollow cavity\n"
-	.string "behind...\p"
+	.string "here...\p"
 	.string "Use SECRET POWER?$"
 
 SecretBase_Text_DiscoveredSmallCavern::

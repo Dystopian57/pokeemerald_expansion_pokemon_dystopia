@@ -228,7 +228,7 @@ script OldaleWarehouseCarRebel {
     msgbox (format("Let's go back to Petalburg, buddy. We'll make better pals."))
 
 	playse (SE_LEDGE)
-	applymovement (7, moves(jump_in_place_up_down * 1))
+	applymovement (7, moves(jump_in_place_down * 1))
 	waitse
 	//playse (SE_LEDGE)
 	//applymovement (7, moves(jump_in_place_up_down * 1))

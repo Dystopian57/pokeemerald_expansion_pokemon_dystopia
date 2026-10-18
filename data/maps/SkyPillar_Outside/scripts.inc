@@ -18,7 +18,6 @@ SkyPillar_Outside_EventScript_CheckSetAbnormalWeather::
 	return
 
 SkyPillar_Outside_OnLoad:
-	call_if_set FLAG_WALLACE_GOES_TO_SKY_PILLAR, SkyPillar_Outside_EventScript_OpenDoor
 	end
 
 SkyPillar_Outside_EventScript_OpenDoor::

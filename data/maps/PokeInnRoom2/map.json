@@ -55,6 +55,13 @@
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_2F",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_INN_ROOM2",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

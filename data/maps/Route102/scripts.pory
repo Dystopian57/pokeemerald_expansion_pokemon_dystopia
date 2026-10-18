@@ -241,6 +241,7 @@ script Route103ScientistFoundTracks {
         applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
 
         msgbox(format("Halt a moment, my dear fellow! Those marks on the ground..."))
+		closemessage
 
         applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 3, face_right))
         applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 3, face_right))
@@ -294,7 +295,7 @@ script Route102Scientist {
 		Pokémon may reveal itself.
 		\p You, who seem of rather... absent mind, should prove the perfect candidate to test my
 		theory.\p I am therefore compelled to ask for your assistance.\pI would duly compensate
-		you for your time, of course."))
+		you for your time, of course. What do you say?"))
 
 		scientistasksforhelp102:
 		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Help", "Don't help")
@@ -393,6 +394,19 @@ script Route102Scientistfollowchat {
 		release
 		}
 
+	script Route102ScientistNottoGreatCrater {
+		lock
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+        msgbox(format("My young helper, this way is to the Great Crater!\pA novel habitat worthy of research,
+		to be sure...\p But the chances to find our specimen
+		there are decidedly slim.\pBefore considering new enclaves of search, let us first comb this
+		area thoroughly."))
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up * 1))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		release
+		}
+
 	script Route102ScientistNottoPetalburg {
 		lock
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
@@ -404,6 +418,19 @@ script Route102Scientistfollowchat {
 		waitmovement (OBJ_EVENT_ID_PLAYER)
 		release
 		}
+
+	script Route102ScientistNottoOldale {
+		lock
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+        msgbox(format("My young helper, this way is to Petalburg City\pThe chances to find our specimen
+		there are decidedly slim.\pBefore considering new enclaves of search, let us first comb this
+		area thoroughly."))
+		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1))
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		release
+		}
+
 	script Route102ConstructionShedSign {
 		lock
         msgbox(format("Construction Shed.\n{COLOR RED}Authorized Personnel Only."))	

@@ -14,6 +14,14 @@ script OldaleWarehouseApplianceStorageItem {
     removeobject (4)
 	releaseall}
 
+script ScavengerSandshrew {
+	lock
+	applymovement (41, moves(face_player))
+	playmoncry (SPECIES_SANDSHREW, CRY_MODE_NORMAL)
+	msgbox(format("San-saaan!"))
+	release
+}
+
 script OldaleWarehouseApplianceStorageScavenger1 {
 	trainerbattle_single(TRAINER_SCAVENGER_OLDALEWAREHOUSE_1, ApplianceStorageScavenger1_Intro, ApplianceStorageScavenger1_Outro)
 

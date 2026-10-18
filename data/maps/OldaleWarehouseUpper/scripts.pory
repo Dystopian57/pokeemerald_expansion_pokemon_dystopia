@@ -304,6 +304,7 @@ script OldaleWarehouseUpperRebelEventEntrance {
 		msgbox(format("You want this place so badly? Whatever. We're done with it anyway."))
 		applymovement (1, moves(walk_in_place_up))
 		msgbox(format("PACK IT UP, REBELS! We're going back to {COLOR GREEN}PETALBURG!"))
+		closemessage
 		applymovement (3, moves(walk_right * 1, walk_in_place_left * 1))
 		applymovement (1, moves(walk_diag_northeast * 1, walk_up * 1))
 		waitmovement (1)
@@ -478,10 +479,10 @@ script OldaleWarehouseUpperRebelEventEntrance {
 			setflag (FLAG_BADGE01_GET)
 			checkplayergender
 			if(var(VAR_RESULT) == MALE){msgbox(format("{COLOR GREEN}{PLAYER} begins to remember some of his soldier skills..."))}
-			if(var(VAR_RESULT) == FEMALE){msgbox(format("{COLOR GREEN}{PLAYER}begins to remember some of her soldier skills..."))}
+			if(var(VAR_RESULT) == FEMALE){msgbox(format("{COLOR GREEN}{PLAYER} begins to remember some of her soldier skills..."))}
 
         	playse (MUS_OBTAIN_BADGE)
-			msgbox(format("{COLOR GREEN}{PLAYER} can now train Pokémon (and Safemon) past level 10!"))
+			msgbox(format("{COLOR GREEN}{PLAYER} can now train Pokémon {COLOR BLUE}(and Safemon) {COLOR GREEN}past level 10!"))
 
 
 			playbgm (MUS_UNDERPIZZA, TRUE)
@@ -608,7 +609,7 @@ script OldaleWarehouseUpperMoneyBags {
 	updatemoneybox
 	playse (SE_SHOP)
 	waitse
-	msgbox(format("Received 5000¥!"))
+	msgbox(format("Received 1000¥!"))
 	removeobject (8)
 	setflag (FLAG_ITEM_WAREHOUSEMONEYBAGS)
 	hidemoneybox

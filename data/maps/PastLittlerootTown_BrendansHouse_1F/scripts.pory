@@ -1,0 +1,67 @@
+raw `
+
+`
+mapscripts PastLittlerootTown_BrendansHouse_1F_MapScripts {
+    //MAP_SCRIPT_ON_LOAD: DisableInnFollowers
+	//MAP_SCRIPT_ON_TRANSITION: PastSpriteSwapTrick
+}
+
+script PastDinnerShelf {
+
+    lock
+	msgbox (format("Clean dinnerware is neatly arranged inside the shelf."))
+    release
+
+}
+
+script PastSink {
+
+    lock
+	msgbox (format("The sink is so sparkly, one can see their reflection on it!"))
+    release
+
+}
+
+script PastFridge {
+
+    lock
+	msgbox (format("It's full of yummy things."))
+    release
+
+}
+
+script PastLivingRoomTV {
+
+    lock
+	msgbox (format("It's not time to watch TV."))
+    release
+
+}
+
+script PastMay {
+
+    lock
+    applymovement (1, moves(face_player))
+    waitmovement (1)
+
+    if (!flag(pastmaytoldtofetchbrendan))
+	{   setspeaker ([SP_NAME_MOM])
+        msgbox (format("Ah, {PLAYER} - you're up dear!\p Breakfast is almost ready. Why don't you call dad in?"))
+    setflag (pastmaytoldtofetchbrendan)}
+
+    else {	
+    setspeaker ([SP_NAME_MOM])
+    msgbox (format("Dad has gone to stroll to {COLOR GREEN}Route 101{COLOR DARK_GRAY}. Take Mankey with you!"))}
+    applymovement (1, moves(face_up))
+    waitmovement (1)
+    release
+
+}
+
+script PastWindow {
+
+    lock
+	msgbox (format("Beyond the glass, the greenery extends as far as the eye can see."))
+    release
+
+}

@@ -339,10 +339,10 @@
 #define scientistarrivedinsanctum 0x133 // Set after you follow Steven to the entrance of the Cave of Origin.
 #define scientistinsanctum          0x134
 #define gotmoldybread           0x135
-#define FLAG_MET_SCOTT_RUSTBORO              0x136
+#define pastmaytoldtofetchbrendan              0x136
 #define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0x137 // Set after speaking to Wallace within the Cave of Origin.
 #define FLAG_RECEIVED_HM_WATERFALL           0x138
-#define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
+#define pastmankey                           0x139
 #define FLAG_RECEIVED_AURORA_TICKET          0x13A
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
@@ -366,9 +366,9 @@
 #define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
-#define FLAG_CHOSE_ROOT_FOSSIL               0x14F
-#define FLAG_CHOSE_CLAW_FOSSIL               0x150
-#define FLAG_RECEIVED_POWDER_JAR             0x151
+#define pastplayerm               0x14F
+#define pastplayerf               0x150
+#define scientistinsanctumgavedevonballs            0x151
 
 #define FLAG_CHOSEN_MULTI_BATTLE_NPC_PARTNER 0x152
 

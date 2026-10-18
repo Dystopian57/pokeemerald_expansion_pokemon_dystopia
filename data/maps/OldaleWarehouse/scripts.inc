@@ -534,7 +534,7 @@ OldaleWarehouseCarRebel_Movement_4:
 # 231 "data/maps/OldaleWarehouse/scripts.pory"
 OldaleWarehouseCarRebel_Movement_5:
 # 231 "data/maps/OldaleWarehouse/scripts.pory"
-	jump_in_place_up_down
+	jump_in_place_down
 	step_end
 
 # 239 "data/maps/OldaleWarehouse/scripts.pory"

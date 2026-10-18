@@ -44,6 +44,7 @@ script GreenSanctumScientistWartzFind {
 
         msgbox(format("By the primordial two... this is remarkable! No, it is astounding!"))
     	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_in_place_up))
         msgbox(format("This part of
 		the forest... it seems to remain unscathed from the damage and pollution cause by recent armed
 		conflict!\pBut most importantly - look!"))
@@ -61,12 +62,12 @@ script GreenSanctumScientistWartzFind {
     msgbox(format("That is the specimen we've been looking for!\p I beseech you - you must capture it
 	for me!"))
 	scientistbegstocatchwartz:
-	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "No", "Why?")
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "No", "Why?")
 	if (var(VAR_RESULT) == 0) {
 		playersaysyestoscientist:
 		msgbox(format("Wonderful! Here, take these Devon Balls."))
 		giveitem (ITEM_POKE_BALL, 10)
-		msgbox(format("Go forth now, and help make Hoenn a safer place!"))
+		setflag (scientistinsanctumgavedevonballs)
 			if (flag(scientistarrivedinsanctum))
 			{goto (endofscientist)}
 			else {goto (endofscientistfollow)}
@@ -79,6 +80,7 @@ script GreenSanctumScientistWartzFind {
 		reward.\pI will now contact a Devon Guard to assist me. Should you change your mind before they arrive,
 		I'd be inclined to resume our arrangement."))
 		closemessage
+    	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_in_place_up * 1))
 		if (flag(scientistarrivedinsanctum))
 		{goto (endofscientist)}
 		else {goto (endofscientistfollow)}
@@ -94,14 +96,14 @@ script GreenSanctumScientistWartzFind {
 
 	endofscientistfollow:
 	setflag (scientistarrivedinsanctum)
-	setvar (VAR_102_SCIENTIST, 3)
+	setvar (VAR_102_SCIENTIST, 4)
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_in_place_up * 1))
 	destroyfollowernpc
 	clearflag (scientistinsanctum)
 	addobject (4)
-	applymovement (4, moves(face_up))
 
 	endofscientist:
+	applymovement (4, moves(face_up))
 	release
 
 }
@@ -118,10 +120,11 @@ script GreenSanctumScientistDontgo {
 		msgbox(format("My good youth, surely you must at least try before fleeing!"))
 		closemessage
 		applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
-		waitmovement (OBJ_EVENT_ID_PLAYER)}
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		applymovement (4, moves(walk_in_place_up * 1))}
 		else {release}
 
-	lock
+
 }
 
 script GreenSactumWartzFight {
@@ -184,10 +187,19 @@ script GreenSactumWartzFight {
 			}
 
 		}
+	release
 }
 
 script GreenSanctumScientistIdle {
 	lock
+
+	if (flag(scientistinsanctumgavedevonballs))
+
+	{
+	applymovement (4, moves(face_player))
+	msgbox(format("What are you waiting for? Make haste - it might flee at any minute!"))
+	goto (endofscientist102idle)}
+
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playse (SE_POKENAV_CALL)
 	waitse
@@ -210,6 +222,10 @@ script GreenSanctumScientistIdle {
 	if (var(VAR_RESULT) == 2) {
 	goto (playersayswhytoscientist)
 	}
+
+	endofscientist102idle:
+	applymovement (4, moves(face_up))
+	release
 }
 
 //if Wartz defeated, Scientist throws ball, givemon.

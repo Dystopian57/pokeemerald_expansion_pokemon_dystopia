@@ -264,7 +264,7 @@ script DevonShowFreetrial {
 			hidemonpic
 			playse (SE_FLEE)
 			setspeaker (NULL)
-			msgbox (format("Will this steamy incident increase the gap between our protanist couple…?\p
+			msgbox (format("Will this steamy incident widen the gap between our protagonist couple…?\p
 			Or will it serve as the patch needed to repair their relationship!?\p
 			Find out more in the next episode of “Love is Danger!” Only on Devon Shows!"))
 			fadeoutbgm (1)
@@ -736,11 +736,21 @@ script DLCInnBedTime {
 	waitse
 	playse (SE_SUCCESS)
 	waitse
+
+	if (var(VAR_OLDALE_PHASE) >= 1 && (var(VAR_FLASHBACK_DREAM) == 0))
+	{	setvar (VAR_FLASHBACK_WAKEUPLOCATION, 2) //1 wakes up in room, 2 means wake up at Oldale, 3 in Petalburg Inn
+		fadeoutbgm (1)
+		warpsilent (MAP_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0)}
+
 	fadescreen (FADE_FROM_BLACK)
+
+
+
 	msgbox (format("{PLAYER} wakes up."))
 	fadeinbgm (1)
 	playbgm (MUS_GAMEOVER, TRUE)
 	
 }
+	endofsleep:
 	releaseall		
 }

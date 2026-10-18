@@ -4520,7 +4520,7 @@ OldaleDevonGrunts_Text_13:
 OldaleDevonGrunts_Text_14:
 # 944 "data/maps/OldaleTown/scripts.pory"
 	.string "Good day, dear civilians! I'm sorry to\n"
-	.string "say, Road 002 is still off lim-...$"
+	.string "say, {COLOR GREEN}Road 002{COLOR DARK_GRAY} is still off lim-...$"
 
 OldaleDevonGrunts_Text_15:
 # 952 "data/maps/OldaleTown/scripts.pory"

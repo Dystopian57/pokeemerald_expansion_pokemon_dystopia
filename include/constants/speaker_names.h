@@ -28,6 +28,10 @@ enum SpeakerNames {
     SP_NAME_SWAGGY,
     SP_NAME_GABBY,
     SP_NAME_GLACIA,
+    SP_NAME_MANKEY,
+    SP_NAME_DAD,
+    SP_NAME_NORMAN,
+    SP_NAME_PRIMEAPE,
 
     SP_NAME_COUNT
 };

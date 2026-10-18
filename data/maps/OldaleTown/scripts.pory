@@ -941,7 +941,7 @@ script OldaleDevonGrunts { //karen and jerry
 	if(var(VAR_OLDALE_PHASE) == 3)
         {
         applymovement (14, moves(face_player, walk_in_place_right * 1))
-        msgbox(format("Good day, dear civilians! I'm sorry to say, Road 002 is still off lim-...")) 
+        msgbox(format("Good day, dear civilians! I'm sorry to say, {COLOR GREEN}Road 002{COLOR DARK_GRAY} is still off lim-...")) 
 
         playbgm (MUS_HELP, TRUE)
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(jump_in_place_left * 1))

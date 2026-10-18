@@ -314,12 +314,6 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .image = IMG_VIRIDIAN_FOREST
     },
 
-    [MPS_LIPTOO_CHAMBER] = {
-        .mapsec = MAPSEC_LIPTOO_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
     [MPS_WEEPTH_CHAMBER] = {
         .mapsec = MAPSEC_WEEPTH_CHAMBER,
         .type = MPS_TYPE_CAVE,

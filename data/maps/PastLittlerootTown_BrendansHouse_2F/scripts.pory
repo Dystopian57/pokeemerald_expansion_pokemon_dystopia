@@ -3,19 +3,205 @@ raw `
 `
 
 mapscripts PastLittlerootTown_BrendansHouse_2F_MapScripts {
-    MAP_SCRIPT_ON_LOAD: PastSpriteSwapTrick
+    MAP_SCRIPT_ON_LOAD: DisablePastFollowers
 	//MAP_SCRIPT_ON_TRANSITION: PastSpriteSwapTrick
 }
 
-script PastSpriteSwapTrick {
+
+script DisablePastFollowers {
+	if (var(VAR_FLASHBACK_DREAM) == 0)
+		{
 	setflag (FLAG_TEMP_HIDE_FOLLOWER)
-    //msgbox (format("Test..."))
-    //msgbox(format("{PLAYER} falls into a deep slumber..."))
-    //fadescreenswapbuffers (FADE_TO_BLACK)
-    //fadescreenswapbuffers (FADE_FROM_BLACK)
-    //fadescreenswapbuffers (FADE_TO_BLACK)
-    applymovement (OBJ_EVENT_ID_PLAYER, moves(set_invisible))
-    //waitmovement (OBJ_EVENT_ID_PLAYER)
-    setobjectxy (1, 5, 4)
-    //fadescreenswapbuffers (FADE_FROM_BLACK)
+	clearflag(FLAG_SYS_POKENAV_GET)
+	clearflag(FLAG_SYS_POKEDEX_GET)
+    clearflag(FLAG_SYS_POKEMON_GET)
+    
+    }
+	//setrespawn (HEAL_LOCATION_OLDALE_TOWN)
+	//special (TurnOnTVScreen)
+	}
+
+script Playersaysmyoldroom {
+    lock
+	setspeaker ([SP_NAME_PLAYER])
+	msgbox (format("It's my old room, from when I was little..."))
+    release
+}
+
+script FlashbackTV {
+    lock
+	setspeaker ([SP_NAME_GABBY])
+	msgbox (format("Gabby here, live in Goldenrod City - the cornerstone of Jotho's journalism!
+    \p Or so it used to be, before business conglomerate Silph Co. turned it into its latest
+    mouthpiece.\pToday, we are here to look into the matter of {COLOR RED}mysterious radio transmissions,
+    {COLOR DARK_GRAY} as reported by our correpondants...\pJoin us as we unveil this mystery together!"))
+
+	setspeaker (NULL)
+	msgbox (format("... should get going already."))
+    release
+}
+
+script PastPlayerPC {
+
+    lock
+	msgbox (format("It's not time for surfing the Devon Net right now."))
+    release
+
+}
+
+script PastMap {
+
+    lock
+	msgbox (format("A vibrant map of Hoenn, green and blue in equal measure."))
+    release
+
+}
+
+script PastBattleTrophy {
+
+	lockall
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	msgbox (format("It's dad's Battle Frontier trophy. It's so shiny!!"))}
+	else {msgbox (format("It's mom's Battle Frontier trophy. It's so shiny!"))}
+	releaseall		
+}
+
+script PastPlayerRoomDiary {
+	lockall
+	setspeaker ([SP_NAME_PLAYER])
+	msgbox (format("My diary..."))
+	setspeaker (NULL)
+			showmonpic(SPECIES_ALCREMIE, 10,3)
+			msgbox (format("Today dad and mom gave me the best birthday gift ever - my first
+			Pokémon!\pMommy said it's a Mankey, a Fighting type.\pIn school I learnt
+			Fighting types are strong against Normal types, like the ones grandpa uses. \pSpeaking of 
+			grandpa, daddy said I am going to stay with him for a while...\pBecause him and mommy are going
+			to be very very busy with work.\pI was a bit sad. It was my birthday, but I think everyone
+			was sad today."))
+			hidemonpic
+    release	
+}
+
+script PastMankeyFollow {
+            setvar (VAR_FLASHBACK_DREAM, 1)
+            applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+            waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+            playmoncry (SPECIES_MANKEY, CRY_MODE_NORMAL)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Ki-kiii!"))
+            setspeaker (NULL)
+            msgbox (format("Mankey is eager to follow {PLAYER} around!"))
+            closemessage
+	        clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+            setfollowernpc (LOCALID_MANKEYFOLLOW, FNPC_ALL, MankeyFollowChat, PARTNER_RIVAL_FEMALE)
+            setflag (pastmankey)
+            release
+}
+
+script MankeyFollowChat {
+    lock
+
+	if (var(VAR_FLASHBACK_DREAM) == 1)
+		{
+        random (3)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: 
+            playse (SE_LEDGE)
+                applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(jump_in_place_up))
+                waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+            playse (SE_LEDGE)
+                applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(jump_in_place_down))
+                waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+                applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
+                waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+            playmoncry (SPECIES_MANKEY, CRY_MODE_HIGH_PITCH)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Man-maaaan!"))
+            setspeaker (NULL)
+            msgbox (format("Mankey is jumping about in excitement!"))
+        case 1: 
+
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+            playse (SE_M_BRICK_BREAK)
+            waitse
+            playmoncry (SPECIES_MANKEY, CRY_MODE_HIGH_PITCH)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Mankey is Karate Chopping the air."))
+
+        case 2:
+
+            playmoncry (SPECIES_MANKEY, CRY_MODE_HIGH_PITCH)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Ki-kiiii!!"))
+            setspeaker (NULL)
+            msgbox (format("Mankey seems full of energy."))
+        }}
+        
+	if (var(VAR_FLASHBACK_DREAM) == 2)
+		{
+        random (2)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: 
+        
+            playmoncry (SPECIES_MANKEY, CRY_MODE_HIGH_PITCH)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Ki-kiiii!!"))
+            setspeaker (NULL)
+            msgbox (format("Mankey is happy to be outdoors!"))
+
+
+        case 1: 
+        
+            playmoncry (SPECIES_MANKEY, CRY_MODE_HIGH_PITCH)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Ki-kiiii!!"))
+            setspeaker (NULL)
+            msgbox (format("Mankey gambols in the grass."))
+        }}
+
+
+	if (var(VAR_FLASHBACK_DREAM) >= 3)
+		{
+        random (3)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0: 
+        
+            playmoncry (SPECIES_MANKEY, CRY_MODE_WEAK)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Ki... k-kiii..."))
+            setspeaker (NULL)
+            msgbox (format("Mankey is trying to put up a brave face."))
+
+
+        case 1: 
+        
+            playmoncry (SPECIES_MANKEY, CRY_MODE_WEAK)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("M-maaan...?"))
+            applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_up, face_left, face_down, face_right, face_player))
+            waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+            setspeaker (NULL)
+            msgbox (format("Mankey looks around in confusion."))
+
+        case 2: 
+        
+            playmoncry (SPECIES_MANKEY, CRY_MODE_WEAK)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Kiiii..."))
+            applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_away_player, face_player))
+            waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+            setspeaker (NULL)
+            msgbox (format("Mankey remains alert, watching {PLAYER}'s back."))
+        }}
+
+
+    release
 }

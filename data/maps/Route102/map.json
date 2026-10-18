@@ -81,7 +81,7 @@
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 20,
       "y": 12,
-      "elevation": 15,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -253,6 +253,267 @@
       "elevation": 0,
       "var": "VAR_102_SCIENTIST",
       "var_value": "2",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "2",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoOldale"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoGreatCrater"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "3",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
+      "script": "Route102ScientistNottoPetalburg"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "1",
       "script": "Route102ScientistNottoPetalburg"
     }
   ],

@@ -345,13 +345,21 @@
 #define OBJ_EVENT_GFX_MUSASHI                    330
 #define OBJ_EVENT_GFX_BACKPACK                   331
 
+#define OBJ_EVENT_GFX_FILLERNPC1                 332
+#define OBJ_EVENT_GFX_FILLERNPC2                 333
+#define OBJ_EVENT_GFX_FILLERNPC3                 334
+#define OBJ_EVENT_GFX_FILLERNPC4                 336
 
-#define OBJ_EVENT_GFX_APRICORN_TREE              332
+#define OBJ_EVENT_GFX_PASTPLAYERM                337
+#define OBJ_EVENT_GFX_PASTPLAYERF                338
+
+
+#define OBJ_EVENT_GFX_APRICORN_TREE              339
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        333
+#define NUM_OBJ_EVENT_GFX                        340
 
 
 // These are dynamic object gfx ids.

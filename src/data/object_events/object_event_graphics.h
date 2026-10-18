@@ -201,6 +201,13 @@ const u32 gObjectEventPic_mudcrawdaunt[] = INCBIN_U32("graphics/object_events/pi
 
 const u32 gObjectEventPic_longhairguy[] = INCBIN_U32("graphics/object_events/pics/people/longhairguy.4bpp");
 
+const u32 gObjectEventPic_pastplayerm[] = INCBIN_U32("graphics/object_events/pics/people/pastplayerm.4bpp");
+const u32 gObjectEventPic_pastplayerf[] = INCBIN_U32("graphics/object_events/pics/people/pastplayerf.4bpp");
+
+const u32 gObjectEventPic_fillernpc1[] = INCBIN_U32("graphics/object_events/pics/people/fillernpc1.4bpp");
+const u32 gObjectEventPic_fillernpc2[] = INCBIN_U32("graphics/object_events/pics/people/fillernpc2.4bpp");
+const u32 gObjectEventPic_fillernpc3[] = INCBIN_U32("graphics/object_events/pics/people/fillernpc3.4bpp");
+const u32 gObjectEventPic_fillernpc4[] = INCBIN_U32("graphics/object_events/pics/people/fillernpc4.4bpp");
 
 const u32 gObjectEventPic_wageslavem[] = INCBIN_U32("graphics/object_events/pics/people/wageslavem.4bpp");
 const u32 gObjectEventPic_escapedprisonerm[] = INCBIN_U32("graphics/object_events/pics/people/escapedprisonerm.4bpp");

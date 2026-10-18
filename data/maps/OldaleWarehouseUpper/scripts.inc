@@ -248,7 +248,7 @@ OldaleWarehouseUpperRebelEventEntrance_49:
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_53
 OldaleWarehouseUpperRebelEventEntrance_52:
-# 511 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 512 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	end
 
@@ -438,7 +438,7 @@ OldaleWarehouseUpperRebelEventEntrance_53:
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_56
 OldaleWarehouseUpperRebelEventEntrance_55:
-# 328 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 329 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_58
 	goto OldaleWarehouseUpperRebelEventEntrance_52
@@ -515,63 +515,65 @@ OldaleWarehouseUpperRebelEventEntrance_65:
 # 306 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_42
 # 307 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_28
+	closemessage
 # 308 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_29
+	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_28
 # 309 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 1
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_29
 # 310 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 1
+	waitmovement 1
 # 311 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 1
+# 312 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	playse SE_EXIT
-# 316 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_30
 # 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_31
+	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_30
 # 318 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_LEDGE
+	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_31
 # 319 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 2
+	playse SE_LEDGE
 # 320 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
+	waitmovement 2
 # 321 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setspeaker [ SP_NAME_CALVIN ]
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
 # 322 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_43
+	setspeaker [ SP_NAME_CALVIN ]
 # 323 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	fadenewbgm 1
+	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_43
 # 324 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playbgm MUS_STOPTHIEF, TRUE
+	fadenewbgm 1
 # 325 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playbgm MUS_STOPTHIEF, TRUE
+# 326 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto rebelsleaveupperwarehouse
 	goto OldaleWarehouseUpperRebelEventEntrance_55
 
 OldaleWarehouseUpperRebelEventEntrance_58:
-# 329 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_FLEE
 # 330 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_27
+	playse SE_FLEE
 # 331 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_27
 # 332 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_9
+	waitmovement
 # 333 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_MEGA_KICK2
+	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_9
 # 334 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	call WarehouseRebelAdminShake
+	playse SE_M_MEGA_KICK2
 # 335 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	call WarehouseRebelAdminShake
 # 336 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_26
-# 337 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_BIND
-# 338 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitse
+# 337 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_26
+# 338 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_BIND
 # 339 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitse
+# 340 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_44
-# 342 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 343 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 1, 0, DYN_MULTICHOICE_CB_NONE, OldaleWarehouseUpperRebelEventEntrance_Text_45
-# 344 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 345 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_63
 	goto OldaleWarehouseUpperRebelEventEntrance_52
@@ -582,279 +584,279 @@ OldaleWarehouseUpperRebelEventEntrance_61:
 	goto OldaleWarehouseUpperRebelEventEntrance_60
 
 OldaleWarehouseUpperRebelEventEntrance_63:
-# 345 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_HEADBUTT
 # 346 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	call WarehouseRebelAdminShake
+	playse SE_M_HEADBUTT
 # 347 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_26
+	call WarehouseRebelAdminShake
 # 348 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_26
 # 349 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_DIZZY_PUNCH
+	waitse
 # 350 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	playse SE_M_DIZZY_PUNCH
 # 351 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_DIZZY_PUNCH
+	waitse
 # 352 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	playse SE_M_DIZZY_PUNCH
 # 353 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_DIZZY_PUNCH
+	waitse
 # 354 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
-# 355 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	playse SE_M_DIZZY_PUNCH
-# 356 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 355 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitse
+# 356 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_DIZZY_PUNCH
 # 357 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_39
+	waitse
 # 358 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_32
+	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_39
 # 359 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 1
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_32
 # 360 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 1
+# 361 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_33
-# 362 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	checkplayergender
 # 363 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	checkplayergender
+# 364 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_69
 OldaleWarehouseUpperRebelEventEntrance_68:
-# 364 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 365 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_72
 OldaleWarehouseUpperRebelEventEntrance_71:
-# 366 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_34
 # 367 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 1
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_34
 # 368 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_35
-# 370 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_28
-# 371 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 3
-# 372 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_METRONOME
-# 373 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_36
-# 376 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_48
-# 377 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
-# 378 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_37
-# 379 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitmovement 1
-# 380 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 1
-# 382 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	call WarehouseRebelAdminShake
-# 383 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_BELLY_DRUM
-# 384 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
-# 385 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	call WarehouseRebelAdminShake
-# 386 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_VITAL_THROW2
-# 387 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
-# 388 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	call WarehouseRebelAdminBigShake
-# 389 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_EXPLOSION
-# 390 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
-# 392 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	fadeoutbgm 1
-# 394 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_30
-# 395 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 369 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_35
+# 371 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_28
+# 372 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitmovement 3
+# 373 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_METRONOME
+# 374 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_36
+# 377 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_48
+# 378 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
+# 379 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 1, OldaleWarehouseUpperRebelEventEntrance_Movement_37
+# 380 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 1
+# 381 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 1
+# 383 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	call WarehouseRebelAdminShake
+# 384 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_BELLY_DRUM
+# 385 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitse
+# 386 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	call WarehouseRebelAdminShake
+# 387 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_VITAL_THROW2
+# 388 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitse
+# 389 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	call WarehouseRebelAdminBigShake
+# 390 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_EXPLOSION
+# 391 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitse
+# 393 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	fadeoutbgm 1
+# 395 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_30
 # 396 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_49
+	waitmovement 3
 # 397 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_TWISTER
+	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_49
 # 398 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_TWISTER
+# 399 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_50
-# 401 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_38
 # 402 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 2
+	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_38
 # 403 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setspeaker [ SP_NAME_CALVIN ]
-# 404 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_51
-# 405 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_LEDGE
-# 406 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_14
-# 407 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitmovement 2
+# 404 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setspeaker [ SP_NAME_CALVIN ]
+# 405 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_51
+# 406 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_LEDGE
+# 407 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_14
 # 408 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playbgm MUS_STOPTHIEF, TRUE
+	waitmovement 2
 # 409 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
+	playbgm MUS_STOPTHIEF, TRUE
 # 410 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	checkplayergender
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
 # 411 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	checkplayergender
+# 412 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_75
 OldaleWarehouseUpperRebelEventEntrance_74:
-# 412 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 413 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_78
 OldaleWarehouseUpperRebelEventEntrance_77:
-# 413 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	closemessage
 # 414 "data/maps/OldaleWarehouseUpper/scripts.pory"
-rebelsleaveupperwarehouse:
-# 415 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_FLEE
-# 417 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_39
-# 418 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 3
-# 419 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 3
-# 420 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_EXIT
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_40
-# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
-# 425 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_FLEE
-# 426 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 2
-# 427 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 2
-# 428 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_EXIT
-# 429 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
-# 432 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 4, OldaleWarehouseUpperRebelEventEntrance_Movement_41
-# 433 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_2
-# 434 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 4
-# 435 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_LEDGE
-# 436 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 4, OldaleWarehouseUpperRebelEventEntrance_Movement_42
-# 437 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 4, OldaleWarehouseUpperRebelEventEntrance_Movement_39
-# 438 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_FLEE
-# 439 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 4
-# 440 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 4
-# 441 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_EXIT
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 6, OldaleWarehouseUpperRebelEventEntrance_Movement_43
-# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_9
-# 445 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_FLEE
-# 446 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 6
-# 447 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 6
-# 448 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_EXIT
-# 449 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_2
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 5, OldaleWarehouseUpperRebelEventEntrance_Movement_44
-# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
-# 454 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_FLEE
-# 455 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 5
-# 456 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 5
-# 457 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_EXIT
-# 458 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
-# 461 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	addobject 2
-# 462 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setobjectxy 2, 2, 1
-# 463 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_45
-# 464 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 2
-# 465 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setspeaker [ SP_NAME_CALVIN ]
-# 466 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
-# 467 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_EXIT
-# 468 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
-# 469 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_54
-# 470 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	closemessage
-# 471 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setspeaker NULL
-# 472 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_39
-# 473 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 2
-# 474 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 2
-# 475 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 415 "data/maps/OldaleWarehouseUpper/scripts.pory"
+rebelsleaveupperwarehouse:
+# 416 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_FLEE
+# 418 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 3, OldaleWarehouseUpperRebelEventEntrance_Movement_39
+# 419 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 3
+# 420 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 3
+# 421 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	playse SE_EXIT
-# 476 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_40
+# 425 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
+# 426 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_FLEE
+# 427 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 2
+# 428 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 2
+# 429 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_EXIT
+# 430 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
+# 433 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 4, OldaleWarehouseUpperRebelEventEntrance_Movement_41
+# 434 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_2
+# 435 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 4
+# 436 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_LEDGE
+# 437 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 4, OldaleWarehouseUpperRebelEventEntrance_Movement_42
+# 438 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 4, OldaleWarehouseUpperRebelEventEntrance_Movement_39
+# 439 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_FLEE
+# 440 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 4
+# 441 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 4
+# 442 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_EXIT
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 6, OldaleWarehouseUpperRebelEventEntrance_Movement_43
+# 445 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_9
+# 446 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_FLEE
+# 447 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 6
+# 448 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 6
+# 449 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_EXIT
+# 450 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_2
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 5, OldaleWarehouseUpperRebelEventEntrance_Movement_44
+# 454 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_3
+# 455 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_FLEE
+# 456 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 5
+# 457 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 5
+# 458 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_EXIT
+# 459 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
+# 462 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	addobject 2
+# 463 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setobjectxy 2, 2, 1
+# 464 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_45
+# 465 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 2
+# 466 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setspeaker [ SP_NAME_CALVIN ]
+# 467 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitse
+# 468 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_EXIT
+# 469 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitse
+# 470 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_54
+# 471 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	closemessage
+# 472 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setspeaker NULL
+# 473 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 2, OldaleWarehouseUpperRebelEventEntrance_Movement_39
+# 474 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 2
+# 475 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	removeobject 2
+# 476 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_EXIT
 # 477 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	fadeoutbgm 1
+	waitse
 # 478 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_BADGE01_GET
+	fadeoutbgm 1
 # 479 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	checkplayergender
+	setflag FLAG_BADGE01_GET
 # 480 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	checkplayergender
+# 481 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_81
 OldaleWarehouseUpperRebelEventEntrance_80:
-# 481 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 482 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq OldaleWarehouseUpperRebelEventEntrance_84
 OldaleWarehouseUpperRebelEventEntrance_83:
-# 483 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse MUS_OBTAIN_BADGE
 # 484 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse MUS_OBTAIN_BADGE
+# 485 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_57
-# 487 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 488 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	playbgm MUS_UNDERPIZZA, TRUE
-# 492 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag oldalewarehouserebelscleared
 # 493 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag DLCclassends
+	setflag oldalewarehouserebelscleared
 # 494 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	clearflag DLCrecesstarts
+	setflag DLCclassends
 # 495 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	clearflag cigarettepop
+	clearflag DLCrecesstarts
 # 496 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	clearflag carrebelwarehouse
+	clearflag cigarettepop
 # 497 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag camelianotoutsideDLC
+	clearflag carrebelwarehouse
 # 498 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag sharpynotinroute103
+	setflag camelianotoutsideDLC
 # 499 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag conartistescaped
+	setflag sharpynotinroute103
 # 500 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag devonbridgeguardgoestoconartist
+	setflag conartistescaped
 # 501 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	clearflag FLAG_ITEM_OLDALE_BYTRUCK
+	setflag devonbridgeguardgoestoconartist
 # 502 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	clearflag FLAG_ITEM_OLDALE_BYTRUCK
+# 503 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	setvar VAR_OLDALE_PHASE, 2
 	goto OldaleWarehouseUpperRebelEventEntrance_52
 
@@ -864,265 +866,265 @@ OldaleWarehouseUpperRebelEventEntrance_66:
 	goto OldaleWarehouseUpperRebelEventEntrance_65
 
 OldaleWarehouseUpperRebelEventEntrance_69:
-# 363 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 364 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_46
 	goto OldaleWarehouseUpperRebelEventEntrance_68
 
 OldaleWarehouseUpperRebelEventEntrance_72:
-# 364 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 365 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_47
 	goto OldaleWarehouseUpperRebelEventEntrance_71
 
 OldaleWarehouseUpperRebelEventEntrance_75:
-# 411 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 412 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_52
 	goto OldaleWarehouseUpperRebelEventEntrance_74
 
 OldaleWarehouseUpperRebelEventEntrance_78:
-# 412 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 413 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_53
 	goto OldaleWarehouseUpperRebelEventEntrance_77
 
 OldaleWarehouseUpperRebelEventEntrance_81:
-# 480 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 481 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_55
 	goto OldaleWarehouseUpperRebelEventEntrance_80
 
 OldaleWarehouseUpperRebelEventEntrance_84:
-# 481 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 482 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperRebelEventEntrance_Text_56
 	goto OldaleWarehouseUpperRebelEventEntrance_83
 
 
 WarehouseRebelAdminShake::
-# 525 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8004, 2
 # 526 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8005, 6
+	setvar VAR_0x8004, 2
 # 527 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8006, 4
+	setvar VAR_0x8005, 6
 # 528 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 4
 # 529 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_STRENGTH
+	setvar VAR_0x8007, 4
 # 530 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_STRENGTH
+# 531 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	special ShakeCamera
 	return
 
 
 WarehouseRebelAdminBigShake::
-# 534 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8004, 4
 # 535 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8005, 8
+	setvar VAR_0x8004, 4
 # 536 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8006, 8
+	setvar VAR_0x8005, 8
 # 537 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 8
 # 538 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_BRICK_BREAK
+	setvar VAR_0x8007, 4
 # 539 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_M_BRICK_BREAK
+# 540 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	special ShakeCamera
 	return
 
 
 WarehouseDevonBallCrate::
-# 545 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 546 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_MAUSOLEUM_HEXGIRL, 1
 	goto_if_le WarehouseDevonBallCrate_2
-# 564 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 565 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox WarehouseDevonBallCrate_Text_4
 WarehouseDevonBallCrate_1:
-# 567 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 568 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 WarehouseDevonBallCrate_2:
-# 547 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 548 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSEDEVONBALLS, WarehouseDevonBallCrate_5
-# 560 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 561 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox WarehouseDevonBallCrate_Text_3
 	goto WarehouseDevonBallCrate_1
 
 WarehouseDevonBallCrate_5:
-# 548 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox WarehouseDevonBallCrate_Text_0
 # 549 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox WarehouseDevonBallCrate_Text_0
+# 550 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, WarehouseDevonBallCrate_Text_1, WarehouseDevonBallCrate_Text_2
-# 551 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 552 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq WarehouseDevonBallCrate_9
 WarehouseDevonBallCrate_8:
-# 555 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 556 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq WarehouseDevonBallCrate_11
 	goto WarehouseDevonBallCrate_1
 
 WarehouseDevonBallCrate_9:
-# 552 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	giveitem ITEM_POKE_BALL, 10
 # 553 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	giveitem ITEM_POKE_BALL, 10
+# 554 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	setflag FLAG_ITEM_WAREHOUSEDEVONBALLS
 	goto WarehouseDevonBallCrate_8
 
 WarehouseDevonBallCrate_11:
-# 555 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 556 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	goto WarehouseDevonBallCrate_1
 
 
 OldaleWarehouseUpperComputer::
-# 572 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 573 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperComputer_Text_0
+	lock
 # 574 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperComputer_Text_0
+# 575 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperBookshelves::
-# 578 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 579 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperBookshelves_Text_0
+	lock
 # 580 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperBookshelves_Text_0
+# 581 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperMicrowave::
-# 584 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 585 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperMicrowave_Text_0
+	lock
 # 586 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperMicrowave_Text_0
+# 587 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSEMICROWAVE, OldaleWarehouseUpperMicrowave_2
-# 590 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 591 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperMicrowave_Text_1
 OldaleWarehouseUpperMicrowave_1:
-# 592 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 593 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperMicrowave_2:
-# 587 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	giveitem ITEM_AERODACTYLITE
 # 588 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	giveitem ITEM_AERODACTYLITE
+# 589 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	setflag FLAG_ITEM_WAREHOUSEMICROWAVE
 	goto OldaleWarehouseUpperMicrowave_1
 
 
 OldaleWarehouseUpperLoadtadDoll::
-# 596 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 597 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	givedecoration DECOR_LOTAD_DOLL
+	lock
 # 598 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 9
+	givedecoration DECOR_LOTAD_DOLL
 # 599 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_ITEM_WAREHOUSELOTADDOLL
+	removeobject 9
 # 600 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setflag FLAG_ITEM_WAREHOUSELOTADDOLL
+# 601 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperMoneyBags::
-# 604 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 605 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	showmoneybox 18, 0
+	lock
 # 606 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperMoneyBags_Text_0
+	showmoneybox 18, 0
 # 607 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	addmoney 1000
+	msgbox OldaleWarehouseUpperMoneyBags_Text_0
 # 608 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	updatemoneybox
+	addmoney 1000
 # 609 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_SHOP
+	updatemoneybox
 # 610 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	playse SE_SHOP
 # 611 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperMoneyBags_Text_1
+	waitse
 # 612 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 8
+	msgbox OldaleWarehouseUpperMoneyBags_Text_1
 # 613 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
+	removeobject 8
 # 614 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	hidemoneybox
+	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
 # 615 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	hidemoneybox
+# 616 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperExtinguisher::
-# 620 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 621 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperExtinguisher_Text_0
+	lock
 # 622 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperExtinguisher_Text_0
+# 623 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperPrinter::
-# 626 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 627 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	lock
+# 628 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperPrinter_Text_0
-# 629 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 630 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperCoffee::
-# 633 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 634 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperCoffee_Text_0
+	lock
 # 635 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperCoffee_Text_0
+# 636 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSECOFFEE, OldaleWarehouseUpperCoffee_2
-# 638 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 639 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperCoffee_Text_1
 OldaleWarehouseUpperCoffee_1:
-# 640 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 641 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperCoffee_2:
-# 636 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 637 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	giveitem ITEM_HEAL_POWDER
 	goto OldaleWarehouseUpperCoffee_1
 
 
 OldaleWarehouseUpperTrashcan::
-# 644 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 645 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	lock
+# 646 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSETRASHCAN, OldaleWarehouseUpperTrashcan_2
-# 648 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 649 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperTrashcan_Text_0
 OldaleWarehouseUpperTrashcan_1:
-# 650 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 651 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperTrashcan_2:
-# 646 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 647 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	givedecoration DECOR_SKITTY_DOLL
 	goto OldaleWarehouseUpperTrashcan_1
 
 
 OldaleWarehouseUpperSafemonNotice::
-# 654 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 655 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	showmonpic SPECIES_LOADTAD, 10, 3
+	lock
 # 656 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	showmonpic SPECIES_LOADTAD, 10, 3
+# 657 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperSafemonNotice_Text_0
-# 658 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	hidemonpic
 # 659 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	hidemonpic
+# 660 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
@@ -1341,179 +1343,179 @@ OldaleWarehouseUpperRebelEventEntrance_Movement_27:
 	walk_fast_right
 	step_end
 
-# 307 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 308 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_28:
-# 307 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 308 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_right
-# 307 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 308 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 308 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 309 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_29:
-# 308 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 309 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_diag_northeast
-# 308 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 309 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_up
 	step_end
 
-# 316 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_30:
-# 316 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_left
-# 316 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 318 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_31:
-# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 318 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_up
-# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 318 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_up
-# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 318 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_left
-# 317 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 318 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 358 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 359 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_32:
-# 358 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 359 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_down
-# 358 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 359 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_left
-# 358 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 359 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_up
-# 358 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 359 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 360 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 361 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_33:
-# 360 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 361 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_down
-# 360 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 361 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_left
-# 360 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 361 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 366 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 367 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_34:
-# 366 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 367 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_slow_up
-# 366 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 367 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_left
-# 366 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 367 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 368 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 369 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_35:
-# 368 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 369 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 373 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 374 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_36:
-# 373 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 374 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 378 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 379 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_37:
-# 378 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 379 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_slow_up
 	step_end
 
-# 401 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 402 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_38:
-# 401 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 402 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_up
-# 401 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 402 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_up
-# 401 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 402 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_left
 	step_end
 
-# 417 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 418 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_39:
-# 417 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 418 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_40:
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 423 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 424 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 432 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 433 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_41:
-# 432 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 433 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 432 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 433 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 436 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 437 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_42:
-# 436 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 437 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	jump_2_right
 	step_end
 
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_43:
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_right
-# 443 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 444 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_44:
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_left
-# 452 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 453 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 463 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 464 "data/maps/OldaleWarehouseUpper/scripts.pory"
 OldaleWarehouseUpperRebelEventEntrance_Movement_45:
-# 463 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 464 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	walk_fast_down
 	step_end
 
@@ -1719,162 +1721,162 @@ OldaleWarehouseUpperRebelEventEntrance_Text_42:
 	.string "{COLOR GREEN}PETALBURG!$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_43:
-# 322 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 323 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Y-you heard the boss! Back to base!$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_44:
-# 339 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 340 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "{COLOR GREEN}The {COLOR RED}Rebel{COLOR GREEN} has {PLAYER} in a wrestling\n"
 	.string "grapple!$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_45:
-# 342 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 343 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Headbutt!$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_46:
-# 363 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 364 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "L-let me at him... where's the...\n"
 	.string "t-werp...!?$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_47:
-# 364 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 365 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "L-let me at her... where's the...\n"
 	.string "t-werp...!?$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_48:
-# 376 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 377 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Uhm... boss? You're going to Tauros\n"
 	.string "Tackle from downstairs?$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_49:
-# 396 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 397 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Oouuch...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_50:
-# 398 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 399 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "...$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_51:
-# 404 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 405 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A-as the second in command, I say...$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_52:
-# 411 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 412 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "I told you this guy was too strong!\n"
 	.string "RUUUUN!$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_53:
-# 412 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 413 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "I told you this girl was too strong!\n"
 	.string "RUUUUN!$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_54:
-# 469 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 470 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "T-this is not over yet! You'll regret\n"
 	.string "getting on our bad side, twerp!$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_55:
-# 480 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 481 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "{COLOR GREEN}{PLAYER} begins to remember some of\n"
 	.string "his soldier skills...$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_56:
-# 481 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	.string "{COLOR GREEN}{PLAYER}begins to remember some of\n"
+# 482 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "{COLOR GREEN}{PLAYER} begins to remember some of\n"
 	.string "her soldier skills...$"
 
 OldaleWarehouseUpperRebelEventEntrance_Text_57:
-# 484 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	.string "{COLOR GREEN}{PLAYER} can now train Pokémon (and\n"
-	.string "Safemon) past level 10!$"
+# 485 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "{COLOR GREEN}{PLAYER} can now train Pokémon {COLOR BLUE}(and\n"
+	.string "Safemon) {COLOR GREEN}past level 10!$"
 
 WarehouseDevonBallCrate_Text_0:
-# 548 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 549 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "There's a few unsealed balls in the\n"
 	.string "crates. No one will miss them...$"
 
 WarehouseDevonBallCrate_Text_1:
-# 549 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 550 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Take them$"
 
 WarehouseDevonBallCrate_Text_2:
-# 549 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 550 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Leave$"
 
 WarehouseDevonBallCrate_Text_3:
-# 560 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 561 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Can't take all of the Devon Balls...$"
 
 WarehouseDevonBallCrate_Text_4:
-# 564 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 565 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A crate full of Devon Balls, still sealed.$"
 
 OldaleWarehouseUpperComputer_Text_0:
-# 573 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 574 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The desktop's background features the\n"
 	.string "warehouse's logo: a smiling Loadtad.$"
 
 OldaleWarehouseUpperBookshelves_Text_0:
-# 579 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 580 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "It's full of accounting books and\n"
 	.string "company guidelines.$"
 
 OldaleWarehouseUpperMicrowave_Text_0:
-# 585 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 586 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "It's a microwave. There's some reheated\n"
 	.string "food inside...$"
 
 OldaleWarehouseUpperMicrowave_Text_1:
-# 590 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 591 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The microwave is empty.$"
 
 OldaleWarehouseUpperMoneyBags_Text_0:
-# 606 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 607 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Seems the {COLOR RED}Rebels{COLOR DARK_GRAY} forgot some of their\n"
 	.string "loot...$"
 
 OldaleWarehouseUpperMoneyBags_Text_1:
-# 611 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	.string "Received 5000¥!$"
+# 612 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "Received 1000¥!$"
 
 OldaleWarehouseUpperExtinguisher_Text_0:
-# 621 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 622 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A regular fire extinguisher.$"
 
 OldaleWarehouseUpperPrinter_Text_0:
-# 627 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 628 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "There's many copies of a picture of\n"
 	.string "Mister Stone.\p"
 	.string "The image has been edited to make him\n"
 	.string "look like a Mr. Mime.$"
 
 OldaleWarehouseUpperCoffee_Text_0:
-# 634 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 635 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "For some reason, there's a can of\n"
 	.string "coffee by the coffee machine...$"
 
 OldaleWarehouseUpperCoffee_Text_1:
-# 638 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 639 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A coffee machine, Chesto brand.$"
 
 OldaleWarehouseUpperTrashcan_Text_0:
-# 648 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 649 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The trash can is empty.$"
 
 OldaleWarehouseUpperSafemonNotice_Text_0:
-# 656 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 657 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "{COLOR BLUE}Safemon Notice{COLOR DARK_GRAY}: To assist conditioning,\n"
 	.string "do not feed Loadtads until end of\l"
 	.string "shift!$"
 
 RebelGruntMWareHouseUpperOutro::
-# 515 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 516 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "If Cheerorb could use Self-Destruct... \nwe would have won!$"
 
 RebelGruntFWareHouseUpperOutro::
-# 518 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 519 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "... you're paying for my Devon Center\nfee.$"
 
 RebelAdminWareHouseUpperOutro::
-# 521 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 522 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Heh... this isn't over.$"

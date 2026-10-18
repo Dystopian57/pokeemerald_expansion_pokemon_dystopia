@@ -46,7 +46,7 @@ EventScript_CancelCut::
 Text_WantToCut:
 	.string "The fence is red with rust.\n"
 	.string "A Pokémon could CUT it down.\p"
-	.string "Would you like to CUT it?$"
+	.string "Command a Pokémon to CUT it?$"
 
 Text_MonUsedFieldMove:
 	.string "{STR_VAR_1} used {STR_VAR_2}!$"

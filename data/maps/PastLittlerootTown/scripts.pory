@@ -1,0 +1,380 @@
+raw `
+
+
+`
+mapscripts PastLittlerootTown_MapScripts {
+    MAP_SCRIPT_ON_LOAD: LoadPastSprite
+	//MAP_SCRIPT_ON_TRANSITION: PastSpriteSwapTrick
+}
+
+script LoadPastSprite {
+
+		checkplayergender
+			if(var(VAR_RESULT) == MALE){
+            setflag (pastplayerf)
+            }
+
+			if(var(VAR_RESULT) == FEMALE){
+            setflag (pastplayerm)
+            }
+}
+
+script PastOutsideTrigger {
+
+    setvar (VAR_FLASHBACK_DREAM, 2)
+
+}
+
+script PastNightmareZoneReturn {
+    
+    lock
+	msgbox (format("... must find dad."))
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    release
+
+}
+
+script PastNightmareZoneTrigger {
+
+    setvar (VAR_FLASHBACK_DREAM, 3)
+
+}
+
+script PastShadeWeather {
+lock
+setweather (WEATHER_SHADE)
+doweather
+fadeoutbgm (1)
+playbgm (MUS_WEATHER_GROUDON, FALSE)
+release
+}
+
+script PastPlayerHouseSign {
+
+    lock
+	msgbox (format("BRENDAN's House."))
+    release
+
+}
+
+script PastRivalHouseSign {
+
+    lock
+	msgbox (format("MAY's House."))
+    release
+
+}
+
+script PastLabSign{
+
+    lock
+	msgbox (format("Littleroot Pokémon Lab."))
+    release
+
+}
+
+script PastTownSign{
+
+    lock
+	msgbox (format("Littleroot Town\n“A town that can't be shaded any hue.”"))
+    release
+
+}
+
+script PastNormanFlashback {
+    lock
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 12))
+    	waitmovement(OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+        setspeaker ([SP_NAME_NORMAN])
+        msgbox (format("{PLAYER}... again."))
+
+        playmoncry (SPECIES_MANKEY, CRY_MODE_WEAK)
+        setspeaker ([SP_NAME_MANKEY])
+        msgbox (format("Ki..."))
+
+        setspeaker ([SP_NAME_NORMAN])
+        msgbox (format("We will not stop until you win at least once.
+        \pYour parents were much stronger, and they...
+        \p... this is for your own good. Command your Pokémon. Now!"))
+        closemessage
+
+        playse (SE_LEDGE)
+		applymovement(20, moves(jump_in_place_down))
+        waitse
+        playmoncry (SPECIES_VIGOROTH, CRY_MODE_HIGH_PITCH)
+        setspeaker (NULL)
+        msgbox (format("VIIIGRRRR!"))
+        closemessage
+
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 12))
+    	waitmovement(OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+
+    setvar (VAR_FLASHBACK_DREAM, 4)
+    release
+
+}
+
+script PastWarFlashback {
+    lock
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 12))
+    	waitmovement(OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+        msgbox (format("Venomoth... Confuse Ray."))
+
+        playmoncry (SPECIES_VENOMOTH, CRY_MODE_NORMAL)
+        msgbox (format("Gzzz...!"))
+        closemessage
+
+        playse (SE_M_CONFUSE_RAY)
+        waitse
+
+        playse (SE_LEDGE)
+        applymovement (22, moves(jump_in_place_up))
+        waitse
+        playmoncry (SPECIES_PRIMEAPE, CRY_MODE_WEAK) 
+        setspeaker ([SP_NAME_PRIMEAPE])
+
+        msgbox (format("Priii...!?"))
+
+        applymovement (22, moves(face_right))
+        playse (SE_CONTEST_CONDITION_LOSE)
+        waitse
+        applymovement (22, moves(face_down))
+        playse (SE_CONTEST_CONDITION_LOSE)
+        waitse
+
+
+        playmoncry (SPECIES_PRIMEAPE, CRY_MODE_WEAK) 
+        setspeaker ([SP_NAME_PRIMEAPE])
+
+        setspeaker (NULL)
+
+        msgbox (format("Primeape looks around with blank eyes."))
+        closemessage
+
+        playse (SE_LEDGE)
+		applymovement(10, moves(jump_in_place_left))
+		applymovement(19, moves(jump_in_place_left))
+        waitse
+        setspeaker ([SP_NAME_RIVAL])
+        msgbox (format("{PLAYER}, watch out!! Primeape is...!"))
+        closemessage
+
+        setspeaker (NULL)
+
+        applymovement (22, moves(walk_down * 1))
+        playse (SE_CONTEST_CONDITION_LOSE)
+        waitse
+
+
+
+
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 12))
+    	waitmovement(OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+
+        playmoncry (SPECIES_PRIMEAPE, CRY_MODE_HIGH_PITCH)
+        playse (SE_M_STRENGTH)     
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+        waitse
+        playse (SE_M_STRENGTH)     
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+        waitse
+        playse (SE_M_BRICK_BREAK)     
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+        waitse
+
+
+    setvar (VAR_FLASHBACK_DREAM, 5)
+    release
+
+}
+
+script PastRivalTrauma {
+
+    lock
+
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+	    msgbox (format("{PLAYER}, guess what! My arm doesn't hurt anymore."))}
+	else {    msgbox (format("{PLAYER}, guess what! My leg doesn't hurt anymore."))}
+
+    msgbox (format("{COLOR RED}tHaT mUsT mEaN It'S hEaLeD, rIiIgHT!?"))
+    closemessage
+	applymovement(24, moves(walk_down_affine))
+	applymovement(25, moves(walk_down_affine))
+    waitmovement (24)
+    waitmovement (25)
+    removeobject (24)
+    removeobject (25)
+    setflag (pastplayerm)
+    setflag (pastplayerf)
+    release
+    setvar (VAR_FLASHBACK_DREAM, 6)
+
+}
+
+script PastRivalBlames {
+    lock
+    msgbox (format("tHiS"))
+    release
+}
+
+script PastGruntsTakeMankey {
+    lock
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+	applymovement(26, moves(walk_down * 1, face_right))
+	applymovement(27, moves(walk_down * 1, face_left))
+    msgbox (format("We must take this away."))
+    closemessage
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_left, face_right, face_left, face_right, face_left))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+
+            playmoncry (SPECIES_MANKEY, CRY_MODE_WEAK)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("K-kii...?"))
+
+	applymovement(27, moves(walk_right * 1, face_left))
+	applymovement(26, moves(walk_in_place_right))
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+            playse (SE_M_STRENGTH)
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(jump_right))
+        waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+	    applymovement(26, moves(walk_right * 1))
+
+	    applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+
+            playmoncry (SPECIES_MANKEY, CRY_MODE_HIGH_PITCH)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Kiii!"))
+            closemessage
+
+	applymovement(26, moves(walk_right * 10))
+	applymovement(27, moves(walk_right * 10))
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 10))
+
+    playse (SE_WALL_HIT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitse
+
+    playse (SE_WALL_HIT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitse
+
+    playse (SE_WALL_HIT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitse
+
+    waitmovement (27)
+
+            playmoncry (SPECIES_MANKEY, CRY_MODE_HIGH_PITCH)
+            setspeaker ([SP_NAME_MANKEY])
+            msgbox (format("Kiii!"))
+            closemessage
+
+    playse (SE_WALL_HIT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+    playse (SE_WALL_HIT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+    playse (SE_WALL_HIT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+            playse (SE_M_STRENGTH)
+
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+            playse (SE_M_STRENGTH)
+
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+    setvar (VAR_FLASHBACK_DREAM, 7)
+	setflag (FLAG_TEMP_HIDE_FOLLOWER)
+    destroyfollowernpc
+    release
+}
+
+script PastNoMusic {
+    fadeoutbgm (1)
+    playbgm (MUS_NONE, FALSE)
+    
+}
+
+script PastBrendan {
+    lock
+    fadeoutbgm (1)
+    playbgm (MUS_NONE, FALSE)
+    msgbox (format("..."))
+    closemessage
+
+	applymovement(11, moves(face_down))
+    waitmovement (11)
+    msgbox (format("You are a failure."))
+
+	applymovement(11, moves(walk_down_affine * 2))
+    waitmovement (11)
+    removeobject (11)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down_affine))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    removeobject (OBJ_EVENT_ID_PLAYER)
+
+	clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+	setflag(FLAG_SYS_POKENAV_GET)
+	setflag(FLAG_SYS_POKEDEX_GET)
+    setflag(FLAG_SYS_POKEMON_GET)
+
+
+	if (var(VAR_FLASHBACK_WAKEUPLOCATION) == 1)
+	{	warpsilent (MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0)}
+
+	if (var(VAR_FLASHBACK_WAKEUPLOCATION) == 2)
+	{	warpsilent (MAP_POKE_INN_ROOM2, 2)}
+
+}
+
+script PastNoReturnAfterMankey {
+    lock
+    msgbox (format("Must... tell dad... to come have... breakfast."))
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    release
+}

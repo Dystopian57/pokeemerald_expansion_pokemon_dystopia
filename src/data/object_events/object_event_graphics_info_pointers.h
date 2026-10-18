@@ -314,6 +314,14 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fisherfishi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mudcrawdaunt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_longhairguy;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fillernpc1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fillernpc2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fillernpc3;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_fillernpc4;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pastplayerm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pastplayerf;
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_wageslavem;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_escapedprisonerm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_lanette;
@@ -666,6 +674,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_FISHERFISHING] =                  &gObjectEventGraphicsInfo_fisherfishing,
     [OBJ_EVENT_GFX_MUDCRAWDAUNT] =                  &gObjectEventGraphicsInfo_mudcrawdaunt,
     [OBJ_EVENT_GFX_LONGHAIRGUY] =                  &gObjectEventGraphicsInfo_longhairguy,
+
+    [OBJ_EVENT_GFX_FILLERNPC1] =                  &gObjectEventGraphicsInfo_fillernpc1,
+    [OBJ_EVENT_GFX_FILLERNPC2] =                  &gObjectEventGraphicsInfo_fillernpc2,
+    [OBJ_EVENT_GFX_FILLERNPC3] =                  &gObjectEventGraphicsInfo_fillernpc3,
+    [OBJ_EVENT_GFX_FILLERNPC4] =                  &gObjectEventGraphicsInfo_fillernpc4,
+
+    [OBJ_EVENT_GFX_PASTPLAYERM] =                  &gObjectEventGraphicsInfo_pastplayerm,
+    [OBJ_EVENT_GFX_PASTPLAYERF] =                  &gObjectEventGraphicsInfo_pastplayerf,
+
     [OBJ_EVENT_GFX_WAGESLAVEM] =             &gObjectEventGraphicsInfo_wageslavem,
     [OBJ_EVENT_GFX_ESCAPEDPRISONERM] =             &gObjectEventGraphicsInfo_escapedprisonerm,
     [OBJ_EVENT_GFX_LANETTE] =                  &gObjectEventGraphicsInfo_lanette,

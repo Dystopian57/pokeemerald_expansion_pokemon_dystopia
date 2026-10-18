@@ -557,7 +557,29 @@ static const struct SpriteFrameImage sPicTable_longhairguy[] = {
     overworld_ascending_frames(gObjectEventPic_longhairguy, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_fillernpc1[] = {
+    overworld_ascending_frames(gObjectEventPic_fillernpc1, 2, 4),
+};
 
+static const struct SpriteFrameImage sPicTable_fillernpc2[] = {
+    overworld_ascending_frames(gObjectEventPic_fillernpc2, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_fillernpc3[] = {
+    overworld_ascending_frames(gObjectEventPic_fillernpc3, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_fillernpc4[] = {
+    overworld_ascending_frames(gObjectEventPic_fillernpc4, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_pastplayerm[] = {
+    overworld_ascending_frames(gObjectEventPic_pastplayerm, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_pastplayerf[] = {
+    overworld_ascending_frames(gObjectEventPic_pastplayerf, 2, 4),
+};
 
 static const struct SpriteFrameImage sPicTable_injureddevongruntm[] = {
     overworld_ascending_frames(gObjectEventPic_injureddevongruntm, 4, 4),

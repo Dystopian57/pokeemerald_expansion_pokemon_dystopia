@@ -308,5 +308,6 @@ EventScript_ResetAllMapFlags::
 	setflag birchpoochyena
 	setflag rivalmappearsinOldale
 	setflag rivalfappearsinOldale
+	setflag scientistinsanctum
 	call EventScript_ResetAllBerries
 	end
