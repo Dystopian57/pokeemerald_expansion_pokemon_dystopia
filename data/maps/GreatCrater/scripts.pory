@@ -341,7 +341,7 @@ script ReportersGreatCrater {
 
 
 	text ReportersGreatCrater_Outro{
-	"That was perfect. Here - this is for\nyour trouble!"}
+	"That was cinema! Here - this is for\nyour trouble!"}
 
 	//Tate and Liza's Cosmic Special
 
@@ -632,7 +632,7 @@ script GreatCraterSouvenirBox {
 		releaseall}
 
 script GreatCraterSign {
-		msgbox(format("North - Road 002 \n East - Route 101"))
+		msgbox(format("{UP_ARROW} North - Road 002 \n {RIGHT_ARROW} East - Route 101"))
 		releaseall}
 
 script GreatCraterSouvenirSupplies {

@@ -18,7 +18,7 @@ script WaterfallHermit {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (1, moves(face_player))
 
-    if (!flag (FLAG_RECEIVED_HM_WATERFALL))
+    if (!flag (FLAG_BADGE07_GET))
     {
         msgbox(format("Welcome, young traveller, to {COLOR GREEN}Waterfall Cave{COLOR DARK_GRAY} - a place who has been
 		hidden for centuries.\pIt used to be that things like nature and time
@@ -71,7 +71,8 @@ script WaterfallHermit {
         giveitem (ITEM_HM07)
         setflag (hermitmovesexplained)
 	    fadenewbgm (1)
-        playbgm (MUS_LEMURIA, TRUE)	
+        playbgm (MUS_LEMURIA, TRUE)
+        addvar (VAR_HERMIT_DEFEATED_COUNT, + 1)
         msgbox(format("I wish you luck on your travels."))
         //msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
         //back here. \p Only then I will grant you passage into the depths beyond."))

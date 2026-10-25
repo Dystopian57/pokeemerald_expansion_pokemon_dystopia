@@ -184,6 +184,123 @@ script PopWeatherMon102 {
 	}
 
 
+script Route102ConstructionWorkerMTrapinch {
+	lock
+	applymovement (9, moves(face_player))
+	waitmovement (9)
+	playmoncry (SPECIES_TRAPINCH, CRY_MODE_NORMAL)
+	msgbox(format("Traaaa!"))
+	applymovement (9, moves(face_down))
+	waitmovement (9)
+	release
+}
+
+script Route102ConstructionWorkerFDiglett {
+	lock
+	applymovement (11, moves(face_player))
+	waitmovement (11)
+	playmoncry (SPECIES_DIGLETT, CRY_MODE_NORMAL)
+	msgbox(format("Di-diiiig!"))
+	applymovement (11, moves(face_down))
+	waitmovement (11)
+	release
+}
+
+script Route102_ConstructionWorkerMBattle {
+	trainerbattle_single(TRAINER_RICKY_1, ConstructionWorkerM102_Intro, ConstructionWorkerM102_Outro, Route102_ConstructionWorkerMRegister)
+	specialvar (VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq (VAR_RESULT, TRUE, Route102_ConstructionWorkerMRematch)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (1, moves(face_player))
+	msgbox(format("Thanks for listening to my drama. Let's talk again sometime."))
+	applymovement (9, moves(face_player))
+	playmoncry (SPECIES_TRAPINCH, CRY_MODE_NORMAL)
+	msgbox(format("Traaaa!"))
+	applymovement (1, moves(face_down))
+	applymovement (9, moves(face_down))
+	waitmovement (9)
+	release
+	end
+}
+
+script Route102_ConstructionWorkerMRegister {
+	special (PlayerFaceTrainerAfterBattle)
+	waitmovement (1)
+	msgbox(format("Everything went downhill after I tried to gift this “Turtwig” to my son…\p
+	He shunned me, my wife divorced me, I lost my job…
+	\p Now I'm all alone with Trapinch. We're both failures, but at least we got each other.
+	\p ... wow, venting to someone really helped. Let's do this again."))
+	register_matchcall (TRAINER_RICKY_1)
+	release
+	end
+}
+
+script Route102_ConstructionWorkerMRematch {
+	trainerbattle_rematch (TRAINER_RICKY_1, ConstructionWorkerM102_Intro2, ConstructionWorkerM102_Outro2)
+	msgbox(format("TEST."))
+	end
+	}
+
+
+	text ConstructionWorkerM102_Intro{
+		"I wanted to buy my son a Turtwig for his \nbirthday...\pAnd a con artist sold me a Trapinch\ndisguised
+		as a Turtwig!\pLet me see if it can at least fight!"}
+
+	text ConstructionWorkerM102_Outro{
+		"Guess that's a no..."}
+
+	text ConstructionWorkerM102_Intro2{
+		"There you are - I've been preparing\nmy counterattack! CHAAARGE!"}
+
+	text ConstructionWorkerM102_Outro2{
+		"... I surrender. Again."}
+
+///////////////////////////////////
+
+script Route102_ConstructionWorkerFBattle {
+	trainerbattle_single(TRAINER_LOLA_1, ConstructionWorkerF102_Intro, ConstructionWorkerF102_Outro, Route102_ConstructionWorkerFRegister)
+	specialvar (VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq (VAR_RESULT, TRUE, Route102_ConstructionWorkerFRematch)
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (3, moves(face_player))
+	msgbox(format("Rebels kept vandalizing the bridge and harrasing us builders.\pIt was costly for Devon,
+	so they stopped construction “till further notice”.\pBah, I should stop waiting and get a new job."))
+	applymovement (3, moves(face_down))
+	waitmovement (9)
+	release
+	end
+}
+
+script Route102_ConstructionWorkerFRegister {
+	special (PlayerFaceTrainerAfterBattle)
+	waitmovement (1)
+	msgbox(format("This was way too short a distraction. Let's prolong it a bit with some...
+	\pDevon Profile exchange!"))
+	register_matchcall (TRAINER_LOLA_1)
+	release
+	end
+}
+
+script Route102_ConstructionWorkerFRematch {
+	trainerbattle_rematch (TRAINER_LOLA_1, ConstructionWorkerF102_Intro2, ConstructionWorkerF102_Outro2)
+	msgbox(format("TEST."))
+	end
+	}
+
+
+	text ConstructionWorkerF102_Intro{
+		"Another day with nothing to do... just\nwhen is construction resuming!?
+		\pPlease battle me, or I'll die of\nboredom!"}
+
+	text ConstructionWorkerF102_Outro{
+		"Well, that was some short-lived fun.\pCouldn't you beat me more slowly?"}
+
+	text ConstructionWorkerF102_Intro2{
+		"There you are - I've been preparing\nmy counterattack! CHAAARGE!"}
+
+	text ConstructionWorkerF102_Outro2{
+		"... I surrender. Again."}
+
 
 script Road102BridgeItem {
 	lock
@@ -344,6 +461,7 @@ script Route102Scientistfollowchat {
 			if (flag (FLAG_SYS_POKEDEX_GET))
 			{msgbox(format("I see you possess a Devon Dex. Let me register the Pokémon's visual
 			data in it."))
+			setflag (researcherin102sawdevondex)
 			closemessage
 			
 			playse (SE_DEX_SCROLL)
@@ -410,7 +528,7 @@ script Route102Scientistfollowchat {
 	script Route102ScientistNottoPetalburg {
 		lock
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
-        msgbox(format("My young helper, this way is to Petalburg City\pThe chances to find our specimen
+        msgbox(format("My young helper, this way is to Petalburg City!\pThe chances to find our specimen
 		there are decidedly slim.\pBefore considering new enclaves of search, let us first comb this
 		area thoroughly."))
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1))
@@ -422,7 +540,7 @@ script Route102Scientistfollowchat {
 	script Route102ScientistNottoOldale {
 		lock
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player))
-        msgbox(format("My young helper, this way is to Petalburg City\pThe chances to find our specimen
+        msgbox(format("My young helper, this way is to Oldale Town!\pThe chances to find our specimen
 		there are decidedly slim.\pBefore considering new enclaves of search, let us first comb this
 		area thoroughly."))
 		applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1))
@@ -433,5 +551,250 @@ script Route102Scientistfollowchat {
 
 	script Route102ConstructionShedSign {
 		lock
-        msgbox(format("Construction Shed.\n{COLOR RED}Authorized Personnel Only."))	
+        msgbox(format("Road 002 Construction Shed.\n{COLOR RED}Authorized Personnel Only."))	
 		}
+
+	script Route102OldaleSign {
+		lock
+		msgbox (format("{RIGHT_ARROW} East - Oldale Town."))
+		release
+	}
+
+	script Route102Wheelbarrow {
+		lock
+		msgbox (format("A wheelbarrow that's been left behind."))
+		release
+	}
+
+	script Route102Excavator {
+		lock
+		msgbox (format("An excavating machine. The elements have began to damage the paintjob."))
+		release
+	}
+
+	script Route102Bulldozer {
+		lock
+		msgbox (format("A bulldozer. There's no surrounding tracks - must have been stil for
+		some time."))
+		release
+	}
+
+	script Route102Crane {
+		lock
+		msgbox (format("A mobile crane. It's somewhat sinked in the sand."))
+		release
+	}
+
+	script Route102Beams {
+		lock
+		msgbox (format("A tower of construction beams. A promise undelivered."))
+		release
+	}
+
+	script Route102CautionSign {
+		lock
+		msgbox (format("A caution sign. It serves no purpose now."))
+		release
+	}
+
+	script Route102Cactus {
+		lock
+		msgbox (format("A cactus. It seems to be thriving in the arid route."))
+		release
+	}
+
+	script Route102Asphalt {
+		lock
+		msgbox (format("Seems like some spilled asphalt that has solidified."))
+		release	
+	}
+
+
+	script Route102ScammerApproach0 {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement (10, moves(emote_exclamation_mark))
+		waitmovement (10)
+		msgbox (format("Woah there friend! Where are you going so fast?\pSettle down, enjoy life a
+		little!"))
+		goto (route102scammerafterapproach)
+		
+		}
+
+	script Route102ScammerApproach1 {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement (10, moves(emote_exclamation_mark))
+		waitmovement (10)
+		msgbox (format("Woah there friend! Where are you going so fast?\pSettle down, enjoy life a
+		little!"))
+		applymovement (10, moves(walk_down * 1))
+		waitmovement (10)
+		goto (route102scammerafterapproach)
+		
+		}
+
+	script Route102ScammerApproach2 {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement (10, moves(emote_exclamation_mark))
+		waitmovement
+		msgbox (format("Woah there friend! Where are you going so fast?\pSettle down, enjoy life a
+		little!"))
+		applymovement (10, moves(walk_down * 2))
+		waitmovement (10)
+		goto (route102scammerafterapproach)
+		
+		}
+
+	script Route102ScammerApproach3 {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement (10, moves(emote_exclamation_mark))
+		waitmovement
+		msgbox (format("Woah there friend! Where are you going so fast?\pSettle down, enjoy life a
+		little!"))
+		applymovement (10, moves(walk_down * 3))
+		waitmovement (10)
+		goto (route102scammerafterapproach)
+		
+		}
+
+	script Route102ScammerApproach4 {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement (10, moves(emote_exclamation_mark))
+		waitmovement
+		msgbox (format("Woah there friend! Where are you going so fast?\pSettle down, enjoy life a
+		little!"))
+		applymovement (10, moves(walk_down * 4))
+		waitmovement (10)
+		goto (route102scammerafterapproach)
+		
+		}
+
+	script Route102Scammer {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		applymovement (10, moves(face_player))
+		waitmovement (10)
+
+		if ((var(VAR_102CANDYSCAMMER) == 0 ))
+		{
+
+		msgbox (format("Woah there friend! Where are you going so fast?\pSettle down, enjoy life a
+		little!"))
+		route102scammerafterapproach:
+		closemessage
+        applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		msgbox (format("Say, what about a Rare Candy to sweeten your day?\pIt'll make your
+		Pokémon stronger! 500¥ each!"))
+		scammer102candybuychoice:
+    	showmoneybox (18, 0)
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Buy one", "Don't buy")
+			if (var(VAR_RESULT) == 0) {
+					checkmoney (500)
+					if (var(VAR_RESULT) == TRUE) {
+						removemoney (500)
+						updatemoneybox
+						playse (SE_SHOP)
+						waitse
+						hidemoneybox
+						
+						msgbox (format("Thank you for your purchase - here you go!"))
+						giveitem (ITEM_EXP_CANDY_XS)
+						msgbox (format("Let me know how your Pokémon like it!"))
+						setflag (boughtrarecandyfrom102scammer)
+					setvar (VAR_102CANDYSCAMMER, 1)
+					clearflag (devonreturnstooldale)
+					clearflag (warehousemanagerandabra)
+					setflag (warehousemanchine)
+					setflag (FLAG_ITEM_WAREHOUSEMONEYBAGS)
+						goto (endofroute102scammer)
+						
+						}
+					if (var(VAR_RESULT) == FALSE) {
+						msgbox (format("What... you don't even have 500¥ on you pal?\pSucks to be you!
+						Hey, free advice: I heard the Devon staff is back at Oldale Warehouse.\pMaybe
+						you can get a job there!"))
+						goto (endofroute102scammer)
+					}
+				
+					}
+
+			if (var(VAR_RESULT) == 1) {
+						hidemoneybox
+						msgbox (format("You're going to let this chance pass by? Well... your loss!"))
+					setvar (VAR_102CANDYSCAMMER, 1)
+					clearflag (devonreturnstooldale)
+					clearflag (warehousemanagerandabra)
+					setflag (warehousemanchine)
+					setflag (FLAG_ITEM_WAREHOUSEMONEYBAGS)
+						goto (endofroute102scammer)
+			}
+
+
+		
+		}
+
+  	if ((var(VAR_102CANDYSCAMMER) == 1 ))
+	{		
+
+		if (!flag(confronted102candyscammer))
+
+		{if ((flag(boughtrarecandyfrom102scammer)) && checkitem (ITEM_EXP_CANDY_XS)  == TRUE)
+		{
+		msgbox (format("You still have that candy on you eh? Saving it for a special occassion?"))	
+		goto (endofroute102scammer)	
+		}
+
+		if ((flag(boughtrarecandyfrom102scammer)) && checkitem (ITEM_EXP_CANDY_XS)  == FALSE)
+		{
+		msgbox (format("Hm? What's wrong? You look disappointed."))
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "You're a scammer!", "It's nothing")
+			if (var(VAR_RESULT) == 0) {
+			
+			msgbox (format("Woah there pal - that's some serious accusation! What do you mean!?"))
+				dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "It only healed 1 HP", "Forget about it")
+						if (var(VAR_RESULT) == 0) {
+						msgbox (format("1 HP? And what is an “HP” exactly? What? “Health Points” you say?
+						\pListen kid, I don't have the foggiest of what you're talking about.
+						\pYou're saying you can SEE a Pokémon's health in NUMBERS?
+						\pThat's stupid. This isn't a videogame! But Pokémon get stronger with these candies!
+						\pIf you can't tell the difference, it just
+						means you need to feed them more candies!"))
+						setflag (confronted102candyscammer)
+						goto (endofroute102scammer)
+						}
+						if (var(VAR_RESULT) == 1) {
+						msgbox (format("Bah, stop messing around, I have no time for jokes!"))
+						goto (endofroute102scammer)
+						}
+
+			}
+
+			if (var(VAR_RESULT) == 1) {
+			msgbox (format("Well, then be on your way. I'm on the lookout for customers!"))
+			goto (endofroute102scammer)
+			}
+		}
+
+		}
+		
+		else {
+			msgbox (format("You slandered my candies and my honesty, so I don't want to do more business with you.
+			\pThat includes refunds!"))
+			goto (endofroute102scammer)
+		}
+		
+		}
+
+		endofroute102scammer:
+		release	
+	}

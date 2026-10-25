@@ -308,7 +308,7 @@ script FerryManReturnsSouth {
 
 script Route103ConcordBridgeSign {
 	lock
-    msgbox(format("East - Concord Bridge \n North - Waterfall Cave."))
+    msgbox(format("{RIGHT_ARROW} East - Concord Bridge \n {UP_ARROW} North - Waterfall Cave."))
 	release
 }
 
@@ -725,7 +725,7 @@ script Route103VeteranRematch {
 		"... I surrender. Again."}
 
 
-script DevonPoochain {
+script Route102DevonPoochain {
 	lock
 	applymovement (41, moves(face_player))
 	playmoncry (SPECIES_POOCHAIN, CRY_MODE_NORMAL)
@@ -928,7 +928,7 @@ script Route103ConcordConartist {
 			playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 		setvar (VAR_JIMMYQUESTPROGRESS, 1)
-		//addvar (VAR_DEVON_REPUTATION, + 1)
+		addvar (VAR_DEVON_REPUTATION, + 1)
 
 		applymovement (31, moves(walk_in_place_down))
 

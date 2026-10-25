@@ -930,7 +930,7 @@ releaseall
  script MoneyTipBook {
     lock
 	showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
-        msgbox(format("The book cover reads: “Money, post-war Hoenn and you.”"))
+        msgbox(format("The book cover reads: “Money, Post-war Hoenn and You.”"))
         moneychapterselection:
 	    showmonpic(SPECIES_BASCULIN_BLUE_STRIPED, 10,3)
 

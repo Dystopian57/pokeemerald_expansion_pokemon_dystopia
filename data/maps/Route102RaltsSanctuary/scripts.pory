@@ -98,6 +98,7 @@ script GreenSanctumScientistWartzFind {
 	setflag (scientistarrivedinsanctum)
 	setvar (VAR_102_SCIENTIST, 4)
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, walk_in_place_up * 1))
+	waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
 	destroyfollowernpc
 	clearflag (scientistinsanctum)
 	addobject (4)
@@ -136,7 +137,7 @@ script GreenSactumWartzFight {
 
 		specialvar (VAR_RESULT, CalculatePlayerPartyCount)
 		if (var(VAR_RESULT) == 6) {
-			playse (SE_PIN)
+			playse (SE_LEDGE)
 			applymovement (4, moves(jump_in_place_up * 1))
 			waitmovement (4)
 			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
@@ -153,42 +154,332 @@ script GreenSactumWartzFight {
 			specialvar(VAR_RESULT, GetBattleOutcome)
 			setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 			if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+				setvar (VAR_102_SCIENTIST, 4)
+
+				removeobject (3)
+				setflag (SanctumWartz)
+				clearflag (SanctumBall)
+				addobject (5)
+				playse (SE_BALL_OPEN)
+				waitse
+
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+				setflag (SanctumBall)
+				removeobject (5)
+				waitmovement (OBJ_EVENT_ID_PLAYER)
+				
+		
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+
+				applymovement (4, moves(walk_right * 1, walk_up * 1))
+				waitmovement (4)
+
 				msgbox(format("Excellent work. You would make for an excellent Safemon field researcher!\p
 				Now, as for your reward..."))
-					getseenmon (SPECIES_WARTZ)
-					if (var(VAR_RESULT) == TRUE)
-					{msgbox(format("When I accessed your Devon Dex earlier, I could not help but notice..."))
 
-						if (flag (GOTSTARTER1))
-						{msgbox(format("You picked Bulbasynth as your starter Safemon, did you not?"))}
-
-						if (flag (GOTSTARTER2))
-						{msgbox(format("You picked Bulbasynth as your starter Safemon, did you not?"))}
-
-						if (flag (GOTSTARTER3))
-						{msgbox(format("You picked Bulbasynth as your starter Safemon, did you not?"))}
-					}
-					if (var(VAR_RESULT) == FALSE)
-					{msgbox(format("I have a deal for you. In exchange of your help, I will give you
-					extra starter. From X, X and X. I have such three on me. Which one would you pick?
-					dynchoice for three but option for none. None? I have no other suitable reward prepared.
-					I suppose having helped Hoenn is reward on its own, right? Now, please hand me
-					the Devon Ball containing that Wartz. yes/no"))}
+				goto (wartztradeexplained)
 
 			}
 			elif(var(VAR_RESULT) == B_OUTCOME_WON){
-				msgbox(format("Excellent. (Throw ball + givemon)"))
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+				applymovement (4, moves(walk_right * 1, walk_up * 1))
+				waitmovement (4)
+				msgbox(format("A rather excessive show of force... but I will not argue with results.
+				\pAllow me to finish the task with this Devon Ball!"))
+				closemessage
+				playse (SE_BALL_THROW)
+				waitse
+				playse (SE_BALL_OPEN)
+				removeobject (3)
+				setflag (SanctumWartz)
+				clearflag (SanctumBall)
+				applymovement (5, moves(face_down))
+				waitmovement (5)
+
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+
+				applymovement (4, moves(walk_in_place_up * 1))
+				waitmovement (4)
+				msgbox(format("Aha, I can at least assist in this manner!"))
+				closemessage
+
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up * 1))
+				waitmovement (OBJ_EVENT_ID_PLAYER)
+				removeobject (5)
+				setflag (SanctumBall)
+				givemon(SPECIES_WARTZ, 10, ITEM_EXP_SHARE, ITEM_POKE_BALL, 1, MALE, 0, 0, 0, 0, 0, 0, 25, 25, 25, 25, 25, 25)
+            	playfanfare(MUS_OBTAIN_ITEM)
+				msgbox (format("{PLAYER} picked up the Devon Ball containing Wartz!"))
+
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down * 1))
+				applymovement (4, moves(walk_in_place_up * 1))
+				waitmovement (4)
+
+				msgbox(format("Now, as for your reward..."))
+
+				wartztradeexplained:
+
+					if (flag(researcherin102sawdevondex))
+					{msgbox(format("When I transfered data to your Devon Dex earlier, I could not help but
+					notice..."))
+
+					if(flag(GOTSTARTER1))
+					{msgbox(format("You chose Bulbasynth as your Devon-sanctioned starter."))}
+					if(flag(GOTSTARTER2))
+					{msgbox(format("You chose Smothquil as your Devon-sanctioned starter."))}
+					if(flag(GOTSTARTER3))
+					{msgbox(format("Your first registered Devon Dex entry was... Purachu. Rather unfortunate."))}
+					}
+	
+				if(flag(GOTSTARTER1))
+				{
+
+				msgbox(format("I happen to have with me two Devon-sanctioned Safemon - Smothquil and
+				Purachu.\pI would gladly give one of them onto your care, in exchange of your help
+				just now.\pWhat do you say?"))
+				}
+
+				if(flag(GOTSTARTER2))
+				{
+				msgbox(format("I happen to have with me two Devon-sanctioned Safemon - Bulbasynth and
+				Purachu.\pI would gladly give one of them onto your care, in exchange of your help
+				just now.\pWhat do you say?"))
+				}
+
+				if(flag(GOTSTARTER3))
+				{
+				msgbox(format("I happen to have with me two Devon-sanctioned Safemon - Bulbasynth and
+				Smothquil.\pI would gladly give one of them onto your care, in exchange of your help
+				just now.\pWhat do you say?"))
+
+				}
+				
+				
+				wartztradesafemonchoice:
+
+				if(flag(GOTSTARTER1))
+				{bufferspeciesname (STR_VAR_1, SPECIES_SMOTHQUIL)
+				bufferspeciesname (STR_VAR_2, SPECIES_PIKACHU_SAFE)}
+				if(flag(GOTSTARTER2))
+				{bufferspeciesname (STR_VAR_1, SPECIES_BULBASYNTH)
+				bufferspeciesname (STR_VAR_2, SPECIES_PIKACHU_SAFE)}
+				if(flag(GOTSTARTER3))
+				{bufferspeciesname (STR_VAR_1, SPECIES_BULBASYNTH)
+				bufferspeciesname (STR_VAR_2, SPECIES_SMOTHQUIL)}
+
+				dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+				"Trade Wartz for {STR_VAR_1}", "Trade Wartz for {STR_VAR_2}", "Don't trade Wartz")
+
+				if (var(VAR_RESULT) == 0) {
+					if(flag(GOTSTARTER1))
+					{
+					msgbox(format("Smothquil? Excellent choice - let us trade without delay!"))
+					setvar (VAR_0x8008, INGAME_TRADE_SMOTHQUIL)}
+
+					if(flag(GOTSTARTER2))
+					{
+					msgbox(format("Bulbasynth? Excellent choice - let us trade without delay!"))
+					setvar (VAR_0x8008, INGAME_TRADE_BULBASYNTH)}
+
+					if(flag(GOTSTARTER3))
+					{
+					msgbox(format("Bulbasynth? Excellent choice - let us trade without delay!"))
+					setvar (VAR_0x8008, INGAME_TRADE_BULBASYNTH)}
+
+					copyvar (VAR_0x8004, VAR_0x8008)
+					specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+					special (ChoosePartyMon)
+					waitstate
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, refusedtogivewartz1)
+					copyvar (VAR_0x8005, VAR_0x8004)
+					specialvar (VAR_RESULT, GetTradeSpecies)
+					goto_if_ne (VAR_RESULT, VAR_0x8009, chosesomethingotherthanwartz)
+					copyvar (VAR_0x8004, VAR_0x8008)
+					special (CreateInGameTradePokemon)
+					special (DoInGameTradeScene) 
+					waitstate
+					goto (tradedwartz)
+
+					}
+
+				if (var(VAR_RESULT) == 1) {
+
+					if(flag(GOTSTARTER1))
+					{
+					msgbox(format("Purachu? Excellent choice - let us trade without delay!"))
+					setvar (VAR_0x8008, INGAME_TRADE_PURACHU)}
+
+					if(flag(GOTSTARTER2))
+					{
+					msgbox(format("Purachu Excellent choice - let us trade without delay!"))
+					setvar (VAR_0x8008, INGAME_TRADE_PURACHU)}
+
+					if(flag(GOTSTARTER3))
+					{
+					msgbox(format("Smothquil? Excellent choice - let us trade without delay!"))
+					setvar (VAR_0x8008, INGAME_TRADE_SMOTHQUIL)}
+
+					copyvar (VAR_0x8004, VAR_0x8008)
+					specialvar (VAR_0x8009, GetInGameTradeSpeciesInfo)
+					special (ChoosePartyMon)
+					waitstate
+					goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, refusedtogivewartz1)
+					copyvar (VAR_0x8005, VAR_0x8004)
+					specialvar (VAR_RESULT, GetTradeSpecies)
+					goto_if_ne (VAR_RESULT, VAR_0x8009, chosesomethingotherthanwartz)
+					copyvar (VAR_0x8004, VAR_0x8008)
+					special (CreateInGameTradePokemon)
+					special (DoInGameTradeScene) 
+					waitstate
+					goto (tradedwartz)
+				}
+
+
+
+
+
+				if (var(VAR_RESULT) == 2) {
+				refusedtogivewartz1:
+
+					if (var(VAR_102_SCIENTIST) == 5)
+					{msgbox(format("So you persist in your betrayal... a shame."))
+					playbgm (MUS_RG_SILPH, FALSE)
+					msgbox(format("Then I must persist in my use of force!"))
+					goto (battleresearchersanctum)
+					}
+
+				msgbox(format("Hm? What is the meaning of this? You refuse to follow up on our deal?"))
+					dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+					"Yes, I will keep Wartz", "No, I will trade you Wartz")
+
+					if (var(VAR_RESULT) == 0) {
+					goto (refusedtogivewartz2)
+					}
+					if (var(VAR_RESULT) == 1) {
+					msgbox(format("Ah, I must have misheard. Such is old age - unreleting and
+					unforgiving.\pTo make sure I did not misheard you prior - what Safemon do you wish?"))
+					goto (wartztradesafemonchoice)
+					}
+				}
+
+				chosesomethingotherthanwartz:
+				msgbox(format("A wondrous specimen, to be sure... but I am only interested in
+				Wartz.\pLet's try that again."))
+				goto (wartztradesafemonchoice)
+
+				refusedtogivewartz2:
+				fadeoutbgm (1)
+				playbgm (MUS_NONE, FALSE)
+
+
+				msgbox(format("... \p I see. So this was all a ploy to get your hands on Wartz."))
+				playbgm (MUS_RG_SILPH, FALSE)
+				msgbox(format("I should have known better than
+				to trust someone from the Rebel Zone.\pYou rabble, who wish to undermine our
+				work at every turn.\pYou who were likely injured by a Pokémon. And still do not
+				understand the peril they pose.\pBut no matter... I was prepared for this eventuality.
+				\pI will take that Wartz to Devon Co. - it is not the first, and will not be the last!"))
+				setrespawn (HEAL_LOCATION_HERMIT_TREE)
+
+				battleresearchersanctum:
+				if(flag(GOTSTARTER1))
+				{
+				trainerbattle_no_intro(TRAINER_DUSTY_1 , DevonResearcherSanctumWinMessage)
+				}
+
+				if(flag(GOTSTARTER2))
+				{
+				trainerbattle_no_intro(TRAINER_DUSTY_2 , DevonResearcherSanctumWinMessage)
+				}	
+
+				if(flag(GOTSTARTER3))
+				{
+				trainerbattle_no_intro(TRAINER_DUSTY_3 , DevonResearcherSanctumWinMessage)
+				}	
+
+				msgbox(format("... you triumph. And yet the benefits of your victory will be
+				short-lived. \pSooner or later, that Wartz will be turned into a
+				Safemon.\p Devon Co. will not relent its efforts to bring peace and safety to 
+				Hoenn. \pFor that purpose, it grows stronger every day. You Rebels only delay the inevitable."))
+				closemessage
+				setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+				applymovement (4, moves(walk_down * 2))
+				waitmovement
+				playse (SE_EXIT)
+				removeobject (4)
+				setflag (scientistinsanctum)
+				setvar (VAR_102_SCIENTIST, 11) //11 means player betrayed scientist
+				addvar (VAR_DEVON_REPUTATION, + 1)
+				goto (endofwartzquest)
+
+				tradedwartz:
+
+				if (var(VAR_102_SCIENTIST) == 4)
+				{msgbox(format("Well, that's some successful field work!"))}
+
+				if (var(VAR_102_SCIENTIST) == 5)
+				{msgbox(format("All is well that ends well. Let us forget about our little quarrel."))}
+
+				msgbox(format("May you rest easy tonight,
+				knowing you have helped make Hoenn a safer place.\pTake care now, my young assistant!"))
+				closemessage
+				applymovement (4, moves(walk_down * 2))
+				waitmovement (4)
+				removeobject (4)
+				setflag (scientistinsanctum)
+				playse (SE_EXIT)
+				setvar (VAR_102_SCIENTIST, 10) //10 means player helped scientist
+				goto (endofwartzquest)
+
+
 			}
+
+
+
 			elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+				applymovement (4, moves(walk_in_place_up * 1))
+				waitmovement (4)
+				msgbox(format("Hmm... some would say that was a rather lacking show of mettle.
+				\pBut I trust you have merely chosen a stratagem of attrition, have you not?"))
 				release
 			}
 			elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+				applymovement (4, moves(walk_in_place_up * 1))
+				waitmovement (4)
+				msgbox(format("Hmm... some would say that was a rather lacking show of mettle.
+				\pBut I trust you have merely chosen a stratagem of attrition, have you not?"))
 				release
 			}
 
 		}
+	endofwartzquest:
 	release
 }
+
+
+	text DevonResearcherSanctumWinMessage{
+	"I concede defeat."}
+
+
+script GreenSanctumScientistDemandsWartz {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (4, moves(walk_right * 1, walk_up * 1))
+	waitmovement (4)
+	msgbox(format("My young betrayer... it would seem you have a fellow conspirator inside that
+	tree.\pBut it changes nothing. You may hide in there as many times as you wish...
+	\pI will not allow you to leave with that Wartz.
+	\pNow, what if we spare our companions a fruitless struggle...
+	\pAnd you hand me that specimen willingly? The trade is still on the table."))
+	
+	goto (wartztradesafemonchoice)
+
+
+
+
+
+}
+
 
 script GreenSanctumScientistIdle {
 	lock
@@ -209,7 +500,7 @@ script GreenSanctumScientistIdle {
 	applymovement (4, moves(face_player))
 	msgbox(format("Ah, you are returned. Are you, then, ready to help me catch this specimen?"))
 
-	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "No", "Why?")
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "No", "Why?")
 	if (var(VAR_RESULT) == 0) {
 	goto (playersaysyestoscientist)
 	}
@@ -225,8 +516,89 @@ script GreenSanctumScientistIdle {
 
 	endofscientist102idle:
 	applymovement (4, moves(face_up))
+	waitmovement (4)
 	release
 }
+
+script SanctumFlowerBasket {
+    lock
+    msgbox(format("A basket of flowers that emits a refreshing fragrance."))
+    release
+}
+
+script SanctumBerryBasket {
+    lock
+    msgbox(format("The berry basket shows sign of Pokémon eating from it."))
+    release
+}
+
+script SanctumPlantedBush {
+    lock
+    msgbox(format("A small bush is planted here."))
+    release
+}
+
+
+
+
+script SanctumVeriwoodo {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playmoncry(SPECIES_VERIWOODO, CRY_MODE_NORMAL)
+	msgbox (format("Wooodoo!"))
+	msgbox (format("The Pokémon does not seem inclined to move."))
+
+	if (checkitem (ITEM_COMET_SHARD)  == FALSE)
+	{
+	msgbox (format("Perhaps it could be scared away somehow..."))}
+
+	else {
+	msgbox (format("Use {COLOR RED}Leaky Lighter{COLOR DARK_GRAY} to scare it away?"))
+
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+	msgbox (format("{PLAYER} lighted the Leaky Ligther near the Pokémon."))
+	playse (SE_M_EMBER)
+	waitse
+	playse (SE_LEDGE)
+	applymovement (6, moves(jump_in_place_down))
+	waitse
+	playmoncry(SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH)
+	msgbox (format("WOOODOOOO!!"))
+			setwildbattle(SPECIES_VERIWOODO, 15)
+			dowildbattle
+			specialvar(VAR_RESULT, GetBattleOutcome)
+			setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+			if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+			setflag (sanctumveriwoodo)
+			removeobject (6)
+			goto (endofsanctumveriwoodo)
+			}
+			elif(var(VAR_RESULT) == B_OUTCOME_WON){
+			playse (SE_FLEE)
+			applymovement (6, moves (walk_fast_up * 6))
+			waitmovement (6)
+			setflag (sanctumveriwoodo)
+			removeobject (6)
+			playmoncry(SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH)
+			goto (endofsanctumveriwoodo)
+			}
+			elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+			goto (endofsanctumveriwoodo)
+			}
+			elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+			goto (endofsanctumveriwoodo)
+			}
+
+	}
+	
+	}
+
+	endofsanctumveriwoodo:
+    release
+}
+
 
 //if Wartz defeated, Scientist throws ball, givemon.
 

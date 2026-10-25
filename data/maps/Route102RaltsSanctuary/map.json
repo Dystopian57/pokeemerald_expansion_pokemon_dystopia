@@ -45,7 +45,7 @@
       "x": 5,
       "y": 19,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -65,6 +65,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GreenSanctumScientistIdle",
       "flag": "scientistinsanctum"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 5,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "SanctumBall"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VERIWOODO)",
+      "x": 1,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SanctumVeriwoodo",
+      "flag": "sanctumveriwoodo"
     }
   ],
   "warp_events": [
@@ -151,6 +177,15 @@
       "var": "VAR_102_SCIENTIST",
       "var_value": "4",
       "script": "GreenSanctumScientistDontgo"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_102_SCIENTIST",
+      "var_value": "5",
+      "script": "GreenSanctumScientistDemandsWartz"
     }
   ],
   "bg_events": [
@@ -160,6 +195,38 @@
       "y": 3,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE1_1"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SanctumFlowerBasket"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SanctumFlowerBasket"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SanctumBerryBasket"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SanctumPlantedBush"
     }
   ]
 }

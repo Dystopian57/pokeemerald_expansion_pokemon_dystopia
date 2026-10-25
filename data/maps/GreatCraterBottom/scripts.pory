@@ -23,8 +23,8 @@ script CraterHermit {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (1, moves(face_player))
 
-    if (!flag (FLAG_RECEIVED_HM_FLASH))
-    {msgbox(format("You helped that woman return to the surface, did you? Commendable.
+    if (!flag (FLAG_BADGE02_GET))
+    {msgbox(format("You helped that woman return to the surface, did you not? Commendable.
     \p The powerless should not venture into places like these. \p And with “powerless”...
     I am speaking of you as well."))
     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes. I better leave", "I am not powerless")
@@ -55,12 +55,14 @@ script CraterHermit {
         setflag (FLAG_RECEIVED_HM_FLASH)
         giveitem (ITEM_HM05)
         setflag (hermitmovesexplained)
-        msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
-        back here. \p Only then I will grant you passage into the depths beyond."))
+        addvar (VAR_HERMIT_DEFEATED_COUNT, + 1)
+        msgbox(format("If you gather all of the Hermit Moves from my 7 brothers... you may come
+        back here. \p Only then I will grant you passage into the depths beyond. \p ... what lies
+        below Hoenn, you ask? \p Would you not rather shed light on it yourself? Ho ho ho..."))
         }}
 
     else {
-        msgbox(format("If you gather all of the Hermit Moves from my 8 brothers... you may come
+        msgbox(format("If you gather all of the Hermit Moves from my 7 brothers... you may come
         back here. \p Only then I will grant you passage into the depths beyond. \p Four of my brothers
         live here in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY}, but the rest dwell further away."))
     }
@@ -69,4 +71,4 @@ script CraterHermit {
 }
 
     text CraterHermit_Outro{
-    "Well done. Allow me to shed light onto\na matter..."}
+    "Well done. Your strength is acceptable."}

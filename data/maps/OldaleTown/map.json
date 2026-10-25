@@ -539,6 +539,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldaleRival",
       "flag": "rivalfappearsinOldale"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVONGRUNTM",
+      "x": 35,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DevonWarehouseGuardM",
+      "flag": "devonreturnstooldale"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVONGRUNTF",
+      "x": 37,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DevonWarehouseGuardM",
+      "flag": "devonreturnstooldale"
     }
   ],
   "warp_events": [

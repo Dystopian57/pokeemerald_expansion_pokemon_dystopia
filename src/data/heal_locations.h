@@ -136,6 +136,12 @@ static const struct HealLocation sHealLocations[NUM_HEAL_LOCATIONS - 1] = {
         .x = 3,
         .y = 52,
     },
+    [HEAL_LOCATION_HERMIT_TREE - 1] = {
+        .mapGroup = MAP_GROUP(MAP_HERMIT_TREE),
+        .mapNum = MAP_NUM(MAP_HERMIT_TREE),
+        .x = 5,
+        .y = 4,
+    },
 };
 
 #define DEFAULT_POKEMON_CENTER_X 7

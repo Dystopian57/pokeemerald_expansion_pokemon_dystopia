@@ -52,6 +52,9 @@ enum InGameTradeID
     INGAME_TRADE_TAILLOW8,
     INGAME_TRADE_TAILLOW9,
     INGAME_TRADE_TAILLOW10,
+    INGAME_TRADE_BULBASYNTH,
+    INGAME_TRADE_SMOTHQUIL,
+    INGAME_TRADE_PURACHU,
 };
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon

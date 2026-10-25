@@ -1,0 +1,208 @@
+raw `
+
+
+`
+
+mapscripts Hermit_Tree_MapScripts {
+    //MAP_SCRIPT_ON_LOAD: HermitGreetsPlayerafterresearcherdefeat
+	//MAP_SCRIPT_ON_TRANSITION: PastSpriteSwapTrick
+}
+
+script Playertriestoleaverightafterresearcherdefeat {
+    lock
+
+    applymovement (1, moves(walk_in_place_down))
+
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+	msgbox(format("Leaving so soon? You may be a bit disoriented still...\pPlease, let's exchange
+    a few words."))
+
+    applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    goto (afterhermittellstocome)
+
+}
+
+script SanctumHermitIdle {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (1, moves(face_player))
+    waitmovement (1)
+
+	if (var(VAR_102_SCIENTIST) == 4){
+	msgbox(format("Don't alarm yourself. You are safe here."))
+    afterhermittellstocome:
+	msgbox(format("You may not remember, since you were
+    in a panic just now...\pBut I restored your Pokémon back to health.\pI heard your talk with the
+    man outside...\pYou have a difficult choice ahead of you.\pWill you side with Pokémon, or with people...?"))
+
+	if (!flag (receivedcuthm)) 
+	
+		{msgbox(format("Whatever your choice, come back after you make it."))}
+
+
+	setvar (VAR_102_SCIENTIST, 5)
+    goto (endofsanctumhermitidle)}
+
+	if (var(VAR_102_SCIENTIST) == 5)
+    {
+    lock
+    msgbox(format("I have much to tell you, you who have found this place...\pBut I believe you should
+    speak with that gentleman outside first.\pI fear he may come in if you do not, and do something rash."))
+    goto (endofsanctumhermitidle)
+    }
+
+
+
+    else {
+
+	if (!flag (FLAG_BADGE01_GET)) 
+	
+		{
+            
+        if (var(VAR_102_SCIENTIST) == 10 )
+        {
+        msgbox(format("Greetings, traveller. I witnessed you helping that researcher before...\p
+        Some would deem you a hero for it. Others would regard you as selfish.
+        \p Me, I wish to know more about you before I cast such judgement.\pBut allow me to
+        introduce myself first..."))      
+        }
+
+        if (var(VAR_102_SCIENTIST) == 11 )
+        {
+        msgbox(format("Greetings, traveller. I witnessed you refusing that researcher before...\p
+        Some would deem you a hero for it. Others would regard you as selfish.
+        \p Me, I wish to know more about you before I cast such judgement.\pBut allow me to
+        introduce myself first..."))        
+        }
+        
+        if (!flag (hermitmovesexplained)){
+        msgbox(format("I am one of the Eight Hermits. My brothers and I keep the lore of the
+        Hermit Moves. \p We do not grant this lore just to anyone - in these times of strife,
+        much damage can be done with them, for they have the power to shape the land."))}
+
+        msgbox(format("Let me pose a dilemma to you...\pYour Pokémon has been gravely injured in a remote,
+        thick forest.\pYour other Pokémon can Cut trees, and open a path to reach the
+        Pokémon Center quickly.\pYou may instead spare the forest, and go around it.\pBut your Pokémon
+        may not survive such lengthy journey."))
+
+        msgbox(format("What would you do?")) 
+
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Cut through the forest", "Go around the forest")
+        if (var(VAR_RESULT) == 0) {
+        msgbox(format("I see... you would do all you can to save your companion.\pEven if that
+        means destroying the homes of other Pokémon, and potentially causing their death."))    }
+
+        if (var(VAR_RESULT) == 1) {
+        msgbox(format("I see... so you would spare nature and the habitats of other Pokémon.\pEven if that
+        means further risking your Pokémon's life."))    }
+
+        msgbox(format("I glimpse the nature of your relationship with Pokémon.\pBut let me learn some more,
+        by seeing how you battle with them."))
+
+        trainerbattle_no_intro(TRAINER_PAXTON, TreeHermit_Outro) 
+
+        msgbox(format("I deem you worthy of having this."))
+        playfanfare (MUS_OBTAIN_BADGE)
+        msgbox(format("Obtained the Leaf Token!"))
+        setflag (FLAG_BADGE01_GET)
+        giveitem (ITEM_HM01)
+        setflag (hermitmovesexplained)
+        addvar (VAR_HERMIT_DEFEATED_COUNT, + 1)
+        msgbox(format("If you gather all of the Hermit Moves from my 7 brothers... come
+        back here.\p I will then guide you to our master... the Far Seer."))
+         }
+
+        else {
+
+        if (var(VAR_102_SCIENTIST) == 10 )
+            {msgbox(format("Welcome again. How many Hermit Moves have you acquired thus far?"))}
+        if (var(VAR_102_SCIENTIST) == 11 )
+        {msgbox(format("Welcome again. How is little Wartz doing? But more importantly...
+        \pHow many Hermit Moves have you acquired thus far?"))}
+            
+		if(var(VAR_HERMIT_DEFEATED_COUNT) == 1){
+        msgbox(format("Only mine? Well, I daresay you should stray more from the beaten path...
+        \p Four of my brothers live here in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY},
+        while the rest dwell further away."))}
+
+		if(var(VAR_HERMIT_DEFEATED_COUNT) == 2){
+        msgbox(format("Only two? Well, all great journies have a modest start.
+        \p Four of my brothers live here in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY},
+        while the rest dwell further away."))}
+
+		if(var(VAR_HERMIT_DEFEATED_COUNT) == 3){
+        msgbox(format("Three? I see you are getting to know our family.\pYou have probably
+        noticed the striking family resemblance...\p Some say it is rather unnatural - ho ho ho!
+        At any rate...
+        \p Four of my brothers live here in the {COLOR GREEN}Rebel Zone{COLOR DARK_GRAY},
+        while the rest dwell further away."))}
+
+		if(var(VAR_HERMIT_DEFEATED_COUNT) == 4){
+        msgbox(format("Four? You are not only a finder of secret places, but a great trainer
+        besides, to have vanquished half of us."))}
+
+        msgbox(format("When you obtain all of the Hermit Moves, we will deem you worthy of meeting our master,
+        the Far Seer."))
+
+        }}
+
+    endofsanctumhermitidle:
+    applymovement (1, moves(face_down))
+    waitmovement (1)
+    release
+
+}
+
+    text TreeHermit_Outro{
+    "This has been as revealing as your
+    \nanswer..."}
+
+script HermitTreeFlowers {
+    lock
+    msgbox(format("Flowers like these are rare nowadays..."))
+    release
+}
+
+script HermitTreeTriTree {
+    lock
+    msgbox(format("It's a rare tree"))
+    release
+}
+
+script HermitTreeLushTree {
+    lock
+    msgbox(format("An oak tree. It may grow into the size of the one that forms this place."))
+    release
+}
+
+script HermitTreePalmTree {
+    lock
+    msgbox(format("It's a very healthy palmtree"))
+    release
+}
+
+script HermitTreeLeafDesk {
+    lock
+    msgbox(format("A table with a soft foliage cover. Feels good to the touch."))
+    release
+}
+
+script HermitTreeTrunk {
+    lock
+    msgbox(format("It's part of the huge trunk of the tree.\pLiving proof that nature
+    provides."))
+    release
+}
+
+script HermitTreeItem {
+	lock
+    finditem (ITEM_TM_SUNNY_DAY)
+	releaseall
+}
+
+//script with hermit if scientist var 5 - don't allow normal hermit script! "I would love to speak
+//with you, but I believe you shoul speak with that gentleman outside first. I fear he may come in
+//if you do not, and do something rash."

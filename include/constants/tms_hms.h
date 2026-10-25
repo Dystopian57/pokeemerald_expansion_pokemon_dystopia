@@ -24,7 +24,7 @@
     F(SAFEGUARD) \
     F(SCALD) \
     F(SOLAR_BEAM) \
-    F(IRON_TAIL) \
+    F(TELEPORT) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \

@@ -674,7 +674,7 @@ SecretBase_EventScript_CushionInteract::
 
 SecretBase_Text_AllDecorationsWillBeReturned:
 	.string "All decorations and furniture in your\n"
-	.string "SECRET BASE will be returned to your PC.\p"
+	.string "Secret Shelter will be returned to your PC.\p"
 	.string "Is that okay?$"
 
 SecretBase_Text_WantToRegisterSecretBase:
@@ -717,8 +717,7 @@ SecretBase_Text_BattleTowerShield:
 	.string "{STR_VAR_1} times in a row at the BATTLE TOWER.$"
 
 SecretBase_Text_ToyTV:
-	.string "A realistic toy TV. It could be easily\n"
-	.string "mistaken for the real thing.$"
+	.string "The TV has seen better days.$"
 
 SecretBase_Text_SeedotTV:
 	.string "A toy TV shaped like a SEEDOT.\n"
@@ -729,10 +728,10 @@ SecretBase_Text_SkittyTV:
 	.string "It looks ready to stroll away…$"
 
 SecretBase_Text_WouldYouLikeToMoveBases:
-	.string "You may only make one SECRET BASE.\p"
-	.string "Would you like to move from the SECRET\n"
-	.string "BASE near {STR_VAR_1}?$"
+	.string "You may only make one Secret Shelter.\p"
+	.string "Would you like to move from the Shelter\n"
+	.string "Shelter near {STR_VAR_1}?$"
 
 SecretBase_Text_MovingCompletedUseSecretPower:
 	.string "Moving completed.\p"
-	.string "Would you like to use the SECRET POWER?$"
+	.string "Use SECRET POWER?$"

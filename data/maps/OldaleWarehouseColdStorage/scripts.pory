@@ -165,4 +165,21 @@ script OldaleWarehouseColdStorageShardStock {
 
 
 
-
+script DevonWarehouseWorkerColdStorage {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (6, moves(face_player))
+    waitmovement (6)
+    msgbox (format("I was here when the Rebels first drove us out."))
+    applymovement (6, moves(face_left))
+    waitmovement (6)
+    msgbox (format("The battle broke some medicine cabinets, and the liquid contents spilled all over, which formed this ice."))
+    applymovement (6, moves(face_player))
+    waitmovement (6)
+    msgbox (format("Going to be a pain
+	to clean up..."))
+    applymovement (6, moves(face_down))
+    waitmovement (6)
+	release
+    
+}

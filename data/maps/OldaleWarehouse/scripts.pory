@@ -134,14 +134,22 @@ script OldaleWarehouseHelipip {
 
 script OldaleWarehouseLoadtad {
     lock
-	playmoncry(SPECIES_LOADTAD, CRY_MODE_WEAK)
-    msgbox(format("Tad-tad...! \p With no guidance, the Loadtad is aimlessly carrying a crate around."))
+
+	if (!flag(devonreturnstooldale))
+
+	{playmoncry(SPECIES_LOADTAD, CRY_MODE_WEAK)
+    msgbox(format("Tad-tad...! \p With no guidance, the Loadtad is aimlessly carrying a crate around."))}
+
+	else
+	{playmoncry(SPECIES_LOADTAD, CRY_MODE_NORMAL)
+    msgbox(format("Tad-tad...! \p The Loadtad has calmed down."))}
+
     releaseall
     }
 
 script OldaleWarehouseForklift {
     lock
-    msgbox(format("The forklift shows signs of recent misuse."))
+    msgbox(format("The forklift shows signs of misuse."))
     releaseall
     }
 
@@ -253,5 +261,132 @@ script OldaleWarehouseCarRebel {
 
 	else {release}
 	
+	release
+}
+
+script DevonWarehouseWorkerLoadtad {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Easy now, boy... did the bad rebels scare you?"))
+	release
+
+}
+
+script DevonWarehouseWorkerForklift {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (10, moves(face_player))
+    waitmovement (10)
+    msgbox (format("Many forklifts have bumps all over... did they use them to race or something?
+	\pTalk about childish..."))
+    applymovement (10, moves(face_down))
+    waitmovement (10)
+    release
+    
+}
+
+script WarehouseParcelNPC {
+	lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (11, moves(face_player))
+    waitmovement (11)
+
+  	if (flag(dailyloadtadparcelquest))
+	{    msgbox (format("The Loadtads are getting a bit nervous, so it's better to leave them
+	alone for today.\p Come back tomorrow, if you want to help retrieve parcels again!"))
+	goto (endofdevonparcelquestnpc)
+	}
+
+	else {
+
+
+	if ((var(VAR_WAREHOUSEPARCELQUEST) == 0)) {
+
+		if (flag(devondailyparcelquestexplained))
+		{msgbox (format("You're back! Interested in getting parcels from Loadtads?"))}
+
+		if (!flag(devondailyparcelquestexplained))
+		{msgbox (format("Hey there! You look like a resourceful trainer. Interested in a part-time job?"))}
+
+    
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "No, thank you")
+			if (var(VAR_RESULT) == 0) {
+				setvar(VAR_WAREHOUSEPARCELQUEST, 1)
+				if (!flag(devondailyparcelquestexplained))
+				{
+				msgbox (format("Great! You may have noticed, many of the Pokémon here are still
+				hostile after the Rebel incident.
+				\pIt's the Loadtads in particular we need to wrangle ASAP, because they are carrying
+				many of our parcels, and their delivery deadlines are closing in.
+				\pThat's where you come in. Get the parcels from the Loadtads - catch them,
+				or snatch the parcels from them.
+				\pFor every parcel you give me, I'll give you a reward. Deal?"))
+				setflag (devondailyparcelquestexplained)
+
+					dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Sounds good", "Sounds boring")
+					if (var(VAR_RESULT) == 0) {
+
+					msgbox (format("Great! Good luck with the parcel hunt!"))
+					goto (endofdevonparcelquestnpc)
+					}
+
+					if (var(VAR_RESULT) == 1) {
+					msgbox (format("Boring? Buddy, work is rarely fun! That's why it's called work, and not
+					... play-time!"))
+					msgbox (format("Well, it's your loss. Come back if you change your mind!"))
+
+					goto (endofdevonparcelquestnpc)
+					}
+				}
+
+				if (flag(devondailyparcelquestexplained))
+				{msgbox (format("Great - well, you know how it goes! Get me some of the parcels the
+				Loadtads in this floor have equipped!"))
+				goto (endofdevonparcelquestnpc)}
+				
+			}
+
+			if (var(VAR_RESULT) == 1) {
+			msgbox (format("Well, it's your loss. Come back if you change your mind!"))
+			goto (endofdevonparcelquestnpc)
+			}
+
+		}
+
+  	if ((var(VAR_WAREHOUSEPARCELQUEST) < 4 && checkitem (ITEM_PARCEL)  == FALSE))
+	{
+	msgbox (format("What, no luck getting those parcels yet? Try a little harder!"))
+	goto (endofdevonparcelquestnpc)}
+	
+
+  	if ((var(VAR_WAREHOUSEPARCELQUEST) < 4 && checkitem (ITEM_PARCEL)  == TRUE))
+	{
+	
+	gotparcelforparcelquest:
+	msgbox (format("Hey, good job getting that parcel! Here's your reward!"))
+
+        addvar (VAR_WAREHOUSEPARCELQUEST, + 1)
+		removeitem (ITEM_PARCEL)
+		random (2)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0:giveitem (ITEM_ULTRA_BALL, 5)
+		msgbox (format("Those are very rare balls - you won't find them sold anywhere in the Rebel Zone!"))
+		case 1: giveitem (ITEM_MAX_POTION)
+		msgbox (format("Very rare medicine - you won't find it sold anywhere in the Rebel Zone!"))
+		goto (endofdevonparcelquestnpc)
+		}
+
+		if ((var(VAR_WAREHOUSEPARCELQUEST) == 4))
+		{setvar(VAR_WAREHOUSEPARCELQUEST, 0)
+		setflag (dailyloadtadparcelquest)
+		goto (endofdevonparcelquestnpc)}
+	}
+
+}
+	endofdevonparcelquestnpc:
+    applymovement (11, moves(face_down))
+    waitmovement (11)
 	release
 }

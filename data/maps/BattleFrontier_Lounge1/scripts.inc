@@ -5,9 +5,6 @@ BattleFrontier_Lounge1_MapScripts::
 BattleFrontier_Lounge1_EventScript_Breeder::
 	lock
 	faceplayer
-	call_if_unset FLAG_MET_BATTLE_FRONTIER_BREEDER, BattleFrontier_Lounge1_EventScript_BreederIntro
-	call_if_set FLAG_MET_BATTLE_FRONTIER_BREEDER, BattleFrontier_Lounge1_EventScript_AlreadyMetBreeder
-	setflag FLAG_MET_BATTLE_FRONTIER_BREEDER
 	goto BattleFrontier_Lounge1_EventScript_ChooseMonToShowBreeder
 	end
 

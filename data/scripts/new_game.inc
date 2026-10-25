@@ -309,5 +309,9 @@ EventScript_ResetAllMapFlags::
 	setflag rivalmappearsinOldale
 	setflag rivalfappearsinOldale
 	setflag scientistinsanctum
+	setflag SanctumWartz
+	setflag SanctumBall
+	setflag warehousemanagerandabra
+	clearflag devonreturnstooldale
 	call EventScript_ResetAllBerries
 	end

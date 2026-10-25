@@ -1743,6 +1743,57 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_MACHOP
+    },
+
+    [INGAME_TRADE_BULBASYNTH] =
+    {
+        .nickname = _("BULBASYNTH"),
+        .species = SPECIES_BULBASYNTH,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_CLEAR_AMULET,
+        .mailNum = 2,
+        .otName = _("DUSTY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_WARTZ
+    },
+
+    [INGAME_TRADE_SMOTHQUIL] =
+    {
+        .nickname = _("SMOTHQUIL"),
+        .species = SPECIES_SMOTHQUIL,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_CLEAR_AMULET,
+        .mailNum = 2,
+        .otName = _("DUSTY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_WARTZ
+    },
+
+    [INGAME_TRADE_PURACHU] =
+    {
+        .nickname = _("PURACHU"),
+        .species = SPECIES_PIKACHU_SAFE,
+        .ivs = {25, 25, 25, 25, 25, 25},
+        .abilityNum = 0,
+        .otId = 251225,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_CLEAR_AMULET,
+        .mailNum = 2,
+        .otName = _("DUSTY"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_WARTZ
     }
 };
 

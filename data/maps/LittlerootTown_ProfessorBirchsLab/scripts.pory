@@ -1761,8 +1761,19 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 	applymovement (4, moves(walk_in_place_down))
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
-	msgbox (format("Was about time, {PLAYER}. I have good and bad
-			news for you...\pWhich would you like to hear first?"))
+
+	if (!flag(playerreturnstolabafterrefusingsfemon))
+
+	{msgbox (format("Was about time, {PLAYER}. I have good and bad
+			news for you...\pWhich would you like to hear first?"))}
+
+	if (flag(playerreturnstolabafterrefusingsfemon))
+	{msgbox (format("So you changed your mind, {PLAYER}. I thought so."))
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox (format("You're lucky we haven't changed ours about helping you. Anyway..."))
+	goto (pickstartersafemon)
+	}
 	
     dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Good news", "Bad news")
     if (var(VAR_RESULT) == 0) {
@@ -1786,7 +1797,12 @@ script LittlerootTown_Eventscript_ProffessorChoosePokeDialogue {
 		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 		setspeaker ([SP_NAME_BALSAM])
 		msgbox(format("But now that you're out, you need some help to reconnect with
-		the world.\p Now, pick a Safemon to accompany you.\pI know they're not like your old Primeape, 
+		the world. Now..."))
+
+		pickstartersafemon:
+		createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+		setspeaker ([SP_NAME_BALSAM])
+		msgbox(format("Go ahead and pick a Safemon to accompany you.\pI know they're not like your old Primeape, 
 		but they should get you across {COLOR GREEN}Route 101{COLOR DARK_GRAY} safely enough."))
 		removefieldmugshot
     }
@@ -1835,12 +1851,31 @@ script LittlerootTown_Eventscript_ProffessorDontgo1 {
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
 	setspeaker ([SP_NAME_BALSAM])
 	msgbox (format("{PLAYER}, can't you at least give this a chance?"))
+
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Okay", "No")
+	if (var(VAR_RESULT) == 0) {
+
 	removefieldmugshot
 	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 	applymovement (4, moves(walk_in_place_up))
 	waitmovement (4)
+	}
+
+	if (var(VAR_RESULT) == 1) {
+	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+	setspeaker ([SP_NAME_BALSAM])
+	msgbox (format("Fine. Just go back home then, and keep wasting your life."))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 4))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	playse (SE_EXIT)
+	setvar (VAR_LITTLEROOT_PHASE, 0)
+	setflag (playerreturnstolabafterrefusingsfemon)
+	warpsilent (MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0)
+	}
+
 	releaseall}
 
 script LittlerootTown_Eventscript_ProffessorDontgo2 {

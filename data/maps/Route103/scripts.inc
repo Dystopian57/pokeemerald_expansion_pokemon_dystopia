@@ -1279,7 +1279,7 @@ Route103VeteranRematch::
 	end
 
 
-DevonPoochain::
+Route102DevonPoochain::
 # 729 "data/maps/Route103/scripts.pory"
 	lock
 # 730 "data/maps/Route103/scripts.pory"
@@ -1287,7 +1287,7 @@ DevonPoochain::
 # 731 "data/maps/Route103/scripts.pory"
 	playmoncry SPECIES_POOCHAIN, CRY_MODE_NORMAL
 # 732 "data/maps/Route103/scripts.pory"
-	msgbox DevonPoochain_Text_0
+	msgbox Route102DevonPoochain_Text_0
 # 733 "data/maps/Route103/scripts.pory"
 	release
 	return
@@ -1632,6 +1632,8 @@ Route103ConcordConartist_15:
 Route103ConcordConartist_23:
 # 930 "data/maps/Route103/scripts.pory"
 	setvar VAR_JIMMYQUESTPROGRESS, 1
+# 931 "data/maps/Route103/scripts.pory"
+	addvar VAR_DEVON_REPUTATION, + 1
 # 933 "data/maps/Route103/scripts.pory"
 	applymovement 31, Route103DevonGruntCheckingDriver_Movement_0
 # 935 "data/maps/Route103/scripts.pory"
@@ -3095,8 +3097,8 @@ Fishercallsfornumber_Movement_0:
 
 Route103ConcordBridgeSign_Text_0:
 # 311 "data/maps/Route103/scripts.pory"
-	.string "East - Concord Bridge\n"
-	.string "North - Waterfall Cave.$"
+	.string "{RIGHT_ARROW} East - Concord Bridge\n"
+	.string "{UP_ARROW} North - Waterfall Cave.$"
 
 Route103WaterfallCaveSign_Text_0:
 # 317 "data/maps/Route103/scripts.pory"
@@ -3317,7 +3319,7 @@ Route103VeteranRematch_Text_0:
 	.string "Old age is a cruel thing. But I plan to\n"
 	.string "use the time I have left.$"
 
-DevonPoochain_Text_0:
+Route102DevonPoochain_Text_0:
 # 732 "data/maps/Route103/scripts.pory"
 	.string "Grrr!$"
 

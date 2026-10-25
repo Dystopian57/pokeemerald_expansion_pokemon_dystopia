@@ -223,3 +223,35 @@ script OldaleWarehouseApplianceStoragePokeAssembler {
 	msgbox(format("It's an old Pokéball assembler."))
 	release
 }
+
+script DevonWarehouseWorkerPanelTechnician{
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		setvar(VAR_0x8004, 2)  //@ vertical pan
+		setvar(VAR_0x8005, 2)  //@ horizontal pan
+		setvar(VAR_0x8006, 2)  //@ num shakes
+		setvar(VAR_0x8007, 4)  //@ shake delay
+		special(ShakeCamera)
+		playse (SE_M_THUNDERBOLT2)
+		msgbox(format("O-ouch!"))
+    applymovement (8, moves(face_player))
+    waitmovement (8)
+    msgbox (format("Keep your distance, please. This panel is very unsafe."))
+    applymovement (8, moves(face_down))
+    waitmovement (8)
+    release
+    
+}
+
+script DevonWarehouseWorkerApplianceInventory {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (9, moves(face_player))
+    waitmovement (9)
+    msgbox (format("We're missing some inventory here... and it happens to be the high-end stuff.
+	\pThose Rebels know their tech better than I thought."))
+    applymovement (9, moves(face_up))
+    waitmovement (9)
+    release
+    
+}

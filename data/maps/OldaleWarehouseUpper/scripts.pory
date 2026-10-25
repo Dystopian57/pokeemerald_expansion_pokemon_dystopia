@@ -541,9 +541,23 @@ script WarehouseRebelAdminBigShake {
 }
 
 
+script WarehouseUpperBallManager {
+	lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (13, moves(face_player))
+	if (!flag(FLAG_ITEM_WAREHOUSEDEVONBALLS))
+	{msgbox(format("I find it curious those Rebels didn't take these Devon Balls..."))
+
+	}
+
+	else {msgbox(format("Of course the rebels left none of the Devon Balls..."))}
+	applymovement (13, moves(face_right))
+	release
+}
+
 script WarehouseDevonBallCrate {
 
-    if (var(VAR_MAUSOLEUM_HEXGIRL) <= 1)
+    if (var(VAR_OLDALE_PHASE) <= 1)
 
 	{if (!flag (FLAG_ITEM_WAREHOUSEDEVONBALLS))
 	{	msgbox(format("There's a few unsealed balls in the crates. No one will miss them..."))
@@ -558,7 +572,7 @@ script WarehouseDevonBallCrate {
 	}
 
 	else{
-	msgbox(format("Can't take all of the Devon Balls..."))}
+	msgbox(format("It would be wrong to take these Devon Balls..."))}
 	}
 
 	else {
@@ -658,4 +672,113 @@ script OldaleWarehouseUpperSafemonNotice {
 	until end of shift!"))
 	hidemonpic
 	release
+}
+
+script DevonWarehouseManagerAbra {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (12, moves(face_player))
+	waitmovement (12)
+	playmoncry (SPECIES_ABRA, CRY_MODE_WEAK)
+    msgbox (format("... aaaabraaa."))
+    applymovement (12, moves(face_left))
+	waitmovement (12)
+	release
+}
+
+script DevonWarehouseUpperManager {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("I don't want to hear any more excuses, you hear me?\pI want this warehouse back in order
+	by the..."))
+    applymovement (10, moves(face_player))
+    waitmovement (10)
+    msgbox (format("Hm? And who are you? If you're a job applicant, I'm afraid..."))
+	closemessage
+    applymovement (10, moves(emote_exclamation_mark))
+    waitmovement (10)
+    msgbox (format("Wait a minute - you..."))
+    applymovement (10, moves(jump_in_place_up))
+    waitmovement (10)
+    msgbox (format("If you aren't the warehouse's saviour!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    msgbox (format("See that camera behind you? It recorded all of your heroic deeds in this room!"))
+
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_down))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+    msgbox (format("Please, allow me to give you this as thanks!"))
+
+	giveitem (ITEM_TM_TELEPORT)
+
+    msgbox (format("That is the most useful move for kind, busy people like us."))
+
+    applymovement (10, moves(walk_in_place_left))
+    waitmovement (10)
+    msgbox (format("Allow me to demonstrate... Abra!"))
+
+	playmoncry (SPECIES_ABRA, CRY_MODE_WEAK)
+    msgbox (format("... aaaabraaa."))
+
+    applymovement (10, moves(walk_in_place_up))
+    waitmovement (10)
+    msgbox (format("Goodbye!"))
+
+	playse (SE_M_TELEPORT)
+	removeobject (10)
+	waitse
+	playse (SE_M_TELEPORT)
+	removeobject (12)
+	waitse
+	setflag (warehousemanagerandabra)
+
+    applymovement (11, moves(emote_exclamation_mark))
+    waitmovement (11)
+    msgbox (format("Wait, sir, you haven't...! Ah..."))
+    applymovement (11, moves(face_down))
+    waitmovement (11)
+
+
+
+	closemessage
+
+    release
+    
+}
+
+script DevonWarehouseUpperComplainer {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+	if (!flag(warehousemanagerandabra))
+
+   { applymovement (41, moves(face_player))
+    waitmovement (41)
+    msgbox (format("That manager comes everyday from Slateport with his Abra.\pHe barks orders
+	for 10 minutes, does no work, and teleports out."))
+    applymovement (41, moves(face_down))
+    waitmovement (41)}
+
+
+
+	else
+	{ msgbox (format("But sir, half our Loadtads are missing, and the forklifts are not..."))}
+
+    release
+    
+}
+
+
+script DevonWarehouseUpperComputerGuy {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (14, moves(face_player))
+    waitmovement (14)
+    msgbox (format("I'm running a virus check on our internal network-
+	\p The Rebels have some impressive hackers, like Lanette, the designer of Hoenn's Storage System.
+	\pWe need to make sure the Rebels planted no malware."))
+    applymovement (14, moves(face_up))
+    waitmovement (14)
+    release
+    
 }

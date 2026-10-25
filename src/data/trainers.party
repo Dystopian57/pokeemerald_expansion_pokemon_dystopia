@@ -204,20 +204,35 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_DUSTY_1 ===
 Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Class: scientistm
+Pic: scientistmbattle
 Gender: Male
 Music: Hiker
-Double Battle: No
+Items: Max Potion / Revive
+Double Battle: Yes
 AI: Check Bad Move
 
-Sandslash
-Level: 23
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Smothquil @ Wide Lens
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Corrosion
+Nature: Adamant
+- Shell Trap
+- Poison Gas
+- Fire Fang
+- Smokescreen
+
+Pikachu_Safe @ Magnet
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Huge Power
+Nature: Adamant
+- Spark
+- Tail Slap
+- Yawn
+- Iron Tail
+
+
 
 === TRAINER_CHIP ===
 Name: CHIP
@@ -279,37 +294,63 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_DUSTY_2 ===
 Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Class: scientistm
+Pic: scientistmbattle
 Gender: Male
 Music: Hiker
-Double Battle: No
+Items: Max Potion / Revive
+Double Battle: Yes
 AI: Check Bad Move
 
-Sandslash
-Level: 27
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Bulbasynth @ Leftovers
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Triage
+Nature: Adamant
+- Pollen Puff
+- Iron Defense
+- Twineedle
+- Absorb
+
+Pikachu_Safe @ Energy Powder
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Thick Fat
+Nature: Impish
+- Spark
+- Tail Slap
+- Yawn
+- Belly Drum
 
 === TRAINER_DUSTY_3 ===
 Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Class: scientistm
+Pic: scientistmbattle
 Gender: Male
 Music: Hiker
-Double Battle: No
+Items: Max Potion / Revive
+Double Battle: Yes
 AI: Check Bad Move
 
-Sandslash
-Level: 30
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Bulbasynth @ Leftovers
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Triage
+Nature: Adamant
+- Strength Sap
+- Protect
+- Twineedle
+- Absorb
+
+Smothquil @ Energy Powder
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Corrosion
+Nature: Jolly
+- Shell Trap
+- Toxic
+- Fire Fang
+- Smokescreen
 
 === TRAINER_DUSTY_4 ===
 Name: DUSTY
@@ -456,21 +497,32 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Hyper Voice
 
 === TRAINER_LOLA_1 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
+Name: VIVIAN
+Class: technicianf
+Pic: technicianfbattle
 Gender: Female
-Music: Girl
+Music: Mercenary
 Double Battle: No
 AI: Check Bad Move
+Overworld Lead: West
 
-Azurill
-Level: 12
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Diglett
+Level: 10
+Ability: Arena Trap
+Nature: Quirky
+- Dig
+- Sucker Punch
+- Charm
+- Foul Play
 
-Azurill
-Level: 12
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Drilbur
+Level: 10
+Ability: Mold Breaker
+Nature: Quirky
+- Rock Smash
+- Slash
+- X-Scissor
+- Metal Claw
 
 === TRAINER_AUSTINA ===
 Name: AUSTINA
@@ -567,21 +619,32 @@ Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_RICKY_1 ===
-Name: RICKY
-Class: Tuber M
-Pic: Tuber M
+Name: DARIAN
+Class: technicianm
+Pic: technicianmbattle
 Gender: Male
-Music: Girl
+Music: Mercenary
 Double Battle: No
 AI: Check Bad Move
+Overworld Lead: West
 
-Zigzagoon
-Level: 13
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-- Sand Attack
-- Headbutt
-- Tail Whip
-- Surf
+Trapinch
+Level: 10
+Ability: Sheer Force
+Nature: Quirky
+- Bulldoze
+- Substitute
+- Bite
+- Take Down
+
+Sandshrew 
+Level: 10
+Ability: Sand Rush
+Nature: Quirky
+- Dig
+- Fury Swipes
+- Slash
+- Metal Claw
 
 === TRAINER_SIMON ===
 Name: SIMON
@@ -4681,20 +4744,39 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_GEORGIA ===
 Name: GEORGIA
-Class: School Kid
-Pic: School Kid F
+Class: rebeladminf
+Pic: rebeladminfbattle
 Gender: Female
 Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 16
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Shuppet
+Level: 11
+Ability: Cursed Body
+Nature: Quirky
+- Night Shade
+- Will-O-Wisp
+- Shadow Sneak
+- Curse
 
-Beautifly
-Level: 16
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gligar
+Level: 11
+Ability: Immunity
+Nature: Quirky
+- Knock Off
+- Poison Tail
+- U-Turn
+- Aerial Ace
+
+Wimpod
+Level: 11
+Ability: Wimp Out
+Nature: Quirky
+- Mud Shot
+- Scald
+- Swift
+- Spikes
 
 === TRAINER_KAREN_2 ===
 Name: KAREN
@@ -9534,7 +9616,6 @@ Nature: Quirky
 - Bullet Seed
 - Dig
 
-
 === TRAINER_VETERAN_103_2 ===
 Name: BRYAN
 Class: Veteranm
@@ -11315,21 +11396,52 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_PAXTON ===
-Name: PAXTON
-Class: Expert
-Pic: Expert M
+Name: FREDRICK
+Class: HermitM
+Pic: hermitmbattle
 Gender: Male
-Music: Intense
+Music: Suspicious
+Items: Tea
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+Mugshot: Green
 
-Swellow
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Seedot @ Sitrus Berry
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 125 Def / 0 SpA / 125 SpD / 0 Spe
+Ability: Chlorophyll
+Nature: Quirky
+- Sunny Day
+- Synthesis
+- Bullet Seed
+- Foul Play
 
-Breloom
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Veriwoodo @ Miracle Seed
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 125 Def / 0 SpA / 125 SpD / 0 Spe
+Ability: Seed Sower
+Nature: Adamant
+- Hammer Arm
+- Wood Hammer
+- Ingrain
+- Morning Sun
+
+Shiitako @ Custap Berry
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 125 Def / 0 SpA / 125 SpD / 0 Spe
+Ability: Cute Charm
+Nature: Quirky
+- Brine
+- Water Spout
+- Trailblaze
+- Tearful Look
+
+
+
+
 
 === TRAINER_ISABELLA ===
 Name: ISABELLA
@@ -13372,20 +13484,39 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAWSON ===
 Name: DAWSON
-Class: Rich Boy
-Pic: Rich Boy
+Class: devonadminm
+Pic: devonadminmbattle
 Gender: Male
 Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Nosepass
+Level: 11
+Ability: Magnet Pull
+Nature: Quirky
+- Power Gem
+- Spark
+- Bulldoze
+- Body Press
 
-Poochyena
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Arystal
+Level: 11
+Ability: Anger Shell
+Nature: Quirky
+- Ice Shard
+- Slash
+- Screech
+- Salt Cure
+
+Staryu
+Level: 11
+Ability: Analytic
+Nature: Quirky
+- Reflect
+- Light Screen
+- Ice Beam
+- Psybeam
 
 === TRAINER_SARAH ===
 Name: SARAH

@@ -1659,8 +1659,8 @@ GreatCraterSouvenirBox_Text_0:
 
 GreatCraterSign_Text_0:
 # 635 "data/maps/GreatCrater/scripts.pory"
-	.string "North - Road 002\n"
-	.string "East - Route 101$"
+	.string "{UP_ARROW} North - Road 002\n"
+	.string "{RIGHT_ARROW} East - Route 101$"
 
 GreatCraterSouvenirSupplies_Text_0:
 # 639 "data/maps/GreatCrater/scripts.pory"
@@ -1802,7 +1802,7 @@ GreatCraterTouristMaleIdle_Text_0:
 
 ReportersGreatCrater_Outro::
 # 343 "data/maps/GreatCrater/scripts.pory"
-	.string "That was perfect. Here - this is for\nyour trouble!$"
+	.string "That was cinema! Here - this is for\nyour trouble!$"
 
 GreatCrater_Text_XIsTheBiggestHappeningThingRight::
 # 405 "data/maps/GreatCrater/scripts.pory"

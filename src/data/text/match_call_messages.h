@@ -13,15 +13,15 @@ const u8 gText_MatchCallRuinManiac_Dusty_Pokemon[] = _("Craggy ROCK POKéMON.");
 const u8 gText_MatchCallRuinManiac_Dusty_Intro1[] = _("In search of ancient lore,");
 const u8 gText_MatchCallRuinManiac_Dusty_Intro2[] = _("I travel the world.");
 
-const u8 gText_MatchCallTuber_Lola_Strategy[] = _("I'm going to try hard!");
-const u8 gText_MatchCallTuber_Lola_Pokemon[] = _("Good swimmer POKéMON.");
-const u8 gText_MatchCallTuber_Lola_Intro1[] = _("I wish I could swim without");
-const u8 gText_MatchCallTuber_Lola_Intro2[] = _("using an inner tube.");
+const u8 gText_MatchCallTuber_Lola_Strategy[] = _("Building expert.");
+const u8 gText_MatchCallTuber_Lola_Pokemon[] = _("Useful ones.");
+const u8 gText_MatchCallTuber_Lola_Intro1[] = _("Looking for construction");
+const u8 gText_MatchCallTuber_Lola_Intro2[] = _("work - send a message!");
 
-const u8 gText_MatchCallTuber_Ricky_Strategy[] = _("I don't know. I'll try hard.");
-const u8 gText_MatchCallTuber_Ricky_Pokemon[] = _("WATER POKéMON are buddies.");
-const u8 gText_MatchCallTuber_Ricky_Intro1[] = _("It's not like I can't swim.");
-const u8 gText_MatchCallTuber_Ricky_Intro2[] = _("I just like my inner tube.");
+const u8 gText_MatchCallTuber_Ricky_Strategy[] = _("Just an unlucky jobber.");
+const u8 gText_MatchCallTuber_Ricky_Pokemon[] = _("My Turtwig-turned Trapinch.");
+const u8 gText_MatchCallTuber_Ricky_Intro1[] = _("Honey, if you're reading");
+const u8 gText_MatchCallTuber_Ricky_Intro2[] = _("this - answer the phone!");
 
 const u8 gText_MatchCallSisAndBro_LilaAndRoy_Strategy[] = _("We split our duties.");
 const u8 gText_MatchCallSisAndBro_LilaAndRoy_Pokemon[] = _("We like friendly POKéMON.");

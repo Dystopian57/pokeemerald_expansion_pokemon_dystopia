@@ -3944,7 +3944,7 @@ Littleroot_Player_Mailbox_5:
 # 2019 "data/maps/LittlerootTown/scripts.pory"
 	msgbox Littleroot_Player_Mailbox_Text_2
 # 2020 "data/maps/LittlerootTown/scripts.pory"
-	givemon SPECIES_SNOVER, 10, ITEM_MIRACLE_SEED, ITEM_CHERISH_BALL, NATURE_QUIRKY, 1, MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ICE_SHARD, MOVE_SPLASH, MOVE_MOONLIGHT, MOVE_SPARK
+	givemon SPECIES_SNOVER, 10, ITEM_EXP_CHARM, ITEM_CHERISH_BALL, NATURE_QUIRKY, 1, MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ICE_SHARD, MOVE_SPLASH, MOVE_MOONLIGHT, MOVE_SPARK
 # 2021 "data/maps/LittlerootTown/scripts.pory"
 	setflag receiveddemomysterygift
 	goto Littleroot_Player_Mailbox_4
@@ -5296,7 +5296,7 @@ Littleroot_LabSign_Text_0:
 
 Littleroot_CemeterySign_Text_0:
 # 2057 "data/maps/LittlerootTown/scripts.pory"
-	.string "East - Littleroot Cemetery.$"
+	.string "{RIGHT_ARROW} East - Littleroot Cemetery.$"
 
 Littleroot_Boxpillar_Text_0:
 # 2063 "data/maps/LittlerootTown/scripts.pory"

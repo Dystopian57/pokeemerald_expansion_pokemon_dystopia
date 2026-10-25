@@ -339,6 +339,60 @@ OldaleWarehouseApplianceStoragePokeAssembler::
 	return
 
 
+DevonWarehouseWorkerPanelTechnician::
+# 228 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	lock
+# 229 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 230 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	setvar VAR_0x8004, 2
+# 231 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	setvar VAR_0x8005, 2
+# 232 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	setvar VAR_0x8006, 2
+# 233 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	setvar VAR_0x8007, 4
+# 234 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	special ShakeCamera
+# 235 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	playse SE_M_THUNDERBOLT2
+# 236 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerPanelTechnician_Text_0
+# 237 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	applymovement 8, ScavengerSandshrew_Movement_0
+# 238 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	waitmovement 8
+# 239 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerPanelTechnician_Text_1
+# 240 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	applymovement 8, DevonWarehouseWorkerPanelTechnician_Movement_0
+# 241 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	waitmovement 8
+# 242 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	release
+	return
+
+
+DevonWarehouseWorkerApplianceInventory::
+# 247 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	lock
+# 248 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 249 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	applymovement 9, ScavengerSandshrew_Movement_0
+# 250 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	waitmovement 9
+# 251 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerApplianceInventory_Text_0
+# 253 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	applymovement 9, DevonWarehouseWorkerApplianceInventory_Movement_0
+# 254 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	waitmovement 9
+# 255 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	release
+	return
+
+
 # 19 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 ScavengerSandshrew_Movement_0:
 # 19 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
@@ -357,6 +411,18 @@ OldaleWarehouseApplianceStorageScavenger2Trigger_Movement_1:
 	emote_exclamation_mark
 # 57 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	face_player
+	step_end
+
+# 240 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+DevonWarehouseWorkerPanelTechnician_Movement_0:
+# 240 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	face_down
+	step_end
+
+# 253 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+DevonWarehouseWorkerApplianceInventory_Movement_0:
+# 253 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	face_up
 	step_end
 
 ScavengerSandshrew_Text_0:
@@ -513,6 +579,22 @@ OldaleWarehouseApplianceStoragePress_Text_0:
 OldaleWarehouseApplianceStoragePokeAssembler_Text_0:
 # 223 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	.string "It's an old Pokéball assembler.$"
+
+DevonWarehouseWorkerPanelTechnician_Text_0:
+# 236 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	.string "O-ouch!$"
+
+DevonWarehouseWorkerPanelTechnician_Text_1:
+# 239 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	.string "Keep your distance, please. This panel\n"
+	.string "is very unsafe.$"
+
+DevonWarehouseWorkerApplianceInventory_Text_0:
+# 251 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
+	.string "We're missing some inventory here... and\n"
+	.string "it happens to be the high-end stuff.\p"
+	.string "Those Rebels know their tech better\n"
+	.string "than I thought.$"
 
 ApplianceStorageScavenger1_Intro::
 # 41 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"

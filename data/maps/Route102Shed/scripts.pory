@@ -28,3 +28,11 @@ script Route103ScientistShedTalk {
         setvar(VAR_102_SCIENTIST, 3)
 		release
 		}
+
+
+script Route102ShedTrashItem {
+	lock
+	givedecoration (DECOR_RED_PLANT)
+	setflag (FLAG_ITEM_102SHED)	
+	release
+}

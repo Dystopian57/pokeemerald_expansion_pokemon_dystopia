@@ -2053,8 +2053,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_EXP_CANDY_XS] =
     {
-        .name = ITEM_NAME("Common Candy"),
-        .pluralName = ITEM_PLURAL_NAME("Common Candies"),
+        .name = ITEM_NAME("Rare Candy?"),
+        .pluralName = ITEM_PLURAL_NAME("Rare Candies?"),
         //.name = ITEM_NAME("Exp. Candy XS"),
         //.pluralName = ITEM_PLURAL_NAME("Exp. Candies XS"),
         .holdEffect = HOLD_EFFECT_RESTORE_HP,
@@ -2062,9 +2062,9 @@ const struct Item gItemsInfo[] =
         //.price = 50,
         //.holdEffectParam = EXP_100,
         .description = COMPOUND_STRING(
-            "It supposedly\n"
-            "makes a Pokémon\n"
-            "stronger."),
+            "It makes a\n"
+            "Pokémon stronger.\n"
+            "Supposedly."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12212,14 +12212,14 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_IRON_TAIL] =
+    [ITEM_TM_TELEPORT] =
     {
         .name = ITEM_NAME("TM23"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Slams the foe with\n"
-            "a hard tail. It may\n"
-            "lower Defense."),
+            "Warps away from\n"
+            "battle, or to last\n"
+            "visited PokéCenter."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -14199,15 +14199,15 @@ const struct Item gItemsInfo[] =
     [ITEM_PARCEL] =
     {
         .name = ITEM_NAME("Parcel"),
-        .price = 0,
+        .price = 2000,
         .description = COMPOUND_STRING(
-            "A parcel for Prof.\n"
-            "Oak from a Pokémon\n"
-            "Mart's clerk."),
-        .importance = 2,
-        .pocket = POCKET_KEY_ITEMS,
+            "A parcel like the\n"
+            "ones Loadtads\n"
+            "carry."),
+        .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
         .iconPic = gItemIcon_Parcel,
         .iconPalette = gItemIconPalette_Parcel,
     },

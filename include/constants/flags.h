@@ -370,17 +370,18 @@
 #define pastplayerf               0x150
 #define scientistinsanctumgavedevonballs            0x151
 
+
 #define FLAG_CHOSEN_MULTI_BATTLE_NPC_PARTNER 0x152
 
-#define FLAG_MET_BATTLE_FRONTIER_BREEDER     0x153
-#define FLAG_MET_BATTLE_FRONTIER_MANIAC      0x154
+#define researcherin102sawdevondex     0x153
+#define SanctumBall      0x154
 #define FLAG_ENTERED_CONTEST                 0x155
-#define FLAG_MET_SLATEPORT_FANCLUB_CHAIRMAN  0x156
-#define FLAG_MET_BATTLE_FRONTIER_GAMBLER     0x157
+#define receivedcuthm  0x156
+#define sanctumveriwoodo     0x157
 #define FLAG_ENABLE_MR_STONE_POKENAV         0x158
 #define FLAG_NURSE_MENTIONS_GOLD_CARD        0x159
-#define FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR  0x15A
-#define FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR 0x15B
+#define devonreturnstooldale  0x15A
+#define warehousemanagerandabra 0x15B
 
 // Flags for whether a rematchable trainer has been registered in the player's Match Call.
 // Most are used implicitly by adding their REMATCH_* id to TRAINER_REGISTERED_FLAGS_START.
@@ -483,12 +484,13 @@
 #define FLAG_SHOWN_EON_TICKET                0x1AE
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
+
 #define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1
-#define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2
-#define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3
-#define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4
-#define FLAG_MOVE_TUTOR_TAUGHT_METRONOME     0x1B5
-#define FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK    0x1B6
+#define THISFLAGISNOTUSED       0x1B2
+#define confronted102candyscammer   0x1B3
+#define boughtrarecandyfrom102scammer         0x1B4
+#define playerreturnstolabafterrefusingsfemon     0x1B5
+#define devondailyparcelquestexplained    0x1B6
 #define FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE    0x1B7
 #define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8
 #define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9
@@ -1144,7 +1146,7 @@
 #define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER        0x436
-#define FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY                        0x437
+#define FLAG_ITEM_TM_SUNNY_DAY                                      0x437
 #define FLAG_ITEM_METEOR_FALLS_B1F_2R_TM_DRAGON_CLAW                0x438
 #define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_BIG_PEARL                     0x439
 #define FLAG_ITEM_SHOAL_CAVE_INNER_ROOM_RARE_CANDY                  0x43A
@@ -1279,7 +1281,7 @@
 #define FLAG_JOELTENT_ITEM                                           0x4BA // Unused Flag
 #define FLAG_OLDALETRUCK_ITEM                                           0x4BB // Unused Flag
 #define FLAG_ITEM_OLDALE_BYCAR                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
+#define FLAG_ITEM_102SHED                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
@@ -1611,7 +1613,7 @@
 #define unuseddaily4                           (DAILY_FLAGS_START + 0x16) // Unused Flag
 #define unuseddaily3                           (DAILY_FLAGS_START + 0x17) // Unused Flag
 #define unuseddaily2                        (DAILY_FLAGS_START + 0x18) // Unused Flag
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
+#define dailyloadtadparcelquest                           (DAILY_FLAGS_START + 0x19) // Unused Flag
 #define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag

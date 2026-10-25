@@ -3542,6 +3542,46 @@ GiveSafemonParty1_17:
 	goto GiveSafemonParty1_16
 
 
+DevonWarehouseGuardM::
+# 1868 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 1869 "data/maps/OldaleTown/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1870 "data/maps/OldaleTown/scripts.pory"
+	applymovement 40, ConArtist103Rewards_Movement_0
+# 1871 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 40
+# 1872 "data/maps/OldaleTown/scripts.pory"
+	msgbox DevonWarehouseGuardM_Text_0
+# 1874 "data/maps/OldaleTown/scripts.pory"
+	applymovement 40, OldaleOutsideParkNPC_Movement_0
+# 1875 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 40
+# 1876 "data/maps/OldaleTown/scripts.pory"
+	release
+	return
+
+
+DevonWarehouseGuardF::
+# 1881 "data/maps/OldaleTown/scripts.pory"
+	lock
+# 1882 "data/maps/OldaleTown/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1883 "data/maps/OldaleTown/scripts.pory"
+	applymovement 41, ConArtist103Rewards_Movement_0
+# 1884 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 41
+# 1885 "data/maps/OldaleTown/scripts.pory"
+	msgbox DevonWarehouseGuardF_Text_0
+# 1887 "data/maps/OldaleTown/scripts.pory"
+	applymovement 41, OldaleOutsideParkNPC_Movement_0
+# 1888 "data/maps/OldaleTown/scripts.pory"
+	waitmovement 41
+# 1889 "data/maps/OldaleTown/scripts.pory"
+	release
+	return
+
+
 # 146 "data/maps/OldaleTown/scripts.pory"
 ConArtist103Rewards_Movement_0:
 # 146 "data/maps/OldaleTown/scripts.pory"
@@ -4131,7 +4171,7 @@ OldaleDLCSign_Text_0:
 
 Oldale102Sign_Text_0:
 # 422 "data/maps/OldaleTown/scripts.pory"
-	.string "West - Road 002.$"
+	.string "{LEFT_ARROW}West - Road 002.$"
 
 OldalePeekingOldman_Text_0:
 # 430 "data/maps/OldaleTown/scripts.pory"
@@ -4924,6 +4964,20 @@ GiveSafemonParty1_Text_5:
 GiveSafemonParty1_Text_6:
 # 1810 "data/maps/OldaleTown/scripts.pory"
 	.string "Good Party$"
+
+DevonWarehouseGuardM_Text_0:
+# 1872 "data/maps/OldaleTown/scripts.pory"
+	.string "We have redoubled our security after\n"
+	.string "the recent Rebel invasion.\p"
+	.string "Job applicants may still come in, but be\n"
+	.string "in your best behaviour.$"
+
+DevonWarehouseGuardF_Text_0:
+# 1885 "data/maps/OldaleTown/scripts.pory"
+	.string "We were ready for a battle with those\n"
+	.string "Rebels that had holed up in here...\p"
+	.string "But they had just gone when we arrived.\n"
+	.string "Odd, but welcome!$"
 
 DevonGruntMOutro::
 # 1074 "data/maps/OldaleTown/scripts.pory"

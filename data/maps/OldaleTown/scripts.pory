@@ -419,7 +419,7 @@ script OldaleDLCSign {
 
 script Oldale102Sign {
     lock
-    msgbox(format("West - Road 002."))
+    msgbox(format("{LEFT_ARROW}West - Road 002."))
     releaseall      
 }
 
@@ -1864,3 +1864,28 @@ script GiveSafemonParty1 {
 releaseall
 }
 
+script DevonWarehouseGuardM {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (40, moves(face_player))
+    waitmovement (40)
+    msgbox (format("We have redoubled our security after the recent Rebel invasion.\pJob applicants
+    may still come in, but be in your best behaviour."))
+    applymovement (40, moves(face_down))
+    waitmovement (40)
+    release
+    
+}
+
+script DevonWarehouseGuardF {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (41, moves(face_player))
+    waitmovement (41)
+    msgbox (format("We were ready for a battle with those Rebels that had holed up in here...
+    \pBut they had just gone when we arrived. Odd, but welcome!"))
+    applymovement (41, moves(face_down))
+    waitmovement (41)
+    release
+    
+}

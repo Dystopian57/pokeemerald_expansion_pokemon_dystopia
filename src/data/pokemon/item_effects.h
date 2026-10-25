@@ -4,7 +4,7 @@ const u8 gItemEffect_Potion[7] = {
 };
 
 const u8 gItemEffect_CommonCandy[7] = {
-    [3] = ITEM4_HEAL_HP,
+    [4] = ITEM4_HEAL_HP,
     [6] = 1, // Amount of HP to recover
 };
 

@@ -45,6 +45,18 @@ Route103ScientistShedTalk::
 	return
 
 
+Route102ShedTrashItem::
+# 34 "data/maps/Route102Shed/scripts.pory"
+	lock
+# 35 "data/maps/Route102Shed/scripts.pory"
+	givedecoration DECOR_RED_PLANT
+# 36 "data/maps/Route102Shed/scripts.pory"
+	setflag FLAG_ITEM_102SHED
+# 37 "data/maps/Route102Shed/scripts.pory"
+	release
+	return
+
+
 # 13 "data/maps/Route102Shed/scripts.pory"
 Route103ScientistShedTalk_Movement_0:
 # 13 "data/maps/Route102Shed/scripts.pory"

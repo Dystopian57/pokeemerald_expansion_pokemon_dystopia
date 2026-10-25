@@ -35,13 +35,13 @@ CraterHermit::
 # 24 "data/maps/GreatCraterBottom/scripts.pory"
 	applymovement 1, CraterHermit_Movement_0
 # 26 "data/maps/GreatCraterBottom/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_HM_FLASH, CraterHermit_2
-# 63 "data/maps/GreatCraterBottom/scripts.pory"
+	goto_if_unset FLAG_BADGE02_GET, CraterHermit_2
+# 65 "data/maps/GreatCraterBottom/scripts.pory"
 	msgbox CraterHermit_Text_9
 CraterHermit_1:
-# 67 "data/maps/GreatCraterBottom/scripts.pory"
+# 69 "data/maps/GreatCraterBottom/scripts.pory"
 endcraterhermitscript:
-# 68 "data/maps/GreatCraterBottom/scripts.pory"
+# 70 "data/maps/GreatCraterBottom/scripts.pory"
 	release
 	return
 
@@ -89,6 +89,8 @@ CraterHermit_10:
 # 57 "data/maps/GreatCraterBottom/scripts.pory"
 	setflag hermitmovesexplained
 # 58 "data/maps/GreatCraterBottom/scripts.pory"
+	addvar VAR_HERMIT_DEFEATED_COUNT, + 1
+# 59 "data/maps/GreatCraterBottom/scripts.pory"
 	msgbox CraterHermit_Text_8
 	goto CraterHermit_1
 
@@ -112,7 +114,7 @@ CraterBottomHole_Text_0:
 CraterHermit_Text_0:
 # 27 "data/maps/GreatCraterBottom/scripts.pory"
 	.string "You helped that woman return to the\n"
-	.string "surface, did you? Commendable.\p"
+	.string "surface, did you not? Commendable.\p"
 	.string "The powerless should not venture into\n"
 	.string "places like these.\p"
 	.string "And with “powerless”... I am speaking of\n"
@@ -161,17 +163,20 @@ CraterHermit_Text_7:
 	.string "Obtained the Light Token!$"
 
 CraterHermit_Text_8:
-# 58 "data/maps/GreatCraterBottom/scripts.pory"
+# 59 "data/maps/GreatCraterBottom/scripts.pory"
 	.string "If you gather all of the Hermit Moves\n"
-	.string "from my 8 brothers... you may come back\l"
+	.string "from my 7 brothers... you may come back\l"
 	.string "here.\p"
 	.string "Only then I will grant you passage into\n"
-	.string "the depths beyond.$"
+	.string "the depths beyond.\p"
+	.string "... what lies below Hoenn, you ask?\p"
+	.string "Would you not rather shed light on it\n"
+	.string "yourself? Ho ho ho...$"
 
 CraterHermit_Text_9:
-# 63 "data/maps/GreatCraterBottom/scripts.pory"
+# 65 "data/maps/GreatCraterBottom/scripts.pory"
 	.string "If you gather all of the Hermit Moves\n"
-	.string "from my 8 brothers... you may come back\l"
+	.string "from my 7 brothers... you may come back\l"
 	.string "here.\p"
 	.string "Only then I will grant you passage into\n"
 	.string "the depths beyond.\p"
@@ -180,5 +185,5 @@ CraterHermit_Text_9:
 	.string "away.$"
 
 CraterHermit_Outro::
-# 71 "data/maps/GreatCraterBottom/scripts.pory"
-	.string "Well done. Allow me to shed light onto\na matter...$"
+# 73 "data/maps/GreatCraterBottom/scripts.pory"
+	.string "Well done. Your strength is acceptable.$"

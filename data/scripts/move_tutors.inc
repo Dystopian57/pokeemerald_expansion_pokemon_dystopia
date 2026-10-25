@@ -27,7 +27,6 @@ MoveTutor_EventScript_SwaggerTaught::
 MauvilleCity_EventScript_RolloutTutor::
 	lock
 	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT, MoveTutor_EventScript_RolloutTaught
 	msgbox MoveTutor_Text_RolloutTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RolloutDeclined
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
@@ -36,7 +35,6 @@ MauvilleCity_EventScript_RolloutTutor::
 	setvar VAR_0x8005, MOVE_ROLLOUT
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RolloutDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT
 	goto MoveTutor_EventScript_RolloutTaught
 	end
 
@@ -53,7 +51,6 @@ MoveTutor_EventScript_RolloutTaught::
 VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor::
 	lock
 	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER, MoveTutor_EventScript_FuryCutterTaught
 	msgbox MoveTutor_Text_FuryCutterTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FuryCutterDeclined
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
@@ -62,7 +59,6 @@ VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor::
 	setvar VAR_0x8005, MOVE_FURY_CUTTER
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FuryCutterDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER
 	goto MoveTutor_EventScript_FuryCutterTaught
 	end
 
@@ -79,7 +75,6 @@ MoveTutor_EventScript_FuryCutterTaught::
 LavaridgeTown_House_EventScript_MimicTutor::
 	lock
 	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_MIMIC, MoveTutor_EventScript_MimicTaught
 	msgbox MoveTutor_MimicTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MimicDeclined
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
@@ -88,7 +83,6 @@ LavaridgeTown_House_EventScript_MimicTutor::
 	setvar VAR_0x8005, MOVE_MIMIC
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MimicDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_MIMIC
 	goto MoveTutor_EventScript_MimicTaught
 	end
 
@@ -105,7 +99,6 @@ MoveTutor_EventScript_MimicTaught::
 FallarborTown_Mart_EventScript_MetronomeTutor::
 	lock
 	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_METRONOME, MoveTutor_EventScript_MetronomeTaught
 	msgbox MoveTutor_Text_MetronomeTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MetronomeDeclined
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
@@ -114,7 +107,6 @@ FallarborTown_Mart_EventScript_MetronomeTutor::
 	setvar VAR_0x8005, MOVE_METRONOME
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MetronomeDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_METRONOME
 	goto MoveTutor_EventScript_MetronomeTaught
 	end
 
@@ -131,7 +123,6 @@ MoveTutor_EventScript_MetronomeTaught::
 FortreeCity_House2_EventScript_SleepTalkTutor::
 	lock
 	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK, MoveTutor_EventScript_SleepTalkTaught
 	msgbox MoveTutor_Text_SleepTalkTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SleepTalkDeclined
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
@@ -140,7 +131,6 @@ FortreeCity_House2_EventScript_SleepTalkTutor::
 	setvar VAR_0x8005, MOVE_SLEEP_TALK
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SleepTalkDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK
 	goto MoveTutor_EventScript_SleepTalkTaught
 	end
 

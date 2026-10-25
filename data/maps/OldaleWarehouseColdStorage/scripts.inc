@@ -283,6 +283,38 @@ OldaleWarehouseColdStorageShardStock::
 	return
 
 
+DevonWarehouseWorkerColdStorage::
+# 169 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	lock
+# 170 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 171 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	applymovement 6, OldaleWarehouseColdStorageMedic_Movement_0
+# 172 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	waitmovement 6
+# 173 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerColdStorage_Text_0
+# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	applymovement 6, DevonWarehouseWorkerColdStorage_Movement_0
+# 175 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	waitmovement 6
+# 176 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerColdStorage_Text_1
+# 177 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	applymovement 6, OldaleWarehouseColdStorageMedic_Movement_0
+# 178 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	waitmovement 6
+# 179 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerColdStorage_Text_2
+# 181 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	applymovement 6, DevonWarehouseWorkerColdStorage_Movement_1
+# 182 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	waitmovement 6
+# 183 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	release
+	return
+
+
 # 32 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 OldaleWarehouseColdStorageChimechoBoxAlert_Movement_0:
 # 32 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
@@ -299,6 +331,18 @@ OldaleWarehouseColdStorageMedic_Movement_0:
 OldaleWarehouseColdStorageMedic_Movement_1:
 # 91 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	face_up
+	step_end
+
+# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+DevonWarehouseWorkerColdStorage_Movement_0:
+# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	face_left
+	step_end
+
+# 181 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+DevonWarehouseWorkerColdStorage_Movement_1:
+# 181 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	face_down
 	step_end
 
 OldaleWarehouseColdStorageBoxPile_Text_0:
@@ -378,3 +422,18 @@ OldaleWarehouseColdStorageShardStock_Text_0:
 # 162 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "There's various gems inside. Many look\n"
 	.string "like beautiful ice shards.$"
+
+DevonWarehouseWorkerColdStorage_Text_0:
+# 173 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.string "I was here when the Rebels first drove\n"
+	.string "us out.$"
+
+DevonWarehouseWorkerColdStorage_Text_1:
+# 176 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.string "The battle broke some medicine\n"
+	.string "cabinets, and the liquid contents\l"
+	.string "spilled all over, which formed this ice.$"
+
+DevonWarehouseWorkerColdStorage_Text_2:
+# 179 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.string "Going to be a pain to clean up...$"
