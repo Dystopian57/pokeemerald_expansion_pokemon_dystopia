@@ -899,8 +899,7 @@ PlayerHouseBedTime_4:
 # 503 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	waitse
 # 505 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	compare VAR_OLDALE_PHASE, 1
-	goto_if_ge PlayerHouseBedTime_12
+	goto_if_set FLAG_SYS_POKEMON_GET, PlayerHouseBedTime_12
 PlayerHouseBedTime_10:
 # 510 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
@@ -936,7 +935,7 @@ PlayerHouseBedTime_11:
 # 507 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	fadeoutbgm 1
 # 508 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	warpsilent MAP_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0
+	warpsilent MAP_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 1
 	goto PlayerHouseBedTime_10
 
 PlayerHouseBedTime_12:

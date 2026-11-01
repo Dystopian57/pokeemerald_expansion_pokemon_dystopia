@@ -943,6 +943,8 @@ WarehouseUpperBallManager_1:
 # 554 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	applymovement 13, WarehouseUpperBallManager_Movement_1
 # 555 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 13
+# 556 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
@@ -953,362 +955,372 @@ WarehouseUpperBallManager_2:
 
 
 WarehouseDevonBallCrate::
-# 560 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 561 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_OLDALE_PHASE, 1
 	goto_if_le WarehouseDevonBallCrate_2
-# 579 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 580 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox WarehouseDevonBallCrate_Text_4
 WarehouseDevonBallCrate_1:
-# 582 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 583 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 WarehouseDevonBallCrate_2:
-# 562 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 563 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSEDEVONBALLS, WarehouseDevonBallCrate_5
-# 575 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 576 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox WarehouseDevonBallCrate_Text_3
 	goto WarehouseDevonBallCrate_1
 
 WarehouseDevonBallCrate_5:
-# 563 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox WarehouseDevonBallCrate_Text_0
 # 564 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox WarehouseDevonBallCrate_Text_0
+# 565 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, WarehouseDevonBallCrate_Text_1, WarehouseDevonBallCrate_Text_2
-# 566 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 567 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq WarehouseDevonBallCrate_9
 WarehouseDevonBallCrate_8:
-# 570 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 571 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq WarehouseDevonBallCrate_11
 	goto WarehouseDevonBallCrate_1
 
 WarehouseDevonBallCrate_9:
-# 567 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	giveitem ITEM_POKE_BALL, 10
 # 568 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	giveitem ITEM_POKE_BALL, 10
+# 569 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	setflag FLAG_ITEM_WAREHOUSEDEVONBALLS
 	goto WarehouseDevonBallCrate_8
 
 WarehouseDevonBallCrate_11:
-# 570 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 571 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	goto WarehouseDevonBallCrate_1
 
 
 OldaleWarehouseUpperComputer::
-# 587 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 588 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperComputer_Text_0
+	lock
 # 589 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperComputer_Text_0
+# 590 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperBookshelves::
-# 593 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 594 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperBookshelves_Text_0
+	lock
 # 595 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperBookshelves_Text_0
+# 596 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperMicrowave::
-# 599 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 600 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperMicrowave_Text_0
+	lock
 # 601 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperMicrowave_Text_0
+# 602 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSEMICROWAVE, OldaleWarehouseUpperMicrowave_2
-# 605 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 606 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperMicrowave_Text_1
 OldaleWarehouseUpperMicrowave_1:
-# 607 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 608 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperMicrowave_2:
-# 602 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	giveitem ITEM_AERODACTYLITE
 # 603 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	giveitem ITEM_AERODACTYLITE
+# 604 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	setflag FLAG_ITEM_WAREHOUSEMICROWAVE
 	goto OldaleWarehouseUpperMicrowave_1
 
 
 OldaleWarehouseUpperLoadtadDoll::
-# 611 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 612 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	givedecoration DECOR_LOTAD_DOLL
+	lock
 # 613 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 9
+	givedecoration DECOR_LOTAD_DOLL
 # 614 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_ITEM_WAREHOUSELOTADDOLL
+	removeobject 9
 # 615 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setflag FLAG_ITEM_WAREHOUSELOTADDOLL
+# 616 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperMoneyBags::
-# 619 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 620 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	showmoneybox 18, 0
+	lock
 # 621 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperMoneyBags_Text_0
+	showmoneybox 18, 0
 # 622 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	addmoney 1000
+	msgbox OldaleWarehouseUpperMoneyBags_Text_0
 # 623 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	updatemoneybox
+	addmoney 1000
 # 624 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_SHOP
+	updatemoneybox
 # 625 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	playse SE_SHOP
 # 626 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperMoneyBags_Text_1
+	waitse
 # 627 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 8
+	msgbox OldaleWarehouseUpperMoneyBags_Text_1
 # 628 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
+	removeobject 8
 # 629 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	hidemoneybox
+	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
 # 630 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	hidemoneybox
+# 631 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperExtinguisher::
-# 635 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 636 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperExtinguisher_Text_0
+	lock
 # 637 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperExtinguisher_Text_0
+# 638 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperPrinter::
-# 641 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 642 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	lock
+# 643 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperPrinter_Text_0
-# 644 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 645 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseUpperCoffee::
-# 648 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 649 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox OldaleWarehouseUpperCoffee_Text_0
+	lock
 # 650 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox OldaleWarehouseUpperCoffee_Text_0
+# 651 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSECOFFEE, OldaleWarehouseUpperCoffee_2
-# 653 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 654 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperCoffee_Text_1
 OldaleWarehouseUpperCoffee_1:
-# 655 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 656 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperCoffee_2:
-# 651 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 652 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	giveitem ITEM_HEAL_POWDER
 	goto OldaleWarehouseUpperCoffee_1
 
 
 OldaleWarehouseUpperTrashcan::
-# 659 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 660 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	lock
+# 661 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	goto_if_unset FLAG_ITEM_WAREHOUSETRASHCAN, OldaleWarehouseUpperTrashcan_2
-# 663 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 664 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperTrashcan_Text_0
 OldaleWarehouseUpperTrashcan_1:
-# 665 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 666 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 OldaleWarehouseUpperTrashcan_2:
-# 661 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 662 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	givedecoration DECOR_SKITTY_DOLL
 	goto OldaleWarehouseUpperTrashcan_1
 
 
 OldaleWarehouseUpperSafemonNotice::
-# 669 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 670 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	showmonpic SPECIES_LOADTAD, 10, 3
+	lock
 # 671 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	showmonpic SPECIES_LOADTAD, 10, 3
+# 672 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox OldaleWarehouseUpperSafemonNotice_Text_0
-# 673 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	hidemonpic
 # 674 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	hidemonpic
+# 675 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 DevonWarehouseManagerAbra::
-# 678 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 679 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 680 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 12, WarehouseUpperBallManager_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 681 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 12
+	applymovement 12, WarehouseUpperBallManager_Movement_0
 # 682 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playmoncry SPECIES_ABRA, CRY_MODE_WEAK
-# 683 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseManagerAbra_Text_0
-# 684 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 12, DevonWarehouseManagerAbra_Movement_0
-# 685 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitmovement 12
+# 683 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playmoncry SPECIES_ABRA, CRY_MODE_WEAK
+# 684 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox DevonWarehouseManagerAbra_Text_0
+# 685 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 12, WarehouseUpperBallManager_Movement_1
 # 686 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 12
+# 687 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 DevonWarehouseUpperManager::
-# 690 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	lock
 # 691 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 692 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 693 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox DevonWarehouseUpperManager_Text_0
-# 694 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 10, WarehouseUpperBallManager_Movement_0
 # 695 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 10
+	applymovement 10, WarehouseUpperBallManager_Movement_0
 # 696 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_1
+	waitmovement 10
 # 697 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	closemessage
+	msgbox DevonWarehouseUpperManager_Text_1
 # 698 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_20
+	closemessage
 # 699 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 10
+	playse SE_PIN
 # 700 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_2
+	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_20
 # 701 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_16
+	waitmovement 10
 # 702 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 10
+	msgbox DevonWarehouseUpperManager_Text_2
 # 703 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_3
+	playse SE_LEDGE
 # 704 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
+	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_16
 # 705 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	waitmovement 10
 # 706 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_4
+	msgbox DevonWarehouseUpperManager_Text_3
+# 707 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_6
 # 708 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_9
-# 709 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 710 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_5
+# 709 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox DevonWarehouseUpperManager_Text_4
+# 711 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleWarehouseUpperRebelEventEntrance_Movement_9
 # 712 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 713 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox DevonWarehouseUpperManager_Text_5
+# 715 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	giveitem ITEM_TM_TELEPORT
-# 714 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_6
-# 716 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_2
 # 717 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 10
-# 718 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_7
+	msgbox DevonWarehouseUpperManager_Text_6
+# 719 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_2
 # 720 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playmoncry SPECIES_ABRA, CRY_MODE_WEAK
-# 721 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseManagerAbra_Text_0
-# 723 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_6
-# 724 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitmovement 10
+# 721 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox DevonWarehouseUpperManager_Text_7
+# 723 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 12, OldaleWarehouseUpperRebelEventEntrance_Movement_3
+# 724 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 12
 # 725 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_8
-# 727 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_TELEPORT
+	playmoncry SPECIES_ABRA, CRY_MODE_WEAK
+# 726 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox DevonWarehouseManagerAbra_Text_0
 # 728 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 10
+	applymovement 10, OldaleWarehouseUpperRebelEventEntrance_Movement_6
 # 729 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	waitmovement 10
 # 730 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	playse SE_M_TELEPORT
-# 731 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	removeobject 12
+	msgbox DevonWarehouseUpperManager_Text_8
 # 732 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitse
+	playse SE_M_TELEPORT
 # 733 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag warehousemanagerandabra
+	removeobject 10
+# 734 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitse
 # 735 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 11, OldaleWarehouseUpperRebelEventEntrance_Movement_20
+	playse SE_M_TELEPORT
 # 736 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 11
+	removeobject 12
 # 737 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperManager_Text_9
+	waitse
 # 738 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 11, DevonWarehouseUpperManager_Movement_0
-# 739 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	setflag warehousemanagerandabra
+# 740 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	playse SE_PIN
+# 741 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 11, OldaleWarehouseUpperRebelEventEntrance_Movement_20
+# 742 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	waitmovement 11
 # 743 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	closemessage
+	msgbox DevonWarehouseUpperManager_Text_9
+# 744 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 11, DevonWarehouseUpperManager_Movement_0
 # 745 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 11
+# 749 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	closemessage
+# 751 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 
 DevonWarehouseUpperComplainer::
-# 750 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 756 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
-# 751 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 757 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 753 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	goto_if_unset warehousemanagerandabra, DevonWarehouseUpperComplainer_2
-# 765 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 759 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	goto_if_set warehousemanagerandabra, DevonWarehouseUpperComplainer_2
+# 771 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox DevonWarehouseUpperComplainer_Text_1
 DevonWarehouseUpperComplainer_1:
-# 767 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 773 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
 DevonWarehouseUpperComplainer_2:
-# 755 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 41, WarehouseUpperBallManager_Movement_0
-# 756 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 41
-# 757 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 761 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 11, WarehouseUpperBallManager_Movement_0
+# 762 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 11
+# 763 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	msgbox DevonWarehouseUpperComplainer_Text_0
-# 759 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 41, DevonWarehouseUpperManager_Movement_0
-# 760 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 41
+# 765 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 11, DevonWarehouseUpperManager_Movement_0
+# 766 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 11
 	goto DevonWarehouseUpperComplainer_1
 
 
 DevonWarehouseUpperComputerGuy::
-# 773 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 779 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	lock
-# 774 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 775 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 14, WarehouseUpperBallManager_Movement_0
-# 776 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 14
-# 777 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	msgbox DevonWarehouseUpperComputerGuy_Text_0
 # 780 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	applymovement 14, DevonWarehouseUpperComputerGuy_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 781 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	waitmovement 14
+	applymovement 14, WarehouseUpperBallManager_Movement_0
 # 782 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 14
+# 783 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	msgbox DevonWarehouseUpperComputerGuy_Text_0
+# 786 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	applymovement 14, DevonWarehouseUpperComputerGuy_Movement_0
+# 787 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	waitmovement 14
+# 788 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	release
 	return
 
@@ -1715,22 +1727,16 @@ WarehouseUpperBallManager_Movement_1:
 	face_right
 	step_end
 
-# 684 "data/maps/OldaleWarehouseUpper/scripts.pory"
-DevonWarehouseManagerAbra_Movement_0:
-# 684 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	face_left
-	step_end
-
-# 738 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 744 "data/maps/OldaleWarehouseUpper/scripts.pory"
 DevonWarehouseUpperManager_Movement_0:
-# 738 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 744 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	face_down
 	step_end
 
-# 780 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 786 "data/maps/OldaleWarehouseUpper/scripts.pory"
 DevonWarehouseUpperComputerGuy_Movement_0:
-# 780 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	face_up
+# 786 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	face_left
 	step_end
 
 OldaleWarehouseUpperRebelEventEntrance_Text_0:
@@ -2015,153 +2021,154 @@ WarehouseUpperBallManager_Text_1:
 	.string "Devon Balls...$"
 
 WarehouseDevonBallCrate_Text_0:
-# 563 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 564 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "There's a few unsealed balls in the\n"
 	.string "crates. No one will miss them...$"
 
 WarehouseDevonBallCrate_Text_1:
-# 564 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 565 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Take them$"
 
 WarehouseDevonBallCrate_Text_2:
-# 564 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 565 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Leave$"
 
 WarehouseDevonBallCrate_Text_3:
-# 575 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 576 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "It would be wrong to take these Devon\n"
 	.string "Balls...$"
 
 WarehouseDevonBallCrate_Text_4:
-# 579 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 580 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A crate full of Devon Balls, still sealed.$"
 
 OldaleWarehouseUpperComputer_Text_0:
-# 588 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 589 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The desktop's background features the\n"
 	.string "warehouse's logo: a smiling Loadtad.$"
 
 OldaleWarehouseUpperBookshelves_Text_0:
-# 594 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 595 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "It's full of accounting books and\n"
 	.string "company guidelines.$"
 
 OldaleWarehouseUpperMicrowave_Text_0:
-# 600 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 601 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "It's a microwave. There's some reheated\n"
 	.string "food inside...$"
 
 OldaleWarehouseUpperMicrowave_Text_1:
-# 605 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 606 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The microwave is empty.$"
 
 OldaleWarehouseUpperMoneyBags_Text_0:
-# 621 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 622 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Seems the {COLOR RED}Rebels{COLOR DARK_GRAY} forgot some of their\n"
 	.string "loot...$"
 
 OldaleWarehouseUpperMoneyBags_Text_1:
-# 626 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 627 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Received 1000¥!$"
 
 OldaleWarehouseUpperExtinguisher_Text_0:
-# 636 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 637 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A regular fire extinguisher.$"
 
 OldaleWarehouseUpperPrinter_Text_0:
-# 642 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 643 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "There's many copies of a picture of\n"
 	.string "Mister Stone.\p"
 	.string "The image has been edited to make him\n"
 	.string "look like a Mr. Mime.$"
 
 OldaleWarehouseUpperCoffee_Text_0:
-# 649 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 650 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "For some reason, there's a can of\n"
 	.string "coffee by the coffee machine...$"
 
 OldaleWarehouseUpperCoffee_Text_1:
-# 653 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 654 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "A coffee machine, Chesto brand.$"
 
 OldaleWarehouseUpperTrashcan_Text_0:
-# 663 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 664 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "The trash can is empty.$"
 
 OldaleWarehouseUpperSafemonNotice_Text_0:
-# 671 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 672 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "{COLOR BLUE}Safemon Notice{COLOR DARK_GRAY}: To assist conditioning,\n"
 	.string "do not feed Loadtads until end of\l"
 	.string "shift!$"
 
 DevonWarehouseManagerAbra_Text_0:
-# 683 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 684 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "... aaaabraaa.$"
 
 DevonWarehouseUpperManager_Text_0:
-# 692 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 693 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "I don't want to hear any more excuses,\n"
 	.string "you hear me?\p"
 	.string "I want this warehouse back in order by\n"
 	.string "the...$"
 
 DevonWarehouseUpperManager_Text_1:
-# 696 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 697 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Hm? And who are you? If you're a job\n"
 	.string "applicant, I'm afraid...$"
 
 DevonWarehouseUpperManager_Text_2:
-# 700 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 702 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Wait a minute - you...$"
 
 DevonWarehouseUpperManager_Text_3:
-# 703 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 706 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "If you aren't the warehouse's saviour!$"
 
 DevonWarehouseUpperManager_Text_4:
-# 706 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 709 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "See that camera behind you? It\n"
 	.string "recorded all of your heroic deeds in\l"
 	.string "this room!$"
 
 DevonWarehouseUpperManager_Text_5:
-# 710 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 713 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Please, allow me to give you this as\n"
 	.string "thanks!$"
 
 DevonWarehouseUpperManager_Text_6:
-# 714 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 717 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "That is the most useful move for kind,\n"
 	.string "busy people like us.$"
 
 DevonWarehouseUpperManager_Text_7:
-# 718 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 721 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Allow me to demonstrate... Abra!$"
 
 DevonWarehouseUpperManager_Text_8:
-# 725 "data/maps/OldaleWarehouseUpper/scripts.pory"
-	.string "Goodbye!$"
+# 730 "data/maps/OldaleWarehouseUpper/scripts.pory"
+	.string "Goodbye, and thank you for your\n"
+	.string "service!$"
 
 DevonWarehouseUpperManager_Text_9:
-# 737 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 743 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "Wait, sir, you haven't...! Ah...$"
 
 DevonWarehouseUpperComplainer_Text_0:
-# 757 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 763 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "That manager comes everyday from\n"
 	.string "Slateport with his Abra.\p"
 	.string "He barks orders for 10 minutes, does no\n"
 	.string "work, and teleports out.$"
 
 DevonWarehouseUpperComplainer_Text_1:
-# 765 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 771 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "But sir, half our Loadtads are missing,\n"
 	.string "and the forklifts are not...$"
 
 DevonWarehouseUpperComputerGuy_Text_0:
-# 777 "data/maps/OldaleWarehouseUpper/scripts.pory"
+# 783 "data/maps/OldaleWarehouseUpper/scripts.pory"
 	.string "I'm running a virus check on our\n"
-	.string "internal network-\p"
+	.string "internal network.\p"
 	.string "The Rebels have some impressive\n"
 	.string "hackers, like Lanette, the designer of\l"
 	.string "Hoenn's Storage System.\p"

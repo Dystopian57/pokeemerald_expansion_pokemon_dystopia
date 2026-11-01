@@ -720,8 +720,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_FullRestore,
         .flingPower = 30,
-        .iconPic = gItemIcon_LargePotion,
-        .iconPalette = gItemIconPalette_MaxPotion,
+        .iconPic = gItemIcon_Potion,
+        .iconPalette = gItemIconPalette_Potion,
     },
 
     [ITEM_FULL_RESTORE] =

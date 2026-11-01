@@ -1145,11 +1145,6 @@ static const union AnimCmd sAnim_rebelgruntfsign[] =
 {
     ANIMCMD_FRAME(0, 8),
     ANIMCMD_FRAME(1, 8),
-    ANIMCMD_FRAME(2, 8),
-    ANIMCMD_FRAME(3, 8),
-    ANIMCMD_FRAME(4, 8),
-    ANIMCMD_FRAME(5, 8),
-
     ANIMCMD_JUMP(0),
 };
 

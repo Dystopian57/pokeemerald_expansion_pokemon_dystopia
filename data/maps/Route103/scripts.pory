@@ -728,6 +728,7 @@ script Route103VeteranRematch {
 script Route102DevonPoochain {
 	lock
 	applymovement (41, moves(face_player))
+	waitmovement (41)
 	playmoncry (SPECIES_POOCHAIN, CRY_MODE_NORMAL)
 	msgbox(format("Grrr!"))
 	release

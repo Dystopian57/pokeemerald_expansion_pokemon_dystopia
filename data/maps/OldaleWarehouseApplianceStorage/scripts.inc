@@ -359,15 +359,15 @@ DevonWarehouseWorkerPanelTechnician::
 # 236 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	msgbox DevonWarehouseWorkerPanelTechnician_Text_0
 # 237 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	applymovement 8, ScavengerSandshrew_Movement_0
+	applymovement 7, ScavengerSandshrew_Movement_0
 # 238 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	waitmovement 8
+	waitmovement 7
 # 239 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	msgbox DevonWarehouseWorkerPanelTechnician_Text_1
 # 240 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	applymovement 8, DevonWarehouseWorkerPanelTechnician_Movement_0
+	applymovement 7, DevonWarehouseWorkerPanelTechnician_Movement_0
 # 241 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	waitmovement 8
+	waitmovement 7
 # 242 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return
@@ -379,15 +379,15 @@ DevonWarehouseWorkerApplianceInventory::
 # 248 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 249 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	applymovement 9, ScavengerSandshrew_Movement_0
+	applymovement 8, ScavengerSandshrew_Movement_0
 # 250 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	waitmovement 9
+	waitmovement 8
 # 251 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	msgbox DevonWarehouseWorkerApplianceInventory_Text_0
 # 253 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	applymovement 9, DevonWarehouseWorkerApplianceInventory_Movement_0
+	applymovement 8, DevonWarehouseWorkerApplianceInventory_Movement_0
 # 254 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
-	waitmovement 9
+	waitmovement 8
 # 255 "data/maps/OldaleWarehouseApplianceStorage/scripts.pory"
 	release
 	return

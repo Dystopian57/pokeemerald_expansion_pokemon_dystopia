@@ -534,56 +534,166 @@ PastBrendan::
 	waitmovement 11
 # 351 "data/maps/PastLittlerootTown/scripts.pory"
 	msgbox PastBrendan_Text_1
-# 353 "data/maps/PastLittlerootTown/scripts.pory"
-	applymovement 11, PastBrendan_Movement_0
 # 354 "data/maps/PastLittlerootTown/scripts.pory"
-	waitmovement 11
+	playse SE_FALL
 # 355 "data/maps/PastLittlerootTown/scripts.pory"
-	removeobject 11
+	playmoncry SPECIES_VOLTORB, CRY_MODE_NORMAL
 # 356 "data/maps/PastLittlerootTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PastRivalTrauma_Movement_0
+	addobject 28
 # 357 "data/maps/PastLittlerootTown/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxy 28, 17, 5
 # 358 "data/maps/PastLittlerootTown/scripts.pory"
-	removeobject OBJ_EVENT_ID_PLAYER
+	addobject 29
+# 359 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 29, 22, 7
 # 360 "data/maps/PastLittlerootTown/scripts.pory"
-	clearflag FLAG_TEMP_HIDE_FOLLOWER
-# 361 "data/maps/PastLittlerootTown/scripts.pory"
-	setflag FLAG_SYS_POKENAV_GET
+	waitse
 # 362 "data/maps/PastLittlerootTown/scripts.pory"
-	setflag FLAG_SYS_POKEDEX_GET
+	playse SE_FALL
 # 363 "data/maps/PastLittlerootTown/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	playmoncry SPECIES_VOLTORB, CRY_MODE_NORMAL
+# 364 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 30
+# 365 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 30, 18, 4
 # 366 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 31
+# 367 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 31, 17, 7
+# 368 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 32
+# 369 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 32, 19, 9
+# 370 "data/maps/PastLittlerootTown/scripts.pory"
+	waitse
+# 372 "data/maps/PastLittlerootTown/scripts.pory"
+	playse SE_FALL
+# 373 "data/maps/PastLittlerootTown/scripts.pory"
+	playmoncry SPECIES_VOLTORB, CRY_MODE_NORMAL
+# 374 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 33
+# 375 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 33, 22, 5
+# 376 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 34
+# 377 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 34, 17, 7
+# 378 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 35
+# 379 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 35, 19, 5
+# 380 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 36
+# 381 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 36, 17, 9
+# 382 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 37
+# 383 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 37, 21, 8
+# 384 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 38
+# 385 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 38, 21, 4
+# 386 "data/maps/PastLittlerootTown/scripts.pory"
+	addobject 39
+# 387 "data/maps/PastLittlerootTown/scripts.pory"
+	setobjectxy 39, 16, 6
+# 388 "data/maps/PastLittlerootTown/scripts.pory"
+	waitse
+# 392 "data/maps/PastLittlerootTown/scripts.pory"
+	playse SE_M_EXPLOSION
+# 393 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8004, 2
+# 394 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8005, 6
+# 395 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8006, 4
+# 396 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8007, 4
+# 397 "data/maps/PastLittlerootTown/scripts.pory"
+	special ShakeCamera
+# 398 "data/maps/PastLittlerootTown/scripts.pory"
+	waitse
+# 399 "data/maps/PastLittlerootTown/scripts.pory"
+	fadescreenswapbuffers FADE_TO_WHITE
+# 400 "data/maps/PastLittlerootTown/scripts.pory"
+	playse SE_M_SELF_DESTRUCT
+# 401 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8004, 2
+# 402 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8005, 6
+# 403 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8006, 4
+# 404 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8007, 4
+# 405 "data/maps/PastLittlerootTown/scripts.pory"
+	special ShakeCamera
+# 406 "data/maps/PastLittlerootTown/scripts.pory"
+	waitse
+# 407 "data/maps/PastLittlerootTown/scripts.pory"
+	playse SE_M_SELF_DESTRUCT
+# 408 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8004, 2
+# 409 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8005, 6
+# 410 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8006, 4
+# 411 "data/maps/PastLittlerootTown/scripts.pory"
+	setvar VAR_0x8007, 4
+# 412 "data/maps/PastLittlerootTown/scripts.pory"
+	special ShakeCamera
+# 413 "data/maps/PastLittlerootTown/scripts.pory"
+	waitse
+# 416 "data/maps/PastLittlerootTown/scripts.pory"
+	applymovement 11, PastBrendan_Movement_0
+# 417 "data/maps/PastLittlerootTown/scripts.pory"
+	waitmovement 11
+# 418 "data/maps/PastLittlerootTown/scripts.pory"
+	removeobject 11
+# 419 "data/maps/PastLittlerootTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PastRivalTrauma_Movement_0
+# 420 "data/maps/PastLittlerootTown/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 421 "data/maps/PastLittlerootTown/scripts.pory"
+	removeobject OBJ_EVENT_ID_PLAYER
+# 423 "data/maps/PastLittlerootTown/scripts.pory"
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
+# 424 "data/maps/PastLittlerootTown/scripts.pory"
+	setflag FLAG_SYS_POKENAV_GET
+# 425 "data/maps/PastLittlerootTown/scripts.pory"
+	setflag FLAG_SYS_POKEDEX_GET
+# 426 "data/maps/PastLittlerootTown/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 429 "data/maps/PastLittlerootTown/scripts.pory"
 	compare VAR_FLASHBACK_WAKEUPLOCATION, 1
 	goto_if_eq PastBrendan_2
 PastBrendan_1:
-# 369 "data/maps/PastLittlerootTown/scripts.pory"
+# 432 "data/maps/PastLittlerootTown/scripts.pory"
 	compare VAR_FLASHBACK_WAKEUPLOCATION, 2
 	goto_if_eq PastBrendan_4
 	return
 
 PastBrendan_2:
-# 367 "data/maps/PastLittlerootTown/scripts.pory"
-	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0
+# 430 "data/maps/PastLittlerootTown/scripts.pory"
+	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 1
 	goto PastBrendan_1
 
 PastBrendan_4:
-# 370 "data/maps/PastLittlerootTown/scripts.pory"
+# 433 "data/maps/PastLittlerootTown/scripts.pory"
 	warpsilent MAP_POKE_INN_ROOM2, 2
 	return
 
 
 PastNoReturnAfterMankey::
-# 375 "data/maps/PastLittlerootTown/scripts.pory"
+# 438 "data/maps/PastLittlerootTown/scripts.pory"
 	lock
-# 376 "data/maps/PastLittlerootTown/scripts.pory"
+# 439 "data/maps/PastLittlerootTown/scripts.pory"
 	msgbox PastNoReturnAfterMankey_Text_0
-# 377 "data/maps/PastLittlerootTown/scripts.pory"
+# 440 "data/maps/PastLittlerootTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, PastNightmareZoneReturn_Movement_0
-# 378 "data/maps/PastLittlerootTown/scripts.pory"
+# 441 "data/maps/PastLittlerootTown/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 379 "data/maps/PastLittlerootTown/scripts.pory"
+# 442 "data/maps/PastLittlerootTown/scripts.pory"
 	release
 	return
 
@@ -778,11 +888,11 @@ PastGruntsTakeMankey_Movement_8:
 	walk_right
 	step_end
 
-# 353 "data/maps/PastLittlerootTown/scripts.pory"
+# 416 "data/maps/PastLittlerootTown/scripts.pory"
 PastBrendan_Movement_0:
-# 353 "data/maps/PastLittlerootTown/scripts.pory"
+# 416 "data/maps/PastLittlerootTown/scripts.pory"
 	walk_down_affine
-# 353 "data/maps/PastLittlerootTown/scripts.pory"
+# 416 "data/maps/PastLittlerootTown/scripts.pory"
 	walk_down_affine
 	step_end
 
@@ -887,6 +997,6 @@ PastBrendan_Text_1:
 	.string "You are a failure.$"
 
 PastNoReturnAfterMankey_Text_0:
-# 376 "data/maps/PastLittlerootTown/scripts.pory"
+# 439 "data/maps/PastLittlerootTown/scripts.pory"
 	.string "Must... tell dad... to come have...\n"
 	.string "breakfast.$"

@@ -6089,7 +6089,7 @@ u16 GetBattleBGM(void)
 
         case TRAINER_CLASS_DEVONADMINM:
         case TRAINER_CLASS_DEVONADMINF:
-            return MUS_BOSSBATTLE;
+            return MUS_GOROCKQUADS;
 
         case TRAINER_CLASS_ROXANNEDEVON:
             return MUS_ALTRUTOWER;

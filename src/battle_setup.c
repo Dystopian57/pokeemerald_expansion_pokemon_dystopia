@@ -1572,6 +1572,7 @@ void PlayTrainerEncounterMusic(void)
             music = MUS_ENCOUNTERPINCHERS;
             break;
         case TRAINER_ENCOUNTER_MUSIC_DEVONADMIN:
+            music = MUS_ROCKYCAVEBATTLE;
             music = MUS_GOROCKQUADS;
             break;
         case TRAINER_ENCOUNTER_MUSIC_WAGESLAVE:

@@ -552,6 +552,7 @@ script WarehouseUpperBallManager {
 
 	else {msgbox(format("Of course the rebels left none of the Devon Balls..."))}
 	applymovement (13, moves(face_right))
+	waitmovement (13)
 	release
 }
 
@@ -681,7 +682,7 @@ script DevonWarehouseManagerAbra {
 	waitmovement (12)
 	playmoncry (SPECIES_ABRA, CRY_MODE_WEAK)
     msgbox (format("... aaaabraaa."))
-    applymovement (12, moves(face_left))
+    applymovement (12, moves(face_right))
 	waitmovement (12)
 	release
 }
@@ -695,9 +696,11 @@ script DevonWarehouseUpperManager {
     waitmovement (10)
     msgbox (format("Hm? And who are you? If you're a job applicant, I'm afraid..."))
 	closemessage
+	playse (SE_PIN)
     applymovement (10, moves(emote_exclamation_mark))
     waitmovement (10)
     msgbox (format("Wait a minute - you..."))
+	playse (SE_LEDGE)
     applymovement (10, moves(jump_in_place_up))
     waitmovement (10)
     msgbox (format("If you aren't the warehouse's saviour!"))
@@ -717,12 +720,14 @@ script DevonWarehouseUpperManager {
     waitmovement (10)
     msgbox (format("Allow me to demonstrate... Abra!"))
 
+    applymovement (12, moves(walk_in_place_right))
+    waitmovement (12)
 	playmoncry (SPECIES_ABRA, CRY_MODE_WEAK)
     msgbox (format("... aaaabraaa."))
 
     applymovement (10, moves(walk_in_place_up))
     waitmovement (10)
-    msgbox (format("Goodbye!"))
+    msgbox (format("Goodbye, and thank you for your service!"))
 
 	playse (SE_M_TELEPORT)
 	removeobject (10)
@@ -732,6 +737,7 @@ script DevonWarehouseUpperManager {
 	waitse
 	setflag (warehousemanagerandabra)
 
+	playse (SE_PIN)
     applymovement (11, moves(emote_exclamation_mark))
     waitmovement (11)
     msgbox (format("Wait, sir, you haven't...! Ah..."))
@@ -750,14 +756,14 @@ script DevonWarehouseUpperComplainer {
     lock
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
-	if (!flag(warehousemanagerandabra))
+	if (flag(warehousemanagerandabra))
 
-   { applymovement (41, moves(face_player))
-    waitmovement (41)
+   { applymovement (11, moves(face_player))
+    waitmovement (11)
     msgbox (format("That manager comes everyday from Slateport with his Abra.\pHe barks orders
 	for 10 minutes, does no work, and teleports out."))
-    applymovement (41, moves(face_down))
-    waitmovement (41)}
+    applymovement (11, moves(face_down))
+    waitmovement (11)}
 
 
 
@@ -774,10 +780,10 @@ script DevonWarehouseUpperComputerGuy {
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement (14, moves(face_player))
     waitmovement (14)
-    msgbox (format("I'm running a virus check on our internal network-
+    msgbox (format("I'm running a virus check on our internal network.
 	\p The Rebels have some impressive hackers, like Lanette, the designer of Hoenn's Storage System.
 	\pWe need to make sure the Rebels planted no malware."))
-    applymovement (14, moves(face_up))
+    applymovement (14, moves(face_left))
     waitmovement (14)
     release
     

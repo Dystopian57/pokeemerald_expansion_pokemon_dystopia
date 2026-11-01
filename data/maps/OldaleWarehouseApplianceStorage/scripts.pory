@@ -234,11 +234,11 @@ script DevonWarehouseWorkerPanelTechnician{
 		special(ShakeCamera)
 		playse (SE_M_THUNDERBOLT2)
 		msgbox(format("O-ouch!"))
-    applymovement (8, moves(face_player))
-    waitmovement (8)
+    applymovement (7, moves(face_player))
+    waitmovement (7)
     msgbox (format("Keep your distance, please. This panel is very unsafe."))
-    applymovement (8, moves(face_down))
-    waitmovement (8)
+    applymovement (7, moves(face_down))
+    waitmovement (7)
     release
     
 }
@@ -246,12 +246,12 @@ script DevonWarehouseWorkerPanelTechnician{
 script DevonWarehouseWorkerApplianceInventory {
     lock
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-    applymovement (9, moves(face_player))
-    waitmovement (9)
+    applymovement (8, moves(face_player))
+    waitmovement (8)
     msgbox (format("We're missing some inventory here... and it happens to be the high-end stuff.
 	\pThose Rebels know their tech better than I thought."))
-    applymovement (9, moves(face_up))
-    waitmovement (9)
+    applymovement (8, moves(face_up))
+    waitmovement (8)
     release
     
 }

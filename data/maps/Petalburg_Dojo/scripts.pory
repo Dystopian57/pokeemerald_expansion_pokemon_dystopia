@@ -1,0 +1,572 @@
+raw `
+Petalburg_Dojo_MapScripts::
+	.byte 0
+
+`
+
+script PetalburgDojoApproach1 {
+    setvar (VAR_PETALBURG_DOJO_POSITION, 1)
+    goto (PetalburgDojoIntro)
+}
+
+script PetalburgDojoApproach2 {
+    setvar (VAR_PETALBURG_DOJO_POSITION, 2)
+    goto (PetalburgDojoIntro)
+}
+
+script PetalburgDojoApproach3 {
+    setvar (VAR_PETALBURG_DOJO_POSITION, 3)
+    goto (PetalburgDojoIntro)
+}
+
+script PetalburgDojoApproach4 {
+    setvar (VAR_PETALBURG_DOJO_POSITION, 4)
+    goto (PetalburgDojoIntro)
+}
+
+script PetalburgDojoApproach5 {
+    setvar (VAR_PETALBURG_DOJO_POSITION, 5)
+    goto (PetalburgDojoIntro)
+}
+
+script PetalburgDojoApproach6 {
+    setvar (VAR_PETALBURG_DOJO_POSITION, 6)
+    goto (PetalburgDojoIntro)
+}
+
+script PetalburgDojoApproach7 {
+    setvar (VAR_PETALBURG_DOJO_POSITION, 7)
+    goto (PetalburgDojoIntro)
+}
+
+script PetalburgDojoIntro {
+    
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+    playse (SE_PIN)
+    applymovement (1, moves(emote_exclamation_mark))
+    waitmovement (1)
+
+	setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+
+
+    msgbox (format("{PLAYER}... is that you?"))
+
+
+    applymovement (1, moves(face_down))
+    waitmovement (1)
+
+    applymovement (2, moves(face_down, emote_exclamation_mark))
+    waitmovement (2)
+
+    playse (SE_PIN)
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+
+		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 0 && !flag(Sharpy103Rematch)) //never event went to fight Sharpy
+		{
+            
+        msgbox (format("Oh, hello, {PLAYER}!"))
+
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD) 
+        msgbox (format("You really stood me up in {COLOR GREEN}Route 103{COLOR DARK_GRAY}! I waited for AGES!"))
+
+        applymovement (3, moves(walk_in_place_right))
+        waitmovement (3)
+        setspeaker ([SP_NAME_CAMELIA])
+        createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY) 
+        msgbox (format("He's exaggerating. He was only there for five minutes."))}
+
+		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 0 && flag(Sharpy103Rematch)) //fought Sharpy but lost
+		{   msgbox (format("Oh, hello, {PLAYER}! You came!"))
+
+            setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL) 
+             msgbox (format("You should have come for a rematch on Route 103 - I knew you went
+             easy on me!"))}
+
+		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 1) //fought Sharpy and won
+				{msgbox (format("Oh hi {PLAYER} - you came! Took you your sweet time!"))}
+
+
+	setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_CONFUSED)
+    playse (SE_M_SKETCH) //tri attack
+    applymovement (1, moves(emote_x))
+    waitmovement (1)
+    msgbox(format("Oh, so you know each other? I guess Hoenn is a small place."))
+
+	setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+
+    checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("Sharpy, Camelia - in case you didn't know,
+    {PLAYER} is my grandson."))}
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Sharpy, Camelia - in case you didn't know,
+    {PLAYER} is my granddaugther."))}
+
+	setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_MENACING)
+    playse (SE_PIN) 
+    applymovement (3, moves(walk_in_place_down, emote_exclamation_mark))
+    waitmovement (3)
+    msgbox(format("Oh? I knew you were special when I saw you! My intuition never misses!"))
+
+	setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+    msgbox(format("Now, don't stand there, {PLAYER} - come."))
+    removefieldmugshot
+    closemessage
+
+
+		if (var(VAR_PETALBURG_DOJO_POSITION) == 1) {
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 3, walk_up * 2))
+            waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+
+		if (var(VAR_PETALBURG_DOJO_POSITION) == 2) {
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 2, walk_up * 2))
+            waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+
+		if (var(VAR_PETALBURG_DOJO_POSITION) == 3) {
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 1, walk_up * 2))
+            waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+
+		if (var(VAR_PETALBURG_DOJO_POSITION) == 4) {
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_up * 2))
+            waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+
+		if (var(VAR_PETALBURG_DOJO_POSITION) == 5) {
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left * 1, walk_up * 2))
+            waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+
+		if (var(VAR_PETALBURG_DOJO_POSITION) == 6) {
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left * 2, walk_up * 2))
+            waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+
+		if (var(VAR_PETALBURG_DOJO_POSITION) == 7) {
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left * 3, walk_up * 2))
+            waitmovement (OBJ_EVENT_ID_PLAYER)
+        }
+
+    applymovement (2, moves(face_up))  
+    applymovement (3, moves(face_up))
+    waitmovement (3)
+
+	setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_CONFUSED)
+    msgbox(format("{PLAYER}... I know you've been... “sick”, for a while."))
+
+	setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+    msgbox(format("Are you up to date with things in Hoenn?"))
+
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I am", "I am not")
+
+		if (var(VAR_RESULT) == 0) {
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+        msgbox(format("Then you know about Devon and its questionable policies. Like Safemon."))
+        devoncatchup:
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
+        msgbox(format("We've been protesting against Devon in front of their closest lab,
+        in {COLOR GREEN}Route 104{COLOR DARK_GRAY}, but..."))
+        
+        applymovement (3, moves(face_right))
+        waitmovement (3)
+        setspeaker ([SP_NAME_CAMELIA])
+        createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_MENACING)
+        msgbox(format("They're not listening to us. So we're planning a “bolder” approach."))
+
+        applymovement (3, moves(face_up))
+        waitmovement (3)
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
+        msgbox(format("Precisely. We want to liberate the Safemon that are held captive there."))
+
+        applymovement (2, moves(face_left))
+        waitmovement (2)
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+        msgbox(format("Yeah! But no battles, and no stealing stuff like Rebels do."))
+
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+        msgbox(format("Just freeing those poor Safemon. Get in and get out, all stealthy like!"))
+
+        applymovement (2, moves(face_up))
+        waitmovement (2)
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+        msgbox(format("I know it's sudden, {PLAYER} - but if you agree with us..."))
+
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+        msgbox(format("Will you help us
+        liberate the Safemon that Devon keeps in {COLOR GREEN}Route 104{COLOR DARK_GRAY}?"))
+
+            dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will", "I will not")
+
+            if (var(VAR_RESULT) == 0) {
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+            msgbox(format("Excellent. Now, while it is true our methods will be pacific..."))
+            agreedtohelpwith104indojo:
+            applymovement (2, moves(face_left))
+            waitmovement (2)
+            setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+            msgbox(format("We need to be prepared for everything! So we were going to do a battle!"))
+
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+            msgbox(format("Come with me, {PLAYER}. We will face Sharpy and Camelia in a double battle."))
+            hidefollower
+
+            repeatdojointrobattle:
+
+            applymovement (1, moves(walk_left * 2, walk_in_place_right))
+
+            applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, walk_left * 2, walk_in_place_right))
+
+            applymovement (2, moves(walk_right * 1, walk_up * 1, walk_in_place_left))
+
+            applymovement (3, moves(walk_right * 3, walk_down * 1, walk_in_place_left))
+            waitmovement (3)
+
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_MENACING)
+            msgbox(format("Now focus, you two. And no bickering between each other this time."))
+
+            playse (SE_LEDGE)
+            applymovement (2, moves(jump_in_place_left))
+            waitmovement (2)
+
+		        if(var(VAR_SHARPYANDCAMELIAOLDALE) == 1) //fought Sharpy and won
+				{
+                setspeaker ([SP_NAME_SHARPY])
+                createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)     
+                msgbox (format("Of course - it's rematch time, {PLAYER}"))
+                setspeaker ([SP_NAME_CAMELIA])
+                createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_MENACING)  
+                msgbox (format("Now it's my turn to get to battle you! I'm kind of excited."))}
+
+                else {
+                setspeaker ([SP_NAME_SHARPY])
+                createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+                msgbox (format("You got it - let's do this, Camelia!"))
+
+                setspeaker ([SP_NAME_CAMELIA])
+                createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_MENACING) 
+                msgbox (format("You better not drag me down, Sharpy!"))}
+
+            removefieldmugshot
+            setfollowernpc (LOCALID_DOJO_NORMAN, FNPC_ALL, OldaleRivalfollowchat, PARTNER_NORMAN)
+            setvar (VAR_PETALBURG_PHASE, 1)
+            setflag (lostdojointromultibattle)
+            clearflag (dojonorman)
+			trainerbattle_two_trainers (TRAINER_SHARPYDOJO, Sharpy_MultiOutro, 
+			TRAINER_CAMELIADOJO, Camelia_MultiOutro)
+
+            setvar (VAR_PETALBURG_PHASE, 2)
+
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_HAPPY)
+            msgbox(format("Now, no need to get upset. You do did remarkably well."))
+
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+            msgbox(format("Now go back to your rooms, and get everything ready. I need to go over a
+            last thing with {PLAYER}"))
+
+            setspeaker ([SP_NAME_SHARPY])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)  
+            msgbox(format("Gotcha! See you later, {PLAYER}."))
+
+            applymovement (3, moves(walk_left * 2, walk_up * 2))
+            applymovement (2, moves(walk_left * 2, walk_up * 2))
+            opendoor (1, 1)
+            opendoor (7, 1)
+            playse (SE_DOOR)
+            waitse
+            applymovement (3, moves(walk_up * 1))
+            removeobject (3)
+            applymovement (2, moves(walk_up * 1))
+            removeobject (2)
+            waitmovement (2)
+            setflag (dojosharpyandcamelia)
+
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+            msgbox(format("{PLAYER}... before we set out for Route 104, there's something I need your
+            help with."))
+
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
+            msgbox(format("We went over Devon Co. - but do you know about Rebels too?"))
+
+                dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I do", "I don't")
+
+                if (var(VAR_RESULT) == 0) {
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_CONFUSED)
+                msgbox(format("Hmm... your face tells me you have met them, even."))
+
+                rebelcatchup:
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
+                msgbox(format("Rebels are a troublesome bunch, but they do not worry me as much as Devon."))
+                
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
+                msgbox(format("They are a reactionary force to Devon. If we deal with Devon, the Rebel situation
+                should sort itself out."))
+                
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+                msgbox(format("That said... after they lost Oldale Warehouse, I've heard they want to occupy 
+                Devon Lab in Route 104 next."))
+
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+                msgbox(format("If they do that, our reivindication will be tarnihshed with their vandalism."))
+                
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_MENACING)
+                msgbox(format("To avoid that, I want you
+                to go see the Rebel Leader in Petalburg, and ask him and
+                his Rebels leave Route 104 alone, on my behalf."))
+                
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+                msgbox(format("He is a... problematic man. But he owes me
+                one, and I know he will do me this favour."))
+
+                setspeaker ([SP_NAME_NORMAN])
+                createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+                msgbox(format("He should be in Petalburg Arcade, the building in front of
+                the dojo.\pDon't delay. We will wait here for you."))
+                
+                }
+
+                if (var(VAR_RESULT) == 1) {
+                msgbox(format("Really? I heard they were causing trouble in Oldale recently."))
+                goto (rebelcatchup)
+                }
+            
+            }
+            if (var(VAR_RESULT) == 1) {
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+            msgbox(format("I understand... After the war, 
+            you must be tired of fighting.."))
+            
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+            msgbox(format("Perhaps seeing more of Petalburg, and its surroundings,
+            will change your mind."))
+            
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+            msgbox(format("If it does, our offer will stand. Take care, {PLAYER}."))}
+            setvar (VAR_PETALBURG_PHASE, 1)
+            goto (endofdojointro)
+
+        }
+
+		if (var(VAR_RESULT) == 1) {
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_CONFUSED)
+        msgbox(format("Really? I thought Balsam or Birch would have
+        caught you up."))
+
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+        msgbox(format("
+        Well, to make a long story short..."))
+
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
+        msgbox(format("Little by little, Devon has been seizing control of Hoenn.
+        \pThey did some good things at first, like rebuilding infraestructure, and getting Pokémon
+        Centers back in order."))
+
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+        msgbox(format("But then they began to privatize said centers, absorb Pokémarts, build roads without regard
+        to nature, put tolls on travel. The list goes on and on.
+        \pAnd to top it all off... they began to turn Pokémon into Safemon."))
+        goto (devoncatchup)}
+
+
+endofdojointro:
+removefieldmugshot
+
+release
+}
+
+script Petalburg_DojoNormanIdle {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+    applymovement(1, moves(face_player))
+    waitmovement (1)
+
+	if (var(VAR_PETALBURG_PHASE) == 1)
+    { 
+        if (flag(lostdojointromultibattle))
+        {
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+        msgbox(format("Now, don't feel ashamed, {PLAYER}. After a year at home, it's natural
+        your training skills have rusted a little."))
+
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+        msgbox(format("Let's practice some more. We need to be prepared for the unexpected"))
+        goto (repeatdojointrobattle)
+        }
+
+        msgbox(format("You're back, {PLAYER}, and we're glad you are.
+        \pHave you changed your mind about helping us free those Safemon?"))
+    
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will help", "I won't help")
+
+        if (var(VAR_RESULT) == 0) {
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_HAPPY)
+            msgbox(format("I knew I could count on you. Now, while our intentions are pacific..."))
+            goto (agreedtohelpwith104indojo)
+        }
+
+        if (var(VAR_RESULT) == 1) {
+            setspeaker ([SP_NAME_NORMAN])
+            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
+            msgbox(format("I am sorry to hear that... but you are in your right to refuse."))
+            goto (endofnormanidledojo)
+        }
+    }
+
+
+	if (var(VAR_PETALBURG_PHASE) == 2)
+    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?"))}
+    
+
+		//dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "What should I do?", "Idle chat")
+
+		//if (var(VAR_RESULT) == 0) {
+        //msgbox(format("Idk"))
+        //}
+    endofnormanidledojo:
+    removefieldmugshot
+    applymovement(1, moves(face_down))
+    waitmovement (1)
+    release
+
+}
+
+script Petalburg_DojoSharpyIdle {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(2, moves(face_player))
+    waitmovement (2)
+	if (var(VAR_PETALBURG_PHASE) == 1)
+    { 
+    setspeaker ([SP_NAME_SHARPY])
+    createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)    
+    msgbox(format("Don't worry, freeing those Safemon should be cinch-Trapinch for us three!"))}
+
+    applymovement(2, moves(face_up))
+    waitmovement (2)
+    
+    }
+
+script Petalburg_DojoCameliaIdle {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(3, moves(face_player))
+    waitmovement (3)
+	if (var(VAR_PETALBURG_PHASE) == 1)
+    { 
+    setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)  
+
+    	checkplayergender
+		if(var(VAR_RESULT) == MALE){
+        msgbox(format("If you are Norman's grandson, then that means your parents are..."))}
+		if(var(VAR_RESULT) == MALE){
+        msgbox(format("If you are Norman's granddaugther, then that means your parents are..."))}
+
+    setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)  
+    msgbox(format("Well, I understand if you prefer to stay away from conflict."))}
+
+    applymovement(3, moves(face_up))
+    waitmovement (3)
+    
+    }
+
+script PetalburgDojoNoRoomAccess {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(1, moves(face_player))
+    waitmovement (1)
+
+    setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+    msgbox(format("You know this dojo, {PLAYER}. There's no exit that way."))
+    
+    applymovement(1, moves(face_down))
+    applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+    removefieldmugshot
+    release
+
+}
+
+script Petalburg_DojoNormanBeforeYouGo {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+    applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
+
+    setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+    msgbox(format("Oh, and... {PLAYER}?"))
+
+    	checkplayergender
+		if(var(VAR_RESULT) == MALE){
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_HAPPY)
+        msgbox(format("Good job on that battle. You're a good trainer. Just like your father."))}
+
+		if(var(VAR_RESULT) == FEMALE){
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_HAPPY)
+        msgbox(format("Good job on that battle. You're a good trainer. Just like your mother."))}
+
+
+    setvar (VAR_PETALBURG_PHASE, 2)
+    setflag (rebelsunblockarcade)
+    removefieldmugshot
+    release
+}
+
+	text Camelia_MultiOutro{
+		"I want {PLAYER} as partner next\ntime..."}
+
+	text Sharpy_MultiOutro{
+		"Oh yeah!? Right back at you! Bleeeh!"}
+
+

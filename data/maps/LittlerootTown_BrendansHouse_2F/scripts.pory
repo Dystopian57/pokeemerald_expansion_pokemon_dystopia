@@ -502,10 +502,10 @@ script PlayerHouseBedTime {
 	playse (SE_SUCCESS)
 	waitse
 
-	if (var(VAR_OLDALE_PHASE) >= 1 && (var(VAR_FLASHBACK_DREAM) == 0))
+	if (flag(FLAG_SYS_POKEMON_GET) && (var(VAR_FLASHBACK_DREAM) == 0))
 	{	setvar (VAR_FLASHBACK_WAKEUPLOCATION, 1) //1 wakes up in room, 2 means wake up at Oldale, 3 in Petalburg Inn
 		fadeoutbgm (1)
-		warpsilent (MAP_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0)}
+		warpsilent (MAP_PAST_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 1)}
 
 	fadescreen (FADE_FROM_BLACK)
 	special(HealPlayerParty)

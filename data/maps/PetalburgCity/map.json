@@ -31,48 +31,6 @@
   ],
   "object_events": [
     {
-      "local_id": "LOCALID_PETALBURG_WALLY",
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
-      "x": 17,
-      "y": 16,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLY"
-    },
-    {
-      "local_id": "LOCALID_PETALBURG_BOY",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 13,
-      "y": 21,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_EventScript_Boy",
-      "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_PETALBURG_WALLYS_DAD",
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
-      "x": 17,
-      "y": 16,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 21,
       "y": 8,
@@ -97,34 +55,6 @@
       "trainer_sight_or_berry_tree_id": "ITEM_ETHER",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_PETALBURG_CITY_ETHER"
-    },
-    {
-      "local_id": "LOCALID_GYM_BOY",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 14,
-      "y": 21,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_EventScript_GymBoy",
-      "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_PETALBURG_SCOTT",
-      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
-      "x": 15,
-      "y": 18,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -215,7 +145,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "petalburgriothidecivilians"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
@@ -228,7 +158,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "petalburgriothidecivilians"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -241,7 +171,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "petalburgriothidecivilians"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
@@ -293,7 +223,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "petalburgriothidecivilians"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GANGBIKERM",
@@ -449,7 +379,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "petalburgriothidecivilians"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -565,11 +495,37 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgRiotInjuredDevon",
+      "flag": "petalburgriotstopped"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_INJUREDREBELGRUNTF",
+      "x": 31,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgRiotInjuredRebel",
+      "flag": "petalburgriotstopped"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTMBAT",
+      "x": 30,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgRiotBatter",
+      "flag": "petalburgriotstopped"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTFSIGN",
       "x": 32,
       "y": 20,
       "elevation": 0,
@@ -578,78 +534,52 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTMBAT",
-      "x": 30,
-      "y": 18,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTFSIGN",
-      "x": 35,
-      "y": 21,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgRiotRebelwithSign",
+      "flag": "petalburgriotstopped"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVONADMINM",
-      "x": 34,
-      "y": 23,
+      "x": 35,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgRiotCutscene",
+      "flag": "petalburgriotstopped"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REBELADMINF",
       "x": 31,
-      "y": 23,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgRiotCutscene",
+      "flag": "petalburgriotstopped"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVONGRUNTF",
-      "x": 32,
-      "y": 21,
+      "x": 31,
+      "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgRiotArrestingDevon",
+      "flag": "petalburgriotstopped"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIRE",
-      "x": 34,
-      "y": 17,
+      "x": 30,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -657,11 +587,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "petalburgriotstopped"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SMOKE",
-      "x": 32,
+      "x": 33,
       "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -670,24 +600,50 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "petalburgriothidecivilians"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARYSTAL)",
-      "x": 33,
-      "y": 23,
+      "x": 34,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgRiotDevonLead",
+      "flag": "petalburgriotstopped"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GLIGAR)",
       "x": 32,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgRiotRebelLead",
+      "flag": "petalburgriotstopped"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE",
+      "x": 32,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "petalburgriotstopped"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
+      "x": 34,
       "y": 23,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
@@ -695,8 +651,112 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgRiotLowerRebel",
+      "flag": "petalburgriotstopped"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVONGRUNTM",
+      "x": 35,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgRiotLowerDevon",
+      "flag": "petalburgriotstopped"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELFLAG",
+      "x": 31,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "petalburgriotstopped"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SCRAGGY)",
+      "x": 30,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "petalburgriothidecivilians"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRIKE)",
+      "x": 32,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
+      "x": 20,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "rebelsunblockarcade"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTF",
+      "x": 20,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "rebelsunblockarcade"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
+      "x": 9,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "rebelsunblockarcade"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTF",
+      "x": 10,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "rebelsunblockarcade"
     }
   ],
   "warp_events": [
@@ -803,6 +863,105 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgRiotDontblocktheway"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgRiotDontblockthewayDevon"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgRiotDevonAdminStart"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgRiotRebelAdminStart"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "1",
+      "script": "PetalburgRiotRebelAdminStart"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "2",
+      "script": "PetalburgRiotRebelAdminStart"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "1",
+      "script": "PetalburgRiotDevonAdminStart"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "2",
+      "script": "PetalburgRiotDevonAdminStart"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "2",
+      "script": "PetalburgRiotDevonAdminStartLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "1",
+      "script": "PetalburgRiotRebelAdminStartLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "1",
+      "script": "PetalburgRiotRebelAdminStartLeave"
     }
   ],
   "bg_events": [

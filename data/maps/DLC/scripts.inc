@@ -2614,8 +2614,8 @@ DLCSealedBox_Text_0:
 
 MoneyTipBook_Text_0:
 # 933 "data/maps/DLC/scripts.pory"
-	.string "The book cover reads: “Money, post-war\n"
-	.string "Hoenn and you.”$"
+	.string "The book cover reads: “Money, Post-war\n"
+	.string "Hoenn and You.”$"
 
 MoneyTipBook_Text_1:
 # 937 "data/maps/DLC/scripts.pory"

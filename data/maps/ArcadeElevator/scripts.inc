@@ -24,11 +24,11 @@ ArcadeElevatorArcade::
 	compare VAR_RESULT, 0
 	goto_if_eq ArcadeElevatorArcade_2
 ArcadeElevatorArcade_1:
-# 51 "data/maps/ArcadeElevator/scripts.pory"
+# 52 "data/maps/ArcadeElevator/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq ArcadeElevatorArcade_5
 ArcadeElevatorArcade_4:
-# 54 "data/maps/ArcadeElevator/scripts.pory"
+# 55 "data/maps/ArcadeElevator/scripts.pory"
 	release
 	return
 
@@ -43,67 +43,67 @@ ArcadeElevatorArcade_2:
 	fadescreenswapbuffers FADE_TO_BLACK
 # 29 "data/maps/ArcadeElevator/scripts.pory"
 	playse SE_ELEVATOR
-# 36 "data/maps/ArcadeElevator/scripts.pory"
-	waitse
 # 37 "data/maps/ArcadeElevator/scripts.pory"
-	warpsilent MAP_ARCADE_ELEVATOR, 6
+	waitse
 # 38 "data/maps/ArcadeElevator/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ArcadeElevatorArcade_Movement_0
+	warpsilent MAP_ARCADE_ELEVATOR, 6
 # 39 "data/maps/ArcadeElevator/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, ArcadeElevatorArcade_Movement_0
 # 40 "data/maps/ArcadeElevator/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	waitmovement OBJ_EVENT_ID_PLAYER
 # 41 "data/maps/ArcadeElevator/scripts.pory"
-	call Elevatorshake
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 42 "data/maps/ArcadeElevator/scripts.pory"
-	playse SE_M_STRENGTH
+	call Elevatorshake
 # 43 "data/maps/ArcadeElevator/scripts.pory"
-	waitse
+	playse SE_M_STRENGTH
 # 44 "data/maps/ArcadeElevator/scripts.pory"
-	playse SE_TRUCK_UNLOAD
-# 45 "data/maps/ArcadeElevator/scripts.pory"
 	waitse
-# 48 "data/maps/ArcadeElevator/scripts.pory"
+# 45 "data/maps/ArcadeElevator/scripts.pory"
+	playse SE_TRUCK_UNLOAD
+# 46 "data/maps/ArcadeElevator/scripts.pory"
+	waitse
+# 49 "data/maps/ArcadeElevator/scripts.pory"
 	msgbox ArcadeElevatorArcade_Text_4
 	goto ArcadeElevatorArcade_1
 
 ArcadeElevatorArcade_5:
-# 52 "data/maps/ArcadeElevator/scripts.pory"
+# 53 "data/maps/ArcadeElevator/scripts.pory"
 	release
 	goto ArcadeElevatorArcade_4
 
 
 Elevatorshake::
-# 61 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8004, 2
 # 62 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8005, 6
+	setvar VAR_0x8004, 2
 # 63 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8006, 4
+	setvar VAR_0x8005, 6
 # 64 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 4
 # 65 "data/maps/ArcadeElevator/scripts.pory"
+	setvar VAR_0x8007, 4
+# 66 "data/maps/ArcadeElevator/scripts.pory"
 	special ShakeCamera
 	return
 
 
 Elevatorstart::
-# 70 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8004, 2
 # 71 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8005, 4
+	setvar VAR_0x8004, 2
 # 72 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8006, 2
+	setvar VAR_0x8005, 4
 # 73 "data/maps/ArcadeElevator/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8006, 2
 # 74 "data/maps/ArcadeElevator/scripts.pory"
+	setvar VAR_0x8007, 4
+# 75 "data/maps/ArcadeElevator/scripts.pory"
 	special ShakeCamera
 	return
 
 
-# 38 "data/maps/ArcadeElevator/scripts.pory"
+# 39 "data/maps/ArcadeElevator/scripts.pory"
 ArcadeElevatorArcade_Movement_0:
-# 38 "data/maps/ArcadeElevator/scripts.pory"
+# 39 "data/maps/ArcadeElevator/scripts.pory"
 	face_up
 	step_end
 
@@ -124,5 +124,5 @@ ArcadeElevatorArcade_Text_3:
 	.string "Remain here$"
 
 ArcadeElevatorArcade_Text_4:
-# 48 "data/maps/ArcadeElevator/scripts.pory"
+# 49 "data/maps/ArcadeElevator/scripts.pory"
 	.string "-1 F - RHH reached.$"

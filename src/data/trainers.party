@@ -4750,15 +4750,8 @@ Gender: Female
 Music: Girl
 Double Battle: No
 AI: Check Bad Move
+Overworld Lead: West
 
-Shuppet
-Level: 11
-Ability: Cursed Body
-Nature: Quirky
-- Night Shade
-- Will-O-Wisp
-- Shadow Sneak
-- Curse
 
 Gligar
 Level: 11
@@ -4768,6 +4761,15 @@ Nature: Quirky
 - Poison Tail
 - U-Turn
 - Aerial Ace
+
+Shuppet
+Level: 11
+Ability: Cursed Body
+Nature: Quirky
+- Night Shade
+- Will-O-Wisp
+- Shadow Sneak
+- Curse
 
 Wimpod
 Level: 11
@@ -9007,18 +9009,21 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Psychic
 - Future Sight
 
-=== TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
-Name: BRENDAN
+=== TRAINER_SHARPYDOJO ===
+Name: SHARPY
 Class: Rival
-Pic: Brendan
+Pic: sharpybattle
 Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Treecko
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Carvanha
+Ball: ITEM_DIVE_BALL
+Level: 12
+
+Slugma
+Level: 12
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -9172,18 +9177,20 @@ Marshtomp
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_103_MUDKIP ===
-Name: MAY
+=== TRAINER_CAMELIADOJO ===
+Name: CAMELIA
 Class: Rival
-Pic: May
+Pic: cameliabattle
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Treecko
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Numel
+Level: 12
+
+Slugma
+Level: 12
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY
@@ -13490,15 +13497,7 @@ Gender: Male
 Music: Rich
 Double Battle: No
 AI: Check Bad Move
-
-Nosepass
-Level: 11
-Ability: Magnet Pull
-Nature: Quirky
-- Power Gem
-- Spark
-- Bulldoze
-- Body Press
+Overworld Lead: West
 
 Arystal
 Level: 11
@@ -13508,6 +13507,15 @@ Nature: Quirky
 - Slash
 - Screech
 - Salt Cure
+
+Nosepass
+Level: 11
+Ability: Magnet Pull
+Nature: Quirky
+- Power Gem
+- Spark
+- Bulldoze
+- Body Press
 
 Staryu
 Level: 11

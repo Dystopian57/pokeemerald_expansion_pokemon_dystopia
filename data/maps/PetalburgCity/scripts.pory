@@ -2,7 +2,7 @@
 raw `
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 5, 11
+	setobjectxyperm 1, 5, 11
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
@@ -23,15 +23,12 @@ PetalburgCity_EventScript_WallyTutorial::
 	lockall
 	special SavePlayerParty
 	special LoadWallyZigzagoon
-	applymovement LOCALID_PETALBURG_WALLY, PetalburgCity_Movement_WallyTutorialWally
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WallyTutorialPlayer
 	waitmovement 0
 	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_DEFAULT
 	special StartWallyTutorialBattle
 	waitstate
 	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
-	applymovement LOCALID_PETALBURG_WALLY, Common_Movement_WalkInPlaceFasterLeft, MAP_PETALBURG_CITY
-	waitmovement LOCALID_PETALBURG_WALLY, MAP_PETALBURG_CITY
 	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
@@ -48,14 +45,12 @@ PetalburgCity_EventScript_WallyTutorial::
 PetalburgCity_EventScript_WalkToWallyHouse::
 	lockall
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	applymovement LOCALID_PETALBURG_WALLYS_DAD, PetalburgCity_Movement_WalkToWallyHouseWallysDad
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WalkToWallyHousePlayer
 	waitmovement 0
 	setvar VAR_0x8004, 7
 	setvar VAR_0x8005, 5
 	opendoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	applymovement LOCALID_PETALBURG_WALLYS_DAD, PetalburgCity_Movement_WalkInsideHouseWallysDad
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
 	waitmovement 0
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
@@ -75,7 +70,7 @@ PetalburgCity_EventScript_Boy::
 	faceplayer
 	msgbox PetalburgCity_Text_WaterReflection, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PETALBURG_BOY, Common_Movement_FaceOriginalDirection
+	applymovement 1, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -249,13 +244,13 @@ PetalburgCity_EventScript_ShowGymToPlayer3::
 	end
 
 PetalburgCity_EventScript_ShowGymToPlayer::
-	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
+	applymovement 1, Common_Movement_FacePlayer
 	waitmovement 0
 	playbgm MUS_FOLLOW_ME, FALSE
 	playse SE_PIN
-	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
+	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_GYM_BOY, Common_Movement_Delay48
+	applymovement 1, Common_Movement_Delay48
 	waitmovement 0
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_BoyApproachPlayer0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_BoyApproachPlayer1
@@ -268,63 +263,63 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_LeadPlayerToGym2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_LeadPlayerToGym3
 	msgbox PetalburgCity_Text_ThisIsPetalburgGym, MSGBOX_DEFAULT
-	applymovement LOCALID_GYM_BOY, Common_Movement_WalkInPlaceFasterRight
+	applymovement 1, Common_Movement_WalkInPlaceFasterRight
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox PetalburgCity_Text_ThisIsGymSign, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkAway
+	applymovement 1, PetalburgCity_Movement_BoyWalkAway
 	waitmovement 0
 	fadedefaultbgm
 	releaseall
 	end
 
 PetalburgCity_EventScript_BoyApproachPlayer0::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer0
+	applymovement 1, PetalburgCity_Movement_BoyApproachPlayer0
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_BoyApproachPlayer1::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer1
+	applymovement 1, PetalburgCity_Movement_BoyApproachPlayer1
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_BoyApproachPlayer2::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer2
+	applymovement 1, PetalburgCity_Movement_BoyApproachPlayer2
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_BoyApproachPlayer3::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer3
+	applymovement 1, PetalburgCity_Movement_BoyApproachPlayer3
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym0::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym0
+	applymovement 1, PetalburgCity_Movement_BoyWalkToGym0
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym0
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym1::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym1
+	applymovement 1, PetalburgCity_Movement_BoyWalkToGym1
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym1
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym2::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym2
+	applymovement 1, PetalburgCity_Movement_BoyWalkToGym2
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym2
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym3::
-	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym3
+	applymovement 1, PetalburgCity_Movement_BoyWalkToGym3
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym3
 	waitmovement 0
 	return
@@ -488,57 +483,57 @@ PetalburgCity_Movement_PlayerWalkToGym3:
 
 PetalburgCity_EventScript_Scott0::
 	lockall
-	addobject LOCALID_PETALBURG_SCOTT
+	addobject 1
 	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 10
+	setobjectxy 1, 13, 10
 	goto PetalburgCity_EventScript_Scott
 	end
 
 PetalburgCity_EventScript_Scott1::
 	lockall
-	addobject LOCALID_PETALBURG_SCOTT
+	addobject 1
 	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 11
+	setobjectxy 1, 13, 11
 	goto PetalburgCity_EventScript_Scott
 	end
 
 PetalburgCity_EventScript_Scott2::
 	lockall
-	addobject LOCALID_PETALBURG_SCOTT
+	addobject 1
 	setvar VAR_0x8008, 2
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 12
+	setobjectxy 1, 13, 12
 	goto PetalburgCity_EventScript_Scott
 	end
 
 PetalburgCity_EventScript_Scott3::
 	lockall
-	addobject LOCALID_PETALBURG_SCOTT
+	addobject 1
 	setvar VAR_0x8008, 3
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 13
+	setobjectxy 1, 13, 13
 	goto PetalburgCity_EventScript_Scott
 	end
 
 PetalburgCity_EventScript_Scott::
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottStartWalkLeft
+	applymovement 1, PetalburgCity_Movement_ScottStartWalkLeft
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_ExclamationMark
+	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_Delay48
+	applymovement 1, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottApproachPlayer
+	applymovement 1, PetalburgCity_Movement_ScottApproachPlayer
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	setvar VAR_SCOTT_STATE, 1
 	msgbox PetalburgCity_Text_AreYouATrainer, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_WalkInPlaceFasterRight
+	applymovement 1, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	delay 30
 	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_WalkInPlaceFasterLeft
+	applymovement 1, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 30
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
@@ -548,31 +543,31 @@ PetalburgCity_EventScript_Scott::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
-	removeobject LOCALID_PETALBURG_SCOTT
+	removeobject 1
 	releaseall
 	end
 
 PetalburgCity_EventScript_ScottExit0::
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit0
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit0
+	applymovement 1, PetalburgCity_Movement_ScottExit0
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_ScottExit1::
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit1
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit1
+	applymovement 1, PetalburgCity_Movement_ScottExit1
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_ScottExit2::
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit2
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit2
+	applymovement 1, PetalburgCity_Movement_ScottExit2
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_ScottExit3::
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit3
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit3
+	applymovement 1, PetalburgCity_Movement_ScottExit3
 	waitmovement 0
 	return
 
@@ -756,6 +751,8 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 mapscripts PetalburgCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: DayNightMusicPetalburgCity
     MAP_SCRIPT_ON_LOAD: DayNightMusicPetalburgCity
+    MAP_SCRIPT_ON_TRANSITION: PetalburgRiotSpawn
+    MAP_SCRIPT_ON_LOAD: PetalburgRiotSpawn
     MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicPetalburgCity}
 	
 
@@ -777,16 +774,644 @@ script DayNightMusicPetalburgCity {
 enddaynightpetalburgcity:
 }
 
-script OldaleWarehouseDevonReturn {
-	setvar(VAR_OLDALE_PHASE, 4)
+script PetalburgRiotSpawn {
+
+	if (!flag(petalburgriotstopped))
+	{setvar (VAR_PETALBURG_RIOT_POSITION, 0)
+	setflag (petalburgriothidecivilians)
+	clearflag (petalburgriotstopped)}
+
+	if (flag(petalburgriotendedforgood))
+	{setflag (petalburgriotstopped)}
+
+	callnative (UpdateFollowingPokemon)
 }
-script PetalburgProgressChecks {
 
-		//JIMMY
+//clearflag (cigarettepop)
 
+
+//TRAINER_GEORGIA
+//TRAINER_DAWSON
+
+
+script PetalburgRiotRebelAdminStart {
+	setvar (VAR_PETALBURG_RIOT_POSITION, 1) //this means rebel start position
+}
+
+script PetalburgRiotDevonAdminStart {
+	setvar (VAR_PETALBURG_RIOT_POSITION, 2) //this means devon start position
+}
+
+script PetalburgRiotDevonAdminStartLeave {
+	setvar (VAR_PETALBURG_RIOT_POSITION, 0) 
+}
+
+script PetalburgRiotRebelAdminStartLeave {
+	setvar (VAR_PETALBURG_RIOT_POSITION, 0) 
+}
+
+
+script PetalburgRiotDontblocktheway {
+		lock
+		random (2)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{case 0:goto (PetalburgRiotDontblockthewayRebel)
+		case 1: goto (PetalburgRiotDontblockthewayDevon)
+		}
+}
+
+
+script PetalburgRiotDontblockthewayRebel {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement(41, moves(emote_exclamation_mark))
+		waitse
+		msgbox (format("Hey, get off the way! We're rioting here! We're RIOTING HERE!"))
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		release
+}
+
+script PetalburgRiotDontblockthewayDevon {
+		lock
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		playse (SE_PIN)
+		applymovement(40, moves(emote_exclamation_mark))
+		waitse
+		msgbox (format("Dear citizen, for your own safety, you must evacuate immediately!"))
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+		release
+}
+
+script PetalburgRiotRebelLead {
+	lock
+	applymovement (46, moves(face_player))
+	waitmovement (46)
+	playmoncry (SPECIES_GLIGAR, CRY_MODE_NORMAL)
+	msgbox(format("GLIIII!"))
+	applymovement (46, moves(face_right))
+	waitmovement (46)
+	release
+}
+
+script PetalburgRiotDevonLead {
+	lock
+	applymovement (45, moves(face_player))
+	waitmovement (45)
+	playmoncry (SPECIES_ARYSTAL, CRY_MODE_NORMAL)
+	msgbox(format("R-riiii...!"))
+	applymovement (45, moves(face_left))
+	waitmovement (45)
+	release
+}
+
+
+script PetalburgRiotCutscene {
+	//lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	fadeoutbgm (1)
+	fadeinbgm (1)
+	playbgm (MUS_BOSSDRILLDOZER, TRUE)
+
+
+	special (SpawnCameraObject)
+		if (var(VAR_PETALBURG_RIOT_POSITION) == 1) {
+		applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_right * 2))
+		}
+		if (var(VAR_PETALBURG_RIOT_POSITION) == 2) {
+		applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_left * 2))
+		}
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+
+
+	special (RemoveCameraObject)
+
+	applymovement(41, moves(walk_in_place_right))
+    msgbox (format("The people is done with your greed, you Devon scum!\p
+	We want free Pokémon healthcare back, and we want it NOW!"))
+	closemessage
+
+	playse (SE_APPLAUSE)
+    msgbox (format("{COLOR RED}Hell yeah! Down with the corpos! Down with the corpos!"))
+
+	applymovement(40, moves(walk_in_place_left))
+    msgbox (format("Rowdy citizens of Petalburg - look around you! Hoenn is in shambles!
+	\pIf we are to rebuild, funds must be collected.\pIt is a small sacrifice today, for a
+	better future tomorrow."))
+	closemessage
+
+
+	playse (SE_APPLAUSE)
+    msgbox (format("{COLOR BLUE}Yes! It's fair! It's the only way! Stop making things harder!"))
+
+	applymovement(41, moves(walk_in_place_right))
+    msgbox (format("Then have Mr. Stone foot the bill! Not the little people!"))
+	closemessage
+
+
+	playse (SE_APPLAUSE)
+    msgbox (format("{COLOR RED}Yeeees! Eat the rich, eat the rich!"))
+
+    msgbox (format("{COLOR GREEN}A clash between {COLOR RED}Rebel{COLOR DARK_GRAY} {COLOR GREEN}and {COLOR BLUE}Devon{COLOR GREEN} forces is in full force… what to do?"))
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Fight Devon", "Fight Rebels", "Fight both", "Do nothing")
+
+		if (var(VAR_RESULT) == 0) {
+			if (var(VAR_PETALBURG_RIOT_POSITION) == 1) {
+			closemessage
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_right))
+			}
+
+			if (var(VAR_PETALBURG_RIOT_POSITION) == 2) {
+			closemessage
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 4, walk_in_place_right))
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_left * 2, walk_in_place_right))
+			}
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_right))
+			waitmovement (OBJ_EVENT_ID_FOLLOWER)
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+			applymovement (41, moves(walk_in_place_down))
+			waitmovement (41)		
+   		 	msgbox (format("Hah! Take a look, you shitty corpos! The people is with us!"))
+			applymovement (41, moves(face_right))
+			waitmovement (41)	
+			applymovement (40, moves(walk_in_place_left))
+			waitmovement (40)	
+   		 	msgbox (format("They simply fall prey to your lies. A shame…\pFor the sake of Hoenn, I must
+			have order restored!"))
+			trainerbattle_no_intro(TRAINER_DAWSON, Dawson_Outro)
+
+
+			applymovement (40, moves(walk_in_place_left))
+			waitmovement (40)
+			//applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+			//waitmovement (OBJ_EVENT_ID_PLAYER)
+
+   		 	msgbox (format("You will soon realize how wrong your thoughtless vandalism is...
+			\p Everyone, back to base."))
+			closemessage
+
+			playse (SE_FLEE)
+			fadescreenswapbuffers (FADE_TO_BLACK)
+
+			removeobject (36)
+			removeobject (40)
+			removeobject (42)
+			removeobject (45)
+			removeobject (48)
+			removeobject (49)
+
+			waitse
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+
+			applymovement (41, moves(walk_in_place_down))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+				checkplayergender
+				if(var(VAR_RESULT) == MALE){msgbox (format("Good job, man. That'll send Devon a good message."))}
+
+				if(var(VAR_RESULT) == FEMALE){msgbox (format("Good job, girl. That'll send Devon a good message."))}
+
+			msgbox (format("But they'll most likely be back tomorrow, so we will need to as well.
+			\pCounting on you for the next raid. See ya!"))
+			closemessage
+
+			fadescreenswapbuffers (FADE_TO_BLACK)
+
+			playse (SE_M_STRENGTH)
+			waitse
+			playse (SE_M_STRENGTH)
+			waitse
+			playse (SE_M_BRICK_BREAK)
+			waitse
+
+
+
+			removeobject (37)
+			removeobject (38)
+			removeobject (39)
+			removeobject (41)
+			removeobject (46)
+			removeobject (50)
+
+
+
+			addobject (9)
+			addobject (10)
+			addobject (11)
+			addobject (15)
+			addobject (51)
+
+			clearflag (rebelswonpetalburgriot)
+			setflag (petalburgriotstopped)
+
+			clearflag (petalburgriothidecivilians)
+
+			waitse
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+			msgbox (format("{COLOR RED}Rebels{COLOR DARK_GRAY} got inside the center before leaving, and made a mess of things!"))
+
+			goto (endofpetalburgriotscript)
+		}
+
+		if (var(VAR_RESULT) == 1) {
+			if (var(VAR_PETALBURG_RIOT_POSITION) == 1) {
+			closemessage
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 4, walk_in_place_left))
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_right * 2, walk_in_place_left))
+			}
+
+			if (var(VAR_PETALBURG_RIOT_POSITION) == 2) {
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left))
+			}
+			waitmovement (OBJ_EVENT_ID_FOLLOWER)
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+			applymovement (40, moves(walk_in_place_down))
+			waitmovement (40)	
+   		 	msgbox (format("Ah, thank you, citizen! You're helping preserve peace in Petalburg."))
+			applymovement (40, moves(face_left))
+			waitmovement (40)	
+			applymovement (41, moves(walk_in_place_right))
+			waitmovement (41)	
+   		 	msgbox (format("Peace? There'll never be peace, until you stop bleeding this region dry!
+			\pDown with Devon… and down with lapdogs like you!"))
+			trainerbattle_no_intro(TRAINER_GEORGIA, Georgia_Outro)
+
+
+			applymovement (41, moves(walk_in_place_right))
+			waitmovement (41)
+			//applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
+			//waitmovement (OBJ_EVENT_ID_PLAYER)
+
+   		 	msgbox (format("You're lucky this guy showed up. But we'll be back tomorrow."))
+			closemessage
+			playse (SE_LEDGE)
+			applymovement (41, moves(jump_in_place_right))
+			waitmovement (41)
+
+   		 	msgbox (format("Back to base, everyone!"))
+
+			playse (SE_FLEE)
+			fadescreenswapbuffers (FADE_TO_BLACK)
+
+			removeobject (37)
+			removeobject (38)
+			removeobject (39)
+			removeobject (41)
+			removeobject (48)
+			removeobject (50)
+			removeobject (43)
+			removeobject (46)
+			removeobject (47)
+			applymovement (49, moves(face_up))
+
+			waitse
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+
+			applymovement (40, moves(walk_in_place_down))	
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+   		 	msgbox (format("Thanks again, citizen. You have done a great deed for Hoenn today.
+			\pThe center was damaged, but we should still be able to offer our services.
+			\pHowever, we will need to increase the healing prices to compensate for the damages…
+			\pNot to mention, the Rebels will surely be back tomorrow. So I hope we can count
+			with your continued assistance.\pFarewell now, and take care in this dangerous
+			city."))
+
+			fadescreenswapbuffers (FADE_TO_BLACK)
+
+			removeobject (36)
+			removeobject (40)
+			removeobject (42)
+			removeobject (49)
+			removeobject (45)
+			removeobject (46)
+			removeobject (48)
+
+			setflag (petalburgriotstopped)
+
+			setflag (devonwonpetalburgriot)
+
+			addobject (9)
+			addobject (10)
+			addobject (11)
+			addobject (15)
+			addobject (51)
+
+			clearflag (petalburgriothidecivilians)
+
+			waitse
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+
+			goto (endofpetalburgriotscript)
+			
+		}
+
+		if (var(VAR_RESULT) == 2) {
+			closemessage
+			if (var(VAR_PETALBURG_RIOT_POSITION) == 1) {
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 2, walk_up * 1, walk_in_place_down))
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_right * 3, walk_in_place_down))
+			}
+
+			if (var(VAR_PETALBURG_RIOT_POSITION) == 2) {
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_left * 2, walk_up * 1, walk_in_place_down))
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_left * 1, walk_in_place_down))
+			}
+
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+
+
+			playse (SE_PIN)
+			applymovement (41, moves(emote_exclamation_mark))
+			waitse
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
+			//waitmovement (OBJ_EVENT_ID_PLAYER)
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_left))
+			waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
+   		 	msgbox (format("What? Don't get in the way, you meddlesome loser!"))
+
+			playse (SE_PIN)
+			applymovement (40, moves(emote_exclamation_mark))
+			waitse
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+			//waitmovement (OBJ_EVENT_ID_PLAYER)
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_right))
+			waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
+   		 	msgbox (format("You would challenge us both? That is true anarchy..."))
+
+			applymovement (41, moves(walk_in_place_right))
+			applymovement (40, moves(walk_in_place_left))
+			waitmovement (40)
+
+   		 	msgbox (format("{COLOR BLUE}I cannot allow it!\n{COLOR RED}Piss off!"))
+			trainerbattle_two_trainers (TRAINER_GEORGIA, Georgia_MultiOutro, 
+			TRAINER_DAWSON, Dawson_MultiOutro)
+
+
+
+				playse (SE_PIN)
+				applymovement(42, moves(emote_exclamation_mark))
+				playse (SE_PIN)
+				applymovement(49, moves(emote_exclamation_mark, face_up))
+				waitse
+				playse (SE_PIN)
+				applymovement(36, moves(emote_exclamation_mark))
+				waitse
+
+				playse (SE_PIN)
+				applymovement(38, moves(emote_exclamation_mark))
+				playse (SE_PIN)
+				applymovement(39, moves(emote_exclamation_mark))
+				playse (SE_PIN)
+				applymovement(48, moves(emote_exclamation_mark, face_up))
+
+				playse (SE_APPLAUSE)
+
+
+				checkplayergender
+				if(var(VAR_RESULT) == MALE){msgbox (format("He defeated both admins...! Who's that trainer?"))}
+
+				if(var(VAR_RESULT) == FEMALE){msgbox (format("She defeated both admins...! Who's that trainer?"))}
+
+
+
+			applymovement (40, moves(walk_in_place_left))
+			//applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+			//waitmovement (OBJ_EVENT_ID_PLAYER)
+
+			fadeoutbgm (1)
+			fadeinbgm (1)
+			playbgm (MUS_CALM, TRUE)	
+
+   		 	msgbox (format("Your feat seems to have defused the situation. To avoid new escalation..."))
+
+
+			fadeinbgm (1)
+
+			//playbgm (MUS_ENCOUNTERPINCHERS, TRUE)
+			playbgm (MUS_CALM, TRUE)
+			
+
+   		 	msgbox (format("I propose a truce, and a compromise.\pTo match the standard of living here in
+			Petalburg, the healing fees in this Devon Center will receive a 25% discount.
+			\pOn the condition, however...
+			\pThat you Rebels repair the damage you just caused.\pSurely this is a reasonable
+			deal."))
+
+
+
+			applymovement (41, moves(walk_in_place_right))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+
+   		 	msgbox (format("Counter offer... make it a 50% discount, or we will make the damage worse."))
+
+			applymovement (40, moves(walk_in_place_left))
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+   		 	msgbox (format("Hmpf... you negotiate well, for a criminal. Very well.\pThank you, trainer,
+			for helping us arrive at this truce.\pIt is far from ideal, but it will suffice for now."))
+
+			applymovement (41, moves(walk_in_place_right))
+			waitmovement (41)
+			applymovement (40, moves(walk_in_place_left))
+			waitmovement (40)
+
+   		 	msgbox (format("{COLOR BLUE}Grunts, to base!\n{COLOR RED}Pack it up, everyone!"))
+
+			fadescreenswapbuffers (FADE_TO_BLACK)
+
+			removeobject (36)
+			removeobject (40)
+			removeobject (42)
+			removeobject (49)
+			removeobject (45)
+			removeobject (46)
+			removeobject (48)
+
+			removeobject (38)
+			removeobject (39)
+			removeobject (50)
+
+			removeobject (47)
+			removeobject (43)
+			removeobject (37)
+
+			removeobject (41)
+
+
+
+			addobject (9)
+			addobject (10)
+			addobject (11)
+			addobject (15)
+			addobject (51)
+
+			setvar (VAR_PETALBURG_RIOT_POSITION, 3)
+
+			setflag (devonwonpetalburgriot)
+			setflag (rebelswonpetalburgriot)
+
+			setflag (petalburgriotstopped)
+			setflag (petalburgriotendedforgood)
+			clearflag (petalburgriothidecivilians)
+
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+
+			goto (endofpetalburgriotscript)
+
+
+		}
+
+		if (var(VAR_RESULT) == 3) {
+
+		setvar (VAR_PETALBURG_RIOT_POSITION, 0)
+		goto (endofpetalburgriotscript)
+
+		}
+
+endofpetalburgriotscript:
+
+		closemessage
+		fadeoutbgm (1)
+		fadeinbgm (1)
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{playbgm (MUS_TEAMGRDUEL, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{playbgm (MUS_TEAMGRDUEL, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{playbgm (MUS_PANULACAVE, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_PANULACAVE, TRUE)}
+
+release
+}
+
+	text Dawson_Intro{
+		"Willneverplay"}
+
+	text Georgia_Intro{
+		"Willneverplay"}
+
+	text Dawson_Outro{
+		"And thus Hoenn plunges further into\nchaos..."}
+
+	text Georgia_Outro{
+		"Tsk... we'll never give up!!"}
+
+	text Georgia_MultiOutro{
+		"Tsk... only lost cause this guy\ndragged me down!!"}
+
+	text Dawson_MultiOutro{
+		"You are quite strong. You would make\nan excellent Devon Grunt."}
+
+
+
+
+
+script PetalburgRiotBatter {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+	setvar(VAR_0x8004, 2)  //@ vertical pan
+	setvar(VAR_0x8005, 6)  //@ horizontal pan
+	setvar(VAR_0x8006, 4)  //@ num shakes
+	setvar(VAR_0x8007, 4)  //@ shake delay
+    playse (SE_M_STRENGTH)
+	special(ShakeCamera)
+
+    msgbox (format("Damn Devon Center windows - they're tougher than an Aggron! GYAAAAA!"))
+    release
+    
+}
+
+script PetalburgRiotRebelwithSign {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("DOWN WITH DEVON! DOWN WITH DEVON!"))
+    release
+    
+}
+
+script PetalburgRiotInjuredRebel {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Tsk… battle without potions next time, and we'll see who wins! Corpo scum!"))
+    release
+    
+}
+
+script PetalburgRiotArrestingDevon {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Stay down, for your own good! You are under arrest!"))
+    release
+    
+}
+
+script PetalburgRiotInjuredDevon {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Ugh… Just a little break, and I'll give that hoodlum with the bat some…!"))
+    release
+    
+}
+
+script PetalburgRiotLowerRebel {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Get it through your head, you thick-skulled lapdog!\pWe want no bridges, no
+	Safemon, and no shady corpos messing around!"))
+    release
+    
+}
+
+script PetalburgRiotLowerDevon {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("Stop it! Why are you Rebels so ungrateful?\pDevon wants to rebuild this area,
+	and all you do is get in the way!"))
+    release
+    
+}
+
+
+
+
+script HardwareStoreClerk {
+	
+
+		if (!flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
+		//never met scavengers
+
+		if (flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
+		//lost against scavenger F
+		if (flag (foughtwarehousescavenger2) && flag(scavengergivesobjectspotter)) {}
+		//how's that object spotter treating you.
+
+}
+
+script JimmyMcGligarSewersIdle {
 		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && !flag(conartistaskeddistract)) //this means Player never interacted
 		//with Jimmy
-		{}
+		{release}
 
 		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && flag(conartistaskeddistract)) //this means Jimmy asked for help
 		//but player never helped him
@@ -806,33 +1431,4 @@ script PetalburgProgressChecks {
 	    if(var(VAR_JIMMYQUESTPROGRESS) == 3){}	//Player helped Jimmy and even bought Exeggcute egg
 
 		//regardless of result, setvar (VAR_JIMMYQUESTPROGRESS, 4)
-
-		//SHARPY AND CAMELIA
-
-		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 0 && !flag(Sharpy103Rematch)) //never event went to fight Sharpy
-				{}
-
-		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 0 && flag(Sharpy103Rematch)) //fought Sharpy but lost
-				{}
-
-		if(var(VAR_SHARPYANDCAMELIAOLDALE) == 1) //fought Sharpy and won
-				{}
-
-		//regardless of result, setvar (VAR_SHARPYANDCAMELIAOLDALE, 2)
-
-		//HARDWARE STORE
-
-		if (!flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
-		//never met scavengers
-
-		if (flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
-		//lost against scavenger F
-		if (flag (foughtwarehousescavenger2) && flag(scavengergivesobjectspotter)) {}
-		//how's that object spotter treating you.
 }
-
-//clearflag (cigarettepop)
-
-
-//TRAINER_GEORGIA
-//TRAINER_DAWSON

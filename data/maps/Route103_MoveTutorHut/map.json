@@ -65,7 +65,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MoveTutor103Bookshelf"
+      "script": "KantonianWarHistoryVol3103TutorHut"
     },
     {
       "type": "sign",

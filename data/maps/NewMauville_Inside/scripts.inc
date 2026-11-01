@@ -19,9 +19,6 @@ NewMauville_Inside_EventScript_TryRemoveVoltorb::
 NewMauville_Inside_OnTransition:
 	setvar VAR_TEMP_1, 0
 	setvar VAR_TEMP_2, 0
-	call_if_unset FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
-	call_if_unset FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb2
-	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
 	end
 
 NewMauville_Inside_EventScript_ShowVoltorb1::
@@ -188,12 +185,10 @@ NewMauville_Inside_EventScript_Voltorb1::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb1
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb1
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Inside_EventScript_DefeatedVoltorb1
-	setflag FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
 	release
 	end
 
 NewMauville_Inside_EventScript_DefeatedVoltorb1::
-	setflag FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
@@ -212,12 +207,10 @@ NewMauville_Inside_EventScript_Voltorb2::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb2
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb2
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Inside_EventScript_DefeatedVoltorb2
-	setflag FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
 	release
 	end
 
 NewMauville_Inside_EventScript_DefeatedVoltorb2::
-	setflag FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
@@ -236,12 +229,10 @@ NewMauville_Inside_EventScript_Voltorb3::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb3
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb3
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Inside_EventScript_DefeatedVoltorb3
-	setflag FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
 	release
 	end
 
 NewMauville_Inside_EventScript_DefeatedVoltorb3::
-	setflag FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

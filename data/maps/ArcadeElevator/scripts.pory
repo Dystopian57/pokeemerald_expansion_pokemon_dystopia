@@ -33,6 +33,7 @@ script ArcadeElevatorArcade {
 		//setobjectxy (OBJ_EVENT_ID_CAMERA, 12, 6)
 
         //special (RemoveCameraObject)
+
         waitse
         warpsilent (MAP_ARCADE_ELEVATOR, 6)
         applymovement (OBJ_EVENT_ID_PLAYER, moves (face_up))

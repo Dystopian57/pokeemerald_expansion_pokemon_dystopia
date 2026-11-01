@@ -32,7 +32,79 @@ script Route103ScientistShedTalk {
 
 script Route102ShedTrashItem {
 	lock
-	givedecoration (DECOR_RED_PLANT)
-	setflag (FLAG_ITEM_102SHED)	
+    if (!flag(FLAG_ITEM_102SHED))
+	{
+    msgbox(format("There's a potted plant inside the trash can..."))
+    givedecoration (DECOR_RED_PLANT)
+	setflag (FLAG_ITEM_102SHED)	}
+
+    else {
+    msgbox(format("The trash can is empty."))
+    }
+
+	release
+}
+
+
+script Route102ShedFirstAidKit {
+	lock
+    if (!flag(FLAG_ITEM_102SHED1STAID))
+	{
+    msgbox(format("There may be something in the first aid kit..."))
+    giveitem (ITEM_SUPER_POTION)
+	setflag (FLAG_ITEM_102SHED1STAID)	}
+
+    else {
+    msgbox(format("The first aid kit is empty."))
+    }
+
+	release
+}
+
+
+
+script Route102ShedPlant {
+	lock
+    msgbox(format("Seems the plant withered a long time ago."))
+	release
+}
+
+script Route102ShedVines {
+	lock
+    msgbox(format("Vines are creeped from the other side of the wall."))
+	release
+}
+
+script Route102ShedToolshelf {
+	lock
+    msgbox(format("The discarded tools have begun to gather rust."))
+	release
+}
+
+script Route102ShedLadder {
+	lock
+    msgbox(format("A rather moldy wooden ladder."))
+	release
+}
+
+
+script KantonianWarHistoryVol4102Shed {
+    lock
+    msgbox(format("A book's cover reads “History of the
+    Kantonian War, Volume 3”. \p Read it?"))
+    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+	if (var(VAR_RESULT) == 0) {
+
+    msgbox(format("May, 2006. Team Rocket has spent the last decade using Silph Co.
+	as a proxy for their criminal activities, primarily that of Pokémon trafficking.
+	\pThe Kantonian citizens are outraged, but authorities are kept at bay through bribery.
+	\pIn a curious move, the company acquires Cinnabar's Laboratory to invest in the study of
+	Pokémon Fossils."))
+	
+	}
+
+	if (var(VAR_RESULT) == 1) {release}
+
 	release
 }

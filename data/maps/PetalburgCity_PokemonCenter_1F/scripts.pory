@@ -1,0 +1,232 @@
+raw `
+
+PetalburgCity_PokemonCenter_1F_OnTransition:
+	setrespawn HEAL_LOCATION_PETALBURG_CITY
+	call Common_EventScript_UpdateBrineyLocation
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_Nurse::
+	setvar VAR_0x800B, LOCALID_PETALBURG_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_FatMan::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem, MSGBOX_NPC
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_Youngster::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP, MSGBOX_NPC
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_Woman::
+	lock
+	faceplayer
+	msgbox PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, IsStarterInParty
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_PokemonCenter_1F_EventScript_SayStarterTypeInfo
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SayStarterTypeInfo::
+	call_if_eq VAR_STARTER_MON, 0, PetalburgCity_PokemonCenter_1F_EventScript_SayTreeckoType
+	call_if_eq VAR_STARTER_MON, 1, PetalburgCity_PokemonCenter_1F_EventScript_SayTorchicType
+	call_if_eq VAR_STARTER_MON, 2, PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SayTreeckoType::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType, MSGBOX_DEFAULT
+	return
+
+PetalburgCity_PokemonCenter_1F_EventScript_SayTorchicType::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType, MSGBOX_DEFAULT
+	return
+
+PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType, MSGBOX_DEFAULT
+	return
+
+PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
+	.string "That PC-based POKéMON Storage\n"
+	.string "System…\p"
+	.string "Whoever made it must be some kind\n"
+	.string "of a scientific wizard!$"
+
+PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
+	.string "When my POKéMON ate an\n"
+	.string "ORAN BERRY, it regained HP!$"
+
+PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
+	.string "There are many types of POKéMON.\p"
+	.string "All types have their strengths and\n"
+	.string "weaknesses against other types.\p"
+	.string "Depending on the types of POKéMON,\n"
+	.string "a battle could be easy or hard.$"
+
+PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
+	.string "For example, your TREECKO\n"
+	.string "is a GRASS type.\p"
+	.string "It's strong against the WATER and\n"
+	.string "GROUND types.\p"
+	.string "But, it's weak against FIRE-type\n"
+	.string "POKéMON.$"
+
+PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
+	.string "For example, your TORCHIC\n"
+	.string "is a FIRE type.\p"
+	.string "It's strong against the GRASS and\n"
+	.string "BUG types.\p"
+	.string "But, it's weak against WATER-type\n"
+	.string "POKéMON.$"
+
+PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
+	.string "For example, your MUDKIP\n"
+	.string "is a WATER type.\p"
+	.string "It's strong against the FIRE type.\p"
+	.string "But, it's weak against GRASS-type\n"
+	.string "and ELECTRIC-type POKéMON.$"
+
+`
+
+mapscripts PetalburgCity_PokemonCenter_1F_MapScripts {
+    MAP_SCRIPT_ON_LOAD: PetalburgCity_PokemonCenter_1F_TVOn
+    //MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
+    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
+    //MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
+	}
+
+script PetalburgCity_PokemonCenter_1F_TVOn {
+	setrespawn (HEAL_LOCATION_PETALBURG_CITY)
+	special (TurnOnTVScreen)
+	}
+
+
+script PetalburgDevonCenterFakeMedic {
+    lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+    showmoneybox (18, 0)
+
+	if (!flag(petalburgriotendedforgood))
+	{
+	msgbox(format("Hello there! Round of healing? It's 200¥ while we pay for repairs!"))
+
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+		if (var(VAR_RESULT) == 0) {
+				checkmoney (200)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (200)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+					
+					msgbox(format("Great - just a moment!"))
+					hidefollower (0)
+					applymovement (8, moves(face_left))
+					dofieldeffect (FLDEFF_POKECENTER_HEAL)
+					waitfieldeffect (FLDEFF_POKECENTER_HEAL)
+					special (HealPlayerParty)
+					applymovement (8, moves (face_down))
+					callnative (UpdateFollowingPokemon)
+					msgbox(format("All in good shape now. Take care!"))
+					goto (endofpetalburgfakemedic)
+					}
+
+				if (var(VAR_RESULT) == FALSE) {
+
+					checkplayergender
+					if(var(VAR_RESULT) == MALE){msgbox(format("Uhm... you ain't got enough, pal- I mean, sir."))}
+
+					if(var(VAR_RESULT) == FEMALE){msgbox(format("Uhm... you ain't got enough, pal- I mean, miss."))}
+
+					msgbox(format("Due to the repair costs for the riot, we have suspended the one heal loan system.
+					\pYou want some healing, go get some pokeyen!"))
+				}
+		}
+
+		if (var(VAR_RESULT) == 1) {
+		msgbox(format("Huh? Don't waste my time then!"))
+		}
+		goto (endofpetalburgfakemedic)
+		}
+
+
+	if (flag(petalburgriotendedforgood))
+		{
+		msgbox(format("Steal sequence commence!"))
+		setflag(petalburgfakemedic)
+		}
+
+endofpetalburgfakemedic:
+release
+}
+
+script PetalburgDevonCenterTV {
+    lock
+
+	if (flag (rebelswonpetalburgriot))
+	{
+    msgbox(format("The TV returns static. The antenna may have been damaged after the riot."))
+    }
+    else {goto (OldalePokeCenterTVAds)}
+
+}
+
+script PetalburgDevonCenterInnBlocker {
+    lock
+    applymovement (7, moves(face_player))
+    msgbox(format("I'm sorry, but our inn floors suffered fire damage during the recent riot.\pThey are
+	are unsafe to stay in as a result. We apologize for the inconvenience."))
+	applymovement (7, moves(face_right))
+	waitmovement (7)
+    releaseall
+    }
+
+script PetalburgDevonCenterPCTechnician {
+    lock
+    applymovement (4, moves(face_player))
+    msgbox(format("Those rebels messed this PC real good. I'll take a while to repair it."))
+	applymovement (4, moves(face_up))
+	waitmovement (4)
+    releaseall
+    }
+
+script PetalburgDevonCenterMart {
+    lock
+    applymovement (4, moves(face_player))
+
+	if (!flag (rebelswonpetalburgriot))
+	{
+    msgbox(format("Those Rebels stole all our stock in the last raid...\pMart will reopen once we
+	receive a new shipment from Oldale Warehouse!"))
+	goto (endofpetalburgdevonmart)
+    }
+
+	if (flag (devonwonpetalburgriot))
+	{
+    msgbox(format("Welcome to Petalburg Devon Mart! How may I help you?"))
+    }
+	pokemart (Petalburg_DevonMart)
+
+    msgbox(format("Thank you for your patronage!"))
+	endofpetalburgdevonmart:
+	applymovement (2, moves(face_left))
+	waitmovement (2)
+    releaseall
+    }
+
+		mart Petalburg_DevonMart {
+			ITEM_POKE_BALL
+			ITEM_POTION
+			ITEM_SUPER_POTION
+			ITEM_HYPER_POTION
+			ITEM_REMEDY
+			ITEM_REVIVAL_HERB
+			ITEM_HONEY
+			ITEM_POKE_TOY
+			ITEM_CLEAR_AMULET }

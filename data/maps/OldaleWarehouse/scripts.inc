@@ -490,21 +490,21 @@ WarehouseParcelNPC::
 	compare VAR_WAREHOUSEPARCELQUEST, 0
 	goto_if_eq WarehouseParcelNPC_6
 WarehouseParcelNPC_5:
-# 355 "data/maps/OldaleWarehouse/scripts.pory"
+# 356 "data/maps/OldaleWarehouse/scripts.pory"
 	compare VAR_WAREHOUSEPARCELQUEST, 4
 	goto_if_lt WarehouseParcelNPC_10
 WarehouseParcelNPC_8:
-# 361 "data/maps/OldaleWarehouse/scripts.pory"
+# 362 "data/maps/OldaleWarehouse/scripts.pory"
 	compare VAR_WAREHOUSEPARCELQUEST, 4
 	goto_if_lt WarehouseParcelNPC_17
 WarehouseParcelNPC_1:
-# 387 "data/maps/OldaleWarehouse/scripts.pory"
-endofdevonparcelquestnpc:
 # 388 "data/maps/OldaleWarehouse/scripts.pory"
-	applymovement 11, DevonWarehouseWorkerForklift_Movement_1
+endofdevonparcelquestnpc:
 # 389 "data/maps/OldaleWarehouse/scripts.pory"
-	waitmovement 11
+	applymovement 11, DevonWarehouseWorkerForklift_Movement_1
 # 390 "data/maps/OldaleWarehouse/scripts.pory"
+	waitmovement 11
+# 391 "data/maps/OldaleWarehouse/scripts.pory"
 	release
 	return
 
@@ -528,15 +528,15 @@ WarehouseParcelNPC_20:
 	compare VAR_RESULT, 0
 	goto_if_eq WarehouseParcelNPC_28
 WarehouseParcelNPC_27:
-# 348 "data/maps/OldaleWarehouse/scripts.pory"
+# 349 "data/maps/OldaleWarehouse/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq WarehouseParcelNPC_32
 	goto WarehouseParcelNPC_5
 
 WarehouseParcelNPC_9:
-# 357 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox WarehouseParcelNPC_Text_12
 # 358 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox WarehouseParcelNPC_Text_12
+# 359 "data/maps/OldaleWarehouse/scripts.pory"
 	goto endofdevonparcelquestnpc
 	goto WarehouseParcelNPC_8
 
@@ -553,26 +553,26 @@ WarehouseParcelNPC_14:
 	goto WarehouseParcelNPC_13
 
 WarehouseParcelNPC_16:
-# 364 "data/maps/OldaleWarehouse/scripts.pory"
-gotparcelforparcelquest:
 # 365 "data/maps/OldaleWarehouse/scripts.pory"
+gotparcelforparcelquest:
+# 366 "data/maps/OldaleWarehouse/scripts.pory"
 	msgbox WarehouseParcelNPC_Text_13
-# 367 "data/maps/OldaleWarehouse/scripts.pory"
-	addvar VAR_WAREHOUSEPARCELQUEST, + 1
 # 368 "data/maps/OldaleWarehouse/scripts.pory"
-	removeitem ITEM_PARCEL
+	addvar VAR_WAREHOUSEPARCELQUEST, + 1
 # 369 "data/maps/OldaleWarehouse/scripts.pory"
-	random 2
+	removeitem ITEM_PARCEL
 # 370 "data/maps/OldaleWarehouse/scripts.pory"
+	random 2
+# 371 "data/maps/OldaleWarehouse/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 372 "data/maps/OldaleWarehouse/scripts.pory"
-	switch VAR_RESULT
 # 373 "data/maps/OldaleWarehouse/scripts.pory"
+	switch VAR_RESULT
+# 374 "data/maps/OldaleWarehouse/scripts.pory"
 	case 0, WarehouseParcelNPC_25
-# 375 "data/maps/OldaleWarehouse/scripts.pory"
+# 376 "data/maps/OldaleWarehouse/scripts.pory"
 	case 1, WarehouseParcelNPC_26
 WarehouseParcelNPC_23:
-# 380 "data/maps/OldaleWarehouse/scripts.pory"
+# 381 "data/maps/OldaleWarehouse/scripts.pory"
 	compare VAR_WAREHOUSEPARCELQUEST, 4
 	goto_if_eq WarehouseParcelNPC_30
 	goto WarehouseParcelNPC_1
@@ -590,18 +590,18 @@ WarehouseParcelNPC_21:
 	goto WarehouseParcelNPC_20
 
 WarehouseParcelNPC_25:
-# 373 "data/maps/OldaleWarehouse/scripts.pory"
-	giveitem ITEM_ULTRA_BALL, 5
 # 374 "data/maps/OldaleWarehouse/scripts.pory"
+	giveitem ITEM_ULTRA_BALL, 5
+# 375 "data/maps/OldaleWarehouse/scripts.pory"
 	msgbox WarehouseParcelNPC_Text_14
 	goto WarehouseParcelNPC_23
 
 WarehouseParcelNPC_26:
-# 375 "data/maps/OldaleWarehouse/scripts.pory"
-	giveitem ITEM_MAX_POTION
 # 376 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox WarehouseParcelNPC_Text_15
+	giveitem ITEM_MAX_POTION
 # 377 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox WarehouseParcelNPC_Text_15
+# 378 "data/maps/OldaleWarehouse/scripts.pory"
 	goto endofdevonparcelquestnpc
 	goto WarehouseParcelNPC_23
 
@@ -611,23 +611,23 @@ WarehouseParcelNPC_28:
 # 315 "data/maps/OldaleWarehouse/scripts.pory"
 	goto_if_unset devondailyparcelquestexplained, WarehouseParcelNPC_35
 WarehouseParcelNPC_34:
-# 341 "data/maps/OldaleWarehouse/scripts.pory"
+# 342 "data/maps/OldaleWarehouse/scripts.pory"
 	goto_if_set devondailyparcelquestexplained, WarehouseParcelNPC_37
 	goto WarehouseParcelNPC_27
 
 WarehouseParcelNPC_30:
-# 381 "data/maps/OldaleWarehouse/scripts.pory"
-	setvar VAR_WAREHOUSEPARCELQUEST, 0
 # 382 "data/maps/OldaleWarehouse/scripts.pory"
-	setflag dailyloadtadparcelquest
+	setvar VAR_WAREHOUSEPARCELQUEST, 0
 # 383 "data/maps/OldaleWarehouse/scripts.pory"
+	setflag dailyloadtadparcelquest
+# 384 "data/maps/OldaleWarehouse/scripts.pory"
 	goto endofdevonparcelquestnpc
 	goto WarehouseParcelNPC_1
 
 WarehouseParcelNPC_32:
-# 349 "data/maps/OldaleWarehouse/scripts.pory"
-	msgbox WarehouseParcelNPC_Text_10
 # 350 "data/maps/OldaleWarehouse/scripts.pory"
+	msgbox WarehouseParcelNPC_Text_10
+# 351 "data/maps/OldaleWarehouse/scripts.pory"
 	goto endofdevonparcelquestnpc
 	goto WarehouseParcelNPC_5
 
@@ -642,29 +642,31 @@ WarehouseParcelNPC_35:
 	compare VAR_RESULT, 0
 	goto_if_eq WarehouseParcelNPC_40
 WarehouseParcelNPC_39:
-# 332 "data/maps/OldaleWarehouse/scripts.pory"
+# 333 "data/maps/OldaleWarehouse/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq WarehouseParcelNPC_42
 	goto WarehouseParcelNPC_34
 
 WarehouseParcelNPC_37:
-# 342 "data/maps/OldaleWarehouse/scripts.pory"
+# 343 "data/maps/OldaleWarehouse/scripts.pory"
 	msgbox WarehouseParcelNPC_Text_11
-# 344 "data/maps/OldaleWarehouse/scripts.pory"
+# 345 "data/maps/OldaleWarehouse/scripts.pory"
 	goto endofdevonparcelquestnpc
 	goto WarehouseParcelNPC_27
 
 WarehouseParcelNPC_40:
 # 329 "data/maps/OldaleWarehouse/scripts.pory"
 	msgbox WarehouseParcelNPC_Text_8
+# 330 "data/maps/OldaleWarehouse/scripts.pory"
+	goto endofdevonparcelquestnpc
 	goto WarehouseParcelNPC_39
 
 WarehouseParcelNPC_42:
-# 333 "data/maps/OldaleWarehouse/scripts.pory"
+# 334 "data/maps/OldaleWarehouse/scripts.pory"
 	msgbox WarehouseParcelNPC_Text_9
-# 335 "data/maps/OldaleWarehouse/scripts.pory"
+# 336 "data/maps/OldaleWarehouse/scripts.pory"
 	msgbox WarehouseParcelNPC_Text_10
-# 337 "data/maps/OldaleWarehouse/scripts.pory"
+# 338 "data/maps/OldaleWarehouse/scripts.pory"
 	goto endofdevonparcelquestnpc
 	goto WarehouseParcelNPC_34
 
@@ -978,40 +980,40 @@ WarehouseParcelNPC_Text_8:
 	.string "Great! Good luck with the parcel hunt!$"
 
 WarehouseParcelNPC_Text_9:
-# 333 "data/maps/OldaleWarehouse/scripts.pory"
+# 334 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "Boring? Buddy, work is rarely fun!\n"
 	.string "That's why it's called work, and not ...\l"
 	.string "play-time!$"
 
 WarehouseParcelNPC_Text_10:
-# 335 "data/maps/OldaleWarehouse/scripts.pory"
+# 336 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "Well, it's your loss. Come back if you\n"
 	.string "change your mind!$"
 
 WarehouseParcelNPC_Text_11:
-# 342 "data/maps/OldaleWarehouse/scripts.pory"
+# 343 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "Great - well, you know how it goes! Get\n"
 	.string "me some of the parcels the Loadtads in\l"
 	.string "this floor have equipped!$"
 
 WarehouseParcelNPC_Text_12:
-# 357 "data/maps/OldaleWarehouse/scripts.pory"
+# 358 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "What, no luck getting those parcels\n"
 	.string "yet? Try a little harder!$"
 
 WarehouseParcelNPC_Text_13:
-# 365 "data/maps/OldaleWarehouse/scripts.pory"
+# 366 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "Hey, good job getting that parcel!\n"
 	.string "Here's your reward!$"
 
 WarehouseParcelNPC_Text_14:
-# 374 "data/maps/OldaleWarehouse/scripts.pory"
+# 375 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "Those are very rare balls - you won't\n"
 	.string "find them sold anywhere in the Rebel\l"
 	.string "Zone!$"
 
 WarehouseParcelNPC_Text_15:
-# 376 "data/maps/OldaleWarehouse/scripts.pory"
+# 377 "data/maps/OldaleWarehouse/scripts.pory"
 	.string "Very rare medicine - you won't find it\n"
 	.string "sold anywhere in the Rebel Zone!$"
 

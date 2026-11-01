@@ -13,7 +13,48 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_DOJO_NORMAN",
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "x": 4,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Petalburg_DojoNormanIdle",
+      "flag": "dojonorman"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHARPY",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Petalburg_DojoSharpyIdle",
+      "flag": "dojosharpyandcamelia"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMELIA",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Petalburg_DojoCameliaIdle",
+      "flag": "dojosharpyandcamelia"
+    }
+  ],
   "warp_events": [
     {
       "x": 4,
@@ -49,8 +90,196 @@
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_DOJO_NORMAN_ROOM",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "0",
+      "script": "PetalburgDojoApproach1"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "0",
+      "script": "PetalburgDojoApproach2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "0",
+      "script": "PetalburgDojoApproach3"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "0",
+      "script": "PetalburgDojoApproach4"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "0",
+      "script": "PetalburgDojoApproach5"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "0",
+      "script": "PetalburgDojoApproach6"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "0",
+      "script": "PetalburgDojoApproach7"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "2",
+      "script": "Petalburg_DojoNormanBeforeYouGo"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "2",
+      "script": "Petalburg_DojoNormanBeforeYouGo"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "2",
+      "script": "Petalburg_DojoNormanBeforeYouGo"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "2",
+      "script": "Petalburg_DojoNormanBeforeYouGo"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "2",
+      "script": "Petalburg_DojoNormanBeforeYouGo"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "2",
+      "script": "Petalburg_DojoNormanBeforeYouGo"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "2",
+      "script": "Petalburg_DojoNormanBeforeYouGo"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "1",
+      "script": "PetalburgDojoNoRoomAccess"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "1",
+      "script": "PetalburgDojoNoRoomAccess"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "1",
+      "script": "PetalburgDojoNoRoomAccess"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "1",
+      "script": "PetalburgDojoNoRoomAccess"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "1",
+      "script": "PetalburgDojoNoRoomAccess"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_PHASE",
+      "var_value": "1",
+      "script": "PetalburgDojoNoRoomAccess"
+    }
+  ],
   "bg_events": []
 }

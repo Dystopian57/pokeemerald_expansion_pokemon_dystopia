@@ -490,22 +490,26 @@
 #define confronted102candyscammer   0x1B3
 #define boughtrarecandyfrom102scammer         0x1B4
 #define playerreturnstolabafterrefusingsfemon     0x1B5
-#define devondailyparcelquestexplained    0x1B6
-#define FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE    0x1B7
-#define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8
+#define devondailyparcelquestexplained       0x1B6
+
+#define petalburgriotendedforgood            0x1B7
+#define petalburgriothidecivilians           0x1B8
 #define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9
 #define FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION     0x1BA
-#define FLAG_DEFEATED_REGIROCK               0x1BB
-#define FLAG_DEFEATED_REGICE                 0x1BC
-#define FLAG_DEFEATED_REGISTEEL              0x1BD
+
+#define rebelsunblockarcade                  0x1BB
+
+
+#define petalburgnurse                 0x1BC
+#define petalburgfakemedic              0x1BD
 #define FLAG_DEFEATED_KYOGRE                 0x1BE
 #define FLAG_DEFEATED_GROUDON                0x1BF
 #define FLAG_DEFEATED_RAYQUAZA               0x1C0
-#define FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE 0x1C1
-#define FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE 0x1C2
-#define FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE 0x1C3
-#define FLAG_DEFEATED_ELECTRODE_1_AQUA_HIDEOUT 0x1C4
-#define FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT 0x1C5
+#define rebelswonpetalburgriot 0x1C1
+#define devonwonpetalburgriot 0x1C2
+#define dojosharpyandcamelia 0x1C3
+#define lostdojointromultibattle 0x1C4
+#define dojonorman 0x1C5
 #define FLAG_DEFEATED_SUDOWOODO              0x1C6
 #define FLAG_DEFEATED_MEW                    0x1C7
 #define FLAG_DEFEATED_LATIAS_OR_LATIOS       0x1C8
@@ -1282,7 +1286,7 @@
 #define FLAG_OLDALETRUCK_ITEM                                           0x4BB // Unused Flag
 #define FLAG_ITEM_OLDALE_BYCAR                                           0x4BC // Unused Flag
 #define FLAG_ITEM_102SHED                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
+#define FLAG_ITEM_102SHED1STAID                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
@@ -1614,7 +1618,7 @@
 #define unuseddaily3                           (DAILY_FLAGS_START + 0x17) // Unused Flag
 #define unuseddaily2                        (DAILY_FLAGS_START + 0x18) // Unused Flag
 #define dailyloadtadparcelquest                           (DAILY_FLAGS_START + 0x19) // Unused Flag
-#define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
+#define petalburgriotstopped                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
 #define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag

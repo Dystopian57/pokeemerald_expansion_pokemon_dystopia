@@ -64,6 +64,21 @@ static const u16 sFieldMugshotPal_CameliaConfused[] = INCBIN_U16("graphics/field
 static const u32 sFieldMugshotGfx_CameliaAngry[] = INCBIN_U32("graphics/field_mugshots/camelia/angry.4bpp.lz");
 static const u16 sFieldMugshotPal_CameliaAngry[] = INCBIN_U16("graphics/field_mugshots/camelia/angry.gbapal");
 
+
+//Norman
+static const u32 sFieldMugshotGfx_NormanNormal[] = INCBIN_U32("graphics/field_mugshots/norman/normal.4bpp.lz");
+static const u16 sFieldMugshotPal_NormanNormal[] = INCBIN_U16("graphics/field_mugshots/norman/normal.gbapal");
+static const u32 sFieldMugshotGfx_NormanHappy[] = INCBIN_U32("graphics/field_mugshots/norman/happy.4bpp.lz");
+static const u16 sFieldMugshotPal_NormanHappy[] = INCBIN_U16("graphics/field_mugshots/norman/happy.gbapal");
+static const u32 sFieldMugshotGfx_NormanAngry[] = INCBIN_U32("graphics/field_mugshots/norman/angry.4bpp.lz");
+static const u16 sFieldMugshotPal_NormanAngry[] = INCBIN_U16("graphics/field_mugshots/norman/angry.gbapal");
+static const u32 sFieldMugshotGfx_NormanConfused[] = INCBIN_U32("graphics/field_mugshots/norman/confused.4bpp.lz");
+static const u16 sFieldMugshotPal_NormanConfused[] = INCBIN_U16("graphics/field_mugshots/norman/confused.gbapal");
+static const u32 sFieldMugshotGfx_NormanMenacing[] = INCBIN_U32("graphics/field_mugshots/norman/menacing.4bpp.lz");
+static const u16 sFieldMugshotPal_NormanMenacing[] = INCBIN_U16("graphics/field_mugshots/norman/menacing.gbapal");
+static const u32 sFieldMugshotGfx_NormanTalk[] = INCBIN_U32("graphics/field_mugshots/norman/talk.4bpp.lz");
+static const u16 sFieldMugshotPal_NormanTalk[] = INCBIN_U16("graphics/field_mugshots/norman/talk.gbapal");
+
 struct MugshotGfx
 {
     const u32 *gfx;
@@ -262,6 +277,43 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         },
     },
 
+    [MUGSHOT_NORMAN] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_NormanNormal,
+            .pal = sFieldMugshotPal_NormanNormal,
+        },
 
+        [EMOTE_HAPPY] =
+        {
+            .gfx = sFieldMugshotGfx_NormanHappy,
+            .pal = sFieldMugshotPal_NormanHappy,
+        },
+
+         [EMOTE_ANGRY] =
+        {
+            .gfx = sFieldMugshotGfx_NormanAngry,
+            .pal = sFieldMugshotPal_NormanAngry,
+        },
+
+         [EMOTE_MENACING] =
+        {
+            .gfx = sFieldMugshotGfx_NormanMenacing,
+            .pal = sFieldMugshotPal_NormanMenacing,
+        },
+
+        [EMOTE_CONFUSED] =
+        {
+            .gfx = sFieldMugshotGfx_NormanConfused,
+            .pal = sFieldMugshotPal_NormanConfused,
+        },
+
+        [EMOTE_TALK] =
+        {
+            .gfx = sFieldMugshotGfx_NormanTalk,
+            .pal = sFieldMugshotPal_NormanTalk,
+        },
+    },
 
 };

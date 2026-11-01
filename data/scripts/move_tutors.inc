@@ -147,7 +147,6 @@ MoveTutor_EventScript_SleepTalkTaught::
 LilycoveCity_DepartmentStoreRooftop_EventScript_SubstituteTutor::
 	lock
 	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE, MoveTutor_EventScript_SubstituteTaught
 	msgbox MoveTutor_Text_SubstituteTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SubstituteDeclined
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
@@ -156,7 +155,6 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_SubstituteTutor::
 	setvar VAR_0x8005, MOVE_SUBSTITUTE
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SubstituteDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE
 	goto MoveTutor_EventScript_SubstituteTaught
 	end
 
@@ -173,7 +171,6 @@ MoveTutor_EventScript_SubstituteTaught::
 MossdeepCity_EventScript_DynamicPunchTutor::
 	lock
 	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH, MoveTutor_EventScript_DynamicPunchTaught
 	msgbox MoveTutor_Text_DynamicPunchTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DynamicPunchDeclined
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
@@ -182,7 +179,6 @@ MossdeepCity_EventScript_DynamicPunchTutor::
 	setvar VAR_0x8005, MOVE_DYNAMIC_PUNCH
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DynamicPunchDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH
 	goto MoveTutor_EventScript_DynamicPunchTaught
 	end
 

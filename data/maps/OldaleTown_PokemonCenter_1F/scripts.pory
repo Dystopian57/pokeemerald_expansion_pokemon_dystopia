@@ -796,9 +796,6 @@ script OldaleTown_Mart_PostWarehouse {
 			ITEM_HONEY
 			ITEM_POKE_TOY }
 
-//LATER IN PETALBURG: ITEM_HYPER_POTION, ITEM_CLEAR_AMULET
-
-
 
 script OldalePokeCenterOldLady {
     lockall
@@ -867,7 +864,7 @@ script OldalePokeCenterPlant {
     }
 
 script OldalePokeCenterTVKid {
-    lockall
+    lock
     applymovement (8, moves(face_player))
     msgbox(format("I've been watching this TV for half an hour, and there's been nothing but ads...\p
 	They say you can watch actual programs on the TVs in the inn rooms.\pBut they don't give me

@@ -85,21 +85,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Icy Wind
 - Facade
 
-=== PARTNER_SHARPY ===
-Name: SHARPY
-Class: Sharpy
-Pic: sharpybattle
-Gender: Male
-Music: Male
-Back Pic: SHARPY
-AI: Basic Trainer
-
-Corphish
-Quirky Nature
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Aqua Jet
 
 === PARTNER_STEVEN ===
 Name: STEVEN
@@ -139,3 +124,51 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_NORMAN ===
+Name: NORMAN
+Class: Rival
+Pic: oldnormanbattle
+Gender: Male
+Music: Male
+Back Pic: Norman
+AI: Basic Trainer
+
+Slakoth
+Adamant Nature
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Rest
+
+=== PARTNER_SHARPY ===
+Name: SHARPY
+Class: Sharpy
+Pic: sharpybattle
+Gender: Male
+Music: Male
+Back Pic: Sharpy
+AI: Basic Trainer
+
+Corphish
+Quirky Nature
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Aqua Jet
+
+=== PARTNER_CAMELIA ===
+Name: Camelia
+Class: Rival
+Pic: cameliabattle
+Gender: Male
+Music: Male
+Back Pic: Camelia
+AI: Basic Trainer
+
+Corphish
+Quirky Nature
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Aqua Jet

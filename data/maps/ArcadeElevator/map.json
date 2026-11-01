@@ -58,8 +58,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 12,
-      "y": 6,
+      "x": 23,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ARCADE_ELEVATOR",
       "dest_warp_id": "0"

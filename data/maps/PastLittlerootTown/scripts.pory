@@ -42,12 +42,12 @@ script PastNightmareZoneTrigger {
 }
 
 script PastShadeWeather {
-lock
-setweather (WEATHER_SHADE)
-doweather
-fadeoutbgm (1)
-playbgm (MUS_WEATHER_GROUDON, FALSE)
-release
+    lock
+    setweather (WEATHER_SHADE)
+    doweather
+    fadeoutbgm (1)
+    playbgm (MUS_WEATHER_GROUDON, FALSE)
+    release
 }
 
 script PastPlayerHouseSign {
@@ -350,6 +350,69 @@ script PastBrendan {
     waitmovement (11)
     msgbox (format("You are a failure."))
 
+
+    playse (SE_FALL)
+    playmoncry (SPECIES_VOLTORB, CRY_MODE_NORMAL)
+    addobject (28)
+    setobjectxy (28, 17, 5)
+    addobject (29)
+    setobjectxy (29, 22, 7)
+    waitse
+
+    playse (SE_FALL)
+    playmoncry (SPECIES_VOLTORB, CRY_MODE_NORMAL)
+    addobject (30)
+    setobjectxy (30, 18, 4)
+    addobject (31)
+    setobjectxy (31, 17, 7)
+    addobject (32)
+    setobjectxy (32, 19, 9)
+    waitse
+
+    playse (SE_FALL)
+    playmoncry (SPECIES_VOLTORB, CRY_MODE_NORMAL)
+    addobject (33)
+    setobjectxy (33, 22, 5)
+    addobject (34)
+    setobjectxy (34, 17, 7)
+    addobject (35)
+    setobjectxy (35, 19, 5)
+    addobject (36)
+    setobjectxy (36, 17, 9)
+    addobject (37)
+    setobjectxy (37, 21, 8)
+    addobject (38)
+    setobjectxy (38, 21, 4)
+    addobject (39)
+    setobjectxy (39, 16, 6)
+    waitse
+
+
+
+        playse (SE_M_EXPLOSION)     
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+        waitse
+    fadescreenswapbuffers (FADE_TO_WHITE)
+        playse (SE_M_SELF_DESTRUCT)     
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+        waitse
+        playse (SE_M_SELF_DESTRUCT)   
+            setvar(VAR_0x8004, 2)  //@ vertical pan
+            setvar(VAR_0x8005, 6)  //@ horizontal pan
+            setvar(VAR_0x8006, 4)  //@ num shakes
+            setvar(VAR_0x8007, 4)  //@ shake delay
+            special(ShakeCamera)
+        waitse
+
+
 	applymovement(11, moves(walk_down_affine * 2))
     waitmovement (11)
     removeobject (11)
@@ -364,7 +427,7 @@ script PastBrendan {
 
 
 	if (var(VAR_FLASHBACK_WAKEUPLOCATION) == 1)
-	{	warpsilent (MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 0)}
+	{	warpsilent (MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 1)}
 
 	if (var(VAR_FLASHBACK_WAKEUPLOCATION) == 2)
 	{	warpsilent (MAP_POKE_INN_ROOM2, 2)}

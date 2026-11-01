@@ -10,7 +10,8 @@
 #define MUGSHOT_FPLAYER  6
 #define MUGSHOT_SHARPY  7
 #define MUGSHOT_CAMELIA  8
-#define MUGSHOT_COUNT 9
+#define MUGSHOT_NORMAN  9
+#define MUGSHOT_COUNT 10
 
 #define EMOTE_NORMAL  0
 #define EMOTE_HAPPY   1

@@ -312,6 +312,9 @@ EventScript_ResetAllMapFlags::
 	setflag SanctumWartz
 	setflag SanctumBall
 	setflag warehousemanagerandabra
-	clearflag devonreturnstooldale
+	setflag petalburgriothidecivilians
+	setflag devonreturnstooldale
+	setflag rebelswonpetalburgriot
+	setflag petalburgnurse
 	call EventScript_ResetAllBerries
 	end
