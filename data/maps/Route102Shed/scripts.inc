@@ -140,11 +140,11 @@ KantonianWarHistoryVol4102Shed::
 	compare VAR_RESULT, 0
 	goto_if_eq KantonianWarHistoryVol4102Shed_2
 KantonianWarHistoryVol4102Shed_1:
-# 107 "data/maps/Route102Shed/scripts.pory"
+# 106 "data/maps/Route102Shed/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq KantonianWarHistoryVol4102Shed_5
 KantonianWarHistoryVol4102Shed_4:
-# 109 "data/maps/Route102Shed/scripts.pory"
+# 108 "data/maps/Route102Shed/scripts.pory"
 	release
 	return
 
@@ -154,7 +154,7 @@ KantonianWarHistoryVol4102Shed_2:
 	goto KantonianWarHistoryVol4102Shed_1
 
 KantonianWarHistoryVol4102Shed_5:
-# 107 "data/maps/Route102Shed/scripts.pory"
+# 106 "data/maps/Route102Shed/scripts.pory"
 	release
 	goto KantonianWarHistoryVol4102Shed_4
 
@@ -259,13 +259,14 @@ KantonianWarHistoryVol4102Shed_Text_2:
 
 KantonianWarHistoryVol4102Shed_Text_3:
 # 99 "data/maps/Route102Shed/scripts.pory"
-	.string "May, 2006. Team Rocket has spent the\n"
-	.string "last decade using Silph Co. as a proxy\l"
-	.string "for their criminal activities, primarily\l"
-	.string "that of Pokémon trafficking.\p"
-	.string "The Kantonian citizens are outraged,\n"
-	.string "but authorities are kept at bay\l"
-	.string "through bribery.\p"
-	.string "In a curious move, the company acquires\n"
-	.string "Cinnabar's Laboratory to invest in the\l"
-	.string "study of Pokémon Fossils.$"
+	.string "June 2009: Slowly but surely, the\n"
+	.string "Rocket-ran Silph Co. begins to extend\l"
+	.string "its tendrils into the neighbouring\l"
+	.string "Jotho region.\p"
+	.string "The biggest initial step is the\n"
+	.string "acquisition of Goldenrod's Radio Tower.\p"
+	.string "Giovanni uses this media investment to\n"
+	.string "wash the company's international image.\p"
+	.string "In September of that year he appoints\n"
+	.string "a young trainer called Silver as\l"
+	.string "vice-president.$"

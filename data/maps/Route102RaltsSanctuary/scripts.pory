@@ -402,9 +402,24 @@ script GreenSactumWartzFight {
 				Safemon.\p Devon Co. will not relent its efforts to bring peace and safety to 
 				Hoenn. \pFor that purpose, it grows stronger every day. You Rebels only delay the inevitable."))
 				closemessage
+
+					if (flag(scientistleavessanctumexception))
+					{
+					applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1, walk_in_place_left))
+					applymovement (4, moves(walk_right * 1, walk_down * 1))
+					waitmovement
+					playse (SE_EXIT)
+					removeobject (4)
+					setflag (scientistinsanctum)
+					setvar (VAR_102_SCIENTIST, 11) //11 means player betrayed scientist
+					addvar (VAR_DEVON_REPUTATION, + 1)
+					goto (endofwartzquest)
+					
+					}
+
 				setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 				applymovement (4, moves(walk_down * 2))
-				waitmovement
+				waitmovement (4)
 				playse (SE_EXIT)
 				removeobject (4)
 				setflag (scientistinsanctum)
@@ -423,6 +438,22 @@ script GreenSactumWartzFight {
 				msgbox(format("May you rest easy tonight,
 				knowing you have helped make Hoenn a safer place.\pTake care now, my young assistant!"))
 				closemessage
+
+
+				if (flag(scientistleavessanctumexception))
+				{
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1, walk_in_place_left))
+				applymovement (4, moves(walk_right * 1, walk_down * 1))
+				waitmovement (4)
+				removeobject (4)
+				setflag (scientistinsanctum)
+				playse (SE_EXIT)
+				setvar (VAR_102_SCIENTIST, 10) //10 means player helped scientist
+				goto (endofwartzquest)
+				
+				}
+
+
 				applymovement (4, moves(walk_down * 2))
 				waitmovement (4)
 				removeobject (4)
@@ -460,12 +491,29 @@ script GreenSactumWartzFight {
 	text DevonResearcherSanctumWinMessage{
 	"I concede defeat."}
 
+script GreenSanctumScientistDemandsWartzPlayerReenter {
+
+	lock
+	setflag (scientistleavessanctumexception)
+
+	playse (SE_PIN)
+	applymovement (4, moves(face_right))
+	waitse
+
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	msgbox(format("What...!? How in the name of safety...?\pW-well, no matter. I will not allow you
+	to toy with this matter any longer!\pTrade me the specimen, young trainer, or else...!"))
+	goto (wartztradesafemonchoice)
+	}
+
 
 script GreenSanctumScientistDemandsWartz {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (4, moves(walk_right * 1, walk_up * 1))
 	waitmovement (4)
+	scientistdemandswartz:
 	msgbox(format("My young betrayer... it would seem you have a fellow conspirator inside that
 	tree.\pBut it changes nothing. You may hide in there as many times as you wish...
 	\pI will not allow you to leave with that Wartz.
@@ -483,6 +531,11 @@ script GreenSanctumScientistDemandsWartz {
 
 script GreenSanctumScientistIdle {
 	lock
+
+	if (var(VAR_102_SCIENTIST) == 5){
+	msgbox(format("The scientist has his attention completely focused on the tree ahead..."))	
+	goto (endofscientist102idle)
+	}
 
 	if (flag(scientistinsanctumgavedevonballs))
 

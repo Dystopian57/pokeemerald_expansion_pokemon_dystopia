@@ -135,11 +135,32 @@ Back Pic: Norman
 AI: Basic Trainer
 
 Slakoth
+Ball: ITEM_GREAT_BALL
 Adamant Nature
 Level: 12
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 SpA
-- Rest
+- Brick Break
+- Take Down
+- Facade
+
+Zigzagoon
+Ball: ITEM_GREAT_BALL
+Adamant Nature
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Headbutt
+- Facade
+
+Vigoroth
+Ball: ITEM_GREAT_BALL
+Adamant Nature
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Slash
+- Extremespeed
 
 === PARTNER_SHARPY ===
 Name: SHARPY

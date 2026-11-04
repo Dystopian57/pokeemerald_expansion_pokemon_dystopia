@@ -279,6 +279,96 @@
       "var": "VAR_PETALBURG_PHASE",
       "var_value": "1",
       "script": "PetalburgDojoNoRoomAccess"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
     }
   ],
   "bg_events": []

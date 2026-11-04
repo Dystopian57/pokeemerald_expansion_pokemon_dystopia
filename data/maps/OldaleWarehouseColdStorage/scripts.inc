@@ -3,32 +3,31 @@
 
 OldaleWarehouseColdStorage_MapScripts::
 # 6 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, DayNightAmbientLight
+	map_script MAP_SCRIPT_ON_LOAD, OldaleWarehouseColdStorageMapscriptbundle
 # 7 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, DayNightAmbientLight
+	map_script MAP_SCRIPT_ON_TRANSITION, OldaleWarehouseColdStorageMapscriptbundle
 # 8 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightAmbientLight
-# 9 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, RedoChimechoBoxAlert
-# 10 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, RedoChimechoBoxAlert
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, OldaleWarehouseColdStorageMapscriptbundle
 	.byte 0
 
 
-RedoChimechoBoxAlert::
-# 15 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	goto_if_set chimechoboxjumped, RedoChimechoBoxAlert_2
-	return
-
-RedoChimechoBoxAlert_1:
+OldaleWarehouseColdStorageMapscriptbundle::
+# 13 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	goto_if_set chimechoboxjumped, OldaleWarehouseColdStorageMapscriptbundle_3
+OldaleWarehouseColdStorageMapscriptbundle_1:
 # 16 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	clearflag chimechoboxjumped
+	goto DayNightAmbientLight
 	return
 
-RedoChimechoBoxAlert_2:
-# 15 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	goto_if_unset chimechodealtwith, RedoChimechoBoxAlert_1
-	return
+OldaleWarehouseColdStorageMapscriptbundle_2:
+# 14 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	clearflag chimechoboxjumped
+	goto OldaleWarehouseColdStorageMapscriptbundle_1
+
+OldaleWarehouseColdStorageMapscriptbundle_3:
+# 13 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	goto_if_unset chimechodealtwith, OldaleWarehouseColdStorageMapscriptbundle_2
+	goto OldaleWarehouseColdStorageMapscriptbundle_1
 
 
 OldaleWarehouseColdStorageBoxPile::

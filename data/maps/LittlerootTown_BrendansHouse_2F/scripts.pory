@@ -11,6 +11,7 @@ LittlerootTown_BrendansHouse_2F_OnTransition:
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
 	call_if_eq VAR_LITTLEROOT_PHASE, 0, GiveSturdyWatch
+	clearflag forceshiny
 	end
 
 GiveSturdyWatch::
@@ -313,6 +314,8 @@ PlayersHouse_2F_Text_ItsAGameCube:
 //}
 
 
+
+
 script ScriptedShinyFailsafe {
 	clearflag (forceshiny)
 }
@@ -342,7 +345,7 @@ script ResetSamanthainMausoleumifneeded {
 script ResetAideinLabifNeeded {
 	
 	    if (flag (Aideeleaveslab))
-    {   
+    	{   
 		setvar(VAR_LITTLEROOT_PHASE, 5)
 		setflag (AidelamentsPlayerdefeatintunnel)
 
@@ -486,12 +489,12 @@ script PlayerHouseBedTime {
 	random (4)
 	copyvar (VAR_TEMP_1, VAR_RESULT)
 
-		switch (var(VAR_RESULT))
-		{case 0: setvar(VAR_ROUTE103_WEATHER, 3)
-		case 1: setvar(VAR_ROUTE102_WEATHER, 3)
-		case 2: setvar(VAR_GREATCRATER_WEATHER, 3)
-		case 3: setvar(VAR_PETALBURGLANDFILL_WEATHER, 3)
-		}
+		//switch (var(VAR_RESULT))
+		//{case 0: setvar(VAR_ROUTE103_WEATHER, 3)
+		//case 1: setvar(VAR_ROUTE102_WEATHER, 3)
+		//case 2: setvar(VAR_GREATCRATER_WEATHER, 3)
+		//case 3: setvar(VAR_PETALBURGLANDFILL_WEATHER, 3)
+		//}
 
 
 		

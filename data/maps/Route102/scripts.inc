@@ -216,1025 +216,1035 @@ Route102_Text_RouteSignPetalburg:
 	.string "{LEFT_ARROW} PETALBURG CITY$"
 
 Route102_MapScripts::
+# 114 "data/maps/Route102/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, Route102MapscriptBundle
 # 115 "data/maps/Route102/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, Route102Weather
-# 116 "data/maps/Route102/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, PopWeatherMon102
-# 117 "data/maps/Route102/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, DynamicWeather102
+	map_script MAP_SCRIPT_ON_LOAD, Route102MapscriptBundle
 	.byte 0
 
 
-DynamicWeather102::
-# 120 "data/maps/Route102/scripts.pory"
-	compare VAR_ROUTE102_WEATHER, 0
-	goto_if_eq DynamicWeather102_1
-	return
-
-DynamicWeather102_1:
-# 121 "data/maps/Route102/scripts.pory"
-	random 10
+Route102MapscriptBundle::
+# 119 "data/maps/Route102/scripts.pory"
+	compare VAR_ROUTE102_WEATHER, 3
+	goto_if_eq Route102MapscriptBundle_2
+Route102MapscriptBundle_1:
 # 122 "data/maps/Route102/scripts.pory"
+	compare VAR_ROUTE103_WEATHER, 0
+	goto_if_gt Route102MapscriptBundle_5
+Route102MapscriptBundle_4:
+# 125 "data/maps/Route102/scripts.pory"
+	random 10
+# 126 "data/maps/Route102/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 124 "data/maps/Route102/scripts.pory"
+# 128 "data/maps/Route102/scripts.pory"
 	switch VAR_RESULT
-# 125 "data/maps/Route102/scripts.pory"
-	case 0, DynamicWeather102_4
-# 126 "data/maps/Route102/scripts.pory"
-	case 1, DynamicWeather102_5
-# 127 "data/maps/Route102/scripts.pory"
-	case 2, DynamicWeather102_6
-# 128 "data/maps/Route102/scripts.pory"
-	case 3, DynamicWeather102_7
 # 129 "data/maps/Route102/scripts.pory"
-	case 4, DynamicWeather102_8
+	case 0, Route102MapscriptBundle_8
 # 130 "data/maps/Route102/scripts.pory"
-	case 5, DynamicWeather102_9
+	case 1, Route102MapscriptBundle_9
 # 131 "data/maps/Route102/scripts.pory"
-	case 6, DynamicWeather102_10
+	case 2, Route102MapscriptBundle_10
 # 132 "data/maps/Route102/scripts.pory"
-	case 7, DynamicWeather102_11
+	case 3, Route102MapscriptBundle_11
 # 133 "data/maps/Route102/scripts.pory"
-	case 8, DynamicWeather102_12
+	case 4, Route102MapscriptBundle_12
 # 134 "data/maps/Route102/scripts.pory"
-	case 9, DynamicWeather102_13
+	case 5, Route102MapscriptBundle_13
 # 135 "data/maps/Route102/scripts.pory"
-	case 10, DynamicWeather102_14
+	case 6, Route102MapscriptBundle_14
+# 136 "data/maps/Route102/scripts.pory"
+	case 7, Route102MapscriptBundle_15
+# 137 "data/maps/Route102/scripts.pory"
+	case 8, Route102MapscriptBundle_16
+# 138 "data/maps/Route102/scripts.pory"
+	case 9, Route102MapscriptBundle_17
+# 139 "data/maps/Route102/scripts.pory"
+	case 10, Route102MapscriptBundle_18
 	return
 
-DynamicWeather102_4:
-# 125 "data/maps/Route102/scripts.pory"
-	goto Route102EndSandtorm
-	return
+Route102MapscriptBundle_2:
+# 120 "data/maps/Route102/scripts.pory"
+	clearflag route102weathermon
+	goto Route102MapscriptBundle_1
 
-DynamicWeather102_5:
-# 126 "data/maps/Route102/scripts.pory"
-	goto Route102EndSandtorm
-	return
+Route102MapscriptBundle_5:
+# 123 "data/maps/Route102/scripts.pory"
+	goto Route102TVWeather
+	goto Route102MapscriptBundle_4
 
-DynamicWeather102_6:
-# 127 "data/maps/Route102/scripts.pory"
-	goto Route102Shade
-	return
-
-DynamicWeather102_7:
-# 128 "data/maps/Route102/scripts.pory"
-	goto Route102Shade
-	return
-
-DynamicWeather102_8:
+Route102MapscriptBundle_8:
 # 129 "data/maps/Route102/scripts.pory"
-	goto Route102Shade
+	goto Route102EndSandtorm
 	return
 
-DynamicWeather102_9:
+Route102MapscriptBundle_9:
 # 130 "data/maps/Route102/scripts.pory"
-	goto Route102Shade
+	goto Route102EndSandtorm
 	return
 
-DynamicWeather102_10:
+Route102MapscriptBundle_10:
 # 131 "data/maps/Route102/scripts.pory"
-	goto Route102Shade
+	goto Route102EndSandtorm
 	return
 
-DynamicWeather102_11:
+Route102MapscriptBundle_11:
 # 132 "data/maps/Route102/scripts.pory"
-	goto Route102Shade
+	goto Route102EndSandtorm
 	return
 
-DynamicWeather102_12:
+Route102MapscriptBundle_12:
 # 133 "data/maps/Route102/scripts.pory"
 	goto Route102Shade
 	return
 
-DynamicWeather102_13:
+Route102MapscriptBundle_13:
 # 134 "data/maps/Route102/scripts.pory"
 	goto Route102Shade
 	return
 
-DynamicWeather102_14:
+Route102MapscriptBundle_14:
 # 135 "data/maps/Route102/scripts.pory"
 	goto Route102Shade
 	return
 
+Route102MapscriptBundle_15:
+# 136 "data/maps/Route102/scripts.pory"
+	goto Route102Shade
+	return
 
-Route102Weather::
-# 141 "data/maps/Route102/scripts.pory"
+Route102MapscriptBundle_16:
+# 137 "data/maps/Route102/scripts.pory"
+	goto Route102Shade
+	return
+
+Route102MapscriptBundle_17:
+# 138 "data/maps/Route102/scripts.pory"
+	goto Route102Shade
+	return
+
+Route102MapscriptBundle_18:
+# 139 "data/maps/Route102/scripts.pory"
+	goto Route102Shade
+	return
+
+
+Route102TVWeather::
+# 148 "data/maps/Route102/scripts.pory"
 	goto_if_eq VAR_ROUTE102_WEATHER, 0, Route102Shade
-# 142 "data/maps/Route102/scripts.pory"
+# 149 "data/maps/Route102/scripts.pory"
 	goto_if_eq VAR_ROUTE102_WEATHER, 1, Route102Sandstorm1
-# 143 "data/maps/Route102/scripts.pory"
+# 150 "data/maps/Route102/scripts.pory"
 	goto_if_eq VAR_ROUTE102_WEATHER, 2, Route102Sandstorm2
-# 144 "data/maps/Route102/scripts.pory"
+# 151 "data/maps/Route102/scripts.pory"
 	goto_if_eq VAR_ROUTE102_WEATHER, 3, Route102EndSandtorm
-# 146 "data/maps/Route102/scripts.pory"
+# 153 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Shade::
-# 150 "data/maps/Route102/scripts.pory"
+# 157 "data/maps/Route102/scripts.pory"
 	setweather WEATHER_SHADE
 	return
 
 
 Route102Sandstorm1::
-# 154 "data/maps/Route102/scripts.pory"
+# 161 "data/maps/Route102/scripts.pory"
 	setweather WEATHER_SANDSTORM
-# 155 "data/maps/Route102/scripts.pory"
+# 162 "data/maps/Route102/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 2
-# 156 "data/maps/Route102/scripts.pory"
+# 163 "data/maps/Route102/scripts.pory"
 	playbgm MUS_RUINSMUSIC, TRUE
 	return
 
 
 Route102Sandstorm2::
-# 160 "data/maps/Route102/scripts.pory"
+# 167 "data/maps/Route102/scripts.pory"
 	setweather WEATHER_SANDSTORM
-# 161 "data/maps/Route102/scripts.pory"
+# 168 "data/maps/Route102/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 3
-# 162 "data/maps/Route102/scripts.pory"
+# 169 "data/maps/Route102/scripts.pory"
 	playbgm MUS_RUINSMUSIC, TRUE
 	return
 
 
 Route102EndSandtorm::
-# 166 "data/maps/Route102/scripts.pory"
+# 173 "data/maps/Route102/scripts.pory"
 	setweather WEATHER_SANDSTORM
-# 167 "data/maps/Route102/scripts.pory"
+# 174 "data/maps/Route102/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 0
-# 168 "data/maps/Route102/scripts.pory"
+# 175 "data/maps/Route102/scripts.pory"
 	playbgm MUS_RUINSMUSIC, TRUE
 	return
 
 
 PopWeatherMon102::
-# 181 "data/maps/Route102/scripts.pory"
+# 188 "data/maps/Route102/scripts.pory"
 	compare VAR_ROUTE102_WEATHER, 3
 	goto_if_eq PopWeatherMon102_1
 	return
 
 PopWeatherMon102_1:
-# 182 "data/maps/Route102/scripts.pory"
+# 189 "data/maps/Route102/scripts.pory"
 	clearflag route102weathermon
 	return
 
 
 Route102ConstructionWorkerMTrapinch::
-# 188 "data/maps/Route102/scripts.pory"
-	lock
-# 189 "data/maps/Route102/scripts.pory"
-	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_0
-# 190 "data/maps/Route102/scripts.pory"
-	waitmovement 9
-# 191 "data/maps/Route102/scripts.pory"
-	playmoncry SPECIES_TRAPINCH, CRY_MODE_NORMAL
-# 192 "data/maps/Route102/scripts.pory"
-	msgbox Route102ConstructionWorkerMTrapinch_Text_0
-# 193 "data/maps/Route102/scripts.pory"
-	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_1
-# 194 "data/maps/Route102/scripts.pory"
-	waitmovement 9
 # 195 "data/maps/Route102/scripts.pory"
+	lock
+# 196 "data/maps/Route102/scripts.pory"
+	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_0
+# 197 "data/maps/Route102/scripts.pory"
+	waitmovement 9
+# 198 "data/maps/Route102/scripts.pory"
+	playmoncry SPECIES_TRAPINCH, CRY_MODE_NORMAL
+# 199 "data/maps/Route102/scripts.pory"
+	msgbox Route102ConstructionWorkerMTrapinch_Text_0
+# 200 "data/maps/Route102/scripts.pory"
+	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_1
+# 201 "data/maps/Route102/scripts.pory"
+	waitmovement 9
+# 202 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102ConstructionWorkerFDiglett::
-# 199 "data/maps/Route102/scripts.pory"
-	lock
-# 200 "data/maps/Route102/scripts.pory"
-	applymovement 11, Route102ConstructionWorkerMTrapinch_Movement_0
-# 201 "data/maps/Route102/scripts.pory"
-	waitmovement 11
-# 202 "data/maps/Route102/scripts.pory"
-	playmoncry SPECIES_DIGLETT, CRY_MODE_NORMAL
-# 203 "data/maps/Route102/scripts.pory"
-	msgbox Route102ConstructionWorkerFDiglett_Text_0
-# 204 "data/maps/Route102/scripts.pory"
-	applymovement 11, Route102ConstructionWorkerMTrapinch_Movement_1
-# 205 "data/maps/Route102/scripts.pory"
-	waitmovement 11
 # 206 "data/maps/Route102/scripts.pory"
+	lock
+# 207 "data/maps/Route102/scripts.pory"
+	applymovement 11, Route102ConstructionWorkerMTrapinch_Movement_0
+# 208 "data/maps/Route102/scripts.pory"
+	waitmovement 11
+# 209 "data/maps/Route102/scripts.pory"
+	playmoncry SPECIES_DIGLETT, CRY_MODE_NORMAL
+# 210 "data/maps/Route102/scripts.pory"
+	msgbox Route102ConstructionWorkerFDiglett_Text_0
+# 211 "data/maps/Route102/scripts.pory"
+	applymovement 11, Route102ConstructionWorkerMTrapinch_Movement_1
+# 212 "data/maps/Route102/scripts.pory"
+	waitmovement 11
+# 213 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102_ConstructionWorkerMBattle::
-# 210 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_RICKY_1, ConstructionWorkerM102_Intro, ConstructionWorkerM102_Outro, Route102_ConstructionWorkerMRegister
-# 211 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 212 "data/maps/Route102/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route102_ConstructionWorkerMRematch
-# 213 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 214 "data/maps/Route102/scripts.pory"
-	applymovement 1, Route102ConstructionWorkerMTrapinch_Movement_0
-# 215 "data/maps/Route102/scripts.pory"
-	msgbox Route102_ConstructionWorkerMBattle_Text_0
-# 216 "data/maps/Route102/scripts.pory"
-	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_0
 # 217 "data/maps/Route102/scripts.pory"
-	playmoncry SPECIES_TRAPINCH, CRY_MODE_NORMAL
+	trainerbattle_single TRAINER_RICKY_1, ConstructionWorkerM102_Intro, ConstructionWorkerM102_Outro, Route102_ConstructionWorkerMRegister
 # 218 "data/maps/Route102/scripts.pory"
-	msgbox Route102ConstructionWorkerMTrapinch_Text_0
+	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 219 "data/maps/Route102/scripts.pory"
-	applymovement 1, Route102ConstructionWorkerMTrapinch_Movement_1
+	goto_if_eq VAR_RESULT, TRUE, Route102_ConstructionWorkerMRematch
 # 220 "data/maps/Route102/scripts.pory"
-	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_1
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 221 "data/maps/Route102/scripts.pory"
-	waitmovement 9
+	applymovement 1, Route102ConstructionWorkerMTrapinch_Movement_0
 # 222 "data/maps/Route102/scripts.pory"
+	msgbox Route102_ConstructionWorkerMBattle_Text_0
+# 223 "data/maps/Route102/scripts.pory"
+	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_0
+# 224 "data/maps/Route102/scripts.pory"
+	playmoncry SPECIES_TRAPINCH, CRY_MODE_NORMAL
+# 225 "data/maps/Route102/scripts.pory"
+	msgbox Route102ConstructionWorkerMTrapinch_Text_0
+# 226 "data/maps/Route102/scripts.pory"
+	applymovement 1, Route102ConstructionWorkerMTrapinch_Movement_1
+# 227 "data/maps/Route102/scripts.pory"
+	applymovement 9, Route102ConstructionWorkerMTrapinch_Movement_1
+# 228 "data/maps/Route102/scripts.pory"
+	waitmovement 9
+# 229 "data/maps/Route102/scripts.pory"
 	release
 	end
 
 
 Route102_ConstructionWorkerMRegister::
-# 227 "data/maps/Route102/scripts.pory"
-	special PlayerFaceTrainerAfterBattle
-# 228 "data/maps/Route102/scripts.pory"
-	waitmovement 1
-# 229 "data/maps/Route102/scripts.pory"
-	msgbox Route102_ConstructionWorkerMRegister_Text_0
-# 233 "data/maps/Route102/scripts.pory"
-	register_matchcall TRAINER_RICKY_1
 # 234 "data/maps/Route102/scripts.pory"
+	special PlayerFaceTrainerAfterBattle
+# 235 "data/maps/Route102/scripts.pory"
+	waitmovement 1
+# 236 "data/maps/Route102/scripts.pory"
+	msgbox Route102_ConstructionWorkerMRegister_Text_0
+# 240 "data/maps/Route102/scripts.pory"
+	register_matchcall TRAINER_RICKY_1
+# 241 "data/maps/Route102/scripts.pory"
 	release
 	end
 
 
 Route102_ConstructionWorkerMRematch::
-# 239 "data/maps/Route102/scripts.pory"
+# 246 "data/maps/Route102/scripts.pory"
 	trainerbattle_rematch TRAINER_RICKY_1, ConstructionWorkerM102_Intro2, ConstructionWorkerM102_Outro2
-# 240 "data/maps/Route102/scripts.pory"
+# 247 "data/maps/Route102/scripts.pory"
 	msgbox Route102_ConstructionWorkerMRematch_Text_0
 	end
 
 
 Route102_ConstructionWorkerFBattle::
-# 261 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_LOLA_1, ConstructionWorkerF102_Intro, ConstructionWorkerF102_Outro, Route102_ConstructionWorkerFRegister
-# 262 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 263 "data/maps/Route102/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route102_ConstructionWorkerFRematch
-# 264 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 265 "data/maps/Route102/scripts.pory"
-	applymovement 3, Route102ConstructionWorkerMTrapinch_Movement_0
-# 266 "data/maps/Route102/scripts.pory"
-	msgbox Route102_ConstructionWorkerFBattle_Text_0
 # 268 "data/maps/Route102/scripts.pory"
-	applymovement 3, Route102ConstructionWorkerMTrapinch_Movement_1
+	trainerbattle_single TRAINER_LOLA_1, ConstructionWorkerF102_Intro, ConstructionWorkerF102_Outro, Route102_ConstructionWorkerFRegister
 # 269 "data/maps/Route102/scripts.pory"
-	waitmovement 9
+	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 270 "data/maps/Route102/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, Route102_ConstructionWorkerFRematch
+# 271 "data/maps/Route102/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 272 "data/maps/Route102/scripts.pory"
+	applymovement 3, Route102ConstructionWorkerMTrapinch_Movement_0
+# 273 "data/maps/Route102/scripts.pory"
+	msgbox Route102_ConstructionWorkerFBattle_Text_0
+# 275 "data/maps/Route102/scripts.pory"
+	applymovement 3, Route102ConstructionWorkerMTrapinch_Movement_1
+# 276 "data/maps/Route102/scripts.pory"
+	waitmovement 9
+# 277 "data/maps/Route102/scripts.pory"
 	release
 	end
 
 
 Route102_ConstructionWorkerFRegister::
-# 275 "data/maps/Route102/scripts.pory"
+# 282 "data/maps/Route102/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 276 "data/maps/Route102/scripts.pory"
+# 283 "data/maps/Route102/scripts.pory"
 	waitmovement 1
-# 277 "data/maps/Route102/scripts.pory"
+# 284 "data/maps/Route102/scripts.pory"
 	msgbox Route102_ConstructionWorkerFRegister_Text_0
-# 279 "data/maps/Route102/scripts.pory"
+# 286 "data/maps/Route102/scripts.pory"
 	register_matchcall TRAINER_LOLA_1
-# 280 "data/maps/Route102/scripts.pory"
+# 287 "data/maps/Route102/scripts.pory"
 	release
 	end
 
 
 Route102_ConstructionWorkerFRematch::
-# 285 "data/maps/Route102/scripts.pory"
+# 292 "data/maps/Route102/scripts.pory"
 	trainerbattle_rematch TRAINER_LOLA_1, ConstructionWorkerF102_Intro2, ConstructionWorkerF102_Outro2
-# 286 "data/maps/Route102/scripts.pory"
+# 293 "data/maps/Route102/scripts.pory"
 	msgbox Route102_ConstructionWorkerMRematch_Text_0
 	end
 
 
 Road102BridgeItem::
-# 306 "data/maps/Route102/scripts.pory"
+# 313 "data/maps/Route102/scripts.pory"
 	lock
-# 307 "data/maps/Route102/scripts.pory"
+# 314 "data/maps/Route102/scripts.pory"
 	finditem ITEM_HARD_STONE
-# 310 "data/maps/Route102/scripts.pory"
+# 317 "data/maps/Route102/scripts.pory"
 	removeobject 4
-# 311 "data/maps/Route102/scripts.pory"
+# 318 "data/maps/Route102/scripts.pory"
 	releaseall
 	return
 
 
 Route102Weathermon::
-# 317 "data/maps/Route102/scripts.pory"
+# 324 "data/maps/Route102/scripts.pory"
 	lock
-# 318 "data/maps/Route102/scripts.pory"
+# 325 "data/maps/Route102/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 319 "data/maps/Route102/scripts.pory"
+# 326 "data/maps/Route102/scripts.pory"
 	applymovement 8, Route102ConstructionWorkerMTrapinch_Movement_0
-# 320 "data/maps/Route102/scripts.pory"
+# 327 "data/maps/Route102/scripts.pory"
 	msgbox Route102Weathermon_Text_0
-# 321 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Weathermon_Text_1, Route102Weathermon_Text_2
-# 323 "data/maps/Route102/scripts.pory"
+# 330 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Weathermon_2
 Route102Weathermon_1:
-# 344 "data/maps/Route102/scripts.pory"
+# 351 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Weathermon_5
 Route102Weathermon_4:
-# 348 "data/maps/Route102/scripts.pory"
+# 355 "data/maps/Route102/scripts.pory"
 endsandshrewinsandstormscript:
-# 349 "data/maps/Route102/scripts.pory"
+# 356 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 350 "data/maps/Route102/scripts.pory"
+# 357 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Weathermon_2:
-# 324 "data/maps/Route102/scripts.pory"
+# 331 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 325 "data/maps/Route102/scripts.pory"
+# 332 "data/maps/Route102/scripts.pory"
 	setwildbattle SPECIES_SANDSHREW, 3
-# 326 "data/maps/Route102/scripts.pory"
+# 333 "data/maps/Route102/scripts.pory"
 	dowildbattle
-# 327 "data/maps/Route102/scripts.pory"
+# 334 "data/maps/Route102/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 328 "data/maps/Route102/scripts.pory"
+# 335 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq Route102Weathermon_7
-# 331 "data/maps/Route102/scripts.pory"
+# 338 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Route102Weathermon_8
-# 335 "data/maps/Route102/scripts.pory"
+# 342 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq Route102Weathermon_9
-# 338 "data/maps/Route102/scripts.pory"
+# 345 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Route102Weathermon_10
 	goto Route102Weathermon_1
 
 Route102Weathermon_5:
-# 345 "data/maps/Route102/scripts.pory"
+# 352 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_4
 
 Route102Weathermon_7:
-# 329 "data/maps/Route102/scripts.pory"
+# 336 "data/maps/Route102/scripts.pory"
 	setflag route102weathermon
 	goto Route102Weathermon_1
 
 Route102Weathermon_8:
-# 332 "data/maps/Route102/scripts.pory"
+# 339 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
-# 333 "data/maps/Route102/scripts.pory"
+# 340 "data/maps/Route102/scripts.pory"
 	setflag route102weathermon
 	goto Route102Weathermon_1
 
 Route102Weathermon_9:
-# 336 "data/maps/Route102/scripts.pory"
+# 343 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_1
 
 Route102Weathermon_10:
-# 339 "data/maps/Route102/scripts.pory"
+# 346 "data/maps/Route102/scripts.pory"
 	goto endsandshrewinsandstormscript
 	goto Route102Weathermon_1
 
 
 Route103ScientistFoundTracks::
-# 354 "data/maps/Route102/scripts.pory"
-	lock
-# 355 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 357 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
-# 358 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route103ScientistFoundTracks_Movement_0
-# 360 "data/maps/Route102/scripts.pory"
-	msgbox Route103ScientistFoundTracks_Text_0
 # 361 "data/maps/Route102/scripts.pory"
-	closemessage
-# 363 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route103ScientistFoundTracks_Movement_1
+	lock
+# 362 "data/maps/Route102/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 364 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route103ScientistFoundTracks_Movement_1
+	playse SE_PIN
 # 365 "data/maps/Route102/scripts.pory"
-	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route103ScientistFoundTracks_Movement_0
 # 367 "data/maps/Route102/scripts.pory"
-	msgbox Route103ScientistFoundTracks_Text_1
+	msgbox Route103ScientistFoundTracks_Text_0
+# 368 "data/maps/Route102/scripts.pory"
+	closemessage
+# 370 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route103ScientistFoundTracks_Movement_1
 # 371 "data/maps/Route102/scripts.pory"
-	setvar VAR_102_SCIENTIST, 2
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route103ScientistFoundTracks_Movement_1
 # 372 "data/maps/Route102/scripts.pory"
+	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
+# 374 "data/maps/Route102/scripts.pory"
+	msgbox Route103ScientistFoundTracks_Text_1
+# 378 "data/maps/Route102/scripts.pory"
+	setvar VAR_102_SCIENTIST, 2
+# 379 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Scientist::
-# 376 "data/maps/Route102/scripts.pory"
+# 383 "data/maps/Route102/scripts.pory"
 	lock
-# 377 "data/maps/Route102/scripts.pory"
+# 384 "data/maps/Route102/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 379 "data/maps/Route102/scripts.pory"
+# 386 "data/maps/Route102/scripts.pory"
 	compare VAR_102_SCIENTIST, 1
 	goto_if_eq Route102Scientist_2
 Route102Scientist_1:
-# 386 "data/maps/Route102/scripts.pory"
+# 393 "data/maps/Route102/scripts.pory"
 	compare VAR_102_SCIENTIST, 0
 	goto_if_eq Route102Scientist_5
 Route102Scientist_4:
-# 439 "data/maps/Route102/scripts.pory"
+# 446 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Scientist_2:
-# 380 "data/maps/Route102/scripts.pory"
+# 387 "data/maps/Route102/scripts.pory"
 	applymovement 7, Route102ConstructionWorkerMTrapinch_Movement_0
-# 381 "data/maps/Route102/scripts.pory"
+# 388 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_0
-# 383 "data/maps/Route102/scripts.pory"
+# 390 "data/maps/Route102/scripts.pory"
 	goto scientistasksforhelp102
 	goto Route102Scientist_1
 
 Route102Scientist_5:
-# 387 "data/maps/Route102/scripts.pory"
+# 394 "data/maps/Route102/scripts.pory"
 	setvar VAR_102_SCIENTIST, 1
-# 388 "data/maps/Route102/scripts.pory"
+# 395 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_1
-# 389 "data/maps/Route102/scripts.pory"
+# 396 "data/maps/Route102/scripts.pory"
 	playse SE_PIN
-# 390 "data/maps/Route102/scripts.pory"
+# 397 "data/maps/Route102/scripts.pory"
 	applymovement 7, Route103ScientistFoundTracks_Movement_0
-# 391 "data/maps/Route102/scripts.pory"
+# 398 "data/maps/Route102/scripts.pory"
 	checkplayergender
-# 392 "data/maps/Route102/scripts.pory"
+# 399 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route102Scientist_8
 Route102Scientist_7:
-# 395 "data/maps/Route102/scripts.pory"
+# 402 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Route102Scientist_11
 Route102Scientist_10:
-# 398 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scientist_Text_3
-# 403 "data/maps/Route102/scripts.pory"
-	applymovement 7, Route102Scientist_Movement_0
 # 405 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scientist_Text_4
-# 408 "data/maps/Route102/scripts.pory"
-	applymovement 7, Route102ConstructionWorkerMTrapinch_Movement_0
+	msgbox Route102Scientist_Text_3
 # 410 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scientist_Text_5
+	applymovement 7, Route102Scientist_Movement_0
+# 412 "data/maps/Route102/scripts.pory"
+	msgbox Route102Scientist_Text_4
+# 415 "data/maps/Route102/scripts.pory"
+	applymovement 7, Route102ConstructionWorkerMTrapinch_Movement_0
 # 417 "data/maps/Route102/scripts.pory"
+	msgbox Route102Scientist_Text_5
+# 424 "data/maps/Route102/scripts.pory"
 scientistasksforhelp102:
-# 418 "data/maps/Route102/scripts.pory"
+# 425 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scientist_Text_6, Route102Scientist_Text_7
-# 419 "data/maps/Route102/scripts.pory"
+# 426 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Scientist_14
 Route102Scientist_13:
-# 431 "data/maps/Route102/scripts.pory"
+# 438 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Scientist_16
 	goto Route102Scientist_4
 
 Route102Scientist_8:
-# 393 "data/maps/Route102/scripts.pory"
+# 400 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_2
 	goto Route102Scientist_7
 
 Route102Scientist_11:
-# 396 "data/maps/Route102/scripts.pory"
+# 403 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_2
 	goto Route102Scientist_10
 
 Route102Scientist_14:
-# 419 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scientist_Text_8
-# 425 "data/maps/Route102/scripts.pory"
-	setfollowernpc LOCALID_102_RESEARCHER, FNPC_ALL, Route102Scientistfollowchat, 0
 # 426 "data/maps/Route102/scripts.pory"
+	msgbox Route102Scientist_Text_8
+# 432 "data/maps/Route102/scripts.pory"
+	setfollowernpc LOCALID_102_RESEARCHER, FNPC_ALL, Route102Scientistfollowchat, 0
+# 433 "data/maps/Route102/scripts.pory"
 	removeobject 7
-# 427 "data/maps/Route102/scripts.pory"
+# 434 "data/maps/Route102/scripts.pory"
 	setflag researcher102
-# 428 "data/maps/Route102/scripts.pory"
+# 435 "data/maps/Route102/scripts.pory"
 	clearflag SanctumWartz
 	goto Route102Scientist_13
 
 Route102Scientist_16:
-# 432 "data/maps/Route102/scripts.pory"
+# 439 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientist_Text_9
-# 435 "data/maps/Route102/scripts.pory"
+# 442 "data/maps/Route102/scripts.pory"
 	setflag SanctumWartz
 	goto Route102Scientist_4
 
 
 Route102Scientistfollowchat::
-# 444 "data/maps/Route102/scripts.pory"
+# 451 "data/maps/Route102/scripts.pory"
 	lock
-# 445 "data/maps/Route102/scripts.pory"
+# 452 "data/maps/Route102/scripts.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ConstructionWorkerMTrapinch_Movement_0
-# 447 "data/maps/Route102/scripts.pory"
+# 454 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_0
-# 449 "data/maps/Route102/scripts.pory"
+# 456 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, Route102Scientistfollowchat_Text_1, Route102Scientistfollowchat_Text_2, Route102Scientistfollowchat_Text_3, Route102Scientistfollowchat_Text_4, Route102Scientistfollowchat_Text_5
-# 450 "data/maps/Route102/scripts.pory"
+# 457 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Scientistfollowchat_2
 Route102Scientistfollowchat_1:
-# 456 "data/maps/Route102/scripts.pory"
+# 463 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Scientistfollowchat_5
 Route102Scientistfollowchat_4:
-# 484 "data/maps/Route102/scripts.pory"
+# 491 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Route102Scientistfollowchat_8
 Route102Scientistfollowchat_7:
-# 491 "data/maps/Route102/scripts.pory"
+# 498 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Route102Scientistfollowchat_13
 Route102Scientistfollowchat_12:
-# 508 "data/maps/Route102/scripts.pory"
+# 515 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Route102Scientistfollowchat_16
 Route102Scientistfollowchat_15:
-# 511 "data/maps/Route102/scripts.pory"
+# 518 "data/maps/Route102/scripts.pory"
 endofscientistfollow103:
-# 512 "data/maps/Route102/scripts.pory"
+# 519 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Scientistfollowchat_2:
-# 451 "data/maps/Route102/scripts.pory"
+# 458 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_6
 	goto Route102Scientistfollowchat_1
 
 Route102Scientistfollowchat_5:
-# 457 "data/maps/Route102/scripts.pory"
+# 464 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_7
-# 461 "data/maps/Route102/scripts.pory"
+# 468 "data/maps/Route102/scripts.pory"
 	goto_if_set FLAG_SYS_POKEDEX_GET, Route102Scientistfollowchat_10
 	goto Route102Scientistfollowchat_4
 
 Route102Scientistfollowchat_8:
-# 485 "data/maps/Route102/scripts.pory"
+# 492 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_10
 	goto Route102Scientistfollowchat_7
 
 Route102Scientistfollowchat_10:
-# 462 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scientistfollowchat_Text_8
-# 464 "data/maps/Route102/scripts.pory"
-	setflag researcherin102sawdevondex
-# 465 "data/maps/Route102/scripts.pory"
-	closemessage
-# 467 "data/maps/Route102/scripts.pory"
-	playse SE_DEX_SCROLL
-# 468 "data/maps/Route102/scripts.pory"
-	waitse
 # 469 "data/maps/Route102/scripts.pory"
-	playse SE_DEX_SCROLL
-# 470 "data/maps/Route102/scripts.pory"
-	waitse
+	msgbox Route102Scientistfollowchat_Text_8
 # 471 "data/maps/Route102/scripts.pory"
-	playse SE_DEX_SEARCH
+	setflag researcherin102sawdevondex
 # 472 "data/maps/Route102/scripts.pory"
-	waitse
-# 473 "data/maps/Route102/scripts.pory"
-	playse SE_DEX_PAGE
+	closemessage
 # 474 "data/maps/Route102/scripts.pory"
+	playse SE_DEX_SCROLL
+# 475 "data/maps/Route102/scripts.pory"
 	waitse
 # 476 "data/maps/Route102/scripts.pory"
-	setseenmon SPECIES_WARTZ
+	playse SE_DEX_SCROLL
+# 477 "data/maps/Route102/scripts.pory"
+	waitse
 # 478 "data/maps/Route102/scripts.pory"
+	playse SE_DEX_SEARCH
+# 479 "data/maps/Route102/scripts.pory"
+	waitse
+# 480 "data/maps/Route102/scripts.pory"
+	playse SE_DEX_PAGE
+# 481 "data/maps/Route102/scripts.pory"
+	waitse
+# 483 "data/maps/Route102/scripts.pory"
+	setseenmon SPECIES_WARTZ
+# 485 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_9
 	goto Route102Scientistfollowchat_4
 
 Route102Scientistfollowchat_13:
-# 492 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scientistfollowchat_Text_11
-# 495 "data/maps/Route102/scripts.pory"
-	closemessage
-# 497 "data/maps/Route102/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 498 "data/maps/Route102/scripts.pory"
-	destroyfollowernpc
 # 499 "data/maps/Route102/scripts.pory"
-	addobject 7
-# 500 "data/maps/Route102/scripts.pory"
-	clearflag researcher102
-# 501 "data/maps/Route102/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox Route102Scientistfollowchat_Text_11
 # 502 "data/maps/Route102/scripts.pory"
+	closemessage
+# 504 "data/maps/Route102/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 505 "data/maps/Route102/scripts.pory"
+	destroyfollowernpc
+# 506 "data/maps/Route102/scripts.pory"
+	addobject 7
+# 507 "data/maps/Route102/scripts.pory"
+	clearflag researcher102
+# 508 "data/maps/Route102/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 509 "data/maps/Route102/scripts.pory"
 	setvar VAR_102_SCIENTIST, 1
-# 503 "data/maps/Route102/scripts.pory"
+# 510 "data/maps/Route102/scripts.pory"
 	goto endofscientistfollow103
 	goto Route102Scientistfollowchat_12
 
 Route102Scientistfollowchat_16:
-# 509 "data/maps/Route102/scripts.pory"
+# 516 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scientistfollowchat_Text_12
 	goto Route102Scientistfollowchat_15
 
 
 Route102ScientistNottoGreatCrater::
-# 516 "data/maps/Route102/scripts.pory"
-	lock
-# 517 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ConstructionWorkerMTrapinch_Movement_0
-# 518 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScientistNottoGreatCrater_Text_0
-# 522 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ScientistNottoGreatCrater_Movement_0
 # 523 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route102ScientistNottoGreatCrater_Movement_0
+	lock
 # 524 "data/maps/Route102/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ConstructionWorkerMTrapinch_Movement_0
 # 525 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScientistNottoGreatCrater_Text_0
+# 529 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ScientistNottoGreatCrater_Movement_0
+# 530 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route102ScientistNottoGreatCrater_Movement_0
+# 531 "data/maps/Route102/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 532 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102ScientistNottoPetalburg::
-# 529 "data/maps/Route102/scripts.pory"
-	lock
-# 530 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ConstructionWorkerMTrapinch_Movement_0
-# 531 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScientistNottoPetalburg_Text_0
-# 534 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ScientistNottoPetalburg_Movement_0
-# 535 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route102ScientistNottoPetalburg_Movement_0
 # 536 "data/maps/Route102/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	lock
 # 537 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ConstructionWorkerMTrapinch_Movement_0
+# 538 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScientistNottoPetalburg_Text_0
+# 541 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ScientistNottoPetalburg_Movement_0
+# 542 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route102ScientistNottoPetalburg_Movement_0
+# 543 "data/maps/Route102/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 544 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102ScientistNottoOldale::
-# 541 "data/maps/Route102/scripts.pory"
-	lock
-# 542 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ConstructionWorkerMTrapinch_Movement_0
-# 543 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScientistNottoOldale_Text_0
-# 546 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ScientistNottoOldale_Movement_0
-# 547 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route102ScientistNottoOldale_Movement_0
 # 548 "data/maps/Route102/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	lock
 # 549 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ConstructionWorkerMTrapinch_Movement_0
+# 550 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScientistNottoOldale_Text_0
+# 553 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Route102ScientistNottoOldale_Movement_0
+# 554 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route102ScientistNottoOldale_Movement_0
+# 555 "data/maps/Route102/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 556 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102ConstructionShedSign::
-# 553 "data/maps/Route102/scripts.pory"
+# 560 "data/maps/Route102/scripts.pory"
 	lock
-# 554 "data/maps/Route102/scripts.pory"
+# 561 "data/maps/Route102/scripts.pory"
 	msgbox Route102ConstructionShedSign_Text_0
 	return
 
 
 Route102OldaleSign::
-# 558 "data/maps/Route102/scripts.pory"
+# 565 "data/maps/Route102/scripts.pory"
 	lock
-# 559 "data/maps/Route102/scripts.pory"
+# 566 "data/maps/Route102/scripts.pory"
 	msgbox Route102OldaleSign_Text_0
-# 560 "data/maps/Route102/scripts.pory"
+# 567 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Wheelbarrow::
-# 564 "data/maps/Route102/scripts.pory"
+# 571 "data/maps/Route102/scripts.pory"
 	lock
-# 565 "data/maps/Route102/scripts.pory"
+# 572 "data/maps/Route102/scripts.pory"
 	msgbox Route102Wheelbarrow_Text_0
-# 566 "data/maps/Route102/scripts.pory"
+# 573 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Excavator::
-# 570 "data/maps/Route102/scripts.pory"
-	lock
-# 571 "data/maps/Route102/scripts.pory"
-	msgbox Route102Excavator_Text_0
-# 572 "data/maps/Route102/scripts.pory"
-	release
-	return
-
-
-Route102Bulldozer::
-# 576 "data/maps/Route102/scripts.pory"
-	lock
 # 577 "data/maps/Route102/scripts.pory"
-	msgbox Route102Bulldozer_Text_0
+	lock
+# 578 "data/maps/Route102/scripts.pory"
+	msgbox Route102Excavator_Text_0
 # 579 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
-Route102Crane::
+Route102Bulldozer::
 # 583 "data/maps/Route102/scripts.pory"
 	lock
 # 584 "data/maps/Route102/scripts.pory"
+	msgbox Route102Bulldozer_Text_0
+# 586 "data/maps/Route102/scripts.pory"
+	release
+	return
+
+
+Route102Crane::
+# 590 "data/maps/Route102/scripts.pory"
+	lock
+# 591 "data/maps/Route102/scripts.pory"
 	msgbox Route102Crane_Text_0
-# 585 "data/maps/Route102/scripts.pory"
+# 592 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Beams::
-# 589 "data/maps/Route102/scripts.pory"
+# 596 "data/maps/Route102/scripts.pory"
 	lock
-# 590 "data/maps/Route102/scripts.pory"
+# 597 "data/maps/Route102/scripts.pory"
 	msgbox Route102Beams_Text_0
-# 591 "data/maps/Route102/scripts.pory"
+# 598 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102CautionSign::
-# 595 "data/maps/Route102/scripts.pory"
+# 602 "data/maps/Route102/scripts.pory"
 	lock
-# 596 "data/maps/Route102/scripts.pory"
+# 603 "data/maps/Route102/scripts.pory"
 	msgbox Route102CautionSign_Text_0
-# 597 "data/maps/Route102/scripts.pory"
+# 604 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Cactus::
-# 601 "data/maps/Route102/scripts.pory"
+# 608 "data/maps/Route102/scripts.pory"
 	lock
-# 602 "data/maps/Route102/scripts.pory"
+# 609 "data/maps/Route102/scripts.pory"
 	msgbox Route102Cactus_Text_0
-# 603 "data/maps/Route102/scripts.pory"
+# 610 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102Asphalt::
-# 607 "data/maps/Route102/scripts.pory"
+# 614 "data/maps/Route102/scripts.pory"
 	lock
-# 608 "data/maps/Route102/scripts.pory"
+# 615 "data/maps/Route102/scripts.pory"
 	msgbox Route102Asphalt_Text_0
-# 609 "data/maps/Route102/scripts.pory"
+# 616 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 
 Route102ScammerApproach0::
-# 614 "data/maps/Route102/scripts.pory"
-	lock
-# 615 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 616 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
-# 617 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach0_Movement_0
-# 618 "data/maps/Route102/scripts.pory"
-	waitmovement 10
-# 619 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScammerApproach0_Text_0
 # 621 "data/maps/Route102/scripts.pory"
+	lock
+# 622 "data/maps/Route102/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 623 "data/maps/Route102/scripts.pory"
+	playse SE_PIN
+# 624 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach0_Movement_0
+# 625 "data/maps/Route102/scripts.pory"
+	waitmovement 10
+# 626 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerApproach0_Text_0
+# 628 "data/maps/Route102/scripts.pory"
 	goto route102scammerafterapproach
 	return
 
 
 Route102ScammerApproach1::
-# 626 "data/maps/Route102/scripts.pory"
-	lock
-# 627 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 628 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
-# 629 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach0_Movement_0
-# 630 "data/maps/Route102/scripts.pory"
-	waitmovement 10
-# 631 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScammerApproach0_Text_0
 # 633 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach1_Movement_0
+	lock
 # 634 "data/maps/Route102/scripts.pory"
-	waitmovement 10
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 635 "data/maps/Route102/scripts.pory"
+	playse SE_PIN
+# 636 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach0_Movement_0
+# 637 "data/maps/Route102/scripts.pory"
+	waitmovement 10
+# 638 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerApproach0_Text_0
+# 640 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach1_Movement_0
+# 641 "data/maps/Route102/scripts.pory"
+	waitmovement 10
+# 642 "data/maps/Route102/scripts.pory"
 	goto route102scammerafterapproach
 	return
 
 
 Route102ScammerApproach2::
-# 640 "data/maps/Route102/scripts.pory"
-	lock
-# 641 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 642 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
-# 643 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach0_Movement_0
-# 644 "data/maps/Route102/scripts.pory"
-	waitmovement
-# 645 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScammerApproach0_Text_0
 # 647 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach2_Movement_0
+	lock
 # 648 "data/maps/Route102/scripts.pory"
-	waitmovement 10
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 649 "data/maps/Route102/scripts.pory"
+	playse SE_PIN
+# 650 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach0_Movement_0
+# 651 "data/maps/Route102/scripts.pory"
+	waitmovement
+# 652 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerApproach0_Text_0
+# 654 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach2_Movement_0
+# 655 "data/maps/Route102/scripts.pory"
+	waitmovement 10
+# 656 "data/maps/Route102/scripts.pory"
 	goto route102scammerafterapproach
 	return
 
 
 Route102ScammerApproach3::
-# 654 "data/maps/Route102/scripts.pory"
-	lock
-# 655 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 656 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
-# 657 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach0_Movement_0
-# 658 "data/maps/Route102/scripts.pory"
-	waitmovement
-# 659 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScammerApproach0_Text_0
 # 661 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach3_Movement_0
+	lock
 # 662 "data/maps/Route102/scripts.pory"
-	waitmovement 10
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 663 "data/maps/Route102/scripts.pory"
+	playse SE_PIN
+# 664 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach0_Movement_0
+# 665 "data/maps/Route102/scripts.pory"
+	waitmovement
+# 666 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerApproach0_Text_0
+# 668 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach3_Movement_0
+# 669 "data/maps/Route102/scripts.pory"
+	waitmovement 10
+# 670 "data/maps/Route102/scripts.pory"
 	goto route102scammerafterapproach
 	return
 
 
 Route102ScammerApproach4::
-# 668 "data/maps/Route102/scripts.pory"
-	lock
-# 669 "data/maps/Route102/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 670 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
-# 671 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach0_Movement_0
-# 672 "data/maps/Route102/scripts.pory"
-	waitmovement
-# 673 "data/maps/Route102/scripts.pory"
-	msgbox Route102ScammerApproach0_Text_0
 # 675 "data/maps/Route102/scripts.pory"
-	applymovement 10, Route102ScammerApproach4_Movement_0
+	lock
 # 676 "data/maps/Route102/scripts.pory"
-	waitmovement 10
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 677 "data/maps/Route102/scripts.pory"
+	playse SE_PIN
+# 678 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach0_Movement_0
+# 679 "data/maps/Route102/scripts.pory"
+	waitmovement
+# 680 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerApproach0_Text_0
+# 682 "data/maps/Route102/scripts.pory"
+	applymovement 10, Route102ScammerApproach4_Movement_0
+# 683 "data/maps/Route102/scripts.pory"
+	waitmovement 10
+# 684 "data/maps/Route102/scripts.pory"
 	goto route102scammerafterapproach
 	return
 
 
 Route102Scammer::
-# 682 "data/maps/Route102/scripts.pory"
+# 689 "data/maps/Route102/scripts.pory"
 	lock
-# 683 "data/maps/Route102/scripts.pory"
+# 690 "data/maps/Route102/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 684 "data/maps/Route102/scripts.pory"
+# 691 "data/maps/Route102/scripts.pory"
 	applymovement 10, Route102ConstructionWorkerMTrapinch_Movement_0
-# 685 "data/maps/Route102/scripts.pory"
+# 692 "data/maps/Route102/scripts.pory"
 	waitmovement 10
-# 687 "data/maps/Route102/scripts.pory"
+# 694 "data/maps/Route102/scripts.pory"
 	compare VAR_102CANDYSCAMMER, 0
 	goto_if_eq Route102Scammer_2
 Route102Scammer_1:
-# 746 "data/maps/Route102/scripts.pory"
+# 753 "data/maps/Route102/scripts.pory"
 	compare VAR_102CANDYSCAMMER, 1
 	goto_if_eq Route102Scammer_5
 Route102Scammer_4:
-# 798 "data/maps/Route102/scripts.pory"
+# 805 "data/maps/Route102/scripts.pory"
 endofroute102scammer:
-# 799 "data/maps/Route102/scripts.pory"
+# 806 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102Scammer_2:
-# 690 "data/maps/Route102/scripts.pory"
+# 697 "data/maps/Route102/scripts.pory"
 	msgbox Route102ScammerApproach0_Text_0
-# 692 "data/maps/Route102/scripts.pory"
-route102scammerafterapproach:
-# 693 "data/maps/Route102/scripts.pory"
-	closemessage
-# 694 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route102Scammer_Movement_0
-# 695 "data/maps/Route102/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 696 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_0
-# 698 "data/maps/Route102/scripts.pory"
-scammer102candybuychoice:
 # 699 "data/maps/Route102/scripts.pory"
-	showmoneybox 18, 0
+route102scammerafterapproach:
 # 700 "data/maps/Route102/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scammer_Text_1, Route102Scammer_Text_2
+	closemessage
 # 701 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Route102Scammer_Movement_0
+# 702 "data/maps/Route102/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 703 "data/maps/Route102/scripts.pory"
+	msgbox Route102Scammer_Text_0
+# 705 "data/maps/Route102/scripts.pory"
+scammer102candybuychoice:
+# 706 "data/maps/Route102/scripts.pory"
+	showmoneybox 18, 0
+# 707 "data/maps/Route102/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scammer_Text_1, Route102Scammer_Text_2
+# 708 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Scammer_8
 Route102Scammer_7:
-# 731 "data/maps/Route102/scripts.pory"
+# 738 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Scammer_13
 	goto Route102Scammer_1
 
 Route102Scammer_5:
-# 749 "data/maps/Route102/scripts.pory"
+# 756 "data/maps/Route102/scripts.pory"
 	goto_if_unset confronted102candyscammer, Route102Scammer_10
-# 791 "data/maps/Route102/scripts.pory"
+# 798 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scammer_Text_17
-# 793 "data/maps/Route102/scripts.pory"
+# 800 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_4
 
 Route102Scammer_8:
-# 702 "data/maps/Route102/scripts.pory"
+# 709 "data/maps/Route102/scripts.pory"
 	checkmoney 500
-# 703 "data/maps/Route102/scripts.pory"
+# 710 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route102Scammer_16
 Route102Scammer_15:
-# 722 "data/maps/Route102/scripts.pory"
+# 729 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route102Scammer_23
 	goto Route102Scammer_7
 
 Route102Scammer_10:
-# 751 "data/maps/Route102/scripts.pory"
+# 758 "data/maps/Route102/scripts.pory"
 	goto_if_set boughtrarecandyfrom102scammer, Route102Scammer_20
 Route102Scammer_18:
-# 757 "data/maps/Route102/scripts.pory"
+# 764 "data/maps/Route102/scripts.pory"
 	goto_if_set boughtrarecandyfrom102scammer, Route102Scammer_26
 	goto Route102Scammer_4
 
 Route102Scammer_13:
-# 732 "data/maps/Route102/scripts.pory"
-	hidemoneybox
-# 733 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_6
-# 734 "data/maps/Route102/scripts.pory"
-	setvar VAR_102CANDYSCAMMER, 1
-# 735 "data/maps/Route102/scripts.pory"
-	clearflag devonreturnstooldale
-# 736 "data/maps/Route102/scripts.pory"
-	clearflag warehousemanagerandabra
-# 737 "data/maps/Route102/scripts.pory"
-	setflag warehousemanchine
-# 738 "data/maps/Route102/scripts.pory"
-	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
 # 739 "data/maps/Route102/scripts.pory"
+	hidemoneybox
+# 740 "data/maps/Route102/scripts.pory"
+	msgbox Route102Scammer_Text_6
+# 741 "data/maps/Route102/scripts.pory"
+	setvar VAR_102CANDYSCAMMER, 1
+# 742 "data/maps/Route102/scripts.pory"
+	clearflag devonreturnstooldale
+# 743 "data/maps/Route102/scripts.pory"
+	clearflag warehousemanagerandabra
+# 744 "data/maps/Route102/scripts.pory"
+	setflag warehousemanchine
+# 745 "data/maps/Route102/scripts.pory"
+	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
+# 746 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_1
 
 Route102Scammer_16:
-# 704 "data/maps/Route102/scripts.pory"
-	removemoney 500
-# 705 "data/maps/Route102/scripts.pory"
-	updatemoneybox
-# 706 "data/maps/Route102/scripts.pory"
-	playse SE_SHOP
-# 707 "data/maps/Route102/scripts.pory"
-	waitse
-# 708 "data/maps/Route102/scripts.pory"
-	hidemoneybox
-# 710 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_3
 # 711 "data/maps/Route102/scripts.pory"
-	giveitem ITEM_EXP_CANDY_XS
+	removemoney 500
 # 712 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_4
+	updatemoneybox
 # 713 "data/maps/Route102/scripts.pory"
-	setflag boughtrarecandyfrom102scammer
+	playse SE_SHOP
 # 714 "data/maps/Route102/scripts.pory"
-	setvar VAR_102CANDYSCAMMER, 1
+	waitse
 # 715 "data/maps/Route102/scripts.pory"
-	clearflag devonreturnstooldale
-# 716 "data/maps/Route102/scripts.pory"
-	clearflag warehousemanagerandabra
+	hidemoneybox
 # 717 "data/maps/Route102/scripts.pory"
-	setflag warehousemanchine
+	msgbox Route102Scammer_Text_3
 # 718 "data/maps/Route102/scripts.pory"
-	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
+	giveitem ITEM_EXP_CANDY_XS
 # 719 "data/maps/Route102/scripts.pory"
+	msgbox Route102Scammer_Text_4
+# 720 "data/maps/Route102/scripts.pory"
+	setflag boughtrarecandyfrom102scammer
+# 721 "data/maps/Route102/scripts.pory"
+	setvar VAR_102CANDYSCAMMER, 1
+# 722 "data/maps/Route102/scripts.pory"
+	clearflag devonreturnstooldale
+# 723 "data/maps/Route102/scripts.pory"
+	clearflag warehousemanagerandabra
+# 724 "data/maps/Route102/scripts.pory"
+	setflag warehousemanchine
+# 725 "data/maps/Route102/scripts.pory"
+	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
+# 726 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_15
 
 Route102Scammer_19:
-# 753 "data/maps/Route102/scripts.pory"
+# 760 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scammer_Text_7
-# 754 "data/maps/Route102/scripts.pory"
+# 761 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_18
 
@@ -1246,22 +1256,22 @@ Route102Scammer_20:
 	goto Route102Scammer_18
 
 Route102Scammer_23:
-# 723 "data/maps/Route102/scripts.pory"
+# 730 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scammer_Text_5
-# 726 "data/maps/Route102/scripts.pory"
+# 733 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_7
 
 Route102Scammer_25:
-# 759 "data/maps/Route102/scripts.pory"
+# 766 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scammer_Text_8
-# 760 "data/maps/Route102/scripts.pory"
+# 767 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scammer_Text_9, Route102Scammer_Text_10
-# 761 "data/maps/Route102/scripts.pory"
+# 768 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Scammer_30
 Route102Scammer_29:
-# 782 "data/maps/Route102/scripts.pory"
+# 789 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Scammer_32
 	goto Route102Scammer_4
@@ -1274,162 +1284,162 @@ Route102Scammer_26:
 	goto Route102Scammer_4
 
 Route102Scammer_30:
-# 763 "data/maps/Route102/scripts.pory"
+# 770 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scammer_Text_11
-# 764 "data/maps/Route102/scripts.pory"
+# 771 "data/maps/Route102/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scammer_Text_12, Route102Scammer_Text_13
-# 765 "data/maps/Route102/scripts.pory"
+# 772 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route102Scammer_35
 Route102Scammer_34:
-# 775 "data/maps/Route102/scripts.pory"
+# 782 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route102Scammer_37
 	goto Route102Scammer_29
 
 Route102Scammer_32:
-# 783 "data/maps/Route102/scripts.pory"
+# 790 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scammer_Text_16
-# 784 "data/maps/Route102/scripts.pory"
+# 791 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_4
 
 Route102Scammer_35:
-# 766 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_14
-# 772 "data/maps/Route102/scripts.pory"
-	setflag confronted102candyscammer
 # 773 "data/maps/Route102/scripts.pory"
+	msgbox Route102Scammer_Text_14
+# 779 "data/maps/Route102/scripts.pory"
+	setflag confronted102candyscammer
+# 780 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_34
 
 Route102Scammer_37:
-# 776 "data/maps/Route102/scripts.pory"
+# 783 "data/maps/Route102/scripts.pory"
 	msgbox Route102Scammer_Text_15
-# 777 "data/maps/Route102/scripts.pory"
+# 784 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
 	goto Route102Scammer_29
 
 
-# 189 "data/maps/Route102/scripts.pory"
+# 196 "data/maps/Route102/scripts.pory"
 Route102ConstructionWorkerMTrapinch_Movement_0:
-# 189 "data/maps/Route102/scripts.pory"
+# 196 "data/maps/Route102/scripts.pory"
 	face_player
 	step_end
 
-# 193 "data/maps/Route102/scripts.pory"
+# 200 "data/maps/Route102/scripts.pory"
 Route102ConstructionWorkerMTrapinch_Movement_1:
-# 193 "data/maps/Route102/scripts.pory"
+# 200 "data/maps/Route102/scripts.pory"
 	face_down
 	step_end
 
-# 358 "data/maps/Route102/scripts.pory"
+# 365 "data/maps/Route102/scripts.pory"
 Route103ScientistFoundTracks_Movement_0:
-# 358 "data/maps/Route102/scripts.pory"
+# 365 "data/maps/Route102/scripts.pory"
 	face_player
-# 358 "data/maps/Route102/scripts.pory"
+# 365 "data/maps/Route102/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 363 "data/maps/Route102/scripts.pory"
+# 370 "data/maps/Route102/scripts.pory"
 Route103ScientistFoundTracks_Movement_1:
-# 363 "data/maps/Route102/scripts.pory"
+# 370 "data/maps/Route102/scripts.pory"
 	walk_up
-# 363 "data/maps/Route102/scripts.pory"
+# 370 "data/maps/Route102/scripts.pory"
 	walk_up
-# 363 "data/maps/Route102/scripts.pory"
+# 370 "data/maps/Route102/scripts.pory"
 	walk_up
-# 363 "data/maps/Route102/scripts.pory"
+# 370 "data/maps/Route102/scripts.pory"
 	face_right
 	step_end
 
-# 403 "data/maps/Route102/scripts.pory"
+# 410 "data/maps/Route102/scripts.pory"
 Route102Scientist_Movement_0:
-# 403 "data/maps/Route102/scripts.pory"
+# 410 "data/maps/Route102/scripts.pory"
 	face_away_player
 	step_end
 
-# 522 "data/maps/Route102/scripts.pory"
+# 529 "data/maps/Route102/scripts.pory"
 Route102ScientistNottoGreatCrater_Movement_0:
-# 522 "data/maps/Route102/scripts.pory"
+# 529 "data/maps/Route102/scripts.pory"
 	walk_up
 	step_end
 
-# 534 "data/maps/Route102/scripts.pory"
+# 541 "data/maps/Route102/scripts.pory"
 Route102ScientistNottoPetalburg_Movement_0:
-# 534 "data/maps/Route102/scripts.pory"
+# 541 "data/maps/Route102/scripts.pory"
 	walk_right
 	step_end
 
-# 546 "data/maps/Route102/scripts.pory"
+# 553 "data/maps/Route102/scripts.pory"
 Route102ScientistNottoOldale_Movement_0:
-# 546 "data/maps/Route102/scripts.pory"
+# 553 "data/maps/Route102/scripts.pory"
 	walk_left
 	step_end
 
-# 617 "data/maps/Route102/scripts.pory"
+# 624 "data/maps/Route102/scripts.pory"
 Route102ScammerApproach0_Movement_0:
-# 617 "data/maps/Route102/scripts.pory"
+# 624 "data/maps/Route102/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 633 "data/maps/Route102/scripts.pory"
+# 640 "data/maps/Route102/scripts.pory"
 Route102ScammerApproach1_Movement_0:
-# 633 "data/maps/Route102/scripts.pory"
+# 640 "data/maps/Route102/scripts.pory"
 	walk_down
 	step_end
 
-# 647 "data/maps/Route102/scripts.pory"
+# 654 "data/maps/Route102/scripts.pory"
 Route102ScammerApproach2_Movement_0:
-# 647 "data/maps/Route102/scripts.pory"
+# 654 "data/maps/Route102/scripts.pory"
 	walk_down
-# 647 "data/maps/Route102/scripts.pory"
+# 654 "data/maps/Route102/scripts.pory"
 	walk_down
 	step_end
 
-# 661 "data/maps/Route102/scripts.pory"
+# 668 "data/maps/Route102/scripts.pory"
 Route102ScammerApproach3_Movement_0:
-# 661 "data/maps/Route102/scripts.pory"
+# 668 "data/maps/Route102/scripts.pory"
 	walk_down
-# 661 "data/maps/Route102/scripts.pory"
+# 668 "data/maps/Route102/scripts.pory"
 	walk_down
-# 661 "data/maps/Route102/scripts.pory"
+# 668 "data/maps/Route102/scripts.pory"
 	walk_down
 	step_end
 
-# 675 "data/maps/Route102/scripts.pory"
+# 682 "data/maps/Route102/scripts.pory"
 Route102ScammerApproach4_Movement_0:
-# 675 "data/maps/Route102/scripts.pory"
+# 682 "data/maps/Route102/scripts.pory"
 	walk_down
-# 675 "data/maps/Route102/scripts.pory"
+# 682 "data/maps/Route102/scripts.pory"
 	walk_down
-# 675 "data/maps/Route102/scripts.pory"
+# 682 "data/maps/Route102/scripts.pory"
 	walk_down
-# 675 "data/maps/Route102/scripts.pory"
+# 682 "data/maps/Route102/scripts.pory"
 	walk_down
 	step_end
 
-# 694 "data/maps/Route102/scripts.pory"
+# 701 "data/maps/Route102/scripts.pory"
 Route102Scammer_Movement_0:
-# 694 "data/maps/Route102/scripts.pory"
+# 701 "data/maps/Route102/scripts.pory"
 	face_up
 	step_end
 
 Route102ConstructionWorkerMTrapinch_Text_0:
-# 192 "data/maps/Route102/scripts.pory"
+# 199 "data/maps/Route102/scripts.pory"
 	.string "Traaaa!$"
 
 Route102ConstructionWorkerFDiglett_Text_0:
-# 203 "data/maps/Route102/scripts.pory"
+# 210 "data/maps/Route102/scripts.pory"
 	.string "Di-diiiig!$"
 
 Route102_ConstructionWorkerMBattle_Text_0:
-# 215 "data/maps/Route102/scripts.pory"
+# 222 "data/maps/Route102/scripts.pory"
 	.string "Thanks for listening to my drama. Let's\n"
 	.string "talk again sometime.$"
 
 Route102_ConstructionWorkerMRegister_Text_0:
-# 229 "data/maps/Route102/scripts.pory"
+# 236 "data/maps/Route102/scripts.pory"
 	.string "Everything went downhill after I tried\n"
 	.string "to gift this “Turtwig” to my son…\p"
 	.string "He shunned me, my wife divorced me, I\n"
@@ -1441,11 +1451,11 @@ Route102_ConstructionWorkerMRegister_Text_0:
 	.string "helped. Let's do this again.$"
 
 Route102_ConstructionWorkerMRematch_Text_0:
-# 240 "data/maps/Route102/scripts.pory"
+# 247 "data/maps/Route102/scripts.pory"
 	.string "TEST.$"
 
 Route102_ConstructionWorkerFBattle_Text_0:
-# 266 "data/maps/Route102/scripts.pory"
+# 273 "data/maps/Route102/scripts.pory"
 	.string "Rebels kept vandalizing the bridge and\n"
 	.string "harrasing us builders.\p"
 	.string "It was costly for Devon, so they\n"
@@ -1455,31 +1465,31 @@ Route102_ConstructionWorkerFBattle_Text_0:
 	.string "job.$"
 
 Route102_ConstructionWorkerFRegister_Text_0:
-# 277 "data/maps/Route102/scripts.pory"
+# 284 "data/maps/Route102/scripts.pory"
 	.string "This was way too short a distraction.\n"
 	.string "Let's prolong it a bit with some...\p"
 	.string "Devon Profile exchange!$"
 
 Route102Weathermon_Text_0:
-# 320 "data/maps/Route102/scripts.pory"
+# 327 "data/maps/Route102/scripts.pory"
 	.string "The Sandshrew is just enjoying the\n"
 	.string "sandstorm. Battle it?$"
 
 Route102Weathermon_Text_1:
-# 321 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	.string "Yes$"
 
 Route102Weathermon_Text_2:
-# 321 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	.string "No$"
 
 Route103ScientistFoundTracks_Text_0:
-# 360 "data/maps/Route102/scripts.pory"
+# 367 "data/maps/Route102/scripts.pory"
 	.string "Halt a moment, my dear fellow! Those\n"
 	.string "marks on the ground...$"
 
 Route103ScientistFoundTracks_Text_1:
-# 367 "data/maps/Route102/scripts.pory"
+# 374 "data/maps/Route102/scripts.pory"
 	.string "As I thought... they are the\n"
 	.string "unmistakable footprints of a Keckleon!\p"
 	.string "Certainly not the Pokémon we are\n"
@@ -1490,23 +1500,23 @@ Route103ScientistFoundTracks_Text_1:
 	.string "lead us to a yet uncharted spot.$"
 
 Route102Scientist_Text_0:
-# 381 "data/maps/Route102/scripts.pory"
+# 388 "data/maps/Route102/scripts.pory"
 	.string "You are returned, which fills my heart\n"
 	.string "with renewed hope!\p"
 	.string "Will you assist me with the search of\n"
 	.string "the to-be-Safened Pokémon?$"
 
 Route102Scientist_Text_1:
-# 388 "data/maps/Route102/scripts.pory"
+# 395 "data/maps/Route102/scripts.pory"
 	.string "Where is it, where is it...?$"
 
 Route102Scientist_Text_2:
-# 393 "data/maps/Route102/scripts.pory"
+# 400 "data/maps/Route102/scripts.pory"
 	.string "Oh, hello there lad. I thought they had\n"
 	.string "enclosed the road for me...$"
 
 Route102Scientist_Text_3:
-# 398 "data/maps/Route102/scripts.pory"
+# 405 "data/maps/Route102/scripts.pory"
 	.string "But this is most fortunate. You see, I\n"
 	.string "work for Devon Co.'s Safemon\l"
 	.string "Department.\p"
@@ -1518,13 +1528,13 @@ Route102Scientist_Text_3:
 	.string "telepathic powers.$"
 
 Route102Scientist_Text_4:
-# 405 "data/maps/Route102/scripts.pory"
+# 412 "data/maps/Route102/scripts.pory"
 	.string "I theorize it's reading in my mind the\n"
 	.string "desire to capture and study it, and\l"
 	.string "thus giving me a wide berth.$"
 
 Route102Scientist_Text_5:
-# 410 "data/maps/Route102/scripts.pory"
+# 417 "data/maps/Route102/scripts.pory"
 	.string "Luckily, according to my theory, if I\n"
 	.string "were to follow someone who harbors no\l"
 	.string "such desire...\p"
@@ -1540,15 +1550,15 @@ Route102Scientist_Text_5:
 	.string "time, of course. What do you say?$"
 
 Route102Scientist_Text_6:
-# 418 "data/maps/Route102/scripts.pory"
+# 425 "data/maps/Route102/scripts.pory"
 	.string "Help$"
 
 Route102Scientist_Text_7:
-# 418 "data/maps/Route102/scripts.pory"
+# 425 "data/maps/Route102/scripts.pory"
 	.string "Don't help$"
 
 Route102Scientist_Text_8:
-# 419 "data/maps/Route102/scripts.pory"
+# 426 "data/maps/Route102/scripts.pory"
 	.string "That's splendid! Together we shall take\n"
 	.string "the next step to make Hoenn a safer\l"
 	.string "place.\p"
@@ -1563,7 +1573,7 @@ Route102Scientist_Text_8:
 	.string "enclave I am yet to discover.$"
 
 Route102Scientist_Text_9:
-# 432 "data/maps/Route102/scripts.pory"
+# 439 "data/maps/Route102/scripts.pory"
 	.string "Ah, most unfortunate... but I\n"
 	.string "understand.\p"
 	.string "You must be in a hurry, or have moral\n"
@@ -1575,31 +1585,31 @@ Route102Scientist_Text_9:
 	.string "rendezvous here anew. Take care.$"
 
 Route102Scientistfollowchat_Text_0:
-# 447 "data/maps/Route102/scripts.pory"
+# 454 "data/maps/Route102/scripts.pory"
 	.string "Yes? What is it, my young helper?$"
 
 Route102Scientistfollowchat_Text_1:
-# 449 "data/maps/Route102/scripts.pory"
+# 456 "data/maps/Route102/scripts.pory"
 	.string "Where to?$"
 
 Route102Scientistfollowchat_Text_2:
-# 449 "data/maps/Route102/scripts.pory"
+# 456 "data/maps/Route102/scripts.pory"
 	.string "Which Pokémon is it?$"
 
 Route102Scientistfollowchat_Text_3:
-# 449 "data/maps/Route102/scripts.pory"
+# 456 "data/maps/Route102/scripts.pory"
 	.string "All good?$"
 
 Route102Scientistfollowchat_Text_4:
-# 449 "data/maps/Route102/scripts.pory"
+# 456 "data/maps/Route102/scripts.pory"
 	.string "I'm leaving$"
 
 Route102Scientistfollowchat_Text_5:
-# 449 "data/maps/Route102/scripts.pory"
+# 456 "data/maps/Route102/scripts.pory"
 	.string "Nevermind$"
 
 Route102Scientistfollowchat_Text_6:
-# 451 "data/maps/Route102/scripts.pory"
+# 458 "data/maps/Route102/scripts.pory"
 	.string "I wish I could offer such guidance. All I\n"
 	.string "can say is I have examined all the spots\l"
 	.string "where Pokémon live in the vicinity.\p"
@@ -1609,7 +1619,7 @@ Route102Scientistfollowchat_Text_6:
 	.string "oversight...?$"
 
 Route102Scientistfollowchat_Text_7:
-# 457 "data/maps/Route102/scripts.pory"
+# 464 "data/maps/Route102/scripts.pory"
 	.string "Of course, how oblivious of me... the\n"
 	.string "Pokémon I am looking for is a Ralts.\p"
 	.string "I have been told certain specimens of\n"
@@ -1618,19 +1628,19 @@ Route102Scientistfollowchat_Text_7:
 	.string "is of the utmost priority.$"
 
 Route102Scientistfollowchat_Text_8:
-# 462 "data/maps/Route102/scripts.pory"
+# 469 "data/maps/Route102/scripts.pory"
 	.string "I see you possess a Devon Dex. Let me\n"
 	.string "register the Pokémon's visual data in\l"
 	.string "it.$"
 
 Route102Scientistfollowchat_Text_9:
-# 478 "data/maps/Route102/scripts.pory"
+# 485 "data/maps/Route102/scripts.pory"
 	.string "You should be able to see it now. Entry\n"
 	.string "98. It may prove paramount in the\l"
 	.string "search.$"
 
 Route102Scientistfollowchat_Text_10:
-# 485 "data/maps/Route102/scripts.pory"
+# 492 "data/maps/Route102/scripts.pory"
 	.string "Ah, it's kind of you to worry about me.\n"
 	.string "Possibly on account of my age?\p"
 	.string "They warned me of the... “contrarian”\n"
@@ -1642,7 +1652,7 @@ Route102Scientistfollowchat_Text_10:
 	.string "us continue our search.$"
 
 Route102Scientistfollowchat_Text_11:
-# 492 "data/maps/Route102/scripts.pory"
+# 499 "data/maps/Route102/scripts.pory"
 	.string "Truly? That's most regrettable... I felt\n"
 	.string "we were quite close to our goal.\p"
 	.string "I appreciate your time nonetheless. If\n"
@@ -1650,12 +1660,12 @@ Route102Scientistfollowchat_Text_11:
 	.string "where we first met.$"
 
 Route102Scientistfollowchat_Text_12:
-# 509 "data/maps/Route102/scripts.pory"
+# 516 "data/maps/Route102/scripts.pory"
 	.string "Pray do not dispair. We shall find the\n"
 	.string "specimen in time.$"
 
 Route102ScientistNottoGreatCrater_Text_0:
-# 518 "data/maps/Route102/scripts.pory"
+# 525 "data/maps/Route102/scripts.pory"
 	.string "My young helper, this way is to the\n"
 	.string "Great Crater!\p"
 	.string "A novel habitat worthy of research, to\n"
@@ -1667,7 +1677,7 @@ Route102ScientistNottoGreatCrater_Text_0:
 	.string "thoroughly.$"
 
 Route102ScientistNottoPetalburg_Text_0:
-# 531 "data/maps/Route102/scripts.pory"
+# 538 "data/maps/Route102/scripts.pory"
 	.string "My young helper, this way is to\n"
 	.string "Petalburg City!\p"
 	.string "The chances to find our specimen there\n"
@@ -1677,7 +1687,7 @@ Route102ScientistNottoPetalburg_Text_0:
 	.string "thoroughly.$"
 
 Route102ScientistNottoOldale_Text_0:
-# 543 "data/maps/Route102/scripts.pory"
+# 550 "data/maps/Route102/scripts.pory"
 	.string "My young helper, this way is to Oldale\n"
 	.string "Town!\p"
 	.string "The chances to find our specimen there\n"
@@ -1687,86 +1697,86 @@ Route102ScientistNottoOldale_Text_0:
 	.string "thoroughly.$"
 
 Route102ConstructionShedSign_Text_0:
-# 554 "data/maps/Route102/scripts.pory"
+# 561 "data/maps/Route102/scripts.pory"
 	.string "Road 002 Construction Shed.\n"
 	.string "{COLOR RED}Authorized Personnel Only.$"
 
 Route102OldaleSign_Text_0:
-# 559 "data/maps/Route102/scripts.pory"
+# 566 "data/maps/Route102/scripts.pory"
 	.string "{RIGHT_ARROW} East - Oldale Town.$"
 
 Route102Wheelbarrow_Text_0:
-# 565 "data/maps/Route102/scripts.pory"
+# 572 "data/maps/Route102/scripts.pory"
 	.string "A wheelbarrow that's been left behind.$"
 
 Route102Excavator_Text_0:
-# 571 "data/maps/Route102/scripts.pory"
+# 578 "data/maps/Route102/scripts.pory"
 	.string "An excavating machine. The elements\n"
 	.string "have began to damage the paintjob.$"
 
 Route102Bulldozer_Text_0:
-# 577 "data/maps/Route102/scripts.pory"
+# 584 "data/maps/Route102/scripts.pory"
 	.string "A bulldozer. There's no surrounding\n"
 	.string "tracks - must have been stil for some\l"
 	.string "time.$"
 
 Route102Crane_Text_0:
-# 584 "data/maps/Route102/scripts.pory"
+# 591 "data/maps/Route102/scripts.pory"
 	.string "A mobile crane. It's somewhat sinked in\n"
 	.string "the sand.$"
 
 Route102Beams_Text_0:
-# 590 "data/maps/Route102/scripts.pory"
+# 597 "data/maps/Route102/scripts.pory"
 	.string "A tower of construction beams. A\n"
 	.string "promise undelivered.$"
 
 Route102CautionSign_Text_0:
-# 596 "data/maps/Route102/scripts.pory"
+# 603 "data/maps/Route102/scripts.pory"
 	.string "A caution sign. It serves no purpose\n"
 	.string "now.$"
 
 Route102Cactus_Text_0:
-# 602 "data/maps/Route102/scripts.pory"
+# 609 "data/maps/Route102/scripts.pory"
 	.string "A cactus. It seems to be thriving in the\n"
 	.string "arid route.$"
 
 Route102Asphalt_Text_0:
-# 608 "data/maps/Route102/scripts.pory"
+# 615 "data/maps/Route102/scripts.pory"
 	.string "Seems like some spilled asphalt that\n"
 	.string "has solidified.$"
 
 Route102ScammerApproach0_Text_0:
-# 619 "data/maps/Route102/scripts.pory"
+# 626 "data/maps/Route102/scripts.pory"
 	.string "Woah there friend! Where are you going\n"
 	.string "so fast?\p"
 	.string "Settle down, enjoy life a little!$"
 
 Route102Scammer_Text_0:
-# 696 "data/maps/Route102/scripts.pory"
+# 703 "data/maps/Route102/scripts.pory"
 	.string "Say, what about a Rare Candy to\n"
 	.string "sweeten your day?\p"
 	.string "It'll make your Pokémon stronger! 500¥\n"
 	.string "each!$"
 
 Route102Scammer_Text_1:
-# 700 "data/maps/Route102/scripts.pory"
+# 707 "data/maps/Route102/scripts.pory"
 	.string "Buy one$"
 
 Route102Scammer_Text_2:
-# 700 "data/maps/Route102/scripts.pory"
+# 707 "data/maps/Route102/scripts.pory"
 	.string "Don't buy$"
 
 Route102Scammer_Text_3:
-# 710 "data/maps/Route102/scripts.pory"
+# 717 "data/maps/Route102/scripts.pory"
 	.string "Thank you for your purchase - here you\n"
 	.string "go!$"
 
 Route102Scammer_Text_4:
-# 712 "data/maps/Route102/scripts.pory"
+# 719 "data/maps/Route102/scripts.pory"
 	.string "Let me know how your Pokémon like it!$"
 
 Route102Scammer_Text_5:
-# 723 "data/maps/Route102/scripts.pory"
+# 730 "data/maps/Route102/scripts.pory"
 	.string "What... you don't even have 500¥ on you\n"
 	.string "pal?\p"
 	.string "Sucks to be you! Hey, free advice: I\n"
@@ -1775,43 +1785,43 @@ Route102Scammer_Text_5:
 	.string "Maybe you can get a job there!$"
 
 Route102Scammer_Text_6:
-# 733 "data/maps/Route102/scripts.pory"
+# 740 "data/maps/Route102/scripts.pory"
 	.string "You're going to let this chance pass\n"
 	.string "by? Well... your loss!$"
 
 Route102Scammer_Text_7:
-# 753 "data/maps/Route102/scripts.pory"
+# 760 "data/maps/Route102/scripts.pory"
 	.string "You still have that candy on you eh?\n"
 	.string "Saving it for a special occassion?$"
 
 Route102Scammer_Text_8:
-# 759 "data/maps/Route102/scripts.pory"
+# 766 "data/maps/Route102/scripts.pory"
 	.string "Hm? What's wrong? You look\n"
 	.string "disappointed.$"
 
 Route102Scammer_Text_9:
-# 760 "data/maps/Route102/scripts.pory"
+# 767 "data/maps/Route102/scripts.pory"
 	.string "You're a scammer!$"
 
 Route102Scammer_Text_10:
-# 760 "data/maps/Route102/scripts.pory"
+# 767 "data/maps/Route102/scripts.pory"
 	.string "It's nothing$"
 
 Route102Scammer_Text_11:
-# 763 "data/maps/Route102/scripts.pory"
+# 770 "data/maps/Route102/scripts.pory"
 	.string "Woah there pal - that's some serious\n"
 	.string "accusation! What do you mean!?$"
 
 Route102Scammer_Text_12:
-# 764 "data/maps/Route102/scripts.pory"
+# 771 "data/maps/Route102/scripts.pory"
 	.string "It only healed 1 HP$"
 
 Route102Scammer_Text_13:
-# 764 "data/maps/Route102/scripts.pory"
+# 771 "data/maps/Route102/scripts.pory"
 	.string "Forget about it$"
 
 Route102Scammer_Text_14:
-# 766 "data/maps/Route102/scripts.pory"
+# 773 "data/maps/Route102/scripts.pory"
 	.string "1 HP? And what is an “HP” exactly?\n"
 	.string "What? “Health Points” you say?\p"
 	.string "Listen kid, I don't have the foggiest of\n"
@@ -1826,50 +1836,50 @@ Route102Scammer_Text_14:
 	.string "candies!$"
 
 Route102Scammer_Text_15:
-# 776 "data/maps/Route102/scripts.pory"
+# 783 "data/maps/Route102/scripts.pory"
 	.string "Bah, stop messing around, I have no time\n"
 	.string "for jokes!$"
 
 Route102Scammer_Text_16:
-# 783 "data/maps/Route102/scripts.pory"
+# 790 "data/maps/Route102/scripts.pory"
 	.string "Well, then be on your way. I'm on the\n"
 	.string "lookout for customers!$"
 
 Route102Scammer_Text_17:
-# 791 "data/maps/Route102/scripts.pory"
+# 798 "data/maps/Route102/scripts.pory"
 	.string "You slandered my candies and my\n"
 	.string "honesty, so I don't want to do more\l"
 	.string "business with you.\p"
 	.string "That includes refunds!$"
 
 ConstructionWorkerM102_Intro::
-# 245 "data/maps/Route102/scripts.pory"
+# 252 "data/maps/Route102/scripts.pory"
 	.string "I wanted to buy my son a Turtwig for his \nbirthday...\pAnd a con artist sold me a Trapinch\ndisguised as a Turtwig!\pLet me see if it can at least fight!$"
 
 ConstructionWorkerM102_Outro::
-# 249 "data/maps/Route102/scripts.pory"
+# 256 "data/maps/Route102/scripts.pory"
 	.string "Guess that's a no...$"
 
 ConstructionWorkerM102_Intro2::
-# 252 "data/maps/Route102/scripts.pory"
+# 259 "data/maps/Route102/scripts.pory"
 	.string "There you are - I've been preparing\nmy counterattack! CHAAARGE!$"
 
 ConstructionWorkerM102_Outro2::
-# 255 "data/maps/Route102/scripts.pory"
+# 262 "data/maps/Route102/scripts.pory"
 	.string "... I surrender. Again.$"
 
 ConstructionWorkerF102_Intro::
-# 291 "data/maps/Route102/scripts.pory"
+# 298 "data/maps/Route102/scripts.pory"
 	.string "Another day with nothing to do... just\nwhen is construction resuming!? \pPlease battle me, or I'll die of\nboredom!$"
 
 ConstructionWorkerF102_Outro::
-# 295 "data/maps/Route102/scripts.pory"
+# 302 "data/maps/Route102/scripts.pory"
 	.string "Well, that was some short-lived fun.\pCouldn't you beat me more slowly?$"
 
 ConstructionWorkerF102_Intro2::
-# 298 "data/maps/Route102/scripts.pory"
+# 305 "data/maps/Route102/scripts.pory"
 	.string "There you are - I've been preparing\nmy counterattack! CHAAARGE!$"
 
 ConstructionWorkerF102_Outro2::
-# 301 "data/maps/Route102/scripts.pory"
+# 308 "data/maps/Route102/scripts.pory"
 	.string "... I surrender. Again.$"

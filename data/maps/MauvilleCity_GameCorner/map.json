@@ -502,6 +502,78 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "EnableFollowersArcade"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
     }
   ],
   "bg_events": [

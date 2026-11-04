@@ -1,0 +1,18 @@
+raw `
+PetalburgDojo_CameliaRoom_MapScripts::
+	.byte 0
+
+`
+
+script CameliaRoomCamelia {
+    lock
+    applymovement (2, moves(face_player))
+
+    setspeaker ([SP_NAME_CAMELIA])
+    createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL) 
+    msgbox(format("I already prepared everything in advance. So I'm just calming down now.
+    \pLike my father always says - “a calm mind does a good job.” "))
+	applymovement (2, moves(face_down))
+	waitmovement (2)
+    releaseall
+    }

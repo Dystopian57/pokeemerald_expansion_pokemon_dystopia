@@ -3,7 +3,7 @@
   "name": "PetalburgDojo_CameliaRoom",
   "layout": "LAYOUT_PETALBURG_DOJO_CAMELIA_ROOM",
   "music": "MUS_IZUMOINDESPAIR",
-  "region_map_section": "MAPSEC_MONEAN_CHAMBER",
+  "region_map_section": "MAPSEC_SAFFRON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

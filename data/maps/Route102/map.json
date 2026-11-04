@@ -603,6 +603,78 @@
       "var": "VAR_102CANDYSCAMMER",
       "var_value": "0",
       "script": "Route102ScammerApproach4"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
     }
   ],
   "bg_events": [

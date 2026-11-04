@@ -57,15 +57,23 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 `
 
 mapscripts OldaleTown_PokemonCenter_1F_MapScripts {
-    MAP_SCRIPT_ON_LOAD: OldaleDevonCenter_TVOn
+    MAP_SCRIPT_ON_LOAD: OldaleTownDevonCenterMapscriptBundle
     //MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
     //MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
 	}
 
-script OldaleDevonCenter_TVOn {
+script OldaleTownDevonCenterMapscriptBundle {
 	setrespawn (HEAL_LOCATION_OLDALE_TOWN)
 	special (TurnOnTVScreen)
+
+	if (var(VAR_OLDALE_PHASE) == 2)
+	{
+	clearflag (rivalappearsinOldale)
+	setflag (OldaleDevonFightLost)
+	
+	}
+
 	}
 
 script DayNightAmbientLight {
@@ -81,6 +89,7 @@ script DayNightAmbientLight {
 
 		if (var(VAR_0x8000) == TIME_NIGHT)
 		{setweather (WEATHER_SHADE)}
+
 
 	release
 }
@@ -1032,7 +1041,7 @@ script Azuresortad {
 	showmonpic(SPECIES_BASCULIN, 10,3)
 	playse (SE_M_HAZE)
 	msgbox(format("Don't you hate it when you go to the beach, and the sea is deadly poisoned?\p
-	\p Devon Co. hears you, and is thus proud to present..."))
+	Devon Co. hears you, and is thus proud to present..."))
 	hidemonpic
 	showmonpic(SPECIES_BASCULIN_WHITE_STRIPED, 10,3)
 	playse (SE_M_SURF)

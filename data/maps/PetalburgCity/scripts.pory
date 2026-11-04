@@ -749,43 +749,50 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 
 
 mapscripts PetalburgCity_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: DayNightMusicPetalburgCity
-    MAP_SCRIPT_ON_LOAD: DayNightMusicPetalburgCity
-    MAP_SCRIPT_ON_TRANSITION: PetalburgRiotSpawn
-    MAP_SCRIPT_ON_LOAD: PetalburgRiotSpawn
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicPetalburgCity}
 	
+    MAP_SCRIPT_ON_TRANSITION: PetalburgCityMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: PetalburgCityMapscriptBundle
+    MAP_SCRIPT_ON_FRAME_TABLE: PetalburgCityMapscriptBundle
+    //MAP_SCRIPT_ON_TRANSITION: PetalburgRiotSpawn
+    //MAP_SCRIPT_ON_LOAD: PetalburgRiotSpawn
+    //MAP_SCRIPT_ON_FRAME_TABLE: PetalburgRiotSpawn
 
-script DayNightMusicPetalburgCity {
-	gettimeofday
-		if (var(VAR_0x8000) == TIME_MORNING)
-		{goto (enddaynightpetalburgcity)}
 
-		if (var(VAR_0x8000) == TIME_DAY)
-		{goto (enddaynightpetalburgcity)}
-
-		if (var(VAR_0x8000) == TIME_EVENING)
-		{goto (enddaynightpetalburgcity)}
-
-		if (var(VAR_0x8000) == TIME_NIGHT)
-		{playbgm (MUS_PANULACAVE, TRUE)
-		goto (enddaynightpetalburgcity)}
-
-enddaynightpetalburgcity:
-}
+	}
 
 script PetalburgRiotSpawn {
 
-	if (!flag(petalburgriotstopped))
-	{setvar (VAR_PETALBURG_RIOT_POSITION, 0)
-	setflag (petalburgriothidecivilians)
-	clearflag (petalburgriotstopped)}
 
 	if (flag(petalburgriotendedforgood))
-	{setflag (petalburgriotstopped)}
+	{	
+	setflag (petalburgriotstopped) //this is the daily flag
+	}
 
-	callnative (UpdateFollowingPokemon)
 }
+	
+
+script PetalburgCityMapscriptBundle {
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{playbgm (MUS_TEAMGRDUEL, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{playbgm (MUS_TEAMGRDUEL, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{playbgm (MUS_TEAMGRDUEL, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_PANULACAVE, TRUE)}
+
+	if (flag(petalburgriotendedforgood))
+	{	
+	setflag (petalburgriotstopped) //this is the daily flag
+	}
+
+}
+
+
 
 //clearflag (cigarettepop)
 
@@ -812,13 +819,16 @@ script PetalburgRiotRebelAdminStartLeave {
 
 
 script PetalburgRiotDontblocktheway {
-		lock
+
+		if (!flag(petalburgriotstopped))
+		{
 		random (2)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 
 		switch (var(VAR_RESULT))
 		{case 0:goto (PetalburgRiotDontblockthewayRebel)
 		case 1: goto (PetalburgRiotDontblockthewayDevon)
+		}
 		}
 }
 
@@ -880,19 +890,19 @@ script PetalburgRiotCutscene {
 	playbgm (MUS_BOSSDRILLDOZER, TRUE)
 
 
-	special (SpawnCameraObject)
-		if (var(VAR_PETALBURG_RIOT_POSITION) == 1) {
-		applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_right * 2))
-		}
-		if (var(VAR_PETALBURG_RIOT_POSITION) == 2) {
-		applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_left * 2))
-		}
-    waitmovement(OBJ_EVENT_ID_CAMERA)
-	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
-    waitmovement(OBJ_EVENT_ID_CAMERA)
+	//special (SpawnCameraObject)
+		//if (var(VAR_PETALBURG_RIOT_POSITION) == 1) {
+		//applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_right * 2))
+		//}
+		//if (var(VAR_PETALBURG_RIOT_POSITION) == 2) {
+		//applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_left * 2))
+		//}
+    //waitmovement(OBJ_EVENT_ID_CAMERA)
+	//applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 2))
+    //waitmovement(OBJ_EVENT_ID_CAMERA)
 
 
-	special (RemoveCameraObject)
+	//special (RemoveCameraObject)
 
 	applymovement(41, moves(walk_in_place_right))
     msgbox (format("The people is done with your greed, you Devon scum!\p
@@ -903,7 +913,7 @@ script PetalburgRiotCutscene {
     msgbox (format("{COLOR RED}Hell yeah! Down with the corpos! Down with the corpos!"))
 
 	applymovement(40, moves(walk_in_place_left))
-    msgbox (format("Rowdy citizens of Petalburg - look around you! Hoenn is in shambles!
+    msgbox (format("Citizens of Petalburg - look around you! The war left Hoenn in shambles!
 	\pIf we are to rebuild, funds must be collected.\pIt is a small sacrifice today, for a
 	better future tomorrow."))
 	closemessage
@@ -945,7 +955,7 @@ script PetalburgRiotCutscene {
 			waitmovement (41)	
 			applymovement (40, moves(walk_in_place_left))
 			waitmovement (40)	
-   		 	msgbox (format("They simply fall prey to your lies. A shame…\pFor the sake of Hoenn, I must
+   		 	msgbox (format("They simply fall prey to your manipulation. A shame…\pFor the sake of Hoenn, I must
 			have order restored!"))
 			trainerbattle_no_intro(TRAINER_DAWSON, Dawson_Outro)
 
@@ -999,11 +1009,13 @@ script PetalburgRiotCutscene {
 			removeobject (38)
 			removeobject (39)
 			removeobject (41)
-			removeobject (46)
+			removeobject (43)
 			removeobject (50)
+			removeobject (46)
+			removeobject (47)
 
 
-
+			addobject (27)
 			addobject (9)
 			addobject (10)
 			addobject (11)
@@ -1018,7 +1030,7 @@ script PetalburgRiotCutscene {
 			waitse
 			fadescreenswapbuffers (FADE_FROM_BLACK)
 			msgbox (format("{COLOR RED}Rebels{COLOR DARK_GRAY} got inside the center before leaving, and made a mess of things!"))
-
+			setvar (VAR_PETALBURG_RIOT_POSITION, 0)
 			goto (endofpetalburgriotscript)
 		}
 
@@ -1046,7 +1058,7 @@ script PetalburgRiotCutscene {
 			\pDown with Devon… and down with lapdogs like you!"))
 			trainerbattle_no_intro(TRAINER_GEORGIA, Georgia_Outro)
 
-
+			setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 			applymovement (41, moves(walk_in_place_right))
 			waitmovement (41)
 			//applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
@@ -1096,11 +1108,16 @@ script PetalburgRiotCutscene {
 			removeobject (45)
 			removeobject (46)
 			removeobject (48)
+			removeobject (46)
+
+
+
 
 			setflag (petalburgriotstopped)
 
 			setflag (devonwonpetalburgriot)
 
+			addobject (27)
 			addobject (9)
 			addobject (10)
 			addobject (11)
@@ -1112,6 +1129,7 @@ script PetalburgRiotCutscene {
 			waitse
 			fadescreenswapbuffers (FADE_FROM_BLACK)
 
+			setvar (VAR_PETALBURG_RIOT_POSITION, 0)
 			goto (endofpetalburgriotscript)
 			
 		}
@@ -1120,7 +1138,7 @@ script PetalburgRiotCutscene {
 			closemessage
 			if (var(VAR_PETALBURG_RIOT_POSITION) == 1) {
 			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 2, walk_up * 1, walk_in_place_down))
-			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_right * 3, walk_in_place_down))
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_right * 1, walk_in_place_down))
 			}
 
 			if (var(VAR_PETALBURG_RIOT_POSITION) == 2) {
@@ -1159,6 +1177,8 @@ script PetalburgRiotCutscene {
 			trainerbattle_two_trainers (TRAINER_GEORGIA, Georgia_MultiOutro, 
 			TRAINER_DAWSON, Dawson_MultiOutro)
 
+			setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
 
 
 				playse (SE_PIN)
@@ -1193,7 +1213,7 @@ script PetalburgRiotCutscene {
 
 			fadeoutbgm (1)
 			fadeinbgm (1)
-			playbgm (MUS_CALM, TRUE)	
+			playbgm (MUS_NONE, TRUE)	
 
    		 	msgbox (format("Your feat seems to have defused the situation. To avoid new escalation..."))
 
@@ -1204,8 +1224,8 @@ script PetalburgRiotCutscene {
 			playbgm (MUS_CALM, TRUE)
 			
 
-   		 	msgbox (format("I propose a truce, and a compromise.\pTo match the standard of living here in
-			Petalburg, the healing fees in this Devon Center will receive a 25% discount.
+   		 	msgbox (format("I propose a truce, and a compromise.\pTo match the standard of living in
+			{COLOR GREEN}Petalburg{COLOR DARK_GRAY}, the healing fees in this Devon Center will have a 25% discount.
 			\pOn the condition, however...
 			\pThat you Rebels repair the damage you just caused.\pSurely this is a reasonable
 			deal."))
@@ -1213,14 +1233,20 @@ script PetalburgRiotCutscene {
 
 
 			applymovement (41, moves(walk_in_place_right))
+			waitmovement (41)
 			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
-			waitmovement (OBJ_EVENT_ID_PLAYER)
+			//waitmovement (OBJ_EVENT_ID_PLAYER)
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left))
+			waitmovement (OBJ_EVENT_ID_FOLLOWER)
 
    		 	msgbox (format("Counter offer... make it a 50% discount, or we will make the damage worse."))
 
 			applymovement (40, moves(walk_in_place_left))
+			//waitmovement (OBJ_EVENT_ID_PLAYER)
+			waitmovement (40)
 			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
-			waitmovement (OBJ_EVENT_ID_PLAYER)
+			applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_right))
+			waitmovement (OBJ_EVENT_ID_FOLLOWER)
    		 	msgbox (format("Hmpf... you negotiate well, for a criminal. Very well.\pThank you, trainer,
 			for helping us arrive at this truce.\pIt is far from ideal, but it will suffice for now."))
 
@@ -1250,7 +1276,9 @@ script PetalburgRiotCutscene {
 			removeobject (37)
 
 			removeobject (41)
+			removeobject (43)
 
+			addobject (27)
 
 
 			addobject (9)
@@ -1259,7 +1287,7 @@ script PetalburgRiotCutscene {
 			addobject (15)
 			addobject (51)
 
-			setvar (VAR_PETALBURG_RIOT_POSITION, 3)
+			setvar (VAR_PETALBURG_RIOT_POSITION, 4)
 
 			setflag (devonwonpetalburgriot)
 			setflag (rebelswonpetalburgriot)
@@ -1392,43 +1420,61 @@ script PetalburgRiotLowerDevon {
     
 }
 
+script PetalburgSmokerMilitia {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement (57, moves(face_player))
+	waitmovement (57)
 
+	if (!flag(petalburgsmokergivesligther))
 
+    {msgbox (format("I'll never catch up with the rest if I keep smoking...\pHere, take this from me!"))
+	giveitem (ITEM_FLAME_ORB)
+	setflag (petalburgsmokergivesligther)}
 
-script HardwareStoreClerk {
-	
+	else {
+	msgbox (format("... I mean, I already lighted this one, so may as well smoke it.
+	\pAnd I also got some matches, it'd be a waste not to use them."))}
 
-		if (!flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
-		//never met scavengers
-
-		if (flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
-		//lost against scavenger F
-		if (flag (foughtwarehousescavenger2) && flag(scavengergivesobjectspotter)) {}
-		//how's that object spotter treating you.
-
+	applymovement (57, moves(face_down))
+	waitmovement (57)
+    release
+    
 }
 
-script JimmyMcGligarSewersIdle {
-		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && !flag(conartistaskeddistract)) //this means Player never interacted
-		//with Jimmy
-		{release}
+script PetalburgMiliaSnackGuy {
+    lock
 
-		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && flag(conartistaskeddistract)) //this means Jimmy asked for help
-		//but player never helped him
-		{}
+		if (!flag(militiadailysnack))
+		{
+		random (2)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
 
-	    if(var(VAR_JIMMYQUESTPROGRESS) == 1 && flag(conartistescaped) && flag(!betrayedconcordconartist)) //this means Player helped Jimmy but cleared Warehouse
-		//before getting reward from Jimmy, so he gives Tamarakku egg: "I never thanked you!"
-		{}
+		switch (var(VAR_RESULT))
+		{case 0:
+			msgbox(format("HIII-YA! HIII-YA! Arf, arf...\pWhen doing exercise, gotta keep hydrated! Here,
+			have this!"))
+			giveitem (ITEM_FRESH_WATER)
+		case 1:
+			msgbox(format("HIII-YA! HIII-YA! Arf, arf...\pNothing like an energy bar to keep energy up! Here,
+			have one!"))
+			giveitem (ITEM_ENERGY_POWDER)
+		}
+		setflag (militiadailysnack)
+		}
 
-	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(helpedconcordconartist)) //this means Player helped Jimmy and obtained egg
-   		//Jimmy has Player's number so he can call them
-		{}
+		else {	msgbox(format("Thanks for cheering us up! Come back tomorrow too! HIII-YA!"))
+				
+				}
 
-	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(betrayedconcordconartist)) //this means Player betrayed Jimmy
-		{}	
+    releaseall
+    }
 
-	    if(var(VAR_JIMMYQUESTPROGRESS) == 3){}	//Player helped Jimmy and even bought Exeggcute egg
-
-		//regardless of result, setvar (VAR_JIMMYQUESTPROGRESS, 4)
+	script PetalburgMilitiaLeftGuy {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox (format("The war showed us Pokémon can't be trusted, and Safemon are useless.\pSo what
+	can you rely on to protect yourself these days?\pThat's right - your BODY! WAYAAAA!"))
+    release
+    
 }

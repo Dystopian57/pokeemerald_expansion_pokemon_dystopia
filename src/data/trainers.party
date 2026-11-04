@@ -9018,12 +9018,26 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
+Corphish @ Berry Juice
+Ball: ITEM_DIVE_BALL
+Level: 12
+Ability: Adaptability
+Nature: Quirky
+- Double Hit
+- Razor Shell
+- Guillotine
+- X-Scissor
+
 Carvanha
 Ball: ITEM_DIVE_BALL
 Level: 12
+Ability: Rough Skin
+Nature: Quirky
+- Aqua Jet
+- Bite
+- Poison Fang
+- Focus Energy
 
-Slugma
-Level: 12
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -9183,14 +9197,29 @@ Class: Rival
 Pic: cameliabattle
 Gender: Female
 Music: Female
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Numel
+Numel @ Berry Juice
+Ball: ITEM_PREMIER_BALL
 Level: 12
+Ability: Adaptability
+Nature: Quirky
+- Double Hit
+- Razor Shell
+- Guillotine
+- X-Scissor
 
 Slugma
+Ball: ITEM_PREMIER_BALL
 Level: 12
+Ability: Rough Skin
+Nature: Quirky
+- Aqua Jet
+- Bite
+- Poison Fang
+- Focus Energy
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY

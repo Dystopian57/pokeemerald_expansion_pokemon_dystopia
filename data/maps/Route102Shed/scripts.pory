@@ -96,11 +96,10 @@ script KantonianWarHistoryVol4102Shed {
 
 	if (var(VAR_RESULT) == 0) {
 
-    msgbox(format("May, 2006. Team Rocket has spent the last decade using Silph Co.
-	as a proxy for their criminal activities, primarily that of Pokémon trafficking.
-	\pThe Kantonian citizens are outraged, but authorities are kept at bay through bribery.
-	\pIn a curious move, the company acquires Cinnabar's Laboratory to invest in the study of
-	Pokémon Fossils."))
+    msgbox(format("June 2009: Slowly but surely, the Rocket-ran Silph Co. begins to extend its tendrils
+    into the neighbouring Jotho region.\pThe biggest initial step is the acquisition of Goldenrod's Radio
+    Tower.\pGiovanni uses this media investment to wash the company's international image.
+    \pIn September of that year he appoints a young trainer called Silver as vice-president."))
 	
 	}
 

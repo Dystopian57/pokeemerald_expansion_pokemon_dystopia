@@ -8,37 +8,6 @@ mapscripts OldaleTown_House1_MapScripts {
 
 
 
-
-
-script DayNightNPC {
-
-	gettimeofday
-		if (var(VAR_0x8000) == TIME_MORNING)
-		{	setflag (nightnpc)
-			clearflag (daynpc)
-        goto (endofdaynightnpc)}
-
-		if (var(VAR_0x8000) == TIME_DAY)
-		{	clearflag (daynpc)
-			setflag (nightnpc)
-        goto (endofdaynightnpc)}
-
-		if (var(VAR_0x8000) == TIME_EVENING)
-		{	setflag (nightnpc)
-			clearflag (daynpc)
-        goto (endofdaynightnpc)}
-
-		if (var(VAR_0x8000) == TIME_NIGHT)
-		{	clearflag (nightnpc)
-			setflag (daynpc)
-        goto (endofdaynightnpc)}
-
-endofdaynightnpc:
-}
-
-
-
-
 script OldaleHouse1Vase {
 	lock
 	if (!flag (FLAG_ITEM_OLDALEHOUSE1VASE))

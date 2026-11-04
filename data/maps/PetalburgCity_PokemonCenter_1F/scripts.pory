@@ -92,11 +92,61 @@ PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
 `
 
 mapscripts PetalburgCity_PokemonCenter_1F_MapScripts {
-    MAP_SCRIPT_ON_LOAD: PetalburgCity_PokemonCenter_1F_TVOn
+    MAP_SCRIPT_ON_LOAD: PetalburgCity_PokemonCenter_1FMapscriptbundle
+    MAP_SCRIPT_ON_TRANSITION: PetalburgCity_PokemonCenter_1FMapscriptbundle
     //MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
-    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
+    //MAP_SCRIPT_ON_LOAD: PetalburgDevonCenterHideCivilians
+
+    //MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
+    //MAP_SCRIPT_ON_TRANSITION: PetalburgDevonCenterHideCivilians
     //MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight
 	}
+
+script PetalburgCity_PokemonCenter_1FMapscriptbundle {
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
+		goto (DayNightNPC)
+	
+}
+
+
+script PetalburgDevonCenterHideCivilians {
+	if (var(VAR_PETALBURG_RIOT_POSITION) == 0 && !flag(petalburgriotstopped))
+	{
+	setflag (petalburgriothidecivilians)
+	}
+
+	if (flag(petalburgriotendedforgood))
+	{setflag (petalburgriotstopped)}
+}
+
+
+script PetalburgDevonCenterHideTalkversion {
+
+	lock
+	msgbox(format("Daily flag set. Riot objects will not respawn now."))
+	release
+
+	if (var(VAR_PETALBURG_RIOT_POSITION) == 0 && !flag(petalburgriotstopped))
+	{
+	setflag (petalburgriothidecivilians)
+	}
+
+	if (flag(petalburgriotendedforgood))
+	{setflag (petalburgriotstopped)}
+}
 
 script PetalburgCity_PokemonCenter_1F_TVOn {
 	setrespawn (HEAL_LOCATION_PETALBURG_CITY)
@@ -108,10 +158,156 @@ script PetalburgDevonCenterFakeMedic {
     lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
-    showmoneybox (18, 0)
+			if (var(VAR_PETALBURG_HEALING_SCAM) == 5) {
+			msgbox(format("Don't get sour. We all need a bit of humour in these dark times!"))
+			goto (endofpetalburgfakemedic)
+			}
+
+			if (var(VAR_PETALBURG_HEALING_SCAM) == 3) {
+			msgbox(format("You again? What's wrong now? Huh? That's not your Pokémon?
+			\pThat means you're a thief. Is that a confession?\pWant me to call the Devon grunts?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Yes, call them",
+			"No, that's okay",)
+
+				if (var(VAR_RESULT) == 0) {
+					playse (SE_PIN)
+					applymovement (8, moves(emote_exclamation_mark))
+					waitmovement (8)
+				msgbox(format("Y-you know what...? Maybe that's not my best idea today, hehe.
+				\pHere's your Pokémon - let's forget his ever happened, hey?"))
+				destroyfollowernpc
+				playse (SE_BALL_OPEN)
+				waitse
+				setflag (scamfeebas)
+
+				goto (healscammerreturnspokemon)
+				}
+
+				if (var(VAR_RESULT) == 1) {
+				msgbox(format("Thought so. Off you go then, you and your great partner!"))
+				goto (endofpetalburgfakemedic)
+				}
+			}
+
+		if (var(VAR_PETALBURG_HEALING_SCAM) == 1 || var(VAR_PETALBURG_HEALING_SCAM) == 2) {
+		msgbox(format("Hm? What's the funny look about?"))
+
+			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+			"My Pokémon are missing",
+			"You stole my Pokémon!",
+			"Nothing",)
+
+			if (var(VAR_RESULT) == 0) {
+			playse (SE_M_SKETCH) //tri attack
+			applymovement (8, moves(emote_x))
+			waitmovement (8)
+			msgbox(format("I'm sorry to hear that. But we heal Pokémon here, we don't find them."))
+			closemessage
+
+			playse (SE_PIN)
+			applymovement (8, moves(emote_exclamation_mark))
+			waitmovement (8)
+
+				msgbox(format("Wait... now that you mention it! Oh, I'm so sorry, you're right!
+				\pI forgot to load your Pokémon in from the machine. Here it is!"))
+				closemessage
+				playse (SE_BALL_OPEN)
+				waitse
+				clearflag (scamfeebas)
+				addobject (11)
+
+				playmoncry (SPECIES_FEEBAS, CRY_MODE_NORMAL)
+				setfollowernpc (LOCALID_FEEBAS, FNPC_ALL, ScamFeebasfollowchat, PARTNER_RIVAL_FEMALE)
+				setvar (VAR_PETALBURG_HEALING_SCAM, 3)
+				goto (endofpetalburgfakemedic)
+			}
+
+			if (var(VAR_RESULT) == 1) {
+
+				msgbox(format("Woah, what are you talking about? That's a serious accusation!
+				\pDo you have any proof to back it up?"))
+				dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+				"Yes",
+				"No",
+				"I don't need any",)
+					if (var(VAR_RESULT) == 0) {
+					playse (SE_PIN)
+					applymovement (8, moves(emote_exclamation_mark))
+					waitmovement (8)
+					msgbox(format("Y-you do!? Why, aren't you a smart fellow...
+					\p... I'll cut you a sweet deal then.
+					\pI give you your Pokémon back, and you forget this ever happened."))
+
+					healscammerreturnspokemon:
+
+
+					//hidefollower (0)
+					clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+					//setflag (B_FLAG_FOLLOWERS_DISABLED) 
+					setflag (FLAG_SYS_POKEMON_GET)
+					callnative (UpdateFollowingPokemon)
+					playse (MUS_OBTAIN_BADGE)
+						checkplayergender
+						if(var(VAR_RESULT) == MALE){msgbox(format("{PLAYER} got his Pokémon back!"))}
+
+						if(var(VAR_RESULT) == FEMALE){msgbox(format("{PLAYER} got her Pokémon back!"))}
+
+					msgbox(format("Don't look at me like that - it was just a joke! Have a good one now."))
+					setvar (VAR_PETALBURG_HEALING_SCAM, 4)
+
+					
+					clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+					clearflag (B_FLAG_FOLLOWERS_DISABLED) 
+
+					goto (endofpetalburgfakemedic)
+					}
+
+					if (var(VAR_RESULT) == 1) {
+					msgbox(format("Heh, thought so. Then stop harrasing me then, or I'll call the grunts on
+					you."))
+					goto (endofpetalburgfakemedic)
+					}
+					if (var(VAR_RESULT) == 2) {
+					playse (SE_PIN)
+					applymovement (8, moves(emote_exclamation_mark))
+					waitmovement (8)
+					msgbox(format("I-is that a threat? Y-you do look rather... seasoned.\pO-okay, here's your
+					Pokémon!"))
+
+					setflag (FLAG_SYS_POKEMON_GET)
+					playse (MUS_OBTAIN_BADGE)
+						checkplayergender
+						if(var(VAR_RESULT) == MALE){msgbox(format("{PLAYER} got his Pokémon back!"))}
+
+						if(var(VAR_RESULT) == FEMALE){msgbox(format("{PLAYER} got her Pokémon back!"))}
+
+					msgbox(format("We're good now, right? Let's pretend this never happened, please?"))
+					setvar (VAR_PETALBURG_HEALING_SCAM, 4)
+
+					clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+					clearflag (B_FLAG_FOLLOWERS_DISABLED) 
+
+					goto (endofpetalburgfakemedic)
+					}
+			}
+
+			if (var(VAR_RESULT) == 2) {
+			msgbox(format("Then clear the way for customers, please!"))
+			goto (endofpetalburgfakemedic)
+			}
+		
+	
+		//setflag(petalburgfakemedic)
+		goto (endofpetalburgfakemedic)
+		}
+
+    
 
 	if (!flag(petalburgriotendedforgood))
 	{
+	showmoneybox (18, 0)
 	msgbox(format("Hello there! Round of healing? It's 200¥ while we pay for repairs!"))
 
 	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
@@ -158,18 +354,181 @@ script PetalburgDevonCenterFakeMedic {
 
 	if (flag(petalburgriotendedforgood))
 		{
-		msgbox(format("Steal sequence commence!"))
-		setflag(petalburgfakemedic)
+		//showmoneybox (18, 0)
+		msgbox(format("Welcome, dear customer!\pTo celebrate the end of the riots, healing is on the house
+		today!\pLet me see those Pokémon..."))
+
+					removeobject (OBJ_EVENT_ID_FOLLOWER)
+					hidefollower (0)
+					applymovement (8, moves(face_left))
+					dofieldeffect (FLDEFF_POKECENTER_HEAL)
+					waitfieldeffect (FLDEFF_POKECENTER_HEAL)
+					special (HealPlayerParty)
+					applymovement (8, moves (face_down))
+					clearflag (FLAG_SYS_POKEMON_GET)
+					//hidefollower (0)
+					setflag (FLAG_TEMP_HIDE_FOLLOWER)
+					//setflag (B_FLAG_FOLLOWERS_DISABLED) 
+					//callnative (UpdateFollowingPokemon)
+
+
+					msgbox(format("All in good shape now. Take care! Hehe..."))
+
+
+		setvar (VAR_PETALBURG_HEALING_SCAM, 1)
+
 		}
 
 endofpetalburgfakemedic:
 release
 }
 
+
+
+script ScamFeebasfollowchat {
+	lock
+	playmoncry (SPECIES_FEEBAS, CRY_MODE_NORMAL)
+	msgbox(format("Fee..."))
+	release
+}
+
+script DevonGuardsTakeHealScammer {
+	lock
+	clearflag (healscammerarrestdevons)
+	playse (SE_SLIDING_DOOR)
+	waitse
+
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(face_down))
+
+	addobject (12)
+	addobject (13)
+
+	applymovement (12, moves(walk_up * 1))
+	applymovement (13, moves(walk_up * 1))
+	waitmovement (13)
+
+	playse (SE_SLIDING_DOOR)
+	waitse
+	addobject (14)
+
+	playbgm (MUS_STOPTHIEF, TRUE)
+
+	applymovement (14, moves(walk_in_place_up * 1))
+	waitmovement (14)
+	msgbox(format("That's him! The nurse who stole my Pokémon! Get him!"))
+	closemessage
+
+	playse (SE_PIN)
+	applymovement (8, moves(emote_double_exclamation_mark))
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 2, face_left))
+	applymovement (12, moves(walk_up * 3))
+	waitmovement (12)
+
+	applymovement (12, moves(walk_in_place_up * 1))
+	waitmovement (12)
+	msgbox(format("I hope you like the cold. There's a cell with your name in Dewford Prison!"))
+	closemessage
+
+	playse (SE_LEDGE)
+	applymovement (8, moves(jump_in_place_down * 1))
+	waitmovement (8)
+
+	msgbox(format("W-WAIT, no, this is a TERRIBLE misunderstanding! I can explain!"))
+
+	applymovement (12, moves(walk_in_place_up * 1))
+	waitmovement (12)
+	msgbox(format("Save it for the trial! Off with you!"))
+	closemessage
+
+	fadescreenswapbuffers (FADE_TO_BLACK)
+	playse (SE_FLEE)
+	waitse
+	playse (SE_SLIDING_DOOR)
+	waitse
+	removeobject (8)
+	removeobject (12)
+	removeobject (13)
+	removeobject (14)
+
+	setflag (healscammerarrestdevons)
+	setflag (petalburgfakemedic)
+	clearflag (petalburgnurse)
+
+	setflag (petalburgriotendedforgood)
+	setflag (petalburgriotstopped)
+
+	addobject (1)
+
+
+
+
+	fadeoutbgm (1)
+	fadeinbgm (1)
+	playbgm (MUS_GYMNOPEDIE, TRUE)
+
+	setvar (VAR_PETALBURG_HEALING_SCAM, 5)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
+	warpsilent (MAP_PETALBURG_CITY_POKEMON_CENTER_1F, 3)
+	warpsilent (MAP_PETALBURG_CITY, 2)
+
+
+	release
+}
+
+script PlayerRealizesHealScam {
+	lock
+
+			checkplayergender
+			if(var(VAR_RESULT) == MALE){msgbox (format("{PLAYER} feels his Pokéballs a bit ligther..."))}
+
+			if(var(VAR_RESULT) == FEMALE){msgbox (format("{PLAYER} feels her Pokéballs a bit ligther..."))}
+
+			playse (SE_PIN)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
+			waitse
+
+			checkplayergender
+			if(var(VAR_RESULT) == MALE){msgbox (format("{PLAYER} realizes his Pokémon are gone!"))}
+
+			if(var(VAR_RESULT) == FEMALE){msgbox (format("{PLAYER} realizes her Pokémon are gone!"))}
+
+	setvar (VAR_PETALBURG_HEALING_SCAM, 2)
+	release
+}
+
+script PlayerHealScamForceDown {
+	lock
+	msgbox (format("Must take back the Pokémon...!"))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	release
+	}
+
+script PlayerHealScamForceUp {
+	lock
+	msgbox (format("Can't leave without the Pokémon...!"))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_up * 1))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	release
+	}
+
+script PlayerHealScamForceRight {
+	lock
+	msgbox (format("Can't leave without the Pokémon...!"))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+	release
+	}
+
+
+
 script PetalburgDevonCenterTV {
     lock
 
-	if (flag (rebelswonpetalburgriot))
+	if (!flag (rebelswonpetalburgriot))
 	{
     msgbox(format("The TV returns static. The antenna may have been damaged after the riot."))
     }
@@ -187,7 +546,7 @@ script PetalburgDevonCenterInnBlocker {
     releaseall
     }
 
-script PetalburgDevonCenterPCTechnician {
+script PetalburgDevonCenterPCTechnicianRepairing {
     lock
     applymovement (4, moves(face_player))
     msgbox(format("Those rebels messed this PC real good. I'll take a while to repair it."))
@@ -195,6 +554,49 @@ script PetalburgDevonCenterPCTechnician {
 	waitmovement (4)
     releaseall
     }
+
+script PetalburgDevonCenterTableNPC1 {
+    lock
+    applymovement (3, moves(face_player))
+    msgbox(format("Apparently Kanto attacked us because they thought Hoenn would attack them first.
+	\pDid we really lose so much because of a misunderstanding…?
+	\pOr did someone plan this out? If so, why?
+	\pAnd most importantly - does it even matter…? It's all such a mess…"))
+	applymovement (3, moves(face_right))
+	waitmovement (3)
+    releaseall
+    }
+
+script PetalburgDevonCenterPCTechnician {
+    lock
+	applymovement (10, moves(face_player))
+	if (flag(petalburgriotendedforgood))
+		{
+			msgbox(format("I work on a contract basis, so now that Rebels have calmed down, I get less work.
+			\pMaybe I should break something myself..."))
+		}
+
+	else {
+
+		if (!flag(rebelswonpetalburgriot))
+		{   
+		msgbox(format("Let us work, please. The sooner we're done, the sooner PC service returns."))
+		}
+
+		if (flag(rebelswonpetalburgriot))
+		{   
+		msgbox(format("Just finished repairing the PC. Have at it!"))
+		}
+
+		}
+
+		applymovement (10, moves(face_down))
+		waitmovement (10)
+
+    release
+    }
+
+
 
 script PetalburgDevonCenterMart {
     lock

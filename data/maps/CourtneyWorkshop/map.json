@@ -44,6 +44,79 @@
       "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    }
+  ],
   "bg_events": []
 }

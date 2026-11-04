@@ -5,30 +5,75 @@ raw `
 
 
 mapscripts GreatCrater_MapScripts {
-    MAP_SCRIPT_ON_LOAD: DayNightMusicGreatCrater
+    MAP_SCRIPT_ON_LOAD: GreatCraterMapscriptBundle
     //MAP_SCRIPT_ON_LOAD: DynamicWeatherCrater
     //MAP_SCRIPT_ON_LOAD: RedoTouristWarning
     MAP_SCRIPT_ON_TRANSITION: RedoTouristWarning
     //MAP_SCRIPT_ON_FRAME_TABLE: RedoTouristWarning
-    MAP_SCRIPT_ON_TRANSITION: DayNightMusicGreatCrater
+    //MAP_SCRIPT_ON_TRANSITION: DayNightMusicGreatCrater
 	}
 
-script DayNightMusicGreatCrater {
+script GreatCraterMapscriptBundle {
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
-		{goto (enddaynightmusiccemetery)}
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
 
 		if (var(VAR_0x8000) == TIME_DAY)
-		{goto (enddaynightmusiccemetery)}
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
 
 		if (var(VAR_0x8000) == TIME_EVENING)
-		{goto (enddaynightmusiccemetery)}
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
 
 		if (var(VAR_0x8000) == TIME_NIGHT)
 		{playbgm (MUS_WEATHER_GROUDON, TRUE)
 		goto (enddaynightmusicgreatcrater)}
 
 enddaynightmusicgreatcrater:
+
+//DynamicWeatherhere
+		random (10)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+		switch (var(VAR_RESULT))
+		{case 0:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
+		case 1:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
+		case 2:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
+		case 3:
+		setweather (WEATHER_VOLCANIC_ASH)
+		playbgm (MUS_STORM, TRUE)
+		setvar (VAR_GREATCRATER_WEATHER, 4)
+		case 4:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 5:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 6:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 7:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 8:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 9:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		case 10:
+		setweather (WEATHER_SHADE)
+		setvar (VAR_GREATCRATER_WEATHER, 0)
+		}
+
+
 }
 
 script RedoTouristWarning {
@@ -39,6 +84,10 @@ script RedoTouristWarning {
 
 
 script DynamicWeatherCrater {
+
+
+if(var(VAR_GREATCRATER_WEATHER) > 0)
+{		goto (GreatCraterTVWeather)}
 
 		random (10)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
@@ -84,7 +133,7 @@ script DynamicWeatherCrater {
 
 
 
-script GreatCraterWeather {
+script GreatCraterTVWeather {
 
 			goto_if_eq (VAR_GREATCRATER_WEATHER, 0, GreatCraterShade)
 			goto_if_eq (VAR_GREATCRATER_WEATHER, 1, GreatCraterAsh1)
@@ -334,7 +383,19 @@ script ReportersGreatCrater {
 	finishreporterscript:
 	fadeoutbgm (1)
 	fadeinbgm (1)
-	playbgm (MUS_ABNORMAL_WEATHER, TRUE)
+	
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_WEATHER_GROUDON, TRUE)}
 	releaseall
 
 }
@@ -465,6 +526,10 @@ script TouristGreatCraterApproach0 {
 		playmoncry (SPECIES_CLEFAIRY, CRY_MODE_HIGH_PITCH)
 		applymovement (13, moves(jump_in_place_down * 1))
 		waitmovement (13)
+
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+
 		call (TouristGreatCraterBattle)}
 
 	else {release}
@@ -481,6 +546,10 @@ script TouristGreatCraterApproach1 {
 		waitmovement (13)
 		applymovement (6, moves(walk_down * 1))
 		applymovement (13, moves(walk_down * 1))
+
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+
 		call (TouristGreatCraterBattle)}
 
 	else {release}
@@ -497,6 +566,10 @@ script TouristGreatCraterApproach2 {
 		waitmovement (13)
 		applymovement (6, moves(walk_down * 2))
 		applymovement (13, moves(walk_down * 2))
+
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+
 		call (TouristGreatCraterBattle)}
 
 	else {release}
@@ -604,7 +677,22 @@ script GreatCraterSouvenirShop {
 		pokemart (ShopSouvenirs)
 		fadeoutbgm (1)
 		fadeinbgm (1)
-		playbgm (MUS_ABNORMAL_WEATHER, TRUE)
+
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{playbgm (MUS_ABNORMAL_WEATHER, TRUE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_WEATHER_GROUDON, TRUE)}
+
+
+
 		releaseall
 
 }

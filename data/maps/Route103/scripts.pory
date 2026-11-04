@@ -209,12 +209,24 @@ Route103_Text_RouteSign:
 mapscripts Route103_MapScripts {
 	//MAP_SCRIPT_ON_LOAD: Route103WeatherSong
 	//MAP_SCRIPT_ON_TRANSITION: Route103WeatherSong
-    MAP_SCRIPT_ON_TRANSITION: DynamicWeather103
-    MAP_SCRIPT_ON_TRANSITION: Route103Weather
-	MAP_SCRIPT_ON_TRANSITION: FerryManReturnsSouth}
+    //MAP_SCRIPT_ON_LOAD: Route103Mapscriptbundle
+	MAP_SCRIPT_ON_TRANSITION: Route103Mapscriptbundle}
 
 
-script DynamicWeather103 {
+script Route103Mapscriptbundle {
+
+	//ferrymanhandling
+		clearflag (ferryman103down)
+		clearflag (ferryboat103down)
+		setflag (ferryman103up)
+		setflag (ferryboat103up)
+
+	//tvweather
+
+if(var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3)
+{		goto (Route103TVWeather)}
+
+	//dynamicweather
 
 		random (10)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
@@ -256,12 +268,14 @@ script DynamicWeather103 {
 		case 10:
 		setweather (WEATHER_SHADE)
 		setvar (VAR_ROUTE103_WEATHER, 0)
-		}}
+		}
+		
+		}
 
  
-script Route103Weather {
+script Route103TVWeather {
 
-			goto_if_eq (VAR_ROUTE103_WEATHER, 0, Route103Shade)
+			//goto_if_eq (VAR_ROUTE103_WEATHER, 0, Route103Shade)
 			goto_if_eq (VAR_ROUTE103_WEATHER, 1, Route103Rain1)
 			goto_if_eq (VAR_ROUTE103_WEATHER, 2, Route103Rain2)
 			goto_if_eq (VAR_ROUTE103_WEATHER, 3, Route103EndRain)
@@ -512,7 +526,7 @@ script Sharpy103 {
 		setvar (VAR_SHARPYANDCAMELIAOLDALE, 1)
    		//setvar(VAR_OLDALE_PHASE, 3)
 		releaseall
-		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
 		else{release}
 		}
@@ -580,7 +594,7 @@ script Route103Tourist{
 	trainerbattle_no_intro(TRAINER_TOURIST_103, Tourist103_Outro)
 
 
-		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 
@@ -924,7 +938,7 @@ script Route103ConcordConartist {
 
 		fadeoutbgm (1)
 		fadenewbgm (1)
-		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{
 			playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
@@ -995,7 +1009,7 @@ script ConArtistEgg {
 	fadeoutbgm (1)
 	playse (MUS_OBTAIN_ITEM)
 	msgbox(format("Obtained the Mysterious Egg!"))
-		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 	removeobject (33)
@@ -1011,7 +1025,7 @@ script RiverFerryGuyUp {
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (34, moves(face_player))
 
-	if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4) {
+		if (var(VAR_ROUTE103_WEATHER) > 0) {
 		checkplayergender
 		if(var(VAR_RESULT) == MALE){
 		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lad?"))}
@@ -1061,7 +1075,7 @@ script RiverFerryGuyUp {
 		applymovement (37, moves(walk_in_place_up * 1))
 		waitmovement (0)
 
-		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 
@@ -1092,7 +1106,8 @@ script RiverFerryGuyDown {
 	lockall
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (37, moves(face_player))
-		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4){
+		if (var(VAR_ROUTE103_WEATHER) > 0)
+		{
 		checkplayergender
 		if(var(VAR_RESULT) == MALE){
 		msgbox(format("He-he, it's raining Skitties and Poochyenas, hey lad?"))}
@@ -1139,7 +1154,7 @@ script RiverFerryGuyDown {
 		applymovement (34, moves(walk_in_place_up * 1))
 		waitmovement (0)
 
-		if (var(VAR_ROUTE103_WEATHER) == 1 || var(VAR_ROUTE103_WEATHER) == 2 || var(VAR_ROUTE103_WEATHER) == 3 || var(VAR_ROUTE103_WEATHER) == 4)
+		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
 

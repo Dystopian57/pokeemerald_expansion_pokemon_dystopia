@@ -224,8 +224,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 7,
-      "y": 5,
+      "x": 3,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",
@@ -233,8 +233,8 @@
     },
     {
       "type": "trigger",
-      "x": 6,
-      "y": 4,
+      "x": 5,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",
@@ -243,7 +243,7 @@
     {
       "type": "trigger",
       "x": 8,
-      "y": 4,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",
@@ -251,8 +251,8 @@
     },
     {
       "type": "trigger",
-      "x": 6,
-      "y": 4,
+      "x": 4,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
       "var_value": "2",
@@ -260,8 +260,8 @@
     },
     {
       "type": "trigger",
-      "x": 8,
-      "y": 4,
+      "x": 6,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
       "var_value": "2",
@@ -270,7 +270,7 @@
     {
       "type": "trigger",
       "x": 7,
-      "y": 5,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_OLDALE_PHASE",
       "var_value": "2",

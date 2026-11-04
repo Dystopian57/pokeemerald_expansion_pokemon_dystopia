@@ -4,6 +4,9 @@ Petalburg_Dojo_MapScripts::
 
 `
 
+
+
+
 script PetalburgDojoApproach1 {
     setvar (VAR_PETALBURG_DOJO_POSITION, 1)
     goto (PetalburgDojoIntro)
@@ -112,7 +115,7 @@ script PetalburgDojoIntro {
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_MENACING)
     playse (SE_PIN) 
     applymovement (3, moves(walk_in_place_down, emote_exclamation_mark))
-    waitmovement (3)
+    waitse
     msgbox(format("Oh? I knew you were special when I saw you! My intuition never misses!"))
 
 	setspeaker ([SP_NAME_NORMAN])
@@ -230,10 +233,12 @@ script PetalburgDojoIntro {
             setspeaker ([SP_NAME_NORMAN])
             createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
             msgbox(format("Come with me, {PLAYER}. We will face Sharpy and Camelia in a double battle."))
-            hidefollower
+            closemessage
+            removefieldmugshot
+
 
             repeatdojointrobattle:
-
+            hidefollower
             applymovement (1, moves(walk_left * 2, walk_in_place_right))
 
             applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down * 1, walk_left * 2, walk_in_place_right))
@@ -274,8 +279,9 @@ script PetalburgDojoIntro {
             setvar (VAR_PETALBURG_PHASE, 1)
             setflag (lostdojointromultibattle)
             clearflag (dojonorman)
-			trainerbattle_two_trainers (TRAINER_SHARPYDOJO, Sharpy_MultiOutro, 
-			TRAINER_CAMELIADOJO, Camelia_MultiOutro)
+			trainerbattle_two_trainers (TRAINER_CAMELIADOJO, Camelia_MultiOutro, 
+            TRAINER_SHARPYDOJO, Sharpy_MultiOutro)
+
 
             setvar (VAR_PETALBURG_PHASE, 2)
 
@@ -285,30 +291,48 @@ script PetalburgDojoIntro {
 
             setspeaker ([SP_NAME_NORMAN])
             createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
-            msgbox(format("Now go back to your rooms, and get everything ready. I need to go over a
-            last thing with {PLAYER}"))
+            msgbox(format("Now go back to your rooms, and get everything ready. I need to go over one
+            last thing with {PLAYER}."))
 
             setspeaker ([SP_NAME_SHARPY])
-            createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)  
+            createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)  
             msgbox(format("Gotcha! See you later, {PLAYER}."))
 
-            applymovement (3, moves(walk_left * 2, walk_up * 2))
-            applymovement (2, moves(walk_left * 2, walk_up * 2))
-            opendoor (1, 1)
-            opendoor (7, 1)
+            setflag (dojonorman)
+            applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 2, walk_in_place_down))
+            applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 2, walk_in_place_up))
+
+            applymovement (2, moves(walk_right * 1, walk_up * 1))
+            applymovement (3, moves(walk_fast_up * 3, walk_fast_left * 5, face_up))
+            waitmovement (3)
+
             playse (SE_DOOR)
+            opendoor (7, 1)
+            //waitse
+        
+            playse (SE_DOOR)
+            opendoor (1, 1)
             waitse
+
             applymovement (3, moves(walk_up * 1))
+            waitmovement (3)
             removeobject (3)
+            closedoor (1, 1)
             applymovement (2, moves(walk_up * 1))
-            removeobject (2)
             waitmovement (2)
+            removeobject (2)
+            closedoor (7, 1)
+
             setflag (dojosharpyandcamelia)
 
+            clearflag (dojonorman)
             setspeaker ([SP_NAME_NORMAN])
             createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
             msgbox(format("{PLAYER}... before we set out for Route 104, there's something I need your
             help with."))
+
+            destroyfollowernpc
+            addobject (1)
 
             setspeaker ([SP_NAME_NORMAN])
             createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
@@ -333,8 +357,8 @@ script PetalburgDojoIntro {
                 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
-                msgbox(format("That said... after they lost Oldale Warehouse, I've heard they want to occupy 
-                Devon Lab in Route 104 next."))
+                msgbox(format("That said... after they lost {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY},
+                I hear they want to occupy the {COLOR GREEN}Devon Lab{COLOR DARK_GRAY} in Route 104 next."))
 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
@@ -344,17 +368,19 @@ script PetalburgDojoIntro {
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_MENACING)
                 msgbox(format("To avoid that, I want you
                 to go see the Rebel Leader in Petalburg, and ask him and
-                his Rebels leave Route 104 alone, on my behalf."))
+                his Rebels leave Route 104 alone."))
                 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
                 msgbox(format("He is a... problematic man. But he owes me
-                one, and I know he will do me this favour."))
+                one, and I know he will agree."))
 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
                 msgbox(format("He should be in Petalburg Arcade, the building in front of
                 the dojo.\pDon't delay. We will wait here for you."))
+                setvar (VAR_PETALBURG_PHASE, 2)
+                goto (endofdojointro)
                 
                 }
 
@@ -432,12 +458,16 @@ script Petalburg_DojoNormanIdle {
 
         setspeaker ([SP_NAME_NORMAN])
         createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
-        msgbox(format("Let's practice some more. We need to be prepared for the unexpected"))
+        msgbox(format("Let's practice some more. We need to be prepared for the unexpected."))
         goto (repeatdojointrobattle)
         }
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
+        msgbox(format("You're back, {PLAYER}, and we're glad you are."))
 
-        msgbox(format("You're back, {PLAYER}, and we're glad you are.
-        \pHave you changed your mind about helping us free those Safemon?"))
+        setspeaker ([SP_NAME_NORMAN])
+        createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
+        msgbox(format("Have you changed your mind about helping us free those Safemon?"))
     
         dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will help", "I won't help")
 
@@ -484,10 +514,11 @@ script Petalburg_DojoSharpyIdle {
     setspeaker ([SP_NAME_SHARPY])
     createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)    
     msgbox(format("Don't worry, freeing those Safemon should be cinch-Trapinch for us three!"))}
-
+    removefieldmugshot
     applymovement(2, moves(face_up))
     waitmovement (2)
-    
+
+    release
     }
 
 script Petalburg_DojoCameliaIdle {
@@ -503,16 +534,16 @@ script Petalburg_DojoCameliaIdle {
     	checkplayergender
 		if(var(VAR_RESULT) == MALE){
         msgbox(format("If you are Norman's grandson, then that means your parents are..."))}
-		if(var(VAR_RESULT) == MALE){
+		if(var(VAR_RESULT) == FEMALE){
         msgbox(format("If you are Norman's granddaugther, then that means your parents are..."))}
 
     setspeaker ([SP_NAME_CAMELIA])
     createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)  
     msgbox(format("Well, I understand if you prefer to stay away from conflict."))}
-
+    removefieldmugshot
     applymovement(3, moves(face_up))
     waitmovement (3)
-    
+    release
     }
 
 script PetalburgDojoNoRoomAccess {
@@ -557,7 +588,7 @@ script Petalburg_DojoNormanBeforeYouGo {
         msgbox(format("Good job on that battle. You're a good trainer. Just like your mother."))}
 
 
-    setvar (VAR_PETALBURG_PHASE, 2)
+    setvar (VAR_PETALBURG_PHASE, 3)
     setflag (rebelsunblockarcade)
     removefieldmugshot
     release

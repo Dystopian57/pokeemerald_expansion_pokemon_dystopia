@@ -1,0 +1,73 @@
+raw `
+JimmyEggStore_MapScripts::
+	.byte 0
+
+`
+
+script JimmyMcGligarSewersIdle {
+		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && !flag(conartistaskeddistract)) //this means Player never interacted
+		//with Jimmy
+		{
+
+        msgbox(format("Welcome to Jimmy's Egg Store - where happiness hatches!
+        \pWhat can I do for you?"))
+
+        eggsell:
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Buy an egg", "Explanation")
+
+		if (var(VAR_RESULT) == 0) {
+
+
+        giveegg (SPECIES_TAMARAKKU)
+        playse (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained the Mysterious Egg!"))
+
+        //Jimmy Eggs:
+        //Tamarakku (cracked egg)
+        //Exeggute (egg bundle)
+        //Teddiursa (moon egg)
+        //Helioptile (sun egg)
+        //Fomantis (flower egg)
+        //Happiny (pink egg)
+
+
+        }
+
+		if (var(VAR_RESULT) == 1) {
+        msgbox(format("Why, I think it's rather self-explanatory - but I'm happy to tell you a bit more.
+        \pThese days, only Devon Breeders are legally allowed to breed Pokémon, and handle their offspring.
+        \pAnyone else who gets caught
+        doing it... it's a heavy fine in the best of cases, and Dewford Prison in the worst.
+        \pDevon Co. only want Safemon inhabiting routes, and regular Pokémon
+        reproduction goes against that goal.
+        \pBut you know Pokémon - and hell, humans too. They're gonna screw no matter what.
+        \pWhen they do, keeping the egg is just asking for trouble. That's where I come in!
+        \pI take these eggs off people, and give them a new home. Simple as that.
+        \pIllegal? Maybe. Moral? Probably. Profitable? Very!
+        \pSpeaking of profit, I ain't running a charity here, so...
+        \pWanna buy an egg?"))
+        goto (eggsell)
+        }
+
+
+        }
+
+		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && flag(conartistaskeddistract)) //this means Jimmy asked for help
+		//but player never helped him
+		{}
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 1 && flag(conartistescaped) && flag(!betrayedconcordconartist)) //this means Player helped Jimmy but cleared Warehouse
+		//before getting reward from Jimmy, so he gives Tamarakku egg: "I never thanked you!"
+		{}
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(helpedconcordconartist)) //this means Player helped Jimmy and obtained egg
+   		//Jimmy has Player's number so he can call them
+		{}
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(betrayedconcordconartist)) //this means Player betrayed Jimmy
+		{}	
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 3){}	//Player helped Jimmy and even bought Exeggcute egg
+
+		//regardless of result, setvar (VAR_JIMMYQUESTPROGRESS, 4)
+}

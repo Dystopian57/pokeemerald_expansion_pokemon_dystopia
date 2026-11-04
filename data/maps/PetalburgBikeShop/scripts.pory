@@ -1,7 +1,10 @@
 mapscripts PetalburgBikeShop_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: DayNightMusicHardwareWorkshop
     MAP_SCRIPT_ON_LOAD: DayNightMusicHardwareWorkshop
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicHardwareWorkshop}
+    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicHardwareWorkshop
+    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
+    MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
+	}
 	
 
 script DayNightMusicHardwareWorkshop {
@@ -20,6 +23,32 @@ script DayNightMusicHardwareWorkshop {
 		goto (enddaynighthardwareworkshop)}
 
 enddaynighthardwareworkshop:
+}
+
+script PetalburgHardwareStoreCustomer {
+    lock
+    applymovement (3, moves(face_player))
+    msgbox(format("During the war, there used to be Grenade Balls that dealt damage to Pokémon,
+	but Devon has removed all of those from circulation.
+	\pIt's one of the few good things Devon has done. Those were brutal, even for Rebel standards."))
+	applymovement (3, moves(face_up))
+	waitmovement (3)
+    releaseall
+    }
+
+
+
+script HardwareStoreClerk {
+	
+
+		if (!flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
+		//never met scavengers
+
+		if (flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
+		//lost against scavenger F
+		if (flag (foughtwarehousescavenger2) && flag(scavengergivesobjectspotter)) {}
+		//how's that object spotter treating you.
+
 }
 
 //Sidney's car = devon speeder

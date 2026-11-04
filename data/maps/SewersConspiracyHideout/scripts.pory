@@ -1,0 +1,22 @@
+raw `
+SewersConspiracyHideout_MapScripts::
+	.byte 0
+
+`
+
+script ConspiracyHideoutTheoristEntrance {
+    lock
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (3, moves(face_player))
+    msgbox(format("Everything Devon does is part of their big project to control Hoenn's economy.
+    \pAnd it all starts with the Safemon project.
+    \pSafemon are often weaker than Pokémon, so they need healing more often in Poké Centers,
+    And healing now comes with a fee!
+    \pMost Safemon are also too weak to carry their trainers,
+    which pushes people to buy Devon vehicles.\pAnd where do you drive those vehicles? In Devon roads,
+    which have tolls!. Which also come with a fee!
+    \pDon't fall for it. Come live with us, and enjoy freedom!"))
+	applymovement (3, moves(face_left))
+	waitmovement (3)
+    releaseall
+    }

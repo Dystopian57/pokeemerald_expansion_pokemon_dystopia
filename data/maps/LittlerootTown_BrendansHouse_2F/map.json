@@ -236,7 +236,7 @@
     {
       "type": "trigger",
       "x": 2,
-      "y": 5,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
@@ -244,8 +244,8 @@
     },
     {
       "type": "trigger",
-      "x": 3,
-      "y": 6,
+      "x": 0,
+      "y": -3,
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
@@ -254,7 +254,7 @@
     {
       "type": "trigger",
       "x": 2,
-      "y": 7,
+      "y": -3,
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
@@ -262,8 +262,8 @@
     },
     {
       "type": "trigger",
-      "x": 7,
-      "y": 2,
+      "x": 5,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_MAUSOLEUM_HEXGIRL",
       "var_value": "3",
@@ -271,8 +271,8 @@
     },
     {
       "type": "trigger",
-      "x": 7,
-      "y": 2,
+      "x": 4,
+      "y": -2,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_PHASE",
       "var_value": "6",

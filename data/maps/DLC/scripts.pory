@@ -5,19 +5,18 @@ raw `
 
 
 mapscripts DLC_MapScripts {
-    MAP_SCRIPT_ON_LOAD: DLC_TVOn
-    MAP_SCRIPT_ON_LOAD: LessonMusic
-    MAP_SCRIPT_ON_TRANSITION: LessonMusic}
+    MAP_SCRIPT_ON_LOAD: DLC_Mapscriptbundle
+    MAP_SCRIPT_ON_TRANSITION: DLC_Mapscriptbundle}
 
-script DLC_TVOn {
+script DLC_Mapscriptbundle {
 	special (TurnOnTVScreen)
-	}
 
-script LessonMusic {
   	if (var(VAR_OLDALE_PHASE) == 0)
     {playbgm (MUS_SCHOOL, TRUE)}
-     else {release}  
-}
+     else {release} 
+
+	}
+
 
 
 script OldaleDLC_GoToSeatForTherapyLeft {
@@ -160,6 +159,7 @@ script OldaleTown_DLC_TherapyCutscene{
     applymovement (1, moves (walk_fast_left * 1, walk_fast_down * 4))
     playse (SE_FLEE)
     msgbox(format("AAAAAHH...!!"))
+    closemessage
     applymovement (4, moves (face_left, face_down))
     applymovement (5, moves (face_right, face_down))
     applymovement (7, moves (face_left, face_down))
@@ -192,13 +192,12 @@ script OldaleTown_DLC_TherapyCutscene{
     closemessage
     removefieldmugshot
     applymovement (2, moves (walk_right * 1, walk_down *2))
-    waitmovement (2)
-    removeobject (2)
-    playse (SE_DOOR)
     applymovement (3, moves (walk_right * 2, walk_down *2))
     waitmovement (3)
+    removeobject (2)
     removeobject (3)
     playse (SE_DOOR)
+
     waitse
 
 

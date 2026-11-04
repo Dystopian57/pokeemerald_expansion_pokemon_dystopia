@@ -1,7 +1,31 @@
 raw `
-LittlerootMausoleum_MapScripts::
-	.byte 0
+
 `
+
+mapscripts LittlerootMausoleum_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: MausoleumMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: MausoleumMapscriptBundle
+	}
+
+script MausoleumMapscriptBundle {
+	
+
+	if (var(VAR_MAUSOLEUM_HEXGIRL) == 3)
+	{
+
+	    if (!flag (Samanthagotsnacks))
+    {   setvar(VAR_MAUSOLEUM_HEXGIRL, 2)
+		setflag (Samanthalamentsplayerdefeat)}
+
+	    else
+    {   setvar(VAR_MAUSOLEUM_HEXGIRL, 4)}
+
+	    clearflag (Samanthaleavesmausoleum)
+        addobject (1)
+    }
+
+}
+
 
 script MausoleumTM {
     lock

@@ -4,9 +4,9 @@ raw `
 `
 
 mapscripts PokeInnRoom1_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: DayNightNPCInn
+    MAP_SCRIPT_ON_TRANSITION: PokeInnRoom1MapScriptBundle
     MAP_SCRIPT_ON_TRANSITION: LoadTradedFightingTypeOW
-    MAP_SCRIPT_ON_LOAD: DayNightNPCInn
+    MAP_SCRIPT_ON_LOAD: PokeInnRoom1MapScriptBundle
     MAP_SCRIPT_ON_LOAD: LoadTradedFightingTypeOW
     MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
     MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
@@ -18,7 +18,10 @@ mapscripts PokeInnRoom1_MapScripts {
 #define GOTSTARTER3 
 
 
-script LoadTradedFightingTypeOW {
+script PokeInnRoom1MapScriptBundle {
+
+    //trade choice object pop
+
     if (var(VAR_FIGHTINGTRADECHOICE) == 1){
         addobject (11)
         setobjectxy (11, 5, 11)
@@ -31,12 +34,7 @@ script LoadTradedFightingTypeOW {
         setobjectxy (12, 5, 11)
         applymovement (12, moves(face_left))
         //setobjectxyperm (12, 5, 11)
-    }
-    release
-}
 
-
-script DayNightNPCInn {
 
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
@@ -60,7 +58,35 @@ script DayNightNPCInn {
         goto (endofdaynightnpcinn)}
 
 endofdaynightnpcinn:
+
+
+    }
+
+//DayNightLight
+
+
+goto (DayNightAmbientLight)
+
+
 	release
+}
+
+
+script LoadTradedFightingTypeOW {
+    if (var(VAR_FIGHTINGTRADECHOICE) == 1){
+        addobject (11)
+        setobjectxy (11, 5, 11)
+        applymovement (11, moves(face_left))
+        //setobjectxyperm (11, 5, 11)
+    }
+
+    if (var(VAR_FIGHTINGTRADECHOICE) == 2){
+        addobject (12)
+        setobjectxy (12, 5, 11)
+        applymovement (12, moves(face_left))
+        //setobjectxyperm (12, 5, 11)
+    }
+    release
 }
 
 script OldaleUsedInnBin {

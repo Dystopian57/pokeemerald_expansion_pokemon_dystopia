@@ -42,7 +42,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCAVENGERF",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 2,
       "y": 8,
       "elevation": 0,
@@ -51,7 +51,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgDevonCenterTableNPC1",
       "flag": "0"
     },
     {
@@ -64,15 +64,15 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgDevonCenterPCTechnician",
+      "script": "PetalburgDevonCenterPCTechnicianRepairing",
       "flag": "rebelswonpetalburgriot"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BARD",
-      "x": 11,
-      "y": 2,
+      "x": 3,
+      "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -118,6 +118,85 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgDevonCenterFakeMedic",
       "flag": "petalburgfakemedic"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LOADTAD)",
+      "x": 13,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TECHNICIANF",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgDevonCenterPCTechnician",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_FEEBAS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FEEBAS)",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ScamFeebasfollowchat",
+      "flag": "scamfeebas"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVONGRUNTM",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "healscammerarrestdevons"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVONGRUNTF",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "healscammerarrestdevons"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "healscammerarrestdevons"
     }
   ],
   "warp_events": [
@@ -141,13 +220,345 @@
       "elevation": 4,
       "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_2F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "0",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var_value": "4",
+      "script": "PetalburgDevonCenterHideCivilians"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceRight"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceRight"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "3",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "3",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "3",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "3",
+      "script": "PlayerHealScamForceUp"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "3",
+      "script": "PlayerHealScamForceRight"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "4",
+      "script": "DevonGuardsTakeHealScammer"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "4",
+      "script": "DevonGuardsTakeHealScammer"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "4",
+      "script": "DevonGuardsTakeHealScammer"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "3",
+      "script": "PlayerHealScamForceDown"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "2",
+      "script": "PlayerHealScamForceDown"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_HEALING_SCAM",
+      "var_value": "1",
+      "script": "PlayerRealizesHealScam"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 5,
+      "x": 4,
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -168,6 +579,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PetalburgDevonCenterMart"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PetalburgDevonCenterMart"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PetalburgDevonCenterHideTalkversion"
     }
   ]
 }

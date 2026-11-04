@@ -1490,1435 +1490,1366 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm sorry to have taken your time.$"
 
 PetalburgCity_MapScripts::
-# 752 "data/maps/PetalburgCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, DayNightMusicPetalburgCity
 # 753 "data/maps/PetalburgCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, DayNightMusicPetalburgCity
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCityMapscriptBundle
 # 754 "data/maps/PetalburgCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgRiotSpawn
+	map_script MAP_SCRIPT_ON_LOAD, PetalburgCityMapscriptBundle
 # 755 "data/maps/PetalburgCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, PetalburgRiotSpawn
-# 756 "data/maps/PetalburgCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, DayNightMusicPetalburgCity
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PetalburgCityMapscriptBundle
 	.byte 0
 
 
-DayNightMusicPetalburgCity::
-# 760 "data/maps/PetalburgCity/scripts.pory"
-	gettimeofday
-# 761 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_0x8000, TIME_MORNING
-	goto_if_eq DayNightMusicPetalburgCity_2
-DayNightMusicPetalburgCity_1:
-# 764 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_0x8000, TIME_DAY
-	goto_if_eq DayNightMusicPetalburgCity_5
-DayNightMusicPetalburgCity_4:
-# 767 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_0x8000, TIME_EVENING
-	goto_if_eq DayNightMusicPetalburgCity_8
-DayNightMusicPetalburgCity_7:
-# 770 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_0x8000, TIME_NIGHT
-	goto_if_eq DayNightMusicPetalburgCity_11
-DayNightMusicPetalburgCity_10:
-# 774 "data/maps/PetalburgCity/scripts.pory"
-enddaynightpetalburgcity:
-	return
-
-DayNightMusicPetalburgCity_2:
-# 762 "data/maps/PetalburgCity/scripts.pory"
-	goto enddaynightpetalburgcity
-	goto DayNightMusicPetalburgCity_1
-
-DayNightMusicPetalburgCity_5:
-# 765 "data/maps/PetalburgCity/scripts.pory"
-	goto enddaynightpetalburgcity
-	goto DayNightMusicPetalburgCity_4
-
-DayNightMusicPetalburgCity_8:
-# 768 "data/maps/PetalburgCity/scripts.pory"
-	goto enddaynightpetalburgcity
-	goto DayNightMusicPetalburgCity_7
-
-DayNightMusicPetalburgCity_11:
-# 771 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_PANULACAVE, TRUE
-# 772 "data/maps/PetalburgCity/scripts.pory"
-	goto enddaynightpetalburgcity
-	goto DayNightMusicPetalburgCity_10
-
-
 PetalburgRiotSpawn::
-# 779 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_unset petalburgriotstopped, PetalburgRiotSpawn_2
-PetalburgRiotSpawn_1:
-# 784 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set petalburgriotendedforgood, PetalburgRiotSpawn_5
-PetalburgRiotSpawn_4:
-# 787 "data/maps/PetalburgCity/scripts.pory"
-	callnative UpdateFollowingPokemon
+# 766 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set petalburgriotendedforgood, PetalburgRiotSpawn_1
 	return
 
-PetalburgRiotSpawn_2:
-# 780 "data/maps/PetalburgCity/scripts.pory"
-	setvar VAR_PETALBURG_RIOT_POSITION, 0
-# 781 "data/maps/PetalburgCity/scripts.pory"
-	setflag petalburgriothidecivilians
-# 782 "data/maps/PetalburgCity/scripts.pory"
-	clearflag petalburgriotstopped
-	goto PetalburgRiotSpawn_1
-
-PetalburgRiotSpawn_5:
-# 785 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotSpawn_1:
+# 768 "data/maps/PetalburgCity/scripts.pory"
 	setflag petalburgriotstopped
-	goto PetalburgRiotSpawn_4
+	return
+
+
+PetalburgCityMapscriptBundle::
+# 775 "data/maps/PetalburgCity/scripts.pory"
+	gettimeofday
+# 776 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_0x8000, TIME_MORNING
+	goto_if_eq PetalburgCityMapscriptBundle_2
+PetalburgCityMapscriptBundle_1:
+# 779 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_0x8000, TIME_DAY
+	goto_if_eq PetalburgCityMapscriptBundle_5
+PetalburgCityMapscriptBundle_4:
+# 782 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_0x8000, TIME_EVENING
+	goto_if_eq PetalburgCityMapscriptBundle_8
+PetalburgCityMapscriptBundle_7:
+# 785 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_0x8000, TIME_NIGHT
+	goto_if_eq PetalburgCityMapscriptBundle_11
+PetalburgCityMapscriptBundle_10:
+# 788 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_set petalburgriotendedforgood, PetalburgCityMapscriptBundle_13
+	return
+
+PetalburgCityMapscriptBundle_2:
+# 777 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_TEAMGRDUEL, TRUE
+	goto PetalburgCityMapscriptBundle_1
+
+PetalburgCityMapscriptBundle_5:
+# 780 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_TEAMGRDUEL, TRUE
+	goto PetalburgCityMapscriptBundle_4
+
+PetalburgCityMapscriptBundle_8:
+# 783 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_TEAMGRDUEL, TRUE
+	goto PetalburgCityMapscriptBundle_7
+
+PetalburgCityMapscriptBundle_11:
+# 786 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_PANULACAVE, TRUE
+	goto PetalburgCityMapscriptBundle_10
+
+PetalburgCityMapscriptBundle_13:
+# 790 "data/maps/PetalburgCity/scripts.pory"
+	setflag petalburgriotstopped
+	return
 
 
 PetalburgRiotRebelAdminStart::
-# 798 "data/maps/PetalburgCity/scripts.pory"
+# 805 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_PETALBURG_RIOT_POSITION, 1
 	return
 
 
 PetalburgRiotDevonAdminStart::
-# 802 "data/maps/PetalburgCity/scripts.pory"
+# 809 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_PETALBURG_RIOT_POSITION, 2
 	return
 
 
 PetalburgRiotDevonAdminStartLeave::
-# 806 "data/maps/PetalburgCity/scripts.pory"
+# 813 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_PETALBURG_RIOT_POSITION, 0
 	return
 
 
 PetalburgRiotRebelAdminStartLeave::
-# 810 "data/maps/PetalburgCity/scripts.pory"
+# 817 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_PETALBURG_RIOT_POSITION, 0
 	return
 
 
 PetalburgRiotDontblocktheway::
-# 815 "data/maps/PetalburgCity/scripts.pory"
-	lock
-# 816 "data/maps/PetalburgCity/scripts.pory"
-	random 2
-# 817 "data/maps/PetalburgCity/scripts.pory"
-	copyvar VAR_TEMP_1, VAR_RESULT
-# 819 "data/maps/PetalburgCity/scripts.pory"
-	switch VAR_RESULT
-# 820 "data/maps/PetalburgCity/scripts.pory"
-	case 0, PetalburgRiotDontblocktheway_2
-# 821 "data/maps/PetalburgCity/scripts.pory"
-	case 1, PetalburgRiotDontblocktheway_3
+# 823 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset petalburgriotstopped, PetalburgRiotDontblocktheway_1
 	return
 
-PetalburgRiotDontblocktheway_2:
-# 820 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotDontblocktheway_1:
+# 825 "data/maps/PetalburgCity/scripts.pory"
+	random 2
+# 826 "data/maps/PetalburgCity/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 828 "data/maps/PetalburgCity/scripts.pory"
+	switch VAR_RESULT
+# 829 "data/maps/PetalburgCity/scripts.pory"
+	case 0, PetalburgRiotDontblocktheway_4
+# 830 "data/maps/PetalburgCity/scripts.pory"
+	case 1, PetalburgRiotDontblocktheway_5
+	return
+
+PetalburgRiotDontblocktheway_4:
+# 829 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgRiotDontblockthewayRebel
 	return
 
-PetalburgRiotDontblocktheway_3:
-# 821 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotDontblocktheway_5:
+# 830 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgRiotDontblockthewayDevon
 	return
 
 
 PetalburgRiotDontblockthewayRebel::
-# 827 "data/maps/PetalburgCity/scripts.pory"
+# 837 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 828 "data/maps/PetalburgCity/scripts.pory"
+# 838 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 829 "data/maps/PetalburgCity/scripts.pory"
+# 839 "data/maps/PetalburgCity/scripts.pory"
 	playse SE_PIN
-# 830 "data/maps/PetalburgCity/scripts.pory"
+# 840 "data/maps/PetalburgCity/scripts.pory"
 	applymovement 41, PetalburgRiotDontblockthewayRebel_Movement_0
-# 831 "data/maps/PetalburgCity/scripts.pory"
+# 841 "data/maps/PetalburgCity/scripts.pory"
 	waitse
-# 832 "data/maps/PetalburgCity/scripts.pory"
+# 842 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotDontblockthewayRebel_Text_0
-# 833 "data/maps/PetalburgCity/scripts.pory"
+# 843 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 834 "data/maps/PetalburgCity/scripts.pory"
+# 844 "data/maps/PetalburgCity/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotDontblockthewayRebel_Movement_1
-# 835 "data/maps/PetalburgCity/scripts.pory"
+# 845 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 836 "data/maps/PetalburgCity/scripts.pory"
+# 846 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotDontblockthewayDevon::
-# 840 "data/maps/PetalburgCity/scripts.pory"
+# 850 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 841 "data/maps/PetalburgCity/scripts.pory"
+# 851 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 842 "data/maps/PetalburgCity/scripts.pory"
+# 852 "data/maps/PetalburgCity/scripts.pory"
 	playse SE_PIN
-# 843 "data/maps/PetalburgCity/scripts.pory"
+# 853 "data/maps/PetalburgCity/scripts.pory"
 	applymovement 40, PetalburgRiotDontblockthewayRebel_Movement_0
-# 844 "data/maps/PetalburgCity/scripts.pory"
+# 854 "data/maps/PetalburgCity/scripts.pory"
 	waitse
-# 845 "data/maps/PetalburgCity/scripts.pory"
+# 855 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotDontblockthewayDevon_Text_0
-# 846 "data/maps/PetalburgCity/scripts.pory"
+# 856 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 847 "data/maps/PetalburgCity/scripts.pory"
+# 857 "data/maps/PetalburgCity/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotDontblockthewayRebel_Movement_1
-# 848 "data/maps/PetalburgCity/scripts.pory"
+# 858 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 849 "data/maps/PetalburgCity/scripts.pory"
+# 859 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotRebelLead::
-# 853 "data/maps/PetalburgCity/scripts.pory"
+# 863 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 854 "data/maps/PetalburgCity/scripts.pory"
+# 864 "data/maps/PetalburgCity/scripts.pory"
 	applymovement 46, PetalburgRiotRebelLead_Movement_0
-# 855 "data/maps/PetalburgCity/scripts.pory"
+# 865 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 46
-# 856 "data/maps/PetalburgCity/scripts.pory"
+# 866 "data/maps/PetalburgCity/scripts.pory"
 	playmoncry SPECIES_GLIGAR, CRY_MODE_NORMAL
-# 857 "data/maps/PetalburgCity/scripts.pory"
+# 867 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotRebelLead_Text_0
-# 858 "data/maps/PetalburgCity/scripts.pory"
+# 868 "data/maps/PetalburgCity/scripts.pory"
 	applymovement 46, PetalburgRiotRebelLead_Movement_1
-# 859 "data/maps/PetalburgCity/scripts.pory"
+# 869 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 46
-# 860 "data/maps/PetalburgCity/scripts.pory"
+# 870 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotDevonLead::
-# 864 "data/maps/PetalburgCity/scripts.pory"
+# 874 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 865 "data/maps/PetalburgCity/scripts.pory"
+# 875 "data/maps/PetalburgCity/scripts.pory"
 	applymovement 45, PetalburgRiotRebelLead_Movement_0
-# 866 "data/maps/PetalburgCity/scripts.pory"
+# 876 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 45
-# 867 "data/maps/PetalburgCity/scripts.pory"
+# 877 "data/maps/PetalburgCity/scripts.pory"
 	playmoncry SPECIES_ARYSTAL, CRY_MODE_NORMAL
-# 868 "data/maps/PetalburgCity/scripts.pory"
+# 878 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotDevonLead_Text_0
-# 869 "data/maps/PetalburgCity/scripts.pory"
+# 879 "data/maps/PetalburgCity/scripts.pory"
 	applymovement 45, PetalburgRiotDevonLead_Movement_0
-# 870 "data/maps/PetalburgCity/scripts.pory"
+# 880 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 45
-# 871 "data/maps/PetalburgCity/scripts.pory"
+# 881 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotCutscene::
-# 877 "data/maps/PetalburgCity/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 878 "data/maps/PetalburgCity/scripts.pory"
-	fadeoutbgm 1
-# 879 "data/maps/PetalburgCity/scripts.pory"
-	fadeinbgm 1
-# 880 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_BOSSDRILLDOZER, TRUE
-# 883 "data/maps/PetalburgCity/scripts.pory"
-	special SpawnCameraObject
-# 884 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_PETALBURG_RIOT_POSITION, 1
-	goto_if_eq PetalburgRiotCutscene_2
-PetalburgRiotCutscene_1:
 # 887 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_PETALBURG_RIOT_POSITION, 2
-	goto_if_eq PetalburgRiotCutscene_5
-PetalburgRiotCutscene_4:
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 888 "data/maps/PetalburgCity/scripts.pory"
+	fadeoutbgm 1
+# 889 "data/maps/PetalburgCity/scripts.pory"
+	fadeinbgm 1
 # 890 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 891 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgRiotCutscene_Movement_2
-# 892 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 895 "data/maps/PetalburgCity/scripts.pory"
-	special RemoveCameraObject
-# 897 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_3
-# 898 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_BOSSDRILLDOZER, TRUE
+# 907 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_0
+# 908 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotCutscene_Text_0
-# 900 "data/maps/PetalburgCity/scripts.pory"
-	closemessage
-# 902 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_APPLAUSE
-# 903 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_1
-# 905 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_4
-# 906 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_2
-# 909 "data/maps/PetalburgCity/scripts.pory"
+# 910 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
 # 912 "data/maps/PetalburgCity/scripts.pory"
 	playse SE_APPLAUSE
 # 913 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_3
+	msgbox PetalburgRiotCutscene_Text_1
 # 915 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_3
+	applymovement 40, PetalburgRiotCutscene_Movement_1
 # 916 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_4
-# 917 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_2
+# 919 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 920 "data/maps/PetalburgCity/scripts.pory"
+# 922 "data/maps/PetalburgCity/scripts.pory"
 	playse SE_APPLAUSE
-# 921 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_5
 # 923 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_6
-# 924 "data/maps/PetalburgCity/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, PetalburgRiotCutscene_Text_7, PetalburgRiotCutscene_Text_8, PetalburgRiotCutscene_Text_9, PetalburgRiotCutscene_Text_10
+	msgbox PetalburgRiotCutscene_Text_3
+# 925 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_0
 # 926 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_4
+# 927 "data/maps/PetalburgCity/scripts.pory"
+	closemessage
+# 930 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_APPLAUSE
+# 931 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_5
+# 933 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_6
+# 934 "data/maps/PetalburgCity/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, PetalburgRiotCutscene_Text_7, PetalburgRiotCutscene_Text_8, PetalburgRiotCutscene_Text_9, PetalburgRiotCutscene_Text_10
+# 936 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq PetalburgRiotCutscene_8
-PetalburgRiotCutscene_7:
-# 1025 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_eq PetalburgRiotCutscene_2
+PetalburgRiotCutscene_1:
+# 1037 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_RESULT, 1
+	goto_if_eq PetalburgRiotCutscene_5
+PetalburgRiotCutscene_4:
+# 1137 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_RESULT, 2
 	goto_if_eq PetalburgRiotCutscene_11
 PetalburgRiotCutscene_10:
-# 1119 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_RESULT, 2
-	goto_if_eq PetalburgRiotCutscene_17
-PetalburgRiotCutscene_16:
-# 1278 "data/maps/PetalburgCity/scripts.pory"
+# 1306 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_RESULT, 3
-	goto_if_eq PetalburgRiotCutscene_26
-PetalburgRiotCutscene_25:
-# 1285 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_eq PetalburgRiotCutscene_20
+PetalburgRiotCutscene_19:
+# 1313 "data/maps/PetalburgCity/scripts.pory"
 endofpetalburgriotscript:
-# 1287 "data/maps/PetalburgCity/scripts.pory"
+# 1315 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 1288 "data/maps/PetalburgCity/scripts.pory"
+# 1316 "data/maps/PetalburgCity/scripts.pory"
 	fadeoutbgm 1
-# 1289 "data/maps/PetalburgCity/scripts.pory"
+# 1317 "data/maps/PetalburgCity/scripts.pory"
 	fadeinbgm 1
-# 1291 "data/maps/PetalburgCity/scripts.pory"
+# 1319 "data/maps/PetalburgCity/scripts.pory"
 	gettimeofday
-# 1292 "data/maps/PetalburgCity/scripts.pory"
+# 1320 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_MORNING
-	goto_if_eq PetalburgRiotCutscene_38
-PetalburgRiotCutscene_37:
-# 1295 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_eq PetalburgRiotCutscene_32
+PetalburgRiotCutscene_31:
+# 1323 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_DAY
+	goto_if_eq PetalburgRiotCutscene_41
+PetalburgRiotCutscene_40:
+# 1326 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_0x8000, TIME_EVENING
 	goto_if_eq PetalburgRiotCutscene_47
 PetalburgRiotCutscene_46:
-# 1298 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_0x8000, TIME_EVENING
+# 1329 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_0x8000, TIME_NIGHT
 	goto_if_eq PetalburgRiotCutscene_53
 PetalburgRiotCutscene_52:
-# 1301 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_0x8000, TIME_NIGHT
-	goto_if_eq PetalburgRiotCutscene_59
-PetalburgRiotCutscene_58:
-# 1304 "data/maps/PetalburgCity/scripts.pory"
+# 1332 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 PetalburgRiotCutscene_2:
-# 885 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgRiotCutscene_Movement_0
+# 937 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_PETALBURG_RIOT_POSITION, 1
+	goto_if_eq PetalburgRiotCutscene_8
+PetalburgRiotCutscene_7:
+# 943 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_PETALBURG_RIOT_POSITION, 2
+	goto_if_eq PetalburgRiotCutscene_17
+PetalburgRiotCutscene_16:
+# 948 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotRebelLead_Movement_1
+# 949 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 950 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 951 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_4
+# 952 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 41
+# 953 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_11
+# 954 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotRebelLead_Movement_1
+# 955 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 41
+# 956 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotCutscene_Movement_1
+# 957 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 40
+# 958 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_12
+# 960 "data/maps/PetalburgCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_DAWSON, Dawson_Outro
+# 963 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotCutscene_Movement_1
+# 964 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 40
+# 968 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_13
+# 970 "data/maps/PetalburgCity/scripts.pory"
+	closemessage
+# 972 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_FLEE
+# 973 "data/maps/PetalburgCity/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 975 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 36
+# 976 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 40
+# 977 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 42
+# 978 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 45
+# 979 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 48
+# 980 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 49
+# 982 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 983 "data/maps/PetalburgCity/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 985 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_4
+# 986 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_5
+# 987 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 988 "data/maps/PetalburgCity/scripts.pory"
+	checkplayergender
+# 989 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq PetalburgRiotCutscene_29
+PetalburgRiotCutscene_28:
+# 991 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_RESULT, FEMALE
+	goto_if_eq PetalburgRiotCutscene_38
+PetalburgRiotCutscene_37:
+# 993 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_16
+# 995 "data/maps/PetalburgCity/scripts.pory"
+	closemessage
+# 997 "data/maps/PetalburgCity/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 999 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_M_STRENGTH
+# 1000 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1001 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_M_STRENGTH
+# 1002 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1003 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_M_BRICK_BREAK
+# 1004 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1008 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 37
+# 1009 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 38
+# 1010 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 39
+# 1011 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 41
+# 1012 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 43
+# 1013 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 50
+# 1014 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 46
+# 1015 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 47
+# 1018 "data/maps/PetalburgCity/scripts.pory"
+	addobject 27
+# 1019 "data/maps/PetalburgCity/scripts.pory"
+	addobject 9
+# 1020 "data/maps/PetalburgCity/scripts.pory"
+	addobject 10
+# 1021 "data/maps/PetalburgCity/scripts.pory"
+	addobject 11
+# 1022 "data/maps/PetalburgCity/scripts.pory"
+	addobject 15
+# 1023 "data/maps/PetalburgCity/scripts.pory"
+	addobject 51
+# 1025 "data/maps/PetalburgCity/scripts.pory"
+	clearflag rebelswonpetalburgriot
+# 1026 "data/maps/PetalburgCity/scripts.pory"
+	setflag petalburgriotstopped
+# 1028 "data/maps/PetalburgCity/scripts.pory"
+	clearflag petalburgriothidecivilians
+# 1030 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1031 "data/maps/PetalburgCity/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 1032 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_17
+# 1033 "data/maps/PetalburgCity/scripts.pory"
+	setvar VAR_PETALBURG_RIOT_POSITION, 0
+# 1034 "data/maps/PetalburgCity/scripts.pory"
+	goto endofpetalburgriotscript
 	goto PetalburgRiotCutscene_1
 
 PetalburgRiotCutscene_5:
-# 888 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgRiotCutscene_Movement_1
-	goto PetalburgRiotCutscene_4
-
-PetalburgRiotCutscene_8:
-# 927 "data/maps/PetalburgCity/scripts.pory"
+# 1038 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_PETALBURG_RIOT_POSITION, 1
 	goto_if_eq PetalburgRiotCutscene_14
 PetalburgRiotCutscene_13:
-# 933 "data/maps/PetalburgCity/scripts.pory"
+# 1044 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_PETALBURG_RIOT_POSITION, 2
-	goto_if_eq PetalburgRiotCutscene_23
-PetalburgRiotCutscene_22:
-# 938 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotRebelLead_Movement_1
-# 939 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_eq PetalburgRiotCutscene_26
+PetalburgRiotCutscene_25:
+# 1048 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement OBJ_EVENT_ID_FOLLOWER
-# 940 "data/maps/PetalburgCity/scripts.pory"
+# 1049 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 941 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_7
-# 942 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 41
-# 943 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_11
-# 944 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotRebelLead_Movement_1
-# 945 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 41
-# 946 "data/maps/PetalburgCity/scripts.pory"
+# 1050 "data/maps/PetalburgCity/scripts.pory"
 	applymovement 40, PetalburgRiotCutscene_Movement_4
-# 947 "data/maps/PetalburgCity/scripts.pory"
+# 1051 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 40
-# 948 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_12
-# 950 "data/maps/PetalburgCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_DAWSON, Dawson_Outro
-# 953 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_4
-# 954 "data/maps/PetalburgCity/scripts.pory"
+# 1052 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_18
+# 1053 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotDevonLead_Movement_0
+# 1054 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 40
-# 958 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_13
-# 960 "data/maps/PetalburgCity/scripts.pory"
+# 1055 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_0
+# 1056 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 41
+# 1057 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_19
+# 1059 "data/maps/PetalburgCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_GEORGIA, Georgia_Outro
+# 1061 "data/maps/PetalburgCity/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1062 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_0
+# 1063 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 41
+# 1067 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_20
+# 1068 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 962 "data/maps/PetalburgCity/scripts.pory"
+# 1069 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_LEDGE
+# 1070 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_8
+# 1071 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 41
+# 1073 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_21
+# 1075 "data/maps/PetalburgCity/scripts.pory"
 	playse SE_FLEE
-# 963 "data/maps/PetalburgCity/scripts.pory"
+# 1076 "data/maps/PetalburgCity/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 965 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 36
-# 966 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 40
-# 967 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 42
-# 968 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 45
-# 969 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 48
-# 970 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 49
-# 972 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 973 "data/maps/PetalburgCity/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 975 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_7
-# 976 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_8
-# 977 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 978 "data/maps/PetalburgCity/scripts.pory"
-	checkplayergender
-# 979 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_RESULT, MALE
-	goto_if_eq PetalburgRiotCutscene_35
-PetalburgRiotCutscene_34:
-# 981 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_RESULT, FEMALE
-	goto_if_eq PetalburgRiotCutscene_44
-PetalburgRiotCutscene_43:
-# 983 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_16
-# 985 "data/maps/PetalburgCity/scripts.pory"
-	closemessage
-# 987 "data/maps/PetalburgCity/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 989 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_M_STRENGTH
-# 990 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 991 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_M_STRENGTH
-# 992 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 993 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_M_BRICK_BREAK
-# 994 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 998 "data/maps/PetalburgCity/scripts.pory"
+# 1078 "data/maps/PetalburgCity/scripts.pory"
 	removeobject 37
-# 999 "data/maps/PetalburgCity/scripts.pory"
+# 1079 "data/maps/PetalburgCity/scripts.pory"
 	removeobject 38
-# 1000 "data/maps/PetalburgCity/scripts.pory"
+# 1080 "data/maps/PetalburgCity/scripts.pory"
 	removeobject 39
-# 1001 "data/maps/PetalburgCity/scripts.pory"
+# 1081 "data/maps/PetalburgCity/scripts.pory"
 	removeobject 41
-# 1002 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 46
-# 1003 "data/maps/PetalburgCity/scripts.pory"
+# 1082 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 48
+# 1083 "data/maps/PetalburgCity/scripts.pory"
 	removeobject 50
-# 1007 "data/maps/PetalburgCity/scripts.pory"
-	addobject 9
-# 1008 "data/maps/PetalburgCity/scripts.pory"
-	addobject 10
-# 1009 "data/maps/PetalburgCity/scripts.pory"
-	addobject 11
-# 1010 "data/maps/PetalburgCity/scripts.pory"
-	addobject 15
-# 1011 "data/maps/PetalburgCity/scripts.pory"
-	addobject 51
-# 1013 "data/maps/PetalburgCity/scripts.pory"
-	clearflag rebelswonpetalburgriot
-# 1014 "data/maps/PetalburgCity/scripts.pory"
-	setflag petalburgriotstopped
-# 1016 "data/maps/PetalburgCity/scripts.pory"
-	clearflag petalburgriothidecivilians
-# 1018 "data/maps/PetalburgCity/scripts.pory"
+# 1084 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 43
+# 1085 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 46
+# 1086 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 47
+# 1087 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 49, PetalburgRiotCutscene_Movement_9
+# 1089 "data/maps/PetalburgCity/scripts.pory"
 	waitse
-# 1019 "data/maps/PetalburgCity/scripts.pory"
+# 1090 "data/maps/PetalburgCity/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 1020 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_17
-# 1022 "data/maps/PetalburgCity/scripts.pory"
+# 1092 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotCutscene_Movement_4
+# 1093 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_5
+# 1094 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 1095 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_22
+# 1102 "data/maps/PetalburgCity/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 1104 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 36
+# 1105 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 40
+# 1106 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 42
+# 1107 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 49
+# 1108 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 45
+# 1109 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 46
+# 1110 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 48
+# 1111 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 46
+# 1116 "data/maps/PetalburgCity/scripts.pory"
+	setflag petalburgriotstopped
+# 1118 "data/maps/PetalburgCity/scripts.pory"
+	setflag devonwonpetalburgriot
+# 1120 "data/maps/PetalburgCity/scripts.pory"
+	addobject 27
+# 1121 "data/maps/PetalburgCity/scripts.pory"
+	addobject 9
+# 1122 "data/maps/PetalburgCity/scripts.pory"
+	addobject 10
+# 1123 "data/maps/PetalburgCity/scripts.pory"
+	addobject 11
+# 1124 "data/maps/PetalburgCity/scripts.pory"
+	addobject 15
+# 1125 "data/maps/PetalburgCity/scripts.pory"
+	addobject 51
+# 1127 "data/maps/PetalburgCity/scripts.pory"
+	clearflag petalburgriothidecivilians
+# 1129 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1130 "data/maps/PetalburgCity/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 1132 "data/maps/PetalburgCity/scripts.pory"
+	setvar VAR_PETALBURG_RIOT_POSITION, 0
+# 1133 "data/maps/PetalburgCity/scripts.pory"
 	goto endofpetalburgriotscript
+	goto PetalburgRiotCutscene_4
+
+PetalburgRiotCutscene_8:
+# 938 "data/maps/PetalburgCity/scripts.pory"
+	closemessage
+# 939 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_0
+# 940 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_0
 	goto PetalburgRiotCutscene_7
 
 PetalburgRiotCutscene_11:
-# 1026 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_PETALBURG_RIOT_POSITION, 1
-	goto_if_eq PetalburgRiotCutscene_20
-PetalburgRiotCutscene_19:
-# 1032 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_PETALBURG_RIOT_POSITION, 2
-	goto_if_eq PetalburgRiotCutscene_32
-PetalburgRiotCutscene_31:
-# 1036 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_FOLLOWER
-# 1037 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 1038 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_7
-# 1039 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 40
-# 1040 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_18
-# 1041 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotDevonLead_Movement_0
-# 1042 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 40
-# 1043 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_3
-# 1044 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 41
-# 1045 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_19
-# 1047 "data/maps/PetalburgCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_GEORGIA, Georgia_Outro
-# 1050 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_3
-# 1051 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 41
-# 1055 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_20
-# 1056 "data/maps/PetalburgCity/scripts.pory"
+# 1138 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 1057 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_LEDGE
-# 1058 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_11
-# 1059 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 41
-# 1061 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_21
-# 1063 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_FLEE
-# 1064 "data/maps/PetalburgCity/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 1066 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 37
-# 1067 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 38
-# 1068 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 39
-# 1069 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 41
-# 1070 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 48
-# 1071 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 50
-# 1072 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 43
-# 1073 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 46
-# 1074 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 47
-# 1075 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 49, PetalburgRiotCutscene_Movement_12
-# 1077 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 1078 "data/maps/PetalburgCity/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 1080 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_7
-# 1081 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_8
-# 1082 "data/maps/PetalburgCity/scripts.pory"
+# 1139 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_PETALBURG_RIOT_POSITION, 1
+	goto_if_eq PetalburgRiotCutscene_23
+PetalburgRiotCutscene_22:
+# 1144 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_PETALBURG_RIOT_POSITION, 2
+	goto_if_eq PetalburgRiotCutscene_35
+PetalburgRiotCutscene_34:
+# 1149 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 1083 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_22
-# 1090 "data/maps/PetalburgCity/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 1092 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 36
-# 1093 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 40
-# 1094 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 42
-# 1095 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 49
-# 1096 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 45
-# 1097 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 46
-# 1098 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 48
-# 1100 "data/maps/PetalburgCity/scripts.pory"
-	setflag petalburgriotstopped
-# 1102 "data/maps/PetalburgCity/scripts.pory"
-	setflag devonwonpetalburgriot
-# 1104 "data/maps/PetalburgCity/scripts.pory"
-	addobject 9
-# 1105 "data/maps/PetalburgCity/scripts.pory"
-	addobject 10
-# 1106 "data/maps/PetalburgCity/scripts.pory"
-	addobject 11
-# 1107 "data/maps/PetalburgCity/scripts.pory"
-	addobject 15
-# 1108 "data/maps/PetalburgCity/scripts.pory"
-	addobject 51
-# 1110 "data/maps/PetalburgCity/scripts.pory"
-	clearflag petalburgriothidecivilians
-# 1112 "data/maps/PetalburgCity/scripts.pory"
+# 1152 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1153 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotDontblockthewayRebel_Movement_0
+# 1154 "data/maps/PetalburgCity/scripts.pory"
 	waitse
-# 1113 "data/maps/PetalburgCity/scripts.pory"
+# 1155 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_1
+# 1157 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotDevonLead_Movement_0
+# 1158 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 1160 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_23
+# 1162 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1163 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotDontblockthewayRebel_Movement_0
+# 1164 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1165 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_0
+# 1167 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotRebelLead_Movement_1
+# 1168 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 1170 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_24
+# 1172 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_0
+# 1173 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotCutscene_Movement_1
+# 1174 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 40
+# 1176 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_25
+# 1177 "data/maps/PetalburgCity/scripts.pory"
+	trainerbattle_two_trainers TRAINER_GEORGIA, Georgia_MultiOutro, TRAINER_DAWSON, Dawson_MultiOutro
+# 1180 "data/maps/PetalburgCity/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1184 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1185 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 42, PetalburgRiotDontblockthewayRebel_Movement_0
+# 1186 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1187 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 49, PetalburgRiotCutscene_Movement_14
+# 1188 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1189 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1190 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 36, PetalburgRiotDontblockthewayRebel_Movement_0
+# 1191 "data/maps/PetalburgCity/scripts.pory"
+	waitse
+# 1193 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1194 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 38, PetalburgRiotDontblockthewayRebel_Movement_0
+# 1195 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1196 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 39, PetalburgRiotDontblockthewayRebel_Movement_0
+# 1197 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_PIN
+# 1198 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 48, PetalburgRiotCutscene_Movement_14
+# 1200 "data/maps/PetalburgCity/scripts.pory"
+	playse SE_APPLAUSE
+# 1203 "data/maps/PetalburgCity/scripts.pory"
+	checkplayergender
+# 1204 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq PetalburgRiotCutscene_44
+PetalburgRiotCutscene_43:
+# 1206 "data/maps/PetalburgCity/scripts.pory"
+	compare VAR_RESULT, FEMALE
+	goto_if_eq PetalburgRiotCutscene_50
+PetalburgRiotCutscene_49:
+# 1210 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotCutscene_Movement_1
+# 1214 "data/maps/PetalburgCity/scripts.pory"
+	fadeoutbgm 1
+# 1215 "data/maps/PetalburgCity/scripts.pory"
+	fadeinbgm 1
+# 1216 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_NONE, TRUE
+# 1218 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_28
+# 1221 "data/maps/PetalburgCity/scripts.pory"
+	fadeinbgm 1
+# 1224 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_CALM, TRUE
+# 1227 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_29
+# 1235 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_0
+# 1236 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 41
+# 1237 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_1
+# 1239 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_1
+# 1240 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 1242 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_30
+# 1244 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotCutscene_Movement_1
+# 1246 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 40
+# 1247 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_0
+# 1248 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_0
+# 1249 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 1250 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_31
+# 1253 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 41, PetalburgRiotCutscene_Movement_0
+# 1254 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 41
+# 1255 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 40, PetalburgRiotCutscene_Movement_1
+# 1256 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 40
+# 1258 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_32
+# 1260 "data/maps/PetalburgCity/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 1262 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 36
+# 1263 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 40
+# 1264 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 42
+# 1265 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 49
+# 1266 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 45
+# 1267 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 46
+# 1268 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 48
+# 1270 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 38
+# 1271 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 39
+# 1272 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 50
+# 1274 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 47
+# 1275 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 43
+# 1276 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 37
+# 1278 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 41
+# 1279 "data/maps/PetalburgCity/scripts.pory"
+	removeobject 43
+# 1281 "data/maps/PetalburgCity/scripts.pory"
+	addobject 27
+# 1284 "data/maps/PetalburgCity/scripts.pory"
+	addobject 9
+# 1285 "data/maps/PetalburgCity/scripts.pory"
+	addobject 10
+# 1286 "data/maps/PetalburgCity/scripts.pory"
+	addobject 11
+# 1287 "data/maps/PetalburgCity/scripts.pory"
+	addobject 15
+# 1288 "data/maps/PetalburgCity/scripts.pory"
+	addobject 51
+# 1290 "data/maps/PetalburgCity/scripts.pory"
+	setvar VAR_PETALBURG_RIOT_POSITION, 4
+# 1292 "data/maps/PetalburgCity/scripts.pory"
+	setflag devonwonpetalburgriot
+# 1293 "data/maps/PetalburgCity/scripts.pory"
+	setflag rebelswonpetalburgriot
+# 1295 "data/maps/PetalburgCity/scripts.pory"
+	setflag petalburgriotstopped
+# 1296 "data/maps/PetalburgCity/scripts.pory"
+	setflag petalburgriotendedforgood
+# 1297 "data/maps/PetalburgCity/scripts.pory"
+	clearflag petalburgriothidecivilians
+# 1299 "data/maps/PetalburgCity/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 1115 "data/maps/PetalburgCity/scripts.pory"
+# 1301 "data/maps/PetalburgCity/scripts.pory"
 	goto endofpetalburgriotscript
 	goto PetalburgRiotCutscene_10
 
 PetalburgRiotCutscene_14:
-# 928 "data/maps/PetalburgCity/scripts.pory"
+# 1039 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 929 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_3
-# 930 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_3
+# 1040 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_6
+# 1041 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_7
 	goto PetalburgRiotCutscene_13
 
 PetalburgRiotCutscene_17:
-# 1120 "data/maps/PetalburgCity/scripts.pory"
+# 944 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
-# 1121 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_PETALBURG_RIOT_POSITION, 1
-	goto_if_eq PetalburgRiotCutscene_29
-PetalburgRiotCutscene_28:
-# 1126 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_PETALBURG_RIOT_POSITION, 2
-	goto_if_eq PetalburgRiotCutscene_41
-PetalburgRiotCutscene_40:
-# 1131 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 1134 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1135 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotDontblockthewayRebel_Movement_0
-# 1136 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 1137 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_4
-# 1139 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotDevonLead_Movement_0
-# 1140 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_FOLLOWER
-# 1142 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_23
-# 1144 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1145 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotDontblockthewayRebel_Movement_0
-# 1146 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 1147 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_3
-# 1149 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotRebelLead_Movement_1
-# 1150 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_FOLLOWER
-# 1152 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_24
-# 1154 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_3
-# 1155 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_4
-# 1156 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 40
-# 1158 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_25
-# 1159 "data/maps/PetalburgCity/scripts.pory"
-	trainerbattle_two_trainers TRAINER_GEORGIA, Georgia_MultiOutro, TRAINER_DAWSON, Dawson_MultiOutro
-# 1164 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1165 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 42, PetalburgRiotDontblockthewayRebel_Movement_0
-# 1166 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1167 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 49, PetalburgRiotCutscene_Movement_17
-# 1168 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 1169 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1170 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 36, PetalburgRiotDontblockthewayRebel_Movement_0
-# 1171 "data/maps/PetalburgCity/scripts.pory"
-	waitse
-# 1173 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1174 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 38, PetalburgRiotDontblockthewayRebel_Movement_0
-# 1175 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1176 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 39, PetalburgRiotDontblockthewayRebel_Movement_0
-# 1177 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 1178 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 48, PetalburgRiotCutscene_Movement_17
-# 1180 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_APPLAUSE
-# 1183 "data/maps/PetalburgCity/scripts.pory"
-	checkplayergender
-# 1184 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_RESULT, MALE
-	goto_if_eq PetalburgRiotCutscene_50
-PetalburgRiotCutscene_49:
-# 1186 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_RESULT, FEMALE
-	goto_if_eq PetalburgRiotCutscene_56
-PetalburgRiotCutscene_55:
-# 1190 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_4
-# 1194 "data/maps/PetalburgCity/scripts.pory"
-	fadeoutbgm 1
-# 1195 "data/maps/PetalburgCity/scripts.pory"
-	fadeinbgm 1
-# 1196 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_CALM, TRUE
-# 1198 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_28
-# 1201 "data/maps/PetalburgCity/scripts.pory"
-	fadeinbgm 1
-# 1204 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_CALM, TRUE
-# 1207 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_29
-# 1215 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_3
-# 1216 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_4
-# 1217 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 1219 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_30
-# 1221 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_4
-# 1222 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_3
-# 1223 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 1224 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_31
-# 1227 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 41, PetalburgRiotCutscene_Movement_3
-# 1228 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 41
-# 1229 "data/maps/PetalburgCity/scripts.pory"
-	applymovement 40, PetalburgRiotCutscene_Movement_4
-# 1230 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 40
-# 1232 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_32
-# 1234 "data/maps/PetalburgCity/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 1236 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 36
-# 1237 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 40
-# 1238 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 42
-# 1239 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 49
-# 1240 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 45
-# 1241 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 46
-# 1242 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 48
-# 1244 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 38
-# 1245 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 39
-# 1246 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 50
-# 1248 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 47
-# 1249 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 43
-# 1250 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 37
-# 1252 "data/maps/PetalburgCity/scripts.pory"
-	removeobject 41
-# 1256 "data/maps/PetalburgCity/scripts.pory"
-	addobject 9
-# 1257 "data/maps/PetalburgCity/scripts.pory"
-	addobject 10
-# 1258 "data/maps/PetalburgCity/scripts.pory"
-	addobject 11
-# 1259 "data/maps/PetalburgCity/scripts.pory"
-	addobject 15
-# 1260 "data/maps/PetalburgCity/scripts.pory"
-	addobject 51
-# 1262 "data/maps/PetalburgCity/scripts.pory"
-	setvar VAR_PETALBURG_RIOT_POSITION, 3
-# 1264 "data/maps/PetalburgCity/scripts.pory"
-	setflag devonwonpetalburgriot
-# 1265 "data/maps/PetalburgCity/scripts.pory"
-	setflag rebelswonpetalburgriot
-# 1267 "data/maps/PetalburgCity/scripts.pory"
-	setflag petalburgriotstopped
-# 1268 "data/maps/PetalburgCity/scripts.pory"
-	setflag petalburgriotendedforgood
-# 1269 "data/maps/PetalburgCity/scripts.pory"
-	clearflag petalburgriothidecivilians
-# 1271 "data/maps/PetalburgCity/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 1273 "data/maps/PetalburgCity/scripts.pory"
-	goto endofpetalburgriotscript
+# 945 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_2
+# 946 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_3
 	goto PetalburgRiotCutscene_16
 
 PetalburgRiotCutscene_20:
-# 1027 "data/maps/PetalburgCity/scripts.pory"
-	closemessage
-# 1028 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_9
-# 1029 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_10
+# 1308 "data/maps/PetalburgCity/scripts.pory"
+	setvar VAR_PETALBURG_RIOT_POSITION, 0
+# 1309 "data/maps/PetalburgCity/scripts.pory"
+	goto endofpetalburgriotscript
 	goto PetalburgRiotCutscene_19
 
 PetalburgRiotCutscene_23:
-# 934 "data/maps/PetalburgCity/scripts.pory"
-	closemessage
-# 935 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_5
-# 936 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_6
+# 1140 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_10
+# 1141 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_11
 	goto PetalburgRiotCutscene_22
 
 PetalburgRiotCutscene_26:
-# 1280 "data/maps/PetalburgCity/scripts.pory"
-	setvar VAR_PETALBURG_RIOT_POSITION, 0
-# 1281 "data/maps/PetalburgCity/scripts.pory"
-	goto endofpetalburgriotscript
+# 1045 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_1
+# 1046 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_1
 	goto PetalburgRiotCutscene_25
 
 PetalburgRiotCutscene_29:
-# 1122 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_13
-# 1123 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_14
+# 989 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_14
 	goto PetalburgRiotCutscene_28
 
 PetalburgRiotCutscene_32:
-# 1033 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_4
-# 1034 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_4
+# 1321 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_TEAMGRDUEL, TRUE
 	goto PetalburgRiotCutscene_31
 
 PetalburgRiotCutscene_35:
-# 979 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_14
+# 1145 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_12
+# 1146 "data/maps/PetalburgCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_13
 	goto PetalburgRiotCutscene_34
 
 PetalburgRiotCutscene_38:
-# 1293 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_TEAMGRDUEL, TRUE
+# 991 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_15
 	goto PetalburgRiotCutscene_37
 
 PetalburgRiotCutscene_41:
-# 1127 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgRiotCutscene_Movement_15
-# 1128 "data/maps/PetalburgCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, PetalburgRiotCutscene_Movement_16
+# 1324 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_TEAMGRDUEL, TRUE
 	goto PetalburgRiotCutscene_40
 
 PetalburgRiotCutscene_44:
-# 981 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_15
+# 1204 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_26
 	goto PetalburgRiotCutscene_43
 
 PetalburgRiotCutscene_47:
-# 1296 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_TEAMGRDUEL, TRUE
+# 1327 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_PANULACAVE, TRUE
 	goto PetalburgRiotCutscene_46
 
 PetalburgRiotCutscene_50:
-# 1184 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_26
+# 1206 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgRiotCutscene_Text_27
 	goto PetalburgRiotCutscene_49
 
 PetalburgRiotCutscene_53:
-# 1299 "data/maps/PetalburgCity/scripts.pory"
+# 1330 "data/maps/PetalburgCity/scripts.pory"
 	playbgm MUS_PANULACAVE, TRUE
 	goto PetalburgRiotCutscene_52
 
-PetalburgRiotCutscene_56:
-# 1186 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgRiotCutscene_Text_27
-	goto PetalburgRiotCutscene_55
-
-PetalburgRiotCutscene_59:
-# 1302 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_PANULACAVE, TRUE
-	goto PetalburgRiotCutscene_58
-
 
 PetalburgRiotBatter::
-# 1330 "data/maps/PetalburgCity/scripts.pory"
+# 1358 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 1331 "data/maps/PetalburgCity/scripts.pory"
+# 1359 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1333 "data/maps/PetalburgCity/scripts.pory"
+# 1361 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8004, 2
-# 1334 "data/maps/PetalburgCity/scripts.pory"
+# 1362 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8005, 6
-# 1335 "data/maps/PetalburgCity/scripts.pory"
+# 1363 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8006, 4
-# 1336 "data/maps/PetalburgCity/scripts.pory"
+# 1364 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8007, 4
-# 1337 "data/maps/PetalburgCity/scripts.pory"
+# 1365 "data/maps/PetalburgCity/scripts.pory"
 	playse SE_M_STRENGTH
-# 1338 "data/maps/PetalburgCity/scripts.pory"
+# 1366 "data/maps/PetalburgCity/scripts.pory"
 	special ShakeCamera
-# 1340 "data/maps/PetalburgCity/scripts.pory"
+# 1368 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotBatter_Text_0
-# 1341 "data/maps/PetalburgCity/scripts.pory"
+# 1369 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotRebelwithSign::
-# 1346 "data/maps/PetalburgCity/scripts.pory"
+# 1374 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 1347 "data/maps/PetalburgCity/scripts.pory"
+# 1375 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1348 "data/maps/PetalburgCity/scripts.pory"
+# 1376 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotRebelwithSign_Text_0
-# 1349 "data/maps/PetalburgCity/scripts.pory"
+# 1377 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotInjuredRebel::
-# 1354 "data/maps/PetalburgCity/scripts.pory"
+# 1382 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 1355 "data/maps/PetalburgCity/scripts.pory"
+# 1383 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1356 "data/maps/PetalburgCity/scripts.pory"
+# 1384 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotInjuredRebel_Text_0
-# 1357 "data/maps/PetalburgCity/scripts.pory"
+# 1385 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotArrestingDevon::
-# 1362 "data/maps/PetalburgCity/scripts.pory"
+# 1390 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 1363 "data/maps/PetalburgCity/scripts.pory"
+# 1391 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1364 "data/maps/PetalburgCity/scripts.pory"
+# 1392 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotArrestingDevon_Text_0
-# 1365 "data/maps/PetalburgCity/scripts.pory"
+# 1393 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotInjuredDevon::
-# 1370 "data/maps/PetalburgCity/scripts.pory"
+# 1398 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 1371 "data/maps/PetalburgCity/scripts.pory"
+# 1399 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1372 "data/maps/PetalburgCity/scripts.pory"
+# 1400 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotInjuredDevon_Text_0
-# 1373 "data/maps/PetalburgCity/scripts.pory"
+# 1401 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotLowerRebel::
-# 1378 "data/maps/PetalburgCity/scripts.pory"
+# 1406 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 1379 "data/maps/PetalburgCity/scripts.pory"
+# 1407 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1380 "data/maps/PetalburgCity/scripts.pory"
+# 1408 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotLowerRebel_Text_0
-# 1382 "data/maps/PetalburgCity/scripts.pory"
+# 1410 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
 PetalburgRiotLowerDevon::
-# 1387 "data/maps/PetalburgCity/scripts.pory"
+# 1415 "data/maps/PetalburgCity/scripts.pory"
 	lock
-# 1388 "data/maps/PetalburgCity/scripts.pory"
+# 1416 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1389 "data/maps/PetalburgCity/scripts.pory"
+# 1417 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgRiotLowerDevon_Text_0
-# 1391 "data/maps/PetalburgCity/scripts.pory"
+# 1419 "data/maps/PetalburgCity/scripts.pory"
 	release
 	return
 
 
-HardwareStoreClerk::
-# 1401 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_unset foughtwarehousescavenger2, HardwareStoreClerk_3
-HardwareStoreClerk_1:
-# 1404 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set foughtwarehousescavenger2, HardwareStoreClerk_8
-HardwareStoreClerk_6:
-# 1406 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set foughtwarehousescavenger2, HardwareStoreClerk_12
-	return
-
-HardwareStoreClerk_2:
-	goto HardwareStoreClerk_1
-
-HardwareStoreClerk_3:
-# 1401 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_unset scavengergivesobjectspotter, HardwareStoreClerk_2
-	goto HardwareStoreClerk_1
-
-HardwareStoreClerk_7:
-	goto HardwareStoreClerk_6
-
-HardwareStoreClerk_8:
-# 1404 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_unset scavengergivesobjectspotter, HardwareStoreClerk_7
-	goto HardwareStoreClerk_6
-
-HardwareStoreClerk_11:
-	return
-
-HardwareStoreClerk_12:
-# 1406 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set scavengergivesobjectspotter, HardwareStoreClerk_11
-	return
-
-
-JimmyMcGligarSewersIdle::
-# 1412 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_JIMMYQUESTPROGRESS, 0
-	goto_if_eq JimmyMcGligarSewersIdle_3
-JimmyMcGligarSewersIdle_1:
-# 1416 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_JIMMYQUESTPROGRESS, 0
-	goto_if_eq JimmyMcGligarSewersIdle_8
-JimmyMcGligarSewersIdle_6:
-# 1420 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_JIMMYQUESTPROGRESS, 1
-	goto_if_eq JimmyMcGligarSewersIdle_14
-JimmyMcGligarSewersIdle_11:
+PetalburgSmokerMilitia::
 # 1424 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_JIMMYQUESTPROGRESS, 2
-	goto_if_eq JimmyMcGligarSewersIdle_21
-JimmyMcGligarSewersIdle_18:
-# 1428 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_JIMMYQUESTPROGRESS, 2
-	goto_if_eq JimmyMcGligarSewersIdle_28
-JimmyMcGligarSewersIdle_25:
+	lock
+# 1425 "data/maps/PetalburgCity/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1426 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 57, PetalburgRiotRebelLead_Movement_0
+# 1427 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 57
+# 1429 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset petalburgsmokergivesligther, PetalburgSmokerMilitia_2
+# 1436 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgSmokerMilitia_Text_1
+PetalburgSmokerMilitia_1:
+# 1439 "data/maps/PetalburgCity/scripts.pory"
+	applymovement 57, PetalburgSmokerMilitia_Movement_0
+# 1440 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 57
+# 1441 "data/maps/PetalburgCity/scripts.pory"
+	release
+	return
+
+PetalburgSmokerMilitia_2:
 # 1431 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_JIMMYQUESTPROGRESS, 3
-	goto_if_eq JimmyMcGligarSewersIdle_32
+	msgbox PetalburgSmokerMilitia_Text_0
+# 1432 "data/maps/PetalburgCity/scripts.pory"
+	giveitem ITEM_FLAME_ORB
+# 1433 "data/maps/PetalburgCity/scripts.pory"
+	setflag petalburgsmokergivesligther
+	goto PetalburgSmokerMilitia_1
+
+
+PetalburgMiliaSnackGuy::
+# 1446 "data/maps/PetalburgCity/scripts.pory"
+	lock
+# 1448 "data/maps/PetalburgCity/scripts.pory"
+	goto_if_unset militiadailysnack, PetalburgMiliaSnackGuy_2
+# 1466 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgMiliaSnackGuy_Text_2
+PetalburgMiliaSnackGuy_1:
+# 1470 "data/maps/PetalburgCity/scripts.pory"
+	releaseall
 	return
 
-JimmyMcGligarSewersIdle_2:
-# 1414 "data/maps/PetalburgCity/scripts.pory"
+PetalburgMiliaSnackGuy_2:
+# 1450 "data/maps/PetalburgCity/scripts.pory"
+	random 2
+# 1451 "data/maps/PetalburgCity/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 1453 "data/maps/PetalburgCity/scripts.pory"
+	switch VAR_RESULT
+# 1454 "data/maps/PetalburgCity/scripts.pory"
+	case 0, PetalburgMiliaSnackGuy_7
+# 1458 "data/maps/PetalburgCity/scripts.pory"
+	case 1, PetalburgMiliaSnackGuy_8
+PetalburgMiliaSnackGuy_5:
+# 1463 "data/maps/PetalburgCity/scripts.pory"
+	setflag militiadailysnack
+	goto PetalburgMiliaSnackGuy_1
+
+PetalburgMiliaSnackGuy_7:
+# 1455 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgMiliaSnackGuy_Text_0
+# 1457 "data/maps/PetalburgCity/scripts.pory"
+	giveitem ITEM_FRESH_WATER
+	goto PetalburgMiliaSnackGuy_5
+
+PetalburgMiliaSnackGuy_8:
+# 1459 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgMiliaSnackGuy_Text_1
+# 1461 "data/maps/PetalburgCity/scripts.pory"
+	giveitem ITEM_ENERGY_POWDER
+	goto PetalburgMiliaSnackGuy_5
+
+
+PetalburgMilitiaLeftGuy::
+# 1474 "data/maps/PetalburgCity/scripts.pory"
+	lock
+# 1475 "data/maps/PetalburgCity/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1476 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgMilitiaLeftGuy_Text_0
+# 1478 "data/maps/PetalburgCity/scripts.pory"
 	release
-	goto JimmyMcGligarSewersIdle_1
-
-JimmyMcGligarSewersIdle_3:
-# 1412 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_unset conartistaskeddistract, JimmyMcGligarSewersIdle_2
-	goto JimmyMcGligarSewersIdle_1
-
-JimmyMcGligarSewersIdle_7:
-	goto JimmyMcGligarSewersIdle_6
-
-JimmyMcGligarSewersIdle_8:
-# 1416 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set conartistaskeddistract, JimmyMcGligarSewersIdle_7
-	goto JimmyMcGligarSewersIdle_6
-
-JimmyMcGligarSewersIdle_12:
-	goto JimmyMcGligarSewersIdle_11
-
-JimmyMcGligarSewersIdle_13:
-# 1420 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set ! betrayedconcordconartist, JimmyMcGligarSewersIdle_12
-	goto JimmyMcGligarSewersIdle_11
-
-JimmyMcGligarSewersIdle_14:
-# 1420 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set conartistescaped, JimmyMcGligarSewersIdle_13
-	goto JimmyMcGligarSewersIdle_11
-
-JimmyMcGligarSewersIdle_19:
-	goto JimmyMcGligarSewersIdle_18
-
-JimmyMcGligarSewersIdle_20:
-# 1424 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set helpedconcordconartist, JimmyMcGligarSewersIdle_19
-	goto JimmyMcGligarSewersIdle_18
-
-JimmyMcGligarSewersIdle_21:
-# 1424 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set conartistescaped, JimmyMcGligarSewersIdle_20
-	goto JimmyMcGligarSewersIdle_18
-
-JimmyMcGligarSewersIdle_26:
-	goto JimmyMcGligarSewersIdle_25
-
-JimmyMcGligarSewersIdle_27:
-# 1428 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set betrayedconcordconartist, JimmyMcGligarSewersIdle_26
-	goto JimmyMcGligarSewersIdle_25
-
-JimmyMcGligarSewersIdle_28:
-# 1428 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set conartistescaped, JimmyMcGligarSewersIdle_27
-	goto JimmyMcGligarSewersIdle_25
-
-JimmyMcGligarSewersIdle_32:
 	return
 
 
-# 830 "data/maps/PetalburgCity/scripts.pory"
+# 840 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotDontblockthewayRebel_Movement_0:
-# 830 "data/maps/PetalburgCity/scripts.pory"
+# 840 "data/maps/PetalburgCity/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 834 "data/maps/PetalburgCity/scripts.pory"
+# 844 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotDontblockthewayRebel_Movement_1:
-# 834 "data/maps/PetalburgCity/scripts.pory"
+# 844 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
 	step_end
 
-# 854 "data/maps/PetalburgCity/scripts.pory"
+# 864 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotRebelLead_Movement_0:
-# 854 "data/maps/PetalburgCity/scripts.pory"
+# 864 "data/maps/PetalburgCity/scripts.pory"
 	face_player
 	step_end
 
-# 858 "data/maps/PetalburgCity/scripts.pory"
+# 868 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotRebelLead_Movement_1:
-# 858 "data/maps/PetalburgCity/scripts.pory"
+# 868 "data/maps/PetalburgCity/scripts.pory"
 	face_right
 	step_end
 
-# 869 "data/maps/PetalburgCity/scripts.pory"
+# 879 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotDevonLead_Movement_0:
-# 869 "data/maps/PetalburgCity/scripts.pory"
+# 879 "data/maps/PetalburgCity/scripts.pory"
 	face_left
 	step_end
 
-# 885 "data/maps/PetalburgCity/scripts.pory"
+# 907 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotCutscene_Movement_0:
-# 885 "data/maps/PetalburgCity/scripts.pory"
-	walk_right
-# 885 "data/maps/PetalburgCity/scripts.pory"
-	walk_right
-	step_end
-
-# 888 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_1:
-# 888 "data/maps/PetalburgCity/scripts.pory"
-	walk_left
-# 888 "data/maps/PetalburgCity/scripts.pory"
-	walk_left
-	step_end
-
-# 891 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_2:
-# 891 "data/maps/PetalburgCity/scripts.pory"
-	walk_up
-# 891 "data/maps/PetalburgCity/scripts.pory"
-	walk_up
-	step_end
-
-# 897 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_3:
-# 897 "data/maps/PetalburgCity/scripts.pory"
+# 907 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 905 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_4:
-# 905 "data/maps/PetalburgCity/scripts.pory"
+# 915 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_1:
+# 915 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 935 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_5:
-# 935 "data/maps/PetalburgCity/scripts.pory"
+# 945 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_2:
+# 945 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 935 "data/maps/PetalburgCity/scripts.pory"
+# 945 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 935 "data/maps/PetalburgCity/scripts.pory"
+# 945 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 935 "data/maps/PetalburgCity/scripts.pory"
+# 945 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 935 "data/maps/PetalburgCity/scripts.pory"
+# 945 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 936 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_6:
-# 936 "data/maps/PetalburgCity/scripts.pory"
+# 946 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_3:
+# 946 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 936 "data/maps/PetalburgCity/scripts.pory"
+# 946 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 936 "data/maps/PetalburgCity/scripts.pory"
+# 946 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 941 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_7:
-# 941 "data/maps/PetalburgCity/scripts.pory"
+# 951 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_4:
+# 951 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 976 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_8:
-# 976 "data/maps/PetalburgCity/scripts.pory"
+# 986 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_5:
+# 986 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 1028 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_9:
-# 1028 "data/maps/PetalburgCity/scripts.pory"
+# 1040 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_6:
+# 1040 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 1028 "data/maps/PetalburgCity/scripts.pory"
+# 1040 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 1028 "data/maps/PetalburgCity/scripts.pory"
+# 1040 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 1028 "data/maps/PetalburgCity/scripts.pory"
+# 1040 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 1028 "data/maps/PetalburgCity/scripts.pory"
+# 1040 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 1029 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_10:
-# 1029 "data/maps/PetalburgCity/scripts.pory"
+# 1041 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_7:
+# 1041 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 1029 "data/maps/PetalburgCity/scripts.pory"
+# 1041 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 1029 "data/maps/PetalburgCity/scripts.pory"
+# 1041 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 1058 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_11:
-# 1058 "data/maps/PetalburgCity/scripts.pory"
+# 1070 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_8:
+# 1070 "data/maps/PetalburgCity/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 1075 "data/maps/PetalburgCity/scripts.pory"
+# 1087 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_9:
+# 1087 "data/maps/PetalburgCity/scripts.pory"
+	face_up
+	step_end
+
+# 1140 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_10:
+# 1140 "data/maps/PetalburgCity/scripts.pory"
+	walk_right
+# 1140 "data/maps/PetalburgCity/scripts.pory"
+	walk_right
+# 1140 "data/maps/PetalburgCity/scripts.pory"
+	walk_up
+# 1140 "data/maps/PetalburgCity/scripts.pory"
+	walk_in_place_down
+	step_end
+
+# 1141 "data/maps/PetalburgCity/scripts.pory"
+PetalburgRiotCutscene_Movement_11:
+# 1141 "data/maps/PetalburgCity/scripts.pory"
+	walk_right
+# 1141 "data/maps/PetalburgCity/scripts.pory"
+	walk_in_place_down
+	step_end
+
+# 1145 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotCutscene_Movement_12:
-# 1075 "data/maps/PetalburgCity/scripts.pory"
-	face_up
+# 1145 "data/maps/PetalburgCity/scripts.pory"
+	walk_left
+# 1145 "data/maps/PetalburgCity/scripts.pory"
+	walk_left
+# 1145 "data/maps/PetalburgCity/scripts.pory"
+	walk_up
+# 1145 "data/maps/PetalburgCity/scripts.pory"
+	walk_in_place_down
 	step_end
 
-# 1122 "data/maps/PetalburgCity/scripts.pory"
+# 1146 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotCutscene_Movement_13:
-# 1122 "data/maps/PetalburgCity/scripts.pory"
-	walk_right
-# 1122 "data/maps/PetalburgCity/scripts.pory"
-	walk_right
-# 1122 "data/maps/PetalburgCity/scripts.pory"
-	walk_up
-# 1122 "data/maps/PetalburgCity/scripts.pory"
+# 1146 "data/maps/PetalburgCity/scripts.pory"
+	walk_left
+# 1146 "data/maps/PetalburgCity/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 1123 "data/maps/PetalburgCity/scripts.pory"
+# 1187 "data/maps/PetalburgCity/scripts.pory"
 PetalburgRiotCutscene_Movement_14:
-# 1123 "data/maps/PetalburgCity/scripts.pory"
-	walk_right
-# 1123 "data/maps/PetalburgCity/scripts.pory"
-	walk_right
-# 1123 "data/maps/PetalburgCity/scripts.pory"
-	walk_right
-# 1123 "data/maps/PetalburgCity/scripts.pory"
-	walk_in_place_down
-	step_end
-
-# 1127 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_15:
-# 1127 "data/maps/PetalburgCity/scripts.pory"
-	walk_left
-# 1127 "data/maps/PetalburgCity/scripts.pory"
-	walk_left
-# 1127 "data/maps/PetalburgCity/scripts.pory"
-	walk_up
-# 1127 "data/maps/PetalburgCity/scripts.pory"
-	walk_in_place_down
-	step_end
-
-# 1128 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_16:
-# 1128 "data/maps/PetalburgCity/scripts.pory"
-	walk_left
-# 1128 "data/maps/PetalburgCity/scripts.pory"
-	walk_in_place_down
-	step_end
-
-# 1167 "data/maps/PetalburgCity/scripts.pory"
-PetalburgRiotCutscene_Movement_17:
-# 1167 "data/maps/PetalburgCity/scripts.pory"
+# 1187 "data/maps/PetalburgCity/scripts.pory"
 	emote_exclamation_mark
-# 1167 "data/maps/PetalburgCity/scripts.pory"
+# 1187 "data/maps/PetalburgCity/scripts.pory"
 	face_up
+	step_end
+
+# 1439 "data/maps/PetalburgCity/scripts.pory"
+PetalburgSmokerMilitia_Movement_0:
+# 1439 "data/maps/PetalburgCity/scripts.pory"
+	face_down
 	step_end
 
 PetalburgRiotDontblockthewayRebel_Text_0:
-# 832 "data/maps/PetalburgCity/scripts.pory"
+# 842 "data/maps/PetalburgCity/scripts.pory"
 	.string "Hey, get off the way! We're rioting here!\n"
 	.string "We're RIOTING HERE!$"
 
 PetalburgRiotDontblockthewayDevon_Text_0:
-# 845 "data/maps/PetalburgCity/scripts.pory"
+# 855 "data/maps/PetalburgCity/scripts.pory"
 	.string "Dear citizen, for your own safety, you\n"
 	.string "must evacuate immediately!$"
 
 PetalburgRiotRebelLead_Text_0:
-# 857 "data/maps/PetalburgCity/scripts.pory"
+# 867 "data/maps/PetalburgCity/scripts.pory"
 	.string "GLIIII!$"
 
 PetalburgRiotDevonLead_Text_0:
-# 868 "data/maps/PetalburgCity/scripts.pory"
+# 878 "data/maps/PetalburgCity/scripts.pory"
 	.string "R-riiii...!$"
 
 PetalburgRiotCutscene_Text_0:
-# 898 "data/maps/PetalburgCity/scripts.pory"
+# 908 "data/maps/PetalburgCity/scripts.pory"
 	.string "The people is done with your greed, you\n"
 	.string "Devon scum!\p"
 	.string "We want free Pokémon healthcare back,\n"
 	.string "and we want it NOW!$"
 
 PetalburgRiotCutscene_Text_1:
-# 903 "data/maps/PetalburgCity/scripts.pory"
+# 913 "data/maps/PetalburgCity/scripts.pory"
 	.string "{COLOR RED}Hell yeah! Down with the corpos! Down\n"
 	.string "with the corpos!$"
 
 PetalburgRiotCutscene_Text_2:
-# 906 "data/maps/PetalburgCity/scripts.pory"
-	.string "Rowdy citizens of Petalburg - look\n"
-	.string "around you! Hoenn is in shambles!\p"
+# 916 "data/maps/PetalburgCity/scripts.pory"
+	.string "Citizens of Petalburg - look around\n"
+	.string "you! The war left Hoenn in shambles!\p"
 	.string "If we are to rebuild, funds must be\n"
 	.string "collected.\p"
 	.string "It is a small sacrifice today, for a\n"
 	.string "better future tomorrow.$"
 
 PetalburgRiotCutscene_Text_3:
-# 913 "data/maps/PetalburgCity/scripts.pory"
+# 923 "data/maps/PetalburgCity/scripts.pory"
 	.string "{COLOR BLUE}Yes! It's fair! It's the only way! Stop\n"
 	.string "making things harder!$"
 
 PetalburgRiotCutscene_Text_4:
-# 916 "data/maps/PetalburgCity/scripts.pory"
+# 926 "data/maps/PetalburgCity/scripts.pory"
 	.string "Then have Mr. Stone foot the bill! Not\n"
 	.string "the little people!$"
 
 PetalburgRiotCutscene_Text_5:
-# 921 "data/maps/PetalburgCity/scripts.pory"
+# 931 "data/maps/PetalburgCity/scripts.pory"
 	.string "{COLOR RED}Yeeees! Eat the rich, eat the rich!$"
 
 PetalburgRiotCutscene_Text_6:
-# 923 "data/maps/PetalburgCity/scripts.pory"
+# 933 "data/maps/PetalburgCity/scripts.pory"
 	.string "{COLOR GREEN}A clash between {COLOR RED}Rebel{COLOR DARK_GRAY} {COLOR GREEN}and {COLOR BLUE}Devon{COLOR GREEN} forces\n"
 	.string "is in full force… what to do?$"
 
 PetalburgRiotCutscene_Text_7:
-# 924 "data/maps/PetalburgCity/scripts.pory"
+# 934 "data/maps/PetalburgCity/scripts.pory"
 	.string "Fight Devon$"
 
 PetalburgRiotCutscene_Text_8:
-# 924 "data/maps/PetalburgCity/scripts.pory"
+# 934 "data/maps/PetalburgCity/scripts.pory"
 	.string "Fight Rebels$"
 
 PetalburgRiotCutscene_Text_9:
-# 924 "data/maps/PetalburgCity/scripts.pory"
+# 934 "data/maps/PetalburgCity/scripts.pory"
 	.string "Fight both$"
 
 PetalburgRiotCutscene_Text_10:
-# 924 "data/maps/PetalburgCity/scripts.pory"
+# 934 "data/maps/PetalburgCity/scripts.pory"
 	.string "Do nothing$"
 
 PetalburgRiotCutscene_Text_11:
-# 943 "data/maps/PetalburgCity/scripts.pory"
+# 953 "data/maps/PetalburgCity/scripts.pory"
 	.string "Hah! Take a look, you shitty corpos! The\n"
 	.string "people is with us!$"
 
 PetalburgRiotCutscene_Text_12:
-# 948 "data/maps/PetalburgCity/scripts.pory"
-	.string "They simply fall prey to your lies. A\n"
-	.string "shame…\p"
+# 958 "data/maps/PetalburgCity/scripts.pory"
+	.string "They simply fall prey to your\n"
+	.string "manipulation. A shame…\p"
 	.string "For the sake of Hoenn, I must have\n"
 	.string "order restored!$"
 
 PetalburgRiotCutscene_Text_13:
-# 958 "data/maps/PetalburgCity/scripts.pory"
+# 968 "data/maps/PetalburgCity/scripts.pory"
 	.string "You will soon realize how wrong your\n"
 	.string "thoughtless vandalism is...\p"
 	.string "Everyone, back to base.$"
 
 PetalburgRiotCutscene_Text_14:
-# 979 "data/maps/PetalburgCity/scripts.pory"
+# 989 "data/maps/PetalburgCity/scripts.pory"
 	.string "Good job, man. That'll send Devon a good\n"
 	.string "message.$"
 
 PetalburgRiotCutscene_Text_15:
-# 981 "data/maps/PetalburgCity/scripts.pory"
+# 991 "data/maps/PetalburgCity/scripts.pory"
 	.string "Good job, girl. That'll send Devon a good\n"
 	.string "message.$"
 
 PetalburgRiotCutscene_Text_16:
-# 983 "data/maps/PetalburgCity/scripts.pory"
+# 993 "data/maps/PetalburgCity/scripts.pory"
 	.string "But they'll most likely be back\n"
 	.string "tomorrow, so we will need to as well.\p"
 	.string "Counting on you for the next raid. See\n"
 	.string "ya!$"
 
 PetalburgRiotCutscene_Text_17:
-# 1020 "data/maps/PetalburgCity/scripts.pory"
+# 1032 "data/maps/PetalburgCity/scripts.pory"
 	.string "{COLOR RED}Rebels{COLOR DARK_GRAY} got inside the center before\n"
 	.string "leaving, and made a mess of things!$"
 
 PetalburgRiotCutscene_Text_18:
-# 1040 "data/maps/PetalburgCity/scripts.pory"
+# 1052 "data/maps/PetalburgCity/scripts.pory"
 	.string "Ah, thank you, citizen! You're helping\n"
 	.string "preserve peace in Petalburg.$"
 
 PetalburgRiotCutscene_Text_19:
-# 1045 "data/maps/PetalburgCity/scripts.pory"
+# 1057 "data/maps/PetalburgCity/scripts.pory"
 	.string "Peace? There'll never be peace, until\n"
 	.string "you stop bleeding this region dry!\p"
 	.string "Down with Devon… and down with lapdogs\n"
 	.string "like you!$"
 
 PetalburgRiotCutscene_Text_20:
-# 1055 "data/maps/PetalburgCity/scripts.pory"
+# 1067 "data/maps/PetalburgCity/scripts.pory"
 	.string "You're lucky this guy showed up. But\n"
 	.string "we'll be back tomorrow.$"
 
 PetalburgRiotCutscene_Text_21:
-# 1061 "data/maps/PetalburgCity/scripts.pory"
+# 1073 "data/maps/PetalburgCity/scripts.pory"
 	.string "Back to base, everyone!$"
 
 PetalburgRiotCutscene_Text_22:
-# 1083 "data/maps/PetalburgCity/scripts.pory"
+# 1095 "data/maps/PetalburgCity/scripts.pory"
 	.string "Thanks again, citizen. You have done a\n"
 	.string "great deed for Hoenn today.\p"
 	.string "The center was damaged, but we should\n"
@@ -2933,54 +2864,53 @@ PetalburgRiotCutscene_Text_22:
 	.string "dangerous city.$"
 
 PetalburgRiotCutscene_Text_23:
-# 1142 "data/maps/PetalburgCity/scripts.pory"
+# 1160 "data/maps/PetalburgCity/scripts.pory"
 	.string "What? Don't get in the way, you\n"
 	.string "meddlesome loser!$"
 
 PetalburgRiotCutscene_Text_24:
-# 1152 "data/maps/PetalburgCity/scripts.pory"
+# 1170 "data/maps/PetalburgCity/scripts.pory"
 	.string "You would challenge us both? That is\n"
 	.string "true anarchy...$"
 
 PetalburgRiotCutscene_Text_25:
-# 1158 "data/maps/PetalburgCity/scripts.pory"
+# 1176 "data/maps/PetalburgCity/scripts.pory"
 	.string "{COLOR BLUE}I cannot allow it!\n"
 	.string "{COLOR RED}Piss off!$"
 
 PetalburgRiotCutscene_Text_26:
-# 1184 "data/maps/PetalburgCity/scripts.pory"
+# 1204 "data/maps/PetalburgCity/scripts.pory"
 	.string "He defeated both admins...! Who's that\n"
 	.string "trainer?$"
 
 PetalburgRiotCutscene_Text_27:
-# 1186 "data/maps/PetalburgCity/scripts.pory"
+# 1206 "data/maps/PetalburgCity/scripts.pory"
 	.string "She defeated both admins...! Who's that\n"
 	.string "trainer?$"
 
 PetalburgRiotCutscene_Text_28:
-# 1198 "data/maps/PetalburgCity/scripts.pory"
+# 1218 "data/maps/PetalburgCity/scripts.pory"
 	.string "Your feat seems to have defused the\n"
 	.string "situation. To avoid new escalation...$"
 
 PetalburgRiotCutscene_Text_29:
-# 1207 "data/maps/PetalburgCity/scripts.pory"
+# 1227 "data/maps/PetalburgCity/scripts.pory"
 	.string "I propose a truce, and a compromise.\p"
-	.string "To match the standard of living here in\n"
-	.string "Petalburg, the healing fees in this\l"
-	.string "Devon Center will receive a 25%\l"
-	.string "discount.\p"
+	.string "To match the standard of living in\n"
+	.string "{COLOR GREEN}Petalburg{COLOR DARK_GRAY}, the healing fees in this\l"
+	.string "Devon Center will have a 25% discount.\p"
 	.string "On the condition, however...\p"
 	.string "That you Rebels repair the damage you\n"
 	.string "just caused.\p"
 	.string "Surely this is a reasonable deal.$"
 
 PetalburgRiotCutscene_Text_30:
-# 1219 "data/maps/PetalburgCity/scripts.pory"
+# 1242 "data/maps/PetalburgCity/scripts.pory"
 	.string "Counter offer... make it a 50% discount,\n"
 	.string "or we will make the damage worse.$"
 
 PetalburgRiotCutscene_Text_31:
-# 1224 "data/maps/PetalburgCity/scripts.pory"
+# 1250 "data/maps/PetalburgCity/scripts.pory"
 	.string "Hmpf... you negotiate well, for a\n"
 	.string "criminal. Very well.\p"
 	.string "Thank you, trainer, for helping us\n"
@@ -2989,68 +2919,106 @@ PetalburgRiotCutscene_Text_31:
 	.string "for now.$"
 
 PetalburgRiotCutscene_Text_32:
-# 1232 "data/maps/PetalburgCity/scripts.pory"
+# 1258 "data/maps/PetalburgCity/scripts.pory"
 	.string "{COLOR BLUE}Grunts, to base!\n"
 	.string "{COLOR RED}Pack it up, everyone!$"
 
 PetalburgRiotBatter_Text_0:
-# 1340 "data/maps/PetalburgCity/scripts.pory"
+# 1368 "data/maps/PetalburgCity/scripts.pory"
 	.string "Damn Devon Center windows - they're\n"
 	.string "tougher than an Aggron! GYAAAAA!$"
 
 PetalburgRiotRebelwithSign_Text_0:
-# 1348 "data/maps/PetalburgCity/scripts.pory"
+# 1376 "data/maps/PetalburgCity/scripts.pory"
 	.string "DOWN WITH DEVON! DOWN WITH DEVON!$"
 
 PetalburgRiotInjuredRebel_Text_0:
-# 1356 "data/maps/PetalburgCity/scripts.pory"
+# 1384 "data/maps/PetalburgCity/scripts.pory"
 	.string "Tsk… battle without potions next time,\n"
 	.string "and we'll see who wins! Corpo scum!$"
 
 PetalburgRiotArrestingDevon_Text_0:
-# 1364 "data/maps/PetalburgCity/scripts.pory"
+# 1392 "data/maps/PetalburgCity/scripts.pory"
 	.string "Stay down, for your own good! You are\n"
 	.string "under arrest!$"
 
 PetalburgRiotInjuredDevon_Text_0:
-# 1372 "data/maps/PetalburgCity/scripts.pory"
+# 1400 "data/maps/PetalburgCity/scripts.pory"
 	.string "Ugh… Just a little break, and I'll give\n"
 	.string "that hoodlum with the bat some…!$"
 
 PetalburgRiotLowerRebel_Text_0:
-# 1380 "data/maps/PetalburgCity/scripts.pory"
+# 1408 "data/maps/PetalburgCity/scripts.pory"
 	.string "Get it through your head, you\n"
 	.string "thick-skulled lapdog!\p"
 	.string "We want no bridges, no Safemon, and no\n"
 	.string "shady corpos messing around!$"
 
 PetalburgRiotLowerDevon_Text_0:
-# 1389 "data/maps/PetalburgCity/scripts.pory"
+# 1417 "data/maps/PetalburgCity/scripts.pory"
 	.string "Stop it! Why are you Rebels so\n"
 	.string "ungrateful?\p"
 	.string "Devon wants to rebuild this area, and\n"
 	.string "all you do is get in the way!$"
 
+PetalburgSmokerMilitia_Text_0:
+# 1431 "data/maps/PetalburgCity/scripts.pory"
+	.string "I'll never catch up with the rest if I\n"
+	.string "keep smoking...\p"
+	.string "Here, take this from me!$"
+
+PetalburgSmokerMilitia_Text_1:
+# 1436 "data/maps/PetalburgCity/scripts.pory"
+	.string "... I mean, I already lighted this one, so\n"
+	.string "may as well smoke it.\p"
+	.string "And I also got some matches, it'd be a\n"
+	.string "waste not to use them.$"
+
+PetalburgMiliaSnackGuy_Text_0:
+# 1455 "data/maps/PetalburgCity/scripts.pory"
+	.string "HIII-YA! HIII-YA! Arf, arf...\p"
+	.string "When doing exercise, gotta keep\n"
+	.string "hydrated! Here, have this!$"
+
+PetalburgMiliaSnackGuy_Text_1:
+# 1459 "data/maps/PetalburgCity/scripts.pory"
+	.string "HIII-YA! HIII-YA! Arf, arf...\p"
+	.string "Nothing like an energy bar to keep\n"
+	.string "energy up! Here, have one!$"
+
+PetalburgMiliaSnackGuy_Text_2:
+# 1466 "data/maps/PetalburgCity/scripts.pory"
+	.string "Thanks for cheering us up! Come back\n"
+	.string "tomorrow too! HIII-YA!$"
+
+PetalburgMilitiaLeftGuy_Text_0:
+# 1476 "data/maps/PetalburgCity/scripts.pory"
+	.string "The war showed us Pokémon can't be\n"
+	.string "trusted, and Safemon are useless.\p"
+	.string "So what can you rely on to protect\n"
+	.string "yourself these days?\p"
+	.string "That's right - your BODY! WAYAAAA!$"
+
 Dawson_Intro::
-# 1307 "data/maps/PetalburgCity/scripts.pory"
+# 1335 "data/maps/PetalburgCity/scripts.pory"
 	.string "Willneverplay$"
 
 Georgia_Intro::
-# 1310 "data/maps/PetalburgCity/scripts.pory"
+# 1338 "data/maps/PetalburgCity/scripts.pory"
 	.string "Willneverplay$"
 
 Dawson_Outro::
-# 1313 "data/maps/PetalburgCity/scripts.pory"
+# 1341 "data/maps/PetalburgCity/scripts.pory"
 	.string "And thus Hoenn plunges further into\nchaos...$"
 
 Georgia_Outro::
-# 1316 "data/maps/PetalburgCity/scripts.pory"
+# 1344 "data/maps/PetalburgCity/scripts.pory"
 	.string "Tsk... we'll never give up!!$"
 
 Georgia_MultiOutro::
-# 1319 "data/maps/PetalburgCity/scripts.pory"
+# 1347 "data/maps/PetalburgCity/scripts.pory"
 	.string "Tsk... only lost cause this guy\ndragged me down!!$"
 
 Dawson_MultiOutro::
-# 1322 "data/maps/PetalburgCity/scripts.pory"
+# 1350 "data/maps/PetalburgCity/scripts.pory"
 	.string "You are quite strong. You would make\nan excellent Devon Grunt.$"

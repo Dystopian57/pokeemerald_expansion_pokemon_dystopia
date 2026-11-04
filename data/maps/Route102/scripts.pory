@@ -111,21 +111,25 @@ Route102_Text_RouteSignPetalburg:
 
 
 mapscripts Route102_MapScripts {
-    //MAP_SCRIPT_ON_TRANSITION: Route102Weather
-    MAP_SCRIPT_ON_LOAD: Route102Weather
-	MAP_SCRIPT_ON_LOAD: PopWeatherMon102
-	MAP_SCRIPT_ON_LOAD: DynamicWeather102}
+    MAP_SCRIPT_ON_TRANSITION: Route102MapscriptBundle
+    MAP_SCRIPT_ON_LOAD: Route102MapscriptBundle}
 
-script DynamicWeather102 {
-		if (var(VAR_ROUTE102_WEATHER) == 0)
-		{random (10)
+script Route102MapscriptBundle {
+
+	if (var(VAR_ROUTE102_WEATHER) == 3)
+	{clearflag (route102weathermon)}
+
+	if(var(VAR_ROUTE103_WEATHER) > 0)
+	{		goto (Route102TVWeather)}
+
+		random (10)
 		copyvar (VAR_TEMP_1, VAR_RESULT)
 
 		switch (var(VAR_RESULT))
 		{case 0: goto (Route102EndSandtorm)
 		case 1: goto (Route102EndSandtorm)
-		case 2: goto (Route102Shade)
-		case 3: goto (Route102Shade)
+		case 2: goto (Route102EndSandtorm)
+		case 3: goto (Route102EndSandtorm)
 		case 4: goto (Route102Shade)
 		case 5: goto (Route102Shade)
 		case 6: goto (Route102Shade)
@@ -133,10 +137,13 @@ script DynamicWeather102 {
 		case 8: goto (Route102Shade)
 		case 9: goto (Route102Shade)
 		case 10: goto (Route102Shade)
-		}}
+		}
+
+
+
 }
 
-script Route102Weather {
+script Route102TVWeather {
 
 			goto_if_eq (VAR_ROUTE102_WEATHER, 0, Route102Shade)
 			goto_if_eq (VAR_ROUTE102_WEATHER, 1, Route102Sandstorm1)

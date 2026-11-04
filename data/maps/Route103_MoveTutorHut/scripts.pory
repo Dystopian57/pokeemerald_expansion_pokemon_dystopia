@@ -7,20 +7,26 @@ raw `
 
 mapscripts Route103_MoveTutorHut_MapScripts {
 	
-	//MAP_SCRIPT_ON_LOAD: DayNightNPC
-	MAP_SCRIPT_ON_TRANSITION: DayNightNPC
-	//MAP_SCRIPT_ON_FRAME_TABLE: DayNightNPC
-    //MAP_SCRIPT_ON_LOAD: DayNightAmbientLightTutorHut
-    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLightTutorHut
-    //MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLightTutorHut
-
-    MAP_SCRIPT_ON_TRANSITION: DayNightMusicTutorHut
-    //MAP_SCRIPT_ON_LOAD: DayNightMusicTutorHut
-    //MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicTutorHut
+	MAP_SCRIPT_ON_LOAD: Route103_MoveTutorHutMapscriptbundle
+	MAP_SCRIPT_ON_TRANSITION: Route103_MoveTutorHutMapscriptbundle
 }
 
 
-script DayNightMusicTutorHut {
+script Route103_MoveTutorHutMapscriptbundle {
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{goto (enddaynightmusicmovetutorhut)}
@@ -36,7 +42,12 @@ script DayNightMusicTutorHut {
 		goto (enddaynightmusicmovetutorhut)}
 
 enddaynightmusicmovetutorhut:
+
+	goto (DayNightNPC)
+	
 }
+
+
 
 script DayNightAmbientLightTutorHut {
 		gettimeofday

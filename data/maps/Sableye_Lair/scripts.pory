@@ -17,6 +17,10 @@ mapscripts Sableye_Lair_MapScripts {
  
 script SableyeLairBossCheck {
 
+    	gettimeofday
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{playbgm (MUS_RELAXING, TRUE)}
+
             if (var(VAR_SABLEYELAIRANGER) > 3)
             {setflag (canspawnsableyelairboss)
             setvar (VAR_SABLEYELAIRANGER, 4)

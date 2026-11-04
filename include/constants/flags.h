@@ -510,15 +510,15 @@
 #define dojosharpyandcamelia 0x1C3
 #define lostdojointromultibattle 0x1C4
 #define dojonorman 0x1C5
-#define FLAG_DEFEATED_SUDOWOODO              0x1C6
-#define FLAG_DEFEATED_MEW                    0x1C7
+#define scientistleavessanctumexception              0x1C6
+#define gavesharpyflaskindojo                    0x1C7
 #define FLAG_DEFEATED_LATIAS_OR_LATIOS       0x1C8
 #define FLAG_CAUGHT_LATIAS_OR_LATIOS         0x1C9
 #define FLAG_CAUGHT_MEW                      0x1CA
-#define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE 0x1CB
-#define FLAG_MET_SCOTT_IN_VERDANTURF         0x1CC
-#define FLAG_MET_SCOTT_IN_FALLARBOR          0x1CD
-#define FLAG_MET_SCOTT_IN_LILYCOVE           0x1CE
+#define petalburgsmokergivesligther 0x1CB
+#define militiadailysnack        0x1CC
+#define scamfeebas         0x1CD
+#define healscammerarrestdevons           0x1CE
 #define FLAG_MET_SCOTT_IN_EVERGRANDE         0x1CF
 #define FLAG_MET_SCOTT_ON_SS_TIDAL           0x1D0
 #define FLAG_SCOTT_GIVES_BATTLE_POINTS       0x1D1
@@ -1287,7 +1287,7 @@
 #define FLAG_ITEM_OLDALE_BYCAR                                           0x4BC // Unused Flag
 #define FLAG_ITEM_102SHED                                           0x4BD // Unused Flag
 #define FLAG_ITEM_102SHED1STAID                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
+#define FLAG_ITEM_SHARPYROOM                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag

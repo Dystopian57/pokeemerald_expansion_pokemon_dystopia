@@ -3,7 +3,9 @@ raw `
 `
 
 mapscripts PetalburgBeach_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DayNightNPC
     MAP_SCRIPT_ON_TRANSITION: DayNightMusicPetalburgBeach
+    MAP_SCRIPT_ON_LOAD: DayNightNPC
     MAP_SCRIPT_ON_LOAD: DayNightMusicPetalburgBeach}
 	
 

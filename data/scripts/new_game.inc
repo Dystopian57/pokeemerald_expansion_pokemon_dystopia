@@ -316,5 +316,6 @@ EventScript_ResetAllMapFlags::
 	setflag devonreturnstooldale
 	setflag rebelswonpetalburgriot
 	setflag petalburgnurse
+	setflag scamfeebas
 	call EventScript_ResetAllBerries
 	end

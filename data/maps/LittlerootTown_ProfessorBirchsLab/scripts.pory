@@ -998,8 +998,28 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 `
 
 mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
-    //MAP_SCRIPT_ON_TRANSITION: Lights
+    MAP_SCRIPT_ON_TRANSITION: BirchLabMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: BirchLabMapscriptBundle
 	}
+
+
+script BirchLabMapscriptBundle {
+	if (var(VAR_LITTLEROOT_PHASE) == 6)
+	{
+
+	    if (flag (Aideeleaveslab))
+    	{   
+		setvar(VAR_LITTLEROOT_PHASE, 5)
+		setflag (AidelamentsPlayerdefeatintunnel)
+
+	    clearflag (Aideeleaveslab)
+		addobject (5)
+		}
+
+	}
+
+}
+
 
 script Lights {
 

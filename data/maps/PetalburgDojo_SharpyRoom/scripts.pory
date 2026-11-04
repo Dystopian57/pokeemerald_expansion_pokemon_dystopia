@@ -1,0 +1,89 @@
+raw `
+PetalburgDojo_SharpyRoom_MapScripts::
+	.byte 0
+
+`
+
+script SharpyRoomBox {
+	lock
+    if (!flag(FLAG_ITEM_SHARPYROOM))
+	{
+    msgbox(format("There's something buried in the box..."))
+    giveitem (ITEM_MYSTIC_WATER)
+	setflag (FLAG_ITEM_SHARPYROOM)	}
+
+    else {
+    msgbox(format("The box contains nothing of use."))
+    }
+
+	release
+}
+
+script SharpyRoomSharpy {
+    lock
+    applymovement (1, moves(face_player))
+
+    if (flag (FLAG_ITEM_SHARPYROOM))
+    {
+
+        if (!flag(gavesharpyflaskindojo) && checkitem (ITEM_MYSTIC_WATER)  == TRUE)
+        {
+
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
+        msgbox(format("Hey, is that my Old Flask!? You found it!"))
+
+        removeitem (ITEM_MYSTIC_WATER, 1)
+        
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+        msgbox(format("You're a real one, {PLAYER}. Now I'm totes ready for the mission!"))
+        setflag (gavesharpyflaskindojo)
+        goto (endofsharpyroomsharpyidle)
+        }
+
+        if (flag(gavesharpyflaskindojo)){
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
+        msgbox(format("I'm kind of nervous, are you not?"))
+
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+        msgbox(format("This must be how my dad felt before one of his old missions..."))
+        goto (endofsharpyroomsharpyidle)
+        }
+        
+        }
+
+
+        else {
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
+        msgbox(format("Oh dang it… where did I put my water flask!?"))
+
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_CONFUSED)
+        msgbox(format("My Carvanha needs it to be hydrated at all times!")) 
+        
+        setspeaker ([SP_NAME_SHARPY])
+        createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SAD)
+        msgbox(format("I should have listened to Camelia, and pack everything in advance."))
+        goto (endofsharpyroomsharpyidle)
+        }
+
+
+    endofsharpyroomsharpyidle:
+	applymovement (1, moves(face_down))
+	waitmovement (1)
+    removefieldmugshot
+    release
+    }
+
+
+  
+
+
+    
+
+
+    

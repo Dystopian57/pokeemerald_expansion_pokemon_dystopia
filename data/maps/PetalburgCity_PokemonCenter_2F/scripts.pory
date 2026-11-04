@@ -1,0 +1,62 @@
+raw `
+//PetalburgCity_PokemonCenter_2F_MapScripts::
+	//map_script MAP_SCRIPT_ON_FRAME_TABLE, CableClub_OnFrame
+	//map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CableClub_OnWarp
+	//map_script MAP_SCRIPT_ON_LOAD, CableClub_OnLoad
+	//map_script MAP_SCRIPT_ON_TRANSITION, CableClub_OnTransition
+	//.byte 0
+
+@ The below 3 are unused and leftover from RS
+PetalburgCity_PokemonCenter_2F_EventScript_Colosseum::
+	call CableClub_EventScript_Colosseum
+	end
+
+PetalburgCity_PokemonCenter_2F_EventScript_TradeCenter::
+	call CableClub_EventScript_TradeCenter
+	end
+
+PetalburgCity_PokemonCenter_2F_EventScript_RecordCorner::
+	call CableClub_EventScript_RecordCorner
+	end
+
+
+`
+
+mapscripts PetalburgCity_PokemonCenter_2F_MapScripts {
+    MAP_SCRIPT_ON_LOAD: PetalburgCity_PokemonCenter_2FMapscriptbundle
+    MAP_SCRIPT_ON_TRANSITION: PetalburgCity_PokemonCenter_2FMapscriptbundle
+	}
+
+script PetalburgCity_PokemonCenter_2FMapscriptbundle {
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
+		goto (DayNightNPC)
+	
+}
+
+
+script PetalburgDevonCenter2FBoyfriend {
+    lock
+    msgbox(format("But honey, those Devon Visas are very hard to get...
+    \pWhat's wrong with Petalburg Beach anyway."))
+    releaseall
+    }
+
+script PetalburgDevonCenter2FGirlfriend {
+    lock
+    msgbox(format("I'm just sick of that muddy, toxic beach.
+    \pJust get a real job and a visa, and we could go to Petal Park!"))
+    releaseall
+    }
