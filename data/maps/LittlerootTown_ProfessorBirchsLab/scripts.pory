@@ -1035,6 +1035,47 @@ script Littleroot_Idletalk_Aidee{
 	applymovement (5, moves(face_player))
 	setspeaker ([SP_NAME_AIDEE])
 
+		if (var(VAR_BALSAM_LORE) == 1){
+
+			setvar (VAR_BALSAM_LORE, 2)
+			msgbox (format("Hey, {PLAYER}... couldn't help but overhear your chat with the
+			Professor before.\p"))
+
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Did you know she's actually the daughter of a famous Professor in
+			Alola?"))
+
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("She keeps that a secret, though - she's all about
+			being recognized for her own deeds, and..."))
+
+
+			applymovement (4, moves(walk_in_place_left))
+			playse (SE_M_SWAGGER2)
+			removefieldmugshot
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+			setspeaker ([SP_NAME_BALSAM])
+			msgbox (format("Jim, I can hear you. Stop gossiping, and get back to work."))
+			applymovement (4, moves(walk_in_place_up))
+
+
+			applymovement (5, moves(face_right))
+			removefieldmugshot
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_TALK)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Ahaha, of course... I'm sorry Professor!"))
+
+			applymovement (5, moves(face_player))
+			removefieldmugshot
+			createfieldmugshot (MUGSHOT_AIDEE , EMOTE_HAPPY)
+			setspeaker ([SP_NAME_AIDEE])
+			msgbox (format("Let's continue some other time, hey {PLAYER}?"))
+			goto(aideeisfollowing)
+
+			}
+
 if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 	createfieldmugshot (MUGSHOT_AIDEE , EMOTE_NORMAL)
 	msgbox (format("Oh, {PLAYER}! Did you ask your friend to help with finding a
@@ -1323,6 +1364,53 @@ script Littleroot_Idletalk_Prof{
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_BALSAM])
 	applymovement (4, moves(face_player))
+
+
+			if (checkitem (ITEM_STRANGE_SOUVENIR)  == TRUE)
+			{
+
+			if (var(VAR_BALSAM_LORE) == 0){
+			msgbox (format("{PLAYER} - that bump you have in your backpack... let me see what
+			you got there."))
+			removefieldmugshot
+			setspeaker (NULL)
+			msgbox (format("{COLOR GREEN}{PLAYER} shows Balsam the {COLOR GREEN}Strange Souvenir."))
+			setspeaker ([SP_NAME_BALSAM])
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
+			msgbox (format("I knew it - you've been searching through my trash."))
+
+			setspeaker ([SP_NAME_BALSAM])
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_CONFUSED)
+			msgbox (format("I'm not sure if I should be mad or confused. You're something else."))
+
+			setspeaker ([SP_NAME_BALSAM])
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+			msgbox (format("Well, you can keep that trinket if you'd like. It's just something
+			my dad sent me from back home, but I have no use for it."))
+
+			setspeaker ([SP_NAME_BALSAM])
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_TALK)
+			msgbox (format("Since you seem so curious about me, I'm from Alola."))
+
+			setspeaker ([SP_NAME_BALSAM])
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_NORMAL)
+			msgbox (format("I came here after finishing my studies, and got roped in the war and all the rest.
+			\pPretty bad luck, if you ask me. But good for you, right?"))
+
+			setspeaker ([SP_NAME_BALSAM])
+			createfieldmugshot (MUGSHOT_BALSAM , EMOTE_HAPPY)
+			msgbox (format("I know I'm not a charmer, but you could be dealing with a Devon
+			shill."))
+
+			setvar (VAR_BALSAM_LORE, 1)
+			goto (finishbalsamidletalk)
+
+			}
+
+			else {goto (continuebalsamidleasnormal)}
+			}
+
+continuebalsamidleasnormal:
 
 if (var(VAR_MAUSOLEUM_HEXGIRL) == 3){
 

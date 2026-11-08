@@ -1850,7 +1850,7 @@ OldaleTown_DLC_TherapyCutscene_Movement_8:
 # 138 "data/maps/DLC/scripts.pory"
 	face_left
 # 138 "data/maps/DLC/scripts.pory"
-	emote_double_exclamation_mark
+	emote_exclamation_mark
 	step_end
 
 # 142 "data/maps/DLC/scripts.pory"

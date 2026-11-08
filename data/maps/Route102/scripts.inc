@@ -369,12 +369,8 @@ Route102Sandstorm2::
 
 
 Route102EndSandtorm::
-# 173 "data/maps/Route102/scripts.pory"
-	setweather WEATHER_SANDSTORM
 # 174 "data/maps/Route102/scripts.pory"
 	setvar VAR_ROUTE102_WEATHER, 0
-# 175 "data/maps/Route102/scripts.pory"
-	playbgm MUS_RUINSMUSIC, TRUE
 	return
 
 
@@ -1109,7 +1105,7 @@ Route102ScammerApproach4::
 	return
 
 
-Route102Scammer::
+Route102ScammerIdle::
 # 689 "data/maps/Route102/scripts.pory"
 	lock
 # 690 "data/maps/Route102/scripts.pory"
@@ -1120,19 +1116,19 @@ Route102Scammer::
 	waitmovement 10
 # 694 "data/maps/Route102/scripts.pory"
 	compare VAR_102CANDYSCAMMER, 0
-	goto_if_eq Route102Scammer_2
-Route102Scammer_1:
+	goto_if_eq Route102ScammerIdle_2
+Route102ScammerIdle_1:
 # 753 "data/maps/Route102/scripts.pory"
 	compare VAR_102CANDYSCAMMER, 1
-	goto_if_eq Route102Scammer_5
-Route102Scammer_4:
-# 805 "data/maps/Route102/scripts.pory"
+	goto_if_eq Route102ScammerIdle_5
+Route102ScammerIdle_4:
+# 811 "data/maps/Route102/scripts.pory"
 endofroute102scammer:
-# 806 "data/maps/Route102/scripts.pory"
+# 812 "data/maps/Route102/scripts.pory"
 	release
 	return
 
-Route102Scammer_2:
+Route102ScammerIdle_2:
 # 697 "data/maps/Route102/scripts.pory"
 	msgbox Route102ScammerApproach0_Text_0
 # 699 "data/maps/Route102/scripts.pory"
@@ -1140,60 +1136,63 @@ route102scammerafterapproach:
 # 700 "data/maps/Route102/scripts.pory"
 	closemessage
 # 701 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route102Scammer_Movement_0
+	applymovement OBJ_EVENT_ID_PLAYER, Route102ScammerIdle_Movement_0
 # 702 "data/maps/Route102/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 703 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_0
+	msgbox Route102ScammerIdle_Text_0
 # 705 "data/maps/Route102/scripts.pory"
 scammer102candybuychoice:
 # 706 "data/maps/Route102/scripts.pory"
 	showmoneybox 18, 0
 # 707 "data/maps/Route102/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scammer_Text_1, Route102Scammer_Text_2
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102ScammerIdle_Text_1, Route102ScammerIdle_Text_2
 # 708 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq Route102Scammer_8
-Route102Scammer_7:
+	goto_if_eq Route102ScammerIdle_8
+Route102ScammerIdle_7:
 # 738 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, 1
-	goto_if_eq Route102Scammer_13
-	goto Route102Scammer_1
+	goto_if_eq Route102ScammerIdle_13
+	goto Route102ScammerIdle_1
 
-Route102Scammer_5:
+Route102ScammerIdle_5:
 # 756 "data/maps/Route102/scripts.pory"
-	goto_if_unset confronted102candyscammer, Route102Scammer_10
-# 798 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_17
-# 800 "data/maps/Route102/scripts.pory"
+	goto_if_unset confronted102candyscammer, Route102ScammerIdle_10
+# 804 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerIdle_Text_18
+# 806 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
-	goto Route102Scammer_4
+	goto Route102ScammerIdle_4
 
-Route102Scammer_8:
+Route102ScammerIdle_8:
 # 709 "data/maps/Route102/scripts.pory"
 	checkmoney 500
 # 710 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq Route102Scammer_16
-Route102Scammer_15:
+	goto_if_eq Route102ScammerIdle_16
+Route102ScammerIdle_15:
 # 729 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq Route102Scammer_23
-	goto Route102Scammer_7
+	goto_if_eq Route102ScammerIdle_23
+	goto Route102ScammerIdle_7
 
-Route102Scammer_10:
+Route102ScammerIdle_10:
 # 758 "data/maps/Route102/scripts.pory"
-	goto_if_set boughtrarecandyfrom102scammer, Route102Scammer_20
-Route102Scammer_18:
+	goto_if_unset boughtrarecandyfrom102scammer, Route102ScammerIdle_20
+Route102ScammerIdle_18:
 # 764 "data/maps/Route102/scripts.pory"
-	goto_if_set boughtrarecandyfrom102scammer, Route102Scammer_26
-	goto Route102Scammer_4
+	goto_if_set boughtrarecandyfrom102scammer, Route102ScammerIdle_27
+Route102ScammerIdle_25:
+# 770 "data/maps/Route102/scripts.pory"
+	goto_if_set boughtrarecandyfrom102scammer, Route102ScammerIdle_31
+	goto Route102ScammerIdle_4
 
-Route102Scammer_13:
+Route102ScammerIdle_13:
 # 739 "data/maps/Route102/scripts.pory"
 	hidemoneybox
 # 740 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_6
+	msgbox Route102ScammerIdle_Text_6
 # 741 "data/maps/Route102/scripts.pory"
 	setvar VAR_102CANDYSCAMMER, 1
 # 742 "data/maps/Route102/scripts.pory"
@@ -1206,9 +1205,9 @@ Route102Scammer_13:
 	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
 # 746 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
-	goto Route102Scammer_1
+	goto Route102ScammerIdle_1
 
-Route102Scammer_16:
+Route102ScammerIdle_16:
 # 711 "data/maps/Route102/scripts.pory"
 	removemoney 500
 # 712 "data/maps/Route102/scripts.pory"
@@ -1220,11 +1219,11 @@ Route102Scammer_16:
 # 715 "data/maps/Route102/scripts.pory"
 	hidemoneybox
 # 717 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_3
+	msgbox Route102ScammerIdle_Text_3
 # 718 "data/maps/Route102/scripts.pory"
 	giveitem ITEM_EXP_CANDY_XS
 # 719 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_4
+	msgbox Route102ScammerIdle_Text_4
 # 720 "data/maps/Route102/scripts.pory"
 	setflag boughtrarecandyfrom102scammer
 # 721 "data/maps/Route102/scripts.pory"
@@ -1239,86 +1238,100 @@ Route102Scammer_16:
 	setflag FLAG_ITEM_WAREHOUSEMONEYBAGS
 # 726 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
-	goto Route102Scammer_15
+	goto Route102ScammerIdle_15
 
-Route102Scammer_19:
+Route102ScammerIdle_19:
 # 760 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_7
+	msgbox Route102ScammerIdle_Text_7
 # 761 "data/maps/Route102/scripts.pory"
-	goto endofroute102scammer
-	goto Route102Scammer_18
+	goto scammer102candybuychoice
+	goto Route102ScammerIdle_18
 
-Route102Scammer_20:
-	checkitem ITEM_EXP_CANDY_XS
-# 0 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route102Scammer_19
-	goto Route102Scammer_18
-
-Route102Scammer_23:
-# 730 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_5
-# 733 "data/maps/Route102/scripts.pory"
-	goto endofroute102scammer
-	goto Route102Scammer_7
-
-Route102Scammer_25:
-# 766 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_8
-# 767 "data/maps/Route102/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scammer_Text_9, Route102Scammer_Text_10
-# 768 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq Route102Scammer_30
-Route102Scammer_29:
-# 789 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq Route102Scammer_32
-	goto Route102Scammer_4
-
-Route102Scammer_26:
+Route102ScammerIdle_20:
 	checkitem ITEM_EXP_CANDY_XS
 # 0 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq Route102Scammer_25
-	goto Route102Scammer_4
+	goto_if_eq Route102ScammerIdle_19
+	goto Route102ScammerIdle_18
 
-Route102Scammer_30:
-# 770 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_11
-# 771 "data/maps/Route102/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102Scammer_Text_12, Route102Scammer_Text_13
+Route102ScammerIdle_23:
+# 730 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerIdle_Text_5
+# 733 "data/maps/Route102/scripts.pory"
+	goto endofroute102scammer
+	goto Route102ScammerIdle_7
+
+Route102ScammerIdle_26:
+# 766 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerIdle_Text_8
+# 767 "data/maps/Route102/scripts.pory"
+	goto endofroute102scammer
+	goto Route102ScammerIdle_25
+
+Route102ScammerIdle_27:
+	checkitem ITEM_EXP_CANDY_XS
+# 0 "data/maps/Route102/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route102ScammerIdle_26
+	goto Route102ScammerIdle_25
+
+Route102ScammerIdle_30:
 # 772 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq Route102Scammer_35
-Route102Scammer_34:
-# 782 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq Route102Scammer_37
-	goto Route102Scammer_29
-
-Route102Scammer_32:
-# 790 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_16
-# 791 "data/maps/Route102/scripts.pory"
-	goto endofroute102scammer
-	goto Route102Scammer_4
-
-Route102Scammer_35:
+	msgbox Route102ScammerIdle_Text_9
 # 773 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_14
-# 779 "data/maps/Route102/scripts.pory"
-	setflag confronted102candyscammer
-# 780 "data/maps/Route102/scripts.pory"
-	goto endofroute102scammer
-	goto Route102Scammer_34
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102ScammerIdle_Text_10, Route102ScammerIdle_Text_11
+# 774 "data/maps/Route102/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Route102ScammerIdle_35
+Route102ScammerIdle_34:
+# 795 "data/maps/Route102/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq Route102ScammerIdle_37
+	goto Route102ScammerIdle_4
 
-Route102Scammer_37:
-# 783 "data/maps/Route102/scripts.pory"
-	msgbox Route102Scammer_Text_15
-# 784 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_31:
+	checkitem ITEM_EXP_CANDY_XS
+# 0 "data/maps/Route102/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route102ScammerIdle_30
+	goto Route102ScammerIdle_4
+
+Route102ScammerIdle_35:
+# 776 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerIdle_Text_12
+# 777 "data/maps/Route102/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Route102ScammerIdle_Text_13, Route102ScammerIdle_Text_14
+# 778 "data/maps/Route102/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Route102ScammerIdle_40
+Route102ScammerIdle_39:
+# 788 "data/maps/Route102/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq Route102ScammerIdle_42
+	goto Route102ScammerIdle_34
+
+Route102ScammerIdle_37:
+# 796 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerIdle_Text_17
+# 797 "data/maps/Route102/scripts.pory"
 	goto endofroute102scammer
-	goto Route102Scammer_29
+	goto Route102ScammerIdle_4
+
+Route102ScammerIdle_40:
+# 779 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerIdle_Text_15
+# 785 "data/maps/Route102/scripts.pory"
+	setflag confronted102candyscammer
+# 786 "data/maps/Route102/scripts.pory"
+	goto endofroute102scammer
+	goto Route102ScammerIdle_39
+
+Route102ScammerIdle_42:
+# 789 "data/maps/Route102/scripts.pory"
+	msgbox Route102ScammerIdle_Text_16
+# 790 "data/maps/Route102/scripts.pory"
+	goto endofroute102scammer
+	goto Route102ScammerIdle_34
 
 
 # 196 "data/maps/Route102/scripts.pory"
@@ -1420,7 +1433,7 @@ Route102ScammerApproach4_Movement_0:
 	step_end
 
 # 701 "data/maps/Route102/scripts.pory"
-Route102Scammer_Movement_0:
+Route102ScammerIdle_Movement_0:
 # 701 "data/maps/Route102/scripts.pory"
 	face_up
 	step_end
@@ -1751,31 +1764,31 @@ Route102ScammerApproach0_Text_0:
 	.string "so fast?\p"
 	.string "Settle down, enjoy life a little!$"
 
-Route102Scammer_Text_0:
+Route102ScammerIdle_Text_0:
 # 703 "data/maps/Route102/scripts.pory"
 	.string "Say, what about a Rare Candy to\n"
 	.string "sweeten your day?\p"
 	.string "It'll make your Pokémon stronger! 500¥\n"
 	.string "each!$"
 
-Route102Scammer_Text_1:
+Route102ScammerIdle_Text_1:
 # 707 "data/maps/Route102/scripts.pory"
 	.string "Buy one$"
 
-Route102Scammer_Text_2:
+Route102ScammerIdle_Text_2:
 # 707 "data/maps/Route102/scripts.pory"
 	.string "Don't buy$"
 
-Route102Scammer_Text_3:
+Route102ScammerIdle_Text_3:
 # 717 "data/maps/Route102/scripts.pory"
 	.string "Thank you for your purchase - here you\n"
 	.string "go!$"
 
-Route102Scammer_Text_4:
+Route102ScammerIdle_Text_4:
 # 719 "data/maps/Route102/scripts.pory"
 	.string "Let me know how your Pokémon like it!$"
 
-Route102Scammer_Text_5:
+Route102ScammerIdle_Text_5:
 # 730 "data/maps/Route102/scripts.pory"
 	.string "What... you don't even have 500¥ on you\n"
 	.string "pal?\p"
@@ -1784,44 +1797,49 @@ Route102Scammer_Text_5:
 	.string "Warehouse.\p"
 	.string "Maybe you can get a job there!$"
 
-Route102Scammer_Text_6:
+Route102ScammerIdle_Text_6:
 # 740 "data/maps/Route102/scripts.pory"
 	.string "You're going to let this chance pass\n"
 	.string "by? Well... your loss!$"
 
-Route102Scammer_Text_7:
+Route102ScammerIdle_Text_7:
 # 760 "data/maps/Route102/scripts.pory"
+	.string "Hey hey, you changed your mind pal?\n"
+	.string "Candy is still only 500¥ each!$"
+
+Route102ScammerIdle_Text_8:
+# 766 "data/maps/Route102/scripts.pory"
 	.string "You still have that candy on you eh?\n"
 	.string "Saving it for a special occassion?$"
 
-Route102Scammer_Text_8:
-# 766 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_9:
+# 772 "data/maps/Route102/scripts.pory"
 	.string "Hm? What's wrong? You look\n"
 	.string "disappointed.$"
 
-Route102Scammer_Text_9:
-# 767 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_10:
+# 773 "data/maps/Route102/scripts.pory"
 	.string "You're a scammer!$"
 
-Route102Scammer_Text_10:
-# 767 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_11:
+# 773 "data/maps/Route102/scripts.pory"
 	.string "It's nothing$"
 
-Route102Scammer_Text_11:
-# 770 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_12:
+# 776 "data/maps/Route102/scripts.pory"
 	.string "Woah there pal - that's some serious\n"
 	.string "accusation! What do you mean!?$"
 
-Route102Scammer_Text_12:
-# 771 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_13:
+# 777 "data/maps/Route102/scripts.pory"
 	.string "It only healed 1 HP$"
 
-Route102Scammer_Text_13:
-# 771 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_14:
+# 777 "data/maps/Route102/scripts.pory"
 	.string "Forget about it$"
 
-Route102Scammer_Text_14:
-# 773 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_15:
+# 779 "data/maps/Route102/scripts.pory"
 	.string "1 HP? And what is an “HP” exactly?\n"
 	.string "What? “Health Points” you say?\p"
 	.string "Listen kid, I don't have the foggiest of\n"
@@ -1835,18 +1853,18 @@ Route102Scammer_Text_14:
 	.string "just means you need to feed them more\l"
 	.string "candies!$"
 
-Route102Scammer_Text_15:
-# 783 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_16:
+# 789 "data/maps/Route102/scripts.pory"
 	.string "Bah, stop messing around, I have no time\n"
 	.string "for jokes!$"
 
-Route102Scammer_Text_16:
-# 790 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_17:
+# 796 "data/maps/Route102/scripts.pory"
 	.string "Well, then be on your way. I'm on the\n"
 	.string "lookout for customers!$"
 
-Route102Scammer_Text_17:
-# 798 "data/maps/Route102/scripts.pory"
+Route102ScammerIdle_Text_18:
+# 804 "data/maps/Route102/scripts.pory"
 	.string "You slandered my candies and my\n"
 	.string "honesty, so I don't want to do more\l"
 	.string "business with you.\p"

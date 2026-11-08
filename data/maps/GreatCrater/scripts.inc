@@ -912,10 +912,6 @@ TouristGreatCraterApproach0_1:
 	applymovement 13, TouristGreatCraterApproach0_Movement_1
 # 528 "data/maps/GreatCrater/scripts.pory"
 	waitmovement 13
-# 530 "data/maps/GreatCrater/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, TouristGreatCraterApproach0_Movement_2
-# 531 "data/maps/GreatCrater/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
 # 533 "data/maps/GreatCrater/scripts.pory"
 	call TouristGreatCraterBattle
 	return
@@ -947,10 +943,6 @@ TouristGreatCraterApproach1_1:
 	applymovement 6, TouristGreatCraterApproach1_Movement_0
 # 548 "data/maps/GreatCrater/scripts.pory"
 	applymovement 13, TouristGreatCraterApproach1_Movement_0
-# 550 "data/maps/GreatCrater/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, TouristGreatCraterApproach0_Movement_2
-# 551 "data/maps/GreatCrater/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
 # 553 "data/maps/GreatCrater/scripts.pory"
 	call TouristGreatCraterBattle
 	return
@@ -982,10 +974,6 @@ TouristGreatCraterApproach2_1:
 	applymovement 6, TouristGreatCraterApproach2_Movement_0
 # 568 "data/maps/GreatCrater/scripts.pory"
 	applymovement 13, TouristGreatCraterApproach2_Movement_0
-# 570 "data/maps/GreatCrater/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, TouristGreatCraterApproach0_Movement_2
-# 571 "data/maps/GreatCrater/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
 # 573 "data/maps/GreatCrater/scripts.pory"
 	call TouristGreatCraterBattle
 	return
@@ -1518,12 +1506,6 @@ TouristGreatCraterApproach0_Movement_0:
 TouristGreatCraterApproach0_Movement_1:
 # 527 "data/maps/GreatCrater/scripts.pory"
 	jump_in_place_down
-	step_end
-
-# 530 "data/maps/GreatCrater/scripts.pory"
-TouristGreatCraterApproach0_Movement_2:
-# 530 "data/maps/GreatCrater/scripts.pory"
-	face_up
 	step_end
 
 # 547 "data/maps/GreatCrater/scripts.pory"

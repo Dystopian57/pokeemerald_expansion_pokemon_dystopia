@@ -38,7 +38,7 @@ PokeInnRoom1MapScriptBundle_2:
 # 26 "data/maps/PokeInnRoom1/scripts.pory"
 	addobject 11
 # 27 "data/maps/PokeInnRoom1/scripts.pory"
-	setobjectxy 11, 5, 11
+	setobjectxyperm 11, 5, 11
 # 28 "data/maps/PokeInnRoom1/scripts.pory"
 	applymovement 11, PokeInnRoom1MapScriptBundle_Movement_0
 	goto PokeInnRoom1MapScriptBundle_1

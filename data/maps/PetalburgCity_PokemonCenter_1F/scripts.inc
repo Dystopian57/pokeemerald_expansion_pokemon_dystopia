@@ -315,15 +315,15 @@ PetalburgDevonCenterFakeMedic_4:
 	compare VAR_PETALBURG_HEALING_SCAM, 2
 	goto_if_eq PetalburgDevonCenterFakeMedic_8
 PetalburgDevonCenterFakeMedic_7:
-# 308 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 310 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_unset petalburgriotendedforgood, PetalburgDevonCenterFakeMedic_16
 PetalburgDevonCenterFakeMedic_15:
-# 355 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 357 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_set petalburgriotendedforgood, PetalburgDevonCenterFakeMedic_24
 PetalburgDevonCenterFakeMedic_23:
-# 382 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 384 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 endofpetalburgfakemedic:
-# 383 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 385 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
@@ -361,11 +361,11 @@ PetalburgDevonCenterFakeMedic_18:
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgDevonCenterFakeMedic_30
 PetalburgDevonCenterFakeMedic_29:
-# 296 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 298 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq PetalburgDevonCenterFakeMedic_39
 PetalburgDevonCenterFakeMedic_38:
-# 303 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 305 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgfakemedic
 	goto PetalburgDevonCenterFakeMedic_7
 
@@ -391,21 +391,21 @@ PetalburgDevonCenterFakeMedic_13:
 	goto PetalburgDevonCenterFakeMedic_12
 
 PetalburgDevonCenterFakeMedic_16:
-# 310 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 312 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	showmoneybox 18, 0
-# 311 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterFakeMedic_Text_24
 # 313 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PetalburgDevonCenterFakeMedic_Text_13, PetalburgDevonCenterFakeMedic_Text_14
+	msgbox PetalburgDevonCenterFakeMedic_Text_24
 # 315 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PetalburgDevonCenterFakeMedic_Text_13, PetalburgDevonCenterFakeMedic_Text_14
+# 317 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PetalburgDevonCenterFakeMedic_27
 PetalburgDevonCenterFakeMedic_26:
-# 348 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 350 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgDevonCenterFakeMedic_33
 PetalburgDevonCenterFakeMedic_32:
-# 351 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 353 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgfakemedic
 	goto PetalburgDevonCenterFakeMedic_15
 
@@ -456,630 +456,634 @@ PetalburgDevonCenterFakeMedic_21:
 	goto PetalburgDevonCenterFakeMedic_4
 
 PetalburgDevonCenterFakeMedic_24:
-# 358 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 360 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_31
-# 361 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	removeobject OBJ_EVENT_ID_FOLLOWER
-# 362 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	hidefollower 0
 # 363 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_2
+	removeobject OBJ_EVENT_ID_FOLLOWER
 # 364 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	dofieldeffect FLDEFF_POKECENTER_HEAL
+	hidefollower 0
 # 365 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitfieldeffect FLDEFF_POKECENTER_HEAL
-# 366 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	special HealPlayerParty
-# 367 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_3
+# 366 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	dofieldeffect FLDEFF_POKECENTER_HEAL
+# 367 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitfieldeffect FLDEFF_POKECENTER_HEAL
 # 368 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	clearflag FLAG_SYS_POKEMON_GET
+	special HealPlayerParty
+# 369 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_4
 # 370 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	clearflag FLAG_SYS_POKEMON_GET
+# 372 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	setflag FLAG_TEMP_HIDE_FOLLOWER
-# 375 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 377 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_32
-# 378 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 380 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	setvar VAR_PETALBURG_HEALING_SCAM, 1
 	goto PetalburgDevonCenterFakeMedic_23
 
 PetalburgDevonCenterFakeMedic_27:
-# 316 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 318 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	checkmoney 200
-# 317 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 319 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq PetalburgDevonCenterFakeMedic_36
 PetalburgDevonCenterFakeMedic_35:
-# 336 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 338 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq PetalburgDevonCenterFakeMedic_44
 	goto PetalburgDevonCenterFakeMedic_26
 
 PetalburgDevonCenterFakeMedic_30:
 # 229 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterFakeMedic_Text_12
+	playse SE_M_METRONOME
+# 230 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_2
 # 231 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox PetalburgDevonCenterFakeMedic_Text_12
+# 233 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, PetalburgDevonCenterFakeMedic_Text_13, PetalburgDevonCenterFakeMedic_Text_14, PetalburgDevonCenterFakeMedic_Text_15
-# 235 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 237 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PetalburgDevonCenterFakeMedic_42
 PetalburgDevonCenterFakeMedic_41:
-# 267 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 269 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgDevonCenterFakeMedic_47
 PetalburgDevonCenterFakeMedic_46:
-# 272 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 274 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq PetalburgDevonCenterFakeMedic_55
 	goto PetalburgDevonCenterFakeMedic_29
 
 PetalburgDevonCenterFakeMedic_33:
-# 349 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 351 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_30
 	goto PetalburgDevonCenterFakeMedic_32
 
 PetalburgDevonCenterFakeMedic_36:
-# 318 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	removemoney 200
-# 319 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	updatemoneybox
 # 320 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_SHOP
+	removemoney 200
 # 321 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitse
+	updatemoneybox
 # 322 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	hidemoneybox
+	playse SE_SHOP
+# 323 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitse
 # 324 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterFakeMedic_Text_25
-# 325 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	hidefollower 0
+	hidemoneybox
 # 326 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_2
+	msgbox PetalburgDevonCenterFakeMedic_Text_25
 # 327 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	dofieldeffect FLDEFF_POKECENTER_HEAL
+	hidefollower 0
 # 328 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitfieldeffect FLDEFF_POKECENTER_HEAL
-# 329 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	special HealPlayerParty
-# 330 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_3
+# 329 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	dofieldeffect FLDEFF_POKECENTER_HEAL
+# 330 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitfieldeffect FLDEFF_POKECENTER_HEAL
 # 331 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	callnative UpdateFollowingPokemon
+	special HealPlayerParty
 # 332 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterFakeMedic_Text_26
+	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_4
 # 333 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	callnative UpdateFollowingPokemon
+# 334 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox PetalburgDevonCenterFakeMedic_Text_26
+# 335 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgfakemedic
 	goto PetalburgDevonCenterFakeMedic_35
 
 PetalburgDevonCenterFakeMedic_39:
-# 297 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 299 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_23
-# 298 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 300 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgfakemedic
 	goto PetalburgDevonCenterFakeMedic_38
 
 PetalburgDevonCenterFakeMedic_42:
-# 236 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_PIN
-# 237 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_0
 # 238 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 8
+	playse SE_PIN
 # 239 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_0
+# 240 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 8
+# 241 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_16
-# 243 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 245 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 healscammerreturnspokemon:
-# 247 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	clearflag FLAG_TEMP_HIDE_FOLLOWER
 # 249 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 250 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	callnative UpdateFollowingPokemon
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
 # 251 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse MUS_OBTAIN_BADGE
+	setflag FLAG_SYS_POKEMON_GET
 # 252 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	checkplayergender
+	callnative UpdateFollowingPokemon
 # 253 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	playse MUS_OBTAIN_BADGE
+# 254 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	checkplayergender
+# 255 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PetalburgDevonCenterFakeMedic_50
 PetalburgDevonCenterFakeMedic_49:
-# 255 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 257 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq PetalburgDevonCenterFakeMedic_58
 PetalburgDevonCenterFakeMedic_57:
-# 257 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 259 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_19
-# 258 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 260 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	setvar VAR_PETALBURG_HEALING_SCAM, 4
-# 261 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 263 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	clearflag FLAG_TEMP_HIDE_FOLLOWER
-# 262 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	clearflag B_FLAG_FOLLOWERS_DISABLED
 # 264 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	clearflag B_FLAG_FOLLOWERS_DISABLED
+# 266 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgfakemedic
 	goto PetalburgDevonCenterFakeMedic_41
 
 PetalburgDevonCenterFakeMedic_44:
-# 338 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 340 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	checkplayergender
-# 339 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 341 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PetalburgDevonCenterFakeMedic_53
 PetalburgDevonCenterFakeMedic_52:
-# 341 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 343 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq PetalburgDevonCenterFakeMedic_61
 PetalburgDevonCenterFakeMedic_60:
-# 343 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 345 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_29
 	goto PetalburgDevonCenterFakeMedic_26
 
 PetalburgDevonCenterFakeMedic_47:
-# 268 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterFakeMedic_Text_20
 # 270 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox PetalburgDevonCenterFakeMedic_Text_20
+# 272 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgfakemedic
 	goto PetalburgDevonCenterFakeMedic_46
 
 PetalburgDevonCenterFakeMedic_50:
-# 253 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 255 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_17
 	goto PetalburgDevonCenterFakeMedic_49
 
 PetalburgDevonCenterFakeMedic_53:
-# 339 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 341 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_27
 	goto PetalburgDevonCenterFakeMedic_52
 
 PetalburgDevonCenterFakeMedic_55:
-# 273 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_PIN
-# 274 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_0
 # 275 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 8
+	playse SE_PIN
 # 276 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_0
+# 277 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 8
+# 278 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_21
-# 279 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 280 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse MUS_OBTAIN_BADGE
 # 281 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	checkplayergender
+	setflag FLAG_SYS_POKEMON_GET
 # 282 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	playse MUS_OBTAIN_BADGE
+# 283 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	checkplayergender
+# 284 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PetalburgDevonCenterFakeMedic_64
 PetalburgDevonCenterFakeMedic_63:
-# 284 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 286 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq PetalburgDevonCenterFakeMedic_67
 PetalburgDevonCenterFakeMedic_66:
-# 286 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 288 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_22
-# 287 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	setvar VAR_PETALBURG_HEALING_SCAM, 4
 # 289 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	setvar VAR_PETALBURG_HEALING_SCAM, 4
+# 291 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	clearflag FLAG_TEMP_HIDE_FOLLOWER
-# 290 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	clearflag B_FLAG_FOLLOWERS_DISABLED
 # 292 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	clearflag B_FLAG_FOLLOWERS_DISABLED
+# 294 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgfakemedic
 	goto PetalburgDevonCenterFakeMedic_29
 
 PetalburgDevonCenterFakeMedic_58:
-# 255 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 257 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_18
 	goto PetalburgDevonCenterFakeMedic_57
 
 PetalburgDevonCenterFakeMedic_61:
-# 341 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 343 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_28
 	goto PetalburgDevonCenterFakeMedic_60
 
 PetalburgDevonCenterFakeMedic_64:
-# 282 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 284 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_17
 	goto PetalburgDevonCenterFakeMedic_63
 
 PetalburgDevonCenterFakeMedic_67:
-# 284 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 286 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterFakeMedic_Text_18
 	goto PetalburgDevonCenterFakeMedic_66
 
 
 ScamFeebasfollowchat::
-# 389 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 390 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playmoncry SPECIES_FEEBAS, CRY_MODE_NORMAL
 # 391 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox ScamFeebasfollowchat_Text_0
+	lock
 # 392 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	playmoncry SPECIES_FEEBAS, CRY_MODE_NORMAL
+# 393 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox ScamFeebasfollowchat_Text_0
+# 394 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 
 DevonGuardsTakeHealScammer::
-# 396 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 397 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	clearflag healscammerarrestdevons
 # 398 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_SLIDING_DOOR
+	lock
 # 399 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitse
-# 401 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDevonCenterFakeMedic_Movement_3
-# 403 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	addobject 12
-# 404 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	addobject 13
-# 406 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 12, DevonGuardsTakeHealScammer_Movement_0
-# 407 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 13, DevonGuardsTakeHealScammer_Movement_0
-# 408 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 13
-# 410 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	clearflag healscammerarrestdevons
+# 400 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	playse SE_SLIDING_DOOR
-# 411 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 401 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	waitse
+# 403 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDevonCenterFakeMedic_Movement_4
+# 405 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	addobject 12
+# 406 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	addobject 13
+# 408 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 12, DevonGuardsTakeHealScammer_Movement_0
+# 409 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 13, DevonGuardsTakeHealScammer_Movement_0
+# 410 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 13
 # 412 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	addobject 14
+	playse SE_SLIDING_DOOR
+# 413 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitse
 # 414 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playbgm MUS_STOPTHIEF, TRUE
+	addobject 14
 # 416 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 14, DevonGuardsTakeHealScammer_Movement_1
-# 417 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 14
+	playbgm MUS_STOPTHIEF, TRUE
 # 418 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox DevonGuardsTakeHealScammer_Text_0
+	applymovement 14, DevonGuardsTakeHealScammer_Movement_1
 # 419 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	closemessage
+	waitmovement 14
+# 420 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox DevonGuardsTakeHealScammer_Text_0
 # 421 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_PIN
-# 422 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 8, DevonGuardsTakeHealScammer_Movement_2
+	closemessage
 # 423 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DevonGuardsTakeHealScammer_Movement_3
+	playse SE_PIN
 # 424 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 12, DevonGuardsTakeHealScammer_Movement_4
+	applymovement 8, PetalburgDevonCenterFakeMedic_Movement_0
 # 425 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 12
+	applymovement OBJ_EVENT_ID_PLAYER, DevonGuardsTakeHealScammer_Movement_2
+# 426 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 12, DevonGuardsTakeHealScammer_Movement_3
 # 427 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 12, DevonGuardsTakeHealScammer_Movement_1
-# 428 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	waitmovement 12
 # 429 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox DevonGuardsTakeHealScammer_Text_1
-# 430 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	closemessage
-# 432 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_LEDGE
-# 433 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 8, DevonGuardsTakeHealScammer_Movement_5
-# 434 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 8
-# 436 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox DevonGuardsTakeHealScammer_Text_2
-# 438 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	applymovement 12, DevonGuardsTakeHealScammer_Movement_1
-# 439 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 430 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	waitmovement 12
-# 440 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox DevonGuardsTakeHealScammer_Text_3
-# 441 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 431 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox DevonGuardsTakeHealScammer_Text_1
+# 432 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	closemessage
+# 434 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	playse SE_LEDGE
+# 435 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 8, DevonGuardsTakeHealScammer_Movement_4
+# 436 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 8
+# 438 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox DevonGuardsTakeHealScammer_Text_2
+# 440 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 12, DevonGuardsTakeHealScammer_Movement_1
+# 441 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 12
+# 442 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox DevonGuardsTakeHealScammer_Text_3
 # 443 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 444 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_FLEE
+	closemessage
 # 445 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitse
+	fadescreenswapbuffers FADE_TO_BLACK
 # 446 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_SLIDING_DOOR
+	playse SE_FLEE
 # 447 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	waitse
 # 448 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	removeobject 8
+	playse SE_SLIDING_DOOR
 # 449 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	removeobject 12
+	waitse
 # 450 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	removeobject 13
+	removeobject 8
 # 451 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	removeobject 14
+	removeobject 12
+# 452 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	removeobject 13
 # 453 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	setflag healscammerarrestdevons
-# 454 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	setflag petalburgfakemedic
+	removeobject 14
 # 455 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	clearflag petalburgnurse
+	setflag healscammerarrestdevons
+# 456 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	setflag petalburgfakemedic
 # 457 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	clearflag petalburgnurse
+# 459 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	setflag petalburgriotendedforgood
-# 458 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	setflag petalburgriotstopped
 # 460 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	setflag petalburgriotstopped
+# 462 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	addobject 1
-# 465 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	fadeoutbgm 1
-# 466 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	fadeinbgm 1
 # 467 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playbgm MUS_GYMNOPEDIE, TRUE
+	fadeoutbgm 1
+# 468 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	fadeinbgm 1
 # 469 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	setvar VAR_PETALBURG_HEALING_SCAM, 5
-# 470 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	playbgm MUS_GYMNOPEDIE, TRUE
 # 471 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	warpsilent MAP_PETALBURG_CITY_POKEMON_CENTER_1F, 3
+	setvar VAR_PETALBURG_HEALING_SCAM, 5
 # 472 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 473 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	warpsilent MAP_PETALBURG_CITY_POKEMON_CENTER_1F, 3
+# 474 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	warpsilent MAP_PETALBURG_CITY, 2
-# 475 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 477 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 
 PlayerRealizesHealScam::
-# 479 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
 # 481 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	lock
+# 483 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	checkplayergender
-# 482 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 484 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PlayerRealizesHealScam_2
 PlayerRealizesHealScam_1:
-# 484 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 486 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq PlayerRealizesHealScam_5
 PlayerRealizesHealScam_4:
-# 486 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	playse SE_PIN
-# 487 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDevonCenterFakeMedic_Movement_0
 # 488 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitse
+	playse SE_PIN
+# 489 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDevonCenterFakeMedic_Movement_0
 # 490 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitse
+# 492 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	checkplayergender
-# 491 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 493 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq PlayerRealizesHealScam_8
 PlayerRealizesHealScam_7:
-# 493 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 495 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq PlayerRealizesHealScam_11
 PlayerRealizesHealScam_10:
-# 495 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 497 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	setvar VAR_PETALBURG_HEALING_SCAM, 2
-# 496 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 498 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 PlayerRealizesHealScam_2:
-# 482 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 484 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PlayerRealizesHealScam_Text_0
 	goto PlayerRealizesHealScam_1
 
 PlayerRealizesHealScam_5:
-# 484 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 486 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PlayerRealizesHealScam_Text_1
 	goto PlayerRealizesHealScam_4
 
 PlayerRealizesHealScam_8:
-# 491 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 493 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PlayerRealizesHealScam_Text_2
 	goto PlayerRealizesHealScam_7
 
 PlayerRealizesHealScam_11:
-# 493 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 495 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PlayerRealizesHealScam_Text_3
 	goto PlayerRealizesHealScam_10
 
 
 PlayerHealScamForceDown::
-# 500 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 501 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PlayerHealScamForceDown_Text_0
 # 502 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	closemessage
+	lock
 # 503 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PlayerHealScamForceDown_Movement_0
+	msgbox PlayerHealScamForceDown_Text_0
 # 504 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	closemessage
 # 505 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerHealScamForceDown_Movement_0
+# 506 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 507 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 
 PlayerHealScamForceUp::
-# 509 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 510 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PlayerHealScamForceUp_Text_0
 # 511 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	closemessage
+	lock
 # 512 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, DevonGuardsTakeHealScammer_Movement_0
+	msgbox PlayerHealScamForceUp_Text_0
 # 513 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	closemessage
 # 514 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DevonGuardsTakeHealScammer_Movement_0
+# 515 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 516 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 
 PlayerHealScamForceRight::
-# 518 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 519 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PlayerHealScamForceUp_Text_0
 # 520 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	closemessage
+	lock
 # 521 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PlayerHealScamForceRight_Movement_0
+	msgbox PlayerHealScamForceUp_Text_0
 # 522 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	closemessage
 # 523 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerHealScamForceRight_Movement_0
+# 524 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 525 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 
 PetalburgDevonCenterTV::
-# 529 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
 # 531 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	lock
+# 533 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_unset rebelswonpetalburgriot, PetalburgDevonCenterTV_1
-# 535 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 537 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto OldalePokeCenterTVAds
 	return
 
 PetalburgDevonCenterTV_1:
-# 533 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 535 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterTV_Text_0
 	return
 
 
 PetalburgDevonCenterInnBlocker::
-# 540 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 541 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 7, PetalburgDevonCenterInnBlocker_Movement_0
 # 542 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterInnBlocker_Text_0
+	lock
+# 543 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 7, PetalburgDevonCenterInnBlocker_Movement_0
 # 544 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 7, PetalburgDevonCenterInnBlocker_Movement_1
-# 545 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 7
+	msgbox PetalburgDevonCenterInnBlocker_Text_0
 # 546 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 7, PetalburgDevonCenterInnBlocker_Movement_1
+# 547 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 7
+# 548 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 PetalburgDevonCenterPCTechnicianRepairing::
-# 550 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 551 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 4, PetalburgDevonCenterInnBlocker_Movement_0
 # 552 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterPCTechnicianRepairing_Text_0
+	lock
 # 553 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 4, PetalburgDevonCenterPCTechnicianRepairing_Movement_0
+	applymovement 4, PetalburgDevonCenterInnBlocker_Movement_0
 # 554 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 4
+	msgbox PetalburgDevonCenterPCTechnicianRepairing_Text_0
 # 555 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 4, PetalburgDevonCenterPCTechnicianRepairing_Movement_0
+# 556 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 4
+# 557 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 PetalburgDevonCenterTableNPC1::
-# 559 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 560 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 3, PetalburgDevonCenterInnBlocker_Movement_0
 # 561 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	lock
+# 562 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 3, PetalburgDevonCenterInnBlocker_Movement_0
+# 563 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterTableNPC1_Text_0
-# 565 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 3, PetalburgDevonCenterInnBlocker_Movement_1
-# 566 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 3
 # 567 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 3, PetalburgDevonCenterInnBlocker_Movement_1
+# 568 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 3
+# 569 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 
 PetalburgDevonCenterPCTechnician::
-# 571 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	lock
-# 572 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 10, PetalburgDevonCenterInnBlocker_Movement_0
 # 573 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	lock
+# 574 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 10, PetalburgDevonCenterInnBlocker_Movement_0
+# 575 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_set petalburgriotendedforgood, PetalburgDevonCenterPCTechnician_2
-# 581 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 583 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_unset rebelswonpetalburgriot, PetalburgDevonCenterPCTechnician_6
 PetalburgDevonCenterPCTechnician_5:
-# 586 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 588 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_set rebelswonpetalburgriot, PetalburgDevonCenterPCTechnician_8
 PetalburgDevonCenterPCTechnician_1:
-# 593 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 10, PetalburgDevonCenterFakeMedic_Movement_3
-# 594 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 10
+# 595 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 10, PetalburgDevonCenterFakeMedic_Movement_4
 # 596 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 10
+# 598 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 PetalburgDevonCenterPCTechnician_2:
-# 575 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 577 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterPCTechnician_Text_0
 	goto PetalburgDevonCenterPCTechnician_1
 
 PetalburgDevonCenterPCTechnician_6:
-# 583 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 585 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterPCTechnician_Text_1
 	goto PetalburgDevonCenterPCTechnician_5
 
 PetalburgDevonCenterPCTechnician_8:
-# 588 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 590 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterPCTechnician_Text_2
 	goto PetalburgDevonCenterPCTechnician_1
 
 
 PetalburgDevonCenterMart::
-# 602 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 604 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	lock
-# 603 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 4, PetalburgDevonCenterInnBlocker_Movement_0
 # 605 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 4, PetalburgDevonCenterInnBlocker_Movement_0
+# 607 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_unset rebelswonpetalburgriot, PetalburgDevonCenterMart_2
 PetalburgDevonCenterMart_1:
-# 612 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 614 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto_if_set devonwonpetalburgriot, PetalburgDevonCenterMart_5
 PetalburgDevonCenterMart_4:
-# 616 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	pokemart Petalburg_DevonMart
 # 618 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterMart_Text_2
-# 619 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-endofpetalburgdevonmart:
+	pokemart Petalburg_DevonMart
 # 620 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	applymovement 2, PetalburgDevonCenterFakeMedic_Movement_2
+	msgbox PetalburgDevonCenterMart_Text_2
 # 621 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	waitmovement 2
+endofpetalburgdevonmart:
 # 622 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	applymovement 2, PetalburgDevonCenterFakeMedic_Movement_3
+# 623 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	waitmovement 2
+# 624 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	releaseall
 	return
 
 PetalburgDevonCenterMart_2:
-# 607 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	msgbox PetalburgDevonCenterMart_Text_0
 # 609 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	msgbox PetalburgDevonCenterMart_Text_0
+# 611 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	goto endofpetalburgdevonmart
 	goto PetalburgDevonCenterMart_1
 
 PetalburgDevonCenterMart_5:
-# 614 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 616 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	msgbox PetalburgDevonCenterMart_Text_1
 	goto PetalburgDevonCenterMart_4
 
 
 	.align 2
-# 625 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-Petalburg_DevonMart:
-# 626 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_POKE_BALL
 # 627 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_POTION
+Petalburg_DevonMart:
 # 628 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_POKE_BALL
 # 629 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_POTION
 # 630 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_REMEDY
+	.2byte ITEM_SUPER_POTION
 # 631 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_HYPER_POTION
 # 632 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_HONEY
+	.2byte ITEM_REMEDY
 # 633 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.2byte ITEM_POKE_TOY
+	.2byte ITEM_REVIVAL_HERB
 # 634 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_HONEY
+# 635 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	.2byte ITEM_POKE_TOY
+# 636 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.2byte ITEM_CLEAR_AMULET
 	.2byte ITEM_NONE
 
@@ -1095,89 +1099,89 @@ PetalburgDevonCenterFakeMedic_Movement_1:
 	emote_x
 	step_end
 
-# 326 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 230 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PetalburgDevonCenterFakeMedic_Movement_2:
-# 326 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 230 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+	emote_question_mark
+	step_end
+
+# 328 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+PetalburgDevonCenterFakeMedic_Movement_3:
+# 328 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	face_left
 	step_end
 
-# 330 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-PetalburgDevonCenterFakeMedic_Movement_3:
-# 330 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 332 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+PetalburgDevonCenterFakeMedic_Movement_4:
+# 332 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	face_down
 	step_end
 
-# 406 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 408 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 DevonGuardsTakeHealScammer_Movement_0:
-# 406 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 408 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 416 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 418 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 DevonGuardsTakeHealScammer_Movement_1:
-# 416 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 418 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 422 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 425 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 DevonGuardsTakeHealScammer_Movement_2:
-# 422 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	emote_double_exclamation_mark
-	step_end
-
-# 423 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-DevonGuardsTakeHealScammer_Movement_3:
-# 423 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 425 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_right
-# 423 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 425 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_right
-# 423 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 425 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	face_left
 	step_end
 
-# 424 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-DevonGuardsTakeHealScammer_Movement_4:
-# 424 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 426 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+DevonGuardsTakeHealScammer_Movement_3:
+# 426 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_up
-# 424 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 426 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_up
-# 424 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 426 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 433 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-DevonGuardsTakeHealScammer_Movement_5:
-# 433 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 435 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+DevonGuardsTakeHealScammer_Movement_4:
+# 435 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 503 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 505 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PlayerHealScamForceDown_Movement_0:
-# 503 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 505 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 521 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 523 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PlayerHealScamForceRight_Movement_0:
-# 521 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 523 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	walk_right
 	step_end
 
-# 541 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 543 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PetalburgDevonCenterInnBlocker_Movement_0:
-# 541 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 543 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	face_player
 	step_end
 
-# 544 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 546 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PetalburgDevonCenterInnBlocker_Movement_1:
-# 544 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 546 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	face_right
 	step_end
 
-# 553 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 555 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PetalburgDevonCenterPCTechnicianRepairing_Movement_0:
-# 553 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 555 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	face_up
 	step_end
 
@@ -1248,25 +1252,25 @@ PetalburgDevonCenterFakeMedic_Text_11:
 	.string "the machine. Here it is!$"
 
 PetalburgDevonCenterFakeMedic_Text_12:
-# 229 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 231 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Woah, what are you talking about?\n"
 	.string "That's a serious accusation!\p"
 	.string "Do you have any proof to back it up?$"
 
 PetalburgDevonCenterFakeMedic_Text_13:
-# 232 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 234 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Yes$"
 
 PetalburgDevonCenterFakeMedic_Text_14:
-# 233 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 235 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "No$"
 
 PetalburgDevonCenterFakeMedic_Text_15:
-# 234 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 236 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "I don't need any$"
 
 PetalburgDevonCenterFakeMedic_Text_16:
-# 239 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 241 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Y-you do!? Why, aren't you a smart\n"
 	.string "fellow...\p"
 	.string "... I'll cut you a sweet deal then.\p"
@@ -1274,64 +1278,64 @@ PetalburgDevonCenterFakeMedic_Text_16:
 	.string "forget this ever happened.$"
 
 PetalburgDevonCenterFakeMedic_Text_17:
-# 253 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 255 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} got his Pokémon back!$"
 
 PetalburgDevonCenterFakeMedic_Text_18:
-# 255 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 257 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} got her Pokémon back!$"
 
 PetalburgDevonCenterFakeMedic_Text_19:
-# 257 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 259 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Don't look at me like that - it was just\n"
 	.string "a joke! Have a good one now.$"
 
 PetalburgDevonCenterFakeMedic_Text_20:
-# 268 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 270 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Heh, thought so. Then stop harrasing me\n"
 	.string "then, or I'll call the grunts on you.$"
 
 PetalburgDevonCenterFakeMedic_Text_21:
-# 276 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 278 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "I-is that a threat? Y-you do look\n"
 	.string "rather... seasoned.\p"
 	.string "O-okay, here's your Pokémon!$"
 
 PetalburgDevonCenterFakeMedic_Text_22:
-# 286 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 288 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "We're good now, right? Let's pretend\n"
 	.string "this never happened, please?$"
 
 PetalburgDevonCenterFakeMedic_Text_23:
-# 297 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 299 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Then clear the way for customers,\n"
 	.string "please!$"
 
 PetalburgDevonCenterFakeMedic_Text_24:
-# 311 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 313 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Hello there! Round of healing? It's 200¥\n"
 	.string "while we pay for repairs!$"
 
 PetalburgDevonCenterFakeMedic_Text_25:
-# 324 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 326 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Great - just a moment!$"
 
 PetalburgDevonCenterFakeMedic_Text_26:
-# 332 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 334 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "All in good shape now. Take care!$"
 
 PetalburgDevonCenterFakeMedic_Text_27:
-# 339 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 341 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Uhm... you ain't got enough, pal- I mean,\n"
 	.string "sir.$"
 
 PetalburgDevonCenterFakeMedic_Text_28:
-# 341 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 343 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Uhm... you ain't got enough, pal- I mean,\n"
 	.string "miss.$"
 
 PetalburgDevonCenterFakeMedic_Text_29:
-# 343 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 345 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Due to the repair costs for the riot, we\n"
 	.string "have suspended the one heal loan\l"
 	.string "system.\p"
@@ -1339,78 +1343,78 @@ PetalburgDevonCenterFakeMedic_Text_29:
 	.string "pokeyen!$"
 
 PetalburgDevonCenterFakeMedic_Text_30:
-# 349 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 351 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Huh? Don't waste my time then!$"
 
 PetalburgDevonCenterFakeMedic_Text_31:
-# 358 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 360 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Welcome, dear customer!\p"
 	.string "To celebrate the end of the riots,\n"
 	.string "healing is on the house today!\p"
 	.string "Let me see those Pokémon...$"
 
 PetalburgDevonCenterFakeMedic_Text_32:
-# 375 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 377 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "All in good shape now. Take care! Hehe...$"
 
 ScamFeebasfollowchat_Text_0:
-# 391 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 393 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Fee...$"
 
 DevonGuardsTakeHealScammer_Text_0:
-# 418 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 420 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "That's him! The nurse who stole my\n"
 	.string "Pokémon! Get him!$"
 
 DevonGuardsTakeHealScammer_Text_1:
-# 429 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 431 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "I hope you like the cold. There's a cell\n"
 	.string "with your name in Dewford Prison!$"
 
 DevonGuardsTakeHealScammer_Text_2:
-# 436 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 438 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "W-WAIT, no, this is a TERRIBLE\n"
 	.string "misunderstanding! I can explain!$"
 
 DevonGuardsTakeHealScammer_Text_3:
-# 440 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 442 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Save it for the trial! Off with you!$"
 
 PlayerRealizesHealScam_Text_0:
-# 482 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 484 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} feels his Pokéballs a bit\n"
 	.string "ligther...$"
 
 PlayerRealizesHealScam_Text_1:
-# 484 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 486 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} feels her Pokéballs a bit\n"
 	.string "ligther...$"
 
 PlayerRealizesHealScam_Text_2:
-# 491 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 493 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} realizes his Pokémon are\n"
 	.string "gone!$"
 
 PlayerRealizesHealScam_Text_3:
-# 493 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 495 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} realizes her Pokémon are\n"
 	.string "gone!$"
 
 PlayerHealScamForceDown_Text_0:
-# 501 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 503 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Must take back the Pokémon...!$"
 
 PlayerHealScamForceUp_Text_0:
-# 510 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 512 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Can't leave without the Pokémon...!$"
 
 PetalburgDevonCenterTV_Text_0:
-# 533 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 535 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "The TV returns static. The antenna may\n"
 	.string "have been damaged after the riot.$"
 
 PetalburgDevonCenterInnBlocker_Text_0:
-# 542 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 544 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "I'm sorry, but our inn floors suffered\n"
 	.string "fire damage during the recent riot.\p"
 	.string "They are are unsafe to stay in as a\n"
@@ -1418,12 +1422,12 @@ PetalburgDevonCenterInnBlocker_Text_0:
 	.string "inconvenience.$"
 
 PetalburgDevonCenterPCTechnicianRepairing_Text_0:
-# 552 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 554 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Those rebels messed this PC real good.\n"
 	.string "I'll take a while to repair it.$"
 
 PetalburgDevonCenterTableNPC1_Text_0:
-# 561 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 563 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Apparently Kanto attacked us because\n"
 	.string "they thought Hoenn would attack them\l"
 	.string "first.\p"
@@ -1435,7 +1439,7 @@ PetalburgDevonCenterTableNPC1_Text_0:
 	.string "matter…? It's all such a mess…$"
 
 PetalburgDevonCenterPCTechnician_Text_0:
-# 575 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 577 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "I work on a contract basis, so now that\n"
 	.string "Rebels have calmed down, I get less\l"
 	.string "work.\p"
@@ -1443,27 +1447,27 @@ PetalburgDevonCenterPCTechnician_Text_0:
 	.string "myself...$"
 
 PetalburgDevonCenterPCTechnician_Text_1:
-# 583 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 585 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Let us work, please. The sooner we're\n"
 	.string "done, the sooner PC service returns.$"
 
 PetalburgDevonCenterPCTechnician_Text_2:
-# 588 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 590 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Just finished repairing the PC. Have at\n"
 	.string "it!$"
 
 PetalburgDevonCenterMart_Text_0:
-# 607 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 609 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Those Rebels stole all our stock in the\n"
 	.string "last raid...\p"
 	.string "Mart will reopen once we receive a new\n"
 	.string "shipment from Oldale Warehouse!$"
 
 PetalburgDevonCenterMart_Text_1:
-# 614 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 616 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Welcome to Petalburg Devon Mart! How\n"
 	.string "may I help you?$"
 
 PetalburgDevonCenterMart_Text_2:
-# 618 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
+# 620 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "Thank you for your patronage!$"

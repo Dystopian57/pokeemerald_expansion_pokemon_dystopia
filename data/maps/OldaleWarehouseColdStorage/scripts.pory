@@ -101,13 +101,6 @@ script OldaleWarehouseColdStorageRebelClerk {
 	pokemart (OldaleWarehouseColdStorage_TempShop)
 	release}
 
-
-script OldaleWarehouseColdStorageItem {
-	lock
-    finditem (ITEM_STAR_PIECE)
-    removeobject (2)
-	releaseall}
-
 	mart OldaleWarehouseColdStorage_TempShop {
 			ITEM_POKE_BALL
 			ITEM_POTION
@@ -118,6 +111,14 @@ script OldaleWarehouseColdStorageItem {
 			ITEM_POKE_TOY
             ITEM_FULL_HEAL
             ITEM_AERODACTYLITE }
+
+script OldaleWarehouseColdStorageItem {
+	lock
+    finditem (ITEM_STAR_PIECE)
+    removeobject (2)
+	releaseall}
+
+
 
 script OldaleWarehouseColdStorageSchedule {
 	lock

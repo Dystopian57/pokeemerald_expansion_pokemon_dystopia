@@ -252,19 +252,19 @@ LittlerootMausoleum_HexGirl_10:
 	compare VAR_MAUSOLEUM_HEXGIRL, 4
 	goto_if_eq LittlerootMausoleum_HexGirl_19
 LittlerootMausoleum_HexGirl_18:
-# 330 "data/maps/LittlerootMausoleum/scripts.pory"
+# 337 "data/maps/LittlerootMausoleum/scripts.pory"
 	compare VAR_MAUSOLEUM_HEXGIRL, 5
 	goto_if_eq LittlerootMausoleum_HexGirl_33
 LittlerootMausoleum_HexGirl_32:
-# 336 "data/maps/LittlerootMausoleum/scripts.pory"
+# 343 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto endhexgirlscript
-# 337 "data/maps/LittlerootMausoleum/scripts.pory"
+# 344 "data/maps/LittlerootMausoleum/scripts.pory"
 endhexgirlscript:
-# 338 "data/maps/LittlerootMausoleum/scripts.pory"
+# 345 "data/maps/LittlerootMausoleum/scripts.pory"
 	applymovement 1, LittlerootMausoleum_Shuppet_Movement_2
-# 339 "data/maps/LittlerootMausoleum/scripts.pory"
+# 346 "data/maps/LittlerootMausoleum/scripts.pory"
 	waitmovement 1
-# 340 "data/maps/LittlerootMausoleum/scripts.pory"
+# 347 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
@@ -416,22 +416,25 @@ LittlerootMausoleum_HexGirl_45:
 # 307 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set SamanthaJoelInteraction, LittlerootMausoleum_HexGirl_51
 LittlerootMausoleum_HexGirl_50:
-# 311 "data/maps/LittlerootMausoleum/scripts.pory"
-	setspeaker [ SP_NAME_SAMANTHA ]
 # 312 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_34
-# 313 "data/maps/LittlerootMausoleum/scripts.pory"
-	giveitem ITEM_SPELL_TAG
-# 315 "data/maps/LittlerootMausoleum/scripts.pory"
-	goto_if_set SamanthaBirchInteraction, LittlerootMausoleum_HexGirl_56
+	goto_if_set SamanthaCameliaInteraction, LittlerootMausoleum_HexGirl_54
 LittlerootMausoleum_HexGirl_53:
-# 321 "data/maps/LittlerootMausoleum/scripts.pory"
+# 318 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
+# 319 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_35
+# 320 "data/maps/LittlerootMausoleum/scripts.pory"
+	giveitem ITEM_SPELL_TAG
 # 322 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_36
-# 325 "data/maps/LittlerootMausoleum/scripts.pory"
+	goto_if_set SamanthaBirchInteraction, LittlerootMausoleum_HexGirl_59
+LittlerootMausoleum_HexGirl_56:
+# 328 "data/maps/LittlerootMausoleum/scripts.pory"
+	setspeaker [ SP_NAME_SAMANTHA ]
+# 329 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_37
+# 332 "data/maps/LittlerootMausoleum/scripts.pory"
 	setvar VAR_MAUSOLEUM_HEXGIRL, 5
-# 326 "data/maps/LittlerootMausoleum/scripts.pory"
+# 333 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto endhexgirlscript
 	goto LittlerootMausoleum_HexGirl_18
 
@@ -478,10 +481,10 @@ LittlerootMausoleum_HexGirl_30:
 	goto LittlerootMausoleum_HexGirl_29
 
 LittlerootMausoleum_HexGirl_33:
-# 331 "data/maps/LittlerootMausoleum/scripts.pory"
+# 338 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 332 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_37
+# 339 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_38
 	goto LittlerootMausoleum_HexGirl_32
 
 LittlerootMausoleum_HexGirl_36:
@@ -576,407 +579,414 @@ LittlerootMausoleum_HexGirl_51:
 	goto LittlerootMausoleum_HexGirl_50
 
 LittlerootMausoleum_HexGirl_54:
-# 317 "data/maps/LittlerootMausoleum/scripts.pory"
+# 313 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 318 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_35
-# 319 "data/maps/LittlerootMausoleum/scripts.pory"
+# 314 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_34
+	goto LittlerootMausoleum_HexGirl_53
+
+LittlerootMausoleum_HexGirl_57:
+# 324 "data/maps/LittlerootMausoleum/scripts.pory"
+	setspeaker [ SP_NAME_SAMANTHA ]
+# 325 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_36
+# 326 "data/maps/LittlerootMausoleum/scripts.pory"
 	giveitem ITEM_DESTINY_KNOT
-	goto LittlerootMausoleum_HexGirl_53
+	goto LittlerootMausoleum_HexGirl_56
 
-LittlerootMausoleum_HexGirl_55:
-# 315 "data/maps/LittlerootMausoleum/scripts.pory"
-	goto_if_set SamanthaJoelInteraction, LittlerootMausoleum_HexGirl_54
-	goto LittlerootMausoleum_HexGirl_53
+LittlerootMausoleum_HexGirl_58:
+# 322 "data/maps/LittlerootMausoleum/scripts.pory"
+	goto_if_set SamanthaJoelInteraction, LittlerootMausoleum_HexGirl_57
+	goto LittlerootMausoleum_HexGirl_56
 
-LittlerootMausoleum_HexGirl_56:
-# 315 "data/maps/LittlerootMausoleum/scripts.pory"
-	goto_if_set SamanthaBalsamInteraction, LittlerootMausoleum_HexGirl_55
-	goto LittlerootMausoleum_HexGirl_53
+LittlerootMausoleum_HexGirl_59:
+# 322 "data/maps/LittlerootMausoleum/scripts.pory"
+	goto_if_set SamanthaBalsamInteraction, LittlerootMausoleum_HexGirl_58
+	goto LittlerootMausoleum_HexGirl_56
 
 
 Samanthafollowchat::
-# 344 "data/maps/LittlerootMausoleum/scripts.pory"
+# 351 "data/maps/LittlerootMausoleum/scripts.pory"
 	lock
-# 345 "data/maps/LittlerootMausoleum/scripts.pory"
+# 352 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 346 "data/maps/LittlerootMausoleum/scripts.pory"
+# 353 "data/maps/LittlerootMausoleum/scripts.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, MausoleumMourningLady_Movement_0
-# 347 "data/maps/LittlerootMausoleum/scripts.pory"
+# 354 "data/maps/LittlerootMausoleum/scripts.pory"
 	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
-# 348 "data/maps/LittlerootMausoleum/scripts.pory"
+# 355 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox Samanthafollowchat_Text_0
-# 349 "data/maps/LittlerootMausoleum/scripts.pory"
+# 356 "data/maps/LittlerootMausoleum/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Samanthafollowchat_Text_1, Samanthafollowchat_Text_2, Samanthafollowchat_Text_3, Samanthafollowchat_Text_4
-# 350 "data/maps/LittlerootMausoleum/scripts.pory"
+# 357 "data/maps/LittlerootMausoleum/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Samanthafollowchat_2
 Samanthafollowchat_1:
-# 365 "data/maps/LittlerootMausoleum/scripts.pory"
+# 372 "data/maps/LittlerootMausoleum/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Samanthafollowchat_5
 Samanthafollowchat_4:
-# 377 "data/maps/LittlerootMausoleum/scripts.pory"
+# 384 "data/maps/LittlerootMausoleum/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Samanthafollowchat_11
 Samanthafollowchat_10:
-# 405 "data/maps/LittlerootMausoleum/scripts.pory"
+# 412 "data/maps/LittlerootMausoleum/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Samanthafollowchat_19
 Samanthafollowchat_18:
-# 408 "data/maps/LittlerootMausoleum/scripts.pory"
+# 415 "data/maps/LittlerootMausoleum/scripts.pory"
 	release
 	return
 
 Samanthafollowchat_2:
-# 351 "data/maps/LittlerootMausoleum/scripts.pory"
+# 358 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_unset Samanthagotsnacks, Samanthafollowchat_8
 Samanthafollowchat_7:
-# 354 "data/maps/LittlerootMausoleum/scripts.pory"
+# 361 "data/maps/LittlerootMausoleum/scripts.pory"
 	playse SE_M_BITE
-# 356 "data/maps/LittlerootMausoleum/scripts.pory"
+# 363 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set Samanthagotsnacks, Samanthafollowchat_16
 	goto Samanthafollowchat_1
 
 Samanthafollowchat_5:
-# 366 "data/maps/LittlerootMausoleum/scripts.pory"
+# 373 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_unset Samanthagotsnacks, Samanthafollowchat_14
 Samanthafollowchat_13:
-# 371 "data/maps/LittlerootMausoleum/scripts.pory"
+# 378 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set Samanthagotsnacks, Samanthafollowchat_24
 	goto Samanthafollowchat_4
 
 Samanthafollowchat_8:
-# 352 "data/maps/LittlerootMausoleum/scripts.pory"
+# 359 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 353 "data/maps/LittlerootMausoleum/scripts.pory"
+# 360 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox Samanthafollowchat_Text_5
 	goto Samanthafollowchat_7
 
 Samanthafollowchat_11:
-# 378 "data/maps/LittlerootMausoleum/scripts.pory"
+# 385 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_unset Samanthagotsnacks, Samanthafollowchat_22
 Samanthafollowchat_21:
-# 389 "data/maps/LittlerootMausoleum/scripts.pory"
+# 396 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set Samanthagotsnacks, Samanthafollowchat_26
 	goto Samanthafollowchat_10
 
 Samanthafollowchat_14:
-# 367 "data/maps/LittlerootMausoleum/scripts.pory"
+# 374 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 368 "data/maps/LittlerootMausoleum/scripts.pory"
+# 375 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox Samanthafollowchat_Text_7
 	goto Samanthafollowchat_13
 
 Samanthafollowchat_16:
-# 358 "data/maps/LittlerootMausoleum/scripts.pory"
+# 365 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 359 "data/maps/LittlerootMausoleum/scripts.pory"
+# 366 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox Samanthafollowchat_Text_6
 	goto Samanthafollowchat_1
 
 Samanthafollowchat_19:
-# 406 "data/maps/LittlerootMausoleum/scripts.pory"
+# 413 "data/maps/LittlerootMausoleum/scripts.pory"
 	release
 	goto Samanthafollowchat_18
 
 Samanthafollowchat_22:
-# 379 "data/maps/LittlerootMausoleum/scripts.pory"
-	setspeaker [ SP_NAME_SAMANTHA ]
-# 380 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox Samanthafollowchat_Text_9
-# 382 "data/maps/LittlerootMausoleum/scripts.pory"
-	closemessage
-# 383 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 384 "data/maps/LittlerootMausoleum/scripts.pory"
-	destroyfollowernpc
-# 385 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
 # 386 "data/maps/LittlerootMausoleum/scripts.pory"
-	setvar VAR_MAUSOLEUM_HEXGIRL, 2
+	setspeaker [ SP_NAME_SAMANTHA ]
 # 387 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox Samanthafollowchat_Text_9
+# 389 "data/maps/LittlerootMausoleum/scripts.pory"
+	closemessage
+# 390 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 391 "data/maps/LittlerootMausoleum/scripts.pory"
+	destroyfollowernpc
+# 392 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 393 "data/maps/LittlerootMausoleum/scripts.pory"
+	setvar VAR_MAUSOLEUM_HEXGIRL, 2
+# 394 "data/maps/LittlerootMausoleum/scripts.pory"
 	clearflag Samanthaleavesmausoleum
 	goto Samanthafollowchat_21
 
 Samanthafollowchat_24:
-# 372 "data/maps/LittlerootMausoleum/scripts.pory"
+# 379 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 373 "data/maps/LittlerootMausoleum/scripts.pory"
+# 380 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox Samanthafollowchat_Text_8
 	goto Samanthafollowchat_4
 
 Samanthafollowchat_26:
-# 390 "data/maps/LittlerootMausoleum/scripts.pory"
-	setspeaker [ SP_NAME_SAMANTHA ]
-# 391 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox Samanthafollowchat_Text_10
-# 393 "data/maps/LittlerootMausoleum/scripts.pory"
-	closemessage
-# 394 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 395 "data/maps/LittlerootMausoleum/scripts.pory"
-	destroyfollowernpc
-# 396 "data/maps/LittlerootMausoleum/scripts.pory"
-	clearflag Samanthaleavesmausoleum
 # 397 "data/maps/LittlerootMausoleum/scripts.pory"
-	addobject 1
+	setspeaker [ SP_NAME_SAMANTHA ]
 # 398 "data/maps/LittlerootMausoleum/scripts.pory"
-	applymovement 1, LittlerootMausoleum_Shuppet_Movement_2
-# 399 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox Samanthafollowchat_Text_10
 # 400 "data/maps/LittlerootMausoleum/scripts.pory"
+	closemessage
+# 401 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 402 "data/maps/LittlerootMausoleum/scripts.pory"
+	destroyfollowernpc
+# 403 "data/maps/LittlerootMausoleum/scripts.pory"
+	clearflag Samanthaleavesmausoleum
+# 404 "data/maps/LittlerootMausoleum/scripts.pory"
+	addobject 1
+# 405 "data/maps/LittlerootMausoleum/scripts.pory"
+	applymovement 1, LittlerootMausoleum_Shuppet_Movement_2
+# 406 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 407 "data/maps/LittlerootMausoleum/scripts.pory"
 	setvar VAR_MAUSOLEUM_HEXGIRL, 4
 	goto Samanthafollowchat_10
 
 
 LittlerootMausoleum_ShuppetPost1stquest::
-# 412 "data/maps/LittlerootMausoleum/scripts.pory"
+# 419 "data/maps/LittlerootMausoleum/scripts.pory"
 	lock
-# 415 "data/maps/LittlerootMausoleum/scripts.pory"
+# 422 "data/maps/LittlerootMausoleum/scripts.pory"
 	compare VAR_MAUSOLEUM_HEXGIRL, 3
 	goto_if_eq LittlerootMausoleum_ShuppetPost1stquest_2
 LittlerootMausoleum_ShuppetPost1stquest_1:
-# 421 "data/maps/LittlerootMausoleum/scripts.pory"
+# 428 "data/maps/LittlerootMausoleum/scripts.pory"
 	compare VAR_MAUSOLEUM_HEXGIRL, 0
 	goto_if_eq LittlerootMausoleum_ShuppetPost1stquest_5
-# 426 "data/maps/LittlerootMausoleum/scripts.pory"
+# 433 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_unset shuppetgivesincense, LittlerootMausoleum_ShuppetPost1stquest_9
 LittlerootMausoleum_ShuppetPost1stquest_8:
-# 435 "data/maps/LittlerootMausoleum/scripts.pory"
+# 442 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_unset shuppetgivesincense, LittlerootMausoleum_ShuppetPost1stquest_12
 LittlerootMausoleum_ShuppetPost1stquest_11:
-# 438 "data/maps/LittlerootMausoleum/scripts.pory"
+# 445 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto endofshuppetscript
 LittlerootMausoleum_ShuppetPost1stquest_4:
-# 442 "data/maps/LittlerootMausoleum/scripts.pory"
+# 449 "data/maps/LittlerootMausoleum/scripts.pory"
 endofshuppetscript:
-# 443 "data/maps/LittlerootMausoleum/scripts.pory"
+# 450 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 LittlerootMausoleum_ShuppetPost1stquest_2:
-# 416 "data/maps/LittlerootMausoleum/scripts.pory"
+# 423 "data/maps/LittlerootMausoleum/scripts.pory"
 	playmoncry SPECIES_SHUPPET, CRY_MODE_NORMAL
-# 417 "data/maps/LittlerootMausoleum/scripts.pory"
+# 424 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_ShuppetPost1stquest_Text_0
 	goto LittlerootMausoleum_ShuppetPost1stquest_1
 
 LittlerootMausoleum_ShuppetPost1stquest_5:
-# 422 "data/maps/LittlerootMausoleum/scripts.pory"
+# 429 "data/maps/LittlerootMausoleum/scripts.pory"
 	playmoncry SPECIES_SHUPPET, CRY_MODE_NORMAL
-# 423 "data/maps/LittlerootMausoleum/scripts.pory"
+# 430 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_ShuppetPost1stquest_Text_1
 	goto LittlerootMausoleum_ShuppetPost1stquest_4
 
 LittlerootMausoleum_ShuppetPost1stquest_9:
-# 427 "data/maps/LittlerootMausoleum/scripts.pory"
+# 434 "data/maps/LittlerootMausoleum/scripts.pory"
 	playmoncry SPECIES_SHUPPET, CRY_MODE_HIGH_PITCH
-# 428 "data/maps/LittlerootMausoleum/scripts.pory"
+# 435 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_ShuppetPost1stquest_Text_2
-# 430 "data/maps/LittlerootMausoleum/scripts.pory"
+# 437 "data/maps/LittlerootMausoleum/scripts.pory"
 	giveitem ITEM_LUCK_INCENSE
-# 431 "data/maps/LittlerootMausoleum/scripts.pory"
+# 438 "data/maps/LittlerootMausoleum/scripts.pory"
 	setflag shuppetgivesincense
-# 432 "data/maps/LittlerootMausoleum/scripts.pory"
+# 439 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_ShuppetPost1stquest_Text_3
 	goto LittlerootMausoleum_ShuppetPost1stquest_8
 
 LittlerootMausoleum_ShuppetPost1stquest_12:
-# 436 "data/maps/LittlerootMausoleum/scripts.pory"
+# 443 "data/maps/LittlerootMausoleum/scripts.pory"
 	playmoncry SPECIES_SHUPPET, CRY_MODE_NORMAL
-# 437 "data/maps/LittlerootMausoleum/scripts.pory"
+# 444 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_ShuppetPost1stquest_Text_1
 	goto LittlerootMausoleum_ShuppetPost1stquest_11
 
 
 MausoleumHealingSigil::
-# 448 "data/maps/LittlerootMausoleum/scripts.pory"
-	lockall
-# 449 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadeoutbgm 1
-# 450 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_TO_WHITE
-# 451 "data/maps/LittlerootMausoleum/scripts.pory"
-	special HealPlayerParty
-# 452 "data/maps/LittlerootMausoleum/scripts.pory"
-	playse MUS_HEAL
-# 453 "data/maps/LittlerootMausoleum/scripts.pory"
-	waitse
-# 454 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadeinbgm 1
 # 455 "data/maps/LittlerootMausoleum/scripts.pory"
-	playbgm MUS_RG_POKE_TOWER, TRUE
+	lockall
 # 456 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_WHITE
+	fadeoutbgm 1
 # 457 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_TO_WHITE
+# 458 "data/maps/LittlerootMausoleum/scripts.pory"
+	special HealPlayerParty
+# 459 "data/maps/LittlerootMausoleum/scripts.pory"
+	playse MUS_HEAL
+# 460 "data/maps/LittlerootMausoleum/scripts.pory"
+	waitse
+# 461 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadeinbgm 1
+# 462 "data/maps/LittlerootMausoleum/scripts.pory"
+	playbgm MUS_RG_POKE_TOWER, TRUE
+# 463 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_WHITE
+# 464 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 
 MausoleumTombstone::
-# 461 "data/maps/LittlerootMausoleum/scripts.pory"
+# 468 "data/maps/LittlerootMausoleum/scripts.pory"
 	lockall
-# 462 "data/maps/LittlerootMausoleum/scripts.pory"
+# 469 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox MausoleumTombstone_Text_0
-# 463 "data/maps/LittlerootMausoleum/scripts.pory"
+# 470 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 
 MausoleumIncense::
-# 467 "data/maps/LittlerootMausoleum/scripts.pory"
+# 474 "data/maps/LittlerootMausoleum/scripts.pory"
 	lockall
-# 468 "data/maps/LittlerootMausoleum/scripts.pory"
+# 475 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox MausoleumIncense_Text_0
-# 469 "data/maps/LittlerootMausoleum/scripts.pory"
+# 476 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 
 MausoleumBouquet::
-# 473 "data/maps/LittlerootMausoleum/scripts.pory"
+# 480 "data/maps/LittlerootMausoleum/scripts.pory"
 	lockall
-# 474 "data/maps/LittlerootMausoleum/scripts.pory"
+# 481 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox MausoleumBouquet_Text_0
-# 475 "data/maps/LittlerootMausoleum/scripts.pory"
+# 482 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 
 MausoleumBlanket::
-# 479 "data/maps/LittlerootMausoleum/scripts.pory"
+# 486 "data/maps/LittlerootMausoleum/scripts.pory"
 	lockall
-# 480 "data/maps/LittlerootMausoleum/scripts.pory"
+# 487 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox MausoleumBlanket_Text_0
-# 481 "data/maps/LittlerootMausoleum/scripts.pory"
+# 488 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 
 MausoleumSigns::
-# 485 "data/maps/LittlerootMausoleum/scripts.pory"
+# 492 "data/maps/LittlerootMausoleum/scripts.pory"
 	lockall
-# 486 "data/maps/LittlerootMausoleum/scripts.pory"
+# 493 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox MausoleumSigns_Text_0
-# 487 "data/maps/LittlerootMausoleum/scripts.pory"
+# 494 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 
 MausoleumNogoDownstairs::
-# 491 "data/maps/LittlerootMausoleum/scripts.pory"
-	lockall
-# 492 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadeoutbgm 2
-# 493 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox MausoleumNogoDownstairs_Text_0
-# 494 "data/maps/LittlerootMausoleum/scripts.pory"
-	closemessage
-# 495 "data/maps/LittlerootMausoleum/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, MausoleumNogoDownstairs_Movement_0
-# 496 "data/maps/LittlerootMausoleum/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 497 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadeinbgm 2
 # 498 "data/maps/LittlerootMausoleum/scripts.pory"
+	lockall
+# 499 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadeoutbgm 2
+# 500 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox MausoleumNogoDownstairs_Text_0
+# 501 "data/maps/LittlerootMausoleum/scripts.pory"
+	closemessage
+# 502 "data/maps/LittlerootMausoleum/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, MausoleumNogoDownstairs_Movement_0
+# 503 "data/maps/LittlerootMausoleum/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 504 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadeinbgm 2
+# 505 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 
 MausoleumFinishedSnackQuest::
-# 505 "data/maps/LittlerootMausoleum/scripts.pory"
+# 512 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set Samanthagotsnacks, MausoleumFinishedSnackQuest_1
-# 552 "data/maps/LittlerootMausoleum/scripts.pory"
+# 559 "data/maps/LittlerootMausoleum/scripts.pory"
 	release
 	return
 
 MausoleumFinishedSnackQuest_1:
-# 507 "data/maps/LittlerootMausoleum/scripts.pory"
-	lock
-# 508 "data/maps/LittlerootMausoleum/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootMausoleum_Shuppet_Movement_1
-# 509 "data/maps/LittlerootMausoleum/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, MausoleumMourningLady_Movement_1
-# 510 "data/maps/LittlerootMausoleum/scripts.pory"
-	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
-# 511 "data/maps/LittlerootMausoleum/scripts.pory"
-	setspeaker [ SP_NAME_SAMANTHA ]
-# 512 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_30
 # 514 "data/maps/LittlerootMausoleum/scripts.pory"
+	lock
+# 515 "data/maps/LittlerootMausoleum/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootMausoleum_Shuppet_Movement_1
+# 516 "data/maps/LittlerootMausoleum/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, MausoleumMourningLady_Movement_1
+# 517 "data/maps/LittlerootMausoleum/scripts.pory"
+	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
+# 518 "data/maps/LittlerootMausoleum/scripts.pory"
+	setspeaker [ SP_NAME_SAMANTHA ]
+# 519 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_30
+# 521 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set SamanthaBirchInteraction, MausoleumFinishedSnackQuest_5
 MausoleumFinishedSnackQuest_4:
-# 520 "data/maps/LittlerootMausoleum/scripts.pory"
+# 527 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set SamanthaBalsamInteraction, MausoleumFinishedSnackQuest_8
 MausoleumFinishedSnackQuest_7:
-# 526 "data/maps/LittlerootMausoleum/scripts.pory"
+# 533 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set SamanthaJoelInteraction, MausoleumFinishedSnackQuest_11
 MausoleumFinishedSnackQuest_10:
-# 530 "data/maps/LittlerootMausoleum/scripts.pory"
+# 537 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 531 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_34
-# 532 "data/maps/LittlerootMausoleum/scripts.pory"
+# 538 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_35
+# 539 "data/maps/LittlerootMausoleum/scripts.pory"
 	giveitem ITEM_SPELL_TAG
-# 534 "data/maps/LittlerootMausoleum/scripts.pory"
+# 541 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set SamanthaBirchInteraction, MausoleumFinishedSnackQuest_16
 MausoleumFinishedSnackQuest_13:
-# 540 "data/maps/LittlerootMausoleum/scripts.pory"
-	setspeaker [ SP_NAME_SAMANTHA ]
-# 541 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_36
-# 543 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 544 "data/maps/LittlerootMausoleum/scripts.pory"
-	destroyfollowernpc
-# 545 "data/maps/LittlerootMausoleum/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 546 "data/maps/LittlerootMausoleum/scripts.pory"
-	setvar VAR_MAUSOLEUM_HEXGIRL, 4
 # 547 "data/maps/LittlerootMausoleum/scripts.pory"
+	setspeaker [ SP_NAME_SAMANTHA ]
+# 548 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_37
+# 550 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 551 "data/maps/LittlerootMausoleum/scripts.pory"
+	destroyfollowernpc
+# 552 "data/maps/LittlerootMausoleum/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 553 "data/maps/LittlerootMausoleum/scripts.pory"
+	setvar VAR_MAUSOLEUM_HEXGIRL, 4
+# 554 "data/maps/LittlerootMausoleum/scripts.pory"
 	clearflag Samanthaleavesmausoleum
-# 549 "data/maps/LittlerootMausoleum/scripts.pory"
+# 556 "data/maps/LittlerootMausoleum/scripts.pory"
 	releaseall
 	return
 
 MausoleumFinishedSnackQuest_5:
-# 515 "data/maps/LittlerootMausoleum/scripts.pory"
+# 522 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 516 "data/maps/LittlerootMausoleum/scripts.pory"
+# 523 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_HexGirl_Text_31
 	goto MausoleumFinishedSnackQuest_4
 
 MausoleumFinishedSnackQuest_8:
-# 521 "data/maps/LittlerootMausoleum/scripts.pory"
+# 528 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 522 "data/maps/LittlerootMausoleum/scripts.pory"
+# 529 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_HexGirl_Text_32
 	goto MausoleumFinishedSnackQuest_7
 
 MausoleumFinishedSnackQuest_11:
-# 527 "data/maps/LittlerootMausoleum/scripts.pory"
+# 534 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 528 "data/maps/LittlerootMausoleum/scripts.pory"
+# 535 "data/maps/LittlerootMausoleum/scripts.pory"
 	msgbox LittlerootMausoleum_HexGirl_Text_33
 	goto MausoleumFinishedSnackQuest_10
 
 MausoleumFinishedSnackQuest_14:
-# 536 "data/maps/LittlerootMausoleum/scripts.pory"
+# 543 "data/maps/LittlerootMausoleum/scripts.pory"
 	setspeaker [ SP_NAME_SAMANTHA ]
-# 537 "data/maps/LittlerootMausoleum/scripts.pory"
-	msgbox LittlerootMausoleum_HexGirl_Text_35
-# 538 "data/maps/LittlerootMausoleum/scripts.pory"
+# 544 "data/maps/LittlerootMausoleum/scripts.pory"
+	msgbox LittlerootMausoleum_HexGirl_Text_36
+# 545 "data/maps/LittlerootMausoleum/scripts.pory"
 	giveitem ITEM_DESTINY_KNOT
 	goto MausoleumFinishedSnackQuest_13
 
 MausoleumFinishedSnackQuest_15:
-# 534 "data/maps/LittlerootMausoleum/scripts.pory"
+# 541 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set SamanthaJoelInteraction, MausoleumFinishedSnackQuest_14
 	goto MausoleumFinishedSnackQuest_13
 
 MausoleumFinishedSnackQuest_16:
-# 534 "data/maps/LittlerootMausoleum/scripts.pory"
+# 541 "data/maps/LittlerootMausoleum/scripts.pory"
 	goto_if_set SamanthaBalsamInteraction, MausoleumFinishedSnackQuest_15
 	goto MausoleumFinishedSnackQuest_13
 
@@ -1013,9 +1023,9 @@ LittlerootMausoleum_Shuppet_Movement_2:
 	face_down
 	step_end
 
-# 495 "data/maps/LittlerootMausoleum/scripts.pory"
+# 502 "data/maps/LittlerootMausoleum/scripts.pory"
 MausoleumNogoDownstairs_Movement_0:
-# 495 "data/maps/LittlerootMausoleum/scripts.pory"
+# 502 "data/maps/LittlerootMausoleum/scripts.pory"
 	walk_slow_down
 	step_end
 
@@ -1295,22 +1305,28 @@ LittlerootMausoleum_HexGirl_Text_33:
 	.string "kid.$"
 
 LittlerootMausoleum_HexGirl_Text_34:
-# 312 "data/maps/LittlerootMausoleum/scripts.pory"
+# 314 "data/maps/LittlerootMausoleum/scripts.pory"
+	.string "As for Camelia... she made me think\n"
+	.string "about Devon. Maybe I should change\l"
+	.string "jobs...$"
+
+LittlerootMausoleum_HexGirl_Text_35:
+# 319 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "H-here... I want to give you this as...\n"
 	.string "t-thanks...!$"
 
-LittlerootMausoleum_HexGirl_Text_35:
-# 318 "data/maps/LittlerootMausoleum/scripts.pory"
+LittlerootMausoleum_HexGirl_Text_36:
+# 325 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "A-and... I also m-made... this...!$"
 
-LittlerootMausoleum_HexGirl_Text_36:
-# 322 "data/maps/LittlerootMausoleum/scripts.pory"
+LittlerootMausoleum_HexGirl_Text_37:
+# 329 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "I-I'm sorry I don't have... m-more to\n"
 	.string "give you... for your help...\p"
 	.string "T-thanks again... it was... v-very fun!$"
 
-LittlerootMausoleum_HexGirl_Text_37:
-# 332 "data/maps/LittlerootMausoleum/scripts.pory"
+LittlerootMausoleum_HexGirl_Text_38:
+# 339 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "Don't worry, {PLAYER}. The snacks will\n"
 	.string "last me a while.\p"
 	.string "A-and I sleep well, thanks to the\n"
@@ -1319,47 +1335,47 @@ LittlerootMausoleum_HexGirl_Text_37:
 	.string "without you... thanks again!$"
 
 Samanthafollowchat_Text_0:
-# 348 "data/maps/LittlerootMausoleum/scripts.pory"
+# 355 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "{PLAYER}... what's the matter?$"
 
 Samanthafollowchat_Text_1:
-# 349 "data/maps/LittlerootMausoleum/scripts.pory"
+# 356 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "What's up?$"
 
 Samanthafollowchat_Text_2:
-# 349 "data/maps/LittlerootMausoleum/scripts.pory"
+# 356 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "Where to?$"
 
 Samanthafollowchat_Text_3:
-# 349 "data/maps/LittlerootMausoleum/scripts.pory"
+# 356 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "I need to go$"
 
 Samanthafollowchat_Text_4:
-# 349 "data/maps/LittlerootMausoleum/scripts.pory"
+# 356 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "It's nothing$"
 
 Samanthafollowchat_Text_5:
-# 353 "data/maps/LittlerootMausoleum/scripts.pory"
+# 360 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "I-I'm good... just a big hungry...$"
 
 Samanthafollowchat_Text_6:
-# 359 "data/maps/LittlerootMausoleum/scripts.pory"
+# 366 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Nom-nom-nom... gulp.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\p"
 	.string "O-oh, I'm sorry! I couldn't help myself...$"
 
 Samanthafollowchat_Text_7:
-# 368 "data/maps/LittlerootMausoleum/scripts.pory"
+# 375 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "I-I want to go to the vending machine\n"
 	.string "next to {COLOR GREEN}Oldale Town{COLOR DARK_GRAY}'s Devon Center.\p"
 	.string "There's some... t-tasty snacks there...$"
 
 Samanthafollowchat_Text_8:
-# 373 "data/maps/LittlerootMausoleum/scripts.pory"
+# 380 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "L-let's go back... to the {COLOR GREEN}Mausoleum{COLOR DARK_GRAY}... I\n"
 	.string "have all the snacks... hehe...$"
 
 Samanthafollowchat_Text_9:
-# 380 "data/maps/LittlerootMausoleum/scripts.pory"
+# 387 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "O-oh, did something come up? T-that's\n"
 	.string "okay...\p"
 	.string "I-I'll go back to the Mausoleum... we can\n"
@@ -1367,7 +1383,7 @@ Samanthafollowchat_Text_9:
 	.string "B-bye... {PLAYER}...$"
 
 Samanthafollowchat_Text_10:
-# 391 "data/maps/LittlerootMausoleum/scripts.pory"
+# 398 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "O-oh, okay... I-I guess you helped me\n"
 	.string "get the snacks...\p"
 	.string "Y-yes, I... I can go back to the\n"
@@ -1375,51 +1391,51 @@ Samanthafollowchat_Text_10:
 	.string "B-bye... {PLAYER}...$"
 
 LittlerootMausoleum_ShuppetPost1stquest_Text_0:
-# 417 "data/maps/LittlerootMausoleum/scripts.pory"
+# 424 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "Shuppet seems to be saying goodbye to\n"
 	.string "{PLAYER} and Samantha.$"
 
 LittlerootMausoleum_ShuppetPost1stquest_Text_1:
-# 423 "data/maps/LittlerootMausoleum/scripts.pory"
+# 430 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "Shuuu...$"
 
 LittlerootMausoleum_ShuppetPost1stquest_Text_2:
-# 428 "data/maps/LittlerootMausoleum/scripts.pory"
+# 435 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "Shuuu...!\p"
 	.string "The Shuppet opens its mouth wide.\n"
 	.string "There's something inside it seems to be\l"
 	.string "offering...$"
 
 LittlerootMausoleum_ShuppetPost1stquest_Text_3:
-# 432 "data/maps/LittlerootMausoleum/scripts.pory"
+# 439 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "The Shuppet nods with a clever smile.$"
 
 MausoleumTombstone_Text_0:
-# 462 "data/maps/LittlerootMausoleum/scripts.pory"
+# 469 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "It's a tombstone. The name on it does\n"
 	.string "not seem familiar.$"
 
 MausoleumIncense_Text_0:
-# 468 "data/maps/LittlerootMausoleum/scripts.pory"
+# 475 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "The incense fills the area with a sad,\n"
 	.string "nostalgic smell.$"
 
 MausoleumBouquet_Text_0:
-# 474 "data/maps/LittlerootMausoleum/scripts.pory"
+# 481 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "A flower bouquet. The vase is far from\n"
 	.string "new, but the flowers are well tended.$"
 
 MausoleumBlanket_Text_0:
-# 480 "data/maps/LittlerootMausoleum/scripts.pory"
+# 487 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "A spare bedding set from home. It looks\n"
 	.string "a bit out of place...$"
 
 MausoleumSigns_Text_0:
-# 486 "data/maps/LittlerootMausoleum/scripts.pory"
+# 493 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "“Littleroot Mausoleum.”$"
 
 MausoleumNogoDownstairs_Text_0:
-# 493 "data/maps/LittlerootMausoleum/scripts.pory"
+# 500 "data/maps/LittlerootMausoleum/scripts.pory"
 	.string "...\p"
 	.string "There is... no need to go there right\n"
 	.string "now...$"

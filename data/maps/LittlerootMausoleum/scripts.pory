@@ -308,6 +308,13 @@ script LittlerootMausoleum_HexGirl {
             setspeaker ([SP_NAME_SAMANTHA])
             msgbox (format("I liked meeting Joel too. He is a tough kid."))
              }
+
+        if (flag (SamanthaCameliaInteraction)){
+            setspeaker ([SP_NAME_SAMANTHA])
+            msgbox (format("As for Camelia... she made me think about Devon. Maybe I should change
+            jobs..."))
+             }
+
         setspeaker ([SP_NAME_SAMANTHA])
         msgbox (format("H-here... I want to give you this as... t-thanks...!"))
         giveitem (ITEM_SPELL_TAG)

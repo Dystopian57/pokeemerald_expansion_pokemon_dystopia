@@ -5,56 +5,46 @@ JimmyEggStore_MapScripts::
 `
 
 script JimmyMcGligarSewersIdle {
+
+
+        if (!flag(JimmySewersIntro))
+
+        {
+
 		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && !flag(conartistaskeddistract)) //this means Player never interacted
 		//with Jimmy
-		{
+		{goto (startJimmyStoreidle)}
 
-        msgbox(format("Welcome to Jimmy's Egg Store - where happiness hatches!
-        \pWhat can I do for you?"))
-
-        eggsell:
-		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Buy an egg", "Explanation")
-
-		if (var(VAR_RESULT) == 0) {
-
-
-        giveegg (SPECIES_TAMARAKKU)
-        playse (MUS_OBTAIN_ITEM)
-        msgbox(format("Obtained the Mysterious Egg!"))
-
-        //Jimmy Eggs:
-        //Tamarakku (cracked egg)
-        //Exeggute (egg bundle)
-        //Teddiursa (moon egg)
-        //Helioptile (sun egg)
-        //Fomantis (flower egg)
-        //Happiny (pink egg)
-
-
-        }
-
-		if (var(VAR_RESULT) == 1) {
-        msgbox(format("Why, I think it's rather self-explanatory - but I'm happy to tell you a bit more.
-        \pThese days, only Devon Breeders are legally allowed to breed Pokémon, and handle their offspring.
-        \pAnyone else who gets caught
-        doing it... it's a heavy fine in the best of cases, and Dewford Prison in the worst.
-        \pDevon Co. only want Safemon inhabiting routes, and regular Pokémon
-        reproduction goes against that goal.
-        \pBut you know Pokémon - and hell, humans too. They're gonna screw no matter what.
-        \pWhen they do, keeping the egg is just asking for trouble. That's where I come in!
-        \pI take these eggs off people, and give them a new home. Simple as that.
-        \pIllegal? Maybe. Moral? Probably. Profitable? Very!
-        \pSpeaking of profit, I ain't running a charity here, so...
-        \pWanna buy an egg?"))
-        goto (eggsell)
-        }
-
-
-        }
 
 		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && flag(conartistaskeddistract)) //this means Jimmy asked for help
 		//but player never helped him
-		{}
+		{
+
+        msgbox(format("Hello there, dear custo-..."))
+        closemessage
+		playse (SE_PIN)
+        applymovement (5, moves (emote_exclamation_mark))
+        waitmovement (5)
+        msgbox(format("Wait a minute. I remember you!
+        \p I asked you for help on Concord Bridge, and you just waltzed away!"))
+
+		playse (SE_M_SWAGGER2)
+        applymovement (5, moves (emote_double_exclamation_mark))
+        waitmovement (5)
+
+            checkplayergender
+            if(var(VAR_RESULT) == MALE){
+            msgbox(format("Grr... not a man of your word, aren't you? What a shame."))
+            }
+
+            if(var(VAR_RESULT) == FEMALE){
+            msgbox(format("Grr... not a man of your word, aren't you? What a shame."))
+            }
+
+        msgbox(format("You're lucky grudges aren't profitable, or I might be showing you the door now.
+        \p... well, the pipe. Same thing. Anyhow..."))
+        goto (startJimmyStoreidle)
+        }
 
 	    if(var(VAR_JIMMYQUESTPROGRESS) == 1 && flag(conartistescaped) && flag(!betrayedconcordconartist)) //this means Player helped Jimmy but cleared Warehouse
 		//before getting reward from Jimmy, so he gives Tamarakku egg: "I never thanked you!"
@@ -67,7 +57,786 @@ script JimmyMcGligarSewersIdle {
 	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(betrayedconcordconartist)) //this means Player betrayed Jimmy
 		{}	
 
-	    if(var(VAR_JIMMYQUESTPROGRESS) == 3){}	//Player helped Jimmy and even bought Exeggcute egg
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 3)
+        {}	//Player helped Jimmy and even bought Exeggcute egg
 
 		//regardless of result, setvar (VAR_JIMMYQUESTPROGRESS, 4)
+
+        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+
+        }
+
+        startJimmyStoreidle:
+        msgbox(format("Welcome to Jimmy's Egg Store - Where Happiness Hatches!
+        \pWhat can I do for you, oh dear customer?"))
+
+        eggsell:
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Buy an egg", "Play Thimbleregg", "Explanation", "Leave")
+
+
+		if (var(VAR_RESULT) == 3) {
+        msgbox(format("Well, maybe some other time!
+        {COLOR LIGHT_GRAY}{SHADOW WHITE}Cheapstake...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+        goto (endofjimmystoreidle)
+        }
+
+		if (var(VAR_RESULT) == 0) {
+        msgbox(format("Sure thing - it's only 1000¥ each! The species is a surprise!"))
+
+        		checkmoney (1000)
+				if (var(VAR_RESULT) == TRUE) {
+    	        showmoneybox (18, 0)
+
+                dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+                "Cracked Egg",
+                "Bundle Egg",
+                "Moon Egg",
+                "Sun Egg",
+                "Flower Egg",
+                "Pink Egg",
+                "Nevermind")
+
+            		if (var(VAR_RESULT) == 6) {
+                    msgbox(format("Well, maybe some other time!
+                    {COLOR LIGHT_GRAY}{SHADOW WHITE}Cheapstake...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+                    goto (endofjimmystoreidle)
+                    }
+
+            		if (var(VAR_RESULT) == 0) {
+
+                    specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                    if (var(VAR_RESULT) == 6) {
+                    setflag (newmonabouttobesenttoPC)
+					removemoney (1000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+
+                    giveegg (SPECIES_TAMARAKKU)
+                    playse (MUS_OBTAIN_ITEM)
+                    msgbox(format("Obtained the Cracked Egg!"))
+
+                    }
+                    }
+                    if (var(VAR_RESULT) == 1) {
+
+                    specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                    if (var(VAR_RESULT) == 6) {
+                    setflag (newmonabouttobesenttoPC)
+					removemoney (1000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+
+                    giveegg (SPECIES_EXEGGCUTE)
+                    playse (MUS_OBTAIN_ITEM)
+                    msgbox(format("Obtained the Bundle Egg!"))     
+
+                    }               
+                    }
+
+                    if (var(VAR_RESULT) == 2) {
+
+                    specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                    if (var(VAR_RESULT) == 6) {
+                    setflag (newmonabouttobesenttoPC)
+					removemoney (1000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+
+                    giveegg (SPECIES_TEDDIURSA)
+                    playse (MUS_OBTAIN_ITEM)
+                    msgbox(format("Obtained the Moon Egg!"))     
+
+                    }   
+
+                    }
+                    if (var(VAR_RESULT) == 3) {
+
+                    specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                    if (var(VAR_RESULT) == 6) {
+                    setflag (newmonabouttobesenttoPC)
+					removemoney (1000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+
+                    giveegg (SPECIES_HELIOPTILE)
+                    playse (MUS_OBTAIN_ITEM)
+                    msgbox(format("Obtained the Sun Egg!"))     
+
+                    }   
+
+                    }
+                    if (var(VAR_RESULT) == 4) {
+
+                    specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                    if (var(VAR_RESULT) == 6) {
+                    setflag (newmonabouttobesenttoPC)
+					removemoney (1000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+
+                    giveegg (SPECIES_FOMANTIS)
+                    playse (MUS_OBTAIN_ITEM)
+                    msgbox(format("Obtained the Flower Egg!"))     
+
+                    }   
+
+                    }
+                    if (var(VAR_RESULT) == 5) {
+
+
+                    specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                    if (var(VAR_RESULT) == 6) {
+                    setflag (newmonabouttobesenttoPC)
+					removemoney (1000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+
+                    giveegg (SPECIES_HAPPINY)
+                    playse (MUS_OBTAIN_ITEM)
+                    msgbox(format("Obtained the Pink Egg!"))     
+
+                    }   
+
+                    }
+
+                    if (flag (newmonabouttobesenttoPC))
+                    {
+                    msgbox(format("The Egg was sent to the PC."))
+                    clearflag (newmonabouttobesenttoPC)	
+                    }
+
+                    msgbox(format("Thank you for your patronage - you take good care of that hatchling now!"))                
+                    goto (endofjimmystoreidle)
+			}
+
+
+				if (var(VAR_RESULT) == FALSE) {
+
+                closemessage
+                playse (SE_PIN)
+                applymovement (5, moves (emote_exclamation_mark))
+                waitmovement (5)
+                msgbox(format("Wait a minute... I can smell it on you. You ain't got enough dough!
+                \pParenting takes money you know? You sort your financials before coming back!"))
+                goto (endofjimmystoreidle)
+
+                }
+
+        }
+
+		if (var(VAR_RESULT) == 1) {
+
+        if (flag(dailythimbleregg))
+
+            {msgbox(format("Oh, I'm sorry dear customer - only one Thimbleregg round per day!
+            \pI've got some customers addicted to the thrilling gambling rush, and it's not a
+            pleasant experience.\pSo come back tomorrow - I'll be happy to play then!"))
+            goto (endofjimmystoreidle)
+            }
+
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){
+        msgbox(format("Thumbleregg? You're on, lad! Let me get everything ready..."))
+        }
+
+        checkplayergender
+        if(var(VAR_RESULT) == FEMALE){
+        msgbox(format("Thumbleregg? You're on, lass! Let me get everything ready..."))
+        }
+        closemessage
+
+        fadescreenswapbuffers (FADE_TO_BLACK)
+
+        //hide decorations to make room for thimbleregg
+        setflag (thimbleregghideobjects)
+        removeobject (6)
+        removeobject (7)
+        removeobject (8)
+        removeobject (12)
+
+        //add balls
+
+        clearflag (thimblereggballs)
+        addobject (14)
+        addobject (15)
+        addobject (16)
+
+        setobjectxy (5, 1, 3)
+        setobjectxy (OBJ_EVENT_ID_PLAYER, 1, 5)
+
+		special (SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 3, walk_up * 1))
+    	waitmovement(OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+
+        fadeoutbgm (1)
+        fadeinbgm (1)
+        playbgm (MUS_STOPTHIEF, TRUE)
+
+        fadescreenswapbuffers (FADE_FROM_BLACK)
+
+
+
+        msgbox(format("Alright, eyes sharp now! Guess inside which ball is the egg, and get
+        that egg as a prize!"))
+
+        playse (SE_BALL_OPEN)
+        removeobject (15)
+        clearflag (thimblereggegg)
+        addobject (13)
+        waitse
+        addobject (15)
+
+        playse (SE_BALL_TRADE)
+        setflag (thimblereggegg)
+        removeobject (13)
+        waitse
+
+
+
+		random (3)
+		copyvar (VAR_TEMP_1, VAR_RESULT)
+
+		switch (var(VAR_RESULT))
+		{
+            
+//THIMBLE VARIATION 1    
+        case 0:
+        temporarythimblecommonstart:
+
+	    playse (SE_BALL_THROW)
+        applymovement (15, moves(walk_fast_down * 1, walk_fast_left * 1, walk_fast_up * 1))
+        applymovement (14, moves(walk_fast_up * 1, walk_fast_right * 1, walk_fast_down * 1))
+        waitmovement (14)
+
+	    playse (SE_BALL_THROW)
+        applymovement (14, moves(walk_fast_down * 1, walk_fast_right * 1, walk_fast_up * 1))
+        applymovement (16, moves(walk_fast_up * 1, walk_fast_left * 1, walk_fast_down * 1))
+        waitmovement (16)
+
+	    playse (SE_BALL_THROW)
+        applymovement (14, moves(walk_fast_down * 1, walk_fast_left * 2, walk_fast_up * 1))
+        applymovement (15, moves(walk_fast_up * 1, walk_fast_right * 2, walk_fast_down * 1))
+        waitmovement (16)
+        //egg is on the right ball
+
+        msgbox(format("Well, where is the egg?"))
+
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+        "Left ball", "Middle ball", "Right ball")
+
+            if (var(VAR_RESULT) == 0) {
+            wrongthimblereggeggitsinright:
+            playse (SE_RG_HELP_ERROR)
+            msgbox(format("Nope!"))
+
+            playse (SE_BALL_OPEN)
+
+            removeobject (15)
+            addobject (13)
+            setobjectxy (13, 2, 4)
+            clearflag (thimblereggegg)
+
+            waitse
+            addobject (15)
+
+            msgbox(format("It was on the right ball! Better luck next time!")) 
+            goto (jimmypicksupthimblereggstuff) 
+
+            }
+
+            if (var(VAR_RESULT) == 1) {
+            goto (wrongthimblereggeggitsinright)
+
+            }
+
+            if (var(VAR_RESULT) == 2) {
+
+            playse (SE_SUCCESS)
+            waitse
+
+
+            playse (SE_BALL_OPEN)
+
+            removeobject (15)
+            addobject (13)
+            setobjectxy (13, 2, 4)
+            clearflag (thimblereggegg)
+            
+
+            waitse
+            msgbox(format("Good job! You guessed right - here's your egg!"))
+
+
+
+                specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                if (var(VAR_RESULT) == 6) {
+                setflag (newmonabouttobesenttoPC)}
+
+            random (6)
+            copyvar (VAR_TEMP_1, VAR_RESULT)
+
+            switch (var(VAR_RESULT))
+            {
+
+            case 0:
+                giveegg (SPECIES_TAMARAKKU)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Cracked Egg!"))
+
+            case 1:
+                giveegg (SPECIES_EXEGGCUTE)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Bundle Egg!"))
+
+            case 2:
+                giveegg (SPECIES_TEDDIURSA)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Moon Egg!"))
+
+            case 3:
+                giveegg (SPECIES_HELIOPTILE)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Sun Egg!"))
+
+            case 4:
+                giveegg (SPECIES_FOMANTIS)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Flower Egg!"))
+
+            case 5:
+                giveegg (SPECIES_HAPPINY)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Pink Egg!"))
+
+            }
+
+                    if (flag (newmonabouttobesenttoPC))
+                    {
+                    msgbox(format("The Egg was sent to the PC."))
+                    clearflag (newmonabouttobesenttoPC)	
+                    }
+
+                goto (jimmypicksupthimblereggstuff) 
+                }
+
+//THIMBLE VARIATION 2
+		case 1:
+	    playse (SE_BALL_THROW)
+        applymovement (15, moves(walk_fast_down * 1, walk_fast_right * 1, walk_fast_up * 1))
+        applymovement (16, moves(walk_fast_up * 1, walk_fast_left * 1, walk_fast_down * 1))
+        waitmovement (16)
+
+	    playse (SE_BALL_THROW)
+        applymovement (15, moves(walk_fast_down * 1, walk_fast_left * 1, walk_fast_up * 1))
+        applymovement (16, moves(walk_fast_up * 1, walk_fast_right * 1, walk_fast_down * 1))
+        waitmovement (16)
+
+	    playse (SE_BALL_THROW)
+        applymovement (14, moves(walk_fast_down * 1, walk_fast_right * 1, walk_fast_up * 1))
+        applymovement (15, moves(walk_fast_up * 1, walk_fast_left * 1, walk_fast_down * 1))
+        waitmovement (15)
+        //left
+
+        msgbox(format("Well, where is the egg?"))
+
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+        "Left ball", "Middle ball", "Right ball")
+
+            if (var(VAR_RESULT) == 0) {
+            playse (SE_SUCCESS)
+            waitse
+
+
+            playse (SE_BALL_OPEN)
+
+            removeobject (15)
+            addobject (13)
+            setobjectxy (13, 0, 4)
+            clearflag (thimblereggegg)
+            
+
+            waitse
+            msgbox(format("Good job! You guessed right - here's your egg!"))
+
+
+
+                specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                if (var(VAR_RESULT) == 6) {
+                setflag (newmonabouttobesenttoPC)}
+
+            random (6)
+            copyvar (VAR_TEMP_1, VAR_RESULT)
+
+            switch (var(VAR_RESULT))
+            {
+
+            case 0:
+                giveegg (SPECIES_TAMARAKKU)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Cracked Egg!"))
+
+            case 1:
+                giveegg (SPECIES_EXEGGCUTE)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Bundle Egg!"))
+
+            case 2:
+                giveegg (SPECIES_TEDDIURSA)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Moon Egg!"))
+
+            case 3:
+                giveegg (SPECIES_HELIOPTILE)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Sun Egg!"))
+
+            case 4:
+                giveegg (SPECIES_FOMANTIS)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Flower Egg!"))
+
+            case 5:
+                giveegg (SPECIES_HAPPINY)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Pink Egg!"))
+
+            }
+
+                    if (flag (newmonabouttobesenttoPC))
+                    {
+                    msgbox(format("The Egg was sent to the PC."))
+                    clearflag (newmonabouttobesenttoPC)	
+                    }
+
+                goto (jimmypicksupthimblereggstuff) 
+            }
+
+            if (var(VAR_RESULT) == 1) {
+            goto (wrongthimblereggeggitsinleft)
+
+            }
+
+            if (var(VAR_RESULT) == 2) {
+
+            wrongthimblereggeggitsinleft:
+            playse (SE_RG_HELP_ERROR)
+            msgbox(format("Nope!"))
+
+            playse (SE_BALL_OPEN)
+
+            removeobject (15)
+            addobject (13)
+            setobjectxy (13, 0, 4)
+            clearflag (thimblereggegg)
+
+            waitse
+            addobject (15)
+
+            msgbox(format("It was on the left ball! Better luck next time!")) 
+            goto (jimmypicksupthimblereggstuff) 
+            
+            }
+
+//THIMBLE VARIATION 3
+
+		case 2:
+
+
+	    playse (SE_BALL_THROW)
+        applymovement (14, moves(walk_fast_down * 1, walk_fast_right * 2, walk_fast_up * 1))
+        applymovement (16, moves(walk_fast_up * 1, walk_fast_left * 2, walk_fast_down * 1))
+        waitmovement (16)
+
+	    playse (SE_BALL_THROW)
+        applymovement (15, moves(walk_fast_down * 1, walk_fast_left * 1, walk_fast_up * 1))
+        applymovement (16, moves(walk_fast_up * 1, walk_fast_right * 1, walk_fast_down * 1))
+        waitmovement (16)
+
+	    playse (SE_BALL_THROW)
+        applymovement (14, moves(walk_fast_down * 1, walk_fast_left * 1, walk_fast_up * 1))
+        applymovement (16, moves(walk_fast_up * 1, walk_fast_right * 1, walk_fast_down * 1))
+        waitmovement (16)
+
+	    playse (SE_BALL_THROW)
+        applymovement (14, moves(walk_fast_down * 1, walk_fast_left * 1, walk_fast_up * 1))
+        applymovement (15, moves(walk_fast_up * 1, walk_fast_right * 1, walk_fast_down * 1))
+        waitmovement (15)
+
+        //middle
+
+        msgbox(format("Well, where is the egg?"))
+
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+        "Left ball", "Middle ball", "Right ball")
+
+            if (var(VAR_RESULT) == 0) {
+
+            wrongthimblereggeggitsinmiddle:
+            playse (SE_RG_HELP_ERROR)
+            msgbox(format("Nope!"))
+
+            playse (SE_BALL_OPEN)
+
+            removeobject (15)
+            addobject (13)
+            setobjectxy (13, 1, 4)
+            clearflag (thimblereggegg)
+
+            waitse
+            addobject (15)
+
+            msgbox(format("It was on the middle ball! Better luck next time!")) 
+            goto (jimmypicksupthimblereggstuff) 
+
+            }
+
+            if (var(VAR_RESULT) == 1) {
+
+            playse (SE_SUCCESS)
+            waitse
+
+
+            playse (SE_BALL_OPEN)
+
+            removeobject (15)
+            addobject (13)
+            setobjectxy (13, 1, 4)
+            clearflag (thimblereggegg)
+            
+
+            waitse
+            msgbox(format("Good job! You guessed right - here's your egg!"))
+
+            random (6)
+            copyvar (VAR_TEMP_1, VAR_RESULT)
+
+                specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+                if (var(VAR_RESULT) == 6) {
+                setflag (newmonabouttobesenttoPC)}
+
+            switch (var(VAR_RESULT))
+            {
+
+            case 0:
+                giveegg (SPECIES_TAMARAKKU)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Cracked Egg!"))
+
+            case 1:
+                giveegg (SPECIES_EXEGGCUTE)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Bundle Egg!"))
+
+            case 2:
+                giveegg (SPECIES_TEDDIURSA)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Moon Egg!"))
+
+            case 3:
+                giveegg (SPECIES_HELIOPTILE)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Sun Egg!"))
+
+            case 4:
+                giveegg (SPECIES_FOMANTIS)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Flower Egg!"))
+
+            case 5:
+                giveegg (SPECIES_HAPPINY)
+                playse (MUS_OBTAIN_ITEM)
+                msgbox(format("Obtained the Pink Egg!"))
+
+            }
+
+                    if (flag (newmonabouttobesenttoPC))
+                    {
+                    msgbox(format("The Egg was sent to the PC."))
+                    clearflag (newmonabouttobesenttoPC)	
+                    }
+
+                goto (jimmypicksupthimblereggstuff) 
+
+
+            }
+
+            if (var(VAR_RESULT) == 2) {
+            goto (wrongthimblereggeggitsinmiddle)
+
+
+            }
+
+            jimmypicksupthimblereggstuff:
+            msgbox(format("Now let me put everything back in place..."))
+            closemessage
+
+        
+            fadescreenswapbuffers (FADE_TO_BLACK)
+
+            playse (SE_M_STRENGTH)
+            waitse
+            playse (SE_M_STRENGTH)
+            waitse
+
+            //hide egg
+            removeobject (13)
+            setflag (thimblereggegg)
+
+            //put decorations back in place
+            clearflag (thimbleregghideobjects)
+            addobject (6)
+            addobject (7)
+            addobject (8)
+            addobject (12)
+
+            //hide balls
+
+            setflag (thimblereggballs)
+            removeobject (14)
+            removeobject (15)
+            removeobject (16)
+
+            setobjectxy (5, 4, 4)
+            setobjectxy (OBJ_EVENT_ID_PLAYER, 4, 5)
+
+            special (SpawnCameraObject)
+            applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 3, walk_down * 1))
+            waitmovement(OBJ_EVENT_ID_CAMERA)
+            special (RemoveCameraObject)
+
+            fadeoutbgm (1)
+            fadeinbgm (1)
+            playbgm (MUS_PYRITETOWN, TRUE)
+
+            fadescreenswapbuffers (FADE_FROM_BLACK)
+
+            msgbox(format("Pretty fun, right? Come back tomorrow for another round!"))
+            setflag (dailythimbleregg)
+
+
+            goto (endofjimmystoreidle) 
+
+            } 
+            
+            }
+
+
+		if (var(VAR_RESULT) == 2) {
+        msgbox(format("Why, I think it's rather self-explanatory - but I'm happy to tell you a bit more.
+        \pThese days, only Devon Breeders are legally allowed to breed Pokémon, and handle their offspring.
+        \pAnyone else who gets caught
+        doing it... it's a heavy fine in the best of cases, and Dewford Prison in the worst.
+        \pDevon Co. only want Safemon inhabiting routes, and regular Pokémon
+        reproduction goes against that goal.
+        \pBut you know Pokémon - and hell, humans too.\pThey're gonna screw no matter what. Bwahaha!
+        \pWhen they do, keeping the egg is just asking for legal trouble.\pAnd that's where yours truly in!
+        \pI take these eggs off people, and give them a new home. Simple as that.
+        \pIllegal? Maybe. Moral? Probably. Profitable? Very!
+        \pSpeaking of profit, I ain't running a DLC here, so...
+        \pWanna buy an egg?"))
+        goto (eggsell)
+        }
+
+        
+
+    endofjimmystoreidle:
+    release
+}
+
+
+script JimmyTamarakkuIdle {
+	lock
+	applymovement (1, moves(face_player))
+	waitmovement (1)
+	playmoncry (SPECIES_TAMARAKKU, CRY_MODE_WEAK)
+	msgbox (format("..."))
+	applymovement (1, moves(face_down))
+	waitmovement (1)
+	release
+}
+
+script JimmyKecleonIdle {
+	lock
+	applymovement (7, moves(face_player))
+	waitmovement (7)
+	playmoncry (SPECIES_KECLEON, CRY_MODE_NORMAL)
+	msgbox (format("Ke-keeee!"))
+	release
+}
+
+script JimmyGachapodIdle {
+	lock
+	applymovement (6, moves(face_player))
+	waitmovement (6)
+	playmoncry (SPECIES_GACHAPOD, CRY_MODE_WEAK)
+	msgbox (format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Ga-gaaa...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"))
+	release
+}
+
+script JimmyStoreBoxItem {
+	lock
+	if (!flag (jimmystoreboxitem))
+	{
+	msgbox(format("There's something inside the box..."))
+	giveitem (ITEM_OVAL_CHARM)
+	setflag (jimmystoreboxitem)}
+
+	else {msgbox(format("There's nothing inside the box."))}
+	release
+}
+
+
+script JimmyStoreBriefcase {
+    lock
+    msgbox (format("An inconspicuous briefcase, worn with use."))
+    releaseall
+}
+
+script JimmyStoreTamarakkudoll {
+    lock
+    msgbox (format("A Tamarakku doll. It's a bit creepy."))
+    releaseall
+}
+
+script JimmyStoreBucket {
+    lock
+    msgbox (format("The bucket is filling with the leakage from the pipe.\pIt's a bit disgusting..."))
+    releaseall
+}
+
+script JimmyStoreEggsoncushions {
+    lock
+    msgbox (format("A few eggs are arranged on top of cushions."))
+    releaseall
+}
+
+script JimmyStoreMoneyBags {
+    lock
+    msgbox (format("It's a bundle of bags, like the kind used to keep mon-..."))
+    closemessage
+    playse (SE_PIN)
+    applymovement (5, moves(face_left, emote_exclamation_mark))
+    waitmovement (5)
+    msgbox (format("Hey! Don't you touch my money, or I'll put Tamarakku on you!"))
+	applymovement (1, moves(face_left))
+	waitmovement (1)
+	playmoncry (SPECIES_TAMARAKKU, CRY_MODE_WEAK)
+	msgbox (format("..."))
+	applymovement (1, moves(face_down))
+    applymovement (5, moves(face_down))
+    waitmovement (5)
+    releaseall
 }

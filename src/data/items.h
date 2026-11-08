@@ -5951,21 +5951,20 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SCIZORITE] =
     {
-        .name = ITEM_NAME("Scizorite"),
+        .name = ITEM_NAME("Fuel Scooper"),
         .price = 0,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Scizor to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_MEGA_STONE,
+            "A machine that\n"
+            "suctions fuel from\n"
+            "various sources."),
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
         .iconPic = gItemIcon_Scizorite,
         .iconPalette = gItemIconPalette_Scizorite,
     },
+
 
     [ITEM_HERACRONITE] =
     {

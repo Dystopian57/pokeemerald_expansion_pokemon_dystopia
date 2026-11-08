@@ -183,7 +183,7 @@ script DevonInnFreezer {
 
 	else {msgbox(format("There's no more drinks in the freezer."))}
 	release
-}
+} 
 
 script WallClock {
 	incrementgamestat (GAME_STAT_CHECKED_CLOCK)

@@ -24,7 +24,7 @@ script PokeInnRoom1MapScriptBundle {
 
     if (var(VAR_FIGHTINGTRADECHOICE) == 1){
         addobject (11)
-        setobjectxy (11, 5, 11)
+        setobjectxyperm (11, 5, 11)
         applymovement (11, moves(face_left))
         //setobjectxyperm (11, 5, 11)
     }

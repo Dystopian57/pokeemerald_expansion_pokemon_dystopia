@@ -486,7 +486,7 @@
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
 
 #define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1
-#define THISFLAGISNOTUSED       0x1B2
+#define hardwarestoregaveintro       0x1B2
 #define confronted102candyscammer   0x1B3
 #define boughtrarecandyfrom102scammer         0x1B4
 #define playerreturnstolabafterrefusingsfemon     0x1B5
@@ -519,9 +519,9 @@
 #define militiadailysnack        0x1CC
 #define scamfeebas         0x1CD
 #define healscammerarrestdevons           0x1CE
-#define FLAG_MET_SCOTT_IN_EVERGRANDE         0x1CF
+#define SamanthaCameliaInteraction         0x1CF
 #define FLAG_MET_SCOTT_ON_SS_TIDAL           0x1D0
-#define FLAG_SCOTT_GIVES_BATTLE_POINTS       0x1D1
+#define newmonabouttobesenttoPC       0x1D1
 #define FLAG_COLLECTED_ALL_GOLD_SYMBOLS      0x1D2
 #define FLAG_ENABLE_ROXANNE_MATCH_CALL       0x1D3
 #define FLAG_ENABLE_BRAWLY_MATCH_CALL        0x1D4
@@ -531,18 +531,19 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
+#define foundJimmyinsewers                   0x1DA // Unused Flag
+
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define thimbleregghideobjects                    0x1DE // Unused Flag
+#define thimblereggballs                    0x1DF // Unused Flag
+#define FLAGAINTUSED                    0x1E0 // Unused Flag
+#define JimmySewersIntro                    0x1E1 // Unused Flag
+#define thimblereggegg                    0x1E2 // Unused Flag
+#define jimmystoreboxitem                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -1614,7 +1615,7 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 #define dailyunusedmaynotwork                           (DAILY_FLAGS_START + 0x15) // Unused Flag
-#define unuseddaily4                           (DAILY_FLAGS_START + 0x16) // Unused Flag
+#define dailythimbleregg                           (DAILY_FLAGS_START + 0x16) // Unused Flag
 #define unuseddaily3                           (DAILY_FLAGS_START + 0x17) // Unused Flag
 #define unuseddaily2                        (DAILY_FLAGS_START + 0x18) // Unused Flag
 #define dailyloadtadparcelquest                           (DAILY_FLAGS_START + 0x19) // Unused Flag

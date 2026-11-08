@@ -348,6 +348,8 @@ script GreenSactumWartzFight {
 					goto (battleresearchersanctum)
 					}
 
+				playse (SE_M_METRONOME)
+				applymovement (4, moves(emote_question_mark))
 				msgbox(format("Hm? What is the meaning of this? You refuse to follow up on our deal?"))
 					dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
 					"Yes, I will keep Wartz", "No, I will trade you Wartz")

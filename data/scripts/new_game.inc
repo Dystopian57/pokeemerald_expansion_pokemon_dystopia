@@ -317,5 +317,7 @@ EventScript_ResetAllMapFlags::
 	setflag rebelswonpetalburgriot
 	setflag petalburgnurse
 	setflag scamfeebas
+	setflag thimblereggballs
+	setflag thimblereggegg
 	call EventScript_ResetAllBerries
 	end

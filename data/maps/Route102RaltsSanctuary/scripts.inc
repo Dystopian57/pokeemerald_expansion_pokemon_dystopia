@@ -252,16 +252,16 @@ GreenSactumWartzFight::
 # 183 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq GreenSactumWartzFight_6
-# 470 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 472 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq GreenSactumWartzFight_7
-# 477 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 479 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq GreenSactumWartzFight_8
 GreenSactumWartzFight_1:
-# 486 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 488 "data/maps/Route102RaltsSanctuary/scripts.pory"
 endofwartzquest:
-# 487 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 489 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
@@ -411,114 +411,114 @@ GreenSactumWartzFight_45:
 	compare VAR_RESULT, 2
 	goto_if_eq GreenSactumWartzFight_52
 GreenSactumWartzFight_51:
-# 365 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 367 "data/maps/Route102RaltsSanctuary/scripts.pory"
 chosesomethingotherthanwartz:
-# 366 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSactumWartzFight_Text_26
 # 368 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	goto wartztradesafemonchoice
+	msgbox GreenSactumWartzFight_Text_26
 # 370 "data/maps/Route102RaltsSanctuary/scripts.pory"
-refusedtogivewartz2:
-# 371 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	fadeoutbgm 1
+	goto wartztradesafemonchoice
 # 372 "data/maps/Route102RaltsSanctuary/scripts.pory"
+refusedtogivewartz2:
+# 373 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	fadeoutbgm 1
+# 374 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playbgm MUS_NONE, FALSE
-# 375 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSactumWartzFight_Text_27
-# 376 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playbgm MUS_RG_SILPH, FALSE
 # 377 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSactumWartzFight_Text_27
+# 378 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	playbgm MUS_RG_SILPH, FALSE
+# 379 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox GreenSactumWartzFight_Text_28
-# 382 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setrespawn HEAL_LOCATION_HERMIT_TREE
 # 384 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setrespawn HEAL_LOCATION_HERMIT_TREE
+# 386 "data/maps/Route102RaltsSanctuary/scripts.pory"
 battleresearchersanctum:
-# 385 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 387 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto_if_set GOTSTARTER1, GreenSactumWartzFight_61
 GreenSactumWartzFight_60:
-# 390 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 392 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto_if_set GOTSTARTER2, GreenSactumWartzFight_73
 GreenSactumWartzFight_72:
-# 395 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 397 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto_if_set GOTSTARTER3, GreenSactumWartzFight_82
 GreenSactumWartzFight_81:
-# 400 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 402 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox GreenSactumWartzFight_Text_29
-# 404 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	closemessage
 # 406 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	closemessage
+# 408 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto_if_set scientistleavessanctumexception, GreenSactumWartzFight_87
 GreenSactumWartzFight_86:
-# 420 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 421 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSactumWartzFight_Movement_5
 # 422 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 4
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 423 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_EXIT
+	applymovement 4, GreenSactumWartzFight_Movement_6
 # 424 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	removeobject 4
+	waitmovement 4
 # 425 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag scientistinsanctum
+	playse SE_EXIT
 # 426 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setvar VAR_102_SCIENTIST, 11
+	removeobject 4
 # 427 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	addvar VAR_DEVON_REPUTATION, + 1
+	setflag scientistinsanctum
 # 428 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	goto endofwartzquest
+	setvar VAR_102_SCIENTIST, 11
+# 429 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	addvar VAR_DEVON_REPUTATION, + 1
 # 430 "data/maps/Route102RaltsSanctuary/scripts.pory"
-tradedwartz:
+	goto endofwartzquest
 # 432 "data/maps/Route102RaltsSanctuary/scripts.pory"
+tradedwartz:
+# 434 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_102_SCIENTIST, 4
 	goto_if_eq GreenSactumWartzFight_90
 GreenSactumWartzFight_89:
-# 435 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 437 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_102_SCIENTIST, 5
 	goto_if_eq GreenSactumWartzFight_93
 GreenSactumWartzFight_92:
-# 438 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSactumWartzFight_Text_32
 # 440 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSactumWartzFight_Text_32
+# 442 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	closemessage
-# 443 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 445 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto_if_set scientistleavessanctumexception, GreenSactumWartzFight_96
 GreenSactumWartzFight_95:
-# 457 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSactumWartzFight_Movement_5
-# 458 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 4
 # 459 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	removeobject 4
+	applymovement 4, GreenSactumWartzFight_Movement_6
 # 460 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag scientistinsanctum
+	waitmovement 4
 # 461 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_EXIT
+	removeobject 4
 # 462 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setvar VAR_102_SCIENTIST, 10
+	setflag scientistinsanctum
 # 463 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	playse SE_EXIT
+# 464 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setvar VAR_102_SCIENTIST, 10
+# 465 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofwartzquest
 	goto GreenSactumWartzFight_1
 
 GreenSactumWartzFight_7:
-# 471 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSanctumScientistWartzFind_Movement_4
-# 472 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 4
 # 473 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSactumWartzFight_Text_33
+	applymovement 4, GreenSanctumScientistWartzFind_Movement_4
+# 474 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	waitmovement 4
 # 475 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSactumWartzFight_Text_33
+# 477 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	goto GreenSactumWartzFight_1
 
 GreenSactumWartzFight_8:
-# 478 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSanctumScientistWartzFind_Movement_4
-# 479 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 4
 # 480 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSactumWartzFight_Text_33
+	applymovement 4, GreenSanctumScientistWartzFind_Movement_4
+# 481 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	waitmovement 4
 # 482 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSactumWartzFight_Text_33
+# 484 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	goto GreenSactumWartzFight_1
 
@@ -677,14 +677,18 @@ refusedtogivewartz1:
 	goto_if_eq GreenSactumWartzFight_64
 GreenSactumWartzFight_63:
 # 351 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSactumWartzFight_Text_22
+	playse SE_M_METRONOME
 # 352 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	applymovement 4, GreenSactumWartzFight_Movement_3
+# 353 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSactumWartzFight_Text_22
+# 354 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, GreenSactumWartzFight_Text_23, GreenSactumWartzFight_Text_24
-# 355 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 357 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq GreenSactumWartzFight_76
 GreenSactumWartzFight_75:
-# 358 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 360 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq GreenSactumWartzFight_84
 	goto GreenSactumWartzFight_51
@@ -704,7 +708,7 @@ GreenSactumWartzFight_58:
 	goto GreenSactumWartzFight_57
 
 GreenSactumWartzFight_61:
-# 387 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 389 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	trainerbattle_no_intro TRAINER_DUSTY_1, DevonResearcherSanctumWinMessage
 	goto GreenSactumWartzFight_60
 
@@ -734,12 +738,12 @@ GreenSactumWartzFight_70:
 	goto GreenSactumWartzFight_69
 
 GreenSactumWartzFight_73:
-# 392 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 394 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	trainerbattle_no_intro TRAINER_DUSTY_2, DevonResearcherSanctumWinMessage
 	goto GreenSactumWartzFight_72
 
 GreenSactumWartzFight_76:
-# 356 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 358 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto refusedtogivewartz2
 	goto GreenSactumWartzFight_75
 
@@ -751,326 +755,326 @@ GreenSactumWartzFight_79:
 	goto GreenSactumWartzFight_78
 
 GreenSactumWartzFight_82:
-# 397 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 399 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	trainerbattle_no_intro TRAINER_DUSTY_3, DevonResearcherSanctumWinMessage
 	goto GreenSactumWartzFight_81
 
 GreenSactumWartzFight_84:
-# 359 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSactumWartzFight_Text_25
 # 361 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSactumWartzFight_Text_25
+# 363 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto wartztradesafemonchoice
 	goto GreenSactumWartzFight_51
 
 GreenSactumWartzFight_87:
-# 408 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, GreenSactumWartzFight_Movement_3
-# 409 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSactumWartzFight_Movement_4
 # 410 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement
+	applymovement OBJ_EVENT_ID_PLAYER, GreenSactumWartzFight_Movement_4
 # 411 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_EXIT
+	applymovement 4, GreenSactumWartzFight_Movement_5
 # 412 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	removeobject 4
+	waitmovement
 # 413 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag scientistinsanctum
+	playse SE_EXIT
 # 414 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setvar VAR_102_SCIENTIST, 11
+	removeobject 4
 # 415 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	addvar VAR_DEVON_REPUTATION, + 1
+	setflag scientistinsanctum
 # 416 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setvar VAR_102_SCIENTIST, 11
+# 417 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	addvar VAR_DEVON_REPUTATION, + 1
+# 418 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofwartzquest
 	goto GreenSactumWartzFight_86
 
 GreenSactumWartzFight_90:
-# 433 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 435 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox GreenSactumWartzFight_Text_30
 	goto GreenSactumWartzFight_89
 
 GreenSactumWartzFight_93:
-# 436 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 438 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox GreenSactumWartzFight_Text_31
 	goto GreenSactumWartzFight_92
 
 GreenSactumWartzFight_96:
-# 445 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, GreenSactumWartzFight_Movement_3
-# 446 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSactumWartzFight_Movement_4
 # 447 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 4
+	applymovement OBJ_EVENT_ID_PLAYER, GreenSactumWartzFight_Movement_4
 # 448 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	removeobject 4
+	applymovement 4, GreenSactumWartzFight_Movement_5
 # 449 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag scientistinsanctum
+	waitmovement 4
 # 450 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_EXIT
+	removeobject 4
 # 451 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setvar VAR_102_SCIENTIST, 10
+	setflag scientistinsanctum
 # 452 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	playse SE_EXIT
+# 453 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setvar VAR_102_SCIENTIST, 10
+# 454 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofwartzquest
 	goto GreenSactumWartzFight_95
 
 
 GreenSanctumScientistDemandsWartzPlayerReenter::
-# 496 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 498 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	lock
-# 497 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag scientistleavessanctumexception
 # 499 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_PIN
-# 500 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSanctumScientistDemandsWartzPlayerReenter_Movement_0
+	setflag scientistleavessanctumexception
 # 501 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitse
+	playse SE_PIN
+# 502 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	applymovement 4, GreenSanctumScientistDemandsWartzPlayerReenter_Movement_0
 # 503 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, GreenSanctumScientistDemandsWartzPlayerReenter_Movement_1
-# 504 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	waitse
 # 505 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSanctumScientistDemandsWartzPlayerReenter_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, GreenSanctumScientistDemandsWartzPlayerReenter_Movement_1
+# 506 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
 # 507 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSanctumScientistDemandsWartzPlayerReenter_Text_0
+# 509 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto wartztradesafemonchoice
 	return
 
 
 GreenSanctumScientistDemandsWartz::
-# 512 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	lock
-# 513 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 514 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSactumWartzFight_Movement_1
+	lock
 # 515 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 4
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 516 "data/maps/Route102RaltsSanctuary/scripts.pory"
-scientistdemandswartz:
+	applymovement 4, GreenSactumWartzFight_Movement_1
 # 517 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	waitmovement 4
+# 518 "data/maps/Route102RaltsSanctuary/scripts.pory"
+scientistdemandswartz:
+# 519 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox GreenSanctumScientistDemandsWartz_Text_0
-# 523 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 525 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto wartztradesafemonchoice
 	return
 
 
 GreenSanctumScientistIdle::
-# 533 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	lock
 # 535 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	lock
+# 537 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_102_SCIENTIST, 5
 	goto_if_eq GreenSanctumScientistIdle_2
 GreenSanctumScientistIdle_1:
-# 540 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 542 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto_if_set scientistinsanctumgavedevonballs, GreenSanctumScientistIdle_5
 GreenSanctumScientistIdle_4:
-# 547 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 548 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_POKENAV_CALL
 # 549 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitse
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 550 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playse SE_POKENAV_CALL
 # 551 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	waitse
 # 552 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSanctumScientistIdle_Text_2
+	playse SE_POKENAV_CALL
 # 553 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSanctumScientistIdle_Movement_0
+	waitse
 # 554 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSanctumScientistIdle_Text_3
+	msgbox GreenSanctumScientistIdle_Text_2
+# 555 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	applymovement 4, GreenSanctumScientistIdle_Movement_0
 # 556 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSanctumScientistIdle_Text_3
+# 558 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, GreenSanctumScientistWartzFind_Text_4, GreenSanctumScientistWartzFind_Text_5, GreenSanctumScientistWartzFind_Text_6
-# 557 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 559 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq GreenSanctumScientistIdle_8
 GreenSanctumScientistIdle_7:
-# 561 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 563 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq GreenSanctumScientistIdle_11
 GreenSanctumScientistIdle_10:
-# 566 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 568 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq GreenSanctumScientistIdle_14
 GreenSanctumScientistIdle_13:
-# 570 "data/maps/Route102RaltsSanctuary/scripts.pory"
-endofscientist102idle:
-# 571 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSanctumScientistWartzFind_Movement_7
 # 572 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 4
+endofscientist102idle:
 # 573 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	applymovement 4, GreenSanctumScientistWartzFind_Movement_7
+# 574 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	waitmovement 4
+# 575 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
 GreenSanctumScientistIdle_2:
-# 536 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 538 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox GreenSanctumScientistIdle_Text_0
-# 537 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 539 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofscientist102idle
 	goto GreenSanctumScientistIdle_1
 
 GreenSanctumScientistIdle_5:
-# 543 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 4, GreenSanctumScientistIdle_Movement_0
-# 544 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox GreenSanctumScientistIdle_Text_1
 # 545 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	applymovement 4, GreenSanctumScientistIdle_Movement_0
+# 546 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox GreenSanctumScientistIdle_Text_1
+# 547 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofscientist102idle
 	goto GreenSanctumScientistIdle_4
 
 GreenSanctumScientistIdle_8:
-# 558 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 560 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto playersaysyestoscientist
 	goto GreenSanctumScientistIdle_7
 
 GreenSanctumScientistIdle_11:
-# 562 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 564 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox GreenSanctumScientistIdle_Text_4
 	goto GreenSanctumScientistIdle_10
 
 GreenSanctumScientistIdle_14:
-# 567 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 569 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto playersayswhytoscientist
 	goto GreenSanctumScientistIdle_13
 
 
 SanctumFlowerBasket::
-# 577 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	lock
-# 578 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox SanctumFlowerBasket_Text_0
 # 579 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	lock
+# 580 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox SanctumFlowerBasket_Text_0
+# 581 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
 
 SanctumBerryBasket::
-# 583 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	lock
-# 584 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox SanctumBerryBasket_Text_0
 # 585 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	lock
+# 586 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox SanctumBerryBasket_Text_0
+# 587 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
 
 SanctumPlantedBush::
-# 589 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	lock
-# 590 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox SanctumPlantedBush_Text_0
 # 591 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	lock
+# 592 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox SanctumPlantedBush_Text_0
+# 593 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
 
 SanctumVeriwoodo::
-# 598 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	lock
-# 599 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 600 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playmoncry SPECIES_VERIWOODO, CRY_MODE_NORMAL
+	lock
 # 601 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox SanctumVeriwoodo_Text_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 602 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	playmoncry SPECIES_VERIWOODO, CRY_MODE_NORMAL
+# 603 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox SanctumVeriwoodo_Text_0
+# 604 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_1
 	checkitem ITEM_COMET_SHARD
 # 0 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SanctumVeriwoodo_2
-# 609 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox SanctumVeriwoodo_Text_3
 # 611 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SanctumVeriwoodo_Text_4, GreenSanctumScientistWartzFind_Text_5
+	msgbox SanctumVeriwoodo_Text_3
 # 613 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SanctumVeriwoodo_Text_4, GreenSanctumScientistWartzFind_Text_5
+# 615 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SanctumVeriwoodo_5
 SanctumVeriwoodo_1:
-# 651 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 653 "data/maps/Route102RaltsSanctuary/scripts.pory"
 endofsanctumveriwoodo:
-# 652 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 654 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
 SanctumVeriwoodo_2:
-# 606 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 608 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_2
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_5:
-# 614 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox SanctumVeriwoodo_Text_5
-# 615 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_M_EMBER
 # 616 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitse
+	msgbox SanctumVeriwoodo_Text_5
 # 617 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_LEDGE
+	playse SE_M_EMBER
 # 618 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 6, GreenSanctumScientistWartzFind_Movement_5
-# 619 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	waitse
+# 619 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	playse SE_LEDGE
 # 620 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playmoncry SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH
+	applymovement 6, GreenSanctumScientistWartzFind_Movement_5
 # 621 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	msgbox SanctumVeriwoodo_Text_6
+	waitse
 # 622 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setwildbattle SPECIES_VERIWOODO, 15
+	playmoncry SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH
 # 623 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	dowildbattle
+	msgbox SanctumVeriwoodo_Text_6
 # 624 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_VERIWOODO, 15
 # 625 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	dowildbattle
 # 626 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 627 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 628 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq SanctumVeriwoodo_7
-# 631 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SanctumVeriwoodo_8
-# 640 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 642 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq SanctumVeriwoodo_9
-# 643 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 645 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SanctumVeriwoodo_10
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_7:
-# 627 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag sanctumveriwoodo
-# 628 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	removeobject 6
 # 629 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setflag sanctumveriwoodo
+# 630 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	removeobject 6
+# 631 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_8:
-# 632 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playse SE_FLEE
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	applymovement 6, SanctumVeriwoodo_Movement_0
 # 634 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	waitmovement 6
+	playse SE_FLEE
 # 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	setflag sanctumveriwoodo
+	applymovement 6, SanctumVeriwoodo_Movement_0
 # 636 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	removeobject 6
+	waitmovement 6
 # 637 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	playmoncry SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH
+	setflag sanctumveriwoodo
 # 638 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	removeobject 6
+# 639 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	playmoncry SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH
+# 640 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_9:
-# 641 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 643 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_10:
-# 644 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 646 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
@@ -1161,61 +1165,67 @@ GreenSactumWartzFight_Movement_2:
 	face_down
 	step_end
 
-# 408 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 352 "data/maps/Route102RaltsSanctuary/scripts.pory"
 GreenSactumWartzFight_Movement_3:
-# 408 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 352 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	emote_question_mark
+	step_end
+
+# 410 "data/maps/Route102RaltsSanctuary/scripts.pory"
+GreenSactumWartzFight_Movement_4:
+# 410 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_right
-# 408 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 410 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 409 "data/maps/Route102RaltsSanctuary/scripts.pory"
-GreenSactumWartzFight_Movement_4:
-# 409 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	walk_right
-# 409 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	walk_down
-	step_end
-
-# 421 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 411 "data/maps/Route102RaltsSanctuary/scripts.pory"
 GreenSactumWartzFight_Movement_5:
-# 421 "data/maps/Route102RaltsSanctuary/scripts.pory"
-	walk_down
-# 421 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 411 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	walk_right
+# 411 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_down
 	step_end
 
-# 500 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 423 "data/maps/Route102RaltsSanctuary/scripts.pory"
+GreenSactumWartzFight_Movement_6:
+# 423 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	walk_down
+# 423 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	walk_down
+	step_end
+
+# 502 "data/maps/Route102RaltsSanctuary/scripts.pory"
 GreenSanctumScientistDemandsWartzPlayerReenter_Movement_0:
-# 500 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 502 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	face_right
 	step_end
 
-# 503 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 505 "data/maps/Route102RaltsSanctuary/scripts.pory"
 GreenSanctumScientistDemandsWartzPlayerReenter_Movement_1:
-# 503 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 505 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	face_left
 	step_end
 
-# 543 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 545 "data/maps/Route102RaltsSanctuary/scripts.pory"
 GreenSanctumScientistIdle_Movement_0:
-# 543 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 545 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	face_player
 	step_end
 
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 SanctumVeriwoodo_Movement_0:
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -1419,39 +1429,39 @@ GreenSactumWartzFight_Text_21:
 	.string "Then I must persist in my use of force!$"
 
 GreenSactumWartzFight_Text_22:
-# 351 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 353 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Hm? What is the meaning of this? You\n"
 	.string "refuse to follow up on our deal?$"
 
 GreenSactumWartzFight_Text_23:
-# 353 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 355 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Yes, I will keep Wartz$"
 
 GreenSactumWartzFight_Text_24:
-# 353 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 355 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "No, I will trade you Wartz$"
 
 GreenSactumWartzFight_Text_25:
-# 359 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 361 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Ah, I must have misheard. Such is old\n"
 	.string "age - unreleting and unforgiving.\p"
 	.string "To make sure I did not misheard you\n"
 	.string "prior - what Safemon do you wish?$"
 
 GreenSactumWartzFight_Text_26:
-# 366 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 368 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "A wondrous specimen, to be sure... but I\n"
 	.string "am only interested in Wartz.\p"
 	.string "Let's try that again.$"
 
 GreenSactumWartzFight_Text_27:
-# 375 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 377 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "...\p"
 	.string "I see. So this was all a ploy to get your\n"
 	.string "hands on Wartz.$"
 
 GreenSactumWartzFight_Text_28:
-# 377 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 379 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "I should have known better than to\n"
 	.string "trust someone from the Rebel Zone.\p"
 	.string "You rabble, who wish to undermine our\n"
@@ -1466,7 +1476,7 @@ GreenSactumWartzFight_Text_28:
 	.string "last!$"
 
 GreenSactumWartzFight_Text_29:
-# 400 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 402 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "... you triumph. And yet the benefits of\n"
 	.string "your victory will be short-lived.\p"
 	.string "Sooner or later, that Wartz will be\n"
@@ -1478,29 +1488,29 @@ GreenSactumWartzFight_Text_29:
 	.string "inevitable.$"
 
 GreenSactumWartzFight_Text_30:
-# 433 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 435 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Well, that's some successful field work!$"
 
 GreenSactumWartzFight_Text_31:
-# 436 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 438 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "All is well that ends well. Let us forget\n"
 	.string "about our little quarrel.$"
 
 GreenSactumWartzFight_Text_32:
-# 438 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 440 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "May you rest easy tonight, knowing you\n"
 	.string "have helped make Hoenn a safer place.\p"
 	.string "Take care now, my young assistant!$"
 
 GreenSactumWartzFight_Text_33:
-# 473 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 475 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Hmm... some would say that was a rather\n"
 	.string "lacking show of mettle.\p"
 	.string "But I trust you have merely chosen a\n"
 	.string "stratagem of attrition, have you not?$"
 
 GreenSanctumScientistDemandsWartzPlayerReenter_Text_0:
-# 505 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 507 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "What...!? How in the name of safety...?\p"
 	.string "W-well, no matter. I will not allow you to\n"
 	.string "toy with this matter any longer!\p"
@@ -1508,7 +1518,7 @@ GreenSanctumScientistDemandsWartzPlayerReenter_Text_0:
 	.string "else...!$"
 
 GreenSanctumScientistDemandsWartz_Text_0:
-# 517 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 519 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "My young betrayer... it would seem you\n"
 	.string "have a fellow conspirator inside that\l"
 	.string "tree.\p"
@@ -1523,77 +1533,77 @@ GreenSanctumScientistDemandsWartz_Text_0:
 	.string "table.$"
 
 GreenSanctumScientistIdle_Text_0:
-# 536 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 538 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "The scientist has his attention\n"
 	.string "completely focused on the tree ahead...$"
 
 GreenSanctumScientistIdle_Text_1:
-# 544 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 546 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "What are you waiting for? Make haste -\n"
 	.string "it might flee at any minute!$"
 
 GreenSanctumScientistIdle_Text_2:
-# 552 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 554 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "These Devon guards... they are far from\n"
 	.string "reliable. I must submit a complaint upon\l"
 	.string "my...$"
 
 GreenSanctumScientistIdle_Text_3:
-# 554 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 556 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Ah, you are returned. Are you, then,\n"
 	.string "ready to help me catch this specimen?$"
 
 GreenSanctumScientistIdle_Text_4:
-# 562 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 564 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "I beg of you. If you intend to assist at\n"
 	.string "all, and not simply toy with this most\l"
 	.string "serious matter, make haste!$"
 
 SanctumFlowerBasket_Text_0:
-# 578 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 580 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "A basket of flowers that emits a\n"
 	.string "refreshing fragrance.$"
 
 SanctumBerryBasket_Text_0:
-# 584 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 586 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "The berry basket shows sign of Pokémon\n"
 	.string "eating from it.$"
 
 SanctumPlantedBush_Text_0:
-# 590 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 592 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "A small bush is planted here.$"
 
 SanctumVeriwoodo_Text_0:
-# 601 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 603 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Wooodoo!$"
 
 SanctumVeriwoodo_Text_1:
-# 602 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 604 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "The Pokémon does not seem inclined to\n"
 	.string "move.$"
 
 SanctumVeriwoodo_Text_2:
-# 606 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 608 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Perhaps it could be scared away\n"
 	.string "somehow...$"
 
 SanctumVeriwoodo_Text_3:
-# 609 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 611 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Use {COLOR RED}Leaky Lighter{COLOR DARK_GRAY} to scare it away?$"
 
 SanctumVeriwoodo_Text_4:
-# 611 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 613 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Yes$"
 
 SanctumVeriwoodo_Text_5:
-# 614 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 616 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "{PLAYER} lighted the Leaky Ligther\n"
 	.string "near the Pokémon.$"
 
 SanctumVeriwoodo_Text_6:
-# 621 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 623 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "WOOODOOOO!!$"
 
 DevonResearcherSanctumWinMessage::
-# 491 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 493 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "I concede defeat.$"

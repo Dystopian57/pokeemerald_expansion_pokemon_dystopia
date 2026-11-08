@@ -135,7 +135,7 @@ script OldaleTown_DLC_TherapyCutscene{
     removefieldmugshot
 	createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
 	setspeaker ([SP_NAME_SHARPY])
-    applymovement (1, moves (face_left, emote_double_exclamation_mark))
+    applymovement (1, moves (face_left, emote_exclamation_mark))
     msgbox(format("BANG BANG!"))
 
 	setspeaker (NULL)

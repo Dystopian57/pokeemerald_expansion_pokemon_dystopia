@@ -87,6 +87,7 @@ script BalsamBed {
     fadedefaultbgm
     msgbox (format("{PLAYER}... what do you think you're doing? This is not a guest room."))
 
+	applymovement (1, moves(emote_double_exclamation_mark))
 	setspeaker ([SP_NAME_BALSAM])
 	createfieldmugshot (MUGSHOT_BALSAM , EMOTE_ANGRY)
     playse (SE_M_SWAGGER2)

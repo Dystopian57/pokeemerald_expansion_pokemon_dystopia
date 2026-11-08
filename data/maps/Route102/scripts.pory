@@ -170,9 +170,9 @@ script Route102Sandstorm2 {
 }
 
 script Route102EndSandtorm {
-	setweather (WEATHER_SANDSTORM)
+	//setweather (WEATHER_SANDSTORM)
 	setvar(VAR_ROUTE102_WEATHER, 0)
-	playbgm (MUS_RUINSMUSIC, TRUE)
+	//playbgm (MUS_RUINSMUSIC, TRUE)
 }
 
 script PopWeatherMon102 {
@@ -685,7 +685,7 @@ script Route102Scientistfollowchat {
 		
 		}
 
-	script Route102Scammer {
+	script Route102ScammerIdle {
 		lock
 		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement (10, moves(face_player))
@@ -755,7 +755,13 @@ script Route102Scientistfollowchat {
 
 		if (!flag(confronted102candyscammer))
 
-		{if ((flag(boughtrarecandyfrom102scammer)) && checkitem (ITEM_EXP_CANDY_XS)  == TRUE)
+		{if ((!flag(boughtrarecandyfrom102scammer)) && checkitem (ITEM_EXP_CANDY_XS)  == FALSE)
+		{
+		msgbox (format("Hey hey, you changed your mind pal? Candy is still only 500¥ each!"))	
+		goto (scammer102candybuychoice)	
+		}
+
+		if ((flag(boughtrarecandyfrom102scammer)) && checkitem (ITEM_EXP_CANDY_XS)  == TRUE)
 		{
 		msgbox (format("You still have that candy on you eh? Saving it for a special occassion?"))	
 		goto (endofroute102scammer)	

@@ -3,7 +3,7 @@
   "name": "PetalburgSewers",
   "layout": "LAYOUT_PETALBURG_SEWERS",
   "music": "MUS_SUSPENSE",
-  "region_map_section": "MAPSEC_WEEPTH_CHAMBER",
+  "region_map_section": "MAPSEC_UNDERWATER_SOOTOPOLIS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
@@ -212,7 +212,7 @@
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_JIMMY_EGG_STORE",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     },
     {
       "x": 26,
@@ -281,15 +281,8 @@
   "bg_events": [
     {
       "type": "secret_base",
-      "x": 19,
-      "y": 28,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_BROWN_CAVE1_1"
-    },
-    {
-      "type": "secret_base",
-      "x": 20,
-      "y": 28,
+      "x": 22,
+      "y": 27,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BROWN_CAVE1_1"
     }

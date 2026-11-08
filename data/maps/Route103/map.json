@@ -671,7 +671,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "FerryManReturnsSouth"
+      "script": "RespawnFerrymapDown"
     },
     {
       "type": "trigger",
@@ -680,7 +680,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "FerryManReturnsSouth"
+      "script": "RespawnFerrymapDown"
     },
     {
       "type": "trigger",
@@ -689,7 +689,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "FerryManReturnsSouth"
+      "script": "RespawnFerrymapDown"
     },
     {
       "type": "trigger",
@@ -698,7 +698,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_UNUSED_7",
       "var_value": "0",
-      "script": "FerryManReturnsSouth"
+      "script": "RespawnFerrymapDown"
     },
     {
       "type": "trigger",
@@ -708,6 +708,15 @@
       "var": "VAR_FISHERPROGRESS103",
       "var_value": "1",
       "script": "Fishercallsfornumber"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "RespawnFerrymapUp"
     }
   ],
   "bg_events": [

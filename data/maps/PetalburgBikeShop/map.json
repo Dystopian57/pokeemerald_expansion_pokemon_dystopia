@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHardwareStoreClerk",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHardwareSidneyCarMechanic",
       "flag": "0"
     },
     {
@@ -84,151 +84,23 @@
       "dest_warp_id": "10"
     }
   ],
-  "coord_events": [
+  "coord_events": [],
+  "bg_events": [
     {
-      "type": "trigger",
-      "x": 2,
+      "type": "sign",
+      "x": 0,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PetalburgHardwareStoreGasCylinder"
     },
     {
-      "type": "trigger",
+      "type": "sign",
       "x": 3,
-      "y": 7,
+      "y": 3,
       "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "0",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
-      "var_value": "4",
-      "script": "PetalburgDevonCenterHideCivilians"
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PetalburgHardwareStoreClerk"
     }
-  ],
-  "bg_events": []
+  ]
 }

@@ -228,9 +228,10 @@ script AideCasettePlayer {
 		applymovement (1, moves (walk_in_place_right* 1))
 		msgbox (format("Aah... some people don't have taste for music, am I right?"))
 		closemessage
+		removefieldmugshot
 		applymovement (1, moves (walk_in_place_down * 1))
 		waitmovement (1)
-		removefieldmugshot
+
 		}
 	release
 	}

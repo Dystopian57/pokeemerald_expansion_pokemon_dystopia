@@ -36,19 +36,307 @@ script PetalburgHardwareStoreCustomer {
     releaseall
     }
 
+script PetalburgHardwareStoreGasCylinder {
+    lock
+    msgbox(format("It's a gas cylinder. The label reads “Pacifidlog Oil Rig”."))
+    releaseall
+    }
 
+script PetalburgHardwareSidneyCar {
+    lock
+    msgbox(format("It's a sparkly, brand-new sports car."))
+    releaseall
+    }
 
-script HardwareStoreClerk {
+script PetalburgHardwareSidneyCarMechanic {
+    lock
+    applymovement (2, moves(face_player))
+    msgbox(format("Sometimes I wonder why Sidney keeps a car he never uses.\pSome say it's to
+    give this store some work, but I don't think he's that nice."))
+	applymovement (2, moves(face_up))
+	waitmovement (2)
+    releaseall
+    }
+
+script PetalburgHardwareStoreClerk {
 	
+    applymovement (1, moves(face_player))
 
-		if (!flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
-		//never met scavengers
+        if (flag(hardwarestoregaveintro))
 
-		if (flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {}
-		//lost against scavenger F
-		if (flag (foughtwarehousescavenger2) && flag(scavengergivesobjectspotter)) {}
-		//how's that object spotter treating you.
+        {goto (hardwarestoreclerknormalintro)}
+
+        else {
+        setflag (hardwarestoregaveintro)
+		if (!flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {
+		//never met scavengers in Oldale Warehouse
+        msgbox(format("Welcome to Petalburg's Hardware Store! First time, right? What will it be?"))
+        goto (hardwarestoreclerkoffer)  
+        }
+
+
+		if (flag (foughtwarehousescavenger2) && !flag(scavengergivesobjectspotter)) {
+		//lost against scavenger F in Oldale Warehouse
+
+            msgbox(format("Well well... if it isn't the twerp who tried to get our loot
+            at Oldale Warehouse.\pNo bad feelings, okay? One has to make a living in these parts.
+            \pSo... can I interest you in anything?"))
+            goto (hardwarestoreclerkoffer)
+
+		}
+
+		if (flag (foughtwarehousescavenger2) && flag(scavengergivesobjectspotter)) {
+            //won against scavengers in Oldale Warehouse
+            checkplayergender
+            if(var(VAR_RESULT) == MALE){
+            msgbox(format("Oh hey, you're that guy from Oldale Warehouse!"))
+            }
+
+            if(var(VAR_RESULT) == FEMALE){
+            msgbox(format("Oh hey, you're that gal from Oldale Warehouse!"))
+            }
+
+            msgbox(format("How is that Object Spotter treating you - getting good mileage out of it?
+            \pIf you're interested in more top-quality tech, you've come to the right place!"))
+            goto (hardwarestoreclerkoffer)
+        }
+
+        }
+        hardwarestoreclerknormalintro:
+        msgbox(format("Welcome to Petalburg's Hardware Store! What will it be?"))
+        hardwarestoreclerkoffer:
+        
+         if(var(VAR_BIKEQUEST) == 0)
+         {bufferstring (STR_VAR_1, "About bikes...")}
+
+         if(var(VAR_BIKEQUEST) == 1)
+         {bufferstring (STR_VAR_1, "About the fuel.")}
+
+         if(var(VAR_BIKEQUEST) == 2)
+         {bufferstring (STR_VAR_1, "I got the fuel.")}
+
+         if(var(VAR_BIKEQUEST) == 3)
+         {bufferstring (STR_VAR_1, "Switch engine.")}
+
+        dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Buy items", "Buy furniture", "{STR_VAR_1}", "Leave")
+	    if (var(VAR_RESULT) == 0) {
+	    pokemart (PetalburgHardwareStoreItemOffer)
+        }
+
+	    if (var(VAR_RESULT) == 1) {
+	    pokemart (PetalburgHardwareStoreFurnitureOffer)
+        }
+
+	    if (var(VAR_RESULT) == 2) {
+
+        msgbox(format("Ah, interested in the big toys, aren't you? Well, you're in luck!
+        \pWe have exactly one Motorbike left in stock. It's a special girl too - a solar model!
+        \pThat means zero fuel costs. We're selling it for the low price of 500.000¥!"))
+        showmoneybox (18, 0)
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "I'll buy", "No thanks", "That's too expensive!")
+ 
+            	if (var(VAR_RESULT) == 0) {
+        		checkmoney (500000)
+                    if (var(VAR_RESULT) == TRUE) {
+                    msgbox(format("Woah, I didn't expect you to have that much cash! Well, here you go!"))
+					removemoney (500000)
+                    updatemoneybox
+					playse (SE_SHOP)
+					waitse
+					hidemoneybox
+                    setvar (VAR_BIKEQUEST, 2)
+                    giveitem (ITEM_ACRO_BIKE)
+                    msgbox(format("Oh, I almost forgot - you can fit two different
+                    kinds of engines on this beauty!\pI fitted it with the Cross Engine, which gives
+                    the bike more agility.\pBut if you want some more horsepower, just drop by and
+                    I'll swap that with the Race Engine, at no extra cost!\pThanks for your help,
+                    and drive responsibly!"))
+	                goto (releaseendofhardwarestoreclerk)  
+
+                    }
+                    if (var(VAR_RESULT) == FALSE) {
+                    msgbox(format("Oops... seems you don't have enough on you. And we don't do instalments, sorry!"))      
+	                hidemoneybox
+                    goto (hardwareclerkoffersbikedeal)
+                    }
+
+                    }
+
+                if (var(VAR_RESULT) == 1) {
+
+                msgbox(format("Too bad. Come back if you change your mind."))
+                hidemoneybox
+	            goto (releaseendofhardwarestoreclerk)  
+                }
+
+            	if (var(VAR_RESULT) == 2) {
+                
+                msgbox(format("Too expensive? Buddy, they sell regular bikes in Kanto for like, a million pokeyen!
+                \pAnd this here is a motorbike, at half that price!"))
+                hidemoneybox
+                hardwareclerkoffersbikedeal:
+                msgbox(format("
+                \pHey, I get it. it's hard to get cash here in the Rebel Zone.
+                \pWhich is why we're offering another deal for this motorbike. Interested?"))
+
+                    dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "No thanks")
+    
+                    if (var(VAR_RESULT) == 0) {
+                    msgbox(format("Great - well, it's very simple. We're the only supplier of
+                    fuel in the Rebel Zone... and we're running out of it!\p
+                    \pDevon is hoarding all of the oil from the
+                    Pacifidlog Rig. It's been getting harder and harder to get.
+                    \pIf we don't get fuel to sell, our business will crash. To help us with that...
+                    take this!"))
+
+                    giveitem (ITEM_SCIZORITE)
+
+                    msgbox(format("That's a Fuel Scooper. With it, you can extract fuel from
+                    different sources, such as barrels or vehicles.\pNow, depending on where
+                    you extract the fuel from, it might be considered stealing...\pBut this is
+                    the Rebel Zone. You can only get so far by being moral.\pSo we won't argue
+                    with the methods you choose.\pJust be careful, and come back once the tank
+                    attached to the scooper is full!"))
+                    setvar (VAR_BIKEQUEST, 1)
+	                goto (releaseendofhardwarestoreclerk)  
+                    
+                        }
+
+                    if (var(VAR_RESULT) == 0) {
+                    msgbox(format("Too bad. Come back if you change your mind."))
+	                goto (releaseendofhardwarestoreclerk)  
+                    }
+
+                        }
+
+                        
+
+                if(var(VAR_BIKEQUEST) == 1)
+                {
+                msgbox(format("How's the fuel scooping going? Let me see the scooper's tank..."))
+                        if(var(VAR_FUELSCOOPERLEVEL) == 0)
+                        {
+                        msgbox(format("Why, you still haven't scooped anything! Bah!\pYou better
+                        get it moving, or I'll give that scooper to someone who wants in on the deal."))          
+                        }
+
+                        if(var(VAR_FUELSCOOPERLEVEL) == 1)
+                        {
+                        msgbox(format("Hmm, you haven't scooped much. You'd need four times
+                        this amount before it's a fair deal for the bike.\pHave you checked the
+                        abandoned vehicles in Road 002? They might have some fuel left in their
+                        tanks."))          
+                        }
+
+                        if(var(VAR_FUELSCOOPERLEVEL) == 2)
+                        {
+                        msgbox(format("Hey, not bad - it's about half full. Keep at it!"))          
+                        }
+
+                        if(var(VAR_FUELSCOOPERLEVEL) == 3)
+                        {
+                        msgbox(format("Well, you're almost there - it's about three quarters full!
+                        \pI think one more scoop ought to do it. I'll have that solar bike ready
+                        for you!"))          
+                        }
+
+                        if(var(VAR_FUELSCOOPERLEVEL) == 3)
+                        {
+                        msgbox(format("Wow, look at that - you did it! That's a good full tank!
+                        \pIf we ever need an extra hand in the shop, perhaps we can count on you?
+                        Now, I'll have that and the scooper back. And this is for you!"))  
+                        setvar (VAR_BIKEQUEST, 2)
+                        giveitem (ITEM_ACRO_BIKE)
+                        msgbox(format("Oh, I almost forgot - you can fit two different
+                        kinds of engines on this beauty!\pI fitted it with the Cross Engine, which gives
+                        the bike more agility.\pBut if you want some more horsepower, just drop by and
+                        I'll swap that with the Race Engine, at no extra cost!\pThanks for your help,
+                        and drive responsibly!"))
+
+                        }
+                        goto (endofhardwarestoreclerk)
+                }
+
+                if(var(VAR_BIKEQUEST) == 2)
+
+                {   if (checkitem (ITEM_ACRO_BIKE)  == TRUE)
+		            {
+                    msgbox(format("Sure! You have the Cross Motor on your Solar Bike,
+                    don't you?\pLet me swap that with the Race Motor. I'll be a moment!")) 
+                    fadescreenswapbuffers (FADE_TO_BLACK)
+                    playse (SE_ELEVATOR)
+                    waitse
+                    playse (SE_FU_ZAKU)
+                    waitse
+                    playse (SE_FU_ZAKU)
+                    waitse
+                    fadescreenswapbuffers (FADE_FROM_BLACK)
+                    msgbox(format("Alright, here you go!"))
+                    removeitem (ITEM_ACRO_BIKE)
+                    giveitem (ITEM_MACH_BIKE) 
+                    msgbox(format("Drive safely now!"))
+                    }
+
+                    if (checkitem (ITEM_MACH_BIKE)  == TRUE)
+		            {
+                    msgbox(format("Sure! You have the Race Motor on your Solar Bike,
+                    don't you?\pLet me swap that with the Cross Motor. I'll be a moment!")) 
+                    fadescreenswapbuffers (FADE_TO_BLACK)
+                    playse (SE_ELEVATOR)
+                    waitse
+                    playse (SE_FU_ZAKU)
+                    waitse
+                    playse (SE_FU_ZAKU)
+                    waitse
+                    fadescreenswapbuffers (FADE_FROM_BLACK)
+                    msgbox(format("Alright, here you go!"))
+                    removeitem (ITEM_MACH_BIKE)
+                    giveitem (ITEM_ACRO_BIKE) 
+                    msgbox(format("Drive safely now!"))
+                    }
+	                goto (releaseendofhardwarestoreclerk)     
+                        }
+                        
+                        }
+
+	    if (var(VAR_RESULT) == 3) {
+	    goto (endofhardwarestoreclerk)
+        }
+
+        
+    endofhardwarestoreclerk:
+
+    msgbox(format("Alright. Come back soon!"))
+    releaseendofhardwarestoreclerk:
+
+	applymovement (1, moves(face_down))
+	waitmovement (1)
+
+    release
 
 }
+
+
+	mart PetalburgHardwareStoreItemOffer {
+			ITEM_POKE_BALL
+			ITEM_POTION
+			ITEM_SUPER_POTION
+			ITEM_REMEDY
+			ITEM_REVIVAL_HERB
+			ITEM_HONEY
+			ITEM_POKE_TOY
+            ITEM_FULL_HEAL
+            ITEM_AERODACTYLITE }
+
+	mart PetalburgHardwareStoreFurnitureOffer {
+			ITEM_POKE_BALL
+			ITEM_POTION
+			ITEM_SUPER_POTION
+			ITEM_REMEDY
+			ITEM_REVIVAL_HERB
+			ITEM_HONEY
+			ITEM_POKE_TOY
+            ITEM_FULL_HEAL
+            ITEM_AERODACTYLITE }
 
 //Sidney's car = devon speeder

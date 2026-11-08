@@ -3504,3 +3504,297 @@ EnableFollowersArcade::
 	clearflag FLAG_TEMP_HIDE_FOLLOWER
 	return
 
+
+RebelAdminArcade::
+# 1764 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	lock
+# 1765 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1767 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_0
+# 1770 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_PETALBURG_PHASE, 6
+	goto_if_eq RebelAdminArcade_2
+RebelAdminArcade_1:
+# 1785 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_PETALBURG_PHASE, 5
+	goto_if_eq RebelAdminArcade_5
+RebelAdminArcade_4:
+# 1790 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_PETALBURG_PHASE, 3
+	goto_if_eq RebelAdminArcade_11
+RebelAdminArcade_10:
+# 1874 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+endofpetalburgarcadeelevatoradmin:
+# 1875 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	release
+	return
+
+RebelAdminArcade_2:
+# 1771 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_0
+# 1772 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, RebelAdminArcade_Text_1, RebelAdminArcade_Text_2
+# 1776 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq RebelAdminArcade_8
+RebelAdminArcade_7:
+# 1780 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq RebelAdminArcade_13
+	goto RebelAdminArcade_1
+
+RebelAdminArcade_5:
+# 1786 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_5
+# 1787 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	goto joinrebelchoicequestion
+	goto RebelAdminArcade_4
+
+RebelAdminArcade_8:
+# 1777 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_3
+	goto RebelAdminArcade_7
+
+RebelAdminArcade_11:
+# 1792 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_PETALBURG_PHASE, 4
+# 1794 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_6
+# 1795 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	closemessage
+# 1797 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	playse SE_PIN
+# 1798 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_1
+# 1799 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmovement 31
+# 1801 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_7
+# 1804 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	closemessage
+# 1806 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_2
+# 1807 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmovement 31
+# 1808 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_0
+# 1809 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmovement 31
+# 1811 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_8
+# 1815 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, RebelAdminArcade_Text_9, RebelAdminArcade_Text_10
+# 1819 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq RebelAdminArcade_16
+RebelAdminArcade_15:
+# 1823 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq RebelAdminArcade_18
+	goto RebelAdminArcade_10
+
+RebelAdminArcade_13:
+# 1781 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_4
+	goto RebelAdminArcade_1
+
+RebelAdminArcade_16:
+# 1820 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_11
+	goto RebelAdminArcade_15
+
+RebelAdminArcade_18:
+# 1824 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_12
+# 1832 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+joinrebelchoicequestion:
+# 1833 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, RebelAdminArcade_Text_13, RebelAdminArcade_Text_10
+# 1837 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq RebelAdminArcade_21
+RebelAdminArcade_20:
+# 1863 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq RebelAdminArcade_23
+	goto RebelAdminArcade_10
+
+RebelAdminArcade_21:
+# 1838 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1839 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_1
+# 1840 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmovement 31
+# 1841 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_14
+# 1843 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_3
+# 1844 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmovement 31
+# 1845 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_15
+# 1846 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_4
+# 1847 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmovement 31
+# 1848 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_16
+# 1850 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	applymovement 31, RebelAdminArcade_Movement_0
+# 1851 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmovement 31
+# 1852 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_17
+# 1861 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_PETALBURG_PHASE, 6
+	goto RebelAdminArcade_20
+
+RebelAdminArcade_23:
+# 1864 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_18
+# 1865 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	goto endofpetalburgarcadeelevatoradmin
+	goto RebelAdminArcade_10
+
+
+# 1767 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+RebelAdminArcade_Movement_0:
+# 1767 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	face_player
+	step_end
+
+# 1798 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+RebelAdminArcade_Movement_1:
+# 1798 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 1806 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+RebelAdminArcade_Movement_2:
+# 1806 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	jump_in_place_down
+	step_end
+
+# 1843 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+RebelAdminArcade_Movement_3:
+# 1843 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	face_left
+	step_end
+
+# 1846 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+RebelAdminArcade_Movement_4:
+# 1846 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	face_right
+	step_end
+
+RebelAdminArcade_Text_0:
+# 1771 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "Got the passwords$"
+
+RebelAdminArcade_Text_1:
+# 1773 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "Yes, I have them$"
+
+RebelAdminArcade_Text_2:
+# 1774 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "No, not yet$"
+
+RebelAdminArcade_Text_3:
+# 1777 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "Let's hear them then.$"
+
+RebelAdminArcade_Text_4:
+# 1781 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "Then leave me alone. You gave me enough\n"
+	.string "a headache for a long time!$"
+
+RebelAdminArcade_Text_5:
+# 1786 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "What do you want now!?$"
+
+RebelAdminArcade_Text_6:
+# 1794 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "New face? Tell me the password. Hm?\n"
+	.string "Wait a minute...$"
+
+RebelAdminArcade_Text_7:
+# 1801 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "You... you're the brat from Oldale\n"
+	.string "Warehouse! The hells you doing here?\p"
+	.string "Just so you know, you just caught me\n"
+	.string "unawares back then... but here!?$"
+
+RebelAdminArcade_Text_8:
+# 1811 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "This is our headquarters! Nah, that's\n"
+	.string "too soft... our STRONGHOLD!\p"
+	.string "You're lucky the boss doesn't want\n"
+	.string "fights in this floor, or we'd teach you a\l"
+	.string "lesson.\p"
+	.string "Now scram.$"
+
+RebelAdminArcade_Text_9:
+# 1816 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "I need to speak with your boss$"
+
+RebelAdminArcade_Text_10:
+# 1817 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "I'll leave$"
+
+RebelAdminArcade_Text_11:
+# 1820 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "And don't come back$"
+
+RebelAdminArcade_Text_12:
+# 1824 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "With our boss!? Bwahaha! You're funny!\p"
+	.string "Look kid, maybe Devon has promised you\n"
+	.string "a fat sum to defeat us...\p"
+	.string "But our boss is a former Elite Four. You\n"
+	.string "stand no chance in hell.\p"
+	.string "Besides, you're not getting to him\n"
+	.string "anyway. Only rebels can use the\l"
+	.string "elevator. Checkmate!$"
+
+RebelAdminArcade_Text_13:
+# 1834 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "I'll join the Rebels$"
+
+RebelAdminArcade_Text_14:
+# 1841 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "... do you think I'm stupid!? You messed\n"
+	.string "our gig at Oldale Warehouse!\p"
+	.string "You got in our way, and now you want to\n"
+	.string "join us!? Wait, unless...$"
+
+RebelAdminArcade_Text_15:
+# 1845 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "You've realized how badass we are.\n"
+	.string "That'd make sense. Tons, in fact$"
+
+RebelAdminArcade_Text_16:
+# 1848 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "But what if you work for Devon, and it's\n"
+	.string "all a trick to...!?$"
+
+RebelAdminArcade_Text_17:
+# 1852 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "Bah, why am I wasting my time thinking\n"
+	.string "about this? I'm just here to guard the\l"
+	.string "elevator!\p"
+	.string "Look, if you become a Rebel, I'll let you\n"
+	.string "in, simple as that.\p"
+	.string "But the only way to become one is for\n"
+	.string "Rebel Admin A to tell you the passwords.\p"
+	.string "Where's Rebel Admin A? Heh... can't help\n"
+	.string "you with that.\p"
+	.string "Finding him is how we test if applicants\n"
+	.string "have the street smarts to join us.\p"
+	.string "So ask around, keep your eyes open, and\n"
+	.string "don't come with the passwords.$"
+
+RebelAdminArcade_Text_18:
+# 1864 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	.string "And don't come back!$"

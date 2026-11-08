@@ -226,6 +226,8 @@ script PetalburgDevonCenterFakeMedic {
 
 			if (var(VAR_RESULT) == 1) {
 
+				playse (SE_M_METRONOME)
+				applymovement (8, moves(emote_question_mark))
 				msgbox(format("Woah, what are you talking about? That's a serious accusation!
 				\pDo you have any proof to back it up?"))
 				dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
@@ -419,7 +421,7 @@ script DevonGuardsTakeHealScammer {
 	closemessage
 
 	playse (SE_PIN)
-	applymovement (8, moves(emote_double_exclamation_mark))
+	applymovement (8, moves(emote_exclamation_mark))
 	applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 2, face_left))
 	applymovement (12, moves(walk_up * 3))
 	waitmovement (12)

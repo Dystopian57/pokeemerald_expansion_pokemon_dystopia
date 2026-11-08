@@ -527,8 +527,8 @@ script TouristGreatCraterApproach0 {
 		applymovement (13, moves(jump_in_place_down * 1))
 		waitmovement (13)
 
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
-		waitmovement (OBJ_EVENT_ID_PLAYER)
+		//applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+		//waitmovement (OBJ_EVENT_ID_PLAYER)
 
 		call (TouristGreatCraterBattle)}
 
@@ -547,8 +547,8 @@ script TouristGreatCraterApproach1 {
 		applymovement (6, moves(walk_down * 1))
 		applymovement (13, moves(walk_down * 1))
 
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
-		waitmovement (OBJ_EVENT_ID_PLAYER)
+		//applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+		//waitmovement (OBJ_EVENT_ID_PLAYER)
 
 		call (TouristGreatCraterBattle)}
 
@@ -567,8 +567,8 @@ script TouristGreatCraterApproach2 {
 		applymovement (6, moves(walk_down * 2))
 		applymovement (13, moves(walk_down * 2))
 
-		applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
-		waitmovement (OBJ_EVENT_ID_PLAYER)
+		//applymovement (OBJ_EVENT_ID_PLAYER, moves(face_up))
+		//waitmovement (OBJ_EVENT_ID_PLAYER)
 
 		call (TouristGreatCraterBattle)}
 

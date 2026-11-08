@@ -1758,3 +1758,120 @@ script EnableFollowersArcade {
 	//setrespawn (HEAL_LOCATION_OLDALE_TOWN)
 	//special (TurnOnTVScreen)
 	}
+
+script RebelAdminArcade {
+	
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+    applymovement (31, moves(face_player))
+
+
+		if(var(VAR_PETALBURG_PHASE) == 6){
+		msgbox(format("Got the passwords"))
+            dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Yes, I have them",
+			"No, not yet")
+
+            	if (var(VAR_RESULT) == 0) {
+				msgbox(format("Let's hear them then."))
+				}
+
+            	if (var(VAR_RESULT) == 1) {
+				msgbox(format("Then leave me alone. You gave me enough a headache for a long time!"))
+				}
+		}
+
+		if(var(VAR_PETALBURG_PHASE) == 5){
+		msgbox(format("What do you want now!?"))
+		goto (joinrebelchoicequestion)
+		}
+
+		if(var(VAR_PETALBURG_PHASE) == 3){
+
+			setvar (VAR_PETALBURG_PHASE, 4)
+
+            msgbox(format("New face? Tell me the password. Hm? Wait a minute..."))
+			closemessage
+
+			playse (SE_PIN)
+			applymovement (31, moves(emote_exclamation_mark))
+			waitmovement (31)
+
+            msgbox(format("You... you're the brat from Oldale Warehouse! The hells you doing here?
+			\pJust so you know, you just caught me unawares back then...
+			but here!?"))
+			closemessage
+
+			applymovement (31, moves(jump_in_place_down))
+			waitmovement (31)
+			applymovement (31, moves(face_player))
+			waitmovement (31)
+
+            msgbox(format("This is our headquarters! Nah, that's too soft... our STRONGHOLD!
+			\pYou're lucky the boss doesn't want fights in this floor, or we'd teach you a lesson.
+			\pNow scram."))
+
+            dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"I need to speak with your boss",
+			"I'll leave")
+
+            	if (var(VAR_RESULT) == 1) {
+				msgbox(format("And don't come back"))
+				}
+
+            	if (var(VAR_RESULT) == 0) {
+                msgbox(format("With our boss!? Bwahaha! You're funny!
+				\pLook kid, maybe Devon has promised you
+				a fat sum to defeat us...
+				\pBut our boss is a former Elite Four. You stand
+				no chance in hell.
+				\pBesides, you're not getting to him anyway. Only rebels can use
+				the elevator. Checkmate!")) 
+
+			joinrebelchoicequestion:
+            dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"I'll join the Rebels",
+			"I'll leave")
+
+            	if (var(VAR_RESULT) == 0) {
+				playse (SE_M_SWAGGER2)
+				applymovement (31, moves(emote_exclamation_mark))
+				waitmovement (31)
+				msgbox(format("... do you think I'm stupid!? You messed our gig at Oldale Warehouse!
+				\pYou got in our way, and now you want to join us!? Wait, unless..."))
+				applymovement (31, moves(face_left))
+				waitmovement (31)
+				msgbox(format("You've realized how badass we are. That'd make sense. Tons, in fact"))
+				applymovement (31, moves(face_right))
+				waitmovement (31)
+				msgbox(format("But what if you work for
+				Devon, and it's all a trick to...!?"))
+				applymovement (31, moves(face_player))
+				waitmovement (31)
+				msgbox(format("Bah, why am I wasting my time thinking about this? I'm just here to guard
+				the elevator!
+				\pLook, if you become a Rebel, I'll let you in, simple as that.
+				\pBut the only way to become one is for Rebel Admin A to tell you the
+				passwords.
+				\pWhere's Rebel Admin A? Heh... can't help you with that.
+				\pFinding him is how we test if applicants have the street smarts to join us.
+				\pSo ask around, keep your eyes open, and don't come with the passwords."))
+
+				setvar (VAR_PETALBURG_PHASE, 6)
+				}
+            	if (var(VAR_RESULT) == 1) {
+				msgbox(format("And don't come back!"))
+				goto (endofpetalburgarcadeelevatoradmin)
+				}
+
+				}
+ 
+            
+
+}
+
+endofpetalburgarcadeelevatoradmin:
+release
+
+}

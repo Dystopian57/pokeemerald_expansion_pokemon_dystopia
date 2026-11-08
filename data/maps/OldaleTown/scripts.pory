@@ -847,6 +847,58 @@ else {release}
 script OldaleCamelia {
     lock
 
+
+    if(var(VAR_MAUSOLEUM_HEXGIRL) == 3){
+        applymovement(4, moves(face_player))
+
+        if (flag (SamanthaCameliaInteraction)){
+            goto (cameliareminderduringsamantha)
+        }
+
+        if (!flag (SamanthaCameliaInteraction)){
+
+            createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_CAMELIA])
+			msgbox(format("Hey there, {PLAYER}... does your friend want to join us fight Devon?"))
+
+            removefieldmugshot
+			applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
+			playse (SE_PIN)
+			setspeaker ([SP_NAME_SAMANTHA])
+            msgbox(format("F-fight Devon? N-no, I work for Devon...!"))
+
+
+            createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_CONFUSED)
+			setspeaker ([SP_NAME_CAMELIA])
+            playse (SE_M_SKETCH) //tri attack
+            applymovement (16, moves(emote_x))
+			msgbox(format("You do...? You don't look like any Devon employee I've seen."))
+
+            createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_CAMELIA])
+			msgbox(format("You look too kind."))
+
+            removefieldmugshot
+			setspeaker ([SP_NAME_SAMANTHA])
+            msgbox(format("O-oh... thank you...?"))
+
+            cameliareminderduringsamantha:
+            createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL)
+			setspeaker ([SP_NAME_CAMELIA])
+			msgbox(format("{PLAYER}, Sharpy is still waiting in {COLOR GREEN}Route 103{COLOR DARK_GRAY}
+            for that silly “Test Duel”."))
+
+            createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_ANGRY)
+			setspeaker ([SP_NAME_CAMELIA])
+			msgbox(format("Please, beat him as soon as you can, so we can go back to Petalburg."))
+            removefieldmugshot
+
+			goto (endofcameliaidleoldale)
+			}
+            
+            }
+
+
     if (flag (saidnotosharpyinoldale))
     {
 
@@ -886,6 +938,7 @@ script OldaleCamelia {
     removefieldmugshot
 	applymovement (16, moves(face_left))
     waitmovement (16)
+    endofcameliaidleoldale:
     releaseall
     }
 
@@ -1819,6 +1872,9 @@ script SamanthaGetSnacksCutscene {
     waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
 
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_left * 1, face_down))
+    waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
+    playse (SE_M_ATTRACT)
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(emote_heart))
     waitmovement (OBJ_EVENT_ID_NPC_FOLLOWER)
     setspeaker ([SP_NAME_SAMANTHA])
     msgbox (format("Hehehe... I've got tons. We can go back. \p T-thank you..."))

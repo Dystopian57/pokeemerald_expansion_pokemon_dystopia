@@ -434,13 +434,6 @@
     },
     {
       "type": "secret_base",
-      "x": 9,
-      "y": 47,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_BROWN_CAVE1_1"
-    },
-    {
-      "type": "secret_base",
       "x": 30,
       "y": 51,
       "elevation": 0,

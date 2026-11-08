@@ -1967,7 +1967,9 @@ msgbox (format("O-oh, {PLAYER}... this is... {RIVAL}'s house, right?"))
 
 }
 
-   else {msgbox (format("I-I can eat these in the mausoleum... I-I don't want to take more
+   else {
+		setspeaker ([SP_NAME_SAMANTHA])
+		msgbox (format("I-I can eat these in the mausoleum... I-I don't want to take more
     of your time...!"))}
 applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1))
 applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_down * 1))
@@ -1982,14 +1984,19 @@ script SamanthaDontgotoPlayers {
     {
 	applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(face_player, emote_exclamation_mark))
 	playse (SE_PIN)
+	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("O-oh, {PLAYER}... this is... your house, right? Your name is on the sign..."))
 
+	setspeaker ([SP_NAME_SAMANTHA])
 	msgbox (format("I-I appreciate it, but... I can't take your food! \p I have saved money for mine. So let's
 	go to {COLOR GREEN}Oldale{COLOR DARK_GRAY} to get it."))
 	closemessage
 
 }
-   else {msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
+   else {
+	
+	setspeaker ([SP_NAME_SAMANTHA])
+	msgbox (format("W-we can go back to the Mausoleum now... I-I don't want to take more
     of your time...!"))
 	closemessage}
 applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right * 1))
@@ -2381,12 +2388,14 @@ else {
 	setspeaker ([SP_NAME_BIRCH])
 	msgbox (format("Expecting to be chased, I panicked and began to run in circles! As usual!"))
 		checkplayergender
+		setspeaker ([SP_NAME_BIRCH])
 		if(var(VAR_RESULT) == MALE){msgbox (format("I met your father in a similar occassion. But that's a tale for another
 	time."))}
 
 		if(var(VAR_RESULT) == FEMALE){msgbox (format("I met your mother in a similar occassion. But that's a tale for another
 	time."))}
-	
+
+	setspeaker ([SP_NAME_BIRCH])
 	msgbox (format("Now, imagine my surprise, when I turned around and saw...\pThat the Poochain was not chasing me
 	in anger. It could not even move.\pThe poor thing did not have a hole in its muzzle,
 	so it could not eat.\pIt was very malnourished. I took it to the lab, and cut all its restrains."))

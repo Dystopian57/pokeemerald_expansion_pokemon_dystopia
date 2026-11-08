@@ -209,17 +209,39 @@ Route103_Text_RouteSign:
 mapscripts Route103_MapScripts {
 	//MAP_SCRIPT_ON_LOAD: Route103WeatherSong
 	//MAP_SCRIPT_ON_TRANSITION: Route103WeatherSong
-    //MAP_SCRIPT_ON_LOAD: Route103Mapscriptbundle
+    MAP_SCRIPT_ON_LOAD: Route103Mapscriptbundle
 	MAP_SCRIPT_ON_TRANSITION: Route103Mapscriptbundle}
 
 
-script Route103Mapscriptbundle {
+script RespawnFerrymapUp {
+	
+		setflag (ferryman103down)
+		setflag (ferryboat103down)
+		clearflag (ferryman103up)
+		clearflag (ferryboat103up)
+		//addobject (36)
+		//addobject (37)
 
-	//ferrymanhandling
+}
+
+script RespawnFerrymapDown {
+	
 		clearflag (ferryman103down)
 		clearflag (ferryboat103down)
 		setflag (ferryman103up)
 		setflag (ferryboat103up)
+		//addobject (34)
+		//addobject (35)
+
+}
+
+script Route103Mapscriptbundle {
+
+	//ferrymanhandling
+		//clearflag (ferryman103down)
+		//clearflag (ferryboat103down)
+		//setflag (ferryman103up)
+		//setflag (ferryboat103up)
 
 	//tvweather
 
@@ -303,7 +325,7 @@ script Route103Rain2 {
 
 
 script Route103EndRain {
-	setweather (WEATHER_SHADE)
+	setweather (WEATHER_RAIN)
 	setvar(VAR_ROUTE103_WEATHER, 0)
 	fadeoutbgm (0)
 	playbgm (MUS_STORM, TRUE)
@@ -311,14 +333,7 @@ script Route103EndRain {
 
 
 
-script FerryManReturnsSouth {
-	
-		clearflag (ferryman103down)
-		clearflag (ferryboat103down)
-		setflag (ferryman103up)
-		setflag (ferryboat103up)
-		
-}
+
 
 script Route103ConcordBridgeSign {
 	lock
@@ -900,7 +915,7 @@ script Route103ConcordConartist {
 		applymovement (28, moves(walk_in_place_right * 1, walk_in_place_down * 1, walk_in_place_right * 1, walk_in_place_down * 1, walk_in_place_right * 1, walk_in_place_down * 1))
 		msgbox(format("What the...?"))
 
-		applymovement (28, moves(face_player))
+		applymovement (28, moves(face_player, emote_double_exclamation_mark))
 
 		msgbox(format("You two-faced bastard - you set me up! You're going to get it now! 
 		\p No one slips Jimmy McGligar, best Pokémon egg seller of Hoenn!"))
@@ -1004,6 +1019,12 @@ script ConArtistEgg {
 
 	if (flag (conartistescaped))
 	{
+			specialvar (VAR_RESULT, CalculatePlayerPartyCount)
+			if (var(VAR_RESULT) == 6) {
+			setflag (newmonabouttobesenttoPC)
+			}
+
+
 	msgbox(format("The shady dealer left this egg behind..."))
 	giveegg (SPECIES_TAMARAKKU)
 	fadeoutbgm (1)
@@ -1012,6 +1033,14 @@ script ConArtistEgg {
 		if (var(VAR_ROUTE103_WEATHER) > 0)
 		{playbgm (MUS_STORM, TRUE)}
 		else{playbgm (MUS_MT_PYRE_EXTERIOR, TRUE)}
+
+		
+			if (flag (newmonabouttobesenttoPC))
+			{
+			msgbox(format("The Egg was sent to the PC."))
+			clearflag (newmonabouttobesenttoPC)	
+			}
+
 	removeobject (33)
 	setflag (conartistegg)
 	releaseall}

@@ -177,139 +177,139 @@ OldaleWarehouseColdStorageRebelClerk::
 	return
 
 
-OldaleWarehouseColdStorageItem::
+	.align 2
+# 104 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+OldaleWarehouseColdStorage_TempShop:
+# 105 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.2byte ITEM_POKE_BALL
 # 106 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
+	.2byte ITEM_POTION
 # 107 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	finditem ITEM_STAR_PIECE
+	.2byte ITEM_SUPER_POTION
 # 108 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	removeobject 2
+	.2byte ITEM_REMEDY
 # 109 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.2byte ITEM_REVIVAL_HERB
+# 110 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.2byte ITEM_HONEY
+# 111 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.2byte ITEM_POKE_TOY
+# 112 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.2byte ITEM_FULL_HEAL
+# 113 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	.2byte ITEM_AERODACTYLITE
+	.2byte ITEM_NONE
+
+OldaleWarehouseColdStorageItem::
+# 116 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	lock
+# 117 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	finditem ITEM_STAR_PIECE
+# 118 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	removeobject 2
+# 119 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	releaseall
 	return
 
 
-	.align 2
-# 111 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-OldaleWarehouseColdStorage_TempShop:
-# 112 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_POKE_BALL
-# 113 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_POTION
-# 114 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_SUPER_POTION
-# 115 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_REMEDY
-# 116 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_REVIVAL_HERB
-# 117 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_HONEY
-# 118 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_POKE_TOY
-# 119 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_FULL_HEAL
-# 120 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	.2byte ITEM_AERODACTYLITE
-	.2byte ITEM_NONE
-
 OldaleWarehouseColdStorageSchedule::
-# 123 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 124 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	lock
+# 125 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	msgbox OldaleWarehouseColdStorageSchedule_Text_0
-# 127 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 128 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseColdStorageMedStock::
-# 131 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 132 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox OldaleWarehouseColdStorageMedStock_Text_0
+	lock
 # 133 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox OldaleWarehouseColdStorageMedStock_Text_0
+# 134 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseColdStorageFurStock::
-# 137 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 138 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox OldaleWarehouseColdStorageFurStock_Text_0
+	lock
 # 139 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox OldaleWarehouseColdStorageFurStock_Text_0
+# 140 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseColdStorageFoodStock::
-# 143 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 144 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox OldaleWarehouseColdStorageFoodStock_Text_0
+	lock
 # 145 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox OldaleWarehouseColdStorageFoodStock_Text_0
+# 146 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseColdStorageJewels::
-# 149 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 150 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox OldaleWarehouseColdStorageJewels_Text_0
+	lock
 # 151 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox OldaleWarehouseColdStorageJewels_Text_0
+# 152 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseColdStorageSkinStock::
-# 155 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 156 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox OldaleWarehouseColdStorageSkinStock_Text_0
+	lock
 # 157 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox OldaleWarehouseColdStorageSkinStock_Text_0
+# 158 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
 
 OldaleWarehouseColdStorageShardStock::
-# 161 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 162 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox OldaleWarehouseColdStorageShardStock_Text_0
+	lock
 # 163 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox OldaleWarehouseColdStorageShardStock_Text_0
+# 164 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
 
 DevonWarehouseWorkerColdStorage::
-# 169 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	lock
 # 170 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	lock
 # 171 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	applymovement 6, OldaleWarehouseColdStorageMedic_Movement_0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 172 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	waitmovement 6
-# 173 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox DevonWarehouseWorkerColdStorage_Text_0
-# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	applymovement 6, DevonWarehouseWorkerColdStorage_Movement_0
-# 175 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	waitmovement 6
-# 176 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox DevonWarehouseWorkerColdStorage_Text_1
-# 177 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	applymovement 6, OldaleWarehouseColdStorageMedic_Movement_0
+# 173 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	waitmovement 6
+# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerColdStorage_Text_0
+# 175 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	applymovement 6, DevonWarehouseWorkerColdStorage_Movement_0
+# 176 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	waitmovement 6
+# 177 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerColdStorage_Text_1
 # 178 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	waitmovement 6
+	applymovement 6, OldaleWarehouseColdStorageMedic_Movement_0
 # 179 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	msgbox DevonWarehouseWorkerColdStorage_Text_2
-# 181 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
-	applymovement 6, DevonWarehouseWorkerColdStorage_Movement_1
-# 182 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	waitmovement 6
+# 180 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	msgbox DevonWarehouseWorkerColdStorage_Text_2
+# 182 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	applymovement 6, DevonWarehouseWorkerColdStorage_Movement_1
 # 183 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+	waitmovement 6
+# 184 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	release
 	return
 
@@ -332,15 +332,15 @@ OldaleWarehouseColdStorageMedic_Movement_1:
 	face_up
 	step_end
 
-# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 175 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 DevonWarehouseWorkerColdStorage_Movement_0:
-# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 175 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	face_left
 	step_end
 
-# 181 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 182 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 DevonWarehouseWorkerColdStorage_Movement_1:
-# 181 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 182 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	face_down
 	step_end
 
@@ -384,7 +384,7 @@ OldaleWarehouseColdStorageRebelClerk_Text_0:
 	.string "Eh, whatever. Want something?$"
 
 OldaleWarehouseColdStorageSchedule_Text_0:
-# 124 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 125 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "The sign contains what seems like a\n"
 	.string "shipping schedule...\p"
 	.string "“{COLOR BLUE}Weekly Dewford - Mainland shipment:{COLOR DARK_GRAY}\p"
@@ -393,46 +393,46 @@ OldaleWarehouseColdStorageSchedule_Text_0:
 	.string "Arystal Shards. Handle with care.”$"
 
 OldaleWarehouseColdStorageMedStock_Text_0:
-# 132 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 133 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "The shelves are full of\n"
 	.string "healthcare-related supplies.$"
 
 OldaleWarehouseColdStorageFurStock_Text_0:
-# 138 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 139 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "Piles of furs, primarily of brown and\n"
 	.string "orange color.$"
 
 OldaleWarehouseColdStorageFoodStock_Text_0:
-# 144 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 145 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "It's full of luxury-tier, package\n"
 	.string "foodstuffs.$"
 
 OldaleWarehouseColdStorageJewels_Text_0:
-# 150 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 151 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "The expository shows beautiful jewels\n"
 	.string "made with light-blue gems.$"
 
 OldaleWarehouseColdStorageSkinStock_Text_0:
-# 156 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 157 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "It contains skincare products, mostly\n"
 	.string "of the Glalie's brand.$"
 
 OldaleWarehouseColdStorageShardStock_Text_0:
-# 162 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 163 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "There's various gems inside. Many look\n"
 	.string "like beautiful ice shards.$"
 
 DevonWarehouseWorkerColdStorage_Text_0:
-# 173 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 174 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "I was here when the Rebels first drove\n"
 	.string "us out.$"
 
 DevonWarehouseWorkerColdStorage_Text_1:
-# 176 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 177 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "The battle broke some medicine\n"
 	.string "cabinets, and the liquid contents\l"
 	.string "spilled all over, which formed this ice.$"
 
 DevonWarehouseWorkerColdStorage_Text_2:
-# 179 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
+# 180 "data/maps/OldaleWarehouseColdStorage/scripts.pory"
 	.string "Going to be a pain to clean up...$"
