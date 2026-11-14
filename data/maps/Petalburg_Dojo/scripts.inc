@@ -204,15 +204,15 @@ PetalburgDojoIntro_38:
 	compare VAR_RESULT, 0
 	goto_if_eq PetalburgDojoIntro_42
 PetalburgDojoIntro_41:
-# 412 "data/maps/Petalburg_Dojo/scripts.pory"
+# 414 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgDojoIntro_45
 PetalburgDojoIntro_44:
-# 437 "data/maps/Petalburg_Dojo/scripts.pory"
+# 439 "data/maps/Petalburg_Dojo/scripts.pory"
 endofdojointro:
-# 438 "data/maps/Petalburg_Dojo/scripts.pory"
-	removefieldmugshot
 # 440 "data/maps/Petalburg_Dojo/scripts.pory"
+	removefieldmugshot
+# 442 "data/maps/Petalburg_Dojo/scripts.pory"
 	release
 	return
 
@@ -367,617 +367,678 @@ devoncatchup:
 	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
 # 203 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_20
-# 205 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
 # 206 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+	setspeaker [ SP_NAME_SHARPY ]
 # 207 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
+# 208 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_21
-# 209 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 2, PetalburgDojoIntro_Movement_13
 # 210 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement 2
+	applymovement 2, PetalburgDojoIntro_Movement_13
 # 211 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
+	waitmovement 2
 # 212 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
-# 213 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_22
-# 215 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
+# 213 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 214 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_22
 # 216 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+	setspeaker [ SP_NAME_NORMAN ]
 # 217 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 218 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_23
-# 220 "data/maps/Petalburg_Dojo/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PetalburgDojoIntro_Text_24, PetalburgDojoIntro_Text_25
 # 222 "data/maps/Petalburg_Dojo/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PetalburgDojoIntro_Text_24, PetalburgDojoIntro_Text_25
+# 224 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PetalburgDojoIntro_48
 PetalburgDojoIntro_47:
-# 393 "data/maps/Petalburg_Dojo/scripts.pory"
+# 395 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgDojoIntro_51
 PetalburgDojoIntro_50:
-# 407 "data/maps/Petalburg_Dojo/scripts.pory"
+# 409 "data/maps/Petalburg_Dojo/scripts.pory"
 	setvar VAR_PETALBURG_PHASE, 1
-# 408 "data/maps/Petalburg_Dojo/scripts.pory"
+# 410 "data/maps/Petalburg_Dojo/scripts.pory"
 	goto endofdojointro
 	goto PetalburgDojoIntro_41
 
 PetalburgDojoIntro_45:
-# 413 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 414 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_CONFUSED
 # 415 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 416 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_CONFUSED
+# 417 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_53
-# 418 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 419 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
 # 420 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 421 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 422 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_54
-# 423 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 424 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
 # 425 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_55
-# 429 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 430 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 426 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+# 427 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_55
 # 431 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 432 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 433 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_56
-# 434 "data/maps/Petalburg_Dojo/scripts.pory"
+# 436 "data/maps/Petalburg_Dojo/scripts.pory"
 	goto devoncatchup
 	goto PetalburgDojoIntro_44
 
 PetalburgDojoIntro_48:
-# 223 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 224 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
 # 225 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_26
+	setspeaker [ SP_NAME_NORMAN ]
 # 226 "data/maps/Petalburg_Dojo/scripts.pory"
-agreedtohelpwith104indojo:
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
 # 227 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 2, PetalburgDojoIntro_Movement_15
+	msgbox PetalburgDojoIntro_Text_26
 # 228 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement 2
+agreedtohelpwith104indojo:
 # 229 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
+	applymovement 2, PetalburgDojoIntro_Movement_15
 # 230 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
-# 231 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_27
-# 233 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 234 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
-# 235 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_28
-# 236 "data/maps/Petalburg_Dojo/scripts.pory"
-	closemessage
-# 237 "data/maps/Petalburg_Dojo/scripts.pory"
-	removefieldmugshot
-# 240 "data/maps/Petalburg_Dojo/scripts.pory"
-repeatdojointrobattle:
-# 241 "data/maps/Petalburg_Dojo/scripts.pory"
-	hidefollower
-# 242 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 1, PetalburgDojoIntro_Movement_16
-# 244 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDojoIntro_Movement_17
-# 246 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 2, PetalburgDojoIntro_Movement_18
-# 248 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 3, PetalburgDojoIntro_Movement_19
-# 249 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement 3
-# 251 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 252 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_MENACING
-# 253 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_29
-# 255 "data/maps/Petalburg_Dojo/scripts.pory"
-	playse SE_LEDGE
-# 256 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 2, PetalburgDojoIntro_Movement_20
-# 257 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement 2
+# 231 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 232 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 233 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_27
+# 235 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 236 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 237 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_28
+# 238 "data/maps/Petalburg_Dojo/scripts.pory"
+	closemessage
+# 239 "data/maps/Petalburg_Dojo/scripts.pory"
+	removefieldmugshot
+# 242 "data/maps/Petalburg_Dojo/scripts.pory"
+repeatdojointrobattle:
+# 243 "data/maps/Petalburg_Dojo/scripts.pory"
+	hidefollower
+# 244 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 1, PetalburgDojoIntro_Movement_16
+# 246 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDojoIntro_Movement_17
+# 248 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 2, PetalburgDojoIntro_Movement_18
+# 250 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 3, PetalburgDojoIntro_Movement_19
+# 251 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitmovement 3
+# 253 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 254 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_MENACING
+# 255 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_29
+# 257 "data/maps/Petalburg_Dojo/scripts.pory"
+	playse SE_LEDGE
+# 258 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 2, PetalburgDojoIntro_Movement_20
 # 259 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitmovement 2
+# 261 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_SHARPYANDCAMELIAOLDALE, 1
 	goto_if_eq PetalburgDojoIntro_54
-# 269 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 270 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
 # 271 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_32
+	setspeaker [ SP_NAME_SHARPY ]
+# 272 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
 # 273 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
-# 274 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_MENACING
+	msgbox PetalburgDojoIntro_Text_32
 # 275 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 276 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_MENACING
+# 277 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_33
 PetalburgDojoIntro_53:
-# 277 "data/maps/Petalburg_Dojo/scripts.pory"
-	removefieldmugshot
-# 278 "data/maps/Petalburg_Dojo/scripts.pory"
-	setfollowernpc LOCALID_DOJO_NORMAN, FNPC_ALL, OldaleRivalfollowchat, PARTNER_NORMAN
 # 279 "data/maps/Petalburg_Dojo/scripts.pory"
-	setvar VAR_PETALBURG_PHASE, 1
+	removefieldmugshot
 # 280 "data/maps/Petalburg_Dojo/scripts.pory"
-	setflag lostdojointromultibattle
+	setfollowernpc LOCALID_DOJO_NORMAN, FNPC_ALL, OldaleRivalfollowchat, PARTNER_NORMAN
 # 281 "data/maps/Petalburg_Dojo/scripts.pory"
-	clearflag dojonorman
+	setvar VAR_PETALBURG_PHASE, 1
 # 282 "data/maps/Petalburg_Dojo/scripts.pory"
-	trainerbattle_two_trainers TRAINER_CAMELIADOJO, Camelia_MultiOutro, TRAINER_SHARPYDOJO, Sharpy_MultiOutro
-# 286 "data/maps/Petalburg_Dojo/scripts.pory"
-	setvar VAR_PETALBURG_PHASE, 2
-# 288 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 289 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
-# 290 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_34
-# 292 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 293 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
-# 294 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_35
-# 297 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 298 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
-# 299 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_36
-# 301 "data/maps/Petalburg_Dojo/scripts.pory"
-	setflag dojonorman
-# 302 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, PetalburgDojoIntro_Movement_21
-# 303 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDojoIntro_Movement_22
-# 305 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 2, PetalburgDojoIntro_Movement_23
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 3, PetalburgDojoIntro_Movement_24
-# 307 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement 3
-# 309 "data/maps/Petalburg_Dojo/scripts.pory"
-	playse SE_DOOR
-# 310 "data/maps/Petalburg_Dojo/scripts.pory"
-	opendoor 7, 1
-# 313 "data/maps/Petalburg_Dojo/scripts.pory"
-	playse SE_DOOR
-# 314 "data/maps/Petalburg_Dojo/scripts.pory"
-	opendoor 1, 1
-# 315 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitse
-# 317 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 3, PetalburgDojoIntro_Movement_25
-# 318 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement 3
-# 319 "data/maps/Petalburg_Dojo/scripts.pory"
-	removeobject 3
-# 320 "data/maps/Petalburg_Dojo/scripts.pory"
-	closedoor 1, 1
-# 321 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement 2, PetalburgDojoIntro_Movement_25
-# 322 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement 2
-# 323 "data/maps/Petalburg_Dojo/scripts.pory"
-	removeobject 2
-# 324 "data/maps/Petalburg_Dojo/scripts.pory"
-	closedoor 7, 1
-# 326 "data/maps/Petalburg_Dojo/scripts.pory"
-	setflag dojosharpyandcamelia
-# 328 "data/maps/Petalburg_Dojo/scripts.pory"
+	setflag lostdojointromultibattle
+# 283 "data/maps/Petalburg_Dojo/scripts.pory"
 	clearflag dojonorman
-# 329 "data/maps/Petalburg_Dojo/scripts.pory"
+# 284 "data/maps/Petalburg_Dojo/scripts.pory"
+	trainerbattle_two_trainers TRAINER_CAMELIADOJO, Camelia_MultiOutro, TRAINER_SHARPYDOJO, Sharpy_MultiOutro
+# 288 "data/maps/Petalburg_Dojo/scripts.pory"
+	setvar VAR_PETALBURG_PHASE, 2
+# 290 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 330 "data/maps/Petalburg_Dojo/scripts.pory"
+# 291 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
+# 292 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_34
+# 294 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 295 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 296 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_35
+# 299 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_SHARPY ]
+# 300 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_NORMAL
+# 301 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_36
+# 303 "data/maps/Petalburg_Dojo/scripts.pory"
+	setflag dojonorman
+# 304 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, PetalburgDojoIntro_Movement_21
+# 305 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDojoIntro_Movement_22
+# 307 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 2, PetalburgDojoIntro_Movement_23
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 3, PetalburgDojoIntro_Movement_24
+# 309 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitmovement 3
+# 311 "data/maps/Petalburg_Dojo/scripts.pory"
+	playse SE_DOOR
+# 312 "data/maps/Petalburg_Dojo/scripts.pory"
+	opendoor 7, 1
+# 315 "data/maps/Petalburg_Dojo/scripts.pory"
+	playse SE_DOOR
+# 316 "data/maps/Petalburg_Dojo/scripts.pory"
+	opendoor 1, 1
+# 317 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitse
+# 319 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 3, PetalburgDojoIntro_Movement_25
+# 320 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitmovement 3
+# 321 "data/maps/Petalburg_Dojo/scripts.pory"
+	removeobject 3
+# 322 "data/maps/Petalburg_Dojo/scripts.pory"
+	closedoor 1, 1
+# 323 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement 2, PetalburgDojoIntro_Movement_25
+# 324 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitmovement 2
+# 325 "data/maps/Petalburg_Dojo/scripts.pory"
+	removeobject 2
+# 326 "data/maps/Petalburg_Dojo/scripts.pory"
+	closedoor 7, 1
+# 328 "data/maps/Petalburg_Dojo/scripts.pory"
+	setflag dojosharpyandcamelia
+# 330 "data/maps/Petalburg_Dojo/scripts.pory"
+	clearflag dojonorman
 # 331 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_37
-# 334 "data/maps/Petalburg_Dojo/scripts.pory"
-	destroyfollowernpc
-# 335 "data/maps/Petalburg_Dojo/scripts.pory"
-	addobject 1
-# 337 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 338 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+# 332 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 333 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_37
+# 336 "data/maps/Petalburg_Dojo/scripts.pory"
+	destroyfollowernpc
+# 337 "data/maps/Petalburg_Dojo/scripts.pory"
+	addobject 1
 # 339 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_38
+	setspeaker [ SP_NAME_NORMAN ]
+# 340 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
 # 341 "data/maps/Petalburg_Dojo/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PetalburgDojoIntro_Text_39, PetalburgDojoIntro_Text_40
+	msgbox PetalburgDojoIntro_Text_38
 # 343 "data/maps/Petalburg_Dojo/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PetalburgDojoIntro_Text_39, PetalburgDojoIntro_Text_40
+# 345 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PetalburgDojoIntro_58
 PetalburgDojoIntro_57:
-# 387 "data/maps/Petalburg_Dojo/scripts.pory"
+# 389 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgDojoIntro_60
 	goto PetalburgDojoIntro_47
 
 PetalburgDojoIntro_51:
-# 394 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 395 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
 # 396 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_50
-# 399 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 400 "data/maps/Petalburg_Dojo/scripts.pory"
+# 397 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 398 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_50
 # 401 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_51
-# 404 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 405 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 402 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 403 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_51
 # 406 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 407 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 408 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_52
 	goto PetalburgDojoIntro_50
 
 PetalburgDojoIntro_54:
-# 261 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_SHARPY ]
-# 262 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
 # 263 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_30
+	setspeaker [ SP_NAME_SHARPY ]
 # 264 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_CAMELIA ]
+	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
 # 265 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_MENACING
+	msgbox PetalburgDojoIntro_Text_30
 # 266 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_CAMELIA ]
+# 267 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_MENACING
+# 268 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_31
 	goto PetalburgDojoIntro_53
 
 PetalburgDojoIntro_58:
-# 344 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 345 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_CONFUSED
 # 346 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_41
+	setspeaker [ SP_NAME_NORMAN ]
+# 347 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_CONFUSED
 # 348 "data/maps/Petalburg_Dojo/scripts.pory"
-rebelcatchup:
-# 349 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
+	msgbox PetalburgDojoIntro_Text_41
 # 350 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+rebelcatchup:
 # 351 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_42
-# 353 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 354 "data/maps/Petalburg_Dojo/scripts.pory"
+# 352 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+# 353 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_42
 # 355 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 356 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+# 357 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_43
-# 358 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 359 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
 # 360 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_44
-# 363 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 364 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
-# 365 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_45
-# 367 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 368 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_MENACING
-# 369 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_46
-# 373 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 374 "data/maps/Petalburg_Dojo/scripts.pory"
+# 361 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
-# 375 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_47
-# 378 "data/maps/Petalburg_Dojo/scripts.pory"
+# 362 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_44
+# 365 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 379 "data/maps/Petalburg_Dojo/scripts.pory"
+# 366 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 367 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_45
+# 369 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 370 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_MENACING
+# 371 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_46
+# 375 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 376 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 377 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_47
 # 380 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox PetalburgDojoIntro_Text_48
+	setspeaker [ SP_NAME_NORMAN ]
+# 381 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
 # 382 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoIntro_Text_48
+# 384 "data/maps/Petalburg_Dojo/scripts.pory"
 	setvar VAR_PETALBURG_PHASE, 2
-# 383 "data/maps/Petalburg_Dojo/scripts.pory"
+# 385 "data/maps/Petalburg_Dojo/scripts.pory"
 	goto endofdojointro
 	goto PetalburgDojoIntro_57
 
 PetalburgDojoIntro_60:
-# 388 "data/maps/Petalburg_Dojo/scripts.pory"
+# 390 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoIntro_Text_49
-# 389 "data/maps/Petalburg_Dojo/scripts.pory"
+# 391 "data/maps/Petalburg_Dojo/scripts.pory"
 	goto rebelcatchup
 	goto PetalburgDojoIntro_47
 
 
 Petalburg_DojoNormanIdle::
-# 444 "data/maps/Petalburg_Dojo/scripts.pory"
+# 446 "data/maps/Petalburg_Dojo/scripts.pory"
 	lock
-# 445 "data/maps/Petalburg_Dojo/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 447 "data/maps/Petalburg_Dojo/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 449 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 1, Petalburg_DojoNormanIdle_Movement_0
-# 448 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement 1
 # 450 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitmovement 1
+# 452 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_PETALBURG_PHASE, 1
 	goto_if_eq Petalburg_DojoNormanIdle_2
 Petalburg_DojoNormanIdle_1:
-# 490 "data/maps/Petalburg_Dojo/scripts.pory"
+# 491 "data/maps/Petalburg_Dojo/scripts.pory"
+	setspeaker [ SP_NAME_NORMAN ]
+# 492 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 493 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_PETALBURG_PHASE, 2
 	goto_if_eq Petalburg_DojoNormanIdle_5
 Petalburg_DojoNormanIdle_4:
-# 499 "data/maps/Petalburg_Dojo/scripts.pory"
+# 498 "data/maps/Petalburg_Dojo/scripts.pory"
+	compare VAR_PETALBURG_PHASE, 3
+	goto_if_eq Petalburg_DojoNormanIdle_11
+Petalburg_DojoNormanIdle_10:
+# 504 "data/maps/Petalburg_Dojo/scripts.pory"
+	compare VAR_PETALBURG_PHASE, 4
+	goto_if_eq Petalburg_DojoNormanIdle_17
+Petalburg_DojoNormanIdle_16:
+# 509 "data/maps/Petalburg_Dojo/scripts.pory"
+	compare VAR_PETALBURG_PHASE, 5
+	goto_if_eq Petalburg_DojoNormanIdle_22
+Petalburg_DojoNormanIdle_21:
+# 523 "data/maps/Petalburg_Dojo/scripts.pory"
 endofnormanidledojo:
-# 500 "data/maps/Petalburg_Dojo/scripts.pory"
+# 524 "data/maps/Petalburg_Dojo/scripts.pory"
 	removefieldmugshot
-# 501 "data/maps/Petalburg_Dojo/scripts.pory"
+# 525 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 1, PetalburgDojoIntro_Movement_1
-# 502 "data/maps/Petalburg_Dojo/scripts.pory"
+# 526 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement 1
-# 503 "data/maps/Petalburg_Dojo/scripts.pory"
+# 527 "data/maps/Petalburg_Dojo/scripts.pory"
 	release
 	return
 
 Petalburg_DojoNormanIdle_2:
-# 452 "data/maps/Petalburg_Dojo/scripts.pory"
+# 454 "data/maps/Petalburg_Dojo/scripts.pory"
 	goto_if_set lostdojointromultibattle, Petalburg_DojoNormanIdle_8
 Petalburg_DojoNormanIdle_7:
-# 464 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 465 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
 # 466 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox Petalburg_DojoNormanIdle_Text_2
-# 468 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 469 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+# 467 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 468 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_2
 # 470 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox Petalburg_DojoNormanIdle_Text_3
+	setspeaker [ SP_NAME_NORMAN ]
+# 471 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
 # 472 "data/maps/Petalburg_Dojo/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Petalburg_DojoNormanIdle_Text_4, Petalburg_DojoNormanIdle_Text_5
+	msgbox Petalburg_DojoNormanIdle_Text_3
 # 474 "data/maps/Petalburg_Dojo/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, Petalburg_DojoNormanIdle_Text_4, Petalburg_DojoNormanIdle_Text_5
+# 476 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq Petalburg_DojoNormanIdle_11
-Petalburg_DojoNormanIdle_10:
-# 481 "data/maps/Petalburg_Dojo/scripts.pory"
+	goto_if_eq Petalburg_DojoNormanIdle_14
+Petalburg_DojoNormanIdle_13:
+# 483 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, 1
-	goto_if_eq Petalburg_DojoNormanIdle_13
+	goto_if_eq Petalburg_DojoNormanIdle_19
 	goto Petalburg_DojoNormanIdle_1
 
 Petalburg_DojoNormanIdle_5:
-# 491 "data/maps/Petalburg_Dojo/scripts.pory"
+# 494 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoNormanIdle_Text_8
 	goto Petalburg_DojoNormanIdle_4
 
 Petalburg_DojoNormanIdle_8:
-# 454 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 455 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
 # 456 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox Petalburg_DojoNormanIdle_Text_0
-# 459 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 460 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 457 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 458 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_0
 # 461 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox Petalburg_DojoNormanIdle_Text_1
+	setspeaker [ SP_NAME_NORMAN ]
 # 462 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 463 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_1
+# 464 "data/maps/Petalburg_Dojo/scripts.pory"
 	goto repeatdojointrobattle
 	goto Petalburg_DojoNormanIdle_7
 
 Petalburg_DojoNormanIdle_11:
-# 475 "data/maps/Petalburg_Dojo/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
-# 476 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
-# 477 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox Petalburg_DojoNormanIdle_Text_6
-# 478 "data/maps/Petalburg_Dojo/scripts.pory"
-	goto agreedtohelpwith104indojo
+# 499 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_9
 	goto Petalburg_DojoNormanIdle_10
 
-Petalburg_DojoNormanIdle_13:
-# 482 "data/maps/Petalburg_Dojo/scripts.pory"
+Petalburg_DojoNormanIdle_14:
+# 477 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 483 "data/maps/Petalburg_Dojo/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 478 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
+# 479 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_6
+# 480 "data/maps/Petalburg_Dojo/scripts.pory"
+	goto agreedtohelpwith104indojo
+	goto Petalburg_DojoNormanIdle_13
+
+Petalburg_DojoNormanIdle_17:
+# 505 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_10
+	goto Petalburg_DojoNormanIdle_16
+
+Petalburg_DojoNormanIdle_19:
 # 484 "data/maps/Petalburg_Dojo/scripts.pory"
-	msgbox Petalburg_DojoNormanIdle_Text_7
+	setspeaker [ SP_NAME_NORMAN ]
 # 485 "data/maps/Petalburg_Dojo/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 486 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_7
+# 487 "data/maps/Petalburg_Dojo/scripts.pory"
 	goto endofnormanidledojo
 	goto Petalburg_DojoNormanIdle_1
 
+Petalburg_DojoNormanIdle_22:
+# 510 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox Petalburg_DojoNormanIdle_Text_11
+	goto Petalburg_DojoNormanIdle_21
+
 
 Petalburg_DojoSharpyIdle::
-# 508 "data/maps/Petalburg_Dojo/scripts.pory"
+# 532 "data/maps/Petalburg_Dojo/scripts.pory"
 	lock
-# 509 "data/maps/Petalburg_Dojo/scripts.pory"
+# 533 "data/maps/Petalburg_Dojo/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 510 "data/maps/Petalburg_Dojo/scripts.pory"
+# 534 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 2, Petalburg_DojoNormanIdle_Movement_0
-# 511 "data/maps/Petalburg_Dojo/scripts.pory"
+# 535 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement 2
-# 512 "data/maps/Petalburg_Dojo/scripts.pory"
+# 536 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_PETALBURG_PHASE, 1
 	goto_if_eq Petalburg_DojoSharpyIdle_2
 Petalburg_DojoSharpyIdle_1:
-# 517 "data/maps/Petalburg_Dojo/scripts.pory"
+# 541 "data/maps/Petalburg_Dojo/scripts.pory"
 	removefieldmugshot
-# 518 "data/maps/Petalburg_Dojo/scripts.pory"
+# 542 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 2, PetalburgDojoIntro_Movement_13
-# 519 "data/maps/Petalburg_Dojo/scripts.pory"
+# 543 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement 2
-# 521 "data/maps/Petalburg_Dojo/scripts.pory"
+# 545 "data/maps/Petalburg_Dojo/scripts.pory"
 	release
 	return
 
 Petalburg_DojoSharpyIdle_2:
-# 514 "data/maps/Petalburg_Dojo/scripts.pory"
+# 538 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_SHARPY ]
-# 515 "data/maps/Petalburg_Dojo/scripts.pory"
+# 539 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPY, EMOTE_POKEBALL
-# 516 "data/maps/Petalburg_Dojo/scripts.pory"
+# 540 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoSharpyIdle_Text_0
 	goto Petalburg_DojoSharpyIdle_1
 
 
 Petalburg_DojoCameliaIdle::
-# 525 "data/maps/Petalburg_Dojo/scripts.pory"
+# 549 "data/maps/Petalburg_Dojo/scripts.pory"
 	lock
-# 526 "data/maps/Petalburg_Dojo/scripts.pory"
+# 550 "data/maps/Petalburg_Dojo/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 527 "data/maps/Petalburg_Dojo/scripts.pory"
+# 551 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 3, Petalburg_DojoNormanIdle_Movement_0
-# 528 "data/maps/Petalburg_Dojo/scripts.pory"
+# 552 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement 3
-# 529 "data/maps/Petalburg_Dojo/scripts.pory"
+# 553 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_PETALBURG_PHASE, 1
 	goto_if_eq Petalburg_DojoCameliaIdle_2
 Petalburg_DojoCameliaIdle_1:
-# 543 "data/maps/Petalburg_Dojo/scripts.pory"
+# 567 "data/maps/Petalburg_Dojo/scripts.pory"
 	removefieldmugshot
-# 544 "data/maps/Petalburg_Dojo/scripts.pory"
+# 568 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 3, PetalburgDojoIntro_Movement_13
-# 545 "data/maps/Petalburg_Dojo/scripts.pory"
+# 569 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement 3
-# 546 "data/maps/Petalburg_Dojo/scripts.pory"
+# 570 "data/maps/Petalburg_Dojo/scripts.pory"
 	release
 	return
 
 Petalburg_DojoCameliaIdle_2:
-# 531 "data/maps/Petalburg_Dojo/scripts.pory"
+# 555 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_CAMELIA ]
-# 532 "data/maps/Petalburg_Dojo/scripts.pory"
+# 556 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_CONFUSED
-# 534 "data/maps/Petalburg_Dojo/scripts.pory"
+# 558 "data/maps/Petalburg_Dojo/scripts.pory"
 	checkplayergender
-# 535 "data/maps/Petalburg_Dojo/scripts.pory"
+# 559 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Petalburg_DojoCameliaIdle_5
 Petalburg_DojoCameliaIdle_4:
-# 537 "data/maps/Petalburg_Dojo/scripts.pory"
+# 561 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Petalburg_DojoCameliaIdle_8
 Petalburg_DojoCameliaIdle_7:
-# 540 "data/maps/Petalburg_Dojo/scripts.pory"
+# 564 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_CAMELIA ]
-# 541 "data/maps/Petalburg_Dojo/scripts.pory"
+# 565 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_CAMELIA, EMOTE_NORMAL
-# 542 "data/maps/Petalburg_Dojo/scripts.pory"
+# 566 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoCameliaIdle_Text_2
 	goto Petalburg_DojoCameliaIdle_1
 
 Petalburg_DojoCameliaIdle_5:
-# 536 "data/maps/Petalburg_Dojo/scripts.pory"
+# 560 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoCameliaIdle_Text_0
 	goto Petalburg_DojoCameliaIdle_4
 
 Petalburg_DojoCameliaIdle_8:
-# 538 "data/maps/Petalburg_Dojo/scripts.pory"
+# 562 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoCameliaIdle_Text_1
 	goto Petalburg_DojoCameliaIdle_7
 
 
 PetalburgDojoNoRoomAccess::
-# 550 "data/maps/Petalburg_Dojo/scripts.pory"
+# 574 "data/maps/Petalburg_Dojo/scripts.pory"
 	lock
-# 551 "data/maps/Petalburg_Dojo/scripts.pory"
+# 575 "data/maps/Petalburg_Dojo/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 552 "data/maps/Petalburg_Dojo/scripts.pory"
+# 576 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 1, Petalburg_DojoNormanIdle_Movement_0
-# 553 "data/maps/Petalburg_Dojo/scripts.pory"
+# 577 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement 1
-# 555 "data/maps/Petalburg_Dojo/scripts.pory"
+# 579 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 556 "data/maps/Petalburg_Dojo/scripts.pory"
+# 580 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
-# 557 "data/maps/Petalburg_Dojo/scripts.pory"
+# 581 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox PetalburgDojoNoRoomAccess_Text_0
-# 559 "data/maps/Petalburg_Dojo/scripts.pory"
+# 583 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement 1, PetalburgDojoIntro_Movement_1
-# 560 "data/maps/Petalburg_Dojo/scripts.pory"
+# 584 "data/maps/Petalburg_Dojo/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgDojoNoRoomAccess_Movement_0
-# 561 "data/maps/Petalburg_Dojo/scripts.pory"
+# 585 "data/maps/Petalburg_Dojo/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 563 "data/maps/Petalburg_Dojo/scripts.pory"
+# 587 "data/maps/Petalburg_Dojo/scripts.pory"
 	removefieldmugshot
-# 564 "data/maps/Petalburg_Dojo/scripts.pory"
+# 588 "data/maps/Petalburg_Dojo/scripts.pory"
 	release
 	return
 
 
 Petalburg_DojoNormanBeforeYouGo::
-# 569 "data/maps/Petalburg_Dojo/scripts.pory"
+# 593 "data/maps/Petalburg_Dojo/scripts.pory"
 	lock
-# 570 "data/maps/Petalburg_Dojo/scripts.pory"
+# 594 "data/maps/Petalburg_Dojo/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 572 "data/maps/Petalburg_Dojo/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Petalburg_DojoNormanBeforeYouGo_Movement_0
-# 573 "data/maps/Petalburg_Dojo/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 575 "data/maps/Petalburg_Dojo/scripts.pory"
+# 598 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 576 "data/maps/Petalburg_Dojo/scripts.pory"
+# 599 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
-# 577 "data/maps/Petalburg_Dojo/scripts.pory"
+# 600 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoNormanBeforeYouGo_Text_0
-# 579 "data/maps/Petalburg_Dojo/scripts.pory"
+# 602 "data/maps/Petalburg_Dojo/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Petalburg_DojoNormanBeforeYouGo_Movement_0
+# 603 "data/maps/Petalburg_Dojo/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 605 "data/maps/Petalburg_Dojo/scripts.pory"
 	checkplayergender
-# 580 "data/maps/Petalburg_Dojo/scripts.pory"
+# 606 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Petalburg_DojoNormanBeforeYouGo_2
 Petalburg_DojoNormanBeforeYouGo_1:
-# 585 "data/maps/Petalburg_Dojo/scripts.pory"
+# 611 "data/maps/Petalburg_Dojo/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Petalburg_DojoNormanBeforeYouGo_5
 Petalburg_DojoNormanBeforeYouGo_4:
-# 591 "data/maps/Petalburg_Dojo/scripts.pory"
+# 617 "data/maps/Petalburg_Dojo/scripts.pory"
 	setvar VAR_PETALBURG_PHASE, 3
-# 592 "data/maps/Petalburg_Dojo/scripts.pory"
+# 618 "data/maps/Petalburg_Dojo/scripts.pory"
 	setflag rebelsunblockarcade
-# 593 "data/maps/Petalburg_Dojo/scripts.pory"
+# 619 "data/maps/Petalburg_Dojo/scripts.pory"
 	removefieldmugshot
-# 594 "data/maps/Petalburg_Dojo/scripts.pory"
+# 620 "data/maps/Petalburg_Dojo/scripts.pory"
 	release
 	return
 
 Petalburg_DojoNormanBeforeYouGo_2:
-# 581 "data/maps/Petalburg_Dojo/scripts.pory"
+# 607 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 582 "data/maps/Petalburg_Dojo/scripts.pory"
+# 608 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
-# 583 "data/maps/Petalburg_Dojo/scripts.pory"
+# 609 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoNormanBeforeYouGo_Text_1
 	goto Petalburg_DojoNormanBeforeYouGo_1
 
 Petalburg_DojoNormanBeforeYouGo_5:
-# 586 "data/maps/Petalburg_Dojo/scripts.pory"
+# 612 "data/maps/Petalburg_Dojo/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
-# 587 "data/maps/Petalburg_Dojo/scripts.pory"
+# 613 "data/maps/Petalburg_Dojo/scripts.pory"
 	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
-# 588 "data/maps/Petalburg_Dojo/scripts.pory"
+# 614 "data/maps/Petalburg_Dojo/scripts.pory"
 	msgbox Petalburg_DojoNormanBeforeYouGo_Text_2
 	goto Petalburg_DojoNormanBeforeYouGo_4
+
+
+PetalburgDojoGymStatue::
+# 631 "data/maps/Petalburg_Dojo/scripts.pory"
+	lock
+# 632 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgDojoGymStatue_Text_0
+# 633 "data/maps/Petalburg_Dojo/scripts.pory"
+	releaseall
+	return
+
+
+PetalburgSharpyRoomSign::
+# 637 "data/maps/Petalburg_Dojo/scripts.pory"
+	lock
+# 638 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgSharpyRoomSign_Text_0
+# 639 "data/maps/Petalburg_Dojo/scripts.pory"
+	releaseall
+	return
+
+
+PetalburgCameliaRoomSign::
+# 643 "data/maps/Petalburg_Dojo/scripts.pory"
+	lock
+# 644 "data/maps/Petalburg_Dojo/scripts.pory"
+	msgbox PetalburgCameliaRoomSign_Text_0
+# 645 "data/maps/Petalburg_Dojo/scripts.pory"
+	releaseall
+	return
 
 
 # 51 "data/maps/Petalburg_Dojo/scripts.pory"
@@ -1118,129 +1179,129 @@ PetalburgDojoIntro_Movement_15:
 	face_left
 	step_end
 
-# 242 "data/maps/Petalburg_Dojo/scripts.pory"
+# 244 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_16:
-# 242 "data/maps/Petalburg_Dojo/scripts.pory"
+# 244 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_left
-# 242 "data/maps/Petalburg_Dojo/scripts.pory"
+# 244 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_left
-# 242 "data/maps/Petalburg_Dojo/scripts.pory"
+# 244 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 244 "data/maps/Petalburg_Dojo/scripts.pory"
+# 246 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_17:
-# 244 "data/maps/Petalburg_Dojo/scripts.pory"
+# 246 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_down
-# 244 "data/maps/Petalburg_Dojo/scripts.pory"
+# 246 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_left
-# 244 "data/maps/Petalburg_Dojo/scripts.pory"
+# 246 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_left
-# 244 "data/maps/Petalburg_Dojo/scripts.pory"
+# 246 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 246 "data/maps/Petalburg_Dojo/scripts.pory"
+# 248 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_18:
-# 246 "data/maps/Petalburg_Dojo/scripts.pory"
+# 248 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 246 "data/maps/Petalburg_Dojo/scripts.pory"
+# 248 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_up
-# 246 "data/maps/Petalburg_Dojo/scripts.pory"
+# 248 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 248 "data/maps/Petalburg_Dojo/scripts.pory"
+# 250 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_19:
-# 248 "data/maps/Petalburg_Dojo/scripts.pory"
+# 250 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 248 "data/maps/Petalburg_Dojo/scripts.pory"
+# 250 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 248 "data/maps/Petalburg_Dojo/scripts.pory"
+# 250 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 248 "data/maps/Petalburg_Dojo/scripts.pory"
+# 250 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_down
-# 248 "data/maps/Petalburg_Dojo/scripts.pory"
+# 250 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 256 "data/maps/Petalburg_Dojo/scripts.pory"
+# 258 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_20:
-# 256 "data/maps/Petalburg_Dojo/scripts.pory"
+# 258 "data/maps/Petalburg_Dojo/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 302 "data/maps/Petalburg_Dojo/scripts.pory"
+# 304 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_21:
-# 302 "data/maps/Petalburg_Dojo/scripts.pory"
+# 304 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 302 "data/maps/Petalburg_Dojo/scripts.pory"
+# 304 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 302 "data/maps/Petalburg_Dojo/scripts.pory"
+# 304 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 303 "data/maps/Petalburg_Dojo/scripts.pory"
+# 305 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_22:
-# 303 "data/maps/Petalburg_Dojo/scripts.pory"
+# 305 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 303 "data/maps/Petalburg_Dojo/scripts.pory"
+# 305 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 303 "data/maps/Petalburg_Dojo/scripts.pory"
+# 305 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 305 "data/maps/Petalburg_Dojo/scripts.pory"
+# 307 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_23:
-# 305 "data/maps/Petalburg_Dojo/scripts.pory"
+# 307 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_right
-# 305 "data/maps/Petalburg_Dojo/scripts.pory"
+# 307 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_up
 	step_end
 
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_24:
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_up
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_up
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_up
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_left
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_left
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_left
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_left
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_fast_left
-# 306 "data/maps/Petalburg_Dojo/scripts.pory"
+# 308 "data/maps/Petalburg_Dojo/scripts.pory"
 	face_up
 	step_end
 
-# 317 "data/maps/Petalburg_Dojo/scripts.pory"
+# 319 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoIntro_Movement_25:
-# 317 "data/maps/Petalburg_Dojo/scripts.pory"
+# 319 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_up
 	step_end
 
-# 447 "data/maps/Petalburg_Dojo/scripts.pory"
+# 449 "data/maps/Petalburg_Dojo/scripts.pory"
 Petalburg_DojoNormanIdle_Movement_0:
-# 447 "data/maps/Petalburg_Dojo/scripts.pory"
+# 449 "data/maps/Petalburg_Dojo/scripts.pory"
 	face_player
 	step_end
 
-# 560 "data/maps/Petalburg_Dojo/scripts.pory"
+# 584 "data/maps/Petalburg_Dojo/scripts.pory"
 PetalburgDojoNoRoomAccess_Movement_0:
-# 560 "data/maps/Petalburg_Dojo/scripts.pory"
+# 584 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_down
 	step_end
 
-# 572 "data/maps/Petalburg_Dojo/scripts.pory"
+# 602 "data/maps/Petalburg_Dojo/scripts.pory"
 Petalburg_DojoNormanBeforeYouGo_Movement_0:
-# 572 "data/maps/Petalburg_Dojo/scripts.pory"
+# 602 "data/maps/Petalburg_Dojo/scripts.pory"
 	walk_in_place_up
 	step_end
 
@@ -1321,12 +1382,12 @@ PetalburgDojoIntro_Text_15:
 
 PetalburgDojoIntro_Text_16:
 # 180 "data/maps/Petalburg_Dojo/scripts.pory"
-	.string "Then you know about Devon and its\n"
+	.string "Then you know about {COLOR BLUE}Devon{COLOR DARK_GRAY} and its\n"
 	.string "questionable policies. Like Safemon.$"
 
 PetalburgDojoIntro_Text_17:
 # 184 "data/maps/Petalburg_Dojo/scripts.pory"
-	.string "We've been protesting against Devon in\n"
+	.string "We've been protesting against {COLOR BLUE}Devon{COLOR DARK_GRAY} in\n"
 	.string "front of their closest lab, in {COLOR GREEN}Route\l"
 	.string "104{COLOR DARK_GRAY}, but...$"
 
@@ -1343,186 +1404,186 @@ PetalburgDojoIntro_Text_19:
 PetalburgDojoIntro_Text_20:
 # 203 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Yeah! But no battles, and no stealing\n"
-	.string "stuff like Rebels do.$"
+	.string "stuff like {COLOR RED}Rebels{COLOR DARK_GRAY} do.$"
 
 PetalburgDojoIntro_Text_21:
-# 207 "data/maps/Petalburg_Dojo/scripts.pory"
+# 208 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Just freeing those poor Safemon. Get in\n"
 	.string "and get out, all stealthy like!$"
 
 PetalburgDojoIntro_Text_22:
-# 213 "data/maps/Petalburg_Dojo/scripts.pory"
+# 214 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I know it's sudden, {PLAYER} - but if\n"
 	.string "you agree with us...$"
 
 PetalburgDojoIntro_Text_23:
-# 217 "data/maps/Petalburg_Dojo/scripts.pory"
+# 218 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Will you help us liberate the Safemon\n"
-	.string "that Devon keeps in {COLOR GREEN}Route 104{COLOR DARK_GRAY}?$"
+	.string "that {COLOR BLUE}Devon{COLOR DARK_GRAY} keeps in {COLOR GREEN}Route 104{COLOR DARK_GRAY}?$"
 
 PetalburgDojoIntro_Text_24:
-# 220 "data/maps/Petalburg_Dojo/scripts.pory"
+# 222 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I will$"
 
 PetalburgDojoIntro_Text_25:
-# 220 "data/maps/Petalburg_Dojo/scripts.pory"
+# 222 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I will not$"
 
 PetalburgDojoIntro_Text_26:
-# 225 "data/maps/Petalburg_Dojo/scripts.pory"
+# 227 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Excellent. Now, while it is true our\n"
 	.string "methods will be pacific...$"
 
 PetalburgDojoIntro_Text_27:
-# 231 "data/maps/Petalburg_Dojo/scripts.pory"
+# 233 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "We need to be prepared for everything!\n"
 	.string "So we were going to do a battle!$"
 
 PetalburgDojoIntro_Text_28:
-# 235 "data/maps/Petalburg_Dojo/scripts.pory"
+# 237 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Come with me, {PLAYER}. We will face\n"
 	.string "Sharpy and Camelia in a double battle.$"
 
 PetalburgDojoIntro_Text_29:
-# 253 "data/maps/Petalburg_Dojo/scripts.pory"
+# 255 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Now focus, you two. And no bickering\n"
 	.string "between each other this time.$"
 
 PetalburgDojoIntro_Text_30:
-# 263 "data/maps/Petalburg_Dojo/scripts.pory"
+# 265 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Of course - it's rematch time,\n"
 	.string "{PLAYER}$"
 
 PetalburgDojoIntro_Text_31:
-# 266 "data/maps/Petalburg_Dojo/scripts.pory"
+# 268 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Now it's my turn to get to battle you!\n"
 	.string "I'm kind of excited.$"
 
 PetalburgDojoIntro_Text_32:
-# 271 "data/maps/Petalburg_Dojo/scripts.pory"
+# 273 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "You got it - let's do this, Camelia!$"
 
 PetalburgDojoIntro_Text_33:
-# 275 "data/maps/Petalburg_Dojo/scripts.pory"
+# 277 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "You better not drag me down, Sharpy!$"
 
 PetalburgDojoIntro_Text_34:
-# 290 "data/maps/Petalburg_Dojo/scripts.pory"
+# 292 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Now, no need to get upset. You do did\n"
 	.string "remarkably well.$"
 
 PetalburgDojoIntro_Text_35:
-# 294 "data/maps/Petalburg_Dojo/scripts.pory"
+# 296 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Now go back to your rooms, and get\n"
 	.string "everything ready. I need to go over one\l"
 	.string "last thing with {PLAYER}.$"
 
 PetalburgDojoIntro_Text_36:
-# 299 "data/maps/Petalburg_Dojo/scripts.pory"
+# 301 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Gotcha! See you later, {PLAYER}.$"
 
 PetalburgDojoIntro_Text_37:
-# 331 "data/maps/Petalburg_Dojo/scripts.pory"
+# 333 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "{PLAYER}... before we set out for\n"
-	.string "Route 104, there's something I need\l"
+	.string "{COLOR GREEN}Route 104{COLOR DARK_GRAY}, there's something I need\l"
 	.string "your help with.$"
 
 PetalburgDojoIntro_Text_38:
-# 339 "data/maps/Petalburg_Dojo/scripts.pory"
-	.string "We went over Devon Co. - but do you\n"
+# 341 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "We went over {COLOR BLUE}Devon Co.{COLOR DARK_GRAY} - but do you\n"
 	.string "know about Rebels too?$"
 
 PetalburgDojoIntro_Text_39:
-# 341 "data/maps/Petalburg_Dojo/scripts.pory"
+# 343 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I do$"
 
 PetalburgDojoIntro_Text_40:
-# 341 "data/maps/Petalburg_Dojo/scripts.pory"
+# 343 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I don't$"
 
 PetalburgDojoIntro_Text_41:
-# 346 "data/maps/Petalburg_Dojo/scripts.pory"
+# 348 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Hmm... your face tells me you have met\n"
 	.string "them, even.$"
 
 PetalburgDojoIntro_Text_42:
-# 351 "data/maps/Petalburg_Dojo/scripts.pory"
+# 353 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Rebels are a troublesome bunch, but\n"
-	.string "they do not worry me as much as Devon.$"
+	.string "they do not worry me as much as {COLOR BLUE}Devon{COLOR DARK_GRAY}.$"
 
 PetalburgDojoIntro_Text_43:
-# 355 "data/maps/Petalburg_Dojo/scripts.pory"
-	.string "They are a reactionary force to Devon.\n"
-	.string "If we deal with Devon, the Rebel\l"
+# 357 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "They are a reactionary force to {COLOR BLUE}Devon{COLOR DARK_GRAY}.\n"
+	.string "If we deal with {COLOR BLUE}Devon{COLOR DARK_GRAY}, the Rebel\l"
 	.string "situation should sort itself out.$"
 
 PetalburgDojoIntro_Text_44:
-# 360 "data/maps/Petalburg_Dojo/scripts.pory"
+# 362 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "That said... after they lost {COLOR GREEN}Oldale\n"
 	.string "Warehouse{COLOR DARK_GRAY}, I hear they want to occupy\l"
-	.string "the {COLOR GREEN}Devon Lab{COLOR DARK_GRAY} in Route 104 next.$"
+	.string "the {COLOR GREEN}Devon Lab{COLOR DARK_GRAY} in {COLOR GREEN}Route 104{COLOR DARK_GRAY} next.$"
 
 PetalburgDojoIntro_Text_45:
-# 365 "data/maps/Petalburg_Dojo/scripts.pory"
+# 367 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "If they do that, our reivindication will\n"
-	.string "be tarnihshed with their vandalism.$"
+	.string "be tarnished with their vandalism.$"
 
 PetalburgDojoIntro_Text_46:
-# 369 "data/maps/Petalburg_Dojo/scripts.pory"
+# 371 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "To avoid that, I want you to go see the\n"
 	.string "Rebel Leader in Petalburg, and ask him\l"
-	.string "and his Rebels leave Route 104 alone.$"
+	.string "and his Rebels leave {COLOR GREEN}Route 104{COLOR DARK_GRAY} alone.$"
 
 PetalburgDojoIntro_Text_47:
-# 375 "data/maps/Petalburg_Dojo/scripts.pory"
+# 377 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "He is a... problematic man. But he owes\n"
 	.string "me one, and I know he will agree.$"
 
 PetalburgDojoIntro_Text_48:
-# 380 "data/maps/Petalburg_Dojo/scripts.pory"
-	.string "He should be in Petalburg Arcade, the\n"
+# 382 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "He should be in {COLOR GREEN}Petalburg Arcade{COLOR DARK_GRAY}, the\n"
 	.string "building in front of the dojo.\p"
 	.string "Don't delay. We will wait here for you.$"
 
 PetalburgDojoIntro_Text_49:
-# 388 "data/maps/Petalburg_Dojo/scripts.pory"
+# 390 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Really? I heard they were causing\n"
 	.string "trouble in Oldale recently.$"
 
 PetalburgDojoIntro_Text_50:
-# 396 "data/maps/Petalburg_Dojo/scripts.pory"
-	.string "I understand... After the war, you must\n"
+# 398 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "I understand... after the war, you must\n"
 	.string "be tired of fighting..$"
 
 PetalburgDojoIntro_Text_51:
-# 401 "data/maps/Petalburg_Dojo/scripts.pory"
+# 403 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Perhaps seeing more of Petalburg, and\n"
 	.string "its surroundings, will change your mind.$"
 
 PetalburgDojoIntro_Text_52:
-# 406 "data/maps/Petalburg_Dojo/scripts.pory"
+# 408 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "If it does, our offer will stand. Take\n"
 	.string "care, {PLAYER}.$"
 
 PetalburgDojoIntro_Text_53:
-# 415 "data/maps/Petalburg_Dojo/scripts.pory"
+# 417 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Really? I thought Balsam or Birch would\n"
 	.string "have caught you up.$"
 
 PetalburgDojoIntro_Text_54:
-# 420 "data/maps/Petalburg_Dojo/scripts.pory"
+# 422 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Well, to make a long story short...$"
 
 PetalburgDojoIntro_Text_55:
-# 425 "data/maps/Petalburg_Dojo/scripts.pory"
-	.string "Little by little, Devon has been seizing\n"
+# 427 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "Little by little, {COLOR BLUE}Devon{COLOR DARK_GRAY} has been seizing\n"
 	.string "control of Hoenn.\p"
 	.string "They did some good things at first, like\n"
 	.string "rebuilding infraestructure, and getting\l"
 	.string "Pokémon Centers back in order.$"
 
 PetalburgDojoIntro_Text_56:
-# 431 "data/maps/Petalburg_Dojo/scripts.pory"
+# 433 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "But then they began to privatize said\n"
 	.string "centers, absorb Pokémarts, build roads\l"
 	.string "without regard to nature, put tolls on\l"
@@ -1531,92 +1592,145 @@ PetalburgDojoIntro_Text_56:
 	.string "turn Pokémon into Safemon.$"
 
 Petalburg_DojoNormanIdle_Text_0:
-# 456 "data/maps/Petalburg_Dojo/scripts.pory"
+# 458 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Now, don't feel ashamed, {PLAYER}.\n"
 	.string "After a year at home, it's natural your\l"
 	.string "training skills have rusted a little.$"
 
 Petalburg_DojoNormanIdle_Text_1:
-# 461 "data/maps/Petalburg_Dojo/scripts.pory"
+# 463 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Let's practice some more. We need to be\n"
 	.string "prepared for the unexpected.$"
 
 Petalburg_DojoNormanIdle_Text_2:
-# 466 "data/maps/Petalburg_Dojo/scripts.pory"
+# 468 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "You're back, {PLAYER}, and we're glad\n"
 	.string "you are.$"
 
 Petalburg_DojoNormanIdle_Text_3:
-# 470 "data/maps/Petalburg_Dojo/scripts.pory"
+# 472 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Have you changed your mind about\n"
 	.string "helping us free those Safemon?$"
 
 Petalburg_DojoNormanIdle_Text_4:
-# 472 "data/maps/Petalburg_Dojo/scripts.pory"
+# 474 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I will help$"
 
 Petalburg_DojoNormanIdle_Text_5:
-# 472 "data/maps/Petalburg_Dojo/scripts.pory"
+# 474 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I won't help$"
 
 Petalburg_DojoNormanIdle_Text_6:
-# 477 "data/maps/Petalburg_Dojo/scripts.pory"
+# 479 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I knew I could count on you. Now, while\n"
 	.string "our intentions are pacific...$"
 
 Petalburg_DojoNormanIdle_Text_7:
-# 484 "data/maps/Petalburg_Dojo/scripts.pory"
+# 486 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I am sorry to hear that... but you are in\n"
 	.string "your right to refuse.$"
 
 Petalburg_DojoNormanIdle_Text_8:
-# 491 "data/maps/Petalburg_Dojo/scripts.pory"
+# 494 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "Thank you, {PLAYER}. I would go to\n"
+	.string "speak with my acquaintance myself...\p"
+	.string "But me being seen in the arcade would\n"
+	.string "only link our actions to the Rebels.\p"
+	.string "I am too well known. You, on the other\n"
+	.string "hand, should pass unnoticed.$"
+
+Petalburg_DojoNormanIdle_Text_9:
+# 499 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "{PLAYER} - what is it? Did you speak\n"
-	.string "with my acquaintance yet?$"
+	.string "with my acquaintance yet?\p"
+	.string "As the leader of the Rebels, you will\n"
+	.string "most likely find him in their base.\p"
+	.string "And that's Petalburg Arcade. Of course,\n"
+	.string "that's just their legal front.\p"
+	.string "Just be careful. They are a rowdy bunch.$"
+
+Petalburg_DojoNormanIdle_Text_10:
+# 505 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "{PLAYER} - what is it? Did you speak\n"
+	.string "with my acquaintance yet?\p"
+	.string "Hmm... so one of his henchmen is blocking\n"
+	.string "the way to his office.\p"
+	.string "Tell him I sent you. He may let you\n"
+	.string "through then.$"
+
+Petalburg_DojoNormanIdle_Text_11:
+# 510 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "{PLAYER} - what is it? Did you speak\n"
+	.string "with my acquaintance yet?\p"
+	.string "Hmm... so only Rebels can meet with him?\n"
+	.string "Who does he think he is...?\p"
+	.string "Of course, you should not join the\n"
+	.string "Rebels. They are nothing but\l"
+	.string "troublemakers.\p"
+	.string "But if you could pretend to join, just\n"
+	.string "long enough to meet him...\p"
+	.string "I'm sorry. I did not realize this would\n"
+	.string "be so difficult.\p"
+	.string "Perhaps we'll need to call off the\n"
+	.string "operation, after all...$"
 
 Petalburg_DojoSharpyIdle_Text_0:
-# 516 "data/maps/Petalburg_Dojo/scripts.pory"
+# 540 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Don't worry, freeing those Safemon\n"
 	.string "should be cinch-Trapinch for us three!$"
 
 Petalburg_DojoCameliaIdle_Text_0:
-# 536 "data/maps/Petalburg_Dojo/scripts.pory"
+# 560 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "If you are Norman's grandson, then that\n"
 	.string "means your parents are...$"
 
 Petalburg_DojoCameliaIdle_Text_1:
-# 538 "data/maps/Petalburg_Dojo/scripts.pory"
+# 562 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "If you are Norman's granddaugther,\n"
 	.string "then that means your parents are...$"
 
 Petalburg_DojoCameliaIdle_Text_2:
-# 542 "data/maps/Petalburg_Dojo/scripts.pory"
+# 566 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Well, I understand if you prefer to stay\n"
 	.string "away from conflict.$"
 
 PetalburgDojoNoRoomAccess_Text_0:
-# 557 "data/maps/Petalburg_Dojo/scripts.pory"
+# 581 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "You know this dojo, {PLAYER}. There's\n"
 	.string "no exit that way.$"
 
 Petalburg_DojoNormanBeforeYouGo_Text_0:
-# 577 "data/maps/Petalburg_Dojo/scripts.pory"
+# 600 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Oh, and... {PLAYER}?$"
 
 Petalburg_DojoNormanBeforeYouGo_Text_1:
-# 583 "data/maps/Petalburg_Dojo/scripts.pory"
+# 609 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Good job on that battle. You're a good\n"
 	.string "trainer. Just like your father.$"
 
 Petalburg_DojoNormanBeforeYouGo_Text_2:
-# 588 "data/maps/Petalburg_Dojo/scripts.pory"
+# 614 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Good job on that battle. You're a good\n"
 	.string "trainer. Just like your mother.$"
 
+PetalburgDojoGymStatue_Text_0:
+# 632 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "“Petalburg Dojo.” The word “dojo”\n"
+	.string "seems carved on top of another.$"
+
+PetalburgSharpyRoomSign_Text_0:
+# 638 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "“Sharpy's Room.”$"
+
+PetalburgCameliaRoomSign_Text_0:
+# 644 "data/maps/Petalburg_Dojo/scripts.pory"
+	.string "“Camelia's Room.”\n"
+	.string "Knock before entering!$"
+
 Camelia_MultiOutro::
-# 597 "data/maps/Petalburg_Dojo/scripts.pory"
+# 623 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "I want {PLAYER} as partner next\ntime...$"
 
 Sharpy_MultiOutro::
-# 600 "data/maps/Petalburg_Dojo/scripts.pory"
+# 626 "data/maps/Petalburg_Dojo/scripts.pory"
 	.string "Oh yeah!? Right back at you! Bleeeh!$"

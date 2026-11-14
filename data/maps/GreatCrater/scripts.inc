@@ -86,7 +86,7 @@ GreatCraterMapscriptBundle_14:
 # 38 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 39 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 40 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return
@@ -95,7 +95,7 @@ GreatCraterMapscriptBundle_15:
 # 42 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 43 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 44 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return
@@ -104,7 +104,7 @@ GreatCraterMapscriptBundle_16:
 # 46 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 47 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 48 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return
@@ -113,7 +113,7 @@ GreatCraterMapscriptBundle_17:
 # 50 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 51 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 52 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return
@@ -224,7 +224,7 @@ DynamicWeatherCrater_5:
 # 96 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 97 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 98 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return
@@ -233,7 +233,7 @@ DynamicWeatherCrater_6:
 # 100 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 101 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 102 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return
@@ -242,7 +242,7 @@ DynamicWeatherCrater_7:
 # 104 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 105 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 106 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return
@@ -251,7 +251,7 @@ DynamicWeatherCrater_8:
 # 108 "data/maps/GreatCrater/scripts.pory"
 	setweather WEATHER_VOLCANIC_ASH
 # 109 "data/maps/GreatCrater/scripts.pory"
-	playbgm MUS_STORM, TRUE
+	playbgm MUS_WEATHER_GROUDON, TRUE
 # 110 "data/maps/GreatCrater/scripts.pory"
 	setvar VAR_GREATCRATER_WEATHER, 4
 	return

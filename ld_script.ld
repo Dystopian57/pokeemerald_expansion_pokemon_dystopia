@@ -1084,8 +1084,12 @@ SECTIONS {
         sound/songs/midi/mus_dozeremergency.o(.rodata);
         sound/songs/midi/mus_mainstreetcolosseum.o(.rodata);
         sound/songs/midi/mus_battlesim.o(.rodata);
-        sound/songs/midi/mus_seventhsymphony.o(.rodata);  
-        
+        sound/songs/midi/mus_seventhsymphony.o(.rodata); 
+        sound/songs/midi/mus_earthandsea.o(.rodata);
+        sound/songs/midi/mus_gitsreincarnation.o(.rodata);    
+        sound/songs/midi/mus_gscgymbattle.o(.rodata);  
+        sound/songs/midi/mus_pmdgoodnight.o(.rodata);  
+
         
         sound/songs/midi/mus_gsc_route38.o(.rodata);
         sound/songs/midi/mus_caught.o(.rodata);

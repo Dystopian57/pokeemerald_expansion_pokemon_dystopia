@@ -1420,6 +1420,56 @@ script PetalburgRiotLowerDevon {
     
 }
 
+script PetalburgArcadeGuard1 {
+    lock
+    applymovement (55, moves(face_player))
+    msgbox(format("No games for you right now, kid. Arcade is off limits."))
+	applymovement (55, moves(face_up))
+	waitmovement (55)
+    releaseall
+    }
+
+script PetalburgArcadeGuardMaku {
+    lock
+	playmoncry (SPECIES_MAKUHITA, CRY_MODE_NORMAL)
+    applymovement (56, moves(face_player))
+    msgbox(format("Uu-ooh!"))
+	applymovement (56, moves(face_up))
+	waitmovement (56)
+    releaseall
+    }
+
+script PetalburgArcadeGuard2 {
+    lock
+    applymovement (53, moves(walk_in_place_down))
+	waitmovement (53)
+    msgbox(format("I mean, a single trainer kicked them off the warehouse...
+	\pPfft, Huey's crew is pathetic. Should have sent us intead."))
+    releaseall
+    }
+
+script PetalburgArcadeGuard3 {
+    lock
+    applymovement (54, moves(walk_in_place_up))
+	waitmovement (54)
+    msgbox(format("They're reporting to the boss now. Them losers gonna demoted
+	to guard duty."))
+	applymovement (55, moves(face_up))
+	waitmovement (55)
+	goto (PetalburgArcadeGuardsGoAway)
+    }
+
+script PetalburgArcadeGuardsGoAway {
+    applymovement (53, moves(walk_in_place_right))
+    applymovement (54, moves(walk_in_place_right))
+	waitmovement (54)
+    msgbox(format("Hm? Arcade's off limits, kid. We're on high alert."))
+    applymovement (53, moves(walk_in_place_down))
+    applymovement (54, moves(walk_in_place_up))
+	waitmovement (54)
+	releaseall
+}
+
 script PetalburgSmokerMilitia {
     lock
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -1442,7 +1492,7 @@ script PetalburgSmokerMilitia {
     
 }
 
-script PetalburgMiliaSnackGuy {
+script PetalburgMilitiaSnackGuy {
     lock
 
 		if (!flag(militiadailysnack))
@@ -1470,11 +1520,490 @@ script PetalburgMiliaSnackGuy {
     releaseall
     }
 
-	script PetalburgMilitiaLeftGuy {
+script PetalburgMilitiaLeftGuy {
     lock
     setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     msgbox (format("The war showed us Pokémon can't be trusted, and Safemon are useless.\pSo what
 	can you rely on to protect yourself these days?\pThat's right - your BODY! WAYAAAA!"))
     release
-    
+	}
+
+script PetalburgMilitiaRightGuy {
+    lock
+
+	if (var(VAR_SENSEIQTRAININGQUEST) == 0) {
+    msgbox (format("If you want to join us, speak with Musashi-sensei! HIII-YAAH!"))
+	}
+
+	else {
+    msgbox (format("Seeing you spar againt Musashi-sensei was so inspiring! HII-YAAH!"))
+	}
+
+    release
+	}
+
+
+
+
+script PetalburgMartialArtsSensei {
+
+	lock
+
+	if (var(VAR_SENSEIQTRAININGQUEST) == 1) {
+
+    msgbox(format("Remember. Martial arts are supposed to quell conflict, not fuel it.
+	\pThose who use power wrongly... they risk being destroyed by it."))
+	goto (senseiscriptend)
+	}
+
+	if (var(VAR_SENSEIQTRAININGQUEST) == 0) {
+
+    msgbox(format("That's it - control your breathing! Watch your forms!\p
+	It's still soon for a break!"))
+
+	applymovement (35, moves(face_player))
+	waitmovement (35)
+
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){msgbox(format("Hmm? Come to join the lesson, young man?"))}
+
+	if(var(VAR_RESULT) == FEMALE){msgbox(format("Hmm? Come to join the lesson, young woman?"))}
+
+
+    msgbox(format("Hmm… I see it in that somber gaze you try to hide.
+	\pYou were a soldier. But you were never a warrior. And now you are neither.
+	\pSo why are you here? Do you wish for strength?"))
+
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+		if (var(VAR_RESULT) == 1) {
+		msgbox(format("Very well... if you change your mind, we train here during the day."))
+		goto (senseiscriptend)
+		}
+
+		if (var(VAR_RESULT) == 0) {
+		setvar (VAR_SENSEIQTRAININGQUEST, 1)
+		msgbox(format("And what would you use said strength for?"))
+			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+			"To defend myself",
+			"To accomplish my goals",
+			"To protect others",
+			"I don't know")
+
+			if (var(VAR_RESULT) == 0) {
+			msgbox(format("I see. You have suffered harm - you are naturally afraid of more..."))
+			}
+			if (var(VAR_RESULT) == 1) {
+			msgbox(format("Your goals? Self-growth, perchance? Some manner of revenge? I hope not..."))
+			}
+			if (var(VAR_RESULT) == 2) {
+			msgbox(format("A worthy pursuit. But that, young one, often requires more resolve than
+			strength..."))
+			}
+			if (var(VAR_RESULT) == 3) {
+			msgbox(format("Ah... you are honest, if nothing else. Sometimes we ignore why we
+			are drawn to something."))
+			}
+
+			msgbox(format("Stand over there. I will impart a lesson to you."))
+			closemessage
+
+			fadescreenswapbuffers (FADE_TO_BLACK)
+            hidefollower
+
+			fadeoutbgm (1)
+			fadeinbgm (1)
+			playbgm (MUS_EARTHANDSEA, TRUE)
+
+			setflag (punchpetalburgmartialartists)
+			clearflag (idlepetalburgmartialartists)
+
+			removeobject (32)
+			removeobject (33)
+			removeobject (34)
+
+			addobject (60)
+			addobject (61)
+			addobject (62)
+
+			setobjectxy (35, 20, 8)
+			applymovement (35, moves(face_right))
+			waitmovement (35)
+
+			setobjectxy (OBJ_EVENT_ID_PLAYER, 24, 8)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+
+
+		msgbox(format("True martial arts is not about vanquising your opponent's strength with
+		your own.
+		\pIt's about redirecting said strenght towards a peaceful conclusion.
+		\pSince ancient times, people have learnt to do this from Pokémon, which do this
+		instinctively with moves like {COLOR GREEN} Counter{COLOR DARK_GRAY}.
+		\pI will now teach you said move. Now, I wish you to strike me."))
+		closemessage
+
+		playse (SE_M_METRONOME)
+		applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_question_mark))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+
+		applymovement (35, moves(walk_in_place_right * 1))
+		waitmovement (35)
+
+		msgbox(format("Hoho… fear not. Looks can be deceiving. And that goes for both of us…
+		\pDo not hesitate. Strike me!"))
+
+		checkplayergender
+		if(var(VAR_RESULT) == MALE){
+			
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Strike with crutch",
+			"Low kick")}
+
+		if(var(VAR_RESULT) == FEMALE){
+			
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Kick",
+			"Punch")}
+
+			if (var(VAR_RESULT) == 0) {
+			goto (playerstrikessensei)
+			}
+
+			if (var(VAR_RESULT) == 1) {
+			closemessage
+			playerstrikessensei:
+			playse (SE_FLEE)
+			applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_fast_left * 3))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+
+
+			setvar(VAR_0x8004, 2)  //@ vertical pan
+			setvar(VAR_0x8005, 6)  //@ horizontal pan
+			setvar(VAR_0x8006, 4)  //@ num shakes
+			setvar(VAR_0x8007, 4)  //@ shake delay
+			special(ShakeCamera)
+			playse (SE_CLICK)
+			waitse
+
+			setvar(VAR_0x8004, 4)  //@ vertical pan
+			setvar(VAR_0x8005, 8)  //@ horizontal pan
+			setvar(VAR_0x8006, 8)  //@ num shakes
+			setvar(VAR_0x8007, 4)  //@ shake delay
+			playse (SE_EFFECTIVE)
+			special(ShakeCamera)
+
+
+				msgbox(format("{COLOR GREEN}The old man deflects the hit, and returns the blow!"))
+
+				applymovement (35, moves(walk_in_place_right * 1))
+				waitmovement (35)
+
+				msgbox(format("See? This was not a clash of your force against mine.
+				\pIt was a single motion, where your own blow turned against you.
+				\pThis is the secret of the move {COLOR GREEN}Counter{COLOR DARK_GRAY}.
+				\pNow, go back to your spot."))
+				closemessage
+
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(walk_right * 3, walk_in_place_left))
+				waitmovement (OBJ_EVENT_ID_PLAYER)
+
+				msgbox(format("I want you to try performing the move now. Get ready!"))
+				closemessage
+
+				playse (SE_PIN)
+				applymovement (OBJ_EVENT_ID_PLAYER, moves(emote_exclamation_mark))
+				waitse
+
+				playse (SE_FLEE)
+				applymovement (35, moves(walk_fast_right * 3))
+				waitmovement (35)
+
+				msgbox(format("{COLOR GREEN}The old man draws near with great speed to strike!"))
+				playercounterssenseichoice:
+					checkplayergender
+					if(var(VAR_RESULT) == MALE){
+						
+						dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+						"Kick as he comes",
+						"Dodge and punch back",
+						"Trip him with crutch and strike back",)
+						goto (counterchoiceresolves)}
+
+
+					if(var(VAR_RESULT) == FEMALE){
+						
+						dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+						"Kick as he comes",
+						"Block with arm and punch back",
+						"Dodge and kick back")}
+
+						counterchoiceresolves:
+						if (var(VAR_RESULT) == 0) {
+						closemessage
+						playse (SE_BALL_THROW)
+						waitse
+						call (SmallSenseiShake)
+						msgbox(format("{COLOR GREEN}The old man dodges nimbly and strikes {PLAYER}!"))
+
+						applymovement (35, moves(walk_in_place_right * 1))
+						waitmovement (35)
+
+						msgbox(format("That is not the way. You met my force with your own force.
+						\pThat is how the Hoenn army must have taught you....
+						\pYou must not think like a mere soldier - think like a warrior!
+						\pTry and use my own motion against me. Again!
+						\p{COLOR GREEN}The old man attempts to strike again!"))
+						goto (playercounterssenseichoice)
+						
+						}	
+
+						if (var(VAR_RESULT) == 1) {
+						closemessage
+						call (SmallSenseiShake)
+
+						msgbox(format("{COLOR GREEN}{PLAYER} is unable to dodge the old man's strike!"))
+						
+						applymovement (35, moves(walk_in_place_right * 1))
+						waitmovement (35)
+
+						msgbox(format("{COLOR DARK_GRAY}You understood the principle... but you failed to understand your limits."))						
+
+						checkplayergender
+						if(var(VAR_RESULT) == MALE){
+							msgbox(format("Those crutches you need for support - they rob you of your agility.
+							\pHowever, they may also be turned to weapons at any moment. Again!
+							\p{COLOR GREEN}The old man attempts to strike again!"))
+							goto (playercounterssenseichoice)
+							}
+
+						if(var(VAR_RESULT) == FEMALE){
+							msgbox(format("You have only one able hand to block, while I have two to strike you.
+							\pThink of what else you may leverage against me. Again!
+							\p{COLOR GREEN}The old man attempts to strike again!"))
+							goto (playercounterssenseichoice)
+
+							}
+
+							}
+
+						if (var(VAR_RESULT) == 2) {
+							closemessage
+							checkplayergender
+							if(var(VAR_RESULT) == MALE){
+							playse (SE_ICE_STAIRS)
+							}
+
+							if(var(VAR_RESULT) == FEMALE){
+							playse (SE_BALL_THROW)
+							waitse
+							}
+
+							waitse
+							call (SmallSenseiShake)
+							msgbox(format("{COLOR GREEN}{PLAYER} has successfuly countered the attack!"))
+							playfanfare (MUS_LEVEL_UP)
+							msgbox(format("{COLOR GREEN}{PLAYER} learnt the move Counter!"))
+
+							applymovement (35, moves(walk_in_place_right * 1))
+							waitmovement (35)
+
+							msgbox(format("Excellent! Not only did you used my own move against me...
+							\pYou also understood your own limitations.\pYou have potential as a
+							martial artist."))
+
+								fadescreenswapbuffers (FADE_TO_BLACK)
+								fadeoutbgm (1)
+								fadeinbgm (1)
+
+								gettimeofday
+								if (var(VAR_0x8000) == TIME_NIGHT)
+								{playbgm (MUS_PANULACAVE, TRUE)}
+								else {playbgm (MUS_TEAMGRDUEL, TRUE)}
+
+								clearflag (punchpetalburgmartialartists)
+								setflag (idlepetalburgmartialartists)
+
+								addobject (32)
+								addobject (33)
+								addobject (34)
+
+								removeobject (60)
+								removeobject (61)
+								removeobject (62)
+
+								setobjectxy (35, 22, 8)
+								applymovement (35, moves(face_right))
+								waitmovement (35)
+
+								setobjectxy (OBJ_EVENT_ID_PLAYER, 23, 8)
+								applymovement (OBJ_EVENT_ID_PLAYER, moves(face_left))
+								waitmovement (OBJ_EVENT_ID_PLAYER)
+
+								fadescreenswapbuffers (FADE_FROM_BLACK)
+
+								msgbox(format("I hope you never come into peril, and need to use
+								{COLOR GREEN}Counter{COLOR DARK_GRAY}...
+								\pBut if you do, and feel yourself in need of even more training...
+								\pI would be happy to be your teacher. Now, take care out there."))
+
+
+
+						}	
+
+
+				}
+
+				}
+
+
+	setvar (VAR_SENSEIQTRAININGQUEST, 1)
+
+	senseiscriptend:
+
+	applymovement (35, moves(face_up))
+	waitmovement (35)
+
+	release
+
+	}
+	}
+
+
+		script SmallSenseiShake {
+			
+		
+			setvar(VAR_0x8004, 4)  //@ vertical pan
+			setvar(VAR_0x8005, 8)  //@ horizontal pan
+			setvar(VAR_0x8006, 8)  //@ num shakes
+			setvar(VAR_0x8007, 4)  //@ shake delay
+			playse (SE_EFFECTIVE)
+			special(ShakeCamera)
+			waitse
+
+			}
+
+script ArcadeLotFuelScooperTruck1Pointer {
+
+	lock
+	
+	msgbox(format("This vehicle might have fuel... but this is not the spot to scoop it from."))
+	dofieldeffectsparkle (10, 31, 9)
+	release
+
+}
+
+
+script ArcadeLotFuelScooperTruck1 {
+	
+	lock
+
+	if (flag(arcadelottruck1fuel))
+
+	{msgbox(format("I've already scoped fuel from this truck. Its tank is empty."))
+	goto (endoffuelscooper)}
+
+	if (!flag(arcadelottruck1fuel))
+
+	{
+
+    if(var(VAR_FUELSCOOPERLEVEL) == 4)
+    {msgbox(format("This vehicle might have fuel... but the {COLOR GREEN}Fuel Scooper{COLOR DARK_GRAY}'s tank is full!
+	\pI should take this to the manager of {COLOR GREEN}Petalburg's Hardware Store."))
+	goto (endoffuelscooper)}
+
+	msgbox(format("This vehicle might have fuel...\nUse the {COLOR GREEN}Fuel Scooper{COLOR DARK_GRAY}?"))
+	dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+		if (var(VAR_RESULT) == 1) {
+		goto (endoffuelscooper)
+		}
+
+		if (var(VAR_RESULT) == 0) {
+
+			closemessage
+
+			playse (SE_M_GIGA_DRAIN)
+			waitse
+			playse (SE_M_GIGA_DRAIN)
+			waitse
+
+
+			addvar (VAR_FUELSCOOPERLEVEL, + 1)
+
+        	if(var(VAR_FUELSCOOPERLEVEL) == 1){
+			msgbox(format("The {COLOR GREEN}Fuel Scooper{COLOR DARK_GRAY} tank is now a quarter full!"))
+			}
+
+        	if(var(VAR_FUELSCOOPERLEVEL) == 2){
+			msgbox(format("The {COLOR GREEN}Fuel Scooper{COLOR DARK_GRAY} tank is now half full!"))
+			}
+
+        	if(var(VAR_FUELSCOOPERLEVEL) == 3){
+			msgbox(format("The {COLOR GREEN}Fuel Scooper{COLOR DARK_GRAY} tank is now three quarters full!"))
+			}
+
+        	if(var(VAR_FUELSCOOPERLEVEL) == 4){
+			playfanfare (MUS_RG_PHOTO)
+			msgbox(format("The {COLOR GREEN}Fuel Scooper{COLOR DARK_GRAY} tank is now completely full!"))
+			}
+
+
+
+			setvar(VAR_0x8004, 2)  //@ vertical pan
+			setvar(VAR_0x8005, 6)  //@ horizontal pan
+			setvar(VAR_0x8006, 4)  //@ num shakes
+			setvar(VAR_0x8007, 4)  //@ shake delay
+			playse (SE_TRUCK_DOOR)
+			special(ShakeCamera)
+
+
+			clearflag (angryfuelowner)
+			addobject (59)
+			waitse
+
+			playse (SE_LEDGE)
+			applymovement (59, moves(jump_down * 1, face_left))
+			waitse
+
+			playse (SE_PIN)
+			applymovement (59, moves(emote_exclamation_mark))
+			waitmovement
+
+			msgbox(format("You thief! That's my hard-earned gasoline you're taking!"))
+			trainerbattle_no_intro(TRAINER_RICKY_1, ConstructionWorkerM102_Outro)
+
+			msgbox(format("Wait a minute - that {COLOR GREEN}Fuel Scooper{COLOR DARK_GRAY}!
+			You're working for the Hardware Store!
+			\pThose jerks have been sending idiots like you to steal fuel for them...
+			\pSo they can resell it to the same people they're stealing from!
+			\pBah, I ain't servicing there anymore, even if I have to walk everywhere.
+			\pI hope whatever they're paying you for this is worh it! Piss off!"))
+			setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+			applymovement (59, moves(walk_fast_right * 2, walk_fast_up * 3, walk_fast_right * 4))
+			waitmovement (59)
+			removeobject (59)
+			setflag (angryfuelowner)
+			setflag (arcadelottruck1fuel)
+
+			}
+
+			}
+
+		endoffuelscooper:
+		release
+
+}
+
+
+script PetalburgTrendyPhraseGuitarist {
+	lock
+	call (Common_EventScript_BufferTrendyPhrase)
+	msgbox(format("Listen to my new song... {STR_VAR_1}!
+	\p What, you don't know the phrase? It's like, the Rebel Zone's slogan right now!
+	\p{STR_VAR_1}!!!!!"))
+
 }

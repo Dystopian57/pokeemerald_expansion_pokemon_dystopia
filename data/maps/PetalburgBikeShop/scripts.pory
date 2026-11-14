@@ -1,13 +1,11 @@
 mapscripts PetalburgBikeShop_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: DayNightMusicHardwareWorkshop
-    MAP_SCRIPT_ON_LOAD: DayNightMusicHardwareWorkshop
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicHardwareWorkshop
-    MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
-    MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
+    MAP_SCRIPT_ON_TRANSITION: PetalburgBikeShopMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: PetalburgBikeShopMapscriptBundle
+    MAP_SCRIPT_ON_FRAME_TABLE: PetalburgBikeShopMapscriptBundle
 	}
 	
 
-script DayNightMusicHardwareWorkshop {
+script PetalburgBikeShopMapscriptBundle {
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{goto (enddaynighthardwareworkshop)}
@@ -23,6 +21,22 @@ script DayNightMusicHardwareWorkshop {
 		goto (enddaynighthardwareworkshop)}
 
 enddaynighthardwareworkshop:
+//goto (DayNightAmbientLight)
+
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
 }
 
 script PetalburgHardwareStoreCustomer {
@@ -59,7 +73,7 @@ script PetalburgHardwareSidneyCarMechanic {
     }
 
 script PetalburgHardwareStoreClerk {
-	
+	lock
     applymovement (1, moves(face_player))
 
         if (flag(hardwarestoregaveintro))
@@ -110,15 +124,15 @@ script PetalburgHardwareStoreClerk {
          {bufferstring (STR_VAR_1, "About bikes...")}
 
          if(var(VAR_BIKEQUEST) == 1)
-         {bufferstring (STR_VAR_1, "About the fuel.")}
+         {bufferstring (STR_VAR_1, "About the fuel")}
 
          if(var(VAR_BIKEQUEST) == 2)
-         {bufferstring (STR_VAR_1, "I got the fuel.")}
+         {bufferstring (STR_VAR_1, "I got the fuel")}
 
          if(var(VAR_BIKEQUEST) == 3)
-         {bufferstring (STR_VAR_1, "Switch engine.")}
+         {bufferstring (STR_VAR_1, "Switch engine")}
 
-        dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Buy items", "Buy furniture", "{STR_VAR_1}", "Leave")
+        dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Buy items", "Buy furniture", "{STR_VAR_1}", "Leave")
 	    if (var(VAR_RESULT) == 0) {
 	    pokemart (PetalburgHardwareStoreItemOffer)
         }
@@ -129,8 +143,10 @@ script PetalburgHardwareStoreClerk {
 
 	    if (var(VAR_RESULT) == 2) {
 
+        if(var(VAR_BIKEQUEST) == 0){
+
         msgbox(format("Ah, interested in the big toys, aren't you? Well, you're in luck!
-        \pWe have exactly one Motorbike left in stock. It's a special girl too - a solar model!
+        \pWe have exactly one Motorbike left in stock.\p It's a special girl too - a solar model!
         \pThat means zero fuel costs. We're selling it for the low price of 500.000¥!"))
         showmoneybox (18, 0)
             dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "I'll buy", "No thanks", "That's too expensive!")
@@ -175,8 +191,7 @@ script PetalburgHardwareStoreClerk {
                 \pAnd this here is a motorbike, at half that price!"))
                 hidemoneybox
                 hardwareclerkoffersbikedeal:
-                msgbox(format("
-                \pHey, I get it. it's hard to get cash here in the Rebel Zone.
+                msgbox(format("Hey, I get it. It's hard to get cash here in the Rebel Zone.
                 \pWhich is why we're offering another deal for this motorbike. Interested?"))
 
                     dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Sure", "No thanks")
@@ -184,10 +199,10 @@ script PetalburgHardwareStoreClerk {
                     if (var(VAR_RESULT) == 0) {
                     msgbox(format("Great - well, it's very simple. We're the only supplier of
                     fuel in the Rebel Zone... and we're running out of it!\p
-                    \pDevon is hoarding all of the oil from the
+                    Devon is hoarding all of the oil from the
                     Pacifidlog Rig. It's been getting harder and harder to get.
-                    \pIf we don't get fuel to sell, our business will crash. To help us with that...
-                    take this!"))
+                    \pIf we don't get fuel to sell, may as well close the store.
+                    To help us prevent that... take this!"))
 
                     giveitem (ITEM_SCIZORITE)
 
@@ -208,7 +223,7 @@ script PetalburgHardwareStoreClerk {
                     }
 
                         }
-
+                            }
                         
 
                 if(var(VAR_BIKEQUEST) == 1)
@@ -217,7 +232,9 @@ script PetalburgHardwareStoreClerk {
                         if(var(VAR_FUELSCOOPERLEVEL) == 0)
                         {
                         msgbox(format("Why, you still haven't scooped anything! Bah!\pYou better
-                        get it moving, or I'll give that scooper to someone who wants in on the deal."))          
+                        get it moving, or I'll give that scooper to someone who wants in on the deal.
+                        \pIf this were a videogame, you'd just have to like, get close to a vehicle,
+                        and interact with it. It's that simple."))          
                         }
 
                         if(var(VAR_FUELSCOOPERLEVEL) == 1)
@@ -240,7 +257,7 @@ script PetalburgHardwareStoreClerk {
                         for you!"))          
                         }
 
-                        if(var(VAR_FUELSCOOPERLEVEL) == 3)
+                        if(var(VAR_FUELSCOOPERLEVEL) == 4)
                         {
                         msgbox(format("Wow, look at that - you did it! That's a good full tank!
                         \pIf we ever need an extra hand in the shop, perhaps we can count on you?
@@ -318,25 +335,23 @@ script PetalburgHardwareStoreClerk {
 
 
 	mart PetalburgHardwareStoreItemOffer {
-			ITEM_POKE_BALL
-			ITEM_POTION
-			ITEM_SUPER_POTION
-			ITEM_REMEDY
-			ITEM_REVIVAL_HERB
-			ITEM_HONEY
-			ITEM_POKE_TOY
+			ITEM_CHARCOAL
+			ITEM_HEAT_ROCK
+			ITEM_MAGNET
+			ITEM_METAL_COAT
+			ITEM_MYSTIC_WATER
+			ITEM_ROCKY_HELMET
+			ITEM_SHELL_BELL
             ITEM_FULL_HEAL
-            ITEM_AERODACTYLITE }
+            ITEM_DOWSING_MACHINE }
 
 	mart PetalburgHardwareStoreFurnitureOffer {
-			ITEM_POKE_BALL
-			ITEM_POTION
-			ITEM_SUPER_POTION
-			ITEM_REMEDY
-			ITEM_REVIVAL_HERB
-			ITEM_HONEY
-			ITEM_POKE_TOY
-            ITEM_FULL_HEAL
-            ITEM_AERODACTYLITE }
+			DECOR_TIRE
+			DECOR_TV
+			DECOR_CUTE_POSTER
+			DECOR_FREEZER
+			DECOR_FENCE_WIDTH
+            DECOR_HEAVY_DESK
+            DECOR_SOLID_BOARD }
 
 //Sidney's car = devon speeder

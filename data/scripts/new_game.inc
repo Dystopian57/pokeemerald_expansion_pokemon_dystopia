@@ -319,5 +319,7 @@ EventScript_ResetAllMapFlags::
 	setflag scamfeebas
 	setflag thimblereggballs
 	setflag thimblereggegg
+	setflag idlepetalburgmartialartists
+	setflag angryfuelowner
 	call EventScript_ResetAllBerries
 	end

@@ -540,7 +540,7 @@
 
 #define thimbleregghideobjects                    0x1DE // Unused Flag
 #define thimblereggballs                    0x1DF // Unused Flag
-#define FLAGAINTUSED                    0x1E0 // Unused Flag
+#define arcadeelevatorguardnorman       0x1E0 // Unused Flag
 #define JimmySewersIntro                    0x1E1 // Unused Flag
 #define thimblereggegg                    0x1E2 // Unused Flag
 #define jimmystoreboxitem                    0x1E3 // Unused Flag
@@ -678,11 +678,11 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
+#define idlepetalburgmartialartists  0x264 // Unused Flag
+#define punchpetalburgmartialartists  0x265 // Unused Flag
+#define courtneygives5balls  0x266 // Unused Flag
+#define angryfuelowner  0x267 // Unused Flag
+#define arcadelottruck1fuel  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
@@ -1616,14 +1616,14 @@
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 #define dailyunusedmaynotwork                           (DAILY_FLAGS_START + 0x15) // Unused Flag
 #define dailythimbleregg                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define unuseddaily3                           (DAILY_FLAGS_START + 0x17) // Unused Flag
+#define dailysanctumberry                           (DAILY_FLAGS_START + 0x17) // Unused Flag
 #define unuseddaily2                        (DAILY_FLAGS_START + 0x18) // Unused Flag
 #define dailyloadtadparcelquest                           (DAILY_FLAGS_START + 0x19) // Unused Flag
 #define petalburgriotstopped                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
-#define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
-#define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
-#define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
-#define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
+#define moonballsale                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
+#define loveballsale                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
+#define unuseddaily4                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
+#define unuseddaily5                            (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag

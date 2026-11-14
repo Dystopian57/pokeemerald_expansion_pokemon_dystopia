@@ -315,7 +315,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
     },
 
     [MPS_WEEPTH_CHAMBER] = {
-        .mapsec = MAPSEC_WEEPTH_CHAMBER,
+        .mapsec = MAPSEC_UNDERWATER_SOOTOPOLIS,
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_SEWERS

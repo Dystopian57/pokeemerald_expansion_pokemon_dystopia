@@ -680,6 +680,10 @@ gSongTable::
 	song mus_mainstreetcolosseum, 0, 0
 	song mus_battlesim, 0, 0
 	song mus_seventhsymphony, 0, 0
+	song mus_earthandsea, 0, 0
+	song mus_gitsreincarnation, 0, 0
+	song mus_gscgymbattle, 0, 0
+	song mus_pmdgoodnight, 0, 0
 
 
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2

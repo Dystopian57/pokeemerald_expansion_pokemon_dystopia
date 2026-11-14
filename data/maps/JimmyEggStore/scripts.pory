@@ -13,7 +13,10 @@ script JimmyMcGligarSewersIdle {
 
 		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && !flag(conartistaskeddistract)) //this means Player never interacted
 		//with Jimmy
-		{goto (startJimmyStoreidle)}
+		{
+        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+        setflag (JimmySewersIntro)
+        goto (startJimmyStoreidle)}
 
 
 		if(var(VAR_JIMMYQUESTPROGRESS) == 0 && flag(conartistaskeddistract)) //this means Jimmy asked for help
@@ -38,31 +41,96 @@ script JimmyMcGligarSewersIdle {
             }
 
             if(var(VAR_RESULT) == FEMALE){
-            msgbox(format("Grr... not a man of your word, aren't you? What a shame."))
+            msgbox(format("Grr... not a woman of your word, aren't you? What a shame."))
             }
 
         msgbox(format("You're lucky grudges aren't profitable, or I might be showing you the door now.
         \p... well, the pipe. Same thing. Anyhow..."))
+        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+        setflag (JimmySewersIntro)
         goto (startJimmyStoreidle)
         }
 
 	    if(var(VAR_JIMMYQUESTPROGRESS) == 1 && flag(conartistescaped) && flag(!betrayedconcordconartist)) //this means Player helped Jimmy but cleared Warehouse
 		//before getting reward from Jimmy, so he gives Tamarakku egg: "I never thanked you!"
-		{}
+		{
+        msgbox(format("Well well, if it isn't my personal saviour, AND favourite customer!
+        \pYou're such a good samaritan, you helped me without coming to claim the reward I promised
+        you!\pBut Jimmy McGligar is a man of his word - and here's the proof!"))
 
-	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(helpedconcordconartist)) //this means Player helped Jimmy and obtained egg
-   		//Jimmy has Player's number so he can call them
-		{}
+        giveegg (SPECIES_TAMARAKKU)
+        fadeoutbgm (1)
+        playse (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained the Mysterious Egg!"))
 
-	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(betrayedconcordconartist)) //this means Player betrayed Jimmy
-		{}	
+        msgbox(format("There you go - I'm sure it'll hatch into a strong, healthy baby!
+        \pAnd if you're interested in more, well... you're in the right place!"))
+        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+        setflag (JimmySewersIntro)
+        goto (startJimmyStoreidle)   
+        }
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(helpedconcordconartist))
+        //this means Player helped Jimmy and obtained egg
+		{
+      	playse (SE_PIN)
+        applymovement (5, moves (emote_exclamation_mark))
+        waitmovement (5)
+        msgbox(format("Well well, if it isn't my personal saviour! Glad you found my humble place!
+        \pI wouldn't be here if it wasn't for you, so please, make yourself at sewer!"))
+        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+        setflag (JimmySewersIntro)
+        goto (startJimmyStoreidle)    
+        }
+
+	    if(var(VAR_JIMMYQUESTPROGRESS) == 2 && flag(conartistescaped) && flag(betrayedconcordconartist))
+        //this means Player betrayed Jimmy
+		{
+		playse (SE_PIN)
+        applymovement (5, moves (emote_exclamation_mark))
+        waitmovement (5)
+        msgbox(format("Hey, it's YOU! You damn kid!"))
+ 		playse (SE_M_SWAGGER2)
+        applymovement (5, moves (emote_double_exclamation_mark))
+        waitmovement (5)
+        msgbox(format("You really played a number on me back on Concord Bridge!
+        \pI should kick you right out of my shop for it. But… I'll confess...
+        \pThat was the first time someone tricked ME. And part of me respects that.
+        \pWhat say we let bygone be bygones? Water under the Concord Bridge!
+        \pBut I warn you. Fool me once, that's alright..."))
+        applymovement (5, moves (face_left))
+        waitmovement (5)
+        msgbox(format("Fool me twice, I'll throw this fella at your throat."))
+ 		playse (SE_LEDGE)
+        applymovement (1, moves (jump_in_place_down))
+        waitmovement (1)
+        playmoncry (SPECIES_TAMARAKKU, CRY_MODE_WEAK)
+
+        applymovement (5, moves (face_player))
+        waitmovement (5)
+        msgbox(format("Anyhow..."))
+        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+        setflag (JimmySewersIntro)
+        goto (startJimmyStoreidle)
+        }	
 
 	    if(var(VAR_JIMMYQUESTPROGRESS) == 3)
-        {}	//Player helped Jimmy and even bought Exeggcute egg
+	    //Player helped Jimmy and even bought Exeggcute egg
+        {
+      	playse (SE_PIN)
+        applymovement (5, moves (emote_exclamation_mark))
+        waitmovement (5)
+        msgbox(format("Well well, if it isn't my personal saviour AND favourite customer!
+        \pI wouldn't be here if it wasn't for you, so please, make yourself at sewer!"))
+        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+        setflag (JimmySewersIntro)
+        goto (startJimmyStoreidle)  
+        }
 
 		//regardless of result, setvar (VAR_JIMMYQUESTPROGRESS, 4)
 
-        setvar (VAR_JIMMYQUESTPROGRESS, 4)
+
+
 
         }
 
@@ -71,7 +139,7 @@ script JimmyMcGligarSewersIdle {
         \pWhat can I do for you, oh dear customer?"))
 
         eggsell:
-		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Buy an egg", "Play Thimbleregg", "Explanation", "Leave")
+		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Buy an egg", "Play Thimbleregg", "Egg Store?", "Leave")
 
 
 		if (var(VAR_RESULT) == 3) {

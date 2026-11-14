@@ -223,19 +223,27 @@
     },
     {
       "type": "sign",
-      "x": 8,
-      "y": 14,
+      "x": 7,
+      "y": -2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SanctumBerryBasket"
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 8,
       "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SanctumPlantedBush"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SanctumBerryBasketDailyBerry"
     }
   ]
 }

@@ -587,14 +587,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PetalburgDevonCenterMart"
-    },
-    {
-      "type": "sign",
-      "x": 4,
-      "y": 7,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PetalburgDevonCenterHideTalkversion"
     }
   ]
 }

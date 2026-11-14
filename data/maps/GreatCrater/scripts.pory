@@ -36,19 +36,19 @@ enddaynightmusicgreatcrater:
 		switch (var(VAR_RESULT))
 		{case 0:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 1:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 2:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 3:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 4:
 		setweather (WEATHER_SHADE)
@@ -94,19 +94,19 @@ if(var(VAR_GREATCRATER_WEATHER) > 0)
 		switch (var(VAR_RESULT))
 		{case 0:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 1:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 2:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 3:
 		setweather (WEATHER_VOLCANIC_ASH)
-		playbgm (MUS_STORM, TRUE)
+		playbgm (MUS_WEATHER_GROUDON, TRUE)
 		setvar (VAR_GREATCRATER_WEATHER, 4)
 		case 4:
 		setweather (WEATHER_SHADE)

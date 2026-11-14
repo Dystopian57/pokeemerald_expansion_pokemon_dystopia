@@ -3754,6 +3754,10 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_MAINSTREETCOLOSSEUM)            \
     X(MUS_BATTLESIM)            \
     X(MUS_SEVENTHSYMPHONY)            \
+    X(MUS_EARTHANDSEA)            \
+    X(MUS_GITSREINCARNATION)            \
+    X(MUS_GSCGYMBATTLE)            \
+    X(MUS_PMDGOODNIGHT)            \
 
 
 #define SOUND_LIST_SE               \

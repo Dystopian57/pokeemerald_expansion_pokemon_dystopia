@@ -959,122 +959,185 @@ SanctumBerryBasket::
 	return
 
 
-SanctumPlantedBush::
+SanctumBerryBasketDailyBerry::
 # 591 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	lock
-# 592 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 594 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	goto_if_unset dailysanctumberry, SanctumBerryBasketDailyBerry_2
+# 617 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	msgbox SanctumBerryBasketDailyBerry_Text_0
+SanctumBerryBasketDailyBerry_1:
+# 620 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	release
+	return
+
+SanctumBerryBasketDailyBerry_2:
+# 598 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	compare VAR_WALLYBERRYQUEST, 1
+	goto_if_eq SanctumBerryBasketDailyBerry_5
+# 604 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	random 4
+# 605 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	copyvar VAR_TEMP_1, VAR_RESULT
+# 606 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	switch VAR_RESULT
+# 607 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	case 0, SanctumBerryBasketDailyBerry_10
+# 608 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	case 1, SanctumBerryBasketDailyBerry_11
+# 609 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	case 2, SanctumBerryBasketDailyBerry_12
+# 610 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	case 3, SanctumBerryBasketDailyBerry_13
+SanctumBerryBasketDailyBerry_8:
+# 612 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setflag dailysanctumberry
+	goto SanctumBerryBasketDailyBerry_1
+
+SanctumBerryBasketDailyBerry_5:
+# 599 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	giveitem ITEM_PECHA_BERRY
+# 600 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	setflag dailysanctumberry
+	goto SanctumBerryBasketDailyBerry_1
+
+SanctumBerryBasketDailyBerry_10:
+# 607 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	giveitem ITEM_ORAN_BERRY
+	goto SanctumBerryBasketDailyBerry_8
+
+SanctumBerryBasketDailyBerry_11:
+# 608 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	giveitem ITEM_SITRUS_BERRY
+	goto SanctumBerryBasketDailyBerry_8
+
+SanctumBerryBasketDailyBerry_12:
+# 609 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	giveitem ITEM_PECHA_BERRY
+	goto SanctumBerryBasketDailyBerry_8
+
+SanctumBerryBasketDailyBerry_13:
+# 610 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	giveitem ITEM_LEPPA_BERRY
+	goto SanctumBerryBasketDailyBerry_8
+
+
+SanctumPlantedBush::
+# 624 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	lock
+# 625 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumPlantedBush_Text_0
-# 593 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 626 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
 
 SanctumVeriwoodo::
-# 600 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	lock
-# 601 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 634 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 602 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playmoncry SPECIES_VERIWOODO, CRY_MODE_NORMAL
-# 603 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 636 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_0
-# 604 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 637 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_1
 	checkitem ITEM_COMET_SHARD
 # 0 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SanctumVeriwoodo_2
-# 611 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 644 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_3
-# 613 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 646 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SanctumVeriwoodo_Text_4, GreenSanctumScientistWartzFind_Text_5
-# 615 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 648 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SanctumVeriwoodo_5
 SanctumVeriwoodo_1:
-# 653 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 686 "data/maps/Route102RaltsSanctuary/scripts.pory"
 endofsanctumveriwoodo:
-# 654 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 687 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	release
 	return
 
 SanctumVeriwoodo_2:
-# 608 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 641 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_2
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_5:
-# 616 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 649 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_5
-# 617 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 650 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playse SE_M_EMBER
-# 618 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 651 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	waitse
-# 619 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 652 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playse SE_LEDGE
-# 620 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 653 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	applymovement 6, GreenSanctumScientistWartzFind_Movement_5
-# 621 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 654 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	waitse
-# 622 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 655 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playmoncry SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH
-# 623 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 656 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	msgbox SanctumVeriwoodo_Text_6
-# 624 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 657 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	setwildbattle SPECIES_VERIWOODO, 15
-# 625 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 658 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	dowildbattle
-# 626 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 659 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 627 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 660 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 628 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 661 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq SanctumVeriwoodo_7
-# 633 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 666 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SanctumVeriwoodo_8
-# 642 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 675 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq SanctumVeriwoodo_9
-# 645 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 678 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SanctumVeriwoodo_10
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_7:
-# 629 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 662 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	setflag sanctumveriwoodo
-# 630 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 663 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	removeobject 6
-# 631 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 664 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_8:
-# 634 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 667 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playse SE_FLEE
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	applymovement 6, SanctumVeriwoodo_Movement_0
-# 636 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 669 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	waitmovement 6
-# 637 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 670 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	setflag sanctumveriwoodo
-# 638 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 671 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	removeobject 6
-# 639 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 672 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	playmoncry SPECIES_VERIWOODO, CRY_MODE_HIGH_PITCH
-# 640 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 673 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_9:
-# 643 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 676 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
 SanctumVeriwoodo_10:
-# 646 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 679 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	goto endofsanctumveriwoodo
 	goto SanctumVeriwoodo_1
 
@@ -1213,19 +1276,19 @@ GreenSanctumScientistIdle_Movement_0:
 	face_player
 	step_end
 
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 SanctumVeriwoodo_Movement_0:
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
-# 635 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 668 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -1569,39 +1632,43 @@ SanctumBerryBasket_Text_0:
 	.string "The berry basket shows sign of Pokémon\n"
 	.string "eating from it.$"
 
+SanctumBerryBasketDailyBerry_Text_0:
+# 617 "data/maps/Route102RaltsSanctuary/scripts.pory"
+	.string "Shouldn't take anymore berries today.$"
+
 SanctumPlantedBush_Text_0:
-# 592 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 625 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "A small bush is planted here.$"
 
 SanctumVeriwoodo_Text_0:
-# 603 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 636 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Wooodoo!$"
 
 SanctumVeriwoodo_Text_1:
-# 604 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 637 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "The Pokémon does not seem inclined to\n"
 	.string "move.$"
 
 SanctumVeriwoodo_Text_2:
-# 608 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 641 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Perhaps it could be scared away\n"
 	.string "somehow...$"
 
 SanctumVeriwoodo_Text_3:
-# 611 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 644 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Use {COLOR RED}Leaky Lighter{COLOR DARK_GRAY} to scare it away?$"
 
 SanctumVeriwoodo_Text_4:
-# 613 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 646 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "Yes$"
 
 SanctumVeriwoodo_Text_5:
-# 616 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 649 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "{PLAYER} lighted the Leaky Ligther\n"
 	.string "near the Pokémon.$"
 
 SanctumVeriwoodo_Text_6:
-# 623 "data/maps/Route102RaltsSanctuary/scripts.pory"
+# 656 "data/maps/Route102RaltsSanctuary/scripts.pory"
 	.string "WOOODOOOO!!$"
 
 DevonResearcherSanctumWinMessage::

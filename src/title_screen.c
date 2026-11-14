@@ -658,7 +658,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-        m4aSongNumStart(MUS_WEATHER_GROUDON);
+        m4aSongNumStart(MUS_GITSREINCARNATION);
         gMain.state = 5;
         break;
     case 5:

@@ -3,16 +3,13 @@ raw `
 `
 
 mapscripts CourtneyWorkshop_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: DayNightMusicCourtneyWorkshop
-    MAP_SCRIPT_ON_LOAD: DayNightMusicCourtneyWorkshop
-    MAP_SCRIPT_ON_FRAME_TABLE: DayNightMusicCourtneyWorkshop
-	
-	MAP_SCRIPT_ON_TRANSITION: DayNightAmbientLight
-	MAP_SCRIPT_ON_LOAD: DayNightAmbientLight
-	MAP_SCRIPT_ON_FRAME_TABLE: DayNightAmbientLight}
+    MAP_SCRIPT_ON_TRANSITION: CourtneyWorkShopMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: CourtneyWorkShopMapscriptBundle
+    MAP_SCRIPT_ON_FRAME_TABLE: CourtneyWorkShopMapscriptBundle}
 	
 
-script DayNightMusicCourtneyWorkshop {
+
+script CourtneyWorkShopMapscriptBundle {
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{goto (enddaynightcourtneyworkshop)}
@@ -28,4 +25,354 @@ script DayNightMusicCourtneyWorkshop {
 		goto (enddaynightcourtneyworkshop)}
 
 enddaynightcourtneyworkshop:
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
+goto (DayNightNPC)
+
 }
+
+script DayNightMusicCourtneyWorkshop {
+
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{goto (enddaynightcourtneyworkshop)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{goto (enddaynightcourtneyworkshop)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{goto (enddaynightcourtneyworkshop)}
+
+
+}
+
+script PetalburgCourtneyPokeballWorkshopNight {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement (2, moves(face_player))
+    msgbox(format("Oh, I'm sorry - I'm preparing for bed!
+	\pCome back tomorrow, and I'll be happy to customize your Pokéballs!"))
+    applymovement (2, moves(face_up))
+	release
+}
+
+script PetalburgCourtneyPokeballWorkshop {
+	lock
+
+    applymovement (1, moves(face_player))
+
+    msgbox(format("Hello - welcome to Courtney's Pokéball Workhop!"))
+
+		dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+		"Convert Pokéballs",
+		"Pokéball Workshop?",
+		"Leave")
+	
+		if (var(VAR_RESULT) == 0) {
+
+			if(!flag(moonballsale) && !flag(loveballsale)){
+			random (2)
+			copyvar (VAR_TEMP_1, VAR_RESULT)
+			switch (var(VAR_RESULT))
+			{case 0: setflag (moonballsale)
+			case 1: setflag (loveballsale)
+			}}
+
+		if (flag(moonballsale))
+    	{msgbox(format("Oh, I feel like drawing cute moons today - so Moon Balls are discounted!"))}
+		if (flag(loveballsale))
+    	{msgbox(format("Oh, I feel like drawing cute hearts today - so Love Balls are discounted!"))}
+
+    	msgbox(format("Which Pokéball are you interested in?"))
+
+		dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+
+		"Alien Ball",
+		"Cherish Ball",
+		"Damaged Ball", //park ball
+		"Dive Ball",
+		"Dream Ball",
+		"Dusk Ball",
+		"Fast Ball",
+		"Friend Ball",
+		"Heal Ball",
+		"Heavy Ball",
+		"Level Ball",
+		"Love Ball",
+		"Lure Ball",
+		"Luxury Ball",
+		"Moon Ball",
+		"Net Ball",
+		"Nest Ball",
+		"Premier Ball",
+		"Quick Ball",
+		"Repeat Ball",
+		"Safari Ball",
+		"Sport Ball",
+		"Strange Ball",
+		"Timer Ball",
+		"Leave")
+
+			//BIZARRE BALL (ALIEN BALL)
+
+			if (var(VAR_RESULT) == 0) {
+ 			msgbox(format("A Bizarre Ball? Those are funky! And how many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_BEAST_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_BEAST_BALL, 5)
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+			}
+
+			//CHERISH
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Cherish Ball? Those are so stylish! And how many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_CHERISH_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_CHERISH_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+
+			if (var(VAR_RESULT) == 2) {
+ 			msgbox(format("A Damaged Ball? So you want me to... break a Pokéball?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Yes, just one",
+			"Break five, please")
+
+				if (var(VAR_RESULT) == 0) {
+ 						msgbox(format("... forgive me, grandpa Kurt! I-I mean...!"))
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_PARK_BALL)
+						msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+						As a Pokéball artisan, that was painful! Don't ask me for that again!"))		
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_PARK_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+						As a Pokéball artisan, that was painful! Don't ask me for that again!"))
+
+						goto (endofcourtneyscript)
+			}
+
+		//////////////////////////////////////
+		//////////////////////////////////////
+		//////////////////////////////////////
+
+
+		}
+
+		if (var(VAR_RESULT) == 1) {
+		
+    	msgbox(format("Yup, here's where I do my favourite thing - making special Pokéballs!
+		\pCompanies around the world are removing Pokéballs from
+		the market...
+		\pAnd just to push their flagship Pokéballs!"))
+		playse (SE_M_SWAGGER2)
+    	applymovement (1, moves(emote_x))
+    	msgbox(format("It's all Silph Ball this, and Devon Ball that these days - what a bore!"))
+
+    	msgbox(format("My grandad and I - he's the best Pokéball artisan in Jotho, you see..."))
+		playse (SE_M_SWAGGER2)
+    	applymovement (1, moves(emote_x))
+    	msgbox(format("We hate that."))
+
+    	msgbox(format("So we began to convert these boring company Pokéballs into special ones!
+		\pIf you want me to do that with yours, bring them to me!
+		\pIt's just 100¥ per
+		Pokéball, to cover the material costs.
+		\pOh, and if you already caught one of your partners on one of those boring balls...
+		\pDon't worry, it's not too late to swap!
+		\pJust use any Pokéball from your bag, and then
+		select the Pokémon whose ball you wish to swap with the one you chose."))
+		playse (SE_M_ATTRACT)
+    	applymovement (1, moves(emote_heart))
+    	msgbox(format("Let's bring self-expression back into the Pokéball
+		world, together!"))
+
+
+		goto (endofcourtneyscript)
+		
+		}
+
+		if (var(VAR_RESULT) == 2) {
+    	msgbox(format("Oh, okay... goodbye!"))
+		goto (endofcourtneyscript)
+		}
+
+		courtneyfinishedsale:
+		msgbox(format("Come back for more!"))
+
+		endofcourtneyscript:
+
+    	applymovement (1, moves(face_up))
+		waitmovement (1)
+		release
+		}
+
+					//FOR PARK BALL (DAMAGED BALL)
+
+					//playse (SE_BALL_BOUNCE_1)
+					//waitse
+					//playse (SE_BALL_BOUNCE_2)
+					//waitse
+					//playse (SE_BALL_BOUNCE_3)
+					//waitse
+					//playse (SE_BALL_BOUNCE_4)
+					//waitse
+					//playse (SE_M_BRICK_BREAK)
+					//waitse
+
+		
+	
+	script CourtneyTradeSequence {
+			showmoneybox (18, 0)
+			if (!flag(courtneygives5balls))
+			{msgbox(format("Okay! That will be 100¥, and one Devon Ball!"))
+			checkmoney (100)
+			}
+			else {msgbox(format("Okay! That will be 500¥, and five Devon Ball!"))
+			checkmoney (500)
+			}
+
+					if (var(VAR_RESULT) == FALSE) {
+					msgbox(format("Oh, you don't have enough pokeyen... Maybe some other time?"))
+					goto (endofcourtneyscript)
+					}
+
+					if (var(VAR_RESULT) == TRUE) {
+						if (!flag(courtneygives5balls))
+						{
+							if (checkitem (ITEM_POKE_BALL, 1)  == FALSE)
+							{
+							msgbox(format("Oh, but you don't have a Devon Ball. Go buy one, hurry!"))
+							goto (endofcourtneyscript)
+							}
+							
+							if (checkitem (ITEM_POKE_BALL, 1)  == TRUE)
+							{
+							removemoney (100)
+							updatemoneybox
+							playse (SE_RG_SHOP)
+							waitse
+							hidemoneybox
+							removeitem (ITEM_POKE_BALL, 1)
+
+							goto (Courtneyperformsballtrade)
+							}
+
+						}
+
+						else 
+						{
+							if (checkitem (ITEM_POKE_BALL, 5)  == FALSE)
+							{
+							msgbox(format("Oh, but you don't have enough Devon Balls. Go buy some, hurry!"))
+							}
+							
+							if (checkitem (ITEM_POKE_BALL, 5)  == TRUE)
+							{
+							removemoney (500)
+							updatemoneybox
+							playse (SE_RG_SHOP)
+							waitse
+							hidemoneybox
+							removeitem (ITEM_POKE_BALL, 5)
+							goto (Courtneyperformsballtrade)
+							}			
+						
+						}	
+					}
+
+				Courtneyperformsballtrade:
+
+				msgbox(format("Perfect! Just give me a second!"))
+				closemessage
+
+				fadescreenswapbuffers (FADE_TO_BLACK)
+
+				fadeoutbgm (1)
+				fadeinbgm (1)
+
+				playbgm (MUS_NONE, TRUE)
+				playse (SE_SWITCH)
+				waitse
+				playse (SE_CLICK)
+				waitse
+				playse (SE_BALL_OPEN)
+				waitse
+				playse (SE_BALL)
+				waitse
+				playse (SE_BALL)
+				waitse
+				playse (SE_RG_BALL_CLICK)
+				waitse
+
+				fadeinbgm (1)
+
+				gettimeofday
+				if (var(VAR_0x8000) == TIME_NIGHT)
+				{playbgm (MUS_TAKARASUSHI, TRUE)}
+				else {playbgm (MUS_RG_SEVII_45, TRUE)}
+
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+
+				if (!flag(courtneygives5balls))
+				{msgbox(format("Thanks for waiting - it's finished!"))}
+
+				if (flag(courtneygives5balls))
+				{msgbox(format("Thanks for waiting - they are finished!"))}
+
+	}

@@ -1767,22 +1767,23 @@ script RebelAdminArcade {
     applymovement (31, moves(face_player))
 
 
-		if(var(VAR_PETALBURG_PHASE) == 6){
-		msgbox(format("Got the passwords"))
+		if(var(VAR_PETALBURG_PHASE) == 5){
+		msgbox(format("Hey. Got the passwords?"))
             dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
 			"Yes, I have them",
 			"No, not yet")
 
             	if (var(VAR_RESULT) == 0) {
 				msgbox(format("Let's hear them then."))
+				//code entry here
 				}
 
             	if (var(VAR_RESULT) == 1) {
-				msgbox(format("Then leave me alone. You gave me enough a headache for a long time!"))
+				msgbox(format("Then leave me alone. You gave me enough headache for a long time!"))
 				}
 		}
 
-		if(var(VAR_PETALBURG_PHASE) == 5){
+		if(var(VAR_PETALBURG_PHASE) == 4){
 		msgbox(format("What do you want now!?"))
 		goto (joinrebelchoicequestion)
 		}
@@ -1803,21 +1804,24 @@ script RebelAdminArcade {
 			but here!?"))
 			closemessage
 
+			playse (SE_LEDGE)
 			applymovement (31, moves(jump_in_place_down))
 			waitmovement (31)
 			applymovement (31, moves(face_player))
 			waitmovement (31)
 
             msgbox(format("This is our headquarters! Nah, that's too soft... our STRONGHOLD!
-			\pYou're lucky the boss doesn't want fights in this floor, or we'd teach you a lesson.
+			\pYou're lucky the boss doesn't want fights in this floor, or else...
 			\pNow scram."))
 
             dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
 			"I need to speak with your boss",
+			"Norman sends me to meet your boss",
 			"I'll leave")
 
-            	if (var(VAR_RESULT) == 1) {
-				msgbox(format("And don't come back"))
+            	if (var(VAR_RESULT) == 2) {
+				msgbox(format("And don't come back!"))
+				goto (endofpetalburgarcadeelevatoradmin)
 				}
 
             	if (var(VAR_RESULT) == 0) {
@@ -1826,8 +1830,17 @@ script RebelAdminArcade {
 				a fat sum to defeat us...
 				\pBut our boss is a former Elite Four. You stand
 				no chance in hell.
-				\pBesides, you're not getting to him anyway. Only rebels can use
-				the elevator. Checkmate!")) 
+				\pBesides, you're not getting to him anyway.\pOnly Rebels can use
+				the elevator. Checkmate!")) }
+
+            	if (var(VAR_RESULT) == 1) {
+                msgbox(format("Norman? So he's the one sending you to mess with us?
+				\pHe finally makes a move, and it's not even him doing the work.
+				\pAnyways, it doesn't matter who you're a lapdog of.
+				\pThe only way to get to get a meeting
+				with our boss...
+				\pIs to become a Rebel yourself! Checkmate!")) 
+				setflag (arcadeelevatorguardnorman)}
 
 			joinrebelchoicequestion:
             dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
@@ -1836,29 +1849,33 @@ script RebelAdminArcade {
 
             	if (var(VAR_RESULT) == 0) {
 				playse (SE_M_SWAGGER2)
-				applymovement (31, moves(emote_exclamation_mark))
+				applymovement (31, moves(emote_x))
 				waitmovement (31)
 				msgbox(format("... do you think I'm stupid!? You messed our gig at Oldale Warehouse!
 				\pYou got in our way, and now you want to join us!? Wait, unless..."))
 				applymovement (31, moves(face_left))
 				waitmovement (31)
-				msgbox(format("You've realized how badass we are. That'd make sense. Tons, in fact"))
+				msgbox(format("You've realized how badass we are. That'd make sense. Tons, in fact."))
 				applymovement (31, moves(face_right))
 				waitmovement (31)
-				msgbox(format("But what if you work for
-				Devon, and it's all a trick to...!?"))
+
+				if (flag(arcadeelevatorguardnorman))
+				{msgbox(format("But what if this is just a trick of Norman to...?"))}
+
+				else {msgbox(format("But what if you work for
+				Devon, and it's all a trick to...!?"))}
+
 				applymovement (31, moves(face_player))
 				waitmovement (31)
-				msgbox(format("Bah, why am I wasting my time thinking about this? I'm just here to guard
-				the elevator!
-				\pLook, if you become a Rebel, I'll let you in, simple as that.
-				\pBut the only way to become one is for Rebel Admin A to tell you the
-				passwords.
-				\pWhere's Rebel Admin A? Heh... can't help you with that.
+				msgbox(format("Bah, why am I wasting my time thinking about this? My head hurts!
+				\pSticking to the rules. If you become a Rebel, I let you in.
+				\pBut the only way to become one is for {COLOR GREEN}Rebel Admin A{COLOR DARK_GRAY}
+				to tell you the passwords.
+				\pWhere's {COLOR GREEN}Rebel Admin A{COLOR DARK_GRAY}? Heh... can't help you with that.
 				\pFinding him is how we test if applicants have the street smarts to join us.
-				\pSo ask around, keep your eyes open, and don't come with the passwords."))
+				\pSo ask around, keep your eyes open, and come back with the passwords."))
 
-				setvar (VAR_PETALBURG_PHASE, 6)
+				setvar (VAR_PETALBURG_PHASE, 5)
 				}
             	if (var(VAR_RESULT) == 1) {
 				msgbox(format("And don't come back!"))
@@ -1868,9 +1885,6 @@ script RebelAdminArcade {
 				}
  
             
-
-}
-
 endofpetalburgarcadeelevatoradmin:
 release
 

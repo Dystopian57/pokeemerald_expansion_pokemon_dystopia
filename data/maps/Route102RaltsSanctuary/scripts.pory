@@ -587,6 +587,39 @@ script SanctumBerryBasket {
     release
 }
 
+script SanctumBerryBasketDailyBerry {
+    lock
+
+	
+	if (!flag(dailysanctumberry))
+
+	{
+
+		if(var(VAR_WALLYBERRYQUEST) == 1)
+		{giveitem (ITEM_PECHA_BERRY)
+		setflag (dailysanctumberry)
+		}
+
+		else {
+			random (4)
+			copyvar (VAR_TEMP_1, VAR_RESULT)
+			switch (var(VAR_RESULT))
+			{case 0: giveitem (ITEM_ORAN_BERRY)
+			case 1: giveitem (ITEM_SITRUS_BERRY)
+			case 2: giveitem (ITEM_PECHA_BERRY)
+			case 3: giveitem (ITEM_LEPPA_BERRY)
+			}
+			setflag (dailysanctumberry)
+			}
+			}
+
+	else {
+	msgbox(format("Shouldn't take anymore berries today."))
+	}
+
+    release
+}
+
 script SanctumPlantedBush {
     lock
     msgbox(format("A small bush is planted here."))

@@ -177,11 +177,11 @@ script PetalburgDojoIntro {
 		if (var(VAR_RESULT) == 0) {
         setspeaker ([SP_NAME_NORMAN])
         createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
-        msgbox(format("Then you know about Devon and its questionable policies. Like Safemon."))
+        msgbox(format("Then you know about {COLOR BLUE}Devon{COLOR DARK_GRAY} and its questionable policies. Like Safemon."))
         devoncatchup:
         setspeaker ([SP_NAME_NORMAN])
         createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
-        msgbox(format("We've been protesting against Devon in front of their closest lab,
+        msgbox(format("We've been protesting against {COLOR BLUE}Devon{COLOR DARK_GRAY} in front of their closest lab,
         in {COLOR GREEN}Route 104{COLOR DARK_GRAY}, but..."))
         
         applymovement (3, moves(face_right))
@@ -200,7 +200,8 @@ script PetalburgDojoIntro {
         waitmovement (2)
         setspeaker ([SP_NAME_SHARPY])
         createfieldmugshot (MUGSHOT_SHARPY , EMOTE_NORMAL)
-        msgbox(format("Yeah! But no battles, and no stealing stuff like Rebels do."))
+        msgbox(format("Yeah! But no battles, and no stealing stuff like
+        {COLOR RED}Rebels{COLOR DARK_GRAY} do."))
 
         setspeaker ([SP_NAME_SHARPY])
         createfieldmugshot (MUGSHOT_SHARPY , EMOTE_POKEBALL)
@@ -215,7 +216,8 @@ script PetalburgDojoIntro {
         setspeaker ([SP_NAME_NORMAN])
         createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
         msgbox(format("Will you help us
-        liberate the Safemon that Devon keeps in {COLOR GREEN}Route 104{COLOR DARK_GRAY}?"))
+        liberate the Safemon that {COLOR BLUE}Devon{COLOR DARK_GRAY} keeps in 
+        {COLOR GREEN}Route 104{COLOR DARK_GRAY}?"))
 
             dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I will", "I will not")
 
@@ -328,7 +330,7 @@ script PetalburgDojoIntro {
             clearflag (dojonorman)
             setspeaker ([SP_NAME_NORMAN])
             createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
-            msgbox(format("{PLAYER}... before we set out for Route 104, there's something I need your
+            msgbox(format("{PLAYER}... before we set out for {COLOR GREEN}Route 104{COLOR DARK_GRAY}, there's something I need your
             help with."))
 
             destroyfollowernpc
@@ -336,7 +338,7 @@ script PetalburgDojoIntro {
 
             setspeaker ([SP_NAME_NORMAN])
             createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
-            msgbox(format("We went over Devon Co. - but do you know about Rebels too?"))
+            msgbox(format("We went over {COLOR BLUE}Devon Co.{COLOR DARK_GRAY} - but do you know about Rebels too?"))
 
                 dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "I do", "I don't")
 
@@ -348,27 +350,27 @@ script PetalburgDojoIntro {
                 rebelcatchup:
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
-                msgbox(format("Rebels are a troublesome bunch, but they do not worry me as much as Devon."))
+                msgbox(format("Rebels are a troublesome bunch, but they do not worry me as much as {COLOR BLUE}Devon{COLOR DARK_GRAY}."))
                 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
-                msgbox(format("They are a reactionary force to Devon. If we deal with Devon, the Rebel situation
+                msgbox(format("They are a reactionary force to {COLOR BLUE}Devon{COLOR DARK_GRAY}. If we deal with {COLOR BLUE}Devon{COLOR DARK_GRAY}, the Rebel situation
                 should sort itself out."))
                 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
                 msgbox(format("That said... after they lost {COLOR GREEN}Oldale Warehouse{COLOR DARK_GRAY},
-                I hear they want to occupy the {COLOR GREEN}Devon Lab{COLOR DARK_GRAY} in Route 104 next."))
+                I hear they want to occupy the {COLOR GREEN}Devon Lab{COLOR DARK_GRAY} in {COLOR GREEN}Route 104{COLOR DARK_GRAY} next."))
 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
-                msgbox(format("If they do that, our reivindication will be tarnihshed with their vandalism."))
+                msgbox(format("If they do that, our reivindication will be tarnished with their vandalism."))
                 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_MENACING)
                 msgbox(format("To avoid that, I want you
                 to go see the Rebel Leader in Petalburg, and ask him and
-                his Rebels leave Route 104 alone."))
+                his Rebels leave {COLOR GREEN}Route 104{COLOR DARK_GRAY} alone."))
                 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
@@ -377,7 +379,7 @@ script PetalburgDojoIntro {
 
                 setspeaker ([SP_NAME_NORMAN])
                 createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
-                msgbox(format("He should be in Petalburg Arcade, the building in front of
+                msgbox(format("He should be in {COLOR GREEN}Petalburg Arcade{COLOR DARK_GRAY}, the building in front of
                 the dojo.\pDon't delay. We will wait here for you."))
                 setvar (VAR_PETALBURG_PHASE, 2)
                 goto (endofdojointro)
@@ -393,7 +395,7 @@ script PetalburgDojoIntro {
             if (var(VAR_RESULT) == 1) {
             setspeaker ([SP_NAME_NORMAN])
             createfieldmugshot (MUGSHOT_NORMAN , EMOTE_ANGRY)
-            msgbox(format("I understand... After the war, 
+            msgbox(format("I understand... after the war, 
             you must be tired of fighting.."))
             
             setspeaker ([SP_NAME_NORMAN])
@@ -422,7 +424,7 @@ script PetalburgDojoIntro {
 
         setspeaker ([SP_NAME_NORMAN])
         createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
-        msgbox(format("Little by little, Devon has been seizing control of Hoenn.
+        msgbox(format("Little by little, {COLOR BLUE}Devon{COLOR DARK_GRAY} has been seizing control of Hoenn.
         \pThey did some good things at first, like rebuilding infraestructure, and getting Pokémon
         Centers back in order."))
 
@@ -486,9 +488,31 @@ script Petalburg_DojoNormanIdle {
         }
     }
 
-
+    setspeaker ([SP_NAME_NORMAN])
+    createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
 	if (var(VAR_PETALBURG_PHASE) == 2)
-    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?"))}
+    {msgbox(format("Thank you, {PLAYER}. I would go to speak with my acquaintance myself...
+    \pBut me being seen in the arcade would only link our actions to the Rebels.\pI am too
+    well known. You, on the other hand, should pass unnoticed."))}
+
+	if (var(VAR_PETALBURG_PHASE) == 3)
+    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?
+    \pAs the leader of the Rebels, you will most likely find him in their base.
+    \pAnd that's Petalburg Arcade. Of course, that's just their legal front.
+    \pJust be careful. They are a rowdy bunch."))}
+
+	if (var(VAR_PETALBURG_PHASE) == 4)
+    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?
+    \pHmm... so one of his henchmen is blocking the way to his office.
+    \pTell him I sent you. He may let you through then."))}
+
+	if (var(VAR_PETALBURG_PHASE) == 5)
+    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?
+    \pHmm... so only Rebels can meet with him? Who does he think he is...?
+    \pOf course, you should not join the Rebels. They are nothing but troublemakers.
+    \pBut if you could pretend to join, just long enough to meet him...
+    \pI'm sorry. I did not realize this would be so difficult.
+    \pPerhaps we'll need to call off the operation, after all..."))}
     
 
 		//dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "What should I do?", "Idle chat")
@@ -569,12 +593,14 @@ script Petalburg_DojoNormanBeforeYouGo {
 	lock
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
-    applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
-    waitmovement (OBJ_EVENT_ID_PLAYER)
+
 
     setspeaker ([SP_NAME_NORMAN])
     createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
     msgbox(format("Oh, and... {PLAYER}?"))
+
+    applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+    waitmovement (OBJ_EVENT_ID_PLAYER)
 
     	checkplayergender
 		if(var(VAR_RESULT) == MALE){
@@ -601,3 +627,20 @@ script Petalburg_DojoNormanBeforeYouGo {
 		"Oh yeah!? Right back at you! Bleeeh!"}
 
 
+script PetalburgDojoGymStatue {
+    lock
+    msgbox(format("“Petalburg Dojo.” The word “dojo” seems carved on top of another."))
+    releaseall
+    }
+
+script PetalburgSharpyRoomSign {
+    lock
+    msgbox(format("“Sharpy's Room.”"))
+    releaseall
+    }
+
+script PetalburgCameliaRoomSign {
+    lock
+    msgbox(format("“Camelia's Room.”\nKnock before entering!"))
+    releaseall
+    }

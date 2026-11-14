@@ -104,6 +104,8 @@ mapscripts PetalburgCity_PokemonCenter_1F_MapScripts {
 
 script PetalburgCity_PokemonCenter_1FMapscriptbundle {
 
+		setrespawn (HEAL_LOCATION_OLDALE_TOWN)
+
 		gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{setweather (WEATHER_NONE)}
@@ -156,6 +158,7 @@ script PetalburgCity_PokemonCenter_1F_TVOn {
 
 script PetalburgDevonCenterFakeMedic {
     lock
+	setrespawn (HEAL_LOCATION_PETALBURG_CITY)
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
 			if (var(VAR_PETALBURG_HEALING_SCAM) == 5) {
