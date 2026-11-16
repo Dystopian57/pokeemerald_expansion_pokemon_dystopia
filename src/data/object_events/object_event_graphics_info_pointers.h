@@ -338,6 +338,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_devondrone;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_moxie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_patientm;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_foodtray;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cart;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cartbox1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cartboxs;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cartboxt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_smallwhitebox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cigarette;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_rope;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_newbard;
@@ -697,6 +702,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MOXIE] =                  &gObjectEventGraphicsInfo_moxie,
     [OBJ_EVENT_GFX_PATIENTM] =                  &gObjectEventGraphicsInfo_patientm,
     [OBJ_EVENT_GFX_FOODTRAY] =                  &gObjectEventGraphicsInfo_foodtray,
+    [OBJ_EVENT_GFX_CART] =                  &gObjectEventGraphicsInfo_cart,
+    [OBJ_EVENT_GFX_CARTBOX1] =                  &gObjectEventGraphicsInfo_cartbox1,
+    [OBJ_EVENT_GFX_CARTBOXS] =                  &gObjectEventGraphicsInfo_cartboxs,
+    [OBJ_EVENT_GFX_CARTBOXT] =                  &gObjectEventGraphicsInfo_cartboxt,
+    [OBJ_EVENT_GFX_SMALLWHITEBOX] =                  &gObjectEventGraphicsInfo_smallwhitebox,
     [OBJ_EVENT_GFX_CIGARETTE] =                  &gObjectEventGraphicsInfo_cigarette,
     [OBJ_EVENT_GFX_ROPE] =                  &gObjectEventGraphicsInfo_rope,
     [OBJ_EVENT_GFX_NEWBARD] =                  &gObjectEventGraphicsInfo_newbard,

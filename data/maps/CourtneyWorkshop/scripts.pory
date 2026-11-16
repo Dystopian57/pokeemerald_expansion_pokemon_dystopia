@@ -64,6 +64,7 @@ script PetalburgCourtneyPokeballWorkshopNight {
     msgbox(format("Oh, I'm sorry - I'm preparing for bed!
 	\pCome back tomorrow, and I'll be happy to customize your Pokéballs!"))
     applymovement (2, moves(face_up))
+	waitmovement (2)
 	release
 }
 
@@ -98,7 +99,7 @@ script PetalburgCourtneyPokeballWorkshop {
 
 		dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
 
-		"Alien Ball",
+		"Alien Ball", //beast ball
 		"Cherish Ball",
 		"Damaged Ball", //park ball
 		"Dive Ball",
@@ -124,10 +125,10 @@ script PetalburgCourtneyPokeballWorkshop {
 		"Timer Ball",
 		"Leave")
 
-			//BIZARRE BALL (ALIEN BALL)
+			//BEAST BALL (ALIEN BALL)
 
 			if (var(VAR_RESULT) == 0) {
- 			msgbox(format("A Bizarre Ball? Those are funky! And how many would you like?"))
+ 			msgbox(format("An Alien Ball? They're sooo sci-fi! How many would you like?"))
 
 			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
 			"Just one",
@@ -155,7 +156,7 @@ script PetalburgCourtneyPokeballWorkshop {
 			//CHERISH
 
 			if (var(VAR_RESULT) == 1) {
- 			msgbox(format("A Cherish Ball? Those are so stylish! And how many would you like?"))
+ 			msgbox(format("A Cherish Ball? These are so regal! How many would you like?"))
 
 			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
 			"Just one",
@@ -178,6 +179,8 @@ script PetalburgCourtneyPokeballWorkshop {
 						goto (endofcourtneyscript)
 			}
 
+
+			//DAMAGED BALL
 
 			if (var(VAR_RESULT) == 2) {
  			msgbox(format("A Damaged Ball? So you want me to... break a Pokéball?"))
@@ -204,6 +207,585 @@ script PetalburgCourtneyPokeballWorkshop {
 						msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Sigh...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
 						As a Pokéball artisan, that was painful! Don't ask me for that again!"))
 
+						goto (endofcourtneyscript)
+			}
+
+
+			//DIVE BALL
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Dive Ball? Their design is sooo soothing! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_DIVE_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_DIVE_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//DREAM
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Dream Ball? This is on my top 3! how many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_DREAM_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_DREAM_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//DUSK
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Dusk Ball? They have so much edge! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_DUSK_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_DUSK_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//FAST
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Fast Ball? They're so iconic! And how many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_FAST_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_FAST_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//FRIEND
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Friend Ball? Simple but charming! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_FRIEND_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_FRIEND_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//HEAL
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Heal Ball? They're so funky! And how many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_HEAL_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_HEAL_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+
+			//HEAVY
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("Heavy Balls are so imposing! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_HEAVY_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_HEAVY_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//LEVEL
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Level Ball? A striking design! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LEVEL_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LEVEL_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//LOVE
+
+			if (var(VAR_RESULT) == 1) {
+				
+ 			msgbox(format("A Love Ball? These are the cutest! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+
+						if(flag(loveballsale))
+						{
+						setflag (courtneydiscountedballs)
+						}
+
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LOVE_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+
+
+						if(flag(loveballsale))
+						{
+						setflag (courtneydiscountedballs)
+						}
+
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LOVE_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+
+			//LURE
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Level Ball? They're so original! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LURE_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LURE_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//LUXURY
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Luxury Ball? Feeling elegant huh? How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LUXURY_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_LUXURY_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+
+			//MOON
+
+			if (var(VAR_RESULT) == 1) {
+				
+ 			msgbox(format("A Moon Ball? So mystical! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+
+						if(flag(moonballsale))
+						{
+						setflag (courtneydiscountedballs)
+						}
+
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_MOON_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+
+
+						if(flag(moonballsale))
+						{
+						setflag (courtneydiscountedballs)
+						}
+
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_MOON_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+
+			//NET
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Net Ball? Love this bold design! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_NET_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_NET_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//NEST
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Nest Ball? Such a cozy ball! How many would you like?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_NEST_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_NEST_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//PREMIER
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Premier Ball? Didn't know you were so posh! How many?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_PREMIER_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_PREMIER_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//QUICK
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Quick Ball? Such an exciting pattern! How many?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_QUICK_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_QUICK_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//REPEAT
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Repeat Ball? Not my favourite, but useful! How many?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_REPEAT_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_REPEAT_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//SAFARI
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Cammo Ball? This one suits you! How many?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_SAFARI_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_SAFARI_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//SPORT
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Sport Ball? That's a design from my region! How many?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_SPORT_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_SPORT_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//STRANGE
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Strange Ball? This is a very rare design! How many?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_STRANGE_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_STRANGE_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+			}
+
+			//TIMER
+
+			if (var(VAR_RESULT) == 1) {
+ 			msgbox(format("A Timer Ball? They're a bit bizarre, aren't they? How many?"))
+
+			dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"Just one",
+			"Five, please")
+
+				if (var(VAR_RESULT) == 0) {
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_TIMER_BALL)
+						msgbox(format("Come back for more!"))
+						goto (endofcourtneyscript)
+						}
+
+				if (var(VAR_RESULT) == 1) {
+						setflag (courtneygives5balls)
+						call (CourtneyTradeSequence)
+						giveitem (ITEM_TIMER_BALL, 5)
+						}
+						clearflag (courtneygives5balls)
+						msgbox(format("Come back for more!"))
 						goto (endofcourtneyscript)
 			}
 
@@ -279,13 +861,32 @@ script PetalburgCourtneyPokeballWorkshop {
 	
 	script CourtneyTradeSequence {
 			showmoneybox (18, 0)
+
+			if (flag(courtneydiscountedballs))
+
+			{
+			clearflag (courtneydiscountedballs)
 			if (!flag(courtneygives5balls))
-			{msgbox(format("Okay! That will be 100¥, and one Devon Ball!"))
+			{
+			msgbox(format("Okay! That will be 50¥, and one Devon Ball!"))
+			checkmoney (50)
+			}
+			else {msgbox(format("Okay! That will be 500¥, and five Devon Ball!"))
+			checkmoney (250)
+			goto (courtneytradepostprice)
+			}
+			}
+
+			if (!flag(courtneygives5balls))
+			{
+			msgbox(format("Okay! That will be 100¥, and one Devon Ball!"))
 			checkmoney (100)
 			}
 			else {msgbox(format("Okay! That will be 500¥, and five Devon Ball!"))
 			checkmoney (500)
 			}
+
+			courtneytradepostprice:
 
 					if (var(VAR_RESULT) == FALSE) {
 					msgbox(format("Oh, you don't have enough pokeyen... Maybe some other time?"))
@@ -320,6 +921,7 @@ script PetalburgCourtneyPokeballWorkshop {
 							if (checkitem (ITEM_POKE_BALL, 5)  == FALSE)
 							{
 							msgbox(format("Oh, but you don't have enough Devon Balls. Go buy some, hurry!"))
+							goto (endofcourtneyscript)
 							}
 							
 							if (checkitem (ITEM_POKE_BALL, 5)  == TRUE)

@@ -790,6 +790,30 @@ script PetalburgCityMapscriptBundle {
 	setflag (petalburgriotstopped) //this is the daily flag
 	}
 
+	gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{	clearflag (daynpc)
+			setflag (nightnpc)
+
+        goto (endofdaynightnpc)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{	clearflag (daynpc)
+			setflag (nightnpc)
+        goto (endofdaynightnpc)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{	
+			setflag (daynpc)
+			setflag (nightnpc)
+
+        goto (endofdaynightnpc)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{	clearflag (nightnpc)
+			setflag (daynpc)
+        goto (endofdaynightnpc)}
+
 }
 
 
@@ -1478,7 +1502,9 @@ script PetalburgSmokerMilitia {
 
 	if (!flag(petalburgsmokergivesligther))
 
-    {msgbox (format("I'll never catch up with the rest if I keep smoking...\pHere, take this from me!"))
+    {msgbox (format("Today's training was brutal - was dying for a smoke break...
+	\p... but maybe it's the cigs that make it brutal!?
+	\pHere, take this from me!"))
 	giveitem (ITEM_FLAME_ORB)
 	setflag (petalburgsmokergivesligther)}
 
@@ -1543,7 +1569,28 @@ script PetalburgMilitiaRightGuy {
 	}
 
 
+	script PetalburgMartialArtsSenseiNight
+	{
+	lock
 
+	if (var(VAR_SENSEIQTRAININGQUEST) == 0) {
+	applymovement (60, moves(face_player))
+    msgbox(format("Hm? If you come for the training session, it's over now.
+	\pCome back tomorrow, during the day."))
+	applymovement (60, moves(face_up))
+	}
+
+	if (var(VAR_SENSEIQTRAININGQUEST) == 1) {
+	applymovement (60, moves(face_player))
+    msgbox(format("You should go to sleep. Resting is important to keep your strength up."))
+	applymovement (60, moves(face_up))
+	}
+
+	waitmovement (60)
+
+	release
+
+	}
 
 script PetalburgMartialArtsSensei {
 
@@ -1615,16 +1662,20 @@ script PetalburgMartialArtsSensei {
 			fadeinbgm (1)
 			playbgm (MUS_EARTHANDSEA, TRUE)
 
-			setflag (punchpetalburgmartialartists)
-			clearflag (idlepetalburgmartialartists)
+			//setflag (punchpetalburgmartialartists)
+			//clearflag (idlepetalburgmartialartists)
 
-			removeobject (32)
-			removeobject (33)
-			removeobject (34)
+			applymovement (32, moves(face_down))
+			applymovement (33, moves(face_down))
+			applymovement (34, moves(face_down))
 
-			addobject (60)
-			addobject (61)
-			addobject (62)
+			//removeobject (32)
+			//removeobject (33)
+			//removeobject (34)
+
+			//addobject (60)
+			//addobject (61)
+			//addobject (62)
 
 			setobjectxy (35, 20, 8)
 			applymovement (35, moves(face_right))
@@ -1823,16 +1874,16 @@ script PetalburgMartialArtsSensei {
 								{playbgm (MUS_PANULACAVE, TRUE)}
 								else {playbgm (MUS_TEAMGRDUEL, TRUE)}
 
-								clearflag (punchpetalburgmartialartists)
-								setflag (idlepetalburgmartialartists)
+								//clearflag (punchpetalburgmartialartists)
+								//setflag (idlepetalburgmartialartists)
 
-								addobject (32)
-								addobject (33)
-								addobject (34)
+								//addobject (32)
+								//addobject (33)
+								//addobject (34)
 
-								removeobject (60)
-								removeobject (61)
-								removeobject (62)
+								//removeobject (60)
+								//removeobject (61)
+								//removeobject (62)
 
 								setobjectxy (35, 22, 8)
 								applymovement (35, moves(face_right))
@@ -2005,5 +2056,263 @@ script PetalburgTrendyPhraseGuitarist {
 	msgbox(format("Listen to my new song... {STR_VAR_1}!
 	\p What, you don't know the phrase? It's like, the Rebel Zone's slogan right now!
 	\p{STR_VAR_1}!!!!!"))
+	release
+}
+
+script PetalburgWildZoneNPCIntroTrigger {
+
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playse (SE_PIN)
+	applymovement(12, moves(emote_exclamation_mark))
+	waitmovement (12)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (PetalburgWildZoneNPC)
 
 }
+
+script PetalburgWildZoneNPCBuyTrigger {
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+	goto (PetalburgWildZoneNPC)
+
+}
+
+script PetalburgWildZoneNPCLeaveTrigger {
+	
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	playse (SE_M_METRONOME)
+	applymovement(12, moves(emote_question_mark))
+	waitmovement (12)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+	waitmovement
+	goto (PetalburgWildZoneNPC)
+
+}
+
+
+script PetalburgWildZoneNPC {
+	lock
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
+	if (var(VAR_PETALBURG_WILD_ZONE) == 2) {
+
+	applymovement(12, moves(face_player))
+
+	msgbox (format("Done already?"))
+
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+		"Yes",
+		"No")
+
+			if (var(VAR_RESULT) == 1) {
+
+			msgbox (format("No hurries then - enjoy the time you got left!"))
+			closemessage
+			applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+			goto (endofpetalburgwildzonenpc)
+
+			}
+	
+			if (var(VAR_RESULT) == 0) {
+			msgbox (format("Really? Well, I'll have your leftover Pokéballs back then!"))	
+			
+			closemessage
+			playse (SE_BALL_TRAY_BALL)
+			waitse
+			removeitem (ITEM_PARK_BALL, 30)
+			msgbox (format("Come back soon!"))
+			closemessage
+			applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+
+			//special (ExitSafariMode)
+			clearflag (FLAG_TEMP_HIDE_FOLLOWER)
+			setvar (VAR_PETALBURG_WILD_ZONE, 1)
+
+			goto (endofpetalburgwildzonenpc)
+	
+	}
+	
+	}
+
+	if (var(VAR_PETALBURG_WILD_ZONE) == 0) {
+
+		setvar (VAR_PETALBURG_WILD_ZONE, 1)
+
+		applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+			checkplayergender
+			if(var(VAR_RESULT) == MALE)
+			{msgbox (format("Oh hey, you're the guy from Oldale Warehouse! Remember me!?"))}
+
+			if(var(VAR_RESULT) == FEMALE)
+			{msgbox (format("Oh hey, you're the girl from Oldale Warehouse! Remember me!?"))}
+
+		msgbox (format("I'm the Rebel who was left behind there. But that was the old me!
+		\pElectrike and I, we're done working for others!"))
+		applymovement (12, moves(face_left))
+		applymovement (52, moves(face_right))
+		waitmovement (52)
+		msgbox (format("We've started our own business, to make it big on our own - right buddy?"))
+
+		playse (SE_LEDGE)
+		applymovement (52, moves(jump_in_place_right))
+		waitmovement (52)
+		playmoncry (SPECIES_ELECTRIKE, CRY_MODE_HIGH_PITCH)
+
+		msgbox (format("IIIKE!"))
+		closemessage
+
+		applymovement (12, moves(walk_in_place_right))
+
+		applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+
+		special (SpawnCameraObject)
+		applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_right * 3, walk_up * 2))
+		waitmovement(OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+
+
+		msgbox (format("And this is it - the first and only Wild Zone in Petalburg!"))
+
+
+
+		petalburgwildzoneexplanation:
+
+		msgbox (format("It's simple - I give you Pokéballs, and you enter the area
+		to catch rare Pokémon."))
+
+		special (SpawnCameraObject)
+		applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_left * 3, walk_down * 2))
+		waitmovement(OBJ_EVENT_ID_CAMERA)
+		special (RemoveCameraObject)
+
+		applymovement (12, moves(walk_in_place_down))
+		applymovement (52, moves(face_down))
+
+		applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+ 
+
+		msgbox (format("It's 100¥ per entry. You want in?"))
+		goto (petalburgwildzonechoice)
+		
+		}
+
+
+	if (var(VAR_PETALBURG_WILD_ZONE) == 1) {
+
+		applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_up))
+		waitmovement (OBJ_EVENT_ID_PLAYER)
+
+		msgbox (format("Welcome back! Want a round of the Wild Zone?"))
+		petalburgwildzonechoice:
+		showmoneybox (18, 0)
+
+
+		dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+		"Yes",
+		"No",
+		"Wild Zone?")
+	
+			if (var(VAR_RESULT) == 0) {
+
+				checkmoney (100)
+			
+				if (var(VAR_RESULT) == FALSE) {
+				msgbox (format("Hey, you ain't got enough! It's a Wild Zone pal, not a Free Zone!"))
+				hidemoneybox
+				goto (endofpetalburgwildzonenpc)		
+				}
+
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (100)
+					updatemoneybox
+					playse (SE_RG_SHOP)
+					waitse
+					hidemoneybox
+
+					msgbox (format("Alrighty! Here's your Pokéballs!"))
+					giveitem (ITEM_PARK_BALL, 30)
+					//playse (SE_BALL_TRADE)
+					//waitse
+
+					msgbox (format("Have a good time!"))
+					//hidefollower
+					//setflag (FLAG_TEMP_HIDE_FOLLOWER)
+
+					
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 2))
+					waitmovement (OBJ_EVENT_ID_PLAYER)
+
+					//special (EnterSafariMode)
+					setvar (VAR_PETALBURG_WILD_ZONE, 2)
+					goto (endofpetalburgwildzonenpc)
+
+				}
+
+			}
+
+			if (var(VAR_RESULT) == 1) {
+			msgbox (format("You sure? You're going to miss on some raaaare Pokémon..."))
+			closemessage
+			hidemoneybox
+			applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_left * 1))
+			waitmovement (OBJ_EVENT_ID_PLAYER)
+			goto (endofpetalburgwildzonenpc)
+			}
+
+			if (var(VAR_RESULT) == 2) {
+			msgbox (format("Geez, I explained this to you already."))
+			closemessage
+			hidemoneybox
+
+			applymovement (12, moves(walk_in_place_right))
+
+			applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+
+			special (SpawnCameraObject)
+			applymovement (OBJ_EVENT_ID_CAMERA, moves(walk_right * 3, walk_up * 2))
+			waitmovement(OBJ_EVENT_ID_CAMERA)
+			special (RemoveCameraObject)
+
+
+			goto (petalburgwildzoneexplanation)
+			}
+
+
+	}
+
+	endofpetalburgwildzonenpc:
+	release
+}
+
+
+	script PetalburgWildZoneTourist {
+	
+	lock
+	applymovement (62, moves(face_player))
+	msgbox (format("This Wild Zone is a bit dirtier than the one we have in Lumiose...
+	\pBut it's an interesting regional spin!"))
+	playmoncry (SPECIES_NINKABURI, CRY_MODE_NORMAL)
+	playse (SE_M_HORN_ATTACK)
+	applymovement (62, moves(walk_in_place_right))
+	waitmovement (62)
+	msgbox (format("Ouch, something just bit me...!"))
+	release
+
+	}
+
+
+
+	script PetalburgBurgerMunchlax {
+
+	lock
+	playmoncry (SPECIES_MUNCHLAX, CRY_MODE_WEAK)
+	msgbox (format("Mun-muuun...
+	\pThe Munchlax is scraping the griller for leftover meat."))
+	release
+
+	}

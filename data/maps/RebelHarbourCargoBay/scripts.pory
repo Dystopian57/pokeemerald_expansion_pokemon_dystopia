@@ -1,0 +1,473 @@
+raw `
+
+`
+mapscripts RebelHarbourCargoBay_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: RebelHarbourCargoBayMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: RebelHarbourCargoBayMapscriptBundle
+    MAP_SCRIPT_ON_FRAME_TABLE: RebelHarbourCargoBayMapscriptBundle}
+	
+
+
+script RebelHarbourCargoBayMapscriptBundle {
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
+		//respawn all boxes
+
+		if (!flag(harborcartquestdailydone))
+
+		{clearflag (rebelharborbox1)
+		clearflag (rebelharborboxs)
+		clearflag (rebelharborboxt)}
+
+goto (DayNightNPC)}
+
+script RebelHarborCartQuestPlayerLeaves {
+	lock
+	msgbox(format("Hey, where are you going!? There's no parcels over there.
+	\pUnless you want to call it quits?"))
+
+		dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+		"Yes",
+		"No")
+
+			if (var(VAR_RESULT) == 0) {
+
+					if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 0)
+					{
+					msgbox(format("Well, you haven't delivered anything, so there's no money for you.
+					\pJust leave that trolley over there. Someone will get more use off it."))
+					fadescreenswapbuffers (FADE_TO_BLACK)
+					clearflag (harborcartquestaccepted)
+					destroyfollowernpc
+					clearflag (harborexampletrolley)
+					addobject (8)
+					setvar (VAR_HARBORCANTEXITWITHTROLLEY, 0)
+					setvar (VAR_HARBORDELIVEREDBOXCOUNT, 0)
+					fadescreenswapbuffers (FADE_FROM_BLACK)
+					}
+
+					if (var(VAR_HARBORDELIVEREDBOXCOUNT) > 0)
+					{
+					msgbox(format("Well, you've done some work, so come here so I can tally it
+					and give you your pay."))
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+					waitmovement (OBJ_EVENT_ID_PLAYER)
+					}
+
+			}
+			if (var(VAR_RESULT) == 1) {
+					msgbox(format("Then get back to work. You can take a break once you're done!"))
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 1))
+					waitmovement (OBJ_EVENT_ID_PLAYER)
+			}
+
+		release
+	}
+
+script RebelHarborCartQuestWorker {
+	lock
+
+		if (flag(harborcartquestdailydone))
+		{msgbox(format("Come back tomorrow - we'll likely need some help again."))
+		goto (endofharborcartquestworker)
+		}
+
+
+		if (flag(harborcartquestaccepted))
+		{	
+			msgbox(format("Yeah?"))
+
+				dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+				"Deliver parcels",
+				"Call it quits")
+
+					if (var(VAR_RESULT) == 0) {
+
+						if (var(VAR_HARBORCARTBOXCOUNT) == 0)
+						{
+						msgbox(format("... the trolley is empty. Are you okay?"))
+						goto (endofharborcartquestworker)
+						}
+
+						if (var(VAR_HARBORCARTBOXCOUNT) == 1)
+						{
+						msgbox(format("Hm, one box. Taking it easy, hey?"))
+        				addvar (VAR_HARBORDELIVEREDBOXCOUNT, + 1)}
+
+						if (var(VAR_HARBORCARTBOXCOUNT) == 2)
+						{
+						msgbox(format("Two boxes? Let's see..."))
+        				addvar (VAR_HARBORDELIVEREDBOXCOUNT, + 2)}
+
+						if (var(VAR_HARBORCARTBOXCOUNT) == 3)
+						{
+						msgbox(format("Three boxes? Now that's a hard worker."))
+        				addvar (VAR_HARBORDELIVEREDBOXCOUNT, + 3)}
+
+						destroyfollowernpc
+						clearflag (rebelharborcart)
+						addobject (1)
+						applymovement (1, moves(face_right))
+						setobjectxy (1, 6, 12)
+						setfollowernpc (LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)	
+
+							if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 1)
+							{	
+							msgbox(format("That's your first box delivered. Still many to go!"))}		
+
+							if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 2)
+							{msgbox(format("That's two boxes delivered. Keep at it."))}
+
+							if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 3)
+							{msgbox(format("That's three boxes delivered. Getting there!"))}	
+
+						setvar (VAR_HARBORDELIVEREDBOXCOUNT, 0)
+						goto (endofharborcartquestworker)
+						
+
+					}
+
+					if (var(VAR_RESULT) == 1) {
+					msgbox(format("Alright, let's tally how much work you've done..."))
+					showmoneybox (18, 0)
+
+						if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 0)
+						{
+						msgbox(format("... absolutely none. Are you just fooling around!?
+						\pGive me that back."))
+
+						hidemoneybox
+
+						msgbox(format("Give me that back, and come back when you grow up."))
+						}
+
+						if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 1)
+						{msgbox(format("One box delivered. That's 100¥."))
+							addmoney (100)
+							updatemoneybox
+							playse (SE_RG_SHOP)
+							waitse
+							hidemoneybox
+							msgbox(format("I expected better. If you come again, I hope you
+							work a bit longer!"))	
+						}		
+
+						if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 2)
+						{msgbox(format("Two boxes delivered. That's 200¥."))
+							addmoney (200)
+							updatemoneybox
+							playse (SE_RG_SHOP)
+							waitse
+							hidemoneybox
+							msgbox(format("I expected better. If you come again, I hope you
+							work a bit longer!"))
+						}	
+
+						if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 3)
+						{msgbox(format("Two boxes delivered. That's 300¥."))
+							addmoney (300)
+							updatemoneybox
+							playse (SE_RG_SHOP)
+							waitse
+							hidemoneybox
+							msgbox(format("You were a little help, I guess.
+							\pIf you come again, I hope you work a bit longer!"))
+						}	
+
+					clearflag (harborcartquestaccepted)
+					destroyfollowernpc
+					clearflag (harborexampletrolley)
+					addobject (8)
+					setvar (VAR_HARBORDELIVEREDBOXCOUNT, 0)
+					setvar (VAR_HARBORCANTEXITWITHTROLLEY, 0)
+					setflag (harborcartquestdailydone)
+
+					goto (endofharborcartquestworker)
+
+					}
+
+		}
+
+		if (!flag(harborcartquestaccepted))
+		{	
+
+		msgbox(format("Hey kid. Interested in some part-time work?"))
+
+		harborquestchoice:
+
+			dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+			"Yes",
+			"No",
+			"What kind of work?")
+
+
+				if (var(VAR_RESULT) == 0) {
+					if (!flag(harborcartquestintro)){
+					msgbox(format("That's the spirit - and they say folks your age are lazy!"))
+
+					msgbox(format("You know, unlike in Devon facilities like Oldale Warehouse, we
+					don't have many Pokémon specialized in carrying stuff here."))
+
+					msgbox(format("So we do it by hand, or using that forklift over there - but
+					that's broken now.
+					\pI need you to use this trolley and bring me the white
+					small parcels scattered around.
+					\pYou can save some time if you stack more than 2 at a time, but it's also
+					a bit risky.
+					\pAlright, here's the trolley!"))
+					setflag (harborcartquestintro)
+					goto (giventrolley)}
+
+					else {
+					msgbox(format("Good - you know how it works. Here's the trolley!"))
+					}
+					giventrolley:
+					setflag (harborexampletrolley)
+					removeobject (8)
+					setobjectxy (1, 6, 12)
+					applymovement (1, moves(face_right))
+					setfollowernpc (LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+					playfanfare (MUS_OBTAIN_ITEM)
+					msgbox(format("{COLOR GREEN}{PLAYER} is now using a Transport Trolley!"))
+
+					msgbox(format("Load the parcels on that and bring them to me.
+					\pIt's 100¥ per delivered parcel, non-negotiable! Get on with it!"))
+
+					setflag (harborcartquestaccepted)
+					setvar (VAR_HARBORCANTEXITWITHTROLLEY, 1)
+					goto (endofharborcartquestworker)
+									
+				}
+
+				if (var(VAR_RESULT) == 1) {
+					msgbox(format("Too bad. Clear the area then."))
+					goto (endofharborcartquestworker)
+				}
+
+				if (var(VAR_RESULT) == 2) {
+
+					if (!flag(harborcartquestintro)){
+					explainharborcartquest:
+					msgbox(format("It's simple. Unlike in Devon facilities like Oldale Warehouse, we
+					don't have Pokémon specialized in carrying stuff here."))
+					msgbox(format("We normally use that forklift over there - but
+					it's broken now.
+					\pI need you to use this trolley and bring some of the white parcels around.
+					\pYou can save time if you stack more than 2 at a time, but it's risky too.
+					\pSo? are you interested?
+					\lIt's 100¥ per box delivered."))
+					setflag (harborcartquestintro)
+					goto (harborquestchoice)
+					}
+
+					if (flag(harborcartquestintro)){
+					msgbox(format("I already explained it..."))
+					goto (explainharborcartquest)
+					}
+
+
+				}
+
+
+	}
+
+	endofharborcartquestworker:
+	release
+}
+
+
+script RebelHarborCartFollow {
+	lock
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 0)
+	{
+	msgbox(format("The Platform Trolley is empty."))
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 1)
+	{
+	msgbox(format("There's a single box in the Platform Trolley."))
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 2)
+	{
+	msgbox(format("There's two boxes in the Platform Trolley."))
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 3)
+	{
+	msgbox(format("There's three boxes in the Platform Trolley. Can't carry any more."))
+	}
+
+	release
+
+}
+
+
+
+script RebelHarborLoadBox1 {
+    lock
+    removeobject (9)
+    setflag (rebelharborbox1)
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 0)
+	{
+	applymovement (2, moves(face_left))
+    setobjectxy (2, 2, 2)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX1, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 1)
+	{
+	applymovement (11, moves(face_left))
+    setobjectxy (11, 2, 2)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX2, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 2)
+	{
+	applymovement (12, moves(face_left))
+    setobjectxy (12, 2, 2)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX3, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 3)
+	{
+	msgbox(format("Can't carry any more boxes... should bring them back to the boss."))
+	}
+
+    addvar (VAR_HARBORCARTBOXCOUNT, + 1)
+    release
+
+}
+
+script RebelHarborLoadBox2 {
+    lock
+    removeobject (3)
+    setflag (rebelharborboxs)
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 0)
+	{
+	applymovement (2, moves(face_right))
+    setobjectxy (2, 7, 2)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX1, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 1)
+	{
+	applymovement (11, moves(face_right))
+    setobjectxy (11, 7, 2)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX2, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 2)
+	{
+	applymovement (12, moves(face_right))
+    setobjectxy (12, 7, 2)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX3, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 3)
+	{
+	msgbox(format("Can't carry any more boxes... should bring them back to the boss."))
+	}
+
+    addvar (VAR_HARBORCARTBOXCOUNT, + 1)
+    release
+}
+
+
+script RebelHarborLoadBox3 {
+    lock
+    removeobject (10)
+    setflag (rebelharborboxt)
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 0)
+	{
+	applymovement (2, moves(face_right))
+    setobjectxy (2, 6, 6)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX1, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 1)
+	{
+	applymovement (11, moves(face_right))
+    setobjectxy (11, 6, 5)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX2, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 2)
+	{
+	applymovement (12, moves(face_right))
+    setobjectxy (12, 6, 5)
+    destroyfollowernpc
+    setfollowernpc (LOCALID_REBELHARBOR_CARTBOX3, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+	}
+
+	if (var(VAR_HARBORCARTBOXCOUNT) == 3)
+	{
+	msgbox(format("Can't carry any more boxes... should bring them back to the boss."))
+	}
+
+    addvar (VAR_HARBORCARTBOXCOUNT, + 1)
+    release
+}
+
+
+
+
+
+
+
+
+	//setvar(VAR_0x8004, 1)  //@ vertical pan
+	//setvar(VAR_0x8005, 3)  //@ horizontal pan
+	//setvar(VAR_0x8006, 1)  //@ num shakes
+	//setvar(VAR_0x8007, 4)  //@ shake delay
+    //playse (SE_CONTEST_CONDITION_LOSE)
+	//special(ShakeCamera)
+
+	    //msgbox(format("{PLAYER} picked a box."))
+
+    //fadescreenswapbuffers (FADE_TO_BLACK)
+
+	    //fadescreenswapbuffers (FADE_FROM_BLACK)
+
+//NOT USED 
+script RebelHarborCartGrab {
+	lock
+
+	if (!flag(harborcartquestaccepted))
+		{	
+		msgbox(format("It's a platform trolley."))	
+		}
+
+	if (flag(harborcartquestaccepted))
+		{	
+		msgbox(format("{PLAYER} is using the platform trolley."))
+		setfollowernpc (LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)
+		}
+
+
+	release
+}

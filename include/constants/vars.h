@@ -129,10 +129,10 @@
 #define VAR_SENSEIQTRAININGQUEST                               0x406D // Unused Var
 #define VAR_WALLYBERRYQUEST                               0x406E // Unused Var
 #define VAR_ROUTE116_STATE                               0x406F
-#define VAR_ROUTE117_STATE                               0x4070 // Unused Var
+#define VAR_PETALBURG_WILD_ZONE                               0x4070 // Unused Var
 #define VAR_ROUTE118_STATE                               0x4071
 #define VAR_ROUTE119_STATE                               0x4072
-#define VAR_ROUTE120_STATE                               0x4073 // Unused Var
+#define VAR_HARBORCARTBOXCOUNT                               0x4073 // Unused Var
 #define VAR_ROUTE121_STATE                               0x4074
 #define VAR_ROUTE122_STATE                               0x4075 // Unused Var
 #define VAR_ROUTE123_STATE                               0x4076 // Unused Var
@@ -144,8 +144,8 @@
 #define VAR_CRATERTOURISTFAPPROACH                       0x407C // Unused Var
 #define VAR_FLASHBACK_DREAM                              0x407D // Unused Var
 #define VAR_FLASHBACK_WAKEUPLOCATION                     0x407E // Unused Var
-#define VAR_ROUTE132_STATE                               0x407F // Unused Var
-#define VAR_ROUTE133_STATE                               0x4080 // Unused Var
+#define VAR_HARBORDELIVEREDBOXCOUNT                               0x407F // Unused Var
+#define VAR_HARBORCANTEXITWITHTROLLEY                               0x4080 // Unused Var
 #define VAR_ROUTE134_STATE                               0x4081 // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
 #define VAR_PETALBURG_PHASE                                0x4083 // Unused Var

@@ -1,5 +1,23 @@
-raw `
-RebelHarbourLounge_MapScripts::
-	.byte 0
+mapscripts RebelHarbourLounge_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: RebelHarbourLoungeMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: RebelHarbourLoungeMapscriptBundle
+    MAP_SCRIPT_ON_FRAME_TABLE: RebelHarbourLoungeMapscriptBundle}
+	
 
-`
+
+script RebelHarbourLoungeMapscriptBundle {
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
+goto (DayNightNPC)}

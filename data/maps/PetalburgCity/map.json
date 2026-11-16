@@ -31,9 +31,9 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 16,
-      "y": -3,
+      "graphics_id": "OBJ_EVENT_GFX_WAGESLAVEM",
+      "x": 17,
+      "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -44,17 +44,17 @@
       "flag": "FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 4,
-      "y": 38,
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 16,
+      "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_ETHER",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_PETALBURG_CITY_ETHER"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -67,7 +67,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOK",
@@ -183,47 +183,47 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgWildZoneNPC",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_THEORISTM",
       "x": 9,
-      "y": 16,
+      "y": 15,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 9,
-      "y": 17,
+      "y": 16,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "daynpc"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 34,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PUNKM",
-      "x": 29,
-      "y": 23,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "petalburgriothidecivilians"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GANGBIKERM",
@@ -252,7 +252,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
+      "graphics_id": "OBJ_EVENT_GFX_PUNKM",
       "x": 19,
       "y": 38,
       "elevation": 0,
@@ -265,7 +265,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTF",
+      "graphics_id": "OBJ_EVENT_GFX_PUNKF",
       "x": 15,
       "y": 39,
       "elevation": 0,
@@ -278,11 +278,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PUNKM",
+      "graphics_id": "OBJ_EVENT_GFX_GANGBIKERF",
       "x": 12,
       "y": 38,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -304,30 +304,30 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 15,
-      "y": -3,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "daynpc"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 16,
-      "y": 12,
+      "graphics_id": "OBJ_EVENT_GFX_TECHNICIANF",
+      "x": 28,
+      "y": 33,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "nightnpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PUNKF",
@@ -340,23 +340,23 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "nightnpc"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 9,
       "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "daynpc"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_REBELADMINM",
+      "graphics_id": "OBJ_EVENT_GFX_LONGHAIRGUY",
       "x": 14,
       "y": 13,
       "elevation": 0,
@@ -366,7 +366,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "nightnpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUITARIST",
@@ -444,7 +444,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgMilitiaRightGuy",
-      "flag": "punchpetalburgmartialartists"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACKBELTPUNCH",
@@ -457,7 +457,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgMilitiaSnackGuy",
-      "flag": "punchpetalburgmartialartists"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACKBELTPUNCH",
@@ -470,7 +470,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgMilitiaLeftGuy",
-      "flag": "punchpetalburgmartialartists"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MUSASHI",
@@ -483,7 +483,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgMartialArtsSensei",
-      "flag": "0"
+      "flag": "daynpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_INJUREDDEVONGRUNTM",
@@ -577,17 +577,17 @@
       "flag": "petalburgriotstopped"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FIRE",
-      "x": 41,
-      "y": -5,
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 8,
+      "y": 15,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "petalburgriotstopped"
+      "flag": "nightnpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SMOKE",
@@ -682,7 +682,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SCRAGGY)",
-      "x": 30,
+      "x": 29,
       "y": 23,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -769,7 +769,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgSmokerMilitia",
-      "flag": "0"
+      "flag": "nightnpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CIGARETTE",
@@ -782,7 +782,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "nightnpc"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TECHNICIANM",
@@ -798,43 +798,43 @@
       "flag": "angryfuelowner"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 21,
+      "graphics_id": "OBJ_EVENT_GFX_MUSASHI",
+      "x": 24,
       "y": 6,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "idlepetalburgmartialartists"
+      "script": "PetalburgMartialArtsSenseiNight",
+      "flag": "nightnpc"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 22,
-      "y": 6,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUNCHLAX)",
+      "x": 11,
+      "y": 11,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "idlepetalburgmartialartists"
+      "script": "PetalburgBurgerMunchlax",
+      "flag": "nightnpc"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 23,
-      "y": 6,
+      "graphics_id": "OBJ_EVENT_GFX_TOURISTM",
+      "x": 40,
+      "y": 35,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "idlepetalburgmartialartists"
+      "script": "PetalburgWildZoneTourist",
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -1042,12 +1042,30 @@
     },
     {
       "type": "trigger",
-      "x": 30,
-      "y": 23,
+      "x": 33,
+      "y": 37,
       "elevation": 0,
-      "var": "VAR_PETALBURG_RIOT_POSITION",
+      "var": "VAR_PETALBURG_WILD_ZONE",
+      "var_value": "0",
+      "script": "PetalburgWildZoneNPCIntroTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_WILD_ZONE",
       "var_value": "1",
-      "script": "PetalburgRiotRebelAdminStartLeave"
+      "script": "PetalburgWildZoneNPCBuyTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_WILD_ZONE",
+      "var_value": "2",
+      "script": "PetalburgWildZoneNPCLeaveTrigger"
     }
   ],
   "bg_events": [

@@ -609,6 +609,26 @@ static const struct SpriteFrameImage sPicTable_foodtray[] = {
     overworld_ascending_frames(gObjectEventPic_foodtray, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_cart[] = {
+    overworld_ascending_frames(gObjectEventPic_cart, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_cartbox1[] = {
+    overworld_ascending_frames(gObjectEventPic_cartbox1, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_cartboxs[] = {
+    overworld_ascending_frames(gObjectEventPic_cartboxs, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_cartboxt[] = {
+    overworld_ascending_frames(gObjectEventPic_cartboxt, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_smallwhitebox[] = {
+    overworld_ascending_frames(gObjectEventPic_smallwhitebox, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_cigarette[] = {
     overworld_ascending_frames(gObjectEventPic_cigarette, 2, 4),
 };

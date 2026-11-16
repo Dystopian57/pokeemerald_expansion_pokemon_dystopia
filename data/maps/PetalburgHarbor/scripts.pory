@@ -1,0 +1,27 @@
+raw `
+
+`
+
+mapscripts PetalburgHarbor_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: PetalburgHarborMapscriptBundle
+    MAP_SCRIPT_ON_LOAD: PetalburgHarborMapscriptBundle
+    MAP_SCRIPT_ON_FRAME_TABLE: PetalburgHarborMapscriptBundle}
+	
+
+
+script PetalburgHarborMapscriptBundle {
+
+		gettimeofday
+		if (var(VAR_0x8000) == TIME_MORNING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_DAY)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_EVENING)
+		{setweather (WEATHER_NONE)}
+
+		if (var(VAR_0x8000) == TIME_NIGHT)
+		{setweather (WEATHER_SHADE)}
+
+goto (DayNightNPC)}

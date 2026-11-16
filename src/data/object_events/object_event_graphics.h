@@ -229,6 +229,16 @@ const u32 gObjectEventPic_moxie[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_patientm[] = INCBIN_U32("graphics/object_events/pics/people/patientm.4bpp");
 const u32 gObjectEventPic_foodtray[] = INCBIN_U32("graphics/object_events/pics/misc/foodtray.4bpp");
 
+const u32 gObjectEventPic_cart[] = INCBIN_U32("graphics/object_events/pics/misc/cart.4bpp");
+
+const u32 gObjectEventPic_cartbox1[] = INCBIN_U32("graphics/object_events/pics/misc/cartbox1.4bpp");
+
+const u32 gObjectEventPic_cartboxs[] = INCBIN_U32("graphics/object_events/pics/misc/cartboxs.4bpp");
+
+const u32 gObjectEventPic_cartboxt[] = INCBIN_U32("graphics/object_events/pics/misc/cartboxt.4bpp");
+
+const u32 gObjectEventPic_smallwhitebox[] = INCBIN_U32("graphics/object_events/pics/misc/smallwhitebox.4bpp");
+
 const u32 gObjectEventPic_cigarette[] = INCBIN_U32("graphics/object_events/pics/misc/cigarette.4bpp");
 const u32 gObjectEventPic_rope[] = INCBIN_U32("graphics/object_events/pics/misc/rope.4bpp");
 
