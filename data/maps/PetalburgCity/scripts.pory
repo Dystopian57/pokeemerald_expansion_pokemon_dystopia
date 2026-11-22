@@ -772,6 +772,10 @@ script PetalburgRiotSpawn {
 	
 
 script PetalburgCityMapscriptBundle {
+
+		if (var(VAR_PETALBURG_WILD_ZONE) == 2)
+		{playbgm (MUS_SAFARI_ZONE, TRUE)}
+
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
 		{playbgm (MUS_TEAMGRDUEL, TRUE)}
@@ -2236,18 +2240,20 @@ script PetalburgWildZoneNPC {
 
 					msgbox (format("Alrighty! Here's your Pokéballs!"))
 					giveitem (ITEM_PARK_BALL, 30)
-					//playse (SE_BALL_TRADE)
-					//waitse
+					playse (SE_BALL_TRADE)
+					waitse
 
 					msgbox (format("Have a good time!"))
-					//hidefollower
-					//setflag (FLAG_TEMP_HIDE_FOLLOWER)
+					
+					fadeoutbgm (1)
+					fadeinbgm (1)
+					playbgm (MUS_SAFARI_ZONE, TRUE) 
+
 
 					
 					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_right * 2))
 					waitmovement (OBJ_EVENT_ID_PLAYER)
 
-					//special (EnterSafariMode)
 					setvar (VAR_PETALBURG_WILD_ZONE, 2)
 					goto (endofpetalburgwildzonenpc)
 

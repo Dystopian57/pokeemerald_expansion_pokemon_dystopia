@@ -199,7 +199,7 @@ JimmyMcGligarSewersIdle_70:
 # 353 "data/maps/JimmyEggStore/scripts.pory"
 	fadeinbgm 1
 # 354 "data/maps/JimmyEggStore/scripts.pory"
-	playbgm MUS_STOPTHIEF, TRUE
+	playbgm MUS_TRICK_HOUSE, TRUE
 # 356 "data/maps/JimmyEggStore/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 360 "data/maps/JimmyEggStore/scripts.pory"
@@ -1327,119 +1327,119 @@ JimmyKecleonIdle::
 	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
 # 844 "data/maps/JimmyEggStore/scripts.pory"
 	msgbox JimmyKecleonIdle_Text_0
-# 845 "data/maps/JimmyEggStore/scripts.pory"
+# 846 "data/maps/JimmyEggStore/scripts.pory"
 	release
 	return
 
 
 JimmyGachapodIdle::
-# 849 "data/maps/JimmyEggStore/scripts.pory"
-	lock
 # 850 "data/maps/JimmyEggStore/scripts.pory"
-	applymovement 6, JimmyMcGligarSewersIdle_Movement_4
+	lock
 # 851 "data/maps/JimmyEggStore/scripts.pory"
-	waitmovement 6
+	applymovement 6, JimmyMcGligarSewersIdle_Movement_4
 # 852 "data/maps/JimmyEggStore/scripts.pory"
-	playmoncry SPECIES_GACHAPOD, CRY_MODE_WEAK
+	waitmovement 6
 # 853 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyGachapodIdle_Text_0
+	playmoncry SPECIES_GACHAPOD, CRY_MODE_WEAK
 # 854 "data/maps/JimmyEggStore/scripts.pory"
+	msgbox JimmyGachapodIdle_Text_0
+# 855 "data/maps/JimmyEggStore/scripts.pory"
 	release
 	return
 
 
 JimmyStoreBoxItem::
-# 858 "data/maps/JimmyEggStore/scripts.pory"
-	lock
 # 859 "data/maps/JimmyEggStore/scripts.pory"
+	lock
+# 860 "data/maps/JimmyEggStore/scripts.pory"
 	goto_if_unset jimmystoreboxitem, JimmyStoreBoxItem_2
-# 865 "data/maps/JimmyEggStore/scripts.pory"
+# 866 "data/maps/JimmyEggStore/scripts.pory"
 	msgbox JimmyStoreBoxItem_Text_1
 JimmyStoreBoxItem_1:
-# 866 "data/maps/JimmyEggStore/scripts.pory"
+# 867 "data/maps/JimmyEggStore/scripts.pory"
 	release
 	return
 
 JimmyStoreBoxItem_2:
-# 861 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyStoreBoxItem_Text_0
 # 862 "data/maps/JimmyEggStore/scripts.pory"
-	giveitem ITEM_OVAL_CHARM
+	msgbox JimmyStoreBoxItem_Text_0
 # 863 "data/maps/JimmyEggStore/scripts.pory"
+	giveitem ITEM_OVAL_CHARM
+# 864 "data/maps/JimmyEggStore/scripts.pory"
 	setflag jimmystoreboxitem
 	goto JimmyStoreBoxItem_1
 
 
 JimmyStoreBriefcase::
-# 871 "data/maps/JimmyEggStore/scripts.pory"
-	lock
 # 872 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyStoreBriefcase_Text_0
+	lock
 # 873 "data/maps/JimmyEggStore/scripts.pory"
+	msgbox JimmyStoreBriefcase_Text_0
+# 874 "data/maps/JimmyEggStore/scripts.pory"
 	releaseall
 	return
 
 
 JimmyStoreTamarakkudoll::
-# 877 "data/maps/JimmyEggStore/scripts.pory"
-	lock
 # 878 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyStoreTamarakkudoll_Text_0
+	lock
 # 879 "data/maps/JimmyEggStore/scripts.pory"
+	msgbox JimmyStoreTamarakkudoll_Text_0
+# 880 "data/maps/JimmyEggStore/scripts.pory"
 	releaseall
 	return
 
 
 JimmyStoreBucket::
-# 883 "data/maps/JimmyEggStore/scripts.pory"
-	lock
 # 884 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyStoreBucket_Text_0
+	lock
 # 885 "data/maps/JimmyEggStore/scripts.pory"
+	msgbox JimmyStoreBucket_Text_0
+# 886 "data/maps/JimmyEggStore/scripts.pory"
 	releaseall
 	return
 
 
 JimmyStoreEggsoncushions::
-# 889 "data/maps/JimmyEggStore/scripts.pory"
-	lock
 # 890 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyStoreEggsoncushions_Text_0
+	lock
 # 891 "data/maps/JimmyEggStore/scripts.pory"
+	msgbox JimmyStoreEggsoncushions_Text_0
+# 892 "data/maps/JimmyEggStore/scripts.pory"
 	releaseall
 	return
 
 
 JimmyStoreMoneyBags::
-# 895 "data/maps/JimmyEggStore/scripts.pory"
-	lock
 # 896 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyStoreMoneyBags_Text_0
+	lock
 # 897 "data/maps/JimmyEggStore/scripts.pory"
-	closemessage
+	msgbox JimmyStoreMoneyBags_Text_0
 # 898 "data/maps/JimmyEggStore/scripts.pory"
-	playse SE_PIN
+	closemessage
 # 899 "data/maps/JimmyEggStore/scripts.pory"
-	applymovement 5, JimmyStoreMoneyBags_Movement_0
+	playse SE_PIN
 # 900 "data/maps/JimmyEggStore/scripts.pory"
-	waitmovement 5
+	applymovement 5, JimmyStoreMoneyBags_Movement_0
 # 901 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyStoreMoneyBags_Text_1
-# 902 "data/maps/JimmyEggStore/scripts.pory"
-	applymovement 1, JimmyMcGligarSewersIdle_Movement_2
-# 903 "data/maps/JimmyEggStore/scripts.pory"
-	waitmovement 1
-# 904 "data/maps/JimmyEggStore/scripts.pory"
-	playmoncry SPECIES_TAMARAKKU, CRY_MODE_WEAK
-# 905 "data/maps/JimmyEggStore/scripts.pory"
-	msgbox JimmyTamarakkuIdle_Text_0
-# 906 "data/maps/JimmyEggStore/scripts.pory"
-	applymovement 1, JimmyTamarakkuIdle_Movement_0
-# 907 "data/maps/JimmyEggStore/scripts.pory"
-	applymovement 5, JimmyTamarakkuIdle_Movement_0
-# 908 "data/maps/JimmyEggStore/scripts.pory"
 	waitmovement 5
+# 902 "data/maps/JimmyEggStore/scripts.pory"
+	msgbox JimmyStoreMoneyBags_Text_1
+# 903 "data/maps/JimmyEggStore/scripts.pory"
+	applymovement 1, JimmyMcGligarSewersIdle_Movement_2
+# 904 "data/maps/JimmyEggStore/scripts.pory"
+	waitmovement 1
+# 905 "data/maps/JimmyEggStore/scripts.pory"
+	playmoncry SPECIES_TAMARAKKU, CRY_MODE_WEAK
+# 906 "data/maps/JimmyEggStore/scripts.pory"
+	msgbox JimmyTamarakkuIdle_Text_0
+# 907 "data/maps/JimmyEggStore/scripts.pory"
+	applymovement 1, JimmyTamarakkuIdle_Movement_0
+# 908 "data/maps/JimmyEggStore/scripts.pory"
+	applymovement 5, JimmyTamarakkuIdle_Movement_0
 # 909 "data/maps/JimmyEggStore/scripts.pory"
+	waitmovement 5
+# 910 "data/maps/JimmyEggStore/scripts.pory"
 	releaseall
 	return
 
@@ -1592,11 +1592,11 @@ JimmyTamarakkuIdle_Movement_0:
 	face_down
 	step_end
 
-# 899 "data/maps/JimmyEggStore/scripts.pory"
+# 900 "data/maps/JimmyEggStore/scripts.pory"
 JimmyStoreMoneyBags_Movement_0:
-# 899 "data/maps/JimmyEggStore/scripts.pory"
+# 900 "data/maps/JimmyEggStore/scripts.pory"
 	face_left
-# 899 "data/maps/JimmyEggStore/scripts.pory"
+# 900 "data/maps/JimmyEggStore/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
@@ -1901,46 +1901,48 @@ JimmyTamarakkuIdle_Text_0:
 
 JimmyKecleonIdle_Text_0:
 # 844 "data/maps/JimmyEggStore/scripts.pory"
-	.string "Ke-keeee!$"
+	.string "Ke-keeee!\p"
+	.string "The Kecleon seems to be looking for\n"
+	.string "Ninkaburi to eat.$"
 
 JimmyGachapodIdle_Text_0:
-# 853 "data/maps/JimmyEggStore/scripts.pory"
+# 854 "data/maps/JimmyEggStore/scripts.pory"
 	.string "{COLOR LIGHT_GRAY}{SHADOW WHITE}Ga-gaaa...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}$"
 
 JimmyStoreBoxItem_Text_0:
-# 861 "data/maps/JimmyEggStore/scripts.pory"
+# 862 "data/maps/JimmyEggStore/scripts.pory"
 	.string "There's something inside the box...$"
 
 JimmyStoreBoxItem_Text_1:
-# 865 "data/maps/JimmyEggStore/scripts.pory"
+# 866 "data/maps/JimmyEggStore/scripts.pory"
 	.string "There's nothing inside the box.$"
 
 JimmyStoreBriefcase_Text_0:
-# 872 "data/maps/JimmyEggStore/scripts.pory"
+# 873 "data/maps/JimmyEggStore/scripts.pory"
 	.string "An inconspicuous briefcase, worn with\n"
 	.string "use.$"
 
 JimmyStoreTamarakkudoll_Text_0:
-# 878 "data/maps/JimmyEggStore/scripts.pory"
+# 879 "data/maps/JimmyEggStore/scripts.pory"
 	.string "A Tamarakku doll. It's a bit creepy.$"
 
 JimmyStoreBucket_Text_0:
-# 884 "data/maps/JimmyEggStore/scripts.pory"
+# 885 "data/maps/JimmyEggStore/scripts.pory"
 	.string "The bucket is filling with the leakage\n"
 	.string "from the pipe.\p"
 	.string "It's a bit disgusting...$"
 
 JimmyStoreEggsoncushions_Text_0:
-# 890 "data/maps/JimmyEggStore/scripts.pory"
+# 891 "data/maps/JimmyEggStore/scripts.pory"
 	.string "A few eggs are arranged on top of\n"
 	.string "cushions.$"
 
 JimmyStoreMoneyBags_Text_0:
-# 896 "data/maps/JimmyEggStore/scripts.pory"
+# 897 "data/maps/JimmyEggStore/scripts.pory"
 	.string "It's a bundle of bags, like the kind used\n"
 	.string "to keep mon-...$"
 
 JimmyStoreMoneyBags_Text_1:
-# 901 "data/maps/JimmyEggStore/scripts.pory"
+# 902 "data/maps/JimmyEggStore/scripts.pory"
 	.string "Hey! Don't you touch my money, or I'll\n"
 	.string "put Tamarakku on you!$"

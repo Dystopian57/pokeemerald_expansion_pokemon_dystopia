@@ -9,10 +9,48 @@ script RebelHarbourLoungeMapscriptBundle {
 
 		gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)
-		{setweather (WEATHER_NONE)}
+		{setweather (WEATHER_NONE)
+		
+		//BREAKFAST GUESTS LOTTO
+
+			if (!flag(harborloungebreakfastguestlotto))
+			{random (2)
+			copyvar (VAR_TEMP_1, VAR_RESULT)
+			switch (var(VAR_RESULT))
+			{
+			case 0: 
+			clearflag (harborbreakfastone)
+
+			setflag(harborbreakfasttwo)
+			setflag (harborlunchone)
+			setflag (harborlunchtwo)
+			setflag (harbordinnerone)
+			setflag (harbordinnertwo)
+
+			case 1:
+			clearflag (harborbreakfasttwo)
+			setflag(harborbreakfastone)
+			setflag (harborlunchone)
+			setflag (harborlunchtwo)
+			setflag (harbordinnerone)
+			setflag (harbordinnertwo)
+			}	
+
+			setflag (harborloungebreakfastguestlotto)
+			}
+
+		
+		}
 
 		if (var(VAR_0x8000) == TIME_DAY)
-		{setweather (WEATHER_NONE)}
+		{setweather (WEATHER_NONE)
+		
+		
+		
+
+		
+		
+		}
 
 		if (var(VAR_0x8000) == TIME_EVENING)
 		{setweather (WEATHER_NONE)}
@@ -20,4 +58,1602 @@ script RebelHarbourLoungeMapscriptBundle {
 		if (var(VAR_0x8000) == TIME_NIGHT)
 		{setweather (WEATHER_SHADE)}
 
-goto (DayNightNPC)}
+
+
+
+goto (DayNightNPC)
+}
+
+
+script RebelHarborTouristAsksRebento {
+	lock
+	applymovement (15, moves(face_player))
+	waitmovement (15)
+	msgbox(format("This is foreign discrimination, plain and simple!
+	\pI've heard they sell a Rebel-themed lunch box here, called Rebento!
+	\pBut they won't sell it to me - surely because I'm a foreigner!"))
+	applymovement (15, moves(face_right))
+	waitmovement (15)
+	release
+}
+
+script RebelHarborGuyCalmsTourist {
+	lock
+	msgbox(format("SSSSH. You've got it all wrong pal. Believe me, you don't want one of those.
+	\pJust get a Petalburguer and sit your fat arse down."))
+	release
+}
+
+
+script RebelHarborLoungeClerkOverCounter {
+	lock
+	applymovement (4, moves(face_player))
+	waitmovement (4)
+	msgbox(format("Hey, don't invade my space! If you want to order, go over the counter."))
+	applymovement (4, moves(face_right))
+	waitmovement (4)
+	release
+}
+
+script RebelHarborLoungeClerk {
+	lock
+
+	if(!flag(harborloungequestaccepted))
+	{goto (normalharborloungeclerkstart)}
+
+	if(flag(harborloungequestaccepted))
+	{goto (questactiveharborloungeclerk)}
+
+	normalharborloungeclerkstart:
+	msgbox(format("What do you want?"))
+
+
+			dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE,
+			"Order food",
+			"Special order",
+			"Part time job",
+			"Leave")
+
+				if (var(VAR_RESULT) == 3) {
+				goto (rebelharborloungeclerkend)
+				}
+
+				if (var(VAR_RESULT) == 0) {}
+
+				if (var(VAR_RESULT) == 1) {}
+
+				if (var(VAR_RESULT) == 2) {
+
+					if (flag(harborloungequestdone))
+					{
+					msgbox(format("You already worked here today. We're not hiring full-time, sorry!"))
+					goto (rebelharborloungeclerkend)
+					}
+
+					if (!flag(harborloungequestdone))
+					{
+
+						gettimeofday
+						if (var(VAR_0x8000) == TIME_MORNING)
+						{
+						setflag (morningstartwaiterquest)
+						msgbox(format("You come just in time. We could use a couple extra hands to serve
+						breakfast."))
+						}
+
+						if (var(VAR_0x8000) == TIME_DAY)
+						{
+						setflag (daystartwaiterquest)
+						msgbox(format("You come just in time. We could use a couple extra hands to serve
+						lunch."))
+						}
+
+						if (var(VAR_0x8000) == TIME_EVENING)
+						{
+						msgbox(format("We don't need any help on the evenings.\p But come back on the
+						morning, midday or night, and we'll likely do."))
+						goto (rebelharborloungeclerkend)
+						}
+
+						if (var(VAR_0x8000) == TIME_NIGHT)
+						{
+						setflag (nightstartwaiterquest)
+						msgbox(format("You come just in time.
+						We could use a couple extra hands to serve dinner."))
+						}
+
+						checkplayergender
+						if(var(VAR_RESULT) == FEMALE){
+						msgbox(format("... well, one hand, in your case."))}
+						msgbox(format("3000¥ per shift, with deductions if you mess up. You in?"))
+
+							dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+							"Sure",
+							"No thanks",)
+
+								if (var(VAR_RESULT) == 1) {
+								msgbox(format("Too hard for you?
+								They're also hiring on the cargo bay, if that's more your fancy."))
+								goto (rebelharborloungeclerkend)				
+								}
+
+								if (var(VAR_RESULT) == 0) {
+								msgbox(format("Great - go and get those orders then!"))
+								closemessage
+
+								
+								setflag (harborloungequestaccepted)
+								//fadescreenswapbuffers (FADE_TO_BLACK)
+	
+								//fadescreenswapbuffers (FADE_FROM_BLACK)
+
+								fadeoutbgm (1)
+								fadeinbgm (1)
+								playbgm (MUS_BUYSOMETHINGWILLYA, TRUE)
+        						//warpsilent (MAP_REBEL_HARBOUR_LOUNGE, 4)
+								}
+
+
+					goto (rebelharborloungeclerkend)
+
+						}
+
+					}
+
+						questactiveharborloungeclerk:
+						if (var(VAR_WAITERQUEST) == 0) {
+	
+						harborloungeclerkdemandsorders:
+						msgbox(format("What are you waiting for? You haven't picked everyone's orders!"))	
+						}
+						
+						if (var(VAR_WAITERQUEST) == 1) {
+						harborloungeclerkrevieworders:
+						msgbox(format("Alright, let's go over the orders."))
+							special (SpawnCameraObject)
+							applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 4))
+							waitmovement(OBJ_EVENT_ID_CAMERA)
+							special (RemoveCameraObject)
+						msgbox(format("What does Table 1 want?"))
+
+
+					//MORNING
+						//TABLE 1
+						if (flag(morningstartwaiterquest))
+						{	
+						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+						"Barboach Caviar", //0
+						"Boiled Shellder", //1
+						"Carvanha Fin Soup", //2
+						"Corphish Legs", //3
+						"Dried Feebas", //4
+						"Magikarp Sushi", //5
+						"Murkrow Egg", //6
+						"Petalburger", //7
+						"Octiyaki", //8
+						"Slateport Pizza", //9
+						"Sautéed Shiitako", //10
+						"Seedot Nuts", //11
+						"Shaved Aryscream", //12
+						"Shuckle Juice", //13
+						"Swablu Candy", //14
+						"Swinub Bacon", //15
+						"Wingull Wings") //16
+
+							if (var(VAR_RESULT) == 7) //Petalburger , ordered by young fat man
+							{
+								if (flag(tableonefirstcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERFIRSTTABLESUCCESS, + 1)
+								}
+
+								else {goto (proceedtotable2)}
+							
+							}
+							if (var(VAR_RESULT) == 15) //Swinub Bacon, ordered by old fat man
+							{
+
+								if (flag(tableonesecondcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERFIRSTTABLESUCCESS, + 1)
+								}
+
+								else {goto (proceedtotable2)}
+
+							}
+
+							else {goto (proceedtotable2)}
+
+						proceedtotable2:
+							special (SpawnCameraObject)
+							applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 5, walk_right * 1))
+							waitmovement(OBJ_EVENT_ID_CAMERA)
+							special (RemoveCameraObject)
+
+					msgbox(format("Alright. What about Table 2?"))
+
+					//MORNING
+						//TABLE 2, FIRST ASK
+						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+						"Barboach Caviar", //0
+						"Boiled Shellder", //1
+						"Carvanha Fin Soup", //2
+						"Corphish Legs", //3
+						"Dried Feebas", //4
+						"Magikarp Sushi", //5
+						"Murkrow Egg", //6
+						"Petalburger", //7
+						"Octiyaki", //8
+						"Slateport Pizza", //9
+						"Sautéed Shiitako", //10
+						"Seedot Nuts", //11
+						"Shaved Aryscream", //12
+						"Shuckle Juice", //13
+						"Swablu Candy", //14
+						"Swinub Bacon", //15
+						"Wingull Wings") //16
+
+
+							if (var(VAR_RESULT) == 6) //Murkrow Egg, ordered by Wage Slave
+							{
+								if (flag(tabletwofirstcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwofirstcorrectbreakfast)
+								goto (proceedtotable2seconchoice)
+								}
+
+								else {goto (proceedtotable2seconchoice)}
+									
+							}
+
+
+							if (var(VAR_RESULT) == 13) //Shuckle Juice, ordered by Wage Slave's daughter
+							{
+
+								if (flag(tabletwosecondcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwosecondcorrectbreakfast)
+								goto (proceedtotable2seconchoice)
+								}
+
+								else {goto (proceedtotable2seconchoice)}
+
+							}
+
+
+							if (var(VAR_RESULT) == 4) //Dried Feebas, ordered by Mercenary M
+							{
+								if (flag(tabletwothirdcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwothirdcorrectbreakfast)
+								goto (proceedtotable2seconchoice)
+								}
+
+								else {goto (proceedtotable2seconchoice)}
+									
+							}
+
+							if (var(VAR_RESULT) == 16) //Wingull Wings, for Mercenary M's Raticate
+							{
+								if (flag(tabletwofourthcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwofourthcorrectbreakfast)
+								goto (proceedtotable2seconchoice)
+								}
+
+								else {goto (proceedtotable2seconchoice)}
+									
+							}
+
+
+
+							else {goto (proceedtotable2seconchoice)}
+
+
+					proceedtotable2seconchoice:
+					msgbox(format("Anything else on Table 2?"))
+
+					//MORNING
+						//TABLE 2, SECOND ASK
+						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+						"No, nothing", //0
+						"Barboach Caviar", //1
+						"Boiled Shellder", //2
+						"Carvanha Fin Soup", //3
+						"Corphish Legs", //4
+						"Dried Feebas", //5
+						"Magikarp Sushi", //6
+						"Murkrow Egg", //7
+						"Petalburger", //8
+						"Octiyaki", //9
+						"Slateport Pizza", //10
+						"Sautéed Shiitako", //11
+						"Seedot Nuts", //12
+						"Shaved Aryscream", //13
+						"Shuckle Juice", //14
+						"Swablu Candy", //15
+						"Swinub Bacon", //16
+						"Wingull Wings") //17
+
+							if (var(VAR_RESULT) == 7) //Murkrow Egg, ordered by Wage Slave
+							{
+								if (flag(tabletwofirstcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwofirstcorrectbreakfast)
+								goto (proceedtotable3)
+								}
+
+								else {goto (proceedtotable3)}
+								
+							
+							}
+							if (var(VAR_RESULT) == 14) //Shuckle Juice, ordered by Wage Slave's daughter
+							{
+
+								if (flag(tabletwosecondcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwosecondcorrectbreakfast)
+								goto (proceedtotable3)
+								}
+
+								else {goto (proceedtotable3)}
+
+							}
+
+
+							if (var(VAR_RESULT) == 5) //Dried Feebas, ordered by Mercenary M
+							{
+								if (flag(tabletwothirdcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwothirdcorrectbreakfast)
+								goto (proceedtotable3)
+								}
+
+								else {goto (proceedtotable3)}
+									
+							}
+
+							if (var(VAR_RESULT) == 17) //Wingull Wings, for Mercenary M's Raticate
+							{
+								if (flag(tabletwofourthcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERSECONDTABLESUCCESS, + 1)
+								clearflag (tabletwofourthcorrectbreakfast)
+								goto (proceedtotable3)
+								}
+
+								else {goto (proceedtotable3)}
+									
+							}
+
+							else {goto (proceedtotable3)}
+
+
+						proceedtotable3:
+							special (SpawnCameraObject)
+							applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right * 6))
+							waitmovement(OBJ_EVENT_ID_CAMERA)
+							special (RemoveCameraObject)
+
+					msgbox(format("Alright. To finish up, tell me what Table 3 has ordered."))
+
+					//MORNING
+						//TABLE 3
+						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+						"Barboach Caviar", //0
+						"Boiled Shellder", //1
+						"Carvanha Fin Soup", //2
+						"Corphish Legs", //3
+						"Dried Feebas", //4
+						"Magikarp Sushi", //5
+						"Murkrow Egg", //6
+						"Petalburger", //7
+						"Octiyaki", //8
+						"Slateport Pizza", //9
+						"Sautéed Shiitako", //10
+						"Seedot Nuts", //11
+						"Shaved Aryscream", //12
+						"Shuckle Juice", //13
+						"Swablu Candy", //14
+						"Swinub Bacon", //15
+						"Wingull Wings") //16
+
+							if (var(VAR_RESULT) == 4) //Dried Feebas, ordered by Bandaged Man
+							{
+								if (flag(tablethreefirstcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreefirstcorrectbreakfast)
+								goto (proceedtotable3seconchoice)
+								}
+
+								else {goto (proceedtotable3seconchoice)}
+							
+							}
+
+							if (var(VAR_RESULT) == 10) //Sautéed Shiitako, ordered by Trapinch Tecnician
+							{
+								if (flag(tablethreesecondcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreesecondcorrectbreakfast)
+								goto (proceedtotable3seconchoice)
+								}
+
+								else {goto (proceedtotable3seconchoice)}
+							
+							}
+
+							if (var(VAR_RESULT) == 2) //Carvanha Fin Soup, for Poor Woman
+							{
+								if (flag(tablethreethirdcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreethirdcorrectbreakfast)
+								goto (proceedtotable3seconchoice)
+								}
+
+								else {goto (proceedtotable3seconchoice)}
+							
+							}
+
+							if (var(VAR_RESULT) == 11) //Seedot Nuts, for Poor Woman's Cubone
+							{
+								if (flag(tablethreefourthcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreefourthcorrectbreakfast)
+								goto (proceedtotable3seconchoice)
+								}
+
+								else {goto (proceedtotable3seconchoice)}
+							
+							}
+
+
+							else {goto (proceedtotable3seconchoice)}
+
+
+
+					proceedtotable3seconchoice:
+					msgbox(format("Anything else on Table 3?"))
+
+					//MORNING
+						//TABLE 3, SECOND ASK
+						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+						"No, nothing", //0
+						"Barboach Caviar", //1
+						"Boiled Shellder", //2
+						"Carvanha Fin Soup", //3
+						"Corphish Legs", //4
+						"Dried Feebas", //5
+						"Magikarp Sushi", //6
+						"Murkrow Egg", //7
+						"Petalburger", //8
+						"Octiyaki", //9
+						"Slateport Pizza", //10
+						"Sautéed Shiitako", //11
+						"Seedot Nuts", //12
+						"Shaved Aryscream", //13
+						"Shuckle Juice", //14
+						"Swablu Candy", //15
+						"Swinub Ham", //16
+						"Wingull Wings") //17
+
+							if (var(VAR_RESULT) == 5) //Dried Feebas, ordered by Bandaged Man
+							{
+								if (flag(tablethreefirstcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreefirstcorrectbreakfast)
+								goto (finishedwaiterorderrelay)
+								}
+
+								else {goto (finishedwaiterorderrelay)}
+							
+							}
+
+							if (var(VAR_RESULT) == 11) //Sautéed Shiitako, ordered by Trapinch Tecnician
+							{
+								if (flag(tablethreesecondcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreesecondcorrectbreakfast)
+								goto (finishedwaiterorderrelay)
+								}
+
+								else {goto (finishedwaiterorderrelay)}
+							
+							}
+
+							if (var(VAR_RESULT) == 3) //Carvanha Fin Soup, for Poor Woman
+							{
+								if (flag(tablethreethirdcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreethirdcorrectbreakfast)
+								goto (finishedwaiterorderrelay)
+								}
+
+								else {goto (finishedwaiterorderrelay)}
+							
+							}
+
+							if (var(VAR_RESULT) == 12) //Seedot Nuts, for Poor Woman's Cubone
+							{
+								if (flag(tablethreefourthcorrectbreakfast))
+								{
+        						addvar (VAR_WAITERQUEST, + 1)
+								addvar (VAR_WAITERTHIRDTABLESUCCESS, + 1)
+								clearflag (tablethreefourthcorrectbreakfast)
+								goto (finishedwaiterorderrelay)
+								}
+
+								else {goto (finishedwaiterorderrelay)}
+							
+							}
+
+							else {goto (finishedwaiterorderrelay)}
+
+
+							finishedwaiterorderrelay:
+							special (SpawnCameraObject)
+							applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 3, walk_up * 5))
+							waitmovement(OBJ_EVENT_ID_CAMERA)
+							special (RemoveCameraObject)
+
+
+					msgbox(format("Very well. I'll take this to the cook. Standby to deliver
+					the orders!"))
+
+					fadescreenswapbuffers (FADE_TO_BLACK)
+
+					clearflag (breakfastonefoodtrays)
+					addobject (41)
+					addobject (38)
+					addobject (37)
+					addobject (39)
+					addobject (40)
+
+
+						if (flag(harborbreakfastone))
+						{
+						setobjectxy (41, 3, 8)
+						setobjectxy (38, 4, 12)
+						setobjectxy (37, 5, 12)
+						setobjectxy (39, 10, 14)
+						setobjectxy (40, 11, 14)
+						}
+
+						if (flag(harborbreakfasttwo))
+						{
+						setobjectxy (41, 3, 9)
+						setobjectxy (38, 4, 12)
+						setobjectxy (37, 4, 12)
+						setobjectxy (39, 10, 14)
+						setobjectxy (40, 10, 14)
+						}	
+
+
+					fadeoutbgm (1)
+					fadeinbgm (1)
+					playbgm (MUS_CONTEST_RESULTS, TRUE)
+
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(face_down))
+					
+					hidefollower
+					//applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_down))
+					//waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
+					fadescreenswapbuffers (FADE_FROM_BLACK)
+
+					msgbox(format("{COLOR GREEN}{PLAYER} has delivered the orders, and observes the
+					guests' reaction..."))
+					closemessage
+
+						special (SpawnCameraObject)
+						applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 4))
+						waitmovement(OBJ_EVENT_ID_CAMERA)
+						special (RemoveCameraObject)		
+
+					//BREAKFAST SCORE
+					//BREAKFAST TABLE 1 SCORE EMOTES (EITHER DOUBLE EXCLAMATION OR HEART)
+
+						if (var(VAR_WAITERFIRSTTABLESUCCESS) == 0)
+						{
+
+						if (flag(harborbreakfastone))
+						{
+						playse (SE_M_SWAGGER2)
+						applymovement(7, moves(emote_double_exclamation_mark))
+						waitmovement (7)
+						}
+
+						if (flag(harborbreakfasttwo))
+						{
+						playse (SE_M_SWAGGER2)
+						applymovement(29, moves(emote_double_exclamation_mark))
+						waitmovement (29)
+						}	
+
+						msgbox(format("Table 1 does not seem very happy."))
+
+						}
+
+						if (var(VAR_WAITERFIRSTTABLESUCCESS) == 1)
+						{
+						if (flag(harborbreakfastone))
+						{
+						playse (SE_M_ATTRACT)
+						applymovement(7, moves(emote_double_exclamation_mark))
+						waitmovement (7)
+						}
+
+						if (flag(harborbreakfasttwo))
+						{
+						playse (SE_M_ATTRACT)
+						applymovement(29, moves(emote_double_exclamation_mark))
+						waitmovement (29)
+						}	
+
+						msgbox(format("Table 1 seems quite happy."))
+
+						}
+
+
+					//BREAKFAST TABLE 2 SCORE EMOTES
+
+						if (var(VAR_WAITERSECONDTABLESUCCESS) == 0)
+						{
+
+						if (!flag(harborbreakfastone))
+						{
+						playse (SE_M_SWAGGER2)
+						applymovement(18, moves(emote_double_exclamation_mark))
+						waitmovement (18)
+
+						playse (SE_M_SWAGGER2)
+						applymovement(19, moves(emote_double_exclamation_mark))
+						waitmovement (19)
+						}	
+
+						if (!flag(harborbreakfasttwo))
+						{
+						playse (SE_M_SWAGGER2)
+						applymovement(49, moves(emote_double_exclamation_mark))
+						waitmovement (49)
+
+						playse (SE_M_SWAGGER2)
+						applymovement(50, moves(emote_double_exclamation_mark))
+						waitmovement (50)
+						}
+
+						msgbox(format("Table 2 does not seem very happy."))
+
+						}
+
+						if (var(VAR_WAITERSECONDTABLESUCCESS) == 1)
+						{
+						if (!flag(harborbreakfastone))
+						{
+						playse (SE_M_METRONOME)
+						applymovement(18, moves(emote_double_exclamation_mark))
+						waitmovement (18)
+
+						playse (SE_M_METRONOME)
+						applymovement(19, moves(emote_double_exclamation_mark))
+						waitmovement (19)
+						}	
+
+						if (!flag(harborbreakfasttwo))
+						{
+						playse (SE_M_METRONOME)
+						applymovement(49, moves(emote_double_exclamation_mark))
+						waitmovement (49)
+
+						playse (SE_M_METRONOME)
+						applymovement(50, moves(emote_double_exclamation_mark))
+						waitmovement (50)
+						}	
+
+						msgbox(format("There seems to have been a mistake in Table 2..."))
+
+						}
+
+						if (var(VAR_WAITERSECONDTABLESUCCESS) == 2)
+						{
+						if (!flag(harborbreakfastone))
+						{
+						playse (SE_M_ATTRACT)
+						applymovement(18, moves(emote_double_exclamation_mark))
+						waitmovement (18)
+
+						playse (SE_M_ATTRACT)
+						applymovement(19, moves(emote_double_exclamation_mark))
+						waitmovement (19)
+						}	
+
+						if (!flag(harborbreakfasttwo))
+						{
+						playse (SE_M_ATTRACT)
+						applymovement(49, moves(emote_double_exclamation_mark))
+						waitmovement (49)
+
+						playse (SE_M_ATTRACT)
+						applymovement(50, moves(emote_double_exclamation_mark))
+						waitmovement (50)
+						}	
+				
+						msgbox(format("Table 2 seems quite happy."))
+
+						}
+
+
+
+					//BREAKFAST TABLE 3 SCORE EMOTES
+
+						if (var(VAR_WAITERTHIRDTABLESUCCESS) == 0)
+						{
+						if (!flag(harborbreakfastone))
+						{
+						playse (SE_M_SWAGGER2)
+						applymovement(36, moves(emote_double_exclamation_mark))
+						waitmovement (36)
+
+						playse (SE_M_SWAGGER2)
+						applymovement(34, moves(emote_double_exclamation_mark))
+						waitmovement (34)
+
+						playse (SE_M_SWAGGER2)
+						applymovement(54, moves(emote_double_exclamation_mark))
+						waitmovement (54)
+						}	
+
+						if (!flag(harborbreakfasttwo))
+						{
+						playse (SE_M_SWAGGER2)
+						applymovement(46, moves(emote_double_exclamation_mark))
+						waitmovement (46)
+
+						playse (SE_M_SWAGGER2)
+						applymovement(54, moves(emote_double_exclamation_mark))
+						waitmovement (54)
+
+						}
+
+						msgbox(format("Table 3 does not seem very happy."))
+
+						}
+
+						if (var(VAR_WAITERTHIRDTABLESUCCESS) == 1)
+						{
+						if (!flag(harborbreakfastone))
+						{
+						playse (SE_M_METRONOME)
+						applymovement(36, moves(emote_double_exclamation_mark))
+						waitmovement (36)
+
+						playse (SE_M_METRONOME)
+						applymovement(34, moves(emote_double_exclamation_mark))
+						waitmovement (34)
+
+						playse (SE_M_METRONOME)
+						applymovement(54, moves(emote_double_exclamation_mark))
+						waitmovement (54)
+						}	
+
+						if (!flag(harborbreakfasttwo))
+						{
+						playse (SE_M_METRONOME)
+						applymovement(46, moves(emote_double_exclamation_mark))
+						waitmovement (46)
+
+						playse (SE_M_METRONOME)
+						applymovement(54, moves(emote_double_exclamation_mark))
+						waitmovement (54)
+
+						}	
+
+						msgbox(format("There seems to have been a mistake in Table 3..."))
+
+						}
+
+						if (var(VAR_WAITERTHIRDTABLESUCCESS) == 2)
+						{
+						if (!flag(harborbreakfastone))
+						{
+						playse (SE_M_ATTRACT)
+						applymovement(36, moves(emote_double_exclamation_mark))
+						waitmovement (36)
+
+						playse (SE_M_ATTRACT)
+						applymovement(34, moves(emote_double_exclamation_mark))
+						waitmovement (34)
+
+						playse (SE_M_ATTRACT)
+						applymovement(54, moves(emote_double_exclamation_mark))
+						waitmovement (54)
+						}	
+
+						if (!flag(harborbreakfasttwo))
+						{
+						playse (SE_M_ATTRACT)
+						applymovement(46, moves(emote_double_exclamation_mark))
+						waitmovement (46)
+
+						playse (SE_M_ATTRACT)
+						applymovement(54, moves(emote_double_exclamation_mark))
+						waitmovement (54)
+
+						}
+
+						msgbox(format("Table 3 seems quite happy."))
+
+						}
+
+							special (SpawnCameraObject)
+							applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 4))
+							waitmovement(OBJ_EVENT_ID_CAMERA)
+							special (RemoveCameraObject)
+
+
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+					applymovement (OBJ_EVENT_ID_FOLLOWER, moves(face_up))
+					waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
+
+
+						if (var(VAR_WAITERQUEST) == 1) //none correct
+						{
+						msgbox(format("... you did not get a single order right. That's kind of
+						impressive."))
+						showmoneybox (18, 0)
+						msgbox(format("What's not impressive is your pay - 500¥."))
+						
+						addmoney (500)
+						updatemoneybox
+						playse (SE_RG_SHOP)
+						waitse
+						hidemoneybox
+
+						msgbox(format("And be thankful it doesn't
+						come with a Megakick as a tip."))	
+						}
+
+						if (var(VAR_WAITERQUEST) == 2) //1 correct
+						{
+						msgbox(format("You got a single correct order right. Wonder if it
+						was pure luck..."))
+
+						showmoneybox (18, 0)		
+
+						msgbox(format("Speaking of luck, you're lucky I'm even paying you
+						these 1000¥."))
+
+						addmoney (1000)
+						updatemoneybox
+						playse (SE_RG_SHOP)
+						waitse
+						hidemoneybox
+
+						msgbox(format("Now get out of my sight."))			
+						}
+
+						if (var(VAR_WAITERQUEST) == 3) //2 correct
+						{
+						msgbox(format("You got only a couple orders right. Were you even paying
+						attention?"))	
+						showmoneybox (18, 0)
+						msgbox(format("Well, here's all I can give you for your lousy work -  1500¥."))								
+
+						addmoney (1500)
+						updatemoneybox
+						playse (SE_RG_SHOP)
+						waitse
+						hidemoneybox
+
+						msgbox(format("If you think you can do better, you can come help again.
+						See ya."))	
+						
+						}
+
+						if (var(VAR_WAITERQUEST) == 4) //3 correct
+						{
+						msgbox(format("You got two orders wrong... well. It's not like people
+						expect much better in this joint."))
+						showmoneybox (18, 0)
+						msgbox(format("Still, I need to deduct 1000¥ from your pay. I don't
+						make the rules."))
+						addmoney (2000)
+						updatemoneybox
+						playse (SE_RG_SHOP)
+						waitse
+						hidemoneybox
+
+						msgbox(format("Could use you tomorrow too. Evenings aside, we're
+						busy all the time."))
+
+						}
+
+						if (var(VAR_WAITERQUEST) == 5) //4 correct
+						{
+						showmoneybox (18, 0)
+						msgbox(format("You got one order wrong, but that's better than our
+						average part-timer."))		
+						addmoney (2500)
+						updatemoneybox
+						playse (SE_RG_SHOP)
+						waitse
+						hidemoneybox
+
+						msgbox(format("Good job today. If you need some quick cash again,
+						come right back."))
+
+						}
+
+						if (var(VAR_WAITERQUEST) == 6) //5 correct
+						{
+						msgbox(format("Wow, you got every order right. I'm impressed."))					
+						}
+
+						closemessage
+
+						clearflag (harborloungequestaccepted)
+						clearflag (morningstartwaiterquest)
+						clearflag (daystartwaiterquest)
+						clearflag (nightstartwaiterquest)
+
+
+						setvar (VAR_WAITERQUEST, 0)
+						setvar (VAR_WAITERFIRSTTABLESUCCESS, 0)
+						setvar (VAR_WAITERSECONDTABLESUCCESS, 0)
+						setvar (VAR_WAITERTHIRDTABLESUCCESS, 0)
+
+						clearflag (tableonefirstcorrectbreakfast)
+						clearflag (tableonesecondcorrectbreakfast)
+
+						clearflag (tabletwofirstcorrectbreakfast)
+						clearflag (tabletwosecondcorrectbreakfast)
+						clearflag (tabletwothirdcorrectbreakfast)
+						clearflag (tabletwofourthcorrectbreakfast)
+
+						clearflag (tablethreefirstcorrectbreakfast)
+						clearflag (tablethreesecondcorrectbreakfast)
+						clearflag (tablethreethirdcorrectbreakfast)
+						clearflag (tablethreefourthcorrectbreakfast)
+
+						fadeoutbgm (1)
+						fadeinbgm (1)
+						playbgm (MUS_PIRATESGUIGE, TRUE)
+
+						goto (rebelharborloungeclerkend)
+
+					}
+					
+					
+					}
+				
+
+				rebelharborloungeclerkend:
+				release
+				
+
+				}
+
+
+
+
+
+	script PetalburgHarbourOrderChecker {
+			if (flag(morningstartwaiterquest))
+			{
+
+				if (!flag(harborbreakfastone))
+				{
+
+					if((flag(tableonefirstcorrectbreakfast) && 
+						flag(tabletwofirstcorrectbreakfast) &&
+						flag(tabletwosecondcorrectbreakfast) &&
+						flag(tablethreefirstcorrectbreakfast) &&
+						flag(tablethreesecondcorrectbreakfast)))
+
+						{
+						setvar (VAR_WAITERQUEST, 1)	
+						}
+
+				}
+
+				if (!flag(harborbreakfasttwo))
+				{
+
+					if((flag(tableonesecondcorrectbreakfast) && 
+						flag(tabletwothirdcorrectbreakfast) &&
+						flag(tabletwofourthcorrectbreakfast) &&
+						flag(tablethreethirdcorrectbreakfast) &&
+						flag(tablethreefourthcorrectbreakfast)))
+
+						{
+						setvar (VAR_WAITERQUEST, 1)	
+						}
+				}
+
+			}
+
+		release
+	}
+
+
+	//TABLE 1 GUEST SCRIPTS
+	script PetalburgHarbourTable1YoungFatManGuest {
+		lock
+		applymovement (7, moves(face_player))
+
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("I still have room for a bit more..."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+
+			if (!flag(harborloungequestaccepted))
+
+			{
+			msgbox(format("I never get tired of the burgers here, but maybe I'll try something
+			new today..."))
+			}
+
+			if (flag(harborloungequestaccepted))
+
+			{
+			
+
+				if (flag(tableonefirstcorrectbreakfast))
+
+				{msgbox(format("Are you deaf? I said I want a Petalburger! Come on, I'm starving here!"))
+				}
+
+				if (!flag(tableonefirstcorrectbreakfast))
+
+				{msgbox(format("Hmm... I'll have a Slateport Pizz-... nay, a Petalburger!"))
+				setflag (tableonefirstcorrectbreakfast)
+				}
+			
+			}
+			
+			}
+
+		applymovement (7, moves(face_left))
+		waitmovement (7)
+		goto (PetalburgHarbourOrderChecker)
+		release
+		}
+
+	script PetalburgHarbourTable1OldFatManGuest {
+		lock
+		applymovement (29, moves(face_player))
+
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("I'm just waiting for Nosepass to finish eating now.
+			\pOne more floor tile ought to do it."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+
+
+		if (!flag(harborloungequestaccepted))
+
+		{
+		msgbox(format("Some people need to buy food for their Pokémon - but me?
+		\pMy Nosepass eats rocks and stuff like that. Talk about cost-effective!"))
+		}
+
+		if (flag(harborloungequestaccepted))
+
+		{
+
+			if (flag(tableonesecondcorrectbreakfast))
+
+			{msgbox(format("Still waiting for that bacon. Don't tell me you've ran out of it?"))
+			setflag (tableonesecondcorrectbreakfast)
+			}
+
+			if (!flag(tableonesecondcorrectbreakfast))
+
+			{msgbox(format("I'll have a ration of Swinub Bacon."))
+			setflag (tableonesecondcorrectbreakfast)
+			}
+
+		}
+		
+		}
+		applymovement (29, moves(face_left))
+		waitmovement (29)
+		goto (PetalburgHarbourOrderChecker)
+		release
+		}
+
+	//TABLE 2 GUEST SCRIPTS
+	script PetalburgHarbourTable2WageSlaveGuest {
+		lock
+		applymovement (18, moves(face_player))
+
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("If only I could buy some dessert for her now..."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+		
+
+		if (!flag(harborloungequestaccepted))
+
+		{
+		msgbox(format("I wish I could afford to take my daugther to a nicer place than this...
+		\pBut some people can't even afford this these days, so perhaps I should not complain."))
+		}
+
+		if (flag(harborloungequestaccepted))
+
+		{
+			if (flag(tabletwofirstcorrectbreakfast))
+
+			{msgbox(format("Nothing else, only the Murkrow Egg. I'll share it with my daugther."))
+			}
+
+			if (!flag(tabletwofirstcorrectbreakfast))
+
+			{msgbox(format("A Murkrow Egg, sunny side up, please."))
+			setflag (tabletwofirstcorrectbreakfast)
+			}
+
+		}
+		
+		}
+		applymovement (18, moves(face_down))
+		waitmovement (18)
+		goto (PetalburgHarbourOrderChecker)
+		release
+		}
+
+
+	script PetalburgHarbourTable2DaugtherGuest {
+		lock
+		applymovement (19, moves(face_player))
+
+		if (!flag(harborloungequestdone))
+
+		{
+			msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Psst...!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+			\p Don't tell daddy, but I'm eating slowly
+			so we can be together longer."))
+		}
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("When I'm a good girl, my daddy brings me here to have breakfast!
+			\pBut then he says he's not hungry, and I eat most of it.
+			\pI think he's just picky!"))
+			
+
+		if (!flag(harborloungequestaccepted))
+
+			{
+				msgbox(format("When I'm a good girl, my daddy brings me here to have breakfast!
+				\pBut then he says he's not hungry, and I eat most of it.
+				\pI think he's just picky!"))
+			}
+
+			if (flag(harborloungequestaccepted))
+
+			{
+
+				if (flag(tabletwosecondcorrectbreakfast))
+				{checkplayergender
+				if(var(VAR_RESULT) == MALE){
+				msgbox(format("Sir, when is my Shuckle Juice coming? Are they
+				asking the Shuckle for it now?"))
+				}
+				if(var(VAR_RESULT) == FEMALE){
+				msgbox(format("Miss, when is my Shuckle Juice coming? Are they
+				asking the Shuckle for it now?"))
+				}
+				}
+
+				if (!flag(tabletwosecondcorrectbreakfast))
+
+				{msgbox(format("Daddy said I can have some Shuckle Juice with my egg! Can I?
+				\pDo you ask the Shuckle nicely to give it to you?"))
+
+					dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+					"Yes",
+					"No")
+
+				if (var(VAR_RESULT) == 0) {
+				msgbox(format("That's so cool! Maybe I'll ask my dad for a Shuckle for my birthday."))
+				}
+
+				if (var(VAR_RESULT) == 1) {
+				msgbox(format("Oh no, please don't be mean to the Shuckle! Don't steal its juice!"))		
+				}
+
+				setflag (tabletwosecondcorrectbreakfast)}
+
+				applymovement (19, moves(face_down))
+				waitmovement (19)
+				goto (PetalburgHarbourOrderChecker)
+			
+			}
+		
+		}
+		release
+		}
+
+
+	script PetalburgHarbourTable2MercenaryMGuest {
+		lock
+		applymovement (49, moves(face_player))
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("I tell you, you're bursting your ass for pennies working for that
+			bitchy punk girl.
+			\pYou should become a freelancer. You own boss, your own rules - that's the way."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+		
+			if (!flag(harborloungequestaccepted))
+
+			{
+			msgbox(format("I swear, this fat rat of a Pokémon eats more every day. Gonna be
+			my ruin."))
+			}
+
+			if (flag(harborloungequestaccepted))
+
+			{
+
+			if (flag(tabletwothirdcorrectbreakfast))
+
+			{msgbox(format("Come on, your cook went to fish that Feebas to Fortree or what?
+			\pAnd don't forget about the Wingull Wings for my Raticate."))
+			}
+
+			if (!flag(tabletwothirdcorrectbreakfast))
+
+			{msgbox(format("Some Dried Feebas for me, and Wingull Wings for my Raticate."))
+
+				checkplayergender
+				if(var(VAR_RESULT) == MALE){
+				msgbox(format("Just dont' feed them to it. Might chomp your good leg off, hehe."))
+				}
+				if(var(VAR_RESULT) == FEMALE){
+				msgbox(format("Just dont' feed them to it. Might chomp your good arm off, hehe."))
+				}
+
+			setflag (tabletwothirdcorrectbreakfast)
+			setflag (tabletwofourthcorrectbreakfast)
+			}}}
+
+		applymovement (49, moves(face_right))
+		waitmovement (49)
+		goto (PetalburgHarbourOrderChecker)
+		release
+		}
+
+
+	//TABLE 3 GUEST SCRIPTS
+	script PetalburgHarbourTable3BandagedManGuest {
+		lock
+		applymovement (36, moves(face_player))
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("I'm stuffed... and it wasn't even good. Guess hunger is the best spice!"))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+		
+			if (!flag(harborloungequestaccepted))
+
+			{
+			msgbox(format("I'm losing sight on my good eye... doctor Wally recommended I include
+			fish on my diet, among other things."))
+
+			checkplayergender
+			if(var(VAR_RESULT) == MALE){
+			msgbox(format("If you haven't already, go have him check your leg. You won't be worse off for it."))
+			}
+			if(var(VAR_RESULT) == FEMALE){
+			msgbox(format("If you haven't already, go have him check your arm. You won't be worse off for it."))
+			}
+
+			}
+
+			if (flag(harborloungequestaccepted))
+
+			{
+
+
+				if (flag(tablethreefirstcorrectbreakfast))
+
+				{msgbox(format("Feebas' uglyness is a self-defense mechanism - they look like they'd
+				taste awful, so predators ignore them.\pBut they are actually not that bad, if cleaned
+				and seasoned properly."))
+				}
+
+				if (!flag(tablethreefirstcorrectbreakfast))
+
+				{msgbox(format("I'll have some Dried Feebas, please."))
+				setflag (tablethreefirstcorrectbreakfast)
+				}}}
+
+		applymovement (36, moves(face_right))
+		waitmovement (36)
+		goto (PetalburgHarbourOrderChecker)
+		release
+		}
+
+	script PetalburgHarbourTable3TrapinchTechnicianGuest {
+		lock
+		applymovement (34, moves(face_player))
+
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("There goes a bit more of my dwindling savings... I really need
+			to find a new job soon.
+			\pMaybe I can part-time here like you!"))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+
+			if (!flag(harborloungequestaccepted))
+
+			{
+			msgbox(format("Let's see... something cheap, filling, and that I can share
+			with Trapinch..."))}
+
+
+		if (flag(tablethreesecondcorrectbreakfast))
+
+		{msgbox(format("I've read that some Trapinch cultivate fungi in their underground caverns.
+		\pPerhaps that's why mine likes Sautéed Shiitako so much. Is it ready yet?"))
+		}
+
+		if (!flag(tablethreesecondcorrectbreakfast))
+
+		{msgbox(format("A Sautéed Shiitako, for me and my Trapinch."))
+		setflag (tablethreesecondcorrectbreakfast)
+		}}
+
+		applymovement (34, moves(face_up))
+		waitmovement (34)
+		goto (PetalburgHarbourOrderChecker)
+		release
+		}
+
+
+	script PetalburgHarbourTable3CuboneWomanGuest {
+		lock
+		applymovement (46, moves(face_player))
+
+
+		if (flag(harborloungequestdone))
+
+		{
+			msgbox(format("You did a good job. You should rest a little."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+
+			if (!flag(harborloungequestaccepted))
+
+			{
+			msgbox(format("I met this Cubone the other day... it seems we both lost someone
+			dear recently.
+			\pI think it was fate that brought us together, so I'm taking care of him."))}
+
+
+
+		if (flag(tablethreethirdcorrectbreakfast))
+
+		{msgbox(format("Have you forgotten? It's a Carvanha Fin Soup, and Seedot Nuts."))
+
+
+			checkplayergender
+			if(var(VAR_RESULT) == MALE){
+			msgbox(format("It must be tough working with that leg. Please, don't hurry on my behalf."))
+			}
+			if(var(VAR_RESULT) == FEMALE){
+			msgbox(format("It must be tough working with that arm. Please, don't hurry on my behalf."))
+			}
+
+		}
+
+		if (!flag(tablethreethirdcorrectbreakfast))
+
+		{msgbox(format("I'll have some Carvanha Fin Soup, and Seedot Nuts for my Cubone."))
+		setflag (tablethreethirdcorrectbreakfast)
+		setflag (tablethreefourthcorrectbreakfast)
+		}}
+
+		applymovement (46, moves(face_up))
+		waitmovement (46)
+		goto (PetalburgHarbourOrderChecker)
+		release
+		}
+
+
+	script PetalburgHarbourTable1Nosepass {
+		lock
+		playmoncry (SPECIES_NOSEPASS, CRY_MODE_NORMAL)
+		msgbox(format("Nnnoooss...
+		\pThe Nosepass is eating - snorting? - loose chunks of floor tiles through its nose."))	
+		release	
+		}
+
+	script PetalburgHarbourTable2Raticate {
+		lock
+		applymovement (50, moves(face_player))
+
+		if (flag(harborloungequestdone))
+
+		{
+			playmoncry (SPECIES_RATICATE, CRY_MODE_WEAK)
+			msgbox(format("Munch munch...
+			\pThe Raticate is eating the last bits of meat off the bones."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+
+		playmoncry (SPECIES_RATICATE, CRY_MODE_HIGH_PITCH)
+		msgbox(format("GRRRR!
+		\pThis Raticate might bite someone if it's not fed soon..."))
+		
+		}
+		applymovement (50, moves(face_left))
+		waitmovement (50)
+		release	
+		}
+
+	script PetalburgHarbourTable3Cubone {
+		lock
+		applymovement (54, moves(face_player))
+		playmoncry (SPECIES_CUBONE, CRY_MODE_WEAK)
+
+		if (flag(harborloungequestdone))
+		{
+			msgbox(format("{COLOR LIGHT_GRAY}{SHADOW WHITE}Yawn...{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}
+			\pThe Cubone seems sleepy after eating."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+
+		msgbox(format("Booo..."))
+		}
+		applymovement (54, moves(face_right))
+		msgbox(format("The Cubone's belly rumbles can be heard from afar."))
+		release	
+		}
+
+	script PetalburgHarbourTable3Trapinch {
+		lock
+		applymovement (35, moves(face_player))
+
+		if (flag(harborloungequestdone))
+		{
+			playmoncry (SPECIES_TRAPINCH, CRY_MODE_WEAK)
+			msgbox(format("Trr...
+			\pThe Trapinch seems to be enjoying the aftertaste of the food."))	
+		}
+
+		if (!flag(harborloungequestdone))
+
+		{
+
+		playmoncry (SPECIES_TRAPINCH, CRY_MODE_NORMAL)
+		msgbox(format("Trrrr!"))
+		}
+		applymovement (35, moves(face_down))
+		msgbox(format("The Trapinch looks at the empty bowl with anticipation."))
+		release	
+		}
+
+////////////////
+
+		script trashscript {
+					msgbox(format("Some people left without paying today. And it's not coming
+				out of my pocket.\pIt's coming out of yours. (2000 is top pay, -500 for
+				each wrongly served table.)"))
+
+        if (var(VAR_PETALBURG_PHASE) < 6)
+         {bufferstring (STR_VAR_1, "???")}
+        if (var(VAR_PETALBURG_PHASE) == 6)
+         {bufferstring (STR_VAR_1, "Rebento")}		
+		}
+
+
+		script MyScript {
+
+					msgbox(format("A long menu list is written on the board."))
+
+						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE,
+						"No, nothing", //0
+						"Barboach Caviar", //1
+						"Boiled Shellder", //2
+						"Carvanha Fin Soup", //3
+						"Corphish Legs", //4
+						"Dried Feebas", //5
+						"Magikarp Sushi", //6
+						"Murkrow Egg", //7
+						"Petalburger", //8
+						"Octiyaki", //9
+						"Slateport Pizza", //10
+						"Sautéed Shiitako", //11
+						"Seedot Nuts", //12
+						"Shaved Aryscream", //13
+						"Shuckle Juice", //14
+						"Swablu Candy", //15
+						"Swinub Bacon", //16
+						"Wingull Wings") //17
+
+							if (var(VAR_RESULT) == 0)
+							{
+							
+							}
+
+		}

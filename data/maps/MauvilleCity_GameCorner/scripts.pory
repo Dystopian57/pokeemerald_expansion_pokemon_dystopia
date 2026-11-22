@@ -1875,6 +1875,7 @@ script RebelAdminArcade {
 				\pFinding him is how we test if applicants have the street smarts to join us.
 				\pSo ask around, keep your eyes open, and come back with the passwords."))
 
+				setflag (fireinharborkitchen)
 				setvar (VAR_PETALBURG_PHASE, 5)
 				}
             	if (var(VAR_RESULT) == 1) {

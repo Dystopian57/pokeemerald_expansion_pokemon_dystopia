@@ -201,7 +201,7 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
-#define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
+#define VAR_WAITERQUEST                                0x40B8 // Unused Var
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
 #define VAR_SHARPYANDCAMELIAOLDALE                                0x40BB // Unused Var
@@ -214,7 +214,7 @@
 #define VAR_PACIFIDLOG_TM_RECEIVED_DAY                   0x40C2
 #define VAR_VICTORY_ROAD_1F_STATE                        0x40C3
 #define VAR_FOSSIL_RESURRECTION_STATE                    0x40C4
-#define VAR_WHICH_FOSSIL_REVIVED                         0x40C5
+#define VAR_WAITERSECONDTABLESUCCESS                         0x40C5
 #define VAR_STEVENS_HOUSE_STATE                          0x40C6
 #define VAR_OLDALE_RIVAL_STATE                           0x40C7
 #define VAR_JAGGED_PASS_STATE                            0x40C8
@@ -234,7 +234,7 @@
 #define VAR_TRAINER_HILL_IS_ACTIVE                       0x40D6
 #define VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE                 0x40D7
 #define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
-#define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
+#define VAR_WAITERTHIRDTABLESUCCESS 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
 #define VAR_OLDALECARREBEL                               0x40DB // Unused Var
 #define VAR_FISHERPROGRESS103                               0x40DC // Unused Var
@@ -267,7 +267,7 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_LITTLEROOT_PHASE                             0x40F7 // Used to define phases of Littleroot: 1 Arriveatlab, 2 got Poke, 3 Aideequest, 4 checkonrival
 #define VAR_CLOCK_SET                                    0x40F8 // Used to prevent player from leaving bedroom without setting the clock
-#define VAR_FREEVARHERE                                 0x40F9 // Unused Var
+#define VAR_WAITERFIRSTTABLESUCCESS                                 0x40F9 // Unused Var
 #define VAR_RIVALMIMIWARNINGDONE                         0x40FA // Used so Rival only warns the player about Mimikyu once at the start of the game
 #define VAR_JOELQUESTS                         0x40FB // Unused Var
 #define VAR_ROUTE101REBELFLEES                           0x40FC // Unused Var

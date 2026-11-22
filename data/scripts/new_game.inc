@@ -321,5 +321,17 @@ EventScript_ResetAllMapFlags::
 	setflag thimblereggegg
 	setflag idlepetalburgmartialartists
 	setflag angryfuelowner
+	setflag harborbreakfastone
+	setflag harborbreakfasttwo
+	setflag harborlunchone
+	setflag harborlunchtwo
+	setflag harbordinnerone
+	setflag harbordinnertwo
+	setflag breakfastonefoodtrays
+	setflag breakfasttwofoodtrays
+	setflag healscammerarrestdevons
+	setflag harborbreakfasttakeaway
+	setflag harborlunchtakeaway
+	setflag harbordinnertakeaway
 	call EventScript_ResetAllBerries
 	end

@@ -915,6 +915,7 @@ script Route103ConcordConartist {
 		applymovement (28, moves(walk_in_place_right * 1, walk_in_place_down * 1, walk_in_place_right * 1, walk_in_place_down * 1, walk_in_place_right * 1, walk_in_place_down * 1))
 		msgbox(format("What the...?"))
 
+		playse (SE_M_SWAGGER2)
 		applymovement (28, moves(face_player, emote_double_exclamation_mark))
 
 		msgbox(format("You two-faced bastard - you set me up! You're going to get it now! 

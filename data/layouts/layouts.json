@@ -5134,7 +5134,7 @@
     {
       "id": "LAYOUT_REBEL_HARBOUR_LOUNGE",
       "name": "RebelHarbourLounge_Layout",
-      "width": 13,
+      "width": 14,
       "height": 16,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
@@ -5145,7 +5145,7 @@
       "id": "LAYOUT_REBEL_HARBOUR_CARGO_BAY",
       "name": "RebelHarbourCargoBay_Layout",
       "width": 11,
-      "height": 17,
+      "height": 27,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_IslandHarbor",
       "border_filepath": "data/layouts/RebelHarbourCargoBay/border.bin",

@@ -356,7 +356,8 @@ script ResetAideinLabifNeeded {
 
 script PlayerRoomGamecube {
 	lockall
-	msgbox (format("{COLOR DARK_GRAY}It's an old Gamecube. The game “Harvest Moon: A Wonderful Life” is loaded in."))
+	msgbox (format("{COLOR DARK_GRAY}It's an old Dreamcast. The game “Shenmue” is loaded in."))
+	//msgbox (format("{COLOR DARK_GRAY}It's an old Gamecube. The game “Harvest Moon: A Wonderful Life” is loaded in."))
 	releaseall		
 }
 

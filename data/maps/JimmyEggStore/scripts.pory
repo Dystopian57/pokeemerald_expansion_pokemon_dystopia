@@ -351,7 +351,7 @@ script JimmyMcGligarSewersIdle {
 
         fadeoutbgm (1)
         fadeinbgm (1)
-        playbgm (MUS_STOPTHIEF, TRUE)
+        playbgm (MUS_TRICK_HOUSE, TRUE)
 
         fadescreenswapbuffers (FADE_FROM_BLACK)
 
@@ -841,7 +841,8 @@ script JimmyKecleonIdle {
 	applymovement (7, moves(face_player))
 	waitmovement (7)
 	playmoncry (SPECIES_KECLEON, CRY_MODE_NORMAL)
-	msgbox (format("Ke-keeee!"))
+	msgbox (format("Ke-keeee!
+    \pThe Kecleon seems to be looking for Ninkaburi to eat."))
 	release
 }
 

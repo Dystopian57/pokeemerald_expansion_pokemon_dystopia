@@ -803,12 +803,12 @@ script PetalburgCourtneyPokeballWorkshop {
 		the market...
 		\pAnd just to push their flagship Pokéballs!"))
 		playse (SE_M_SWAGGER2)
-    	applymovement (1, moves(emote_x))
+    	applymovement (1, moves(emote_double_exclamation_mark))
     	msgbox(format("It's all Silph Ball this, and Devon Ball that these days - what a bore!"))
 
     	msgbox(format("My grandad and I - he's the best Pokéball artisan in Jotho, you see..."))
 		playse (SE_M_SWAGGER2)
-    	applymovement (1, moves(emote_x))
+   		applymovement (1, moves(emote_double_exclamation_mark))
     	msgbox(format("We hate that."))
 
     	msgbox(format("So we began to convert these boring company Pokéballs into special ones!

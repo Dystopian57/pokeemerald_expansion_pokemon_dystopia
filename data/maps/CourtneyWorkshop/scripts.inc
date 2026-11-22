@@ -1602,7 +1602,7 @@ PetalburgCourtneyPokeballWorkshopNight_Movement_1:
 # 806 "data/maps/CourtneyWorkshop/scripts.pory"
 PetalburgCourtneyPokeballWorkshop_Movement_0:
 # 806 "data/maps/CourtneyWorkshop/scripts.pory"
-	emote_x
+	emote_double_exclamation_mark
 	step_end
 
 # 823 "data/maps/CourtneyWorkshop/scripts.pory"

@@ -3524,9 +3524,9 @@ RebelAdminArcade_4:
 	compare VAR_PETALBURG_PHASE, 3
 	goto_if_eq RebelAdminArcade_11
 RebelAdminArcade_10:
-# 1888 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-endofpetalburgarcadeelevatoradmin:
 # 1889 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+endofpetalburgarcadeelevatoradmin:
+# 1890 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	release
 	return
 
@@ -3607,7 +3607,7 @@ joinrebelchoicequestion:
 	compare VAR_RESULT, 0
 	goto_if_eq RebelAdminArcade_25
 RebelAdminArcade_24:
-# 1880 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 1881 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq RebelAdminArcade_27
 	goto RebelAdminArcade_10
@@ -3667,13 +3667,15 @@ RebelAdminArcade_29:
 # 1870 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox RebelAdminArcade_Text_20
 # 1878 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setflag fireinharborkitchen
+# 1879 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_PETALBURG_PHASE, 5
 	goto RebelAdminArcade_24
 
 RebelAdminArcade_27:
-# 1881 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox RebelAdminArcade_Text_12
 # 1882 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox RebelAdminArcade_Text_12
+# 1883 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto endofpetalburgarcadeelevatoradmin
 	goto RebelAdminArcade_10
 
