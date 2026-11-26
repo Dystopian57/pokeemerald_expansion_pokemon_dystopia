@@ -8,12 +8,10 @@ BattleFrontier_ReceptionGate_OnTransition:
 	end
 
 BattleFrontier_ReceptionGate_OnFrame:
-	map_script_2 VAR_HAS_ENTERED_BATTLE_FRONTIER, 0, BattleFrontier_ReceptionGate_EventScript_FirstTimeEntering
 	.2byte 0
 
 BattleFrontier_ReceptionGate_EventScript_FirstTimeEntering::
 	lockall
-	setvar VAR_HAS_ENTERED_BATTLE_FRONTIER, 1
 	playse SE_PIN
 	applymovement LOCALID_FRONTIER_RECEPTION_GREETER, Common_Movement_ExclamationMark
 	waitmovement 0

@@ -114,7 +114,7 @@
   "bg_events": [
     {
       "type": "secret_base",
-      "x": 21,
+      "x": 20,
       "y": 19,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE2_1"

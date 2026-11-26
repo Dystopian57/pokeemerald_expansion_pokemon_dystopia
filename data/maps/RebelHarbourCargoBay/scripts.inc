@@ -148,9 +148,9 @@ RebelHarborCartQuestWorker_4:
 # 202 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_unset harborcartquestaccepted, RebelHarborCartQuestWorker_8
 RebelHarborCartQuestWorker_7:
-# 293 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 316 "data/maps/RebelHarbourCargoBay/scripts.pory"
 endofharborcartquestworker:
-# 294 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 317 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	release
 	return
 
@@ -186,11 +186,11 @@ harborquestchoice:
 	compare VAR_RESULT, 0
 	goto_if_eq RebelHarborCartQuestWorker_14
 RebelHarborCartQuestWorker_13:
-# 256 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 269 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq RebelHarborCartQuestWorker_22
 RebelHarborCartQuestWorker_21:
-# 261 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 274 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq RebelHarborCartQuestWorker_34
 	goto RebelHarborCartQuestWorker_7
@@ -221,7 +221,7 @@ RebelHarborCartQuestWorker_48:
 # 122 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	applymovement 1, RebelHarborCartQuestWorker_Movement_0
 # 123 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	setobjectxy 1, 6, 12
+	setobjectxy 1, 6, 22
 # 124 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 # 126 "data/maps/RebelHarbourCargoBay/scripts.pory"
@@ -245,34 +245,36 @@ RebelHarborCartQuestWorker_62:
 RebelHarborCartQuestWorker_14:
 # 216 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_unset harborcartquestintro, RebelHarborCartQuestWorker_25
-# 235 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 247 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartQuestWorker_Text_26
 RebelHarborCartQuestWorker_24:
-# 237 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 249 "data/maps/RebelHarbourCargoBay/scripts.pory"
 giventrolley:
-# 238 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	setflag harborexampletrolley
-# 239 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	removeobject 5
-# 240 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	addobject 1
-# 241 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	setobjectxy 1, 6, 22
-# 242 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 1, RebelHarborCartQuestWorker_Movement_0
-# 243 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	setfollowernpc LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
-# 244 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 245 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_27
-# 247 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_28
 # 250 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	setflag harborcartquestaccepted
+	hidefollower
 # 251 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	setvar VAR_HARBORCANTEXITWITHTROLLEY, 1
+	setflag harborexampletrolley
 # 252 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	removeobject 5
+# 253 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 1
+# 254 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	setobjectxy 1, 6, 22
+# 255 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement 1, RebelHarborCartQuestWorker_Movement_0
+# 256 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	setfollowernpc LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
+# 257 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 258 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_27
+# 260 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_28
+# 263 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	setflag harborcartquestaccepted
+# 264 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	setvar VAR_HARBORCANTEXITWITHTROLLEY, 1
+# 265 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto endofharborcartquestworker
 	goto RebelHarborCartQuestWorker_13
 
@@ -323,9 +325,9 @@ RebelHarborCartQuestWorker_19:
 	goto RebelHarborCartQuestWorker_18
 
 RebelHarborCartQuestWorker_22:
-# 257 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 270 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartQuestWorker_Text_29
-# 258 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 271 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto endofharborcartquestworker
 	goto RebelHarborCartQuestWorker_21
 
@@ -334,23 +336,35 @@ RebelHarborCartQuestWorker_25:
 	msgbox RebelHarborCartQuestWorker_Text_21
 # 219 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartQuestWorker_Text_22
-# 222 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_23
-# 224 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 4, RebelHarborCartQuestWorker_Movement_0
+# 223 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RebelHarborCartQuestWorker_Movement_1
 # 225 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	waitmovement 4
+	applymovement OBJ_EVENT_ID_FOLLOWER, RebelHarborCartQuestWorker_Movement_1
 # 226 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_24
+	waitmovement OBJ_EVENT_ID_FOLLOWER
 # 228 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 4, RebelHarborCartQuestWorker_Movement_1
-# 229 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	waitmovement 4
-# 230 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_25
+	msgbox RebelHarborCartQuestWorker_Text_23
 # 231 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RebelHarborCartQuestWorker_Movement_2
+# 233 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, RebelHarborCartQuestWorker_Movement_2
+# 234 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 236 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement 3, RebelHarborCartQuestWorker_Movement_0
+# 237 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	waitmovement 3
+# 238 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_24
+# 240 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement 3, RebelHarborCartQuestWorker_Movement_3
+# 241 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	waitmovement 3
+# 242 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_25
+# 243 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setflag harborcartquestintro
-# 232 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 244 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto giventrolley
 	goto RebelHarborCartQuestWorker_24
 
@@ -371,10 +385,10 @@ RebelHarborCartQuestWorker_32:
 	goto RebelHarborCartQuestWorker_31
 
 RebelHarborCartQuestWorker_34:
-# 263 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 276 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_unset harborcartquestintro, RebelHarborCartQuestWorker_43
 RebelHarborCartQuestWorker_42:
-# 282 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 305 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_set harborcartquestintro, RebelHarborCartQuestWorker_51
 	goto RebelHarborCartQuestWorker_7
 
@@ -403,27 +417,35 @@ RebelHarborCartQuestWorker_40:
 	goto RebelHarborCartQuestWorker_39
 
 RebelHarborCartQuestWorker_43:
-# 264 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 277 "data/maps/RebelHarbourCargoBay/scripts.pory"
 explainharborcartquest:
-# 265 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_22
-# 268 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_23
-# 270 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 3, RebelHarborCartQuestWorker_Movement_0
-# 271 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	waitmovement 3
-# 272 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_24
-# 274 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 3, RebelHarborCartQuestWorker_Movement_1
-# 275 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	waitmovement 3
-# 276 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	msgbox RebelHarborCartQuestWorker_Text_30
 # 278 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_22
+# 282 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RebelHarborCartQuestWorker_Movement_1
+# 284 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, RebelHarborCartQuestWorker_Movement_1
+# 285 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 287 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_23
+# 290 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, RebelHarborCartQuestWorker_Movement_2
+# 292 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, RebelHarborCartQuestWorker_Movement_2
+# 293 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	waitmovement OBJ_EVENT_ID_FOLLOWER
+# 295 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement 3, RebelHarborCartQuestWorker_Movement_0
+# 296 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	waitmovement 3
+# 297 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_24
+# 299 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	msgbox RebelHarborCartQuestWorker_Text_30
+# 301 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setflag harborcartquestintro
-# 279 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 302 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto harborquestchoice
 	goto RebelHarborCartQuestWorker_42
 
@@ -452,9 +474,9 @@ RebelHarborCartQuestWorker_49:
 	goto RebelHarborCartQuestWorker_48
 
 RebelHarborCartQuestWorker_51:
-# 283 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 306 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartQuestWorker_Text_31
-# 284 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 307 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto explainharborcartquest
 	goto RebelHarborCartQuestWorker_7
 
@@ -492,307 +514,325 @@ RebelHarborCartQuestWorker_63:
 
 
 RebelHarborCartFollow::
-# 299 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 322 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	lock
-# 303 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 326 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 0
 	goto_if_eq RebelHarborCartFollow_2
 RebelHarborCartFollow_1:
-# 308 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 331 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 1
 	goto_if_eq RebelHarborCartFollow_5
 RebelHarborCartFollow_4:
-# 313 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 336 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 2
 	goto_if_eq RebelHarborCartFollow_8
 RebelHarborCartFollow_7:
-# 318 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 341 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 3
 	goto_if_eq RebelHarborCartFollow_11
 RebelHarborCartFollow_10:
-# 324 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 347 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	release
 	return
 
 RebelHarborCartFollow_2:
-# 305 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 328 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartFollow_Text_0
 	goto RebelHarborCartFollow_1
 
 RebelHarborCartFollow_5:
-# 310 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 333 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartFollow_Text_1
 	goto RebelHarborCartFollow_4
 
 RebelHarborCartFollow_8:
-# 315 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 338 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartFollow_Text_2
 	goto RebelHarborCartFollow_7
 
 RebelHarborCartFollow_11:
-# 320 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 343 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartFollow_Text_3
 	goto RebelHarborCartFollow_10
 
 
 RebelHarborLoadBox1::
-# 331 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 354 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	lock
-# 334 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 357 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_unset harborcartquestaccepted, RebelHarborLoadBox1_2
-# 340 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 363 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	removeobject 6
-# 341 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 364 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setflag rebelharborbox1
-# 343 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 366 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 0
 	goto_if_eq RebelHarborLoadBox1_6
 RebelHarborLoadBox1_5:
-# 351 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 375 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 1
 	goto_if_eq RebelHarborLoadBox1_9
 RebelHarborLoadBox1_8:
-# 359 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 384 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 2
 	goto_if_eq RebelHarborLoadBox1_12
 RebelHarborLoadBox1_11:
-# 367 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 393 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 3
 	goto_if_eq RebelHarborLoadBox1_15
 RebelHarborLoadBox1_14:
-# 373 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 399 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	addvar VAR_HARBORCARTBOXCOUNT, + 1
 RebelHarborLoadBox1_1:
-# 376 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 402 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	release
 	return
 
 RebelHarborLoadBox1_2:
-# 336 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 359 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborLoadBox1_Text_0
 	goto RebelHarborLoadBox1_1
 
 RebelHarborLoadBox1_6:
-# 345 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 2, RebelHarborCartQuestWorker_Movement_1
-# 346 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 368 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 2
+# 369 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement 2, RebelHarborCartQuestWorker_Movement_3
+# 370 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 2, 2, 12
-# 347 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 371 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 348 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 372 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX1, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox1_5
 
 RebelHarborLoadBox1_9:
-# 353 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 8, RebelHarborCartQuestWorker_Movement_1
-# 354 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 377 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 8
+# 378 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement 8, RebelHarborCartQuestWorker_Movement_3
+# 379 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 8, 2, 12
-# 355 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 380 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 356 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 381 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX2, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox1_8
 
 RebelHarborLoadBox1_12:
-# 361 "data/maps/RebelHarbourCargoBay/scripts.pory"
-	applymovement 9, RebelHarborCartQuestWorker_Movement_1
-# 362 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 386 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 9
+# 387 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	applymovement 9, RebelHarborCartQuestWorker_Movement_3
+# 388 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 9, 2, 12
-# 363 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 389 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 364 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 390 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX3, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox1_11
 
 RebelHarborLoadBox1_15:
-# 369 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 395 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborLoadBox1_Text_1
-# 370 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 396 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto endofloadbox2
 	goto RebelHarborLoadBox1_14
 
 
 RebelHarborLoadBox2::
-# 381 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 407 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	lock
-# 384 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 410 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_unset harborcartquestaccepted, RebelHarborLoadBox2_2
-# 390 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 416 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	removeobject 14
-# 391 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 417 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setflag rebelharborboxs
-# 393 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 419 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 0
 	goto_if_eq RebelHarborLoadBox2_6
 RebelHarborLoadBox2_5:
-# 401 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 428 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 1
 	goto_if_eq RebelHarborLoadBox2_9
 RebelHarborLoadBox2_8:
-# 409 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 437 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 2
 	goto_if_eq RebelHarborLoadBox2_12
 RebelHarborLoadBox2_11:
-# 417 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 446 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 3
 	goto_if_eq RebelHarborLoadBox2_15
 RebelHarborLoadBox2_14:
-# 423 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 452 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	addvar VAR_HARBORCARTBOXCOUNT, + 1
-# 424 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 453 "data/maps/RebelHarbourCargoBay/scripts.pory"
 endofloadbox2:
 RebelHarborLoadBox2_1:
-# 427 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 456 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	release
 	return
 
 RebelHarborLoadBox2_2:
-# 386 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 412 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborLoadBox1_Text_0
 	goto RebelHarborLoadBox2_1
 
 RebelHarborLoadBox2_6:
-# 395 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 421 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 2
+# 422 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	applymovement 2, RebelHarborCartQuestWorker_Movement_0
-# 396 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 423 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 2, 8, 12
-# 397 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 424 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 398 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 425 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX1, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox2_5
 
 RebelHarborLoadBox2_9:
-# 403 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 430 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 8
+# 431 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	applymovement 8, RebelHarborCartQuestWorker_Movement_0
-# 404 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 432 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 8, 8, 12
-# 405 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 433 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 406 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 434 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX2, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox2_8
 
 RebelHarborLoadBox2_12:
-# 411 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 439 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 9
+# 440 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	applymovement 9, RebelHarborCartQuestWorker_Movement_0
-# 412 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 441 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 9, 8, 12
-# 413 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 442 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 414 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 443 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX3, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox2_11
 
 RebelHarborLoadBox2_15:
-# 419 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 448 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborLoadBox1_Text_1
-# 420 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 449 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto endofloadbox2
 	goto RebelHarborLoadBox2_14
 
 
 RebelHarborLoadBox3::
-# 432 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 461 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	lock
-# 435 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 464 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_unset harborcartquestaccepted, RebelHarborLoadBox3_2
-# 441 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 470 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	removeobject 7
-# 442 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 471 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setflag rebelharborboxt
-# 445 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 474 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 0
 	goto_if_eq RebelHarborLoadBox3_6
 RebelHarborLoadBox3_5:
-# 453 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 483 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 1
 	goto_if_eq RebelHarborLoadBox3_9
 RebelHarborLoadBox3_8:
-# 461 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 492 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 2
 	goto_if_eq RebelHarborLoadBox3_12
 RebelHarborLoadBox3_11:
-# 469 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 501 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	compare VAR_HARBORCARTBOXCOUNT, 3
 	goto_if_eq RebelHarborLoadBox3_15
 RebelHarborLoadBox3_14:
-# 475 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 507 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	addvar VAR_HARBORCARTBOXCOUNT, + 1
 RebelHarborLoadBox3_1:
-# 479 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 511 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	release
 	return
 
 RebelHarborLoadBox3_2:
-# 437 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 466 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborLoadBox1_Text_0
 	goto RebelHarborLoadBox3_1
 
 RebelHarborLoadBox3_6:
-# 447 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 476 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 2
+# 477 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	applymovement 2, RebelHarborCartQuestWorker_Movement_0
-# 448 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 478 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 2, 6, 15
-# 449 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 479 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 450 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 480 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX1, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox3_5
 
 RebelHarborLoadBox3_9:
-# 455 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 485 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 8
+# 486 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	applymovement 8, RebelHarborCartQuestWorker_Movement_0
-# 456 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 487 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 8, 6, 15
-# 457 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 488 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 458 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 489 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX2, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox3_8
 
 RebelHarborLoadBox3_12:
-# 463 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 494 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	addobject 9
+# 495 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	applymovement 9, RebelHarborCartQuestWorker_Movement_0
-# 464 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 496 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setobjectxy 9, 6, 15
-# 465 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 497 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	destroyfollowernpc
-# 466 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 498 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_CARTBOX3, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborLoadBox3_11
 
 RebelHarborLoadBox3_15:
-# 471 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 503 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborLoadBox1_Text_1
-# 472 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 504 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto endofloadbox2
 	goto RebelHarborLoadBox3_14
 
 
 RebelHarborCartGrab::
-# 504 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 536 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	lock
-# 506 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 538 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_unset harborcartquestaccepted, RebelHarborCartGrab_2
 RebelHarborCartGrab_1:
-# 511 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 543 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	goto_if_set harborcartquestaccepted, RebelHarborCartGrab_5
 RebelHarborCartGrab_4:
-# 518 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 550 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	release
 	return
 
 RebelHarborCartGrab_2:
-# 508 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 540 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartGrab_Text_0
 	goto RebelHarborCartGrab_1
 
 RebelHarborCartGrab_5:
-# 513 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 545 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	msgbox RebelHarborCartGrab_Text_1
-# 514 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 546 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	setfollowernpc LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE
 	goto RebelHarborCartGrab_4
 
@@ -809,9 +849,21 @@ RebelHarborCartQuestWorker_Movement_0:
 	face_right
 	step_end
 
-# 228 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 223 "data/maps/RebelHarbourCargoBay/scripts.pory"
 RebelHarborCartQuestWorker_Movement_1:
-# 228 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 223 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	walk_in_place_left
+	step_end
+
+# 231 "data/maps/RebelHarbourCargoBay/scripts.pory"
+RebelHarborCartQuestWorker_Movement_2:
+# 231 "data/maps/RebelHarbourCargoBay/scripts.pory"
+	walk_in_place_right
+	step_end
+
+# 240 "data/maps/RebelHarbourCargoBay/scripts.pory"
+RebelHarborCartQuestWorker_Movement_3:
+# 240 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	face_left
 	step_end
 
@@ -954,82 +1006,82 @@ RebelHarborCartQuestWorker_Text_22:
 	.string "carrying stuff here.$"
 
 RebelHarborCartQuestWorker_Text_23:
-# 222 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 228 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "We normally use that forklift over\n"
 	.string "there - but it's broken now.$"
 
 RebelHarborCartQuestWorker_Text_24:
-# 226 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 238 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "I need you to use this trolley and bring\n"
 	.string "some of the white boxes around.$"
 
 RebelHarborCartQuestWorker_Text_25:
-# 230 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 242 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "Alright, here's the trolley!$"
 
 RebelHarborCartQuestWorker_Text_26:
-# 235 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 247 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "Good - you know how it works. Here's the\n"
 	.string "trolley!$"
 
 RebelHarborCartQuestWorker_Text_27:
-# 245 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 258 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "{COLOR GREEN}{PLAYER} is now using a Transport\n"
 	.string "Trolley!$"
 
 RebelHarborCartQuestWorker_Text_28:
-# 247 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 260 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "Load the boxes on that and bring them\n"
 	.string "to me.\p"
-	.string "It's 100¥ per delivered parcel,\n"
+	.string "It's 100¥ per delivered box,\n"
 	.string "non-negotiable! Get on with it!$"
 
 RebelHarborCartQuestWorker_Text_29:
-# 257 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 270 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "Too bad. Clear the area then.$"
 
 RebelHarborCartQuestWorker_Text_30:
-# 276 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 299 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "So, you in?\n"
 	.string "It's 100¥ per box delivered.$"
 
 RebelHarborCartQuestWorker_Text_31:
-# 283 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 306 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "I already explained it...$"
 
 RebelHarborCartFollow_Text_0:
-# 305 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 328 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "The Platform Trolley is empty.$"
 
 RebelHarborCartFollow_Text_1:
-# 310 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 333 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "There's a single box in the Platform\n"
 	.string "Trolley.$"
 
 RebelHarborCartFollow_Text_2:
-# 315 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 338 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "There's two boxes in the Platform\n"
 	.string "Trolley.$"
 
 RebelHarborCartFollow_Text_3:
-# 320 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 343 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "There's three boxes in the Platform\n"
 	.string "Trolley. Can't carry any more.$"
 
 RebelHarborLoadBox1_Text_0:
-# 336 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 359 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "The box seems a little out of place.$"
 
 RebelHarborLoadBox1_Text_1:
-# 369 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 395 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "Can't carry any more boxes... should\n"
 	.string "bring them back to the boss.$"
 
 RebelHarborCartGrab_Text_0:
-# 508 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 540 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "It's a platform trolley.$"
 
 RebelHarborCartGrab_Text_1:
-# 513 "data/maps/RebelHarbourCargoBay/scripts.pory"
+# 545 "data/maps/RebelHarbourCargoBay/scripts.pory"
 	.string "{PLAYER} is using the platform\n"
 	.string "trolley.$"

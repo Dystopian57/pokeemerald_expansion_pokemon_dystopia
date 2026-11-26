@@ -773,8 +773,8 @@ script PetalburgRiotSpawn {
 
 script PetalburgCityMapscriptBundle {
 
-		if (var(VAR_PETALBURG_WILD_ZONE) == 2)
-		{playbgm (MUS_SAFARI_ZONE, TRUE)}
+		//if (var(VAR_PETALBURG_WILD_ZONE) == 2)
+		//{playbgm (MUS_SAFARI_ZONE, TRUE)}
 
 	gettimeofday
 		if (var(VAR_0x8000) == TIME_MORNING)

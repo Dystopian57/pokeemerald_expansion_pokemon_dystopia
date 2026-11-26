@@ -106,7 +106,7 @@
       "flag": "nightnpc"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_FILLERNPC1",
       "x": 3,
       "y": 3,
       "elevation": 0,

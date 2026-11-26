@@ -449,6 +449,38 @@ script Petalburg_DojoNormanIdle {
     applymovement(1, moves(face_player))
     waitmovement (1)
 
+        if (!flag(normandailydiremoneyoffer))
+        		{checkmoney (1000)
+				if (var(VAR_RESULT) == TRUE) {
+    	        goto (normanishappywithplayermoney)
+                }
+
+				if (var(VAR_RESULT) == FALSE) {
+
+                msgbox(format("{PLAYER}... I couldn't help but notice. Your wallet looks very thin."))         
+    	        showmoneybox (18, 0)      
+                msgbox(format("Do you need some money?"))   
+
+                dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No")
+
+                if (var(VAR_RESULT) == 0) {}
+                if (var(VAR_RESULT) == 1) {
+
+                    checkplayergender
+                    if(var(VAR_RESULT) == MALE){
+                    msgbox(format("I see... I understand your wish for independence. Your father was
+                    the same.")) }
+                    if(var(VAR_RESULT) == FEMALE){
+                    msgbox(format("I see... I understand your wish for independence. Your mother was
+                    the same."))}
+
+                    msgbox(format("But I want you to have some more pokeyen on you, or I might nag
+                    you about this some other day.\pNow, onto other matters..."))
+                    setflag (normandailydiremoneyoffer)
+                    goto (normanishappywithplayermoney)
+                }}}
+
+    normanishappywithplayermoney:
 	if (var(VAR_PETALBURG_PHASE) == 1)
     { 
         if (flag(lostdojointromultibattle))
@@ -496,18 +528,18 @@ script Petalburg_DojoNormanIdle {
     well known. You, on the other hand, should pass unnoticed."))}
 
 	if (var(VAR_PETALBURG_PHASE) == 3)
-    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?
+    {msgbox(format("{PLAYER} - Did you speak with my acquaintance yet?
     \pAs the leader of the Rebels, you will most likely find him in their base.
     \pAnd that's Petalburg Arcade. Of course, that's just their legal front.
     \pJust be careful. They are a rowdy bunch."))}
 
 	if (var(VAR_PETALBURG_PHASE) == 4)
-    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?
+    {msgbox(format("{PLAYER} - Did you speak with my acquaintance yet?
     \pHmm... so one of his henchmen is blocking the way to his office.
     \pTell him I sent you. He may let you through then."))}
 
 	if (var(VAR_PETALBURG_PHASE) == 5)
-    {msgbox(format("{PLAYER} - what is it? Did you speak with my acquaintance yet?
+    {msgbox(format("{PLAYER} - Did you speak with my acquaintance yet?
     \pHmm... so only Rebels can meet with him? Who does he think he is...?
     \pOf course, you should not join the Rebels. They are nothing but troublemakers.
     \pBut if you could pretend to join, just long enough to meet him...

@@ -1511,108 +1511,99 @@ PetalburgRiotSpawn_1:
 
 
 PetalburgCityMapscriptBundle::
-# 776 "data/maps/PetalburgCity/scripts.pory"
-	compare VAR_PETALBURG_WILD_ZONE, 2
-	goto_if_eq PetalburgCityMapscriptBundle_2
-PetalburgCityMapscriptBundle_1:
 # 779 "data/maps/PetalburgCity/scripts.pory"
 	gettimeofday
 # 780 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_MORNING
-	goto_if_eq PetalburgCityMapscriptBundle_5
-PetalburgCityMapscriptBundle_4:
+	goto_if_eq PetalburgCityMapscriptBundle_2
+PetalburgCityMapscriptBundle_1:
 # 783 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_DAY
-	goto_if_eq PetalburgCityMapscriptBundle_8
-PetalburgCityMapscriptBundle_7:
+	goto_if_eq PetalburgCityMapscriptBundle_5
+PetalburgCityMapscriptBundle_4:
 # 786 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_EVENING
-	goto_if_eq PetalburgCityMapscriptBundle_11
-PetalburgCityMapscriptBundle_10:
+	goto_if_eq PetalburgCityMapscriptBundle_8
+PetalburgCityMapscriptBundle_7:
 # 789 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_NIGHT
-	goto_if_eq PetalburgCityMapscriptBundle_14
-PetalburgCityMapscriptBundle_13:
+	goto_if_eq PetalburgCityMapscriptBundle_11
+PetalburgCityMapscriptBundle_10:
 # 792 "data/maps/PetalburgCity/scripts.pory"
-	goto_if_set petalburgriotendedforgood, PetalburgCityMapscriptBundle_17
-PetalburgCityMapscriptBundle_16:
+	goto_if_set petalburgriotendedforgood, PetalburgCityMapscriptBundle_14
+PetalburgCityMapscriptBundle_13:
 # 797 "data/maps/PetalburgCity/scripts.pory"
 	gettimeofday
 # 798 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_MORNING
-	goto_if_eq PetalburgCityMapscriptBundle_20
-PetalburgCityMapscriptBundle_19:
+	goto_if_eq PetalburgCityMapscriptBundle_17
+PetalburgCityMapscriptBundle_16:
 # 804 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_DAY
-	goto_if_eq PetalburgCityMapscriptBundle_23
-PetalburgCityMapscriptBundle_22:
+	goto_if_eq PetalburgCityMapscriptBundle_20
+PetalburgCityMapscriptBundle_19:
 # 809 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_EVENING
-	goto_if_eq PetalburgCityMapscriptBundle_26
-PetalburgCityMapscriptBundle_25:
+	goto_if_eq PetalburgCityMapscriptBundle_23
+PetalburgCityMapscriptBundle_22:
 # 816 "data/maps/PetalburgCity/scripts.pory"
 	compare VAR_0x8000, TIME_NIGHT
-	goto_if_eq PetalburgCityMapscriptBundle_28
+	goto_if_eq PetalburgCityMapscriptBundle_25
 	return
 
 PetalburgCityMapscriptBundle_2:
-# 777 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_SAFARI_ZONE, TRUE
+# 781 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_TEAMGRDUEL, TRUE
 	goto PetalburgCityMapscriptBundle_1
 
 PetalburgCityMapscriptBundle_5:
-# 781 "data/maps/PetalburgCity/scripts.pory"
+# 784 "data/maps/PetalburgCity/scripts.pory"
 	playbgm MUS_TEAMGRDUEL, TRUE
 	goto PetalburgCityMapscriptBundle_4
 
 PetalburgCityMapscriptBundle_8:
-# 784 "data/maps/PetalburgCity/scripts.pory"
+# 787 "data/maps/PetalburgCity/scripts.pory"
 	playbgm MUS_TEAMGRDUEL, TRUE
 	goto PetalburgCityMapscriptBundle_7
 
 PetalburgCityMapscriptBundle_11:
-# 787 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_TEAMGRDUEL, TRUE
+# 790 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_PANULACAVE, TRUE
 	goto PetalburgCityMapscriptBundle_10
 
 PetalburgCityMapscriptBundle_14:
-# 790 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_PANULACAVE, TRUE
+# 794 "data/maps/PetalburgCity/scripts.pory"
+	setflag petalburgriotstopped
 	goto PetalburgCityMapscriptBundle_13
 
 PetalburgCityMapscriptBundle_17:
-# 794 "data/maps/PetalburgCity/scripts.pory"
-	setflag petalburgriotstopped
-	goto PetalburgCityMapscriptBundle_16
-
-PetalburgCityMapscriptBundle_20:
 # 799 "data/maps/PetalburgCity/scripts.pory"
 	clearflag daynpc
 # 800 "data/maps/PetalburgCity/scripts.pory"
 	setflag nightnpc
 # 802 "data/maps/PetalburgCity/scripts.pory"
 	goto endofdaynightnpc
-	goto PetalburgCityMapscriptBundle_19
+	goto PetalburgCityMapscriptBundle_16
 
-PetalburgCityMapscriptBundle_23:
+PetalburgCityMapscriptBundle_20:
 # 805 "data/maps/PetalburgCity/scripts.pory"
 	clearflag daynpc
 # 806 "data/maps/PetalburgCity/scripts.pory"
 	setflag nightnpc
 # 807 "data/maps/PetalburgCity/scripts.pory"
 	goto endofdaynightnpc
-	goto PetalburgCityMapscriptBundle_22
+	goto PetalburgCityMapscriptBundle_19
 
-PetalburgCityMapscriptBundle_26:
+PetalburgCityMapscriptBundle_23:
 # 811 "data/maps/PetalburgCity/scripts.pory"
 	setflag daynpc
 # 812 "data/maps/PetalburgCity/scripts.pory"
 	setflag nightnpc
 # 814 "data/maps/PetalburgCity/scripts.pory"
 	goto endofdaynightnpc
-	goto PetalburgCityMapscriptBundle_25
+	goto PetalburgCityMapscriptBundle_22
 
-PetalburgCityMapscriptBundle_28:
+PetalburgCityMapscriptBundle_25:
 # 817 "data/maps/PetalburgCity/scripts.pory"
 	clearflag nightnpc
 # 818 "data/maps/PetalburgCity/scripts.pory"

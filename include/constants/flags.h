@@ -731,8 +731,8 @@
 #define tabletwofourthcorrectbreakfast  0x296 // Unused Flag
 #define tablethreethirdcorrectbreakfast  0x297 // Unused Flag
 #define tablethreefourthcorrectbreakfast  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
+#define takeawaycorrectorder  0x299 // Unused Flag
+#define normandailydiremoneyoffer  0x29A // Unused Flag
 #define FLAG_UNUSED_0x29B  0x29B // Unused Flag
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
@@ -1627,8 +1627,8 @@
 #define harborcartquestdailydone                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define harborloungequestdone                          (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define harborloungebreakfastguestlotto                           (DAILY_FLAGS_START + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
+#define harborloungelunchguestlotto                           (DAILY_FLAGS_START + 0x22) // Unused Flag
+#define harborloungedinnerguestlotto                           (DAILY_FLAGS_START + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x945                           (DAILY_FLAGS_START + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x946                           (DAILY_FLAGS_START + 0x26) // Unused Flag

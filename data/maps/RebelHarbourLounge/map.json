@@ -76,21 +76,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable3RedHairGirlGuest",
       "flag": "harbordinnerone"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
-      "x": 2,
-      "y": -4,
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 4,
+      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgHarbourTable1OldFatManGuestDinner",
+      "flag": "harbordinnertwo"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
@@ -102,21 +102,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgHarbourTable1YoungFatManGuest",
+      "script": "PetalburgHarbourTable1YoungFatManGuestBreakfast",
       "flag": "harborbreakfastone"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FOODTRAY",
-      "x": 3,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NOSEPASS)",
+      "x": 7,
       "y": -4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgHarbourTable1Nosepass",
+      "flag": "harbordinnertwo"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SMALLNINKABURI",
@@ -171,17 +171,17 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_REBELGRUNTM",
-      "x": 2,
-      "y": -4,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "x": 13,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgHarbourTable3Zigzagoon",
+      "flag": "harbordinnertwo"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROUND_CUSHION",
@@ -197,17 +197,17 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TOURISTM",
-      "x": 1,
-      "y": -4,
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 4,
+      "y": 8,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgHarbourTable1YoungFatManGuestLunch",
+      "flag": "harborlunchone"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
@@ -219,7 +219,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2ClerkMGuest",
       "flag": "harbordinnerone"
     },
     {
@@ -271,7 +271,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2ClerkFGuest",
       "flag": "harbordinnerone"
     },
     {
@@ -284,7 +284,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable3PoorGirlGuest",
       "flag": "harbordinnertwo"
     },
     {
@@ -297,7 +297,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable3PoorBoyGuest",
       "flag": "harbordinnertwo"
     },
     {
@@ -310,7 +310,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2TouristMGuest",
       "flag": "harborlunchone"
     },
     {
@@ -323,7 +323,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2TouristFGuest",
       "flag": "harborlunchone"
     },
     {
@@ -336,7 +336,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2OldmanGuest",
       "flag": "harbordinnertwo"
     },
     {
@@ -349,34 +349,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2OldwomanGuest",
       "flag": "harbordinnertwo"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_TECHNICIANM",
-      "x": 1,
-      "y": -4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_TECHNICIANF",
-      "x": 2,
-      "y": -4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
@@ -388,7 +362,33 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgHarbourTable1OldFatManGuest",
+      "script": "PetalburgHarbourTable1OldFatManGuestLunch",
+      "flag": "harborlunchtwo"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgHarbourTable1YoungFatManGuestDinner",
+      "flag": "harbordinnerone"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgHarbourTable1OldFatManGuestBreakfast",
       "flag": "harborbreakfasttwo"
     },
     {
@@ -401,7 +401,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTakeAwayDinnerSharpy",
       "flag": "harbordinnertakeaway"
     },
     {
@@ -414,7 +414,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTakeAwayDinnerCamelia",
       "flag": "harbordinnertakeaway"
     },
     {
@@ -427,7 +427,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgHarbourTable2WageSlaveGuest",
+      "script": "PetalburgHarbourTakeAwayBreakfastBalsam",
       "flag": "harborbreakfasttakeaway"
     },
     {
@@ -440,7 +440,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgHarbourTable2DaugtherGuest",
+      "script": "PetalburgHarbourTakeAwayBreakfastAide",
       "flag": "harborbreakfasttakeaway"
     },
     {
@@ -622,7 +622,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTakeAwayLunchNorman",
       "flag": "harborlunchtakeaway"
     },
     {
@@ -635,7 +635,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2RebelGuest",
       "flag": "harborlunchtwo"
     },
     {
@@ -674,24 +674,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable2Wimpod",
       "flag": "harborlunchtwo"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PATIENTF",
-      "x": 12,
-      "y": 12,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "harborlunchtwo"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PATIENTM",
       "x": 9,
       "y": 12,
       "elevation": 0,
@@ -700,7 +687,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable3PatientFGuest",
+      "flag": "harborlunchtwo"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PATIENTM",
+      "x": 12,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgHarbourTable3PatientMGuest",
       "flag": "harborlunchtwo"
     },
     {
@@ -726,7 +726,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable3PunkMGuest",
       "flag": "harbordinnerone"
     },
     {
@@ -739,21 +739,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgHarbourTable3PrisonerGuest",
       "flag": "harborlunchone"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 13,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NOSEPASS)",
+      "x": 3,
       "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "harbordinnertakeaway"
+      "script": "PetalburgHarbourTable1Nosepass",
+      "flag": "harborlunchtwo"
     }
   ],
   "warp_events": [
@@ -793,7 +793,44 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_WAITERCANTLEAVE",
+      "var_value": "1",
+      "script": "PetalburgHarbourWaiterDontGoToMainRoom"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_WAITERCANTLEAVE",
+      "var_value": "1",
+      "script": "PetalburgHarbourWaiterDontGoToMainRoom"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_WAITERCANTLEAVE",
+      "var_value": "1",
+      "script": "PetalburgHarbourWaiterDontGoToPier"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_WAITERCANTLEAVE",
+      "var_value": "1",
+      "script": "PetalburgHarbourWaiterDontGoToPier"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -120,7 +120,7 @@ script RebelHarborCartQuestWorker {
 						clearflag (rebelharborcart)
 						addobject (1)
 						applymovement (1, moves(face_right))
-						setobjectxy (1, 6, 12)
+						setobjectxy (1, 6, 22)
 						setfollowernpc (LOCALID_REBELHARBOR_EMPTYCART, FNPC_ALL, RebelHarborCartFollow, PARTNER_RIVAL_FEMALE)	
 
 							if (var(VAR_HARBORDELIVEREDBOXCOUNT) == 1)
@@ -219,14 +219,26 @@ script RebelHarborCartQuestWorker {
 					msgbox(format("It's simple. You see, unlike in Devon facilities like Oldale 
 					Warehouse...
 					\pWe don't have Pokémon specialized in carrying stuff here."))
+
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
+
+					applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left))
+					waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
 					msgbox(format("We normally use that forklift over there - but
 					it's broken now."))
-					applymovement (4, moves(face_right))
-					waitmovement (4)
+
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+
+					applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_right))
+					waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
+					applymovement (3, moves(face_right))
+					waitmovement (3)
 					msgbox(format("I need you to use this trolley and bring some of the
 					white boxes around."))
-					applymovement (4, moves(face_left))
-					waitmovement (4)
+					applymovement (3, moves(face_left))
+					waitmovement (3)
 					msgbox(format("Alright, here's the trolley!"))
 					setflag (harborcartquestintro)
 					goto (giventrolley)}
@@ -235,6 +247,7 @@ script RebelHarborCartQuestWorker {
 					msgbox(format("Good - you know how it works. Here's the trolley!"))
 					}
 					giventrolley:
+					hidefollower
 					setflag (harborexampletrolley)
 					removeobject (5)
 					addobject (1)
@@ -245,7 +258,7 @@ script RebelHarborCartQuestWorker {
 					msgbox(format("{COLOR GREEN}{PLAYER} is now using a Transport Trolley!"))
 
 					msgbox(format("Load the boxes on that and bring them to me.
-					\pIt's 100¥ per delivered parcel, non-negotiable! Get on with it!"))
+					\pIt's 100¥ per delivered box, non-negotiable! Get on with it!"))
 
 					setflag (harborcartquestaccepted)
 					setvar (VAR_HARBORCANTEXITWITHTROLLEY, 1)
@@ -265,14 +278,24 @@ script RebelHarborCartQuestWorker {
 					msgbox(format("It's simple. You see, unlike in Devon facilities like Oldale 
 					Warehouse...
 					\pWe don't have Pokémon specialized in carrying stuff here."))
+
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_left))
+
+					applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_left))
+					waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
 					msgbox(format("We normally use that forklift over there - but
 					it's broken now."))
+
+					applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_in_place_right))
+
+					applymovement (OBJ_EVENT_ID_FOLLOWER, moves(walk_in_place_right))
+					waitmovement (OBJ_EVENT_ID_FOLLOWER)
+
 					applymovement (3, moves(face_right))
 					waitmovement (3)
 					msgbox(format("I need you to use this trolley and bring some of the
 					white boxes around."))
-					applymovement (3, moves(face_left))
-					waitmovement (3)
 					msgbox(format("So, you in?
 					\nIt's 100¥ per box delivered."))
 					setflag (harborcartquestintro)
@@ -342,6 +365,7 @@ script RebelHarborLoadBox1 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 0)
 	{
+	addobject (2)
 	applymovement (2, moves(face_left))
     setobjectxy (2, 2, 12)
     destroyfollowernpc
@@ -350,6 +374,7 @@ script RebelHarborLoadBox1 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 1)
 	{
+	addobject (8)
 	applymovement (8, moves(face_left))
     setobjectxy (8, 2, 12)
     destroyfollowernpc
@@ -358,6 +383,7 @@ script RebelHarborLoadBox1 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 2)
 	{
+	addobject (9)
 	applymovement (9, moves(face_left))
     setobjectxy (9, 2, 12)
     destroyfollowernpc
@@ -392,6 +418,7 @@ script RebelHarborLoadBox2 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 0)
 	{
+	addobject (2)
 	applymovement (2, moves(face_right))
     setobjectxy (2, 8, 12)
     destroyfollowernpc
@@ -400,6 +427,7 @@ script RebelHarborLoadBox2 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 1)
 	{
+	addobject (8)
 	applymovement (8, moves(face_right))
     setobjectxy (8, 8, 12)
     destroyfollowernpc
@@ -408,6 +436,7 @@ script RebelHarborLoadBox2 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 2)
 	{
+	addobject (9)
 	applymovement (9, moves(face_right))
     setobjectxy (9, 8, 12)
     destroyfollowernpc
@@ -444,6 +473,7 @@ script RebelHarborLoadBox3 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 0)
 	{
+	addobject (2)
 	applymovement (2, moves(face_right))
     setobjectxy (2, 6, 15)
     destroyfollowernpc
@@ -452,6 +482,7 @@ script RebelHarborLoadBox3 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 1)
 	{
+	addobject (8)
 	applymovement (8, moves(face_right))
     setobjectxy (8, 6, 15)
     destroyfollowernpc
@@ -460,6 +491,7 @@ script RebelHarborLoadBox3 {
 
 	if (var(VAR_HARBORCARTBOXCOUNT) == 2)
 	{
+	addobject (9)
 	applymovement (9, moves(face_right))
     setobjectxy (9, 6, 15)
     destroyfollowernpc

@@ -521,6 +521,12 @@ script CasetteRadio {
                 if (var(VAR_RESULT) == FALSE)
                 {bufferstring (STR_VAR_2, "???")}
 
+                checkitem (ITEM_PIKASHUNIUM_Z)
+                if (var(VAR_RESULT) == TRUE)
+                {bufferstring (STR_VAR_2, "“The Wish”")}
+                if (var(VAR_RESULT) == FALSE)
+                {bufferstring (STR_VAR_2, "???")}
+
                 msgbox (format("Which tape to insert?"))
                 dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE,
                 "{STR_VAR_1}",
@@ -553,12 +559,12 @@ script CasetteRadio {
                             }
 
                             if(var(VAR_RESULT) == 2){
-                            checkitem (ITEM_DNA_SPLICERS)
+                            checkitem (ITEM_PIKASHUNIUM_Z)
                             if (var(VAR_RESULT) == TRUE)
                             {
                             fadeoutbgm (1)
-                            fadenewbgm (MUS_RENBOUPARTY)
-                            msgbox (format("Now playing - “Party!”."))}
+                            fadenewbgm (MUS_NOZOMI)
+                            msgbox (format("Now playing - “The Wish”."))}
 
                             else {playse (SE_FAILURE)}
                             goto (endofradioscript)
