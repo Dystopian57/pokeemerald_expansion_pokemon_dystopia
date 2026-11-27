@@ -1604,10 +1604,11 @@ script RebelHarborLoungeClerk {
 
 					}	
 
-
+					finishedtakeaway:
 					msgbox(format("Very well. I'll take this to the cook. Standby to deliver
 					the orders!"))
 
+					
 					fadescreenswapbuffers (FADE_TO_BLACK)
 
 					if (!flag(harborbreakfasttakeaway))
@@ -1650,7 +1651,7 @@ script RebelHarborLoungeClerk {
 						//setobjectxy (40, 10, 14)
 						//}	
 
-					finishedtakeaway:
+					
 
 					setflag (harborbreakfasttakeaway)
 					setflag (harborlunchtakeaway)
@@ -2457,6 +2458,7 @@ script RebelHarborLoungeClerk {
 						clearflag (daystartwaiterquest)
 						clearflag (nightstartwaiterquest)
 						setflag (harborloungequestdone)
+						clearflag (takeawaytookorder)
 						clearflag (takeawaycorrectorder)
 
 
@@ -2527,7 +2529,7 @@ script RebelHarborLoungeClerk {
 							if (!flag(harborbreakfasttakeaway)
 							|| !flag(harborlunchtakeaway)
 							|| !flag(harbordinnertakeaway)
-							&& flag(takeawaycorrectorder))
+							&& flag(takeawaytookorder))
 
 							
 							{setvar (VAR_WAITERQUEST, 1)}		
@@ -2559,7 +2561,7 @@ script RebelHarborLoungeClerk {
 							if (!flag(harborbreakfasttakeaway)
 							|| !flag(harborlunchtakeaway)
 							|| !flag(harbordinnertakeaway)
-							&& flag(takeawaycorrectorder))
+							&& flag(takeawaytookorder))
 
 							
 							{setvar (VAR_WAITERQUEST, 1)}		
@@ -2580,7 +2582,7 @@ script RebelHarborLoungeClerk {
 		script PetalburgHarbourTakeAwayBreakfastBalsam {
 		lock
 		applymovement (32, moves(face_player))
-		if (!flag(takeawaycorrectorder))
+		if (!flag(takeawaytookorder))
 		{
 
 			setspeaker ([SP_NAME_BALSAM])
@@ -2596,7 +2598,7 @@ script RebelHarborLoungeClerk {
 			msgbox(format("We'll have some Swinub Bacon to take. It'll be a long day of research
 			ahead for us, so we need some protein-rich breakfast."))
 
-			setflag (takeawaycorrectorder)
+			setflag (takeawaytookorder)
 
 		}
 
@@ -2616,7 +2618,7 @@ script RebelHarborLoungeClerk {
 		script PetalburgHarbourTakeAwayBreakfastAide {
 		lock
 		applymovement (33, moves(face_player))
-		if (!flag(takeawaycorrectorder))
+		if (!flag(takeawaytookorder))
 		{
 
 			setspeaker ([SP_NAME_AIDEE])
@@ -2706,7 +2708,7 @@ script RebelHarborLoungeClerk {
 		script PetalburgHarbourTakeAwayLunchNorman {
 		lock
 		applymovement (47, moves(face_player))
-		if (!flag(takeawaycorrectorder))
+		if (!flag(takeawaytookorder))
 		{
 			setspeaker ([SP_NAME_NORMAN])
 			createfieldmugshot (MUGSHOT_NORMAN , EMOTE_NORMAL)
@@ -2750,8 +2752,7 @@ script RebelHarborLoungeClerk {
 			createfieldmugshot (MUGSHOT_NORMAN , EMOTE_TALK)
 			msgbox(format("As for my order, I'll have some Magikarp Sushi. Please, I am in no hurry."))
 
-
-			setflag (takeawaycorrectorder)
+			setflag (takeawaytookorder)
 
 		}
 
@@ -2775,7 +2776,7 @@ script RebelHarborLoungeClerk {
 		script PetalburgHarbourTakeAwayDinnerSharpy {
 		lock
 		applymovement (30, moves(face_player))
-		if (!flag(takeawaycorrectorder))
+		if (!flag(takeawaytookorder))
 		{
 
             setspeaker ([SP_NAME_SHARPY])
@@ -2832,7 +2833,7 @@ script RebelHarborLoungeClerk {
             createfieldmugshot (MUGSHOT_SHARPY , EMOTE_SHOCK)
 			msgbox(format("Wait, why do I have to pay!?"))
 
-			setflag (takeawaycorrectorder)
+			setflag (takeawaytookorder)
 
 		}
 
@@ -2852,7 +2853,7 @@ script RebelHarborLoungeClerk {
 		script PetalburgHarbourTakeAwayDinnerCamelia {
 		lock
 		applymovement (31, moves(face_player))
-		if (!flag(takeawaycorrectorder))
+		if (!flag(takeawaytookorder))
 		{
             setspeaker ([SP_NAME_CAMELIA])
             createfieldmugshot (MUGSHOT_CAMELIA , EMOTE_NORMAL) 
@@ -2904,7 +2905,7 @@ script RebelHarborLoungeClerk {
 			msgbox(format("We'll make sure you're free next time, and eat
 			one together at the dojo!"))
 
-			setflag (takeawaycorrectorder)
+			setflag (takeawaytookorder)
 
 		}
 

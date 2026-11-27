@@ -324,9 +324,9 @@ RebelHarborLoungeClerk_19:
 	compare VAR_WAITERQUEST, 1
 	goto_if_eq RebelHarborLoungeClerk_26
 RebelHarborLoungeClerk_25:
-# 2495 "data/maps/RebelHarbourLounge/scripts.pory"
-rebelharborloungeclerkend:
 # 2496 "data/maps/RebelHarbourLounge/scripts.pory"
+rebelharborloungeclerkend:
+# 2497 "data/maps/RebelHarbourLounge/scripts.pory"
 	release
 	return
 
@@ -496,60 +496,62 @@ RebelHarborLoungeClerk_393:
 # 1568 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnertakeaway, RebelHarborLoungeClerk_420
 RebelHarborLoungeClerk_419:
+# 1607 "data/maps/RebelHarbourLounge/scripts.pory"
+finishedtakeaway:
 # 1608 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox RebelHarborLoungeClerk_Text_46
-# 1611 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1612 "data/maps/RebelHarbourLounge/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 1613 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1614 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborbreakfasttakeaway, RebelHarborLoungeClerk_443
 RebelHarborLoungeClerk_442:
-# 1618 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1619 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborlunchtakeaway, RebelHarborLoungeClerk_460
 RebelHarborLoungeClerk_459:
-# 1622 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1623 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnertakeaway, RebelHarborLoungeClerk_469
 RebelHarborLoungeClerk_468:
-# 1653 "data/maps/RebelHarbourLounge/scripts.pory"
-finishedtakeaway:
-# 1655 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag harborbreakfasttakeaway
 # 1656 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag harborlunchtakeaway
+	setflag harborbreakfasttakeaway
 # 1657 "data/maps/RebelHarbourLounge/scripts.pory"
+	setflag harborlunchtakeaway
+# 1658 "data/maps/RebelHarbourLounge/scripts.pory"
 	setflag harbordinnertakeaway
-# 1659 "data/maps/RebelHarbourLounge/scripts.pory"
-	fadeoutbgm 1
 # 1660 "data/maps/RebelHarbourLounge/scripts.pory"
-	fadeinbgm 1
+	fadeoutbgm 1
 # 1661 "data/maps/RebelHarbourLounge/scripts.pory"
+	fadeinbgm 1
+# 1662 "data/maps/RebelHarbourLounge/scripts.pory"
 	playbgm MUS_CONTEST_RESULTS, TRUE
-# 1663 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1664 "data/maps/RebelHarbourLounge/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, RebelHarborLoungeClerk_Movement_9
-# 1665 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1666 "data/maps/RebelHarbourLounge/scripts.pory"
 	hidefollower
-# 1669 "data/maps/RebelHarbourLounge/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+# 1667 "data/maps/RebelHarbourLounge/scripts.pory"
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 # 1671 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox RebelHarborLoungeClerk_Text_47
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 1673 "data/maps/RebelHarbourLounge/scripts.pory"
-	closemessage
+	msgbox RebelHarborLoungeClerk_Text_47
 # 1675 "data/maps/RebelHarbourLounge/scripts.pory"
-	special SpawnCameraObject
-# 1676 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, RebelHarborLoungeClerk_Movement_10
+	closemessage
 # 1677 "data/maps/RebelHarbourLounge/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
+	special SpawnCameraObject
 # 1678 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, RebelHarborLoungeClerk_Movement_10
+# 1679 "data/maps/RebelHarbourLounge/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 1680 "data/maps/RebelHarbourLounge/scripts.pory"
 	special RemoveCameraObject
-# 1684 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1686 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_WAITERFIRSTTABLESUCCESS, 0
 	goto_if_eq RebelHarborLoungeClerk_472
 RebelHarborLoungeClerk_471:
-# 1736 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1738 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_WAITERFIRSTTABLESUCCESS, 1
 	goto_if_eq RebelHarborLoungeClerk_475
 RebelHarborLoungeClerk_474:
-# 1789 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1791 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_WAITERSECONDTABLESUCCESS, 0
 	goto_if_eq RebelHarborLoungeClerk_481
 RebelHarborLoungeClerk_480:
@@ -635,44 +637,46 @@ RebelHarborLoungeClerk_674:
 # 2460 "data/maps/RebelHarbourLounge/scripts.pory"
 	setflag harborloungequestdone
 # 2461 "data/maps/RebelHarbourLounge/scripts.pory"
+	clearflag takeawaytookorder
+# 2462 "data/maps/RebelHarbourLounge/scripts.pory"
 	clearflag takeawaycorrectorder
-# 2464 "data/maps/RebelHarbourLounge/scripts.pory"
-	setvar VAR_WAITERQUEST, 0
 # 2465 "data/maps/RebelHarbourLounge/scripts.pory"
-	setvar VAR_WAITERFIRSTTABLESUCCESS, 0
+	setvar VAR_WAITERQUEST, 0
 # 2466 "data/maps/RebelHarbourLounge/scripts.pory"
-	setvar VAR_WAITERSECONDTABLESUCCESS, 0
+	setvar VAR_WAITERFIRSTTABLESUCCESS, 0
 # 2467 "data/maps/RebelHarbourLounge/scripts.pory"
-	setvar VAR_WAITERTHIRDTABLESUCCESS, 0
+	setvar VAR_WAITERSECONDTABLESUCCESS, 0
 # 2468 "data/maps/RebelHarbourLounge/scripts.pory"
+	setvar VAR_WAITERTHIRDTABLESUCCESS, 0
+# 2469 "data/maps/RebelHarbourLounge/scripts.pory"
 	setvar VAR_WAITERCANTLEAVE, 0
-# 2470 "data/maps/RebelHarbourLounge/scripts.pory"
-	clearflag tableonefirstcorrectbreakfast
 # 2471 "data/maps/RebelHarbourLounge/scripts.pory"
+	clearflag tableonefirstcorrectbreakfast
+# 2472 "data/maps/RebelHarbourLounge/scripts.pory"
 	clearflag tableonesecondcorrectbreakfast
-# 2473 "data/maps/RebelHarbourLounge/scripts.pory"
-	clearflag tabletwofirstcorrectbreakfast
 # 2474 "data/maps/RebelHarbourLounge/scripts.pory"
-	clearflag tabletwosecondcorrectbreakfast
+	clearflag tabletwofirstcorrectbreakfast
 # 2475 "data/maps/RebelHarbourLounge/scripts.pory"
-	clearflag tabletwothirdcorrectbreakfast
+	clearflag tabletwosecondcorrectbreakfast
 # 2476 "data/maps/RebelHarbourLounge/scripts.pory"
+	clearflag tabletwothirdcorrectbreakfast
+# 2477 "data/maps/RebelHarbourLounge/scripts.pory"
 	clearflag tabletwofourthcorrectbreakfast
-# 2478 "data/maps/RebelHarbourLounge/scripts.pory"
-	clearflag tablethreefirstcorrectbreakfast
 # 2479 "data/maps/RebelHarbourLounge/scripts.pory"
-	clearflag tablethreesecondcorrectbreakfast
+	clearflag tablethreefirstcorrectbreakfast
 # 2480 "data/maps/RebelHarbourLounge/scripts.pory"
-	clearflag tablethreethirdcorrectbreakfast
+	clearflag tablethreesecondcorrectbreakfast
 # 2481 "data/maps/RebelHarbourLounge/scripts.pory"
+	clearflag tablethreethirdcorrectbreakfast
+# 2482 "data/maps/RebelHarbourLounge/scripts.pory"
 	clearflag tablethreefourthcorrectbreakfast
-# 2483 "data/maps/RebelHarbourLounge/scripts.pory"
-	fadeoutbgm 1
 # 2484 "data/maps/RebelHarbourLounge/scripts.pory"
-	fadeinbgm 1
+	fadeoutbgm 1
 # 2485 "data/maps/RebelHarbourLounge/scripts.pory"
+	fadeinbgm 1
+# 2486 "data/maps/RebelHarbourLounge/scripts.pory"
 	playbgm MUS_PIRATESGUIGE, TRUE
-# 2487 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2488 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto rebelharborloungeclerkend
 	goto RebelHarborLoungeClerk_25
 
@@ -2180,11 +2184,11 @@ RebelHarborLoungeClerk_439:
 	goto RebelHarborLoungeClerk_285
 
 RebelHarborLoungeClerk_443:
-# 1614 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag harborbreakfasttakeaway
 # 1615 "data/maps/RebelHarbourLounge/scripts.pory"
-	removeobject 32
+	setflag harborbreakfasttakeaway
 # 1616 "data/maps/RebelHarbourLounge/scripts.pory"
+	removeobject 32
+# 1617 "data/maps/RebelHarbourLounge/scripts.pory"
 	removeobject 33
 	goto RebelHarborLoungeClerk_442
 
@@ -2232,9 +2236,9 @@ RebelHarborLoungeClerk_456:
 	goto RebelHarborLoungeClerk_312
 
 RebelHarborLoungeClerk_460:
-# 1619 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag harborlunchtakeaway
 # 1620 "data/maps/RebelHarbourLounge/scripts.pory"
+	setflag harborlunchtakeaway
+# 1621 "data/maps/RebelHarbourLounge/scripts.pory"
 	removeobject 47
 	goto RebelHarborLoungeClerk_459
 
@@ -2257,90 +2261,86 @@ RebelHarborLoungeClerk_465:
 	goto RebelHarborLoungeClerk_339
 
 RebelHarborLoungeClerk_469:
-# 1623 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag harbordinnertakeaway
 # 1624 "data/maps/RebelHarbourLounge/scripts.pory"
-	removeobject 30
+	setflag harbordinnertakeaway
 # 1625 "data/maps/RebelHarbourLounge/scripts.pory"
+	removeobject 30
+# 1626 "data/maps/RebelHarbourLounge/scripts.pory"
 	removeobject 31
 	goto RebelHarborLoungeClerk_468
 
 RebelHarborLoungeClerk_472:
-# 1687 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1689 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborbreakfastone, RebelHarborLoungeClerk_478
 RebelHarborLoungeClerk_477:
-# 1694 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1696 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborlunchone, RebelHarborLoungeClerk_487
 RebelHarborLoungeClerk_486:
-# 1701 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1703 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnerone, RebelHarborLoungeClerk_499
 RebelHarborLoungeClerk_498:
-# 1708 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1710 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborbreakfasttwo, RebelHarborLoungeClerk_514
 RebelHarborLoungeClerk_513:
-# 1715 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1717 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborlunchtwo, RebelHarborLoungeClerk_532
 RebelHarborLoungeClerk_531:
-# 1722 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1724 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnertwo, RebelHarborLoungeClerk_553
 RebelHarborLoungeClerk_552:
-# 1729 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1731 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox RebelHarborLoungeClerk_Text_48
-# 1730 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1732 "data/maps/RebelHarbourLounge/scripts.pory"
 	closemessage
 	goto RebelHarborLoungeClerk_471
 
 RebelHarborLoungeClerk_475:
-# 1738 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1740 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborbreakfastone, RebelHarborLoungeClerk_484
 RebelHarborLoungeClerk_483:
-# 1745 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1747 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborlunchone, RebelHarborLoungeClerk_496
 RebelHarborLoungeClerk_495:
-# 1752 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1754 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnerone, RebelHarborLoungeClerk_511
 RebelHarborLoungeClerk_510:
-# 1759 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1761 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborbreakfasttwo, RebelHarborLoungeClerk_529
 RebelHarborLoungeClerk_528:
-# 1766 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1768 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborlunchtwo, RebelHarborLoungeClerk_550
 RebelHarborLoungeClerk_549:
-# 1773 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1775 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnertwo, RebelHarborLoungeClerk_574
 RebelHarborLoungeClerk_573:
-# 1780 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1782 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox RebelHarborLoungeClerk_Text_49
-# 1781 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1783 "data/maps/RebelHarbourLounge/scripts.pory"
 	closemessage
 	goto RebelHarborLoungeClerk_474
 
 RebelHarborLoungeClerk_478:
-# 1689 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1690 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 7, RebelHarborLoungeClerk_Movement_11
 # 1691 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1692 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 7, RebelHarborLoungeClerk_Movement_11
+# 1693 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 7
 	goto RebelHarborLoungeClerk_477
 
 RebelHarborLoungeClerk_481:
-# 1792 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1794 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborbreakfastone, RebelHarborLoungeClerk_493
 RebelHarborLoungeClerk_492:
-# 1803 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1805 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborbreakfasttwo, RebelHarborLoungeClerk_508
 RebelHarborLoungeClerk_507:
-# 1816 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1818 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborlunchone, RebelHarborLoungeClerk_526
 RebelHarborLoungeClerk_525:
-# 1827 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1829 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harborlunchtwo, RebelHarborLoungeClerk_547
 RebelHarborLoungeClerk_546:
-# 1838 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox RebelHarborLoungeClerk_Text_50
-# 1839 "data/maps/RebelHarbourLounge/scripts.pory"
-	closemessage
 # 1844 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnerone, RebelHarborLoungeClerk_571
 RebelHarborLoungeClerk_570:
@@ -2359,20 +2359,20 @@ RebelHarborLoungeClerk_615:
 	goto RebelHarborLoungeClerk_480
 
 RebelHarborLoungeClerk_484:
-# 1740 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_ATTRACT
-# 1741 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 7, RebelHarborLoungeClerk_Movement_12
 # 1742 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_ATTRACT
+# 1743 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 7, RebelHarborLoungeClerk_Movement_12
+# 1744 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 7
 	goto RebelHarborLoungeClerk_483
 
 RebelHarborLoungeClerk_487:
-# 1696 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1697 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 15, RebelHarborLoungeClerk_Movement_11
 # 1698 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1699 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 15, RebelHarborLoungeClerk_Movement_11
+# 1700 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 15
 	goto RebelHarborLoungeClerk_486
 
@@ -2402,35 +2402,35 @@ RebelHarborLoungeClerk_612:
 	goto RebelHarborLoungeClerk_489
 
 RebelHarborLoungeClerk_493:
-# 1794 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1795 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 18, RebelHarborLoungeClerk_Movement_11
 # 1796 "data/maps/RebelHarbourLounge/scripts.pory"
-	waitmovement 18
-# 1798 "data/maps/RebelHarbourLounge/scripts.pory"
 	playse SE_M_SWAGGER2
-# 1799 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 19, RebelHarborLoungeClerk_Movement_11
+# 1797 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 18, RebelHarborLoungeClerk_Movement_11
+# 1798 "data/maps/RebelHarbourLounge/scripts.pory"
+	waitmovement 18
 # 1800 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1801 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 19, RebelHarborLoungeClerk_Movement_11
+# 1802 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 19
 	goto RebelHarborLoungeClerk_492
 
 RebelHarborLoungeClerk_496:
-# 1747 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_ATTRACT
-# 1748 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 15, RebelHarborLoungeClerk_Movement_12
 # 1749 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_ATTRACT
+# 1750 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 15, RebelHarborLoungeClerk_Movement_12
+# 1751 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 15
 	goto RebelHarborLoungeClerk_495
 
 RebelHarborLoungeClerk_499:
-# 1703 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1704 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 28, RebelHarborLoungeClerk_Movement_11
 # 1705 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1706 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 28, RebelHarborLoungeClerk_Movement_11
+# 1707 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 28
 	goto RebelHarborLoungeClerk_498
 
@@ -2475,35 +2475,35 @@ RebelHarborLoungeClerk_505:
 	goto RebelHarborLoungeClerk_504
 
 RebelHarborLoungeClerk_508:
-# 1805 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1806 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 49, RebelHarborLoungeClerk_Movement_11
 # 1807 "data/maps/RebelHarbourLounge/scripts.pory"
-	waitmovement 49
-# 1809 "data/maps/RebelHarbourLounge/scripts.pory"
 	playse SE_M_SWAGGER2
-# 1810 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 50, RebelHarborLoungeClerk_Movement_11
+# 1808 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 49, RebelHarborLoungeClerk_Movement_11
+# 1809 "data/maps/RebelHarbourLounge/scripts.pory"
+	waitmovement 49
 # 1811 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1812 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 50, RebelHarborLoungeClerk_Movement_11
+# 1813 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 50
 	goto RebelHarborLoungeClerk_507
 
 RebelHarborLoungeClerk_511:
-# 1754 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_ATTRACT
-# 1755 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 28, RebelHarborLoungeClerk_Movement_12
 # 1756 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_ATTRACT
+# 1757 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 28, RebelHarborLoungeClerk_Movement_12
+# 1758 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 28
 	goto RebelHarborLoungeClerk_510
 
 RebelHarborLoungeClerk_514:
-# 1710 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1711 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 29, RebelHarborLoungeClerk_Movement_11
 # 1712 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1713 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 29, RebelHarborLoungeClerk_Movement_11
+# 1714 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 29
 	goto RebelHarborLoungeClerk_513
 
@@ -2566,35 +2566,35 @@ RebelHarborLoungeClerk_523:
 	goto RebelHarborLoungeClerk_522
 
 RebelHarborLoungeClerk_526:
-# 1818 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1819 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 18, RebelHarborLoungeClerk_Movement_11
 # 1820 "data/maps/RebelHarbourLounge/scripts.pory"
-	waitmovement 18
-# 1822 "data/maps/RebelHarbourLounge/scripts.pory"
 	playse SE_M_SWAGGER2
-# 1823 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 19, RebelHarborLoungeClerk_Movement_11
+# 1821 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 18, RebelHarborLoungeClerk_Movement_11
+# 1822 "data/maps/RebelHarbourLounge/scripts.pory"
+	waitmovement 18
 # 1824 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1825 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 19, RebelHarborLoungeClerk_Movement_11
+# 1826 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 19
 	goto RebelHarborLoungeClerk_525
 
 RebelHarborLoungeClerk_529:
-# 1761 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_ATTRACT
-# 1762 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 29, RebelHarborLoungeClerk_Movement_12
 # 1763 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_ATTRACT
+# 1764 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 29, RebelHarborLoungeClerk_Movement_12
+# 1765 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 29
 	goto RebelHarborLoungeClerk_528
 
 RebelHarborLoungeClerk_532:
-# 1717 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1718 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 27, RebelHarborLoungeClerk_Movement_11
 # 1719 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1720 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 27, RebelHarborLoungeClerk_Movement_11
+# 1721 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 27
 	goto RebelHarborLoungeClerk_531
 
@@ -2675,35 +2675,35 @@ RebelHarborLoungeClerk_544:
 	goto RebelHarborLoungeClerk_543
 
 RebelHarborLoungeClerk_547:
-# 1829 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1830 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 23, RebelHarborLoungeClerk_Movement_11
 # 1831 "data/maps/RebelHarbourLounge/scripts.pory"
-	waitmovement 23
-# 1833 "data/maps/RebelHarbourLounge/scripts.pory"
 	playse SE_M_SWAGGER2
-# 1834 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 24, RebelHarborLoungeClerk_Movement_11
+# 1832 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 23, RebelHarborLoungeClerk_Movement_11
+# 1833 "data/maps/RebelHarbourLounge/scripts.pory"
+	waitmovement 23
 # 1835 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1836 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 24, RebelHarborLoungeClerk_Movement_11
+# 1837 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 24
 	goto RebelHarborLoungeClerk_546
 
 RebelHarborLoungeClerk_550:
-# 1768 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_ATTRACT
-# 1769 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 27, RebelHarborLoungeClerk_Movement_12
 # 1770 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_ATTRACT
+# 1771 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 27, RebelHarborLoungeClerk_Movement_12
+# 1772 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 27
 	goto RebelHarborLoungeClerk_549
 
 RebelHarborLoungeClerk_553:
-# 1724 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_SWAGGER2
-# 1725 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 6, RebelHarborLoungeClerk_Movement_11
 # 1726 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_SWAGGER2
+# 1727 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 6, RebelHarborLoungeClerk_Movement_11
+# 1728 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 6
 	goto RebelHarborLoungeClerk_552
 
@@ -2814,11 +2814,11 @@ RebelHarborLoungeClerk_571:
 	goto RebelHarborLoungeClerk_570
 
 RebelHarborLoungeClerk_574:
-# 1775 "data/maps/RebelHarbourLounge/scripts.pory"
-	playse SE_M_ATTRACT
-# 1776 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 6, RebelHarborLoungeClerk_Movement_12
 # 1777 "data/maps/RebelHarbourLounge/scripts.pory"
+	playse SE_M_ATTRACT
+# 1778 "data/maps/RebelHarbourLounge/scripts.pory"
+	applymovement 6, RebelHarborLoungeClerk_Movement_12
+# 1779 "data/maps/RebelHarbourLounge/scripts.pory"
 	waitmovement 6
 	goto RebelHarborLoungeClerk_573
 
@@ -3327,332 +3327,332 @@ RebelHarborLoungeClerk_678:
 
 
 PetalburgHarbourOrderChecker::
-# 2507 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborbreakfastone, PetalburgHarbourOrderChecker_2
 # 2508 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborlunchone, PetalburgHarbourOrderChecker_2
+	goto_if_unset harborbreakfastone, PetalburgHarbourOrderChecker_2
 # 2509 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_unset harborlunchone, PetalburgHarbourOrderChecker_2
+# 2510 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnerone, PetalburgHarbourOrderChecker_2
 PetalburgHarbourOrderChecker_1:
-# 2540 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborbreakfasttwo, PetalburgHarbourOrderChecker_9
 # 2541 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborlunchtwo, PetalburgHarbourOrderChecker_9
+	goto_if_unset harborbreakfasttwo, PetalburgHarbourOrderChecker_9
 # 2542 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_unset harborlunchtwo, PetalburgHarbourOrderChecker_9
+# 2543 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnertwo, PetalburgHarbourOrderChecker_9
 PetalburgHarbourOrderChecker_8:
-# 2573 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2574 "data/maps/RebelHarbourLounge/scripts.pory"
 	release
 	return
 
 PetalburgHarbourOrderChecker_2:
-# 2513 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2514 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tableonefirstcorrectbreakfast, PetalburgHarbourOrderChecker_17
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_9:
-# 2545 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2546 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tableonesecondcorrectbreakfast, PetalburgHarbourOrderChecker_27
 	goto PetalburgHarbourOrderChecker_8
 
 PetalburgHarbourOrderChecker_15:
-# 2521 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2522 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set harborbreakfasttakeaway, PetalburgHarbourOrderChecker_38
 PetalburgHarbourOrderChecker_35:
-# 2528 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborbreakfasttakeaway, PetalburgHarbourOrderChecker_49
 # 2529 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborlunchtakeaway, PetalburgHarbourOrderChecker_49
+	goto_if_unset harborbreakfasttakeaway, PetalburgHarbourOrderChecker_49
 # 2530 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_unset harborlunchtakeaway, PetalburgHarbourOrderChecker_49
+# 2531 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnertakeaway, PetalburgHarbourOrderChecker_54
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_16:
-# 2515 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2516 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tabletwosecondcorrectbreakfast, PetalburgHarbourOrderChecker_21
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_17:
-# 2514 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2515 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tabletwofirstcorrectbreakfast, PetalburgHarbourOrderChecker_16
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_20:
-# 2517 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2518 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tablethreesecondcorrectbreakfast, PetalburgHarbourOrderChecker_15
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_21:
-# 2516 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2517 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tablethreefirstcorrectbreakfast, PetalburgHarbourOrderChecker_20
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_25:
-# 2553 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2554 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set harborbreakfasttakeaway, PetalburgHarbourOrderChecker_45
 PetalburgHarbourOrderChecker_42:
-# 2560 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborbreakfasttakeaway, PetalburgHarbourOrderChecker_57
 # 2561 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset harborlunchtakeaway, PetalburgHarbourOrderChecker_57
+	goto_if_unset harborbreakfasttakeaway, PetalburgHarbourOrderChecker_57
 # 2562 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_unset harborlunchtakeaway, PetalburgHarbourOrderChecker_57
+# 2563 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_unset harbordinnertakeaway, PetalburgHarbourOrderChecker_62
 	goto PetalburgHarbourOrderChecker_8
 
 PetalburgHarbourOrderChecker_26:
-# 2547 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2548 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tabletwofourthcorrectbreakfast, PetalburgHarbourOrderChecker_31
 	goto PetalburgHarbourOrderChecker_8
 
 PetalburgHarbourOrderChecker_27:
-# 2546 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2547 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tabletwothirdcorrectbreakfast, PetalburgHarbourOrderChecker_26
 	goto PetalburgHarbourOrderChecker_8
 
 PetalburgHarbourOrderChecker_30:
-# 2549 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2550 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tablethreefourthcorrectbreakfast, PetalburgHarbourOrderChecker_25
 	goto PetalburgHarbourOrderChecker_8
 
 PetalburgHarbourOrderChecker_31:
-# 2548 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2549 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set tablethreethirdcorrectbreakfast, PetalburgHarbourOrderChecker_30
 	goto PetalburgHarbourOrderChecker_8
 
 PetalburgHarbourOrderChecker_36:
-# 2525 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2526 "data/maps/RebelHarbourLounge/scripts.pory"
 	setvar VAR_WAITERQUEST, 1
 	goto PetalburgHarbourOrderChecker_35
 
 PetalburgHarbourOrderChecker_37:
-# 2523 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2524 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set harbordinnertakeaway, PetalburgHarbourOrderChecker_36
 	goto PetalburgHarbourOrderChecker_35
 
 PetalburgHarbourOrderChecker_38:
-# 2522 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2523 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set harborlunchtakeaway, PetalburgHarbourOrderChecker_37
 	goto PetalburgHarbourOrderChecker_35
 
 PetalburgHarbourOrderChecker_43:
-# 2557 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2558 "data/maps/RebelHarbourLounge/scripts.pory"
 	setvar VAR_WAITERQUEST, 1
 	goto PetalburgHarbourOrderChecker_42
 
 PetalburgHarbourOrderChecker_44:
-# 2555 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2556 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set harbordinnertakeaway, PetalburgHarbourOrderChecker_43
 	goto PetalburgHarbourOrderChecker_42
 
 PetalburgHarbourOrderChecker_45:
-# 2554 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2555 "data/maps/RebelHarbourLounge/scripts.pory"
 	goto_if_set harborlunchtakeaway, PetalburgHarbourOrderChecker_44
 	goto PetalburgHarbourOrderChecker_42
 
 PetalburgHarbourOrderChecker_49:
-# 2534 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2535 "data/maps/RebelHarbourLounge/scripts.pory"
 	setvar VAR_WAITERQUEST, 1
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_54:
-# 2531 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_set takeawaycorrectorder, PetalburgHarbourOrderChecker_49
+# 2532 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_set takeawaytookorder, PetalburgHarbourOrderChecker_49
 	goto PetalburgHarbourOrderChecker_1
 
 PetalburgHarbourOrderChecker_57:
-# 2566 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2567 "data/maps/RebelHarbourLounge/scripts.pory"
 	setvar VAR_WAITERQUEST, 1
 	goto PetalburgHarbourOrderChecker_8
 
 PetalburgHarbourOrderChecker_62:
-# 2563 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_set takeawaycorrectorder, PetalburgHarbourOrderChecker_57
+# 2564 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_set takeawaytookorder, PetalburgHarbourOrderChecker_57
 	goto PetalburgHarbourOrderChecker_8
 
 
 PetalburgHarbourTakeAwayBreakfastBalsam::
-# 2582 "data/maps/RebelHarbourLounge/scripts.pory"
-	lock
 # 2583 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 32, RebelHarborTouristAsksRebento_Movement_0
+	lock
 # 2584 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset takeawaycorrectorder, PetalburgHarbourTakeAwayBreakfastBalsam_2
-# 2605 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
+	applymovement 32, RebelHarborTouristAsksRebento_Movement_0
+# 2585 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_unset takeawaytookorder, PetalburgHarbourTakeAwayBreakfastBalsam_2
 # 2606 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	setspeaker [ SP_NAME_BALSAM ]
 # 2607 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2608 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastBalsam_Text_3
 PetalburgHarbourTakeAwayBreakfastBalsam_1:
-# 2610 "data/maps/RebelHarbourLounge/scripts.pory"
-	removefieldmugshot
 # 2611 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto PetalburgHarbourOrderChecker
+	removefieldmugshot
 # 2612 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto PetalburgHarbourOrderChecker
+# 2613 "data/maps/RebelHarbourLounge/scripts.pory"
 	release
 	return
 
 PetalburgHarbourTakeAwayBreakfastBalsam_2:
-# 2587 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
 # 2588 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+	setspeaker [ SP_NAME_BALSAM ]
 # 2589 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayBreakfastBalsam_Text_0
-# 2591 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 2592 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
-# 2593 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayBreakfastBalsam_Text_1
-# 2595 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_BALSAM ]
-# 2596 "data/maps/RebelHarbourLounge/scripts.pory"
 	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2590 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayBreakfastBalsam_Text_0
+# 2592 "data/maps/RebelHarbourLounge/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
+# 2593 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_HAPPY
+# 2594 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayBreakfastBalsam_Text_1
+# 2596 "data/maps/RebelHarbourLounge/scripts.pory"
+	setspeaker [ SP_NAME_BALSAM ]
 # 2597 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_BALSAM, EMOTE_NORMAL
+# 2598 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastBalsam_Text_2
-# 2600 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag takeawaycorrectorder
+# 2601 "data/maps/RebelHarbourLounge/scripts.pory"
+	setflag takeawaytookorder
 	goto PetalburgHarbourTakeAwayBreakfastBalsam_1
 
 
 PetalburgHarbourTakeAwayBreakfastAide::
-# 2618 "data/maps/RebelHarbourLounge/scripts.pory"
-	lock
 # 2619 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 33, RebelHarborTouristAsksRebento_Movement_0
+	lock
 # 2620 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset takeawaycorrectorder, PetalburgHarbourTakeAwayBreakfastAide_2
-# 2653 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
+	applymovement 33, RebelHarborTouristAsksRebento_Movement_0
+# 2621 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_unset takeawaytookorder, PetalburgHarbourTakeAwayBreakfastAide_2
 # 2654 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
-# 2655 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_5
-# 2657 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
+# 2655 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+# 2656 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_5
 # 2658 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+	setspeaker [ SP_NAME_AIDEE ]
 # 2659 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+# 2660 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_6
-# 2661 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2662 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 6
 	goto_if_lt PetalburgHarbourTakeAwayBreakfastAide_9
 PetalburgHarbourTakeAwayBreakfastAide_8:
-# 2669 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2670 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 6
 	goto_if_gt PetalburgHarbourTakeAwayBreakfastAide_15
 PetalburgHarbourTakeAwayBreakfastAide_14:
-# 2684 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2685 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 7
 	goto_if_gt PetalburgHarbourTakeAwayBreakfastAide_17
 PetalburgHarbourTakeAwayBreakfastAide_1:
-# 2698 "data/maps/RebelHarbourLounge/scripts.pory"
-	removefieldmugshot
 # 2699 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto PetalburgHarbourOrderChecker
+	removefieldmugshot
 # 2700 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto PetalburgHarbourOrderChecker
+# 2701 "data/maps/RebelHarbourLounge/scripts.pory"
 	release
 	return
 
 PetalburgHarbourTakeAwayBreakfastAide_2:
-# 2623 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 2624 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+	setspeaker [ SP_NAME_AIDEE ]
 # 2625 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+# 2626 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_0
-# 2627 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 2628 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
-# 2629 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_1
-# 2632 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
+# 2629 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
+# 2630 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_1
 # 2633 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+	setspeaker [ SP_NAME_AIDEE ]
 # 2634 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+# 2635 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 6
 	goto_if_lt PetalburgHarbourTakeAwayBreakfastAide_6
 PetalburgHarbourTakeAwayBreakfastAide_5:
-# 2639 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2640 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_LITTLEROOT_PHASE, 6
 	goto_if_gt PetalburgHarbourTakeAwayBreakfastAide_12
 PetalburgHarbourTakeAwayBreakfastAide_11:
-# 2644 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 2645 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+	setspeaker [ SP_NAME_AIDEE ]
 # 2646 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+# 2647 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_4
 	goto PetalburgHarbourTakeAwayBreakfastAide_1
 
 PetalburgHarbourTakeAwayBreakfastAide_6:
-# 2636 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2637 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_2
 	goto PetalburgHarbourTakeAwayBreakfastAide_5
 
 PetalburgHarbourTakeAwayBreakfastAide_9:
-# 2663 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 2664 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+	setspeaker [ SP_NAME_AIDEE ]
 # 2665 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+# 2666 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_7
 	goto PetalburgHarbourTakeAwayBreakfastAide_8
 
 PetalburgHarbourTakeAwayBreakfastAide_12:
-# 2641 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2642 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_3
 	goto PetalburgHarbourTakeAwayBreakfastAide_11
 
 PetalburgHarbourTakeAwayBreakfastAide_15:
-# 2671 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 2672 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+	setspeaker [ SP_NAME_AIDEE ]
 # 2673 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_TALK
+# 2674 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_8
-# 2675 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 2676 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
-# 2677 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_9
-# 2679 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
+# 2677 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
+# 2678 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_9
 # 2680 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+	setspeaker [ SP_NAME_AIDEE ]
 # 2681 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+# 2682 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_10
 	goto PetalburgHarbourTakeAwayBreakfastAide_14
 
 PetalburgHarbourTakeAwayBreakfastAide_17:
-# 2686 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2687 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_8
-# 2688 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_AIDEE ]
 # 2689 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
-# 2690 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_11
-# 2692 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_AIDEE ]
+# 2690 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_NORMAL
+# 2691 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_11
 # 2693 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+	setspeaker [ SP_NAME_AIDEE ]
 # 2694 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_AIDEE, EMOTE_HAPPY
+# 2695 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayBreakfastAide_Text_12
 	goto PetalburgHarbourTakeAwayBreakfastAide_1
 
 
 PetalburgHarbourTakeAwayLunchNorman::
-# 2708 "data/maps/RebelHarbourLounge/scripts.pory"
-	lock
 # 2709 "data/maps/RebelHarbourLounge/scripts.pory"
-	applymovement 47, RebelHarborTouristAsksRebento_Movement_0
+	lock
 # 2710 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset takeawaycorrectorder, PetalburgHarbourTakeAwayLunchNorman_2
+	applymovement 47, RebelHarborTouristAsksRebento_Movement_0
+# 2711 "data/maps/RebelHarbourLounge/scripts.pory"
+	goto_if_unset takeawaytookorder, PetalburgHarbourTakeAwayLunchNorman_2
 # 2760 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
 # 2761 "data/maps/RebelHarbourLounge/scripts.pory"
@@ -3675,71 +3675,71 @@ PetalburgHarbourTakeAwayLunchNorman_1:
 	return
 
 PetalburgHarbourTakeAwayLunchNorman_2:
-# 2712 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
 # 2713 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+	setspeaker [ SP_NAME_NORMAN ]
 # 2714 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 2715 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_0
-# 2717 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
 # 2718 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
-# 2719 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_1
-# 2721 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
+# 2719 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_HAPPY
+# 2720 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_1
 # 2722 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+	setspeaker [ SP_NAME_NORMAN ]
 # 2723 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+# 2724 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_2
-# 2725 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2726 "data/maps/RebelHarbourLounge/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, PetalburgHarbourTakeAwayLunchNorman_Text_3, PetalburgHarbourTakeAwayLunchNorman_Text_4
-# 2729 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2730 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq PetalburgHarbourTakeAwayLunchNorman_6
 PetalburgHarbourTakeAwayLunchNorman_5:
-# 2740 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2741 "data/maps/RebelHarbourLounge/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgHarbourTakeAwayLunchNorman_9
 PetalburgHarbourTakeAwayLunchNorman_8:
-# 2750 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
 # 2751 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+	setspeaker [ SP_NAME_NORMAN ]
 # 2752 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_TALK
+# 2753 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_9
 # 2755 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag takeawaycorrectorder
+	setflag takeawaytookorder
 	goto PetalburgHarbourTakeAwayLunchNorman_1
 
 PetalburgHarbourTakeAwayLunchNorman_6:
-# 2730 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
 # 2731 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
-# 2732 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_5
-# 2734 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
+# 2732 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 2733 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_5
 # 2735 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+	setspeaker [ SP_NAME_NORMAN ]
 # 2736 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 2737 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_6
 	goto PetalburgHarbourTakeAwayLunchNorman_5
 
 PetalburgHarbourTakeAwayLunchNorman_9:
-# 2741 "data/maps/RebelHarbourLounge/scripts.pory"
-	setspeaker [ SP_NAME_NORMAN ]
 # 2742 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
-# 2743 "data/maps/RebelHarbourLounge/scripts.pory"
-	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_7
-# 2745 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_NORMAN ]
+# 2743 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_ANGRY
+# 2744 "data/maps/RebelHarbourLounge/scripts.pory"
+	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_7
 # 2746 "data/maps/RebelHarbourLounge/scripts.pory"
-	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+	setspeaker [ SP_NAME_NORMAN ]
 # 2747 "data/maps/RebelHarbourLounge/scripts.pory"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+# 2748 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayLunchNorman_Text_8
 	goto PetalburgHarbourTakeAwayLunchNorman_8
 
@@ -3750,7 +3750,7 @@ PetalburgHarbourTakeAwayDinnerSharpy::
 # 2778 "data/maps/RebelHarbourLounge/scripts.pory"
 	applymovement 30, RebelHarborTouristAsksRebento_Movement_0
 # 2779 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset takeawaycorrectorder, PetalburgHarbourTakeAwayDinnerSharpy_2
+	goto_if_unset takeawaytookorder, PetalburgHarbourTakeAwayDinnerSharpy_2
 # 2841 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_SHARPY ]
 # 2842 "data/maps/RebelHarbourLounge/scripts.pory"
@@ -3846,7 +3846,7 @@ PetalburgHarbourTakeAwayDinnerSharpy_8:
 # 2834 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayDinnerSharpy_Text_9
 # 2836 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag takeawaycorrectorder
+	setflag takeawaytookorder
 	goto PetalburgHarbourTakeAwayDinnerSharpy_1
 
 PetalburgHarbourTakeAwayDinnerSharpy_6:
@@ -3866,7 +3866,7 @@ PetalburgHarbourTakeAwayDinnerCamelia::
 # 2855 "data/maps/RebelHarbourLounge/scripts.pory"
 	applymovement 31, RebelHarborTouristAsksRebento_Movement_0
 # 2856 "data/maps/RebelHarbourLounge/scripts.pory"
-	goto_if_unset takeawaycorrectorder, PetalburgHarbourTakeAwayDinnerCamelia_2
+	goto_if_unset takeawaytookorder, PetalburgHarbourTakeAwayDinnerCamelia_2
 # 2913 "data/maps/RebelHarbourLounge/scripts.pory"
 	setspeaker [ SP_NAME_CAMELIA ]
 # 2914 "data/maps/RebelHarbourLounge/scripts.pory"
@@ -3984,7 +3984,7 @@ PetalburgHarbourTakeAwayDinnerCamelia_2:
 # 2905 "data/maps/RebelHarbourLounge/scripts.pory"
 	msgbox PetalburgHarbourTakeAwayDinnerCamelia_Text_8
 # 2908 "data/maps/RebelHarbourLounge/scripts.pory"
-	setflag takeawaycorrectorder
+	setflag takeawaytookorder
 	goto PetalburgHarbourTakeAwayDinnerCamelia_1
 
 
@@ -6328,33 +6328,33 @@ RebelHarborLoungeClerk_Movement_8:
 	walk_up
 	step_end
 
-# 1663 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1664 "data/maps/RebelHarbourLounge/scripts.pory"
 RebelHarborLoungeClerk_Movement_9:
-# 1663 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1664 "data/maps/RebelHarbourLounge/scripts.pory"
 	face_down
 	step_end
 
-# 1676 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1678 "data/maps/RebelHarbourLounge/scripts.pory"
 RebelHarborLoungeClerk_Movement_10:
-# 1676 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1678 "data/maps/RebelHarbourLounge/scripts.pory"
 	walk_down
-# 1676 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1678 "data/maps/RebelHarbourLounge/scripts.pory"
 	walk_down
-# 1676 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1678 "data/maps/RebelHarbourLounge/scripts.pory"
 	walk_down
-# 1676 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1678 "data/maps/RebelHarbourLounge/scripts.pory"
 	walk_down
 	step_end
 
-# 1690 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1692 "data/maps/RebelHarbourLounge/scripts.pory"
 RebelHarborLoungeClerk_Movement_11:
-# 1690 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1692 "data/maps/RebelHarbourLounge/scripts.pory"
 	emote_double_exclamation_mark
 	step_end
 
-# 1741 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1743 "data/maps/RebelHarbourLounge/scripts.pory"
 RebelHarborLoungeClerk_Movement_12:
-# 1741 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1743 "data/maps/RebelHarbourLounge/scripts.pory"
 	emote_heart
 	step_end
 
@@ -6637,20 +6637,20 @@ RebelHarborLoungeClerk_Text_46:
 	.string "Standby to deliver the orders!$"
 
 RebelHarborLoungeClerk_Text_47:
-# 1671 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1673 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "{COLOR GREEN}{PLAYER} has delivered the orders,\n"
 	.string "and observes the guests' reaction...$"
 
 RebelHarborLoungeClerk_Text_48:
-# 1729 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1731 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Table 1 does not seem very happy.$"
 
 RebelHarborLoungeClerk_Text_49:
-# 1780 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1782 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Table 1 seems quite happy.$"
 
 RebelHarborLoungeClerk_Text_50:
-# 1838 "data/maps/RebelHarbourLounge/scripts.pory"
+# 1866 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Table 2 does not seem very happy.$"
 
 RebelHarborLoungeClerk_Text_51:
@@ -6794,141 +6794,141 @@ RebelHarborLoungeClerk_Text_79:
 	.string "Bad gateway.$"
 
 PetalburgHarbourTakeAwayBreakfastBalsam_Text_0:
-# 2589 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2590 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "{PLAYER}...? Fancy meeting you here.\n"
 	.string "Wait, you work here?$"
 
 PetalburgHarbourTakeAwayBreakfastBalsam_Text_1:
-# 2593 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2594 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "That's great. I'm happy to see you're\n"
 	.string "readapting to society so quickly.$"
 
 PetalburgHarbourTakeAwayBreakfastBalsam_Text_2:
-# 2597 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2598 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "We'll have some Swinub Bacon to take.\n"
 	.string "It'll be a long day of research ahead\l"
 	.string "for us, so we need some protein-rich\l"
 	.string "breakfast.$"
 
 PetalburgHarbourTakeAwayBreakfastBalsam_Text_3:
-# 2607 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2608 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Sorry for giving you extra work - seems\n"
 	.string "like a busy morning here.\p"
 	.string "Try to get us that Swinub Bacon, and\n"
 	.string "we'll be off.$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_0:
-# 2625 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2626 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "{PLAYER}! The Rebel Zone is a small\n"
 	.string "world, isn't it?$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_1:
-# 2629 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2630 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "I see you have your own work now, but I\n"
 	.string "hope you can still help us with ours.$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_2:
-# 2636 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2637 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "... in particular, that Voltorb Shard we\n"
 	.string "asked you to find some time ago.$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_3:
-# 2641 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2642 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "You know what I mean. I'm always\n"
 	.string "expecting your contributions!$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_4:
-# 2646 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2647 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "But let's leave that chat for a more\n"
 	.string "private place. Balsam will take our\l"
 	.string "order - I've never been too picky.$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_5:
-# 2655 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2656 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Oh, if you want to get back to\n"
 	.string "Littleroot quickly...$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_6:
-# 2659 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2660 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "There's a tunnel shortcut you can take\n"
 	.string "in Petalburg Beach.$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_7:
-# 2665 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2666 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "If you give us a hand with that favour\n"
 	.string "we asked you, I'd be happy to tell you\l"
 	.string "more about it.$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_8:
-# 2673 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2674 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "We had that built with a herd of\n"
 	.string "Digletts the Kanto Rebels sent us.$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_9:
-# 2677 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2678 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "It should be useful if a certain\n"
 	.string "company comes knocking on our door...$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_10:
-# 2681 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2682 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "But I hope we never need to find out!$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_11:
-# 2690 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2691 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "If a certain company comes knocking\n"
 	.string "again, we may need to use it...$"
 
 PetalburgHarbourTakeAwayBreakfastAide_Text_12:
-# 2694 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2695 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Unless we can count on you to deal with\n"
 	.string "them again!$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_0:
-# 2714 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2715 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "{PLAYER}... I thought that was you. So\n"
 	.string "you're part-timing here?$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_1:
-# 2719 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2720 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "You're a hard worker. I guess that\n"
 	.string "comes in the family.$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_2:
-# 2723 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2724 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "But if you are ever too short on money...\n"
 	.string "I want you to let me help. Will you?$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_3:
-# 2726 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2727 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Yes$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_4:
-# 2727 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2728 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "No$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_5:
-# 2732 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2733 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "Thank you. I know it does not\n"
 	.string "compensate for... anything, really.$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_6:
-# 2736 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2737 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "But I'd be happy to help you in that\n"
 	.string "regard. I have a bit saved up from my\l"
 	.string "gym leader days. It's the least I can do.$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_7:
-# 2743 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2744 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "I see... of course you won't. And I have\n"
 	.string "no right to complain.$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_8:
-# 2747 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2748 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "But if you ever change your mind, my\n"
 	.string "offer will always stand.$"
 
 PetalburgHarbourTakeAwayLunchNorman_Text_9:
-# 2752 "data/maps/RebelHarbourLounge/scripts.pory"
+# 2753 "data/maps/RebelHarbourLounge/scripts.pory"
 	.string "As for my order, I'll have some Magikarp\n"
 	.string "Sushi. Please, I am in no hurry.$"
 
